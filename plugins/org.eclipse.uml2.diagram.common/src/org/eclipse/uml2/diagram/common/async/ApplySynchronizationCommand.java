@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.common.async;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,15 +11,21 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 
 public class ApplySynchronizationCommand extends AbstractTransactionalCommand {
 	private final SyncModelNode mySyncRoot;
+	private final ArrayList<View> myAddedTopLevelViews = new ArrayList<View>();
 
 	public ApplySynchronizationCommand(SyncModelNode syncRoot) {
 		super(syncRoot.getContext().getDomain(), "Applying synchronization changes", getWorkspaceFiles(syncRoot.getDiagramView()));
 		assert (syncRoot.getDiagramView() != null);
 		mySyncRoot = syncRoot;
+	}
+	
+	public ArrayList<View> getAddedTopLevelViews() {
+		return myAddedTopLevelViews;
 	}
 
 	@Override
@@ -29,7 +36,7 @@ public class ApplySynchronizationCommand extends AbstractTransactionalCommand {
 			SyncModelNode next = queue.removeFirst();
 			syncNode(next, queue);
 		}
-		return CommandResult.newOKCommandResult();
+		return CommandResult.newOKCommandResult(myAddedTopLevelViews);
 	}
 
 	private void syncNode(SyncModelNode node, List<SyncModelNode> queue) {
@@ -76,6 +83,10 @@ public class ApplySynchronizationCommand extends AbstractTransactionalCommand {
 		
 		View copy = ViewService.createNode(diagramParent, node.getSyncModelView().getElement(), node.getSyncModelView().getType(), mySyncRoot.getContext().getPreferencesHint());
 		assert copy != null;
+		
+		if (diagramParent instanceof Diagram){
+			myAddedTopLevelViews.add(copy);
+		}
 		
 		node.associateWithDiagramView(copy);
 		node.applyCanonicalStyle();
