@@ -196,7 +196,7 @@ public class NewDiagramSynchronizationPage extends WizardPage {
 	}
 
 	private String getSelectionTitle() {
-		return "Selected elements will be added to diagram:";
+		return "Selected elements will be added to diagram, 'bold' elements will manage their children:";
 	}
 
 }
