@@ -21,6 +21,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.emf.ui.properties.descriptors.EMFCompositeSourcePropertyDescriptor;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.uml2.uml.ElementImport;
 
 public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescriptor {
 
@@ -38,8 +39,15 @@ public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescr
 		ReferenceElementTableChooserDialog dialog = new ReferenceElementTableChooserDialog(composite.getShell(), myItemProvidersAdapterFactory, (EObject) object, feature) {
 
 			@Override
-			protected boolean isValid(EObject selectedElement) {
-				return feature.getEType().isInstance(selectedElement);
+			protected EObject accept(EObject selectedElement) {
+				if (selectedElement instanceof ElementImport){
+					ElementImport _import = (ElementImport)selectedElement;
+					selectedElement = _import.getImportedElement();
+				}
+				if (selectedElement != null && feature.getEType().isInstance(selectedElement)){
+					return selectedElement;
+				}
+				return null;
 			}
 		};
 		return new ReferenceComboAndDialogCellEditor(composite, new ArrayList(getChoiceOfValues()), getLabelProvider(), true, dialog, TransactionUtil.getEditingDomain(object));

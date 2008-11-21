@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006 Borland Software Corporation
+ * Copyright (c) 2008 Borland Software Corporation
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -91,15 +91,18 @@ public class ReferenceElementTableChooserDialog extends ElementListSelectionDial
 	}
 
 	
-	protected boolean isValid(EObject selectedElement) {
-		return false;
+	protected EObject accept(EObject selectedElement) {
+		return null;
 	}
 
 	protected EObject[] getElements(Object inputElement) {
 		List<EObject> result = new LinkedList<EObject>();
 		for (Object next : getAllChildren(inputElement)) {
-			if ((next instanceof EObject) && isValid((EObject) next)) {
-				result.add((EObject)next);
+			if ((next instanceof EObject)){
+				EObject transfromed = accept((EObject) next);
+				if (transfromed != null){
+					result.add(transfromed);
+				}
 			}
 		}
 		return result.toArray(new EObject[result.size()]);
