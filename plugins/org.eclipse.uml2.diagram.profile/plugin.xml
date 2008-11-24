@@ -784,6 +784,16 @@
       </contributionItemProvider>
    </extension>
    
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <?gmfgen generated="true"?>   
+      <propertyContributor contributorId="org.eclipse.uml2.diagram.profile"
+            labelProvider="org.eclipse.uml2.diagram.profile.sheet.UMLSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+   
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <?gmfgen generated="true"?>   
       <propertyTabs contributorId="org.eclipse.uml2.diagram.profile">
