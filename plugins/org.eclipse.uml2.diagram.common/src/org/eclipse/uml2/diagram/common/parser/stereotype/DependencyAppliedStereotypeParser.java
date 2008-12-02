@@ -24,14 +24,14 @@ public class DependencyAppliedStereotypeParser extends AppliedStereotypeParser {
 
 	@Override
 	protected String getElementLabel(Element element) {
+		if (element instanceof Substitution) {
+			return LABEL_SUBSTITUTION;
+		}
 		if (element instanceof Abstraction) {
 			return LABEL_ABSTRACTION;
 		}
 		if (element instanceof Usage) {
 			return LABEL_USAGE;
-		}
-		if (element instanceof Substitution) {
-			return LABEL_SUBSTITUTION;
 		}
 		return null;
 	}
