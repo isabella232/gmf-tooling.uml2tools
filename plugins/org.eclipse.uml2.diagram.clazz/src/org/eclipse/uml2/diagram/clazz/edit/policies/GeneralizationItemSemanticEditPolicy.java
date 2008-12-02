@@ -114,7 +114,7 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		case GeneralizationEditPart.VISUAL_ID:
 			return getGEFWrapper(new GeneralizationReorientCommand(req));
 		}
-		return getReorientRelationshipCommand(req);
+		return super.getReorientRelationshipCommand(req);
 	}
 
 	/**
