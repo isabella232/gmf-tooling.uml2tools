@@ -15,8 +15,8 @@ import org.eclipse.uml2.uml.AggregationKind;
 
 public class AssociationContributionItemProvider extends AbstractContributionItemProvider implements IProvider {
 	
-	protected IAction createAction(String actionId,
-			IWorkbenchPartDescriptor partDescriptor) {
+	@Override
+	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
 		AggregationKind aggregationKind = getActionIdToAssociationKindTable().get(actionId);
 		if (aggregationKind != null) {
@@ -24,15 +24,14 @@ public class AssociationContributionItemProvider extends AbstractContributionIte
 		}
 		return super.createAction(actionId, partDescriptor);
 	}
-	
-	protected IMenuManager createMenuManager(
-			String menuId,
-			IWorkbenchPartDescriptor partDescriptor) {
-			if (menuId.equals(MENU_ASSOCIATION_GROUP))
-				return new MenuManager(LABEL_ASSOCIATION_GROUP, MENU_ASSOCIATION_GROUP);
-			if (menuId.equals(MENU_ASSOCIATION))
-				return new MenuManager(LABEL_ASSOCIATION, MENU_ASSOCIATION);
-			return super.createMenuManager(menuId, partDescriptor);
+
+	@Override
+	protected IMenuManager createMenuManager(String menuId, IWorkbenchPartDescriptor partDescriptor) {
+		if (menuId.equals(MENU_ASSOCIATION_GROUP))
+			return new MenuManager(LABEL_ASSOCIATION_GROUP, MENU_ASSOCIATION_GROUP);
+		if (menuId.equals(MENU_ASSOCIATION))
+			return new MenuManager(LABEL_ASSOCIATION, MENU_ASSOCIATION);
+		return super.createMenuManager(menuId, partDescriptor);
 	}
 
 	public static final String ACTION_RECTANGLE_INTERFACE_NOTATION = "rectangle_interface_notation"; //$NON-NLS-1$

@@ -34,7 +34,7 @@ public class ChangeAssociationKind extends DiagramAction {
 		if (association == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		AggregationKind currentKind = AssociationEndConvention.getSourceEnd(association).getAggregation();
+		AggregationKind currentKind = AssociationEndConvention.getTargetEnd(association).getAggregation();
 		if (currentKind != null && currentKind.getValue() == kind.getValue()) {
 			return UnexecutableCommand.INSTANCE;
 		}
