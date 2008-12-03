@@ -94,7 +94,10 @@ public class InputPin5EditPart extends BorderedBorderItemEditPart implements Pri
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child instanceof IBorderItemEditPart) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
+				case InputPinName5EditPart.VISUAL_ID:
+				case InputPinOrdering5EditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						protected List createSelectionHandles() {
