@@ -59,7 +59,7 @@ public class BisectionBorderItemLocator extends BorderItemLocator {
 		setCurrentSideOfParent(findClosestSideOfParent(new Rectangle(ptNewLocation, size), getParentBorder()));
 		
 		Rectangle bisectLoc = getBisectionLocation(new Rectangle(ptNewLocation, size), getCurrentSideOfParent());
-		borderItem.getBounds().setBounds(bisectLoc);
+		borderItem.setBounds(bisectLoc);
 	}
 	
 	protected Rectangle getBisectionLocation(Rectangle location, int side) {
