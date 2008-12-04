@@ -147,7 +147,11 @@
 			org.eclipse.draw2d.IFigure label = getFigure();
 			if (label instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel){
 				labelDelegate = new org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel)label);
-			} else {
+			} «IF isRotatedLabel(this)-»
+			else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
+				labelDelegate = new org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfStringLabelDelegate((org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString)figure); 
+			} «ENDIF-»
+			else {
 				labelDelegate = new org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate((org.eclipse.draw2d.Label)label);
 			}
 		}

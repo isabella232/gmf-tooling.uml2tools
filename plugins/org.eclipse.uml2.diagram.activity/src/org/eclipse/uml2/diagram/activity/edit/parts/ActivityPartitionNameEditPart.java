@@ -50,6 +50,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString;
+import org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfStringLabelDelegate;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 
@@ -510,6 +511,8 @@ public class ActivityPartitionNameEditPart extends CompartmentEditPart implement
 			IFigure label = getFigure();
 			if (label instanceof WrappingLabel) {
 				labelDelegate = new WrappingLabelDelegate((WrappingLabel) label);
+			} else if (figure instanceof RotatedImageOfString) {
+				labelDelegate = new RotatedImageOfStringLabelDelegate((RotatedImageOfString) figure);
 			} else {
 				labelDelegate = new SimpleLabelDelegate((Label) label);
 			}
