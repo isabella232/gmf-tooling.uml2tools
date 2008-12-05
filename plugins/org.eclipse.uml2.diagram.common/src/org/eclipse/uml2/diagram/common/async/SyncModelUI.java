@@ -14,10 +14,14 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.ITreeViewerListener;
 import org.eclipse.jface.viewers.TreeExpansionEvent;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.dialogs.FilteredTree;
+import org.eclipse.ui.dialogs.PatternFilter;
 
 
 public class SyncModelUI {
@@ -33,7 +37,9 @@ public class SyncModelUI {
 	}
 	
 	private void createContents(Composite composite) {
-		myTreeViewer = new CheckboxTreeViewer(composite, SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
+		CheckboxFilteredTree filterTree = new CheckboxFilteredTree(composite, 
+    			SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER, new PatternFilter());
+    	myTreeViewer = filterTree.getCheckboxTreeViewer();
 		myLabelProvider.hookTreeViewer(myTreeViewer);
 		
 		GridData layoutData = new GridData(GridData.FILL_BOTH);
@@ -42,6 +48,8 @@ public class SyncModelUI {
 		myTreeViewer.getTree().setLayoutData(layoutData);
 		myTreeViewer.setContentProvider(new SyncModelContentProvider());
 		myTreeViewer.setLabelProvider(myLabelProvider);
+		myTreeViewer.setComparator(new ViewerComparator());
+		myTreeViewer.setAutoExpandLevel(2);
 		
 		myCheckStateInitializer = new CheckStateInitializer(myTreeViewer); 
 		myTreeViewer.addTreeListener(myCheckStateInitializer);
@@ -292,5 +300,22 @@ public class SyncModelUI {
 		}
 	}
 	
+	private class CheckboxFilteredTree extends FilteredTree {
+
+		public CheckboxFilteredTree(Composite parent, int treeStyle, PatternFilter filter) {
+			super(parent, treeStyle, filter);
+		}
+
+		@Override
+		protected TreeViewer doCreateTreeViewer(Composite parent, int style) {
+			return new CheckboxTreeViewer(parent, style);
+		}
+
+		public CheckboxTreeViewer getCheckboxTreeViewer() {
+			return (CheckboxTreeViewer) getViewer();
+		}
+
+	}
+
 	
 }
