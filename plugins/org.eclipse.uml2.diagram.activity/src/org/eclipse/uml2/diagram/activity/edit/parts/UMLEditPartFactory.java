@@ -40,6 +40,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityNameEditPart.VISUAL_ID:
 				return new ActivityNameEditPart(view);
 
+			case ActivityStereotypeEditPart.VISUAL_ID:
+				return new ActivityStereotypeEditPart(view);
+
 			case ConstraintEditPart.VISUAL_ID:
 				return new ConstraintEditPart(view);
 
@@ -51,6 +54,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case AcceptEventActionNameEditPart.VISUAL_ID:
 				return new AcceptEventActionNameEditPart(view);
+
+			case AcceptEventActionStereotypeEditPart.VISUAL_ID:
+				return new AcceptEventActionStereotypeEditPart(view);
 
 			case AcceptEventAction2EditPart.VISUAL_ID:
 				return new AcceptEventAction2EditPart(view);
@@ -241,6 +247,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AcceptEventActionName2EditPart.VISUAL_ID:
 				return new AcceptEventActionName2EditPart(view);
 
+			case AcceptEventActionStereotype2EditPart.VISUAL_ID:
+				return new AcceptEventActionStereotype2EditPart(view);
+
 			case AcceptEventAction4EditPart.VISUAL_ID:
 				return new AcceptEventAction4EditPart(view);
 
@@ -351,6 +360,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case ActivityParameterNodeNameEditPart.VISUAL_ID:
 				return new ActivityParameterNodeNameEditPart(view);
+
+			case ActivityParameterNodeStereotypeEditPart.VISUAL_ID:
+				return new ActivityParameterNodeStereotypeEditPart(view);
 
 			case SendSignalActionEditPart.VISUAL_ID:
 				return new SendSignalActionEditPart(view);

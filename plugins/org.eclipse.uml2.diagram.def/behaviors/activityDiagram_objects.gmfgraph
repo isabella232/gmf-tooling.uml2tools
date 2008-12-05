@@ -145,22 +145,39 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="ActivityParameterFigure">
-        <layoutData
-            xsi:type="gmfgraph:CustomLayoutData"
-            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ActivityParameterFigure_stereo">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"
+              vertical="true"/>
+          <border
+              xsi:type="gmfgraph:MarginBorder">
+            <insets
+                left="5"
+                right="5"/>
+          </border>
+        </children>
         <children
             xsi:type="gmfgraph:Label"
             name="ActivityParameterFigure_name">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              vertical="true"/>
           <border
               xsi:type="gmfgraph:MarginBorder">
             <insets
                 top="3"
                 left="5"
-                bottom="3"
                 right="5"/>
           </border>
         </children>
       </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
     </descriptors>
@@ -216,6 +233,11 @@
       name="AttachedPinNode_external_name"
       figure="AttachedPin_external_name"
       elementIcon="false"/>
+  <labels
+      name="ActivityParameterNode_stereo"
+      figure="ActivityParameterFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.5/@accessors.1"/>
   <labels
       name="ActivityParameterNode_name"
       figure="ActivityParameterFigure"

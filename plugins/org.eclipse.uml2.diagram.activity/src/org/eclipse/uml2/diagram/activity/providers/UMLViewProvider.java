@@ -179,6 +179,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ActivityNameEditPart.VISUAL_ID:
+				case ActivityStereotypeEditPart.VISUAL_ID:
 					if (ActivityEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -194,6 +195,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case AcceptEventActionNameEditPart.VISUAL_ID:
+				case AcceptEventActionStereotypeEditPart.VISUAL_ID:
 					if (AcceptEventActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -315,6 +317,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case AcceptEventActionName2EditPart.VISUAL_ID:
+				case AcceptEventActionStereotype2EditPart.VISUAL_ID:
 					if (AcceptEventAction3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -383,6 +386,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ActivityParameterNodeNameEditPart.VISUAL_ID:
+				case ActivityParameterNodeStereotypeEditPart.VISUAL_ID:
 					if (ActivityParameterNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -557,6 +561,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActivityViewFactory.class;
 		case ActivityNameEditPart.VISUAL_ID:
 			return ActivityNameViewFactory.class;
+		case ActivityStereotypeEditPart.VISUAL_ID:
+			return ActivityStereotypeViewFactory.class;
 		case ConstraintEditPart.VISUAL_ID:
 			return ConstraintViewFactory.class;
 		case Constraint2EditPart.VISUAL_ID:
@@ -565,6 +571,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AcceptEventActionViewFactory.class;
 		case AcceptEventActionNameEditPart.VISUAL_ID:
 			return AcceptEventActionNameViewFactory.class;
+		case AcceptEventActionStereotypeEditPart.VISUAL_ID:
+			return AcceptEventActionStereotypeViewFactory.class;
 		case AcceptEventAction2EditPart.VISUAL_ID:
 			return AcceptEventAction2ViewFactory.class;
 		case AcceptEventActionName3EditPart.VISUAL_ID:
@@ -691,6 +699,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AcceptEventAction3ViewFactory.class;
 		case AcceptEventActionName2EditPart.VISUAL_ID:
 			return AcceptEventActionName2ViewFactory.class;
+		case AcceptEventActionStereotype2EditPart.VISUAL_ID:
+			return AcceptEventActionStereotype2ViewFactory.class;
 		case AcceptEventAction4EditPart.VISUAL_ID:
 			return AcceptEventAction4ViewFactory.class;
 		case AcceptEventActionName4EditPart.VISUAL_ID:
@@ -765,6 +775,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActivityParameterNodeViewFactory.class;
 		case ActivityParameterNodeNameEditPart.VISUAL_ID:
 			return ActivityParameterNodeNameViewFactory.class;
+		case ActivityParameterNodeStereotypeEditPart.VISUAL_ID:
+			return ActivityParameterNodeStereotypeViewFactory.class;
 		case SendSignalActionEditPart.VISUAL_ID:
 			return SendSignalActionViewFactory.class;
 		case SendSignalActionNameEditPart.VISUAL_ID:

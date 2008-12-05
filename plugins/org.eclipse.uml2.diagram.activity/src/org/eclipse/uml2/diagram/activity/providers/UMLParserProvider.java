@@ -18,10 +18,14 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName4EditPa
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionStereotype2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionStereotypeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeStereotypeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityStereotypeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionNameEditPart;
@@ -113,6 +117,7 @@ import org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeAndInStateParser;
 import org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeParser;
 import org.eclipse.uml2.diagram.activity.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -147,6 +152,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private AppliedStereotypeParser activityQualifiedName_5093Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActivityQualifiedName_5093Parser() {
+		if (activityQualifiedName_5093Parser == null) {
+			activityQualifiedName_5093Parser = new AppliedStereotypeParser();
+		}
+		return activityQualifiedName_5093Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser acceptEventActionName_5040Parser;
 
 	/**
@@ -166,6 +186,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser acceptEventActionQualifiedName_5095Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAcceptEventActionQualifiedName_5095Parser() {
+		if (acceptEventActionQualifiedName_5095Parser == null) {
+			acceptEventActionQualifiedName_5095Parser = new AppliedStereotypeParser();
+		}
+		return acceptEventActionQualifiedName_5095Parser;
 	}
 
 	/**
@@ -961,6 +996,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private AppliedStereotypeParser acceptEventActionQualifiedName_5096Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getAcceptEventActionQualifiedName_5096Parser() {
+		if (acceptEventActionQualifiedName_5096Parser == null) {
+			acceptEventActionQualifiedName_5096Parser = new AppliedStereotypeParser();
+		}
+		return acceptEventActionQualifiedName_5096Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser acceptEventActionName_5043Parser;
 
 	/**
@@ -1414,6 +1464,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		Parser_0_0 parser = new Parser_0_0(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser activityParameterNodeQualifiedName_5094Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActivityParameterNodeQualifiedName_5094Parser() {
+		if (activityParameterNodeQualifiedName_5094Parser == null) {
+			activityParameterNodeQualifiedName_5094Parser = new AppliedStereotypeParser();
+		}
+		return activityParameterNodeQualifiedName_5094Parser;
 	}
 
 	/**
@@ -2235,8 +2300,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case ActivityNameEditPart.VISUAL_ID:
 			return getActivityName_5030Parser();
+		case ActivityStereotypeEditPart.VISUAL_ID:
+			return getActivityQualifiedName_5093Parser();
 		case AcceptEventActionNameEditPart.VISUAL_ID:
 			return getAcceptEventActionName_5040Parser();
+		case AcceptEventActionStereotypeEditPart.VISUAL_ID:
+			return getAcceptEventActionQualifiedName_5095Parser();
 		case AcceptEventActionName3EditPart.VISUAL_ID:
 			return getAcceptEventActionName_5042Parser();
 		case DataStoreNodeNameEditPart.VISUAL_ID:
@@ -2307,6 +2376,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOpaqueActionName_5015Parser();
 		case AcceptEventActionName2EditPart.VISUAL_ID:
 			return getAcceptEventActionName_5041Parser();
+		case AcceptEventActionStereotype2EditPart.VISUAL_ID:
+			return getAcceptEventActionQualifiedName_5096Parser();
 		case AcceptEventActionName4EditPart.VISUAL_ID:
 			return getAcceptEventActionName_5043Parser();
 		case PinName2EditPart.VISUAL_ID:
@@ -2347,6 +2418,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOpaqueBehaviorName_5029Parser();
 		case ActivityParameterNodeNameEditPart.VISUAL_ID:
 			return getActivityParameterNodeName_5031Parser();
+		case ActivityParameterNodeStereotypeEditPart.VISUAL_ID:
+			return getActivityParameterNodeQualifiedName_5094Parser();
 		case SendSignalActionNameEditPart.VISUAL_ID:
 			return getSendSignalActionName_5044Parser();
 		case ActivityPartitionNameEditPart.VISUAL_ID:

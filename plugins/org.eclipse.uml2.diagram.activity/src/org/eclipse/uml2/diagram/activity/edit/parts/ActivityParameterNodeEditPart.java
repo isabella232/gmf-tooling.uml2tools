@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
@@ -129,6 +130,10 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ActivityParameterNodeNameEditPart) {
 			((ActivityParameterNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActivityParameterFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof ActivityParameterNodeStereotypeEditPart) {
+			((ActivityParameterNodeStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActivityParameterFigure_stereo());
 			return true;
 		}
 		return false;
@@ -1727,7 +1732,16 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		/**
 		 * @generated
 		 */
+		private Label fFigureActivityParameterFigure_stereo;
+
+		/**
+		 * @generated
+		 */
 		public ActivityParameterFigure() {
+
+			BorderLayout layoutThis = new BorderLayout();
+			this.setLayoutManager(layoutThis);
+
 			createContents();
 		}
 
@@ -1736,11 +1750,17 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		 */
 		private void createContents() {
 
+			fFigureActivityParameterFigure_stereo = new Label();
+			fFigureActivityParameterFigure_stereo.setText("");
+			fFigureActivityParameterFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+
+			this.add(fFigureActivityParameterFigure_stereo, BorderLayout.TOP);
+
 			fFigureActivityParameterFigure_name = new Label();
 			fFigureActivityParameterFigure_name.setText("");
-			fFigureActivityParameterFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(5), getMapMode().DPtoLP(3), getMapMode().DPtoLP(5)));
+			fFigureActivityParameterFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
-			this.add(fFigureActivityParameterFigure_name);
+			this.add(fFigureActivityParameterFigure_name, BorderLayout.CENTER);
 
 		}
 
@@ -1768,6 +1788,13 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		 */
 		public Label getFigureActivityParameterFigure_name() {
 			return fFigureActivityParameterFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureActivityParameterFigure_stereo() {
+			return fFigureActivityParameterFigure_stereo;
 		}
 
 	}

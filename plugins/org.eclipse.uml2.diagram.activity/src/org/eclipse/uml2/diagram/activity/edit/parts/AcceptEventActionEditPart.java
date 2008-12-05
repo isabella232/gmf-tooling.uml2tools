@@ -12,8 +12,10 @@ import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -147,6 +149,10 @@ public class AcceptEventActionEditPart extends ShapeNodeEditPart implements Prim
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof AcceptEventActionNameEditPart) {
 			((AcceptEventActionNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureAcceptEventActionFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof AcceptEventActionStereotypeEditPart) {
+			((AcceptEventActionStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureAcceptEventActionFigure_stereo());
 			return true;
 		}
 		return false;
@@ -2234,11 +2240,13 @@ public class AcceptEventActionEditPart extends ShapeNodeEditPart implements Prim
 		/**
 		 * @generated
 		 */
+		private Label fFigureAcceptEventActionFigure_stereo;
+
+		/**
+		 * @generated
+		 */
 		public AcceptEventActionFigure() {
-
-			BorderLayout layoutThis = new BorderLayout();
-			this.setLayoutManager(layoutThis);
-
+			this.setLayoutManager(new StackLayout());
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			this.addPoint(new Point(getMapMode().DPtoLP(50), getMapMode().DPtoLP(0)));
 			this.addPoint(new Point(getMapMode().DPtoLP(50), getMapMode().DPtoLP(40)));
@@ -2254,10 +2262,30 @@ public class AcceptEventActionEditPart extends ShapeNodeEditPart implements Prim
 		 */
 		private void createContents() {
 
+			RectangleFigure acceptEventActionFigure_NameContainer0 = new RectangleFigure();
+			acceptEventActionFigure_NameContainer0.setFill(false);
+			acceptEventActionFigure_NameContainer0.setOutline(false);
+
+			this.add(acceptEventActionFigure_NameContainer0);
+
+			ToolbarLayout layoutAcceptEventActionFigure_NameContainer0 = new ToolbarLayout();
+			layoutAcceptEventActionFigure_NameContainer0.setStretchMinorAxis(false);
+			layoutAcceptEventActionFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutAcceptEventActionFigure_NameContainer0.setSpacing(0);
+			layoutAcceptEventActionFigure_NameContainer0.setVertical(true);
+
+			acceptEventActionFigure_NameContainer0.setLayoutManager(layoutAcceptEventActionFigure_NameContainer0);
+
+			fFigureAcceptEventActionFigure_stereo = new Label();
+			fFigureAcceptEventActionFigure_stereo.setText("");
+
+			acceptEventActionFigure_NameContainer0.add(fFigureAcceptEventActionFigure_stereo);
+
 			fFigureAcceptEventActionFigure_name = new Label();
 			fFigureAcceptEventActionFigure_name.setText("");
 
-			this.add(fFigureAcceptEventActionFigure_name, BorderLayout.CENTER);
+			acceptEventActionFigure_NameContainer0.add(fFigureAcceptEventActionFigure_name);
 
 		}
 
@@ -2344,6 +2372,13 @@ public class AcceptEventActionEditPart extends ShapeNodeEditPart implements Prim
 		 */
 		public Label getFigureAcceptEventActionFigure_name() {
 			return fFigureAcceptEventActionFigure_name;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureAcceptEventActionFigure_stereo() {
+			return fFigureAcceptEventActionFigure_stereo;
 		}
 
 	}

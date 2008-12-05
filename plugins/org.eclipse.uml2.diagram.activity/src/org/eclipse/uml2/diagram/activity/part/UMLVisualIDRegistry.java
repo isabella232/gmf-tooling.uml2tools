@@ -1411,6 +1411,9 @@ public class UMLVisualIDRegistry {
 			if (ActivityNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ActivityStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (AcceptEventActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -1502,6 +1505,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case AcceptEventActionEditPart.VISUAL_ID:
 			if (AcceptEventActionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AcceptEventActionStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1690,6 +1696,9 @@ public class UMLVisualIDRegistry {
 			if (AcceptEventActionName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (AcceptEventActionStereotype2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case AcceptEventAction4EditPart.VISUAL_ID:
 			if (AcceptEventActionName4EditPart.VISUAL_ID == nodeVisualID) {
@@ -1799,6 +1808,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case ActivityParameterNodeEditPart.VISUAL_ID:
 			if (ActivityParameterNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ActivityParameterNodeStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

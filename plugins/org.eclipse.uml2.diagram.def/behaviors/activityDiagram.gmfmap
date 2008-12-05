@@ -29,6 +29,13 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="activityDiagram_activities.gmfgraph#ActivityNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="activityDiagram.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -59,6 +66,13 @@
                 href="activityDiagram_actions.gmfgraph#AcceptEventActionNode_name"/>
             <features
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="activityDiagram_actions.gmfgraph#AcceptEventActionNode_stereo"/>
+            <features
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -865,6 +879,13 @@
                 href="activityDiagram_objects.gmfgraph#ActivityParameterNode_name"/>
             <features
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="activityDiagram_objects.gmfgraph#ActivityParameterNode_stereo"/>
+            <features
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

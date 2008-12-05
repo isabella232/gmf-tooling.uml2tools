@@ -152,6 +152,10 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 			((ActivityNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActivityFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof ActivityStereotypeEditPart) {
+			((ActivityStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActivityFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof ActivityParameterNodeEditPart) {
 			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((ActivityParameterNodeEditPart) childEditPart).getFigure(), locator);
@@ -406,6 +410,11 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 		/**
 		 * @generated
 		 */
+		private Label fFigureActivityFigure_stereo;
+
+		/**
+		 * @generated
+		 */
 		public ActivityFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
@@ -426,16 +435,19 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 			activityFigureRectangle_name0.setBorder(createBorder0());
 
 			this.add(activityFigureRectangle_name0, BorderLayout.TOP);
-			activityFigureRectangle_name0.setLayoutManager(new StackLayout());
+
+			BorderLayout layoutActivityFigureRectangle_name0 = new BorderLayout();
+			activityFigureRectangle_name0.setLayoutManager(layoutActivityFigureRectangle_name0);
+
+			fFigureActivityFigure_stereo = new Label();
+			fFigureActivityFigure_stereo.setText("");
+
+			activityFigureRectangle_name0.add(fFigureActivityFigure_stereo, BorderLayout.TOP);
 
 			fFigureActivityFigure_name = new Label();
 			fFigureActivityFigure_name.setText("");
 
-			activityFigureRectangle_name0.add(fFigureActivityFigure_name);
-
-			CenterLayout layoutFFigureActivityFigure_name = new CenterLayout();
-
-			fFigureActivityFigure_name.setLayoutManager(layoutFFigureActivityFigure_name);
+			activityFigureRectangle_name0.add(fFigureActivityFigure_name, BorderLayout.CENTER);
 
 			fFigureActivityFigure_Body = new RectangleFigure();
 			fFigureActivityFigure_Body.setFill(false);
@@ -490,6 +502,13 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 		 */
 		public RectangleFigure getFigureActivityFigure_Body() {
 			return fFigureActivityFigure_Body;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureActivityFigure_stereo() {
+			return fFigureActivityFigure_stereo;
 		}
 
 	}
