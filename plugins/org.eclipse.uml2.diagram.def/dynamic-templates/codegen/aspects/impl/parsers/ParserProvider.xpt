@@ -44,7 +44,7 @@
 			«EXPAND MetaModel::MetaFeature FOREACH modelFacet.editableMetaFeatures SEPARATOR ", "»
 		};
 	«ENDIF-»
-	«getQualifiedClassName()» parser = new «EXPAND getQualifiedClassName()»(features«IF modelFacet.editableMetaFeatures.size() > 0», editableFeatures«ENDIF»);
+	«getQualifiedClassName()» parser = new «getQualifiedClassName()»(features«IF modelFacet.editableMetaFeatures.size() > 0», editableFeatures«ENDIF»);
 	«EXPAND impl::parsers::ParserProvider::_setPatterns(viewMethod, editMethod, "parser") FOR modelFacet-»
 		return parser;
 	}
