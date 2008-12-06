@@ -19,16 +19,11 @@
 «EXTENSION aspects::xpt::plugin::Utils»
 «EXTENSION aspects::xpt::FileExtensionUtils»
 
-«AROUND plugin FOR gmfgen::GenPlugin-»
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.0"?>
-«EXPAND xpt::Common::xcopyright FOR editorGen-»
-<plugin>
-
+«AROUND xpt::plugin::plugin::fileTypes FOR gmfgen::GenPlugin-»
    <extension point="org.eclipse.team.core.fileTypes">
       «EXPAND xpt::Common::xmlGeneratedTag»
-«REM» #230873 'Make diagram file extension shorter'«ENDREM-»
-«FOREACH editorGen.collectAllExtensions() AS dfe-»
+«REM» #230873 'Make diagram file extension shorter'«ENDREM»«-»
+«FOREACH collectAllExtensions(editorGen) AS dfe-»
       <fileTypes
          type="text"
          extension="«dfe»">
@@ -36,10 +31,12 @@
 «ENDFOREACH-»
 «REM» End of #230873«ENDREM»«-»
    </extension>
+«ENDAROUND»
 
+«AROUND xpt::plugin::plugin::extension_parser FOR gmfgen::GenPlugin-»
    <extension point="org.eclipse.emf.ecore.extension_parser">
       «EXPAND xpt::Common::xmlGeneratedTag»
-«REM» #230873 'Make diagram file extension shorter'«ENDREM-»
+«REM» #230873 'Make diagram file extension shorter'«ENDREM»«-»
 «FOREACH collectAllExtensions(editorGen) AS dfe-»
       <parser
          type="«dfe»"
@@ -48,21 +45,6 @@
 «ENDFOREACH-»
 «REM» End of #230873«ENDREM»«-»
    </extension>
-
-«EXPAND xpt::editor::extensions::extensions FOR editorGen-»
-«EXPAND xpt::plugin::plugin::menu-»
-«EXPAND xpt::plugin::plugin::validation FOR editorGen.diagram-»
-«EXPAND xpt::plugin::plugin::metrics FOR editorGen.metrics-»
-«EXPAND xpt::diagram::preferences::extensions::extensions FOR editorGen.diagram-»
-«EXPAND xpt::propsheet::extensions::extensions FOR editorGen.propertySheet-»
-«EXPAND xpt::providers::extensions::extensions FOR editorGen.diagram-»
-«EXPAND xpt::navigator::extensions::extensions FOR editorGen.navigator-»
-«EXPAND xpt::application::extensions::extensions FOR editorGen.application-»
-«EXPAND xpt::ConstraintProviders::extensions FOR editorGen-»
-«EXPAND xpt::diagram::updater::extensions::extensions FOR editorGen.diagramUpdater-»
-«EXPAND impl::actions::extensions::Main FOR editorGen-»
-«EXPAND xpt::plugin::plugin::additions-»
-</plugin>
 «ENDAROUND»
 
 «AROUND xpt::plugin::plugin::additions FOR gmfgen::GenPlugin»
