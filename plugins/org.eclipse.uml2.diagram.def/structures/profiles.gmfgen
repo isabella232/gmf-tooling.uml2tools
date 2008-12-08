@@ -310,6 +310,10 @@
             xsi:type="gmfgen:ParentAssignedViewmap"
             getterName="getFigureStereotypeFigure_NameLabel"
             figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Class&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1"
@@ -331,8 +335,8 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label"/>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="&quot;VisualEffect.Stereo&quot;"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3">
@@ -490,6 +494,10 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
         </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="&quot;VisualEffect.Class&quot;"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.1"
@@ -515,8 +523,8 @@
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="&quot;VisualEffect.Class&quot;"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy"/>
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3"
@@ -928,7 +936,6 @@
         canonicalEditPolicyClassName="ProfileContentsCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.2"
         title="contents"
-        needsTitle="false"
         node="//@diagram/@topLevelNodes.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -945,7 +952,6 @@
         canonicalEditPolicyClassName="EnumerationLiteralsCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.3"
         title="literals"
-        needsTitle="false"
         node="//@diagram/@topLevelNodes.2">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -1620,11 +1626,11 @@
       <expressions
           body="'OpaqueExpression'"/>
       <expressions
-          body="let base : String = 'profile' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+          body="let base : String = 'Profile' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
           body="let base : String = 'stereotype' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
-          body=" let base : String = 'enumeration' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+          body=" let base : String = 'Enumeration' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
           body=" let base : String = 'enumerationLiteral' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
@@ -1650,11 +1656,11 @@
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.2/@labelModelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.1/@labelModelFacet"
+        uses="//@diagram/@childNodes.1/@labelModelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser.ConstraintParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet"
+        uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ProfileAppliedStereotypeParser"/>
   </labelParsers>
   <contextMenus

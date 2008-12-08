@@ -49,6 +49,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
@@ -121,7 +122,7 @@ public class StereotypeStereoEditPart extends CompartmentEditPart implements ITe
 				return false;
 			}
 		});
-		installEditPolicy("VisualEffect.Stereo", new ClassifierNameVisualEffectEditPolicy()); //$NON-NLS-1$
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
 	}
 
 	/**

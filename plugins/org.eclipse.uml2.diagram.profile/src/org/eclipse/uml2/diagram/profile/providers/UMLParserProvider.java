@@ -59,7 +59,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createStereotypeName_5001Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -98,7 +98,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createProfileName_5003Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -137,7 +137,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createEnumerationName_5005Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -176,7 +176,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createProfileName_5009Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -215,7 +215,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createCommentBody_5014Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getComment_Body() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -254,7 +254,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createStereotype_3003Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -278,7 +278,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createEnumerationLiteral_3005Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 

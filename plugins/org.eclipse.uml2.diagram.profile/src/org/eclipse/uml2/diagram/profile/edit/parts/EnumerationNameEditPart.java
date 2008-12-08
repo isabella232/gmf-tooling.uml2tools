@@ -49,6 +49,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
+import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
@@ -121,6 +122,7 @@ public class EnumerationNameEditPart extends CompartmentEditPart implements ITex
 				return false;
 			}
 		});
+		installEditPolicy("VisualEffect.Class", new ClassifierNameVisualEffectEditPolicy()); //$NON-NLS-1$
 	}
 
 	/**
