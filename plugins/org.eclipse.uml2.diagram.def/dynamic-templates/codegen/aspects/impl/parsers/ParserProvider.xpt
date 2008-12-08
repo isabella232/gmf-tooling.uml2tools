@@ -50,7 +50,7 @@
 	}
 «ENDDEFINE»
 
-«DEFINE predefinedQualifiedClassName FOR gmfgen::PredefinedParser»«holder.implPackageName».«EXPAND impl:arsers::AbstractParser::qualifiedClassName FOR holder»«ENDDEFINE»
+«DEFINE predefinedQualifiedClassName FOR gmfgen::PredefinedParser»«holder.implPackageName».«EXPAND impl::parsers::AbstractParser::qualifiedClassName FOR holder»«ENDDEFINE»
 
 
 
