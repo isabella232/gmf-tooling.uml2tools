@@ -26,7 +26,6 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.uml2.diagram.common.part.ModelElementsContentHelper;
-import org.eclipse.uml2.uml.ElementImport;
 
 public class ElementFilteredListChooser implements ElementChooserPage {
 
@@ -81,9 +80,9 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		List<EObject> result = new LinkedList<EObject>();
 		for (Object next : getAllChildren(inputElement)) {
 			if ((next instanceof EObject)) {
-				EObject transfromed = ReferencedElementChooserDialog.accept((EObject) next, myFeature);
-				if (transfromed != null) {
-					result.add(transfromed);
+				EObject transformed = ReferencedElementChooserDialog.accept((EObject) next, myFeature);
+				if (transformed != null) {
+					result.add(transformed);
 				}
 			}
 		}
@@ -97,10 +96,6 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 			result.addAll(getAllChildren(next));
 		}
 		return result;
-	}
-
-	public void addSelectionListener(ISelectionChangedListener l) {		
-		//XXX
 	}
 
 }

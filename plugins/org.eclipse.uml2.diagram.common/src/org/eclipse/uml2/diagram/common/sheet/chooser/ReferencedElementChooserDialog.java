@@ -1,8 +1,5 @@
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -33,15 +30,11 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 
 	private TabFolder myTabFolder;
 	
-	private ElementChooserPage myCurrPage;
+	private ElementChooserPage myCurrentPage;
 	
-	private int myCurrPageIndex;
-
 	private final IDialogSettings myDialogSettings;
 	
 	private final String mySettingsKeyLastFocus = "ReferencedElementDialog.KeyLastFocus";
-
-	private final List myTabPages;
 
 	private final AdapterFactory myItemProvidersAdapterFactory;
 
@@ -57,7 +50,6 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
 		mySourceObject = sourceObject;
 		myFeature = feature;
-		myTabPages = new ArrayList();
 	}
 
 	@Override
@@ -68,16 +60,22 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 		myTabFolder.setFont(composite.getFont());
 		myTabFolder.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
-		addTabPage("Choose from a Tree", new ElementTreeChooser(myItemProvidersAdapterFactory, mySourceObject));
+		ElementTreeChooser treeChooserTab = new ElementTreeChooser(myItemProvidersAdapterFactory, mySourceObject);
+		addTabPage("Choose from a Tree", treeChooserTab);
+		treeChooserTab.addSelectionListener(new OkButtonEnabler());
+
 		addTabPage("Choose from a List", new ElementFilteredListChooser(myItemProvidersAdapterFactory, mySourceObject, myFeature));
 
-		myTabFolder.setSelection(myCurrPageIndex);
-		myCurrPage= (ElementChooserPage) myTabFolder.getItem(myCurrPageIndex).getData();
+//		myTabFolder.setSelection(myCurrPageIndex);
+		myCurrentPage= (ElementChooserPage) myTabFolder.getSelection()[0].getData();
 		myTabFolder.addSelectionListener(new SelectionListener() {
 			public void widgetDefaultSelected(SelectionEvent e) {}
 			public void widgetSelected(SelectionEvent e) {
 				tabChanged((TabItem)e.item);
-//				myDialogSettings.put(mySettingsKeyLastFocus, myTabPages.indexOf(page));
+				// XXX remove check, but give a valid settings
+				if (myDialogSettings != null) {
+					myDialogSettings.put(mySettingsKeyLastFocus, myTabFolder.getSelectionIndex());
+				}
 			}
 		});
 		
@@ -97,14 +95,13 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 
 	private void tabChanged(TabItem tabItem) {
 		ElementChooserPage newPage = (ElementChooserPage) tabItem.getData();
-		if (myCurrPage != null) {
-			Object selection = myCurrPage.getSelection();
+		if (myCurrentPage != null) {
+			Object selection = myCurrentPage.getSelection();
 			if (selection != null) {
 				newPage.setSelection(selection);
 			}
 		}
-		myCurrPage = newPage;
-		myCurrPageIndex = tabItem.getParent().getSelectionIndex();
+		myCurrentPage = newPage;
 	}
 	
 	@Override
@@ -147,8 +144,6 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 		tabItem.setText(title);
 		tabItem.setData(tabPage);
 		tabItem.setControl(tabPage.createControl(myTabFolder));
-		tabPage.addSelectionListener(new OkButtonEnabler());
-		myTabPages.add(tabPage);
 	}
 
 	
@@ -156,28 +151,32 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 	public void create() {
 		super.create();
 		int lastFocusNr = 0;
-//		try {
-//			lastFocusNr = myDialogSettings.getInt(mySettingsKeyLastFocus);
-//			if (lastFocusNr < 0)
-//				lastFocusNr = 0;
-//			if (lastFocusNr > myTabPages.size() - 1)
-//				lastFocusNr = myTabPages.size() - 1;
-//		} catch (NumberFormatException x) {
-//			lastFocusNr = 0;
-//		}
-//
-//		myTabFolder.setSelection(lastFocusNr);
+		try {
+			// XXX remove check, but give a valid settings
+			if (myDialogSettings != null) {
+				lastFocusNr = myDialogSettings.getInt(mySettingsKeyLastFocus);
+			}
+			if (lastFocusNr < 0 || lastFocusNr > myTabFolder.getItemCount()) {
+				lastFocusNr = 0;
+			}
+		} catch (NumberFormatException x) {
+			lastFocusNr = 0;
+		}
+
+		myTabFolder.setSelection(lastFocusNr);
 		((ElementChooserPage) myTabFolder.getSelection()[0].getData()).setSelection(getInitialSelection());
 	}
 	
 	private Object getInitialSelection() {
 		return mySourceObject.eGet(myFeature);
 	}
+
+	private void setOkButtonEnabled(boolean enabled) {
+		getButton(IDialogConstants.OK_ID).setEnabled(enabled);
+	}
+
 	private class OkButtonEnabler implements ISelectionChangedListener {
 
-		/**
-		 * @generated
-		 */
 		public void selectionChanged(SelectionChangedEvent event) {
 			if (event.getSelection() instanceof IStructuredSelection) {
 				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
@@ -199,10 +198,6 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 			}
 			setOkButtonEnabled(false);
 		}
-	}
-
-	private void setOkButtonEnabled(boolean enabled) {
-		getButton(IDialogConstants.OK_ID).setEnabled(enabled);
 	}
 
 }

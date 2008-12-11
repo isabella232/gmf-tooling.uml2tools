@@ -19,41 +19,28 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.emf.ui.properties.descriptors.EMFCompositeSourcePropertyDescriptor;
+import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ReferencedElementChooserDialog;
-import org.eclipse.uml2.uml.ElementImport;
 
 public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescriptor {
 
 	private final AdapterFactory myItemProvidersAdapterFactory;
 
-	public ReferencePropertyDescriptor(Object sourceObject, IItemPropertyDescriptor itemPropertyDescriptor, String category, AdapterFactory itemProvidersAdapterFactory) {
+	private final IDialogSettings myDialogSettings;
+
+	public ReferencePropertyDescriptor(Object sourceObject, IItemPropertyDescriptor itemPropertyDescriptor, String category, AdapterFactory itemProvidersAdapterFactory, IDialogSettings dialogSettings) {
 		super(sourceObject, itemPropertyDescriptor, category);
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
+		myDialogSettings = dialogSettings;
 	}
 
 	@Override
 	protected CellEditor doCreateEditor(Composite composite) {
 		final EStructuralFeature feature = (EStructuralFeature) getFeature();
-//		UMLElementChooserDialog dialog = new ReferenceElementTreeChooserDialog(composite.getShell(), myItemProvidersAdapterFactory, (EObject) object, feature) {
-		ReferencedElementChooserDialog dialog = new ReferencedElementChooserDialog(composite.getShell(), null, myItemProvidersAdapterFactory, (EObject) object, feature);
-//		{
-//
-//			@Override
-//			protected EObject accept(EObject selectedElement) {
-//				if (selectedElement instanceof ElementImport){
-//					ElementImport _import = (ElementImport)selectedElement;
-//					selectedElement = _import.getImportedElement();
-//				}
-//				if (selectedElement != null && feature.getEType().isInstance(selectedElement)){
-//					return selectedElement;
-//				}
-//				return null;
-//			}
-//		};
+		ReferencedElementChooserDialog dialog = new ReferencedElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object, feature);
 		return new ReferenceComboAndDialogCellEditor(composite, new ArrayList(getChoiceOfValues()), getLabelProvider(), true, dialog, TransactionUtil.getEditingDomain(object));
-
 	}
 
 }
