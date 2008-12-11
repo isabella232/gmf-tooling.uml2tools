@@ -15,15 +15,32 @@
             xsi:type="gmfgraph:CustomLayout"
             qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
         <children
-            xsi:type="gmfgraph:Label"
-            name="ActionBaseFigure_name">
+            xsi:type="gmfgraph:Rectangle"
+            name="ActionBaseFigure_name"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              forceSingleLine="true"
+              minorAlignment="CENTER"
+              majorSpacing="0"
+              minorSpacing="0"/>
           <insets
               left="5"
               right="5"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ActionBaseFigure_stereo"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ActionBaseFigure_name"/>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="AcceptEventActionFigure">
@@ -31,13 +48,8 @@
           xsi:type="gmfgraph:ScalablePolygon"
           name="AcceptEventActionFigure">
         <layout
-            xsi:type="gmfgraph:StackLayout"/>
-        <border
-            xsi:type="gmfgraph:MarginBorder">
-          <insets
-              left="20"
-              right="2"/>
-        </border>
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="AcceptEventActionFigure_NameContainer"
@@ -50,6 +62,9 @@
               minorAlignment="CENTER"
               majorSpacing="0"
               minorSpacing="0"/>
+          <insets
+              left="20"
+              right="2"/>
           <children
               xsi:type="gmfgraph:Label"
               name="AcceptEventActionFigure_stereo"/>
@@ -188,17 +203,34 @@
           <layout
               xsi:type="gmfgraph:CustomLayout"
               qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+          <insets
+              left="5"
+              right="5"/>
           <children
-              xsi:type="gmfgraph:Label"
-              name="ActionCallBehaviorFigure_name">
-            <insets
-                left="5"
-                right="5"/>
+              xsi:type="gmfgraph:Rectangle"
+              name="ActionCallBehaviorFigure_NameContainer"
+              outline="false"
+              fill="false">
+            <layout
+                xsi:type="gmfgraph:FlowLayout"
+                vertical="true"
+                forceSingleLine="true"
+                minorAlignment="CENTER"
+                majorSpacing="0"
+                minorSpacing="0"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="ActionCallBehaviorFigure_stereo"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="ActionCallBehaviorFigure_name"/>
           </children>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="AcceptTimeEventActionFigure_ExternalLabel">
@@ -212,19 +244,29 @@
           xsi:type="gmfgraph:ScalablePolygon"
           name="SendSignalActionFigure">
         <layout
-            xsi:type="gmfgraph:BorderLayout"/>
-        <border
-            xsi:type="gmfgraph:MarginBorder">
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="SendSignalActionFigure_NameContainer"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              forceSingleLine="true"
+              minorAlignment="CENTER"
+              majorSpacing="0"
+              minorSpacing="0"/>
           <insets
               left="5"
               right="17"/>
-        </border>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="SendSignalActionFigure_name">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              vertical="true"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="SendSignalActionFigure_stereo"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="SendSignalActionFigure_name"/>
         </children>
         <template/>
         <template
@@ -239,7 +281,9 @@
             y="40"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0"/>
     </descriptors>
   </figures>
   <nodes
@@ -321,12 +365,6 @@
     </facets>
   </nodes>
   <nodes
-      xsi:type="gmfgraph:DiagramLabel"
-      name="ActionCallBehaviorNode_name"
-      figure="ActionCallBehaviorFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
-  <nodes
       name="SendSignalActionNode"
       figure="SendSignalActionFigure">
     <facets
@@ -336,6 +374,16 @@
           dy="50"/>
     </facets>
   </nodes>
+  <labels
+      name="Action_BaseNode_name"
+      figure="ActionBaseFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="Action_BaseNode_stereo"
+      figure="ActionBaseFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="AcceptEventActionNode_stereo"
       figure="AcceptEventActionFigure"
@@ -355,4 +403,39 @@
       figure="SendSignalActionFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels
+      name="SendSignalActionNode_stereo"
+      figure="SendSignalActionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.5/@accessors.1"/>
+  <labels
+      name="ActionAddStructuralFeatureValueNode_name"
+      figure="ActionBaseFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="ActionAddStructuralFeatureValueNode_stereo"
+      figure="ActionBaseFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels
+      name="ActionCallBehaviorNode_name"
+      figure="ActionCallBehaviorFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels
+      name="ActionCallBehaviorNode_stereo"
+      figure="ActionCallBehaviorFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <labels
+      name="ActionCallOperationNode_name"
+      figure="ActionBaseFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="ActionCallOperationNode_stereo"
+      figure="ActionBaseFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
 </gmfgraph:Canvas>
