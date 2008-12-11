@@ -19,7 +19,7 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.diagram.common.part.UMLElementChooserDialog;
 
-// ElementTreeSelectionDialog
+// use FilteredItemsSelectionDialog
 public class ReferenceElementTreeChooserDialog extends UMLElementChooserDialog {
 
 	private final EObject mySourceObject;
