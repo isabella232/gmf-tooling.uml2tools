@@ -22,7 +22,6 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.jface.viewers.ILabelProvider;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.uml2.diagram.common.part.ModelElementsContentHelper;
@@ -72,7 +71,7 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		if (selection == null) {
 			myFilteredList.setSelection(null);
 		} else {
-			myFilteredList.setSelection(new Object[]{selection});
+			myFilteredList.setSelection(new Object[]{selection});			
 		}
 	}
 

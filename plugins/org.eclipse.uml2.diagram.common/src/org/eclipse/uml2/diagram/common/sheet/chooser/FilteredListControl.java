@@ -21,8 +21,6 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.HelpEvent;
-import org.eclipse.swt.events.HelpListener;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.SelectionEvent;
@@ -60,8 +58,6 @@ public class FilteredListControl extends Composite {
 
 	private FilteredList myFilteredList;
 	
-    private ListenerList selectionChangedListeners = new ListenerList();
-
 	public FilteredListControl(Composite parent, ILabelProvider renderer) {
 		super(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
@@ -82,6 +78,14 @@ public class FilteredListControl extends Composite {
 		for (int i = 0; i < selectedElements.length; i++) {
 			myInitialSelections.add(selectedElements[i]);
 		}
+	}
+	
+	@Override
+	public boolean setFocus() {
+		if (myFilteredList != null) {
+			return myFilteredList.setFocus();
+		}
+		return super.setFocus();
 	}
 
 	protected Text createFilterText(Composite parent) {
@@ -263,28 +267,6 @@ public class FilteredListControl extends Composite {
 
 	protected void handleSelectionChanged() {
 	}
-	
-    public void addSelectionChangedListener(ISelectionChangedListener listener) {
-        selectionChangedListeners.add(listener);
-    }
-
-    protected void fireSelectionChanged(final SelectionChangedEvent event) {
-        Object[] listeners = selectionChangedListeners.getListeners();
-        for (int i = 0; i < listeners.length; ++i) {
-            final ISelectionChangedListener l = (ISelectionChangedListener) listeners[i];
-            SafeRunnable.run(new SafeRunnable() {
-                public void run() {
-                    l.selectionChanged(event);
-                }
-            });
-        }
-    }
-
-    public void removeSelectionChangedListener(
-            ISelectionChangedListener listener) {
-        selectionChangedListeners.remove(listener);
-    }
-
 
 
 }

@@ -22,6 +22,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
+import org.eclipse.ui.dialogs.FilteredTree;
 import org.eclipse.uml2.uml.ElementImport;
 
 public class ReferencedElementChooserDialog extends TrayDialog {
@@ -46,6 +47,7 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 
 	public ReferencedElementChooserDialog(Shell shell, IDialogSettings settings, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature) {
 		super(shell);
+		setShellStyle(getShellStyle() | SWT.RESIZE);
 		myDialogSettings = settings;
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
 		mySourceObject = sourceObject;
@@ -58,7 +60,10 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 
 		myTabFolder = new TabFolder(composite, SWT.NONE);
 		myTabFolder.setFont(composite.getFont());
-		myTabFolder.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		GridData layoutData = new GridData(GridData.FILL_BOTH);
+		layoutData.heightHint = 300;
+		layoutData.widthHint = 300;
+		myTabFolder.setLayoutData(layoutData);
 		
 		ElementTreeChooser treeChooserTab = new ElementTreeChooser(myItemProvidersAdapterFactory, mySourceObject);
 		addTabPage("Choose from a Tree", treeChooserTab);
@@ -95,11 +100,16 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 
 	private void tabChanged(TabItem tabItem) {
 		ElementChooserPage newPage = (ElementChooserPage) tabItem.getData();
+		tabItem.getControl().setFocus();
 		if (myCurrentPage != null) {
 			Object selection = myCurrentPage.getSelection();
 			if (selection != null) {
 				newPage.setSelection(selection);
 			}
+		}
+		// XXX add OK button listener to filtered tree
+		if (newPage instanceof FilteredTree) {
+			setOkButtonEnabled(true);
 		}
 		myCurrentPage = newPage;
 	}
