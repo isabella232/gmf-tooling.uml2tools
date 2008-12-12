@@ -12,14 +12,17 @@
 
 package org.eclipse.uml2.diagram.activity.parser;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
-import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
+import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.ObjectNodeOrderingKind;
@@ -27,7 +30,15 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 
-public class ObjectNodeAttributesParser implements IParser {
+public class ObjectNodeAttributesParser implements ISemanticParser {
+	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
+		return isAffectingEvent(notification, 0);
+	}
+
+	public List<?> getSemanticElementsBeingParsed(EObject eObject) {
+		return Collections.singletonList(eObject);
+	}
+
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}

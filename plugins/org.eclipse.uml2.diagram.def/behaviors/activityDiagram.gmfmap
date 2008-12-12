@@ -237,7 +237,7 @@
             <diagramLabel
                 href="activityDiagram_objects.gmfgraph#DataStoreNode_states"/>
             <features
-                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
@@ -285,7 +285,7 @@
             <diagramLabel
                 href="activityDiagram_objects.gmfgraph#CentralBufferNode_states"/>
             <features
-                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
@@ -1220,7 +1220,7 @@
                 <diagramLabel
                     href="activityDiagram_objects.gmfgraph#DataStoreNode_states"/>
                 <features
-                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
               </labelMappings>
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping"
@@ -1270,7 +1270,7 @@
                 <diagramLabel
                     href="activityDiagram_objects.gmfgraph#CentralBufferNode_states"/>
                 <features
-                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
               </labelMappings>
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping"
