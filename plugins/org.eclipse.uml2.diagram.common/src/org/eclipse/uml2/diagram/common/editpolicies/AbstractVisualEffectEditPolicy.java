@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -47,7 +48,7 @@ public abstract class AbstractVisualEffectEditPolicy extends CanonicalEditPolicy
 	 * install/remove any new children from view-tree.
 	 */
 	@Override
-	protected final List<?> getSemanticChildrenList() {
+	protected final List<EObject> getSemanticChildrenList() {
 		return Collections.emptyList();
 	}
 	
