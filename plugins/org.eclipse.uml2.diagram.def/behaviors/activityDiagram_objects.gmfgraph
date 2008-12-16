@@ -10,7 +10,8 @@
           xsi:type="gmfgraph:Rectangle"
           name="CentralBufferFigure">
         <layout
-            xsi:type="gmfgraph:StackLayout"/>
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
         <border
             xsi:type="gmfgraph:MarginBorder">
           <insets
@@ -37,6 +38,9 @@
               text="\u00ABcentralBuffer\u00BB"/>
           <children
               xsi:type="gmfgraph:Label"
+              name="CentralBufferFigure_stereo"/>
+          <children
+              xsi:type="gmfgraph:Label"
               name="CentralBufferFigure_name"
               text=""/>
           <children
@@ -45,9 +49,11 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
-      <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="DataStoreFigure">
@@ -55,7 +61,8 @@
           xsi:type="gmfgraph:Rectangle"
           name="DataStoreFigure">
         <layout
-            xsi:type="gmfgraph:StackLayout"/>
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
         <border
             xsi:type="gmfgraph:MarginBorder">
           <insets
@@ -82,6 +89,9 @@
               text="\u00ABdatastore\u00BB"/>
           <children
               xsi:type="gmfgraph:Label"
+              name="DataStoreFigure_stereo"/>
+          <children
+              xsi:type="gmfgraph:Label"
               name="DataStoreFigure_name"
               text=""/>
           <children
@@ -90,9 +100,11 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
-      <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="StandalonePinFigure">
@@ -244,6 +256,11 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <labels
+      name="CentralBufferNode_stereo"
+      figure="CentralBufferFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <labels
       name="CentralBufferNode_name"
       figure="CentralBufferFigure"
       elementIcon="false"
@@ -253,6 +270,11 @@
       figure="CentralBufferFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels
+      name="DataStoreNode_stereo"
+      figure="DataStoreFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
   <labels
       name="DataStoreNode_name"
       figure="DataStoreFigure"

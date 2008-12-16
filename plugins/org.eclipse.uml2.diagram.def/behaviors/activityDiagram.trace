@@ -226,6 +226,9 @@
     <nodeLabelTraces
         visualID="5054"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5128"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3025"
@@ -238,6 +241,9 @@
         queryText="true"/>
     <nodeLabelTraces
         visualID="5050"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5125"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -291,6 +297,9 @@
     <nodeLabelTraces
         visualID="5051"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5127"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3037"
@@ -303,6 +312,9 @@
         queryText="true"/>
     <nodeLabelTraces
         visualID="5049"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5124"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -501,6 +513,9 @@
     <nodeLabelTraces
         visualID="5069"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5129"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3066"
@@ -513,6 +528,9 @@
         queryText="true"/>
     <nodeLabelTraces
         visualID="5072"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5126"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -542,6 +560,9 @@
         queryText="true"/>
     <nodeLabelTraces
         visualID="5075"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5123"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
