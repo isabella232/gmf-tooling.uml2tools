@@ -44,14 +44,8 @@
 			«EXPAND MetaModel::MetaFeature FOREACH modelFacet.editableMetaFeatures SEPARATOR ", "»
 		};
 	«ENDIF-»
-	«EXPAND predefinedQualifiedClassName» parser = new «EXPAND predefinedQualifiedClassName»(features«IF modelFacet.editableMetaFeatures.size() > 0», editableFeatures«ENDIF»);
+	«getQualifiedClassName()» parser = new «getQualifiedClassName()»(features«IF modelFacet.editableMetaFeatures.size() > 0», editableFeatures«ENDIF»);
 	«EXPAND impl::parsers::ParserProvider::_setPatterns(viewMethod, editMethod, "parser") FOR modelFacet-»
 		return parser;
 	}
 «ENDDEFINE»
-
-«DEFINE predefinedQualifiedClassName FOR gmfgen::PredefinedParser»«holder.implPackageName».«EXPAND impl::parsers::AbstractParser::qualifiedClassName FOR holder»«ENDDEFINE»
-
-
-
-
