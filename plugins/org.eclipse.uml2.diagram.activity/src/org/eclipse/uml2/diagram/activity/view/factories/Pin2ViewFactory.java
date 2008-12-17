@@ -14,6 +14,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinInState2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinOrdering2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PinStereotype2EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
@@ -48,6 +49,7 @@ public class Pin2ViewFactory extends AbstractShapeViewFactory {
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PinName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PinInState2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PinOrdering2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PinStereotype2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

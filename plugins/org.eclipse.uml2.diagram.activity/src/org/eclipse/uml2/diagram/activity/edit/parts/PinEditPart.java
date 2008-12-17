@@ -11,6 +11,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
@@ -42,6 +43,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -152,6 +154,10 @@ public class PinEditPart extends AbstractBorderedShapeEditPart implements Primar
 		}
 		if (childEditPart instanceof PinInStateEditPart) {
 			((PinInStateEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStandalonePinFigure_states());
+			return true;
+		}
+		if (childEditPart instanceof PinStereotypeEditPart) {
+			((PinStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStandalonePinFigure_stereo());
 			return true;
 		}
 		return false;
@@ -1718,7 +1724,17 @@ public class PinEditPart extends AbstractBorderedShapeEditPart implements Primar
 		/**
 		 * @generated
 		 */
+		private Label fFigureStandalonePinFigure_stereo;
+
+		/**
+		 * @generated
+		 */
 		public StandalonePinFigure() {
+
+			CenterLayout layoutThis = new CenterLayout();
+
+			this.setLayoutManager(layoutThis);
+
 			createContents();
 		}
 
@@ -1727,17 +1743,37 @@ public class PinEditPart extends AbstractBorderedShapeEditPart implements Primar
 		 */
 		private void createContents() {
 
+			RectangleFigure standalonePinFigure_NameContainer0 = new RectangleFigure();
+			standalonePinFigure_NameContainer0.setFill(false);
+			standalonePinFigure_NameContainer0.setOutline(false);
+
+			standalonePinFigure_NameContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+
+			this.add(standalonePinFigure_NameContainer0);
+
+			ToolbarLayout layoutStandalonePinFigure_NameContainer0 = new ToolbarLayout();
+			layoutStandalonePinFigure_NameContainer0.setStretchMinorAxis(false);
+			layoutStandalonePinFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutStandalonePinFigure_NameContainer0.setSpacing(0);
+			layoutStandalonePinFigure_NameContainer0.setVertical(true);
+
+			standalonePinFigure_NameContainer0.setLayoutManager(layoutStandalonePinFigure_NameContainer0);
+
+			fFigureStandalonePinFigure_stereo = new Label();
+			fFigureStandalonePinFigure_stereo.setText("");
+
+			standalonePinFigure_NameContainer0.add(fFigureStandalonePinFigure_stereo);
+
 			fFigureStandalonePinFigure_name = new Label();
 			fFigureStandalonePinFigure_name.setText("");
 
-			fFigureStandalonePinFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
-
-			this.add(fFigureStandalonePinFigure_name);
+			standalonePinFigure_NameContainer0.add(fFigureStandalonePinFigure_name);
 
 			fFigureStandalonePinFigure_states = new Label();
 			fFigureStandalonePinFigure_states.setText("");
 
-			this.add(fFigureStandalonePinFigure_states);
+			standalonePinFigure_NameContainer0.add(fFigureStandalonePinFigure_states);
 
 		}
 
@@ -1772,6 +1808,13 @@ public class PinEditPart extends AbstractBorderedShapeEditPart implements Primar
 		 */
 		public Label getFigureStandalonePinFigure_states() {
 			return fFigureStandalonePinFigure_states;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureStandalonePinFigure_stereo() {
+			return fFigureStandalonePinFigure_stereo;
 		}
 
 	}

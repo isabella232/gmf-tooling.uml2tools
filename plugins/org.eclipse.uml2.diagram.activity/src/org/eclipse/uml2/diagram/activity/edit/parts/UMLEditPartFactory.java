@@ -145,6 +145,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PinOrderingEditPart.VISUAL_ID:
 				return new PinOrderingEditPart(view);
 
+			case PinStereotypeEditPart.VISUAL_ID:
+				return new PinStereotypeEditPart(view);
+
 			case CreateObjectActionEditPart.VISUAL_ID:
 				return new CreateObjectActionEditPart(view);
 
@@ -306,6 +309,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PinOrdering2EditPart.VISUAL_ID:
 				return new PinOrdering2EditPart(view);
+
+			case PinStereotype2EditPart.VISUAL_ID:
+				return new PinStereotype2EditPart(view);
 
 			case CreateObjectAction2EditPart.VISUAL_ID:
 				return new CreateObjectAction2EditPart(view);
@@ -519,6 +525,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PinOrdering3EditPart.VISUAL_ID:
 				return new PinOrdering3EditPart(view);
+
+			case PinStereotype3EditPart.VISUAL_ID:
+				return new PinStereotype3EditPart(view);
 
 			case CreateObjectAction3EditPart.VISUAL_ID:
 				return new CreateObjectAction3EditPart(view);

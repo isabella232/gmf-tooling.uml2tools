@@ -111,24 +111,41 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="StandalonePinFigure">
-        <layoutData
-            xsi:type="gmfgraph:CustomLayoutData"
+        <layout
+            xsi:type="gmfgraph:CustomLayout"
             qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
         <children
-            xsi:type="gmfgraph:Label"
-            name="StandalonePinFigure_name">
+            xsi:type="gmfgraph:Rectangle"
+            name="StandalonePinFigure_NameContainer"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              forceSingleLine="true"
+              minorAlignment="CENTER"
+              majorSpacing="0"
+              minorSpacing="0"/>
           <insets
               left="5"
               right="5"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="StandalonePinFigure_stereo"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="StandalonePinFigure_name"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="StandalonePinFigure_states"/>
         </children>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="StandalonePinFigure_states"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="SmallSquareFigure">
@@ -231,6 +248,11 @@
           dy="25"/>
     </facets>
   </nodes>
+  <labels
+      name="StandalonePinNode_stereo"
+      figure="StandalonePinFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.2/@accessors.2"/>
   <labels
       name="StandalonePinNode_name"
       figure="StandalonePinFigure"

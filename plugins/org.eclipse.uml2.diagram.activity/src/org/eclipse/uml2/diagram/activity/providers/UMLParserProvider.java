@@ -525,6 +525,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser pinQualifiedName_5130Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPinQualifiedName_5130Parser() {
+		if (pinQualifiedName_5130Parser == null) {
+			pinQualifiedName_5130Parser = new AppliedStereotypeParser();
+		}
+		return pinQualifiedName_5130Parser;
+	}
+
+	/**
 	 * @generated NOT
 	 */
 	protected IParser createPinOrdering_5085Parser() {
@@ -1232,6 +1247,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			pinOrdering_5086Parser = new ObjectNodeAttributesParser();
 		}
 		return pinOrdering_5086Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser pinQualifiedName_5131Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPinQualifiedName_5131Parser() {
+		if (pinQualifiedName_5131Parser == null) {
+			pinQualifiedName_5131Parser = new AppliedStereotypeParser();
+		}
+		return pinQualifiedName_5131Parser;
 	}
 
 	/**
@@ -2093,6 +2123,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser pinQualifiedName_5132Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPinQualifiedName_5132Parser() {
+		if (pinQualifiedName_5132Parser == null) {
+			pinQualifiedName_5132Parser = new AppliedStereotypeParser();
+		}
+		return pinQualifiedName_5132Parser;
+	}
+
+	/**
 	 * @generated NOT
 	 */
 	protected IParser createPinName_5074Parser() {
@@ -2772,6 +2817,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPinName_5052Parser();
 		case PinOrderingEditPart.VISUAL_ID:
 			return getPinOrdering_5085Parser();
+		case PinStereotypeEditPart.VISUAL_ID:
+			return getPinQualifiedName_5130Parser();
 		case CreateObjectActionNameEditPart.VISUAL_ID:
 			return getCreateObjectActionName_5025Parser();
 		case CreateObjectActionStereotypeEditPart.VISUAL_ID:
@@ -2840,6 +2887,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPinName_5053Parser();
 		case PinOrdering2EditPart.VISUAL_ID:
 			return getPinOrdering_5086Parser();
+		case PinStereotype2EditPart.VISUAL_ID:
+			return getPinQualifiedName_5131Parser();
 		case CreateObjectActionName2EditPart.VISUAL_ID:
 			return getCreateObjectActionName_5017Parser();
 		case CreateObjectActionStereotype2EditPart.VISUAL_ID:
@@ -2926,6 +2975,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPinName_5075Parser();
 		case PinOrdering3EditPart.VISUAL_ID:
 			return getPinOrdering_5123Parser();
+		case PinStereotype3EditPart.VISUAL_ID:
+			return getPinQualifiedName_5132Parser();
 		case CreateObjectActionName3EditPart.VISUAL_ID:
 			return getCreateObjectActionName_5076Parser();
 		case CreateObjectActionStereotype3EditPart.VISUAL_ID:

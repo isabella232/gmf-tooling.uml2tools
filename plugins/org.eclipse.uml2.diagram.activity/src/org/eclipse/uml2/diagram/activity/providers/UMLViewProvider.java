@@ -237,6 +237,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case PinNameEditPart.VISUAL_ID:
 				case PinInStateEditPart.VISUAL_ID:
 				case PinOrderingEditPart.VISUAL_ID:
+				case PinStereotypeEditPart.VISUAL_ID:
 					if (PinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -341,6 +342,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case PinName2EditPart.VISUAL_ID:
 				case PinInState2EditPart.VISUAL_ID:
 				case PinOrdering2EditPart.VISUAL_ID:
+				case PinStereotype2EditPart.VISUAL_ID:
 					if (Pin2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -460,6 +462,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case PinName3EditPart.VISUAL_ID:
 				case PinInState3EditPart.VISUAL_ID:
 				case PinOrdering3EditPart.VISUAL_ID:
+				case PinStereotype3EditPart.VISUAL_ID:
 					if (Pin3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -665,6 +668,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PinInStateViewFactory.class;
 		case PinOrderingEditPart.VISUAL_ID:
 			return PinOrderingViewFactory.class;
+		case PinStereotypeEditPart.VISUAL_ID:
+			return PinStereotypeViewFactory.class;
 		case CreateObjectActionEditPart.VISUAL_ID:
 			return CreateObjectActionViewFactory.class;
 		case CreateObjectActionNameEditPart.VISUAL_ID:
@@ -773,6 +778,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PinInState2ViewFactory.class;
 		case PinOrdering2EditPart.VISUAL_ID:
 			return PinOrdering2ViewFactory.class;
+		case PinStereotype2EditPart.VISUAL_ID:
+			return PinStereotype2ViewFactory.class;
 		case CreateObjectAction2EditPart.VISUAL_ID:
 			return CreateObjectAction2ViewFactory.class;
 		case CreateObjectActionName2EditPart.VISUAL_ID:
@@ -915,6 +922,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PinInState3ViewFactory.class;
 		case PinOrdering3EditPart.VISUAL_ID:
 			return PinOrdering3ViewFactory.class;
+		case PinStereotype3EditPart.VISUAL_ID:
+			return PinStereotype3ViewFactory.class;
 		case CreateObjectAction3EditPart.VISUAL_ID:
 			return CreateObjectAction3ViewFactory.class;
 		case CreateObjectActionName3EditPart.VISUAL_ID:
