@@ -33,6 +33,7 @@ public class SynchronizeDiagramDialog extends Dialog {
 		mySyncUI = new SyncModelUI(composite, new SyncModelLabelProvider(new UMLNavigatorLabelProvider()));
 		mySyncUI.setRootNode(getRootSyncNode());
 		mySyncUI.getUI().addFilter(new DiagramHeaderFilter());
+		mySyncUI.revealRootChildren();
 		return composite;
 	}
 

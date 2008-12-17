@@ -52,7 +52,6 @@ public class SyncModelUI {
 		myTreeViewer.setContentProvider(new SyncModelContentProvider());
 		myTreeViewer.setLabelProvider(myLabelProvider);
 		myTreeViewer.setComparator(new ViewerComparator());
-		myTreeViewer.setAutoExpandLevel(2);
 
 		myCheckStateInitializer = new CheckStateInitializer(myTreeViewer);
 		myTreeViewer.addTreeListener(myCheckStateInitializer);
