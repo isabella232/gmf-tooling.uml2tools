@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 /**
  * @generated
  */
+
 public class ActivityFinalNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**

@@ -11,6 +11,7 @@ import org.eclipse.uml2.diagram.common.preferences.IconStylePreferencePage;
 /**
  * @generated
  */
+
 public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 
 	/**

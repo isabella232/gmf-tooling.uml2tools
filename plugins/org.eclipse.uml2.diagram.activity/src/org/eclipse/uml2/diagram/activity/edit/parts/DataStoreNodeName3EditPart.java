@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -25,7 +24,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -58,12 +56,13 @@ import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPoli
 /**
  * @generated
  */
+
 public class DataStoreNodeName3EditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5035;
+	public static final int VISUAL_ID = 5067;
 
 	/**
 	 * @generated
@@ -297,7 +296,7 @@ public class DataStoreNodeName3EditPart extends CompartmentEditPart implements I
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.DataStoreNode_3024, getParserElement(), UMLVisualIDRegistry
+			parser = UMLParserProvider.getParser(UMLElementTypes.DataStoreNode_3065, getParserElement(), UMLVisualIDRegistry
 					.getType(org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName3EditPart.VISUAL_ID));
 		}
 		return parser;
@@ -575,4 +574,5 @@ public class DataStoreNodeName3EditPart extends CompartmentEditPart implements I
 		// Parent should assign one using setLabel() method
 		return null;
 	}
+
 }

@@ -6,6 +6,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
+
 public class UMLNavigatorGroup extends UMLAbstractNavigatorItem {
 
 	/**

@@ -52,6 +52,7 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 /**
  * @generated
  */
+
 public class ConditionalNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**

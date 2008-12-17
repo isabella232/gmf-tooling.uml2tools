@@ -6,6 +6,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
+
 public class DiagramPrintingPreferencePage extends PrintingPreferencePage {
 
 	/**

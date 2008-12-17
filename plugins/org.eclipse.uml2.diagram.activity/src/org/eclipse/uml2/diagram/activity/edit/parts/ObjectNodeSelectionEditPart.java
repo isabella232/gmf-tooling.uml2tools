@@ -12,6 +12,7 @@ import org.eclipse.uml2.diagram.activity.edit.policies.ObjectNodeSelectionItemSe
 /**
  * @generated
  */
+
 public class ObjectNodeSelectionEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**

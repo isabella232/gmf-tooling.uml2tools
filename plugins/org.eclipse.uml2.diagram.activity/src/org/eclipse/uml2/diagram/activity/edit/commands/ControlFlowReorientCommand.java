@@ -15,6 +15,7 @@ import org.eclipse.uml2.uml.ControlFlow;
 /**
  * @generated
  */
+
 public class ControlFlowReorientCommand extends EditElementCommand {
 
 	/**

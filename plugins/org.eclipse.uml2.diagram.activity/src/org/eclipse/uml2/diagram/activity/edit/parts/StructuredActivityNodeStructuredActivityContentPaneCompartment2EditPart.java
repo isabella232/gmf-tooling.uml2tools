@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovabl
 /**
  * @generated
  */
+
 public class StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart extends ShapeCompartmentEditPart {
 
 	/**

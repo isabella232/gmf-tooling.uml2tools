@@ -12,11 +12,13 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionStereotypeEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
+
 public class AddStructuralFeatureValueActionViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -43,6 +45,7 @@ public class AddStructuralFeatureValueActionViewFactory extends AbstractShapeVie
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AddStructuralFeatureValueActionNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

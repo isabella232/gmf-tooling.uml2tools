@@ -13,6 +13,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class InitialNode2ViewFactory extends AbstractShapeViewFactory {
 
 	/**

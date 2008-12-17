@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
+
 public class CreateObjectActionName3ViewFactory extends BasicNodeViewFactory {
 
 	/**

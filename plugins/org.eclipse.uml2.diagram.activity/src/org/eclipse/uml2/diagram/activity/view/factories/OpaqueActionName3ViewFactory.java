@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
+
 public class OpaqueActionName3ViewFactory extends BasicNodeViewFactory {
 
 	/**

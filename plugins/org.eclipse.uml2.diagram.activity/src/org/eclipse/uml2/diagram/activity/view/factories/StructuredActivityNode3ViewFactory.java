@@ -11,12 +11,14 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStereotype3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
+
 public class StructuredActivityNode3ViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -42,6 +44,7 @@ public class StructuredActivityNode3ViewFactory extends AbstractShapeViewFactory
 		if (eObject != null) {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StructuredActivityNodeStereotype3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart.VISUAL_ID), ViewUtil.APPEND, true,
 				getPreferencesHint());
 	}

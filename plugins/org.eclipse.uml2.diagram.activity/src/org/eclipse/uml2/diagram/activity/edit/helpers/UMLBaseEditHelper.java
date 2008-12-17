@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 /**
  * @generated
  */
+
 public class UMLBaseEditHelper extends AbstractEditHelper {
 
 	/**

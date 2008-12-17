@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
+
 public abstract class UMLAbstractExpression {
 
 	/**
@@ -27,20 +28,51 @@ public abstract class UMLAbstractExpression {
 	/**
 	 * @generated
 	 */
-	protected UMLAbstractExpression(String body, EClassifier context) {
-		myBody = body;
-		myContext = context;
-	}
-
-	/**
-	 * @generated
-	 */
 	protected void setStatus(int severity, String message, Throwable throwable) {
 		String pluginID = UMLDiagramEditorPlugin.ID;
 		this.status = new Status(severity, pluginID, -1, (message != null) ? message : "", throwable); //$NON-NLS-1$
 		if (!this.status.isOK()) {
 			UMLDiagramEditorPlugin.getInstance().logError("Expression problem:" + message + "body:" + body(), throwable); //$NON-NLS-1$ //$NON-NLS-2$
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public IStatus getStatus() {
+		return status;
+	}
+
+	/**
+	 * @generated
+	 */
+	private final String myBody;
+
+	/**
+	 * @generated
+	 */
+	public String body() {
+		return myBody;
+	}
+
+	/**
+	 * @generated
+	 */
+	private final EClassifier myContext;
+
+	/**
+	 * @generated
+	 */
+	public EClassifier context() {
+		return myContext;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected UMLAbstractExpression(String body, EClassifier context) {
+		myBody = body;
+		myContext = context;
 	}
 
 	/**
@@ -114,34 +146,4 @@ public abstract class UMLAbstractExpression {
 		return value;
 	}
 
-	/**
-	 * @generated
-	 */
-	public IStatus getStatus() {
-		return status;
-	}
-
-	/**
-	 * @generated
-	 */
-	private final String myBody;
-
-	/**
-	 * @generated
-	 */
-	public String body() {
-		return myBody;
-	}
-
-	/**
-	 * @generated
-	 */
-	private final EClassifier myContext;
-
-	/**
-	 * @generated
-	 */
-	public EClassifier context() {
-		return myContext;
-	}
 }

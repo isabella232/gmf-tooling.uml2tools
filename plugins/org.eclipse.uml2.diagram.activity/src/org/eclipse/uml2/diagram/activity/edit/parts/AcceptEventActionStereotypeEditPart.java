@@ -52,6 +52,7 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 
 /**
  * @generated
@@ -120,6 +121,7 @@ public class AcceptEventActionStereotypeEditPart extends CompartmentEditPart imp
 				return false;
 			}
 		});
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
 	}
 
 	/**

@@ -101,6 +101,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+
 public class CreateObjectAction2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**

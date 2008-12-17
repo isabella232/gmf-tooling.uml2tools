@@ -21,6 +21,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPoli
 /**
  * @generated
  */
+
 public class UMLTextNonResizableEditPolicy extends NonResizableEditPolicyEx implements IRefreshableFeedbackEditPolicy {
 
 	/**

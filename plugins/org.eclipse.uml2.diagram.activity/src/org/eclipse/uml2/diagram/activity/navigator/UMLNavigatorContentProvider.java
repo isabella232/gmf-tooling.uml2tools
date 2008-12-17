@@ -27,6 +27,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 	/**

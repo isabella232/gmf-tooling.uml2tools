@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
+
 public class OutputPinName5ViewFactory extends BasicNodeViewFactory {
 
 	/**

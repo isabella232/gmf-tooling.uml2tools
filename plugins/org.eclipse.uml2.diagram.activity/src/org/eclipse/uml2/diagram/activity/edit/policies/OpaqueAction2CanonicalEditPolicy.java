@@ -101,6 +101,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+
 public class OpaqueAction2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**

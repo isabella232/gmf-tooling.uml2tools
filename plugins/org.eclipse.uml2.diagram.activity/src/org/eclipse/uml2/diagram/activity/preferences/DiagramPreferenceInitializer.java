@@ -7,6 +7,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
+
 public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer {
 
 	/**

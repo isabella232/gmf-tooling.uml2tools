@@ -62,10 +62,12 @@ public class ActionLocalPreconditionCreateCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
+
 		if (getSource() != null && getTarget() != null) {
 			getSource().getLocalPreconditions().add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
+
 	}
 
 	/**
@@ -77,6 +79,13 @@ public class ActionLocalPreconditionCreateCommand extends EditElementCommand {
 		Constraint probablyPhantom = getTarget();
 		probablyPhantom.eResource().getContents().remove(probablyPhantom);
 		return doExecuteWithResultGen(monitor, info);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void setElementToEdit(EObject element) {
+		throw new UnsupportedOperationException();
 	}
 
 	/**

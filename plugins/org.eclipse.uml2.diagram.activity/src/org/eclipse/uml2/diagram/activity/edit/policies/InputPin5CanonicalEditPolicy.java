@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
+
 public class InputPin5CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**

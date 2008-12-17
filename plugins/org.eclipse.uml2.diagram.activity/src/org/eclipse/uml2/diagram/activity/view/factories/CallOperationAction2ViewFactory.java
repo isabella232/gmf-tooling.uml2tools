@@ -12,11 +12,13 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionStereotype2EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
+
 public class CallOperationAction2ViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -43,6 +45,7 @@ public class CallOperationAction2ViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CallOperationActionName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CallOperationActionStereotype2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

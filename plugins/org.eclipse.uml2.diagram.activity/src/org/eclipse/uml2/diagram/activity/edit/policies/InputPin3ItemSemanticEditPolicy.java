@@ -21,6 +21,7 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 /**
  * @generated
  */
+
 public class InputPin3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**

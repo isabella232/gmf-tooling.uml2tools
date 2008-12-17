@@ -32,11 +32,11 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
+
 public class OpaqueActionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
@@ -51,9 +51,6 @@ public class OpaqueActionItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.OutputPin_3001 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getOpaqueAction_OutputValue());
-			}
 			return getGEFWrapper(new OutputPinCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -11,14 +11,16 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName5EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName6EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeInState3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeOrdering3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeStereotype3EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
+
 public class CentralBufferNode3ViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -44,9 +46,10 @@ public class CentralBufferNode3ViewFactory extends AbstractShapeViewFactory {
 		if (eObject != null) {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeName5EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeName6EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeInState3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeOrdering3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeStereotype3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

@@ -15,6 +15,7 @@ import org.eclipse.uml2.uml.ObjectFlow;
 /**
  * @generated
  */
+
 public class ObjectFlowReorientCommand extends EditElementCommand {
 
 	/**

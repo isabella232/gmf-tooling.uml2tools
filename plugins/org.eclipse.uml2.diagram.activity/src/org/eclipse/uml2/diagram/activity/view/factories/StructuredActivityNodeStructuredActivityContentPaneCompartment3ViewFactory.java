@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class StructuredActivityNodeStructuredActivityContentPaneCompartment3ViewFactory extends BasicNodeViewFactory {
 
 	/**

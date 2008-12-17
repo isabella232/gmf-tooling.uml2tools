@@ -12,6 +12,7 @@ import org.eclipse.uml2.diagram.activity.part.Messages;
 /**
  * @generated
  */
+
 public class ConstraintContributionItemProvider extends AbstractContributionItemProvider implements IProvider {
 
 	/**

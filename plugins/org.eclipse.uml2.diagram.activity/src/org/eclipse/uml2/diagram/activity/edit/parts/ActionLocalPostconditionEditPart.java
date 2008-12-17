@@ -12,6 +12,7 @@ import org.eclipse.uml2.diagram.activity.edit.policies.ActionLocalPostconditionI
 /**
  * @generated
  */
+
 public class ActionLocalPostconditionEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**

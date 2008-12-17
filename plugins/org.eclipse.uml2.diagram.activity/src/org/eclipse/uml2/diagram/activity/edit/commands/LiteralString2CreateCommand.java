@@ -1,29 +1,36 @@
 package org.eclipse.uml2.diagram.activity.edit.commands;
 
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
-public class LiteralString2CreateCommand extends CreateElementCommand {
+
+public class LiteralString2CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
 	public LiteralString2CreateCommand(CreateElementRequest req) {
-		super(req);
+		super(req.getLabel(), null, req);
 	}
 
 	/**
+	 * FIXME: replace with setElementToEdit()
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
@@ -37,30 +44,44 @@ public class LiteralString2CreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected EClass getEClassToEdit() {
-		return UMLPackage.eINSTANCE.getConstraint();
-	}
-
-	/**
-	 * @generated
-	 */
-	protected EObject doDefaultElementCreation() {
-		LiteralString newElement = UMLFactory.eINSTANCE.createLiteralString();
-
-		Constraint owner = (Constraint) getElementToEdit();
-		owner.setSpecification(newElement);
-		UMLElementTypes.init_LiteralString_3051(newElement);
-		return newElement;
-	}
-
-	/**
-	 * @generated
-	 */
 	public boolean canExecute() {
 		Constraint container = (Constraint) getElementToEdit();
 		if (container.getSpecification() != null) {
 			return false;
 		}
 		return true;
+
 	}
+
+	/**
+	 * @generated
+	 */
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		LiteralString newElement = UMLFactory.eINSTANCE.createLiteralString();
+
+		Constraint owner = (Constraint) getElementToEdit();
+		owner.setSpecification(newElement);
+
+		UMLElementTypes.init_LiteralString_3051(newElement);
+
+		doConfigure(newElement, monitor, info);
+
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
+		return CommandResult.newOKCommandResult(newElement);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void doConfigure(LiteralString newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
+		configureRequest.addParameters(getRequest().getParameters());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
+		if (configureCommand != null && configureCommand.canExecute()) {
+			configureCommand.execute(monitor, info);
+		}
+	}
+
 }

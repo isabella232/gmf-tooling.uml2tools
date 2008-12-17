@@ -36,11 +36,11 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
+
 public class CallOperationAction2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
@@ -55,21 +55,12 @@ public class CallOperationAction2ItemSemanticEditPolicy extends UMLBaseItemSeman
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.OutputPin_3006 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getCallAction_Result());
-			}
 			return getGEFWrapper(new OutputPin3CreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3007 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInvocationAction_Argument());
-			}
 			return getGEFWrapper(new InputPin4CreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3008 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getCallOperationAction_Target());
-			}
 			return getGEFWrapper(new InputPin5CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

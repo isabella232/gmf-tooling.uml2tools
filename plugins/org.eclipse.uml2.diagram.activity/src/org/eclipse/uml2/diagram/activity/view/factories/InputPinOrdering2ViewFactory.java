@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
+
 public class InputPinOrdering2ViewFactory extends AbstractLabelViewFactory {
 
 	/**

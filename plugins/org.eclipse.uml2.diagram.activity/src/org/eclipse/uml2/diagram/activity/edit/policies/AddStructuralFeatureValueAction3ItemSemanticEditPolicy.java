@@ -36,11 +36,11 @@ import org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
+
 public class AddStructuralFeatureValueAction3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
@@ -55,21 +55,12 @@ public class AddStructuralFeatureValueAction3ItemSemanticEditPolicy extends UMLB
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.InputPin_3003 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction_InsertAt());
-			}
 			return getGEFWrapper(new InputPinCreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3004 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getWriteStructuralFeatureAction_Value());
-			}
 			return getGEFWrapper(new InputPin2CreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3005 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuralFeatureAction_Object());
-			}
 			return getGEFWrapper(new InputPin3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

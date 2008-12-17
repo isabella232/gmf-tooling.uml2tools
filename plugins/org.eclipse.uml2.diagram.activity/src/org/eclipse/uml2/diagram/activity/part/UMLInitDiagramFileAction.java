@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 /**
  * @generated
  */
+
 public class UMLInitDiagramFileAction implements IObjectActionDelegate {
 
 	/**

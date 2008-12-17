@@ -84,5 +84,4 @@ public class UMLDiagramUpdateCommand implements IHandler {
 			nextEditPolicy.refresh();
 		}
 	}
-
 }

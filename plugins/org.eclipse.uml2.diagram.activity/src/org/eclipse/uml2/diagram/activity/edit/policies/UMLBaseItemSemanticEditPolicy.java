@@ -21,8 +21,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
-import org.eclipse.gmf.runtime.emf.type.core.IEditHelperContext;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
@@ -57,6 +55,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+
 public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 	/**
@@ -79,6 +78,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
+	 * Extended request data key to hold editpart visual id.
 	 * Add visual id of edited editpart to extended data of the request
 	 * so command switch can decide what kind of diagram element is being edited.
 	 * It is done in those cases when it's not possible to deduce diagram
@@ -275,6 +275,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
+	 * @deprecated use getGEFWrapper() instead
 	 * @generated
 	 */
 	protected final Command getMSLWrapper(ICommand cmd) {
@@ -344,41 +345,42 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * @generated 
+	 * @generated
 	 */
+
 	public static class LinkConstraints {
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		private static final String OPPOSITE_END_VAR = "oppositeEnd"; //$NON-NLS-1$
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		private static UMLAbstractExpression ControlFlow_4001_SourceExpression;
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		private static UMLAbstractExpression ControlFlow_4001_TargetExpression;
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		public static boolean canCreateControlFlow_4001(Activity container, ActivityNode source, ActivityNode target) {
 			return canExistControlFlow_4001(container, source, target);
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		public static boolean canCreateObjectFlow_4002(Activity container, ActivityNode source, ActivityNode target) {
 			return canExistObjectFlow_4002(container, source, target);
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		public static boolean canCreateActionLocalPrecondition_4003(Action source, Constraint target) {
 			if (source != null) {
@@ -410,7 +412,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		public static boolean canCreateObjectNodeSelection_4004(ObjectNode source, Behavior target) {
 			if (source != null) {
@@ -423,7 +425,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		public static boolean canCreateExceptionHandler_4005(ExecutableNode container, ExecutableNode source, ExecutableNode target) {
 			return canExistExceptionHandler_4005(container, source, target);

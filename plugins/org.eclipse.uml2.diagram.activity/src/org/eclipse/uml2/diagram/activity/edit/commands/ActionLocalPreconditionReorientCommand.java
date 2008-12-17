@@ -15,6 +15,7 @@ import org.eclipse.uml2.uml.Constraint;
 /**
  * @generated
  */
+
 public class ActionLocalPreconditionReorientCommand extends EditElementCommand {
 
 	/**

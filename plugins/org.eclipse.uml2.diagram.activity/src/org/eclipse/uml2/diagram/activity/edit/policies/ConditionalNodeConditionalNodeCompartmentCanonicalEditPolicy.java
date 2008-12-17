@@ -117,6 +117,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+
 public class ConditionalNodeConditionalNodeCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**

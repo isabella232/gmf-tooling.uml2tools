@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
+
 public class ExceptionHandlerLink_fixed_iconViewFactory extends AbstractLabelViewFactory {
 
 	/**

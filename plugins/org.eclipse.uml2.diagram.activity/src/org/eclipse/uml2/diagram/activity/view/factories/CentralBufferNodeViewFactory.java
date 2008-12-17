@@ -11,14 +11,16 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeName2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeInStateEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeOrderingEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeStereotypeEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
+
 public class CentralBufferNodeViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -45,8 +47,9 @@ public class CentralBufferNodeViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeInStateEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeOrderingEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CentralBufferNodeStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

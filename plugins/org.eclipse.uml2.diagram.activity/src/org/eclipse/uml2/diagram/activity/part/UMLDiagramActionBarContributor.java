@@ -6,11 +6,13 @@ import org.eclipse.gmf.runtime.diagram.ui.printing.render.actions.RenderedPrintP
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.ui.IActionBars;
+import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchPage;
 
 /**
  * @generated
  */
+
 public class UMLDiagramActionBarContributor extends DiagramActionBarContributor {
 
 	/**
@@ -32,7 +34,8 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 	 */
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
-		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath("file"); //$NON-NLS-1$
+		// print preview
+		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_FILE);
 		assert fileMenu != null;
 		IAction printPreviewAction = new RenderedPrintPreviewAction(new EnhancedPrintActionHelper());
 		fileMenu.insertBefore("print", printPreviewAction); //$NON-NLS-1$

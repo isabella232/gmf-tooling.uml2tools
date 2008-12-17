@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
@@ -34,6 +35,7 @@ import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 /**
  * @generated
  */
+
 public class OpaqueBehaviorEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**

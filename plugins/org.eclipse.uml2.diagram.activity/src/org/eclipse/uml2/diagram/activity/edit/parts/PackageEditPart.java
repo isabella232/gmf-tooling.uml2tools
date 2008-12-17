@@ -14,6 +14,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovabl
 /**
  * @generated
  */
+
 public class PackageEditPart extends DiagramEditPart {
 
 	/**
@@ -52,5 +53,4 @@ public class PackageEditPart extends DiagramEditPart {
 	public void refreshDiagram() {
 		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
-
 }

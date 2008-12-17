@@ -21,47 +21,48 @@ import org.eclipse.ocl.utilities.PredefinedType;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
 
 /**
- * @generated 
+ * @generated
  */
+
 public class UMLOCLFactory {
 
 	/**
-	 * @generated 
+	 * @generated
 	 */
 	private UMLOCLFactory() {
 	}
 
 	/**
-	 * @generated 
+	 * @generated
 	 */
 	public static UMLAbstractExpression getExpression(String body, EClassifier context, Map environment) {
 		return new Expression(body, context, environment);
 	}
 
 	/**
-	 * @generated 
+	 * @generated
 	 */
 	public static UMLAbstractExpression getExpression(String body, EClassifier context) {
 		return getExpression(body, context, Collections.EMPTY_MAP);
 	}
 
 	/**
-	 * @generated 
+	 * @generated
 	 */
 	private static class Expression extends UMLAbstractExpression {
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		private WeakReference queryRef;
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		private final org.eclipse.ocl.ecore.OCL oclInstance;
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		public Expression(String body, EClassifier context, Map environment) {
 			super(body, context);
@@ -70,7 +71,7 @@ public class UMLOCLFactory {
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		protected Query getQuery() {
 			Query oclQuery = null;
@@ -93,7 +94,7 @@ public class UMLOCLFactory {
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		protected Object doEvaluate(Object context, Map env) {
 			Query oclQuery = getQuery();
@@ -146,7 +147,7 @@ public class UMLOCLFactory {
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		private static void initCustomEnv(Environment ecoreEnv, Map environment) {
 			for (Iterator it = environment.keySet().iterator(); it.hasNext();) {
@@ -157,7 +158,7 @@ public class UMLOCLFactory {
 		}
 
 		/**
-		 * @generated 
+		 * @generated
 		 */
 		private static Variable createVar(Environment ecoreEnv, String name, EClassifier type) {
 			Variable var = EcoreFactory.eINSTANCE.createVariable();
@@ -182,4 +183,5 @@ public class UMLOCLFactory {
 			}
 		};
 	}
+
 }

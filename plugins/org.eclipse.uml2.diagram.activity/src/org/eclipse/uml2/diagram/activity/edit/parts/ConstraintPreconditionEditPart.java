@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 /**
  * @generated
  */
+
 public class ConstraintPreconditionEditPart extends ListCompartmentEditPart implements IInsertableEditPart {
 
 	/**

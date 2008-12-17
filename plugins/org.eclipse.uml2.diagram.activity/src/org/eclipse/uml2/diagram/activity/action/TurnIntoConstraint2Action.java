@@ -10,6 +10,7 @@ import org.eclipse.uml2.diagram.common.actions.ChangeNotationAction;
 /**
  * @generated
  */
+
 public class TurnIntoConstraint2Action extends ChangeNotationAction {
 
 	/**

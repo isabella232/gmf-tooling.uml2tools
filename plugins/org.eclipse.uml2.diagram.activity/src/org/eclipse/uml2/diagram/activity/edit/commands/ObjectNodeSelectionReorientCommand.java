@@ -15,6 +15,7 @@ import org.eclipse.uml2.uml.ObjectNode;
 /**
  * @generated
  */
+
 public class ObjectNodeSelectionReorientCommand extends EditElementCommand {
 
 	/**

@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class ConstraintViewFactory extends AbstractShapeViewFactory {
 
 	/**

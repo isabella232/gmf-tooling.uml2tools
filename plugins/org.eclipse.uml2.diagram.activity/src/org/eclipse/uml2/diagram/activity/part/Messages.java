@@ -5,6 +5,7 @@ import org.eclipse.osgi.util.NLS;
 /**
  * @generated
  */
+
 public class Messages extends NLS {
 
 	/**
@@ -1573,17 +1574,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AbstractParser_UnexpectedValueTypeMessage;
+	public static String AbstractParser_UnexpectedValueType;
 
 	/**
 	 * @generated
 	 */
-	public static String AbstractParser_WrongStringConversionMessage;
+	public static String AbstractParser_WrongStringConversion;
 
 	/**
 	 * @generated
 	 */
-	public static String AbstractParser_UnknownLiteralMessage;
+	public static String AbstractParser_UnknownLiteral;
 
 	/**
 	 * @generated
@@ -1599,6 +1600,8 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String UMLModelingAssistantProviderMessage;
+
+	//TODO: put accessor fields manually
 
 	/**
 	 * @generated
@@ -1640,5 +1643,4 @@ public class Messages extends NLS {
 	 */
 	public static String Constraint2ContributionItemProvider_group;
 
-	//TODO: put accessor fields manually	
 }

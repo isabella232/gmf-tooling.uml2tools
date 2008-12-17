@@ -10,11 +10,11 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActivityCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.Constraint2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ConstraintCreateCommand;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
+
 public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
@@ -29,9 +29,6 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Activity_2026 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new ActivityCreateCommand(req));
 		}
 		if (UMLElementTypes.Constraint_2027 == req.getElementType()) {
@@ -54,6 +51,7 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	/**
 	 * @generated
 	 */
+
 	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**

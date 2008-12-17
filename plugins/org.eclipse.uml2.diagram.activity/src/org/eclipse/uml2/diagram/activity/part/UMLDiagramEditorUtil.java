@@ -58,6 +58,7 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 /**
  * @generated
  */
+
 public class UMLDiagramEditorUtil {
 
 	/**

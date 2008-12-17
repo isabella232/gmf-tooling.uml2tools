@@ -33,6 +33,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 /**
  * @generated
  */
+
 public class UMLNewDiagramFileWizard extends Wizard {
 
 	/**
@@ -129,6 +130,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
+
 	private static class DiagramRootElementSelectionPage extends ModelElementSelectionPage {
 
 		/**

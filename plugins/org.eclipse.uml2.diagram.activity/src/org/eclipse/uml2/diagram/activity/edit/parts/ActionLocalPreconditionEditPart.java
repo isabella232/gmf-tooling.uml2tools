@@ -12,6 +12,7 @@ import org.eclipse.uml2.diagram.activity.edit.policies.ActionLocalPreconditionIt
 /**
  * @generated
  */
+
 public class ActionLocalPreconditionEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**

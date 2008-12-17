@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.activity.edit.policies.ObjectFlowItemSemanticEdi
 /**
  * @generated
  */
+
 public class ObjectFlowEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**

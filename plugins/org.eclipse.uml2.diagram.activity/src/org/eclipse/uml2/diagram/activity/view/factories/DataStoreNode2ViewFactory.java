@@ -11,14 +11,16 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName4EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeInState2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeName2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeOrdering2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeStereotype2EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
+
 public class DataStoreNode2ViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -44,9 +46,10 @@ public class DataStoreNode2ViewFactory extends AbstractShapeViewFactory {
 		if (eObject != null) {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataStoreNodeName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataStoreNodeName4EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataStoreNodeName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataStoreNodeInState2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataStoreNodeOrdering2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(DataStoreNodeStereotype2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

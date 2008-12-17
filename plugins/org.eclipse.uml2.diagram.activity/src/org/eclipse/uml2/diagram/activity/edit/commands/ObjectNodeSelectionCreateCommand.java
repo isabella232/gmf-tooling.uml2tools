@@ -14,6 +14,7 @@ import org.eclipse.uml2.uml.ObjectNode;
 /**
  * @generated
  */
+
 public class ObjectNodeSelectionCreateCommand extends EditElementCommand {
 
 	/**
@@ -62,10 +63,19 @@ public class ObjectNodeSelectionCreateCommand extends EditElementCommand {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
+
 		if (getSource() != null && getTarget() != null) {
 			getSource().setSelection(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void setElementToEdit(EObject element) {
+		throw new UnsupportedOperationException();
 	}
 
 	/**

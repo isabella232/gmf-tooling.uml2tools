@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.policies;
 
 import java.util.Iterator;
+
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
@@ -13,7 +14,6 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ParameterCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -33,9 +33,6 @@ public class ParameterSetItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Parameter_3087 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getBehavior_OwnedParameter());
-			}
 			return getGEFWrapper(new ParameterCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

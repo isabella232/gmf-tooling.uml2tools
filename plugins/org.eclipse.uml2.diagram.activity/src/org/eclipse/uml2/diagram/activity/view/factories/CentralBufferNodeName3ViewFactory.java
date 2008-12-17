@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
+
 public class CentralBufferNodeName3ViewFactory extends BasicNodeViewFactory {
 
 	/**

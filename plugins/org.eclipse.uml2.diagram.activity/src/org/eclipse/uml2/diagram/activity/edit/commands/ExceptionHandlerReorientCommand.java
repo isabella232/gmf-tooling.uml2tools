@@ -14,6 +14,7 @@ import org.eclipse.uml2.uml.ExecutableNode;
 /**
  * @generated
  */
+
 public class ExceptionHandlerReorientCommand extends EditElementCommand {
 
 	/**

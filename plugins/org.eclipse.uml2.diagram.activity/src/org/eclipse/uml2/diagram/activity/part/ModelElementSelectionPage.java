@@ -19,7 +19,6 @@ import org.eclipse.swt.widgets.Label;
 
 /**
  * Wizard page that allows to select element from model.
- * 
  * @generated
  */
 public class ModelElementSelectionPage extends WizardPage {
@@ -104,7 +103,6 @@ public class ModelElementSelectionPage extends WizardPage {
 
 	/**
 	 * Override to provide custom model element description.
-	 * 
 	 * @generated
 	 */
 	protected String getSelectionTitle() {
@@ -133,10 +131,10 @@ public class ModelElementSelectionPage extends WizardPage {
 
 	/**
 	 * Override to provide specific validation of the selected model element.
-	 * 
 	 * @generated
 	 */
 	protected boolean validatePage() {
 		return true;
 	}
+
 }

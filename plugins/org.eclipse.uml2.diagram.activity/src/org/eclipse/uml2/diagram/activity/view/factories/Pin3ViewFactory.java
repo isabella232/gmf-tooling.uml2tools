@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.PinInState3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinName3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinOrdering3EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -18,6 +19,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class Pin3ViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -44,6 +46,7 @@ public class Pin3ViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PinName3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PinInState3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PinOrdering3EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 

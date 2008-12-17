@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.activity.edit.policies.ExceptionHandlerItemSeman
 /**
  * @generated
  */
+
 public class ExceptionHandlerEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
