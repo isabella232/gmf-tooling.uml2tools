@@ -46,21 +46,12 @@ public class State3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Region_3002 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Region());
-			}
 			return getGEFWrapper(new Region2CreateCommand(req));
 		}
 		if (UMLElementTypes.ConnectionPointReference_3017 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Connection());
-			}
 			return getGEFWrapper(new ConnectionPointReferenceCreateCommand(req));
 		}
 		if (UMLElementTypes.ConnectionPointReference_3018 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Connection());
-			}
 			return getGEFWrapper(new ConnectionPointReference2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

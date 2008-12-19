@@ -25,21 +25,12 @@ public class StateCompositeState_InternalActivitiesItemSemanticEditPolicy extend
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Behavior_3019 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Entry());
-			}
 			return getGEFWrapper(new BehaviorCreateCommand(req));
 		}
 		if (UMLElementTypes.Behavior_3020 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Exit());
-			}
 			return getGEFWrapper(new Behavior2CreateCommand(req));
 		}
 		if (UMLElementTypes.Behavior_3021 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_DoActivity());
-			}
 			return getGEFWrapper(new Behavior3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

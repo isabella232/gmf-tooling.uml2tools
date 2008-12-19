@@ -27,9 +27,6 @@ public class StateMachineItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.StateMachine_2004 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getClass_NestedClassifier());
-			}
 			return getGEFWrapper(new StateMachineCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

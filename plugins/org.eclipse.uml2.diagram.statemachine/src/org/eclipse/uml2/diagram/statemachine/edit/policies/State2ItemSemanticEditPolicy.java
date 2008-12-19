@@ -42,9 +42,6 @@ public class State2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Region_3002 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getState_Region());
-			}
 			return getGEFWrapper(new Region2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
