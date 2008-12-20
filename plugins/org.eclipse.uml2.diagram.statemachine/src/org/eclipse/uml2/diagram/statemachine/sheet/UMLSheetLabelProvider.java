@@ -1,23 +1,20 @@
 package org.eclipse.uml2.diagram.statemachine.sheet;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.BaseLabelProvider;
-import org.eclipse.jface.viewers.DecoratingLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.statemachine.navigator.UMLNavigatorGroup;
-import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 /**
  * @generated
  */
+
 public class UMLSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**

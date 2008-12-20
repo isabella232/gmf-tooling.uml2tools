@@ -50,6 +50,7 @@ import org.eclipse.uml2.diagram.statemachine.navigator.UMLNavigatorItem;
 /**
  * @generated
  */
+
 public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
 
 	/**

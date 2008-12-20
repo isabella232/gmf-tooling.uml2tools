@@ -38,22 +38,22 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser stateMachineName_5005Parser;
+	private IParser stateMachineName_5011Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStateMachineName_5005Parser() {
-		if (stateMachineName_5005Parser == null) {
-			stateMachineName_5005Parser = createStateMachineName_5005Parser();
+	private IParser getStateMachineName_5011Parser() {
+		if (stateMachineName_5011Parser == null) {
+			stateMachineName_5011Parser = createStateMachineName_5011Parser();
 		}
-		return stateMachineName_5005Parser;
+		return stateMachineName_5011Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser createStateMachineName_5005Parser() {
+	protected IParser createStateMachineName_5011Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
@@ -334,7 +334,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case StateMachineNameEditPart.VISUAL_ID:
-			return getStateMachineName_5005Parser();
+			return getStateMachineName_5011Parser();
 		case StateNameEditPart.VISUAL_ID:
 			return getStateName_5001Parser();
 		case BehaviorEditPart.VISUAL_ID:

@@ -77,9 +77,9 @@ public class UMLPaletteFactory {
 	 */
 	private ToolEntry createStateMachine1CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.StateMachine_2004);
+		types.add(UMLElementTypes.StateMachine_2005);
 		NodeToolEntry entry = new NodeToolEntry(Messages.StateMachine1CreationTool_title, Messages.StateMachine1CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.StateMachine_2004));
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.StateMachine_2005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

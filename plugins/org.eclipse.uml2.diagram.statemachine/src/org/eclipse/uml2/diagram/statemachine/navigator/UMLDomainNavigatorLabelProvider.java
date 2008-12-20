@@ -11,6 +11,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
+
 public class UMLDomainNavigatorLabelProvider implements ICommonLabelProvider {
 
 	/**

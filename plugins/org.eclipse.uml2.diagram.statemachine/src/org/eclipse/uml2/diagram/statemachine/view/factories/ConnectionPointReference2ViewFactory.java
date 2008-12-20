@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class ConnectionPointReference2ViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -44,4 +45,5 @@ public class ConnectionPointReference2ViewFactory extends AbstractShapeViewFacto
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ConnectionPointReferenceName2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
+
 }

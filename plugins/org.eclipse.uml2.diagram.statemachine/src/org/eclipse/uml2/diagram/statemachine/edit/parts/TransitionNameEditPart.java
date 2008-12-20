@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.statemachine.edit.parts;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.ConnectionLocator;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -22,7 +21,6 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
@@ -56,6 +54,7 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider;
 /**
  * @generated
  */
+
 public class TransitionNameEditPart extends LabelEditPart implements ITextAwareEditPart {
 
 	/**
@@ -570,4 +569,5 @@ public class TransitionNameEditPart extends LabelEditPart implements ITextAwareE
 	protected IFigure createFigurePrim() {
 		return new Label();
 	}
+
 }

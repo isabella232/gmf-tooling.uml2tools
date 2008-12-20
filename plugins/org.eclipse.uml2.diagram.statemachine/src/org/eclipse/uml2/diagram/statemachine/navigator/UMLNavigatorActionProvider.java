@@ -31,6 +31,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class UMLNavigatorActionProvider extends CommonActionProvider {
 
 	/**
@@ -86,6 +87,7 @@ public class UMLNavigatorActionProvider extends CommonActionProvider {
 	/**
 	 * @generated
 	 */
+
 	private class OpenDiagramAction extends Action {
 
 		/**

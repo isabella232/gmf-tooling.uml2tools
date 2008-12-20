@@ -8,6 +8,7 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 /**
  * @generated
  */
+
 public class TransitionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**

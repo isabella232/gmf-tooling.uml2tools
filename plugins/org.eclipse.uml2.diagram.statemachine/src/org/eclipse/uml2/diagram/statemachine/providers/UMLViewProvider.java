@@ -87,6 +87,7 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.TransitionViewFactor
 /**
  * @generated
  */
+
 public class UMLViewProvider extends AbstractViewProvider {
 
 	/**

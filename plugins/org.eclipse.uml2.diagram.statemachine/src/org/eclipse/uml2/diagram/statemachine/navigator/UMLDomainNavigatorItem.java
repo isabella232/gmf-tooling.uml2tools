@@ -12,6 +12,7 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 /**
  * @generated
  */
+
 public class UMLDomainNavigatorItem extends PlatformObject implements IAdaptableSelection {
 
 	/**

@@ -15,11 +15,11 @@ import org.eclipse.uml2.diagram.statemachine.edit.commands.State2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.State3CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.StateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
+
 public class RegionSubvertices2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**

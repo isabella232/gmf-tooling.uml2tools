@@ -55,6 +55,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+
 public class StateCompositeState_InternalActivities2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**

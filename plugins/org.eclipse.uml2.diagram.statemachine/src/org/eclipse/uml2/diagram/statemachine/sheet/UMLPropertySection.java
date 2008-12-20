@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.common.sheet.PropertySourceExtension;
 /**
  * @generated
  */
+
 public class UMLPropertySection extends AdvancedPropertySection implements IPropertySourceProvider {
 
 	/**

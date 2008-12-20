@@ -27,6 +27,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.policies.RegionItemSemanticEdi
 /**
  * @generated
  */
+
 public class RegionEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**

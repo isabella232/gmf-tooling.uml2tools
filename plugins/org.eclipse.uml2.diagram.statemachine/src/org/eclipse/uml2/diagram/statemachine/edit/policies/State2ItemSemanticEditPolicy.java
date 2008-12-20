@@ -23,11 +23,11 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_Inte
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
+
 public class State2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**

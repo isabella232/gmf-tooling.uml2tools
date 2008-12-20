@@ -12,6 +12,7 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 /**
  * @generated
  */
+
 public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 
 	/**
@@ -83,6 +84,9 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 	}
 
 	/**
+	 * @generated
+	 */
+	/**
 	 * #174315 Automatically set diagram file extension
 	 * @generated
 	 */
@@ -109,5 +113,4 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 		fileName += nextWizardPage.getExtension();
 		nextWizardPage.setFileName(fileName);
 	}
-
 }

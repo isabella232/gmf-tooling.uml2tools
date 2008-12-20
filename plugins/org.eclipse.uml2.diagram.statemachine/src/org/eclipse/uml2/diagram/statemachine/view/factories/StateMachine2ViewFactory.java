@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class StateMachine2ViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -54,12 +55,4 @@ public class StateMachine2ViewFactory extends AbstractShapeViewFactory {
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StateMachineNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
-	/**
-	 * @generated
-	 */
-	protected boolean requiresElement(EObject semanticElement, View view) {
-		//this is special node, sharing the semantic element with diagram canvas
-		//thus, the default implementation needs to be overridden
-		return true;
-	}
 }

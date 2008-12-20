@@ -6,11 +6,11 @@ import org.eclipse.uml2.diagram.statemachine.edit.commands.Behavior2CreateComman
 import org.eclipse.uml2.diagram.statemachine.edit.commands.Behavior3CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.BehaviorCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
+
 public class StateCompositeState_InternalActivities2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**

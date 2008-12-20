@@ -5,5 +5,6 @@ import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice
 /**
  * @generated
  */
+
 public class Pseudostate2EditHelperAdvice extends AbstractEditHelperAdvice {
 }

@@ -14,6 +14,7 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 /**
  * @generated
  */
+
 public class ConnectionPointReference2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**

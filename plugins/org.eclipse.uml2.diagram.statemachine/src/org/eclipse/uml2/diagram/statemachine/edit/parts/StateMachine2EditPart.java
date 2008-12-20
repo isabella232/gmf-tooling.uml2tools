@@ -54,7 +54,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2004;
+	public static final int VISUAL_ID = 2005;
 
 	/**
 	 * @generated
@@ -86,7 +86,6 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StateMachine2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy("LayoutEditPolicy", new LaneLayoutEditPolicy()); //$NON-NLS-1$
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -219,7 +218,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(600), getMapMode().DPtoLP(600));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(450), getMapMode().DPtoLP(300));
 		return result;
 	}
 

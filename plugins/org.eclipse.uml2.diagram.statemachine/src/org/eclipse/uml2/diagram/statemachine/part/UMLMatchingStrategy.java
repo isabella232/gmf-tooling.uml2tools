@@ -9,6 +9,7 @@ import org.eclipse.ui.PartInitException;
 /**
  * @generated
  */
+
 public class UMLMatchingStrategy implements IEditorMatchingStrategy {
 
 	/**

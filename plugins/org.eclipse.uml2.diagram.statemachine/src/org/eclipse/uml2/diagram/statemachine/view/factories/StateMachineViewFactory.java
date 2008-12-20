@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
+
 public class StateMachineViewFactory extends DiagramViewFactory {
 
 	/**

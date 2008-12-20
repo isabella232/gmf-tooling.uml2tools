@@ -5,6 +5,7 @@ import org.eclipse.osgi.util.NLS;
 /**
  * @generated
  */
+
 public class Messages extends NLS {
 
 	/**
@@ -463,7 +464,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_StateMachine_1000_links;
+	public static String NavigatorGroupName_Package_1000_links;
 
 	/**
 	 * @generated
@@ -670,5 +671,6 @@ public class Messages extends NLS {
 	 */
 	public static String UMLModelingAssistantProviderMessage;
 
-	//TODO: put accessor fields manually	
+	//TODO: put accessor fields manually
+
 }

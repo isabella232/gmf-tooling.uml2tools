@@ -158,6 +158,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
+		if (editPart instanceof StateMachineEditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.StateMachine_2005);
+			return types;
+		}
 		return Collections.emptyList();
 	}
 

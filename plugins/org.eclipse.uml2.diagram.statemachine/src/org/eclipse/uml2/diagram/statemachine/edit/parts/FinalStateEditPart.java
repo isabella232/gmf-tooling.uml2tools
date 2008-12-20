@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
@@ -37,6 +38,7 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 /**
  * @generated
  */
+
 public class FinalStateEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
@@ -221,15 +223,6 @@ public class FinalStateEditPart extends ShapeNodeEditPart implements PrimaryShap
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
-		types.add(UMLElementTypes.Transition_4001);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
 	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (targetEditPart instanceof StateEditPart) {
@@ -286,7 +279,7 @@ public class FinalStateEditPart extends ShapeNodeEditPart implements PrimaryShap
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.State_3001);
@@ -342,7 +335,16 @@ public class FinalStateEditPart extends ShapeNodeEditPart implements PrimaryShap
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
+		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+		types.add(UMLElementTypes.Transition_4001);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.State_3001);

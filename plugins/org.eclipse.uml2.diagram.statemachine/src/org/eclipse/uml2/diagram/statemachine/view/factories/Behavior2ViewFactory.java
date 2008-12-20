@@ -12,6 +12,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class Behavior2ViewFactory extends AbstractLabelViewFactory {
 
 	/**

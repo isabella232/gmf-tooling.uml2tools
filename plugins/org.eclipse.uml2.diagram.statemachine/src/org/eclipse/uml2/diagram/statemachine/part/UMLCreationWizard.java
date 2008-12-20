@@ -17,6 +17,7 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 /**
  * @generated
  */
+
 public class UMLCreationWizard extends Wizard implements INewWizard {
 
 	/**

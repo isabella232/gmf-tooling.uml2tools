@@ -13,6 +13,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class Pseudostate6ViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -34,4 +35,5 @@ public class Pseudostate6ViewFactory extends AbstractShapeViewFactory {
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
 	}
+
 }

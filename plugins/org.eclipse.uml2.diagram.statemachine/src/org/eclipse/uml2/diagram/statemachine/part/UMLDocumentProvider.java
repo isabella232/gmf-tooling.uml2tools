@@ -57,6 +57,7 @@ import org.eclipse.ui.part.FileEditorInput;
 /**
  * @generated
  */
+
 public class UMLDocumentProvider extends AbstractDocumentProvider implements IDiagramDocumentProvider {
 
 	/**
@@ -644,6 +645,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 	/**
 	 * @generated
 	 */
+
 	protected class ResourceSetInfo extends ElementInfo {
 
 		/**
@@ -838,6 +840,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 		/**
 		 * @generated
 		 */
+
 		private class SynchronizerDelegate implements WorkspaceSynchronizer.Delegate {
 
 			/**
@@ -914,6 +917,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 	/**
 	 * @generated
 	 */
+
 	private class ResourceSetModificationListener extends EContentAdapter {
 
 		/**

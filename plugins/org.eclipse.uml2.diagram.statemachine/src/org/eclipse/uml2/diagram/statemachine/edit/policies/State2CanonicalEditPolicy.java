@@ -39,6 +39,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+
 public class State2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**

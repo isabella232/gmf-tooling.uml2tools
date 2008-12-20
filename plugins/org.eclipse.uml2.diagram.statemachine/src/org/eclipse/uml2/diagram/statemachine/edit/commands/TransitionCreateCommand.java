@@ -3,12 +3,10 @@ package org.eclipse.uml2.diagram.statemachine.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
@@ -17,12 +15,12 @@ import org.eclipse.uml2.diagram.statemachine.edit.policies.UMLBaseItemSemanticEd
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.Vertex;
 
 /**
  * @generated
  */
+
 public class TransitionCreateCommand extends EditElementCommand {
 
 	/**
@@ -151,4 +149,5 @@ public class TransitionCreateCommand extends EditElementCommand {
 		}
 		return null;
 	}
+
 }

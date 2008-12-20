@@ -207,23 +207,23 @@
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
-               id="org.eclipse.uml2.diagram.statemachine.StateMachine_1000"
-               name="%metatype.name.StateMachine_1000"
+               id="org.eclipse.uml2.diagram.statemachine.Package_1000"
+               name="%metatype.name.Package_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="StateMachine"
+               eclass="Package"
                edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.StateMachineEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
-         <specializationType
-               id="org.eclipse.uml2.diagram.statemachine.StateMachine_2004"
-               name="%metatype.name.StateMachine_2004"
+         <metamodelType
+               id="org.eclipse.uml2.diagram.statemachine.StateMachine_2005"
+               name="%metatype.name.StateMachine_2005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.StateMachineEditHelperAdvice">
-            <specializes id="org.eclipse.uml2.diagram.statemachine.StateMachine_1000"/>
-            <param name="semanticHint" value="2004"/>
-         </specializationType>
+               eclass="StateMachine"
+               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.StateMachine2EditHelper">
+            <param name="semanticHint" value="2005"/>
+         </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
@@ -455,8 +455,8 @@
          </enablement>
       </clientContext> 
       <binding context="org.eclipse.uml2.diagram.statemachine.TypeContext">
-         <elementType ref="org.eclipse.uml2.diagram.statemachine.StateMachine_1000"/>
-         <elementType ref="org.eclipse.uml2.diagram.statemachine.StateMachine_2004"/>
+         <elementType ref="org.eclipse.uml2.diagram.statemachine.Package_1000"/>
+         <elementType ref="org.eclipse.uml2.diagram.statemachine.StateMachine_2005"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Region_3013"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.State_3001"/>
          <elementType ref="org.eclipse.uml2.diagram.statemachine.Behavior_3019"/>

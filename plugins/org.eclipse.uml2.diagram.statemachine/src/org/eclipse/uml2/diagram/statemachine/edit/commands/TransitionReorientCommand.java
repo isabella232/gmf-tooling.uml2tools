@@ -15,6 +15,7 @@ import org.eclipse.uml2.uml.Vertex;
 /**
  * @generated
  */
+
 public class TransitionReorientCommand extends EditElementCommand {
 
 	/**

@@ -12,6 +12,7 @@ import org.eclipse.ui.IWorkbenchPage;
 /**
  * @generated
  */
+
 public class UMLDiagramActionBarContributor extends DiagramActionBarContributor {
 
 	/**

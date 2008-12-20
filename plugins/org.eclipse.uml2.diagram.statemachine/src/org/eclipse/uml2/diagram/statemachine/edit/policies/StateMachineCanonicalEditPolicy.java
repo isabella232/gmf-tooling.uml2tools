@@ -57,6 +57,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+
 public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 
 	/**
@@ -70,7 +71,7 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getSemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getPackage_1000SemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((IUpdaterNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
@@ -133,7 +134,7 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getClass_NestedClassifier());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -245,14 +246,14 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StateMachineEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getStateMachine_1000ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.getPackage_1000ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
 		case StateMachine2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(UMLDiagramUpdater.getStateMachine_2004ContainedLinks(view));
+				result.addAll(UMLDiagramUpdater.getStateMachine_2005ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
@@ -611,4 +612,5 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		}
 
 	}
+
 }

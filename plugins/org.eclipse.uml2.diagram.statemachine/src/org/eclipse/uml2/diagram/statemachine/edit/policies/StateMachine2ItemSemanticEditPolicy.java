@@ -18,18 +18,18 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
+
 public class StateMachine2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StateMachine2ItemSemanticEditPolicy() {
-		super(UMLElementTypes.StateMachine_2004);
+		super(UMLElementTypes.StateMachine_2005);
 	}
 
 	/**

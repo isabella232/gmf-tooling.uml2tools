@@ -26,7 +26,7 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StateMachine"/>
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package"/>
     <childNodes
         visualID="3013"
         editPartClassName="RegionEditPart"
@@ -83,7 +83,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.0">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.2">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/State"/>
         <containmentMetaFeature
@@ -94,7 +94,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.1">
+              value="//@expressionProviders/@providers.0/@expressions.3">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -266,7 +266,7 @@
           key="&quot;LayoutEditPolicy&quot;"
           editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy"/>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.2">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.4">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/State"/>
         <containmentMetaFeature
@@ -277,7 +277,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.3">
+              value="//@expressionProviders/@providers.0/@expressions.5">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -288,7 +288,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.4">
+                  value="//@expressionProviders/@providers.0/@expressions.6">
                 <feature
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
               </initializers>
@@ -383,7 +383,7 @@
           key="&quot;LayoutEditPolicy&quot;"
           editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy"/>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.5">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.7">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/State"/>
         <containmentMetaFeature
@@ -394,7 +394,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.6">
+              value="//@expressionProviders/@providers.0/@expressions.8">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -452,7 +452,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.7">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.9">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ConnectionPointReference"/>
         <containmentMetaFeature
@@ -463,7 +463,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.8">
+              value="//@expressionProviders/@providers.0/@expressions.10">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -524,7 +524,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.9">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.11">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ConnectionPointReference"/>
         <containmentMetaFeature
@@ -535,7 +535,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.10">
+              value="//@expressionProviders/@providers.0/@expressions.12">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -642,7 +642,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.11">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.13">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate"/>
         <containmentMetaFeature
@@ -653,7 +653,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.12">
+              value="//@expressionProviders/@providers.0/@expressions.14">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate/kind"/>
           </initializers>
@@ -688,7 +688,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.13">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.15">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate"/>
         <containmentMetaFeature
@@ -699,7 +699,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.14">
+              value="//@expressionProviders/@providers.0/@expressions.16">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate/kind"/>
           </initializers>
@@ -734,7 +734,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.15">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.17">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate"/>
         <containmentMetaFeature
@@ -745,7 +745,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.16">
+              value="//@expressionProviders/@providers.0/@expressions.18">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate/kind"/>
           </initializers>
@@ -786,7 +786,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.17">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.19">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate"/>
         <containmentMetaFeature
@@ -797,7 +797,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.18">
+              value="//@expressionProviders/@providers.0/@expressions.20">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate/kind"/>
           </initializers>
@@ -838,7 +838,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.19">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.21">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate"/>
         <containmentMetaFeature
@@ -849,7 +849,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.20">
+              value="//@expressionProviders/@providers.0/@expressions.22">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate/kind"/>
           </initializers>
@@ -890,7 +890,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.21">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate"/>
         <containmentMetaFeature
@@ -901,7 +901,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.22">
+              value="//@expressionProviders/@providers.0/@expressions.24">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate/kind"/>
           </initializers>
@@ -931,7 +931,7 @@
         <requiredPluginIDs>org.eclipse.uml2.diagram.common</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.25">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate"/>
         <containmentMetaFeature
@@ -942,7 +942,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.24">
+              value="//@expressionProviders/@providers.0/@expressions.26">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate/kind"/>
           </initializers>
@@ -977,7 +977,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.25">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.27">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate"/>
         <containmentMetaFeature
@@ -988,7 +988,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.26">
+              value="//@expressionProviders/@providers.0/@expressions.28">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate/kind"/>
           </initializers>
@@ -1028,7 +1028,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.27">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.29">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate"/>
         <containmentMetaFeature
@@ -1039,13 +1039,13 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.28">
+              value="//@expressionProviders/@providers.0/@expressions.30">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate/kind"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.29">
+              value="//@expressionProviders/@providers.0/@expressions.31">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -1106,7 +1106,7 @@
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.30">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.32">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate"/>
         <containmentMetaFeature
@@ -1117,13 +1117,13 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.31">
+              value="//@expressionProviders/@providers.0/@expressions.33">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Pseudostate/kind"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.32">
+              value="//@expressionProviders/@providers.0/@expressions.34">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -1152,7 +1152,7 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2004"
+        visualID="2005"
         editPartClassName="StateMachine2EditPart"
         itemSemanticEditPolicyClassName="StateMachine2ItemSemanticEditPolicy"
         notationViewFactoryClassName="StateMachine2ViewFactory"
@@ -1163,37 +1163,53 @@
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@elementType"
-          editHelperAdviceClassName="StateMachineEditHelperAdvice"/>
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="StateMachine2EditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="CompositeStateFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class CompositeStateFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureCompositeStateFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureCompositeStateFigure_Body; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureCompositeStateFigure_InternalActivitiesCompartment; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public CompositeStateFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(18)&#xD;&#xA;, getMapMode().DPtoLP(18)&#xD;&#xA;));&#xD;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(4)&#xD;&#xA;, getMapMode().DPtoLP(4)&#xD;&#xA;, getMapMode().DPtoLP(4)&#xD;&#xA;, getMapMode().DPtoLP(4)&#xD;&#xA;));&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure compositeStateFigure_UpperContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;compositeStateFigure_UpperContainer0.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(compositeStateFigure_UpperContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutCompositeStateFigure_UpperContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutCompositeStateFigure_UpperContainer0.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutCompositeStateFigure_UpperContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutCompositeStateFigure_UpperContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutCompositeStateFigure_UpperContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;compositeStateFigure_UpperContainer0.setLayoutManager(layoutCompositeStateFigure_UpperContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureCompositeStateFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureCompositeStateFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureCompositeStateFigure_InternalActivitiesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureCompositeStateFigure_InternalActivitiesCompartment.setOutline(false);&#xD;&#xA;&#xD;&#xA;compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalActivitiesCompartment);&#xD;&#xA;fFigureCompositeStateFigure_InternalActivitiesCompartment.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureCompositeStateFigure_Body = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureCompositeStateFigure_Body.setOutline(false);&#xD;&#xA;&#xD;&#xA;this.add(fFigureCompositeStateFigure_Body, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.LaneLayout layoutFFigureCompositeStateFigure_Body = new org.eclipse.uml2.diagram.common.draw2d.LaneLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;fFigureCompositeStateFigure_Body.setLayoutManager(layoutFFigureCompositeStateFigure_Body);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureCompositeStateFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureCompositeStateFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureCompositeStateFigure_Body() {&#xD;&#xA;&#x9;&#x9;return fFigureCompositeStateFigure_Body;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureCompositeStateFigure_InternalActivitiesCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureCompositeStateFigure_InternalActivitiesCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:AuxSecondaryDiagramNodeAttribute"
-            substituteWithCanvasElement="true"/>
-        <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="600"
-            height="600"/>
+            width="450"
+            height="300"/>
         <requiredPluginIDs>org.eclipse.draw2d</requiredPluginIDs>
         <requiredPluginIDs>org.eclipse.gmf.runtime.draw2d.ui</requiredPluginIDs>
       </viewmap>
-      <behaviour
-          xsi:type="gmfgen:CustomBehaviour"
-          key="&quot;LayoutEditPolicy&quot;"
-          editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StateMachine"/>
         <containmentMetaFeature
-            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Class/nestedClassifier"/>
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
         <childMetaFeature
-            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Class/nestedClassifier"/>
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package/packagedElement"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.0">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StateMachine/region"/>
+            <newElementInitializers>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.1">
+                <feature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+              </initializers>
+              <elementClass
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Region"/>
+            </newElementInitializers>
+          </initializers>
+        </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5005"
+          visualID="5011"
           editPartClassName="StateMachineNameEditPart"
           itemSemanticEditPolicyClassName="StateMachineNameItemSemanticEditPolicy"
           notationViewFactoryClassName="StateMachineNameViewFactory">
@@ -2061,6 +2077,10 @@
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
+      <expressions
+          body=" let base : String = 'StateMachine' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
+          body=" let base : String = 'Region' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.oclIsTypeOf(uml::State) and self.isSimple and (not self.isSubmachineState)"/>

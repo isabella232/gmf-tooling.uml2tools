@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class StateCompositeState_InternalActivities2ViewFactory extends BasicNodeViewFactory {
 
 	/**

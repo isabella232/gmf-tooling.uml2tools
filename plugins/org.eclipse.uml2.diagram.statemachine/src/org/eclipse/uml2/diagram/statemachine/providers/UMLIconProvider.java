@@ -10,6 +10,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
+
 public class UMLIconProvider extends AbstractProvider implements IIconProvider {
 
 	/**

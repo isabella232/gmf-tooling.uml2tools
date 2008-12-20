@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 /**
  * @generated
  */
+
 public class Region2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**

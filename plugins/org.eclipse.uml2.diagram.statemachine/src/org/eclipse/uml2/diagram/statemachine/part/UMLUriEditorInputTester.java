@@ -6,6 +6,7 @@ import org.eclipse.emf.common.ui.URIEditorInput;
 /**
  * @generated
  */
+
 public class UMLUriEditorInputTester extends PropertyTester {
 
 	/**

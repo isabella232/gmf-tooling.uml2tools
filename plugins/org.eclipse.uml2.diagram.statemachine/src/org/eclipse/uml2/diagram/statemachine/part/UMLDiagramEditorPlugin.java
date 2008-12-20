@@ -31,6 +31,7 @@ import org.osgi.framework.BundleContext;
 /**
  * @generated
  */
+
 public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 
 	/**

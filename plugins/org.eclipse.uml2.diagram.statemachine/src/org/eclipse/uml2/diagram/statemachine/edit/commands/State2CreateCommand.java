@@ -3,12 +3,10 @@ package org.eclipse.uml2.diagram.statemachine.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
@@ -17,11 +15,11 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
+
 public class State2CreateCommand extends EditElementCommand {
 
 	/**
@@ -32,6 +30,7 @@ public class State2CreateCommand extends EditElementCommand {
 	}
 
 	/**
+	 * FIXME: replace with setElementToEdit()
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
@@ -80,4 +79,5 @@ public class State2CreateCommand extends EditElementCommand {
 			configureCommand.execute(monitor, info);
 		}
 	}
+
 }

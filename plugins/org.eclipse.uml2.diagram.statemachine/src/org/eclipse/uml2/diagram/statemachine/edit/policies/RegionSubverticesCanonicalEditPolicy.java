@@ -55,6 +55,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+
 public class RegionSubverticesCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**

@@ -1,9 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.navigator;
 
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
@@ -55,13 +53,14 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider;
 import org.eclipse.uml2.uml.FinalState;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.Region;
-import org.eclipse.uml2.uml.StateMachine;
 
 /**
  * @generated
  */
+
 public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
@@ -110,9 +109,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	public Image getImage(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StateMachineEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/3.0.0/UML?StateMachine", UMLElementTypes.StateMachine_1000); //$NON-NLS-1$
+			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_1000); //$NON-NLS-1$
 		case StateMachine2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?StateMachine", UMLElementTypes.StateMachine_2004); //$NON-NLS-1$
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?StateMachine", UMLElementTypes.StateMachine_2005); //$NON-NLS-1$
 		case RegionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Region", UMLElementTypes.Region_3013); //$NON-NLS-1$
 		case StateEditPart.VISUAL_ID:
@@ -208,9 +207,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 		}
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StateMachineEditPart.VISUAL_ID:
-			return getStateMachine_1000Text(view);
+			return getPackage_1000Text(view);
 		case StateMachine2EditPart.VISUAL_ID:
-			return getStateMachine_2004Text(view);
+			return getStateMachine_2005Text(view);
 		case RegionEditPart.VISUAL_ID:
 			return getRegion_3013Text(view);
 		case StateEditPart.VISUAL_ID:
@@ -262,8 +261,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
-	private String getStateMachine_1000Text(View view) {
-		StateMachine domainModelElement = (StateMachine) view.getElement();
+	private String getPackage_1000Text(View view) {
+		Package domainModelElement = (Package) view.getElement();
 		if (domainModelElement != null) {
 			return String.valueOf(domainModelElement.getName());
 		} else {
@@ -275,13 +274,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	 * @generated
 	 */
-	private String getStateMachine_2004Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.StateMachine_2004, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+	private String getStateMachine_2005Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.StateMachine_2005, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
 				.getType(StateMachineNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5005); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5011); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

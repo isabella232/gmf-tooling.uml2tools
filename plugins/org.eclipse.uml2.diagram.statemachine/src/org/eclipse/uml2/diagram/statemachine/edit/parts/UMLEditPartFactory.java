@@ -18,6 +18,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class UMLEditPartFactory implements EditPartFactory {
 
 	/**
@@ -168,6 +169,7 @@ public class UMLEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
+
 	static private class TextCellEditorLocator implements CellEditorLocator {
 
 		/**
@@ -206,12 +208,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 				text.setBounds(rect.x, rect.y, rect.width, rect.height);
 			}
 		}
-
 	}
 
 	/**
 	 * @generated
 	 */
+
 	private static class LabelCellEditorLocator implements CellEditorLocator {
 
 		/**
@@ -247,4 +249,5 @@ public class UMLEditPartFactory implements EditPartFactory {
 			}
 		}
 	}
+
 }

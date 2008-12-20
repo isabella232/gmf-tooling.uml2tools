@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class RegionSubvertices2EditPart extends ShapeCompartmentEditPart {
 
 	/**

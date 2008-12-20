@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPoli
 /**
  * @generated
  */
+
 public class UMLTextSelectionEditPolicy extends SelectionEditPolicy implements IRefreshableFeedbackEditPolicy {
 
 	/**
@@ -215,4 +216,5 @@ public class UMLTextSelectionEditPolicy extends SelectionEditPolicy implements I
 			}
 		}
 	}
+
 }

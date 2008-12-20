@@ -55,6 +55,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 	/**
@@ -229,7 +230,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case StateMachineEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			UMLNavigatorGroup links = new UMLNavigatorGroup(Messages.NavigatorGroupName_StateMachine_1000_links, "icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			UMLNavigatorGroup links = new UMLNavigatorGroup(Messages.NavigatorGroupName_Package_1000_links, "icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(StateMachine2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));

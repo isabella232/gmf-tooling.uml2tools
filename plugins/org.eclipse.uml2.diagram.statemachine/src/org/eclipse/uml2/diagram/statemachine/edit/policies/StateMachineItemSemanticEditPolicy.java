@@ -8,25 +8,25 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.StateMachineCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
+
 public class StateMachineItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public StateMachineItemSemanticEditPolicy() {
-		super(UMLElementTypes.StateMachine_1000);
+		super(UMLElementTypes.Package_1000);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (UMLElementTypes.StateMachine_2004 == req.getElementType()) {
+		if (UMLElementTypes.StateMachine_2005 == req.getElementType()) {
 			return getGEFWrapper(new StateMachineCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
@@ -43,6 +43,7 @@ public class StateMachineItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	/**
 	 * @generated
 	 */
+
 	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**

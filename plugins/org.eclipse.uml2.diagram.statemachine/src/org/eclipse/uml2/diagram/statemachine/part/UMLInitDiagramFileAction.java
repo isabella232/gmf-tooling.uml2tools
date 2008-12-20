@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 /**
  * @generated
  */
+
 public class UMLInitDiagramFileAction implements IObjectActionDelegate {
 
 	/**

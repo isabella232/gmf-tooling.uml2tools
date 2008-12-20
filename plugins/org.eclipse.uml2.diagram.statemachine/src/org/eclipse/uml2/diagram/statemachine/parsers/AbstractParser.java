@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 /**
  * @generated
  */
+
 public abstract class AbstractParser implements IParser {
 
 	/**

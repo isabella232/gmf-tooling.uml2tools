@@ -49,6 +49,7 @@ import org.eclipse.uml2.diagram.statemachine.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.ConnectionPointReference;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
@@ -200,7 +201,7 @@ public class UMLVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass()) && isDiagram((StateMachine) domainElement)) {
+		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass()) && isDiagram((Package) domainElement)) {
 			return StateMachineEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -365,15 +366,9 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case StateMachineEditPart.VISUAL_ID:
-			// We want to additionally show the Canvas Semantical Element in the auxiliary 
-			// org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart (that serves as a pure visual container for children). 
-			// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
-			// list. The only remaining part is to return correct VID for this special case.
-
-			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
+			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
 				return StateMachine2EditPart.VISUAL_ID;
 			}
-			// Diagram header is already processed above
 			break;
 		}
 		return -1;
@@ -620,7 +615,7 @@ public class UMLVisualIDRegistry {
 	 * 
 	 * @generated
 	 */
-	private static boolean isDiagram(StateMachine element) {
+	private static boolean isDiagram(Package element) {
 		return true;
 	}
 
@@ -975,6 +970,9 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case StateMachineEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
+				return StateMachine2EditPart.VISUAL_ID;
+			}
 			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
 				return StateEditPart.VISUAL_ID;
 			}

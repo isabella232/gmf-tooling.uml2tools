@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 /**
  * @generated
  */
+
 public class Region2ViewFactory extends AbstractShapeViewFactory {
 
 	/**
@@ -44,4 +45,5 @@ public class Region2ViewFactory extends AbstractShapeViewFactory {
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
+
 }

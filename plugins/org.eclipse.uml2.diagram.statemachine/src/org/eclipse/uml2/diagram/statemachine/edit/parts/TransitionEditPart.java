@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.policies.TransitionItemSemanti
 /**
  * @generated
  */
+
 public class TransitionEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**

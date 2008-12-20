@@ -55,6 +55,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
+
 public class StateMachine2CanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
@@ -68,7 +69,7 @@ public class StateMachine2CanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getStateMachine_2004SemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getStateMachine_2005SemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((IUpdaterNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;

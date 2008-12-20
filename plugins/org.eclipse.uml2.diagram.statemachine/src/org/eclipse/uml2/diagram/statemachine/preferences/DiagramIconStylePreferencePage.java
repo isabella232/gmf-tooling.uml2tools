@@ -11,6 +11,7 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 /**
  * @generated
  */
+
 public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 
 	/**

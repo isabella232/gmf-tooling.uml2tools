@@ -210,9 +210,9 @@ public class UMLElementTypes extends ElementInitializers {
 		if (elements == null) {
 			elements = new IdentityHashMap();
 
-			elements.put(StateMachine_1000, UMLPackage.eINSTANCE.getStateMachine());
+			elements.put(Package_1000, UMLPackage.eINSTANCE.getPackage());
 
-			elements.put(StateMachine_2004, UMLPackage.eINSTANCE.getStateMachine());
+			elements.put(StateMachine_2005, UMLPackage.eINSTANCE.getStateMachine());
 
 			elements.put(Region_3013, UMLPackage.eINSTANCE.getRegion());
 
@@ -288,16 +288,6 @@ public class UMLElementTypes extends ElementInitializers {
 	private static ImageDescriptor getPseudostateImageDescriptor(IElementType hint) {
 		return getPseudostateImageDescriptors().get(hint);
 	}
-
-	/**
-	 * @generated
-	 */
-	public static final IHintedType StateMachine_1000 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.StateMachine_1000"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IHintedType StateMachine_2004 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.StateMachine_2004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -424,11 +414,21 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Package_1000 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Package_1000"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType StateMachine_2005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.StateMachine_2005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static boolean isKnownElementType(IElementType elementType) {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet();
-			KNOWN_ELEMENT_TYPES.add(StateMachine_1000);
-			KNOWN_ELEMENT_TYPES.add(StateMachine_2004);
+			KNOWN_ELEMENT_TYPES.add(Package_1000);
+			KNOWN_ELEMENT_TYPES.add(StateMachine_2005);
 			KNOWN_ELEMENT_TYPES.add(Region_3013);
 			KNOWN_ELEMENT_TYPES.add(State_3001);
 			KNOWN_ELEMENT_TYPES.add(Behavior_3019);
@@ -461,9 +461,9 @@ public class UMLElementTypes extends ElementInitializers {
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
 		case StateMachineEditPart.VISUAL_ID:
-			return StateMachine_1000;
+			return Package_1000;
 		case StateMachine2EditPart.VISUAL_ID:
-			return StateMachine_2004;
+			return StateMachine_2005;
 		case RegionEditPart.VISUAL_ID:
 			return Region_3013;
 		case StateEditPart.VISUAL_ID:
