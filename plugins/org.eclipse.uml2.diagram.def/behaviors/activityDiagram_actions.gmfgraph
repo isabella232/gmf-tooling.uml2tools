@@ -318,12 +318,6 @@
   </nodes>
   <nodes
       xsi:type="gmfgraph:DiagramLabel"
-      name="Action_BaseNode_name"
-      figure="ActionBaseFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <nodes
-      xsi:type="gmfgraph:DiagramLabel"
       name="ActionAddStructuralFeatureValueNode_name"
       figure="ActionBaseFigure"
       elementIcon="false"

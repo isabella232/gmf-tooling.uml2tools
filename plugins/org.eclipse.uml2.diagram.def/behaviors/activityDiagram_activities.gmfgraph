@@ -156,8 +156,8 @@
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="600"
-          dy="600"/>
+          dx="450"
+          dy="300"/>
     </facets>
   </nodes>
   <nodes
