@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_K9XhEBZkEdyzvZTv-3508A">
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_K9XhEBZkEdyzvZTv-3508A">
   <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_X2t8oBZlEdyzvZTv-3508A" name="e1"/>
   <packagedElement xmi:type="uml:AnyReceiveEvent" xmi:id="_YuTE4BZlEdyzvZTv-3508A" name="e2"/>
   <packagedElement xmi:type="uml:SignalEvent" xmi:id="_M0ZXUBZoEdyHc83xjr4kXQ" name="lab done"/>
