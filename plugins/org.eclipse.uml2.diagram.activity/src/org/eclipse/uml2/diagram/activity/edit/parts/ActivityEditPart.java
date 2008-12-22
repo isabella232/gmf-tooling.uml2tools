@@ -220,7 +220,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(600), getMapMode().DPtoLP(600));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(450), getMapMode().DPtoLP(300));
 		return result;
 	}
 
