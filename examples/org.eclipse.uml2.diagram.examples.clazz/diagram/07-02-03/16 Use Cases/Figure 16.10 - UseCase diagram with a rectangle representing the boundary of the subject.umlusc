@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_sb9hMKMhEdyv8ePVS08H-g" type="UMLUseCase" name="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.umlusecase_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_sb9hMKMhEdyv8ePVS08H-g" type="UMLUseCase" name="Figure 16.10 - UseCase diagram with a rectangle representing the boundary of the subject.umlusecase_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_sqtH0KMhEdyv8ePVS08H-g" type="2001">
     <children xmi:type="notation:Node" xmi:id="_sqtu4KMhEdyv8ePVS08H-g" type="5001"/>
     <children xmi:type="notation:Node" xmi:id="_squV8KMhEdyv8ePVS08H-g" type="7001">
@@ -15,7 +15,9 @@
     <children xmi:type="notation:Node" xmi:id="_vSLgYKMhEdyv8ePVS08H-g" type="5007"/>
     <children xmi:type="notation:Node" xmi:id="_vSLgYaMhEdyv8ePVS08H-g" type="7004">
       <children xmi:type="notation:Node" xmi:id="_OGF2IAcSEd2UQt1e5EP-lA" type="3004">
-        <children xmi:type="notation:Node" xmi:id="_OGF2IwcSEd2UQt1e5EP-lA" type="5006"/>
+        <children xmi:type="notation:Node" xmi:id="_OGF2IwcSEd2UQt1e5EP-lA" type="5006">
+          <styles xmi:type="notation:FontStyle" xmi:id="_fWd5QNAqEd2ruZxj8em4BQ" bold="true"/>
+        </children>
         <children xmi:type="notation:Node" xmi:id="_OGF2JAcSEd2UQt1e5EP-lA" type="7005">
           <styles xmi:type="notation:SortingStyle" xmi:id="_OGF2JQcSEd2UQt1e5EP-lA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_OGF2JgcSEd2UQt1e5EP-lA"/>
@@ -25,7 +27,9 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OGF2IgcSEd2UQt1e5EP-lA" x="325" y="314"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_SR3TAQcSEd2UQt1e5EP-lA" type="3004">
-        <children xmi:type="notation:Node" xmi:id="_SR3TBAcSEd2UQt1e5EP-lA" type="5006"/>
+        <children xmi:type="notation:Node" xmi:id="_SR3TBAcSEd2UQt1e5EP-lA" type="5006">
+          <styles xmi:type="notation:FontStyle" xmi:id="_fWfHYNAqEd2ruZxj8em4BQ" bold="true"/>
+        </children>
         <children xmi:type="notation:Node" xmi:id="_SR3TBQcSEd2UQt1e5EP-lA" type="7005">
           <styles xmi:type="notation:SortingStyle" xmi:id="_SR3TBgcSEd2UQt1e5EP-lA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_SR3TBwcSEd2UQt1e5EP-lA"/>
@@ -35,7 +39,9 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SR3TAwcSEd2UQt1e5EP-lA" x="345" y="167"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_VIs9QAcSEd2UQt1e5EP-lA" type="3004">
-        <children xmi:type="notation:Node" xmi:id="_VIs9QwcSEd2UQt1e5EP-lA" type="5006"/>
+        <children xmi:type="notation:Node" xmi:id="_VIs9QwcSEd2UQt1e5EP-lA" type="5006">
+          <styles xmi:type="notation:FontStyle" xmi:id="_fWfucNAqEd2ruZxj8em4BQ" bold="true"/>
+        </children>
         <children xmi:type="notation:Node" xmi:id="_VIs9RAcSEd2UQt1e5EP-lA" type="7005">
           <styles xmi:type="notation:SortingStyle" xmi:id="_VIs9RQcSEd2UQt1e5EP-lA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_VIs9RgcSEd2UQt1e5EP-lA"/>
@@ -45,7 +51,9 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VIs9QgcSEd2UQt1e5EP-lA" x="104" y="59"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_YD3t4QcSEd2UQt1e5EP-lA" type="3004">
-        <children xmi:type="notation:Node" xmi:id="_YEA30AcSEd2UQt1e5EP-lA" type="5006"/>
+        <children xmi:type="notation:Node" xmi:id="_YEA30AcSEd2UQt1e5EP-lA" type="5006">
+          <styles xmi:type="notation:FontStyle" xmi:id="_fWgVgNAqEd2ruZxj8em4BQ" bold="true"/>
+        </children>
         <children xmi:type="notation:Node" xmi:id="_YEA30QcSEd2UQt1e5EP-lA" type="7005">
           <styles xmi:type="notation:SortingStyle" xmi:id="_YEA30gcSEd2UQt1e5EP-lA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_YEA30wcSEd2UQt1e5EP-lA"/>
