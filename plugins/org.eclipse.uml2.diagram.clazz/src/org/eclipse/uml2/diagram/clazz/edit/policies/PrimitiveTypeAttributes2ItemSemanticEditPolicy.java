@@ -23,9 +23,6 @@ public class PrimitiveTypeAttributes2ItemSemanticEditPolicy extends UMLBaseItemS
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Property_3021 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getDataType_OwnedAttribute());
-			}
 			return getGEFWrapper(new Property4CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

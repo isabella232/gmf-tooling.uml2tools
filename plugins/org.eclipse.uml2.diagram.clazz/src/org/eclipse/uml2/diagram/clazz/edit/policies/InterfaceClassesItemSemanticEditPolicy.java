@@ -23,9 +23,6 @@ public class InterfaceClassesItemSemanticEditPolicy extends UMLBaseItemSemanticE
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Class_3030 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInterface_NestedClassifier());
-			}
 			return getGEFWrapper(new Class4CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

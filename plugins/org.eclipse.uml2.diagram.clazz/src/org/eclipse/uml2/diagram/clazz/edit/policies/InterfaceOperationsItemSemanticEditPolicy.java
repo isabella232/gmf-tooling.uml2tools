@@ -23,9 +23,6 @@ public class InterfaceOperationsItemSemanticEditPolicy extends UMLBaseItemSemant
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Operation_3029 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInterface_OwnedOperation());
-			}
 			return getGEFWrapper(new Operation6CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

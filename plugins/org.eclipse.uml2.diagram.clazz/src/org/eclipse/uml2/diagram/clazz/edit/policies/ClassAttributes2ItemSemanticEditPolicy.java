@@ -23,9 +23,6 @@ public class ClassAttributes2ItemSemanticEditPolicy extends UMLBaseItemSemanticE
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Property_3001 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
-			}
 			return getGEFWrapper(new PropertyNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

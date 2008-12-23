@@ -28,39 +28,21 @@ public class PackageAsFrameContents2ItemSemanticEditPolicy extends UMLBaseItemSe
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Package_3032 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new Package5CreateCommand(req));
 		}
 		if (UMLElementTypes.Class_3033 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new Class5CreateCommand(req));
 		}
 		if (UMLElementTypes.Enumeration_3034 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new Enumeration3CreateCommand(req));
 		}
 		if (UMLElementTypes.InstanceSpecification_3035 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new InstanceSpecification3CreateCommand(req));
 		}
 		if (UMLElementTypes.DataType_3036 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new DataType3CreateCommand(req));
 		}
 		if (UMLElementTypes.PrimitiveType_3037 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new PrimitiveType3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -23,9 +23,6 @@ public class PackageOtherItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.InstanceSpecification_3013 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new InstanceSpecificationCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -84,9 +84,6 @@ public class AssociationClass2ItemSemanticEditPolicy extends UMLBaseItemSemantic
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.RedefinableTemplateSignature_3027 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getTemplateableElement_OwnedTemplateSignature());
-			}
 			return getGEFWrapper(new RedefinableTemplateSignatureCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

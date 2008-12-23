@@ -23,9 +23,6 @@ public class DataTypeOperations2ItemSemanticEditPolicy extends UMLBaseItemSemant
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Operation_3015 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getDataType_OwnedOperation());
-			}
 			return getGEFWrapper(new Operation3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

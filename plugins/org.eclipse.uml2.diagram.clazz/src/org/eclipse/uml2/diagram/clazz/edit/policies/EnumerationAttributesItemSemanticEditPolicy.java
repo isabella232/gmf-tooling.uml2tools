@@ -23,9 +23,6 @@ public class EnumerationAttributesItemSemanticEditPolicy extends UMLBaseItemSema
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Property_3023 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getDataType_OwnedAttribute());
-			}
 			return getGEFWrapper(new Property5CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

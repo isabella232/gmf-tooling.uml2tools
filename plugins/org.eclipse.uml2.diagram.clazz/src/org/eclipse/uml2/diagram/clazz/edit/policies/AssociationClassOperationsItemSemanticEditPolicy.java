@@ -23,9 +23,6 @@ public class AssociationClassOperationsItemSemanticEditPolicy extends UMLBaseIte
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Operation_3020 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getClass_OwnedOperation());
-			}
 			return getGEFWrapper(new Operation2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

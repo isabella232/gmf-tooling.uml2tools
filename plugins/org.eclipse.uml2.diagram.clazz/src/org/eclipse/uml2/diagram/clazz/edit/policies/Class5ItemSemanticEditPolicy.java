@@ -86,15 +86,9 @@ public class Class5ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Port_3025 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
-			}
 			return getGEFWrapper(new PortCreateCommand(req));
 		}
 		if (UMLElementTypes.RedefinableTemplateSignature_3027 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getTemplateableElement_OwnedTemplateSignature());
-			}
 			return getGEFWrapper(new RedefinableTemplateSignatureCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

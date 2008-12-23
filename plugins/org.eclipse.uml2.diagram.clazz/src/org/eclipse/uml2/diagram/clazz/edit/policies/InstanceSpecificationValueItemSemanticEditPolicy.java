@@ -25,15 +25,9 @@ public class InstanceSpecificationValueItemSemanticEditPolicy extends UMLBaseIte
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.LiteralString_3038 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInstanceSpecification_Specification());
-			}
 			return getGEFWrapper(new LiteralStringCreateCommand(req));
 		}
 		if (UMLElementTypes.Expression_3040 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInstanceSpecification_Specification());
-			}
 			return getGEFWrapper(new ExpressionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

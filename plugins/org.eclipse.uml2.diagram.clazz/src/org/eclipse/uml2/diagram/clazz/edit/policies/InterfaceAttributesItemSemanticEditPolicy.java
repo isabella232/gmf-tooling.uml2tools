@@ -23,9 +23,6 @@ public class InterfaceAttributesItemSemanticEditPolicy extends UMLBaseItemSemant
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Property_3028 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInterface_OwnedAttribute());
-			}
 			return getGEFWrapper(new Property6CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
