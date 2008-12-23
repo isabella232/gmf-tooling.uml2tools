@@ -3,12 +3,17 @@ package org.eclipse.uml2.diagram.clazz.edit.policies;
 import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
+import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Node;
@@ -45,6 +50,7 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.UsageReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassAttributesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassClassesEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassOperationsEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Class3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.CommentAnnotatedElementEditPart;
@@ -309,6 +315,36 @@ public class AssociationClass2ItemSemanticEditPolicy extends UMLBaseItemSemantic
 			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		View primaryView = (View) getHost().getModel();
+		DeleteCommand primaryDelete = new DeleteCommand(editingDomain, primaryView);
+		CompositeTransactionalCommand result = new CompositeTransactionalCommand(editingDomain, primaryDelete.getLabel());
+		result.add(primaryDelete);
+
+		View container = (View) primaryView.eContainer();
+		for (Object nextChild : container.getChildren()) {
+			View nextChildView = (View) nextChild;
+			if (nextChildView.getElement() != primaryView.getElement()) {
+				continue;
+			}
+			switch (UMLVisualIDRegistry.getVisualID(nextChildView)) {
+			case AssociationClassRhombEditPart.VISUAL_ID: {
+				result.add(new DeleteCommand(editingDomain, nextChildView));
+				break;
+			}
+			default:
+				break;
+			}
+		}
+		Command gefResult = getGEFWrapper(result.reduce());
+		return mainCommand == null ? gefResult : mainCommand.chain(gefResult);
 	}
 
 }

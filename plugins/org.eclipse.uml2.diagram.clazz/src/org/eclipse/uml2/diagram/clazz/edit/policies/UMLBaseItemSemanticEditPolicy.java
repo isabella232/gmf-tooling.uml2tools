@@ -124,19 +124,22 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
 		semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
-		boolean shouldProceed = true;
 		if (completedRequest instanceof DestroyRequest) {
-			shouldProceed = shouldProceed((DestroyRequest) completedRequest);
-		}
-		if (shouldProceed) {
-			if (completedRequest instanceof DestroyRequest) {
-				TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
-				Command deleteViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View) getHost().getModel()));
-				semanticCommand = semanticCommand == null ? deleteViewCommand : semanticCommand.chain(deleteViewCommand);
+			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
+			if (shouldProceed(destroyRequest)) {
+				semanticCommand = addDeleteViewCommand(semanticCommand, destroyRequest);
 			}
-			return semanticCommand;
 		}
-		return null;
+		return semanticCommand;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		DeleteCommand delete = new DeleteCommand(editingDomain, (View) getHost().getModel());
+		return mainCommand == null ? getGEFWrapper(delete) : mainCommand.chain(getGEFWrapper(delete));
 	}
 
 	/**
