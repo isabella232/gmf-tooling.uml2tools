@@ -145,14 +145,14 @@ public class UMLNewDiagramFileWizard extends Wizard {
 			if (synchronizationPage.wasVisible() && synchronizationPage.getSyncRoot() != null) {
 				IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 				DiagramEditPart diagramEditPart = ((IDiagramWorkbenchPart) editorPart).getDiagramEditPart();
-				if (!diagramEditPart.getChildren().isEmpty()){
+				if (!diagramEditPart.getChildren().isEmpty()) {
 					List<IAdaptable> viewAdapters = new ArrayList<IAdaptable>(diagramEditPart.getChildren().size());
-					for (Object next : diagramEditPart.getChildren()){
-						if (next instanceof IGraphicalEditPart){
-							viewAdapters.add(new EObjectAdapter(((IGraphicalEditPart)next).getNotationView()));
+					for (Object next : diagramEditPart.getChildren()) {
+						if (next instanceof IGraphicalEditPart) {
+							viewAdapters.add(new EObjectAdapter(((IGraphicalEditPart) next).getNotationView()));
 						}
 					}
-					if (!viewAdapters.isEmpty()){
+					if (!viewAdapters.isEmpty()) {
 						DeferredLayoutCommand layout = new DeferredLayoutCommand(myEditingDomain, viewAdapters, diagramEditPart);
 						OperationHistoryFactory.getOperationHistory().execute(layout, new NullProgressMonitor(), null);
 					}
