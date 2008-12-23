@@ -84,6 +84,13 @@ public class PortProvidedCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	protected void setElementToEdit(EObject element) {
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * @generated
+	 */
 	protected Port getSource() {
 		return (Port) source;
 	}

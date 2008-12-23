@@ -1,8 +1,16 @@
 package org.eclipse.uml2.diagram.clazz.edit.commands;
 
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
@@ -15,13 +23,13 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 
-public class Interface3CreateCommand extends CreateElementCommand {
+public class Interface3CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
 	public Interface3CreateCommand(CreateElementRequest req) {
-		super(req);
+		super(req.getLabel(), null, req);
 	}
 
 	/**
@@ -38,20 +46,40 @@ public class Interface3CreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected EClass getEClassToEdit() {
-		return UMLPackage.eINSTANCE.getPackage();
+	public boolean canExecute() {
+		return true;
+
 	}
 
 	/**
 	 * @generated
 	 */
-	protected EObject doDefaultElementCreation() {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Interface newElement = UMLFactory.eINSTANCE.createInterface();
 
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
+
 		UMLElementTypes.init_Interface_3041(newElement);
-		return newElement;
+
+		doConfigure(newElement, monitor, info);
+
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
+		return CommandResult.newOKCommandResult(newElement);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void doConfigure(Interface newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
+		configureRequest.addParameters(getRequest().getParameters());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
+		if (configureCommand != null && configureCommand.canExecute()) {
+			configureCommand.execute(monitor, info);
+		}
 	}
 
 }

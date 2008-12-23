@@ -6,8 +6,12 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.NamedElement;
@@ -19,7 +23,7 @@ import org.eclipse.uml2.uml.Usage;
 /**
  * @generated
  */
-public class UsageCreateCommand extends CreateElementCommand {
+public class UsageCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -40,17 +44,10 @@ public class UsageCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	public UsageCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
-		super(request);
+		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
-		if (request.getContainmentFeature() == null) {
-			setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-		}
-
 		container = deduceContainer(source, target);
-		if (container != null) {
-			super.setElementToEdit(container);
-		}
 	}
 
 	/**
@@ -79,39 +76,35 @@ public class UsageCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected EObject doDefaultElementCreation() {
-		Usage newElement = UMLFactory.eINSTANCE.createUsage();
-		getContainer().getPackagedElements().add(newElement);
-		newElement.getClients().add(getSource());
-		newElement.getSuppliers().add(getTarget());
-		return newElement;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected EClass getEClassToEdit() {
-		return UMLPackage.eINSTANCE.getPackage();
-	}
-
-	/**
-	 * @generated
-	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-		return super.doExecuteWithResult(monitor, info);
+
+		Usage newElement = UMLFactory.eINSTANCE.createUsage();
+		getContainer().getPackagedElements().add(newElement);
+		newElement.getClients().add(getSource());
+		newElement.getSuppliers().add(getTarget());
+		doConfigure(newElement, monitor, info);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
+		return CommandResult.newOKCommandResult(newElement);
+
 	}
 
 	/**
 	 * @generated
 	 */
-	protected ConfigureRequest createConfigureRequest() {
-		ConfigureRequest request = super.createConfigureRequest();
-		request.setParameter(CreateRelationshipRequest.SOURCE, getSource());
-		request.setParameter(CreateRelationshipRequest.TARGET, getTarget());
-		return request;
+	protected void doConfigure(Usage newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
+		configureRequest.addParameters(getRequest().getParameters());
+		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, getSource());
+		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
+		if (configureCommand != null && configureCommand.canExecute()) {
+			configureCommand.execute(monitor, info);
+		}
 	}
 
 	/**

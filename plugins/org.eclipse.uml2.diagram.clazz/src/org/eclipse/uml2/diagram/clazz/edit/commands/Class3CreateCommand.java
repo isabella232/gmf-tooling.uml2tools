@@ -1,8 +1,16 @@
 package org.eclipse.uml2.diagram.clazz.edit.commands;
 
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
@@ -13,20 +21,13 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class Class3CreateCommand extends CreateElementCommand {
+public class Class3CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
 	public Class3CreateCommand(CreateElementRequest req) {
-		super(req);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected EClass getEClassToEdit() {
-		return UMLPackage.eINSTANCE.getClass_();
+		super(req.getLabel(), null, req);
 	}
 
 	/**
@@ -43,13 +44,40 @@ public class Class3CreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected EObject doDefaultElementCreation() {
+	public boolean canExecute() {
+		return true;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Class newElement = UMLFactory.eINSTANCE.createClass();
 
 		Class owner = (Class) getElementToEdit();
 		owner.getNestedClassifiers().add(newElement);
+
 		UMLElementTypes.init_Class_3003(newElement);
-		return newElement;
+
+		doConfigure(newElement, monitor, info);
+
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
+		return CommandResult.newOKCommandResult(newElement);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void doConfigure(Class newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
+		configureRequest.addParameters(getRequest().getParameters());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
+		if (configureCommand != null && configureCommand.canExecute()) {
+			configureCommand.execute(monitor, info);
+		}
 	}
 
 }
