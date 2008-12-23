@@ -18,6 +18,7 @@ import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * @generated
@@ -90,7 +91,7 @@ public class AssociationCreateCommand extends EditElementCommand {
 		Association newElement = targetType.createAssociation(//
 				false, AggregationKind.NONE_LITERAL, CustomMessages.AssociationCreateCommand_source_end, 1, 1, // 
 				sourceType, setNavigability, AggregationKind.NONE_LITERAL, CustomMessages.AssociationCreateCommand_target_end, 1, 1);
-		
+
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);

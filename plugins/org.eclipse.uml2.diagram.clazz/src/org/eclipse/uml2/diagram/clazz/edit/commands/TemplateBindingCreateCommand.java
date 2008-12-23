@@ -82,7 +82,7 @@ public class TemplateBindingCreateCommand extends EditElementCommand {
 		newElement.setBoundElement(getSource());
 		newElement.setSignature(getTarget().getOwnedTemplateSignature());
 		newElement.createParameterSubstitution();
-		
+
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);

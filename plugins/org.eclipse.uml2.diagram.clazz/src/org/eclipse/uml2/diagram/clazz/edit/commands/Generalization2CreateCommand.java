@@ -104,7 +104,7 @@ public class Generalization2CreateCommand extends EditElementCommand {
 			configureCommand.execute(monitor, info);
 		}
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
