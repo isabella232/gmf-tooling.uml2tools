@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateSimpleState_InternalActivitiesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 /**
@@ -45,6 +46,7 @@ public class StateViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StateNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StateStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StateSimpleState_InternalActivitiesEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 

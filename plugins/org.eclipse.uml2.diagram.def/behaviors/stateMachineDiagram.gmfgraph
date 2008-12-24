@@ -28,7 +28,9 @@
             vertical="true"
             matchMinorSize="true"
             forceSingleLine="true"
-            minorAlignment="CENTER"/>
+            minorAlignment="CENTER"
+            majorSpacing="0"
+            minorSpacing="0"/>
         <border
             xsi:type="gmfgraph:MarginBorder">
           <insets
@@ -37,6 +39,9 @@
               bottom="4"
               right="4"/>
         </border>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SimpleStateFigure_stereo"/>
         <children
             xsi:type="gmfgraph:Label"
             name="SimpleStateFigure_name"/>
@@ -52,6 +57,8 @@
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="CompositeStateFigure">
@@ -87,6 +94,9 @@
               minorSpacing="0"/>
           <children
               xsi:type="gmfgraph:Label"
+              name="CompositeStateFigure_stereo"/>
+          <children
+              xsi:type="gmfgraph:Label"
               name="CompositeStateFigure_name"
               text=""/>
           <children
@@ -113,9 +123,11 @@
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
       <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
+      <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.2"/>
     </descriptors>
     <descriptors
         name="RegionFigure">
@@ -488,39 +500,49 @@
   <compartments
       name="CompositeStateContent"
       figure="CompositeStateFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
   <compartments
       name="SimpleState_InternalActivities"
       figure="SimpleStateFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <compartments
       name="CompositeState_InternalActivities"
       figure="CompositeStateFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.3"/>
+  <labels
+      name="CompositeStateNode_stereo"
+      figure="CompositeStateFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="CompositeStateNode_name"
       figure="CompositeStateFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="EntryExitPoint_ExternalLabel"
       figure="EntryExitPointFigure_ExternalLabel"
       elementIcon="false"/>
   <labels
-      name="SimpleStateNode_name"
+      name="SimpleStateNode_stereo"
       figure="SimpleStateFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
+      name="SimpleStateNode_name"
+      figure="SimpleStateFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels
       name="StateMachineNode_name"
       figure="CompositeStateFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="SubmachineStateNode_name"
       figure="CompositeStateFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="EntryExitPointConnectionPointReferenceNode_ExternalLabel"
       figure="EntryExitPointFigure_ExternalLabel"

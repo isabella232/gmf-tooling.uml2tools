@@ -145,6 +145,10 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 			((StateMachineNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof StateMachineStereotypeEditPart) {
+			((StateMachineStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof Pseudostate9EditPart) {
 			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((Pseudostate9EditPart) childEditPart).getFigure(), locator);
@@ -315,6 +319,11 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 		/**
 		 * @generated
 		 */
+		private Label fFigureCompositeStateFigure_stereo;
+
+		/**
+		 * @generated
+		 */
 		private Label fFigureCompositeStateFigure_name;
 
 		/**
@@ -358,6 +367,11 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 			layoutCompositeStateFigure_UpperContainer0.setVertical(true);
 
 			compositeStateFigure_UpperContainer0.setLayoutManager(layoutCompositeStateFigure_UpperContainer0);
+
+			fFigureCompositeStateFigure_stereo = new Label();
+			fFigureCompositeStateFigure_stereo.setText("");
+
+			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_stereo);
 
 			fFigureCompositeStateFigure_name = new Label();
 			fFigureCompositeStateFigure_name.setText("");
@@ -419,6 +433,13 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureCompositeStateFigure_stereo() {
+			return fFigureCompositeStateFigure_stereo;
 		}
 
 	}

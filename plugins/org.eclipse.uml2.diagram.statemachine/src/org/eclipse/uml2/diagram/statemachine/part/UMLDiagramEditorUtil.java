@@ -52,13 +52,13 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 /**
  * @generated
  */
+
 public class UMLDiagramEditorUtil {
 
 	/**
@@ -141,11 +141,8 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * <p>
 	 * This method should be called within a workspace modify operation since it creates resources.
-	 * </p>
 	 * @generated
-	 * @return the created resource, or <code>null</code> if the resource was not created
 	 */
 	public static Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
@@ -187,6 +184,9 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
+	 * Create a new instance of domain element associated with canvas.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private static Package createInitialModel() {
@@ -228,27 +228,6 @@ public class UMLDiagramEditorUtil {
 	/**
 	 * @generated
 	 */
-	public static View findView(DiagramEditPart diagramEditPart, EObject targetElement, LazyElement2ViewMap lazyElement2ViewMap) {
-		boolean hasStructuralURI = false;
-		if (targetElement.eResource() instanceof XMLResource) {
-			hasStructuralURI = ((XMLResource) targetElement.eResource()).getID(targetElement) == null;
-		}
-
-		View view = null;
-		if (hasStructuralURI && !lazyElement2ViewMap.getElement2ViewMap().isEmpty()) {
-			view = (View) lazyElement2ViewMap.getElement2ViewMap().get(targetElement);
-		} else if (findElementsInDiagramByID(diagramEditPart, targetElement, lazyElement2ViewMap.editPartTmpHolder) > 0) {
-			EditPart editPart = (EditPart) lazyElement2ViewMap.editPartTmpHolder.get(0);
-			lazyElement2ViewMap.editPartTmpHolder.clear();
-			view = editPart.getModel() instanceof View ? (View) editPart.getModel() : null;
-		}
-
-		return (view == null) ? diagramEditPart.getDiagramView() : view;
-	}
-
-	/**
-	 * @generated
-	 */
 	private static int findElementsInDiagramByID(DiagramEditPart diagramPart, EObject element, List editPartCollector) {
 		IDiagramGraphicalViewer viewer = (IDiagramGraphicalViewer) diagramPart.getViewer();
 		final int intialNumOfEditParts = editPartCollector.size();
@@ -285,6 +264,27 @@ public class UMLDiagramEditorUtil {
 			}
 		}
 		return editPartCollector.size() - intialNumOfEditParts;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static View findView(DiagramEditPart diagramEditPart, EObject targetElement, LazyElement2ViewMap lazyElement2ViewMap) {
+		boolean hasStructuralURI = false;
+		if (targetElement.eResource() instanceof XMLResource) {
+			hasStructuralURI = ((XMLResource) targetElement.eResource()).getID(targetElement) == null;
+		}
+
+		View view = null;
+		if (hasStructuralURI && !lazyElement2ViewMap.getElement2ViewMap().isEmpty()) {
+			view = (View) lazyElement2ViewMap.getElement2ViewMap().get(targetElement);
+		} else if (findElementsInDiagramByID(diagramEditPart, targetElement, lazyElement2ViewMap.editPartTmpHolder) > 0) {
+			EditPart editPart = (EditPart) lazyElement2ViewMap.editPartTmpHolder.get(0);
+			lazyElement2ViewMap.editPartTmpHolder.clear();
+			view = editPart.getModel() instanceof View ? (View) editPart.getModel() : null;
+		}
+
+		return (view == null) ? diagramEditPart.getDiagramView() : view;
 	}
 
 	/**
@@ -399,4 +399,5 @@ public class UMLDiagramEditorUtil {
 		model.createElementImport(umlLibrary.getOwnedType("UnlimitedNatural"));
 		model.createElementImport(umlLibrary.getOwnedType("Integer"));
 	}
+
 }

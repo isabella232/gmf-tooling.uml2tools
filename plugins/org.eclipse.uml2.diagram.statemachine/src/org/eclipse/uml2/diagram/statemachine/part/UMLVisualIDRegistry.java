@@ -38,10 +38,14 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateSimpleState_InternalActivitiesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotype2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotype3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
@@ -397,6 +401,9 @@ public class UMLVisualIDRegistry {
 			if (StateMachineNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (StateMachineStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (RegionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -416,12 +423,18 @@ public class UMLVisualIDRegistry {
 			if (StateNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (StateStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (StateSimpleState_InternalActivitiesEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case State2EditPart.VISUAL_ID:
 			if (StateName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StateStereotype3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (StateCompositeState_InternalActivitiesEditPart.VISUAL_ID == nodeVisualID) {
@@ -438,6 +451,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case State3EditPart.VISUAL_ID:
 			if (StateName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StateStereotype2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (StateCompositeState_InternalActivities2EditPart.VISUAL_ID == nodeVisualID) {

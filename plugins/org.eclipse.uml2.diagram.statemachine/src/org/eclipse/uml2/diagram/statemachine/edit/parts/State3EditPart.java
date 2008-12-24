@@ -153,6 +153,10 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 			((StateName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof StateStereotype2EditPart) {
+			((StateStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof StateCompositeState_InternalActivities2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_InternalActivitiesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -544,6 +548,11 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		/**
 		 * @generated
 		 */
+		private Label fFigureCompositeStateFigure_stereo;
+
+		/**
+		 * @generated
+		 */
 		private Label fFigureCompositeStateFigure_name;
 
 		/**
@@ -587,6 +596,11 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 			layoutCompositeStateFigure_UpperContainer0.setVertical(true);
 
 			compositeStateFigure_UpperContainer0.setLayoutManager(layoutCompositeStateFigure_UpperContainer0);
+
+			fFigureCompositeStateFigure_stereo = new Label();
+			fFigureCompositeStateFigure_stereo.setText("");
+
+			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_stereo);
 
 			fFigureCompositeStateFigure_name = new Label();
 			fFigureCompositeStateFigure_name.setText("");
@@ -648,6 +662,13 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureCompositeStateFigure_stereo() {
+			return fFigureCompositeStateFigure_stereo;
 		}
 
 	}

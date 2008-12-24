@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
@@ -20,9 +21,13 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotype2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotype3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.parser.SubmachineStateParser;
 import org.eclipse.uml2.diagram.statemachine.parser.TransitionParser;
@@ -62,6 +67,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private AppliedStereotypeParser stateMachineQualifiedName_5012Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStateMachineQualifiedName_5012Parser() {
+		if (stateMachineQualifiedName_5012Parser == null) {
+			stateMachineQualifiedName_5012Parser = new AppliedStereotypeParser();
+		}
+		return stateMachineQualifiedName_5012Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser stateName_5001Parser;
 
 	/**
@@ -81,6 +101,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser stateQualifiedName_5015Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStateQualifiedName_5015Parser() {
+		if (stateQualifiedName_5015Parser == null) {
+			stateQualifiedName_5015Parser = new AppliedStereotypeParser();
+		}
+		return stateQualifiedName_5015Parser;
 	}
 
 	/**
@@ -191,6 +226,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private AppliedStereotypeParser stateQualifiedName_5013Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStateQualifiedName_5013Parser() {
+		if (stateQualifiedName_5013Parser == null) {
+			stateQualifiedName_5013Parser = new AppliedStereotypeParser();
+		}
+		return stateQualifiedName_5013Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser stateName_5008Parser;
 
 	/**
@@ -208,6 +258,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createStateName_5008Parser() {
 		return new SubmachineStateParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser stateQualifiedName_5014Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStateQualifiedName_5014Parser() {
+		if (stateQualifiedName_5014Parser == null) {
+			stateQualifiedName_5014Parser = new AppliedStereotypeParser();
+		}
+		return stateQualifiedName_5014Parser;
 	}
 
 	/**
@@ -335,8 +400,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case StateMachineNameEditPart.VISUAL_ID:
 			return getStateMachineName_5011Parser();
+		case StateMachineStereotypeEditPart.VISUAL_ID:
+			return getStateMachineQualifiedName_5012Parser();
 		case StateNameEditPart.VISUAL_ID:
 			return getStateName_5001Parser();
+		case StateStereotypeEditPart.VISUAL_ID:
+			return getStateQualifiedName_5015Parser();
 		case BehaviorEditPart.VISUAL_ID:
 			return getBehavior_3019Parser();
 		case Behavior2EditPart.VISUAL_ID:
@@ -345,8 +414,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getBehavior_3021Parser();
 		case StateName3EditPart.VISUAL_ID:
 			return getStateName_5004Parser();
+		case StateStereotype3EditPart.VISUAL_ID:
+			return getStateQualifiedName_5013Parser();
 		case StateName2EditPart.VISUAL_ID:
 			return getStateName_5008Parser();
+		case StateStereotype2EditPart.VISUAL_ID:
+			return getStateQualifiedName_5014Parser();
 		case ConnectionPointReferenceNameEditPart.VISUAL_ID:
 			return getConnectionPointReferenceName_5009Parser();
 		case ConnectionPointReferenceName2EditPart.VISUAL_ID:

@@ -47,6 +47,13 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="stateMachineDiagram.gmfgraph#CompositeStateNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -89,6 +96,13 @@
                     href="stateMachineDiagram.gmfgraph#SimpleStateNode_name"/>
                 <features
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#SimpleStateNode_stereo"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
@@ -216,6 +230,13 @@
                 <features
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
               </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#CompositeStateNode_stereo"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.1/@tools.1"/>
@@ -279,6 +300,13 @@
                     href="stateMachineDiagram.gmfgraph#SubmachineStateNode_name"/>
                 <features
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#CompositeStateNode_stereo"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:GenericTool"

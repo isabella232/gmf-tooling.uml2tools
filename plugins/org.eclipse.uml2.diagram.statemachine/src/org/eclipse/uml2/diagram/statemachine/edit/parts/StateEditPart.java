@@ -125,6 +125,10 @@ public class StateEditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 			((StateNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureSimpleStateFigure_name());
 			return true;
 		}
+		if (childEditPart instanceof StateStereotypeEditPart) {
+			((StateStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureSimpleStateFigure_stereo());
+			return true;
+		}
 		if (childEditPart instanceof StateSimpleState_InternalActivitiesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureSimpleStateFigure_InternalActivitiesCompartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -491,6 +495,11 @@ public class StateEditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 		/**
 		 * @generated
 		 */
+		private Label fFigureSimpleStateFigure_stereo;
+
+		/**
+		 * @generated
+		 */
 		private Label fFigureSimpleStateFigure_name;
 
 		/**
@@ -507,7 +516,7 @@ public class StateEditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 			layoutThis.setStretchMinorAxis(true);
 			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
-			layoutThis.setSpacing(5);
+			layoutThis.setSpacing(0);
 			layoutThis.setVertical(true);
 
 			this.setLayoutManager(layoutThis);
@@ -521,6 +530,11 @@ public class StateEditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 		 * @generated
 		 */
 		private void createContents() {
+
+			fFigureSimpleStateFigure_stereo = new Label();
+			fFigureSimpleStateFigure_stereo.setText("");
+
+			this.add(fFigureSimpleStateFigure_stereo);
 
 			fFigureSimpleStateFigure_name = new Label();
 			fFigureSimpleStateFigure_name.setText("");
@@ -552,6 +566,13 @@ public class StateEditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Label getFigureSimpleStateFigure_stereo() {
+			return fFigureSimpleStateFigure_stereo;
 		}
 
 		/**
