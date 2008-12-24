@@ -2491,6 +2491,84 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser valueSpecificationActionName_5133Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValueSpecificationActionName_5133Parser() {
+		if (valueSpecificationActionName_5133Parser == null) {
+			valueSpecificationActionName_5133Parser = createValueSpecificationActionName_5133Parser();
+		}
+		return valueSpecificationActionName_5133Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createValueSpecificationActionName_5133Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser valueSpecificationActionQualifiedName_5134Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValueSpecificationActionQualifiedName_5134Parser() {
+		if (valueSpecificationActionQualifiedName_5134Parser == null) {
+			valueSpecificationActionQualifiedName_5134Parser = createValueSpecificationActionQualifiedName_5134Parser();
+		}
+		return valueSpecificationActionQualifiedName_5134Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createValueSpecificationActionQualifiedName_5134Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_QualifiedName() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ObjectNodeTypeAndInStateParser outputPinName_5137Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinName_5137Parser() {
+		if (outputPinName_5137Parser == null) {
+			outputPinName_5137Parser = new ObjectNodeTypeAndInStateParser();
+		}
+		return outputPinName_5137Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ObjectNodeAttributesParser outputPinOrdering_5138Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOutputPinOrdering_5138Parser() {
+		if (outputPinOrdering_5138Parser == null) {
+			outputPinOrdering_5138Parser = new ObjectNodeAttributesParser();
+		}
+		return outputPinOrdering_5138Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser loopNodeName_5091Parser;
 
 	/**
@@ -2586,6 +2664,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createExpansionRegionMode_5087Parser() {
 		return new ExpansionRegionParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser valueSpecificationActionName_5135Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValueSpecificationActionName_5135Parser() {
+		if (valueSpecificationActionName_5135Parser == null) {
+			valueSpecificationActionName_5135Parser = createValueSpecificationActionName_5135Parser();
+		}
+		return valueSpecificationActionName_5135Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createValueSpecificationActionName_5135Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser valueSpecificationActionQualifiedName_5136Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getValueSpecificationActionQualifiedName_5136Parser() {
+		if (valueSpecificationActionQualifiedName_5136Parser == null) {
+			valueSpecificationActionQualifiedName_5136Parser = createValueSpecificationActionQualifiedName_5136Parser();
+		}
+		return valueSpecificationActionQualifiedName_5136Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createValueSpecificationActionQualifiedName_5136Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_QualifiedName() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -3015,6 +3141,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConditionalNodeQualifiedName_5115Parser();
 		case ExpansionRegionMode2EditPart.VISUAL_ID:
 			return getExpansionRegionMode_5088Parser();
+		case ValueSpecificationActionNameEditPart.VISUAL_ID:
+			return getValueSpecificationActionName_5133Parser();
+		case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+			return getValueSpecificationActionQualifiedName_5134Parser();
+		case OutputPinName6EditPart.VISUAL_ID:
+			return getOutputPinName_5137Parser();
+		case OutputPinOrdering6EditPart.VISUAL_ID:
+			return getOutputPinOrdering_5138Parser();
 		case LoopNodeNameEditPart.VISUAL_ID:
 			return getLoopNodeName_5091Parser();
 		case LoopNodeStereotypeEditPart.VISUAL_ID:
@@ -3025,6 +3159,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConditionalNodeQualifiedName_5116Parser();
 		case ExpansionRegionModeEditPart.VISUAL_ID:
 			return getExpansionRegionMode_5087Parser();
+		case ValueSpecificationActionName2EditPart.VISUAL_ID:
+			return getValueSpecificationActionName_5135Parser();
+		case ValueSpecificationActionStereotype2EditPart.VISUAL_ID:
+			return getValueSpecificationActionQualifiedName_5136Parser();
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049Parser();
 		case LiteralString2EditPart.VISUAL_ID:

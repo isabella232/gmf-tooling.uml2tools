@@ -38,6 +38,7 @@ import org.eclipse.uml2.uml.Pin;
 import org.eclipse.uml2.uml.SendSignalAction;
 import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.ValueSpecificationAction;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -346,6 +347,11 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static UMLAbstractExpression ValueSpecificationAction_3088_Constraint;
+
+	/**
+	 * @generated
+	 */
 	private static UMLAbstractExpression LoopNode_3058_Constraint;
 
 	/**
@@ -357,6 +363,11 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static UMLAbstractExpression ExpansionRegion_3084_Constraint;
+
+	/**
+	 * @generated
+	 */
+	private static UMLAbstractExpression ValueSpecificationAction_3089_Constraint;
 
 	/**
 	 * @generated
@@ -523,6 +534,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getParameterSet().isSuperTypeOf(domainElement.eClass())) {
 				return ParameterSetEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getValueSpecificationAction().isSuperTypeOf(domainElement.eClass()) && isValueSpecificationAction_3089((ValueSpecificationAction) domainElement)) {
+				return ValueSpecificationAction2EditPart.VISUAL_ID;
+			}
 			break;
 		case OpaqueActionEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
@@ -675,6 +689,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3085((ExpansionRegion) domainElement)) {
 				return ExpansionRegion2EditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getValueSpecificationAction().isSuperTypeOf(domainElement.eClass()) && isValueSpecificationAction_3088((ValueSpecificationAction) domainElement)) {
+				return ValueSpecificationActionEditPart.VISUAL_ID;
+			}
 			break;
 		case ActivityPartition2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
@@ -747,6 +764,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3085((ExpansionRegion) domainElement)) {
 				return ExpansionRegion2EditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getValueSpecificationAction().isSuperTypeOf(domainElement.eClass()) && isValueSpecificationAction_3088((ValueSpecificationAction) domainElement)) {
+				return ValueSpecificationActionEditPart.VISUAL_ID;
+			}
 			break;
 		case OpaqueAction3EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
@@ -788,9 +808,19 @@ public class UMLVisualIDRegistry {
 				return InputPin5EditPart.VISUAL_ID;
 			}
 			break;
+		case ValueSpecificationActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin6EditPart.VISUAL_ID;
+			}
+			break;
 		case ParameterSetEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
 				return ParameterEditPart.VISUAL_ID;
+			}
+			break;
+		case ValueSpecificationAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin6EditPart.VISUAL_ID;
 			}
 			break;
 		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
@@ -1492,6 +1522,9 @@ public class UMLVisualIDRegistry {
 			if (ParameterSetEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ValueSpecificationAction2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ConstraintEditPart.VISUAL_ID:
 			if (ConstraintPreconditionEditPart.VISUAL_ID == nodeVisualID) {
@@ -1949,6 +1982,9 @@ public class UMLVisualIDRegistry {
 			if (ExpansionRegion2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ValueSpecificationActionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ActivityPartition2EditPart.VISUAL_ID:
 			if (ActivityPartitionName2EditPart.VISUAL_ID == nodeVisualID) {
@@ -2021,6 +2057,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (ExpansionRegion2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValueSpecificationActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -2213,6 +2252,25 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ValueSpecificationActionEditPart.VISUAL_ID:
+			if (ValueSpecificationActionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValueSpecificationActionStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPin6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case OutputPin6EditPart.VISUAL_ID:
+			if (OutputPinName6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPinOrdering6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case LoopNodeEditPart.VISUAL_ID:
 			if (LoopNodeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -2245,6 +2303,17 @@ public class UMLVisualIDRegistry {
 			break;
 		case ParameterSetEditPart.VISUAL_ID:
 			if (ParameterEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ValueSpecificationAction2EditPart.VISUAL_ID:
+			if (ValueSpecificationActionName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ValueSpecificationActionStereotype2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (OutputPin6EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3580,6 +3649,17 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static boolean isValueSpecificationAction_3088(ValueSpecificationAction domainElement) {
+		if (ValueSpecificationAction_3088_Constraint == null) { // lazy initialization
+			ValueSpecificationAction_3088_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getValueSpecificationAction()); //$NON-NLS-1$
+		}
+		Object result = ValueSpecificationAction_3088_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
 	private static boolean isLoopNode_3058(LoopNode domainElement) {
 		if (LoopNode_3058_Constraint == null) { // lazy initialization
 			LoopNode_3058_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getLoopNode()); //$NON-NLS-1$
@@ -3607,6 +3687,17 @@ public class UMLVisualIDRegistry {
 			ExpansionRegion_3084_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getExpansionRegion()); //$NON-NLS-1$
 		}
 		Object result = ExpansionRegion_3084_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isValueSpecificationAction_3089(ValueSpecificationAction domainElement) {
+		if (ValueSpecificationAction_3089_Constraint == null) { // lazy initialization
+			ValueSpecificationAction_3089_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getValueSpecificationAction()); //$NON-NLS-1$
+		}
+		Object result = ValueSpecificationAction_3089_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3716,6 +3807,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getParameterSet().isSuperTypeOf(domainElement.eClass())) {
 				return ParameterSetEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getValueSpecificationAction().isSuperTypeOf(domainElement.eClass()) && isValueSpecificationAction_3089((ValueSpecificationAction) domainElement)) {
+				return ValueSpecificationAction2EditPart.VISUAL_ID;
 			}
 			break;
 		case ConstraintEditPart.VISUAL_ID:
@@ -3993,6 +4087,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3085((ExpansionRegion) domainElement)) {
 				return ExpansionRegion2EditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getValueSpecificationAction().isSuperTypeOf(domainElement.eClass()) && isValueSpecificationAction_3088((ValueSpecificationAction) domainElement)) {
+				return ValueSpecificationActionEditPart.VISUAL_ID;
+			}
 			break;
 		case ActivityPartition2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getActivityPartition().isSuperTypeOf(domainElement.eClass())) {
@@ -4064,6 +4161,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3085((ExpansionRegion) domainElement)) {
 				return ExpansionRegion2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getValueSpecificationAction().isSuperTypeOf(domainElement.eClass()) && isValueSpecificationAction_3088((ValueSpecificationAction) domainElement)) {
+				return ValueSpecificationActionEditPart.VISUAL_ID;
 			}
 			break;
 		case OpaqueAction3EditPart.VISUAL_ID:
@@ -4391,6 +4491,11 @@ public class UMLVisualIDRegistry {
 				return OutputPin4EditPart.VISUAL_ID;
 			}
 			break;
+		case ValueSpecificationActionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin6EditPart.VISUAL_ID;
+			}
+			break;
 		case LoopNodeEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
 				return StructuredActivityNode2EditPart.VISUAL_ID;
@@ -4565,6 +4670,11 @@ public class UMLVisualIDRegistry {
 		case ParameterSetEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
 				return ParameterEditPart.VISUAL_ID;
+			}
+			break;
+		case ValueSpecificationAction2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
+				return OutputPin6EditPart.VISUAL_ID;
 			}
 			break;
 		case PackageEditPart.VISUAL_ID:
@@ -5257,6 +5367,7 @@ public class UMLVisualIDRegistry {
 		case LoopNode2EditPart.VISUAL_ID:
 		case ConditionalNode2EditPart.VISUAL_ID:
 		case ExpansionRegion2EditPart.VISUAL_ID:
+		case OutputPin6EditPart.VISUAL_ID:
 		case LoopNodeEditPart.VISUAL_ID:
 		case ConditionalNodeEditPart.VISUAL_ID:
 		case ExpansionRegionEditPart.VISUAL_ID:

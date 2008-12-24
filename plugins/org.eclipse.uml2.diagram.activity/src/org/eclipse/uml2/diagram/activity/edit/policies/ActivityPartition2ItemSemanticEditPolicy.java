@@ -33,6 +33,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueAction3CreateComman
 import org.eclipse.uml2.diagram.activity.edit.commands.Pin3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.SendSignalAction2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode3CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ValueSpecificationActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode3EditPart;
@@ -56,6 +57,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Pin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
@@ -144,6 +146,9 @@ public class ActivityPartition2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 		}
 		if (UMLElementTypes.ExpansionRegion_3085 == req.getElementType()) {
 			return getGEFWrapper(new ExpansionRegion2CreateCommand(req));
+		}
+		if (UMLElementTypes.ValueSpecificationAction_3088 == req.getElementType()) {
+			return getGEFWrapper(new ValueSpecificationActionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -238,6 +243,9 @@ public class ActivityPartition2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case ExpansionRegion2EditPart.VISUAL_ID:
+				cmd.add(getDestroyElementCommand(node));
+				break;
+			case ValueSpecificationActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

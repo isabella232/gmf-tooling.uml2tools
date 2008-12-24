@@ -531,6 +531,12 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 		if (targetEditPart instanceof ExpansionRegion2EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
+		if (targetEditPart instanceof OutputPin6EditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
@@ -538,6 +544,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
+		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -753,6 +762,12 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 		if (targetEditPart instanceof ExpansionRegion2EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof OutputPin6EditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
@@ -760,6 +775,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ConstraintEditPart) {
@@ -864,6 +882,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 		if (targetEditPart instanceof ExpansionRegion2EditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+			types.add(UMLElementTypes.ExceptionHandler_4005);
+		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
@@ -871,6 +892,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
+			types.add(UMLElementTypes.ExceptionHandler_4005);
+		}
+		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		return types;
@@ -1095,6 +1119,12 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.OutputPin_3090);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1102,6 +1132,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.AcceptEventAction_3030);
@@ -1317,6 +1350,12 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.OutputPin_3090);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1324,6 +1363,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.Constraint_2027);
@@ -1428,6 +1470,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
@@ -1435,6 +1480,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		return types;
 	}
@@ -1669,6 +1717,12 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.OutputPin_3090);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1676,6 +1730,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.AcceptEventAction_3030);
@@ -1891,6 +1948,12 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.OutputPin_3090);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1898,6 +1961,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.AcceptEventAction_3030);
@@ -1990,6 +2056,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
@@ -1997,6 +2066,9 @@ public class StructuredActivityNodeEditPart extends ShapeNodeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		return types;
 	}

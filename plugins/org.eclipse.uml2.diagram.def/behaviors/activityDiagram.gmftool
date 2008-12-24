@@ -75,8 +75,12 @@
           description="Create Send Signal Action"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="OpaqueBehavior"
-          description="Creating OpaqueBehavior"/>
+          title="Opaque Behavior"
+          description="Create Opaque Behavior"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Value Specification Action"
+          description="Create Value Specification Action"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

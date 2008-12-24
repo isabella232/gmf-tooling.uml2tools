@@ -464,6 +464,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ValueSpecificationAction9CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ValueSpecificationAction9CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ActivityInitialNode1CreationTool_title;
 
 	/**
@@ -1479,6 +1489,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_ValueSpecificationAction_3088_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ValueSpecificationAction_3088_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_OutputPin_3090_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_OutputPin_3090_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_LoopNode_3058_incominglinks;
 
 	/**
@@ -1505,6 +1535,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ExpansionRegion_3084_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ValueSpecificationAction_3089_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ValueSpecificationAction_3089_outgoinglinks;
 
 	/**
 	 * @generated

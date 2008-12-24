@@ -487,6 +487,12 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 		if (targetEditPart instanceof ExpansionRegion2EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
+		if (targetEditPart instanceof OutputPin6EditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
@@ -494,6 +500,9 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
+		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -709,6 +718,12 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 		if (targetEditPart instanceof ExpansionRegion2EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof OutputPin6EditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
@@ -716,6 +731,9 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityEditPart) {
@@ -946,6 +964,12 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.OutputPin_3090);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -953,6 +977,9 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.AcceptEventAction_3030);
@@ -1168,6 +1195,12 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.OutputPin_3090);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1175,6 +1208,9 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.Activity_2026);
@@ -1414,6 +1450,12 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.OutputPin_3090);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1421,6 +1463,9 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.AcceptEventAction_3030);
@@ -1636,6 +1681,12 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.OutputPin_3090);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1643,6 +1694,9 @@ public class OutputPin3EditPart extends BorderedBorderItemEditPart implements Pr
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		return types;
 	}

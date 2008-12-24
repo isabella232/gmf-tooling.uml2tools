@@ -61,6 +61,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createOpaqueAction6CreationTool());
 		paletteContainer.add(createSendSignalAction7CreationTool());
 		paletteContainer.add(createOpaqueBehavior8CreationTool());
+		paletteContainer.add(createValueSpecificationAction9CreationTool());
 		return paletteContainer;
 	}
 
@@ -328,6 +329,19 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
+	private ToolEntry createValueSpecificationAction9CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		types.add(UMLElementTypes.ValueSpecificationAction_3089);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ValueSpecificationAction9CreationTool_title, Messages.ValueSpecificationAction9CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ValueSpecificationAction_3088));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
 	private ToolEntry createActivityInitialNode1CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.InitialNode_3035);
@@ -471,12 +485,13 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createOutputPin3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(5);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(6);
 		types.add(UMLElementTypes.OutputPin_3001);
 		types.add(UMLElementTypes.OutputPin_3002);
 		types.add(UMLElementTypes.OutputPin_3006);
 		types.add(UMLElementTypes.OutputPin_3055);
 		types.add(UMLElementTypes.OutputPin_3081);
+		types.add(UMLElementTypes.OutputPin_3090);
 		NodeToolEntry entry = new NodeToolEntry(Messages.OutputPin3CreationTool_title, Messages.OutputPin3CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.OutputPin_3001));
 		entry.setLargeIcon(entry.getSmallIcon());

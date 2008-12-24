@@ -364,6 +364,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
@@ -371,6 +374,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AcceptEventAction_3030);
@@ -463,6 +469,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 			types.add(UMLElementTypes.ExpansionRegion_3085);
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3088);
+		}
+		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.LoopNode_3058);
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
@@ -470,6 +479,9 @@ public class ConstraintEditPart extends ShapeNodeEditPart implements PrimaryShap
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
+			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		return types;
 	}

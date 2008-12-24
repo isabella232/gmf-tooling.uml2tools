@@ -622,6 +622,24 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ExpansionRegionMode2EditPart.VISUAL_ID:
 				return new ExpansionRegionMode2EditPart(view);
 
+			case ValueSpecificationActionEditPart.VISUAL_ID:
+				return new ValueSpecificationActionEditPart(view);
+
+			case ValueSpecificationActionNameEditPart.VISUAL_ID:
+				return new ValueSpecificationActionNameEditPart(view);
+
+			case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+				return new ValueSpecificationActionStereotypeEditPart(view);
+
+			case OutputPin6EditPart.VISUAL_ID:
+				return new OutputPin6EditPart(view);
+
+			case OutputPinName6EditPart.VISUAL_ID:
+				return new OutputPinName6EditPart(view);
+
+			case OutputPinOrdering6EditPart.VISUAL_ID:
+				return new OutputPinOrdering6EditPart(view);
+
 			case LoopNodeEditPart.VISUAL_ID:
 				return new LoopNodeEditPart(view);
 
@@ -651,6 +669,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case ParameterEditPart.VISUAL_ID:
 				return new ParameterEditPart(view);
+
+			case ValueSpecificationAction2EditPart.VISUAL_ID:
+				return new ValueSpecificationAction2EditPart(view);
+
+			case ValueSpecificationActionName2EditPart.VISUAL_ID:
+				return new ValueSpecificationActionName2EditPart(view);
+
+			case ValueSpecificationActionStereotype2EditPart.VISUAL_ID:
+				return new ValueSpecificationActionStereotype2EditPart(view);
 
 			case LiteralStringEditPart.VISUAL_ID:
 				return new LiteralStringEditPart(view);

@@ -168,11 +168,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case LoopNode2EditPart.VISUAL_ID:
 				case ConditionalNode2EditPart.VISUAL_ID:
 				case ExpansionRegion2EditPart.VISUAL_ID:
+				case ValueSpecificationActionEditPart.VISUAL_ID:
+				case OutputPin6EditPart.VISUAL_ID:
 				case LoopNodeEditPart.VISUAL_ID:
 				case ConditionalNodeEditPart.VISUAL_ID:
 				case ExpansionRegionEditPart.VISUAL_ID:
 				case ParameterSetEditPart.VISUAL_ID:
 				case ParameterEditPart.VISUAL_ID:
+				case ValueSpecificationAction2EditPart.VISUAL_ID:
 				case LiteralStringEditPart.VISUAL_ID:
 				case LiteralString2EditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
@@ -539,6 +542,18 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case ValueSpecificationActionNameEditPart.VISUAL_ID:
+				case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+					if (ValueSpecificationActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case OutputPinName6EditPart.VISUAL_ID:
+				case OutputPinOrdering6EditPart.VISUAL_ID:
+					if (OutputPin6EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				case LoopNodeNameEditPart.VISUAL_ID:
 				case LoopNodeStereotypeEditPart.VISUAL_ID:
 				case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
@@ -556,6 +571,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ExpansionRegionModeEditPart.VISUAL_ID:
 				case ExpansionRegionExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
 					if (ExpansionRegionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ValueSpecificationActionName2EditPart.VISUAL_ID:
+				case ValueSpecificationActionStereotype2EditPart.VISUAL_ID:
+					if (ValueSpecificationAction2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -986,6 +1007,18 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ExpansionRegion2ViewFactory.class;
 		case ExpansionRegionMode2EditPart.VISUAL_ID:
 			return ExpansionRegionMode2ViewFactory.class;
+		case ValueSpecificationActionEditPart.VISUAL_ID:
+			return ValueSpecificationActionViewFactory.class;
+		case ValueSpecificationActionNameEditPart.VISUAL_ID:
+			return ValueSpecificationActionNameViewFactory.class;
+		case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+			return ValueSpecificationActionStereotypeViewFactory.class;
+		case OutputPin6EditPart.VISUAL_ID:
+			return OutputPin6ViewFactory.class;
+		case OutputPinName6EditPart.VISUAL_ID:
+			return OutputPinName6ViewFactory.class;
+		case OutputPinOrdering6EditPart.VISUAL_ID:
+			return OutputPinOrdering6ViewFactory.class;
 		case LoopNodeEditPart.VISUAL_ID:
 			return LoopNodeViewFactory.class;
 		case LoopNodeNameEditPart.VISUAL_ID:
@@ -1006,6 +1039,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ParameterSetViewFactory.class;
 		case ParameterEditPart.VISUAL_ID:
 			return ParameterViewFactory.class;
+		case ValueSpecificationAction2EditPart.VISUAL_ID:
+			return ValueSpecificationAction2ViewFactory.class;
+		case ValueSpecificationActionName2EditPart.VISUAL_ID:
+			return ValueSpecificationActionName2ViewFactory.class;
+		case ValueSpecificationActionStereotype2EditPart.VISUAL_ID:
+			return ValueSpecificationActionStereotype2ViewFactory.class;
 		case LiteralStringEditPart.VISUAL_ID:
 			return LiteralStringViewFactory.class;
 		case LiteralString2EditPart.VISUAL_ID:

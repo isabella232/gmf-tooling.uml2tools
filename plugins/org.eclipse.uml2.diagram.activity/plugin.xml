@@ -1048,6 +1048,25 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <metamodelType
+               id="org.eclipse.uml2.diagram.activity.ValueSpecificationAction_3088"
+               name="%metatype.name.ValueSpecificationAction_3088"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ValueSpecificationAction"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ValueSpecificationActionEditHelper">
+            <param name="semanticHint" value="3088"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.activity.OutputPin_3090"
+               name="%metatype.name.OutputPin_3090"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.activity.OutputPin_3001"/>
+            <param name="semanticHint" value="3090"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <specializationType
                id="org.eclipse.uml2.diagram.activity.LoopNode_3058"
                name="%metatype.name.LoopNode_3058"
@@ -1093,6 +1112,15 @@
                edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ParameterEditHelper">
             <param name="semanticHint" value="3087"/>
          </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.activity.ValueSpecificationAction_3089"
+               name="%metatype.name.ValueSpecificationAction_3089"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.activity.ValueSpecificationAction_3088"/>
+            <param name="semanticHint" value="3089"/>
+         </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
@@ -1263,11 +1291,14 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.LoopNode_3078"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ConditionalNode_3083"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ExpansionRegion_3085"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ValueSpecificationAction_3088"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.OutputPin_3090"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LoopNode_3058"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ConditionalNode_3082"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ExpansionRegion_3084"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ParameterSet_3086"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.Parameter_3087"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ValueSpecificationAction_3089"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3049"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.LiteralString_3051"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ControlFlow_4001"/>
