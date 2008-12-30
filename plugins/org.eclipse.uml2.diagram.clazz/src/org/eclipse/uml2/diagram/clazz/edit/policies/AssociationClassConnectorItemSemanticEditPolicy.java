@@ -1,11 +1,18 @@
 package org.eclipse.uml2.diagram.clazz.edit.policies;
 
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.commands.AssociationCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.AssociationReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.CommentAnnotatedElementCreateCommand;
@@ -34,6 +41,7 @@ import org.eclipse.uml2.diagram.clazz.edit.commands.TemplateBindingCreateCommand
 import org.eclipse.uml2.diagram.clazz.edit.commands.TemplateBindingReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UsageCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UsageReorientCommand;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintConstrainedElementEditPart;
@@ -48,6 +56,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Property7EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
+import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 
 /**
@@ -227,4 +236,27 @@ public class AssociationClassConnectorItemSemanticEditPolicy extends UMLBaseItem
 		return super.getReorientReferenceRelationshipCommand(req);
 	}
 
+	/**
+	 * @NOT-generated
+	 */
+	@Override
+	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		Edge primaryView = (Edge) getHost().getModel();
+		DeleteCommand primaryDelete = new DeleteCommand(editingDomain, primaryView);
+		CompositeTransactionalCommand result = new CompositeTransactionalCommand(editingDomain, primaryDelete.getLabel());
+		result.add(primaryDelete);
+		
+		if (primaryView.getSource() != null && primaryView.getSource().getElement() == primaryView.getElement()){
+			result.add(new DeleteCommand(editingDomain, primaryView.getSource()));
+		}
+
+		if (primaryView.getTarget() != null && primaryView.getTarget().getElement() == primaryView.getElement()){
+			result.add(new DeleteCommand(editingDomain, primaryView.getTarget()));
+		}
+
+		Command gefResult = getGEFWrapper(result.reduce());
+		return mainCommand == null ? gefResult : mainCommand.chain(gefResult);
+	}
+	
 }
