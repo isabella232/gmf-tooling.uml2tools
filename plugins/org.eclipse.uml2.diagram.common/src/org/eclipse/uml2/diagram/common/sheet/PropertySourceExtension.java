@@ -1,13 +1,11 @@
 package org.eclipse.uml2.diagram.common.sheet;
 
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.gmf.runtime.emf.ui.properties.descriptors.EMFCompositePropertySource;
 import org.eclipse.jface.dialogs.IDialogSettings;
-import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 
 public class PropertySourceExtension extends EMFCompositePropertySource {
