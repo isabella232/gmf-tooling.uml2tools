@@ -8,7 +8,7 @@ import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 
 public class UMLInterfaceLinkManager extends InterfaceLinkManager<IUpdaterLinkDescriptor> {
 
-	public UMLInterfaceLinkManager(Collection<?> linkDescriptors) {
+	public UMLInterfaceLinkManager(Collection<IUpdaterLinkDescriptor> linkDescriptors) {
 		super(linkDescriptors, UMLDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 
