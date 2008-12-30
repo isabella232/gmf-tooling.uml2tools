@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.clazz.edit.policies;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EObject;
@@ -100,6 +101,11 @@ public class PostCreateAssociationClassEditPolicy extends AbstractEditPolicy {
 				//get canonical form with positive size
 				expectedRectangleBounds = new Rectangle(expectedRectangleBounds.getTopLeft(), expectedRectangleBounds.getBottomRight());	
 			}
+			
+			IFigure layoutContainer = getHostEditPart().getContentPane();
+			layoutContainer.translateToRelative(expectedRectangleBounds);
+			layoutContainer.translateFromParent(expectedRectangleBounds);
+			expectedRectangleBounds.translate(layoutContainer.getClientArea().getLocation().getNegated());
 			
 			Point rhombTopLeft = expectedRectangleBounds.getTop();
 			if (rhombTopLeft.y > VERTICAL_GAP + 5){
