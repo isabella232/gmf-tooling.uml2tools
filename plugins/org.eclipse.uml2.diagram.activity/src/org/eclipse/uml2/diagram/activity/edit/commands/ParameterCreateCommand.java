@@ -62,12 +62,29 @@ public class ParameterCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResultGen(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		Parameter newElement = UMLFactory.eINSTANCE.createParameter();
 
 		Behavior owner = (Behavior) getElementToEdit();
 		owner.getOwnedParameters().add(newElement);
 		ParameterSet childHolder = (ParameterSet) getElementToEdit();
+		childHolder.getParameters().add(newElement);
+
+		doConfigure(newElement, monitor, info);
+
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
+		return CommandResult.newOKCommandResult(newElement);
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		Parameter newElement = UMLFactory.eINSTANCE.createParameter();
+
+		Behavior owner = (Behavior) getElementToEdit();
+		owner.getOwnedParameters().add(newElement);
+		ParameterSet childHolder = (ParameterSet) getElementToEditGen();
 		childHolder.getParameters().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -88,18 +105,5 @@ public class ParameterCreateCommand extends EditElementCommand {
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
-	}
-
-	/**
-	 * @generated NOT
-	 */
-	protected EObject doDefaultElementCreation() {
-		Parameter newElement = UMLFactory.eINSTANCE.createParameter();
-
-		Behavior owner = (Behavior) getElementToEdit();
-		owner.getOwnedParameters().add(newElement);
-		ParameterSet childHolder = (ParameterSet) getElementToEditGen();
-		childHolder.getParameters().add(newElement);
-		return newElement;
 	}
 }
