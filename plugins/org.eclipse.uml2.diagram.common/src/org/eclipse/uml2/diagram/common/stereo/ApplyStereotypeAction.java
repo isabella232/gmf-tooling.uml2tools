@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.common.stereo;
 
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
@@ -45,7 +44,6 @@ public class ApplyStereotypeAction extends DiagramAction {
 		if (elementEditPart == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		TransactionalEditingDomain editingDomain = elementEditPart.getEditingDomain();
 		boolean applyNotUnapply =!myElement.isStereotypeApplied(myStereotype);
 		ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest request = new ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest(myElement, myStereotype, applyNotUnapply);
 		CompoundCommand command = new CompoundCommand();

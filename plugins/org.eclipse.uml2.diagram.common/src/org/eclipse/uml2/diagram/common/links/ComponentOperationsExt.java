@@ -35,7 +35,7 @@ import org.eclipse.uml2.uml.Usage;
 
 /**
  * The class repeats the functionality of
- * {@link org.eclipse.uml2.uml.internal.operations.ComponentOperations} class
+ * org.eclipse.uml2.uml.internal.operations.ComponentOperations class
  * for Provided and Required interfaces, providing additional info that required
  * to manage (create/delete/reorient) Provided/Required interface links.
  **/

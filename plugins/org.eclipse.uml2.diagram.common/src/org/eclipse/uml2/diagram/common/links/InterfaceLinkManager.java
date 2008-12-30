@@ -22,7 +22,7 @@ public class InterfaceLinkManager<T> {
 	
 	protected final List<InterfaceLinkFilter<T>> myLinkManagers = new ArrayList<InterfaceLinkFilter<T>>(3);
 
-	public InterfaceLinkManager(Collection<?> linkDescriptors, IPreferenceStore store) {
+	public InterfaceLinkManager(Collection<T> linkDescriptors, IPreferenceStore store) {
 		refreshOptions(store);
 		buildTable(linkDescriptors);		
 	}
@@ -46,12 +46,11 @@ public class InterfaceLinkManager<T> {
 		ourHideReferencedGenuine = store.getBoolean(UMLPreferencesConstants.PREF_MANAGE_REQUIRED_LINKS_HIDE_GENUINE);
 	}
 
-	private void buildTable(Collection<?> linkDescriptors) {
+	private void buildTable(Collection<T> linkDescriptors) {
 		initFilters();
-		for (Object next : linkDescriptors) {
-			T linkDescriptor = (T) next;
+		for (T next : linkDescriptors) {
 			for (InterfaceLinkFilter<T> manager: myLinkManagers) {
-				manager.visit(linkDescriptor);
+				manager.visit(next);
 			}
 		}
 	}

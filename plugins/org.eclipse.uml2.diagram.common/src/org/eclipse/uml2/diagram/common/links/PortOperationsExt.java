@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * The class repeats the functionality of
- * {@link org.eclipse.uml2.uml.internal.operations.PortOperations} class for
+ * org.eclipse.uml2.uml.internal.operations.PortOperations class for
  * Provided and Required interfaces, providing additional info that required to
  * manage (create/delete/reorient) Provided/Required Interface links.
  * */
