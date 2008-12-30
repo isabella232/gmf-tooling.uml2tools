@@ -15,14 +15,11 @@ import org.eclipse.uml2.uml.UMLFactory;
 
 public class ProvidedPortLinkHelper {
 
-	private final AdapterFactoryEditingDomain myEditingDomain;
-
 	private final EObject mySource;
 
 	private final EObject myTarget;
 
 	public ProvidedPortLinkHelper(AdapterFactoryEditingDomain editingDomain, EObject source, EObject target) {
-		myEditingDomain = editingDomain;
 		mySource = source;
 		myTarget = target;
 	}

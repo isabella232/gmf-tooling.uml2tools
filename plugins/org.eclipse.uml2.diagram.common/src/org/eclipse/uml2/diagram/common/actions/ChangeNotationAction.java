@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.common.actions;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -152,21 +151,20 @@ public abstract class ChangeNotationAction extends DiagramAction {
         if (!(result instanceof Collection)) {
             return;
         }
-        final List editparts = new ArrayList(1);
+        final List<EditPart> editparts = new ArrayList<EditPart>(1);
 
         IDiagramGraphicalViewer viewer = getDiagramGraphicalViewer();
         if (viewer == null) {
             return;
         }
 
-        Map editpartRegistry = viewer.getEditPartRegistry();
-        for (Iterator iter = ((Collection) result).iterator(); iter.hasNext();) {
-            Object viewAdaptable = iter.next();
+        Map<?, ?> editpartRegistry = viewer.getEditPartRegistry();
+        for (Object viewAdaptable : (Collection<?>)result) {
             if (viewAdaptable instanceof IAdaptable) {
                 Object editPart = editpartRegistry
                     .get(((IAdaptable) viewAdaptable).getAdapter(View.class));
-                if (editPart != null)
-                    editparts.add(editPart);
+                if (editPart instanceof EditPart)
+                    editparts.add((EditPart)editPart);
             }
         }
 
