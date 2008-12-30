@@ -44,6 +44,14 @@
          version="0.0.0"/>
 
    <includes
+         id="org.eclipse.uml2tools.def"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2tools.def.source"
+         version="0.0.0"/>
+
+   <includes
          id="org.eclipse.uml2tools.examples"
          version="0.0.0"/>
 
