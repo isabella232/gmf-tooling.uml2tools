@@ -72,7 +72,7 @@ public class LaneLayout extends AbstractHintLayout {
 	@Override
 	protected Dimension calculateMinimumSize(IFigure container, int wHint, int hHint) {
 		Insets insets = container.getInsets();
-		List children = container.getChildren();
+		List<?> children = container.getChildren();
 		if (children.size() > 0) {
 			int childWHint = getLaneOrientation() == HORIZONTAL ? Math.max(0, wHint - insets.getWidth()) : 
 				(wHint - insets.getWidth() > 0 ? wHint - insets.getWidth() / children.size() : wHint);
@@ -95,7 +95,7 @@ public class LaneLayout extends AbstractHintLayout {
 	@Override
 	protected Dimension calculatePreferredSize(IFigure container, int wHint, int hHint) {
 		Insets insets = container.getInsets();
-		List children = container.getChildren();
+		List<?> children = container.getChildren();
 		if (children.size() > 0) {
 			int childWHint = getLaneOrientation() == HORIZONTAL ? Math.max(0, wHint - insets.getWidth()) : 
 				(wHint - insets.getWidth() > 0 ? wHint - insets.getWidth() / children.size() : wHint);
@@ -135,7 +135,7 @@ public class LaneLayout extends AbstractHintLayout {
 	}
 
 	public void layout(IFigure container) {
-        List children = container.getChildren();
+        List<?> children = container.getChildren();
 		int numChildren = children.size();
         if (numChildren > 0) {
 			Dimension prefSizes[] = new Dimension[numChildren];

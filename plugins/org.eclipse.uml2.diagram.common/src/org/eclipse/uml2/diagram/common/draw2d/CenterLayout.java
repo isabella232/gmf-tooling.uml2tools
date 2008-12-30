@@ -26,7 +26,7 @@ public class CenterLayout extends StackLayout {
 		Rectangle r = figure.getClientArea();
 		final int centerX = r.x + r.width / 2;
 		final int centerY = r.y + r.height / 2;
-		List children = figure.getChildren();
+		List<?> children = figure.getChildren();
 		IFigure child;
 		for (int i = 0; i < children.size(); i++) {
 			child = (IFigure)children.get(i);

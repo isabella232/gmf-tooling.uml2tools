@@ -74,7 +74,7 @@ public class PileLayout extends AbstractHintLayout {
 		int totalWidth = 0; // Width of all components
 		int totalHeight = 0; // Height of all components	
 
-		List children = container.getChildren();
+		List<?> children = container.getChildren();
 		for (int i = 0; i < children.size(); i++) {
 			IFigure child = (IFigure) children.get(i);
 			Dimension size = sizeExtractor.getSize(child, wHint, hHint);
@@ -108,7 +108,7 @@ public class PileLayout extends AbstractHintLayout {
 		Rectangle clientArea = container.getClientArea();
 		int y = clientArea.y;
 		final int maxY = clientArea.y + clientArea.height;
-		List children = container.getChildren();
+		List<?> children = container.getChildren();
 		for (int i = 0; i < children.size(); i++) {
 			IFigure child = (IFigure) children.get(i);
 			Dimension preferred = child.getPreferredSize(clientArea.width, clientArea.height);
@@ -131,7 +131,7 @@ public class PileLayout extends AbstractHintLayout {
 	}
 
 	private int myGap;
-	private Map myConstraints = new HashMap(2);
+	private Map<IFigure, Object> myConstraints = new HashMap<IFigure, Object>(2);
 	private boolean myStretchBottom;
 
 	private static final SizeExtractor MIN_SIZE_EXTRACTOR = new SizeExtractor() {
