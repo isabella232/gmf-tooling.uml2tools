@@ -25,6 +25,10 @@
     <viewmap
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+    <behaviour
+        xsi:type="gmfgen:CustomBehaviour"
+        key="org.eclipse.uml2.diagram.clazz.edit.policies.PostCreateAssociationClassEditPolicy.KEY"
+        editPolicyQualifiedClassName="org.eclipse.uml2.diagram.clazz.edit.policies.PostCreateAssociationClassEditPolicy"/>
     <containsShortcutsTo>uml</containsShortcutsTo>
     <shortcutsProvidedFor>UMLClass</shortcutsProvidedFor>
     <domainDiagramElement

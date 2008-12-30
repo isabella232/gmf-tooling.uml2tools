@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.commands.UMLCreateShortcutDecorationsCommand;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackageCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackageItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.edit.policies.PostCreateAssociationClassEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
@@ -79,6 +80,8 @@ public class PackageEditPart extends DiagramEditPart {
 
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutEditPolicyWithMovableLabels()); //replace with U2T specific version
+		
+		installEditPolicy(PostCreateAssociationClassEditPolicy.KEY, new PostCreateAssociationClassEditPolicy());
 	}
 
 	/**
