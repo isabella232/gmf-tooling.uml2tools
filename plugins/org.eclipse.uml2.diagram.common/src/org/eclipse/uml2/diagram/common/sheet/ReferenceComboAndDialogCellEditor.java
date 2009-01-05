@@ -15,10 +15,7 @@ import java.text.MessageFormat;
 import java.util.List;
 
 import org.eclipse.emf.common.ui.celleditor.ExtendedComboBoxCellEditor;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
@@ -48,11 +45,11 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 
 	private FocusListener myButtonFocusListener;
 
-	final private Dialog myElementChooserDialog;
+	final private ReferencedElementChooserDialog myElementChooserDialog;
 
 	final private TransactionalEditingDomain myEditingDomain;
 
-	public ReferenceComboAndDialogCellEditor(Composite parent, List<?> list, ILabelProvider labelProvider, boolean sorted, Dialog chooserDialog, TransactionalEditingDomain editingDomain) {
+	public ReferenceComboAndDialogCellEditor(Composite parent, List<?> list, ILabelProvider labelProvider, boolean sorted, ReferencedElementChooserDialog chooserDialog, TransactionalEditingDomain editingDomain) {
 		super(parent, list, labelProvider, sorted);
 		myEditingDomain = editingDomain;
 		myElementChooserDialog = chooserDialog;
@@ -77,16 +74,7 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 
 	protected Object openDialogBox(Control cellEditorWindow) {
 		if (myElementChooserDialog.open() == Window.OK) {
-			URI uri = ((ReferencedElementChooserDialog) myElementChooserDialog).getResult();
-			if (uri == null) {
-				return null;
-			}
-			try {
-				return myEditingDomain.getResourceSet().getEObject(uri, true);
-			} catch (WrappedException e) {
-				e.printStackTrace();
-				return null;
-			}
+			return myElementChooserDialog.getResult();
 		}
 		return null;
 	}

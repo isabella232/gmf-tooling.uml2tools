@@ -11,6 +11,7 @@
  */
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,8 +21,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
+import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.uml2.diagram.common.part.ModelElementsContentHelper;
@@ -29,8 +31,6 @@ import org.eclipse.uml2.diagram.common.part.ModelElementsContentHelper;
 public class ElementFilteredListChooser implements ElementChooserPage {
 
 	private AdapterFactoryContentProvider myAdapterFctoryContentProvier;
-
-	private TransactionalEditingDomain myEditingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 
 	private final AdapterFactory myItemProvidersAdapterFactory;
 
@@ -40,11 +40,17 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 
 	private FilteredListControl myFilteredList;
 
-	public ElementFilteredListChooser(AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature) {
+	private final Validator myValidator;
+	
+	private final TransactionalEditingDomain myEditingDomain;
+
+	public ElementFilteredListChooser(AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature, Validator validator, TransactionalEditingDomain editingDomain) {
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
 		mySourceObject = sourceObject;
 		myFeature = feature;
+		myValidator = validator;
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(itemProvidersAdapterFactory);
+		myEditingDomain = editingDomain;
 	}
 
 	public Control createControl(Composite parent) {
@@ -55,31 +61,28 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		}
 		ILabelProvider labelProvider = new SimpleNamedElementLabelProvider(new AdapterFactoryLabelProvider(myItemProvidersAdapterFactory));
 		myFilteredList.setFilterMatcher(new ConfigurableFilterMatcher(labelProvider));
-		myFilteredList.setListElements(getElements(mySourceObject.eResource()));
+		myFilteredList.setListElements(collectElements(mySourceObject.eResource()));
 		return myFilteredList;
 	}
 
-	public Object getSelection() {
+	public List<Object> getSelection() {
         Object[] result = myFilteredList.getSelectedElements();
-        if (result == null || result.length == 0) {
-			return null;
-		}
-        return result[0];
+        return Arrays.asList(result);
 	}
 
-	public void setSelection(Object selection) {
-		if (selection == null) {
+	public void setSelection(List<Object> selection) {
+		if (selection == null || selection.isEmpty()) {
 			myFilteredList.setSelection(null);
 		} else {
-			myFilteredList.setSelection(new Object[]{selection});			
+			myFilteredList.setSelection(selection.toArray());			
 		}
 	}
 
-	protected EObject[] getElements(Object inputElement) {
+	protected EObject[] collectElements(Object inputElement) {
 		List<EObject> result = new LinkedList<EObject>();
 		for (Object next : getAllChildren(inputElement)) {
-			if ((next instanceof EObject)) {
-				EObject transformed = ReferencedElementChooserDialog.accept((EObject) next, myFeature);
+			if (next instanceof EObject) {
+				EObject transformed = myValidator.validate((EObject) next);
 				if (transformed != null) {
 					result.add(transformed);
 				}
@@ -95,6 +98,14 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 			result.addAll(getAllChildren(next));
 		}
 		return result;
+	}
+
+	public void addDoubleClickListener(IDoubleClickListener l) {
+		myFilteredList.addDoubleClickListener(l);
+	}
+
+	public void addSelectionListener(ISelectionChangedListener l) {
+		myFilteredList.addSelectionListener(l);		
 	}
 
 }

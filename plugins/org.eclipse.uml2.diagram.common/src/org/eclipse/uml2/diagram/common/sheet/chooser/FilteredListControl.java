@@ -11,25 +11,25 @@
  */
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.core.runtime.ListenerList;
-import org.eclipse.jface.util.SafeRunnable;
+import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.FilteredList;
 import org.eclipse.ui.dialogs.FilteredList.FilterMatcher;
@@ -48,8 +48,6 @@ public class FilteredListControl extends Composite {
 
 	private List myInitialSelections = new ArrayList();
 
-	private Object[] fSelection = new Object[0];
-
 	private String fFilter = null;
 
 	protected FilteredList fFilteredList;
@@ -57,13 +55,14 @@ public class FilteredListControl extends Composite {
 	private final ILabelProvider fRenderer;
 
 	private FilteredList myFilteredList;
+
+	private TableViewer viewer;
 	
 	public FilteredListControl(Composite parent, ILabelProvider renderer) {
 		super(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
 		setLayout(layout);
 		setLayoutData(new GridData(GridData.FILL_BOTH));
-
 		fRenderer = renderer;
 		createFilterText(this);
 		myFilteredList = createFilteredList(this);
@@ -126,10 +125,38 @@ public class FilteredListControl extends Composite {
 		return text;
 	}
 
+	private Table getTable(FilteredList list) {
+		try {
+			Field field = list.getClass().getDeclaredField("fList");
+			if (!field.isAccessible()) {
+				field.setAccessible(true);
+			}
+			Object value = field.get(list);
+			return (Table)value;
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		return null;
+	}
+	
 	protected FilteredList createFilteredList(Composite parent) {
 		int flags = SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL | (fIsMultipleSelection ? SWT.MULTI : SWT.SINGLE);
 
 		FilteredList list = new FilteredList(parent, flags, fRenderer, fIgnoreCase, fAllowDuplicates, fMatchEmptyString);
+		Table table = getTable(list);
+		if (table!= null) {
+			viewer = new TableViewer(table);
+		}
 
 		GridData data = new GridData();
 		// data.widthHint = convertWidthInCharsToPixels(fWidth);
@@ -142,37 +169,9 @@ public class FilteredListControl extends Composite {
 		list.setFont(parent.getFont());
 		list.setFilter((fFilter == null ? "" : fFilter)); //$NON-NLS-1$		
 
-		list.addSelectionListener(new SelectionListener() {
-
-			public void widgetDefaultSelected(SelectionEvent e) {
-				// handleDefaultSelected();
-			}
-
-			public void widgetSelected(SelectionEvent e) {
-				handleWidgetSelected();
-			}
-		});
-
 		fFilteredList = list;
 
 		return list;
-	}
-
-	private void handleWidgetSelected() {
-		Object[] newSelection = fFilteredList.getSelection();
-
-		if (newSelection.length != fSelection.length) {
-			fSelection = newSelection;
-			handleSelectionChanged();
-		} else {
-			for (int i = 0; i != newSelection.length; i++) {
-				if (!newSelection[i].equals(fSelection[i])) {
-					fSelection = newSelection;
-					handleSelectionChanged();
-					break;
-				}
-			}
-		}
 	}
 
 	protected void setListElements(Object[] elements) {
@@ -265,7 +264,12 @@ public class FilteredListControl extends Composite {
 		return fFilteredList.getFoldedElements(index);
 	}
 
-	protected void handleSelectionChanged() {
+	public void addDoubleClickListener(IDoubleClickListener l) {
+		viewer.addDoubleClickListener(l);
+	}
+
+	public void addSelectionListener(final ISelectionChangedListener l) {
+		viewer.addSelectionChangedListener(l);
 	}
 
 

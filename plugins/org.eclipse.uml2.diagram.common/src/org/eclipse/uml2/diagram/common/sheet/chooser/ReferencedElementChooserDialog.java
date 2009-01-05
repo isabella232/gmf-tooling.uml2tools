@@ -1,119 +1,64 @@
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
+import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.FeatureMap;
-import org.eclipse.emf.edit.provider.IWrapperItemProvider;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.dialogs.TrayDialog;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.TabFolder;
-import org.eclipse.swt.widgets.TabItem;
-import org.eclipse.ui.dialogs.FilteredTree;
-import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.diagram.common.sheet.chooser.ElementChooserPage.Validator;
 
 public class ReferencedElementChooserDialog extends TrayDialog {
 
 	private final static int UNSET_BUTTON_ID = IDialogConstants.NO_TO_ALL_ID + 1;
 
-	private TabFolder myTabFolder;
-	
-	private ElementChooserPage myCurrentPage;
-	
-	private final IDialogSettings myDialogSettings;
-	
-	private final String mySettingsKeyLastFocus = "ReferencedElementDialog.KeyLastFocus";
-
-	private final AdapterFactory myItemProvidersAdapterFactory;
-
-	private final EObject mySourceObject;
+	public EObject myResult;
 
 	private final EStructuralFeature myFeature;
 
-	public  URI mySelectedModelElementURI;
+	private AdapterFactoryLabelProvider labelProvider;
+
+	private final EObject mySourceObject;
+	
+	protected final TabbedElementChooser myChooser;
+	
+	protected final TransactionalEditingDomain myEditingDomain;
 
 	public ReferencedElementChooserDialog(Shell shell, IDialogSettings settings, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature) {
 		super(shell);
-		setShellStyle(getShellStyle() | SWT.RESIZE);
-		myDialogSettings = settings;
-		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
 		mySourceObject = sourceObject;
 		myFeature = feature;
+		labelProvider = new AdapterFactoryLabelProvider(itemProvidersAdapterFactory);
+		myEditingDomain = TransactionUtil.getEditingDomain(sourceObject);
+		myChooser = new TabbedElementChooser(settings, itemProvidersAdapterFactory, sourceObject, feature, myEditingDomain);
 	}
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		final Composite composite = (Composite) super.createDialogArea(parent);
-
-		myTabFolder = new TabFolder(composite, SWT.NONE);
-		myTabFolder.setFont(composite.getFont());
-		GridData layoutData = new GridData(GridData.FILL_BOTH);
-		layoutData.heightHint = 300;
-		layoutData.widthHint = 300;
-		myTabFolder.setLayoutData(layoutData);
-		
-		ElementTreeChooser treeChooserTab = new ElementTreeChooser(myItemProvidersAdapterFactory, mySourceObject);
-		addTabPage("Choose from a Tree", treeChooserTab);
-		treeChooserTab.addSelectionListener(new OkButtonEnabler());
-
-		addTabPage("Choose from a List", new ElementFilteredListChooser(myItemProvidersAdapterFactory, mySourceObject, myFeature));
-
-//		myTabFolder.setSelection(myCurrPageIndex);
-		myCurrentPage= (ElementChooserPage) myTabFolder.getSelection()[0].getData();
-		myTabFolder.addSelectionListener(new SelectionListener() {
-			public void widgetDefaultSelected(SelectionEvent e) {}
-			public void widgetSelected(SelectionEvent e) {
-				tabChanged((TabItem)e.item);
-				// XXX remove check, but give a valid settings
-				if (myDialogSettings != null) {
-					myDialogSettings.put(mySettingsKeyLastFocus, myTabFolder.getSelectionIndex());
-				}
-			}
-		});
-		
+		myChooser.createDialogArea(composite);
+		myChooser.addSelectionListener(new OkButtonEnabler());
 		return composite;
 	}
-	
-	public static EObject accept(EObject selectedElement, EStructuralFeature feature) {
-		if (selectedElement instanceof ElementImport){
-			ElementImport _import = (ElementImport)selectedElement;
-			selectedElement = _import.getImportedElement();
-		}
-		if (selectedElement != null && feature.getEType().isInstance(selectedElement)){
-			return selectedElement;
-		}
-		return null;
+
+	@Override
+	public void create() {
+		super.create();
+		myChooser.initSelection();
 	}
 
-	private void tabChanged(TabItem tabItem) {
-		ElementChooserPage newPage = (ElementChooserPage) tabItem.getData();
-		tabItem.getControl().setFocus();
-		if (myCurrentPage != null) {
-			Object selection = myCurrentPage.getSelection();
-			if (selection != null) {
-				newPage.setSelection(selection);
-			}
-		}
-		// XXX add OK button listener to filtered tree
-		if (newPage instanceof FilteredTree) {
-			setOkButtonEnabled(true);
-		}
-		myCurrentPage = newPage;
-	}
-	
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
 		// create OK and Cancel buttons by default
@@ -123,62 +68,38 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 	}
 
 	@Override
+	protected void configureShell(Shell shell) {
+		super.configureShell(shell);
+		shell.setText("Choose " + myFeature.getName() + " for " + labelProvider.getText(mySourceObject));
+		shell.setImage(labelProvider.getImage(mySourceObject));
+	}
+
+	@Override
 	protected void buttonPressed(int buttonId) {
 		if (UNSET_BUTTON_ID == buttonId) {
-			unsetPressed();			
+			unsetPressed();
 		} else {
 			super.buttonPressed(buttonId);
 		}
 	}
 
 	private void unsetPressed() {
-		mySelectedModelElementURI = null;
+		myResult = null;
 		close();
 	}
 
 	@Override
 	protected void okPressed() {
-		EObject selectedModelElement = (EObject) ((ElementChooserPage)myTabFolder.getSelection()[0].getData()).getSelection();
-		mySelectedModelElementURI = EcoreUtil.getURI(selectedModelElement);
+		List<Object> selection = myChooser.getSelection();
+		if (!selection.isEmpty()) {
+			URI uri = EcoreUtil.getURI((EObject) selection.get(0));
+			myResult = myEditingDomain.getResourceSet().getEObject(uri, true);
+		}
 		super.okPressed();
 	}
 
-	public URI getResult() {
-		return mySelectedModelElementURI;
-    }
-
-	
-	protected final void addTabPage(String title, ElementChooserPage tabPage) {
-		final TabItem tabItem= new TabItem(myTabFolder, SWT.NONE);
-		applyDialogFont(tabItem.getControl());
-		tabItem.setText(title);
-		tabItem.setData(tabPage);
-		tabItem.setControl(tabPage.createControl(myTabFolder));
-	}
-
-	
-	@Override
-	public void create() {
-		super.create();
-		int lastFocusNr = 0;
-		try {
-			// XXX remove check, but give a valid settings
-			if (myDialogSettings != null) {
-				lastFocusNr = myDialogSettings.getInt(mySettingsKeyLastFocus);
-			}
-			if (lastFocusNr < 0 || lastFocusNr > myTabFolder.getItemCount()) {
-				lastFocusNr = 0;
-			}
-		} catch (NumberFormatException x) {
-			lastFocusNr = 0;
-		}
-
-		myTabFolder.setSelection(lastFocusNr);
-		((ElementChooserPage) myTabFolder.getSelection()[0].getData()).setSelection(getInitialSelection());
-	}
-	
-	private Object getInitialSelection() {
-		return mySourceObject.eGet(myFeature);
+	public Object getResult() {
+		return myResult;
 	}
 
 	private void setOkButtonEnabled(boolean enabled) {
@@ -187,26 +108,16 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 
 	private class OkButtonEnabler implements ISelectionChangedListener {
 
+		Validator myValidator = myChooser.getValidator();
+
 		public void selectionChanged(SelectionChangedEvent event) {
-			if (event.getSelection() instanceof IStructuredSelection) {
-				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
-				if (selection.size() == 1) {
-					Object selectedElement = selection.getFirstElement();
-					if (selectedElement instanceof IWrapperItemProvider) {
-						selectedElement = ((IWrapperItemProvider) selectedElement).getValue();
-					}
-					if (selectedElement instanceof FeatureMap.Entry) {
-						selectedElement = ((FeatureMap.Entry) selectedElement).getValue();
-					}
-					if (selectedElement instanceof EObject) {
-						EObject selectedModelElement = (EObject) selectedElement;
-						selectedElement = accept(selectedModelElement, myFeature);
-						setOkButtonEnabled(selectedModelElement != null);
-						return;
-					}
-				}
+			List<Object> selection = myChooser.getSelection();
+			if (selection.size() == 1) {
+				Object firstSelected = selection.get(0);
+				setOkButtonEnabled(myValidator.validate(firstSelected) != null);
+			} else {
+				setOkButtonEnabled(false);
 			}
-			setOkButtonEnabled(false);
 		}
 	}
 

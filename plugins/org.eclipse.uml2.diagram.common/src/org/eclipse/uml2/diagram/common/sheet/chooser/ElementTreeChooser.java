@@ -13,6 +13,7 @@ package org.eclipse.uml2.diagram.common.sheet.chooser;
 
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -27,7 +28,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
+import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -43,8 +44,8 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Tree;
-import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
+import org.eclipse.ui.model.WorkbenchContentProvider;
 
 public class ElementTreeChooser implements ElementChooserPage {
 
@@ -54,13 +55,14 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	private URI mySelectedModelElementURI;
 
-	private TransactionalEditingDomain myEditingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
+	private final TransactionalEditingDomain myEditingDomain;
 
 	private final EObject mySourceObject;
 
-	public ElementTreeChooser(AdapterFactory itemProvidersAdapterFactory, EObject sourceObject) {
+	public ElementTreeChooser(AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, TransactionalEditingDomain editingDomain) {
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
 		mySourceObject = sourceObject;		
+		myEditingDomain = editingDomain;
 	}
 	
 	public Control createControl(Composite parent) {
@@ -70,12 +72,12 @@ public class ElementTreeChooser implements ElementChooserPage {
 		return composite;
 	}
 
-	public Object getSelection() {
-		return ((IStructuredSelection)myTreeViewer.getSelection()).getFirstElement();
+	public List<Object> getSelection() {
+		return ((IStructuredSelection)myTreeViewer.getSelection()).toList();
 	}
 
-	public void setSelection(Object selection) {
-		if (selection == null) {
+	public void setSelection(List<Object> selection) {
+		if (selection == null || selection.isEmpty()) {
 			myTreeViewer.setSelection(null);
 		} else {
 			myTreeViewer.setSelection(new StructuredSelection(selection), true);
@@ -232,6 +234,11 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	public void addSelectionListener(ISelectionChangedListener l) {
 		myTreeViewer.addSelectionChangedListener(l);
+	}
+
+	public void addDoubleClickListener(IDoubleClickListener l) {
+		myTreeViewer.addDoubleClickListener(l);
+		
 	}
 
 }
