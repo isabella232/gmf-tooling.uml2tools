@@ -15,8 +15,9 @@
 
 «DEFINE installUpdateDescriptionEditPolicy FOR gmfgen::GenCommonBase-»
 	«LET {this}.typeSelect(gmfgen::GenLinkEnd).isEmpty() ? null : {this}.typeSelect(gmfgen::GenLinkEnd).first() AS linkEnd-»
-	«LET null != linkEnd && null != getMetaClass(linkEnd) && !getOutgoingLinks(linkEnd).isEmpty() AS canHaveOutgoingLinks-»
-	«LET !getSemanticChildren(this).isEmpty() AS canHaveChildren-»
+	«LET ((gmfgen::GenLinkEnd)linkEnd) AS linkEndImpl-»
+	«LET null != linkEndImpl && null != getMetaClass(linkEndImpl) && !getOutgoingLinks(linkEndImpl).isEmpty() AS canHaveOutgoingLinks-»
+	«LET !{this}.typeSelect(gmfgen::GenContainerBase).isEmpty() && !getSemanticChildren((gmfgen::GenContainerBase)this).isEmpty() AS canHaveChildren-»
 	«IF canHaveChildren || canHaveOutgoingLinks-»
 		if («EXPAND aspects::xpt::editor::VisualIDRegistry::isShortcutDescendantMethodCall FOR getDiagram()»(getNotationView())){
 			installEditPolicy(«-»
@@ -27,6 +28,7 @@
 					));
 		}
 	«ENDIF-»
+	«ENDLET-»
 	«ENDLET-»
 	«ENDLET-»
 	«ENDLET-»
