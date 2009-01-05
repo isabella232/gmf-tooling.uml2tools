@@ -125,12 +125,12 @@ public class TabbedElementChooser {
 	}
 
 
-	public List<Object> getSelection() {		
+	public List<?> getSelection() {		
 		return myCurrentPage.getSelection();
 	}
 
 
-	public void setSelection(List<Object> selection) {
+	public void setSelection(List<?> selection) {
 		myCurrentPage.setSelection(selection);		
 	}
 

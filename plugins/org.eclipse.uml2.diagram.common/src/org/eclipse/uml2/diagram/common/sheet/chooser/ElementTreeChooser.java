@@ -12,7 +12,6 @@
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
@@ -44,8 +43,8 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Tree;
-import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.model.WorkbenchContentProvider;
+import org.eclipse.ui.model.WorkbenchLabelProvider;
 
 public class ElementTreeChooser implements ElementChooserPage {
 
@@ -72,11 +71,11 @@ public class ElementTreeChooser implements ElementChooserPage {
 		return composite;
 	}
 
-	public List<Object> getSelection() {
+	public List<?> getSelection() {
 		return ((IStructuredSelection)myTreeViewer.getSelection()).toList();
 	}
 
-	public void setSelection(List<Object> selection) {
+	public void setSelection(List<?> selection) {
 		if (selection == null || selection.isEmpty()) {
 			myTreeViewer.setSelection(null);
 		} else {
@@ -103,8 +102,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 	}
 
 	public void dispose() {
-		for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-			Resource resource = (Resource) it.next();
+		for (Resource resource : myEditingDomain.getResourceSet().getResources()) {
 			resource.unload();
 		}
 		myEditingDomain.dispose();

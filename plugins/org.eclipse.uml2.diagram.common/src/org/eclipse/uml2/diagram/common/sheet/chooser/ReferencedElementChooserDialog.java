@@ -90,7 +90,7 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 
 	@Override
 	protected void okPressed() {
-		List<Object> selection = myChooser.getSelection();
+		List<?> selection = myChooser.getSelection();
 		if (!selection.isEmpty()) {
 			URI uri = EcoreUtil.getURI((EObject) selection.get(0));
 			myResult = myEditingDomain.getResourceSet().getEObject(uri, true);
@@ -111,7 +111,7 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 		Validator myValidator = myChooser.getValidator();
 
 		public void selectionChanged(SelectionChangedEvent event) {
-			List<Object> selection = myChooser.getSelection();
+			List<?> selection = myChooser.getSelection();
 			if (selection.size() == 1) {
 				Object firstSelected = selection.get(0);
 				setOkButtonEnabled(myValidator.validate(firstSelected) != null);

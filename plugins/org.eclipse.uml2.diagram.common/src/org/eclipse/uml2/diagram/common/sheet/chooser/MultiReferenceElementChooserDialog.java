@@ -273,7 +273,7 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				if (myChooser != null) {
-					List<Object> selection = myChooser.getSelection();
+					List<?> selection = myChooser.getSelection();
 					for (Iterator<?> i = selection.iterator(); i.hasNext();) {
 						Object value = i.next();
 						if (!values.getChildren().contains(value)) {

@@ -13,7 +13,6 @@ package org.eclipse.uml2.diagram.common.sheet.chooser;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
@@ -46,7 +45,7 @@ public class FilteredListControl extends Composite {
 
 	private Text fFilterText;
 
-	private List myInitialSelections = new ArrayList();
+	private List<Object> myInitialSelections = new ArrayList<Object>();
 
 	private String fFilter = null;
 
@@ -73,7 +72,7 @@ public class FilteredListControl extends Composite {
 	}
 
 	public void setInitialSelections(Object[] selectedElements) {
-		myInitialSelections = new ArrayList(selectedElements.length);
+		myInitialSelections = new ArrayList<Object>(selectedElements.length);
 		for (int i = 0; i < selectedElements.length; i++) {
 			myInitialSelections.add(selectedElements[i]);
 		}

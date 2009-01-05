@@ -10,9 +10,9 @@ import org.eclipse.swt.widgets.Control;
 
 public interface ElementChooserPage {
 
-	List<Object> getSelection();
+	List<?> getSelection();
 
-	void setSelection(List<Object> selection);
+	void setSelection(List<?> selection);
 
 	Control createControl(Composite parent);
 

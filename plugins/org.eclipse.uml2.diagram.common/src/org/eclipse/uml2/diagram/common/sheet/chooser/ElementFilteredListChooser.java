@@ -65,12 +65,12 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		return myFilteredList;
 	}
 
-	public List<Object> getSelection() {
+	public List<?> getSelection() {
         Object[] result = myFilteredList.getSelectedElements();
         return Arrays.asList(result);
 	}
 
-	public void setSelection(List<Object> selection) {
+	public void setSelection(List<?> selection) {
 		if (selection == null || selection.isEmpty()) {
 			myFilteredList.setSelection(null);
 		} else {
