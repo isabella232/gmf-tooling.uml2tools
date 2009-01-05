@@ -57,4 +57,4 @@ if (parser != null) {
 }
 «ENDDEFINE»
 
-«DEFINE hintForCaseWithModelFacetOnly(gmfgen::GenCommonBase hintHolder) FOR gmfgen::ModelFacet»«EXPAND xpt::editor::VisualIDRegistry::getTypeMethodCall FOR hintHolder.getDiagram()»(«EXPAND xpt::editor::VisualIDRegistry::visualID FOR hintHolder»)«ENDDEFINE»
+«DEFINE hintForCaseWithModelFacetOnly(gmfgen::GenCommonBase hintHolder) FOR gmfgen::ModelFacet»«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall FOR hintHolder»«ENDDEFINE»

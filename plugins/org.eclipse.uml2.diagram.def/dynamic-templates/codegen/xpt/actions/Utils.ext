@@ -31,7 +31,7 @@ actionsPackage(commonBase.getDiagram())
 ;
 
 Boolean hasAlternativeNotation(GenTopLevelNode node) :
-hasAlternationNotation(node.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first())
+hasAlternationNotation((gmfgenext::SubstitutableByAttributes)node.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first())
 ;
 
 Boolean hasAlternativeNotation(GenNode node) :

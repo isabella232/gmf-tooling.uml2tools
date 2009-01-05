@@ -17,7 +17,7 @@
 «EXTENSION xpt::diagram::editpolicies::Utils»
 
 «AROUND xpt::diagram::editpolicies::NodeItemSemanticEditPolicy::additions FOR gmfgen::GenNode-»
-«LET this.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS group-»
+«LET ((gmfgenext::SubstitutableByAttributes)this.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS group-»
 «IF null != group && group.requiresAll && !group.getSubstitutableByNodes().select(n | n != this).isEmpty()-»
 «EXPAND addDeleteViewCommandForGroup(group) FOR this»
 «ENDIF-»

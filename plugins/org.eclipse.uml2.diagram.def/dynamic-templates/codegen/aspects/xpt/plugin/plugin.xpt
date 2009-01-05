@@ -68,4 +68,4 @@
 
 «DEFINE preferencesPrefix FOR gmfgen::GenDiagram»org.eclipse.uml2.uml.diagram.«unqualify(editorGen.plugin.iD)»«ENDDEFINE»
 «DEFINE preferencePageId FOR gmfgen::GenPreferencePage»«EXPAND preferencesPrefix FOR this.getDiagram()».«unqualify(this.iD)»«ENDDEFINE»
-«DEFINE preferencePageId FOR gmfgen::GenDiagram»«EXPAND preferencePageId FOR this.preferencePages.first()»«ENDDEFINE»
+«DEFINE preferencePageId FOR gmfgen::GenDiagram»«EXPAND preferencePageId FOR (gmfgen::GenPreferencePage)this.preferencePages.first()»«ENDDEFINE»

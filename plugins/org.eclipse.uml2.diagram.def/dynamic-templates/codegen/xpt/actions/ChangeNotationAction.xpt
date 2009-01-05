@@ -84,9 +84,11 @@ public class «EXPAND className(substitutableByNode)» extends org.eclipse.uml2.di
 
 «DEFINE i18nAccessors FOR gmfgen::GenTopLevelNode»
 «LET viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS subChild-»
-«IF subChild != null && !subChild.requiresAll-»
-«FOREACH subChild.getSubstitutableByNodes() AS newNode»«EXPAND i18nAccessors(newNode)»«ENDFOREACH-»
+«LET (gmfgenext::SubstitutableByAttributes)subChild AS subChildImpl-»
+«IF subChildImpl != null && !subChildImpl.requiresAll-»
+«FOREACH subChildImpl.getSubstitutableByNodes().typeSelect(gmfgen::GenNode) AS newNode»«EXPAND i18nAccessors(newNode)»«ENDFOREACH-»
 «ENDIF-»
+«ENDLET-»
 «ENDLET-»
 «ENDDEFINE»
 
@@ -101,9 +103,11 @@ public class «EXPAND className(substitutableByNode)» extends org.eclipse.uml2.di
 
 «DEFINE i18nValues FOR gmfgen::GenTopLevelNode-»
 «LET viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS subChild-»
-«IF subChild != null && !subChild.requiresAll-»
-«FOREACH subChild.getSubstitutableByNodes() AS newNode»«EXPAND i18nValues(newNode)»«ENDFOREACH-»
+«LET (gmfgenext::SubstitutableByAttributes)subChild AS subChildImpl-»
+«IF subChildImpl != null && !subChildImpl.requiresAll-»
+«FOREACH subChildImpl.getSubstitutableByNodes().typeSelect(gmfgen::GenNode) AS newNode»«EXPAND i18nValues(newNode)»«ENDFOREACH-»
 «ENDIF-»
+«ENDLET-»
 «ENDLET-»
 «ENDDEFINE»
 

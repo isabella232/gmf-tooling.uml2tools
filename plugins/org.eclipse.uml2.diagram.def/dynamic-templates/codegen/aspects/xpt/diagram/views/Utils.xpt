@@ -20,7 +20,7 @@
 «AROUND addCustomStyles(String stylesVar) FOR gmfgen::GenCommonBase-»
 	«targetDef.proceed()-»
 	«IF {this}.typeSelect(gmfgen::GenContainerBase).size() > 0-»
-	«IF supportsNonCanonicalMode(this.getDiagram()) && !getSemanticChildren(this).isEmpty() -»
+	«IF supportsNonCanonicalMode(this.getDiagram()) && !getSemanticChildren((gmfgen::GenContainerBase)this).isEmpty() -»
 		«EXPAND addCanonicalStyle(stylesVar) FOR this-»
 	«ENDIF-»
 	«ENDIF-»

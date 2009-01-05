@@ -142,7 +142,7 @@
 	
 		«EXPAND xpt::Common::generatedMemberComment»
 		public void notifyChanged(org.eclipse.emf.common.notify.Notification event) {
-			«EXPAND refreshLinkForTypeModelFacet FOREACH getOutgoingAndContainedTypeLinks(this).collect(link | link.modelFacet.targetMetaFeature)-»
+			«EXPAND refreshLinkForTypeModelFacet FOREACH getOutgoingAndContainedTypeLinks(this).collect(link | ((gmfgen::TypeLinkModelFacet)link.modelFacet).targetMetaFeature)-»
 		}
 	}
 «ENDDEFINE»
@@ -162,7 +162,7 @@
 			switch (next.getVisualID()){
 				«FOREACH linksToListen AS nextLink-»
 					«EXPAND xpt::Common::caseVisualID FOR nextLink»
-					getLinkTargetListener().addReferenceListener(nextLink, «EXPAND MetaModel::MetaFeature FOR nextLink.modelFacet.targetMetaFeature»);
+					getLinkTargetListener().addReferenceListener(nextLink, «EXPAND MetaModel::MetaFeature FOR ((gmfgen::TypeLinkModelFacet)nextLink.modelFacet).targetMetaFeature»);
 					break; 
 				
 				«ENDFOREACH-»
@@ -273,7 +273,7 @@
 «DEFINE handleTypeLinkModification FOR gmfgen::GenNode-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	private void handleTypeLinkModification(org.eclipse.emf.common.notify.Notification event) {
-		«EXPAND addOrRemoveTypeLinkListeners(this) FOREACH getOutgoingAndContainedTypeLinks(this).collect(link|link.modelFacet.containmentMetaFeature).toSet().typeSelect(genmodel::GenFeature)-»zz
+		«EXPAND addOrRemoveTypeLinkListeners(this) FOREACH getOutgoingAndContainedTypeLinks(this).collect(link|((gmfgen::TypeLinkModelFacet)link.modelFacet).containmentMetaFeature).toSet().typeSelect(genmodel::GenFeature)-»zz
 	}
 «ENDDEFINE»
 

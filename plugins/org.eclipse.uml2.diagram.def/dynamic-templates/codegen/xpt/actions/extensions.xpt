@@ -44,9 +44,11 @@
                    path="/ChangeNotationMenu/">
              </popupMenuGroup>
 		«LET viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS subChild-»
-		«IF subChild != null && !subChild.requiresAll-»
-			«FOREACH subChild.getSubstitutableByNodes() AS newNode»«EXPAND changeNotationPopupAction(newNode)»«ENDFOREACH-»
+		«LET (gmfgenext::SubstitutableByAttributes)subChild AS subChildImpl-»
+		«IF subChildImpl != null && !subChildImpl.requiresAll-»
+			«FOREACH subChildImpl.getSubstitutableByNodes().typeSelect(gmfgen::GenNode) AS newNode»«EXPAND changeNotationPopupAction(newNode)»«ENDFOREACH-»
 		«ENDIF-»
+		«ENDLET-»
 		«ENDLET-»
 <popupStructuredContributionCriteria
                    objectClass="«getEditPartQualifiedClassName()»"

@@ -146,16 +146,18 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 «ENDDEFINE»
 
 «DEFINE caseDomainDescriptorContainer FOR gmfgen::GenContainerBase-»
-	«IF getContainedSemanticNodes(this).size() > 0 || this.compartments.size() > 0-»
+	«IF getContainedSemanticNodes(this).size() > 0 || (!{this}.typeSelect(gmfgen::GenNode).isEmpty() && ((gmfgen::GenNode)this).compartments.size() > 0)-»
 «EXPAND xpt::Common::caseVisualID»
 	«FOREACH getContainedSemanticNodes(this) AS nextDirectChild-»
 		«IF !isDiagramHeader(nextDirectChild)-»
 			«EXPAND xpt::editor::VisualIDRegistry::returnVisualID FOR nextDirectChild-»
 		«ENDIF-»
 	«ENDFOREACH-»
-	«FOREACH this.compartments AS nextCompartment-»
+	«IF !{this}.typeSelect(gmfgen::GenNode).isEmpty()-»
+	«FOREACH ((gmfgen::GenNode)this).compartments AS nextCompartment-»
 		«EXPAND xpt::editor::VisualIDRegistry::returnVisualID FOREACH getContainedSemanticNodes(nextCompartment)-»
 	«ENDFOREACH-»
+	«ENDIF-»
 	break;
 	«ENDIF-»
 «ENDDEFINE»
@@ -173,11 +175,13 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 		switch(visualId) {
 			«FOREACH allSubstitutable AS next-»
 			«LET next.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS nextGroup-»
+			«LET (gmfgenext::SubstitutableByAttributes)nextGroup AS nextGroupImpl-»
 			«EXPAND xpt::Common::caseVisualID FOR next»
 				return 
-				«FOREACH nextGroup.getSubstitutableByNodes() AS nextSubstitution SEPARATOR ' || '-»
+				«FOREACH nextGroupImpl.getSubstitutableByNodes() AS nextSubstitution SEPARATOR ' || '-»
 					(substituteCandidate == «EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextSubstitution»)
 				«ENDFOREACH»;		
+			«ENDLET-»
 			«ENDLET-»
 			«ENDFOREACH»
 			

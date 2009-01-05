@@ -30,5 +30,5 @@ Set[genmodel::GenFeature] getOutgoingLinkTargetFeatures(gmfgen::GenNode node, ge
 cached List[gmfgen::GenLink] getOutgoingAndContainedTypeLinks(gmfgen::GenNode node):
 	node.getDiagram().links.select(link|canBeSource(link, node))
 		.select(link | {link.modelFacet}.typeSelect(gmfgen::TypeLinkModelFacet).size() > 0)
-		.select(link | {link.modelFacet}.typeSelect(gmfgen::TypeLinkModelFacet).get(0).childMetaFeature.ecoreFeature.eContainingClass.isSuperTypeOf(node.modelFacet.metaClass.ecoreClass))
+		.select(link | ((gmfgen::TypeLinkModelFacet)link.modelFacet).childMetaFeature.ecoreFeature.eContainingClass.isSuperTypeOf(node.modelFacet.metaClass.ecoreClass))
 ;

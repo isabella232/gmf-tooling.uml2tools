@@ -34,10 +34,12 @@ public static final «EXPAND elementTypeClass FOR elementType» «getUniqueIdentifi
 	«ENDIF-»
 «ENDAROUND»
 
+«DEFINE elementTypeClass FOR gmfgen::ElementType»«ERROR 'subclass expected'»«ENDDEFINE»
 «DEFINE elementTypeClass FOR gmfgen::MetamodelType»org.eclipse.gmf.runtime.emf.type.core.IHintedType«ENDDEFINE»
 «DEFINE elementTypeClass FOR gmfgen::SpecializationType»org.eclipse.gmf.runtime.emf.type.core.IHintedType«ENDDEFINE»
 «DEFINE elementTypeClass FOR gmfgen::NotationType»org.eclipse.gmf.runtime.emf.type.core.IElementType«ENDDEFINE»
 
+«DEFINE castToElementTypeClass FOR gmfgen::ElementType»«ERROR 'subclass expected'»«ENDDEFINE»
 «DEFINE castToElementTypeClass FOR gmfgen::MetamodelType»(«EXPAND elementTypeClass»)«ENDDEFINE»
 «DEFINE castToElementTypeClass FOR gmfgen::SpecializationType»(«EXPAND elementTypeClass»)«ENDDEFINE»
 «DEFINE castToElementTypeClass FOR gmfgen::NotationType»«ENDDEFINE»

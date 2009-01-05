@@ -23,7 +23,7 @@ implements org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart«-»
 «IF this.listLayout && this.childNodes.size() == 1-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public org.eclipse.gmf.runtime.emf.type.core.IElementType getElementType() {
-		return «getDiagram().getElementTypesQualifiedClassName()».«childNodes.get(0).getUniqueIdentifier()»;
+		return «getDiagram().getElementTypesQualifiedClassName()».«((gmfgen::GenCommonBase)childNodes.get(0)).getUniqueIdentifier()»;
 	}
 	
 «ENDIF-»

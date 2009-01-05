@@ -29,7 +29,7 @@ public class «EXPAND className» extends org.eclipse.gmf.runtime.common.ui.servic
 	protected org.eclipse.jface.action.IAction createAction(String actionId, org.eclipse.gmf.runtime.common.ui.util.IWorkbenchPartDescriptor partDescriptor) {
 		org.eclipse.ui.IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
 	«LET viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS subChild-»
-	«EXPAND addActions(subChild)-»
+	«EXPAND addActions((gmfgenext::SubstitutableByAttributes)subChild)-»
 	«ENDLET-»
 		return super.createAction(actionId, partDescriptor);
 	}
@@ -60,7 +60,7 @@ public class «EXPAND className» extends org.eclipse.gmf.runtime.common.ui.servic
 
 «DEFINE addActions(gmfgenext::SubstitutableByAttributes subChild) FOR gmfgen::GenTopLevelNode-»
 «IF subChild != null && !subChild.requiresAll-»
-«FOREACH subChild.getSubstitutableByNodes() AS newNode»«EXPAND addAction(newNode)»«ENDFOREACH-»
+«FOREACH subChild.getSubstitutableByNodes().typeSelect(gmfgen::GenNode) AS newNode»«EXPAND addAction(newNode)»«ENDFOREACH-»
 «ENDIF»
 «ENDDEFINE»
 
