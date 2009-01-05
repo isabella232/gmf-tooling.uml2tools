@@ -6,11 +6,6 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
 			<name>org.eclipse.pde.ManifestBuilder</name>
 			<arguments>
 			</arguments>
@@ -21,13 +16,22 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.gmf.xpand.oawBuilder</name>
+			<name>org.eclipse.m2m.qvt.oml.QvtBuilder</name>
+			<arguments>
+				<dictionary>
+					<key>src_container</key>
+					<value>dynamic-templates/codegen.migrated</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.gmf.xpand.xpandBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.pde.PluginNature</nature>
-		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.m2m.qvt.oml.project.TransformationNature</nature>
 	</natures>
 </projectDescription>

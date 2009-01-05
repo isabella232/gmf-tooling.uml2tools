@@ -1,0 +1,7 @@
+modeltype genModel uses "http://www.eclipse.org/gmf/2008/GenModel";
+
+library defaultImports;
+
+helper needDefaultImports(diagram : genModel::GenDiagram) : Boolean {
+	return 'Package' = diagram.domainDiagramElement.ecoreClass.name or not diagram.domainDiagramElement.ecoreClass.eAllSuperTypes->select(t | t.name = 'Package')->isEmpty()
+}

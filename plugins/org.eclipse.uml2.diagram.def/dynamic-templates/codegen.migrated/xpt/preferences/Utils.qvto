@@ -1,0 +1,9 @@
+import org.eclipse.uml2.diagram.codegen.qvt.NativeEMFUtils;
+
+import org.eclipse.uml2.diagram.codegen.qvt.EMFUtils;
+
+library Utils;
+
+helper isViewFiltersPage(id : String) : Boolean {
+	return 'viewfilter' = getSimpleClassName(id)
+}
