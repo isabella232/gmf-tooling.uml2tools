@@ -573,6 +573,11 @@
                 category="domain"
                 id="property.section.domain.association.target"
                 label="%tab.association.target"/>
+          <propertyTab
+                afterTab="property.tab.domain"
+                category="domain"
+                id="property.tab.domain.constraint.specification"
+                label="%tab.specification"/>
       </propertyTabs>
    </extension>
 
@@ -627,6 +632,15 @@
             tab="property.section.domain.association.target"
             class="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$TargetPropertySection"
             filter="org.eclipse.uml2.diagram.common.sheet.AssociationPropertySection$AssociationPropertySectionFilter">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+         <propertySection
+            id="property.section.domain.constraint.specification" 
+            tab="property.tab.domain.constraint.specification"
+            class="org.eclipse.uml2.diagram.common.sheet.ConstraintSpecificationTab$PropertySection"
+            filter="org.eclipse.uml2.diagram.common.sheet.ConstraintSpecificationTab$PropertySectionFilter">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
             <input type="org.eclipse.uml2.diagram.clazz.navigator.UMLAbstractNavigatorItem"/>

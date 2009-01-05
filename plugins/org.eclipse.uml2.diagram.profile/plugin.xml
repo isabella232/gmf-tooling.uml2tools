@@ -813,6 +813,18 @@
       </propertyTabs>
    </extension>
    
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="false"?>   
+      <propertyTabs contributorId="org.eclipse.uml2.diagram.profile">
+          <propertyTab
+                afterTab="property.tab.domain"
+                category="domain"
+                id="property.tab.domain.constraint.specification"
+                label="%tab.specification"/>
+      </propertyTabs>
+   </extension>
+
+   
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
       <propertySections contributorId="org.eclipse.uml2.diagram.profile">
@@ -840,6 +852,21 @@
             id="property.section.domain" 
             tab="property.tab.domain"
             class="org.eclipse.uml2.diagram.profile.sheet.UMLPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.profile.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+   
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="false"?>   
+      <propertySections contributorId="org.eclipse.uml2.diagram.profile">
+         <propertySection
+            id="property.section.domain.constraint.specification" 
+            tab="property.tab.domain.constraint.specification"
+            class="org.eclipse.uml2.diagram.common.sheet.ConstraintSpecificationTab$PropertySection"
+            filter="org.eclipse.uml2.diagram.common.sheet.ConstraintSpecificationTab$PropertySectionFilter">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
             <input type="org.eclipse.uml2.diagram.profile.navigator.UMLAbstractNavigatorItem"/>
