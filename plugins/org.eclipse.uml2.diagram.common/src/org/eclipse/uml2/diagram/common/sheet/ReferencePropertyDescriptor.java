@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -33,34 +34,30 @@ public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescr
 
 	private final IDialogSettings myDialogSettings;
 
-	private final boolean myIsMany;
-
 	public ReferencePropertyDescriptor(Object sourceObject, IItemPropertyDescriptor itemPropertyDescriptor, String category, AdapterFactory itemProvidersAdapterFactory, IDialogSettings dialogSettings) {
-		this(sourceObject, itemPropertyDescriptor, category, itemProvidersAdapterFactory, dialogSettings, false);
-	}
-
-	public ReferencePropertyDescriptor(Object sourceObject, IItemPropertyDescriptor itemPropertyDescriptor, String category, AdapterFactory itemProvidersAdapterFactory, IDialogSettings dialogSettings, boolean isMany) {
 		super(sourceObject, itemPropertyDescriptor, category);
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
 		myDialogSettings = dialogSettings;
-		myIsMany = isMany;
 	}
 
 	@Override
 	protected CellEditor doCreateEditor(final Composite composite) {
 		final EStructuralFeature feature = (EStructuralFeature) getFeature();
-		if (myIsMany) {
-			return new ExtendedDialogCellEditor(composite, getEditLabelProvider()) {
-				@Override
-				protected Object openDialogBox(Control cellEditorWindow) {
-					MultiReferenceElementChooserDialog dialog = new MultiReferenceElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object, feature);
-					dialog.open();
-					return dialog.getResult();
-				}
-			};
-		}
-		ReferencedElementChooserDialog dialog = new ReferencedElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object, feature);
-		return new ReferenceComboAndDialogCellEditor(composite, new ArrayList(getChoiceOfValues()), getLabelProvider(), true, dialog, TransactionUtil.getEditingDomain(object));
+        if (itemPropertyDescriptor.getFeature(object) instanceof EReference && !getChoiceOfValues().isEmpty()) {
+        	if (itemPropertyDescriptor.isMany(object)) {
+    			return new ExtendedDialogCellEditor(composite, getEditLabelProvider()) {
+    				@Override
+    				protected Object openDialogBox(Control cellEditorWindow) {
+    					MultiReferenceElementChooserDialog dialog = new MultiReferenceElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object, feature);
+    					dialog.open();
+    					return dialog.getResult();
+    				}
+    			};
+        	}
+    		ReferencedElementChooserDialog dialog = new ReferencedElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object, feature);
+    		return new ReferenceComboAndDialogCellEditor(composite, new ArrayList(getChoiceOfValues()), getLabelProvider(), true, dialog, TransactionUtil.getEditingDomain(object));
+        }
+        return super.doCreateEditor(composite);
 	}
 
 }
