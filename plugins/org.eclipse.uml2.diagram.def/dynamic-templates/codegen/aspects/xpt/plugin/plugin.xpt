@@ -16,8 +16,8 @@
 «IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
 «IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
 
-«EXTENSION aspects::xpt::plugin::Utils»
 «EXTENSION aspects::xpt::FileExtensionUtils»
+«EXTENSION org::eclipse::uml2::diagram::codegen::qvt::EMFUtils»
 
 «AROUND xpt::plugin::plugin::fileTypes FOR gmfgen::GenPlugin-»
    <extension point="org.eclipse.team.core.fileTypes">
@@ -66,6 +66,6 @@
    </extension>
 «ENDDEFINE»
 
-«DEFINE preferencesPrefix FOR gmfgen::GenDiagram»org.eclipse.uml2.uml.diagram.«unqualify(editorGen.plugin.iD)»«ENDDEFINE»
-«DEFINE preferencePageId FOR gmfgen::GenPreferencePage»«EXPAND preferencesPrefix FOR this.getDiagram()».«unqualify(this.iD)»«ENDDEFINE»
+«DEFINE preferencesPrefix FOR gmfgen::GenDiagram»org.eclipse.uml2.uml.diagram.«getSimpleClassName(editorGen.plugin.iD)»«ENDDEFINE»
+«DEFINE preferencePageId FOR gmfgen::GenPreferencePage»«EXPAND preferencesPrefix FOR this.getDiagram()».«getSimpleClassName(this.iD)»«ENDDEFINE»
 «DEFINE preferencePageId FOR gmfgen::GenDiagram»«EXPAND preferencePageId FOR (gmfgen::GenPreferencePage)this.preferencePages.first()»«ENDDEFINE»

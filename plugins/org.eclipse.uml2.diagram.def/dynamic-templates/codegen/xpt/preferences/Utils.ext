@@ -11,15 +11,8 @@
 import "http://www.eclipse.org/emf/2002/Ecore";
 import "http://www.eclipse.org/gmf/2008/GenModel";
 
+extension org::eclipse::uml2::diagram::codegen::qvt::EMFUtils;
+
 Boolean isViewFiltersPage(String id) :
 "viewfilter" == getSimpleClassName(id)
 ;
-
-String getSimpleClassName(String fqn) :
-JAVA org.eclipse.emf.codegen.util.CodeGenUtil.getSimpleClassName(java.lang.String)
-;
-
-String getPackageName(String fqn) :
-JAVA org.eclipse.emf.codegen.util.CodeGenUtil.getPackageName(java.lang.String)
-;
-

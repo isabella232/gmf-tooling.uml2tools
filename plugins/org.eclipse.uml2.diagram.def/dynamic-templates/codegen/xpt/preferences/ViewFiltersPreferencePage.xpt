@@ -16,6 +16,7 @@
 «IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
 
 «EXTENSION xpt::preferences::Utils»
+«EXTENSION org::eclipse::uml2::diagram::codegen::qvt::EMFUtils»
 
 «DEFINE isViewFiltersPreferencePage FOR gmfgen::GenCustomPreferencePage»«isViewFiltersPage(iD)»«ENDDEFINE»
 

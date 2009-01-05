@@ -15,7 +15,6 @@
 
 «EXTENSION xpt::actions::Utils»  
 «EXTENSION xpt::diagram::Utils»
-«EXTENSION aspects::xpt::plugin::Utils»
 
 «AROUND preferencePage FOR gmfgen::GenPreferencePage-»
       <page
