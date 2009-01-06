@@ -17,6 +17,7 @@ import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * @generated
@@ -71,7 +72,6 @@ public class AssociationCreateCommand extends EditElementCommand {
 		}
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateAssociation_4011(getContainer(), getSource(), getTarget());
 	}
-
 
 	/**
 	 * @generated NOT
