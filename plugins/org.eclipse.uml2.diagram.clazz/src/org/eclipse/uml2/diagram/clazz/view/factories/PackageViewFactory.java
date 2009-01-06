@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.DiagramViewFactory;
-import org.eclipse.gmf.runtime.notation.CanonicalStyle;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
@@ -36,7 +35,6 @@ public class PackageViewFactory extends DiagramViewFactory {
 	protected List createStyles(View view) {
 		List result = createStylesGen(view);
 		result.add(NotationFactory.eINSTANCE.createFilteringStyle()); //[171240]
-		result.add(U2TNotationFactory.eINSTANCE.createU2TDiagramCanonicalStyle());
 		return result;
 	}
 
