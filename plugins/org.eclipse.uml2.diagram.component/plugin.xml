@@ -56,7 +56,7 @@
    </extension>
 <!-- gmf generator persistent region end -->
 
-   <extension point="org.eclipse.core.runtime.preferences">
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
       <initializer class="org.eclipse.uml2.diagram.component.preferences.DiagramPreferenceInitializer"/>
    </extension>
@@ -169,7 +169,7 @@
       </contributionItemProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
@@ -218,47 +218,69 @@
       </GlobalActionHandlerProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
       <viewProvider class="org.eclipse.uml2.diagram.component.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLComponent"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,3001,3002,3003,3016,3004,3005,3006,3015,3007,3008,3009,3010,3011,3012,3013,3014"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4006,4004,4007,4008,4009,4010,4011,4012"/>
       </viewProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
       <editpartProvider class="org.eclipse.uml2.diagram.component.providers.UMLEditPartProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,3001,3002,3003,3016,3004,3005,3006,3015,3007,3008,3009,3010,3011,3012,3013,3014"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4006,4004,4007,4008,4009,4010,4011,4012"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5001,5020,5004,5021,5005,5008,5011,5012,5014,5015,5022,5002,5019,5003,5006,5018,5016,5017,5007,5009,5010,5013"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002,7009,7010,7011,7003,7004,7005,7006,7007,7008"/>
+         </object>
+         <context views="generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
    </extension>
 
    
 
-   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.component.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart" id="Component_2001"/>
+         <object class="org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart" id="Artifact_2002"/>
+         <object class="org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart" id="Interface_2003"/>
+         <object class="org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart" id="Class_2004"/>
+         <object class="org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart" id="Package_2005"/>
+         <object class="org.eclipse.uml2.diagram.component.edit.parts.Package3EditPart" id="Package_2006"/>
+         <object class="org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart" id="Class_2007"/>
+         <object class="org.eclipse.uml2.diagram.component.edit.parts.CommentEditPart" id="Comment_2008"/>
+         <context elements="Component_2001,Artifact_2002,Interface_2003,Class_2004,Package_2005,Package_2006,Class_2007,Comment_2008"/>
       </modelingAssistantProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
       <IconProvider class="org.eclipse.uml2.diagram.component.providers.UMLIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
       <ParserProvider class="org.eclipse.uml2.diagram.component.providers.UMLParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
@@ -588,7 +610,7 @@
       </metamodel>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <?gmfgen generated="true"?>
       <clientContext id="org.eclipse.uml2.diagram.component.TypeContext">
          <enablement>
@@ -637,10 +659,12 @@
    </extension>
 
 
-   <extension point="org.eclipse.ui.navigator.viewer">
+   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
             <contentExtension pattern="org.eclipse.uml2.diagram.component.resourceContent"/>
+			<contentExtension pattern="org.eclipse.uml2.diagram.component.domainResourceContent"/>
             <contentExtension pattern="org.eclipse.uml2.diagram.component.navigatorLinkHelper"/>
          </includes>
       </viewerContentBinding>
@@ -652,7 +676,8 @@
    </extension>
 
    <extension point="org.eclipse.ui.navigator.navigatorContent">
-      <navigatorContent 
+      <?gmfgen generated="true"?>
+      <navigatorContent
             id="org.eclipse.uml2.diagram.component.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
@@ -662,6 +687,10 @@
             activeByDefault="true">
          <triggerPoints>
             <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="umlcomp"/>
+               </and>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="umlcomponent_diagram"/>
@@ -681,12 +710,43 @@
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="umlcomp"/>
+                  </and>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="umlcomponent_diagram"/>
                   </and>
                   <instanceof value="org.eclipse.uml2.diagram.component.navigator.UMLAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="org.eclipse.uml2.diagram.component.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="org.eclipse.uml2.diagram.component.navigator.UMLDomainNavigatorContentProvider" 
+            labelProvider="org.eclipse.uml2.diagram.component.navigator.UMLDomainNavigatorLabelProvider"
+            icon="icons/obj16/UMLDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="uml"/>
+               </and>
+               <and>
+                  <instanceof value="org.eclipse.emf.ecore.EObject"/>
+                  <test property="org.eclipse.uml2.diagram.component.isDomainModelElement"/>
+               </and>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <and>
+       	       <instanceof value="org.eclipse.emf.ecore.EObject"/>
+       	       <test property="org.eclipse.uml2.diagram.component.isDomainModelElement"/>
+       	    </and>
+         </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="org.eclipse.uml2.diagram.component.navigatorActionProvider"
@@ -699,12 +759,16 @@
       </actionProvider>
    </extension>
    
-   <extension point="org.eclipse.ui.navigator.linkHelper">
+   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
       <linkHelper
             id="org.eclipse.uml2.diagram.component.navigatorLinkHelper"
             class="org.eclipse.uml2.diagram.component.navigator.UMLNavigatorLinkHelper">
          <editorInputEnablement>
-            <instanceof value="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.document.FileEditorInputProxy"/>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="org.eclipse.uml2.diagram.component.isURIEditorInput"/>
+            </and>
          </editorInputEnablement>
          <selectionEnablement>
             <instanceof value="org.eclipse.uml2.diagram.component.navigator.UMLAbstractNavigatorItem"/>
@@ -712,8 +776,10 @@
       </linkHelper>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
-      <propertyContributor contributorId="org.eclipse.uml2.diagram.component"
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="org.eclipse.uml2.diagram.component"
             labelProvider="org.eclipse.uml2.diagram.component.sheet.UMLSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
@@ -721,7 +787,7 @@
       </propertyContributor>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
       <?gmfgen generated="true"?>   
       <propertyTabs contributorId="org.eclipse.uml2.diagram.component">
          <propertyTab
@@ -755,7 +821,7 @@
       </propertyTabs>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
       <propertySections contributorId="org.eclipse.uml2.diagram.component">
          <propertySection id="property.section.ConnectorAppearancePropertySection" 
@@ -813,7 +879,7 @@
       </propertySections>
    </extension>
    
-   <extension point="org.eclipse.ui.preferencePages">
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.component.general"
@@ -869,7 +935,7 @@
       </objectContribution>
    </extension>
 
-   <extension point="org.eclipse.core.expressions.propertyTesters">
+   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
       <?gmfgen generated="true"?>
        <propertyTester
            id="org.eclipse.uml2.diagram.component.URIEditorInputPropertyTester"
@@ -879,7 +945,7 @@
            class="org.eclipse.uml2.diagram.component.part.UMLUriEditorInputTester">
        </propertyTester>
    </extension>
-<extension point="org.eclipse.core.expressions.propertyTesters">
+<extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isDomainModelElement">
       <?gmfgen generated="true"?>
        <propertyTester
            id="org.eclipse.uml2.diagram.component.DomainModelElementPropertyTester"
@@ -898,7 +964,7 @@
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
    </extension>
-   <extension point="org.eclipse.ui.commands">
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
@@ -907,7 +973,7 @@
          id="org.eclipse.uml2.diagram.component.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
-   <extension point="org.eclipse.ui.bindings">
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
          commandId="org.eclipse.uml2.diagram.component.updateDiagram"
@@ -947,7 +1013,7 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-<extension point="org.eclipse.ui.preferencePages">
+<extension point="org.eclipse.ui.preferencePages" id="prefpages.iconstyle">
       <?gmfgen generated="true"?>
       <page
             name="%preferences.icons"
@@ -956,7 +1022,7 @@
             id="org.eclipse.uml2.diagram.component.icons">
       </page>
    </extension>
-   <extension point="org.eclipse.ui.commands">
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="org.eclipse.uml2.diagram.component.UMLLoadResourceAction"
@@ -968,11 +1034,11 @@
          categoryId="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"
          defaultHandler="org.eclipse.uml2.diagram.component.part.UMLCreateShortcutAction"/>
    </extension>
-   <extension point="org.eclipse.ui.handlers">
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
    
-   <extension point="org.eclipse.ui.menus">
+   <extension point="org.eclipse.ui.menus" id="context-menus">
       <?gmfgen generated="true"?>
       <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
       </menuContribution>
@@ -1046,7 +1112,7 @@
 		 </popupContribution>
       </contributionItemProvider>
 </extension>
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.tagvalues">
 <?gmfgen generated="true"?>
       <propertyTabs contributorId="org.eclipse.uml2.diagram.component">
           <propertyTab
@@ -1057,7 +1123,7 @@
       </propertyTabs>
    </extension>
    
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections.tagvalues">
 <?gmfgen generated="true"?>
       <propertySections contributorId="org.eclipse.uml2.diagram.component">
          <propertySection
@@ -1071,10 +1137,5 @@
          </propertySection>
       </propertySections>
    </extension>
-
-
-
-
-
 
 </plugin>
