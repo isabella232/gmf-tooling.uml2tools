@@ -168,8 +168,8 @@
       <viewProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLStateMachine"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3013,3001,3019,3020,3021,3012,3002,3016,3017,3018,3003,3004,3005,3006,3007,3008,3009,3010,3011,3014,3015"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
 
@@ -177,6 +177,19 @@
       <?gmfgen generated="true"?>
       <editpartProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLEditPartProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2005,3013,3001,3019,3020,3021,3012,3002,3016,3017,3018,3003,3004,3005,3006,3007,3008,3009,3010,3011,3014,3015"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5011,5012,5001,5015,5004,5013,5008,5014,5009,5010,5006,5007"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7004,7005,7006,7003,7007"/>
+         </object>
+         <context views="generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
    </extension>
 
@@ -186,6 +199,8 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart" id="StateMachine_2005"/>
+         <context elements="StateMachine_2005"/>
       </modelingAssistantProvider>
    </extension>
 
