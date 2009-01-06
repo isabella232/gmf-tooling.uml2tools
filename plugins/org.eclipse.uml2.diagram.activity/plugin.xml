@@ -1440,8 +1440,8 @@
       </propertyContributor>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-<?gmfgen generated="true"?>
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.tagvalues">
+   <?gmfgen generated="true"?>
       <propertyTabs contributorId="org.eclipse.uml2.diagram.activity">
           <propertyTab
                 afterTab="property.tab.domain"
@@ -1451,8 +1451,8 @@
       </propertyTabs>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
-<?gmfgen generated="true"?>
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections.tagvalues">
+   <?gmfgen generated="true"?>
       <propertySections contributorId="org.eclipse.uml2.diagram.activity">
          <propertySection
             id="property.section.domain.taggedvalues" 
