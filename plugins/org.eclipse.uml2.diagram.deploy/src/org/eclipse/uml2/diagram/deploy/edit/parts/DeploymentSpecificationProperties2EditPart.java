@@ -2,10 +2,12 @@ package org.eclipse.uml2.diagram.deploy.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -14,12 +16,13 @@ import org.eclipse.uml2.diagram.deploy.edit.policies.DeploymentSpecificationProp
 import org.eclipse.uml2.diagram.deploy.part.Messages;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 
 /**
  * @generated
  */
 
-public class DeploymentSpecificationProperties2EditPart extends ListCompartmentEditPart {
+public class DeploymentSpecificationProperties2EditPart extends ListCompartmentEditPart implements IInsertableEditPart {
 
 	/**
 	 * @generated
@@ -77,6 +80,13 @@ public class DeploymentSpecificationProperties2EditPart extends ListCompartmentE
 	protected void setRatio(Double ratio) {
 		// nothing to do -- parent layout does not accept Double constraints as ratio
 		// super.setRatio(ratio); 
+	}
+
+	/**
+	 * @generated
+	 */
+	public IElementType getElementType() {
+		return UMLElementTypes.Property_3003;
 	}
 
 }
