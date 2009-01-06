@@ -3,23 +3,24 @@ package org.eclipse.uml2.diagram.deploy.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.deploy.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Artifact;
 import org.eclipse.uml2.uml.Manifestation;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
-public class ManifestationCreateCommand extends CreateElementCommand {
+public class ManifestationCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -35,14 +36,9 @@ public class ManifestationCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	public ManifestationCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
-		super(request);
+		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
-		if (request.getContainmentFeature() == null) {
-			setContainmentFeature(UMLPackage.eINSTANCE.getArtifact_Manifestation());
-		}
-
-		super.setElementToEdit(source);
 	}
 
 	/**
@@ -68,38 +64,34 @@ public class ManifestationCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected EObject doDefaultElementCreation() {
-		Manifestation newElement = UMLFactory.eINSTANCE.createManifestation();
-		getSource().getManifestations().add(newElement);
-		newElement.setUtilizedElement(getTarget());
-		return newElement;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected EClass getEClassToEdit() {
-		return UMLPackage.eINSTANCE.getArtifact();
-	}
-
-	/**
-	 * @generated
-	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-		return super.doExecuteWithResult(monitor, info);
+
+		Manifestation newElement = UMLFactory.eINSTANCE.createManifestation();
+		getSource().getManifestations().add(newElement);
+		newElement.setUtilizedElement(getTarget());
+		doConfigure(newElement, monitor, info);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
+		return CommandResult.newOKCommandResult(newElement);
+
 	}
 
 	/**
 	 * @generated
 	 */
-	protected ConfigureRequest createConfigureRequest() {
-		ConfigureRequest request = super.createConfigureRequest();
-		request.setParameter(CreateRelationshipRequest.SOURCE, getSource());
-		request.setParameter(CreateRelationshipRequest.TARGET, getTarget());
-		return request;
+	protected void doConfigure(Manifestation newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
+		configureRequest.addParameters(getRequest().getParameters());
+		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, getSource());
+		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
+		if (configureCommand != null && configureCommand.canExecute()) {
+			configureCommand.execute(monitor, info);
+		}
 	}
 
 	/**

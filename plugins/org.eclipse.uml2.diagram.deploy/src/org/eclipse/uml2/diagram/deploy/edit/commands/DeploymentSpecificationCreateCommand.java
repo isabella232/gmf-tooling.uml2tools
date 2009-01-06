@@ -1,9 +1,15 @@
 package org.eclipse.uml2.diagram.deploy.edit.commands;
 
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
@@ -13,13 +19,13 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * @generated
  */
-public class DeploymentSpecificationCreateCommand extends CreateElementCommand {
+public class DeploymentSpecificationCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
 	public DeploymentSpecificationCreateCommand(CreateElementRequest req) {
-		super(req);
+		super(req.getLabel(), null, req);
 	}
 
 	/**
@@ -37,23 +43,13 @@ public class DeploymentSpecificationCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (getEClass() != null) {
-			return getEClass().isSuperTypeOf(getEClassToEdit());
-		}
 		return true;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected EReference getContainmentFeature() {
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected EObject doDefaultElementCreation() {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// Uncomment to put "phantom" objects into the diagram file.		
 		// org.eclipse.emf.ecore.resource.Resource resource = 
 		// 		((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).getContainer().eResource();
@@ -64,7 +60,26 @@ public class DeploymentSpecificationCreateCommand extends CreateElementCommand {
 		DeploymentSpecification newElement = UMLFactory.eINSTANCE.createDeploymentSpecification();
 
 		resource.getContents().add(newElement);
+
 		UMLElementTypes.init_DeploymentSpecification_2007(newElement);
-		return newElement;
+
+		doConfigure(newElement, monitor, info);
+
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
+		return CommandResult.newOKCommandResult(newElement);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void doConfigure(DeploymentSpecification newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
+		configureRequest.addParameters(getRequest().getParameters());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
+		if (configureCommand != null && configureCommand.canExecute()) {
+			configureCommand.execute(monitor, info);
+		}
 	}
 }
