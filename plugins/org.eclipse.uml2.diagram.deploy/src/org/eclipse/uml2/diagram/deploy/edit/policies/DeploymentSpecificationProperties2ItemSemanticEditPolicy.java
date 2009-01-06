@@ -24,9 +24,6 @@ public class DeploymentSpecificationProperties2ItemSemanticEditPolicy extends UM
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Property_3003 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getArtifact_OwnedAttribute());
-			}
 			return getGEFWrapper(new PropertyCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

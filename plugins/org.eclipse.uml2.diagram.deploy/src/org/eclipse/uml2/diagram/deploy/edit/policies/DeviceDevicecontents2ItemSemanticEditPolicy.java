@@ -26,27 +26,15 @@ public class DeviceDevicecontents2ItemSemanticEditPolicy extends UMLBaseItemSema
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Device_3004 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getNode_NestedNode());
-			}
 			return getGEFWrapper(new Device2CreateCommand(req));
 		}
 		if (UMLElementTypes.Artifact_3002 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getClass_NestedClassifier());
-			}
 			return getGEFWrapper(new ArtifactCreateCommand(req));
 		}
 		if (UMLElementTypes.ExecutionEnvironment_3005 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getNode_NestedNode());
-			}
 			return getGEFWrapper(new ExecutionEnvironment2CreateCommand(req));
 		}
 		if (UMLElementTypes.Node_3007 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getNode_NestedNode());
-			}
 			return getGEFWrapper(new Node2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

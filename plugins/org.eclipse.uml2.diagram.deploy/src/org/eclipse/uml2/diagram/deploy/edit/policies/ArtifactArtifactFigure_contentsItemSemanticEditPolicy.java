@@ -25,15 +25,9 @@ public class ArtifactArtifactFigure_contentsItemSemanticEditPolicy extends UMLBa
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Artifact_3008 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getArtifact_NestedArtifact());
-			}
 			return getGEFWrapper(new Artifact4CreateCommand(req));
 		}
 		if (UMLElementTypes.DeploymentSpecification_3009 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getArtifact_NestedArtifact());
-			}
 			return getGEFWrapper(new DeploymentSpecification2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
