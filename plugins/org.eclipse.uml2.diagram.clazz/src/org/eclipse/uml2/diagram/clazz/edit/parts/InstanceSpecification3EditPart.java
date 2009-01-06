@@ -146,12 +146,12 @@ public class InstanceSpecification3EditPart extends ShapeNodeEditPart implements
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof InstanceSpecificationStereo2EditPart) {
-			((InstanceSpecificationStereo2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNode_StereoLabel());
-			return true;
-		}
 		if (childEditPart instanceof InstanceSpecificationName2EditPart) {
 			((InstanceSpecificationName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNode_NameLabel());
+			return true;
+		}
+		if (childEditPart instanceof InstanceSpecificationStereo2EditPart) {
+			((InstanceSpecificationStereo2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNode_StereoLabel());
 			return true;
 		}
 		if (childEditPart instanceof InstanceSpecificationSlots2EditPart) {

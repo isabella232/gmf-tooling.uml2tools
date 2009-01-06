@@ -167,12 +167,12 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof AssociationClassStereotypeEditPart) {
-			((AssociationClassStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
-			return true;
-		}
 		if (childEditPart instanceof AssociationClassNameEditPart) {
 			((AssociationClassNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof AssociationClassStereotypeEditPart) {
+			((AssociationClassStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof AssociationClassAttributesEditPart) {

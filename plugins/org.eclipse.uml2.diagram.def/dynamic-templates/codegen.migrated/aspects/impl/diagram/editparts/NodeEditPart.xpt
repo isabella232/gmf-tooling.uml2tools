@@ -21,7 +21,7 @@
 	«IF hasFixedChildren(self)-»
 		«EXPAND xpt::Common::generatedMemberComment»
 		protected boolean addFixedChild(org.eclipse.gef.EditPart childEditPart) {
-			«FOREACH getInnerFixedLabels(self) AS label-»
+			«FOREACH getInnerFixedLabels(self)->sortedBy(visualID) AS label-»
 				«LET label.viewmap.oclAsType(gmfgen::ParentAssignedViewmap) AS childViewmap-»
 					if (childEditPart instanceof «label.getEditPartQualifiedClassName()») {
 						((«label.getEditPartQualifiedClassName()») childEditPart).«EXPAND impl::diagram::editparts::TextAware::labelSetterName FOR childViewmap»(getPrimaryShape().«childViewmap.getterName»());

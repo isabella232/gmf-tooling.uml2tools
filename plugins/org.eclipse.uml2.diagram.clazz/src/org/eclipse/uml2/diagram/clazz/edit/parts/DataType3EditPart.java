@@ -164,12 +164,12 @@ public class DataType3EditPart extends AbstractBorderedShapeEditPart implements 
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof DataTypeStereotype2EditPart) {
-			((DataTypeStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
-			return true;
-		}
 		if (childEditPart instanceof DataTypeName2EditPart) {
 			((DataTypeName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof DataTypeStereotype2EditPart) {
+			((DataTypeStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof DataTypeAttributes2EditPart) {

@@ -165,12 +165,12 @@ public class Enumeration2EditPart extends AbstractBorderedShapeEditPart implemen
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof EnumerationStereotypeEditPart) {
-			((EnumerationStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
-			return true;
-		}
 		if (childEditPart instanceof EnumerationNameEditPart) {
 			((EnumerationNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
+			return true;
+		}
+		if (childEditPart instanceof EnumerationStereotypeEditPart) {
+			((EnumerationStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof EnumerationLiteralsEditPart) {
