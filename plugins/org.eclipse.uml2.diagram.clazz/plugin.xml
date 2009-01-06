@@ -1862,7 +1862,7 @@
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
    </extension>
-   <extension point="org.eclipse.ui.preferencePages">
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages.iconstyle">
       <?gmfgen generated="true"?>
       <page
             name="%preferences.icons"
