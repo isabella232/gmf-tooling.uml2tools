@@ -11,11 +11,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.common.commands.ProvidedPortLinkHelper;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
-import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
-import org.eclipse.uml2.uml.Realization;
 
 /**
  * @generated
