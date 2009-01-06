@@ -44,12 +44,12 @@
                    path="/ChangeNotationMenu/">
              </popupMenuGroup>
 		«LET (viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first() AS subChild-»
-		«LET subChild.oclAsType(gmfgenext::SubstitutableByAttributes) AS subChildImpl-»
+«LET subChild.oclAsType(gmfgenext::SubstitutableByAttributes) AS subChildImpl-»
 		«IF subChildImpl <> null and not subChildImpl.requiresAll-»
 			«FOREACH (subChildImpl.getSubstitutableByNodes())[gmfgen::GenNode]->asSequence() AS newNode»«EXPAND changeNotationPopupAction(newNode)»«ENDFOREACH-»
 		«ENDIF-»
 		«ENDLET-»
-		«ENDLET-»
+«ENDLET-»
 <popupStructuredContributionCriteria
                    objectClass="«getEditPartQualifiedClassName()»"
                    objectCount="1">
