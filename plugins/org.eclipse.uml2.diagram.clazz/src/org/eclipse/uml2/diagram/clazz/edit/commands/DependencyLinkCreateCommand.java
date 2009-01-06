@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolic
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
