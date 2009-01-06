@@ -48,7 +48,7 @@ public class ValueSpecificationActionCreateCommand extends EditElementCommand {
 	protected EObject getElementToEdit() {
 		return getElementToEditGen().eContainer();
 	}
-	
+
 	/**
 	 * @generated
 	 */
@@ -61,7 +61,6 @@ public class ValueSpecificationActionCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResultGen(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		System.out.println("ValueSpecificationActionCreateCommand.doExecuteWithResult()");
 		ValueSpecificationAction newElement = UMLFactory.eINSTANCE.createValueSpecificationAction();
 
 		Activity owner = (Activity) getElementToEdit();
