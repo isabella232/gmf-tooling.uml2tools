@@ -3,11 +3,13 @@ package org.eclipse.uml2.diagram.csd.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
@@ -15,12 +17,11 @@ import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
-public class ConnectorCreateCommand extends CreateElementCommand {
+public class ConnectorCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -41,17 +42,10 @@ public class ConnectorCreateCommand extends CreateElementCommand {
 	 * @generated
 	 */
 	public ConnectorCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
-		super(request);
+		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
-		if (request.getContainmentFeature() == null) {
-			setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedConnector());
-		}
-
 		container = deduceContainer(source, target);
-		if (container != null) {
-			super.setElementToEdit(container);
-		}
 	}
 
 	/**
@@ -80,43 +74,37 @@ public class ConnectorCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated NOT
 	 */
-	protected EObject doDefaultElementCreation() {
-		// org.eclipse.uml2.uml.Connector newElement = (org.eclipse.uml2.uml.Connector) super.doDefaultElementCreation();
-		Connector connector = UMLFactory.eINSTANCE.createConnector();
-		getContainer().getOwnedConnectors().add(connector);
-		connector.createEnd().setRole(getSource());
-		connector.createEnd().setRole(getTarget());
-
-		UMLElementTypes.init_Connector_4005(connector);
-
-		return connector;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected EClass getEClassToEdit() {
-		return UMLPackage.eINSTANCE.getStructuredClassifier();
-	}
-
-	/**
-	 * @generated
-	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-		return super.doExecuteWithResult(monitor, info);
+
+		Connector newElement = UMLFactory.eINSTANCE.createConnector();
+		getContainer().getOwnedConnectors().add(newElement);
+		newElement.createEnd().setRole(getSource());
+		newElement.createEnd().setRole(getTarget());
+		UMLElementTypes.init_Connector_4005(newElement);
+
+		doConfigure(newElement, monitor, info);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
+		return CommandResult.newOKCommandResult(newElement);
+
 	}
 
 	/**
 	 * @generated
 	 */
-	protected ConfigureRequest createConfigureRequest() {
-		ConfigureRequest request = super.createConfigureRequest();
-		request.setParameter(CreateRelationshipRequest.SOURCE, getSource());
-		request.setParameter(CreateRelationshipRequest.TARGET, getTarget());
-		return request;
+	protected void doConfigure(Connector newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
+		configureRequest.addParameters(getRequest().getParameters());
+		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, getSource());
+		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
+		if (configureCommand != null && configureCommand.canExecute()) {
+			configureCommand.execute(monitor, info);
+		}
 	}
 
 	/**
