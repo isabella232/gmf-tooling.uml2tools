@@ -76,7 +76,7 @@
 «ENDDEFINE»
 
 «DEFINE stereotypePropertySection FOR gmfgen::GenDiagram»
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections.tagvalues">
 «EXPAND xpt::Common::xmlGeneratedTag»
       <propertySections contributorId="«editorGen.plugin.iD»">
          <propertySection
@@ -93,7 +93,7 @@
 «ENDDEFINE»
 
 «DEFINE stereotypePropertyTabs FOR gmfgen::GenDiagram»
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.tagvalues">
 «EXPAND xpt::Common::xmlGeneratedTag»
       <propertyTabs contributorId="«editorGen.plugin.iD»">
           <propertyTab

@@ -615,7 +615,7 @@
       </propertySections>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections.associations">
       <?gmfgen generated="false"?>   
       <propertySections contributorId="org.eclipse.uml2.diagram.clazz">
          <propertySection
