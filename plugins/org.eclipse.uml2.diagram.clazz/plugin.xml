@@ -542,7 +542,7 @@
       </propertyContributor>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
       <?gmfgen generated="true"?>   
       <propertyTabs contributorId="org.eclipse.uml2.diagram.clazz">
          <propertyTab
@@ -560,7 +560,7 @@
       </propertyTabs>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.associations">
       <?gmfgen generated="false"?>   
       <propertyTabs contributorId="org.eclipse.uml2.diagram.clazz">
           <propertyTab
@@ -581,7 +581,7 @@
       </propertyTabs>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
       <propertySections contributorId="org.eclipse.uml2.diagram.clazz">
          <propertySection id="property.section.ConnectorAppearancePropertySection" 
@@ -1910,7 +1910,7 @@
          </command>
       </menuContribution>
    </extension>
-<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.tagvalues">
 <?gmfgen generated="true"?>
       <propertyTabs contributorId="org.eclipse.uml2.diagram.clazz">
           <propertyTab
@@ -1920,7 +1920,7 @@
                 label="Tagged Values"/>
       </propertyTabs>
    </extension>
-<extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+<extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections.tagvalues">
 <?gmfgen generated="true"?>
       <propertySections contributorId="org.eclipse.uml2.diagram.clazz">
          <propertySection
