@@ -662,6 +662,9 @@
       <?gmfgen generated="true"?>
       <editpartProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLEditPartProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="UMLClass"/>
+         </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2002,2001,2007,2004,2005,2003,2010,2006,2008,2009,2012,2013,2014,2015,2016,2017,2018,3006,3007,3008,3009,3011,3012,3041,3013,3001,3002,3003,3025,3027,3019,3020,3014,3015,3021,3022,3016,3023,3024,3017,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040"/>
          </object>
@@ -674,7 +677,7 @@
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7010,7011,7012,7001,7002,7003,7024,7025,7026,7017,7018,7020,7021,7013,7014,7015,7028,7029,7030,7031,7032,7033,7034,7035,7036,7037,7038,7039,7040,7041,7042,7043,7044,7045,7046"/>
          </object>
-         <context views="generated-nodes,generated-links,generated-labels,generated-compartments"/>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
    </extension>
 
