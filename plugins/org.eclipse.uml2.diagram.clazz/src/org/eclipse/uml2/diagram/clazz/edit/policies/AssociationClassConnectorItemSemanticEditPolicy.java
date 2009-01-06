@@ -246,17 +246,17 @@ public class AssociationClassConnectorItemSemanticEditPolicy extends UMLBaseItem
 		DeleteCommand primaryDelete = new DeleteCommand(editingDomain, primaryView);
 		CompositeTransactionalCommand result = new CompositeTransactionalCommand(editingDomain, primaryDelete.getLabel());
 		result.add(primaryDelete);
-		
-		if (primaryView.getSource() != null && primaryView.getSource().getElement() == primaryView.getElement()){
+
+		if (primaryView.getSource() != null && primaryView.getSource().getElement() == primaryView.getElement()) {
 			result.add(new DeleteCommand(editingDomain, primaryView.getSource()));
 		}
 
-		if (primaryView.getTarget() != null && primaryView.getTarget().getElement() == primaryView.getElement()){
+		if (primaryView.getTarget() != null && primaryView.getTarget().getElement() == primaryView.getElement()) {
 			result.add(new DeleteCommand(editingDomain, primaryView.getTarget()));
 		}
 
 		Command gefResult = getGEFWrapper(result.reduce());
 		return mainCommand == null ? gefResult : mainCommand.chain(gefResult);
 	}
-	
+
 }
