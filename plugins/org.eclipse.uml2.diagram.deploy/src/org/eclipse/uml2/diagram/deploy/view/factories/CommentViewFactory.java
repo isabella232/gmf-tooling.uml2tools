@@ -92,5 +92,4 @@ public class CommentViewFactory extends AbstractShapeViewFactory {
 		}
 	}
 
-
 }
