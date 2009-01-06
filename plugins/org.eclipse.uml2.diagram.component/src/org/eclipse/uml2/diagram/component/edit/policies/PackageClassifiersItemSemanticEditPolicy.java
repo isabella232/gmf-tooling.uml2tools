@@ -24,15 +24,9 @@ public class PackageClassifiersItemSemanticEditPolicy extends UMLBaseItemSemanti
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Class_3009 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new Class3CreateCommand(req));
 		}
 		if (UMLElementTypes.Component_3010 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new Component3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

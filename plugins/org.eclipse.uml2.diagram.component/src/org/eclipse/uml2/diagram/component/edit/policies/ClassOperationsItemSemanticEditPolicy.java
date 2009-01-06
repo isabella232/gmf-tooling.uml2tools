@@ -23,9 +23,6 @@ public class ClassOperationsItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Operation_3012 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getClass_OwnedOperation());
-			}
 			return getGEFWrapper(new ClassDiagramNotationOperationCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

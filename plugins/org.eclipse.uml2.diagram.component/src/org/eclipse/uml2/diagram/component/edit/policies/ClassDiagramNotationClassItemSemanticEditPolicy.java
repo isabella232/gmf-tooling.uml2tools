@@ -54,9 +54,6 @@ public class ClassDiagramNotationClassItemSemanticEditPolicy extends UMLBaseItem
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Port_3014 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
-			}
 			return getGEFWrapper(new PortOnClassCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

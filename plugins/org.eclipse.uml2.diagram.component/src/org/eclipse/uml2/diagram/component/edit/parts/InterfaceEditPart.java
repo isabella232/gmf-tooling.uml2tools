@@ -87,7 +87,9 @@ public class InterfaceEditPart extends AbstractBorderedShapeEditPart implements 
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child instanceof IBorderItemEditPart) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
+				case InterfaceNameEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						protected List createSelectionHandles() {

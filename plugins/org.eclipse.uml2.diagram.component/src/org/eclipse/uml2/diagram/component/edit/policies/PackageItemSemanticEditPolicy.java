@@ -34,51 +34,27 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Component_2001 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new ComponentCreateCommand(req));
 		}
 		if (UMLElementTypes.Artifact_2002 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new Artifact2CreateCommand(req));
 		}
 		if (UMLElementTypes.Interface_2003 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new Interface2CreateCommand(req));
 		}
 		if (UMLElementTypes.Class_2004 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new Class2CreateCommand(req));
 		}
 		if (UMLElementTypes.Package_2005 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new PackageCreateCommand(req));
 		}
 		if (UMLElementTypes.Package_2006 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new Package2CreateCommand(req));
 		}
 		if (UMLElementTypes.Class_2007 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new ClassDiagramNotationClassCreateCommand(req));
 		}
 		if (UMLElementTypes.Comment_2008 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getElement_OwnedComment());
-			}
 			return getGEFWrapper(new CommentCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

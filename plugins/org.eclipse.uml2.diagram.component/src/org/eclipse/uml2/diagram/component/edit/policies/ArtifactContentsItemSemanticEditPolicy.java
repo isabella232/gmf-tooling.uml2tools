@@ -24,9 +24,6 @@ public class ArtifactContentsItemSemanticEditPolicy extends UMLBaseItemSemanticE
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Artifact_3016 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getArtifact_NestedArtifact());
-			}
 			return getGEFWrapper(new Artifact3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
