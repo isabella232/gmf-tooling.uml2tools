@@ -217,8 +217,8 @@
       <viewProvider class="org.eclipse.uml2.diagram.profile.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLProfile"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2006,2007,2008,2009,3001,3008,3003,3005,3009"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004"/>
       </viewProvider>
    </extension>
 
@@ -226,6 +226,19 @@
       <?gmfgen generated="true"?>
       <editpartProvider class="org.eclipse.uml2.diagram.profile.providers.UMLEditPartProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,2003,2006,2007,2008,2009,3001,3008,3003,3005,3009"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002,4003,4004"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5001,5012,5003,5013,5005,5011,5008,5009,5010,5014"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002,7003,7004,7005"/>
+         </object>
+         <context views="generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
    </extension>
 
@@ -235,6 +248,14 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.profile.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart" id="Stereotype_2001"/>
+         <object class="org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart" id="Profile_2002"/>
+         <object class="org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart" id="Enumeration_2003"/>
+         <object class="org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart" id="ElementImport_2006"/>
+         <object class="org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart" id="Profile_2007"/>
+         <object class="org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart" id="Constraint_2008"/>
+         <object class="org.eclipse.uml2.diagram.profile.edit.parts.CommentEditPart" id="Comment_2009"/>
+         <context elements="Stereotype_2001,Profile_2002,Enumeration_2003,ElementImport_2006,Profile_2007,Constraint_2008,Comment_2009"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -664,7 +685,7 @@
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
-   <extension point="org.eclipse.ui.preferencePages">
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages.iconstyle">
       <?gmfgen generated="true"?>
       <page
             name="%preferences.icons"
@@ -678,6 +699,10 @@
       <?gmfgen generated="true"?>
       <decoratorProvider class="org.eclipse.uml2.diagram.profile.providers.UMLShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2001,2002,2003,2006,2007,2008,2009"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
    </extension>
    
@@ -874,7 +899,7 @@
       </propertySections>
    </extension>
    
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.tagvalues">
 <?gmfgen generated="true"?>
       <propertyTabs contributorId="org.eclipse.uml2.diagram.profile">
           <propertyTab
@@ -885,7 +910,7 @@
       </propertyTabs>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections.tagvalues">
 <?gmfgen generated="true"?>
       <propertySections contributorId="org.eclipse.uml2.diagram.profile">
          <propertySection
