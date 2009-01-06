@@ -404,7 +404,7 @@
 
    
 	
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
@@ -486,12 +486,12 @@
       </contributionItemProvider>
    </extension>
 
-   <extension point="org.eclipse.core.runtime.preferences">
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
       <initializer class="org.eclipse.uml2.diagram.clazz.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
-   <extension point="org.eclipse.ui.preferencePages">
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
             id="org.eclipse.uml2.uml.diagram.clazz.general"
@@ -531,7 +531,7 @@
       </page>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="org.eclipse.uml2.diagram.clazz"
@@ -648,7 +648,7 @@
       </propertySections>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
       <viewProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLViewProvider">
          <Priority name="Lowest"/>
@@ -658,35 +658,35 @@
       </viewProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
       <editpartProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLEditPartProvider">
          <Priority name="Lowest"/>
       </editpartProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
       </modelingAssistantProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
       <IconProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
       <ParserProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
@@ -1394,7 +1394,7 @@
       </metamodel>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <?gmfgen generated="true"?>
       <clientContext id="org.eclipse.uml2.diagram.clazz.TypeContext">
          <enablement>
@@ -1480,7 +1480,7 @@
       </binding>
    </extension>
 
-   <extension point="org.eclipse.core.expressions.propertyTesters">
+   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
       <?gmfgen generated="true"?>
        <propertyTester
            id="org.eclipse.uml2.diagram.clazz.URIEditorInputPropertyTester"
@@ -1491,7 +1491,7 @@
        </propertyTester>
    </extension>
    
-   <extension point="org.eclipse.core.expressions.propertyTesters">
+   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
       <?gmfgen generated="true"?>
        <propertyTester
            id="org.eclipse.uml2.diagram.clazz.ShortcutPropertyTester"
@@ -1502,7 +1502,7 @@
        </propertyTester>
    </extension>
 
-   <extension point="org.eclipse.core.expressions.propertyTesters">
+   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isDomainModelElement">
       <?gmfgen generated="true"?>
        <propertyTester
            id="org.eclipse.uml2.diagram.clazz.DomainModelElementPropertyTester"
@@ -1513,7 +1513,7 @@
        </propertyTester>
    </extension>
 
-   <extension point="org.eclipse.ui.navigator.viewer">
+   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
       <?gmfgen generated="true"?>
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
@@ -1622,7 +1622,7 @@
       </actionProvider>
    </extension>
    
-   <extension point="org.eclipse.ui.navigator.linkHelper">
+   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
       <?gmfgen generated="true"?>
       <linkHelper
             id="org.eclipse.uml2.diagram.clazz.navigatorLinkHelper"
@@ -1639,7 +1639,7 @@
       </linkHelper>
    </extension>
 
-   <extension point="org.eclipse.ui.commands">
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
@@ -1649,7 +1649,7 @@
          name="%update.diagram.name"/>
    </extension>
 
-   <extension point="org.eclipse.ui.bindings">
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
          commandId="org.eclipse.uml2.diagram.clazz.updateDiagram"
@@ -1821,7 +1821,7 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
       <?gmfgen generated="true"?>
       <decoratorProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
@@ -1879,7 +1879,9 @@
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
-</extension><extension point="org.eclipse.ui.menus">
+</extension>
+
+<extension point="org.eclipse.ui.menus" id="context-menus">
       <?gmfgen generated="true"?>
       <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
       </menuContribution>
@@ -1908,7 +1910,7 @@
          </command>
       </menuContribution>
    </extension>
-<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
 <?gmfgen generated="true"?>
       <propertyTabs contributorId="org.eclipse.uml2.diagram.clazz">
           <propertyTab
@@ -1918,7 +1920,7 @@
                 label="Tagged Values"/>
       </propertyTabs>
    </extension>
-<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+<extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
 <?gmfgen generated="true"?>
       <propertySections contributorId="org.eclipse.uml2.diagram.clazz">
          <propertySection
@@ -1933,7 +1935,7 @@
       </propertySections>
    </extension>
    
-   <extension point="org.eclipse.ui.commands">
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="org.eclipse.uml2.diagram.clazz.UMLLoadResourceAction"
@@ -1946,7 +1948,7 @@
          defaultHandler="org.eclipse.uml2.diagram.clazz.part.UMLCreateShortcutAction"/>
    </extension>
    
-   <extension point="org.eclipse.ui.handlers">
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
    
