@@ -49,6 +49,7 @@ import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.InsertingComponentEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.ExtensionPoint2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextNonResizableEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
@@ -116,6 +117,7 @@ public class ExtensionPoint2EditPart extends CompartmentEditPart implements ITex
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new UMLTextNonResizableEditPolicy());
 		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ListItemComponentEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new InsertingComponentEditPolicy(true));
 	}
 
 	/**
