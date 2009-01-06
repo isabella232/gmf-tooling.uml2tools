@@ -168,12 +168,12 @@ public class Class5EditPart extends AbstractBorderedShapeEditPart implements Pri
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ClassName2EditPart) {
-			((ClassName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
-			return true;
-		}
 		if (childEditPart instanceof ClassStereotype2EditPart) {
 			((ClassStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+			return true;
+		}
+		if (childEditPart instanceof ClassName2EditPart) {
+			((ClassName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
 			return true;
 		}
 		if (childEditPart instanceof ClassAttributes2EditPart) {

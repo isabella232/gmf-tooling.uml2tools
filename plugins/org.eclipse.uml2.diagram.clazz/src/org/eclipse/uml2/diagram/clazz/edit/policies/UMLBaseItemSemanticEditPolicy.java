@@ -126,9 +126,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
 		if (completedRequest instanceof DestroyRequest) {
 			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
-			if (shouldProceed(destroyRequest)) {
-				semanticCommand = addDeleteViewCommand(semanticCommand, destroyRequest);
-			}
+			return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
 		}
 		return semanticCommand;
 	}
@@ -138,8 +136,8 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 */
 	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
-		DeleteCommand delete = new DeleteCommand(editingDomain, (View) getHost().getModel());
-		return mainCommand == null ? getGEFWrapper(delete) : mainCommand.chain(getGEFWrapper(delete));
+		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(editingDomain, (View) getHost().getModel()));
+		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
 	}
 
 	/**

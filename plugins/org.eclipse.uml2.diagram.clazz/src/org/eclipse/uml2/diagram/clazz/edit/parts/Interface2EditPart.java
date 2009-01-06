@@ -149,12 +149,12 @@ public class Interface2EditPart extends ShapeNodeEditPart implements PrimaryShap
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof InterfaceName2EditPart) {
-			((InterfaceName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
-			return true;
-		}
 		if (childEditPart instanceof InterfaceStereotypeEditPart) {
 			((InterfaceStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+			return true;
+		}
+		if (childEditPart instanceof InterfaceName2EditPart) {
+			((InterfaceName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
 			return true;
 		}
 		if (childEditPart instanceof InterfaceAttributesEditPart) {
