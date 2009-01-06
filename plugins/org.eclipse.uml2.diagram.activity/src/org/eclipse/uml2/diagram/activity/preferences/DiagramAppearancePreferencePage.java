@@ -13,6 +13,7 @@ import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
  */
 
 public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
+
 	/**
 	 * @NOT-generated
 	 */
