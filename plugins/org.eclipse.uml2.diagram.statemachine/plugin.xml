@@ -618,7 +618,9 @@
             <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
-   </extension><extension point="org.eclipse.ui.preferencePages">
+   </extension>
+   
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages.iconstyle">
       <?gmfgen generated="true"?>
       <page
             name="%preferences.icons"
@@ -919,7 +921,7 @@
       </contributionItemProvider>
 </extension>
 
-<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.tagvalues">
 <?gmfgen generated="true"?>
       <propertyTabs contributorId="org.eclipse.uml2.diagram.statemachine">
           <propertyTab
@@ -930,7 +932,7 @@
       </propertyTabs>
    </extension>
 
-<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+<extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections.tagvalues">
 <?gmfgen generated="true"?>
       <propertySections contributorId="org.eclipse.uml2.diagram.statemachine">
          <propertySection
