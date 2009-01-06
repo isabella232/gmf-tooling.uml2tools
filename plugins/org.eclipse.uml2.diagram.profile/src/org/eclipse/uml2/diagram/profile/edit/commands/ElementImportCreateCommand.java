@@ -1,28 +1,31 @@
 package org.eclipse.uml2.diagram.profile.edit.commands;
 
-import java.util.Collection;
-
-import org.eclipse.emf.ecore.EClass;
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
  */
-public class ElementImportCreateCommand extends CreateElementCommand {
+public class ElementImportCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
 	public ElementImportCreateCommand(CreateElementRequest req) {
-		super(req);
+		super(req.getLabel(), null, req);
 	}
 
 	/**
@@ -39,20 +42,39 @@ public class ElementImportCreateCommand extends CreateElementCommand {
 	/**
 	 * @generated
 	 */
-	protected EClass getEClassToEdit() {
-		return UMLPackage.eINSTANCE.getNamespace();
+	public boolean canExecute() {
+		return true;
+
 	}
 
 	/**
 	 * @generated
 	 */
-	protected EObject doDefaultElementCreation() {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		ElementImport newElement = UMLFactory.eINSTANCE.createElementImport();
 
 		Namespace owner = (Namespace) getElementToEdit();
 		owner.getElementImports().add(newElement);
 		Profile childHolder = (Profile) getElementToEdit();
 		childHolder.getMetaclassReferences().add(newElement);
-		return newElement;
+
+		doConfigure(newElement, monitor, info);
+
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
+		return CommandResult.newOKCommandResult(newElement);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void doConfigure(ElementImport newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
+		configureRequest.addParameters(getRequest().getParameters());
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
+		if (configureCommand != null && configureCommand.canExecute()) {
+			configureCommand.execute(monitor, info);
+		}
 	}
 }
