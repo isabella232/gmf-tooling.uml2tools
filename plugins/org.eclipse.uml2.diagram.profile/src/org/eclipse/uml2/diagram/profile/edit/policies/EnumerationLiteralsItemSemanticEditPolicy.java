@@ -23,9 +23,6 @@ public class EnumerationLiteralsItemSemanticEditPolicy extends UMLBaseItemSemant
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.EnumerationLiteral_3005 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getEnumeration_OwnedLiteral());
-			}
 			return getGEFWrapper(new EnumerationLiteralCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -71,7 +71,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createPackageName_5001Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -95,7 +95,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createActorName_5002Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -119,7 +119,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createActorName_5005Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -158,7 +158,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createUseCaseName_5003Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -182,7 +182,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createUseCaseName_5004Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -221,7 +221,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createComponentName_5007Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -260,7 +260,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createPackageName_5008Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -306,7 +306,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createCommentBody_5015Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getComment_Body() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -352,7 +352,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createExtensionPoint_3002Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -376,7 +376,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createExtensionPoint_3003Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -400,7 +400,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createUseCaseName_5006Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -424,7 +424,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createActorName_5009Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -448,7 +448,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createUseCaseName_5010Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 
@@ -546,7 +546,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createDependencyName_6005Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		Parser_0_0 parser = new Parser_0_0(features);
+		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
 

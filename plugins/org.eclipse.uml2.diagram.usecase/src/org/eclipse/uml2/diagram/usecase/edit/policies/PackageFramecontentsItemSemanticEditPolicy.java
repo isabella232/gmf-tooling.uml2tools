@@ -24,15 +24,9 @@ public class PackageFramecontentsItemSemanticEditPolicy extends UMLBaseItemSeman
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Actor_3005 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new ActorInPackageCreateCommand(req));
 		}
 		if (UMLElementTypes.UseCase_3006 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new UseCaseinPackageCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -23,9 +23,6 @@ public class SubjectUsecasesItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.UseCase_3004 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getClassifier_OwnedUseCase());
-			}
 			return getGEFWrapper(new InnerUseCaseCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

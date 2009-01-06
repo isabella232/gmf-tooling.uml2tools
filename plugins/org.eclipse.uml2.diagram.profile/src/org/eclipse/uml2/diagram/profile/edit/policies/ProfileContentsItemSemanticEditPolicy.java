@@ -23,9 +23,6 @@ public class ProfileContentsItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Stereotype_3003 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getPackage_PackagedElement());
-			}
 			return getGEFWrapper(new Stereotype2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

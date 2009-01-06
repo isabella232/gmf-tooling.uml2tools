@@ -23,9 +23,6 @@ public class ProfileProfileLabelsItemSemanticEditPolicy extends UMLBaseItemSeman
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.ElementImport_3009 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getNamespace_ElementImport());
-			}
 			return getGEFWrapper(new ElementImport2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

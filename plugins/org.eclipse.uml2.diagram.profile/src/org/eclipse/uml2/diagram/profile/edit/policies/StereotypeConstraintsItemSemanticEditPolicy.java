@@ -23,9 +23,6 @@ public class StereotypeConstraintsItemSemanticEditPolicy extends UMLBaseItemSema
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Constraint_3008 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getNamespace_OwnedRule());
-			}
 			return getGEFWrapper(new ConstraintCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
