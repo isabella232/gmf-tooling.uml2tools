@@ -68,14 +68,14 @@ public class UMLCreateShortcutAction extends AbstractHandler {
 		if (selectedElement == null) {
 			return null;
 		}
-		
+
 		IOperationHistory history = OperationHistoryFactory.getOperationHistory();
 		IStatus status = createShortcut(editingDomain, history, selectedElement, selectedDiagramPart, diagramEditor);
-		
+
 		if (!status.isOK()) {
 			UMLDiagramEditorPlugin.getInstance().logError(status.getMessage(), status.getException());
 		}
-		
+
 		return null;
 	}
 
@@ -83,19 +83,14 @@ public class UMLCreateShortcutAction extends AbstractHandler {
 	 * @NOT-GENERATED 
 	 * FIXME: custom template should make this method generated again [256496]
 	 */
-	public static IStatus createShortcut(
-			TransactionalEditingDomain editingDomain,
-			IOperationHistory history, 
-			EObject selectedElement, EditPart editPart,
-			IEditorPart diagramEditor) {
+	public static IStatus createShortcut(TransactionalEditingDomain editingDomain, IOperationHistory history, EObject selectedElement, EditPart editPart, IEditorPart diagramEditor) {
 
 		final View view = (View) editPart.getModel();
 		final EditPart parentPart = editPart.getParent();
 		final Diagram diagram = view.getDiagram();
-		
-		CreateViewRequest.ViewDescriptor viewDescriptor = new CreateViewRequest.ViewDescriptor(
-				new EObjectAdapter(selectedElement), Node.class, null, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
-		
+
+		CreateViewRequest.ViewDescriptor viewDescriptor = new CreateViewRequest.ViewDescriptor(new EObjectAdapter(selectedElement), Node.class, null, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+
 		ICommand command = new CreateCommand(editingDomain, viewDescriptor, diagram);
 		command = command.compose(new UMLCreateShortcutDecorationsCommand(editingDomain, diagram, viewDescriptor));
 		IStatus status = null;
@@ -104,13 +99,12 @@ public class UMLCreateShortcutAction extends AbstractHandler {
 		} catch (ExecutionException e) {
 			status = new Status(IStatus.ERROR, UMLDiagramEditorPlugin.ID, IStatus.OK, "Unable to create shortcut", e); //$NON-NLS-1$
 		}
-		
 
 		CanonicalEditPolicy policy = (CanonicalEditPolicy) parentPart.getEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
 		if (policy != null) {
 			policy.refresh();
 		}
-		
+
 		return status;
 	}
 }
