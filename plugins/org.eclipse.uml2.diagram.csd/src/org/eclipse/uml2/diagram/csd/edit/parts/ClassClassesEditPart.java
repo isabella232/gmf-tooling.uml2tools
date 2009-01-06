@@ -2,10 +2,12 @@ package org.eclipse.uml2.diagram.csd.edit.parts;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -14,11 +16,12 @@ import org.eclipse.uml2.diagram.csd.edit.policies.ClassClassesItemSemanticEditPo
 import org.eclipse.uml2.diagram.csd.part.Messages;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 
 /**
  * @generated
  */
-public class ClassClassesEditPart extends ListCompartmentEditPart {
+public class ClassClassesEditPart extends ListCompartmentEditPart implements IInsertableEditPart {
 
 	/**
 	 * @generated
@@ -68,6 +71,13 @@ public class ClassClassesEditPart extends ListCompartmentEditPart {
 	protected void setRatio(Double ratio) {
 		// nothing to do -- parent layout does not accept Double constraints as ratio
 		// super.setRatio(ratio); 
+	}
+
+	/**
+	 * @generated
+	 */
+	public IElementType getElementType() {
+		return UMLElementTypes.Class_3010;
 	}
 
 }
