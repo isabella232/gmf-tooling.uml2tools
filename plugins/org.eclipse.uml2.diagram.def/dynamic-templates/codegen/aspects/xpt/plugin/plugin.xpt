@@ -55,7 +55,7 @@
 «ENDAROUND»
 
 «DEFINE iconStylePreferencesPage FOR gmfgen::GenDiagram»
-   <extension point="org.eclipse.ui.preferencePages">
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages.iconstyle">
       «EXPAND xpt::Common::xmlGeneratedTag»
       <page
             name="%preferences.icons"
