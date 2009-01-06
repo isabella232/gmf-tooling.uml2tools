@@ -403,6 +403,9 @@
       <?gmfgen generated="true"?>
       <editpartProvider class="org.eclipse.uml2.diagram.csd.providers.UMLEditPartProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="UMLCompositeStructures"/>
+         </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2005,2006,2003,2007,2009,2011,2012,2013,3002,3007,3013,3008,3009,3010,3011,3004,3014,3016,3017,3015"/>
          </object>
@@ -415,7 +418,7 @@
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7003,7004,7005,7006,7002,7007,7009"/>
          </object>
-         <context views="generated-nodes,generated-links,generated-labels,generated-compartments"/>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
    </extension>
 
