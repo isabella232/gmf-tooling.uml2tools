@@ -164,12 +164,12 @@ public class PrimitiveType3EditPart extends AbstractBorderedShapeEditPart implem
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof PrimitiveTypeName2EditPart) {
-			((PrimitiveTypeName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
-			return true;
-		}
 		if (childEditPart instanceof PrimitiveTypeStereotype2EditPart) {
 			((PrimitiveTypeStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+			return true;
+		}
+		if (childEditPart instanceof PrimitiveTypeName2EditPart) {
+			((PrimitiveTypeName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
 			return true;
 		}
 		if (childEditPart instanceof PrimitiveTypeAttributes2EditPart) {
