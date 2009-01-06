@@ -7,7 +7,7 @@
     modelID="UMLClass"
     diagramFileExtension="umlclass,umlclass_diagram"
     dynamicTemplates="true"
-    templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen">
+    templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen.migrated">
   <diagram
       visualID="1000"
       editPartClassName="PackageEditPart"
