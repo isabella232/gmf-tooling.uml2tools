@@ -24,15 +24,9 @@ public class CollaborationContentsItemSemanticEditPolicy extends UMLBaseItemSema
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.CollaborationUse_3002 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getClassifier_CollaborationUse());
-			}
 			return getGEFWrapper(new CollaborationUse2CreateCommand(req));
 		}
 		if (UMLElementTypes.Property_3007 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
-			}
 			return getGEFWrapper(new PropertyCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

@@ -51,9 +51,6 @@ public class Property3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Port_3016 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getConnectorEnd_Role());
-			}
 			return getGEFWrapper(new Port2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

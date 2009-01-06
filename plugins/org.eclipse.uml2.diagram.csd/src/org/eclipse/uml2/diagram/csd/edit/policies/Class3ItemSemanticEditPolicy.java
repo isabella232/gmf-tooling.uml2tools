@@ -56,9 +56,6 @@ public class Class3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Port_3017 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
-			}
 			return getGEFWrapper(new Port3CreateCommand(req));
 		}
 		return super.getCreateCommand(req);

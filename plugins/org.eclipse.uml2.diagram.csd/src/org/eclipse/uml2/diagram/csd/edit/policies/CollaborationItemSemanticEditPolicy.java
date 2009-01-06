@@ -57,9 +57,6 @@ public class CollaborationItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Parameter_3013 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getStructuredClassifier_OwnedAttribute());
-			}
 			return getGEFWrapper(new ParameterCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
