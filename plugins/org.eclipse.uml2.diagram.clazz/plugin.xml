@@ -653,8 +653,8 @@
       <viewProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLClass"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,2001,2007,2004,2005,2003,2010,2006,2008,2009,2012,2013,2014,2015,2016,2017,2018,3006,3007,3008,3009,3011,3012,3041,3013,3001,3002,3003,3025,3027,3019,3020,3014,3015,3021,3022,3016,3023,3024,3017,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007,4008,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019"/>
       </viewProvider>
    </extension>
 
@@ -662,6 +662,19 @@
       <?gmfgen generated="true"?>
       <editpartProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLEditPartProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2002,2001,2007,2004,2005,2003,2010,2006,2008,2009,2012,2013,2014,2015,2016,2017,2018,3006,3007,3008,3009,3011,3012,3041,3013,3001,3002,3003,3025,3027,3019,3020,3014,3015,3021,3022,3016,3023,3024,3017,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007,4008,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5004,5003,5019,5009,5031,5006,5032,5007,5033,5005,5034,5012,5008,5010,5039,5011,5016,5017,5018,5035,5020,5026,5029,5030,5013,5015,5025,5021,5022,5023,5036,5024,5040,5027,5037,5028,5038"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7010,7011,7012,7001,7002,7003,7024,7025,7026,7017,7018,7020,7021,7013,7014,7015,7028,7029,7030,7031,7032,7033,7034,7035,7036,7037,7038,7039,7040,7041,7042,7043,7044,7045,7046"/>
+         </object>
+         <context views="generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
    </extension>
 
@@ -669,6 +682,24 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart" id="Package_2002"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart" id="Class_2001"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart" id="AssociationClass_2007"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.DataType2EditPart" id="DataType_2004"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveType2EditPart" id="PrimitiveType_2005"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.Enumeration2EditPart" id="Enumeration_2003"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart" id="Interface_2010"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintEditPart" id="Constraint_2006"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart" id="InstanceSpecification_2008"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.DependencyEditPart" id="Dependency_2009"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetEditPart" id="GeneralizationSet_2012"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart" id="Interface_2013"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart" id="Package_2014"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart" id="AssociationClass_2015"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameEditPart" id="Package_2016"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification4EditPart" id="InstanceSpecification_2017"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart" id="Comment_2018"/>
+         <context elements="Package_2002,Class_2001,AssociationClass_2007,DataType_2004,PrimitiveType_2005,Enumeration_2003,Interface_2010,Constraint_2006,InstanceSpecification_2008,Dependency_2009,GeneralizationSet_2012,Interface_2013,Package_2014,AssociationClass_2015,Package_2016,InstanceSpecification_2017,Comment_2018"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -1825,6 +1856,10 @@
       <?gmfgen generated="true"?>
       <decoratorProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2002,2001,2007,2004,2005,2003,2010,2006,2008,2009,2012,2013,2014,2015,2016,2017,2018"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
