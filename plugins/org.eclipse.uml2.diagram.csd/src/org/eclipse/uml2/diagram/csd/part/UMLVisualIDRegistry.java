@@ -853,30 +853,6 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
 				return CommentEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getCollaborationUse().isSuperTypeOf(domainElement.eClass())) {
-				return CollaborationUse2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3007((Property) domainElement)) {
-				return PropertyEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3008((Property) domainElement)) {
-				return Property2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
-				return OperationEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass())) {
-				return Class2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
-				return ElementImportEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3014((Property) domainElement)) {
-				return Property3EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass())) {
-				return SlotEditPart.VISUAL_ID;
-			}
 			break;
 		}
 		return -1;
