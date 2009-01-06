@@ -14595,8 +14595,13 @@
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.DependencyAppliedStereotypeParser"/>
   </labelParsers>
   <contextMenus
+      iD="org.eclipse.uml2.diagram.clazz.menu"
       context="//@diagram">
     <items
-        xsi:type="gmfgen:LoadResourceAction"/>
+        xsi:type="gmfgen:LoadResourceAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.clazz.part.UMLLoadResourceAction"/>
+    <items
+        xsi:type="gmfgen:CreateShortcutAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.clazz.part.UMLCreateShortcutAction"/>
   </contextMenus>
 </gmfgen:GenEditorGenerator>
