@@ -806,63 +806,6 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
 				return CommentEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
-				return ElementImportEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDevice().isSuperTypeOf(domainElement.eClass())) {
-				return Device2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3002((Artifact) domainElement)) {
-				return ArtifactEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getExecutionEnvironment().isSuperTypeOf(domainElement.eClass())) {
-				return ExecutionEnvironment2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getNode().isSuperTypeOf(domainElement.eClass()) && isNode_3007((Node) domainElement)) {
-				return Node2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDevice().isSuperTypeOf(domainElement.eClass())) {
-				return Device2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3002((Artifact) domainElement)) {
-				return ArtifactEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getExecutionEnvironment().isSuperTypeOf(domainElement.eClass())) {
-				return ExecutionEnvironment2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getNode().isSuperTypeOf(domainElement.eClass()) && isNode_3007((Node) domainElement)) {
-				return Node2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
-				return Artifact4EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
-				return DeploymentSpecification2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
-				return Artifact4EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
-				return DeploymentSpecification2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
-				return PropertyEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
-				return Artifact3EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass())) {
-				return Artifact3EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getArtifact().isSuperTypeOf(domainElement.eClass()) && isArtifact_3008((Artifact) domainElement)) {
-				return Artifact4EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDeploymentSpecification().isSuperTypeOf(domainElement.eClass())) {
-				return DeploymentSpecification2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass())) {
-				return PropertyEditPart.VISUAL_ID;
-			}
 			break;
 		}
 		return -1;
