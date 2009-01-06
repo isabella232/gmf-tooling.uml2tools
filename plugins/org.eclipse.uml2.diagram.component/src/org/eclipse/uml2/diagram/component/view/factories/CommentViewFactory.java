@@ -63,7 +63,7 @@ public class CommentViewFactory extends AbstractShapeViewFactory {
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(CommentBodyEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
-	
+
 	/**
 	 * @NOT-generated
 	 * #233241 Comment is not implemented
