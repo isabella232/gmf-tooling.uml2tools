@@ -288,6 +288,9 @@
       <?gmfgen generated="true"?>
       <editpartProvider class="org.eclipse.uml2.diagram.deploy.providers.UMLEditPartProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="UMLDeployment"/>
+         </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2001,2003,2004,2005,2006,2007,2008,3001,3004,3002,3008,3009,3003,3005,3006,3007"/>
          </object>
@@ -300,7 +303,7 @@
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value="7001,7004,7005,7007,7008,7010,7006,7002,7009,7003"/>
          </object>
-         <context views="generated-nodes,generated-links,generated-labels,generated-compartments"/>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
    </extension>
 
