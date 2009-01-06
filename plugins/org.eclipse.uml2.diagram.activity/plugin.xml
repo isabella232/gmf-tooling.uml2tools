@@ -85,7 +85,7 @@
       <initializer class="org.eclipse.uml2.diagram.activity.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
-   <extension point="org.eclipse.ui.preferencePages">
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages.iconstyle">
       <?gmfgen generated="true"?>
       <page
             name="%preferences.icons"
