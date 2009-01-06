@@ -599,30 +599,6 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
 				return CommentEditPart.VISUAL_ID;
 			}
-			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass())) {
-				return ElementImportEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
-				return ExtensionPointEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
-				return ExtensionPoint2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getUseCase().isSuperTypeOf(domainElement.eClass())) {
-				return InnerUseCaseEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
-				return ExtensionPointEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getActor().isSuperTypeOf(domainElement.eClass())) {
-				return ActorInPackageEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getUseCase().isSuperTypeOf(domainElement.eClass())) {
-				return UseCaseinPackageEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getExtensionPoint().isSuperTypeOf(domainElement.eClass())) {
-				return ExtensionPointEditPart.VISUAL_ID;
-			}
 			break;
 		}
 		return -1;
