@@ -78,6 +78,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageName4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PrimitiveTypeName2EditPart;
@@ -124,6 +125,7 @@ import org.eclipse.uml2.diagram.common.parser.slot.SlotToString;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.DependencyAppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.stereotype.PackageAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ParserAdapter;
@@ -547,6 +549,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PackageAppliedStereotypeParser packageQualifiedName_5041Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPackageQualifiedName_5041Parser() {
+		if (packageQualifiedName_5041Parser == null) {
+			packageQualifiedName_5041Parser = new PackageAppliedStereotypeParser();
+		}
+		return packageQualifiedName_5041Parser;
 	}
 
 	/**
@@ -2120,6 +2137,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInterfaceQualifiedName_5035Parser();
 		case PackageName2EditPart.VISUAL_ID:
 			return getPackageName_5020Parser();
+		case PackageStereo2EditPart.VISUAL_ID:
+			return getPackageQualifiedName_5041Parser();
 		case PackageName3EditPart.VISUAL_ID:
 			return getPackageName_5026Parser();
 		case InstanceSpecificationName3EditPart.VISUAL_ID:

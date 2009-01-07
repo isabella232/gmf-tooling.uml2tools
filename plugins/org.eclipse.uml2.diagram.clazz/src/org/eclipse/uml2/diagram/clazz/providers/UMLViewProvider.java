@@ -296,6 +296,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case PackageName2EditPart.VISUAL_ID:
+				case PackageStereo2EditPart.VISUAL_ID:
 				case PackageImportsEditPart.VISUAL_ID:
 					if (Package4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -523,6 +524,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Package4ViewFactory.class;
 		case PackageName2EditPart.VISUAL_ID:
 			return PackageName2ViewFactory.class;
+		case PackageStereo2EditPart.VISUAL_ID:
+			return PackageStereo2ViewFactory.class;
 		case AssociationClassRhombEditPart.VISUAL_ID:
 			return AssociationClassRhombViewFactory.class;
 		case PackageAsFrameEditPart.VISUAL_ID:

@@ -176,6 +176,9 @@
     <nodeLabelTraces
         visualID="5020"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5041"
+        queryText="true"/>
     <compartmentTraces
         visualID="7032"
         queryText="true"/>

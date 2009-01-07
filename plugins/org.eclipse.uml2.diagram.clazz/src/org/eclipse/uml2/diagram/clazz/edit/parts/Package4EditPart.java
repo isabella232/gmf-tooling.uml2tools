@@ -132,6 +132,10 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			((PackageName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureSecondaryPackage_NameLabel());
 			return true;
 		}
+		if (childEditPart instanceof PackageStereo2EditPart) {
+			((PackageStereo2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureSecondaryPackage_PackageLabel());
+			return true;
+		}
 		if (childEditPart instanceof PackageImportsEditPart) {
 			IFigure pane = getPrimaryShape().getFigureSecondaryPackage_Imports();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -1216,7 +1220,7 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		private void createContents() {
 
 			fFigureSecondaryPackage_PackageLabel = new Label();
-			fFigureSecondaryPackage_PackageLabel.setText("Package");
+			fFigureSecondaryPackage_PackageLabel.setText("");
 
 			this.add(fFigureSecondaryPackage_PackageLabel);
 

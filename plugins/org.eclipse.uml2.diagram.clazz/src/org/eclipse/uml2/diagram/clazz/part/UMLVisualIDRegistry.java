@@ -768,6 +768,9 @@ public class UMLVisualIDRegistry {
 			if (PackageName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (PackageStereo2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (PackageImportsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
