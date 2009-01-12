@@ -18,7 +18,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.emf.ui.properties,
  org.eclipse.ui.ide,
  org.eclipse.uml2.diagram.common.notation;visibility:=reexport,
- org.eclipse.gmf.runtime.diagram.ui.properties
+ org.eclipse.gmf.runtime.diagram.ui.properties,
+ org.eclipse.gmf.runtime.diagram.ui.resources.editor;bundle-version="1.2.0",
+ org.eclipse.ocl.uml
 Export-Package: org.eclipse.uml2.diagram.common.actions,
  org.eclipse.uml2.diagram.common.async,
  org.eclipse.uml2.diagram.common.commands,

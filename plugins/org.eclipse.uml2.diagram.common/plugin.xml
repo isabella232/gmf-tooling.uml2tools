@@ -61,4 +61,54 @@
             name="%TurnNoteIntoComment_label">
       </command>
    </extension>
+   
+    <extension point="org.eclipse.ui.startup">
+      <startup class="org.eclipse.uml2.diagram.common.Startup"/>
+   </extension>
+   
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            name="UML2 Tools Constraints"
+            id="org.eclipse.uml2.uml2tools.constraints"/>
+      <constraintProvider
+             cache="true"
+             mode="Batch">
+         <package namespaceUri="http://www.eclipse.org/uml2/3.0.0/UML"/>
+         <constraints categories="org.eclipse.uml2.uml2tools.constraints">
+            <constraint
+                  lang="Java"
+                  class="org.eclipse.uml2.diagram.common.validation.OCLFromStereoConstraint"
+                  severity="ERROR"
+                  mode="Batch"
+                  name="OCL Constraints from the Applied Stereotypes"
+                  id="org.eclipse.uml2.diagram.uml2tools.stereo"
+                  statusCode="1">
+               <description>
+                  Constraints defined in the applied stereotypes should be respected.
+               </description>
+               <message>
+                  A {0} violates constraint '{2}', defined in {1}.
+               </message>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">         
+    <clientContext
+            default="false"
+            id="org.eclipse.uml2.uml2tools.constraints">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="org.eclipse.uml2.diagram.clazz.EditingDomain"/>
+         </enablement>
+      </clientContext>
+      <binding
+            context="org.eclipse.uml2.uml2tools.constraints"
+            category="org.eclipse.uml2.uml2tools.constraints"/>         
+   </extension>      
+   
 </plugin>
