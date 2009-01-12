@@ -39,9 +39,13 @@
                   id="ValidateAction">
              </popupAction>            
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>             
 		 </popupContribution>
       </contributionItemProvider>      
    </extension>
