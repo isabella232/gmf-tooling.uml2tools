@@ -1629,7 +1629,7 @@
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorID"/></with>
-                  <with variable="selection"><iterate ifEmpty="false">
+                  <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart"/>
                   </iterate></with>
                </and>
