@@ -754,7 +754,7 @@
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
-                  <with variable="selection"><iterate ifEmpty="false">
+                  <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart"/>
                   </iterate></with>
                </and>
