@@ -31,10 +31,7 @@ public class OCLFromStereoConstraint extends AbstractModelConstraint {
 
 	@Override
 	public IStatus validate(IValidationContext ctx) {
-		NamedElement selected = (NamedElement) ctx.getTarget();
-		if (selected == null) {
-			return null;
-		}
+		Element selected = (Element) ctx.getTarget();
 		Helper oclHelper = myOCL.createOCLHelper();
 		for (Stereotype stereo : selected.getApplicableStereotypes()) {
 			oclHelper.setContext(stereo);
@@ -42,7 +39,8 @@ public class OCLFromStereoConstraint extends AbstractModelConstraint {
 				try {
 					boolean success = runConstraintOn(oclHelper, selected, c);
 					if (!success) {
-						return ctx.createFailureStatus(selected.getName(), stereo.getName(), c.getName());
+						String name = (selected instanceof NamedElement)? ((NamedElement)selected).getName(): "";
+						return ctx.createFailureStatus(name, stereo.getName(), c.getName());
 					}
 				} catch (ParserException e) {
 					// TODO Auto-generated catch block
