@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.clazz.action;
+package org.eclipse.uml2.diagram.common.actions;
 
 import org.eclipse.emf.edit.ui.action.ValidateAction;
 import org.eclipse.gmf.runtime.common.core.service.IProvider;
@@ -7,7 +7,6 @@ import org.eclipse.gmf.runtime.common.ui.util.IWorkbenchPartDescriptor;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
-import org.eclipse.uml2.diagram.common.actions.GMFValidateAction;
 
 public class ValidateContributionItemProvider extends AbstractContributionItemProvider implements IProvider {
 
