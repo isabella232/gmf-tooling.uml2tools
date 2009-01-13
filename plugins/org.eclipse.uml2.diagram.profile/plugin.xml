@@ -927,5 +927,77 @@
          </propertySection>
       </propertySections>
    </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="validate-action">
+	<?gmfgen generated="true"?>
+	<contributionItemProvider
+			class="org.eclipse.uml2.diagram.common.actions.ValidateContributionItemProvider"
+			checkPluginLoaded="false">
+		<Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenu
+                  id="ValidateMenu"
+                  path="/propertiesGroup">
+             </popupMenu>
+             <popupAction
+                  path="/ValidateMenu"
+                  id="ValidateAction">
+             </popupAction>            
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.CommentEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+	</contributionItemProvider>
+	</extension>
+
 
 </plugin>
