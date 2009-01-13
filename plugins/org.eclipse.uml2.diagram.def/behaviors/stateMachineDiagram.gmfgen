@@ -2214,8 +2214,17 @@
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
   </labelParsers>
   <contextMenus
+      iD="org.eclipse.uml2.diagram.state.canvas"
       context="//@diagram">
     <items
         xsi:type="gmfgen:LoadResourceAction"/>
+  </contextMenus>
+  <contextMenus
+      iD="org.eclipse.uml2.diagram.state.rotate"
+      context="//@diagram/@childNodes.14 //@diagram/@childNodes.15">
+    <items
+        xsi:type="gmfgen:GenCustomAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.common.actions.RotateActionHandler"
+        name="Rotate"/>
   </contextMenus>
 </gmfgen:GenEditorGenerator>

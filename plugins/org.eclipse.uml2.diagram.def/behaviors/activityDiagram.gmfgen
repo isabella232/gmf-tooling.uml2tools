@@ -13854,8 +13854,17 @@
         qualifiedName="org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeAndInStateParser"/>
   </labelParsers>
   <contextMenus
+      iD="org.eclipse.uml2.diagram.activity.canvas"
       context="//@diagram">
     <items
         xsi:type="gmfgen:LoadResourceAction"/>
+  </contextMenus>
+  <contextMenus
+      iD="org.eclipse.uml2.diagram.activity.rotate"
+      context="//@diagram/@childNodes.12 //@diagram/@childNodes.38 //@diagram/@childNodes.60 //@diagram/@childNodes.11 //@diagram/@childNodes.37 //@diagram/@childNodes.59">
+    <items
+        xsi:type="gmfgen:GenCustomAction"
+        qualifiedClassName="org.eclipse.uml2.diagram.common.actions.RotateActionHandler"
+        name="Rotate"/>
   </contextMenus>
 </gmfgen:GenEditorGenerator>

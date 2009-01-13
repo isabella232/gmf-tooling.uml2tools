@@ -4,46 +4,6 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
-   <extension point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="false"?>
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.statemachine.edit.parts.JoinNodeEditPartID"
-            objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart">
-         <menu 
-            id="RotateMenu" 
-            label="Rotate" 
-            path="additions"> 
-         </menu> 
-         <action
-               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
-               definitionId="org.eclipse.uml2.diagram.statemachine.rotateJoin.id"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.statemachine.rotateJoin"
-               label="Rotate"
-               menubarPath="RotateMenu">
-         </action>
-      </objectContribution>                    
-
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.uml2.diagram.statemachine.edit.parts.ForkNodeEditPartID"
-            objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart">
-         <menu 
-            id="RotateMenu" 
-            label="Rotate" 
-            path="additions"> 
-         </menu> 
-         <action
-               class="org.eclipse.uml2.diagram.common.actions.RotateAction"
-               definitionId="org.eclipse.uml2.diagram.statemachine.rotateFork.id"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.statemachine.rotateFork"
-               label="Rotate"
-               menubarPath="RotateMenu">
-         </action>
-      </objectContribution>                    
-   </extension>
 <!-- gmf generator persistent region end -->
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
@@ -761,6 +721,19 @@
             </visibleWhen>
          </command>
       </menuContribution>
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.eclipse.uml2.diagram.statemachine.RotateActionHandler">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"><or> 
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart"/>
+                  </or></iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
    </extension>
    
    <extension point="org.eclipse.ui.commands" id="menu-commands">
@@ -770,10 +743,20 @@
          name="Load Resource"
          categoryId="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"
          defaultHandler="org.eclipse.uml2.diagram.statemachine.part.LoadResourceAction"/>
+      <command id="org.eclipse.uml2.diagram.statemachine.RotateActionHandler"
+         name="Rotate"
+         categoryId="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/>
    </extension>
    
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
+      <handler
+         commandId="org.eclipse.uml2.diagram.statemachine.RotateActionHandler"
+         class="org.eclipse.uml2.diagram.common.actions.RotateActionHandler">
+         <enabledWhen>
+           <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
+         </enabledWhen>
+      </handler>
    </extension>
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
       <?gmfgen generated="true"?>
