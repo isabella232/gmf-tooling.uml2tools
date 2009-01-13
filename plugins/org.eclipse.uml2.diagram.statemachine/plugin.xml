@@ -2,16 +2,9 @@
 <?eclipse version="3.0"?>
 
 <plugin>
-
 <!-- gmf generator persistent region begin -->
 <!-- gmf generator persistent region end -->
-
-   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
-      <?gmfgen generated="true"?>
-      <initializer class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramPreferenceInitializer"/>
-   </extension>
-
-   <extension point="org.eclipse.team.core.fileTypes">
+<extension point="org.eclipse.team.core.fileTypes">
       <?gmfgen generated="true"?>
       <fileTypes
          type="text"
@@ -23,7 +16,7 @@
       </fileTypes>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.extension_parser">
+<extension point="org.eclipse.emf.ecore.extension_parser">
       <?gmfgen generated="true"?>
       <parser
          type="umlstm"
@@ -35,7 +28,7 @@
       </parser>
    </extension>
 
-   <extension point="org.eclipse.ui.editors">
+<extension point="org.eclipse.ui.editors">
       <?gmfgen generated="true"?>
 
       <editor
@@ -62,7 +55,17 @@
 
    </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
+<extension point="org.eclipse.ui.contexts">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="org.eclipse.uml2.diagram.statemachine.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+<extension point="org.eclipse.ui.newWizards">
       <?gmfgen generated="true"?>
   	  <wizard
   	     name="%newWizardName"
@@ -74,7 +77,23 @@
       </wizard>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+<extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="org.eclipse.uml2.diagram.statemachine.InitDiagram"
+            nameFilter="*.uml"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="org.eclipse.uml2.diagram.statemachine.part.UMLInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.statemachine.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
@@ -123,7 +142,133 @@
       </GlobalActionHandlerProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+<extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+<extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="org.eclipse.uml2.uml.diagram.statemachine.general"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.general"
+            category="org.eclipse.uml2.uml.diagram"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.statemachine.appearance"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.appearance"
+            category="org.eclipse.uml2.uml.diagram.statemachine.general"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.statemachine.connections"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.connections"
+            category="org.eclipse.uml2.uml.diagram.statemachine.general"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.statemachine.printing"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.printing"
+            category="org.eclipse.uml2.uml.diagram.statemachine.general"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="org.eclipse.uml2.uml.diagram.statemachine.rulersAndGrid"
+            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.rulersAndGrid"
+            category="org.eclipse.uml2.uml.diagram.statemachine.general"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="org.eclipse.uml2.diagram.statemachine"
+            labelProvider="org.eclipse.uml2.diagram.statemachine.sheet.UMLSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="org.eclipse.uml2.diagram.statemachine">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="org.eclipse.uml2.diagram.statemachine">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="org.eclipse.uml2.diagram.statemachine.sheet.UMLPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="org.eclipse.uml2.diagram.statemachine.sheet.UMLPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="org.eclipse.uml2.diagram.statemachine.sheet.UMLPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+<extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
       <viewProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLViewProvider">
          <Priority name="Lowest"/>
@@ -133,7 +278,7 @@
       </viewProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+<extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
       <editpartProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLEditPartProvider">
          <Priority name="Lowest"/>
@@ -156,9 +301,7 @@
       </editpartProvider>
    </extension>
 
-   
-
-   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+<extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
@@ -167,21 +310,21 @@
       </modelingAssistantProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
       <IconProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
       <ParserProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
@@ -423,7 +566,7 @@
       </metamodel>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <?gmfgen generated="true"?>
       <clientContext id="org.eclipse.uml2.diagram.statemachine.TypeContext">
          <enablement>
@@ -461,11 +604,34 @@
       </binding>
    </extension>
 
+<extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.eclipse.uml2.diagram.statemachine.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="org.eclipse.uml2.diagram.statemachine"
+           properties="isURIEditorInput"
+           class="org.eclipse.uml2.diagram.statemachine.part.UMLUriEditorInputTester">
+       </propertyTester>
+   </extension>
 
-   <extension point="org.eclipse.ui.navigator.viewer">
+<extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isDomainModelElement">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.eclipse.uml2.diagram.statemachine.DomainModelElementPropertyTester"
+           type="org.eclipse.emf.ecore.EObject"
+           namespace="org.eclipse.uml2.diagram.statemachine"
+           properties="isDomainModelElement"
+           class="org.eclipse.uml2.diagram.statemachine.part.UMLDomainModelElementTester">
+       </propertyTester>
+   </extension>
+
+<extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
             <contentExtension pattern="org.eclipse.uml2.diagram.statemachine.resourceContent"/>
+			<contentExtension pattern="org.eclipse.uml2.diagram.statemachine.domainResourceContent"/>
             <contentExtension pattern="org.eclipse.uml2.diagram.statemachine.navigatorLinkHelper"/>
          </includes>
       </viewerContentBinding>
@@ -476,8 +642,9 @@
       </viewerActionBinding>
    </extension>
 
-   <extension point="org.eclipse.ui.navigator.navigatorContent">
-      <navigatorContent 
+<extension point="org.eclipse.ui.navigator.navigatorContent">
+      <?gmfgen generated="true"?>
+      <navigatorContent
             id="org.eclipse.uml2.diagram.statemachine.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
@@ -487,6 +654,10 @@
             activeByDefault="true">
          <triggerPoints>
             <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="umlstm"/>
+               </and>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="umlstatemachine_diagram"/>
@@ -506,12 +677,43 @@
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="umlstm"/>
+                  </and>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="umlstatemachine_diagram"/>
                   </and>
                   <instanceof value="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="org.eclipse.uml2.diagram.statemachine.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="org.eclipse.uml2.diagram.statemachine.navigator.UMLDomainNavigatorContentProvider" 
+            labelProvider="org.eclipse.uml2.diagram.statemachine.navigator.UMLDomainNavigatorLabelProvider"
+            icon="icons/obj16/UMLDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="uml"/>
+               </and>
+               <and>
+                  <instanceof value="org.eclipse.emf.ecore.EObject"/>
+                  <test property="org.eclipse.uml2.diagram.statemachine.isDomainModelElement"/>
+               </and>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <and>
+       	       <instanceof value="org.eclipse.emf.ecore.EObject"/>
+       	       <test property="org.eclipse.uml2.diagram.statemachine.isDomainModelElement"/>
+       	    </and>
+         </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="org.eclipse.uml2.diagram.statemachine.navigatorActionProvider"
@@ -523,13 +725,17 @@
          </enablement>
       </actionProvider>
    </extension>
-   
-   <extension point="org.eclipse.ui.navigator.linkHelper">
+
+<extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
       <linkHelper
             id="org.eclipse.uml2.diagram.statemachine.navigatorLinkHelper"
             class="org.eclipse.uml2.diagram.statemachine.navigator.UMLNavigatorLinkHelper">
          <editorInputEnablement>
-            <instanceof value="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.document.FileEditorInputProxy"/>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="org.eclipse.uml2.diagram.statemachine.isURIEditorInput"/>
+            </and>
          </editorInputEnablement>
          <selectionEnablement>
             <instanceof value="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
@@ -537,122 +743,6 @@
       </linkHelper>
    </extension>
 
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
-      <propertyContributor contributorId="org.eclipse.uml2.diagram.statemachine"
-            labelProvider="org.eclipse.uml2.diagram.statemachine.sheet.UMLSheetLabelProvider">
-         <propertyCategory category="domain"/>
-         <propertyCategory category="visual"/>
-         <propertyCategory category="extra"/>
-      </propertyContributor>
-   </extension>
-
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <propertyTabs contributorId="org.eclipse.uml2.diagram.statemachine">
-         <propertyTab
-             category="visual"
-             id="property.tab.AppearancePropertySection"
-             label="%tab.appearance"/>
-          <propertyTab
-             category="visual"
-             id="property.tab.DiagramPropertySection"
-             label="%tab.diagram"/>
-          <propertyTab
-             category="domain"
-             id="property.tab.domain"
-             label="%tab.domain"/>
-      </propertyTabs>
-   </extension>
-
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
-      <propertySections contributorId="org.eclipse.uml2.diagram.statemachine">
-
-         <propertySection id="property.section.ConnectorAppearancePropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection>
-         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection> 
-         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection>              
-
-          <propertySection id="property.section.RulerGridPropertySection" 
-             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
-             tab="property.tab.DiagramPropertySection">
-          </propertySection>              
-         <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
-            class="org.eclipse.uml2.diagram.statemachine.sheet.UMLPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
-         </propertySection>
-      </propertySections>
-   </extension>
-   
-   <extension point="org.eclipse.ui.preferencePages" id="prefpages.iconstyle">
-      <?gmfgen generated="true"?>
-      <page
-            name="%preferences.icons"
-            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramIconStylePreferencePage"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
-            id="org.eclipse.uml2.diagram.statemachine.icons">
-      </page>
-   </extension>
-   
-   <extension point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="true"?>
-      <objectContribution
-            id="org.eclipse.uml2.diagram.statemachine.InitDiagram"
-            nameFilter="*.uml"
-            objectClass="org.eclipse.core.resources.IFile">
-         <action
-               label="%initDiagramActionLabel"
-               class="org.eclipse.uml2.diagram.statemachine.part.UMLInitDiagramFileAction"
-               menubarPath="additions"
-               enablesFor="1"
-               id="org.eclipse.uml2.diagram.statemachine.InitDiagramAction">
-         </action>
-      </objectContribution>
-   </extension>
-   
-<extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
-      <?gmfgen generated="true"?>
-       <propertyTester
-           id="org.eclipse.uml2.diagram.statemachine.URIEditorInputPropertyTester"
-           type="org.eclipse.emf.common.ui.URIEditorInput"
-           namespace="org.eclipse.uml2.diagram.statemachine"
-           properties="isURIEditorInput"
-           class="org.eclipse.uml2.diagram.statemachine.part.UMLUriEditorInputTester">
-       </propertyTester>
-   </extension>
-<extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isDomainModelElement">
-      <?gmfgen generated="true"?>
-       <propertyTester
-           id="org.eclipse.uml2.diagram.statemachine.DomainModelElementPropertyTester"
-           type="org.eclipse.emf.ecore.EObject"
-           namespace="org.eclipse.uml2.diagram.statemachine"
-           properties="isDomainModelElement"
-           class="org.eclipse.uml2.diagram.statemachine.part.UMLDomainModelElementTester">
-       </propertyTester>
-   </extension>
-<extension point="org.eclipse.ui.contexts">
-      <?gmfgen generated="true"?>
-      <context
-         description="%context.description"
-         id="org.eclipse.uml2.diagram.statemachine.ui.diagramContext"
-         name="%context.name"
-         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
-      </context>
-   </extension>
 <extension point="org.eclipse.ui.commands" id="update-cmd">
       <?gmfgen generated="true"?>
       <command
@@ -662,6 +752,7 @@
          id="org.eclipse.uml2.diagram.statemachine.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
+
 <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
@@ -670,40 +761,8 @@
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
-   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
-      <?gmfgen generated="true"?>
-      <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.general"
-            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.general"
-            category="org.eclipse.uml2.uml.diagram"
-            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramGeneralPreferencePage">
-      </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.appearance"
-            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.appearance"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
-            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramAppearancePreferencePage">
-      </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.connections"
-            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.connections"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
-            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramConnectionsPreferencePage">
-      </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.printing"
-            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.printing"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
-            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramPrintingPreferencePage">
-      </page>
-      <page
-            id="org.eclipse.uml2.uml.diagram.statemachine.rulersAndGrid"
-            name="%prefpage.org.eclipse.uml2.uml.diagram.statemachine.rulersAndGrid"
-            category="org.eclipse.uml2.uml.diagram.statemachine.general"
-            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramRulersAndGridPreferencePage">
-      </page>
-   </extension>
-   <extension point="org.eclipse.ui.menus" id="context-menus">
+
+<extension point="org.eclipse.ui.menus" id="context-menus">
       <?gmfgen generated="true"?>
       <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
       </menuContribution>
@@ -735,8 +794,8 @@
          </command>
       </menuContribution>
    </extension>
-   
-   <extension point="org.eclipse.ui.commands" id="menu-commands">
+
+<extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="org.eclipse.uml2.diagram.statemachine.LoadResourceAction"
@@ -747,8 +806,8 @@
          name="Rotate"
          categoryId="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/>
    </extension>
-   
-   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+
+<extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
       <handler
          commandId="org.eclipse.uml2.diagram.statemachine.RotateActionHandler"
@@ -758,125 +817,7 @@
          </enabledWhen>
       </handler>
    </extension>
-<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
-      <?gmfgen generated="true"?>
-      <propertyContributor
-            contributorId="org.eclipse.uml2.diagram.statemachine"
-            labelProvider="org.eclipse.uml2.diagram.statemachine.sheet.UMLSheetLabelProvider">
-         <propertyCategory category="domain"/>
-         <propertyCategory category="visual"/>
-         <propertyCategory category="extra"/>
-      </propertyContributor>
-   </extension>
 
-<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
-      <?gmfgen generated="true"?>   
-      <propertyTabs contributorId="org.eclipse.uml2.diagram.statemachine">
-         <propertyTab
-             category="visual"
-             id="property.tab.AppearancePropertySection"
-             label="%tab.appearance"/>
-          <propertyTab
-             category="visual"
-             id="property.tab.DiagramPropertySection"
-             label="%tab.diagram"/>
-          <propertyTab
-             category="domain"
-             id="property.tab.domain"
-             label="%tab.domain"/>
-          <propertyTab
-             category="domain"
-             id="property.tab.domain"
-             label="%tab.domain"/>
-          <propertyTab
-             category="domain"
-             id="property.tab.domain"
-             label="%tab.domain"/>
-      </propertyTabs>
-   </extension>
-
-<extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
-      <?gmfgen generated="true"?>   
-      <propertySections contributorId="org.eclipse.uml2.diagram.statemachine">
-         <propertySection id="property.section.ConnectorAppearancePropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection>
-         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection> 
-         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection>     
-         <propertySection id="property.section.RulerGridPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
-            tab="property.tab.DiagramPropertySection">
-         </propertySection>     
-         <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
-            class="org.eclipse.uml2.diagram.statemachine.sheet.UMLPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
-         </propertySection>
-         <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
-            class="org.eclipse.uml2.diagram.statemachine.sheet.UMLPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
-         </propertySection>
-         <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
-            class="org.eclipse.uml2.diagram.statemachine.sheet.UMLPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
-         </propertySection>
-      </propertySections>
-   </extension>
-
-<extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
-      <?gmfgen generated="true"?>
-      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
-         <includes>
-            <contentExtension pattern="org.eclipse.uml2.diagram.statemachine.resourceContent"/>
-			<contentExtension pattern="org.eclipse.uml2.diagram.statemachine.domainResourceContent"/>
-            <contentExtension pattern="org.eclipse.uml2.diagram.statemachine.navigatorLinkHelper"/>
-         </includes>
-      </viewerContentBinding>
-      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
-         <includes>
-            <actionExtension pattern="org.eclipse.uml2.diagram.statemachine.navigatorActionProvider"/>
-         </includes>
-      </viewerActionBinding>
-   </extension>
-
-<extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
-      <?gmfgen generated="true"?>
-      <linkHelper
-            id="org.eclipse.uml2.diagram.statemachine.navigatorLinkHelper"
-            class="org.eclipse.uml2.diagram.statemachine.navigator.UMLNavigatorLinkHelper">
-         <editorInputEnablement>
-            <and>
-               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
-               <test property="org.eclipse.uml2.diagram.statemachine.isURIEditorInput"/>
-            </and>
-         </editorInputEnablement>
-         <selectionEnablement>
-            <instanceof value="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
-         </selectionEnablement>
-      </linkHelper>
-   </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
 <?gmfgen generated="true"?>
       <contributionItemProvider
@@ -948,7 +889,126 @@
       </propertySections>
    </extension>
 
+<extension point="org.eclipse.ui.preferencePages" id="prefpages.iconstyle">
+      <?gmfgen generated="true"?>
+      <page
+            name="%preferences.icons"
+            class="org.eclipse.uml2.diagram.statemachine.preferences.DiagramIconStylePreferencePage"
+            category="org.eclipse.uml2.uml.diagram.statemachine.general"
+            id="org.eclipse.uml2.diagram.statemachine.icons">
+      </page>
+   </extension>
 
-
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="validate-action">
+	<?gmfgen generated="true"?>
+	<contributionItemProvider
+			class="org.eclipse.uml2.diagram.common.actions.ValidateContributionItemProvider"
+			checkPluginLoaded="false">
+		<Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenu
+                  id="ValidateMenu"
+                  path="/propertiesGroup">
+             </popupMenu>
+             <popupAction
+                  path="/ValidateMenu"
+                  id="ValidateAction">
+             </popupAction>            
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+	</contributionItemProvider>
+	</extension>
 
 </plugin>
