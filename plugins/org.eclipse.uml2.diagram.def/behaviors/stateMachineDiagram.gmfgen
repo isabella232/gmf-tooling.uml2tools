@@ -2076,28 +2076,6 @@
         <generatedTypes>abstractNavigatorItem</generatedTypes>
       </filter>
     </tabs>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
-        iD="domain"
-        label="Core">
-      <filter
-          xsi:type="gmfgen:TypeTabFilter">
-        <types>org.eclipse.gmf.runtime.notation.View</types>
-        <types>org.eclipse.gef.EditPart</types>
-        <generatedTypes>abstractNavigatorItem</generatedTypes>
-      </filter>
-    </tabs>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
-        iD="domain"
-        label="Core">
-      <filter
-          xsi:type="gmfgen:TypeTabFilter">
-        <types>org.eclipse.gmf.runtime.notation.View</types>
-        <types>org.eclipse.gef.EditPart</types>
-        <generatedTypes>abstractNavigatorItem</generatedTypes>
-      </filter>
-    </tabs>
   </propertySheet>
   <domainGenModel
       href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#/"/>

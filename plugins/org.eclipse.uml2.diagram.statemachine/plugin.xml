@@ -207,14 +207,6 @@
              category="domain"
              id="property.tab.domain"
              label="%tab.domain"/>
-          <propertyTab
-             category="domain"
-             id="property.tab.domain"
-             label="%tab.domain"/>
-          <propertyTab
-             category="domain"
-             id="property.tab.domain"
-             label="%tab.domain"/>
       </propertyTabs>
    </extension>
 
@@ -241,22 +233,6 @@
             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
             tab="property.tab.DiagramPropertySection">
          </propertySection>     
-         <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
-            class="org.eclipse.uml2.diagram.statemachine.sheet.UMLPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
-         </propertySection>
-         <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
-            class="org.eclipse.uml2.diagram.statemachine.sheet.UMLPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
-            <input type="org.eclipse.uml2.diagram.statemachine.navigator.UMLAbstractNavigatorItem"/>
-         </propertySection>
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
