@@ -727,7 +727,7 @@
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
       <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
-         <command commandId="org.eclipse.uml2.diagram.profile.UMLCreateShortcutAction">
+         <command commandId="org.eclipse.uml2.diagram.profile.UMLLoadResourceAction">
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
@@ -737,7 +737,7 @@
                </and>
             </visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.profile.UMLLoadResourceAction">
+         <command commandId="org.eclipse.uml2.diagram.profile.UMLCreateShortcutAction">
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
@@ -753,14 +753,14 @@
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="org.eclipse.uml2.diagram.profile.UMLCreateShortcutAction"
-         name="Create Shortcut..."
-         categoryId="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"
-         defaultHandler="org.eclipse.uml2.diagram.profile.part.UMLCreateShortcutAction"/>
       <command id="org.eclipse.uml2.diagram.profile.UMLLoadResourceAction"
          name="Load Resource"
          categoryId="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"
          defaultHandler="org.eclipse.uml2.diagram.profile.part.UMLLoadResourceAction"/>
+      <command id="org.eclipse.uml2.diagram.profile.UMLCreateShortcutAction"
+         name="Create Shortcut..."
+         categoryId="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"
+         defaultHandler="org.eclipse.uml2.diagram.profile.part.UMLCreateShortcutAction"/>
    </extension>
    
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
