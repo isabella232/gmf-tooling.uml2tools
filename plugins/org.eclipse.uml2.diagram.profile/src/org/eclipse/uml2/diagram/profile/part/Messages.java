@@ -323,12 +323,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Constraint4CreationTool_title;
+	public static String OCLConstraint4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Constraint4CreationTool_desc;
+	public static String OCLConstraint4CreationTool_desc;
 
 	/**
 	 * @generated

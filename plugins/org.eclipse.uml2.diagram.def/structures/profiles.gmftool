@@ -43,8 +43,8 @@
           description="Create Property"/>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Constraint"
-          description="Create Constraint"/>
+          title="OCL Constraint"
+          description="Create OCL Constraint"/>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Literal"

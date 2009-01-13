@@ -47,7 +47,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createEnumeration1CreationTool());
 		paletteContainer.add(createGeneralization2CreationTool());
 		paletteContainer.add(createProperty3CreationTool());
-		paletteContainer.add(createConstraint4CreationTool());
+		paletteContainer.add(createOCLConstraint4CreationTool());
 		paletteContainer.add(createLiteral5CreationTool());
 		paletteContainer.add(createElementImport6CreationTool());
 		paletteContainer.add(createConstrainedElement7CreationTool());
@@ -144,11 +144,11 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createConstraint4CreationTool() {
+	private ToolEntry createOCLConstraint4CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Constraint_3008);
 		types.add(UMLElementTypes.Constraint_2008);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint4CreationTool_title, Messages.Constraint4CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.OCLConstraint4CreationTool_title, Messages.OCLConstraint4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Constraint_3008));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
