@@ -216,7 +216,8 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * Store model element in the resource. <!-- begin-user-doc -->
+	 * Store model element in the resource.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
