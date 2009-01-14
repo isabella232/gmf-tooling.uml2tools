@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SubstitutableByAttributesImpl.java,v 1.4 2008/05/07 17:38:05 mgolubev Exp $
+ * $Id: SubstitutableByAttributesImpl.java,v 1.5 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -46,7 +46,7 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 * @generated
 	 * @ordered
 	 */
-	protected EList substitutableByIDs;
+	protected EList<Integer> substitutableByIDs;
 
 	/**
 	 * The default value of the '{@link #isRequiresAll() <em>Requires All</em>}' attribute.
@@ -82,6 +82,7 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return GMFGenExtPackage.Literals.SUBSTITUTABLE_BY_ATTRIBUTES;
 	}
@@ -91,9 +92,9 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getSubstitutableByIDs() {
+	public EList<Integer> getSubstitutableByIDs() {
 		if (substitutableByIDs == null) {
-			substitutableByIDs = new EDataTypeUniqueEList(Integer.class, this, GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS);
+			substitutableByIDs = new EDataTypeUniqueEList<Integer>(Integer.class, this, GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS);
 		}
 		return substitutableByIDs;
 	}
@@ -163,6 +164,7 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
@@ -178,11 +180,13 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
 				getSubstitutableByIDs().clear();
-				getSubstitutableByIDs().addAll((Collection)newValue);
+				getSubstitutableByIDs().addAll((Collection<? extends Integer>)newValue);
 				return;
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL:
 				setRequiresAll(((Boolean)newValue).booleanValue());
@@ -196,6 +200,7 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
@@ -213,6 +218,7 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
@@ -228,6 +234,7 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

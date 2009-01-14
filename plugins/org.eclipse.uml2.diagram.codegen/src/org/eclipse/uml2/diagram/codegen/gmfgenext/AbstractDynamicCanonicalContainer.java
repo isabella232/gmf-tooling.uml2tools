@@ -2,13 +2,14 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AbstractDynamicCanonicalContainer.java,v 1.1 2008/05/07 17:36:56 mgolubev Exp $
+ * $Id: AbstractDynamicCanonicalContainer.java,v 1.2 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.gmf.codegen.gmfgen.Attributes;
+import org.eclipse.gmf.codegen.gmfgen.GenCommonBase;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +43,7 @@ public interface AbstractDynamicCanonicalContainer extends Attributes {
 	 * @model
 	 * @generated
 	 */
-	EList getAlwaysCanonicalIDs();
+	EList<Integer> getAlwaysCanonicalIDs();
 
 	/**
 	 * Returns the value of the '<em><b>Initially Canonical</b></em>' attribute.
@@ -74,9 +75,9 @@ public interface AbstractDynamicCanonicalContainer extends Attributes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="org.eclipse.gmf.codegen.gmfgen.GenCommonBase"
+	 * @model kind="operation"
 	 * @generated
 	 */
-	EList getAlwaysCanonicalChildren();
+	EList<GenCommonBase> getAlwaysCanonicalChildren();
 
 } // AbstractDynamicCanonicalContainer

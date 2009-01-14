@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AuxSecondaryDiagramNodeAttributeImpl.java,v 1.2 2007/11/22 16:59:33 mgolubev Exp $
+ * $Id: AuxSecondaryDiagramNodeAttributeImpl.java,v 1.3 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -64,6 +64,7 @@ public class AuxSecondaryDiagramNodeAttributeImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return GMFGenExtPackage.Literals.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE;
 	}
@@ -94,6 +95,7 @@ public class AuxSecondaryDiagramNodeAttributeImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GMFGenExtPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
@@ -107,6 +109,7 @@ public class AuxSecondaryDiagramNodeAttributeImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GMFGenExtPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
@@ -121,6 +124,7 @@ public class AuxSecondaryDiagramNodeAttributeImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
@@ -135,6 +139,7 @@ public class AuxSecondaryDiagramNodeAttributeImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
@@ -148,6 +153,7 @@ public class AuxSecondaryDiagramNodeAttributeImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

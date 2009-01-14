@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: RotatedLabelAttributesImpl.java,v 1.1 2008/09/05 19:40:28 mgolubev Exp $
+ * $Id: RotatedLabelAttributesImpl.java,v 1.2 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -37,6 +37,7 @@ public class RotatedLabelAttributesImpl extends EObjectImpl implements RotatedLa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return GMFGenExtPackage.Literals.ROTATED_LABEL_ATTRIBUTES;
 	}

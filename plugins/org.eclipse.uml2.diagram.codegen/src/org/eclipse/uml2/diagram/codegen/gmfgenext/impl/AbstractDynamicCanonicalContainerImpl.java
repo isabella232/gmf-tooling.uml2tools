@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AbstractDynamicCanonicalContainerImpl.java,v 1.1 2008/05/07 17:36:56 mgolubev Exp $
+ * $Id: AbstractDynamicCanonicalContainerImpl.java,v 1.2 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
+import org.eclipse.gmf.codegen.gmfgen.GenCommonBase;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
 
@@ -45,7 +46,7 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList alwaysCanonicalIDs;
+	protected EList<Integer> alwaysCanonicalIDs;
 
 	/**
 	 * The default value of the '{@link #isInitiallyCanonical() <em>Initially Canonical</em>}' attribute.
@@ -81,6 +82,7 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return GMFGenExtPackage.Literals.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER;
 	}
@@ -90,9 +92,9 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getAlwaysCanonicalIDs() {
+	public EList<Integer> getAlwaysCanonicalIDs() {
 		if (alwaysCanonicalIDs == null) {
-			alwaysCanonicalIDs = new EDataTypeUniqueEList(Integer.class, this, GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS);
+			alwaysCanonicalIDs = new EDataTypeUniqueEList<Integer>(Integer.class, this, GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS);
 		}
 		return alwaysCanonicalIDs;
 	}
@@ -123,7 +125,7 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList getAlwaysCanonicalChildren() {
+	public EList<GenCommonBase> getAlwaysCanonicalChildren() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -134,6 +136,7 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
@@ -149,11 +152,13 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+		@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
 				getAlwaysCanonicalIDs().clear();
-				getAlwaysCanonicalIDs().addAll((Collection)newValue);
+				getAlwaysCanonicalIDs().addAll((Collection<? extends Integer>)newValue);
 				return;
 			case GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
 				setInitiallyCanonical(((Boolean)newValue).booleanValue());
@@ -167,6 +172,7 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
@@ -184,6 +190,7 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
@@ -199,6 +206,7 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

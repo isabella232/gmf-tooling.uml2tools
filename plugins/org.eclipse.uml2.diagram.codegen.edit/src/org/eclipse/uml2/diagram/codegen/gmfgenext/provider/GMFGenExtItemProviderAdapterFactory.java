@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.7 2008/09/05 19:40:30 mgolubev Exp $
+ * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.8 2009/01/14 20:47:07 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -76,7 +76,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection supportedTypes = new ArrayList();
+	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
 	 * This constructs an instance.
@@ -106,6 +106,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createAuxSecondaryDiagramNodeAttributeAdapter() {
 		if (auxSecondaryDiagramNodeAttributeItemProvider == null) {
 			auxSecondaryDiagramNodeAttributeItemProvider = new AuxSecondaryDiagramNodeAttributeItemProvider(this);
@@ -128,6 +129,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createCustomLocatorAttributesAdapter() {
 		if (customLocatorAttributesItemProvider == null) {
 			customLocatorAttributesItemProvider = new CustomLocatorAttributesItemProvider(this);
@@ -150,6 +152,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDetailsLevelAttributesAdapter() {
 		if (detailsLevelAttributesItemProvider == null) {
 			detailsLevelAttributesItemProvider = new DetailsLevelAttributesItemProvider(this);
@@ -172,6 +175,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createSubstitutableByAttributesAdapter() {
 		if (substitutableByAttributesItemProvider == null) {
 			substitutableByAttributesItemProvider = new SubstitutableByAttributesItemProvider(this);
@@ -194,6 +198,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createDynamicCanonicalCompartmentAdapter() {
 		if (dynamicCanonicalCompartmentItemProvider == null) {
 			dynamicCanonicalCompartmentItemProvider = new DynamicCanonicalCompartmentItemProvider(this);
@@ -216,6 +221,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createInteractionDiagramAttributesAdapter() {
 		if (interactionDiagramAttributesItemProvider == null) {
 			interactionDiagramAttributesItemProvider = new InteractionDiagramAttributesItemProvider(this);
@@ -238,6 +244,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter createRotatedLabelAttributesAdapter() {
 		if (rotatedLabelAttributesItemProvider == null) {
 			rotatedLabelAttributesItemProvider = new RotatedLabelAttributesItemProvider(this);
@@ -271,6 +278,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isFactoryForType(Object type) {
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
@@ -281,6 +289,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
 	}
@@ -290,10 +299,11 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class) || (((Class)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -364,14 +374,14 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected static class CreationSwitch extends GMFGenSwitch {
+		protected static class CreationSwitch extends GMFGenSwitch<Object> {
 			/**
 			 * The child descriptors being populated.
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
-			protected List newChildDescriptors;
+			protected List<Object> newChildDescriptors;
 
 			/**
 			 * The domain in which to create the children.
@@ -387,7 +397,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
-			CreationSwitch(List newChildDescriptors, EditingDomain editingDomain) {
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
 				this.newChildDescriptors = newChildDescriptors;
 				this.editingDomain = editingDomain;
 			}
@@ -396,6 +406,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
+			@Override
 			public Object caseViewmap(Viewmap object) {
 				newChildDescriptors.add
 					(createChildParameter
@@ -451,8 +462,8 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Collection getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-			ArrayList result = new ArrayList();
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
 		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
 		   return result;
 		}

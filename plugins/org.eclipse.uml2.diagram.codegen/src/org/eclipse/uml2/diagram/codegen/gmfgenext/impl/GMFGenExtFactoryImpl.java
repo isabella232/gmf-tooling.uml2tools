@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtFactoryImpl.java,v 1.5 2008/09/05 19:40:28 mgolubev Exp $
+ * $Id: GMFGenExtFactoryImpl.java,v 1.6 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -62,6 +62,7 @@ public class GMFGenExtFactoryImpl extends EFactoryImpl implements GMFGenExtFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case GMFGenExtPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE: return createAuxSecondaryDiagramNodeAttribute();
@@ -161,6 +162,7 @@ public class GMFGenExtFactoryImpl extends EFactoryImpl implements GMFGenExtFacto
 	 * @deprecated
 	 * @generated
 	 */
+	@Deprecated
 	public static GMFGenExtPackage getPackage() {
 		return GMFGenExtPackage.eINSTANCE;
 	}

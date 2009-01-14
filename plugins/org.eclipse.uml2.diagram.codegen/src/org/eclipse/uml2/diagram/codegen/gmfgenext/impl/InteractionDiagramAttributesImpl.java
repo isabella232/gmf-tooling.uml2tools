@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: InteractionDiagramAttributesImpl.java,v 1.1 2008/05/07 17:42:26 mgolubev Exp $
+ * $Id: InteractionDiagramAttributesImpl.java,v 1.2 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -64,6 +64,7 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return GMFGenExtPackage.Literals.INTERACTION_DIAGRAM_ATTRIBUTES;
 	}
@@ -94,6 +95,7 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
@@ -107,6 +109,7 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
@@ -121,6 +124,7 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
@@ -135,6 +139,7 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
@@ -148,6 +153,7 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtAdapterFactory.java,v 1.6 2008/09/05 19:40:29 mgolubev Exp $
+ * $Id: GMFGenExtAdapterFactory.java,v 1.7 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -58,6 +58,7 @@ public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
+	@Override
 	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
@@ -74,36 +75,46 @@ public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GMFGenExtSwitch modelSwitch =
-		new GMFGenExtSwitch() {
-			public Object caseAuxSecondaryDiagramNodeAttribute(AuxSecondaryDiagramNodeAttribute object) {
+	protected GMFGenExtSwitch<Adapter> modelSwitch =
+		new GMFGenExtSwitch<Adapter>() {
+			@Override
+			public Adapter caseAuxSecondaryDiagramNodeAttribute(AuxSecondaryDiagramNodeAttribute object) {
 				return createAuxSecondaryDiagramNodeAttributeAdapter();
 			}
-			public Object caseCustomLocatorAttributes(CustomLocatorAttributes object) {
+			@Override
+			public Adapter caseCustomLocatorAttributes(CustomLocatorAttributes object) {
 				return createCustomLocatorAttributesAdapter();
 			}
-			public Object caseDetailsLevelAttributes(DetailsLevelAttributes object) {
+			@Override
+			public Adapter caseDetailsLevelAttributes(DetailsLevelAttributes object) {
 				return createDetailsLevelAttributesAdapter();
 			}
-			public Object caseSubstitutableByAttributes(SubstitutableByAttributes object) {
+			@Override
+			public Adapter caseSubstitutableByAttributes(SubstitutableByAttributes object) {
 				return createSubstitutableByAttributesAdapter();
 			}
-			public Object caseAbstractDynamicCanonicalContainer(AbstractDynamicCanonicalContainer object) {
+			@Override
+			public Adapter caseAbstractDynamicCanonicalContainer(AbstractDynamicCanonicalContainer object) {
 				return createAbstractDynamicCanonicalContainerAdapter();
 			}
-			public Object caseDynamicCanonicalCompartment(DynamicCanonicalCompartment object) {
+			@Override
+			public Adapter caseDynamicCanonicalCompartment(DynamicCanonicalCompartment object) {
 				return createDynamicCanonicalCompartmentAdapter();
 			}
-			public Object caseInteractionDiagramAttributes(InteractionDiagramAttributes object) {
+			@Override
+			public Adapter caseInteractionDiagramAttributes(InteractionDiagramAttributes object) {
 				return createInteractionDiagramAttributesAdapter();
 			}
-			public Object caseRotatedLabelAttributes(RotatedLabelAttributes object) {
+			@Override
+			public Adapter caseRotatedLabelAttributes(RotatedLabelAttributes object) {
 				return createRotatedLabelAttributesAdapter();
 			}
-			public Object caseAttributes(Attributes object) {
+			@Override
+			public Adapter caseAttributes(Attributes object) {
 				return createAttributesAdapter();
 			}
-			public Object defaultCase(EObject object) {
+			@Override
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -116,8 +127,9 @@ public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
+	@Override
 	public Adapter createAdapter(Notifier target) {
-		return (Adapter)modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 

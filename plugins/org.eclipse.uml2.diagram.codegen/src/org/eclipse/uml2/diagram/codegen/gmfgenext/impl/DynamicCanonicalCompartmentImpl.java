@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DynamicCanonicalCompartmentImpl.java,v 1.1 2008/05/07 17:36:56 mgolubev Exp $
+ * $Id: DynamicCanonicalCompartmentImpl.java,v 1.2 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -35,6 +35,7 @@ public class DynamicCanonicalCompartmentImpl extends AbstractDynamicCanonicalCon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return GMFGenExtPackage.Literals.DYNAMIC_CANONICAL_COMPARTMENT;
 	}

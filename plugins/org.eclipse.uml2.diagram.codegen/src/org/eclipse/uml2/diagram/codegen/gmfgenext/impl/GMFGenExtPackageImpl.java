@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackageImpl.java,v 1.7 2008/09/05 19:40:28 mgolubev Exp $
+ * $Id: GMFGenExtPackageImpl.java,v 1.8 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
+import org.eclipse.gmf.mappings.GMFMapPackage;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.AbstractDynamicCanonicalContainer;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.CustomLocatorAttributes;
@@ -21,6 +22,8 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.RotatedLabelAttributes;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
+import org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage;
+import org.eclipse.uml2.diagram.codegen.u2tmap.impl.U2TMapPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -143,12 +146,18 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 
 		// Initialize simple dependencies
 		GMFGenPackage.eINSTANCE.eClass();
+		GMFMapPackage.eINSTANCE.eClass();
+
+		// Obtain or create and register interdependencies
+		U2TMapPackageImpl theU2TMapPackage = (U2TMapPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(U2TMapPackage.eNS_URI) instanceof U2TMapPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(U2TMapPackage.eNS_URI) : U2TMapPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theGMFGenExtPackage.createPackageContents();
+		theU2TMapPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theGMFGenExtPackage.initializePackageContents();
+		theU2TMapPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theGMFGenExtPackage.freeze();
@@ -387,7 +396,15 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		U2TMapPackage theU2TMapPackage = (U2TMapPackage)EPackage.Registry.INSTANCE.getEPackage(U2TMapPackage.eNS_URI);
 		GMFGenPackage theGMFGenPackage = (GMFGenPackage)EPackage.Registry.INSTANCE.getEPackage(GMFGenPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theU2TMapPackage);
+
+		// Create type parameters
+
+		// Set bounds for type parameters
 
 		// Add supertypes to classes
 		auxSecondaryDiagramNodeAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
@@ -414,13 +431,13 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		initEAttribute(getSubstitutableByAttributes_SubstitutableByIDs(), ecorePackage.getEInt(), "substitutableByIDs", null, 0, -1, SubstitutableByAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSubstitutableByAttributes_RequiresAll(), ecorePackage.getEBoolean(), "requiresAll", null, 0, 1, SubstitutableByAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(substitutableByAttributesEClass, theGMFGenPackage.getGenCommonBase(), "getSubstitutableByNodes", 0, -1);
+		addEOperation(substitutableByAttributesEClass, theGMFGenPackage.getGenCommonBase(), "getSubstitutableByNodes", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(abstractDynamicCanonicalContainerEClass, AbstractDynamicCanonicalContainer.class, "AbstractDynamicCanonicalContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractDynamicCanonicalContainer_AlwaysCanonicalIDs(), ecorePackage.getEInt(), "alwaysCanonicalIDs", null, 0, -1, AbstractDynamicCanonicalContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractDynamicCanonicalContainer_InitiallyCanonical(), ecorePackage.getEBoolean(), "initiallyCanonical", "false", 0, 1, AbstractDynamicCanonicalContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(abstractDynamicCanonicalContainerEClass, theGMFGenPackage.getGenCommonBase(), "getAlwaysCanonicalChildren", 0, -1);
+		addEOperation(abstractDynamicCanonicalContainerEClass, theGMFGenPackage.getGenCommonBase(), "getAlwaysCanonicalChildren", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dynamicCanonicalCompartmentEClass, DynamicCanonicalCompartment.class, "DynamicCanonicalCompartment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

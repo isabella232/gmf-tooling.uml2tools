@@ -1,7 +1,11 @@
 @namespace(uri="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0", prefix="uml2.gmfgenext")
 package gmfgenext;
 
-import "platform:/resource/org.eclipse.gmf.codegen/models/gmfgen.ecore";
+import "platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore";
+import "platform:/plugin/org.eclipse.gmf.map/models/gmfmap.ecore";
+import "platform:/plugin/org.eclipse.gmf.graphdef/models/gmfgraph.ecore";
+import "platform:/plugin/org.eclipse.gmf.tooldef/models/tooldef.ecore";
+import "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore";
 
 class AuxSecondaryDiagramNodeAttribute extends gmfgen.Attributes {
 	@genmodel(documentation="When installed into the top-level node, it should always share the domain element with diagram canvas")
@@ -44,3 +48,51 @@ class InteractionDiagramAttributes extends gmfgen.Attributes {
 
 class RotatedLabelAttributes extends gmfgen.Attributes {
 }
+
+@namespace(uri="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping", prefix="u2tmap")
+package u2tmap {
+	class MappingExt extends mappings.Mapping {
+		ref NewMenuDefinitions newMenuDefs;	
+	}
+	
+	class NewMenuDefinitions {
+		attr String defID;
+		
+		val NewMenuContext[*] contexts; 
+		ref NewMenuContext[*] importedContexts;
+		ref NewMenuDefinitions[*] importedDefinitions;
+	}
+	
+	class NewMenuContext {
+		ref ecore.EClass metaclass;
+		attr boolean includeSubClasses = true;
+		ordered val AbstractNewMenuEntry[*]#context entries;
+		ref AbstractNewMenuEntry[*] importedEntries;
+	}
+	
+	abstract class AbstractNewMenuEntry {
+		readonly ref NewMenuContext#entries context;
+	} 
+	
+	class NewMenuEntry extends AbstractNewMenuEntry {
+		ref ecore.EReference containment;
+		attr String displayName;
+
+		ordered ref ecore.EClass[1..*] children;
+	}
+	
+	class NewMenuAllChoices extends NewMenuEntry {
+		unique ref ecore.EClass[*] exclusions;
+	}
+	
+	class Separator extends AbstractNewMenuEntry {
+	}
+	
+	@genmodel(documentation="Actually not used. See scr https://bugs.eclipse.org/bugs/show_bug.cgi?id=261062 for details")
+	abstract class Fake {
+		ref gmfgraph.Canvas explicitGraphdefReference;
+		ref tooldef.ToolRegistry explicitTooldefReference; 
+	}
+}
+
+

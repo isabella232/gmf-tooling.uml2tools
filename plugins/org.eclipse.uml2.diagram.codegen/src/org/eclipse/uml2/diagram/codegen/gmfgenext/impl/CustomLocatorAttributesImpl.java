@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: CustomLocatorAttributesImpl.java,v 1.2 2007/11/22 16:59:33 mgolubev Exp $
+ * $Id: CustomLocatorAttributesImpl.java,v 1.3 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -64,6 +64,7 @@ public class CustomLocatorAttributesImpl extends EObjectImpl implements CustomLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return GMFGenExtPackage.Literals.CUSTOM_LOCATOR_ATTRIBUTES;
 	}
@@ -94,6 +95,7 @@ public class CustomLocatorAttributesImpl extends EObjectImpl implements CustomLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GMFGenExtPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
@@ -107,6 +109,7 @@ public class CustomLocatorAttributesImpl extends EObjectImpl implements CustomLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GMFGenExtPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
@@ -121,6 +124,7 @@ public class CustomLocatorAttributesImpl extends EObjectImpl implements CustomLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
@@ -135,6 +139,7 @@ public class CustomLocatorAttributesImpl extends EObjectImpl implements CustomLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
@@ -148,6 +153,7 @@ public class CustomLocatorAttributesImpl extends EObjectImpl implements CustomLo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtEditPlugin.java,v 1.3 2008/05/07 17:42:49 mgolubev Exp $
+ * $Id: GMFGenExtEditPlugin.java,v 1.4 2009/01/14 20:47:07 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -15,6 +15,12 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
 import org.eclipse.gmf.codegen.gmfgen.presentation.EditorPlugin;
+
+import org.eclipse.gmf.gmfgraph.provider.GMFGraphEditPlugin;
+
+import org.eclipse.gmf.mappings.provider.GMFMapEditPlugin;
+
+import org.eclipse.gmf.tooldef.provider.GMFToolEditPlugin;
 
 /**
  * This is the central singleton for the GMFGenExt edit plugin.
@@ -51,6 +57,9 @@ public final class GMFGenExtEditPlugin extends EMFPlugin {
 		     EcoreEditPlugin.INSTANCE,
 		     GenModelEditPlugin.INSTANCE,
 		     EditorPlugin.INSTANCE,
+		     GMFGraphEditPlugin.INSTANCE,
+		     GMFMapEditPlugin.INSTANCE,
+		     GMFToolEditPlugin.INSTANCE,
 		   });
 	}
 
@@ -61,6 +70,7 @@ public final class GMFGenExtEditPlugin extends EMFPlugin {
 	 * @return the singleton instance.
 	 * @generated
 	 */
+	@Override
 	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}

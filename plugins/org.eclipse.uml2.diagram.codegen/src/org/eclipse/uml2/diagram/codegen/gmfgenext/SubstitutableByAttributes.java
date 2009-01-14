@@ -2,13 +2,14 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SubstitutableByAttributes.java,v 1.3 2007/11/22 16:59:33 mgolubev Exp $
+ * $Id: SubstitutableByAttributes.java,v 1.4 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.gmf.codegen.gmfgen.Attributes;
+import org.eclipse.gmf.codegen.gmfgen.GenCommonBase;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +42,7 @@ public interface SubstitutableByAttributes extends Attributes {
 	 * @model
 	 * @generated
 	 */
-	EList getSubstitutableByIDs();
+	EList<Integer> getSubstitutableByIDs();
 
 	/**
 	 * Returns the value of the '<em><b>Requires All</b></em>' attribute.
@@ -72,9 +73,9 @@ public interface SubstitutableByAttributes extends Attributes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="org.eclipse.gmf.codegen.gmfgen.GenCommonBase"
+	 * @model kind="operation"
 	 * @generated
 	 */
-	EList getSubstitutableByNodes();
+	EList<GenCommonBase> getSubstitutableByNodes();
 
 } // SubstitutableByAttributes

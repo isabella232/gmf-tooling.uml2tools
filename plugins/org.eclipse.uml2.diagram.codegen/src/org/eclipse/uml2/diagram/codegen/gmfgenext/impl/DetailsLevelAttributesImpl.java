@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DetailsLevelAttributesImpl.java,v 1.2 2007/11/22 16:59:33 mgolubev Exp $
+ * $Id: DetailsLevelAttributesImpl.java,v 1.3 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -85,6 +85,7 @@ public class DetailsLevelAttributesImpl extends EObjectImpl implements DetailsLe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected EClass eStaticClass() {
 		return GMFGenExtPackage.Literals.DETAILS_LEVEL_ATTRIBUTES;
 	}
@@ -136,6 +137,7 @@ public class DetailsLevelAttributesImpl extends EObjectImpl implements DetailsLe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES__FILTERING_COMPARTMENT:
@@ -151,6 +153,7 @@ public class DetailsLevelAttributesImpl extends EObjectImpl implements DetailsLe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES__FILTERING_COMPARTMENT:
@@ -168,6 +171,7 @@ public class DetailsLevelAttributesImpl extends EObjectImpl implements DetailsLe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES__FILTERING_COMPARTMENT:
@@ -185,6 +189,7 @@ public class DetailsLevelAttributesImpl extends EObjectImpl implements DetailsLe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES__FILTERING_COMPARTMENT:
@@ -200,6 +205,7 @@ public class DetailsLevelAttributesImpl extends EObjectImpl implements DetailsLe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 

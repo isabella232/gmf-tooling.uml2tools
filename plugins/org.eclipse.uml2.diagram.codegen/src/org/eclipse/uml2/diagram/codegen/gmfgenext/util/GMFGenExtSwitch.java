@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtSwitch.java,v 1.5 2008/09/05 19:40:29 mgolubev Exp $
+ * $Id: GMFGenExtSwitch.java,v 1.6 2009/01/14 20:47:10 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -34,7 +34,7 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
  * @see org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage
  * @generated
  */
-public class GMFGenExtSwitch {
+public class GMFGenExtSwitch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -62,7 +62,7 @@ public class GMFGenExtSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	public Object doSwitch(EObject theEObject) {
+	public T doSwitch(EObject theEObject) {
 		return doSwitch(theEObject.eClass(), theEObject);
 	}
 
@@ -73,16 +73,16 @@ public class GMFGenExtSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected Object doSwitch(EClass theEClass, EObject theEObject) {
+	protected T doSwitch(EClass theEClass, EObject theEObject) {
 		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
 		}
 		else {
-			List eSuperTypes = theEClass.getESuperTypes();
+			List<EClass> eSuperTypes = theEClass.getESuperTypes();
 			return
 				eSuperTypes.isEmpty() ?
 					defaultCase(theEObject) :
-					doSwitch((EClass)eSuperTypes.get(0), theEObject);
+					doSwitch(eSuperTypes.get(0), theEObject);
 		}
 	}
 
@@ -93,46 +93,46 @@ public class GMFGenExtSwitch {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected Object doSwitch(int classifierID, EObject theEObject) {
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case GMFGenExtPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE: {
 				AuxSecondaryDiagramNodeAttribute auxSecondaryDiagramNodeAttribute = (AuxSecondaryDiagramNodeAttribute)theEObject;
-				Object result = caseAuxSecondaryDiagramNodeAttribute(auxSecondaryDiagramNodeAttribute);
+				T result = caseAuxSecondaryDiagramNodeAttribute(auxSecondaryDiagramNodeAttribute);
 				if (result == null) result = caseAttributes(auxSecondaryDiagramNodeAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case GMFGenExtPackage.CUSTOM_LOCATOR_ATTRIBUTES: {
 				CustomLocatorAttributes customLocatorAttributes = (CustomLocatorAttributes)theEObject;
-				Object result = caseCustomLocatorAttributes(customLocatorAttributes);
+				T result = caseCustomLocatorAttributes(customLocatorAttributes);
 				if (result == null) result = caseAttributes(customLocatorAttributes);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES: {
 				DetailsLevelAttributes detailsLevelAttributes = (DetailsLevelAttributes)theEObject;
-				Object result = caseDetailsLevelAttributes(detailsLevelAttributes);
+				T result = caseDetailsLevelAttributes(detailsLevelAttributes);
 				if (result == null) result = caseAttributes(detailsLevelAttributes);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES: {
 				SubstitutableByAttributes substitutableByAttributes = (SubstitutableByAttributes)theEObject;
-				Object result = caseSubstitutableByAttributes(substitutableByAttributes);
+				T result = caseSubstitutableByAttributes(substitutableByAttributes);
 				if (result == null) result = caseAttributes(substitutableByAttributes);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER: {
 				AbstractDynamicCanonicalContainer abstractDynamicCanonicalContainer = (AbstractDynamicCanonicalContainer)theEObject;
-				Object result = caseAbstractDynamicCanonicalContainer(abstractDynamicCanonicalContainer);
+				T result = caseAbstractDynamicCanonicalContainer(abstractDynamicCanonicalContainer);
 				if (result == null) result = caseAttributes(abstractDynamicCanonicalContainer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case GMFGenExtPackage.DYNAMIC_CANONICAL_COMPARTMENT: {
 				DynamicCanonicalCompartment dynamicCanonicalCompartment = (DynamicCanonicalCompartment)theEObject;
-				Object result = caseDynamicCanonicalCompartment(dynamicCanonicalCompartment);
+				T result = caseDynamicCanonicalCompartment(dynamicCanonicalCompartment);
 				if (result == null) result = caseAbstractDynamicCanonicalContainer(dynamicCanonicalCompartment);
 				if (result == null) result = caseAttributes(dynamicCanonicalCompartment);
 				if (result == null) result = defaultCase(theEObject);
@@ -140,14 +140,14 @@ public class GMFGenExtSwitch {
 			}
 			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES: {
 				InteractionDiagramAttributes interactionDiagramAttributes = (InteractionDiagramAttributes)theEObject;
-				Object result = caseInteractionDiagramAttributes(interactionDiagramAttributes);
+				T result = caseInteractionDiagramAttributes(interactionDiagramAttributes);
 				if (result == null) result = caseAttributes(interactionDiagramAttributes);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case GMFGenExtPackage.ROTATED_LABEL_ATTRIBUTES: {
 				RotatedLabelAttributes rotatedLabelAttributes = (RotatedLabelAttributes)theEObject;
-				Object result = caseRotatedLabelAttributes(rotatedLabelAttributes);
+				T result = caseRotatedLabelAttributes(rotatedLabelAttributes);
 				if (result == null) result = caseAttributes(rotatedLabelAttributes);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -167,7 +167,7 @@ public class GMFGenExtSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseAuxSecondaryDiagramNodeAttribute(AuxSecondaryDiagramNodeAttribute object) {
+	public T caseAuxSecondaryDiagramNodeAttribute(AuxSecondaryDiagramNodeAttribute object) {
 		return null;
 	}
 
@@ -182,7 +182,7 @@ public class GMFGenExtSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseCustomLocatorAttributes(CustomLocatorAttributes object) {
+	public T caseCustomLocatorAttributes(CustomLocatorAttributes object) {
 		return null;
 	}
 
@@ -197,7 +197,7 @@ public class GMFGenExtSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDetailsLevelAttributes(DetailsLevelAttributes object) {
+	public T caseDetailsLevelAttributes(DetailsLevelAttributes object) {
 		return null;
 	}
 
@@ -212,7 +212,7 @@ public class GMFGenExtSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseSubstitutableByAttributes(SubstitutableByAttributes object) {
+	public T caseSubstitutableByAttributes(SubstitutableByAttributes object) {
 		return null;
 	}
 
@@ -227,7 +227,7 @@ public class GMFGenExtSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseAbstractDynamicCanonicalContainer(AbstractDynamicCanonicalContainer object) {
+	public T caseAbstractDynamicCanonicalContainer(AbstractDynamicCanonicalContainer object) {
 		return null;
 	}
 
@@ -242,7 +242,7 @@ public class GMFGenExtSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseDynamicCanonicalCompartment(DynamicCanonicalCompartment object) {
+	public T caseDynamicCanonicalCompartment(DynamicCanonicalCompartment object) {
 		return null;
 	}
 
@@ -257,7 +257,7 @@ public class GMFGenExtSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseInteractionDiagramAttributes(InteractionDiagramAttributes object) {
+	public T caseInteractionDiagramAttributes(InteractionDiagramAttributes object) {
 		return null;
 	}
 
@@ -272,7 +272,7 @@ public class GMFGenExtSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseRotatedLabelAttributes(RotatedLabelAttributes object) {
+	public T caseRotatedLabelAttributes(RotatedLabelAttributes object) {
 		return null;
 	}
 
@@ -287,7 +287,7 @@ public class GMFGenExtSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public Object caseAttributes(Attributes object) {
+	public T caseAttributes(Attributes object) {
 		return null;
 	}
 
@@ -302,7 +302,7 @@ public class GMFGenExtSwitch {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	public Object defaultCase(EObject object) {
+	public T defaultCase(EObject object) {
 		return null;
 	}
 
