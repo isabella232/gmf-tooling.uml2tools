@@ -70,6 +70,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackagePackagesEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
@@ -443,6 +444,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case Package2EditPart.VISUAL_ID:
 			if (PackageNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PackageStereo2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PackageImportsEditPart.VISUAL_ID == nodeVisualID) {

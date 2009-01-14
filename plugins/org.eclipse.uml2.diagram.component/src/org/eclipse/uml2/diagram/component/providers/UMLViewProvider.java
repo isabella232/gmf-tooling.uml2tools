@@ -73,6 +73,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackagePackagesEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortNameEditPart;
@@ -148,6 +149,7 @@ import org.eclipse.uml2.diagram.component.view.factories.PackageImportsViewFacto
 import org.eclipse.uml2.diagram.component.view.factories.PackageName2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.PackageNameViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.PackagePackagesViewFactory;
+import org.eclipse.uml2.diagram.component.view.factories.PackageStereo2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.PackageViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.PortName2ViewFactory;
 import org.eclipse.uml2.diagram.component.view.factories.PortNameViewFactory;
@@ -291,6 +293,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case PackageNameEditPart.VISUAL_ID:
+				case PackageStereo2EditPart.VISUAL_ID:
 				case PackageImportsEditPart.VISUAL_ID:
 					if (Package2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -419,6 +422,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Package2ViewFactory.class;
 		case PackageNameEditPart.VISUAL_ID:
 			return PackageNameViewFactory.class;
+		case PackageStereo2EditPart.VISUAL_ID:
+			return PackageStereo2ViewFactory.class;
 		case Package3EditPart.VISUAL_ID:
 			return Package3ViewFactory.class;
 		case PackageName2EditPart.VISUAL_ID:

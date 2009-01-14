@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.common.parser.stereotype.DeploymentAppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.stereotype.PackageAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ArtifactFileName3EditPart;
@@ -46,6 +47,7 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.NodeNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.NodeStereo2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.NodeStereoEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.deploy.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.deploy.parsers.MessageFormatParser;
@@ -94,6 +96,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private PackageAppliedStereotypeParser packageQualifiedName_5025Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getPackageQualifiedName_5025Parser() {
+		if (packageQualifiedName_5025Parser == null) {
+			packageQualifiedName_5025Parser = new PackageAppliedStereotypeParser();
+		}
+		return packageQualifiedName_5025Parser;
 	}
 
 	/**
@@ -735,6 +752,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		switch (visualID) {
 		case PackageNameEditPart.VISUAL_ID:
 			return getPackageName_5001Parser();
+		case PackageStereo2EditPart.VISUAL_ID:
+			return getPackageQualifiedName_5025Parser();
 		case DeviceNameEditPart.VISUAL_ID:
 			return getDeviceName_5002Parser();
 		case DeviceStereoEditPart.VISUAL_ID:

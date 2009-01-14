@@ -48,6 +48,9 @@
     <nodeLabelTraces
         visualID="5011"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5023"
+        queryText="true"/>
     <compartmentTraces
         visualID="7003"
         queryText="true"/>

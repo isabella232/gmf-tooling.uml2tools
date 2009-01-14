@@ -8,6 +8,9 @@
     <nodeLabelTraces
         visualID="5006"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5033"
+        queryText="true"/>
     <compartmentTraces
         visualID="7002"
         queryText="true"/>

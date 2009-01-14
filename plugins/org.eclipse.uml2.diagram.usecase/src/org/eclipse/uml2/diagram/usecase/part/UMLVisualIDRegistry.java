@@ -40,6 +40,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageFramecontentsEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectUsecasesEditPart;
@@ -268,6 +269,9 @@ public class UMLVisualIDRegistry {
 		switch (containerVisualID) {
 		case DiagramHeaderEditPart.VISUAL_ID:
 			if (PackageNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PackageStereo2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PackageImportsEditPart.VISUAL_ID == nodeVisualID) {

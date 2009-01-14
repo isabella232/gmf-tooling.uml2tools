@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
 
 /**
@@ -53,6 +54,7 @@ public class DiagramHeaderViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PackageNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PackageStereo2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(PackageImportsEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 

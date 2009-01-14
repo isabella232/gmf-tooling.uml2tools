@@ -64,6 +64,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
@@ -141,6 +142,7 @@ import org.eclipse.uml2.diagram.csd.view.factories.OperationViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Package2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PackageImportsViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PackageNameViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.PackageStereo2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PackageViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ParameterNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ParameterViewFactory;
@@ -283,6 +285,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case PackageNameEditPart.VISUAL_ID:
+				case PackageStereo2EditPart.VISUAL_ID:
 				case PackageImportsEditPart.VISUAL_ID:
 					if (Package2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -419,6 +422,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Package2ViewFactory.class;
 		case PackageNameEditPart.VISUAL_ID:
 			return PackageNameViewFactory.class;
+		case PackageStereo2EditPart.VISUAL_ID:
+			return PackageStereo2ViewFactory.class;
 		case Class3EditPart.VISUAL_ID:
 			return Class3ViewFactory.class;
 		case ClassName2EditPart.VISUAL_ID:

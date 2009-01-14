@@ -64,6 +64,7 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.deploy.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.deploy.expressions.UMLOCLFactory;
@@ -333,6 +334,9 @@ public class UMLVisualIDRegistry {
 		switch (containerVisualID) {
 		case Package2EditPart.VISUAL_ID:
 			if (PackageNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PackageStereo2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (PackageImportsEditPart.VISUAL_ID == nodeVisualID) {

@@ -42,6 +42,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageFramecontentsEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.PackageNameEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.SubjectUsecasesEditPart;
@@ -92,6 +93,7 @@ import org.eclipse.uml2.diagram.usecase.view.factories.NestedPackageViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.PackageFramecontentsViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.PackageImportsViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.PackageNameViewFactory;
+import org.eclipse.uml2.diagram.usecase.view.factories.PackageStereo2ViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.PackageViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.SubjectNameViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.SubjectUsecasesViewFactory;
@@ -228,6 +230,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case PackageNameEditPart.VISUAL_ID:
+				case PackageStereo2EditPart.VISUAL_ID:
 				case PackageImportsEditPart.VISUAL_ID:
 					if (DiagramHeaderEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -338,6 +341,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return DiagramHeaderViewFactory.class;
 		case PackageNameEditPart.VISUAL_ID:
 			return PackageNameViewFactory.class;
+		case PackageStereo2EditPart.VISUAL_ID:
+			return PackageStereo2ViewFactory.class;
 		case ActorEditPart.VISUAL_ID:
 			return ActorViewFactory.class;
 		case ActorNameEditPart.VISUAL_ID:
