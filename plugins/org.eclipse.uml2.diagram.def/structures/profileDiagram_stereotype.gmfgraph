@@ -86,11 +86,13 @@
       name="attributes"
       figure="StereotypeFigure"
       collapsible="true"
+      needsTitle="true"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <compartments
       name="constraints"
       figure="StereotypeFigure"
       collapsible="true"
+      needsTitle="true"
       accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <labels
       name="StereotypeNode_name"
