@@ -16,9 +16,11 @@ import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportProvider;
 import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.ProfileAppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.valuespec.ConstraintLanguageParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.profile.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
@@ -198,6 +200,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private ConstraintLanguageParser constraintLanguage_5015Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConstraintLanguage_5015Parser() {
+		if (constraintLanguage_5015Parser == null) {
+			constraintLanguage_5015Parser = new ConstraintLanguageParser();
+		}
+		return constraintLanguage_5015Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser commentBody_5014Parser;
 
 	/**
@@ -336,6 +353,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getProfileName_5009Parser();
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_5010Parser();
+		case ConstraintLanguageEditPart.VISUAL_ID:
+			return getConstraintLanguage_5015Parser();
 		case CommentBodyEditPart.VISUAL_ID:
 			return getCommentBody_5014Parser();
 		case ConstraintEditPart.VISUAL_ID:

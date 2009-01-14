@@ -10,6 +10,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
@@ -292,6 +293,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case Constraint2EditPart.VISUAL_ID:
 			if (ConstraintNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConstraintLanguageEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

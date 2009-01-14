@@ -408,6 +408,14 @@
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="classDiagram_constraints.gmfgraph#Constraint_language"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression/language"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="profiles.gmftool#//@palette/@tools.1/@tools.3"/>

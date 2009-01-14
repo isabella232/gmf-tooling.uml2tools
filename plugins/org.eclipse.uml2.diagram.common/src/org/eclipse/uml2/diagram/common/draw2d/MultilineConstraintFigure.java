@@ -21,17 +21,26 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
  * achiveable, move this into the generation using custom viewmap attributes.
  */
 public class MultilineConstraintFigure extends ConstraintFigureBase {
+
+	private WrappingLabel myLanguage;
+
 	private WrappingLabel myBody;
-	
+
 	public MultilineConstraintFigure() {
 		super();
 		setBorder(new MarginBorder(MARGIN_DP, MARGIN_DP, MARGIN_DP, CLIP_MARGIN_DP));
+		myLanguage = new WrappingLabel();
+		add(myLanguage);
 		myBody = new WrappingLabel();
 		add(myBody);
 	}
 
 	public WrappingLabel getBodyLabel() {
 		return myBody;
+	}
+
+	public WrappingLabel getLanguageLabel() {
+		return myLanguage;
 	}
 
 	protected void setTextLabelWrap(boolean wrap) {

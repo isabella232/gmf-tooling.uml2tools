@@ -76,6 +76,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ConstraintNameEditPart.VISUAL_ID:
 				return new ConstraintNameEditPart(view);
 
+			case ConstraintLanguageEditPart.VISUAL_ID:
+				return new ConstraintLanguageEditPart(view);
+
 			case CommentEditPart.VISUAL_ID:
 				return new CommentEditPart(view);
 

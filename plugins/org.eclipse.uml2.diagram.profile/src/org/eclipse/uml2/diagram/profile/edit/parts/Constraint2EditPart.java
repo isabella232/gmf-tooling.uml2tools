@@ -129,6 +129,10 @@ public class Constraint2EditPart extends ShapeNodeEditPart implements PrimarySha
 			((ConstraintNameEditPart) childEditPart).setLabel(getPrimaryShape().getBodyLabel());
 			return true;
 		}
+		if (childEditPart instanceof ConstraintLanguageEditPart) {
+			((ConstraintLanguageEditPart) childEditPart).setLabel(getPrimaryShape().getLanguageLabel());
+			return true;
+		}
 		return false;
 	}
 
@@ -403,6 +407,13 @@ public class Constraint2EditPart extends ShapeNodeEditPart implements PrimarySha
 		 */
 		public WrappingLabel getBodyLabel() {
 			return super.getBodyLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getLanguageLabel() {
+			return super.getLanguageLabel();
 		}
 
 	}
