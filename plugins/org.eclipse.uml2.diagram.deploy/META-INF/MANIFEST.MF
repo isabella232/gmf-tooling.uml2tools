@@ -41,5 +41,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.diagram.common;visibility:=reexport,
  org.eclipse.ocl.ecore;visibility:=reexport,
  org.eclipse.gmf.runtime.diagram.ui.printing,
- org.eclipse.gmf.runtime.diagram.ui.printing.render
+ org.eclipse.gmf.runtime.diagram.ui.printing.render,
+ org.eclipse.draw2d;visibility:=reexport
 Bundle-ActivationPolicy: lazy
