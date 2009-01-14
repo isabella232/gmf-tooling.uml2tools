@@ -46,6 +46,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName6EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName7EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
@@ -428,6 +429,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case ConstraintEditPart.VISUAL_ID:
 			if (ConstraintNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConstraintLanguageEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

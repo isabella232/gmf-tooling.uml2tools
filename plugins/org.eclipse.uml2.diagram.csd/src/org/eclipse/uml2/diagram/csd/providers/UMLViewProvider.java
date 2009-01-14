@@ -48,6 +48,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName7EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
@@ -126,6 +127,7 @@ import org.eclipse.uml2.diagram.csd.view.factories.ConnectorName7ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConnectorNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConnectorViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConstraintConstrainedElementViewFactory;
+import org.eclipse.uml2.diagram.csd.view.factories.ConstraintLanguageViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConstraintNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ConstraintViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.DependencyNameViewFactory;
@@ -310,6 +312,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ConstraintNameEditPart.VISUAL_ID:
+				case ConstraintLanguageEditPart.VISUAL_ID:
 					if (ConstraintEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -442,6 +445,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ConstraintViewFactory.class;
 		case ConstraintNameEditPart.VISUAL_ID:
 			return ConstraintNameViewFactory.class;
+		case ConstraintLanguageEditPart.VISUAL_ID:
+			return ConstraintLanguageViewFactory.class;
 		case CommentEditPart.VISUAL_ID:
 			return CommentViewFactory.class;
 		case CommentBodyEditPart.VISUAL_ID:

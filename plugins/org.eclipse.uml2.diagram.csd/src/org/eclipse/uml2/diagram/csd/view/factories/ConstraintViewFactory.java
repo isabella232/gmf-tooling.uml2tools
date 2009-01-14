@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
@@ -52,6 +53,7 @@ public class ConstraintViewFactory extends AbstractShapeViewFactory {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ConstraintNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ConstraintLanguageEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

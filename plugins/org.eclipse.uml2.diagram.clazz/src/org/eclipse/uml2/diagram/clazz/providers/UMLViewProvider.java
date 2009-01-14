@@ -264,6 +264,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ConstraintNameEditPart.VISUAL_ID:
+				case ConstraintLanguageEditPart.VISUAL_ID:
 					if (ConstraintEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -498,6 +499,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ConstraintViewFactory.class;
 		case ConstraintNameEditPart.VISUAL_ID:
 			return ConstraintNameViewFactory.class;
+		case ConstraintLanguageEditPart.VISUAL_ID:
+			return ConstraintLanguageViewFactory.class;
 		case InstanceSpecification2EditPart.VISUAL_ID:
 			return InstanceSpecification2ViewFactory.class;
 		case InstanceSpecificationNameEditPart.VISUAL_ID:

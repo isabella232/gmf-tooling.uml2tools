@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyNameEditPart;
@@ -73,6 +74,7 @@ import org.eclipse.uml2.diagram.usecase.view.factories.CommentBodyViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.CommentViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ComponentStereoViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintConstrainedElementViewFactory;
+import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintLanguageViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintNameViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintViewFactory;
 import org.eclipse.uml2.diagram.usecase.view.factories.DependencyNameViewFactory;
@@ -274,6 +276,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ConstraintNameEditPart.VISUAL_ID:
+				case ConstraintLanguageEditPart.VISUAL_ID:
 					if (ConstraintEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -377,6 +380,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ConstraintViewFactory.class;
 		case ConstraintNameEditPart.VISUAL_ID:
 			return ConstraintNameViewFactory.class;
+		case ConstraintLanguageEditPart.VISUAL_ID:
+			return ConstraintLanguageViewFactory.class;
 		case CommentEditPart.VISUAL_ID:
 			return CommentViewFactory.class;
 		case CommentBodyEditPart.VISUAL_ID:

@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyNameEditPart;
@@ -331,6 +332,9 @@ public class UMLVisualIDRegistry {
 			break;
 		case ConstraintEditPart.VISUAL_ID:
 			if (ConstraintNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConstraintLanguageEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

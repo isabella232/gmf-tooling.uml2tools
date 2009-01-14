@@ -33,6 +33,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotype2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ClassStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.DataTypeName2EditPart;
@@ -126,6 +127,7 @@ import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser
 import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.DependencyAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.PackageAppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.valuespec.ConstraintLanguageParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ParserAdapter;
@@ -405,6 +407,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createConstraintName_5008Parser() {
 		return new ValueSpecificationParser.ConstraintParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private ConstraintLanguageParser constraintLanguage_5042Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConstraintLanguage_5042Parser() {
+		if (constraintLanguage_5042Parser == null) {
+			constraintLanguage_5042Parser = new ConstraintLanguageParser();
+		}
+		return constraintLanguage_5042Parser;
 	}
 
 	/**
@@ -2121,6 +2138,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInterfaceName_5012Parser();
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_5008Parser();
+		case ConstraintLanguageEditPart.VISUAL_ID:
+			return getConstraintLanguage_5042Parser();
 		case InstanceSpecificationNameEditPart.VISUAL_ID:
 			return getInstanceSpecificationName_5010Parser();
 		case InstanceSpecificationStereoEditPart.VISUAL_ID:

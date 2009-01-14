@@ -722,6 +722,9 @@ public class UMLVisualIDRegistry {
 			if (ConstraintNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ConstraintLanguageEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case InstanceSpecification2EditPart.VISUAL_ID:
 			if (InstanceSpecificationNameEditPart.VISUAL_ID == nodeVisualID) {

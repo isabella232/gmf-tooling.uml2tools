@@ -84,6 +84,9 @@
     <nodeLabelTraces
         visualID="5011"
         queryText="true"/>
+    <nodeLabelTraces
+        visualID="5017"
+        queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2009"

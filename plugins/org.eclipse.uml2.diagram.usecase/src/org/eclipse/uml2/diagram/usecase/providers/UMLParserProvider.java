@@ -18,6 +18,7 @@ import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndToSt
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.PackageAppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.valuespec.ConstraintLanguageParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
 import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
@@ -29,6 +30,7 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationSourceMultiplicity
 import org.eclipse.uml2.diagram.usecase.edit.parts.AssociationTargetMultiplicityEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ComponentStereoEditPart;
+import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ConstraintNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart;
@@ -301,6 +303,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 */
 	protected IParser createConstraintName_5011Parser() {
 		return new ValueSpecificationParser.ConstraintParser();
+	}
+
+	/**
+	 * @generated
+	 */
+	private ConstraintLanguageParser constraintLanguage_5017Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConstraintLanguage_5017Parser() {
+		if (constraintLanguage_5017Parser == null) {
+			constraintLanguage_5017Parser = new ConstraintLanguageParser();
+		}
+		return constraintLanguage_5017Parser;
 	}
 
 	/**
@@ -596,6 +613,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPackageName_5008Parser();
 		case ConstraintNameEditPart.VISUAL_ID:
 			return getConstraintName_5011Parser();
+		case ConstraintLanguageEditPart.VISUAL_ID:
+			return getConstraintLanguage_5017Parser();
 		case CommentBodyEditPart.VISUAL_ID:
 			return getCommentBody_5015Parser();
 		case ElementImportEditPart.VISUAL_ID:
