@@ -47,6 +47,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -90,6 +91,7 @@ public class StateCompositeState_InternalActivities2CanonicalEditPolicy extends 
 		case State3EditPart.VISUAL_ID:
 		case ConnectionPointReferenceEditPart.VISUAL_ID:
 		case ConnectionPointReference2EditPart.VISUAL_ID:
+		case Transition2EditPart.VISUAL_ID:
 		case FinalStateEditPart.VISUAL_ID:
 		case PseudostateEditPart.VISUAL_ID:
 		case Pseudostate2EditPart.VISUAL_ID:

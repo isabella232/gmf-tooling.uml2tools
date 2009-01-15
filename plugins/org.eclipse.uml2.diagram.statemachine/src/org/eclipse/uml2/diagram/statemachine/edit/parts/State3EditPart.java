@@ -163,6 +163,12 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 			pane.add(((StateCompositeState_InternalActivities2EditPart) childEditPart).getFigure());
 			return true;
 		}
+		if (childEditPart instanceof StateCompositeState_InternalTransitions2EditPart) {
+			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_InternalTransitionsCompartment();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((StateCompositeState_InternalTransitions2EditPart) childEditPart).getFigure());
+			return true;
+		}
 		if (childEditPart instanceof ConnectionPointReferenceEditPart) {
 			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
 			getBorderedFigure().getBorderItemContainer().add(((ConnectionPointReferenceEditPart) childEditPart).getFigure(), locator);
@@ -184,6 +190,11 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		if (childEditPart instanceof StateCompositeState_InternalActivities2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_InternalActivitiesCompartment();
 			pane.remove(((StateCompositeState_InternalActivities2EditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof StateCompositeState_InternalTransitions2EditPart) {
+			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_InternalTransitionsCompartment();
+			pane.remove(((StateCompositeState_InternalTransitions2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		if (childEditPart instanceof ConnectionPointReferenceEditPart) {
@@ -223,6 +234,9 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 	protected IFigure getContentPaneForGen(IGraphicalEditPart editPart) {
 		if (editPart instanceof StateCompositeState_InternalActivities2EditPart) {
 			return getPrimaryShape().getFigureCompositeStateFigure_InternalActivitiesCompartment();
+		}
+		if (editPart instanceof StateCompositeState_InternalTransitions2EditPart) {
+			return getPrimaryShape().getFigureCompositeStateFigure_InternalTransitionsCompartment();
 		}
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
@@ -473,6 +487,9 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 			if (type == UMLElementTypes.Behavior_3021) {
 				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateCompositeState_InternalActivities2EditPart.VISUAL_ID));
 			}
+			if (type == UMLElementTypes.Transition_3022) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateCompositeState_InternalTransitions2EditPart.VISUAL_ID));
+			}
 		}
 		return super.getTargetEditPart(request);
 	}
@@ -568,6 +585,11 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureCompositeStateFigure_InternalTransitionsCompartment;
+
+		/**
+		 * @generated
+		 */
 		public CompositeStateFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
@@ -613,6 +635,12 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalActivitiesCompartment);
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());
 
+			fFigureCompositeStateFigure_InternalTransitionsCompartment = new RectangleFigure();
+			fFigureCompositeStateFigure_InternalTransitionsCompartment.setOutline(false);
+
+			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalTransitionsCompartment);
+			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLayoutManager(new StackLayout());
+
 			fFigureCompositeStateFigure_Body = new RectangleFigure();
 			fFigureCompositeStateFigure_Body.setOutline(false);
 
@@ -643,6 +671,13 @@ public class State3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		 */
 		public RectangleFigure getFigureCompositeStateFigure_InternalActivitiesCompartment() {
 			return fFigureCompositeStateFigure_InternalActivitiesCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureCompositeStateFigure_InternalTransitionsCompartment() {
+			return fFigureCompositeStateFigure_InternalTransitionsCompartment;
 		}
 
 		/**

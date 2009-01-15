@@ -147,6 +147,12 @@ public class State2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 			pane.add(((StateCompositeState_InternalActivitiesEditPart) childEditPart).getFigure());
 			return true;
 		}
+		if (childEditPart instanceof StateCompositeState_InternalTransitionsEditPart) {
+			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_InternalTransitionsCompartment();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((StateCompositeState_InternalTransitionsEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -158,6 +164,11 @@ public class State2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		if (childEditPart instanceof StateCompositeState_InternalActivitiesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_InternalActivitiesCompartment();
 			pane.remove(((StateCompositeState_InternalActivitiesEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof StateCompositeState_InternalTransitionsEditPart) {
+			IFigure pane = getPrimaryShape().getFigureCompositeStateFigure_InternalTransitionsCompartment();
+			pane.remove(((StateCompositeState_InternalTransitionsEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -189,6 +200,9 @@ public class State2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof StateCompositeState_InternalActivitiesEditPart) {
 			return getPrimaryShape().getFigureCompositeStateFigure_InternalActivitiesCompartment();
+		}
+		if (editPart instanceof StateCompositeState_InternalTransitionsEditPart) {
+			return getPrimaryShape().getFigureCompositeStateFigure_InternalTransitionsCompartment();
 		}
 		return getContentPane();
 	}
@@ -425,6 +439,9 @@ public class State2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 			if (type == UMLElementTypes.Behavior_3021) {
 				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateCompositeState_InternalActivitiesEditPart.VISUAL_ID));
 			}
+			if (type == UMLElementTypes.Transition_3022) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateCompositeState_InternalTransitionsEditPart.VISUAL_ID));
+			}
 		}
 		return super.getTargetEditPart(request);
 	}
@@ -520,6 +537,11 @@ public class State2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureCompositeStateFigure_InternalTransitionsCompartment;
+
+		/**
+		 * @generated
+		 */
 		public CompositeStateFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
@@ -565,6 +587,12 @@ public class State2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalActivitiesCompartment);
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());
 
+			fFigureCompositeStateFigure_InternalTransitionsCompartment = new RectangleFigure();
+			fFigureCompositeStateFigure_InternalTransitionsCompartment.setOutline(false);
+
+			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalTransitionsCompartment);
+			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLayoutManager(new StackLayout());
+
 			fFigureCompositeStateFigure_Body = new RectangleFigure();
 			fFigureCompositeStateFigure_Body.setOutline(false);
 
@@ -595,6 +623,13 @@ public class State2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdi
 		 */
 		public RectangleFigure getFigureCompositeStateFigure_InternalActivitiesCompartment() {
 			return fFigureCompositeStateFigure_InternalActivitiesCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureCompositeStateFigure_InternalTransitionsCompartment() {
+			return fFigureCompositeStateFigure_InternalTransitionsCompartment;
 		}
 
 		/**

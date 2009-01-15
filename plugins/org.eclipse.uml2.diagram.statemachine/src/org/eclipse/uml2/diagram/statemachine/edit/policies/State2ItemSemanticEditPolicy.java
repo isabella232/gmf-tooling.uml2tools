@@ -20,6 +20,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalActivitiesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalTransitionsEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -84,6 +86,16 @@ public class State2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					case Behavior3EditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
+					}
+				}
+				break;
+			case StateCompositeState_InternalTransitionsEditPart.VISUAL_ID:
+				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
+					Node cnode = (Node) cit.next();
+					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
+					case Transition2EditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

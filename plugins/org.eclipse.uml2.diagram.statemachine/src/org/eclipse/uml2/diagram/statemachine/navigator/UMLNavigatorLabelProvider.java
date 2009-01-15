@@ -46,6 +46,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
@@ -132,6 +133,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ConnectionPointReference", UMLElementTypes.ConnectionPointReference_3017); //$NON-NLS-1$
 		case ConnectionPointReference2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ConnectionPointReference", UMLElementTypes.ConnectionPointReference_3018); //$NON-NLS-1$
+		case Transition2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Transition", UMLElementTypes.Transition_3022); //$NON-NLS-1$
 		case FinalStateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?FinalState", UMLElementTypes.FinalState_3003); //$NON-NLS-1$
 		case PseudostateEditPart.VISUAL_ID:
@@ -230,6 +233,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getConnectionPointReference_3017Text(view);
 		case ConnectionPointReference2EditPart.VISUAL_ID:
 			return getConnectionPointReference_3018Text(view);
+		case Transition2EditPart.VISUAL_ID:
+			return getTransition_3022Text(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003Text(view);
 		case PseudostateEditPart.VISUAL_ID:
@@ -530,6 +535,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return String.valueOf(domainModelElement.getName());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3011); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getTransition_3022Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Transition_3022, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(Transition2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 3022); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

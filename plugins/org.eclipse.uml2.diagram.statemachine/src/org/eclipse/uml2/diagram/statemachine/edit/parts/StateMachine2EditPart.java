@@ -339,6 +339,11 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureCompositeStateFigure_InternalTransitionsCompartment;
+
+		/**
+		 * @generated
+		 */
 		public CompositeStateFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
@@ -384,6 +389,12 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalActivitiesCompartment);
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());
 
+			fFigureCompositeStateFigure_InternalTransitionsCompartment = new RectangleFigure();
+			fFigureCompositeStateFigure_InternalTransitionsCompartment.setOutline(false);
+
+			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalTransitionsCompartment);
+			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLayoutManager(new StackLayout());
+
 			fFigureCompositeStateFigure_Body = new RectangleFigure();
 			fFigureCompositeStateFigure_Body.setOutline(false);
 
@@ -414,6 +425,13 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 		 */
 		public RectangleFigure getFigureCompositeStateFigure_InternalActivitiesCompartment() {
 			return fFigureCompositeStateFigure_InternalActivitiesCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureCompositeStateFigure_InternalTransitionsCompartment() {
+			return fFigureCompositeStateFigure_InternalTransitionsCompartment;
 		}
 
 		/**

@@ -110,6 +110,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Behavior_3019);
 			types.add(UMLElementTypes.Behavior_3020);
 			types.add(UMLElementTypes.Behavior_3021);
+			types.add(UMLElementTypes.Transition_3022);
 			return types;
 		}
 
@@ -121,6 +122,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Behavior_3019);
 			types.add(UMLElementTypes.Behavior_3020);
 			types.add(UMLElementTypes.Behavior_3021);
+			types.add(UMLElementTypes.Transition_3022);
 			return types;
 		}
 

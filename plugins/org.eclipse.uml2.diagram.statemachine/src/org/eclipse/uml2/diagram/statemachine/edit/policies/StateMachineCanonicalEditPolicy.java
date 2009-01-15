@@ -49,6 +49,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -101,6 +102,7 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		case State3EditPart.VISUAL_ID:
 		case ConnectionPointReferenceEditPart.VISUAL_ID:
 		case ConnectionPointReference2EditPart.VISUAL_ID:
+		case Transition2EditPart.VISUAL_ID:
 		case FinalStateEditPart.VISUAL_ID:
 		case PseudostateEditPart.VISUAL_ID:
 		case Pseudostate2EditPart.VISUAL_ID:
@@ -324,6 +326,13 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		case ConnectionPointReference2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getConnectionPointReference_3018ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Transition2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getTransition_3022ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

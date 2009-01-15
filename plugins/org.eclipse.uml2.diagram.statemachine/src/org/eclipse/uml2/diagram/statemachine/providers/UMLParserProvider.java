@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotype2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotype3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotypeEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.parser.SubmachineStateParser;
 import org.eclipse.uml2.diagram.statemachine.parser.TransitionParser;
@@ -326,6 +327,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser transition_3022Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getTransition_3022Parser() {
+		if (transition_3022Parser == null) {
+			transition_3022Parser = createTransition_3022Parser();
+		}
+		return transition_3022Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createTransition_3022Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser pseudostateName_5006Parser;
 
 	/**
@@ -424,6 +449,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConnectionPointReferenceName_5009Parser();
 		case ConnectionPointReferenceName2EditPart.VISUAL_ID:
 			return getConnectionPointReferenceName_5010Parser();
+		case Transition2EditPart.VISUAL_ID:
+			return getTransition_3022Parser();
 		case PseudostateNameEditPart.VISUAL_ID:
 			return getPseudostateName_5006Parser();
 		case PseudostateName2EditPart.VISUAL_ID:

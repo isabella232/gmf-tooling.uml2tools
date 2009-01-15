@@ -71,6 +71,9 @@
     <compartmentTraces
         visualID="7006"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7008"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3013"
@@ -105,6 +108,9 @@
     <compartmentTraces
         visualID="7007"
         queryText="true"/>
+    <compartmentTraces
+        visualID="7009"
+        queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
       visualID="3017"
@@ -129,6 +135,9 @@
   <childNodeTraces
       visualID="3021"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Behavior') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'State') and _containmentMF_.name = 'doActivity')"/>
+  <childNodeTraces
+      visualID="3022"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Transition') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Region') and _containmentMF_.name = 'transition')"/>
   <linkTraces
       visualID="4001"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Transition')">

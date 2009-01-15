@@ -267,10 +267,35 @@
                 <containmentFeature
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/doActivity"/>
               </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.1">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Region/transition"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Transition"/>
+                  <domainSpecialization
+                      body="self.kind = TransitionKind::internal"/>
+                  <labelMappings
+                      xsi:type="gmfmap:FeatureLabelMapping">
+                    <diagramLabel
+                        href="stateMachineDiagram.gmfgraph#InternalTransition_name"/>
+                    <features
+                        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                  </labelMappings>
+                  <diagramNode
+                      href="stateMachineDiagram.gmfgraph#InternalTransition_name"/>
+                </ownedChild>
+              </children>
               <compartments
                   children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.1">
                 <compartment
                     href="stateMachineDiagram.gmfgraph#CompositeState_InternalActivities"/>
+              </compartments>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.4">
+                <compartment
+                    href="stateMachineDiagram.gmfgraph#CompositeState_InternalTransitions"/>
               </compartments>
             </ownedChild>
           </children>
@@ -404,10 +429,21 @@
                 <containmentFeature
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//State/doActivity"/>
               </children>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@compartments.1"
+                  referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.4/@ownedChild">
+                <containmentFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Region/transition"/>
+              </children>
               <compartments
                   children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@children.5">
                 <compartment
                     href="stateMachineDiagram.gmfgraph#CompositeState_InternalActivities"/>
+              </compartments>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild/@children.6">
+                <compartment
+                    href="stateMachineDiagram.gmfgraph#CompositeState_InternalTransitions"/>
               </compartments>
             </ownedChild>
           </children>
@@ -735,6 +771,8 @@
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Transition"/>
+    <domainSpecialization
+        body="not (self.kind = TransitionKind::internal)"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
         readOnly="true">

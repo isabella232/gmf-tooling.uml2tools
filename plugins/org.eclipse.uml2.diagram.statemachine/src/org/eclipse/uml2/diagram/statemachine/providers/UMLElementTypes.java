@@ -40,6 +40,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -234,6 +235,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(ConnectionPointReference_3018, UMLPackage.eINSTANCE.getConnectionPointReference());
 
+			elements.put(Transition_3022, UMLPackage.eINSTANCE.getTransition());
+
 			elements.put(FinalState_3003, UMLPackage.eINSTANCE.getFinalState());
 
 			elements.put(Pseudostate_3004, UMLPackage.eINSTANCE.getPseudostate());
@@ -387,6 +390,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Transition_3022 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Transition_3022"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IHintedType Pseudostate_3014 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Pseudostate_3014"); //$NON-NLS-1$
 
 	/**
@@ -439,6 +447,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(State_3016);
 			KNOWN_ELEMENT_TYPES.add(ConnectionPointReference_3017);
 			KNOWN_ELEMENT_TYPES.add(ConnectionPointReference_3018);
+			KNOWN_ELEMENT_TYPES.add(Transition_3022);
 			KNOWN_ELEMENT_TYPES.add(FinalState_3003);
 			KNOWN_ELEMENT_TYPES.add(Pseudostate_3004);
 			KNOWN_ELEMENT_TYPES.add(Pseudostate_3005);
@@ -484,6 +493,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return ConnectionPointReference_3017;
 		case ConnectionPointReference2EditPart.VISUAL_ID:
 			return ConnectionPointReference_3018;
+		case Transition2EditPart.VISUAL_ID:
+			return Transition_3022;
 		case FinalStateEditPart.VISUAL_ID:
 			return FinalState_3003;
 		case PseudostateEditPart.VISUAL_ID:

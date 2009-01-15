@@ -95,6 +95,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ConnectionPointReferenceName2EditPart.VISUAL_ID:
 				return new ConnectionPointReferenceName2EditPart(view);
 
+			case Transition2EditPart.VISUAL_ID:
+				return new Transition2EditPart(view);
+
 			case FinalStateEditPart.VISUAL_ID:
 				return new FinalStateEditPart(view);
 
@@ -143,11 +146,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StateCompositeState_InternalActivitiesEditPart.VISUAL_ID:
 				return new StateCompositeState_InternalActivitiesEditPart(view);
 
+			case StateCompositeState_InternalTransitionsEditPart.VISUAL_ID:
+				return new StateCompositeState_InternalTransitionsEditPart(view);
+
 			case RegionSubvertices2EditPart.VISUAL_ID:
 				return new RegionSubvertices2EditPart(view);
 
 			case StateCompositeState_InternalActivities2EditPart.VISUAL_ID:
 				return new StateCompositeState_InternalActivities2EditPart(view);
+
+			case StateCompositeState_InternalTransitions2EditPart.VISUAL_ID:
+				return new StateCompositeState_InternalTransitions2EditPart(view);
 
 			case TransitionEditPart.VISUAL_ID:
 				return new TransitionEditPart(view);

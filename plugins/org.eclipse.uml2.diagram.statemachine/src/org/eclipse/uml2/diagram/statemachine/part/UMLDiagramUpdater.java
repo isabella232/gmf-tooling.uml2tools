@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -38,10 +39,13 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalActivities2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalActivitiesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalTransitions2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateSimpleState_InternalActivitiesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Behavior;
@@ -54,6 +58,7 @@ import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Transition;
+import org.eclipse.uml2.uml.TransitionKind;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.Vertex;
 
@@ -80,10 +85,14 @@ public class UMLDiagramUpdater {
 			return getStateSimpleState_InternalActivities_7005SemanticChildren(view);
 		case StateCompositeState_InternalActivitiesEditPart.VISUAL_ID:
 			return getStateCompositeState_InternalActivities_7006SemanticChildren(view);
+		case StateCompositeState_InternalTransitionsEditPart.VISUAL_ID:
+			return getStateCompositeState_InternalTransitions_7008SemanticChildren(view);
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			return getRegionSubvertices_7003SemanticChildren(view);
 		case StateCompositeState_InternalActivities2EditPart.VISUAL_ID:
 			return getStateCompositeState_InternalActivities_7007SemanticChildren(view);
+		case StateCompositeState_InternalTransitions2EditPart.VISUAL_ID:
+			return getStateCompositeState_InternalTransitions_7009SemanticChildren(view);
 		case StateMachineEditPart.VISUAL_ID:
 			return getPackage_1000SemanticChildren(view);
 		}
@@ -317,6 +326,30 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	public static List getStateCompositeState_InternalTransitions_7008SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		State modelElement = (State) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = getInternalTransitions(modelElement).iterator(); it.hasNext();) {
+			Transition childElement = (Transition) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Transition2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List getRegionSubvertices_7003SemanticChildren(View view) {
@@ -422,6 +455,30 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	public static List getStateCompositeState_InternalTransitions_7009SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		State modelElement = (State) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = getInternalTransitions(modelElement).iterator(); it.hasNext();) {
+			Transition childElement = (Transition) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Transition2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List getPackage_1000SemanticChildren(View view) {
@@ -470,6 +527,8 @@ public class UMLDiagramUpdater {
 			return getConnectionPointReference_3017ContainedLinks(view);
 		case ConnectionPointReference2EditPart.VISUAL_ID:
 			return getConnectionPointReference_3018ContainedLinks(view);
+		case Transition2EditPart.VISUAL_ID:
+			return getTransition_3022ContainedLinks(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003ContainedLinks(view);
 		case PseudostateEditPart.VISUAL_ID:
@@ -525,6 +584,8 @@ public class UMLDiagramUpdater {
 			return getConnectionPointReference_3017IncomingLinks(view);
 		case ConnectionPointReference2EditPart.VISUAL_ID:
 			return getConnectionPointReference_3018IncomingLinks(view);
+		case Transition2EditPart.VISUAL_ID:
+			return getTransition_3022IncomingLinks(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003IncomingLinks(view);
 		case PseudostateEditPart.VISUAL_ID:
@@ -580,6 +641,8 @@ public class UMLDiagramUpdater {
 			return getConnectionPointReference_3017OutgoingLinks(view);
 		case ConnectionPointReference2EditPart.VISUAL_ID:
 			return getConnectionPointReference_3018OutgoingLinks(view);
+		case Transition2EditPart.VISUAL_ID:
+			return getTransition_3022OutgoingLinks(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003OutgoingLinks(view);
 		case PseudostateEditPart.VISUAL_ID:
@@ -758,6 +821,13 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getPseudostate_3011ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getTransition_3022ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -981,6 +1051,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getTransition_3022IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getPseudostate_3014IncomingLinks(View view) {
 		Pseudostate modelElement = (Pseudostate) view.getElement();
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
@@ -1192,6 +1269,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getTransition_3022OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getPseudostate_3014OutgoingLinks(View view) {
 		Pseudostate modelElement = (Pseudostate) view.getElement();
 		List result = new LinkedList();
@@ -1328,4 +1412,22 @@ public class UMLDiagramUpdater {
 		}
 	};
 
+	/**
+	 * NOT-generated
+	 */
+	private static List getInternalTransitions(State state) {
+		List internalTransitions = new LinkedList();
+		EList<Region> regions = state.getRegions();
+		for (Iterator<Region> internalTransitionsIterator = regions.iterator(); internalTransitionsIterator.hasNext();) {
+			Region region = internalTransitionsIterator.next();
+			EList<Transition> transitions = region.getTransitions();
+			for (Iterator<Transition> transitionsIterator = transitions.iterator(); transitionsIterator.hasNext();) {
+				Transition transition = transitionsIterator.next();
+				if (transition.getKind() == TransitionKind.INTERNAL_LITERAL) {
+					internalTransitions.add(transition);
+				}
+			}
+		}
+		return internalTransitions;
+	}
 }

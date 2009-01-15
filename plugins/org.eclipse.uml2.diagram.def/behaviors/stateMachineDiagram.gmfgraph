@@ -106,6 +106,13 @@
             <layout
                 xsi:type="gmfgraph:StackLayout"/>
           </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="CompositeStateFigure_InternalTransitionsCompartment"
+              outline="false">
+            <layout
+                xsi:type="gmfgraph:StackLayout"/>
+          </children>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -128,6 +135,8 @@
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.3"/>
     </descriptors>
     <descriptors
         name="RegionFigure">
@@ -446,6 +455,12 @@
           xsi:type="gmfgraph:Label"
           name="InternalActivityFigure_name"/>
     </descriptors>
+    <descriptors
+        name="InternalTransitionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="InternalTransitionFigure_name"/>
+    </descriptors>
   </figures>
   <nodes
       name="StateMachineNode"
@@ -509,6 +524,10 @@
       name="CompositeState_InternalActivities"
       figure="CompositeStateFigure"
       accessor="//@figures.0/@descriptors.1/@accessors.3"/>
+  <compartments
+      name="CompositeState_InternalTransitions"
+      figure="CompositeStateFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.4"/>
   <labels
       name="CompositeStateNode_stereo"
       figure="CompositeStateFigure"
@@ -554,5 +573,9 @@
   <labels
       name="InternalActivity_name"
       figure="InternalActivityFigure"
+      elementIcon="false"/>
+  <labels
+      name="InternalTransition_name"
+      figure="InternalTransitionFigure"
       elementIcon="false"/>
 </gmfgraph:Canvas>
