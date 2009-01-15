@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) 2009 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Michael Golubev (Borland) - temporary hack to workaround https://bugs.eclipse.org/bugs/show_bug.cgi?id=260855#c4
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«EXTENSION xpt::diagram::Utils»
+
+«DEFINE viewProviderReregisteredWithoutFilter FOR gmfgen::GenDiagram-»
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider-hack-260855-comment4-filter-removed">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <viewProvider class="«getNotationViewProviderQualifiedClassName()»">
+         <Priority name="Low"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="«editorGen.modelID»"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+      </viewProvider>
+   </extension>
+«ENDDEFINE»

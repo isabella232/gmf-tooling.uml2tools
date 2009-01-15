@@ -2823,6 +2823,17 @@
 		 </popupContribution>
 	</contributionItemProvider>
 	</extension>
+	
+<extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider-hack-260855-comment4-filter-removed">
+      <?gmfgen generated="true"?>
+      <viewProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLViewProvider">
+         <Priority name="Low"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLClass"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+      </viewProvider>
+   </extension>
+
 
 
    
