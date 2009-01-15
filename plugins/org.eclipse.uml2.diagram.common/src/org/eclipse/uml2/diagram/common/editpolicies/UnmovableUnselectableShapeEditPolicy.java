@@ -14,6 +14,8 @@ package org.eclipse.uml2.diagram.common.editpolicies;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.UnmovableShapeEditPolicy;
 
 
@@ -21,6 +23,15 @@ public class UnmovableUnselectableShapeEditPolicy extends UnmovableShapeEditPoli
 	
 	protected List<?> createSelectionHandles() {
 		return Collections.emptyList();
+	}
+	
+	@Override
+	public Command getCommand(Request request) {
+		if (understandsRequest(request)){
+			//FIXME: temporarily workaround for #261192, should be removed when # 261192 is fixed
+			return new Command(){};
+		}
+		return super.getCommand(request);
 	}
 
 }
