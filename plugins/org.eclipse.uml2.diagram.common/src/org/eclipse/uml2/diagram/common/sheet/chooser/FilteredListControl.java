@@ -60,6 +60,8 @@ public class FilteredListControl extends Composite {
 	public FilteredListControl(Composite parent, ILabelProvider renderer) {
 		super(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
+		layout.marginWidth = 0;
+		layout.marginHeight = 0;
 		setLayout(layout);
 		setLayoutData(new GridData(GridData.FILL_BOTH));
 		fRenderer = renderer;
@@ -94,6 +96,7 @@ public class FilteredListControl extends Composite {
 		data.grabExcessHorizontalSpace = true;
 		data.horizontalAlignment = GridData.FILL;
 		data.verticalAlignment = GridData.BEGINNING;
+		
 		text.setLayoutData(data);
 		text.setFont(parent.getFont());
 
