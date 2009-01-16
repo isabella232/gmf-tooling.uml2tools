@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.ui.provider.PropertyDescriptor;
-import org.eclipse.gmf.runtime.emf.ui.properties.descriptors.EMFCompositePropertySource;
-import org.eclipse.gmf.runtime.emf.ui.properties.descriptors.EMFCompositeSourcePropertyDescriptor;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.CellEditor;
@@ -29,7 +27,7 @@ import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.common.sheet.chooser.MultiReferenceElementChooserDialog;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ReferencedElementChooserDialog;
 
-public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescriptor {
+public class ReferencePropertyDescriptor extends PropertyDescriptor {
 
 	private final AdapterFactory myItemProvidersAdapterFactory;
 
@@ -41,8 +39,8 @@ public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescr
 
 	private final Object mySourceObject;
 
-	public ReferencePropertyDescriptor(Object sourceObject, IItemPropertyDescriptor itemPropertyDescriptor, String category, AdapterFactory itemProvidersAdapterFactory, IDialogSettings dialogSettings, IPreferenceStore store) {
-		super(sourceObject, itemPropertyDescriptor, category);
+	public ReferencePropertyDescriptor(Object sourceObject, IItemPropertyDescriptor itemPropertyDescriptor, AdapterFactory itemProvidersAdapterFactory, IDialogSettings dialogSettings, IPreferenceStore store) {
+		super(sourceObject, itemPropertyDescriptor);
 		mySourceObject = sourceObject;
 		myItemPropertyDescriptor = itemPropertyDescriptor;
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
@@ -51,7 +49,7 @@ public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescr
 	}
 	
 	@Override
-	protected CellEditor doCreateEditor(final Composite composite) {
+	public CellEditor createPropertyEditor(final Composite composite) {
 		final EStructuralFeature feature = (EStructuralFeature) myItemPropertyDescriptor.getFeature(mySourceObject);
         if (itemPropertyDescriptor.getFeature(object) instanceof EReference && !myItemPropertyDescriptor.getChoiceOfValues(mySourceObject).isEmpty()) {
         	if (itemPropertyDescriptor.isMany(object)) {
@@ -69,7 +67,7 @@ public class ReferencePropertyDescriptor extends EMFCompositeSourcePropertyDescr
         		return new ReferenceDialogCellEditor(composite, dialog);
         	}
         }
-		return super.doCreateEditor(composite);
+		return super.createPropertyEditor(composite);
 	}
 	
 	private boolean useDialogNotComboCellEditor() {

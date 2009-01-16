@@ -3,13 +3,13 @@ package org.eclipse.uml2.diagram.common.sheet;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.gmf.runtime.emf.ui.properties.descriptors.EMFCompositePropertySource;
+import org.eclipse.emf.edit.ui.provider.PropertySource;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
 
-public class PropertySourceExtension extends EMFCompositePropertySource {
+public class PropertySourceExtension extends PropertySource {
 
 	private final AdapterFactory myItemProvidersAdapterFactory;
 
@@ -23,8 +23,8 @@ public class PropertySourceExtension extends EMFCompositePropertySource {
 	}
 
 	@Override
-	protected IPropertyDescriptor newPropertyDescriptor(IItemPropertyDescriptor itemPropertyDescriptor) {
-		return new ReferencePropertyDescriptor(object, itemPropertyDescriptor, getCategory(), myItemProvidersAdapterFactory, myDialogSettings, myPreferenceStore);
+	protected IPropertyDescriptor createPropertyDescriptor(IItemPropertyDescriptor itemPropertyDescriptor) {
+		return new ReferencePropertyDescriptor(object, itemPropertyDescriptor, myItemProvidersAdapterFactory, myDialogSettings, myPreferenceStore);
 	}
 
 }
