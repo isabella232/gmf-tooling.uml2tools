@@ -11,4 +11,5 @@
   <packagedElement xmi:type="uml:SignalEvent" xmi:id="_MV4noBZuEdyhrYeRBHu7AQ" name="ok"/>
   <packagedElement xmi:type="uml:CallEvent" xmi:id="_zFUF0BZuEdyhrYeRBHu7AQ" name="abort"/>
   <packagedElement xmi:type="uml:SignalEvent" xmi:id="_58yrMOI_Ed27ga8QhccSnw" name="character"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_pnNEEOPEEd2zc-IGfy6z-g" name="help"/>
 </uml:Package>

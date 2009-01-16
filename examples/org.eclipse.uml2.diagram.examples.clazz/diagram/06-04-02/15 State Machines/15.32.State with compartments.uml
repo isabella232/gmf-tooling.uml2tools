@@ -28,6 +28,12 @@
               <event xmi:type="uml:SignalEvent" href="events.uml#_58yrMOI_Ed27ga8QhccSnw"/>
             </trigger>
           </transition>
+          <transition xmi:id="_tfAcEOPEEd2zc-IGfy6z-g" name="Display Help" kind="internal" source="_XNNhtc__Ed2lF6ZbJF5ZwQ" target="_XNNhtc__Ed2lF6ZbJF5ZwQ">
+            <effect xmi:type="uml:Activity" xmi:id="_85oXAOPEEd2zc-IGfy6z-g" name="displayHelp"/>
+            <trigger xmi:id="_zvaDIOPEEd2zc-IGfy6z-g" name="Display Help Trigger">
+              <event xmi:type="uml:SignalEvent" href="events.uml#_pnNEEOPEEd2zc-IGfy6z-g"/>
+            </trigger>
+          </transition>
         </region>
       </subvertex>
     </region>

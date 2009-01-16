@@ -242,23 +242,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser stateName_5008Parser;
+	private SubmachineStateParser stateName_5008Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getStateName_5008Parser() {
 		if (stateName_5008Parser == null) {
-			stateName_5008Parser = createStateName_5008Parser();
+			stateName_5008Parser = new SubmachineStateParser();
 		}
 		return stateName_5008Parser;
-	}
-
-	/**
-	 * @generated NOT
-	 */
-	protected IParser createStateName_5008Parser() {
-		return new SubmachineStateParser();
 	}
 
 	/**
@@ -327,25 +320,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser transition_3022Parser;
+	private TransitionParser transition_3022Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getTransition_3022Parser() {
 		if (transition_3022Parser == null) {
-			transition_3022Parser = createTransition_3022Parser();
+			transition_3022Parser = new TransitionParser();
 		}
 		return transition_3022Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IParser createTransition_3022Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
 	}
 
 	/**
@@ -399,23 +383,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser transitionName_6001Parser;
+	private TransitionParser transitionName_6001Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getTransitionName_6001Parser() {
 		if (transitionName_6001Parser == null) {
-			transitionName_6001Parser = createTransitionName_6001Parser();
+			transitionName_6001Parser = new TransitionParser();
 		}
 		return transitionName_6001Parser;
-	}
-
-	/**
-	 * @generated NOT
-	 */
-	protected IParser createTransitionName_6001Parser() {
-		return new TransitionParser();
 	}
 
 	/**
