@@ -43,6 +43,7 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 		labelProvider = new AdapterFactoryLabelProvider(itemProvidersAdapterFactory);
 		myEditingDomain = TransactionUtil.getEditingDomain(sourceObject);
 		myChooser = new TabbedElementChooser(settings, itemProvidersAdapterFactory, sourceObject, feature, myEditingDomain);
+		myResult = (EObject) sourceObject.eGet(feature);
 	}
 
 	@Override

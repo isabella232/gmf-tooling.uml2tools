@@ -12,7 +12,6 @@
 package org.eclipse.uml2.diagram.common.sheet;
 
 import org.eclipse.jface.viewers.DialogCellEditor;
-import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ReferencedElementChooserDialog;
@@ -28,11 +27,8 @@ public class ReferenceDialogCellEditor extends DialogCellEditor {
 
 	@Override
 	protected Object openDialogBox(Control cellEditorWindow) {
-		if (myElementChooserDialog.open() == Window.OK) {
-			return myElementChooserDialog.getResult();
-		}
-		return null;
+		myElementChooserDialog.open();
+		return myElementChooserDialog.getResult();
 	}
-
 
 }
