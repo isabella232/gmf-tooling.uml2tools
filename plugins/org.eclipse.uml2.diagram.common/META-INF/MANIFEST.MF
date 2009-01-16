@@ -56,3 +56,4 @@ Export-Package: org.eclipse.uml2.diagram.common.actions,
 Bundle-Vendor: %providerName
 Bundle-ClassPath: .
 Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.eclipse.uml2.diagram.common.UMLCommonPlugin

@@ -22,8 +22,7 @@
 		if (af != null) {
 			org.eclipse.emf.edit.provider.IItemPropertySource ips = (org.eclipse.emf.edit.provider.IItemPropertySource) af.adapt(object, org.eclipse.emf.edit.provider.IItemPropertySource.class);
 			if (ips != null) {
-				org.eclipse.ui.plugin.AbstractUIPlugin plugin = «self.sheet.editorGen.plugin.getActivatorQualifiedClassName()».getInstance();
-				return new org.eclipse.uml2.diagram.common.sheet.PropertySourceExtension(object, ips, af, plugin.getDialogSettings());
+				return new org.eclipse.uml2.diagram.common.sheet.PropertySourceExtension(object, ips, af);
 			}
 		}
 		if (object instanceof org.eclipse.core.runtime.IAdaptable) {

@@ -17,4 +17,8 @@ public interface UMLPreferencesConstants {
 	String PREF_MANAGE_REQUIRED_LINKS_HIDE_DERIVED = "org.eclipse.uml2.diagram.preferences.required_links_group.hide_derived"; //$NON-NLS-1$
 	String PREF_MANAGE_REQUIRED_LINKS_HIDE_GENUINE = "org.eclipse.uml2.diagram.preferences.required_links_group.hide_genuine"; //$NON-NLS-1$
 
+	String PREF_PROP_SHEET_REFERENCE_DIALOG = "propertysheet.reference.dialog"; //$NON-NLS-1$
+	String PREF_PROP_SHEET_REFERENCE_COMBO = "propertysheet.reference.combo"; //$NON-NLS-1$
+	String PREF_PROP_SHEET_REFERENCE = "propertysheet.reference"; //$NON-NLS-1$
+
 }
