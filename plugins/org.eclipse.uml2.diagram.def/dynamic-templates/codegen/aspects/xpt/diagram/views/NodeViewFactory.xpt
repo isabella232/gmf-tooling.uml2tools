@@ -12,8 +12,8 @@
  *    @see #193353 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 «EXTENSION xpt::diagram::ViewmapAttributesUtils»
 «EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
 
@@ -27,9 +27,9 @@ public class «notationViewFactoryClassName» extends org.eclipse.gmf.runtime.diag
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected java.util.List createStyles(org.eclipse.gmf.runtime.notation.View view) {
 		java.util.List styles = new java.util.ArrayList();
-		«EXPAND xpt::diagram::views::Utils::addShapeStyle("styles") FOR viewmap-»
-		«EXPAND xpt::diagram::views::Utils::addLinkedDiagramStyle("styles")-»
-		«EXPAND xpt::diagram::views::Utils::addCustomStyles("styles")-»
+		«EXPAND xpt::diagram::views::Utils::addShapeStyle('styles') FOR viewmap-»
+		«EXPAND xpt::diagram::views::Utils::addLinkedDiagramStyle('styles')-»
+		«EXPAND xpt::diagram::views::Utils::addCustomStyles('styles')-»
 		return styles;
 	}
 
@@ -39,17 +39,17 @@ public class «notationViewFactoryClassName» extends org.eclipse.gmf.runtime.diag
 		«EXPAND xpt::diagram::views::Utils::updateSemanticHint-»
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
 		«EXPAND xpt::diagram::views::NodeViewFactory::addShortcut-»
-		«EXPAND xpt::diagram::views::Utils::foregroundColour("view") FOR viewmap-»
-		«EXPAND xpt::diagram::views::Utils::backgroundColour("view") FOR viewmap-»
-		«IF labels.size() > 0 || compartments.size() > 0-»
+		«EXPAND xpt::diagram::views::Utils::foregroundColour('view') FOR viewmap-»
+		«EXPAND xpt::diagram::views::Utils::backgroundColour('view') FOR viewmap-»
+		«IF labels->size() > 0 or compartments->size() > 0-»
 		org.eclipse.core.runtime.IAdaptable eObjectAdapter = null;
-			«EXPAND xpt::diagram::views::Utils::domainElementAdapter("eObjectAdapter") FOR modelFacet-»
+			«EXPAND xpt::diagram::views::Utils::domainElementAdapter('eObjectAdapter') FOR modelFacet-»
 			«EXPAND xpt::diagram::views::Utils::createChildNode FOREACH labels-»
 			«EXPAND xpt::diagram::views::Utils::createChildNode FOREACH compartments-»
 		«ENDIF-»
 	}
 	
-	«IF isDiagramHeader(this)-»
+	«IF isDiagramHeader(self)-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected boolean requiresElement(org.eclipse.emf.ecore.EObject semanticElement, org.eclipse.gmf.runtime.notation.View view) { 
 		//this is special node, sharing the semantic element with diagram canvas

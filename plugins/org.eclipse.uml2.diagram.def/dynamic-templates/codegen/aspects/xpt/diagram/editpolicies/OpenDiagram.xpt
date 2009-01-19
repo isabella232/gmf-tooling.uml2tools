@@ -13,10 +13,10 @@
  * (assuming that diagram semantic element is always NamedElement) 
  * we trying to set special name to editor input for new diagram.
  */
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «EXTENSION xpt::diagram::editpolicies::Utils»
 
-«AROUND openCommandClass FOR OpenDiagramBehaviour»
+«AROUND openCommandClass FOR gmfgen::OpenDiagramBehaviour»
 	«EXPAND xpt::Common::generatedMemberComment»
 	private static class OpenDiagramCommand extends org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand {
 
@@ -69,7 +69,7 @@
 			assert diagramFacet.eResource() != null;
 			diagramFacet.eResource().getContents().add(d);
 			try {
-			«IF null == subject.getDiagram().editorGen.application-»
+			«IF null = subject.getDiagram().editorGen.application-»
 				new org.eclipse.ui.actions.WorkspaceModifyOperation() {
 					protected void execute(org.eclipse.core.runtime.IProgressMonitor monitor) throws org.eclipse.core.runtime.CoreException, java.lang.reflect.InvocationTargetException, InterruptedException {
 						try {
@@ -80,7 +80,7 @@
 						nextResource.save(«EXPAND xpt::Common::getSaveOptions FOR subject.getDiagram()»);
 					}
 				}
-			«IF null == subject.getDiagram().editorGen.application-»
+			«IF null = subject.getDiagram().editorGen.application-»
 						} catch (java.io.IOException ex) {
 							throw new java.lang.reflect.InvocationTargetException(ex, "Save operation failed");
 						}		
@@ -113,17 +113,17 @@
 
 		«EXPAND xpt::Common::generatedMemberComment»
 		protected String getDiagramKind() {
-			return «IF diagramKind == null»«EXPAND xpt::editor::VisualIDRegistry::modelID FOR subject.getDiagram()»«ELSE»"«diagramKind»"«ENDIF»;
+			return «IF diagramKind = null»«EXPAND xpt::editor::VisualIDRegistry::modelID FOR subject.getDiagram()»«ELSE»"«diagramKind»"«ENDIF»;
 		}
 
 		«EXPAND xpt::Common::generatedMemberComment»
 		protected String getEditorID() {
-			return «IF editorID == null»«subject.getDiagram().editorGen.editor.getQualifiedClassName()».ID«ELSE»"«editorID»"«ENDIF»;
+			return «IF editorID = null»«subject.getDiagram().editorGen.editor.getQualifiedClassName()».ID«ELSE»"«editorID»"«ENDIF»;
 		}
 	}
 «ENDAROUND»
 
-«AROUND additions FOR OpenDiagramBehaviour»
+«AROUND additions FOR gmfgen::OpenDiagramBehaviour»
 protected static String getDiagramName(org.eclipse.emf.ecore.EObject diagramDomainElement){
 	String result = null;
 	if (diagramDomainElement instanceof org.eclipse.uml2.uml.NamedElement) {

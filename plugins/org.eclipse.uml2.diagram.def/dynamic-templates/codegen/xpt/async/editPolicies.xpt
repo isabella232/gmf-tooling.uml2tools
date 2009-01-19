@@ -10,19 +10,19 @@
  *    Michael Golubev (Borland) - [252802] U2T specific delete from diagram action
   */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION xpt::async::NonCanonicalDiagram»  
 
 «DEFINE nodeComponentEditPolicy FOR gmfgen::GenNode-»
-«IF supportsNonCanonicalMode(this.getDiagram())-»
+«IF supportsNonCanonicalMode(self.getDiagram())-»
 	installEditPolicy(org.eclipse.gef.EditPolicy.COMPONENT_ROLE, new org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy());
 «ENDIF-»	
 «ENDDEFINE»
 
 «DEFINE nodeComponentEditPolicy FOR gmfgen::GenChildLabelNode-»
-«IF supportsNonCanonicalMode(this.getDiagram())-»
+«IF supportsNonCanonicalMode(self.getDiagram())-»
 	installEditPolicy(org.eclipse.gef.EditPolicy.COMPONENT_ROLE, new org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy(true));
 «ENDIF-»	
 «ENDDEFINE»

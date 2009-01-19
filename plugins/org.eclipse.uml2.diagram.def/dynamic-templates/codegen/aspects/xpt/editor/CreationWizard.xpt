@@ -11,7 +11,7 @@
  *    Tatiana Fesenko (Borland) - fix for bugzilla #230873 'Make diagram file extension shorter' 
  */
  
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 
 «EXTENSION xpt::editor::Utils»
 «EXTENSION aspects::xpt::FileExtensionUtils»
@@ -32,7 +32,7 @@ public class «creationWizardClassName»
 
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected «getCreationWizardPageQualifiedClassName()» diagramModelFilePage;
-	«IF isStandaloneDomainModel()-»
+	«IF isStandaloneDomainModel(self)-»
 
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected «getCreationWizardPageQualifiedClassName()» domainModelFilePage;
@@ -73,9 +73,9 @@ public class «creationWizardClassName»
 	public void init(org.eclipse.ui.IWorkbench workbench, org.eclipse.jface.viewers.IStructuredSelection selection) {
         this.workbench = workbench;
         this.selection = selection;
-		setWindowTitle(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizard().titleKey()) FOR editorGen»);
+		setWindowTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizard(self))) FOR editorGen»);
 		setDefaultPageImageDescriptor(«editorGen.plugin.getActivatorQualifiedClassName()».getBundledImageDescriptor(
-				"icons/wizban/New«IF domainDiagramElement != null»«domainDiagramElement.genPackage.prefix»«ENDIF»Wizard.gif")); //$NON-NLS-1$
+				"icons/wizban/New«IF domainDiagramElement <> null»«domainDiagramElement.genPackage.prefix»«ENDIF»Wizard.gif")); //$NON-NLS-1$
 		setNeedsProgressMonitor(true);
 	}
 
@@ -84,17 +84,17 @@ public class «creationWizardClassName»
 		«REM» #230873 'Make diagram file extension shorter'
 		The only change is here. We take the first extension from the comma-separated list«ENDREM-»
 		diagramModelFilePage = new «getCreationWizardPageQualifiedClassName()»(
-				"DiagramModelFile", getSelection(), "«editorGen.getDefaultDiagramExtension()»"); //$NON-NLS-1$ //$NON-NLS-2$
+				"DiagramModelFile", getSelection(), "«getDefaultDiagramExtension(editorGen)»"); //$NON-NLS-1$ //$NON-NLS-2$
 		«REM»End of the only change«ENDREM-»
-		diagramModelFilePage.setTitle(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardDiagramPage().titleKey()) FOR editorGen»);
-		diagramModelFilePage.setDescription(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardDiagramPage().descriptionKey()) FOR editorGen»);
+		diagramModelFilePage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizardDiagramPage(self))) FOR editorGen»);
+		diagramModelFilePage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForCreationWizardDiagramPage(self))) FOR editorGen»);
 		addPage(diagramModelFilePage);
-	«IF isStandaloneDomainModel()-»
+	«IF isStandaloneDomainModel(self)-»
 
 		domainModelFilePage = new «getCreationWizardPageQualifiedClassName()»(
 				"DomainModelFile", getSelection(), "«editorGen.domainFileExtension»"); //$NON-NLS-1$ //$NON-NLS-2$
-		domainModelFilePage.setTitle(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardDomainPage().titleKey()) FOR editorGen»);
-		domainModelFilePage.setDescription(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardDomainPage().descriptionKey()) FOR editorGen»);
+		domainModelFilePage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGen»);
+		domainModelFilePage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGen»);
 		addPage(domainModelFilePage);
 	«ENDIF-»
 	}
@@ -102,7 +102,7 @@ public class «creationWizardClassName»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public boolean performFinish() {
 		org.eclipse.jface.operation.IRunnableWithProgress op =
-	«IF editorGen.application == null-»
+	«IF editorGen.application = null-»
 				new org.eclipse.ui.actions.WorkspaceModifyOperation(null) {
 
 			protected void execute(org.eclipse.core.runtime.IProgressMonitor monitor)
@@ -114,7 +114,7 @@ public class «creationWizardClassName»
 					throws InvocationTargetException, InterruptedException {
 	«ENDIF-»
 				diagram = «getDiagramEditorUtilQualifiedClassName()».createDiagram(diagramModelFilePage.getURI(),
-	«IF isStandaloneDomainModel()-»
+	«IF isStandaloneDomainModel(self)-»
 						domainModelFilePage.getURI(),
 	«ENDIF-»
 						monitor);
@@ -123,7 +123,7 @@ public class «creationWizardClassName»
 						«getDiagramEditorUtilQualifiedClassName()».openDiagram(diagram);
 					} catch (org.eclipse.ui.PartInitException e) {
 						org.eclipse.jface.dialogs.ErrorDialog.openError(getContainer().getShell(),
-								«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardOpenEditorError()) FOR editorGen», null, e.getStatus());
+								«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardOpenEditorError(self)) FOR editorGen», null, e.getStatus());
 					}
 				}
 			}
@@ -135,7 +135,7 @@ public class «creationWizardClassName»
 		} catch (java.lang.reflect.InvocationTargetException e) {
 			if (e.getTargetException() instanceof org.eclipse.core.runtime.CoreException) {
 				org.eclipse.jface.dialogs.ErrorDialog.openError(getContainer().getShell(),
-						«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardCreationError()) FOR editorGen», null,
+						«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardCreationError(self)) FOR editorGen», null,
 						((org.eclipse.core.runtime.CoreException) e.getTargetException()).getStatus());
 			} else {
 				«editorGen.plugin.getActivatorQualifiedClassName()».getInstance().logError(

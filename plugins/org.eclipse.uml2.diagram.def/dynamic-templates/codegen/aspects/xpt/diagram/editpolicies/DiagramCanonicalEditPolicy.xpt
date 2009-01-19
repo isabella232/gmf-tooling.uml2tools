@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - initial API and implementation
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «EXTENSION xpt::diagram::editpolicies::Utils»
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION xpt::GenModelUtils»
@@ -25,7 +25,7 @@ private java.util.Collection collectAllLinks(org.eclipse.gmf.runtime.notation.Vi
 	}
 	java.util.Collection result = new java.util.LinkedList();
 	switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(view)) {
-		«EXPAND xpt::diagram::editpolicies::DiagramCanonicalEditPolicy::caseSemanticElement FOREACH getAllSemanticElements(this)-»
+		«EXPAND xpt::diagram::editpolicies::DiagramCanonicalEditPolicy::caseSemanticElement FOREACH getAllSemanticElements(self)-»
 	}
 	for (java.util.Iterator children = view.getChildren().iterator(); children.hasNext();) {
 		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) children.next(), domain2NotationMap));
@@ -111,7 +111,7 @@ private org.eclipse.gef.EditPart getEditPart(org.eclipse.emf.ecore.EObject domai
 	«EXPAND xpt::Common::generatedMemberComment»
 protected final org.eclipse.gef.EditPart getHintedEditPart(org.eclipse.emf.ecore.EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) { 
 	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) domain2NotationMap.getHinted(domainModelElement, «-»
-											«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall("hintVisualId")»);
+											«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('hintVisualId')»);
 	if (view != null) {
 		return (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 	}
@@ -174,7 +174,7 @@ private java.util.Collection refreshConnections() {
 «ENDAROUND»
 
 «AROUND refreshSemantic FOR gmfgen::GenDiagram-»
-«IF !supportsNonCanonicalMode(this)-»
+«IF not supportsNonCanonicalMode(self)-»
 	«targetDef.proceed()-»
 «ELSE-»
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -186,7 +186,7 @@ private java.util.Collection refreshConnections() {
 		java.util.List createdConnectionViews = new java.util.LinkedList();
 		if (myCanonicalHelper.shouldSyncLinks(getNotationView())){
 			createdConnectionViews.addAll(refreshSemanticConnections());
-			«IF !links.isEmpty()-»
+			«IF not links->isEmpty()-»
 			createdConnectionViews.addAll(refreshConnections());
 			«ENDIF-»
 		}
@@ -210,7 +210,7 @@ private java.util.Collection refreshConnections() {
 	
 	«EXPAND DomainToNotationClass»
 	
-	«IF supportsNonCanonicalMode(this)-»
+	«IF supportsNonCanonicalMode(self)-»
 	«EXPAND getNotationView»
 	
 	«EXPAND myCanonicalHelper»

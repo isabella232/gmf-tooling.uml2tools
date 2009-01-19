@@ -10,8 +10,8 @@
  *    Michael Golubev (Borland) - #238308
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «AROUND TextSelectionEditPolicy FOR gmfgen::GenDiagram-»
 «EXPAND xpt::Common::copyright FOR editorGen-»
@@ -21,7 +21,7 @@ package «editPoliciesPackageName»;
 public class «textSelectionEditPolicyClassName» extends org.eclipse.gef.editpolicies.SelectionEditPolicy «-»
 	implements org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy {
 
-	«EXPAND xpt::diagram::editpolicies::TextFeedback::textFeedback FOR this-»
+	«EXPAND xpt::diagram::editpolicies::TextFeedback::textFeedback FOR self-»
 }
 «ENDAROUND»
 
@@ -33,7 +33,7 @@ package «editPoliciesPackageName»;
 public class «textNonResizableEditPolicyClassName» extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableEditPolicyEx «-»
 	implements org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy {
 
-	«EXPAND xpt::diagram::editpolicies::TextFeedback::textFeedback FOR this-»
+	«EXPAND xpt::diagram::editpolicies::TextFeedback::textFeedback FOR self-»
 
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected java.util.List<?> createSelectionHandles() {

@@ -11,14 +11,14 @@
  *    Michael Golubev (Borland) - switch actions for comments/nodes
   */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «EXTENSION xpt::stereo::Utils»  
 
 «DEFINE stereotypeContributionItemProviders FOR gmfgen::GenDiagram»
-«IF supportsStereotypes(this)-»
+«IF supportsStereotypes(self)-»
 <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
 «EXPAND xpt::Common::xmlGeneratedTag»
 «EXPAND applyProfileContributionItemProvider-»
@@ -45,7 +45,7 @@
                   id="menu_apply_unapply_profile">
              </popupMenu>            
              <popupStructuredContributionCriteria
-                   objectClass="«this.getEditPartQualifiedClassName()»"
+                   objectClass="«self.getEditPartQualifiedClassName()»"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
@@ -76,7 +76,7 @@
 «ENDDEFINE»
 
 «DEFINE stereotypePropertySection FOR gmfgen::GenDiagram»
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections.tagvalues">
 «EXPAND xpt::Common::xmlGeneratedTag»
       <propertySections contributorId="«editorGen.plugin.iD»">
          <propertySection
@@ -93,7 +93,7 @@
 «ENDDEFINE»
 
 «DEFINE stereotypePropertyTabs FOR gmfgen::GenDiagram»
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.tagvalues">
 «EXPAND xpt::Common::xmlGeneratedTag»
       <propertyTabs contributorId="«editorGen.plugin.iD»">
           <propertyTab

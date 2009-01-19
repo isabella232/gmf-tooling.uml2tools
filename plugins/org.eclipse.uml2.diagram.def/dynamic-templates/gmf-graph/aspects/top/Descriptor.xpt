@@ -10,19 +10,19 @@
  *    Michael Golubev (Borland) - temporary fix for compilation errors in DeploymentD
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2006/GraphicalDefinition"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "templates"»
+«IMPORT 'http://www.eclipse.org/gmf/2006/GraphicalDefinition'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'templates'»
 «EXTENSION Util»
 
 «REM»The only difference is added ()«ENDREM»
-«AROUND accessorToCustom(List[FigureAccessor] fa) FOR gmfgraph::ChildAccess-»
+«AROUND accessorToCustom(fa : Sequence(gmfgraph::FigureAccessor)) FOR gmfgraph::ChildAccess-»
 	/**
 	 * @generated
 	 */
 	public «EXPAND Runtime::fqn FOR figure» «accessor»() {
-		«LET fa.accessor.first() AS faAccessor-»
-		«IF faAccessor == accessor-»
+		«LET fa.accessor->first() AS faAccessor-»
+		«IF faAccessor = accessor-»
 			return super.«faAccessor»();
 		«ELSE-»
 			return «faAccessor»();		

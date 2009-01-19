@@ -11,13 +11,14 @@
  * 	  Michael Golubev (Borland) - custom icons for diagram elements
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
-«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «EXTENSION aspects::xpt::FileExtensionUtils»
 «EXTENSION org::eclipse::uml2::diagram::codegen::qvt::EMFUtils»
+«EXTENSION org::eclipse::uml2::diagram::codegen::qvt::NativeEMFUtils»
 
 «AROUND xpt::plugin::plugin::fileTypes FOR gmfgen::GenPlugin-»
    <extension point="org.eclipse.team.core.fileTypes">
@@ -52,6 +53,8 @@
 «EXPAND xpt::stereo::extensions::stereotypeContributionItemProviders FOR editorGen.diagram»
 «EXPAND iconStylePreferencesPage FOR editorGen.diagram»
 «EXPAND xpt::async::extensions::asyncDiagramSupport FOR editorGen.diagram»
+«EXPAND xpt::validation::extensions::validateActionSupport FOR editorGen.diagram»
+«EXPAND aspects::xpt::providers::extensions_hack_260855::viewProviderReregisteredWithoutFilter FOR editorGen.diagram»
 «ENDAROUND»
 
 «DEFINE iconStylePreferencesPage FOR gmfgen::GenDiagram»
@@ -60,12 +63,12 @@
       <page
             name="%preferences.icons"
             class="«EXPAND xpt::preferences::IconStylePreferencePage::qualifiedClassName»"
-            category="«EXPAND preferencePageId FOR this»"
+            category="«EXPAND preferencePageId FOR self»"
             id="«editorGen.plugin.iD».icons">
       </page>
    </extension>
 «ENDDEFINE»
 
 «DEFINE preferencesPrefix FOR gmfgen::GenDiagram»org.eclipse.uml2.uml.diagram.«getSimpleClassName(editorGen.plugin.iD)»«ENDDEFINE»
-«DEFINE preferencePageId FOR gmfgen::GenPreferencePage»«EXPAND preferencesPrefix FOR this.getDiagram()».«getSimpleClassName(this.iD)»«ENDDEFINE»
-«DEFINE preferencePageId FOR gmfgen::GenDiagram»«EXPAND preferencePageId FOR (gmfgen::GenPreferencePage)this.preferencePages.first()»«ENDDEFINE»
+«DEFINE preferencePageId FOR gmfgen::GenPreferencePage»«EXPAND preferencesPrefix FOR self.getDiagram()».«getSimpleClassName(self.iD)»«ENDDEFINE»
+«DEFINE preferencePageId FOR gmfgen::GenDiagram»«EXPAND preferencePageId FOR self.preferencePages->first().oclAsType(gmfgen::GenPreferencePage)»«ENDDEFINE»

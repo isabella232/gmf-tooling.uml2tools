@@ -10,20 +10,20 @@
  *    Michael Golubev (Borland) - [255532] - Insert action should work
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «EXTENSION xpt::async::NonCanonicalDiagram»
 
 «AROUND implementsList FOR gmfgen::GenCompartment»«-»
-«IF this.listLayout && this.childNodes.size() == 1-»
+«IF self.listLayout and self.childNodes->size() = 1-»
 implements org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart«-»
 «ENDIF-»
 «ENDAROUND»
 
 «AROUND diagram::editparts::CompartmentEditPart::additions FOR gmfgen::GenCompartment»
-«IF this.listLayout && this.childNodes.size() == 1-»
+«IF self.listLayout and self.childNodes->size() = 1-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public org.eclipse.gmf.runtime.emf.type.core.IElementType getElementType() {
-		return «getDiagram().getElementTypesQualifiedClassName()».«((gmfgen::GenCommonBase)childNodes.get(0)).getUniqueIdentifier()»;
+		return «getDiagram().getElementTypesQualifiedClassName()».«childNodes->at(0 + 1).oclAsType(gmfgen::GenCommonBase).getUniqueIdentifier()»;
 	}
 	
 «ENDIF-»

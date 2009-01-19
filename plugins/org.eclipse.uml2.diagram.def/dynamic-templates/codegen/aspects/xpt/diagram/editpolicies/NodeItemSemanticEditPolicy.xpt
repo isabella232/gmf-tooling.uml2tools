@@ -10,21 +10,21 @@
  *    Michael Golubev (Borland) - #259488 - deletion for multi-view nodes like association class
  */
  
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «EXTENSION xpt::diagram::editpolicies::Utils»
 
 «AROUND xpt::diagram::editpolicies::NodeItemSemanticEditPolicy::additions FOR gmfgen::GenNode-»
-«LET ((gmfgenext::SubstitutableByAttributes)this.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS group-»
-«IF null != group && group.requiresAll && !group.getSubstitutableByNodes().select(n | n != this).isEmpty()-»
-«EXPAND addDeleteViewCommandForGroup(group) FOR this»
+«LET (self.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first().oclAsType(gmfgenext::SubstitutableByAttributes) AS group-»
+«IF null <> group and (group.requiresAll and not group.getSubstitutableByNodes()->select(n | n <> self)->isEmpty())-»
+«EXPAND addDeleteViewCommandForGroup(group) FOR self»
 «ENDIF-»
 «ENDLET-»
 «ENDAROUND»
 
-«DEFINE addDeleteViewCommandForGroup(gmfgenext::SubstitutableByAttributes group) FOR gmfgen::GenNode-»
+«DEFINE addDeleteViewCommandForGroup(group : gmfgenext::SubstitutableByAttributes) FOR gmfgen::GenNode-»
 	«EXPAND xpt::Common::generatedMemberComment»	
 	@Override
 	protected org.eclipse.gef.commands.Command addDeleteViewCommand(org.eclipse.gef.commands.Command mainCommand, org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest completedRequest) {
@@ -41,8 +41,8 @@
 				continue;
 			}
 			switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(nextChildView)){
-			«FOREACH group.getSubstitutableByNodes() AS nextPart-»
-			«IF nextPart != this-»
+			«FOREACH group.getSubstitutableByNodes()->asSequence() AS nextPart-»
+			«IF nextPart <> self-»
 				«EXPAND xpt::Common::caseVisualID FOR nextPart»
 			«ENDIF-»
 			«ENDFOREACH-»

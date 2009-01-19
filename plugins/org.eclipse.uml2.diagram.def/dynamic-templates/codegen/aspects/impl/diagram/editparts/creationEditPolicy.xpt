@@ -10,9 +10,9 @@
  *    Michael Golubev - U2T specific creation edit policy 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «EXTENSION xpt::diagram::editparts::Utils»
 
 «DEFINE newInstance FOR gmfgen::GenCommonBase»«-»
-new org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent(«EXPAND aspects::xpt::editor::VisualIDRegistry::typedSharedInstanceCall FOR this.getDiagram()»)«-»
+new org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent(«EXPAND aspects::xpt::editor::VisualIDRegistry::typedSharedInstanceCall FOR self.getDiagram()»)«-»
 «ENDDEFINE»

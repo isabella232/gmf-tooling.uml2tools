@@ -11,8 +11,8 @@
  *    Tatiana Fesenko (Borland) - fix for bugzilla #230873 'Make diagram file extension shorter' 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION aspects::xpt::FileExtensionUtils»
 
@@ -21,7 +21,7 @@
       «EXPAND xpt::Common::xmlGeneratedTag»
 «REM» #230873 'Make diagram file extension shorter'
 Change: We iterate over diagramFileExtension _list_ here«ENDREM-»
-«FOREACH collectAllExtensions() AS dfe-»
+«FOREACH collectAllExtensions(self) AS dfe-»
 «REM» End of #230873«ENDREM»
       <editor
          id="«editor.iD»"
@@ -61,7 +61,7 @@ Change: We iterate over diagramFileExtension _list_ here«ENDREM-»
    </extension>
 
 «IF diagram.generateInitDiagramAction()-»
-   «IF null == application»<extension point="org.eclipse.ui.popupMenus">
+   «IF null = application»<extension point="org.eclipse.ui.popupMenus">
       «EXPAND xpt::Common::xmlGeneratedTag»
       <objectContribution
             id="«plugin.iD».InitDiagram"

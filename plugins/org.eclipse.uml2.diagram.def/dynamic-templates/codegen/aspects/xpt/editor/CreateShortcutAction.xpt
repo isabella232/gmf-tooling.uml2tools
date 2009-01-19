@@ -10,14 +10,14 @@
  *    Michael Golubev (Borland) - force diagram update after shortcut creation (#240483 and related) 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «EXTENSION xpt::editor::Utils»
 
 «AROUND xpt::editor::CreateShortcutAction::run FOR gmfgen::GenDiagram-»
 	«EXPAND xpt::Common::generatedMemberComment»
 public void run(org.eclipse.jface.action.IAction action) {
 	final org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) mySelectedElement.getModel();
-	«IF null == editorGen.application-»
+	«IF null = editorGen.application-»
 	«getElementChooserQualifiedClassName()» elementChooser = new «getElementChooserQualifiedClassName()»(myShell, view);
 	int result = elementChooser.open();
 	if (result != org.eclipse.jface.window.Window.OK) {

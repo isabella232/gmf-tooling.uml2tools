@@ -12,7 +12,7 @@
  *        use genapi instead 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION xpt::GenModelUtils»
@@ -39,7 +39,7 @@ private void createLinks(org.eclipse.gmf.runtime.notation.Diagram diagram) {
 				}
 				continueLinkCreation = true;
 				switch (nextLinkDescriptor.getVisualID()) {
-	«EXPAND xpt::editor::DiagramContentInitializer::createLinksCase FOREACH links.select(link | null != getMetaClass(link))-»
+	«EXPAND xpt::editor::DiagramContentInitializer::createLinksCase FOREACH links->select(link | null <> link.getMetaClass())-»
 				}
 			}
 		}

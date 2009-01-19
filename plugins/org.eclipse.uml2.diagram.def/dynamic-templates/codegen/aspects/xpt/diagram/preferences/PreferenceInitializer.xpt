@@ -10,8 +10,8 @@
  *    Michael Golubev (Borland) - custom icons for diagram elements
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION xpt::diagram::Utils»
 
@@ -25,15 +25,15 @@ public class «EXPAND xpt::diagram::preferences::PreferenceInitializer::className
 	«EXPAND xpt::Common::generatedMemberComment»
 	public void initializeDefaultPreferences() {
 		org.eclipse.jface.preference.IPreferenceStore store = getPreferenceStore();
-«IF preferences == null-»
-		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults("store") FOREACH allPreferencePages(this)»
+«IF preferences = null-»
+		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults('store') FOREACH allPreferencePages(self)»
 «ELSE»«REM»default values for predefined pages will be set manually«ENDREM»«-»
-		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults("store") FOREACH allPreferencePages(this).typeSelect(GenCustomPreferencePage)»
-		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults("store") FOR preferences-»
+		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults('store') FOREACH (allPreferencePages(self))[gmfgen::GenCustomPreferencePage]»
+		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults('store') FOR preferences-»
 «ENDIF-»
 
 		«REM»Additional preferences here«ENDREM»«-»
-		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaultIconStyle("store")»
+		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaultIconStyle('store')»
 	}
 
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -43,7 +43,7 @@ public class «EXPAND xpt::diagram::preferences::PreferenceInitializer::className
 } 
 «ENDAROUND»
 
-«DEFINE initDefaultIconStyle(String storeVar) FOR gmfgen::GenDiagram»
+«DEFINE initDefaultIconStyle(storeVar : String) FOR gmfgen::GenDiagram»
 	«EXPAND xpt::preferences::IconStylePreferencePage::qualifiedClassName».initDefaults(«storeVar»);
 «ENDDEFINE»
 

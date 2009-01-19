@@ -10,8 +10,8 @@
  *    Michael Golubev (Borland) - #246402 rotated labels support
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION xpt::rotatedlabel::RotatedLabelsSupport»
 
@@ -41,19 +41,19 @@ public class «editPartFactoryClassName» implements org.eclipse.gef.EditPartFacto
 		if (model instanceof org.eclipse.gmf.runtime.notation.View) {
 			org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) model;
 			switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(view)) {
-				«EXPAND xpt::diagram::editparts::EditPartFactory::createEditPart FOR this-»
-				«FOREACH (List[gmfgen::GenNode]) {}.addAll(topLevelNodes).addAll(childNodes) AS node-»
+				«EXPAND xpt::diagram::editparts::EditPartFactory::createEditPart FOR self-»
+				«FOREACH ((Sequence {  })[gmfgen::GenTopLevelNode]->union(topLevelNodes->asSequence()))[gmfgen::GenNode]->union(childNodes->asSequence()) AS node-»
 					«EXPAND xpt::diagram::editparts::EditPartFactory::createEditPart FOR node-»
-				 	«FOREACH node.labels AS label-»
+				 	«FOREACH node.labels->asSequence() AS label-»
 						«EXPAND xpt::diagram::editparts::EditPartFactory::createEditPart FOR label-»
 				 	«ENDFOREACH-»
 				«ENDFOREACH-»
-				«FOREACH compartments AS compartment-»
+				«FOREACH compartments->asSequence() AS compartment-»
 					«EXPAND xpt::diagram::editparts::EditPartFactory::createEditPart FOR compartment-»
 				«ENDFOREACH-»
-				«FOREACH links AS link-»
+				«FOREACH links->asSequence() AS link-»
 					«EXPAND xpt::diagram::editparts::EditPartFactory::createEditPart FOR link-»
-					«FOREACH link.labels AS label-»
+					«FOREACH link.labels->asSequence() AS label-»
 						«EXPAND xpt::diagram::editparts::EditPartFactory::createEditPart FOR label-»
 					«ENDFOREACH-»
 				«ENDFOREACH-»
@@ -151,7 +151,7 @@ public class «editPartFactoryClassName» implements org.eclipse.gef.EditPartFacto
 			org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart source) {
         if (source.getFigure() instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
             return new TextCellEditorLocator((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) source.getFigure());
-        } «IF supportsRotatedLabels(this)-»
+        } «IF supportsRotatedLabels(self)-»
         else if (source.getFigure() instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
         	return new org.eclipse.uml2.diagram.common.draw2d.RotatedImageCellEditorLocator((org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) source.getFigure());
         } 

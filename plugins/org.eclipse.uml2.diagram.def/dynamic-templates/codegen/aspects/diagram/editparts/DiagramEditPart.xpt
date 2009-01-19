@@ -5,10 +5,10 @@
  *    Michael Golubev (Borland) - #237272
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 
 «AROUND diagram::editparts::DiagramEditPart::additions FOR gmfgen::GenDiagram-»
-	«IF !childNodes.isEmpty()-»
+	«IF not childNodes->isEmpty()-»
 		«EXPAND refreshDiagram-»
 	«ENDIF-»
 «ENDAROUND»

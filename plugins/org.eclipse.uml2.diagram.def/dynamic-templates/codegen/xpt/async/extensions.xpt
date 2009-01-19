@@ -10,14 +10,14 @@
  *    Michael Golubev (Borland) - [252802] U2T specific delete from diagram action
    */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «EXTENSION xpt::async::NonCanonicalDiagram»  
 
 «DEFINE asyncDiagramSupport FOR gmfgen::GenDiagram-»
-	«IF supportsNonCanonicalMode(this)-»
+	«IF supportsNonCanonicalMode(self)-»
 		«EXPAND deleteFromDiagramActionSupport-»
 	«ENDIF-»
 «ENDDEFINE»
@@ -35,7 +35,7 @@
 			class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
 			checkPluginLoaded="false">
 		<Priority name="Medium"/>
-«FOREACH this.getAllNodes() AS nextNode-»
+«FOREACH self.getAllNodes()->asSequence() AS nextNode-»
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
 			<popupStructuredContributionCriteria objectClass="«nextNode.getEditPartQualifiedClassName()»"/>
 			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
@@ -49,7 +49,7 @@
 			class="org.eclipse.uml2.diagram.common.async.DeleteFromDiagramPopupProvider"
 			checkPluginLoaded="false">
 		<Priority name="Low"/>
-«FOREACH this.getAllNodes() AS nextNode-»
+«FOREACH self.getAllNodes()->asSequence() AS nextNode-»
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
 			<popupStructuredContributionCriteria objectClass="«nextNode.getEditPartQualifiedClassName()»"/>
 			<popupAction

@@ -5,8 +5,8 @@
  *    Alexander Shatalin (Borland) - initial API and implementation
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «AROUND additions FOR gmfgen::GenDiagramUpdater-»
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -42,4 +42,4 @@ public Object execute(org.eclipse.core.commands.ExecutionEvent event) throws org
 
 «DEFINE performCanonicalUpdateMethodCall FOR gmfgen::GenCommonBase»«getDiagram().editorGen.diagramUpdater.getUpdateCommandQualifiedClassName()».«EXPAND performCanonicalUpdateMethodName»«ENDDEFINE»
 
-«DEFINE performCanonicalUpdateMethodName FOR Object»performCanonicalUpdate«ENDDEFINE»
+«DEFINE performCanonicalUpdateMethodName FOR OclAny»performCanonicalUpdate«ENDDEFINE»

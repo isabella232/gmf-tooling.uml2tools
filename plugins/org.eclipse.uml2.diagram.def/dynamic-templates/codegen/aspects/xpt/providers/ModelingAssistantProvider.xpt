@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - #241066
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 
 «EXTENSION xpt::diagram::Utils»
 «EXTENSION xpt::providers::i18n»
@@ -22,9 +22,9 @@
 		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart editPart =
 				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) host.getAdapter(
 						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
-		«FOREACH getAllContainers() AS container-»
-			«LET container.getAssistantNodes().reject(n | isDiagramHeader(n)) AS filteredAssistantNodes»
-			«IF filteredAssistantNodes.size() > 0-»
+		«FOREACH getAllContainers()->asSequence() AS container-»
+			«LET container.getAssistantNodes()->reject(n | isDiagramHeader(n))->asSequence() AS filteredAssistantNodes»
+			«IF filteredAssistantNodes->size() > 0-»
 		if (editPart instanceof «container.getEditPartQualifiedClassName()») {
 			java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
 				«FOREACH filteredAssistantNodes AS node-»

@@ -10,10 +10,10 @@
  *     Michael Golubev (Borland) - #216445, #237272
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
-«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «EXTENSION xpt::diagram::editparts::Utils»
 «EXTENSION xpt::GenModelUtils»
@@ -21,22 +21,23 @@
 «EXTENSION aspects::diagram::editparts::LinkUpdateUtil»
 «EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
 «EXTENSION aspects::xpt::diagram::updater::DescriptorsGenApi»
+«EXTENSION xpt::NativeGenModelUtils»
 
 «AROUND attributes FOR gmfgen::GenNode-»
 	«targetDef.proceed()-»
 	
-	«IF !isDiagramHeader(this) && !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
+	«IF not isDiagramHeader(self) and not getOutgoingAndContainedTypeLinks(self)->isEmpty()-»
 		«EXPAND xpt::Common::generatedMemberComment»
 		private LinkTargetListener myLinkTargetListener;
 	«ENDIF-»
 «ENDAROUND»
 
 «AROUND diagram::editparts::NodeEditPart::additions FOR gmfgen::GenNode»
-	«IF getSideAffixedChildren(this).size() > 0-»
+	«IF getSideAffixedChildren(self)->size() > 0-»
 	«EXPAND reorderChildFix »
 	«ENDIF-»
 	
-	«IF !isDiagramHeader(this) && !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
+	«IF not isDiagramHeader(self) and not getOutgoingAndContainedTypeLinks(self)->isEmpty()-»
 	
 		«EXPAND getDiagramEventBroker-»
 		
@@ -51,11 +52,11 @@
 		«EXPAND handleTypeLinkModification-»
 	«ENDIF-»
 	
-	«IF !isDiagramHeader(this) && !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
+	«IF not isDiagramHeader(self) and not getOutgoingLinksFeatureModelFacets(self)->isEmpty()-»
 		«EXPAND handleFeatureLinkModification-»
 	«ENDIF-»
 	
-	«IF !isDiagramHeader(this) && (!getOutgoingAndContainedTypeLinks(this).isEmpty() || !getOutgoingLinksFeatureModelFacets(this).isEmpty())-»
+	«IF not isDiagramHeader(self) and (not getOutgoingAndContainedTypeLinks(self)->isEmpty() or not getOutgoingLinksFeatureModelFacets(self)->isEmpty())-»
 		«EXPAND isCanonicalEnabled-»
 		«EXPAND aspects::diagram::editparts::DiagramEditPart::refreshDiagram-»
 	«ENDIF-»
@@ -142,7 +143,7 @@
 	
 		«EXPAND xpt::Common::generatedMemberComment»
 		public void notifyChanged(org.eclipse.emf.common.notify.Notification event) {
-			«EXPAND refreshLinkForTypeModelFacet FOREACH getOutgoingAndContainedTypeLinks(this).collect(link | ((gmfgen::TypeLinkModelFacet)link.modelFacet).targetMetaFeature)-»
+			«EXPAND refreshLinkForTypeModelFacet FOREACH getOutgoingAndContainedTypeLinks(self)->collect(link | link.modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).targetMetaFeature)-»
 		}
 	}
 «ENDDEFINE»
@@ -151,8 +152,8 @@
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		«LET getOutgoingAndContainedTypeLinks(this) AS linksToListen-»
-		«IF !linksToListen.isEmpty()-»
+		«LET getOutgoingAndContainedTypeLinks(self) AS linksToListen-»
+		«IF not linksToListen->isEmpty()-»
 		«LET getGenApiNodeDescriptorQualifiedClassName() AS descriptorFQN -»
 		for («descriptorFQN» next : «EXPAND getContainedLinksMethodName»()) {
 			org.eclipse.emf.ecore.EObject nextLink = next.getModelElement();
@@ -162,7 +163,7 @@
 			switch (next.getVisualID()){
 				«FOREACH linksToListen AS nextLink-»
 					«EXPAND xpt::Common::caseVisualID FOR nextLink»
-					getLinkTargetListener().addReferenceListener(nextLink, «EXPAND MetaModel::MetaFeature FOR ((gmfgen::TypeLinkModelFacet)nextLink.modelFacet).targetMetaFeature»);
+					getLinkTargetListener().addReferenceListener(nextLink, «EXPAND MetaModel::MetaFeature FOR nextLink.modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).targetMetaFeature»);
 					break; 
 				
 				«ENDFOREACH-»
@@ -175,7 +176,7 @@
 		«ENDLET-»
 	}
 	
-	«IF !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
+	«IF not getOutgoingAndContainedTypeLinks(self)->isEmpty()-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	@SuppressWarnings("unchecked")
 	private java.util.List<«getGenApiLinkDescriptorQualifiedClassName()»> «EXPAND getContainedLinksMethodName»() {
@@ -186,14 +187,14 @@
 
 «DEFINE getContainedLinksMethodName FOR gmfgen::GenNode»«EXPAND xpt::diagram::updater::DiagramUpdater::linkGetterName(getContainedLinksMethodNameSuffix())»«ENDDEFINE»
 
-«DEFINE addSemanticListeners(gmfgen::GenNode node) FOR genmodel::GenFeature-»
-	«IF isListType()-»
-		for (Object link : «EXPAND MetaModel::getFeatureValue("domainElement", node.modelFacet.metaClass)») {
+«DEFINE addSemanticListeners(node : gmfgen::GenNode) FOR genmodel::GenFeature-»
+	«IF isListType(self)-»
+		for (Object link : «EXPAND MetaModel::getFeatureValue('domainElement', node.modelFacet.metaClass)») {
 	«ELSE-»
-		Object link = «EXPAND MetaModel::getFeatureValue("domainElement", node.modelFacet.metaClass)»;
+		Object link = «EXPAND MetaModel::getFeatureValue('domainElement', node.modelFacet.metaClass)»;
 	«ENDIF-»
-	«EXPAND addOrRemoveTypeLinkListeners("addReferenceListener", node, this) FOREACH getOutgoingLinkMetaclasses(node, this)-»
-	«IF isListType()-»
+	«EXPAND addOrRemoveTypeLinkListeners('addReferenceListener', node, self) FOREACH getOutgoingLinkMetaclasses(node, self)-»
+	«IF isListType(self)-»
 		}
 	«ENDIF-»
 «ENDDEFINE»
@@ -206,38 +207,38 @@
 	}	
 «ENDDEFINE»
 
-«DEFINE addOrRemoveTypeLinkListeners(gmfgen::GenNode node) FOR genmodel::GenFeature-»
+«DEFINE addOrRemoveTypeLinkListeners(node : gmfgen::GenNode) FOR genmodel::GenFeature-»
 	if (event.getFeature() == «EXPAND MetaModel::MetaFeature»){
 		switch (event.getEventType()) {
 		case org.eclipse.emf.common.notify.Notification.ADD:{
 			Object link = event.getNewValue();
-			«EXPAND addOrRemoveTypeLinkListeners("addReferenceListener", node, this) FOREACH getOutgoingLinkMetaclasses(node, this)-»
-			«EXPAND conditionalRefresh FOR getOutgoingLinkMetaclasses(node, this)-»
+			«EXPAND addOrRemoveTypeLinkListeners('addReferenceListener', node, self) FOREACH getOutgoingLinkMetaclasses(node, self)-»
+			«EXPAND conditionalRefresh FOR getOutgoingLinkMetaclasses(node, self)-»
 			break;
 		}
 		case org.eclipse.emf.common.notify.Notification.REMOVE:{
 			Object link = event.getOldValue();
-			«EXPAND addOrRemoveTypeLinkListeners("removeReferenceListener", node, this) FOREACH getOutgoingLinkMetaclasses(node, this)-»
-			«EXPAND conditionalRefresh FOR getOutgoingLinkMetaclasses(node, this)-»
+			«EXPAND addOrRemoveTypeLinkListeners('removeReferenceListener', node, self) FOREACH getOutgoingLinkMetaclasses(node, self)-»
+			«EXPAND conditionalRefresh FOR getOutgoingLinkMetaclasses(node, self)-»
 			break;
 		}
 		case org.eclipse.emf.common.notify.Notification.ADD_MANY: {
 			java.util.List<?> links = (java.util.List<?>) event.getNewValue();
 			for (Object link : links) {
-				«EXPAND addOrRemoveTypeLinkListeners("addReferenceListener", node, this) FOREACH getOutgoingLinkMetaclasses(node, this)-»
+				«EXPAND addOrRemoveTypeLinkListeners('addReferenceListener', node, self) FOREACH getOutgoingLinkMetaclasses(node, self)-»
 			}
 			for (Object link : links) {
-				«EXPAND conditionalRefreshInLoop FOR getOutgoingLinkMetaclasses(node, this)-»
+				«EXPAND conditionalRefreshInLoop FOR getOutgoingLinkMetaclasses(node, self)-»
 			}
 			break;
 		}
 		case org.eclipse.emf.common.notify.Notification.REMOVE_MANY: {
 			java.util.List<?> links = (java.util.List<?>) event.getOldValue();
 			for (Object link : links) {
-				«EXPAND addOrRemoveTypeLinkListeners("removeReferenceListener", node, this) FOREACH getOutgoingLinkMetaclasses(node, this)-»
+				«EXPAND addOrRemoveTypeLinkListeners('removeReferenceListener', node, self) FOREACH getOutgoingLinkMetaclasses(node, self)-»
 			}
 			for (Object link : links) {
-				«EXPAND conditionalRefreshInLoop FOR getOutgoingLinkMetaclasses(node, this)-»
+				«EXPAND conditionalRefreshInLoop FOR getOutgoingLinkMetaclasses(node, self)-»
 			}
 			break;
 		}
@@ -245,27 +246,27 @@
 	}
 «ENDDEFINE»
 
-«DEFINE addOrRemoveTypeLinkListeners(String methodName) FOR genmodel::GenFeature-»
+«DEFINE addOrRemoveTypeLinkListeners(methodName : String) FOR genmodel::GenFeature-»
 	getLinkTargetListener().«methodName»((org.eclipse.emf.ecore.EObject) link, «EXPAND MetaModel::MetaFeature»);
 «ENDDEFINE»
 
-«DEFINE addOrRemoveTypeLinkListeners(String methodName, gmfgen::GenNode node, genmodel::GenFeature containmentFeature) FOR genmodel::GenClass-»
+«DEFINE addOrRemoveTypeLinkListeners(methodName : String, node : gmfgen::GenNode, containmentFeature : genmodel::GenFeature) FOR genmodel::GenClass-»
 	if («EXPAND conditionalRefreshCondition») {
-		«EXPAND addOrRemoveTypeLinkListeners(methodName) FOREACH getOutgoingLinkTargetFeatures(node, containmentFeature, this)-»
+		«EXPAND addOrRemoveTypeLinkListeners(methodName) FOREACH getOutgoingLinkTargetFeatures(node, containmentFeature, self)-»
 	}
 «ENDDEFINE»
 
-«DEFINE conditionalRefreshCondition FOR genmodel::GenClass»«EXPAND MetaModel::IsInstance("link")»«ENDDEFINE»
+«DEFINE conditionalRefreshCondition FOR genmodel::GenClass»«EXPAND MetaModel::IsInstance('link')»«ENDDEFINE»
 
-«DEFINE conditionalRefreshInLoop FOR Set[genmodel::GenClass]-»
-	if («EXPAND conditionalRefreshCondition FOREACH this SEPARATOR " || "») {
+«DEFINE conditionalRefreshInLoop FOR Set(genmodel::GenClass)-»
+	if («EXPAND conditionalRefreshCondition FOREACH self SEPARATOR ' || '») {
 		refreshDiagram();
 		break;
 	}
 «ENDDEFINE»
 
-«DEFINE conditionalRefresh FOR Set[genmodel::GenClass]-»
-	if («EXPAND conditionalRefreshCondition FOREACH this SEPARATOR " || "») {
+«DEFINE conditionalRefresh FOR Set(genmodel::GenClass)-»
+	if («EXPAND conditionalRefreshCondition FOREACH self SEPARATOR ' || '») {
 		refreshDiagram();
 	}
 «ENDDEFINE»
@@ -273,14 +274,14 @@
 «DEFINE handleTypeLinkModification FOR gmfgen::GenNode-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	private void handleTypeLinkModification(org.eclipse.emf.common.notify.Notification event) {
-		«EXPAND addOrRemoveTypeLinkListeners(this) FOREACH getOutgoingAndContainedTypeLinks(this).collect(link|((gmfgen::TypeLinkModelFacet)link.modelFacet).containmentMetaFeature).toSet().typeSelect(genmodel::GenFeature)-»zz
+		«EXPAND addOrRemoveTypeLinkListeners(self) FOREACH (getOutgoingAndContainedTypeLinks(self)->collect(link | link.modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).containmentMetaFeature)->asOrderedSet())[genmodel::GenFeature]-»zz
 	}
 «ENDDEFINE»
 
 «DEFINE handleFeatureLinkModification FOR gmfgen::GenNode-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	private void handleFeatureLinkModification(org.eclipse.emf.common.notify.Notification event) {
-		«EXPAND refreshLinkForTypeModelFacet FOREACH getOutgoingLinksFeatureModelFacets(this).collect(mf|mf.metaFeature)-»
+		«EXPAND refreshLinkForTypeModelFacet FOREACH getOutgoingLinksFeatureModelFacets(self)->collect(mf | mf.metaFeature)-»
 	}
 «ENDDEFINE»
 
@@ -306,13 +307,13 @@
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected void handleNotificationEvent(org.eclipse.emf.common.notify.Notification event) {
 		«EXPAND handleNotificationEventForShortcuts-»
-		«IF !isDiagramHeader(this)-»
-		«IF !getOutgoingAndContainedTypeLinks(this).isEmpty() || !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
+		«IF not isDiagramHeader(self)-»
+		«IF not getOutgoingAndContainedTypeLinks(self)->isEmpty() or not getOutgoingLinksFeatureModelFacets(self)->isEmpty()-»
 		if (isCanonicalEnabled()){
-			«IF !getOutgoingAndContainedTypeLinks(this).isEmpty()-»
+			«IF not getOutgoingAndContainedTypeLinks(self)->isEmpty()-»
 				handleTypeLinkModification(event);
 			«ENDIF-»
-			«IF !getOutgoingLinksFeatureModelFacets(this).isEmpty()-»
+			«IF not getOutgoingLinksFeatureModelFacets(self)->isEmpty()-»
 				handleFeatureLinkModification(event);
 			«ENDIF-»
 		}

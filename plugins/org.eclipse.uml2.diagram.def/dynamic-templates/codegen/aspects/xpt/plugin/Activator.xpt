@@ -18,7 +18,7 @@
  * NOTE: despite the above, there is some <i>additional</i> code that is contributed via AROUND additions 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «EXTENSION xpt::GenModelUtils»
 
 «AROUND xpt::plugin::Activator::additions FOR gmfgen::GenPlugin-»
@@ -110,7 +110,7 @@ public class «activatorClassName» extends org.eclipse.ui.plugin.AbstractUIPlugin
 		factories.add(new org.eclipse.uml2.diagram.common.providers.AlternativeUMLItemProviderAdapterFactory(getPreferenceStore()));
 		«REM»THE ONLY CHANGE IS ABOVE«ENDREM»«-»
 		
-		«EXPAND MetaModel::PopulateItemProviderFactories("factories") FOR editorGen-»
+		«EXPAND MetaModel::PopulateItemProviderFactories('factories') FOR editorGen-»
 		factories.add(new org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory());
 		factories.add(new org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory());
 	}

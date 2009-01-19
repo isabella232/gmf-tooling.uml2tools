@@ -10,16 +10,16 @@
  *    Michael Golubev (Borland) - initial API and implementation
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
-«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION xpt::GenModelUtils»
 
 «AROUND isOrphaned FOR gmfgen::GenContainerBase-»
-	«LET getSemanticChildren(this).select(n| null != n.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS substitutableChildren-»
-		«IF substitutableChildren.isEmpty()-»
+	«LET getSemanticChildren(self)->select(n | null <> (n.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first()) AS substitutableChildren-»
+		«IF substitutableChildren->isEmpty()-»
 			«EXPAND isOrphanedNoSubstitutables»
 		«ELSE»
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -30,20 +30,20 @@ protected boolean isOrphaned(java.util.Collection semanticChildren, final org.ec
 	int suggestedID = «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall FOR getDiagram()»((org.eclipse.gmf.runtime.notation.View) getHost().getModel(), view.getElement());
 	switch (visualID) {
 	«EXPAND caseBlockForNotAllowedNodes-»
-	«IF getSemanticChildren(this).size() > substitutableChildren.size() -»
-	«FOREACH getSemanticChildren(this) AS nextChild-»
-		«IF !substitutableChildren.contains(nextChild) -»
+	«IF getSemanticChildren(self)->size() > substitutableChildren->size() -»
+	«FOREACH getSemanticChildren(self) AS nextChild-»
+		«IF not substitutableChildren->includes(nextChild) -»
 			«EXPAND xpt::Common::caseVisualID FOR nextChild»		
 		«ENDIF-»
 	«ENDFOREACH-»
 		if (!semanticChildren.contains(view.getElement())) {
 			return true;
 		}
-		«IF hasConformableSemanticChildren(this)-»
+		«IF hasConformableSemanticChildren(self)-»
 			«REM»the default GMF check above should find conformable semantic chilren EXCEPT substitutable ones«ENDREM»«-»
 			«REM»see base template«ENDREM»«-»
-			«LET getSemanticChildren(this).reject(n| null != n.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()).collect(node | node.modelFacet.metaClass) AS childMetaClasses -»
-			«IF !childMetaClasses.forAll(mc | childMetaClasses.select(mc2 | mc == mc2).size() == 1)-»
+			«LET getSemanticChildren(self)->reject(n | null <> (n.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first())->collect(node | node.modelFacet.metaClass) AS childMetaClasses -»
+			«IF not childMetaClasses->forAll(mc | childMetaClasses->select(mc2 | mc = mc2)->size() = 1)-»
 				«EXPAND xpt::diagram::updater::containerBaseCanonicalMethods::updateNotationModelElement-»
 			«ENDIF-»
 			«ENDLET-»
@@ -56,8 +56,8 @@ protected boolean isOrphaned(java.util.Collection semanticChildren, final org.ec
 				return true;
 			}
 			return (visualID != suggestedID) && «-»
-			«LET ((gmfgenext::SubstitutableByAttributes)nextSubstitutableChild.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS group-»
-				«FOREACH group.getSubstitutableByNodes() AS nextSubstitution SEPARATOR " && "»
+			«LET (nextSubstitutableChild.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first().oclAsType(gmfgenext::SubstitutableByAttributes) AS group-»
+				«FOREACH group.getSubstitutableByNodes()->asSequence() AS nextSubstitution SEPARATOR ' && '»
 					(suggestedID != «EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextSubstitution»)
 				«ENDFOREACH-»
 				;		
@@ -72,9 +72,9 @@ protected boolean isOrphaned(java.util.Collection semanticChildren, final org.ec
 
 «DEFINE caseBlockForNotAllowedNodes FOR gmfgen::GenContainerBase-»
 	«REM»We want to explicitly mark as orphaned all generated nodes that are not allowed to be here -- see #208889«ENDREM»«-»
-	«IF this.getDiagram().getAllNodes().size() > getSemanticChildren(this).size()-»
-	«FOREACH this.getDiagram().getAllNodes() AS nextRejectedNode-»
-		«IF !getSemanticChildren(this).contains(nextRejectedNode)-»
+	«IF self.getDiagram().getAllNodes()->size() > getSemanticChildren(self)->size()-»
+	«FOREACH self.getDiagram().getAllNodes()->asSequence() AS nextRejectedNode-»
+		«IF not getSemanticChildren(self)->includes(nextRejectedNode)-»
 			«EXPAND xpt::Common::caseVisualID FOR nextRejectedNode»
 		«ENDIF-»
 	«ENDFOREACH-»
@@ -89,15 +89,15 @@ protected boolean isOrphaned(java.util.Collection semanticChildren, final org.ec
 	«EXPAND aspects::xpt::Warnings::suppressUnchecked»
 protected boolean isOrphaned(java.util.Collection semanticChildren, final org.eclipse.gmf.runtime.notation.View view) {
 	«EXPAND xpt::diagram::updater::containerBaseCanonicalMethods::checkShortcutProperty-»
-	«IF !getSemanticChildren(this).isEmpty()-»
+	«IF not getSemanticChildren(self)->isEmpty()-»
 	int visualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(view);
 	switch (visualID) {
 		«EXPAND caseBlockForNotAllowedNodes-»
-		«EXPAND xpt::Common::caseVisualID FOREACH getSemanticChildren(this)»
+		«EXPAND xpt::Common::caseVisualID FOREACH getSemanticChildren(self)»
 		if (!semanticChildren.contains(view.getElement())) {
 			return true;
 		}
-		«IF hasConformableSemanticChildren(this)-»
+		«IF hasConformableSemanticChildren(self)-»
 			«EXPAND xpt::diagram::updater::containerBaseCanonicalMethods::updateNotationModelElement-»
 		«ENDIF-»
 	}
@@ -112,7 +112,7 @@ protected boolean isOrphaned(java.util.Collection semanticChildren, final org.ec
 	«ENDREM»«-»
 	«EXPAND xpt::Common::generatedMemberComment»
 protected java.util.List getSemanticChildrenList() {
-	«IF hasSemanticChildren(this)-»
+	«IF hasSemanticChildren(self)-»
 	org.eclipse.gmf.runtime.notation.View viewObject = (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
 	java.util.List result = new java.util.LinkedList();
 	for (java.util.Iterator it = «EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodCall»(viewObject).iterator(); it.hasNext();) {

@@ -11,9 +11,9 @@
  *    Michael Golubev (Borland) - switch actions for comments/nodes
   */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «EXTENSION xpt::actions::Utils»  
 
@@ -22,7 +22,7 @@
 «ENDDEFINE»
 
 «DEFINE changeNotationContributionItemProviders FOR gmfgen::GenTopLevelNode»
-«IF hasAlternativeNotation(this)-»
+«IF self.hasAlternativeNotation()-»
 	<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       «EXPAND xpt::Common::xmlGeneratedTag»
       <contributionItemProvider
@@ -43,13 +43,13 @@
                    id="ChangeNotationGroup"
                    path="/ChangeNotationMenu/">
              </popupMenuGroup>
-		«LET viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS subChild-»
-		«LET (gmfgenext::SubstitutableByAttributes)subChild AS subChildImpl-»
-		«IF subChildImpl != null && !subChildImpl.requiresAll-»
-			«FOREACH subChildImpl.getSubstitutableByNodes().typeSelect(gmfgen::GenNode) AS newNode»«EXPAND changeNotationPopupAction(newNode)»«ENDFOREACH-»
+		«LET (viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first() AS subChild-»
+«LET subChild.oclAsType(gmfgenext::SubstitutableByAttributes) AS subChildImpl-»
+		«IF subChildImpl <> null and not subChildImpl.requiresAll-»
+			«FOREACH (subChildImpl.getSubstitutableByNodes())[gmfgen::GenNode]->asSequence() AS newNode»«EXPAND changeNotationPopupAction(newNode)»«ENDFOREACH-»
 		«ENDIF-»
 		«ENDLET-»
-		«ENDLET-»
+«ENDLET-»
 <popupStructuredContributionCriteria
                    objectClass="«getEditPartQualifiedClassName()»"
                    objectCount="1">
@@ -60,7 +60,7 @@
 «ENDIF-»
 «ENDDEFINE»
 
-«DEFINE changeNotationPopupAction(GenNode node) FOR gmfgen::GenTopLevelNode»
+«DEFINE changeNotationPopupAction(node : gmfgen::GenNode) FOR gmfgen::GenTopLevelNode»
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
 				id="«EXPAND xpt::actions::ChangeNotationAction::actionId(node)»">

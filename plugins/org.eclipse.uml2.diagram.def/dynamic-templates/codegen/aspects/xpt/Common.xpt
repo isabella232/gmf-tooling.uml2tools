@@ -10,13 +10,13 @@
  *    Michael Golubev (Borland) - suppress unchecked warnings for DiagramUpdater
  */
  
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
 
-«AROUND generatedClassComment FOR Object-»
+«AROUND generatedClassComment FOR OclAny-»
 	«targetDef.proceed()»
-	«IF !{this}.typeSelect(gmfgen::GenDiagramUpdater).isEmpty()-»
+	«IF not (Sequence { self })[gmfgen::GenDiagramUpdater]->isEmpty()-»
 		«EXPAND aspects::xpt::Warnings::suppressUnchecked»
 	«ENDIF-»
 «ENDAROUND»

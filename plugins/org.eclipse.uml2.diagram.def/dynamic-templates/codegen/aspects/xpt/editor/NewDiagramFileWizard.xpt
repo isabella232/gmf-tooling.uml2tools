@@ -12,8 +12,8 @@
  *    Tatiana Fesenko (Borland) - fix for bugzilla #230873 'Make diagram file extension shorter' 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION xpt::editor::Utils»
 «EXTENSION aspects::xpt::FileExtensionUtils»
@@ -42,10 +42,10 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org.e
 	    assert diagramRoot != null : "Doagram root element must be specified"; «EXPAND xpt::Common::nonNLS»
 	    assert editingDomain != null : "Editing domain must be specified"; «EXPAND xpt::Common::nonNLS»
 
-		myFileCreationPage = new «EXPAND xpt::editor::NewDiagramFileWizard::creationPage»(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardCreationPage().nameKey()) FOR editorGen», org.eclipse.jface.viewers.StructuredSelection.EMPTY);
-		myFileCreationPage.setTitle(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardCreationPage().titleKey()) FOR editorGen»);
+		myFileCreationPage = new «EXPAND xpt::editor::NewDiagramFileWizard::creationPage»(«EXPAND xpt::Externalizer::accessorCall(nameKey(i18nKeyForNewDiagramFileWizardCreationPage(self))) FOR editorGen», org.eclipse.jface.viewers.StructuredSelection.EMPTY);
+		myFileCreationPage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForNewDiagramFileWizardCreationPage(self))) FOR editorGen»);
 		myFileCreationPage.setDescription(org.eclipse.osgi.util.NLS.bind(
-				«EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardCreationPage().descriptionKey()) FOR editorGen», 
+				«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForNewDiagramFileWizardCreationPage(self))) FOR editorGen», 
 				«EXPAND xpt::editor::VisualIDRegistry::modelID»));
 		org.eclipse.core.runtime.IPath filePath;
 		String fileName = domainModelURI.trimFileExtension().lastSegment();
@@ -61,11 +61,11 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org.e
 		«REM» #230873 'Make diagram file extension shorter'
 		The only change is here. We take the first extension from the comma-separated list«ENDREM-»
 		myFileCreationPage.setFileName(«getDiagramEditorUtilQualifiedClassName()».getUniqueFileName(
-				filePath, fileName, "«editorGen.getDefaultDiagramExtension()»")); «EXPAND xpt::Common::nonNLS»
+				filePath, fileName, "«getDefaultDiagramExtension(editorGen)»")); «EXPAND xpt::Common::nonNLS»
 		«REM»End of the only change«ENDREM-»
-		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPage().nameKey()) FOR editorGen»);
-		diagramRootElementSelectionPage.setTitle(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPage().titleKey()) FOR editorGen»);
-		diagramRootElementSelectionPage.setDescription(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPage().descriptionKey()) FOR editorGen»);
+		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(«EXPAND xpt::Externalizer::accessorCall(nameKey(i18nKeyForNewDiagramFileWizardRootSelectionPage(self))) FOR editorGen»);
+		diagramRootElementSelectionPage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForNewDiagramFileWizardRootSelectionPage(self))) FOR editorGen»);
+		diagramRootElementSelectionPage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForNewDiagramFileWizardRootSelectionPage(self))) FOR editorGen»);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
 
 	   	myEditingDomain = editingDomain;
@@ -80,9 +80,9 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org.e
 	«EXPAND xpt::Common::generatedMemberComment»
 	public boolean performFinish() {
 		java.util.List affectedFiles = new java.util.LinkedList();
-		«IF null == editorGen.application-»
+		«IF null = editorGen.application-»
 		org.eclipse.core.resources.IFile diagramFile = myFileCreationPage.createNewFile();
-		«EXPAND xpt::Common::setCharset("diagramFile")-»
+		«EXPAND xpt::Common::setCharset('diagramFile')-»
 		affectedFiles.add(diagramFile);
 		org.eclipse.emf.common.util.URI diagramModelURI = org.eclipse.emf.common.util.URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
 		«ELSE-»
@@ -93,7 +93,7 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org.e
 		final org.eclipse.emf.ecore.resource.Resource diagramResource = resourceSet.createResource(diagramModelURI);
 		org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand command =
 			new org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand(
-				myEditingDomain, «EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardInitDiagramCommand()) FOR editorGen», affectedFiles) {
+				myEditingDomain, «EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardInitDiagramCommand(self)) FOR editorGen», affectedFiles) {
 
 			protected org.eclipse.gmf.runtime.common.core.command.CommandResult doExecuteWithResult(
 					org.eclipse.core.runtime.IProgressMonitor monitor, org.eclipse.core.runtime.IAdaptable info)
@@ -101,7 +101,7 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org.e
 				int diagramVID = «EXPAND xpt::editor::VisualIDRegistry::getDiagramVisualIDMethodCall»(diagramRootElementSelectionPage.getModelElement());
 				if (diagramVID != «EXPAND xpt::editor::VisualIDRegistry::visualID») {
 					return org.eclipse.gmf.runtime.common.core.command.CommandResult.newErrorCommandResult(
-						«EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardIncorrectRootError()) FOR editorGen»);
+						«EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardIncorrectRootError(self)) FOR editorGen»);
 				}
 				org.eclipse.gmf.runtime.notation.Diagram diagram =
 					org.eclipse.gmf.runtime.diagram.core.services.ViewService.createDiagram(
@@ -111,7 +111,7 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org.e
 				«IF editorGen.sameFileForDiagramAndModel-»
 				diagramResource.getContents().add(diagram.getElement());
 				«ENDIF-»
-				«IF !synchronized-»
+				«IF not synchronized-»
 				new «getDiagramContentInitializerQualifiedClassName()»().initDiagramContent(diagram);			
 				«ENDIF-»
 				return org.eclipse.gmf.runtime.common.core.command.CommandResult.newOKCommandResult();
@@ -145,13 +145,13 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org.e
 
 		«EXPAND xpt::Common::generatedMemberComment»
 		protected String getSelectionTitle() {
-			return «EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPageSelectionTitle()) FOR editorGen»;
+			return «EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPageSelectionTitle(self)) FOR editorGen»;
 		}
 
 		«EXPAND xpt::Common::generatedMemberComment»
 		protected boolean validatePage() {
 			if (selectedModelElement == null) {
-				setErrorMessage(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPageNoSelectionMessage()) FOR editorGen»);
+				setErrorMessage(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPageNoSelectionMessage(self)) FOR editorGen»);
 				return false;
 			}
 			boolean result = org.eclipse.gmf.runtime.diagram.core.services.ViewService.getInstance().provides(
@@ -159,7 +159,7 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org.e
 					new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(selectedModelElement),
 					«EXPAND xpt::editor::VisualIDRegistry::modelID»,
 					«editorGen.plugin.getActivatorQualifiedClassName()».DIAGRAM_PREFERENCES_HINT));
-			setErrorMessage(result ? null : «EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPageInvalidSelectionMessage()) FOR editorGen»);
+			setErrorMessage(result ? null : «EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPageInvalidSelectionMessage(self)) FOR editorGen»);
 			return result;
 		}
 	}

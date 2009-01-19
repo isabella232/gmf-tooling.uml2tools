@@ -12,9 +12,9 @@
  *       2. [210678] - Allow multi-view representation for single domain element
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
 «EXTENSION xpt::editor::Utils»
@@ -40,14 +40,14 @@
 «ENDAROUND»
 
 «AROUND returnVisualID FOR gmfgen::GenCommonBase-»
-	«LET ((gmfgenext::SubstitutableByAttributes)viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS group -»
-	«IF isDiagramHeader(this) -»
+	«LET (viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first().oclAsType(gmfgenext::SubstitutableByAttributes) AS group -»
+	«IF isDiagramHeader(self) -»
 		// Diagram header is already processed above
-	«ELSEIF null != group && group.requiresAll-»
+	«ELSEIF null <> group and group.requiresAll-»
 		// there is a group of nodes for single semantic element
 		// the group for this element consists of 
-		// «EXPAND xpt::editor::VisualIDRegistry::visualID FOR this»
-		«FOREACH group.getSubstitutableByNodes() AS nextPart-»
+		// «EXPAND xpt::editor::VisualIDRegistry::visualID FOR self»
+		«FOREACH group.getSubstitutableByNodes()->asSequence() AS nextPart-»
 		// «EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextPart»
 		«ENDFOREACH-»
 		// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
@@ -62,19 +62,19 @@
 «ENDAROUND»
 
 «AROUND caseDomainContainerVisualID FOR gmfgen::GenContainerBase-»
-	«LET selectDiagramHeader(getContainedSemanticNodes(this)) AS childHeader -»
-	«IF null != childHeader -»
+	«LET selectDiagramHeader(getContainedSemanticNodes(self)) AS childHeader -»
+	«IF null <> childHeader -»
 		«EXPAND xpt::Common::caseVisualID»
 			«EXPAND checkHeader FOR childHeader-»
-			«EXPAND xpt::editor::VisualIDRegistry::returnVisualID FOREACH getContainedSemanticNodes(this)-»
+			«EXPAND xpt::editor::VisualIDRegistry::returnVisualID FOREACH getContainedSemanticNodes(self)-»
 			«REM»
 			For multipart nodes, we have added additional check hasViewChild into each group item case, in order to allow other group items to create their views.
 			When all views are created, we still need to return arbitrary choosen part's id for given container + semantic pair, to avoid removing the whole group from diagram by updater
 			«ENDREM» «-»
-			«FOREACH getContainedSemanticNodes(this) AS nextChild -»
+			«FOREACH getContainedSemanticNodes(self) AS nextChild -»
 					«REM»It would be better to add one "escape" block per group, but its not clear how to do it «ENDREM»«-»
-					«LET ((gmfgenext::SubstitutableByAttributes)nextChild.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first()) AS nextGroup -»
-					«IF null != nextGroup && nextGroup.requiresAll -»
+					«LET (nextChild.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first().oclAsType(gmfgenext::SubstitutableByAttributes) AS nextGroup -»
+					«IF null <> nextGroup and nextGroup.requiresAll -»
 							// "escape" for multi-views part : «EXPAND xpt::editor::VisualIDRegistry::visualID» -- prevents from removing the whole group from diagram
 							if («EXPAND xpt::editor::VisualIDRegistry::checkSemanticElement FOR nextChild») {
 								return «EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextChild»;
@@ -90,7 +90,7 @@
 «ENDAROUND»
 
 «DEFINE checkHeader FOR gmfgen::GenNode-»
-	«IF isDiagramHeader(this) -»
+	«IF isDiagramHeader(self) -»
 		// We want to additionally show the Canvas Semantical Element in the auxiliary 
 		// «getEditPartQualifiedClassName()» (that serves as a pure visual container for children). 
 		// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
@@ -127,7 +127,7 @@
 	«EXPAND xpt::Common::generatedMemberComment»
 public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» container, org.eclipse.emf.ecore.EObject domainElement) {
 	«REM»the line below is generated to workaround compilation error in class diagram, where hasViewChild() method is called «ENDREM»«-»
-	«IF this.getAllNodes().collect(n|n.viewmap.attributes).flatten().typeSelect(gmfgenext::SubstitutableByAttributes).select(attr|attr.requiresAll).size() > 0-»
+	«IF (self.getAllNodes()->collect(n | n.viewmap.attributes)->flatten())[gmfgenext::SubstitutableByAttributes]->select(attr | attr.requiresAll)->size() > 0-»
 	final View containerView = null;
 	«ENDIF-»
 	if (domainElement == null) {
@@ -146,15 +146,15 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 «ENDDEFINE»
 
 «DEFINE caseDomainDescriptorContainer FOR gmfgen::GenContainerBase-»
-	«IF getContainedSemanticNodes(this).size() > 0 || (!{this}.typeSelect(gmfgen::GenNode).isEmpty() && ((gmfgen::GenNode)this).compartments.size() > 0)-»
+	«IF getContainedSemanticNodes(self)->size() > 0 or (not (Sequence { self })[gmfgen::GenNode]->isEmpty() and self.oclAsType(gmfgen::GenNode).compartments->size() > 0)-»
 «EXPAND xpt::Common::caseVisualID»
-	«FOREACH getContainedSemanticNodes(this) AS nextDirectChild-»
-		«IF !isDiagramHeader(nextDirectChild)-»
+	«FOREACH getContainedSemanticNodes(self) AS nextDirectChild-»
+		«IF not isDiagramHeader(nextDirectChild)-»
 			«EXPAND xpt::editor::VisualIDRegistry::returnVisualID FOR nextDirectChild-»
 		«ENDIF-»
 	«ENDFOREACH-»
-	«IF !{this}.typeSelect(gmfgen::GenNode).isEmpty()-»
-	«FOREACH ((gmfgen::GenNode)this).compartments AS nextCompartment-»
+	«IF not (Sequence { self })[gmfgen::GenNode]->isEmpty()-»
+	«FOREACH self.oclAsType(gmfgen::GenNode).compartments->asSequence() AS nextCompartment-»
 		«EXPAND xpt::editor::VisualIDRegistry::returnVisualID FOREACH getContainedSemanticNodes(nextCompartment)-»
 	«ENDFOREACH-»
 	«ENDIF-»
@@ -170,15 +170,15 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 		if (visualId == substituteCandidate){
 			return true;
 		}
-		«LET this.getAllNodes().select(n|!n.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).isEmpty()) AS allSubstitutable-»
-		«IF !allSubstitutable.isEmpty()-»
+		«LET self.getAllNodes()->select(n | not (n.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->isEmpty())->asSequence() AS allSubstitutable-»
+		«IF not allSubstitutable->isEmpty()-»
 		switch(visualId) {
 			«FOREACH allSubstitutable AS next-»
-			«LET next.viewmap.attributes.typeSelect(gmfgenext::SubstitutableByAttributes).first() AS nextGroup-»
-			«LET (gmfgenext::SubstitutableByAttributes)nextGroup AS nextGroupImpl-»
+			«LET (next.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first() AS nextGroup-»
+			«LET nextGroup.oclAsType(gmfgenext::SubstitutableByAttributes) AS nextGroupImpl-»
 			«EXPAND xpt::Common::caseVisualID FOR next»
 				return 
-				«FOREACH nextGroupImpl.getSubstitutableByNodes() AS nextSubstitution SEPARATOR ' || '-»
+				«FOREACH nextGroupImpl.getSubstitutableByNodes()->asSequence() AS nextSubstitution SEPARATOR ' || '-»
 					(substituteCandidate == «EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextSubstitution»)
 				«ENDFOREACH»;		
 			«ENDLET-»
@@ -200,7 +200,7 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 «DEFINE isCompartmentVisualID FOR gmfgen::GenDiagram-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public static boolean «EXPAND isCompartmentVisualIDMethodName»(int visualID) {
-		«IF !compartments.isEmpty()-»
+		«IF not compartments->isEmpty()-»
 			switch (visualID) {
 				«EXPAND xpt::Common::caseVisualID FOREACH compartments»
 					return true;
@@ -220,8 +220,8 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 	«EXPAND xpt::Common::generatedMemberComment»
 	public static boolean «EXPAND isSemanticLeafVisualIDMethodName»(int visualID) {
 		switch (visualID) {
-			«FOREACH this.getAllNodes() AS nextNode-»
-			«IF getSemanticChildren(nextNode).isEmpty()-»
+			«FOREACH self.getAllNodes()->asSequence() AS nextNode-»
+			«IF getSemanticChildren(nextNode)->isEmpty()-»
 			«EXPAND xpt::Common::caseVisualID FOR nextNode»
 			«ENDIF-»
 			«ENDFOREACH-»

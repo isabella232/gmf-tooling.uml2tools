@@ -11,7 +11,7 @@
  *    [213008] - Layout element content after notation change
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «EXTENSION xpt::actions::Utils»
 
 «AROUND additions FOR gmfgen::GenChildContainer-»
@@ -22,7 +22,7 @@
 «ENDDEFINE»
 
 «DEFINE deferredLayoutContent FOR gmfgen::GenCompartment-»
-«IF node.hasAlternativeNotation() && !listLayout-»
+«IF node.hasAlternativeNotation() and not listLayout-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected void refreshSemantic() {
 		java.util.List createdViews = new java.util.LinkedList();

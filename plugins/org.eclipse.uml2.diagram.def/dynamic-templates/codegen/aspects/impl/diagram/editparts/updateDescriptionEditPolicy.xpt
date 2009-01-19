@@ -10,21 +10,21 @@
  *    Michael Golubev - update description editpolicy for shortcuts 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «EXTENSION xpt::diagram::updater::Utils»
 
 «DEFINE installUpdateDescriptionEditPolicy FOR gmfgen::GenCommonBase-»
-	«LET {this}.typeSelect(gmfgen::GenLinkEnd).isEmpty() ? null : {this}.typeSelect(gmfgen::GenLinkEnd).first() AS linkEnd-»
-	«LET ((gmfgen::GenLinkEnd)linkEnd) AS linkEndImpl-»
-	«LET null != linkEndImpl && null != getMetaClass(linkEndImpl) && !getOutgoingLinks(linkEndImpl).isEmpty() AS canHaveOutgoingLinks-»
-	«LET !{this}.typeSelect(gmfgen::GenContainerBase).isEmpty() && !getSemanticChildren((gmfgen::GenContainerBase)this).isEmpty() AS canHaveChildren-»
-	«IF canHaveChildren || canHaveOutgoingLinks-»
+	«LET (if (Sequence { self })[gmfgen::GenLinkEnd]->isEmpty() then null else (Sequence { self })[gmfgen::GenLinkEnd]->first() endif) AS linkEnd-»
+	«LET linkEnd.oclAsType(gmfgen::GenLinkEnd) AS linkEndImpl-»
+	«LET null <> linkEndImpl and (null <> linkEndImpl.getMetaClass() and not getOutgoingLinks(linkEndImpl)->isEmpty()) AS canHaveOutgoingLinks-»
+	«LET not (Sequence { self })[gmfgen::GenContainerBase]->isEmpty() and not getSemanticChildren(self.oclAsType(gmfgen::GenContainerBase))->isEmpty() AS canHaveChildren-»
+	«IF canHaveChildren or canHaveOutgoingLinks-»
 		if («EXPAND aspects::xpt::editor::VisualIDRegistry::isShortcutDescendantMethodCall FOR getDiagram()»(getNotationView())){
 			installEditPolicy(«-»
 				org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy.ROLE, «-»
 				new org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy(«-»
 					«EXPAND aspects::xpt::diagram::updater::DiagramUpdater::typedSharedInstanceCall FOR getDiagram().editorGen.diagramUpdater», «-»
-					«IF getAllSemanticElements(getDiagram()).contains(this)»true«ELSE»false«ENDIF» «-»
+					«IF getAllSemanticElements(getDiagram())->includes(self)»true«ELSE»false«ENDIF» «-»
 					));
 		}
 	«ENDIF-»

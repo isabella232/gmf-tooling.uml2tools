@@ -11,9 +11,9 @@
  *                              - more specific fileds for IHintedType's 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «AROUND xpt::providers::ElementTypes::additions FOR gmfgen::GenDiagram-»
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -28,7 +28,7 @@
 «ENDAROUND»
 
 «AROUND xpt::providers::ElementTypes::elementTypeField FOR gmfgen::GenCommonBase-»
-	«IF null != elementType-»
+	«IF null <> elementType-»
 		«EXPAND xpt::Common::generatedMemberComment»
 public static final «EXPAND elementTypeClass FOR elementType» «getUniqueIdentifier()» = «EXPAND castToElementTypeClass FOR elementType»getElementType("«elementType.uniqueIdentifier»"); «EXPAND xpt::Common::nonNLS»
 	«ENDIF-»

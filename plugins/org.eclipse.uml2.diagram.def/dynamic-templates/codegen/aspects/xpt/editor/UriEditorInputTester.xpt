@@ -11,7 +11,7 @@
  *    Tatiana Fesenko (Borland) - fix for bugzilla #230873 'Make diagram file extension shorter' 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 
 «EXTENSION aspects::xpt::FileExtensionUtils»
 
@@ -23,7 +23,7 @@ public boolean test(Object receiver, String method, Object[] args, Object expect
 	}
 	org.eclipse.emf.common.ui.URIEditorInput editorInput = (org.eclipse.emf.common.ui.URIEditorInput) receiver;
 «REM» #230873 'Make diagram file extension shorter'«ENDREM-»
-«FOREACH collectAllExtensions() AS dfe ITERATOR iter-»
+«FOREACH collectAllExtensions(self) AS dfe ITERATOR iter-»
 	«IF iter.isFirstIteration()»return «ELSE» || «ENDIF»"«dfe»".equals(editorInput.getURI().fileExtension())«EXPAND xpt::Common::nonNLS»
 «ENDFOREACH»;
 «REM» End of #230873«ENDREM-»

@@ -10,14 +10,14 @@
  *    Michael Golubev (Borland) - initial API and implementation
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
-«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «DEFINE qualifiedClassName FOR gmfgen::GenDiagram»«EXPAND packageName».«EXPAND className»«ENDDEFINE»
 «DEFINE className FOR gmfgen::GenDiagram»DiagramIconStylePreferencePage«ENDDEFINE»
-«DEFINE packageName FOR gmfgen::GenDiagram»«this.preferencesPackageName»«ENDDEFINE»
+«DEFINE packageName FOR gmfgen::GenDiagram»«self.preferencesPackageName»«ENDDEFINE»
 
 «DEFINE IconStylePreferencePage FOR gmfgen::GenDiagram»
 package «EXPAND packageName»;

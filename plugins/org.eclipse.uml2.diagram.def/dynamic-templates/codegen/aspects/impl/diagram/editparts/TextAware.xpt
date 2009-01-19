@@ -10,13 +10,13 @@
 *    Michael Golubev (Borland) - #238308, #238307, #246402
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION xpt::rotatedlabel::RotatedLabelsSupport»
 
-«AROUND methods(Boolean needsRefreshBounds, Boolean readOnly, Boolean useElementIcon, gmfgen::Viewmap viewmap,
-		gmfgen::LabelModelFacet modelFacet, gmfgen::GenCommonBase host, gmfgen::GenDiagram diagram) FOR gmfgen::GenCommonBase-»
+«AROUND methods(needsRefreshBounds : Boolean, readOnly : Boolean, useElementIcon : Boolean, viewmap : gmfgen::Viewmap,
+		modelFacet : gmfgen::LabelModelFacet, host : gmfgen::GenCommonBase, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
 		
 		«targetDef.proceed()»
 		
@@ -46,7 +46,7 @@
 	}
 «ENDDEFINE»
 
-«AROUND setLabelText(gmfgen::GenDiagram diagram) FOR gmfgen::GenCommonBase-»
+«AROUND setLabelText(diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
@@ -54,7 +54,7 @@
 	}
 «ENDAROUND»
 	
-«AROUND refreshLabel(gmfgen::GenDiagram diagram) FOR gmfgen::GenCommonBase-»
+«AROUND refreshLabel(diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
@@ -68,7 +68,7 @@
 	protected String getLabelTextHelper(org.eclipse.draw2d.IFigure figure) {
 		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
 			return ((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).getText();
-		} «IF isRotatedLabel(this)-»
+		} «IF isRotatedLabel(self)-»
 		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
 			return ((org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) figure).getText();
 		} «ENDIF-»
@@ -83,7 +83,7 @@
 	protected void setLabelTextHelper(org.eclipse.draw2d.IFigure figure, String text) {
 		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
 			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).setText(text);
-		} «IF isRotatedLabel(this)-»
+		} «IF isRotatedLabel(self)-»
 		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
 			((org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) figure).setText(text);
 		} «ENDIF-»
@@ -98,7 +98,7 @@
 	protected org.eclipse.swt.graphics.Image getLabelIconHelper(org.eclipse.draw2d.IFigure figure) {
 		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
 			return ((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).getIcon();
-		} «IF isRotatedLabel(this)-»
+		} «IF isRotatedLabel(self)-»
 		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
 			//rotated label icons are not supported -- do nothing
 			return null; 
@@ -114,7 +114,7 @@
 	protected void setLabelIconHelper(org.eclipse.draw2d.IFigure figure, org.eclipse.swt.graphics.Image icon) {
 		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
 			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).setIcon(icon);
-		} «IF isRotatedLabel(this)-»
+		} «IF isRotatedLabel(self)-»
 		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
 			//rotated label icons are not supported -- do nothing
 			return; 
@@ -125,7 +125,7 @@
 	}
 «ENDAROUND»
 
-«AROUND getManager(gmfgen::GenDiagram diagram) FOR gmfgen::GenCommonBase-»
+«AROUND getManager(diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected org.eclipse.gef.tools.DirectEditManager getManager() {
 		if (manager == null) {
@@ -147,7 +147,7 @@
 			org.eclipse.draw2d.IFigure label = getFigure();
 			if (label instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel){
 				labelDelegate = new org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel)label);
-			} «IF isRotatedLabel(this)-»
+			} «IF isRotatedLabel(self)-»
 			else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
 				labelDelegate = new org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfStringLabelDelegate((org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString)figure); 
 			} «ENDIF-»

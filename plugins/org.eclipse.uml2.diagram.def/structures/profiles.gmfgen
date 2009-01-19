@@ -8,7 +8,7 @@
     diagramFileExtension="umlprofile, umlprofile_diagram"
     domainFileExtension="profile.uml"
     dynamicTemplates="true"
-    templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen.migrated">
+    templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen">
   <diagram
       visualID="1000"
       editPartClassName="ProfileEditPart"

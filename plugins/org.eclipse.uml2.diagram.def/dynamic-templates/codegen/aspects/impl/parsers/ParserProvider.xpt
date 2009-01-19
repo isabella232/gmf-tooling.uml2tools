@@ -10,13 +10,13 @@
  *    Michael Golubev (Borland) - [245969] - temporary migration due to '[244419] custom parsers' GMF changes 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION xpt::providers::ParserUtils»
 
-«AROUND _parser(FeatureLabelModelFacet modelFacet, GenCommonBase element) FOR gmfgen::PredefinedParser»
+«AROUND _parser(modelFacet : gmfgen::FeatureLabelModelFacet, element : gmfgen::GenCommonBase) FOR gmfgen::PredefinedParser»
 	«EXPAND xpt::Common::generatedMemberComment»
 	private org.eclipse.gmf.runtime.common.ui.services.parser.IParser «parserFieldName(element)»;
 
@@ -31,21 +31,21 @@
 	«EXPAND createParserOldWay(modelFacet, element)»
 «ENDAROUND»
 
-«DEFINE createParserOldWayMethodName FOR GenCommonBase»create«this.getUniqueIdentifier().toFirstUpper()»Parser«ENDDEFINE»
+«DEFINE createParserOldWayMethodName FOR gmfgen::GenCommonBase»create«self.getUniqueIdentifier().firstToUpper()»Parser«ENDDEFINE»
 
-«DEFINE createParserOldWay(FeatureLabelModelFacet modelFacet, GenCommonBase element) FOR gmfgen::PredefinedParser»
+«DEFINE createParserOldWay(modelFacet : gmfgen::FeatureLabelModelFacet, element : gmfgen::GenCommonBase) FOR gmfgen::PredefinedParser»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected org.eclipse.gmf.runtime.common.ui.services.parser.IParser «EXPAND createParserOldWayMethodName FOR element»() {
 		org.eclipse.emf.ecore.EAttribute[] features = new org.eclipse.emf.ecore.EAttribute[] {
-			«EXPAND MetaModel::MetaFeature FOREACH modelFacet.metaFeatures SEPARATOR ", " »
+			«EXPAND MetaModel::MetaFeature FOREACH modelFacet.metaFeatures SEPARATOR ', ' »
 		};
-	«IF modelFacet.editableMetaFeatures.size() > 0-»
+	«IF modelFacet.editableMetaFeatures->size() > 0-»
 		org.eclipse.emf.ecore.EAttribute[] editableFeatures = new org.eclipse.emf.ecore.EAttribute[] {
-			«EXPAND MetaModel::MetaFeature FOREACH modelFacet.editableMetaFeatures SEPARATOR ", "»
+			«EXPAND MetaModel::MetaFeature FOREACH modelFacet.editableMetaFeatures SEPARATOR ', '»
 		};
 	«ENDIF-»
-	«getQualifiedClassName()» parser = new «getQualifiedClassName()»(features«IF modelFacet.editableMetaFeatures.size() > 0», editableFeatures«ENDIF»);
-	«EXPAND impl::parsers::ParserProvider::_setPatterns(viewMethod, editMethod, "parser") FOR modelFacet-»
+	«getQualifiedClassName()» parser = new «getQualifiedClassName()»(features«IF modelFacet.editableMetaFeatures->size() > 0», editableFeatures«ENDIF»);
+	«EXPAND impl::parsers::ParserProvider::_setPatterns(viewMethod, editMethod, 'parser') FOR modelFacet-»
 		return parser;
 	}
 «ENDDEFINE»

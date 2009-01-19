@@ -10,13 +10,14 @@
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
-«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
-«IMPORT "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «EXTENSION xpt::preferences::Utils»
 «EXTENSION org::eclipse::uml2::diagram::codegen::qvt::EMFUtils»
+«EXTENSION org::eclipse::uml2::diagram::codegen::qvt::NativeEMFUtils»
 
 «DEFINE isViewFiltersPreferencePage FOR gmfgen::GenCustomPreferencePage»«isViewFiltersPage(iD)»«ENDDEFINE»
 

@@ -10,8 +10,8 @@
  *    Michael Golubev (Borland) - initial API and implementation
  */
 
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
-«DEFINE suppressUnchecked FOR Object-»
+«DEFINE suppressUnchecked FOR OclAny-»
 @SuppressWarnings("unchecked")
 «ENDDEFINE»

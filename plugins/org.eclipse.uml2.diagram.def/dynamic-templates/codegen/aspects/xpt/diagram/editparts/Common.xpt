@@ -10,12 +10,12 @@
  *    Michael Golubev (Borland) - support for SharedBehaviour's
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «DEFINE behaviour FOR gmfgen::SharedBehaviour-»
 	«REM»don't allow delegate to be SharedBehaviour to avoid endless xPand sequence«ENDREM»«-»
-	«IF null != this.delegate && {this.delegate}.typeSelect(gmfgen::SharedBehaviour).isEmpty() -»
-	«EXPAND xpt::diagram::editparts::Common::behaviour FOR this.delegate»
+	«IF null <> self.delegate and (Sequence { self.delegate })[gmfgen::SharedBehaviour]->isEmpty() -»
+	«EXPAND xpt::diagram::editparts::Common::behaviour FOR self.delegate»
 	«ENDIF-»
 «ENDDEFINE»

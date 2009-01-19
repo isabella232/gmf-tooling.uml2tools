@@ -9,8 +9,8 @@
  * Contributors:
  *    Michael Golubev (Borland) - initial API and implementation
  */
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION xpt::GenModelUtils»
 «EXTENSION xpt::editor::GenDiagram»
@@ -33,7 +33,7 @@
 		int i = 1;
 		org.eclipse.core.runtime.IPath filePath = containerFullPath.append(fileName + extension);
 		while (
-		«IF editorGen.application == null-»
+		«IF editorGen.application = null-»
 			org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot().exists(filePath)
 		«ELSE-»
 			filePath.toFile().exists()
@@ -47,9 +47,11 @@
 «ENDAROUND»
 
 «AROUND attachModelMethod FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment("Store model element in the resource.\n<!-- begin-user-doc -->\n<!-- end-user-doc -->")»
+	«EXPAND xpt::Common::generatedMemberComment('Store model element in the resource.
+<!-- begin-user-doc -->
+<!-- end-user-doc -->')»
 	private static void attachModelToResource(«EXPAND MetaModel::QualifiedClassName FOR domainDiagramElement» model, org.eclipse.emf.ecore.resource.Resource resource) {
-		resource.getContents().add(«IF hasDocumentRoot()»createDocumentRoot(model)«ELSE»«IF domainDiagramElement.isExternalInterface()»(org.eclipse.emf.ecore.EObject) «ENDIF»model«ENDIF»);
+		resource.getContents().add(«IF hasDocumentRoot(self)»createDocumentRoot(model)«ELSE»«IF isExternalInterface(domainDiagramElement)»(org.eclipse.emf.ecore.EObject) «ENDIF»model«ENDIF»);
 		«EXPAND loadDefaultImportsCall»
 	}
 «ENDAROUND»
@@ -71,13 +73,13 @@
 «ENDAROUND»
 
 «DEFINE loadDefaultImportsCall FOR gmfgen::GenDiagram-» 
-	«IF needDefaultImports(this)-»
+	«IF needDefaultImports(self)-»
 		loadDefaultImports(model);
 	«ENDIF-»	
 «ENDDEFINE»
 
 «DEFINE loadDefaultImports FOR gmfgen::GenDiagram» 
-	«IF needDefaultImports(this)-»
+	«IF needDefaultImports(self)-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	private static void loadDefaultImports(«EXPAND MetaModel::QualifiedClassName FOR domainDiagramElement» model) {
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = model.eResource().getResourceSet();

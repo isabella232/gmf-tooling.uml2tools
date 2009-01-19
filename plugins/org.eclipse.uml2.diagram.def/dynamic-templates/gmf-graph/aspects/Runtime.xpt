@@ -11,7 +11,7 @@
  *         use simple labels for all of the GMF labels in the GMF2.1M3 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2006/GraphicalDefinition"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+«IMPORT 'http://www.eclipse.org/gmf/2006/GraphicalDefinition'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «AROUND fqn FOR gmfgraph::Label»org.eclipse.draw2d.Label«ENDAROUND»

@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - workaround for #189608
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 
 «AROUND createDecorators FOR gmfgen::GenDiagram-»
 	«EXPAND xpt::Common::generatedMemberComment»

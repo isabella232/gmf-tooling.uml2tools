@@ -11,7 +11,7 @@
  * 								  [255532] InsertAction support 
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2008/GenModel"»
+«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 
 «EXTENSION xpt::async::NonCanonicalDiagram»  
 
@@ -21,8 +21,8 @@
 «ENDAROUND»
 
 «DEFINE installComponentEditPolicy FOR gmfgen::GenChildLabelNode-»
-«IF supportsNonCanonicalMode(this.getDiagram())-»	
-	«EXPAND xpt::async::editPolicies::nodeComponentEditPolicy FOR this-»
+«IF supportsNonCanonicalMode(self.getDiagram())-»	
+	«EXPAND xpt::async::editPolicies::nodeComponentEditPolicy FOR self-»
 «ELSE-»
 	installEditPolicy(org.eclipse.gef.EditPolicy.COMPONENT_ROLE, «-»
 			new org.eclipse.uml2.diagram.common.editpolicies.InsertingComponentEditPolicy(true));
