@@ -1052,7 +1052,7 @@
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"/></with>
-                  <with variable="selection"><iterate ifEmpty="false">
+                  <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart"/>
                   </iterate></with>
                </and>
@@ -1062,7 +1062,7 @@
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"/></with>
-                  <with variable="selection"><iterate ifEmpty="false">
+                  <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart"/>
                   </iterate></with>
                </and>
@@ -1259,6 +1259,7 @@
 		 </popupContribution>
 	</contributionItemProvider>
 	</extension>
+
 
 
 </plugin>

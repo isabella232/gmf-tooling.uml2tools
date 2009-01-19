@@ -215,6 +215,9 @@ private java.util.Collection refreshConnections() {
 	
 	«EXPAND myCanonicalHelper»
 	«ENDIF-»
+	
+	«EXPAND aspects::xpt::diagram::updater::containerBaseCanonicalMethods::getFactoryHint»
+
 «ENDAROUND»
 
 «DEFINE isNotationOnlyEdge FOR gmfgen::GenDiagram»

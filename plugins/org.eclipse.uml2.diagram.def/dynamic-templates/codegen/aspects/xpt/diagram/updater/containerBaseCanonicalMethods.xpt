@@ -130,3 +130,14 @@ protected java.util.List getSemanticChildrenList() {
 	«ENDIF-»
 }
 «ENDAROUND»
+
+«DEFINE getFactoryHint FOR gmfgen::GenContainerBase-»
+	«EXPAND xpt::Common::generatedMemberComment»	 
+	@Override
+	protected String getFactoryHint(org.eclipse.core.runtime.IAdaptable elementAdapter) {
+		org.eclipse.emf.ecore.EObject domainModelElment = (org.eclipse.emf.ecore.EObject) elementAdapter.getAdapter(org.eclipse.emf.ecore.EObject.class);
+		org.eclipse.gmf.runtime.notation.View containerView = ((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) getHost()).getNotationView();
+		int hint = «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall FOR getDiagram()»(containerView, domainModelElment);
+		return (hint != -1) ? «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('hint')» : super.getFactoryHint(elementAdapter);
+	}
+«ENDDEFINE»
