@@ -12,4 +12,12 @@
   <packagedElement xmi:type="uml:CallEvent" xmi:id="_zFUF0BZuEdyhrYeRBHu7AQ" name="abort"/>
   <packagedElement xmi:type="uml:SignalEvent" xmi:id="_58yrMOI_Ed27ga8QhccSnw" name="character"/>
   <packagedElement xmi:type="uml:SignalEvent" xmi:id="_pnNEEOPEEd2zc-IGfy6z-g" name="help"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_ovrukOYnEd2p-Oeihd4m7A" name="lift receiver"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_tOPkkOYnEd2p-Oeihd4m7A" name="caller hangs up"/>
+  <packagedElement xmi:type="uml:TimeEvent" xmi:id="_dUYhMOYtEd2p-Oeihd4m7A" name="after (15 sec.)"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_oSgz8OYzEd2p-Oeihd4m7A" name="dial digit(n)"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_sAmAgOY5Ed2p-Oeihd4m7A" name="busy"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_u9_lwOY5Ed2p-Oeihd4m7A" name="connected"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_tnIEAOY6Ed2p-Oeihd4m7A" name="terminate"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_giCAkOY7Ed2p-Oeihd4m7A" name="caller answers"/>
 </uml:Package>

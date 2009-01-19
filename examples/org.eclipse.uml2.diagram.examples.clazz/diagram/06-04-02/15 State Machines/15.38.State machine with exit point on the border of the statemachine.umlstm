@@ -59,7 +59,7 @@
     <children xmi:type="notation:Node" xmi:id="_Mo-pxNAGEd2lF6ZbJF5ZwQ" type="6001">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Mo-pxdAGEd2lF6ZbJF5ZwQ" y="40"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-pwdAGEd2lF6ZbJF5ZwQ"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-pwdAGEd2lF6ZbJF5ZwQ" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_Mo-pwtAGEd2lF6ZbJF5ZwQ"/>
     <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_JQdOxtAGEd2lF6ZbJF5ZwQ"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Mo-pw9AGEd2lF6ZbJF5ZwQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
@@ -68,7 +68,7 @@
     <children xmi:type="notation:Node" xmi:id="_Mo-pytAGEd2lF6ZbJF5ZwQ" type="6001">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Mo-py9AGEd2lF6ZbJF5ZwQ" x="-11" y="-34"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-px9AGEd2lF6ZbJF5ZwQ"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-px9AGEd2lF6ZbJF5ZwQ" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_Mo-pyNAGEd2lF6ZbJF5ZwQ"/>
     <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_JQdOx9AGEd2lF6ZbJF5ZwQ"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Mo-pydAGEd2lF6ZbJF5ZwQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
@@ -77,7 +77,7 @@
     <children xmi:type="notation:Node" xmi:id="_Mo-p0NAGEd2lF6ZbJF5ZwQ" type="6001">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Mo-p0dAGEd2lF6ZbJF5ZwQ" x="-1" y="19"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-pzdAGEd2lF6ZbJF5ZwQ"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-pzdAGEd2lF6ZbJF5ZwQ" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_Mo-pztAGEd2lF6ZbJF5ZwQ"/>
     <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_JQdOydAGEd2lF6ZbJF5ZwQ"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Mo-pz9AGEd2lF6ZbJF5ZwQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
@@ -86,7 +86,7 @@
     <children xmi:type="notation:Node" xmi:id="_Mo-p1tAGEd2lF6ZbJF5ZwQ" type="6001">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Mo-p19AGEd2lF6ZbJF5ZwQ" x="-63" y="-13"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-p09AGEd2lF6ZbJF5ZwQ"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-p09AGEd2lF6ZbJF5ZwQ" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_Mo-p1NAGEd2lF6ZbJF5ZwQ"/>
     <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_JQdOy9AGEd2lF6ZbJF5ZwQ"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Mo-p1dAGEd2lF6ZbJF5ZwQ" points="[42, 0, -172, -95]$[208, 0, -6, -95]$[212, 75, -2, -20]"/>
@@ -95,19 +95,19 @@
     <children xmi:type="notation:Node" xmi:id="_Mo-p3NAGEd2lF6ZbJF5ZwQ" type="6001">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_Mo-p3dAGEd2lF6ZbJF5ZwQ" x="-162" y="-13"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-p2dAGEd2lF6ZbJF5ZwQ"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-p2dAGEd2lF6ZbJF5ZwQ" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_Mo-p2tAGEd2lF6ZbJF5ZwQ"/>
     <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_JQdOzdAGEd2lF6ZbJF5ZwQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Mo-p29AGEd2lF6ZbJF5ZwQ" points="[0, -4, -322, -112]$[0, -24, -322, -132]$[257, -24, -65, -132]$[318, 101, -4, -7]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Mo-p29AGEd2lF6ZbJF5ZwQ" points="[0, -4, -322, -98]$[0, -38, -322, -132]$[287, -38, -35, -132]$[287, 97, -35, 3]$[315, 97, -7, 3]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KfweANAHEd2lF6ZbJF5ZwQ" id="(0.75,0.1)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_Mo-p3tAGEd2lF6ZbJF5ZwQ" type="4001" source="_MnVrB9AGEd2lF6ZbJF5ZwQ" target="_MmmEJtAGEd2lF6ZbJF5ZwQ">
     <children xmi:type="notation:Node" xmi:id="_Mo-p4tAGEd2lF6ZbJF5ZwQ" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_Mo-p49AGEd2lF6ZbJF5ZwQ" x="-8" y="-22"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Mo-p49AGEd2lF6ZbJF5ZwQ" x="-31" y="-13"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-p39AGEd2lF6ZbJF5ZwQ"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Mo-p39AGEd2lF6ZbJF5ZwQ" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_Mo-p4NAGEd2lF6ZbJF5ZwQ"/>
     <element xmi:type="uml:Transition" href="15.38.State machine with exit point on the border of the statemachine.uml#_JQdOz9AGEd2lF6ZbJF5ZwQ"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Mo-p4dAGEd2lF6ZbJF5ZwQ" points="[0, 0, -7, -7]$[0, 0, -7, -7]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Mo-p4dAGEd2lF6ZbJF5ZwQ" points="[41, 7, -88, 28]$[94, 7, -35, 28]$[94, -18, -35, 3]$[122, -18, -7, 3]"/>
   </edges>
 </notation:Diagram>

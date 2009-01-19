@@ -30,7 +30,7 @@
                 </children>
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_Jnouwc_9Ed2lF6ZbJF5ZwQ"/>
                 <element xmi:type="uml:State" href="15.25.Fork and Join.uml#_HL6TNc_9Ed2lF6ZbJF5ZwQ"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jnouws_9Ed2lF6ZbJF5ZwQ" x="26" y="9"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jnouws_9Ed2lF6ZbJF5ZwQ" x="26" y="7"/>
               </children>
               <children xmi:type="notation:Node" xmi:id="_JnyfwM_9Ed2lF6ZbJF5ZwQ" type="3001">
                 <children xmi:type="notation:Node" xmi:id="_Jnyfw8_9Ed2lF6ZbJF5ZwQ" type="5001"/>
@@ -40,7 +40,7 @@
                 </children>
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_Jnyfwc_9Ed2lF6ZbJF5ZwQ"/>
                 <element xmi:type="uml:State" href="15.25.Fork and Join.uml#_HL6TNs_9Ed2lF6ZbJF5ZwQ"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jnyfws_9Ed2lF6ZbJF5ZwQ" x="176" y="9"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jnyfws_9Ed2lF6ZbJF5ZwQ" x="176" y="7"/>
               </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_JnC45M_9Ed2lF6ZbJF5ZwQ"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_JnC45c_9Ed2lF6ZbJF5ZwQ"/>
@@ -59,7 +59,7 @@
                 </children>
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_JnyfyM_9Ed2lF6ZbJF5ZwQ"/>
                 <element xmi:type="uml:State" href="15.25.Fork and Join.uml#_HL6TOs_9Ed2lF6ZbJF5ZwQ"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jnyfyc_9Ed2lF6ZbJF5ZwQ" x="26" y="14"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jnyfyc_9Ed2lF6ZbJF5ZwQ" x="26" y="7"/>
               </children>
               <children xmi:type="notation:Node" xmi:id="_Jnyfzs_9Ed2lF6ZbJF5ZwQ" type="3001">
                 <children xmi:type="notation:Node" xmi:id="_Jnyf0c_9Ed2lF6ZbJF5ZwQ" type="5001"/>
@@ -69,7 +69,7 @@
                 </children>
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_Jnyfz8_9Ed2lF6ZbJF5ZwQ"/>
                 <element xmi:type="uml:State" href="15.25.Fork and Join.uml#_HL6TO8_9Ed2lF6ZbJF5ZwQ"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jnyf0M_9Ed2lF6ZbJF5ZwQ" x="176" y="14"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jnyf0M_9Ed2lF6ZbJF5ZwQ" x="176" y="7"/>
               </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_JnC46s_9Ed2lF6ZbJF5ZwQ"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_JnC468_9Ed2lF6ZbJF5ZwQ"/>
@@ -80,7 +80,7 @@
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_JkqTSM_9Ed2lF6ZbJF5ZwQ"/>
           <element xmi:type="uml:State" href="15.25.Fork and Join.uml#_HL6TM8_9Ed2lF6ZbJF5ZwQ"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JkqTSc_9Ed2lF6ZbJF5ZwQ" x="151" y="25" width="271" height="181"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JkqTSc_9Ed2lF6ZbJF5ZwQ" x="156" y="12" width="271" height="193"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_JlQJI8_9Ed2lF6ZbJF5ZwQ" type="3001">
           <children xmi:type="notation:Node" xmi:id="_JlQJJs_9Ed2lF6ZbJF5ZwQ" type="5001"/>
