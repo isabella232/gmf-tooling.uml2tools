@@ -622,4 +622,15 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 
 	}
 
+	/**
+	 * @generated
+	 */
+	@Override
+	protected String getFactoryHint(IAdaptable elementAdapter) {
+		EObject domainModelElment = (EObject) elementAdapter.getAdapter(EObject.class);
+		View containerView = ((IGraphicalEditPart) getHost()).getNotationView();
+		int hint = UMLVisualIDRegistry.getNodeVisualID(containerView, domainModelElment);
+		return (hint != -1) ? UMLVisualIDRegistry.getType(hint) : super.getFactoryHint(elementAdapter);
+	}
+
 }
