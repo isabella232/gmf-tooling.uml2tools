@@ -15,10 +15,12 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
@@ -60,19 +62,18 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	public ElementTreeChooser(AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, TransactionalEditingDomain editingDomain) {
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
-		mySourceObject = sourceObject;		
+		mySourceObject = sourceObject;
 		myEditingDomain = editingDomain;
 	}
-	
+
 	public Control createControl(Composite parent) {
 		Composite composite = createModelBrowser(parent);
-//		myTreeViewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
-		myTreeViewer.setInput(mySourceObject.eResource());
+		myTreeViewer.setInput(new TreeRoot.GENERAL_ROOT(mySourceObject));
 		return composite;
 	}
 
 	public List<?> getSelection() {
-		return ((IStructuredSelection)myTreeViewer.getSelection()).toList();
+		return ((IStructuredSelection) myTreeViewer.getSelection()).toList();
 	}
 
 	public void setSelection(List<?> selection) {
@@ -87,7 +88,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 		myTreeViewer = new TreeViewer(composite, SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
 		myTreeViewer.setContentProvider(new ModelElementsTreeContentProvider(myItemProvidersAdapterFactory, myEditingDomain.getResourceSet()));
 		myTreeViewer.setLabelProvider(new ModelElementsTreeLabelProvider());
-		
+
 		GridData layoutData = new GridData(GridData.FILL_BOTH);
 		layoutData.heightHint = 300;
 		layoutData.widthHint = 300;
@@ -96,7 +97,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 		result.setLayoutData(layoutData);
 		return result;
 	}
-	
+
 	public URI getSelectedModelElementURI() {
 		return mySelectedModelElementURI;
 	}
@@ -107,13 +108,13 @@ public class ElementTreeChooser implements ElementChooserPage {
 		}
 		myEditingDomain.dispose();
 	}
-	
+
 	private static class ModelElementsTreeContentProvider implements ITreeContentProvider {
-		
+
 		private static final ITreeContentProvider myWorkbenchContentProvider = new WorkbenchContentProvider();
 
 		private final AdapterFactoryContentProvider myAdapterFctoryContentProvier;
-		
+
 		private final ResourceSet myResourceSet;
 
 		public ModelElementsTreeContentProvider(AdapterFactory itemProvidersAdapterFactory, ResourceSet resourceSet) {
@@ -122,9 +123,16 @@ public class ElementTreeChooser implements ElementChooserPage {
 		}
 
 		public Object[] getChildren(Object parentElement) {
+			if (parentElement instanceof TreeRoot) {
+				parentElement = ((TreeRoot) parentElement).getObject();
+			}
 			Object[] result = myWorkbenchContentProvider.getChildren(parentElement);
 			if (result != null && result.length > 0) {
 				return result;
+			}
+			if (parentElement instanceof ResourceSet) {
+				EList<Resource> resources = ((ResourceSet) parentElement).getResources();
+				return resources.toArray(new Resource[resources.size()]);
 			}
 			if (parentElement instanceof IFile) {
 				IFile modelFile = (IFile) parentElement;
@@ -158,6 +166,9 @@ public class ElementTreeChooser implements ElementChooserPage {
 		}
 
 		public boolean hasChildren(Object element) {
+			if (element instanceof TreeRoot) {
+				element = ((TreeRoot) element).getObject();
+			}
 			if (element instanceof IFile) {
 				return isValidModelFile((IFile) element);
 			}
@@ -170,15 +181,8 @@ public class ElementTreeChooser implements ElementChooserPage {
 		}
 
 		public Object[] getElements(Object inputElement) {
-			Object[] elements = myWorkbenchContentProvider.getElements(inputElement);
-			if (elements != null && elements.length > 0) {
-				return elements;
-			}
-			if (false == inputElement instanceof Resource) {
-				return Collections.EMPTY_LIST.toArray();
-			}
-			Resource modelResource = (Resource) inputElement;
-			return myAdapterFctoryContentProvier.getChildren(modelResource);
+			EObject sourceObject = (EObject) ((TreeRoot) inputElement).getObject();
+			return new Object[] { new TreeRoot.CURRENT_RESOURCE(sourceObject), new TreeRoot.LOADED_RESOURCES(sourceObject), new TreeRoot.WORKSPACE(sourceObject) };
 		}
 
 		public void dispose() {
@@ -193,6 +197,83 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	}
 
+	private interface TreeRoot {
+
+		Object getObject();
+
+		String getLabel();
+
+		class GENERAL_ROOT implements TreeRoot {
+
+			private EObject object;
+
+			GENERAL_ROOT(EObject object) {
+				this.object = object;
+			}
+
+			public EObject getObject() {
+				return object;
+			}
+
+			public String getLabel() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+		}
+
+		class CURRENT_RESOURCE implements TreeRoot {
+
+			private Resource object;
+
+			CURRENT_RESOURCE(EObject object) {
+				this.object = object.eResource();
+			}
+
+			public Object getObject() {
+				return object;
+			}
+
+			public String getLabel() {
+				return "CURRENT RESOURCE";
+			}
+		}
+
+		class LOADED_RESOURCES implements TreeRoot {
+
+			private ResourceSet object;
+
+			LOADED_RESOURCES(EObject object) {
+				this.object = object.eResource().getResourceSet();
+			}
+
+			public Object getObject() {
+				return object;
+			}
+
+			public String getLabel() {
+				return "LOADED RESOURCES";
+			}
+		}
+
+		class WORKSPACE implements TreeRoot {
+
+			private IWorkspaceRoot object;
+
+			WORKSPACE(EObject object) {
+				this.object = ResourcesPlugin.getWorkspace().getRoot();
+			}
+
+			public Object getObject() {
+				return object;
+			}
+
+			public String getLabel() {
+				return "WORKSPACE";
+			}
+
+		}
+	}
+
 	private class ModelElementsTreeLabelProvider implements ILabelProvider {
 
 		private WorkbenchLabelProvider myWorkbenchLabelProvider = new WorkbenchLabelProvider();
@@ -200,11 +281,17 @@ public class ElementTreeChooser implements ElementChooserPage {
 		private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(myItemProvidersAdapterFactory);
 
 		public Image getImage(Object element) {
+			if (element instanceof TreeRoot) {
+				element = ((TreeRoot) element).getObject();
+			}
 			Image result = myWorkbenchLabelProvider.getImage(element);
 			return result != null ? result : myAdapterFactoryLabelProvider.getImage(element);
 		}
 
 		public String getText(Object element) {
+			if (element instanceof TreeRoot) {
+				return ((TreeRoot) element).getLabel();
+			}
 			String result = myWorkbenchLabelProvider.getText(element);
 			return result != null && result.length() > 0 ? result : myAdapterFactoryLabelProvider.getText(element);
 		}
@@ -236,7 +323,6 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	public void addDoubleClickListener(IDoubleClickListener l) {
 		myTreeViewer.addDoubleClickListener(l);
-		
 	}
 
 }
