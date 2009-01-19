@@ -6,6 +6,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.viewers.IDoubleClickListener;
@@ -14,6 +15,7 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Image;
@@ -21,7 +23,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ElementChooserPage.Validator;
@@ -44,7 +45,7 @@ public class TabbedElementChooser {
 
 	private TabFolder myTabFolder;
 	
-	private Label myDetailLabel;
+	private CLabel myDetailLabel;
 
 	private LabelProviderWithContext myDetailLabelProvider;
 	
@@ -71,13 +72,8 @@ public class TabbedElementChooser {
 		Composite plate = new Composite(composite, SWT.NONE);
 		GridLayout layout = new GridLayout();
 		plate.setLayout(layout);
-		myTabFolder = new TabFolder(plate, SWT.NONE);
-		myTabFolder.setFont(plate.getFont());
-		GridData layoutData = new GridData(GridData.FILL_BOTH);
-		layoutData.heightHint = 300;
-		layoutData.widthHint = 300;
-		myTabFolder.setLayoutData(layoutData);
-
+		
+		createTabFolder(plate);
 		myTreeChooserTab = new ElementTreeChooser(myItemProvidersAdapterFactory, mySourceObject, myEditingDomain);
 		addTabPage("Choose from a Tree", myTabFolder, myTreeChooserTab);
 		myListChooserPage = new ElementFilteredListChooser(myItemProvidersAdapterFactory, mySourceObject, myFeature, myValidator, myEditingDomain);
@@ -94,18 +90,28 @@ public class TabbedElementChooser {
 				myDialogSettings.put(mySettingsKeyLastFocus, myTabFolder.getSelectionIndex());
 			}
 		});
+
 		createDetailLabel(plate);		
 		// XXX set context
 //		myDetailLabelProvider.setContext(context);
 		return plate;
 	}
+
+	private void createTabFolder(Composite plate) {
+		myTabFolder = new TabFolder(plate, SWT.NONE);
+		myTabFolder.setFont(plate.getFont());
+		GridData layoutData = new GridData(GridData.FILL_BOTH);
+		layoutData.heightHint = 300;
+		layoutData.widthHint = 300;
+		myTabFolder.setLayoutData(layoutData);
+	}
 	
 	protected LabelProviderWithContext getDetailLabelProvider() {
-		return new QualifiedNameLabelProvider();
+		return new QualifiedNameLabelProvider(new AdapterFactoryLabelProvider(myItemProvidersAdapterFactory));
 	}
 
 	private void createDetailLabel(Composite plate) {
-		myDetailLabel = new Label(plate, SWT.LEFT);
+		myDetailLabel = new CLabel(plate, SWT.LEFT);
 		GridData detailLabelData = new GridData();
 		detailLabelData.grabExcessVerticalSpace = false;
 		detailLabelData.grabExcessHorizontalSpace = true;
@@ -114,17 +120,17 @@ public class TabbedElementChooser {
 		myDetailLabel.setLayoutData(detailLabelData);
 
 		addSelectionListener(new ISelectionChangedListener() {
-
 			public void selectionChanged(SelectionChangedEvent event) {
 				List<?> selection = getSelection();
 				if (selection.size() == 1) {
 					Object selected = selection.get(0);
-					myDetailLabel.setImage(myDetailLabelProvider.getImage(selected));
 					String text = myDetailLabelProvider.getText(selected);
 					if (text == null) {
 						text = "";
 					}
 					myDetailLabel.setText(text);
+					Image image = myDetailLabelProvider.getImage(selected);
+					myDetailLabel.setImage(image);
 				}
 			}
 		});
@@ -194,13 +200,19 @@ public class TabbedElementChooser {
 	}
 	
 	private static class QualifiedNameLabelProvider extends LabelProvider implements LabelProviderWithContext {
+		
+		private final ILabelProvider myImageProvider;
+
+		public QualifiedNameLabelProvider(ILabelProvider imageProvider) {
+			myImageProvider = imageProvider;			
+		}
 
 		public void setContext(Object... context) {
 		}
 
 		@Override
 		public Image getImage(Object element) {
-			return super.getImage(element);
+			return myImageProvider.getImage(element);
 		}
 
 		@Override
@@ -209,6 +221,11 @@ public class TabbedElementChooser {
 				return ((NamedElement)element).getQualifiedName();
 			}
 			return "";
+		}
+		
+		@Override
+		public void dispose() {
+			myImageProvider.dispose();
 		}
 
 	}
