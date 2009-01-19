@@ -7,6 +7,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
@@ -100,6 +103,17 @@ public class ArtifactArtifactFigure_contents2CanonicalEditPolicy extends Canonic
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getArtifact_NestedArtifact());
 		}
 		return myFeaturesToSynchronize;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected String getFactoryHint(IAdaptable elementAdapter) {
+		EObject domainModelElment = (EObject) elementAdapter.getAdapter(EObject.class);
+		View containerView = ((IGraphicalEditPart) getHost()).getNotationView();
+		int hint = UMLVisualIDRegistry.getNodeVisualID(containerView, domainModelElment);
+		return (hint != -1) ? UMLVisualIDRegistry.getType(hint) : super.getFactoryHint(elementAdapter);
 	}
 
 }
