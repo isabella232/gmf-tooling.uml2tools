@@ -69,10 +69,11 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	public Control createControl(Composite parent) {
 		Composite composite = createModelBrowser(parent);
-		TreeRoot.MainRoot root = new TreeRoot.MainRoot(mySourceObject);
+		MainRoot root = new MainRoot(mySourceObject);
 		myTreeViewer.setInput(root);
 		myTreeViewer.addFilter(new UmlFileFilter());
 		myTreeViewer.expandToLevel(root.getCurrentResourceRoot(), 20);
+		myTreeViewer.expandToLevel(root.getLoadedResourcesRoot(), 20);
 		return composite;
 	}
 
@@ -185,9 +186,8 @@ public class ElementTreeChooser implements ElementChooserPage {
 		}
 
 		public Object[] getElements(Object inputElement) {
-			org.eclipse.uml2.diagram.common.sheet.chooser.ElementTreeChooser.TreeRoot.MainRoot root = (org.eclipse.uml2.diagram.common.sheet.chooser.ElementTreeChooser.TreeRoot.MainRoot) inputElement;
-			EObject sourceObject = (EObject) root.getObject();
-			return new Object[] { root.getCurrentResourceRoot(), new TreeRoot.LoadedResources(sourceObject), new TreeRoot.Workspace(sourceObject) };
+			MainRoot root = (MainRoot) inputElement;
+			return new Object[] { root.getCurrentResourceRoot(), root.getLoadedResourcesRoot(), root.getWorkspaceRoot() };
 		}
 
 		public void dispose() {
@@ -201,25 +201,26 @@ public class ElementTreeChooser implements ElementChooserPage {
 		}
 
 	}
-	
+
 	private class UmlFileFilter extends ViewerFilter {
-		
+
 		private static final String UML_FILE_EXTENSION = "uml"; //$NON-NLS-1$
+
 		@Override
 		public boolean select(Viewer viewer, Object parentElement, Object element) {
 			if (element instanceof IFile) {
-				IFile file = (IFile)element;
+				IFile file = (IFile) element;
 				String fileExtension = file.getFullPath().getFileExtension();
 				return UML_FILE_EXTENSION.equals(fileExtension); //$NON-NLS-1$
 			}
 			if (element instanceof Resource) {
-				Resource res = (Resource)element;
+				Resource res = (Resource) element;
 				String fileExtension = res.getURI().fileExtension();
 				return UML_FILE_EXTENSION.equals(fileExtension); //$NON-NLS-1$
 			}
 			return true;
 		}
-		
+
 	}
 
 	private interface TreeRoot {
@@ -228,33 +229,52 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 		String getLabel();
 
-		class MainRoot implements TreeRoot {
+	}
 
-			private EObject object;
-			
-			private TreeRoot myCurrentResource; 
+	class MainRoot implements TreeRoot {
 
-			MainRoot(EObject object) {
-				this.object = object;
-			}
+		private EObject object;
 
-			public EObject getObject() {
-				return object;
-			}
+		private TreeRoot myCurrentResourceRoot;
 
-			public String getLabel() {
-				return null;
-			}
-			
-			public TreeRoot getCurrentResourceRoot() {
-				if (myCurrentResource == null) {
-					myCurrentResource = new CurrentResource(object);
-				}
-				return myCurrentResource;
-			}
+		private TreeRoot myLoadedResourcesRoot;
+
+		private TreeRoot myWorkspaceRoot;
+
+		MainRoot(EObject object) {
+			this.object = object;
 		}
 
-		class CurrentResource implements TreeRoot {
+		public EObject getObject() {
+			return object;
+		}
+
+		public String getLabel() {
+			return null;
+		}
+
+		public TreeRoot getCurrentResourceRoot() {
+			if (myCurrentResourceRoot == null) {
+				myCurrentResourceRoot = new CurrentResource(object);
+			}
+			return myCurrentResourceRoot;
+		}
+
+		public TreeRoot getLoadedResourcesRoot() {
+			if (myLoadedResourcesRoot == null) {
+				myLoadedResourcesRoot = new LoadedResources(object);
+			}
+			return myLoadedResourcesRoot;
+		}
+
+		public TreeRoot getWorkspaceRoot() {
+			if (myWorkspaceRoot == null) {
+				myWorkspaceRoot = new Workspace(object);
+			}
+			return myWorkspaceRoot;
+		}
+
+		private class CurrentResource implements TreeRoot {
 
 			private Resource object;
 
@@ -271,7 +291,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 		}
 
-		class LoadedResources implements TreeRoot {
+		private class LoadedResources implements TreeRoot {
 
 			private ResourceSet object;
 
@@ -288,7 +308,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 		}
 
-		class Workspace implements TreeRoot {
+		private class Workspace implements TreeRoot {
 
 			private IWorkspaceRoot object;
 
