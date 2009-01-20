@@ -64,7 +64,7 @@ public class ReferencePropertyDescriptor extends PropertyDescriptor {
         	}
         	if (useDialogNotComboCellEditor()) {
         		ReferencedElementChooserDialog dialog = new ReferencedElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object, feature);
-        		return new ReferenceDialogCellEditor(composite, dialog);
+        		return new ReferenceDialogCellEditor(composite, dialog, getLabelProvider());
         	}
         }
 		return super.createPropertyEditor(composite);

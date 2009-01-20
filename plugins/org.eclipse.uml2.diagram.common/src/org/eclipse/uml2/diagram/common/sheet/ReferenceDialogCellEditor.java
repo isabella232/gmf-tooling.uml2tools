@@ -11,17 +11,18 @@
  */
 package org.eclipse.uml2.diagram.common.sheet;
 
-import org.eclipse.jface.viewers.DialogCellEditor;
+import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ReferencedElementChooserDialog;
 
-public class ReferenceDialogCellEditor extends DialogCellEditor {
+public class ReferenceDialogCellEditor extends ExtendedDialogCellEditor {
 
 	final private ReferencedElementChooserDialog myElementChooserDialog;
 
-	public ReferenceDialogCellEditor(Composite parent, ReferencedElementChooserDialog chooserDialog) {
-		super(parent);
+	public ReferenceDialogCellEditor(Composite parent, ReferencedElementChooserDialog chooserDialog, ILabelProvider labelProvider) {
+		super(parent, labelProvider);
 		myElementChooserDialog = chooserDialog;
 	}
 
