@@ -69,8 +69,10 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	public Control createControl(Composite parent) {
 		Composite composite = createModelBrowser(parent);
-		myTreeViewer.setInput(new TreeRoot.GENERAL_ROOT(mySourceObject));
+		TreeRoot.MainRoot root = new TreeRoot.MainRoot(mySourceObject);
+		myTreeViewer.setInput(root);
 		myTreeViewer.addFilter(new UmlFileFilter());
+		myTreeViewer.expandToLevel(root.getCurrentResourceRoot(), 20);
 		return composite;
 	}
 
@@ -183,8 +185,9 @@ public class ElementTreeChooser implements ElementChooserPage {
 		}
 
 		public Object[] getElements(Object inputElement) {
-			EObject sourceObject = (EObject) ((TreeRoot) inputElement).getObject();
-			return new Object[] { new TreeRoot.CURRENT_RESOURCE(sourceObject), new TreeRoot.LOADED_RESOURCES(sourceObject), new TreeRoot.WORKSPACE(sourceObject) };
+			org.eclipse.uml2.diagram.common.sheet.chooser.ElementTreeChooser.TreeRoot.MainRoot root = (org.eclipse.uml2.diagram.common.sheet.chooser.ElementTreeChooser.TreeRoot.MainRoot) inputElement;
+			EObject sourceObject = (EObject) root.getObject();
+			return new Object[] { root.getCurrentResourceRoot(), new TreeRoot.LoadedResources(sourceObject), new TreeRoot.Workspace(sourceObject) };
 		}
 
 		public void dispose() {
@@ -225,11 +228,13 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 		String getLabel();
 
-		class GENERAL_ROOT implements TreeRoot {
+		class MainRoot implements TreeRoot {
 
 			private EObject object;
+			
+			private TreeRoot myCurrentResource; 
 
-			GENERAL_ROOT(EObject object) {
+			MainRoot(EObject object) {
 				this.object = object;
 			}
 
@@ -238,16 +243,22 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 
 			public String getLabel() {
-				// TODO Auto-generated method stub
 				return null;
+			}
+			
+			public TreeRoot getCurrentResourceRoot() {
+				if (myCurrentResource == null) {
+					myCurrentResource = new CurrentResource(object);
+				}
+				return myCurrentResource;
 			}
 		}
 
-		class CURRENT_RESOURCE implements TreeRoot {
+		class CurrentResource implements TreeRoot {
 
 			private Resource object;
 
-			CURRENT_RESOURCE(EObject object) {
+			CurrentResource(EObject object) {
 				this.object = object.eResource();
 			}
 
@@ -260,11 +271,11 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 		}
 
-		class LOADED_RESOURCES implements TreeRoot {
+		class LoadedResources implements TreeRoot {
 
 			private ResourceSet object;
 
-			LOADED_RESOURCES(EObject object) {
+			LoadedResources(EObject object) {
 				this.object = object.eResource().getResourceSet();
 			}
 
@@ -277,11 +288,11 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 		}
 
-		class WORKSPACE implements TreeRoot {
+		class Workspace implements TreeRoot {
 
 			private IWorkspaceRoot object;
 
-			WORKSPACE(EObject object) {
+			Workspace(EObject object) {
 				this.object = ResourcesPlugin.getWorkspace().getRoot();
 			}
 
