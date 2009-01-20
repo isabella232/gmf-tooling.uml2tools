@@ -61,7 +61,7 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		}
 		ILabelProvider labelProvider = new SimpleNamedElementLabelProvider(new AdapterFactoryLabelProvider(myItemProvidersAdapterFactory));
 		myFilteredList.setFilterMatcher(new ConfigurableFilterMatcher(labelProvider));
-		myFilteredList.setListElements(collectElements(mySourceObject.eResource()));
+		myFilteredList.setListElements(collectElements(mySourceObject.eResource().getResourceSet()));
 		return myFilteredList;
 	}
 
