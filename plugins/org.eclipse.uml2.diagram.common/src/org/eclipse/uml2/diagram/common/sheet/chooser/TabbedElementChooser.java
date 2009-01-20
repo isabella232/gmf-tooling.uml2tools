@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -173,8 +175,12 @@ public class TabbedElementChooser {
 		myCurrentPage.setSelection(getInitialSelection());
 	}
 
-	protected List<Object> getInitialSelection() {
-		return Collections.singletonList(mySourceObject.eGet(myFeature));
+	protected List<?> getInitialSelection() {
+		Object featureValue = mySourceObject.eGet(myFeature);
+		if (featureValue instanceof Collection) {
+			return new ArrayList<Object>((Collection)featureValue);
+		}
+		return Collections.singletonList(featureValue);
 	}
 
 	public List<?> getSelection() {

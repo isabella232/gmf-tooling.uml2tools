@@ -86,7 +86,7 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 	
 	private void addMissingElements(List<?> selection) {
 		List<Object> els = Arrays.asList(myListElements);
-		if (els.contains(selection)) {
+		if (els.containsAll(selection)) {
 			return;
 		}
 		List<Object> elementsToAdd = new ArrayList<Object>(selection.size());
@@ -102,7 +102,7 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		addElements(collectElements(newResource));
 	}
 
-	private void addElements(Object... elements) {
+	private void addElements(Object[] elements) {
 		myListElements = concatArrays(myListElements, elements);
 		myFilteredList.setListElements(myListElements);
 	}
