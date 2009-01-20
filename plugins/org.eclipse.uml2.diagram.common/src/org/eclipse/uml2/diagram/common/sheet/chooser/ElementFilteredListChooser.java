@@ -11,6 +11,7 @@
  */
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -43,6 +45,8 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 	private final Validator myValidator;
 	
 	private final TransactionalEditingDomain myEditingDomain;
+	
+	private Object[] myListElements;
 
 	public ElementFilteredListChooser(AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature, Validator validator, TransactionalEditingDomain editingDomain) {
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
@@ -61,7 +65,8 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		}
 		ILabelProvider labelProvider = new SimpleNamedElementLabelProvider(new AdapterFactoryLabelProvider(myItemProvidersAdapterFactory));
 		myFilteredList.setFilterMatcher(new ConfigurableFilterMatcher(labelProvider));
-		myFilteredList.setListElements(collectElements(mySourceObject.eResource().getResourceSet()));
+		myListElements = collectElements(mySourceObject.eResource().getResourceSet());
+		myFilteredList.setListElements(myListElements);
 		return myFilteredList;
 	}
 
@@ -74,9 +79,42 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		if (selection == null || selection.isEmpty()) {
 			myFilteredList.setSelection(null);
 		} else {
+			addMissingElements(selection);
 			myFilteredList.setSelection(selection.toArray());			
 		}
 	}
+	
+	private void addMissingElements(List<?> selection) {
+		List<Object> els = Arrays.asList(myListElements);
+		if (els.contains(selection)) {
+			return;
+		}
+		List<Object> elementsToAdd = new ArrayList<Object>(selection.size());
+		for (Object next: selection) {
+			if (!els.contains(next)) {
+				elementsToAdd.add(next);
+			}
+		}
+		addElements(elementsToAdd.toArray(new Object[elementsToAdd.size()]));		
+	}
+	
+	protected void addElementsFromResource(Resource newResource) {
+		addElements(collectElements(newResource));
+	}
+
+	private void addElements(Object... elements) {
+		myListElements = concatArrays(myListElements, elements);
+		myFilteredList.setListElements(myListElements);
+	}
+	
+	private Object[] concatArrays(Object[] first, Object[] second) {
+		Object[] result = new Object[first.length + second.length];
+		System.arraycopy(second, 0, result, 0, second.length);
+		System.arraycopy(first, 0, result, second.length, first.length);
+		return result;
+	}
+	
+	
 
 	protected EObject[] collectElements(Object inputElement) {
 		List<EObject> result = new LinkedList<EObject>();
