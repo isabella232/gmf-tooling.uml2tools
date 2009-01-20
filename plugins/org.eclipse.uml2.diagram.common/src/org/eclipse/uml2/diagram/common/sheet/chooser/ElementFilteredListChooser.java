@@ -91,7 +91,8 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		}
 		List<Object> elementsToAdd = new ArrayList<Object>(selection.size());
 		for (Object next: selection) {
-			if (!els.contains(next)) {
+			next = myValidator.validate(next);
+			if (next != null && !els.contains(next)) {
 				elementsToAdd.add(next);
 			}
 		}
