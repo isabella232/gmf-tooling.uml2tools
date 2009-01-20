@@ -103,8 +103,8 @@ public class TabbedElementChooser {
 		myTabFolder = new TabFolder(plate, SWT.NONE);
 		myTabFolder.setFont(plate.getFont());
 		GridData layoutData = new GridData(GridData.FILL_BOTH);
-		layoutData.heightHint = 300;
-		layoutData.widthHint = 300;
+		layoutData.widthHint = 400;		
+		layoutData.heightHint = 400; 
 		myTabFolder.setLayoutData(layoutData);
 	}
 	
