@@ -21,6 +21,7 @@ import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -112,14 +113,16 @@ public class TabbedElementChooser {
 		return new QualifiedNameLabelProvider(new AdapterFactoryLabelProvider(myItemProvidersAdapterFactory));
 	}
 
-	private void createDetailLabel(Composite plate) {
-		myDetailLabel = new CLabel(plate, SWT.LEFT);
-		GridData detailLabelData = new GridData();
-		detailLabelData.grabExcessVerticalSpace = false;
-		detailLabelData.grabExcessHorizontalSpace = true;
-		detailLabelData.horizontalAlignment = GridData.FILL;
-		detailLabelData.verticalAlignment = GridData.BEGINNING;
-		myDetailLabel.setLayoutData(detailLabelData);
+	private void createDetailLabel(Composite parent) {
+		GridData layoutData = new GridData();
+		layoutData.grabExcessVerticalSpace = false;
+		layoutData.grabExcessHorizontalSpace = true;
+		layoutData.horizontalAlignment = GridData.FILL;
+		layoutData.verticalAlignment = GridData.BEGINNING;
+		Composite plate = new Composite(parent, SWT.BORDER | SWT.FLAT);
+		plate.setLayoutData(layoutData);
+		plate.setLayout(new FillLayout());
+		myDetailLabel = new CLabel(plate, SWT.NONE);
 
 		addSelectionListener(new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event) {
