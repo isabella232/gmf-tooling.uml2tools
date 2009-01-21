@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
@@ -16,16 +15,13 @@ import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.uml.OCL;
 import org.eclipse.ocl.uml.OCL.Helper;
+import org.eclipse.uml2.diagram.common.constraint.ConstraintUtils;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.ValueSpecification;
 
 public class OCLFromStereoConstraint extends AbstractModelConstraint {
-
-	private static final String OCL_LANGUAGE = "OCL";
 
 	final private OCL myOCL = org.eclipse.ocl.uml.OCL.newInstance();
 
@@ -52,21 +48,9 @@ public class OCLFromStereoConstraint extends AbstractModelConstraint {
 	}
 
 	private boolean runConstraintOn(Helper oclHelper, Element selected, Constraint umlConstraint) throws ParserException {
-		String body = getOCLConstraintBody(umlConstraint);
+		String body = ConstraintUtils.getOCLConstraintBody(umlConstraint);
 		Constraint constraint = oclHelper.createInvariant(body);
 		return myOCL.check(selected, constraint);
-	}
-
-	private String getOCLConstraintBody(Constraint umlConstraint) {
-		ValueSpecification s = umlConstraint.getSpecification();
-		if (s != null && s instanceof OpaqueExpression) {
-			OpaqueExpression e = (OpaqueExpression) s;
-			if (!e.getLanguages().isEmpty() && OCL_LANGUAGE.equals(e.getLanguages().get(0))) {
-				EList<String> bodies = e.getBodies();
-				return bodies.isEmpty() ? null : bodies.get(0);
-			}
-		}
-		return null;
 	}
 
 	private static final List<Constraint> getConstraints(EObject stereotype) {
