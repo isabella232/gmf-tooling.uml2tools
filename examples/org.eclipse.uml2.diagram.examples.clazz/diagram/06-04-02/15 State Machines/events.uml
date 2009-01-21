@@ -14,7 +14,11 @@
   <packagedElement xmi:type="uml:SignalEvent" xmi:id="_pnNEEOPEEd2zc-IGfy6z-g" name="help"/>
   <packagedElement xmi:type="uml:SignalEvent" xmi:id="_ovrukOYnEd2p-Oeihd4m7A" name="lift receiver"/>
   <packagedElement xmi:type="uml:SignalEvent" xmi:id="_tOPkkOYnEd2p-Oeihd4m7A" name="caller hangs up"/>
-  <packagedElement xmi:type="uml:TimeEvent" xmi:id="_dUYhMOYtEd2p-Oeihd4m7A" name="after (15 sec.)"/>
+  <packagedElement xmi:type="uml:TimeEvent" xmi:id="_dUYhMOYtEd2p-Oeihd4m7A" name="15 sec" isRelative="true">
+    <when xmi:id="_vs6SYOfHEd2ay9P41dr0Kw">
+      <expr xmi:type="uml:LiteralString" xmi:id="_xocyAOfHEd2ay9P41dr0Kw" value="15 sec."/>
+    </when>
+  </packagedElement>
   <packagedElement xmi:type="uml:CallEvent" xmi:id="_oSgz8OYzEd2p-Oeihd4m7A" name="dial digit(n)"/>
   <packagedElement xmi:type="uml:CallEvent" xmi:id="_sAmAgOY5Ed2p-Oeihd4m7A" name="busy"/>
   <packagedElement xmi:type="uml:CallEvent" xmi:id="_u9_lwOY5Ed2p-Oeihd4m7A" name="connected"/>

@@ -33,6 +33,14 @@ public class Messages extends NLS {
 	public static String ApplyStereotypeAction_apply_stereotype_command;
 
 	public static String ApplyStereotypeAction_empty_name;
+	
+	public static String EventParser_any_receive_event_denotation;
+	
+	public static String EventParser_time_event_absolute_denotation_prefix;
+	
+	public static String EventParser_time_event_relative_denotation_prefix;
+
+	public static String EventParser_change_event_denotation_prefix;
 
 	static {
 		// initialize resource bundle

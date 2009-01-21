@@ -24,9 +24,10 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.diagram.common.parser.events.EventParserUtil;
+import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParserUtil;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Constraint;
-import org.eclipse.uml2.uml.Event;
 import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.Trigger;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -54,12 +55,9 @@ public class TransitionParser implements IParser {
 			EList<Trigger> triggers = transition.getTriggers();
 			for (Iterator<Trigger> triggersIterator = triggers.iterator(); triggersIterator.hasNext();) {
 				Trigger trigger = triggersIterator.next();
-				Event event = trigger.getEvent();
-				if (event != null) {
-					printStringBuffer.append(event.getLabel());
-					if (triggersIterator.hasNext()) {
-						printStringBuffer.append(',');
-					}
+				printStringBuffer.append(EventParserUtil.getEditString(trigger.getEvent()));
+				if (triggersIterator.hasNext()) {
+					printStringBuffer.append(',');
 				}
 			}
 			
@@ -68,7 +66,7 @@ public class TransitionParser implements IParser {
 				ValueSpecification specification = guard.getSpecification();
 				if (specification != null) {
 					printStringBuffer.append('[');
-					printStringBuffer.append(specification.stringValue());
+					printStringBuffer.append(ValueSpecificationParserUtil.getEditString(specification));
 					printStringBuffer.append(']');
 				}
 			}
