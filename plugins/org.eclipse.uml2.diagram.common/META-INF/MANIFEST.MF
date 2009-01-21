@@ -39,7 +39,6 @@ Export-Package: org.eclipse.uml2.diagram.common.actions,
  org.eclipse.uml2.diagram.common.parser.association,
  org.eclipse.uml2.diagram.common.parser.association.end,
  org.eclipse.uml2.diagram.common.parser.association.name,
- org.eclipse.uml2.diagram.common.parser.events,
  org.eclipse.uml2.diagram.common.parser.imports,
  org.eclipse.uml2.diagram.common.parser.instance,
  org.eclipse.uml2.diagram.common.parser.operation,
@@ -53,6 +52,7 @@ Export-Package: org.eclipse.uml2.diagram.common.actions,
  org.eclipse.uml2.diagram.common.preferences,
  org.eclipse.uml2.diagram.common.providers,
  org.eclipse.uml2.diagram.common.sheet,
+ org.eclipse.uml2.diagram.common.sheet.chooser,
  org.eclipse.uml2.diagram.common.stereo
 Bundle-Vendor: %providerName
 Bundle-ClassPath: .

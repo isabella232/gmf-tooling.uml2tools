@@ -77,7 +77,7 @@ public class TabbedElementChooser {
 		plate.setLayout(layout);
 		
 		createTabFolder(plate);
-		myTreeChooserTab = new ElementTreeChooser(myItemProvidersAdapterFactory, mySourceObject, myEditingDomain);
+		myTreeChooserTab = new ElementTreeChooser(myItemProvidersAdapterFactory, mySourceObject, myFeature, myEditingDomain);
 		addTabPage("Choose from a Tree", myTabFolder, myTreeChooserTab);
 		myListChooserPage = new ElementFilteredListChooser(myItemProvidersAdapterFactory, mySourceObject, myFeature, myValidator, myEditingDomain);
 		addTabPage("Choose from a List", myTabFolder, myListChooserPage);
@@ -178,10 +178,13 @@ public class TabbedElementChooser {
 		myCurrentPage.setSelection(getInitialSelection());
 	}
 
+	
 	protected List<?> getInitialSelection() {
 		Object featureValue = mySourceObject.eGet(myFeature);
 		if (featureValue instanceof Collection) {
-			return new ArrayList<Object>((Collection)featureValue);
+			@SuppressWarnings("unchecked") 
+			Collection<Object> a = (Collection)featureValue;
+			return new ArrayList<Object>(a);
 		}
 		return Collections.singletonList(featureValue);
 	}
@@ -240,11 +243,10 @@ public class TabbedElementChooser {
 	}
 
 	private static class FeatureValueValidator implements Validator {
-
-		private final EStructuralFeature myFeature2;
+		private final EStructuralFeature myFeature;
 
 		public FeatureValueValidator(EStructuralFeature feature) {
-			myFeature2 = feature;
+			myFeature = feature;
 		}
 
 		public EObject validate(Object object) {
@@ -256,7 +258,7 @@ public class TabbedElementChooser {
 				ElementImport _import = (ElementImport) eobject;
 				eobject = _import.getImportedElement();
 			}
-			if (eobject != null && myFeature2.getEType().isInstance(eobject)) {
+			if (eobject != null && myFeature.getEType().isInstance(eobject)) {
 				return eobject;
 			}
 			return null;

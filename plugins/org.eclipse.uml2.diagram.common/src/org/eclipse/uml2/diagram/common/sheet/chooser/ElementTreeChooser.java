@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006 Borland Software Corporation
+ * Copyright (c) 2008, 2009 Borland Software Corporation
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -11,7 +11,6 @@
  */
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
@@ -24,6 +23,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
@@ -61,9 +62,12 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	private final EObject mySourceObject;
 
-	public ElementTreeChooser(AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, TransactionalEditingDomain editingDomain) {
+	private final EStructuralFeature myFeature;
+
+	public ElementTreeChooser(AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature, TransactionalEditingDomain editingDomain) {
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
 		mySourceObject = sourceObject;
+		myFeature = feature;
 		myEditingDomain = editingDomain;
 	}
 
@@ -71,7 +75,11 @@ public class ElementTreeChooser implements ElementChooserPage {
 		Composite composite = createModelBrowser(parent);
 		MainRoot root = new MainRoot(mySourceObject);
 		myTreeViewer.setInput(root);
-		myTreeViewer.addFilter(new UmlFileFilter());
+		myTreeViewer.addFilter(new UMLFileFilter());
+		if (myFeature instanceof EReference){
+			//false -- for now always ignore template-related containments, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=261691#c3
+			myTreeViewer.addFilter(new UMLContainmentFilter((EReference)myFeature, false));  
+		}
 		myTreeViewer.expandToLevel(root.getCurrentResourceRoot(), 20);
 		myTreeViewer.expandToLevel(root.getLoadedResourcesRoot(), 20);
 		return composite;
@@ -115,6 +123,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 	}
 
 	private static class ModelElementsTreeContentProvider implements ITreeContentProvider {
+		private static final Object[] NOTHING = new Object[0];
 
 		private static final ITreeContentProvider myWorkbenchContentProvider = new WorkbenchContentProvider();
 
@@ -149,7 +158,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 					e.printStackTrace();
 					//
 				}
-				return Collections.EMPTY_LIST.toArray();
+				return NOTHING;
 			}
 			return myAdapterFctoryContentProvier.getChildren(parentElement);
 		}
@@ -202,7 +211,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	}
 
-	private class UmlFileFilter extends ViewerFilter {
+	private class UMLFileFilter extends ViewerFilter {
 
 		private static final String UML_FILE_EXTENSION = "uml"; //$NON-NLS-1$
 
@@ -287,7 +296,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 
 			public String getLabel() {
-				return "CURRENT RESOURCE";
+				return "Current resource";
 			}
 		}
 
@@ -304,7 +313,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 
 			public String getLabel() {
-				return "LOADED RESOURCES";
+				return "Loaded resources";
 			}
 		}
 
@@ -321,7 +330,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 
 			public String getLabel() {
-				return "WORKSPACE";
+				return "Workspace";
 			}
 
 		}

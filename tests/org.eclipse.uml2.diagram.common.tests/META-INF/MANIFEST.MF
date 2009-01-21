@@ -22,6 +22,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.emf.type.core,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.uml2.uml,
- org.eclipse.gmf.runtime.diagram.ui.resources.editor;bundle-version="1.0.3"
+ org.eclipse.gmf.runtime.diagram.ui.resources.editor,
+ org.eclipse.uml2.diagram.common
 Bundle-ClassPath: .
 Bundle-ActivationPolicy: lazy
