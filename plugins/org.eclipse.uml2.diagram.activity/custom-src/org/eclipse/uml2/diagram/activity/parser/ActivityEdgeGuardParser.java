@@ -20,6 +20,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParserUtil;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
@@ -41,7 +42,7 @@ public class ActivityEdgeGuardParser implements IParser {
 		}
 		StringBuffer editStringBuffer = new StringBuffer();
 		editStringBuffer.append('[');
-		editStringBuffer.append(guard.stringValue());
+		editStringBuffer.append(ValueSpecificationParserUtil.getEditString(guard));
 		editStringBuffer.append(']');
 		return editStringBuffer.toString();
 	}

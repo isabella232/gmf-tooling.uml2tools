@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ydKOcAktEdyF_oRbgI8ypA">
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_ydKOcAktEdyF_oRbgI8ypA">
   <packagedElement xmi:type="uml:Activity" xmi:id="_zkjUUAktEdyF_oRbgI8ypA" name="Process Order">
     <node xmi:type="uml:ActivityParameterNode" xmi:id="_5-t7YAktEdyF_oRbgI8ypA" name="Requested Order" outgoing="_M5RrcAkvEdyF_oRbgI8ypA"/>
     <node xmi:type="uml:OpaqueAction" xmi:id="_rAsAYAkuEdyF_oRbgI8ypA" name="Receive Order" outgoing="_NfIKgAkvEdyF_oRbgI8ypA" incoming="_M5RrcAkvEdyF_oRbgI8ypA _P8pV0AkvEdyF_oRbgI8ypA"/>

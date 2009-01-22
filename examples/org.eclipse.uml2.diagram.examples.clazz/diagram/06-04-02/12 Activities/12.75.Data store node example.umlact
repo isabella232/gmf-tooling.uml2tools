@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ugR6cQkzEdyF_oRbgI8ypA" type="UMLActivity" name="12.75.Data store node example.umlactivity_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_ugR6cQkzEdyF_oRbgI8ypA" type="UMLActivity" name="12.75.Data store node example.umlactivity_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_vDJ-AAkzEdyF_oRbgI8ypA" type="2026">
     <children xmi:type="notation:Node" xmi:id="_vDJ-AwkzEdyF_oRbgI8ypA" type="5030"/>
     <children xmi:type="notation:Node" xmi:id="_6V4IIKJBEdyGqNfYOUez1Q" type="3029">
@@ -56,7 +56,7 @@
     <children xmi:type="notation:Node" xmi:id="_6WBSFqJBEdyGqNfYOUez1Q" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_6WBSF6JBEdyGqNfYOUez1Q" y="60"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_6WBSEaJBEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_6WBSEaJBEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_6WBSEqJBEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ControlFlow" href="12.75.Data store node example.uml#_UXjooAk0EdyF_oRbgI8ypA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6WBSE6JBEdyGqNfYOUez1Q" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
@@ -68,10 +68,10 @@
     <children xmi:type="notation:Node" xmi:id="_6WBSHqJBEdyGqNfYOUez1Q" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_6WBSH6JBEdyGqNfYOUez1Q" y="60"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_6WBSGaJBEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_6WBSGaJBEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_6WBSGqJBEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ControlFlow" href="12.75.Data store node example.uml#_VR0RcAk0EdyF_oRbgI8ypA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6WBSG6JBEdyGqNfYOUez1Q" points="[1, -2, -97, 71]$[12, -26, -86, 47]$[96, -72, -2, 1]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6WBSG6JBEdyGqNfYOUez1Q" points="[3, -2, -95, 71]$[3, -63, -95, 10]$[96, -63, -2, 10]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7PLncDDHEd2mPcUyw5kVSg" id="(0.48979592,0.08108108)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_6WLDEKJBEdyGqNfYOUez1Q" type="4002" source="_6V4IIKJBEdyGqNfYOUez1Q" target="_6V4IJKJBEdyGqNfYOUez1Q">
@@ -81,7 +81,7 @@
     <children xmi:type="notation:Node" xmi:id="_6WLDFqJBEdyGqNfYOUez1Q" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_6WLDF6JBEdyGqNfYOUez1Q" y="60"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_6WLDEaJBEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_6WLDEaJBEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_6WLDEqJBEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ObjectFlow" href="12.75.Data store node example.uml#_D3CcoAk0EdyF_oRbgI8ypA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6WLDE6JBEdyGqNfYOUez1Q" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
@@ -93,7 +93,7 @@
     <children xmi:type="notation:Node" xmi:id="_6WLDHqJBEdyGqNfYOUez1Q" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_6WLDH6JBEdyGqNfYOUez1Q" y="60"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_6WLDGaJBEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_6WLDGaJBEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_6WLDGqJBEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ObjectFlow" href="12.75.Data store node example.uml#_FEiKgAk0EdyF_oRbgI8ypA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6WLDG6JBEdyGqNfYOUez1Q" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
@@ -106,9 +106,9 @@
     <children xmi:type="notation:Node" xmi:id="_6WLDJqJBEdyGqNfYOUez1Q" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_6WLDJ6JBEdyGqNfYOUez1Q" x="-24" y="-21"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_6WLDIaJBEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_6WLDIaJBEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_6WLDIqJBEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ObjectFlow" href="12.75.Data store node example.uml#_Xx3MUAk0EdyF_oRbgI8ypA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6WLDI6JBEdyGqNfYOUez1Q" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6WLDI6JBEdyGqNfYOUez1Q" points="[58, -18, -222, -10]$[278, -18, -2, -10]"/>
   </edges>
 </notation:Diagram>

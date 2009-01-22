@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_mrDyAQkwEdyF_oRbgI8ypA" type="UMLActivity" name="12.49.Activity final example.umlactivity_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_mrDyAQkwEdyF_oRbgI8ypA" type="UMLActivity" name="12.49.Activity final example.umlactivity_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_pm0YgAkwEdyF_oRbgI8ypA" type="2026">
     <children xmi:type="notation:Node" xmi:id="_pm0YgwkwEdyF_oRbgI8ypA" type="5030"/>
     <children xmi:type="notation:Node" xmi:id="_02LasKJAEdyGqNfYOUez1Q" type="3035">
@@ -99,10 +99,10 @@
     <children xmi:type="notation:Node" xmi:id="_02eVxqJAEdyGqNfYOUez1Q" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_02eVx6JAEdyGqNfYOUez1Q" y="60"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_02eVwaJAEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_02eVwaJAEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_02eVwqJAEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ControlFlow" href="12.49.Activity final example.uml#_dVpFUAkxEdyF_oRbgI8ypA"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_02eVw6JAEdyGqNfYOUez1Q" points="[7, -2, -89, 18]$[7, -20, -89, 0]$[95, -20, -1, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_02eVw6JAEdyGqNfYOUez1Q" points="[9, -2, -87, 18]$[9, -19, -87, 1]$[95, -19, -1, 1]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iTxaAKJBEdyGqNfYOUez1Q" id="(0.0080,0.36)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_02eVyKJAEdyGqNfYOUez1Q" type="4001" source="_02LasKJAEdyGqNfYOUez1Q" target="_02La06JAEdyGqNfYOUez1Q">
@@ -124,7 +124,7 @@
     <children xmi:type="notation:Node" xmi:id="_02eV1qJAEdyGqNfYOUez1Q" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_02eV16JAEdyGqNfYOUez1Q" y="60"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_02eV0aJAEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_02eV0aJAEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_02eV0qJAEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ControlFlow" href="12.49.Activity final example.uml#_rsnK4AkxEdyF_oRbgI8ypA"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_02eV06JAEdyGqNfYOUez1Q" points="[-1, -2, 376, -61]$[-10, -21, 367, -80]$[-377, -20, 0, -79]$[-377, 39, 0, -20]"/>
@@ -208,10 +208,10 @@
     <children xmi:type="notation:Node" xmi:id="_iFRgqaTWEdy7eaLHH7_7yw" type="6007">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_iFRgqqTWEdy7eaLHH7_7yw" x="19" y="17"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_iFRgoqTWEdy7eaLHH7_7yw"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_iFRgoqTWEdy7eaLHH7_7yw" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_iFRgo6TWEdy7eaLHH7_7yw"/>
     <element xmi:type="uml:ControlFlow" href="12.49.Activity final example.uml#_iFRgoKTWEdy7eaLHH7_7yw"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iFRgpKTWEdy7eaLHH7_7yw" points="[0, 20, -114, -66]$[0, 86, -114, 0]$[106, 86, -8, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iFRgpKTWEdy7eaLHH7_7yw" points="[-1, 20, -115, -66]$[-1, 77, -115, -9]$[106, 77, -8, -9]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iFRgq6TWEdy7eaLHH7_7yw" id="(0.08035714,0.68)"/>
   </edges>
 </notation:Diagram>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_xG6NQKI4EdyGqNfYOUez1Q" type="UMLActivity" name="12.59.Activity partition using swimlane example.umlactivity_diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_xG6NQKI4EdyGqNfYOUez1Q" type="UMLActivity" name="12.59.Activity partition using swimlane example.umlactivity_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Node" xmi:id="_hfmOQKJFEdyGqNfYOUez1Q" type="2026">
     <children xmi:type="notation:Node" xmi:id="_hf5JMKJFEdyGqNfYOUez1Q" type="5030"/>
     <children xmi:type="notation:Node" xmi:id="_kV_MkKJFEdyGqNfYOUez1Q" type="3056">
@@ -149,10 +149,10 @@
     <children xmi:type="notation:Node" xmi:id="_rBFWJ6JGEdyGqNfYOUez1Q" type="6006">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_rBFWKKJGEdyGqNfYOUez1Q" y="60"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_rBFWIqJGEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_rBFWIqJGEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_rBFWI6JGEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ObjectFlow" href="12.59.Activity partition using swimlane example.uml#_rBFWIKJGEdyGqNfYOUez1Q"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rBFWJKJGEdyGqNfYOUez1Q" points="[3, -3, -92, 82]$[97, -80, 2, 5]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rBFWJKJGEdyGqNfYOUez1Q" points="[0, -1, -4, 75]$[0, -71, -4, 5]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rBFWKaJGEdyGqNfYOUez1Q" id="(0.5888889,0.02)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rBFWKqJGEdyGqNfYOUez1Q" id="(0.56435645,0.9)"/>
   </edges>
@@ -163,10 +163,10 @@
     <children xmi:type="notation:Node" xmi:id="_vP-_h6JGEdyGqNfYOUez1Q" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_vP-_iKJGEdyGqNfYOUez1Q" y="60"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_vP-_gqJGEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_vP-_gqJGEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_vP-_g6JGEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ControlFlow" href="12.59.Activity partition using swimlane example.uml#_vP-_gKJGEdyGqNfYOUez1Q"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vP-_hKJGEdyGqNfYOUez1Q" points="[7, 0, -43, 124]$[28, 0, -22, 124]$[28, -118, -22, 6]$[50, -118, 0, 6]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vP-_hKJGEdyGqNfYOUez1Q" points="[7, 0, -43, 124]$[31, 0, -19, 124]$[31, -124, -19, 0]$[50, -124, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vQIwgKJGEdyGqNfYOUez1Q" id="(0.9306931,0.54)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_vQIwgaJGEdyGqNfYOUez1Q" id="(0.0,0.7)"/>
   </edges>
@@ -203,10 +203,10 @@
     <children xmi:type="notation:Node" xmi:id="_4YQyp6JGEdyGqNfYOUez1Q" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_4YQyqKJGEdyGqNfYOUez1Q" y="60"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_4YQyoqJGEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_4YQyoqJGEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_4YQyo6JGEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ControlFlow" href="12.59.Activity partition using swimlane example.uml#_4YQyoKJGEdyGqNfYOUez1Q"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4YQypKJGEdyGqNfYOUez1Q" points="[2, -7, -42, -11]$[44, -21, 0, -25]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4YQypKJGEdyGqNfYOUez1Q" points="[2, -1, -42, -5]$[42, -1, -2, -5]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4YajoKJGEdyGqNfYOUez1Q" id="(0.975,0.42)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_6FfJcaJGEdyGqNfYOUez1Q" type="4001" source="_3yPJ4KJFEdyGqNfYOUez1Q" target="_7rhvoKJFEdyGqNfYOUez1Q">
@@ -295,7 +295,7 @@
     <children xmi:type="notation:Node" xmi:id="_J4Yad6JHEdyGqNfYOUez1Q" type="6005">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_J4YaeKJHEdyGqNfYOUez1Q" y="60"/>
     </children>
-    <styles xmi:type="notation:RoutingStyle" xmi:id="_J4YacqJHEdyGqNfYOUez1Q"/>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_J4YacqJHEdyGqNfYOUez1Q" routing="Rectilinear"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_J4Yac6JHEdyGqNfYOUez1Q"/>
     <element xmi:type="uml:ControlFlow" href="12.59.Activity partition using swimlane example.uml#_J4YacKJHEdyGqNfYOUez1Q"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_J4YadKJHEdyGqNfYOUez1Q" points="[6, -9, -423, -7]$[6, -35, -423, -33]$[421, -35, -8, -33]$[421, -9, -8, -7]"/>

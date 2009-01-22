@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_ugR6cAkzEdyF_oRbgI8ypA">
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_ugR6cAkzEdyF_oRbgI8ypA">
   <packagedElement xmi:type="uml:Activity" xmi:id="_vDANAAkzEdyF_oRbgI8ypA" name="Data store node example">
     <node xmi:type="uml:OpaqueAction" xmi:id="_1YnrQAkzEdyF_oRbgI8ypA" name="Hire Employee" outgoing="_D3CcoAk0EdyF_oRbgI8ypA"/>
     <node xmi:type="uml:DataStoreNode" xmi:id="_2_vaEAkzEdyF_oRbgI8ypA" name="Personnel database" outgoing="_FEiKgAk0EdyF_oRbgI8ypA _Xx3MUAk0EdyF_oRbgI8ypA" incoming="_D3CcoAk0EdyF_oRbgI8ypA"/>

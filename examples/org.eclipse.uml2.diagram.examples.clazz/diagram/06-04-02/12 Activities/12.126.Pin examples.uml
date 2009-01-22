@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_W4YRgAkyEdyF_oRbgI8ypA">
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_W4YRgAkyEdyF_oRbgI8ypA">
   <packagedElement xmi:type="uml:Activity" xmi:id="_l-AM0AkyEdyF_oRbgI8ypA" name="Pin examples">
     <node xmi:type="uml:OpaqueAction" xmi:id="_wumooAkyEdyF_oRbgI8ypA" name="Accept Order">
       <outputValue xmi:id="_4jAZEAkyEdyF_oRbgI8ypA" name="Order" outgoing="_ZTzVoAkzEdyF_oRbgI8ypA"/>
