@@ -21,7 +21,9 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParserUtil;
 import org.eclipse.uml2.uml.ActivityEdge;
+import org.eclipse.uml2.uml.LiteralNull;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
@@ -38,8 +40,10 @@ public class ActivityEdgeWeightParser  implements IParser {
 		ValueSpecification weight = ((ActivityEdge) eObject).getWeight();
 		if (weight == null) {
 			return "";
+		} else if (weight instanceof LiteralNull) {
+			return "all";
 		}
-		return weight.stringValue();
+		return ValueSpecificationParserUtil.getEditString(weight);
 	}
 
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
