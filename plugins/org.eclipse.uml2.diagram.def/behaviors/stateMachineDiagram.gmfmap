@@ -119,8 +119,7 @@
                   <domainMetaElement
                       href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
                   <domainSpecialization
-                      body="isEntryActivity"
-                      language="java"/>
+                      body="self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).entry = self"/>
                   <labelMappings
                       xsi:type="gmfmap:FeatureLabelMapping"
                       readOnly="true"
@@ -142,8 +141,7 @@
                   <domainMetaElement
                       href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
                   <domainSpecialization
-                      body="isExitActivity"
-                      language="java"/>
+                      body="self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).exit = self"/>
                   <labelMappings
                       xsi:type="gmfmap:FeatureLabelMapping"
                       readOnly="true"
@@ -165,8 +163,7 @@
                   <domainMetaElement
                       href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Behavior"/>
                   <domainSpecialization
-                      body="isDoActivity"
-                      language="java"/>
+                      body="self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).doActivity = self"/>
                   <labelMappings
                       xsi:type="gmfmap:FeatureLabelMapping"
                       readOnly="true"

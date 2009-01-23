@@ -55,11 +55,9 @@ import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.ConnectionPointReference;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.State;
-import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -81,6 +79,21 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static UMLAbstractExpression State_3001_Constraint;
+
+	/**
+	 * @generated
+	 */
+	private static UMLAbstractExpression Behavior_3019_Constraint;
+
+	/**
+	 * @generated
+	 */
+	private static UMLAbstractExpression Behavior_3020_Constraint;
+
+	/**
+	 * @generated
+	 */
+	private static UMLAbstractExpression Behavior_3021_Constraint;
 
 	/**
 	 * @generated
@@ -687,27 +700,36 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	private static boolean isBehavior_3019(Behavior domainElement) {
-		Element owner = domainElement.getOwner();
-		return (owner instanceof State) && domainElement.equals(((State) owner).getEntry());
+		if (Behavior_3019_Constraint == null) { // lazy initialization
+			Behavior_3019_Constraint = UMLOCLFactory.getExpression("self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).entry = self", UMLPackage.eINSTANCE.getBehavior()); //$NON-NLS-1$
+		}
+		Object result = Behavior_3019_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	private static boolean isBehavior_3020(Behavior domainElement) {
-		Element owner = domainElement.getOwner();
-		return (owner instanceof State) && domainElement.equals(((State) owner).getExit());
+		if (Behavior_3020_Constraint == null) { // lazy initialization
+			Behavior_3020_Constraint = UMLOCLFactory.getExpression("self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).exit = self", UMLPackage.eINSTANCE.getBehavior()); //$NON-NLS-1$
+		}
+		Object result = Behavior_3020_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	private static boolean isBehavior_3021(Behavior domainElement) {
-		Element owner = domainElement.getOwner();
-		return (owner instanceof State) && domainElement.equals(((State) owner).getDoActivity());
+		if (Behavior_3021_Constraint == null) { // lazy initialization
+			Behavior_3021_Constraint = UMLOCLFactory.getExpression("self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).doActivity = self", UMLPackage.eINSTANCE.getBehavior()); //$NON-NLS-1$
+		}
+		Object result = Behavior_3021_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
 	/**
