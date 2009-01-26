@@ -29,19 +29,19 @@
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package"/>
     <childNodes
         visualID="3013"
-        editPartClassName="RegionEditPart"
-        itemSemanticEditPolicyClassName="RegionItemSemanticEditPolicy"
-        notationViewFactoryClassName="RegionViewFactory"
-        canonicalEditPolicyClassName="RegionCanonicalEditPolicy"
+        editPartClassName="StateMachine_RegionEditPart"
+        itemSemanticEditPolicyClassName="StateMachine_RegionItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateMachine_RegionViewFactory"
+        canonicalEditPolicyClassName="StateMachine_RegionCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
-        graphicalNodeEditPolicyClassName="RegionGraphicalNodeEditPolicy"
-        createCommandClassName="RegionCreateCommand"
+        graphicalNodeEditPolicyClassName="StateMachine_RegionGraphicalNodeEditPolicy"
+        createCommandClassName="StateMachine_RegionCreateCommand"
         containers="//@diagram/@topLevelNodes.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="RegionEditHelper"/>
+          editHelperClassName="StateMachine_RegionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="RegionFigure"
@@ -138,19 +138,19 @@
     <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
         visualID="3019"
-        editPartClassName="BehaviorEditPart"
-        itemSemanticEditPolicyClassName="BehaviorItemSemanticEditPolicy"
-        notationViewFactoryClassName="BehaviorViewFactory"
-        canonicalEditPolicyClassName="BehaviorCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="BehaviorGraphicalNodeEditPolicy"
-        createCommandClassName="BehaviorCreateCommand"
+        editPartClassName="EntryActivityEditPart"
+        itemSemanticEditPolicyClassName="EntryActivityItemSemanticEditPolicy"
+        notationViewFactoryClassName="EntryActivityViewFactory"
+        canonicalEditPolicyClassName="EntryActivityCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EntryActivityGraphicalNodeEditPolicy"
+        createCommandClassName="EntryActivityCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.5 //@diagram/@compartments.2"
         labelReadOnly="true">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="BehaviorEditHelper"/>
+          editHelperClassName="EntryActivityEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label"/>
@@ -174,12 +174,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
         visualID="3020"
-        editPartClassName="Behavior2EditPart"
-        itemSemanticEditPolicyClassName="Behavior2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Behavior2ViewFactory"
-        canonicalEditPolicyClassName="Behavior2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Behavior2GraphicalNodeEditPolicy"
-        createCommandClassName="Behavior2CreateCommand"
+        editPartClassName="ExitActivityEditPart"
+        itemSemanticEditPolicyClassName="ExitActivityItemSemanticEditPolicy"
+        notationViewFactoryClassName="ExitActivityViewFactory"
+        canonicalEditPolicyClassName="ExitActivityCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ExitActivityGraphicalNodeEditPolicy"
+        createCommandClassName="ExitActivityCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.5 //@diagram/@compartments.2"
         labelReadOnly="true">
       <diagramRunTimeClass
@@ -210,12 +210,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
         visualID="3021"
-        editPartClassName="Behavior3EditPart"
-        itemSemanticEditPolicyClassName="Behavior3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Behavior3ViewFactory"
-        canonicalEditPolicyClassName="Behavior3CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Behavior3GraphicalNodeEditPolicy"
-        createCommandClassName="Behavior3CreateCommand"
+        editPartClassName="DoActivityEditPart"
+        itemSemanticEditPolicyClassName="DoActivityItemSemanticEditPolicy"
+        notationViewFactoryClassName="DoActivityViewFactory"
+        canonicalEditPolicyClassName="DoActivityCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="DoActivityGraphicalNodeEditPolicy"
+        createCommandClassName="DoActivityCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.5 //@diagram/@compartments.2"
         labelReadOnly="true">
       <diagramRunTimeClass
@@ -345,20 +345,20 @@
     </childNodes>
     <childNodes
         visualID="3002"
-        editPartClassName="Region2EditPart"
-        itemSemanticEditPolicyClassName="Region2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Region2ViewFactory"
-        canonicalEditPolicyClassName="Region2CanonicalEditPolicy"
+        editPartClassName="State_RegionEditPart"
+        itemSemanticEditPolicyClassName="State_RegionItemSemanticEditPolicy"
+        notationViewFactoryClassName="State_RegionViewFactory"
+        canonicalEditPolicyClassName="State_RegionCanonicalEditPolicy"
         compartments="//@diagram/@compartments.4"
-        graphicalNodeEditPolicyClassName="Region2GraphicalNodeEditPolicy"
-        createCommandClassName="Region2CreateCommand"
+        graphicalNodeEditPolicyClassName="State_RegionGraphicalNodeEditPolicy"
+        createCommandClassName="State_RegionCreateCommand"
         containers="//@diagram/@childNodes.7 //@diagram/@childNodes.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:SpecializationType"
           metamodelType="//@diagram/@childNodes.0/@elementType"
-          editHelperAdviceClassName="RegionEditHelperAdvice"/>
+          editHelperAdviceClassName="State_RegionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="RegionFigure"
@@ -1344,10 +1344,10 @@
     </links>
     <compartments
         visualID="7004"
-        editPartClassName="RegionSubverticesEditPart"
-        itemSemanticEditPolicyClassName="RegionSubverticesItemSemanticEditPolicy"
-        notationViewFactoryClassName="RegionSubverticesViewFactory"
-        canonicalEditPolicyClassName="RegionSubverticesCanonicalEditPolicy"
+        editPartClassName="StateMachine_RegionSubverticesEditPart"
+        itemSemanticEditPolicyClassName="StateMachine_RegionSubverticesItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateMachine_RegionSubverticesViewFactory"
+        canonicalEditPolicyClassName="StateMachine_RegionSubverticesCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.5 //@diagram/@childNodes.7 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.15 //@diagram/@childNodes.16 //@diagram/@childNodes.17 //@diagram/@childNodes.18 //@diagram/@childNodes.19"
         title="subvertices"
         canCollapse="false"
@@ -1417,10 +1417,10 @@
     </compartments>
     <compartments
         visualID="7003"
-        editPartClassName="RegionSubvertices2EditPart"
-        itemSemanticEditPolicyClassName="RegionSubvertices2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="RegionSubvertices2ViewFactory"
-        canonicalEditPolicyClassName="RegionSubvertices2CanonicalEditPolicy"
+        editPartClassName="State_RegionSubverticesEditPart"
+        itemSemanticEditPolicyClassName="State_RegionSubverticesItemSemanticEditPolicy"
+        notationViewFactoryClassName="State_RegionSubverticesViewFactory"
+        canonicalEditPolicyClassName="State_RegionSubverticesCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.5 //@diagram/@childNodes.7 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.15 //@diagram/@childNodes.16 //@diagram/@childNodes.17 //@diagram/@childNodes.18 //@diagram/@childNodes.19"
         title="subvertices"
         canCollapse="false"

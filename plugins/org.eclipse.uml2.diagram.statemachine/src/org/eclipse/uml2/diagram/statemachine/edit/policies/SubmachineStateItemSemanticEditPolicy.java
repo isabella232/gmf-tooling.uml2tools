@@ -14,15 +14,15 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.ConnectionPointReference2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.ConnectionPointReferenceCreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Region2CreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.State_RegionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionReorientCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
@@ -48,7 +48,7 @@ public class SubmachineStateItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Region_3002 == req.getElementType()) {
-			return getGEFWrapper(new Region2CreateCommand(req));
+			return getGEFWrapper(new State_RegionCreateCommand(req));
 		}
 		if (UMLElementTypes.ConnectionPointReference_3017 == req.getElementType()) {
 			return getGEFWrapper(new ConnectionPointReferenceCreateCommand(req));
@@ -82,7 +82,7 @@ public class SubmachineStateItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case Region2EditPart.VISUAL_ID:
+			case State_RegionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case ConnectionPointReferenceEditPart.VISUAL_ID:
@@ -95,13 +95,13 @@ public class SubmachineStateItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
-					case BehaviorEditPart.VISUAL_ID:
+					case EntryActivityEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Behavior2EditPart.VISUAL_ID:
+					case ExitActivityEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Behavior3EditPart.VISUAL_ID:
+					case DoActivityEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

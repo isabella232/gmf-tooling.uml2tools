@@ -10,14 +10,14 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
 
-public class RegionSubvertices2ViewFactory extends BasicNodeViewFactory {
+public class State_RegionSubverticesViewFactory extends BasicNodeViewFactory {
 
 	/**
 	 * @generated
@@ -34,7 +34,7 @@ public class RegionSubvertices2ViewFactory extends BasicNodeViewFactory {
 	 */
 	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
-			semanticHint = UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID);
+			semanticHint = UMLVisualIDRegistry.getType(State_RegionSubverticesEditPart.VISUAL_ID);
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);

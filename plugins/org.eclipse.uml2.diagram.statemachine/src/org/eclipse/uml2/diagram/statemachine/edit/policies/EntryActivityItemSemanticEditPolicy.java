@@ -10,13 +10,13 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
  * @generated
  */
 
-public class Behavior2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class EntryActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public Behavior2ItemSemanticEditPolicy() {
-		super(UMLElementTypes.Behavior_3020);
+	public EntryActivityItemSemanticEditPolicy() {
+		super(UMLElementTypes.Behavior_3019);
 	}
 
 	/**

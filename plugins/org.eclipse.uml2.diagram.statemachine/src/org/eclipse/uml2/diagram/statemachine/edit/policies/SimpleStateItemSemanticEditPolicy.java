@@ -13,9 +13,9 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionReorientCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -61,13 +61,13 @@ public class SimpleStateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
-					case BehaviorEditPart.VISUAL_ID:
+					case EntryActivityEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Behavior2EditPart.VISUAL_ID:
+					case ExitActivityEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Behavior3EditPart.VISUAL_ID:
+					case DoActivityEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

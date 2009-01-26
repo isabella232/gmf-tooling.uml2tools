@@ -10,15 +10,15 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactor
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
 
-public class Region2ViewFactory extends AbstractShapeViewFactory {
+public class StateMachine_RegionViewFactory extends AbstractShapeViewFactory {
 
 	/**
 	 * @generated
@@ -34,7 +34,7 @@ public class Region2ViewFactory extends AbstractShapeViewFactory {
 	 */
 	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
-			semanticHint = UMLVisualIDRegistry.getType(Region2EditPart.VISUAL_ID);
+			semanticHint = UMLVisualIDRegistry.getType(StateMachine_RegionEditPart.VISUAL_ID);
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
@@ -43,7 +43,7 @@ public class Region2ViewFactory extends AbstractShapeViewFactory {
 		if (eObject != null) {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(RegionSubvertices2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}
 
 }

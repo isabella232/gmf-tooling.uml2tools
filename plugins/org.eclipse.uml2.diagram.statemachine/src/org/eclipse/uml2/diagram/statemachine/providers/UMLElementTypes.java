@@ -17,12 +17,12 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
@@ -34,11 +34,11 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
@@ -473,19 +473,19 @@ public class UMLElementTypes extends ElementInitializers {
 			return Package_1000;
 		case StateMachine2EditPart.VISUAL_ID:
 			return StateMachine_2005;
-		case RegionEditPart.VISUAL_ID:
+		case StateMachine_RegionEditPart.VISUAL_ID:
 			return Region_3013;
 		case SimpleStateEditPart.VISUAL_ID:
 			return State_3001;
-		case BehaviorEditPart.VISUAL_ID:
+		case EntryActivityEditPart.VISUAL_ID:
 			return Behavior_3019;
-		case Behavior2EditPart.VISUAL_ID:
+		case ExitActivityEditPart.VISUAL_ID:
 			return Behavior_3020;
-		case Behavior3EditPart.VISUAL_ID:
+		case DoActivityEditPart.VISUAL_ID:
 			return Behavior_3021;
 		case CompositeStateEditPart.VISUAL_ID:
 			return State_3012;
-		case Region2EditPart.VISUAL_ID:
+		case State_RegionEditPart.VISUAL_ID:
 			return Region_3002;
 		case SubmachineStateEditPart.VISUAL_ID:
 			return State_3016;

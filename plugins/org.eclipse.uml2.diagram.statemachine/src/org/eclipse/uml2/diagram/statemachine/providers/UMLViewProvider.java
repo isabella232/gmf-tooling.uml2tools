@@ -6,9 +6,6 @@ import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateStereotypeEditPart;
@@ -18,6 +15,9 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
@@ -31,10 +31,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateStereotypeEditPart;
@@ -43,6 +39,10 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineStereotypeEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubverticesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateStereotypeEditPart;
@@ -52,9 +52,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Behavior2ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Behavior3ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.BehaviorViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.CompositeStateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.CompositeStateStereotypeViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.CompositeStateViewFactory;
@@ -64,6 +61,9 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointRefer
 import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceName2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.DoActivityViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.EntryActivityViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ExitActivityViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.FinalStateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate10ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate2ViewFactory;
@@ -77,10 +77,6 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate9ViewFact
 import org.eclipse.uml2.diagram.statemachine.view.factories.PseudostateName2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.PseudostateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.PseudostateViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Region2ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.RegionSubvertices2ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.RegionSubverticesViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.RegionViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SimpleStateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SimpleStateStereotypeViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SimpleStateViewFactory;
@@ -89,6 +85,10 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachine2ViewFac
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineStereotypeViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachine_RegionSubverticesViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachine_RegionViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.State_RegionSubverticesViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.State_RegionViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SubmachineStateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SubmachineStateStereotypeViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SubmachineStateViewFactory;
@@ -160,13 +160,13 @@ public class UMLViewProvider extends AbstractViewProvider {
 				}
 				switch (visualID) {
 				case StateMachine2EditPart.VISUAL_ID:
-				case RegionEditPart.VISUAL_ID:
+				case StateMachine_RegionEditPart.VISUAL_ID:
 				case SimpleStateEditPart.VISUAL_ID:
-				case BehaviorEditPart.VISUAL_ID:
-				case Behavior2EditPart.VISUAL_ID:
-				case Behavior3EditPart.VISUAL_ID:
+				case EntryActivityEditPart.VISUAL_ID:
+				case ExitActivityEditPart.VISUAL_ID:
+				case DoActivityEditPart.VISUAL_ID:
 				case CompositeStateEditPart.VISUAL_ID:
-				case Region2EditPart.VISUAL_ID:
+				case State_RegionEditPart.VISUAL_ID:
 				case SubmachineStateEditPart.VISUAL_ID:
 				case ConnectionPointReferenceEditPart.VISUAL_ID:
 				case ConnectionPointReference2EditPart.VISUAL_ID:
@@ -192,8 +192,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case RegionSubverticesEditPart.VISUAL_ID:
-					if (RegionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case StateMachine_RegionSubverticesEditPart.VISUAL_ID:
+					if (StateMachine_RegionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -212,8 +212,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case RegionSubvertices2EditPart.VISUAL_ID:
-					if (Region2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case State_RegionSubverticesEditPart.VISUAL_ID:
+					if (State_RegionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -272,28 +272,28 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return StateMachineNameViewFactory.class;
 		case StateMachineStereotypeEditPart.VISUAL_ID:
 			return StateMachineStereotypeViewFactory.class;
-		case RegionEditPart.VISUAL_ID:
-			return RegionViewFactory.class;
+		case StateMachine_RegionEditPart.VISUAL_ID:
+			return StateMachine_RegionViewFactory.class;
 		case SimpleStateEditPart.VISUAL_ID:
 			return SimpleStateViewFactory.class;
 		case SimpleStateNameEditPart.VISUAL_ID:
 			return SimpleStateNameViewFactory.class;
 		case SimpleStateStereotypeEditPart.VISUAL_ID:
 			return SimpleStateStereotypeViewFactory.class;
-		case BehaviorEditPart.VISUAL_ID:
-			return BehaviorViewFactory.class;
-		case Behavior2EditPart.VISUAL_ID:
-			return Behavior2ViewFactory.class;
-		case Behavior3EditPart.VISUAL_ID:
-			return Behavior3ViewFactory.class;
+		case EntryActivityEditPart.VISUAL_ID:
+			return EntryActivityViewFactory.class;
+		case ExitActivityEditPart.VISUAL_ID:
+			return ExitActivityViewFactory.class;
+		case DoActivityEditPart.VISUAL_ID:
+			return DoActivityViewFactory.class;
 		case CompositeStateEditPart.VISUAL_ID:
 			return CompositeStateViewFactory.class;
 		case CompositeStateNameEditPart.VISUAL_ID:
 			return CompositeStateNameViewFactory.class;
 		case CompositeStateStereotypeEditPart.VISUAL_ID:
 			return CompositeStateStereotypeViewFactory.class;
-		case Region2EditPart.VISUAL_ID:
-			return Region2ViewFactory.class;
+		case State_RegionEditPart.VISUAL_ID:
+			return State_RegionViewFactory.class;
 		case SubmachineStateEditPart.VISUAL_ID:
 			return SubmachineStateViewFactory.class;
 		case SubmachineStateNameEditPart.VISUAL_ID:
@@ -336,16 +336,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Pseudostate10ViewFactory.class;
 		case PseudostateName2EditPart.VISUAL_ID:
 			return PseudostateName2ViewFactory.class;
-		case RegionSubverticesEditPart.VISUAL_ID:
-			return RegionSubverticesViewFactory.class;
+		case StateMachine_RegionSubverticesEditPart.VISUAL_ID:
+			return StateMachine_RegionSubverticesViewFactory.class;
 		case SimpleState_InternalActivitiesEditPart.VISUAL_ID:
 			return SimpleState_InternalActivitiesViewFactory.class;
 		case CompositeState_InternalActivitiesEditPart.VISUAL_ID:
 			return CompositeState_InternalActivitiesViewFactory.class;
 		case CompositeState_InternalTransitionsEditPart.VISUAL_ID:
 			return CompositeState_InternalTransitionsViewFactory.class;
-		case RegionSubvertices2EditPart.VISUAL_ID:
-			return RegionSubvertices2ViewFactory.class;
+		case State_RegionSubverticesEditPart.VISUAL_ID:
+			return State_RegionSubverticesViewFactory.class;
 		case SubmachineState_InternalActivitiesEditPart.VISUAL_ID:
 			return SubmachineState_InternalActivitiesViewFactory.class;
 		case SubmachineState_InternalTransitionsEditPart.VISUAL_ID:

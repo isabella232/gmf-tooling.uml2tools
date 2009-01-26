@@ -6,9 +6,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateStereotypeEditPart;
@@ -18,6 +15,9 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
@@ -31,10 +31,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateStereotypeEditPart;
@@ -43,6 +39,10 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineStereotypeEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubverticesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateStereotypeEditPart;
@@ -262,7 +262,7 @@ public class UMLVisualIDRegistry {
 		switch (containerVisualID) {
 		case StateMachine2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
-				return RegionEditPart.VISUAL_ID;
+				return StateMachine_RegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3014((Pseudostate) domainElement)) {
 				return Pseudostate9EditPart.VISUAL_ID;
@@ -273,12 +273,12 @@ public class UMLVisualIDRegistry {
 			break;
 		case CompositeStateEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
-				return Region2EditPart.VISUAL_ID;
+				return State_RegionEditPart.VISUAL_ID;
 			}
 			break;
 		case SubmachineStateEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
-				return Region2EditPart.VISUAL_ID;
+				return State_RegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && isConnectionPointReference_3017((ConnectionPointReference) domainElement)) {
 				return ConnectionPointReferenceEditPart.VISUAL_ID;
@@ -287,7 +287,7 @@ public class UMLVisualIDRegistry {
 				return ConnectionPointReference2EditPart.VISUAL_ID;
 			}
 			break;
-		case RegionSubverticesEditPart.VISUAL_ID:
+		case StateMachine_RegionSubverticesEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
 				return SimpleStateEditPart.VISUAL_ID;
 			}
@@ -327,24 +327,24 @@ public class UMLVisualIDRegistry {
 			break;
 		case SimpleState_InternalActivitiesEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
-				return BehaviorEditPart.VISUAL_ID;
+				return EntryActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
-				return Behavior2EditPart.VISUAL_ID;
+				return ExitActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
-				return Behavior3EditPart.VISUAL_ID;
+				return DoActivityEditPart.VISUAL_ID;
 			}
 			break;
 		case CompositeState_InternalActivitiesEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
-				return BehaviorEditPart.VISUAL_ID;
+				return EntryActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
-				return Behavior2EditPart.VISUAL_ID;
+				return ExitActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
-				return Behavior3EditPart.VISUAL_ID;
+				return DoActivityEditPart.VISUAL_ID;
 			}
 			break;
 		case CompositeState_InternalTransitionsEditPart.VISUAL_ID:
@@ -352,7 +352,7 @@ public class UMLVisualIDRegistry {
 				return Transition2EditPart.VISUAL_ID;
 			}
 			break;
-		case RegionSubvertices2EditPart.VISUAL_ID:
+		case State_RegionSubverticesEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
 				return SimpleStateEditPart.VISUAL_ID;
 			}
@@ -392,13 +392,13 @@ public class UMLVisualIDRegistry {
 			break;
 		case SubmachineState_InternalActivitiesEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
-				return BehaviorEditPart.VISUAL_ID;
+				return EntryActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
-				return Behavior2EditPart.VISUAL_ID;
+				return ExitActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
-				return Behavior3EditPart.VISUAL_ID;
+				return DoActivityEditPart.VISUAL_ID;
 			}
 			break;
 		case SubmachineState_InternalTransitionsEditPart.VISUAL_ID:
@@ -441,7 +441,7 @@ public class UMLVisualIDRegistry {
 			if (StateMachineStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (RegionEditPart.VISUAL_ID == nodeVisualID) {
+			if (StateMachine_RegionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (Pseudostate9EditPart.VISUAL_ID == nodeVisualID) {
@@ -451,8 +451,8 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case RegionEditPart.VISUAL_ID:
-			if (RegionSubverticesEditPart.VISUAL_ID == nodeVisualID) {
+		case StateMachine_RegionEditPart.VISUAL_ID:
+			if (StateMachine_RegionSubverticesEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -480,12 +480,12 @@ public class UMLVisualIDRegistry {
 			if (CompositeState_InternalTransitionsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Region2EditPart.VISUAL_ID == nodeVisualID) {
+			if (State_RegionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case Region2EditPart.VISUAL_ID:
-			if (RegionSubvertices2EditPart.VISUAL_ID == nodeVisualID) {
+		case State_RegionEditPart.VISUAL_ID:
+			if (State_RegionSubverticesEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -502,7 +502,7 @@ public class UMLVisualIDRegistry {
 			if (SubmachineState_InternalTransitionsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Region2EditPart.VISUAL_ID == nodeVisualID) {
+			if (State_RegionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ConnectionPointReferenceEditPart.VISUAL_ID == nodeVisualID) {
@@ -532,7 +532,7 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case RegionSubverticesEditPart.VISUAL_ID:
+		case StateMachine_RegionSubverticesEditPart.VISUAL_ID:
 			if (SimpleStateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -571,24 +571,24 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case SimpleState_InternalActivitiesEditPart.VISUAL_ID:
-			if (BehaviorEditPart.VISUAL_ID == nodeVisualID) {
+			if (EntryActivityEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Behavior2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ExitActivityEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Behavior3EditPart.VISUAL_ID == nodeVisualID) {
+			if (DoActivityEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case CompositeState_InternalActivitiesEditPart.VISUAL_ID:
-			if (BehaviorEditPart.VISUAL_ID == nodeVisualID) {
+			if (EntryActivityEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Behavior2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ExitActivityEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Behavior3EditPart.VISUAL_ID == nodeVisualID) {
+			if (DoActivityEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -597,7 +597,7 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case RegionSubvertices2EditPart.VISUAL_ID:
+		case State_RegionSubverticesEditPart.VISUAL_ID:
 			if (SimpleStateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -636,13 +636,13 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case SubmachineState_InternalActivitiesEditPart.VISUAL_ID:
-			if (BehaviorEditPart.VISUAL_ID == nodeVisualID) {
+			if (EntryActivityEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Behavior2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ExitActivityEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Behavior3EditPart.VISUAL_ID == nodeVisualID) {
+			if (DoActivityEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -939,7 +939,7 @@ public class UMLVisualIDRegistry {
 		switch (container.getVisualID()) {
 		case StateMachine2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
-				return RegionEditPart.VISUAL_ID;
+				return StateMachine_RegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3014((Pseudostate) domainElement)) {
 				return Pseudostate9EditPart.VISUAL_ID;
@@ -948,7 +948,7 @@ public class UMLVisualIDRegistry {
 				return Pseudostate10EditPart.VISUAL_ID;
 			}
 			break;
-		case RegionEditPart.VISUAL_ID:
+		case StateMachine_RegionEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
 				return SimpleStateEditPart.VISUAL_ID;
 			}
@@ -988,33 +988,33 @@ public class UMLVisualIDRegistry {
 			break;
 		case SimpleStateEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
-				return BehaviorEditPart.VISUAL_ID;
+				return EntryActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
-				return Behavior2EditPart.VISUAL_ID;
+				return ExitActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
-				return Behavior3EditPart.VISUAL_ID;
+				return DoActivityEditPart.VISUAL_ID;
 			}
 			break;
 		case CompositeStateEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
-				return Region2EditPart.VISUAL_ID;
+				return State_RegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
-				return BehaviorEditPart.VISUAL_ID;
+				return EntryActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
-				return Behavior2EditPart.VISUAL_ID;
+				return ExitActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
-				return Behavior3EditPart.VISUAL_ID;
+				return DoActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getTransition().isSuperTypeOf(domainElement.eClass()) && isTransition_3022((Transition) domainElement)) {
 				return Transition2EditPart.VISUAL_ID;
 			}
 			break;
-		case Region2EditPart.VISUAL_ID:
+		case State_RegionEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getState().isSuperTypeOf(domainElement.eClass()) && isState_3001((State) domainElement)) {
 				return SimpleStateEditPart.VISUAL_ID;
 			}
@@ -1054,7 +1054,7 @@ public class UMLVisualIDRegistry {
 			break;
 		case SubmachineStateEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
-				return Region2EditPart.VISUAL_ID;
+				return State_RegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && isConnectionPointReference_3017((ConnectionPointReference) domainElement)) {
 				return ConnectionPointReferenceEditPart.VISUAL_ID;
@@ -1063,13 +1063,13 @@ public class UMLVisualIDRegistry {
 				return ConnectionPointReference2EditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
-				return BehaviorEditPart.VISUAL_ID;
+				return EntryActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3020((Behavior) domainElement)) {
-				return Behavior2EditPart.VISUAL_ID;
+				return ExitActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3021((Behavior) domainElement)) {
-				return Behavior3EditPart.VISUAL_ID;
+				return DoActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getTransition().isSuperTypeOf(domainElement.eClass()) && isTransition_3022((Transition) domainElement)) {
 				return Transition2EditPart.VISUAL_ID;
@@ -1111,11 +1111,11 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
-		case RegionSubverticesEditPart.VISUAL_ID:
+		case StateMachine_RegionSubverticesEditPart.VISUAL_ID:
 		case SimpleState_InternalActivitiesEditPart.VISUAL_ID:
 		case CompositeState_InternalActivitiesEditPart.VISUAL_ID:
 		case CompositeState_InternalTransitionsEditPart.VISUAL_ID:
-		case RegionSubvertices2EditPart.VISUAL_ID:
+		case State_RegionSubverticesEditPart.VISUAL_ID:
 		case SubmachineState_InternalActivitiesEditPart.VISUAL_ID:
 		case SubmachineState_InternalTransitionsEditPart.VISUAL_ID:
 			return true;
@@ -1130,12 +1130,12 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case RegionEditPart.VISUAL_ID:
+		case StateMachine_RegionEditPart.VISUAL_ID:
 		case SimpleStateEditPart.VISUAL_ID:
-		case BehaviorEditPart.VISUAL_ID:
-		case Behavior2EditPart.VISUAL_ID:
-		case Behavior3EditPart.VISUAL_ID:
-		case Region2EditPart.VISUAL_ID:
+		case EntryActivityEditPart.VISUAL_ID:
+		case ExitActivityEditPart.VISUAL_ID:
+		case DoActivityEditPart.VISUAL_ID:
+		case State_RegionEditPart.VISUAL_ID:
 		case ConnectionPointReferenceEditPart.VISUAL_ID:
 		case ConnectionPointReference2EditPart.VISUAL_ID:
 		case Transition2EditPart.VISUAL_ID:

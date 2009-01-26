@@ -12,10 +12,10 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate10CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate9CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.RegionCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.StateMachine_RegionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
@@ -37,7 +37,7 @@ public class StateMachine2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Region_3013 == req.getElementType()) {
-			return getGEFWrapper(new RegionCreateCommand(req));
+			return getGEFWrapper(new StateMachine_RegionCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3014 == req.getElementType()) {
 			return getGEFWrapper(new Pseudostate9CreateCommand(req));
@@ -75,7 +75,7 @@ public class StateMachine2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case RegionEditPart.VISUAL_ID:
+			case StateMachine_RegionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case Pseudostate9EditPart.VISUAL_ID:

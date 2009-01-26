@@ -19,8 +19,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -29,13 +29,13 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
  * @generated
  */
 
-public class Region2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class StateMachine_RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public Region2ItemSemanticEditPolicy() {
-		super(UMLElementTypes.Region_3002);
+	public StateMachine_RegionItemSemanticEditPolicy() {
+		super(UMLElementTypes.Region_3013);
 	}
 
 	/**
@@ -61,7 +61,7 @@ public class Region2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case RegionSubvertices2EditPart.VISUAL_ID:
+			case StateMachine_RegionSubverticesEditPart.VISUAL_ID:
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {

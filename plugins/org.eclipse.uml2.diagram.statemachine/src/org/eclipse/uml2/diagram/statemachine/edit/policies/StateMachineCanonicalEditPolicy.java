@@ -26,12 +26,12 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
@@ -43,11 +43,11 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
@@ -92,13 +92,13 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
-		case RegionEditPart.VISUAL_ID:
+		case StateMachine_RegionEditPart.VISUAL_ID:
 		case SimpleStateEditPart.VISUAL_ID:
-		case BehaviorEditPart.VISUAL_ID:
-		case Behavior2EditPart.VISUAL_ID:
-		case Behavior3EditPart.VISUAL_ID:
+		case EntryActivityEditPart.VISUAL_ID:
+		case ExitActivityEditPart.VISUAL_ID:
+		case DoActivityEditPart.VISUAL_ID:
 		case CompositeStateEditPart.VISUAL_ID:
-		case Region2EditPart.VISUAL_ID:
+		case State_RegionEditPart.VISUAL_ID:
 		case SubmachineStateEditPart.VISUAL_ID:
 		case ConnectionPointReferenceEditPart.VISUAL_ID:
 		case ConnectionPointReference2EditPart.VISUAL_ID:
@@ -260,7 +260,7 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case RegionEditPart.VISUAL_ID: {
+		case StateMachine_RegionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getRegion_3013ContainedLinks(view));
 			}
@@ -274,21 +274,21 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case BehaviorEditPart.VISUAL_ID: {
+		case EntryActivityEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getBehavior_3019ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Behavior2EditPart.VISUAL_ID: {
+		case ExitActivityEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getBehavior_3020ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Behavior3EditPart.VISUAL_ID: {
+		case DoActivityEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getBehavior_3021ContainedLinks(view));
 			}
@@ -302,7 +302,7 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Region2EditPart.VISUAL_ID: {
+		case State_RegionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getRegion_3002ContainedLinks(view));
 			}

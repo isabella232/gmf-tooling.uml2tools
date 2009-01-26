@@ -15,14 +15,14 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
@@ -34,14 +34,14 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubverticesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
@@ -79,7 +79,7 @@ public class UMLDiagramUpdater {
 			return getState_3012SemanticChildren(view);
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016SemanticChildren(view);
-		case RegionSubverticesEditPart.VISUAL_ID:
+		case StateMachine_RegionSubverticesEditPart.VISUAL_ID:
 			return getRegionSubvertices_7004SemanticChildren(view);
 		case SimpleState_InternalActivitiesEditPart.VISUAL_ID:
 			return getStateSimpleState_InternalActivities_7005SemanticChildren(view);
@@ -87,7 +87,7 @@ public class UMLDiagramUpdater {
 			return getStateCompositeState_InternalActivities_7006SemanticChildren(view);
 		case CompositeState_InternalTransitionsEditPart.VISUAL_ID:
 			return getStateCompositeState_InternalTransitions_7008SemanticChildren(view);
-		case RegionSubvertices2EditPart.VISUAL_ID:
+		case State_RegionSubverticesEditPart.VISUAL_ID:
 			return getRegionSubvertices_7003SemanticChildren(view);
 		case SubmachineState_InternalActivitiesEditPart.VISUAL_ID:
 			return getStateCompositeState_InternalActivities_7007SemanticChildren(view);
@@ -111,7 +111,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getRegions().iterator(); it.hasNext();) {
 			Region childElement = (Region) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == RegionEditPart.VISUAL_ID) {
+			if (visualID == StateMachine_RegionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -143,7 +143,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getRegions().iterator(); it.hasNext();) {
 			Region childElement = (Region) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Region2EditPart.VISUAL_ID) {
+			if (visualID == State_RegionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -163,7 +163,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getRegions().iterator(); it.hasNext();) {
 			Region childElement = (Region) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Region2EditPart.VISUAL_ID) {
+			if (visualID == State_RegionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -267,21 +267,21 @@ public class UMLDiagramUpdater {
 		{
 			Behavior childElement = modelElement.getEntry();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == BehaviorEditPart.VISUAL_ID) {
+			if (visualID == EntryActivityEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			Behavior childElement = modelElement.getExit();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Behavior2EditPart.VISUAL_ID) {
+			if (visualID == ExitActivityEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			Behavior childElement = modelElement.getDoActivity();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Behavior3EditPart.VISUAL_ID) {
+			if (visualID == DoActivityEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
@@ -304,21 +304,21 @@ public class UMLDiagramUpdater {
 		{
 			Behavior childElement = modelElement.getEntry();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == BehaviorEditPart.VISUAL_ID) {
+			if (visualID == EntryActivityEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			Behavior childElement = modelElement.getExit();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Behavior2EditPart.VISUAL_ID) {
+			if (visualID == ExitActivityEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			Behavior childElement = modelElement.getDoActivity();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Behavior3EditPart.VISUAL_ID) {
+			if (visualID == DoActivityEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
@@ -433,21 +433,21 @@ public class UMLDiagramUpdater {
 		{
 			Behavior childElement = modelElement.getEntry();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == BehaviorEditPart.VISUAL_ID) {
+			if (visualID == EntryActivityEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			Behavior childElement = modelElement.getExit();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Behavior2EditPart.VISUAL_ID) {
+			if (visualID == ExitActivityEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			Behavior childElement = modelElement.getDoActivity();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Behavior3EditPart.VISUAL_ID) {
+			if (visualID == DoActivityEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
@@ -507,19 +507,19 @@ public class UMLDiagramUpdater {
 			return getPackage_1000ContainedLinks(view);
 		case StateMachine2EditPart.VISUAL_ID:
 			return getStateMachine_2005ContainedLinks(view);
-		case RegionEditPart.VISUAL_ID:
+		case StateMachine_RegionEditPart.VISUAL_ID:
 			return getRegion_3013ContainedLinks(view);
 		case SimpleStateEditPart.VISUAL_ID:
 			return getState_3001ContainedLinks(view);
-		case BehaviorEditPart.VISUAL_ID:
+		case EntryActivityEditPart.VISUAL_ID:
 			return getBehavior_3019ContainedLinks(view);
-		case Behavior2EditPart.VISUAL_ID:
+		case ExitActivityEditPart.VISUAL_ID:
 			return getBehavior_3020ContainedLinks(view);
-		case Behavior3EditPart.VISUAL_ID:
+		case DoActivityEditPart.VISUAL_ID:
 			return getBehavior_3021ContainedLinks(view);
 		case CompositeStateEditPart.VISUAL_ID:
 			return getState_3012ContainedLinks(view);
-		case Region2EditPart.VISUAL_ID:
+		case State_RegionEditPart.VISUAL_ID:
 			return getRegion_3002ContainedLinks(view);
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016ContainedLinks(view);
@@ -564,19 +564,19 @@ public class UMLDiagramUpdater {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StateMachine2EditPart.VISUAL_ID:
 			return getStateMachine_2005IncomingLinks(view);
-		case RegionEditPart.VISUAL_ID:
+		case StateMachine_RegionEditPart.VISUAL_ID:
 			return getRegion_3013IncomingLinks(view);
 		case SimpleStateEditPart.VISUAL_ID:
 			return getState_3001IncomingLinks(view);
-		case BehaviorEditPart.VISUAL_ID:
+		case EntryActivityEditPart.VISUAL_ID:
 			return getBehavior_3019IncomingLinks(view);
-		case Behavior2EditPart.VISUAL_ID:
+		case ExitActivityEditPart.VISUAL_ID:
 			return getBehavior_3020IncomingLinks(view);
-		case Behavior3EditPart.VISUAL_ID:
+		case DoActivityEditPart.VISUAL_ID:
 			return getBehavior_3021IncomingLinks(view);
 		case CompositeStateEditPart.VISUAL_ID:
 			return getState_3012IncomingLinks(view);
-		case Region2EditPart.VISUAL_ID:
+		case State_RegionEditPart.VISUAL_ID:
 			return getRegion_3002IncomingLinks(view);
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016IncomingLinks(view);
@@ -621,19 +621,19 @@ public class UMLDiagramUpdater {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StateMachine2EditPart.VISUAL_ID:
 			return getStateMachine_2005OutgoingLinks(view);
-		case RegionEditPart.VISUAL_ID:
+		case StateMachine_RegionEditPart.VISUAL_ID:
 			return getRegion_3013OutgoingLinks(view);
 		case SimpleStateEditPart.VISUAL_ID:
 			return getState_3001OutgoingLinks(view);
-		case BehaviorEditPart.VISUAL_ID:
+		case EntryActivityEditPart.VISUAL_ID:
 			return getBehavior_3019OutgoingLinks(view);
-		case Behavior2EditPart.VISUAL_ID:
+		case ExitActivityEditPart.VISUAL_ID:
 			return getBehavior_3020OutgoingLinks(view);
-		case Behavior3EditPart.VISUAL_ID:
+		case DoActivityEditPart.VISUAL_ID:
 			return getBehavior_3021OutgoingLinks(view);
 		case CompositeStateEditPart.VISUAL_ID:
 			return getState_3012OutgoingLinks(view);
-		case Region2EditPart.VISUAL_ID:
+		case State_RegionEditPart.VISUAL_ID:
 			return getRegion_3002OutgoingLinks(view);
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016OutgoingLinks(view);

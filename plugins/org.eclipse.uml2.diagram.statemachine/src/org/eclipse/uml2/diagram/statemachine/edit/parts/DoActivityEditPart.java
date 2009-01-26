@@ -48,7 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.InsertingComponentEditPolicy;
-import org.eclipse.uml2.diagram.statemachine.edit.policies.Behavior3ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.DoActivityItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.UMLTextNonResizableEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -58,7 +58,7 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider;
  * @generated
  */
 
-public class Behavior3EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class DoActivityEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
@@ -93,7 +93,7 @@ public class Behavior3EditPart extends CompartmentEditPart implements ITextAware
 	/**
 	 * @generated
 	 */
-	public Behavior3EditPart(View view) {
+	public DoActivityEditPart(View view) {
 		super(view);
 	}
 
@@ -112,7 +112,7 @@ public class Behavior3EditPart extends CompartmentEditPart implements ITextAware
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Behavior3ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DoActivityItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new UMLTextNonResizableEditPolicy());
 		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ListItemComponentEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
@@ -294,7 +294,7 @@ public class Behavior3EditPart extends CompartmentEditPart implements ITextAware
 	public IParser getParser() {
 		if (parser == null) {
 			parser = UMLParserProvider.getParser(UMLElementTypes.Behavior_3021, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart.VISUAL_ID));
+					.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

@@ -328,7 +328,7 @@
                name="%metatype.name.Region_3013"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Region"
-               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.RegionEditHelper">
+               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.StateMachine_RegionEditHelper">
             <param name="semanticHint" value="3013"/>
          </metamodelType>
       </metamodel>
@@ -348,7 +348,7 @@
                name="%metatype.name.Behavior_3019"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Behavior"
-               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.BehaviorEditHelper">
+               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.EntryActivityEditHelper">
             <param name="semanticHint" value="3019"/>
          </metamodelType>
       </metamodel>
@@ -385,7 +385,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Region_3002"
                name="%metatype.name.Region_3002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.RegionEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.State_RegionEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Region_3013"/>
             <param name="semanticHint" value="3002"/>
          </specializationType>
@@ -910,7 +910,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -918,15 +918,15 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -934,7 +934,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

@@ -15,15 +15,15 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
@@ -37,13 +37,13 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
@@ -113,19 +113,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_1000); //$NON-NLS-1$
 		case StateMachine2EditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?StateMachine", UMLElementTypes.StateMachine_2005); //$NON-NLS-1$
-		case RegionEditPart.VISUAL_ID:
+		case StateMachine_RegionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Region", UMLElementTypes.Region_3013); //$NON-NLS-1$
 		case SimpleStateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?State", UMLElementTypes.State_3001); //$NON-NLS-1$
-		case BehaviorEditPart.VISUAL_ID:
+		case EntryActivityEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Behavior", UMLElementTypes.Behavior_3019); //$NON-NLS-1$
-		case Behavior2EditPart.VISUAL_ID:
+		case ExitActivityEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Behavior", UMLElementTypes.Behavior_3020); //$NON-NLS-1$
-		case Behavior3EditPart.VISUAL_ID:
+		case DoActivityEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Behavior", UMLElementTypes.Behavior_3021); //$NON-NLS-1$
 		case CompositeStateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?State", UMLElementTypes.State_3012); //$NON-NLS-1$
-		case Region2EditPart.VISUAL_ID:
+		case State_RegionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Region", UMLElementTypes.Region_3002); //$NON-NLS-1$
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?State", UMLElementTypes.State_3016); //$NON-NLS-1$
@@ -213,19 +213,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getPackage_1000Text(view);
 		case StateMachine2EditPart.VISUAL_ID:
 			return getStateMachine_2005Text(view);
-		case RegionEditPart.VISUAL_ID:
+		case StateMachine_RegionEditPart.VISUAL_ID:
 			return getRegion_3013Text(view);
 		case SimpleStateEditPart.VISUAL_ID:
 			return getState_3001Text(view);
-		case BehaviorEditPart.VISUAL_ID:
+		case EntryActivityEditPart.VISUAL_ID:
 			return getBehavior_3019Text(view);
-		case Behavior2EditPart.VISUAL_ID:
+		case ExitActivityEditPart.VISUAL_ID:
 			return getBehavior_3020Text(view);
-		case Behavior3EditPart.VISUAL_ID:
+		case DoActivityEditPart.VISUAL_ID:
 			return getBehavior_3021Text(view);
 		case CompositeStateEditPart.VISUAL_ID:
 			return getState_3012Text(view);
-		case Region2EditPart.VISUAL_ID:
+		case State_RegionEditPart.VISUAL_ID:
 			return getRegion_3002Text(view);
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016Text(view);
@@ -320,7 +320,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getBehavior_3019Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Behavior_3019, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(BehaviorEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Behavior_3019, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(EntryActivityEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -333,7 +333,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getBehavior_3020Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Behavior_3020, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(Behavior2EditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Behavior_3020, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(ExitActivityEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -346,7 +346,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getBehavior_3021Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Behavior_3021, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(Behavior3EditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Behavior_3021, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(DoActivityEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {

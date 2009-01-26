@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.uml.Region;
+import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.UMLFactory;
 
@@ -19,12 +19,12 @@ import org.eclipse.uml2.uml.UMLFactory;
  * @generated
  */
 
-public class Region2CreateCommand extends EditElementCommand {
+public class ExitActivityCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public Region2CreateCommand(CreateElementRequest req) {
+	public ExitActivityCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -44,29 +44,26 @@ public class Region2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+		State container = (State) getElementToEdit();
+		if (container.getExit() != null) {
+			return false;
+		}
 		return true;
 
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		Region newElement = UMLFactory.eINSTANCE.createRegion();
-
-		State owner = (State) getElementToEdit();
-		owner.getRegions().add(newElement);
-
-		doConfigure(newElement, monitor, info);
-
-		((CreateElementRequest) getRequest()).setNewElement(newElement);
-		return CommandResult.newOKCommandResult(newElement);
+		// There is nothing to create. entry/exit/do activities can't be created by diagram tool.
+		return CommandResult.newCancelledCommandResult();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(Region newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	protected void doConfigure(Behavior newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());

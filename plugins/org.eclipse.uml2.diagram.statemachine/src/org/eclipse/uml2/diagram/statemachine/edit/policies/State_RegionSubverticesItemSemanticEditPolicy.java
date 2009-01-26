@@ -20,13 +20,13 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
  * @generated
  */
 
-public class RegionSubverticesItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class State_RegionSubverticesItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public RegionSubverticesItemSemanticEditPolicy() {
-		super(UMLElementTypes.Region_3013);
+	public State_RegionSubverticesItemSemanticEditPolicy() {
+		super(UMLElementTypes.Region_3002);
 	}
 
 	/**

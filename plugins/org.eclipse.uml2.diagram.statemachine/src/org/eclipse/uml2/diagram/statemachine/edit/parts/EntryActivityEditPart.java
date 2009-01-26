@@ -48,7 +48,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.InsertingComponentEditPolicy;
-import org.eclipse.uml2.diagram.statemachine.edit.policies.Behavior2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.EntryActivityItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.UMLTextNonResizableEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -58,12 +58,12 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider;
  * @generated
  */
 
-public class Behavior2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class EntryActivityEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3020;
+	public static final int VISUAL_ID = 3019;
 
 	/**
 	 * @generated
@@ -93,7 +93,7 @@ public class Behavior2EditPart extends CompartmentEditPart implements ITextAware
 	/**
 	 * @generated
 	 */
-	public Behavior2EditPart(View view) {
+	public EntryActivityEditPart(View view) {
 		super(view);
 	}
 
@@ -112,7 +112,7 @@ public class Behavior2EditPart extends CompartmentEditPart implements ITextAware
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Behavior2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new EntryActivityItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new UMLTextNonResizableEditPolicy());
 		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ListItemComponentEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
@@ -293,8 +293,8 @@ public class Behavior2EditPart extends CompartmentEditPart implements ITextAware
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Behavior_3020, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Behavior_3019, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

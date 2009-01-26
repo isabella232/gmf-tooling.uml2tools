@@ -434,7 +434,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String RegionSubverticesEditPart_title;
+	public static String StateMachine_RegionSubverticesEditPart_title;
 
 	/**
 	 * @generated
@@ -454,7 +454,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String RegionSubvertices2EditPart_title;
+	public static String State_RegionSubverticesEditPart_title;
 
 	/**
 	 * @generated

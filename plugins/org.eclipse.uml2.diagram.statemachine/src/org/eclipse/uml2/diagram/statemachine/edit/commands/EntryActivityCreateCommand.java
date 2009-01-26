@@ -18,16 +18,18 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * @generated
  */
-public class BehaviorCreateCommand extends EditElementCommand {
+
+public class EntryActivityCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public BehaviorCreateCommand(CreateElementRequest req) {
+	public EntryActivityCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
+	 * FIXME: replace with setElementToEdit()
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {

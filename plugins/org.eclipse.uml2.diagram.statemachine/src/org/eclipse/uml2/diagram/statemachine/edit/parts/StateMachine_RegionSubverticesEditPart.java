@@ -11,8 +11,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;
-import org.eclipse.uml2.diagram.statemachine.edit.policies.RegionSubvertices2CanonicalEditPolicy;
-import org.eclipse.uml2.diagram.statemachine.edit.policies.RegionSubvertices2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.StateMachine_RegionSubverticesCanonicalEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.StateMachine_RegionSubverticesItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.Messages;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -21,17 +21,17 @@ import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
  * @generated
  */
 
-public class RegionSubvertices2EditPart extends ShapeCompartmentEditPart {
+public class StateMachine_RegionSubverticesEditPart extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7003;
+	public static final int VISUAL_ID = 7004;
 
 	/**
 	 * @generated
 	 */
-	public RegionSubvertices2EditPart(View view) {
+	public StateMachine_RegionSubverticesEditPart(View view) {
 		super(view);
 	}
 
@@ -39,7 +39,7 @@ public class RegionSubvertices2EditPart extends ShapeCompartmentEditPart {
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return Messages.RegionSubvertices2EditPart_title;
+		return Messages.StateMachine_RegionSubverticesEditPart_title;
 	}
 
 	/**
@@ -56,11 +56,11 @@ public class RegionSubvertices2EditPart extends ShapeCompartmentEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new RegionSubvertices2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateMachine_RegionSubverticesItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutEditPolicyWithMovableLabels()); //replace with U2T specific version
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new RegionSubvertices2CanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StateMachine_RegionSubverticesCanonicalEditPolicy());
 		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, false));
 		}

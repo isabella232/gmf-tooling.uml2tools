@@ -13,13 +13,13 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
@@ -408,11 +408,11 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStateName_5001Parser();
 		case SimpleStateStereotypeEditPart.VISUAL_ID:
 			return getStateQualifiedName_5015Parser();
-		case BehaviorEditPart.VISUAL_ID:
+		case EntryActivityEditPart.VISUAL_ID:
 			return getBehavior_3019Parser();
-		case Behavior2EditPart.VISUAL_ID:
+		case ExitActivityEditPart.VISUAL_ID:
 			return getBehavior_3020Parser();
-		case Behavior3EditPart.VISUAL_ID:
+		case DoActivityEditPart.VISUAL_ID:
 			return getBehavior_3021Parser();
 		case CompositeStateNameEditPart.VISUAL_ID:
 			return getStateName_5004Parser();

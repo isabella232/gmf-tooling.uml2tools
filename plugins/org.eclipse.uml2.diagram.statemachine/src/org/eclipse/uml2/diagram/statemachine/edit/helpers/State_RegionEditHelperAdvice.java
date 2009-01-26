@@ -6,5 +6,5 @@ import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice
  * @generated
  */
 
-public class RegionEditHelperAdvice extends AbstractEditHelperAdvice {
+public class State_RegionEditHelperAdvice extends AbstractEditHelperAdvice {
 }

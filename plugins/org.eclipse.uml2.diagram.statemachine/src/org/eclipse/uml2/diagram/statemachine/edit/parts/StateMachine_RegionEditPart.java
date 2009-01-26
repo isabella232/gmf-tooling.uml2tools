@@ -22,18 +22,18 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.policies.Region2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.StateMachine_RegionItemSemanticEditPolicy;
 
 /**
  * @generated
  */
 
-public class Region2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class StateMachine_RegionEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3002;
+	public static final int VISUAL_ID = 3013;
 
 	/**
 	 * @generated
@@ -48,7 +48,7 @@ public class Region2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	/**
 	 * @generated
 	 */
-	public Region2EditPart(View view) {
+	public StateMachine_RegionEditPart(View view) {
 		super(view);
 	}
 
@@ -57,7 +57,7 @@ public class Region2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Region2ItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateMachine_RegionItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -108,10 +108,10 @@ public class Region2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof RegionSubvertices2EditPart) {
+		if (childEditPart instanceof StateMachine_RegionSubverticesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionFigure_Compartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((RegionSubvertices2EditPart) childEditPart).getFigure());
+			pane.add(((StateMachine_RegionSubverticesEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -122,9 +122,9 @@ public class Region2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof RegionSubvertices2EditPart) {
+		if (childEditPart instanceof StateMachine_RegionSubverticesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionFigure_Compartment();
-			pane.remove(((RegionSubvertices2EditPart) childEditPart).getFigure());
+			pane.remove(((StateMachine_RegionSubverticesEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -154,7 +154,7 @@ public class Region2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof RegionSubvertices2EditPart) {
+		if (editPart instanceof StateMachine_RegionSubverticesEditPart) {
 			return getPrimaryShape().getFigureRegionFigure_Compartment();
 		}
 		return getContentPane();
