@@ -20,6 +20,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
@@ -35,11 +36,10 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
@@ -475,7 +475,7 @@ public class UMLElementTypes extends ElementInitializers {
 			return StateMachine_2005;
 		case RegionEditPart.VISUAL_ID:
 			return Region_3013;
-		case StateEditPart.VISUAL_ID:
+		case SimpleStateEditPart.VISUAL_ID:
 			return State_3001;
 		case BehaviorEditPart.VISUAL_ID:
 			return Behavior_3019;
@@ -483,11 +483,11 @@ public class UMLElementTypes extends ElementInitializers {
 			return Behavior_3020;
 		case Behavior3EditPart.VISUAL_ID:
 			return Behavior_3021;
-		case State2EditPart.VISUAL_ID:
+		case CompositeStateEditPart.VISUAL_ID:
 			return State_3012;
 		case Region2EditPart.VISUAL_ID:
 			return Region_3002;
-		case State3EditPart.VISUAL_ID:
+		case SubmachineStateEditPart.VISUAL_ID:
 			return State_3016;
 		case ConnectionPointReferenceEditPart.VISUAL_ID:
 			return ConnectionPointReference_3017;

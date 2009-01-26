@@ -11,9 +11,9 @@ import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate6CreateCom
 import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate7CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate8CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.PseudostateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.SimpleStateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.State2CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.State3CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.StateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.SubmachineStateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 /**
@@ -34,13 +34,13 @@ public class RegionSubvertices2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.State_3001 == req.getElementType()) {
-			return getGEFWrapper(new StateCreateCommand(req));
+			return getGEFWrapper(new SimpleStateCreateCommand(req));
 		}
 		if (UMLElementTypes.State_3012 == req.getElementType()) {
 			return getGEFWrapper(new State2CreateCommand(req));
 		}
 		if (UMLElementTypes.State_3016 == req.getElementType()) {
-			return getGEFWrapper(new State3CreateCommand(req));
+			return getGEFWrapper(new SubmachineStateCreateCommand(req));
 		}
 		if (UMLElementTypes.FinalState_3003 == req.getElementType()) {
 			return getGEFWrapper(new FinalStateCreateCommand(req));

@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
@@ -31,10 +32,9 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -72,12 +72,12 @@ public class State2CanonicalEditPolicy extends CanonicalEditPolicy {
 		switch (visualID) {
 		case StateMachine2EditPart.VISUAL_ID:
 		case RegionEditPart.VISUAL_ID:
-		case StateEditPart.VISUAL_ID:
+		case SimpleStateEditPart.VISUAL_ID:
 		case BehaviorEditPart.VISUAL_ID:
 		case Behavior2EditPart.VISUAL_ID:
 		case Behavior3EditPart.VISUAL_ID:
-		case State2EditPart.VISUAL_ID:
-		case State3EditPart.VISUAL_ID:
+		case CompositeStateEditPart.VISUAL_ID:
+		case SubmachineStateEditPart.VISUAL_ID:
 		case ConnectionPointReferenceEditPart.VISUAL_ID:
 		case ConnectionPointReference2EditPart.VISUAL_ID:
 		case Transition2EditPart.VISUAL_ID:

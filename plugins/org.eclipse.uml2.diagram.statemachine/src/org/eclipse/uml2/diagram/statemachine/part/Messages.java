@@ -439,17 +439,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StateSimpleState_InternalActivitiesEditPart_title;
+	public static String SimpleState_InternalActivitiesEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StateCompositeState_InternalActivitiesEditPart_title;
+	public static String CompositeState_InternalActivitiesEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StateCompositeState_InternalTransitionsEditPart_title;
+	public static String CompositeState_InternalTransitionsEditPart_title;
 
 	/**
 	 * @generated
@@ -459,12 +459,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StateCompositeState_InternalActivities2EditPart_title;
+	public static String SubmachineState_InternalActivitiesEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StateCompositeState_InternalTransitions2EditPart_title;
+	public static String SubmachineState_InternalTransitionsEditPart_title;
 
 	/**
 	 * @generated

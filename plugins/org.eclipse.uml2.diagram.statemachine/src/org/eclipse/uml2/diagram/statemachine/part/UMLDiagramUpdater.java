@@ -18,6 +18,9 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalActivitiesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
@@ -35,16 +38,13 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Region2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubvertices2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalActivities2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalActivitiesEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalTransitions2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateCompositeState_InternalTransitionsEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateSimpleState_InternalActivitiesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalActivitiesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -75,23 +75,23 @@ public class UMLDiagramUpdater {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StateMachine2EditPart.VISUAL_ID:
 			return getStateMachine_2005SemanticChildren(view);
-		case State2EditPart.VISUAL_ID:
+		case CompositeStateEditPart.VISUAL_ID:
 			return getState_3012SemanticChildren(view);
-		case State3EditPart.VISUAL_ID:
+		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016SemanticChildren(view);
 		case RegionSubverticesEditPart.VISUAL_ID:
 			return getRegionSubvertices_7004SemanticChildren(view);
-		case StateSimpleState_InternalActivitiesEditPart.VISUAL_ID:
+		case SimpleState_InternalActivitiesEditPart.VISUAL_ID:
 			return getStateSimpleState_InternalActivities_7005SemanticChildren(view);
-		case StateCompositeState_InternalActivitiesEditPart.VISUAL_ID:
+		case CompositeState_InternalActivitiesEditPart.VISUAL_ID:
 			return getStateCompositeState_InternalActivities_7006SemanticChildren(view);
-		case StateCompositeState_InternalTransitionsEditPart.VISUAL_ID:
+		case CompositeState_InternalTransitionsEditPart.VISUAL_ID:
 			return getStateCompositeState_InternalTransitions_7008SemanticChildren(view);
 		case RegionSubvertices2EditPart.VISUAL_ID:
 			return getRegionSubvertices_7003SemanticChildren(view);
-		case StateCompositeState_InternalActivities2EditPart.VISUAL_ID:
+		case SubmachineState_InternalActivitiesEditPart.VISUAL_ID:
 			return getStateCompositeState_InternalActivities_7007SemanticChildren(view);
-		case StateCompositeState_InternalTransitions2EditPart.VISUAL_ID:
+		case SubmachineState_InternalTransitionsEditPart.VISUAL_ID:
 			return getStateCompositeState_InternalTransitions_7009SemanticChildren(view);
 		case StateMachineEditPart.VISUAL_ID:
 			return getPackage_1000SemanticChildren(view);
@@ -199,15 +199,15 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getSubvertices().iterator(); it.hasNext();) {
 			Vertex childElement = (Vertex) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StateEditPart.VISUAL_ID) {
+			if (visualID == SimpleStateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == State2EditPart.VISUAL_ID) {
+			if (visualID == CompositeStateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == State3EditPart.VISUAL_ID) {
+			if (visualID == SubmachineStateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -365,15 +365,15 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getSubvertices().iterator(); it.hasNext();) {
 			Vertex childElement = (Vertex) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StateEditPart.VISUAL_ID) {
+			if (visualID == SimpleStateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == State2EditPart.VISUAL_ID) {
+			if (visualID == CompositeStateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == State3EditPart.VISUAL_ID) {
+			if (visualID == SubmachineStateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -509,7 +509,7 @@ public class UMLDiagramUpdater {
 			return getStateMachine_2005ContainedLinks(view);
 		case RegionEditPart.VISUAL_ID:
 			return getRegion_3013ContainedLinks(view);
-		case StateEditPart.VISUAL_ID:
+		case SimpleStateEditPart.VISUAL_ID:
 			return getState_3001ContainedLinks(view);
 		case BehaviorEditPart.VISUAL_ID:
 			return getBehavior_3019ContainedLinks(view);
@@ -517,11 +517,11 @@ public class UMLDiagramUpdater {
 			return getBehavior_3020ContainedLinks(view);
 		case Behavior3EditPart.VISUAL_ID:
 			return getBehavior_3021ContainedLinks(view);
-		case State2EditPart.VISUAL_ID:
+		case CompositeStateEditPart.VISUAL_ID:
 			return getState_3012ContainedLinks(view);
 		case Region2EditPart.VISUAL_ID:
 			return getRegion_3002ContainedLinks(view);
-		case State3EditPart.VISUAL_ID:
+		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016ContainedLinks(view);
 		case ConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3017ContainedLinks(view);
@@ -566,7 +566,7 @@ public class UMLDiagramUpdater {
 			return getStateMachine_2005IncomingLinks(view);
 		case RegionEditPart.VISUAL_ID:
 			return getRegion_3013IncomingLinks(view);
-		case StateEditPart.VISUAL_ID:
+		case SimpleStateEditPart.VISUAL_ID:
 			return getState_3001IncomingLinks(view);
 		case BehaviorEditPart.VISUAL_ID:
 			return getBehavior_3019IncomingLinks(view);
@@ -574,11 +574,11 @@ public class UMLDiagramUpdater {
 			return getBehavior_3020IncomingLinks(view);
 		case Behavior3EditPart.VISUAL_ID:
 			return getBehavior_3021IncomingLinks(view);
-		case State2EditPart.VISUAL_ID:
+		case CompositeStateEditPart.VISUAL_ID:
 			return getState_3012IncomingLinks(view);
 		case Region2EditPart.VISUAL_ID:
 			return getRegion_3002IncomingLinks(view);
-		case State3EditPart.VISUAL_ID:
+		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016IncomingLinks(view);
 		case ConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3017IncomingLinks(view);
@@ -623,7 +623,7 @@ public class UMLDiagramUpdater {
 			return getStateMachine_2005OutgoingLinks(view);
 		case RegionEditPart.VISUAL_ID:
 			return getRegion_3013OutgoingLinks(view);
-		case StateEditPart.VISUAL_ID:
+		case SimpleStateEditPart.VISUAL_ID:
 			return getState_3001OutgoingLinks(view);
 		case BehaviorEditPart.VISUAL_ID:
 			return getBehavior_3019OutgoingLinks(view);
@@ -631,11 +631,11 @@ public class UMLDiagramUpdater {
 			return getBehavior_3020OutgoingLinks(view);
 		case Behavior3EditPart.VISUAL_ID:
 			return getBehavior_3021OutgoingLinks(view);
-		case State2EditPart.VISUAL_ID:
+		case CompositeStateEditPart.VISUAL_ID:
 			return getState_3012OutgoingLinks(view);
 		case Region2EditPart.VISUAL_ID:
 			return getRegion_3002OutgoingLinks(view);
-		case State3EditPart.VISUAL_ID:
+		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016OutgoingLinks(view);
 		case ConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3017OutgoingLinks(view);

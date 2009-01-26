@@ -16,18 +16,18 @@ import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Behavior3EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.BehaviorEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineStereotypeEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateName3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateNameEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotype2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotype3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateStereotypeEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.parser.SubmachineStateParser;
@@ -404,9 +404,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStateMachineName_5011Parser();
 		case StateMachineStereotypeEditPart.VISUAL_ID:
 			return getStateMachineQualifiedName_5012Parser();
-		case StateNameEditPart.VISUAL_ID:
+		case SimpleStateNameEditPart.VISUAL_ID:
 			return getStateName_5001Parser();
-		case StateStereotypeEditPart.VISUAL_ID:
+		case SimpleStateStereotypeEditPart.VISUAL_ID:
 			return getStateQualifiedName_5015Parser();
 		case BehaviorEditPart.VISUAL_ID:
 			return getBehavior_3019Parser();
@@ -414,13 +414,13 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getBehavior_3020Parser();
 		case Behavior3EditPart.VISUAL_ID:
 			return getBehavior_3021Parser();
-		case StateName3EditPart.VISUAL_ID:
+		case CompositeStateNameEditPart.VISUAL_ID:
 			return getStateName_5004Parser();
-		case StateStereotype3EditPart.VISUAL_ID:
+		case CompositeStateStereotypeEditPart.VISUAL_ID:
 			return getStateQualifiedName_5013Parser();
-		case StateName2EditPart.VISUAL_ID:
+		case SubmachineStateNameEditPart.VISUAL_ID:
 			return getStateName_5008Parser();
-		case StateStereotype2EditPart.VISUAL_ID:
+		case SubmachineStateStereotypeEditPart.VISUAL_ID:
 			return getStateQualifiedName_5014Parser();
 		case ConnectionPointReferenceNameEditPart.VISUAL_ID:
 			return getConnectionPointReferenceName_5009Parser();

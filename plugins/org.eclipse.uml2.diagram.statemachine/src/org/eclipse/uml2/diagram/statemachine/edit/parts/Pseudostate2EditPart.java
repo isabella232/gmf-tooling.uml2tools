@@ -214,13 +214,13 @@ public class Pseudostate2EditPart extends ShapeNodeEditPart implements PrimarySh
 	 */
 	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
-		if (targetEditPart instanceof StateEditPart) {
+		if (targetEditPart instanceof SimpleStateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof State2EditPart) {
+		if (targetEditPart instanceof CompositeStateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof State3EditPart) {
+		if (targetEditPart instanceof SubmachineStateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
 		if (targetEditPart instanceof ConnectionPointReferenceEditPart) {

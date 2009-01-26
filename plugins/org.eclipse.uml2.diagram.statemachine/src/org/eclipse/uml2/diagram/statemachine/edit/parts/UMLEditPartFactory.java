@@ -44,14 +44,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case RegionEditPart.VISUAL_ID:
 				return new RegionEditPart(view);
 
-			case StateEditPart.VISUAL_ID:
-				return new StateEditPart(view);
+			case SimpleStateEditPart.VISUAL_ID:
+				return new SimpleStateEditPart(view);
 
-			case StateNameEditPart.VISUAL_ID:
-				return new StateNameEditPart(view);
+			case SimpleStateNameEditPart.VISUAL_ID:
+				return new SimpleStateNameEditPart(view);
 
-			case StateStereotypeEditPart.VISUAL_ID:
-				return new StateStereotypeEditPart(view);
+			case SimpleStateStereotypeEditPart.VISUAL_ID:
+				return new SimpleStateStereotypeEditPart(view);
 
 			case BehaviorEditPart.VISUAL_ID:
 				return new BehaviorEditPart(view);
@@ -62,26 +62,26 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case Behavior3EditPart.VISUAL_ID:
 				return new Behavior3EditPart(view);
 
-			case State2EditPart.VISUAL_ID:
-				return new State2EditPart(view);
+			case CompositeStateEditPart.VISUAL_ID:
+				return new CompositeStateEditPart(view);
 
-			case StateName3EditPart.VISUAL_ID:
-				return new StateName3EditPart(view);
+			case CompositeStateNameEditPart.VISUAL_ID:
+				return new CompositeStateNameEditPart(view);
 
-			case StateStereotype3EditPart.VISUAL_ID:
-				return new StateStereotype3EditPart(view);
+			case CompositeStateStereotypeEditPart.VISUAL_ID:
+				return new CompositeStateStereotypeEditPart(view);
 
 			case Region2EditPart.VISUAL_ID:
 				return new Region2EditPart(view);
 
-			case State3EditPart.VISUAL_ID:
-				return new State3EditPart(view);
+			case SubmachineStateEditPart.VISUAL_ID:
+				return new SubmachineStateEditPart(view);
 
-			case StateName2EditPart.VISUAL_ID:
-				return new StateName2EditPart(view);
+			case SubmachineStateNameEditPart.VISUAL_ID:
+				return new SubmachineStateNameEditPart(view);
 
-			case StateStereotype2EditPart.VISUAL_ID:
-				return new StateStereotype2EditPart(view);
+			case SubmachineStateStereotypeEditPart.VISUAL_ID:
+				return new SubmachineStateStereotypeEditPart(view);
 
 			case ConnectionPointReferenceEditPart.VISUAL_ID:
 				return new ConnectionPointReferenceEditPart(view);
@@ -140,23 +140,23 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case RegionSubverticesEditPart.VISUAL_ID:
 				return new RegionSubverticesEditPart(view);
 
-			case StateSimpleState_InternalActivitiesEditPart.VISUAL_ID:
-				return new StateSimpleState_InternalActivitiesEditPart(view);
+			case SimpleState_InternalActivitiesEditPart.VISUAL_ID:
+				return new SimpleState_InternalActivitiesEditPart(view);
 
-			case StateCompositeState_InternalActivitiesEditPart.VISUAL_ID:
-				return new StateCompositeState_InternalActivitiesEditPart(view);
+			case CompositeState_InternalActivitiesEditPart.VISUAL_ID:
+				return new CompositeState_InternalActivitiesEditPart(view);
 
-			case StateCompositeState_InternalTransitionsEditPart.VISUAL_ID:
-				return new StateCompositeState_InternalTransitionsEditPart(view);
+			case CompositeState_InternalTransitionsEditPart.VISUAL_ID:
+				return new CompositeState_InternalTransitionsEditPart(view);
 
 			case RegionSubvertices2EditPart.VISUAL_ID:
 				return new RegionSubvertices2EditPart(view);
 
-			case StateCompositeState_InternalActivities2EditPart.VISUAL_ID:
-				return new StateCompositeState_InternalActivities2EditPart(view);
+			case SubmachineState_InternalActivitiesEditPart.VISUAL_ID:
+				return new SubmachineState_InternalActivitiesEditPart(view);
 
-			case StateCompositeState_InternalTransitions2EditPart.VISUAL_ID:
-				return new StateCompositeState_InternalTransitions2EditPart(view);
+			case SubmachineState_InternalTransitionsEditPart.VISUAL_ID:
+				return new SubmachineState_InternalTransitionsEditPart(view);
 
 			case TransitionEditPart.VISUAL_ID:
 				return new TransitionEditPart(view);

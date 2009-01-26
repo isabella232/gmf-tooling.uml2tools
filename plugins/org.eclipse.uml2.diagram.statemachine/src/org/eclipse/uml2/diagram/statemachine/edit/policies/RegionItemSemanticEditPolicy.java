@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart;
@@ -19,9 +20,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionSubverticesEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.State2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.State3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
@@ -65,13 +65,13 @@ public class RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
-					case StateEditPart.VISUAL_ID:
+					case SimpleStateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case State2EditPart.VISUAL_ID:
+					case CompositeStateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case State3EditPart.VISUAL_ID:
+					case SubmachineStateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					case FinalStateEditPart.VISUAL_ID:
