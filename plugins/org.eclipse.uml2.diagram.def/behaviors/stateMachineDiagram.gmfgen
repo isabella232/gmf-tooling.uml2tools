@@ -673,12 +673,12 @@
     </childNodes>
     <childNodes
         visualID="3004"
-        editPartClassName="PseudostateEditPart"
-        itemSemanticEditPolicyClassName="PseudostateItemSemanticEditPolicy"
-        notationViewFactoryClassName="PseudostateViewFactory"
-        canonicalEditPolicyClassName="PseudostateCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="PseudostateGraphicalNodeEditPolicy"
-        createCommandClassName="PseudostateCreateCommand"
+        editPartClassName="InitialPseudostateEditPart"
+        itemSemanticEditPolicyClassName="InitialPseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="InitialPseudostateViewFactory"
+        canonicalEditPolicyClassName="InitialPseudostateCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="InitialPseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="InitialPseudostateCreateCommand"
         containers="//@diagram/@compartments.4 //@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -726,12 +726,12 @@
     </childNodes>
     <childNodes
         visualID="3005"
-        editPartClassName="Pseudostate2EditPart"
-        itemSemanticEditPolicyClassName="Pseudostate2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pseudostate2ViewFactory"
-        canonicalEditPolicyClassName="Pseudostate2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Pseudostate2GraphicalNodeEditPolicy"
-        createCommandClassName="Pseudostate2CreateCommand"
+        editPartClassName="ShallowHistoryPseudostateEditPart"
+        itemSemanticEditPolicyClassName="ShallowHistoryPseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="ShallowHistoryPseudostateViewFactory"
+        canonicalEditPolicyClassName="ShallowHistoryPseudostateCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ShallowHistoryPseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="ShallowHistoryPseudostateCreateCommand"
         containers="//@diagram/@compartments.4 //@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -739,7 +739,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Shallow History Pseudostate"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="PseudostateEditHelperAdvice"/>
+          editHelperAdviceClassName="ShallowHistoryPseudostateEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ShallowHistoryFigure"
@@ -770,12 +770,12 @@
     </childNodes>
     <childNodes
         visualID="3006"
-        editPartClassName="Pseudostate3EditPart"
-        itemSemanticEditPolicyClassName="Pseudostate3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pseudostate3ViewFactory"
-        canonicalEditPolicyClassName="Pseudostate3CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Pseudostate3GraphicalNodeEditPolicy"
-        createCommandClassName="Pseudostate3CreateCommand"
+        editPartClassName="DeepHistoryPseudostateEditPart"
+        itemSemanticEditPolicyClassName="DeepHistoryPseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="DeepHistoryPseudostateViewFactory"
+        canonicalEditPolicyClassName="DeepHistoryPseudostateCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="DeepHistoryPseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="DeepHistoryPseudostateCreateCommand"
         containers="//@diagram/@compartments.4 //@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -783,7 +783,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Deep History Pseudostate"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="Pseudostate2EditHelperAdvice"/>
+          editHelperAdviceClassName="DeepHistoryPseudostateEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="DeepHistoryFigure"
@@ -814,13 +814,13 @@
     </childNodes>
     <childNodes
         visualID="3007"
-        editPartClassName="Pseudostate4EditPart"
-        itemSemanticEditPolicyClassName="Pseudostate4ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pseudostate4ViewFactory"
-        canonicalEditPolicyClassName="Pseudostate4CanonicalEditPolicy"
+        editPartClassName="ForkPseudostateEditPart"
+        itemSemanticEditPolicyClassName="ForkPseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="ForkPseudostateViewFactory"
+        canonicalEditPolicyClassName="ForkPseudostateCanonicalEditPolicy"
         primaryDragEditPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.DynamicResizeDirectionsEditPolicy"
-        graphicalNodeEditPolicyClassName="Pseudostate4GraphicalNodeEditPolicy"
-        createCommandClassName="Pseudostate4CreateCommand"
+        graphicalNodeEditPolicyClassName="ForkPseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="ForkPseudostateCreateCommand"
         containers="//@diagram/@compartments.4 //@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -828,7 +828,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Fork Pseudostate"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="Pseudostate3EditHelperAdvice"/>
+          editHelperAdviceClassName="ForkPseudostateEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ForkJoinFigure"
@@ -865,13 +865,13 @@
     </childNodes>
     <childNodes
         visualID="3008"
-        editPartClassName="Pseudostate5EditPart"
-        itemSemanticEditPolicyClassName="Pseudostate5ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pseudostate5ViewFactory"
-        canonicalEditPolicyClassName="Pseudostate5CanonicalEditPolicy"
+        editPartClassName="JoinPseudostateEditPart"
+        itemSemanticEditPolicyClassName="JoinPseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="JoinPseudostateViewFactory"
+        canonicalEditPolicyClassName="JoinPseudostateCanonicalEditPolicy"
         primaryDragEditPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.DynamicResizeDirectionsEditPolicy"
-        graphicalNodeEditPolicyClassName="Pseudostate5GraphicalNodeEditPolicy"
-        createCommandClassName="Pseudostate5CreateCommand"
+        graphicalNodeEditPolicyClassName="JoinPseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="JoinPseudostateCreateCommand"
         containers="//@diagram/@compartments.4 //@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -879,7 +879,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Join Pseudostate"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="Pseudostate4EditHelperAdvice"/>
+          editHelperAdviceClassName="JoinPseudostateEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ForkJoinFigure"
@@ -916,12 +916,12 @@
     </childNodes>
     <childNodes
         visualID="3009"
-        editPartClassName="Pseudostate6EditPart"
-        itemSemanticEditPolicyClassName="Pseudostate6ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pseudostate6ViewFactory"
-        canonicalEditPolicyClassName="Pseudostate6CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Pseudostate6GraphicalNodeEditPolicy"
-        createCommandClassName="Pseudostate6CreateCommand"
+        editPartClassName="JunctionPseudostateEditPart"
+        itemSemanticEditPolicyClassName="JunctionPseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="JunctionPseudostateViewFactory"
+        canonicalEditPolicyClassName="JunctionPseudostateCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="JunctionPseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="JunctionPseudostateCreateCommand"
         containers="//@diagram/@compartments.4 //@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -929,7 +929,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Junction Pseudostate"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="Pseudostate5EditHelperAdvice"/>
+          editHelperAdviceClassName="JunctionPseudostateEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="JunctionFigure"
@@ -966,12 +966,12 @@
     </childNodes>
     <childNodes
         visualID="3010"
-        editPartClassName="Pseudostate7EditPart"
-        itemSemanticEditPolicyClassName="Pseudostate7ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pseudostate7ViewFactory"
-        canonicalEditPolicyClassName="Pseudostate7CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Pseudostate7GraphicalNodeEditPolicy"
-        createCommandClassName="Pseudostate7CreateCommand"
+        editPartClassName="СhoicePseudostateEditPart"
+        itemSemanticEditPolicyClassName="СhoicePseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="СhoicePseudostateViewFactory"
+        canonicalEditPolicyClassName="СhoicePseudostateCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="СhoicePseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="СhoicePseudostateCreateCommand"
         containers="//@diagram/@compartments.4 //@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -979,7 +979,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Choice Pseudostate"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="Pseudostate6EditHelperAdvice"/>
+          editHelperAdviceClassName="СhoicePseudostateEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ScalableRhombFigure"
@@ -1005,12 +1005,12 @@
     </childNodes>
     <childNodes
         visualID="3011"
-        editPartClassName="Pseudostate8EditPart"
-        itemSemanticEditPolicyClassName="Pseudostate8ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pseudostate8ViewFactory"
-        canonicalEditPolicyClassName="Pseudostate8CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Pseudostate8GraphicalNodeEditPolicy"
-        createCommandClassName="Pseudostate8CreateCommand"
+        editPartClassName="TerminatePseudostateEditPart"
+        itemSemanticEditPolicyClassName="TerminatePseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="TerminatePseudostateViewFactory"
+        canonicalEditPolicyClassName="TerminatePseudostateCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="TerminatePseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="TerminatePseudostateCreateCommand"
         containers="//@diagram/@compartments.4 //@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -1018,7 +1018,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Terminate Pseudostate"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="Pseudostate7EditHelperAdvice"/>
+          editHelperAdviceClassName="TerminatePseudostateEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="TerminateFigure"
@@ -1050,12 +1050,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3014"
-        editPartClassName="Pseudostate9EditPart"
-        itemSemanticEditPolicyClassName="Pseudostate9ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pseudostate9ViewFactory"
-        canonicalEditPolicyClassName="Pseudostate9CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Pseudostate9GraphicalNodeEditPolicy"
-        createCommandClassName="Pseudostate9CreateCommand"
+        editPartClassName="EntryPointPseudostateEditPart"
+        itemSemanticEditPolicyClassName="EntryPointPseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="EntryPointPseudostateViewFactory"
+        canonicalEditPolicyClassName="EntryPointPseudostateCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EntryPointPseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="EntryPointPseudostateCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
         preferredSideName="WEST">
       <diagramRunTimeClass
@@ -1064,7 +1064,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Entry Point"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="Pseudostate8EditHelperAdvice"/>
+          editHelperAdviceClassName="EntryPointPseudostateEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="EntryPointFigure"
@@ -1104,9 +1104,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5006"
-          editPartClassName="PseudostateNameEditPart"
-          itemSemanticEditPolicyClassName="PseudostateNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="PseudostateNameViewFactory">
+          editPartClassName="EntryPointPseudostateNameEditPart"
+          itemSemanticEditPolicyClassName="EntryPointPseudostateNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="EntryPointPseudostateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1123,12 +1123,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3015"
-        editPartClassName="Pseudostate10EditPart"
-        itemSemanticEditPolicyClassName="Pseudostate10ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pseudostate10ViewFactory"
-        canonicalEditPolicyClassName="Pseudostate10CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Pseudostate10GraphicalNodeEditPolicy"
-        createCommandClassName="Pseudostate10CreateCommand"
+        editPartClassName="ExitPointPseudostateEditPart"
+        itemSemanticEditPolicyClassName="ExitPointPseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="ExitPointPseudostateViewFactory"
+        canonicalEditPolicyClassName="ExitPointPseudostateCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ExitPointPseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="ExitPointPseudostateCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
         preferredSideName="EAST">
       <diagramRunTimeClass
@@ -1137,7 +1137,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Exit Point"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="Pseudostate9EditHelperAdvice"/>
+          editHelperAdviceClassName="ExitPointPseudostateEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ExitPointFigure"
@@ -1177,9 +1177,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5007"
-          editPartClassName="PseudostateName2EditPart"
-          itemSemanticEditPolicyClassName="PseudostateName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="PseudostateName2ViewFactory">
+          editPartClassName="ExitPointPseudostateNameEditPart"
+          itemSemanticEditPolicyClassName="ExitPointPseudostateNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExitPointPseudostateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap

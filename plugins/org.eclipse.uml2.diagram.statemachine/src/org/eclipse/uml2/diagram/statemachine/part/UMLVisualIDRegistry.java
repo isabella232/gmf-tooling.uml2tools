@@ -15,22 +15,20 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateStereotypeEditPart;
@@ -48,9 +46,11 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateNameEditP
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.Behavior;
@@ -265,10 +265,10 @@ public class UMLVisualIDRegistry {
 				return StateMachine_RegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3014((Pseudostate) domainElement)) {
-				return Pseudostate9EditPart.VISUAL_ID;
+				return EntryPointPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3015((Pseudostate) domainElement)) {
-				return Pseudostate10EditPart.VISUAL_ID;
+				return ExitPointPseudostateEditPart.VISUAL_ID;
 			}
 			break;
 		case CompositeStateEditPart.VISUAL_ID:
@@ -301,28 +301,28 @@ public class UMLVisualIDRegistry {
 				return FinalStateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3004((Pseudostate) domainElement)) {
-				return PseudostateEditPart.VISUAL_ID;
+				return InitialPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3005((Pseudostate) domainElement)) {
-				return Pseudostate2EditPart.VISUAL_ID;
+				return ShallowHistoryPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3006((Pseudostate) domainElement)) {
-				return Pseudostate3EditPart.VISUAL_ID;
+				return DeepHistoryPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3007((Pseudostate) domainElement)) {
-				return Pseudostate4EditPart.VISUAL_ID;
+				return ForkPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3008((Pseudostate) domainElement)) {
-				return Pseudostate5EditPart.VISUAL_ID;
+				return JoinPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3009((Pseudostate) domainElement)) {
-				return Pseudostate6EditPart.VISUAL_ID;
+				return JunctionPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
-				return Pseudostate7EditPart.VISUAL_ID;
+				return ÑhoicePseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
-				return Pseudostate8EditPart.VISUAL_ID;
+				return TerminatePseudostateEditPart.VISUAL_ID;
 			}
 			break;
 		case SimpleState_InternalActivitiesEditPart.VISUAL_ID:
@@ -366,28 +366,28 @@ public class UMLVisualIDRegistry {
 				return FinalStateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3004((Pseudostate) domainElement)) {
-				return PseudostateEditPart.VISUAL_ID;
+				return InitialPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3005((Pseudostate) domainElement)) {
-				return Pseudostate2EditPart.VISUAL_ID;
+				return ShallowHistoryPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3006((Pseudostate) domainElement)) {
-				return Pseudostate3EditPart.VISUAL_ID;
+				return DeepHistoryPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3007((Pseudostate) domainElement)) {
-				return Pseudostate4EditPart.VISUAL_ID;
+				return ForkPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3008((Pseudostate) domainElement)) {
-				return Pseudostate5EditPart.VISUAL_ID;
+				return JoinPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3009((Pseudostate) domainElement)) {
-				return Pseudostate6EditPart.VISUAL_ID;
+				return JunctionPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
-				return Pseudostate7EditPart.VISUAL_ID;
+				return ÑhoicePseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
-				return Pseudostate8EditPart.VISUAL_ID;
+				return TerminatePseudostateEditPart.VISUAL_ID;
 			}
 			break;
 		case SubmachineState_InternalActivitiesEditPart.VISUAL_ID:
@@ -444,10 +444,10 @@ public class UMLVisualIDRegistry {
 			if (StateMachine_RegionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate9EditPart.VISUAL_ID == nodeVisualID) {
+			if (EntryPointPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate10EditPart.VISUAL_ID == nodeVisualID) {
+			if (ExitPointPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -522,13 +522,13 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case Pseudostate9EditPart.VISUAL_ID:
-			if (PseudostateNameEditPart.VISUAL_ID == nodeVisualID) {
+		case EntryPointPseudostateEditPart.VISUAL_ID:
+			if (EntryPointPseudostateNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case Pseudostate10EditPart.VISUAL_ID:
-			if (PseudostateName2EditPart.VISUAL_ID == nodeVisualID) {
+		case ExitPointPseudostateEditPart.VISUAL_ID:
+			if (ExitPointPseudostateNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -545,28 +545,28 @@ public class UMLVisualIDRegistry {
 			if (FinalStateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (PseudostateEditPart.VISUAL_ID == nodeVisualID) {
+			if (InitialPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ShallowHistoryPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate3EditPart.VISUAL_ID == nodeVisualID) {
+			if (DeepHistoryPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate4EditPart.VISUAL_ID == nodeVisualID) {
+			if (ForkPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate5EditPart.VISUAL_ID == nodeVisualID) {
+			if (JoinPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate6EditPart.VISUAL_ID == nodeVisualID) {
+			if (JunctionPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate7EditPart.VISUAL_ID == nodeVisualID) {
+			if (ÑhoicePseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate8EditPart.VISUAL_ID == nodeVisualID) {
+			if (TerminatePseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -610,28 +610,28 @@ public class UMLVisualIDRegistry {
 			if (FinalStateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (PseudostateEditPart.VISUAL_ID == nodeVisualID) {
+			if (InitialPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ShallowHistoryPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate3EditPart.VISUAL_ID == nodeVisualID) {
+			if (DeepHistoryPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate4EditPart.VISUAL_ID == nodeVisualID) {
+			if (ForkPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate5EditPart.VISUAL_ID == nodeVisualID) {
+			if (JoinPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate6EditPart.VISUAL_ID == nodeVisualID) {
+			if (JunctionPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate7EditPart.VISUAL_ID == nodeVisualID) {
+			if (ÑhoicePseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (Pseudostate8EditPart.VISUAL_ID == nodeVisualID) {
+			if (TerminatePseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -942,10 +942,10 @@ public class UMLVisualIDRegistry {
 				return StateMachine_RegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3014((Pseudostate) domainElement)) {
-				return Pseudostate9EditPart.VISUAL_ID;
+				return EntryPointPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3015((Pseudostate) domainElement)) {
-				return Pseudostate10EditPart.VISUAL_ID;
+				return ExitPointPseudostateEditPart.VISUAL_ID;
 			}
 			break;
 		case StateMachine_RegionEditPart.VISUAL_ID:
@@ -962,28 +962,28 @@ public class UMLVisualIDRegistry {
 				return FinalStateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3004((Pseudostate) domainElement)) {
-				return PseudostateEditPart.VISUAL_ID;
+				return InitialPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3005((Pseudostate) domainElement)) {
-				return Pseudostate2EditPart.VISUAL_ID;
+				return ShallowHistoryPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3006((Pseudostate) domainElement)) {
-				return Pseudostate3EditPart.VISUAL_ID;
+				return DeepHistoryPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3007((Pseudostate) domainElement)) {
-				return Pseudostate4EditPart.VISUAL_ID;
+				return ForkPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3008((Pseudostate) domainElement)) {
-				return Pseudostate5EditPart.VISUAL_ID;
+				return JoinPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3009((Pseudostate) domainElement)) {
-				return Pseudostate6EditPart.VISUAL_ID;
+				return JunctionPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
-				return Pseudostate7EditPart.VISUAL_ID;
+				return ÑhoicePseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
-				return Pseudostate8EditPart.VISUAL_ID;
+				return TerminatePseudostateEditPart.VISUAL_ID;
 			}
 			break;
 		case SimpleStateEditPart.VISUAL_ID:
@@ -1028,28 +1028,28 @@ public class UMLVisualIDRegistry {
 				return FinalStateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3004((Pseudostate) domainElement)) {
-				return PseudostateEditPart.VISUAL_ID;
+				return InitialPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3005((Pseudostate) domainElement)) {
-				return Pseudostate2EditPart.VISUAL_ID;
+				return ShallowHistoryPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3006((Pseudostate) domainElement)) {
-				return Pseudostate3EditPart.VISUAL_ID;
+				return DeepHistoryPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3007((Pseudostate) domainElement)) {
-				return Pseudostate4EditPart.VISUAL_ID;
+				return ForkPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3008((Pseudostate) domainElement)) {
-				return Pseudostate5EditPart.VISUAL_ID;
+				return JoinPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3009((Pseudostate) domainElement)) {
-				return Pseudostate6EditPart.VISUAL_ID;
+				return JunctionPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
-				return Pseudostate7EditPart.VISUAL_ID;
+				return ÑhoicePseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
-				return Pseudostate8EditPart.VISUAL_ID;
+				return TerminatePseudostateEditPart.VISUAL_ID;
 			}
 			break;
 		case SubmachineStateEditPart.VISUAL_ID:
@@ -1140,16 +1140,16 @@ public class UMLVisualIDRegistry {
 		case ConnectionPointReference2EditPart.VISUAL_ID:
 		case Transition2EditPart.VISUAL_ID:
 		case FinalStateEditPart.VISUAL_ID:
-		case PseudostateEditPart.VISUAL_ID:
-		case Pseudostate2EditPart.VISUAL_ID:
-		case Pseudostate3EditPart.VISUAL_ID:
-		case Pseudostate4EditPart.VISUAL_ID:
-		case Pseudostate5EditPart.VISUAL_ID:
-		case Pseudostate6EditPart.VISUAL_ID:
-		case Pseudostate7EditPart.VISUAL_ID:
-		case Pseudostate8EditPart.VISUAL_ID:
-		case Pseudostate9EditPart.VISUAL_ID:
-		case Pseudostate10EditPart.VISUAL_ID:
+		case InitialPseudostateEditPart.VISUAL_ID:
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
+		case DeepHistoryPseudostateEditPart.VISUAL_ID:
+		case ForkPseudostateEditPart.VISUAL_ID:
+		case JoinPseudostateEditPart.VISUAL_ID:
+		case JunctionPseudostateEditPart.VISUAL_ID:
+		case ÑhoicePseudostateEditPart.VISUAL_ID:
+		case TerminatePseudostateEditPart.VISUAL_ID:
+		case EntryPointPseudostateEditPart.VISUAL_ID:
+		case ExitPointPseudostateEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

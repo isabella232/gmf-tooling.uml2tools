@@ -2,18 +2,18 @@ package org.eclipse.uml2.diagram.statemachine.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.DeepHistoryPseudostateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.FinalStateCreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate2CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate3CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate4CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate5CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate6CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate7CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate8CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.PseudostateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.ForkPseudostateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.InitialPseudostateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.JoinPseudostateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.JunctionPseudostateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.ShallowHistoryPseudostateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.SimpleStateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.State2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.SubmachineStateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.TerminatePseudostateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.ÑhoicePseudostateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 /**
@@ -46,28 +46,28 @@ public class State_RegionSubverticesItemSemanticEditPolicy extends UMLBaseItemSe
 			return getGEFWrapper(new FinalStateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3004 == req.getElementType()) {
-			return getGEFWrapper(new PseudostateCreateCommand(req));
+			return getGEFWrapper(new InitialPseudostateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3005 == req.getElementType()) {
-			return getGEFWrapper(new Pseudostate2CreateCommand(req));
+			return getGEFWrapper(new ShallowHistoryPseudostateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3006 == req.getElementType()) {
-			return getGEFWrapper(new Pseudostate3CreateCommand(req));
+			return getGEFWrapper(new DeepHistoryPseudostateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3007 == req.getElementType()) {
-			return getGEFWrapper(new Pseudostate4CreateCommand(req));
+			return getGEFWrapper(new ForkPseudostateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3008 == req.getElementType()) {
-			return getGEFWrapper(new Pseudostate5CreateCommand(req));
+			return getGEFWrapper(new JoinPseudostateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3009 == req.getElementType()) {
-			return getGEFWrapper(new Pseudostate6CreateCommand(req));
+			return getGEFWrapper(new JunctionPseudostateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3010 == req.getElementType()) {
-			return getGEFWrapper(new Pseudostate7CreateCommand(req));
+			return getGEFWrapper(new ÑhoicePseudostateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3011 == req.getElementType()) {
-			return getGEFWrapper(new Pseudostate8CreateCommand(req));
+			return getGEFWrapper(new TerminatePseudostateCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

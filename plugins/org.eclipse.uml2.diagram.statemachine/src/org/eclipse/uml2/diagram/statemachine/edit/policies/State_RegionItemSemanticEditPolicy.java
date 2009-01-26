@@ -10,18 +10,18 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
@@ -77,28 +77,28 @@ public class State_RegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 					case FinalStateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case PseudostateEditPart.VISUAL_ID:
+					case InitialPseudostateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Pseudostate2EditPart.VISUAL_ID:
+					case ShallowHistoryPseudostateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Pseudostate3EditPart.VISUAL_ID:
+					case DeepHistoryPseudostateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Pseudostate4EditPart.VISUAL_ID:
+					case ForkPseudostateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Pseudostate5EditPart.VISUAL_ID:
+					case JoinPseudostateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Pseudostate6EditPart.VISUAL_ID:
+					case JunctionPseudostateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Pseudostate7EditPart.VISUAL_ID:
+					case ÑhoicePseudostateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case Pseudostate8EditPart.VISUAL_ID:
+					case TerminatePseudostateEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

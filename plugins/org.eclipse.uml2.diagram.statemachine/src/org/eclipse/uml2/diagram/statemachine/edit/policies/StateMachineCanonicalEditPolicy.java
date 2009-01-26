@@ -29,28 +29,28 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -104,16 +104,16 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 		case ConnectionPointReference2EditPart.VISUAL_ID:
 		case Transition2EditPart.VISUAL_ID:
 		case FinalStateEditPart.VISUAL_ID:
-		case PseudostateEditPart.VISUAL_ID:
-		case Pseudostate2EditPart.VISUAL_ID:
-		case Pseudostate3EditPart.VISUAL_ID:
-		case Pseudostate4EditPart.VISUAL_ID:
-		case Pseudostate5EditPart.VISUAL_ID:
-		case Pseudostate6EditPart.VISUAL_ID:
-		case Pseudostate7EditPart.VISUAL_ID:
-		case Pseudostate8EditPart.VISUAL_ID:
-		case Pseudostate9EditPart.VISUAL_ID:
-		case Pseudostate10EditPart.VISUAL_ID:
+		case InitialPseudostateEditPart.VISUAL_ID:
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
+		case DeepHistoryPseudostateEditPart.VISUAL_ID:
+		case ForkPseudostateEditPart.VISUAL_ID:
+		case JoinPseudostateEditPart.VISUAL_ID:
+		case JunctionPseudostateEditPart.VISUAL_ID:
+		case ÑhoicePseudostateEditPart.VISUAL_ID:
+		case TerminatePseudostateEditPart.VISUAL_ID:
+		case EntryPointPseudostateEditPart.VISUAL_ID:
+		case ExitPointPseudostateEditPart.VISUAL_ID:
 			return true;
 		case StateMachine2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
@@ -344,70 +344,70 @@ public class StateMachineCanonicalEditPolicy extends CanonicalConnectionEditPoli
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case PseudostateEditPart.VISUAL_ID: {
+		case InitialPseudostateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPseudostate_3004ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Pseudostate2EditPart.VISUAL_ID: {
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPseudostate_3005ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Pseudostate3EditPart.VISUAL_ID: {
+		case DeepHistoryPseudostateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPseudostate_3006ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Pseudostate4EditPart.VISUAL_ID: {
+		case ForkPseudostateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPseudostate_3007ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Pseudostate5EditPart.VISUAL_ID: {
+		case JoinPseudostateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPseudostate_3008ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Pseudostate6EditPart.VISUAL_ID: {
+		case JunctionPseudostateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPseudostate_3009ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Pseudostate7EditPart.VISUAL_ID: {
+		case ÑhoicePseudostateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPseudostate_3010ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Pseudostate8EditPart.VISUAL_ID: {
+		case TerminatePseudostateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPseudostate_3011ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Pseudostate9EditPart.VISUAL_ID: {
+		case EntryPointPseudostateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPseudostate_3014ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case Pseudostate10EditPart.VISUAL_ID: {
+		case ExitPointPseudostateEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPseudostate_3015ContainedLinks(view));
 			}

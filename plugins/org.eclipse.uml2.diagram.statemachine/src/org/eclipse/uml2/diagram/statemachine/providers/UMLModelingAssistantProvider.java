@@ -23,23 +23,23 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.Messages;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 
@@ -191,35 +191,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof FinalStateEditPart) {
 			return ((FinalStateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof PseudostateEditPart) {
-			return ((PseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof InitialPseudostateEditPart) {
+			return ((InitialPseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof Pseudostate2EditPart) {
-			return ((Pseudostate2EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ShallowHistoryPseudostateEditPart) {
+			return ((ShallowHistoryPseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof Pseudostate3EditPart) {
-			return ((Pseudostate3EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof DeepHistoryPseudostateEditPart) {
+			return ((DeepHistoryPseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof Pseudostate4EditPart) {
-			return ((Pseudostate4EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ForkPseudostateEditPart) {
+			return ((ForkPseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof Pseudostate5EditPart) {
-			return ((Pseudostate5EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof JoinPseudostateEditPart) {
+			return ((JoinPseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof Pseudostate6EditPart) {
-			return ((Pseudostate6EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof JunctionPseudostateEditPart) {
+			return ((JunctionPseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof Pseudostate7EditPart) {
-			return ((Pseudostate7EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ÑhoicePseudostateEditPart) {
+			return ((ÑhoicePseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof Pseudostate8EditPart) {
-			return ((Pseudostate8EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof TerminatePseudostateEditPart) {
+			return ((TerminatePseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof Pseudostate9EditPart) {
-			return ((Pseudostate9EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof EntryPointPseudostateEditPart) {
+			return ((EntryPointPseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof Pseudostate10EditPart) {
-			return ((Pseudostate10EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ExitPointPseudostateEditPart) {
+			return ((ExitPointPseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -247,35 +247,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof FinalStateEditPart) {
 			return ((FinalStateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof PseudostateEditPart) {
-			return ((PseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof InitialPseudostateEditPart) {
+			return ((InitialPseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof Pseudostate2EditPart) {
-			return ((Pseudostate2EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ShallowHistoryPseudostateEditPart) {
+			return ((ShallowHistoryPseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof Pseudostate3EditPart) {
-			return ((Pseudostate3EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof DeepHistoryPseudostateEditPart) {
+			return ((DeepHistoryPseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof Pseudostate4EditPart) {
-			return ((Pseudostate4EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ForkPseudostateEditPart) {
+			return ((ForkPseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof Pseudostate5EditPart) {
-			return ((Pseudostate5EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof JoinPseudostateEditPart) {
+			return ((JoinPseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof Pseudostate6EditPart) {
-			return ((Pseudostate6EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof JunctionPseudostateEditPart) {
+			return ((JunctionPseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof Pseudostate7EditPart) {
-			return ((Pseudostate7EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ÑhoicePseudostateEditPart) {
+			return ((ÑhoicePseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof Pseudostate8EditPart) {
-			return ((Pseudostate8EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof TerminatePseudostateEditPart) {
+			return ((TerminatePseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof Pseudostate9EditPart) {
-			return ((Pseudostate9EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof EntryPointPseudostateEditPart) {
+			return ((EntryPointPseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof Pseudostate10EditPart) {
-			return ((Pseudostate10EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ExitPointPseudostateEditPart) {
+			return ((ExitPointPseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -304,35 +304,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof FinalStateEditPart) {
 			return ((FinalStateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof PseudostateEditPart) {
-			return ((PseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof InitialPseudostateEditPart) {
+			return ((InitialPseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof Pseudostate2EditPart) {
-			return ((Pseudostate2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ShallowHistoryPseudostateEditPart) {
+			return ((ShallowHistoryPseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof Pseudostate3EditPart) {
-			return ((Pseudostate3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof DeepHistoryPseudostateEditPart) {
+			return ((DeepHistoryPseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof Pseudostate4EditPart) {
-			return ((Pseudostate4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ForkPseudostateEditPart) {
+			return ((ForkPseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof Pseudostate5EditPart) {
-			return ((Pseudostate5EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof JoinPseudostateEditPart) {
+			return ((JoinPseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof Pseudostate6EditPart) {
-			return ((Pseudostate6EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof JunctionPseudostateEditPart) {
+			return ((JunctionPseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof Pseudostate7EditPart) {
-			return ((Pseudostate7EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ÑhoicePseudostateEditPart) {
+			return ((ÑhoicePseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof Pseudostate8EditPart) {
-			return ((Pseudostate8EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof TerminatePseudostateEditPart) {
+			return ((TerminatePseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof Pseudostate9EditPart) {
-			return ((Pseudostate9EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof EntryPointPseudostateEditPart) {
+			return ((EntryPointPseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof Pseudostate10EditPart) {
-			return ((Pseudostate10EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ExitPointPseudostateEditPart) {
+			return ((ExitPointPseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -360,35 +360,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof FinalStateEditPart) {
 			return ((FinalStateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof PseudostateEditPart) {
-			return ((PseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof InitialPseudostateEditPart) {
+			return ((InitialPseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof Pseudostate2EditPart) {
-			return ((Pseudostate2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ShallowHistoryPseudostateEditPart) {
+			return ((ShallowHistoryPseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof Pseudostate3EditPart) {
-			return ((Pseudostate3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof DeepHistoryPseudostateEditPart) {
+			return ((DeepHistoryPseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof Pseudostate4EditPart) {
-			return ((Pseudostate4EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ForkPseudostateEditPart) {
+			return ((ForkPseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof Pseudostate5EditPart) {
-			return ((Pseudostate5EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof JoinPseudostateEditPart) {
+			return ((JoinPseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof Pseudostate6EditPart) {
-			return ((Pseudostate6EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof JunctionPseudostateEditPart) {
+			return ((JunctionPseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof Pseudostate7EditPart) {
-			return ((Pseudostate7EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ÑhoicePseudostateEditPart) {
+			return ((ÑhoicePseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof Pseudostate8EditPart) {
-			return ((Pseudostate8EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof TerminatePseudostateEditPart) {
+			return ((TerminatePseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof Pseudostate9EditPart) {
-			return ((Pseudostate9EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof EntryPointPseudostateEditPart) {
+			return ((EntryPointPseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof Pseudostate10EditPart) {
-			return ((Pseudostate10EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ExitPointPseudostateEditPart) {
+			return ((ExitPointPseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -416,35 +416,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof FinalStateEditPart) {
 			return ((FinalStateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof PseudostateEditPart) {
-			return ((PseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof InitialPseudostateEditPart) {
+			return ((InitialPseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof Pseudostate2EditPart) {
-			return ((Pseudostate2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ShallowHistoryPseudostateEditPart) {
+			return ((ShallowHistoryPseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof Pseudostate3EditPart) {
-			return ((Pseudostate3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof DeepHistoryPseudostateEditPart) {
+			return ((DeepHistoryPseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof Pseudostate4EditPart) {
-			return ((Pseudostate4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ForkPseudostateEditPart) {
+			return ((ForkPseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof Pseudostate5EditPart) {
-			return ((Pseudostate5EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof JoinPseudostateEditPart) {
+			return ((JoinPseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof Pseudostate6EditPart) {
-			return ((Pseudostate6EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof JunctionPseudostateEditPart) {
+			return ((JunctionPseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof Pseudostate7EditPart) {
-			return ((Pseudostate7EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ÑhoicePseudostateEditPart) {
+			return ((ÑhoicePseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof Pseudostate8EditPart) {
-			return ((Pseudostate8EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof TerminatePseudostateEditPart) {
+			return ((TerminatePseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof Pseudostate9EditPart) {
-			return ((Pseudostate9EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof EntryPointPseudostateEditPart) {
+			return ((EntryPointPseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof Pseudostate10EditPart) {
-			return ((Pseudostate10EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ExitPointPseudostateEditPart) {
+			return ((ExitPointPseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}

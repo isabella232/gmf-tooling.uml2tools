@@ -10,11 +10,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate10CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Pseudostate9CreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.EntryPointPseudostateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.ExitPointPseudostateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.StateMachine_RegionCreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -40,10 +40,10 @@ public class StateMachine2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 			return getGEFWrapper(new StateMachine_RegionCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3014 == req.getElementType()) {
-			return getGEFWrapper(new Pseudostate9CreateCommand(req));
+			return getGEFWrapper(new EntryPointPseudostateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3015 == req.getElementType()) {
-			return getGEFWrapper(new Pseudostate10CreateCommand(req));
+			return getGEFWrapper(new ExitPointPseudostateCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -78,10 +78,10 @@ public class StateMachine2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 			case StateMachine_RegionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case Pseudostate9EditPart.VISUAL_ID:
+			case EntryPointPseudostateEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case Pseudostate10EditPart.VISUAL_ID:
+			case ExitPointPseudostateEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

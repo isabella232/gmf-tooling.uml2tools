@@ -15,22 +15,20 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateStereotypeEditPart;
@@ -48,9 +46,11 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateNameEditP
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.view.factories.CompositeStateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.CompositeStateStereotypeViewFactory;
@@ -61,22 +61,20 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointRefer
 import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceName2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.ConnectionPointReferenceViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.DeepHistoryPseudostateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.DoActivityViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.EntryActivityViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.EntryPointPseudostateNameViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.EntryPointPseudostateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.ExitActivityViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ExitPointPseudostateNameViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ExitPointPseudostateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.FinalStateViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate10ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate2ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate3ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate4ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate5ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate6ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate7ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate8ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.Pseudostate9ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.PseudostateName2ViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.PseudostateNameViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.PseudostateViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ForkPseudostateViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.InitialPseudostateViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.JoinPseudostateViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.JunctionPseudostateViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ShallowHistoryPseudostateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SimpleStateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SimpleStateStereotypeViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SimpleStateViewFactory;
@@ -94,9 +92,11 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.SubmachineStateStere
 import org.eclipse.uml2.diagram.statemachine.view.factories.SubmachineStateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SubmachineState_InternalActivitiesViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SubmachineState_InternalTransitionsViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.TerminatePseudostateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.Transition2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.TransitionNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.TransitionViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ÑhoicePseudostateViewFactory;
 
 /**
  * @generated
@@ -172,16 +172,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ConnectionPointReference2EditPart.VISUAL_ID:
 				case Transition2EditPart.VISUAL_ID:
 				case FinalStateEditPart.VISUAL_ID:
-				case PseudostateEditPart.VISUAL_ID:
-				case Pseudostate2EditPart.VISUAL_ID:
-				case Pseudostate3EditPart.VISUAL_ID:
-				case Pseudostate4EditPart.VISUAL_ID:
-				case Pseudostate5EditPart.VISUAL_ID:
-				case Pseudostate6EditPart.VISUAL_ID:
-				case Pseudostate7EditPart.VISUAL_ID:
-				case Pseudostate8EditPart.VISUAL_ID:
-				case Pseudostate9EditPart.VISUAL_ID:
-				case Pseudostate10EditPart.VISUAL_ID:
+				case InitialPseudostateEditPart.VISUAL_ID:
+				case ShallowHistoryPseudostateEditPart.VISUAL_ID:
+				case DeepHistoryPseudostateEditPart.VISUAL_ID:
+				case ForkPseudostateEditPart.VISUAL_ID:
+				case JoinPseudostateEditPart.VISUAL_ID:
+				case JunctionPseudostateEditPart.VISUAL_ID:
+				case ÑhoicePseudostateEditPart.VISUAL_ID:
+				case TerminatePseudostateEditPart.VISUAL_ID:
+				case EntryPointPseudostateEditPart.VISUAL_ID:
+				case ExitPointPseudostateEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
@@ -235,13 +235,13 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case PseudostateNameEditPart.VISUAL_ID:
-					if (Pseudostate9EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case EntryPointPseudostateNameEditPart.VISUAL_ID:
+					if (EntryPointPseudostateEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
-				case PseudostateName2EditPart.VISUAL_ID:
-					if (Pseudostate10EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case ExitPointPseudostateNameEditPart.VISUAL_ID:
+					if (ExitPointPseudostateEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -312,30 +312,30 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return Transition2ViewFactory.class;
 		case FinalStateEditPart.VISUAL_ID:
 			return FinalStateViewFactory.class;
-		case PseudostateEditPart.VISUAL_ID:
-			return PseudostateViewFactory.class;
-		case Pseudostate2EditPart.VISUAL_ID:
-			return Pseudostate2ViewFactory.class;
-		case Pseudostate3EditPart.VISUAL_ID:
-			return Pseudostate3ViewFactory.class;
-		case Pseudostate4EditPart.VISUAL_ID:
-			return Pseudostate4ViewFactory.class;
-		case Pseudostate5EditPart.VISUAL_ID:
-			return Pseudostate5ViewFactory.class;
-		case Pseudostate6EditPart.VISUAL_ID:
-			return Pseudostate6ViewFactory.class;
-		case Pseudostate7EditPart.VISUAL_ID:
-			return Pseudostate7ViewFactory.class;
-		case Pseudostate8EditPart.VISUAL_ID:
-			return Pseudostate8ViewFactory.class;
-		case Pseudostate9EditPart.VISUAL_ID:
-			return Pseudostate9ViewFactory.class;
-		case PseudostateNameEditPart.VISUAL_ID:
-			return PseudostateNameViewFactory.class;
-		case Pseudostate10EditPart.VISUAL_ID:
-			return Pseudostate10ViewFactory.class;
-		case PseudostateName2EditPart.VISUAL_ID:
-			return PseudostateName2ViewFactory.class;
+		case InitialPseudostateEditPart.VISUAL_ID:
+			return InitialPseudostateViewFactory.class;
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
+			return ShallowHistoryPseudostateViewFactory.class;
+		case DeepHistoryPseudostateEditPart.VISUAL_ID:
+			return DeepHistoryPseudostateViewFactory.class;
+		case ForkPseudostateEditPart.VISUAL_ID:
+			return ForkPseudostateViewFactory.class;
+		case JoinPseudostateEditPart.VISUAL_ID:
+			return JoinPseudostateViewFactory.class;
+		case JunctionPseudostateEditPart.VISUAL_ID:
+			return JunctionPseudostateViewFactory.class;
+		case ÑhoicePseudostateEditPart.VISUAL_ID:
+			return ÑhoicePseudostateViewFactory.class;
+		case TerminatePseudostateEditPart.VISUAL_ID:
+			return TerminatePseudostateViewFactory.class;
+		case EntryPointPseudostateEditPart.VISUAL_ID:
+			return EntryPointPseudostateViewFactory.class;
+		case EntryPointPseudostateNameEditPart.VISUAL_ID:
+			return EntryPointPseudostateNameViewFactory.class;
+		case ExitPointPseudostateEditPart.VISUAL_ID:
+			return ExitPointPseudostateViewFactory.class;
+		case ExitPointPseudostateNameEditPart.VISUAL_ID:
+			return ExitPointPseudostateNameViewFactory.class;
 		case StateMachine_RegionSubverticesEditPart.VISUAL_ID:
 			return StateMachine_RegionSubverticesViewFactory.class;
 		case SimpleState_InternalActivitiesEditPart.VISUAL_ID:

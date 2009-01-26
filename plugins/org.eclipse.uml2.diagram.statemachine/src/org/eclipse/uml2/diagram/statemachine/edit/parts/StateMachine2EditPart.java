@@ -1,7 +1,5 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
-import java.util.Collections;
-import java.util.List;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -21,7 +19,6 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
@@ -39,7 +36,6 @@ import org.eclipse.uml2.diagram.common.draw2d.BisectionBorderItemLocator;
 import org.eclipse.uml2.diagram.common.draw2d.LaneLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
-import org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.StateMachine2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.StateMachine2ItemSemanticEditPolicy;
@@ -100,8 +96,8 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
-				case Pseudostate9EditPart.VISUAL_ID:
-				case Pseudostate10EditPart.VISUAL_ID:
+				case EntryPointPseudostateEditPart.VISUAL_ID:
+				case ExitPointPseudostateEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -149,14 +145,14 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 			((StateMachineStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_stereo());
 			return true;
 		}
-		if (childEditPart instanceof Pseudostate9EditPart) {
+		if (childEditPart instanceof EntryPointPseudostateEditPart) {
 			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
-			getBorderedFigure().getBorderItemContainer().add(((Pseudostate9EditPart) childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((EntryPointPseudostateEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof Pseudostate10EditPart) {
+		if (childEditPart instanceof ExitPointPseudostateEditPart) {
 			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
-			getBorderedFigure().getBorderItemContainer().add(((Pseudostate10EditPart) childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((ExitPointPseudostateEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return false;
@@ -167,12 +163,12 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof Pseudostate9EditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((Pseudostate9EditPart) childEditPart).getFigure());
+		if (childEditPart instanceof EntryPointPseudostateEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((EntryPointPseudostateEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof Pseudostate10EditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((Pseudostate10EditPart) childEditPart).getFigure());
+		if (childEditPart instanceof ExitPointPseudostateEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ExitPointPseudostateEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -212,7 +208,7 @@ public class StateMachine2EditPart extends AbstractBorderedShapeEditPart impleme
 	 * @generated NOT
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof Pseudostate9EditPart || editPart instanceof Pseudostate10EditPart) {
+		if (editPart instanceof EntryPointPseudostateEditPart || editPart instanceof ExitPointPseudostateEditPart) {
 			return getContentPaneForGen(editPart);
 		}
 		return contentPane;

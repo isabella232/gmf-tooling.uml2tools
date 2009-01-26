@@ -101,41 +101,41 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case FinalStateEditPart.VISUAL_ID:
 				return new FinalStateEditPart(view);
 
-			case PseudostateEditPart.VISUAL_ID:
-				return new PseudostateEditPart(view);
+			case InitialPseudostateEditPart.VISUAL_ID:
+				return new InitialPseudostateEditPart(view);
 
-			case Pseudostate2EditPart.VISUAL_ID:
-				return new Pseudostate2EditPart(view);
+			case ShallowHistoryPseudostateEditPart.VISUAL_ID:
+				return new ShallowHistoryPseudostateEditPart(view);
 
-			case Pseudostate3EditPart.VISUAL_ID:
-				return new Pseudostate3EditPart(view);
+			case DeepHistoryPseudostateEditPart.VISUAL_ID:
+				return new DeepHistoryPseudostateEditPart(view);
 
-			case Pseudostate4EditPart.VISUAL_ID:
-				return new Pseudostate4EditPart(view);
+			case ForkPseudostateEditPart.VISUAL_ID:
+				return new ForkPseudostateEditPart(view);
 
-			case Pseudostate5EditPart.VISUAL_ID:
-				return new Pseudostate5EditPart(view);
+			case JoinPseudostateEditPart.VISUAL_ID:
+				return new JoinPseudostateEditPart(view);
 
-			case Pseudostate6EditPart.VISUAL_ID:
-				return new Pseudostate6EditPart(view);
+			case JunctionPseudostateEditPart.VISUAL_ID:
+				return new JunctionPseudostateEditPart(view);
 
-			case Pseudostate7EditPart.VISUAL_ID:
-				return new Pseudostate7EditPart(view);
+			case ÑhoicePseudostateEditPart.VISUAL_ID:
+				return new ÑhoicePseudostateEditPart(view);
 
-			case Pseudostate8EditPart.VISUAL_ID:
-				return new Pseudostate8EditPart(view);
+			case TerminatePseudostateEditPart.VISUAL_ID:
+				return new TerminatePseudostateEditPart(view);
 
-			case Pseudostate9EditPart.VISUAL_ID:
-				return new Pseudostate9EditPart(view);
+			case EntryPointPseudostateEditPart.VISUAL_ID:
+				return new EntryPointPseudostateEditPart(view);
 
-			case PseudostateNameEditPart.VISUAL_ID:
-				return new PseudostateNameEditPart(view);
+			case EntryPointPseudostateNameEditPart.VISUAL_ID:
+				return new EntryPointPseudostateNameEditPart(view);
 
-			case Pseudostate10EditPart.VISUAL_ID:
-				return new Pseudostate10EditPart(view);
+			case ExitPointPseudostateEditPart.VISUAL_ID:
+				return new ExitPointPseudostateEditPart(view);
 
-			case PseudostateName2EditPart.VISUAL_ID:
-				return new PseudostateName2EditPart(view);
+			case ExitPointPseudostateNameEditPart.VISUAL_ID:
+				return new ExitPointPseudostateNameEditPart(view);
 
 			case StateMachine_RegionSubverticesEditPart.VISUAL_ID:
 				return new StateMachine_RegionSubverticesEditPart(view);

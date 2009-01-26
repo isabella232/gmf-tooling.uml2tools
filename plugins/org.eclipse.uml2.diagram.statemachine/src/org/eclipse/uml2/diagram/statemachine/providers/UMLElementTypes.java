@@ -20,28 +20,28 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -497,25 +497,25 @@ public class UMLElementTypes extends ElementInitializers {
 			return Transition_3022;
 		case FinalStateEditPart.VISUAL_ID:
 			return FinalState_3003;
-		case PseudostateEditPart.VISUAL_ID:
+		case InitialPseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3004;
-		case Pseudostate2EditPart.VISUAL_ID:
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3005;
-		case Pseudostate3EditPart.VISUAL_ID:
+		case DeepHistoryPseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3006;
-		case Pseudostate4EditPart.VISUAL_ID:
+		case ForkPseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3007;
-		case Pseudostate5EditPart.VISUAL_ID:
+		case JoinPseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3008;
-		case Pseudostate6EditPart.VISUAL_ID:
+		case JunctionPseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3009;
-		case Pseudostate7EditPart.VISUAL_ID:
+		case ÑhoicePseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3010;
-		case Pseudostate8EditPart.VISUAL_ID:
+		case TerminatePseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3011;
-		case Pseudostate9EditPart.VISUAL_ID:
+		case EntryPointPseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3014;
-		case Pseudostate10EditPart.VISUAL_ID:
+		case ExitPointPseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3015;
 		case TransitionEditPart.VISUAL_ID:
 			return Transition_4001;

@@ -20,20 +20,18 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalA
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
@@ -45,8 +43,10 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesE
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.ConnectionPointReference;
@@ -119,11 +119,11 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getConnectionPoints().iterator(); it.hasNext();) {
 			Pseudostate childElement = (Pseudostate) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Pseudostate9EditPart.VISUAL_ID) {
+			if (visualID == EntryPointPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate10EditPart.VISUAL_ID) {
+			if (visualID == ExitPointPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -215,35 +215,35 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == PseudostateEditPart.VISUAL_ID) {
+			if (visualID == InitialPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate2EditPart.VISUAL_ID) {
+			if (visualID == ShallowHistoryPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate3EditPart.VISUAL_ID) {
+			if (visualID == DeepHistoryPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate4EditPart.VISUAL_ID) {
+			if (visualID == ForkPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate5EditPart.VISUAL_ID) {
+			if (visualID == JoinPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate6EditPart.VISUAL_ID) {
+			if (visualID == JunctionPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate7EditPart.VISUAL_ID) {
+			if (visualID == ÑhoicePseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate8EditPart.VISUAL_ID) {
+			if (visualID == TerminatePseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -381,35 +381,35 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == PseudostateEditPart.VISUAL_ID) {
+			if (visualID == InitialPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate2EditPart.VISUAL_ID) {
+			if (visualID == ShallowHistoryPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate3EditPart.VISUAL_ID) {
+			if (visualID == DeepHistoryPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate4EditPart.VISUAL_ID) {
+			if (visualID == ForkPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate5EditPart.VISUAL_ID) {
+			if (visualID == JoinPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate6EditPart.VISUAL_ID) {
+			if (visualID == JunctionPseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate7EditPart.VISUAL_ID) {
+			if (visualID == ÑhoicePseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pseudostate8EditPart.VISUAL_ID) {
+			if (visualID == TerminatePseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -531,25 +531,25 @@ public class UMLDiagramUpdater {
 			return getTransition_3022ContainedLinks(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003ContainedLinks(view);
-		case PseudostateEditPart.VISUAL_ID:
+		case InitialPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3004ContainedLinks(view);
-		case Pseudostate2EditPart.VISUAL_ID:
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3005ContainedLinks(view);
-		case Pseudostate3EditPart.VISUAL_ID:
+		case DeepHistoryPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3006ContainedLinks(view);
-		case Pseudostate4EditPart.VISUAL_ID:
+		case ForkPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3007ContainedLinks(view);
-		case Pseudostate5EditPart.VISUAL_ID:
+		case JoinPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3008ContainedLinks(view);
-		case Pseudostate6EditPart.VISUAL_ID:
+		case JunctionPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3009ContainedLinks(view);
-		case Pseudostate7EditPart.VISUAL_ID:
+		case ÑhoicePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3010ContainedLinks(view);
-		case Pseudostate8EditPart.VISUAL_ID:
+		case TerminatePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3011ContainedLinks(view);
-		case Pseudostate9EditPart.VISUAL_ID:
+		case EntryPointPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3014ContainedLinks(view);
-		case Pseudostate10EditPart.VISUAL_ID:
+		case ExitPointPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3015ContainedLinks(view);
 		case TransitionEditPart.VISUAL_ID:
 			return getTransition_4001ContainedLinks(view);
@@ -588,25 +588,25 @@ public class UMLDiagramUpdater {
 			return getTransition_3022IncomingLinks(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003IncomingLinks(view);
-		case PseudostateEditPart.VISUAL_ID:
+		case InitialPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3004IncomingLinks(view);
-		case Pseudostate2EditPart.VISUAL_ID:
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3005IncomingLinks(view);
-		case Pseudostate3EditPart.VISUAL_ID:
+		case DeepHistoryPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3006IncomingLinks(view);
-		case Pseudostate4EditPart.VISUAL_ID:
+		case ForkPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3007IncomingLinks(view);
-		case Pseudostate5EditPart.VISUAL_ID:
+		case JoinPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3008IncomingLinks(view);
-		case Pseudostate6EditPart.VISUAL_ID:
+		case JunctionPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3009IncomingLinks(view);
-		case Pseudostate7EditPart.VISUAL_ID:
+		case ÑhoicePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3010IncomingLinks(view);
-		case Pseudostate8EditPart.VISUAL_ID:
+		case TerminatePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3011IncomingLinks(view);
-		case Pseudostate9EditPart.VISUAL_ID:
+		case EntryPointPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3014IncomingLinks(view);
-		case Pseudostate10EditPart.VISUAL_ID:
+		case ExitPointPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3015IncomingLinks(view);
 		case TransitionEditPart.VISUAL_ID:
 			return getTransition_4001IncomingLinks(view);
@@ -645,25 +645,25 @@ public class UMLDiagramUpdater {
 			return getTransition_3022OutgoingLinks(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003OutgoingLinks(view);
-		case PseudostateEditPart.VISUAL_ID:
+		case InitialPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3004OutgoingLinks(view);
-		case Pseudostate2EditPart.VISUAL_ID:
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3005OutgoingLinks(view);
-		case Pseudostate3EditPart.VISUAL_ID:
+		case DeepHistoryPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3006OutgoingLinks(view);
-		case Pseudostate4EditPart.VISUAL_ID:
+		case ForkPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3007OutgoingLinks(view);
-		case Pseudostate5EditPart.VISUAL_ID:
+		case JoinPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3008OutgoingLinks(view);
-		case Pseudostate6EditPart.VISUAL_ID:
+		case JunctionPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3009OutgoingLinks(view);
-		case Pseudostate7EditPart.VISUAL_ID:
+		case ÑhoicePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3010OutgoingLinks(view);
-		case Pseudostate8EditPart.VISUAL_ID:
+		case TerminatePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3011OutgoingLinks(view);
-		case Pseudostate9EditPart.VISUAL_ID:
+		case EntryPointPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3014OutgoingLinks(view);
-		case Pseudostate10EditPart.VISUAL_ID:
+		case ExitPointPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3015OutgoingLinks(view);
 		case TransitionEditPart.VISUAL_ID:
 			return getTransition_4001OutgoingLinks(view);

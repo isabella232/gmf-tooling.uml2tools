@@ -306,34 +306,34 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 		if (targetEditPart instanceof FinalStateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof PseudostateEditPart) {
+		if (targetEditPart instanceof InitialPseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof Pseudostate2EditPart) {
+		if (targetEditPart instanceof ShallowHistoryPseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof Pseudostate3EditPart) {
+		if (targetEditPart instanceof DeepHistoryPseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof Pseudostate4EditPart) {
+		if (targetEditPart instanceof ForkPseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof Pseudostate5EditPart) {
+		if (targetEditPart instanceof JoinPseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof Pseudostate6EditPart) {
+		if (targetEditPart instanceof JunctionPseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof Pseudostate7EditPart) {
+		if (targetEditPart instanceof ÑhoicePseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof Pseudostate8EditPart) {
+		if (targetEditPart instanceof TerminatePseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof Pseudostate9EditPart) {
+		if (targetEditPart instanceof EntryPointPseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof Pseudostate10EditPart) {
+		if (targetEditPart instanceof ExitPointPseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
 		return types;

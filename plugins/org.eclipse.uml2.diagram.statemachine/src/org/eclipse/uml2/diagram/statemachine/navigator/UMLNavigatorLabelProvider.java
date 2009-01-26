@@ -21,22 +21,20 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
@@ -46,9 +44,11 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditP
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -137,25 +137,25 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Transition", UMLElementTypes.Transition_3022); //$NON-NLS-1$
 		case FinalStateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?FinalState", UMLElementTypes.FinalState_3003); //$NON-NLS-1$
-		case PseudostateEditPart.VISUAL_ID:
+		case InitialPseudostateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3004); //$NON-NLS-1$
-		case Pseudostate2EditPart.VISUAL_ID:
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3005); //$NON-NLS-1$
-		case Pseudostate3EditPart.VISUAL_ID:
+		case DeepHistoryPseudostateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3006); //$NON-NLS-1$
-		case Pseudostate4EditPart.VISUAL_ID:
+		case ForkPseudostateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3007); //$NON-NLS-1$
-		case Pseudostate5EditPart.VISUAL_ID:
+		case JoinPseudostateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3008); //$NON-NLS-1$
-		case Pseudostate6EditPart.VISUAL_ID:
+		case JunctionPseudostateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3009); //$NON-NLS-1$
-		case Pseudostate7EditPart.VISUAL_ID:
+		case ÑhoicePseudostateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3010); //$NON-NLS-1$
-		case Pseudostate8EditPart.VISUAL_ID:
+		case TerminatePseudostateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3011); //$NON-NLS-1$
-		case Pseudostate9EditPart.VISUAL_ID:
+		case EntryPointPseudostateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3014); //$NON-NLS-1$
-		case Pseudostate10EditPart.VISUAL_ID:
+		case ExitPointPseudostateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pseudostate", UMLElementTypes.Pseudostate_3015); //$NON-NLS-1$
 		case TransitionEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Transition", UMLElementTypes.Transition_4001); //$NON-NLS-1$
@@ -237,25 +237,25 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getTransition_3022Text(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003Text(view);
-		case PseudostateEditPart.VISUAL_ID:
+		case InitialPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3004Text(view);
-		case Pseudostate2EditPart.VISUAL_ID:
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3005Text(view);
-		case Pseudostate3EditPart.VISUAL_ID:
+		case DeepHistoryPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3006Text(view);
-		case Pseudostate4EditPart.VISUAL_ID:
+		case ForkPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3007Text(view);
-		case Pseudostate5EditPart.VISUAL_ID:
+		case JoinPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3008Text(view);
-		case Pseudostate6EditPart.VISUAL_ID:
+		case JunctionPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3009Text(view);
-		case Pseudostate7EditPart.VISUAL_ID:
+		case ÑhoicePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3010Text(view);
-		case Pseudostate8EditPart.VISUAL_ID:
+		case TerminatePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3011Text(view);
-		case Pseudostate9EditPart.VISUAL_ID:
+		case EntryPointPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3014Text(view);
-		case Pseudostate10EditPart.VISUAL_ID:
+		case ExitPointPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3015Text(view);
 		case TransitionEditPart.VISUAL_ID:
 			return getTransition_4001Text(view);
@@ -559,7 +559,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getPseudostate_3014Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3014, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(PseudostateNameEditPart.VISUAL_ID));
+				.getType(EntryPointPseudostateNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -573,7 +573,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getPseudostate_3015Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3015, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(PseudostateName2EditPart.VISUAL_ID));
+				.getType(ExitPointPseudostateNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {

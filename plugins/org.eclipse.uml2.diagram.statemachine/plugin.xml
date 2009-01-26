@@ -455,7 +455,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3005"
                name="%metatype.name.Pseudostate_3005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.PseudostateEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.ShallowHistoryPseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
             <param name="semanticHint" value="3005"/>
          </specializationType>
@@ -465,7 +465,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3006"
                name="%metatype.name.Pseudostate_3006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate2EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.DeepHistoryPseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
             <param name="semanticHint" value="3006"/>
          </specializationType>
@@ -475,7 +475,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3007"
                name="%metatype.name.Pseudostate_3007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate3EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.ForkPseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
             <param name="semanticHint" value="3007"/>
          </specializationType>
@@ -485,7 +485,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3008"
                name="%metatype.name.Pseudostate_3008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate4EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.JoinPseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
             <param name="semanticHint" value="3008"/>
          </specializationType>
@@ -495,7 +495,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3009"
                name="%metatype.name.Pseudostate_3009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate5EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.JunctionPseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
             <param name="semanticHint" value="3009"/>
          </specializationType>
@@ -505,7 +505,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3010"
                name="%metatype.name.Pseudostate_3010"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate6EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.СhoicePseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
             <param name="semanticHint" value="3010"/>
          </specializationType>
@@ -515,7 +515,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3011"
                name="%metatype.name.Pseudostate_3011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate7EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.TerminatePseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
             <param name="semanticHint" value="3011"/>
          </specializationType>
@@ -525,7 +525,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3014"
                name="%metatype.name.Pseudostate_3014"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate8EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.EntryPointPseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
             <param name="semanticHint" value="3014"/>
          </specializationType>
@@ -535,7 +535,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3015"
                name="%metatype.name.Pseudostate_3015"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.Pseudostate9EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.ExitPointPseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
             <param name="semanticHint" value="3015"/>
          </specializationType>
@@ -772,8 +772,8 @@
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"><or> 
-                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart"/>
-                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart"/>
                   </or></iterate></with>
                </and>
             </visibleWhen>
@@ -958,43 +958,43 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateEditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate4EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate5EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate6EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate7EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.СhoicePseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate8EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate9EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Pseudostate10EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
