@@ -91,7 +91,7 @@ public class UMLBaseEditHelper extends AbstractEditHelper {
 	
 	
 	/**
-	 * @generated NOT
+	 * @NOT-generated
 	 */
 	@Override
 	protected ICommand getConfigureCommand(ConfigureRequest req) {
