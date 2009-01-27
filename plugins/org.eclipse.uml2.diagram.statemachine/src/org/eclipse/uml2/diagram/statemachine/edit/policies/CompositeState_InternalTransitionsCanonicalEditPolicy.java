@@ -30,7 +30,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
@@ -70,7 +70,7 @@ public class CompositeState_InternalTransitionsCanonicalEditPolicy extends Canon
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
-		case StateMachine2EditPart.VISUAL_ID:
+		case StateMachineEditPart.VISUAL_ID:
 		case StateMachine_RegionEditPart.VISUAL_ID:
 		case SimpleStateEditPart.VISUAL_ID:
 		case EntryActivityEditPart.VISUAL_ID:

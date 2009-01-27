@@ -32,9 +32,9 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
@@ -469,9 +469,9 @@ public class UMLElementTypes extends ElementInitializers {
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-		case StateMachineEditPart.VISUAL_ID:
+		case PackageEditPart.VISUAL_ID:
 			return Package_1000;
-		case StateMachine2EditPart.VISUAL_ID:
+		case StateMachineEditPart.VISUAL_ID:
 			return StateMachine_2005;
 		case StateMachine_RegionEditPart.VISUAL_ID:
 			return Region_3013;

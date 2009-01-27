@@ -31,9 +31,9 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesEditPart;
@@ -88,7 +88,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List<?> getTypesForPopupBarGen(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
 
-		if (editPart instanceof StateMachine2EditPart) {
+		if (editPart instanceof StateMachineEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Region_3013);
 			types.add(UMLElementTypes.Pseudostate_3014);
@@ -160,7 +160,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
-		if (editPart instanceof StateMachineEditPart) {
+		if (editPart instanceof PackageEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StateMachine_2005);
 			return types;

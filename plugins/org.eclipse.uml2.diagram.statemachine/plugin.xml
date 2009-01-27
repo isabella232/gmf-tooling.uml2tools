@@ -281,7 +281,7 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.statemachine.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
-         <object class="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart" id="StateMachine_2005"/>
+         <object class="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart" id="StateMachine_2005"/>
          <context elements="StateMachine_2005"/>
       </modelingAssistantProvider>
    </extension>
@@ -308,7 +308,7 @@
                name="%metatype.name.Package_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Package"
-               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.StateMachineEditHelper">
+               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.PackageEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
@@ -318,7 +318,7 @@
                name="%metatype.name.StateMachine_2005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StateMachine"
-               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.StateMachine2EditHelper">
+               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.StateMachineEditHelper">
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
@@ -760,7 +760,7 @@
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -821,7 +821,7 @@
                   id="menu_apply_unapply_profile">
              </popupMenu>            
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
@@ -902,11 +902,11 @@
                   id="ValidateAction">
              </popupAction>            
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

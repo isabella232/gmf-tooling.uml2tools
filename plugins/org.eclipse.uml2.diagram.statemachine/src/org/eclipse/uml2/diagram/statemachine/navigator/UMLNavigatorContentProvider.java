@@ -37,10 +37,10 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleState_InternalActivitiesEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubverticesEditPart;
@@ -205,7 +205,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
 			Collection result = new ArrayList();
-			result.addAll(createNavigatorItems(selectViewsByType(resource.getContents(), StateMachineEditPart.MODEL_ID), file, false));
+			result.addAll(createNavigatorItems(selectViewsByType(resource.getContents(), PackageEditPart.MODEL_ID), file, false));
 			return result.toArray();
 		}
 
@@ -231,10 +231,10 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	private Object[] getViewChildren(View view, Object parentElement) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 
-		case StateMachineEditPart.VISUAL_ID: {
+		case PackageEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup links = new UMLNavigatorGroup(Messages.NavigatorGroupName_Package_1000_links, "icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(StateMachine2EditPart.VISUAL_ID));
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(StateMachineEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(TransitionEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
@@ -244,7 +244,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case StateMachine2EditPart.VISUAL_ID: {
+		case StateMachineEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(StateMachine_RegionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
@@ -826,7 +826,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return StateMachineEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view));
+		return PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view));
 	}
 
 	/**

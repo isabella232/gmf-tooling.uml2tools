@@ -35,10 +35,10 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
@@ -109,9 +109,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	public Image getImage(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
-		case StateMachineEditPart.VISUAL_ID:
+		case PackageEditPart.VISUAL_ID:
 			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_1000); //$NON-NLS-1$
-		case StateMachine2EditPart.VISUAL_ID:
+		case StateMachineEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?StateMachine", UMLElementTypes.StateMachine_2005); //$NON-NLS-1$
 		case StateMachine_RegionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Region", UMLElementTypes.Region_3013); //$NON-NLS-1$
@@ -209,9 +209,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
-		case StateMachineEditPart.VISUAL_ID:
+		case PackageEditPart.VISUAL_ID:
 			return getPackage_1000Text(view);
-		case StateMachine2EditPart.VISUAL_ID:
+		case StateMachineEditPart.VISUAL_ID:
 			return getStateMachine_2005Text(view);
 		case StateMachine_RegionEditPart.VISUAL_ID:
 			return getRegion_3013Text(view);
@@ -640,7 +640,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return StateMachineEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view));
+		return PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view));
 	}
 
 }

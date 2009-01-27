@@ -29,12 +29,12 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleState_InternalActivitiesEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineStereotypeEditPart;
@@ -75,12 +75,12 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.InitialPseudostateVi
 import org.eclipse.uml2.diagram.statemachine.view.factories.InternalTransitionViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.JoinPseudostateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.JunctionPseudostateViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.PackageViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.ShallowHistoryPseudostateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SimpleStateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SimpleStateStereotypeViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SimpleStateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.SimpleState_InternalActivitiesViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachine2ViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineStereotypeViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.StateMachineViewFactory;
@@ -109,8 +109,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 	 */
 	protected Class getDiagramViewClass(IAdaptable semanticAdapter, String diagramKind) {
 		EObject semanticElement = getSemanticElement(semanticAdapter);
-		if (StateMachineEditPart.MODEL_ID.equals(diagramKind) && UMLVisualIDRegistry.getDiagramVisualID(semanticElement) != -1) {
-			return StateMachineViewFactory.class;
+		if (PackageEditPart.MODEL_ID.equals(diagramKind) && UMLVisualIDRegistry.getDiagramVisualID(semanticElement) != -1) {
+			return PackageViewFactory.class;
 		}
 		return null;
 	}
@@ -155,11 +155,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 				// This method is called with EObjectAdapter as parameter from:
 				//   - ViewService.createNode(View container, EObject eObject, String type, PreferencesHint preferencesHint) 
 				//   - generated ViewFactory.decorateView() for parent element
-				if (!StateMachineEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(containerView))) {
+				if (!PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(containerView))) {
 					return null; // foreign diagram
 				}
 				switch (visualID) {
-				case StateMachine2EditPart.VISUAL_ID:
+				case StateMachineEditPart.VISUAL_ID:
 				case StateMachine_RegionEditPart.VISUAL_ID:
 				case SimpleStateEditPart.VISUAL_ID:
 				case EntryActivityEditPart.VISUAL_ID:
@@ -188,7 +188,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case StateMachineNameEditPart.VISUAL_ID:
 				case StateMachineStereotypeEditPart.VISUAL_ID:
-					if (StateMachine2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+					if (StateMachineEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -266,8 +266,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return null;
 		}
 		switch (visualID) {
-		case StateMachine2EditPart.VISUAL_ID:
-			return StateMachine2ViewFactory.class;
+		case StateMachineEditPart.VISUAL_ID:
+			return StateMachineViewFactory.class;
 		case StateMachineNameEditPart.VISUAL_ID:
 			return StateMachineNameViewFactory.class;
 		case StateMachineStereotypeEditPart.VISUAL_ID:

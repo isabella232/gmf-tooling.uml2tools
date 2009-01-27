@@ -29,11 +29,11 @@ public class UMLEditPartFactory implements EditPartFactory {
 			View view = (View) model;
 			switch (UMLVisualIDRegistry.getVisualID(view)) {
 
+			case PackageEditPart.VISUAL_ID:
+				return new PackageEditPart(view);
+
 			case StateMachineEditPart.VISUAL_ID:
 				return new StateMachineEditPart(view);
-
-			case StateMachine2EditPart.VISUAL_ID:
-				return new StateMachine2EditPart(view);
 
 			case StateMachineNameEditPart.VISUAL_ID:
 				return new StateMachineNameEditPart(view);

@@ -29,12 +29,12 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleState_InternalActivitiesEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineStereotypeEditPart;
@@ -180,8 +180,8 @@ public class UMLVisualIDRegistry {
 	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
-			if (StateMachineEditPart.MODEL_ID.equals(view.getType())) {
-				return StateMachineEditPart.VISUAL_ID;
+			if (PackageEditPart.MODEL_ID.equals(view.getType())) {
+				return PackageEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
@@ -233,7 +233,7 @@ public class UMLVisualIDRegistry {
 			return -1;
 		}
 		if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass()) && isDiagram((Package) domainElement)) {
-			return StateMachineEditPart.VISUAL_ID;
+			return PackageEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -246,21 +246,21 @@ public class UMLVisualIDRegistry {
 			return -1;
 		}
 		String containerModelID = org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.getModelID(containerView);
-		if (!StateMachineEditPart.MODEL_ID.equals(containerModelID)) {
+		if (!PackageEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
-		if (StateMachineEditPart.MODEL_ID.equals(containerModelID)) {
+		if (PackageEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = StateMachineEditPart.VISUAL_ID;
+				containerVisualID = PackageEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
 		switch (containerVisualID) {
-		case StateMachine2EditPart.VISUAL_ID:
+		case StateMachineEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
 				return StateMachine_RegionEditPart.VISUAL_ID;
 			}
@@ -406,9 +406,9 @@ public class UMLVisualIDRegistry {
 				return InternalTransitionEditPart.VISUAL_ID;
 			}
 			break;
-		case StateMachineEditPart.VISUAL_ID:
+		case PackageEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
-				return StateMachine2EditPart.VISUAL_ID;
+				return StateMachineEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -420,21 +420,21 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.getModelID(containerView);
-		if (!StateMachineEditPart.MODEL_ID.equals(containerModelID)) {
+		if (!PackageEditPart.MODEL_ID.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;
-		if (StateMachineEditPart.MODEL_ID.equals(containerModelID)) {
+		if (PackageEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = StateMachineEditPart.VISUAL_ID;
+				containerVisualID = PackageEditPart.VISUAL_ID;
 			} else {
 				return false;
 			}
 		}
 		switch (containerVisualID) {
-		case StateMachine2EditPart.VISUAL_ID:
+		case StateMachineEditPart.VISUAL_ID:
 			if (StateMachineNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -651,8 +651,8 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case StateMachineEditPart.VISUAL_ID:
-			if (StateMachine2EditPart.VISUAL_ID == nodeVisualID) {
+		case PackageEditPart.VISUAL_ID:
+			if (StateMachineEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -937,7 +937,7 @@ public class UMLVisualIDRegistry {
 			return -1;
 		}
 		switch (container.getVisualID()) {
-		case StateMachine2EditPart.VISUAL_ID:
+		case StateMachineEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
 				return StateMachine_RegionEditPart.VISUAL_ID;
 			}
@@ -1075,9 +1075,9 @@ public class UMLVisualIDRegistry {
 				return InternalTransitionEditPart.VISUAL_ID;
 			}
 			break;
-		case StateMachineEditPart.VISUAL_ID:
+		case PackageEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
-				return StateMachine2EditPart.VISUAL_ID;
+				return StateMachineEditPart.VISUAL_ID;
 			}
 			break;
 		}

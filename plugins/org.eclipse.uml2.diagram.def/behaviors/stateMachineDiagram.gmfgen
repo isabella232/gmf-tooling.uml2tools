@@ -10,10 +10,10 @@
     templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen">
   <diagram
       visualID="1000"
-      editPartClassName="StateMachineEditPart"
-      itemSemanticEditPolicyClassName="StateMachineItemSemanticEditPolicy"
-      notationViewFactoryClassName="StateMachineViewFactory"
-      canonicalEditPolicyClassName="StateMachineCanonicalEditPolicy"
+      editPartClassName="PackageEditPart"
+      itemSemanticEditPolicyClassName="PackageItemSemanticEditPolicy"
+      notationViewFactoryClassName="PackageViewFactory"
+      canonicalEditPolicyClassName="PackageCanonicalEditPolicy"
       iconProviderPriority="Low"
       creationWizardCategoryID="org.eclipse.uml2.diagram.New"
       validationProviderPriority="Low">
@@ -21,7 +21,7 @@
         href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType
         xsi:type="gmfgen:MetamodelType"
-        editHelperClassName="StateMachineEditHelper"/>
+        editHelperClassName="PackageEditHelper"/>
     <viewmap
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
@@ -1195,10 +1195,10 @@
     </childNodes>
     <topLevelNodes
         visualID="2005"
-        editPartClassName="StateMachine2EditPart"
-        itemSemanticEditPolicyClassName="StateMachine2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="StateMachine2ViewFactory"
-        canonicalEditPolicyClassName="StateMachine2CanonicalEditPolicy"
+        editPartClassName="StateMachineEditPart"
+        itemSemanticEditPolicyClassName="StateMachineItemSemanticEditPolicy"
+        notationViewFactoryClassName="StateMachineViewFactory"
+        canonicalEditPolicyClassName="StateMachineCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.20 //@diagram/@childNodes.21"
         graphicalNodeEditPolicyClassName="StateMachineGraphicalNodeEditPolicy"
         createCommandClassName="StateMachineCreateCommand">
@@ -1206,7 +1206,7 @@
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="StateMachine2EditHelper"/>
+          editHelperClassName="StateMachineEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="CompositeStateFigure"
