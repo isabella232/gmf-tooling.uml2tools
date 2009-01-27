@@ -17,21 +17,22 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
@@ -45,7 +46,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
@@ -129,11 +129,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Region", UMLElementTypes.Region_3002); //$NON-NLS-1$
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?State", UMLElementTypes.State_3016); //$NON-NLS-1$
-		case ConnectionPointReferenceEditPart.VISUAL_ID:
+		case EntryConnectionPointReferenceEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ConnectionPointReference", UMLElementTypes.ConnectionPointReference_3017); //$NON-NLS-1$
-		case ConnectionPointReference2EditPart.VISUAL_ID:
+		case ExitConnectionPointReferenceEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ConnectionPointReference", UMLElementTypes.ConnectionPointReference_3018); //$NON-NLS-1$
-		case Transition2EditPart.VISUAL_ID:
+		case InternalTransitionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Transition", UMLElementTypes.Transition_3022); //$NON-NLS-1$
 		case FinalStateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?FinalState", UMLElementTypes.FinalState_3003); //$NON-NLS-1$
@@ -229,11 +229,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getRegion_3002Text(view);
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016Text(view);
-		case ConnectionPointReferenceEditPart.VISUAL_ID:
+		case EntryConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3017Text(view);
-		case ConnectionPointReference2EditPart.VISUAL_ID:
+		case ExitConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3018Text(view);
-		case Transition2EditPart.VISUAL_ID:
+		case InternalTransitionEditPart.VISUAL_ID:
 			return getTransition_3022Text(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003Text(view);
@@ -401,7 +401,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getConnectionPointReference_3017Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ConnectionPointReference_3017, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ConnectionPointReferenceNameEditPart.VISUAL_ID));
+				.getType(EntryConnectionPointReferenceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -415,7 +415,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getConnectionPointReference_3018Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ConnectionPointReference_3018, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ConnectionPointReferenceName2EditPart.VISUAL_ID));
+				.getType(ExitConnectionPointReferenceNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -428,7 +428,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getTransition_3022Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Transition_3022, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(Transition2EditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Transition_3022, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(InternalTransitionEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {

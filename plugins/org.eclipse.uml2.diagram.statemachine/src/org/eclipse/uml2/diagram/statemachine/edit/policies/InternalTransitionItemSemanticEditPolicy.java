@@ -10,12 +10,12 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
  * @generated
  */
 
-public class Transition2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class InternalTransitionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public Transition2ItemSemanticEditPolicy() {
+	public InternalTransitionItemSemanticEditPolicy() {
 		super(UMLElementTypes.Transition_3022);
 	}
 

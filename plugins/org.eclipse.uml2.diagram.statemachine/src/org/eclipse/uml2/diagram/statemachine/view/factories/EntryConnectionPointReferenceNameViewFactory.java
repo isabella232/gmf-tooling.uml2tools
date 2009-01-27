@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 
-public class ConnectionPointReferenceNameViewFactory extends AbstractLabelViewFactory {
+public class EntryConnectionPointReferenceNameViewFactory extends AbstractLabelViewFactory {
 
 	/**
 	 * @generated

@@ -20,12 +20,12 @@ import org.eclipse.uml2.uml.UMLFactory;
  * @generated
  */
 
-public class ConnectionPointReferenceCreateCommand extends EditElementCommand {
+public class ExitConnectionPointReferenceCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public ConnectionPointReferenceCreateCommand(CreateElementRequest req) {
+	public ExitConnectionPointReferenceCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -58,7 +58,7 @@ public class ConnectionPointReferenceCreateCommand extends EditElementCommand {
 		State owner = (State) getElementToEdit();
 		owner.getConnections().add(newElement);
 
-		UMLElementTypes.init_ConnectionPointReference_3017(newElement);
+		UMLElementTypes.init_ConnectionPointReference_3018(newElement);
 
 		doConfigure(newElement, monitor, info);
 

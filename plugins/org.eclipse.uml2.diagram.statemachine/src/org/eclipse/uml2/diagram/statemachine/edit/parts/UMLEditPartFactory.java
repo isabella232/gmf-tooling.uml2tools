@@ -83,20 +83,20 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case SubmachineStateStereotypeEditPart.VISUAL_ID:
 				return new SubmachineStateStereotypeEditPart(view);
 
-			case ConnectionPointReferenceEditPart.VISUAL_ID:
-				return new ConnectionPointReferenceEditPart(view);
+			case EntryConnectionPointReferenceEditPart.VISUAL_ID:
+				return new EntryConnectionPointReferenceEditPart(view);
 
-			case ConnectionPointReferenceNameEditPart.VISUAL_ID:
-				return new ConnectionPointReferenceNameEditPart(view);
+			case EntryConnectionPointReferenceNameEditPart.VISUAL_ID:
+				return new EntryConnectionPointReferenceNameEditPart(view);
 
-			case ConnectionPointReference2EditPart.VISUAL_ID:
-				return new ConnectionPointReference2EditPart(view);
+			case ExitConnectionPointReferenceEditPart.VISUAL_ID:
+				return new ExitConnectionPointReferenceEditPart(view);
 
-			case ConnectionPointReferenceName2EditPart.VISUAL_ID:
-				return new ConnectionPointReferenceName2EditPart(view);
+			case ExitConnectionPointReferenceNameEditPart.VISUAL_ID:
+				return new ExitConnectionPointReferenceNameEditPart(view);
 
-			case Transition2EditPart.VISUAL_ID:
-				return new Transition2EditPart(view);
+			case InternalTransitionEditPart.VISUAL_ID:
+				return new InternalTransitionEditPart(view);
 
 			case FinalStateEditPart.VISUAL_ID:
 				return new FinalStateEditPart(view);

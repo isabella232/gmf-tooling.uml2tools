@@ -54,12 +54,12 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider;
  * @generated
  */
 
-public class ConnectionPointReferenceNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5009;
+	public static final int VISUAL_ID = 5010;
 
 	/**
 	 * @generated
@@ -90,13 +90,13 @@ public class ConnectionPointReferenceNameEditPart extends LabelEditPart implemen
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart.VISUAL_ID), new Point(0, 0));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceNameEditPart.VISUAL_ID), new Point(0, 0));
 	}
 
 	/**
 	 * @generated
 	 */
-	public ConnectionPointReferenceNameEditPart(View view) {
+	public ExitConnectionPointReferenceNameEditPart(View view) {
 		super(view);
 	}
 
@@ -306,8 +306,8 @@ public class ConnectionPointReferenceNameEditPart extends LabelEditPart implemen
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.ConnectionPointReference_3017, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.ConnectionPointReference_3018, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

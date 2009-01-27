@@ -2,7 +2,7 @@ package org.eclipse.uml2.diagram.statemachine.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.Transition2CreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.InternalTransitionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 /**
@@ -23,7 +23,7 @@ public class CompositeState_InternalTransitionsItemSemanticEditPolicy extends UM
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Transition_3022 == req.getElementType()) {
-			return getGEFWrapper(new Transition2CreateCommand(req));
+			return getGEFWrapper(new InternalTransitionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

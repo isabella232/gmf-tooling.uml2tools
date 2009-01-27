@@ -19,12 +19,12 @@ import org.eclipse.uml2.uml.UMLFactory;
  * @generated
  */
 
-public class Transition2CreateCommand extends EditElementCommand {
+public class InternalTransitionCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public Transition2CreateCommand(CreateElementRequest req) {
+	public InternalTransitionCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 

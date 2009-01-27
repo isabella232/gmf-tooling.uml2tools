@@ -465,12 +465,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3017"
-        editPartClassName="ConnectionPointReferenceEditPart"
-        itemSemanticEditPolicyClassName="ConnectionPointReferenceItemSemanticEditPolicy"
-        notationViewFactoryClassName="ConnectionPointReferenceViewFactory"
-        canonicalEditPolicyClassName="ConnectionPointReferenceCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ConnectionPointReferenceGraphicalNodeEditPolicy"
-        createCommandClassName="ConnectionPointReferenceCreateCommand"
+        editPartClassName="EntryConnectionPointReferenceEditPart"
+        itemSemanticEditPolicyClassName="EntryConnectionPointReferenceItemSemanticEditPolicy"
+        notationViewFactoryClassName="EntryConnectionPointReferenceViewFactory"
+        canonicalEditPolicyClassName="EntryConnectionPointReferenceCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EntryConnectionPointReferenceGraphicalNodeEditPolicy"
+        createCommandClassName="EntryConnectionPointReferenceCreateCommand"
         containers="//@diagram/@childNodes.7"
         preferredSideName="WEST">
       <diagramRunTimeClass
@@ -512,9 +512,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5009"
-          editPartClassName="ConnectionPointReferenceNameEditPart"
-          itemSemanticEditPolicyClassName="ConnectionPointReferenceNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ConnectionPointReferenceNameViewFactory">
+          editPartClassName="EntryConnectionPointReferenceNameEditPart"
+          itemSemanticEditPolicyClassName="EntryConnectionPointReferenceNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="EntryConnectionPointReferenceNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -531,12 +531,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3018"
-        editPartClassName="ConnectionPointReference2EditPart"
-        itemSemanticEditPolicyClassName="ConnectionPointReference2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ConnectionPointReference2ViewFactory"
-        canonicalEditPolicyClassName="ConnectionPointReference2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ConnectionPointReference2GraphicalNodeEditPolicy"
-        createCommandClassName="ConnectionPointReference2CreateCommand"
+        editPartClassName="ExitConnectionPointReferenceEditPart"
+        itemSemanticEditPolicyClassName="ExitConnectionPointReferenceItemSemanticEditPolicy"
+        notationViewFactoryClassName="ExitConnectionPointReferenceViewFactory"
+        canonicalEditPolicyClassName="ExitConnectionPointReferenceCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ExitConnectionPointReferenceGraphicalNodeEditPolicy"
+        createCommandClassName="ExitConnectionPointReferenceCreateCommand"
         containers="//@diagram/@childNodes.7"
         preferredSideName="EAST">
       <diagramRunTimeClass
@@ -545,7 +545,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Exit Point Connection Point Reference"
           metamodelType="//@diagram/@childNodes.8/@elementType"
-          editHelperAdviceClassName="ConnectionPointReferenceEditHelperAdvice"/>
+          editHelperAdviceClassName="ExitConnectionPointReferenceEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ExitPointFigure"
@@ -579,9 +579,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5010"
-          editPartClassName="ConnectionPointReferenceName2EditPart"
-          itemSemanticEditPolicyClassName="ConnectionPointReferenceName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ConnectionPointReferenceName2ViewFactory">
+          editPartClassName="ExitConnectionPointReferenceNameEditPart"
+          itemSemanticEditPolicyClassName="ExitConnectionPointReferenceNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExitConnectionPointReferenceNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -598,18 +598,18 @@
     <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
         visualID="3022"
-        editPartClassName="Transition2EditPart"
-        itemSemanticEditPolicyClassName="Transition2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Transition2ViewFactory"
-        canonicalEditPolicyClassName="TransitionCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="TransitionGraphicalNodeEditPolicy"
-        createCommandClassName="Transition2CreateCommand"
+        editPartClassName="InternalTransitionEditPart"
+        itemSemanticEditPolicyClassName="InternalTransitionItemSemanticEditPolicy"
+        notationViewFactoryClassName="InternalTransitionViewFactory"
+        canonicalEditPolicyClassName="InternalTransitionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="InternalTransitionGraphicalNodeEditPolicy"
+        createCommandClassName="InternalTransitionCreateCommand"
         containers="//@diagram/@compartments.6 //@diagram/@compartments.3">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="TransitionEditHelper"/>
+          editHelperClassName="InternalTransitionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label"/>

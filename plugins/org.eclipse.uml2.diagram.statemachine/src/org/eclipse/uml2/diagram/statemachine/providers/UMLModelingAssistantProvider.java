@@ -21,10 +21,10 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
@@ -182,11 +182,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof SubmachineStateEditPart) {
 			return ((SubmachineStateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof ConnectionPointReferenceEditPart) {
-			return ((ConnectionPointReferenceEditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof EntryConnectionPointReferenceEditPart) {
+			return ((EntryConnectionPointReferenceEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof ConnectionPointReference2EditPart) {
-			return ((ConnectionPointReference2EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ExitConnectionPointReferenceEditPart) {
+			return ((ExitConnectionPointReferenceEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof FinalStateEditPart) {
 			return ((FinalStateEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -238,11 +238,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof SubmachineStateEditPart) {
 			return ((SubmachineStateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof ConnectionPointReferenceEditPart) {
-			return ((ConnectionPointReferenceEditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof EntryConnectionPointReferenceEditPart) {
+			return ((EntryConnectionPointReferenceEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof ConnectionPointReference2EditPart) {
-			return ((ConnectionPointReference2EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ExitConnectionPointReferenceEditPart) {
+			return ((ExitConnectionPointReferenceEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof FinalStateEditPart) {
 			return ((FinalStateEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -295,11 +295,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof SubmachineStateEditPart) {
 			return ((SubmachineStateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof ConnectionPointReferenceEditPart) {
-			return ((ConnectionPointReferenceEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof EntryConnectionPointReferenceEditPart) {
+			return ((EntryConnectionPointReferenceEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof ConnectionPointReference2EditPart) {
-			return ((ConnectionPointReference2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ExitConnectionPointReferenceEditPart) {
+			return ((ExitConnectionPointReferenceEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof FinalStateEditPart) {
 			return ((FinalStateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -351,11 +351,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof SubmachineStateEditPart) {
 			return ((SubmachineStateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof ConnectionPointReferenceEditPart) {
-			return ((ConnectionPointReferenceEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof EntryConnectionPointReferenceEditPart) {
+			return ((EntryConnectionPointReferenceEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof ConnectionPointReference2EditPart) {
-			return ((ConnectionPointReference2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ExitConnectionPointReferenceEditPart) {
+			return ((ExitConnectionPointReferenceEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof FinalStateEditPart) {
 			return ((FinalStateEditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -407,11 +407,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof SubmachineStateEditPart) {
 			return ((SubmachineStateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof ConnectionPointReferenceEditPart) {
-			return ((ConnectionPointReferenceEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof EntryConnectionPointReferenceEditPart) {
+			return ((EntryConnectionPointReferenceEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof ConnectionPointReference2EditPart) {
-			return ((ConnectionPointReference2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ExitConnectionPointReferenceEditPart) {
+			return ((ExitConnectionPointReferenceEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof FinalStateEditPart) {
 			return ((FinalStateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);

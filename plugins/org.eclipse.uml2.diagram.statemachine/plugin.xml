@@ -415,7 +415,7 @@
                id="org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3018"
                name="%metatype.name.ConnectionPointReference_3018"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.ConnectionPointReferenceEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.ExitConnectionPointReferenceEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.ConnectionPointReference_3017"/>
             <param name="semanticHint" value="3018"/>
          </specializationType>
@@ -426,7 +426,7 @@
                name="%metatype.name.Transition_3022"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Transition"
-               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.TransitionEditHelper">
+               edithelper="org.eclipse.uml2.diagram.statemachine.edit.helpers.InternalTransitionEditHelper">
             <param name="semanticHint" value="3022"/>
          </metamodelType>
       </metamodel>
@@ -942,15 +942,15 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.EntryConnectionPointReferenceEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

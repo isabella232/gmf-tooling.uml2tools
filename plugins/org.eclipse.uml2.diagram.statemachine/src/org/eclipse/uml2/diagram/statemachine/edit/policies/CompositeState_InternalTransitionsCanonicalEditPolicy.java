@@ -14,17 +14,18 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
@@ -34,7 +35,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditP
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -79,8 +79,8 @@ public class CompositeState_InternalTransitionsCanonicalEditPolicy extends Canon
 		case CompositeStateEditPart.VISUAL_ID:
 		case State_RegionEditPart.VISUAL_ID:
 		case SubmachineStateEditPart.VISUAL_ID:
-		case ConnectionPointReferenceEditPart.VISUAL_ID:
-		case ConnectionPointReference2EditPart.VISUAL_ID:
+		case EntryConnectionPointReferenceEditPart.VISUAL_ID:
+		case ExitConnectionPointReferenceEditPart.VISUAL_ID:
 		case FinalStateEditPart.VISUAL_ID:
 		case InitialPseudostateEditPart.VISUAL_ID:
 		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
@@ -93,7 +93,7 @@ public class CompositeState_InternalTransitionsCanonicalEditPolicy extends Canon
 		case EntryPointPseudostateEditPart.VISUAL_ID:
 		case ExitPointPseudostateEditPart.VISUAL_ID:
 			return true;
-		case Transition2EditPart.VISUAL_ID:
+		case InternalTransitionEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}

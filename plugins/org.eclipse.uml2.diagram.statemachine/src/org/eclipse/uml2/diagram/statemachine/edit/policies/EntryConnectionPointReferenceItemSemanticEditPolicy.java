@@ -15,12 +15,12 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
  * @generated
  */
 
-public class ConnectionPointReferenceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class EntryConnectionPointReferenceItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public ConnectionPointReferenceItemSemanticEditPolicy() {
+	public EntryConnectionPointReferenceItemSemanticEditPolicy() {
 		super(UMLElementTypes.ConnectionPointReference_3017);
 	}
 

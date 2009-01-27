@@ -11,21 +11,22 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalTransitionsEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceName2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
@@ -47,7 +48,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateStereotyp
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
@@ -281,10 +281,10 @@ public class UMLVisualIDRegistry {
 				return State_RegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && isConnectionPointReference_3017((ConnectionPointReference) domainElement)) {
-				return ConnectionPointReferenceEditPart.VISUAL_ID;
+				return EntryConnectionPointReferenceEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && isConnectionPointReference_3018((ConnectionPointReference) domainElement)) {
-				return ConnectionPointReference2EditPart.VISUAL_ID;
+				return ExitConnectionPointReferenceEditPart.VISUAL_ID;
 			}
 			break;
 		case StateMachine_RegionSubverticesEditPart.VISUAL_ID:
@@ -349,7 +349,7 @@ public class UMLVisualIDRegistry {
 			break;
 		case CompositeState_InternalTransitionsEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getTransition().isSuperTypeOf(domainElement.eClass()) && isTransition_3022((Transition) domainElement)) {
-				return Transition2EditPart.VISUAL_ID;
+				return InternalTransitionEditPart.VISUAL_ID;
 			}
 			break;
 		case State_RegionSubverticesEditPart.VISUAL_ID:
@@ -403,7 +403,7 @@ public class UMLVisualIDRegistry {
 			break;
 		case SubmachineState_InternalTransitionsEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getTransition().isSuperTypeOf(domainElement.eClass()) && isTransition_3022((Transition) domainElement)) {
-				return Transition2EditPart.VISUAL_ID;
+				return InternalTransitionEditPart.VISUAL_ID;
 			}
 			break;
 		case StateMachineEditPart.VISUAL_ID:
@@ -505,20 +505,20 @@ public class UMLVisualIDRegistry {
 			if (State_RegionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ConnectionPointReferenceEditPart.VISUAL_ID == nodeVisualID) {
+			if (EntryConnectionPointReferenceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ConnectionPointReference2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ConnectionPointReferenceEditPart.VISUAL_ID:
-			if (ConnectionPointReferenceNameEditPart.VISUAL_ID == nodeVisualID) {
+			if (ExitConnectionPointReferenceEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ConnectionPointReference2EditPart.VISUAL_ID:
-			if (ConnectionPointReferenceName2EditPart.VISUAL_ID == nodeVisualID) {
+		case EntryConnectionPointReferenceEditPart.VISUAL_ID:
+			if (EntryConnectionPointReferenceNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ExitConnectionPointReferenceEditPart.VISUAL_ID:
+			if (ExitConnectionPointReferenceNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -593,7 +593,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case CompositeState_InternalTransitionsEditPart.VISUAL_ID:
-			if (Transition2EditPart.VISUAL_ID == nodeVisualID) {
+			if (InternalTransitionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -647,7 +647,7 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case SubmachineState_InternalTransitionsEditPart.VISUAL_ID:
-			if (Transition2EditPart.VISUAL_ID == nodeVisualID) {
+			if (InternalTransitionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1011,7 +1011,7 @@ public class UMLVisualIDRegistry {
 				return DoActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getTransition().isSuperTypeOf(domainElement.eClass()) && isTransition_3022((Transition) domainElement)) {
-				return Transition2EditPart.VISUAL_ID;
+				return InternalTransitionEditPart.VISUAL_ID;
 			}
 			break;
 		case State_RegionEditPart.VISUAL_ID:
@@ -1057,10 +1057,10 @@ public class UMLVisualIDRegistry {
 				return State_RegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && isConnectionPointReference_3017((ConnectionPointReference) domainElement)) {
-				return ConnectionPointReferenceEditPart.VISUAL_ID;
+				return EntryConnectionPointReferenceEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getConnectionPointReference().isSuperTypeOf(domainElement.eClass()) && isConnectionPointReference_3018((ConnectionPointReference) domainElement)) {
-				return ConnectionPointReference2EditPart.VISUAL_ID;
+				return ExitConnectionPointReferenceEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getBehavior().isSuperTypeOf(domainElement.eClass()) && isBehavior_3019((Behavior) domainElement)) {
 				return EntryActivityEditPart.VISUAL_ID;
@@ -1072,7 +1072,7 @@ public class UMLVisualIDRegistry {
 				return DoActivityEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getTransition().isSuperTypeOf(domainElement.eClass()) && isTransition_3022((Transition) domainElement)) {
-				return Transition2EditPart.VISUAL_ID;
+				return InternalTransitionEditPart.VISUAL_ID;
 			}
 			break;
 		case StateMachineEditPart.VISUAL_ID:
@@ -1136,9 +1136,9 @@ public class UMLVisualIDRegistry {
 		case ExitActivityEditPart.VISUAL_ID:
 		case DoActivityEditPart.VISUAL_ID:
 		case State_RegionEditPart.VISUAL_ID:
-		case ConnectionPointReferenceEditPart.VISUAL_ID:
-		case ConnectionPointReference2EditPart.VISUAL_ID:
-		case Transition2EditPart.VISUAL_ID:
+		case EntryConnectionPointReferenceEditPart.VISUAL_ID:
+		case ExitConnectionPointReferenceEditPart.VISUAL_ID:
+		case InternalTransitionEditPart.VISUAL_ID:
 		case FinalStateEditPart.VISUAL_ID:
 		case InitialPseudostateEditPart.VISUAL_ID:
 		case ShallowHistoryPseudostateEditPart.VISUAL_ID:

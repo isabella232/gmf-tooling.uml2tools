@@ -18,17 +18,18 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalTransitionsEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
@@ -44,7 +45,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -171,11 +171,11 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getConnections().iterator(); it.hasNext();) {
 			ConnectionPointReference childElement = (ConnectionPointReference) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == ConnectionPointReferenceEditPart.VISUAL_ID) {
+			if (visualID == EntryConnectionPointReferenceEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ConnectionPointReference2EditPart.VISUAL_ID) {
+			if (visualID == ExitConnectionPointReferenceEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -341,7 +341,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = getInternalTransitions(modelElement).iterator(); it.hasNext();) {
 			Transition childElement = (Transition) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Transition2EditPart.VISUAL_ID) {
+			if (visualID == InternalTransitionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -470,7 +470,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = getInternalTransitions(modelElement).iterator(); it.hasNext();) {
 			Transition childElement = (Transition) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == Transition2EditPart.VISUAL_ID) {
+			if (visualID == InternalTransitionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -523,11 +523,11 @@ public class UMLDiagramUpdater {
 			return getRegion_3002ContainedLinks(view);
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016ContainedLinks(view);
-		case ConnectionPointReferenceEditPart.VISUAL_ID:
+		case EntryConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3017ContainedLinks(view);
-		case ConnectionPointReference2EditPart.VISUAL_ID:
+		case ExitConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3018ContainedLinks(view);
-		case Transition2EditPart.VISUAL_ID:
+		case InternalTransitionEditPart.VISUAL_ID:
 			return getTransition_3022ContainedLinks(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003ContainedLinks(view);
@@ -580,11 +580,11 @@ public class UMLDiagramUpdater {
 			return getRegion_3002IncomingLinks(view);
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016IncomingLinks(view);
-		case ConnectionPointReferenceEditPart.VISUAL_ID:
+		case EntryConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3017IncomingLinks(view);
-		case ConnectionPointReference2EditPart.VISUAL_ID:
+		case ExitConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3018IncomingLinks(view);
-		case Transition2EditPart.VISUAL_ID:
+		case InternalTransitionEditPart.VISUAL_ID:
 			return getTransition_3022IncomingLinks(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003IncomingLinks(view);
@@ -637,11 +637,11 @@ public class UMLDiagramUpdater {
 			return getRegion_3002OutgoingLinks(view);
 		case SubmachineStateEditPart.VISUAL_ID:
 			return getState_3016OutgoingLinks(view);
-		case ConnectionPointReferenceEditPart.VISUAL_ID:
+		case EntryConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3017OutgoingLinks(view);
-		case ConnectionPointReference2EditPart.VISUAL_ID:
+		case ExitConnectionPointReferenceEditPart.VISUAL_ID:
 			return getConnectionPointReference_3018OutgoingLinks(view);
-		case Transition2EditPart.VISUAL_ID:
+		case InternalTransitionEditPart.VISUAL_ID:
 			return getTransition_3022OutgoingLinks(view);
 		case FinalStateEditPart.VISUAL_ID:
 			return getFinalState_3003OutgoingLinks(view);

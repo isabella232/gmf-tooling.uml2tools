@@ -221,10 +221,10 @@ public class TerminatePseudostateEditPart extends ShapeNodeEditPart implements P
 		if (targetEditPart instanceof SubmachineStateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof ConnectionPointReferenceEditPart) {
+		if (targetEditPart instanceof EntryConnectionPointReferenceEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof ConnectionPointReference2EditPart) {
+		if (targetEditPart instanceof ExitConnectionPointReferenceEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
 		if (targetEditPart instanceof FinalStateEditPart) {

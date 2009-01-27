@@ -12,20 +12,20 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.ConnectionPointReference2CreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.ConnectionPointReferenceCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.EntryConnectionPointReferenceCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.ExitConnectionPointReferenceCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.State_RegionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionReorientCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReference2EditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryConnectionPointReferenceEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.Transition2EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -51,10 +51,10 @@ public class SubmachineStateItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 			return getGEFWrapper(new State_RegionCreateCommand(req));
 		}
 		if (UMLElementTypes.ConnectionPointReference_3017 == req.getElementType()) {
-			return getGEFWrapper(new ConnectionPointReferenceCreateCommand(req));
+			return getGEFWrapper(new EntryConnectionPointReferenceCreateCommand(req));
 		}
 		if (UMLElementTypes.ConnectionPointReference_3018 == req.getElementType()) {
-			return getGEFWrapper(new ConnectionPointReference2CreateCommand(req));
+			return getGEFWrapper(new ExitConnectionPointReferenceCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -85,10 +85,10 @@ public class SubmachineStateItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 			case State_RegionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case ConnectionPointReferenceEditPart.VISUAL_ID:
+			case EntryConnectionPointReferenceEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case ConnectionPointReference2EditPart.VISUAL_ID:
+			case ExitConnectionPointReferenceEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case SubmachineState_InternalActivitiesEditPart.VISUAL_ID:
@@ -111,7 +111,7 @@ public class SubmachineStateItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
-					case Transition2EditPart.VISUAL_ID:
+					case InternalTransitionEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

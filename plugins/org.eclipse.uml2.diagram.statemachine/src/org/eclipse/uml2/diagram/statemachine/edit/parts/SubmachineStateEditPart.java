@@ -108,8 +108,8 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
-				case ConnectionPointReferenceEditPart.VISUAL_ID:
-				case ConnectionPointReference2EditPart.VISUAL_ID:
+				case EntryConnectionPointReferenceEditPart.VISUAL_ID:
+				case ExitConnectionPointReferenceEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -169,14 +169,14 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 			pane.add(((SubmachineState_InternalTransitionsEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof ConnectionPointReferenceEditPart) {
+		if (childEditPart instanceof EntryConnectionPointReferenceEditPart) {
 			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
-			getBorderedFigure().getBorderItemContainer().add(((ConnectionPointReferenceEditPart) childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((EntryConnectionPointReferenceEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof ConnectionPointReference2EditPart) {
+		if (childEditPart instanceof ExitConnectionPointReferenceEditPart) {
 			IBorderItemLocator locator = new BisectionBorderItemLocator(getMainFigure());
-			getBorderedFigure().getBorderItemContainer().add(((ConnectionPointReference2EditPart) childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((ExitConnectionPointReferenceEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return false;
@@ -197,12 +197,12 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 			pane.remove(((SubmachineState_InternalTransitionsEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof ConnectionPointReferenceEditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((ConnectionPointReferenceEditPart) childEditPart).getFigure());
+		if (childEditPart instanceof EntryConnectionPointReferenceEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((EntryConnectionPointReferenceEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof ConnectionPointReference2EditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((ConnectionPointReference2EditPart) childEditPart).getFigure());
+		if (childEditPart instanceof ExitConnectionPointReferenceEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ExitConnectionPointReferenceEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -248,7 +248,7 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 	 * @generated NOT
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof SubmachineState_InternalActivitiesEditPart || editPart instanceof ConnectionPointReferenceEditPart || editPart instanceof ConnectionPointReference2EditPart) {
+		if (editPart instanceof SubmachineState_InternalActivitiesEditPart || editPart instanceof EntryConnectionPointReferenceEditPart || editPart instanceof ExitConnectionPointReferenceEditPart) {
 			return getContentPaneForGen(editPart);
 		}
 		return contentPane;
@@ -362,10 +362,10 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof ConnectionPointReferenceEditPart) {
+		if (targetEditPart instanceof EntryConnectionPointReferenceEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof ConnectionPointReference2EditPart) {
+		if (targetEditPart instanceof ExitConnectionPointReferenceEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
 		if (targetEditPart instanceof FinalStateEditPart) {
