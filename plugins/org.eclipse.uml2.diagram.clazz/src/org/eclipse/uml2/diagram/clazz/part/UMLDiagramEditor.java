@@ -379,7 +379,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	/**
 	 * @generated
 	 */
-	private void refreshPalette() {
+	public void refreshPalette() {
 		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
 		cleanPaletteRoot(paletteRoot);
 		createPaletteRoot(paletteRoot);

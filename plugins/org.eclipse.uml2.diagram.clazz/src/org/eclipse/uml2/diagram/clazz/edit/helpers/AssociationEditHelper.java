@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.edit.helpers;
 
+import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.uml2.diagram.common.commands.ChangeAssociationKindCommand;
@@ -19,10 +20,19 @@ public class AssociationEditHelper extends UMLBaseEditHelper {
 	 * @generated NOT
 	 */
 	protected ICommand getConfigureCommand(ConfigureRequest req) {
+		ICommand superCommand = super.getConfigureCommand(req);
 		if (req.getElementToConfigure() instanceof Association && req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND) instanceof AggregationKind) {
-			return new ChangeAssociationKindCommand((Association) req.getElementToConfigure(), (AggregationKind) req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND));
+			ChangeAssociationKindCommand changeAssociation = new ChangeAssociationKindCommand((Association) req.getElementToConfigure(), (AggregationKind) req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND));
+			if (superCommand!= null) {
+				CompositeCommand result = new CompositeCommand("");
+				result.add(superCommand);
+				result.add(changeAssociation);
+				return result; 
+			}
+			return changeAssociation;
 		}
-		return super.getConfigureCommand(req);
+		return superCommand;
+		
 	}
 
 }

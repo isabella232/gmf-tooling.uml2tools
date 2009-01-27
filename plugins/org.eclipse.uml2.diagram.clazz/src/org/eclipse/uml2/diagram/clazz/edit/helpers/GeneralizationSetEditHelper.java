@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.edit.helpers;
 
+import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
@@ -19,13 +20,21 @@ public class GeneralizationSetEditHelper extends UMLBaseEditHelper {
 	 * @NOT-generated 
 	 */
 	protected ICommand getConfigureCommand(ConfigureRequest req) {
+		ICommand superCommand = super.getConfigureCommand(req);
 		Generalization generalization = getGeneralization(req);
 		if (generalization != null && req.getElementToConfigure() instanceof GeneralizationSet) {
 			GeneralizationSet generalizationSet = (GeneralizationSet) req.getElementToConfigure();
 			SetRequest request = new SetRequest(generalizationSet, UMLPackage.eINSTANCE.getGeneralizationSet_Generalization(), generalization);
-			return new SetValueCommand(request);
+			SetValueCommand setType = new SetValueCommand(request);
+			if (superCommand!= null) {
+				CompositeCommand result = new CompositeCommand("");
+				result.add(superCommand);
+				result.add(setType);
+				return result; 
+			}
+			return setType;
 		}
-		return super.getConfigureCommand(req);
+		return superCommand;
 	}
 
 	private Generalization getGeneralization(ConfigureRequest req) {

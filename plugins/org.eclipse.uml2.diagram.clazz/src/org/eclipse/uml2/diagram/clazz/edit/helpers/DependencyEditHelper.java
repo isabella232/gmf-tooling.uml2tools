@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.edit.helpers;
 
+import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
@@ -20,12 +21,20 @@ public class DependencyEditHelper extends UMLBaseEditHelper {
 	 * @NOT-generated
 	 */
 	protected ICommand getConfigureCommand(ConfigureRequest req) {
+		ICommand superCommand = super.getConfigureCommand(req);
 		if (req.getElementToConfigure() instanceof Dependency && req.getParameter(PARAMETER_DEPENDENCY_NAME) instanceof String) {
 			Dependency dependency = (Dependency) req.getElementToConfigure();
 			String name = (String) req.getParameter(PARAMETER_DEPENDENCY_NAME);
 			SetRequest request = new SetRequest(dependency, UMLPackage.eINSTANCE.getNamedElement_Name(), name);
-			return new SetValueCommand(request);
+			SetValueCommand setType = new SetValueCommand(request); 
+			if (superCommand!= null) {
+				CompositeCommand result = new CompositeCommand("");
+				result.add(superCommand);
+				result.add(setType);
+				return result; 
+			}
+			return setType;
 		}
-		return super.getConfigureCommand(req);
+		return superCommand;
 	}
 }
