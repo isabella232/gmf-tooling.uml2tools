@@ -6,6 +6,7 @@ import java.util.ListIterator;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -17,7 +18,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
-import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Gate;
@@ -87,9 +87,9 @@ public class MessageCreateCommand extends EditElementCommand {
 	private BehaviorExecutionSpecification createBehaviorExecutionSpecification(Interaction interaction, Lifeline lifeline, int index, boolean forSource) {
 		String prefix = forSource ? "invocation-" : "execution-";
 		String withIndex = prefix + index + "-";
-		MessageOccurrenceSpecification start = (MessageOccurrenceSpecification) interaction.createFragment(withIndex + "start", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
-		BehaviorExecutionSpecification result = (BehaviorExecutionSpecification) interaction.createFragment(withIndex + "body", UMLPackage.eINSTANCE.getBehaviorExecutionSpecification());
-		MessageOccurrenceSpecification finish = (MessageOccurrenceSpecification) interaction.createFragment(withIndex + "finish", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
+		MessageOccurrenceSpecification start = doCreateMessageOccurrence(interaction, withIndex + "start");
+		BehaviorExecutionSpecification result = doCreateBehaviorExecution(interaction, withIndex + "body");
+		MessageOccurrenceSpecification finish = doCreateMessageOccurrence(interaction, withIndex + "finish");
 
 		setupBehaviorSpec(result, start, finish, lifeline);
 
@@ -99,22 +99,21 @@ public class MessageCreateCommand extends EditElementCommand {
 	private BehaviorExecutionSpecification[] createBehaviorExecutionSpecificationsPair(Interaction interaction, Lifeline sourceLL, Lifeline targetLL, int messageIndex) {
 		String invocationPrefix = "invocation-" + messageIndex + "-";
 		String executionPrefix = "execution-" + messageIndex + "-";
-		MessageOccurrenceSpecification invocationStart = (MessageOccurrenceSpecification) interaction.createFragment(invocationPrefix + "start", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
-		MessageOccurrenceSpecification executionStart = (MessageOccurrenceSpecification) interaction.createFragment(executionPrefix + "start", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
-		
-		BehaviorExecutionSpecification invocation = (BehaviorExecutionSpecification) interaction.createFragment(invocationPrefix + "body", UMLPackage.eINSTANCE.getBehaviorExecutionSpecification());
-		BehaviorExecutionSpecification execution = (BehaviorExecutionSpecification) interaction.createFragment(executionPrefix + "body", UMLPackage.eINSTANCE.getBehaviorExecutionSpecification());
-		
-		MessageOccurrenceSpecification executionFinish = (MessageOccurrenceSpecification) interaction.createFragment(executionPrefix + "finish", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
-		MessageOccurrenceSpecification invocationFinish = (MessageOccurrenceSpecification) interaction.createFragment(invocationPrefix + "finish", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
+		MessageOccurrenceSpecification invocationStart = doCreateMessageOccurrence(interaction, invocationPrefix + "start");
+		MessageOccurrenceSpecification executionStart = doCreateMessageOccurrence(interaction, executionPrefix + "start");
+
+		BehaviorExecutionSpecification invocation = doCreateBehaviorExecution(interaction, invocationPrefix + "body");
+		BehaviorExecutionSpecification execution = doCreateBehaviorExecution(interaction, executionPrefix + "body");
+
+		MessageOccurrenceSpecification executionFinish = doCreateMessageOccurrence(interaction, executionPrefix + "finish");
+		MessageOccurrenceSpecification invocationFinish = doCreateMessageOccurrence(interaction, invocationPrefix + "finish");
 
 		setupBehaviorSpec(invocation, invocationStart, invocationFinish, sourceLL);
 		setupBehaviorSpec(execution, executionStart, executionFinish, targetLL);
 
-		return new BehaviorExecutionSpecification[] {invocation, execution};
+		return new BehaviorExecutionSpecification[] { invocation, execution };
 	}
 
-	
 	private void setupBehaviorSpec(BehaviorExecutionSpecification spec, MessageOccurrenceSpecification start, MessageOccurrenceSpecification finish, Lifeline lifeline) {
 		setSingleCovered(spec, lifeline);
 		setSingleCovered(start, lifeline);
@@ -174,24 +173,24 @@ public class MessageCreateCommand extends EditElementCommand {
 		Element diagramTarget = getTarget();
 		MessageEnd domainSource;
 		MessageEnd domainTarget;
-		
-		if (diagramSource instanceof Gate && diagramTarget instanceof Lifeline){
+
+		if (diagramSource instanceof Gate && diagramTarget instanceof Lifeline) {
 			domainSource = (Gate) diagramSource;
-			BehaviorExecutionSpecification targetExecution = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramTarget, count, false); 
-			domainTarget = (MessageOccurrenceSpecification)targetExecution.getStart();
-		} else if (diagramTarget instanceof Gate && diagramSource instanceof Lifeline){
-			domainTarget = (Gate)diagramTarget;
+			BehaviorExecutionSpecification targetExecution = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramTarget, count, false);
+			domainTarget = (MessageOccurrenceSpecification) targetExecution.getStart();
+		} else if (diagramTarget instanceof Gate && diagramSource instanceof Lifeline) {
+			domainTarget = (Gate) diagramTarget;
 			BehaviorExecutionSpecification sourceInvocation = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramSource, count, true);
-			domainSource = (MessageOccurrenceSpecification)sourceInvocation.getStart();
-		} else if (diagramTarget instanceof Lifeline && diagramSource instanceof Lifeline){
-			Lifeline sourceLL = (Lifeline)diagramSource;
-			Lifeline targetLL = (Lifeline)diagramTarget;
+			domainSource = (MessageOccurrenceSpecification) sourceInvocation.getStart();
+		} else if (diagramTarget instanceof Lifeline && diagramSource instanceof Lifeline) {
+			Lifeline sourceLL = (Lifeline) diagramSource;
+			Lifeline targetLL = (Lifeline) diagramTarget;
 			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count);
 			BehaviorExecutionSpecification invocation = pair[0];
 			BehaviorExecutionSpecification execution = pair[1];
-			
-			domainSource = (MessageOccurrenceSpecification)invocation.getStart();
-			domainTarget = (MessageOccurrenceSpecification)execution.getStart();
+
+			domainSource = (MessageOccurrenceSpecification) invocation.getStart();
+			domainTarget = (MessageOccurrenceSpecification) execution.getStart();
 		} else {
 			throw new UnsupportedOperationException("Message between this elements can't be created: from: " + getSource() + " to: " + getTarget());
 		}
@@ -289,5 +288,15 @@ public class MessageCreateCommand extends EditElementCommand {
 			return occurr instanceof MessageOccurrenceSpecification;
 		}
 		return false;
+	}
+	
+	private static MessageOccurrenceSpecification doCreateMessageOccurrence(Interaction interaction, String name) {
+		EClass meta = UMLPackage.eINSTANCE.getMessageOccurrenceSpecification();
+		return (MessageOccurrenceSpecification) interaction.createFragment(name, meta);
+	}
+	
+	private static BehaviorExecutionSpecification doCreateBehaviorExecution(Interaction interaction, String name) {
+		EClass meta = UMLPackage.eINSTANCE.getBehaviorExecutionSpecification();
+		return (BehaviorExecutionSpecification) interaction.createFragment(name, meta);
 	}
 }
