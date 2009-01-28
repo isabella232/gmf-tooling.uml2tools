@@ -238,7 +238,7 @@ public class MessageNameEditPart extends LabelEditPart implements ITextAwareEdit
 		if (getParserElement() == null || getParser() == null) {
 			return ""; //$NON-NLS-1$
 		}
-		return getParser().getEditString(new EObjectAdapter(getNotationView()), getParserOptions().intValue());
+		return getParser().getEditString(new EObjectAdapter(getParserElement()), getParserOptions().intValue());
 	}
 
 	/**
@@ -262,7 +262,7 @@ public class MessageNameEditPart extends LabelEditPart implements ITextAwareEdit
 						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
 							public void run() {
-								setResult(parser.isValidEditString(new EObjectAdapter(getNotationView()), (String) value));
+								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
 							}
 						});
 						return valid.getCode() == ParserEditStatus.EDITABLE ? null : valid.getMessage();
@@ -284,7 +284,7 @@ public class MessageNameEditPart extends LabelEditPart implements ITextAwareEdit
 		if (getParserElement() == null || getParser() == null) {
 			return null;
 		}
-		return getParser().getCompletionProcessor(new EObjectAdapter(getNotationView()));
+		return getParser().getCompletionProcessor(new EObjectAdapter(getParserElement()));
 	}
 
 	/**
@@ -583,5 +583,5 @@ public class MessageNameEditPart extends LabelEditPart implements ITextAwareEdit
 		}
 
 	}
-	
+
 }

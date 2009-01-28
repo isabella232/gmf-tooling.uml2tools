@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
+import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Gate;
@@ -289,12 +290,12 @@ public class MessageCreateCommand extends EditElementCommand {
 		}
 		return false;
 	}
-	
+
 	private static MessageOccurrenceSpecification doCreateMessageOccurrence(Interaction interaction, String name) {
 		EClass meta = UMLPackage.eINSTANCE.getMessageOccurrenceSpecification();
 		return (MessageOccurrenceSpecification) interaction.createFragment(name, meta);
 	}
-	
+
 	private static BehaviorExecutionSpecification doCreateBehaviorExecution(Interaction interaction, String name) {
 		EClass meta = UMLPackage.eINSTANCE.getBehaviorExecutionSpecification();
 		return (BehaviorExecutionSpecification) interaction.createFragment(name, meta);
