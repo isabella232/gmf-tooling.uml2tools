@@ -18,6 +18,7 @@ public class Pentagon extends Shape  implements LMVisibleFrameWithPentagon.Penta
     public static final int BIT_SIZE = 5;
 
     public Pentagon () {
+    	setLineWidth(1);
     	setFont(UMLDiagramEditorPlugin.getInstance().getDefaultFont());
         setLayoutManager(new FillingBorderLayout());
     }
