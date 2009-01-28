@@ -2830,7 +2830,7 @@
       <Priority
             name="Lowest">
       </Priority>
-         <editor id="org.eclipse.uml2.diagram.clazz"/>
+       <editor id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"/>
    </paletteProvider>
 </extension> 
 
