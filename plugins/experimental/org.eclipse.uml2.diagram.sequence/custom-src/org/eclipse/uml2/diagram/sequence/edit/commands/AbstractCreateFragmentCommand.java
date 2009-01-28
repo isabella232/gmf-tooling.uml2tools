@@ -19,7 +19,7 @@ public abstract class AbstractCreateFragmentCommand extends CreateElementCommand
 	protected abstract void afterDefaultElementCreation(InteractionFragment createdFragment);
 	
 	@Override
-	protected final EObject doDefaultElementCreation() {
+	protected EObject doDefaultElementCreation() {
 		EObject newElement = super.doDefaultElementCreation();
 		if (newElement instanceof InteractionFragment){
 			InteractionFragment fragment = (InteractionFragment)newElement;
@@ -54,10 +54,17 @@ public abstract class AbstractCreateFragmentCommand extends CreateElementCommand
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (false == container instanceof Lifeline) {
-			return null;
+		if (container instanceof Lifeline){
+			return (Lifeline)container;
 		}
-		return (Lifeline)container;
+		
+		if (container instanceof InteractionFragment){
+			InteractionFragment fragment = (InteractionFragment)container;
+			if (fragment.getCovereds().size() == 1){
+				return fragment.getCovereds().get(0);
+			}
+		}
+		return null;
 	}
 	
 	protected Interaction getInteraction(){

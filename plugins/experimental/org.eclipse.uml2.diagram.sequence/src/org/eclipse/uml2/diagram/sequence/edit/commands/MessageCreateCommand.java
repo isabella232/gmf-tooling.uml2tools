@@ -1,5 +1,8 @@
 package org.eclipse.uml2.diagram.sequence.edit.commands;
 
+import java.util.List;
+import java.util.ListIterator;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -10,12 +13,13 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
-import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.Interaction;
+import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.MessageEnd;
@@ -143,9 +147,51 @@ public class MessageCreateCommand extends CreateElementCommand {
 		BehaviorExecutionSpecification result = (BehaviorExecutionSpecification) interaction.createFragment(withIndex + "body", UMLPackage.eINSTANCE.getBehaviorExecutionSpecification());
 		MessageOccurrenceSpecification finish = (MessageOccurrenceSpecification) interaction.createFragment(withIndex + "finish", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
 
-		result.getCovereds().add(lifeline);
-		result.setStart(start);
-		result.setFinish(finish);
+		setupBehaviorSpec(result, start, finish, lifeline);
+
+		return result;
+	}
+	
+	private void setupBehaviorSpec(BehaviorExecutionSpecification spec, MessageOccurrenceSpecification start, MessageOccurrenceSpecification finish, Lifeline lifeline){
+		setSingleCovered(spec, lifeline);
+		setSingleCovered(start, lifeline);
+		setSingleCovered(finish, lifeline);
+		
+		spec.setStart(start);
+		spec.setFinish(finish);
+	}
+	
+	private void setSingleCovered(InteractionFragment fragment, Lifeline lifeline) {
+		if (!fragment.getCovereds().contains(lifeline)){
+			fragment.getCovereds().add(lifeline);
+		}
+	}
+	
+	private BehaviorExecutionSpecification createBehaviorExecutionSpecification(Interaction interaction, BehaviorExecutionSpecification parentSpec, int index, boolean forSource) {
+		String prefix = forSource ? "invocation-" : "execution-";
+		String withIndex = prefix + index + "-";
+		MessageOccurrenceSpecification start = UMLFactory.eINSTANCE.createMessageOccurrenceSpecification();
+		start.setName(withIndex + "start");
+		
+		BehaviorExecutionSpecification result = UMLFactory.eINSTANCE.createBehaviorExecutionSpecification();  
+		result.setName(withIndex + "body");
+		
+		MessageOccurrenceSpecification finish = UMLFactory.eINSTANCE.createMessageOccurrenceSpecification();
+		start.setName(withIndex + "finish");
+		
+		List<BehaviorExecutionSpecification> existingNested = UMLDiagramUpdater.getNestedSpecs(parentSpec);
+		InteractionFragment justBeforeNewStart = existingNested.isEmpty() ? parentSpec : existingNested.get(existingNested.size() - 1).getFinish();
+		for (ListIterator<InteractionFragment> it = interaction.getFragments().listIterator(); it.hasNext();){
+			InteractionFragment next = it.next();
+			if (next == justBeforeNewStart){
+				it.add(start);
+				it.add(result);
+				it.add(finish);
+			}
+		}
+		
+		Lifeline parentLifeline = parentSpec.getCovereds().get(0);
+		setupBehaviorSpec(result, start, finish, parentLifeline);
 
 		return result;
 	}

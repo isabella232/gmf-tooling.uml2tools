@@ -73,6 +73,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
+		if (editPart instanceof BehaviorExecutionSpecificationEditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.BehaviorExecutionSpecification_3004);
+			return types;
+		}
+
 		if (editPart instanceof CombinedFragmentMountingRegionEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.InteractionOperand_3011);

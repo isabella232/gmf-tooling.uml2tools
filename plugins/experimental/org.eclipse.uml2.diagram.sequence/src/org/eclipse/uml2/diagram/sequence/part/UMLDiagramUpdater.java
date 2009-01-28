@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.sequence.part;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -9,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -48,7 +48,6 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.StateInvariant;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -67,6 +66,8 @@ public class UMLDiagramUpdater {
 			return getCombinedFragment_3008SemanticChildren(view);
 		case LifelineEditPart.VISUAL_ID:
 			return getLifeline_3001SemanticChildren(view);
+		case BehaviorExecutionSpecificationEditPart.VISUAL_ID:
+			return getBehaviorExecutionSpecification_3004SemanticChildren(view);
 		case CombinedFragmentMountingRegionEditPart.VISUAL_ID:
 			return getCombinedFragment_3010SemanticChildren(view);
 		case PackageEditPart.VISUAL_ID:
@@ -173,6 +174,81 @@ public class UMLDiagramUpdater {
 
 		return result;
 	}
+
+	/**
+	 * @generated NOT
+	 */
+	public static List getBehaviorExecutionSpecification_3004SemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		BehaviorExecutionSpecification parentSpec = (BehaviorExecutionSpecification) view.getElement();
+		List<BehaviorExecutionSpecification> nestedSpecs = getNestedSpecs(parentSpec); 
+		if (nestedSpecs.isEmpty()){
+			return Collections.emptyList();
+		}
+		List<IUpdaterNodeDescriptor> result = new ArrayList<IUpdaterNodeDescriptor>(nestedSpecs.size());
+		for (BehaviorExecutionSpecification nextNested : nestedSpecs){
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, nextNested);
+			if (visualID == BehaviorExecutionSpecificationEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(nextNested, visualID));
+			}
+		}
+		return result;
+	}
+	
+	public static List<BehaviorExecutionSpecification> getNestedSpecs(BehaviorExecutionSpecification parentSpec){
+		Interaction interaction = parentSpec.getEnclosingInteraction();
+		OccurrenceSpecification parentStart = parentSpec.getStart();
+		OccurrenceSpecification parentEnd = parentSpec.getFinish();
+		if (parentStart == null || parentEnd == null || parentSpec.getCovereds().size() != 1) {
+			throw new IllegalStateException(//
+					"Invalid BehaviorExecutionSpecification: " + parentSpec + // 
+							", start: " + parentStart + //
+							", finish: " + parentEnd + //
+							", lifelines: " + parentSpec.getCovereds());
+		}
+		Lifeline lifeline = parentSpec.getCovereds().get(0);
+		List<BehaviorExecutionSpecification> result = new ArrayList<BehaviorExecutionSpecification>(interaction.getFragments().size() / 3 + 1);
+		BehaviorExecutionSpecification last = null;
+		boolean inside = false;
+		boolean inDeep = false;
+		for (InteractionFragment next : interaction.getFragments()){
+			if (next == parentSpec.getStart()){
+				inside = true;
+				continue;
+			}
+			if (next == parentSpec.getFinish()){
+				inside = false;
+				break;
+			}
+			if (next == parentSpec){
+				continue;
+			}
+			if (last != null && next == last.getStart()){
+				inDeep = true;
+				continue;
+			}
+			if (last != null && next == last.getFinish()){
+				inDeep = false;
+				continue;
+			}
+			
+			if (next instanceof BehaviorExecutionSpecification){
+				BehaviorExecutionSpecification nextSpec = (BehaviorExecutionSpecification)next;
+				if (!nextSpec.getCovereds().contains(lifeline)){
+					continue;
+				}
+				if (inside && !inDeep){
+					last = nextSpec;
+					result.add(nextSpec);
+					inDeep = true;
+				}
+			}
+		}
+		return result;
+	}
+
 
 	/**
 	 * @generated
