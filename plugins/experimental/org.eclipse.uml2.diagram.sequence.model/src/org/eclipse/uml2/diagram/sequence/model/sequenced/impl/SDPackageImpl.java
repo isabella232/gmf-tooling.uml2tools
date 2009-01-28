@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackageImpl.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDPackageImpl.java,v 1.2 2009/01/28 17:43:06 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -548,6 +548,15 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSDAbstractMessage_MessageNumber() {
+		return (EAttribute)sdAbstractMessageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSDMessage() {
 		return sdMessageEClass;
 	}
@@ -815,6 +824,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		sdAbstractMessageEClass = createEClass(SD_ABSTRACT_MESSAGE);
 		createEReference(sdAbstractMessageEClass, SD_ABSTRACT_MESSAGE__UML_MESSAGE);
 		createEReference(sdAbstractMessageEClass, SD_ABSTRACT_MESSAGE__FRAME);
+		createEAttribute(sdAbstractMessageEClass, SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER);
 
 		sdMessageEClass = createEClass(SD_MESSAGE);
 		createEReference(sdMessageEClass, SD_MESSAGE__SOURCE);
@@ -933,6 +943,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		initEClass(sdAbstractMessageEClass, SDAbstractMessage.class, "SDAbstractMessage", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDAbstractMessage_UmlMessage(), this.getUMLMessage(), null, "umlMessage", null, 0, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSDAbstractMessage_Frame(), this.getSDFrame(), this.getSDFrame_Messages(), "frame", null, 1, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSDAbstractMessage_MessageNumber(), ecorePackage.getEString(), "messageNumber", null, 0, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sdMessageEClass, SDMessage.class, "SDMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDMessage_Source(), this.getSDInvocation(), this.getSDInvocation_OutgoingMessage(), "source", null, 0, 1, SDMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

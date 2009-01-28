@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackage.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDPackage.java,v 1.2 2009/01/28 17:43:06 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -520,13 +520,22 @@ public interface SDPackage extends EPackage {
 	int SD_ABSTRACT_MESSAGE__FRAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Message Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER = 2;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Message</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SD_ABSTRACT_MESSAGE_FEATURE_COUNT = 2;
+	int SD_ABSTRACT_MESSAGE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDMessageImpl <em>Message</em>}' class.
@@ -555,6 +564,15 @@ public interface SDPackage extends EPackage {
 	 * @ordered
 	 */
 	int SD_MESSAGE__FRAME = SD_ABSTRACT_MESSAGE__FRAME;
+
+	/**
+	 * The feature id for the '<em><b>Message Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_MESSAGE__MESSAGE_NUMBER = SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -610,6 +628,15 @@ public interface SDPackage extends EPackage {
 	 * @ordered
 	 */
 	int SD_GATE_MESSAGE__FRAME = SD_ABSTRACT_MESSAGE__FRAME;
+
+	/**
+	 * The feature id for the '<em><b>Message Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_GATE_MESSAGE__MESSAGE_NUMBER = SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>From Not To Gate</b></em>' attribute.
@@ -1239,6 +1266,17 @@ public interface SDPackage extends EPackage {
 	EReference getSDAbstractMessage_Frame();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getMessageNumber <em>Message Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message Number</em>'.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getMessageNumber()
+	 * @see #getSDAbstractMessage()
+	 * @generated
+	 */
+	EAttribute getSDAbstractMessage_MessageNumber();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1752,6 +1790,14 @@ public interface SDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SD_ABSTRACT_MESSAGE__FRAME = eINSTANCE.getSDAbstractMessage_Frame();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER = eINSTANCE.getSDAbstractMessage_MessageNumber();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDMessageImpl <em>Message</em>}' class.

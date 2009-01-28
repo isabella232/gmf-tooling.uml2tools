@@ -47,7 +47,8 @@ class SDInvocation extends SDBehaviorSpec {
 
 abstract class SDAbstractMessage {
 	ref UMLMessage umlMessage;
-	readonly ref SDFrame[1]#messages frame; 
+	readonly ref SDFrame[1]#messages frame;
+	attr String messageNumber; 
 }
 
 class SDMessage extends SDAbstractMessage {

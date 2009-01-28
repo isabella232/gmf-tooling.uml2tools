@@ -1,9 +1,16 @@
 package org.eclipse.uml2.diagram.sequence.model.builder;
 
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
+import javax.sound.midi.ShortMessage;
+
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFactory;
@@ -44,6 +51,73 @@ public class SDBuilder {
 		myCallStack = new LifeLineCallStack();
 	}
 	
+	public void updateMessageNumbers(){
+		List<SDAbstractMessage> orderedSDMessages = orderSDMessages();
+		Set<SDAbstractMessage> guard = new HashSet<SDAbstractMessage>();
+		
+		int rootNumber = 1;
+		for (SDAbstractMessage next : orderedSDMessages){
+			if (next instanceof SDMessage){
+				SDMessage nextMessage = (SDMessage)next;
+				SDMessage firstInChain = findFirstMessageInChain(nextMessage);
+				firstInChain.setMessageNumber(String.valueOf(rootNumber++));
+				setupMessageNumbersForChain(firstInChain, guard);
+			}
+		}
+	}
+	
+	private void setupMessageNumbersForChain(SDMessage current, Set<SDAbstractMessage> guard){
+		if (guard.contains(current)){
+			return;
+		}
+		guard.add(current);
+		
+		SDExecution execution = current.getTarget();
+		int index = 1;
+		for (SDBracket nextBracket : execution.getBrackets()){
+			if (nextBracket instanceof SDInvocation){
+				SDInvocation nextInvocation = (SDInvocation)nextBracket;
+				SDMessage nextMessage = nextInvocation.getOutgoingMessage();
+				nextMessage.setMessageNumber(current.getMessageNumber() + "." + (index++));
+				setupMessageNumbersForChain(nextMessage, guard);
+			}
+		}
+	}
+	
+	private SDMessage findFirstMessageInChain(SDMessage message){
+		SDInvocation invocation = message.getSource();
+		if (invocation.getBracketContainer() instanceof SDLifeLine){
+			return message;
+		}
+		SDExecution containerExecution = (SDExecution)invocation.getBracketContainer();
+		return findFirstMessageInChain(containerExecution.getIncomingMessage());
+	}
+	
+	private List<SDAbstractMessage> orderSDMessages(){
+		Set<Message> matchedUMLMessages = new HashSet<Message>();
+		List<SDAbstractMessage> sdMessages = new LinkedList<SDAbstractMessage>();
+		
+		for (InteractionFragment next : myInteraction.getFragments()){
+			if (next instanceof MessageEnd){
+				MessageEnd nextMessageEnd = (MessageEnd)next;
+				Message umlMessage = nextMessageEnd.getMessage();
+				if (umlMessage == null){
+					continue;
+				}
+				if (matchedUMLMessages.contains(umlMessage)){
+					continue;
+				}
+				SDAbstractMessage sdMessage = SDModelHelper.findMessage(mySDFrame, umlMessage);
+				if (sdMessage == null){
+					continue;
+				}	
+				sdMessages.add(sdMessage);
+				matchedUMLMessages.add(umlMessage);
+			}
+		}
+		return sdMessages;
+	}
+	
 	public LifeLineCallStack getCallStack() {
 		return myCallStack;
 	}
@@ -67,6 +141,8 @@ public class SDBuilder {
 		for (Iterator<InteractionFragment> fragments = myInteraction.getFragments().iterator(); fragments.hasNext();) {
 			buildBrackets(fragments);
 		}
+		
+		updateMessageNumbers();
 
 		return mySDFrame;
 	}

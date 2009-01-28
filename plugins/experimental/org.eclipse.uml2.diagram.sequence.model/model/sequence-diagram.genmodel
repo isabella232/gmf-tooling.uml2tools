@@ -43,6 +43,7 @@
     <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDAbstractMessage">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDAbstractMessage/umlMessage"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDAbstractMessage/frame"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sequence-diagram.ecore#//SDAbstractMessage/messageNumber"/>
     </genClasses>
     <genClasses ecoreClass="sequence-diagram.ecore#//SDMessage">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDMessage/source"/>

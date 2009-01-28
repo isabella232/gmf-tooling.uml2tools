@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAbstractMessageImpl.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDAbstractMessageImpl.java,v 1.2 2009/01/28 17:43:06 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -31,6 +31,7 @@ import org.eclipse.uml2.uml.Message;
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDAbstractMessageImpl#getUmlMessage <em>Uml Message</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDAbstractMessageImpl#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDAbstractMessageImpl#getMessageNumber <em>Message Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +47,25 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 	 * @ordered
 	 */
 	protected Message umlMessage;
+
+	/**
+	 * The default value of the '{@link #getMessageNumber() <em>Message Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MESSAGE_NUMBER_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getMessageNumber() <em>Message Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected String messageNumber = MESSAGE_NUMBER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,6 +139,27 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getMessageNumber() {
+		return messageNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMessageNumber(String newMessageNumber) {
+		String oldMessageNumber = messageNumber;
+		messageNumber = newMessageNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SDPackage.SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER, oldMessageNumber, messageNumber));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -171,6 +212,8 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 				return basicGetUmlMessage();
 			case SDPackage.SD_ABSTRACT_MESSAGE__FRAME:
 				return getFrame();
+			case SDPackage.SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER:
+				return getMessageNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,6 +229,9 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 			case SDPackage.SD_ABSTRACT_MESSAGE__UML_MESSAGE:
 				setUmlMessage((Message)newValue);
 				return;
+			case SDPackage.SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER:
+				setMessageNumber((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,6 +246,9 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 		switch (featureID) {
 			case SDPackage.SD_ABSTRACT_MESSAGE__UML_MESSAGE:
 				setUmlMessage((Message)null);
+				return;
+			case SDPackage.SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER:
+				setMessageNumber(MESSAGE_NUMBER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -217,8 +266,26 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 				return umlMessage != null;
 			case SDPackage.SD_ABSTRACT_MESSAGE__FRAME:
 				return getFrame() != null;
+			case SDPackage.SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER:
+				return MESSAGE_NUMBER_EDEFAULT == null ? messageNumber != null : !MESSAGE_NUMBER_EDEFAULT.equals(messageNumber);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (messageNumber: ");
+		result.append(messageNumber);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SDAbstractMessageImpl

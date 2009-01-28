@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAbstractMessage.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDAbstractMessage.java,v 1.2 2009/01/28 17:43:06 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.Message;
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getUmlMessage <em>Uml Message</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getMessageNumber <em>Message Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -70,5 +71,31 @@ public interface SDAbstractMessage extends EObject {
 	 * @generated
 	 */
 	SDFrame getFrame();
+
+	/**
+	 * Returns the value of the '<em><b>Message Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Message Number</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Message Number</em>' attribute.
+	 * @see #setMessageNumber(String)
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDAbstractMessage_MessageNumber()
+	 * @model
+	 * @generated
+	 */
+	String getMessageNumber();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getMessageNumber <em>Message Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Message Number</em>' attribute.
+	 * @see #getMessageNumber()
+	 * @generated
+	 */
+	void setMessageNumber(String value);
 
 } // SDAbstractMessage

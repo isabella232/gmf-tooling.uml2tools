@@ -53,6 +53,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlMessage" eType="#//UMLMessage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDFrame"
         changeable="false" eOpposite="#//SDFrame/messages"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDMessage" eSuperTypes="#//SDAbstractMessage">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//SDInvocation"
