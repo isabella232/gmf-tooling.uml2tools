@@ -2,19 +2,19 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDNotationPackageImpl.java,v 1.1 2009/01/28 13:08:52 mgolubev Exp $
+ * $Id: SDNotationPackageImpl.java,v 1.2 2009/01/28 18:48:50 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sdnotation.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 
-import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelAccessStyle;
+import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle;
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDNotationFactory;
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDNotationPackage;
 
@@ -32,7 +32,7 @@ public class SDNotationPackageImpl extends EPackageImpl implements SDNotationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass sdModelAccessStyleEClass = null;
+	private EClass sdModelStorageStyleEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -111,8 +111,8 @@ public class SDNotationPackageImpl extends EPackageImpl implements SDNotationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSDModelAccessStyle() {
-		return sdModelAccessStyleEClass;
+	public EClass getSDModelStorageStyle() {
+		return sdModelStorageStyleEClass;
 	}
 
 	/**
@@ -120,8 +120,8 @@ public class SDNotationPackageImpl extends EPackageImpl implements SDNotationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSDModelAccessStyle_Frame() {
-		return (EReference)sdModelAccessStyleEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSDModelStorageStyle_Version() {
+		return (EAttribute)sdModelStorageStyleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -152,8 +152,8 @@ public class SDNotationPackageImpl extends EPackageImpl implements SDNotationPac
 		isCreated = true;
 
 		// Create classes and their features
-		sdModelAccessStyleEClass = createEClass(SD_MODEL_ACCESS_STYLE);
-		createEReference(sdModelAccessStyleEClass, SD_MODEL_ACCESS_STYLE__FRAME);
+		sdModelStorageStyleEClass = createEClass(SD_MODEL_STORAGE_STYLE);
+		createEAttribute(sdModelStorageStyleEClass, SD_MODEL_STORAGE_STYLE__VERSION);
 	}
 
 	/**
@@ -188,11 +188,15 @@ public class SDNotationPackageImpl extends EPackageImpl implements SDNotationPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		sdModelAccessStyleEClass.getESuperTypes().add(theNotationPackage.getNamedStyle());
+		sdModelStorageStyleEClass.getESuperTypes().add(theNotationPackage.getStyle());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(sdModelAccessStyleEClass, SDModelAccessStyle.class, "SDModelAccessStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSDModelAccessStyle_Frame(), theSDPackage.getSDFrame(), null, "frame", null, 0, 1, SDModelAccessStyle.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(sdModelStorageStyleEClass, SDModelStorageStyle.class, "SDModelStorageStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSDModelStorageStyle_Version(), ecorePackage.getEInt(), "version", null, 0, 1, SDModelStorageStyle.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(sdModelStorageStyleEClass, theSDPackage.getSDFrame(), "getAttachedModel", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(sdModelStorageStyleEClass, null, "invalidateModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

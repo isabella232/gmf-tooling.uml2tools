@@ -2,13 +2,13 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDNotationPackage.java,v 1.1 2009/01/28 13:08:52 mgolubev Exp $
+ * $Id: SDNotationPackage.java,v 1.2 2009/01/28 18:48:50 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sdnotation;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 
@@ -61,63 +61,54 @@ public interface SDNotationPackage extends EPackage {
 	SDNotationPackage eINSTANCE = org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDNotationPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDModelAccessStyleImpl <em>SD Model Access Style</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDModelStorageStyleImpl <em>SD Model Storage Style</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDModelAccessStyleImpl
-	 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDNotationPackageImpl#getSDModelAccessStyle()
+	 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDModelStorageStyleImpl
+	 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDNotationPackageImpl#getSDModelStorageStyle()
 	 * @generated
 	 */
-	int SD_MODEL_ACCESS_STYLE = 0;
+	int SD_MODEL_STORAGE_STYLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SD_MODEL_ACCESS_STYLE__NAME = NotationPackage.NAMED_STYLE__NAME;
+	int SD_MODEL_STORAGE_STYLE__VERSION = NotationPackage.STYLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Frame</b></em>' reference.
+	 * The number of structural features of the '<em>SD Model Storage Style</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SD_MODEL_ACCESS_STYLE__FRAME = NotationPackage.NAMED_STYLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>SD Model Access Style</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SD_MODEL_ACCESS_STYLE_FEATURE_COUNT = NotationPackage.NAMED_STYLE_FEATURE_COUNT + 1;
+	int SD_MODEL_STORAGE_STYLE_FEATURE_COUNT = NotationPackage.STYLE_FEATURE_COUNT + 1;
 
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelAccessStyle <em>SD Model Access Style</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle <em>SD Model Storage Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>SD Model Access Style</em>'.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelAccessStyle
+	 * @return the meta object for class '<em>SD Model Storage Style</em>'.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle
 	 * @generated
 	 */
-	EClass getSDModelAccessStyle();
+	EClass getSDModelStorageStyle();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelAccessStyle#getFrame <em>Frame</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Frame</em>'.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelAccessStyle#getFrame()
-	 * @see #getSDModelAccessStyle()
+	 * @return the meta object for the attribute '<em>Version</em>'.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle#getVersion()
+	 * @see #getSDModelStorageStyle()
 	 * @generated
 	 */
-	EReference getSDModelAccessStyle_Frame();
+	EAttribute getSDModelStorageStyle_Version();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -142,22 +133,21 @@ public interface SDNotationPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDModelAccessStyleImpl <em>SD Model Access Style</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDModelStorageStyleImpl <em>SD Model Storage Style</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDModelAccessStyleImpl
-		 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDNotationPackageImpl#getSDModelAccessStyle()
+		 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDModelStorageStyleImpl
+		 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.impl.SDNotationPackageImpl#getSDModelStorageStyle()
 		 * @generated
 		 */
-		EClass SD_MODEL_ACCESS_STYLE = eINSTANCE.getSDModelAccessStyle();
-
+		EClass SD_MODEL_STORAGE_STYLE = eINSTANCE.getSDModelStorageStyle();
 		/**
-		 * The meta object literal for the '<em><b>Frame</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SD_MODEL_ACCESS_STYLE__FRAME = eINSTANCE.getSDModelAccessStyle_Frame();
+		EAttribute SD_MODEL_STORAGE_STYLE__VERSION = eINSTANCE.getSDModelStorageStyle_Version();
 
 	}
 

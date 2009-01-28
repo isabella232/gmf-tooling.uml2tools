@@ -4,6 +4,9 @@ package sdnotation;
 import "platform:/resource/org.eclipse.gmf.runtime.notation/model/notation.ecore";
 import "platform:/resource/org.eclipse.uml2.diagram.sequence.model/model/sequence-diagram.ecore";
 
-class SDModelAccessStyle extends notation.NamedStyle {
-	transient ref sequenced.SDFrame frame;
+class SDModelStorageStyle extends notation.Style {
+	transient attr int version;
+
+	op sequenced.SDFrame getAttachedModel();
+	op void invalidateModel();
 }

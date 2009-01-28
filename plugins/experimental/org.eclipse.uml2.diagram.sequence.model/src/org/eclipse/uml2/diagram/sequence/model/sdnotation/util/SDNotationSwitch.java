@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDNotationSwitch.java,v 1.1 2009/01/28 13:08:52 mgolubev Exp $
+ * $Id: SDNotationSwitch.java,v 1.2 2009/01/28 18:48:50 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sdnotation.util;
 
@@ -11,7 +11,6 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.gmf.runtime.notation.NamedStyle;
 import org.eclipse.gmf.runtime.notation.Style;
 
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.*;
@@ -90,11 +89,10 @@ public class SDNotationSwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case SDNotationPackage.SD_MODEL_ACCESS_STYLE: {
-				SDModelAccessStyle sdModelAccessStyle = (SDModelAccessStyle)theEObject;
-				T result = caseSDModelAccessStyle(sdModelAccessStyle);
-				if (result == null) result = caseNamedStyle(sdModelAccessStyle);
-				if (result == null) result = caseStyle(sdModelAccessStyle);
+			case SDNotationPackage.SD_MODEL_STORAGE_STYLE: {
+				SDModelStorageStyle sdModelStorageStyle = (SDModelStorageStyle)theEObject;
+				T result = caseSDModelStorageStyle(sdModelStorageStyle);
+				if (result == null) result = caseStyle(sdModelStorageStyle);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -103,17 +101,17 @@ public class SDNotationSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>SD Model Access Style</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>SD Model Storage Style</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>SD Model Access Style</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>SD Model Storage Style</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSDModelAccessStyle(SDModelAccessStyle object) {
+	public T caseSDModelStorageStyle(SDModelStorageStyle object) {
 		return null;
 	}
 
@@ -129,21 +127,6 @@ public class SDNotationSwitch<T> {
 	 * @generated
 	 */
 	public T caseStyle(Style object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Named Style</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Named Style</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNamedStyle(NamedStyle object) {
 		return null;
 	}
 

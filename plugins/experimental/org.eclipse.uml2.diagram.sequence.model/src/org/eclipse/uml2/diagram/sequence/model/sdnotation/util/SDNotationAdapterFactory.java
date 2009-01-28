@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDNotationAdapterFactory.java,v 1.1 2009/01/28 13:08:52 mgolubev Exp $
+ * $Id: SDNotationAdapterFactory.java,v 1.2 2009/01/28 18:48:50 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sdnotation.util;
 
@@ -13,7 +13,6 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.gmf.runtime.notation.NamedStyle;
 import org.eclipse.gmf.runtime.notation.Style;
 
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.*;
@@ -75,16 +74,12 @@ public class SDNotationAdapterFactory extends AdapterFactoryImpl {
 	protected SDNotationSwitch<Adapter> modelSwitch =
 		new SDNotationSwitch<Adapter>() {
 			@Override
-			public Adapter caseSDModelAccessStyle(SDModelAccessStyle object) {
-				return createSDModelAccessStyleAdapter();
+			public Adapter caseSDModelStorageStyle(SDModelStorageStyle object) {
+				return createSDModelStorageStyleAdapter();
 			}
 			@Override
 			public Adapter caseStyle(Style object) {
 				return createStyleAdapter();
-			}
-			@Override
-			public Adapter caseNamedStyle(NamedStyle object) {
-				return createNamedStyleAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -107,16 +102,16 @@ public class SDNotationAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelAccessStyle <em>SD Model Access Style</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle <em>SD Model Storage Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelAccessStyle
+	 * @see org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle
 	 * @generated
 	 */
-	public Adapter createSDModelAccessStyleAdapter() {
+	public Adapter createSDModelStorageStyleAdapter() {
 		return null;
 	}
 
@@ -131,20 +126,6 @@ public class SDNotationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStyleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gmf.runtime.notation.NamedStyle <em>Named Style</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.gmf.runtime.notation.NamedStyle
-	 * @generated
-	 */
-	public Adapter createNamedStyleAdapter() {
 		return null;
 	}
 

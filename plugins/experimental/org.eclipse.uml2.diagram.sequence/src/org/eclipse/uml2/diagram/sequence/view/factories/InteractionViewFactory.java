@@ -15,8 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
-import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
-import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelAccessStyle;
+import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle;
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDNotationFactory;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 
@@ -38,10 +37,10 @@ public class InteractionViewFactory extends AbstractShapeViewFactory {
 	/**
 	 * @generated NOT
 	 */
+	@SuppressWarnings("unchecked")
 	protected List createStyles(View view) {
 		List result = createStylesGen(view);
-		SDModelAccessStyle modelAccessStyle = SDNotationFactory.eINSTANCE.createSDModelAccessStyle();
-		modelAccessStyle.setName(SDModelAccessStyle.STYLE_NAME);
+		SDModelStorageStyle modelAccessStyle = SDNotationFactory.eINSTANCE.createSDModelStorageStyle();
 		result.add(modelAccessStyle);
 		return result;
 	}

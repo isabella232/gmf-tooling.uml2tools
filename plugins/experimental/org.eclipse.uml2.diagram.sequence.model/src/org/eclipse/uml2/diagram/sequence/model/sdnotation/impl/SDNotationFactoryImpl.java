@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDNotationFactoryImpl.java,v 1.1 2009/01/28 13:08:52 mgolubev Exp $
+ * $Id: SDNotationFactoryImpl.java,v 1.2 2009/01/28 18:48:50 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sdnotation.impl;
 
@@ -60,7 +60,7 @@ public class SDNotationFactoryImpl extends EFactoryImpl implements SDNotationFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case SDNotationPackage.SD_MODEL_ACCESS_STYLE: return createSDModelAccessStyle();
+			case SDNotationPackage.SD_MODEL_STORAGE_STYLE: return createSDModelStorageStyle();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -71,9 +71,9 @@ public class SDNotationFactoryImpl extends EFactoryImpl implements SDNotationFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SDModelAccessStyle createSDModelAccessStyle() {
-		SDModelAccessStyleImpl sdModelAccessStyle = new SDModelAccessStyleImpl();
-		return sdModelAccessStyle;
+	public SDModelStorageStyle createSDModelStorageStyle() {
+		SDModelStorageStyleImpl sdModelStorageStyle = new SDModelStorageStyleImpl();
+		return sdModelStorageStyle;
 	}
 
 	/**
