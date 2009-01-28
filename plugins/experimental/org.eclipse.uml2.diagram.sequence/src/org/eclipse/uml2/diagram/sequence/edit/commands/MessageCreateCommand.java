@@ -17,6 +17,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
+import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Gate;
@@ -95,6 +96,25 @@ public class MessageCreateCommand extends EditElementCommand {
 		return result;
 	}
 
+	private BehaviorExecutionSpecification[] createBehaviorExecutionSpecificationsPair(Interaction interaction, Lifeline sourceLL, Lifeline targetLL, int messageIndex) {
+		String invocationPrefix = "invocation-" + messageIndex + "-";
+		String executionPrefix = "execution-" + messageIndex + "-";
+		MessageOccurrenceSpecification invocationStart = (MessageOccurrenceSpecification) interaction.createFragment(invocationPrefix + "start", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
+		MessageOccurrenceSpecification executionStart = (MessageOccurrenceSpecification) interaction.createFragment(executionPrefix + "start", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
+		
+		BehaviorExecutionSpecification invocation = (BehaviorExecutionSpecification) interaction.createFragment(invocationPrefix + "body", UMLPackage.eINSTANCE.getBehaviorExecutionSpecification());
+		BehaviorExecutionSpecification execution = (BehaviorExecutionSpecification) interaction.createFragment(executionPrefix + "body", UMLPackage.eINSTANCE.getBehaviorExecutionSpecification());
+		
+		MessageOccurrenceSpecification executionFinish = (MessageOccurrenceSpecification) interaction.createFragment(executionPrefix + "finish", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
+		MessageOccurrenceSpecification invocationFinish = (MessageOccurrenceSpecification) interaction.createFragment(invocationPrefix + "finish", UMLPackage.eINSTANCE.getMessageOccurrenceSpecification());
+
+		setupBehaviorSpec(invocation, invocationStart, invocationFinish, sourceLL);
+		setupBehaviorSpec(execution, executionStart, executionFinish, targetLL);
+
+		return new BehaviorExecutionSpecification[] {invocation, execution};
+	}
+
+	
 	private void setupBehaviorSpec(BehaviorExecutionSpecification spec, MessageOccurrenceSpecification start, MessageOccurrenceSpecification finish, Lifeline lifeline) {
 		setSingleCovered(spec, lifeline);
 		setSingleCovered(start, lifeline);
@@ -151,33 +171,29 @@ public class MessageCreateCommand extends EditElementCommand {
 		int count = interaction.getMessages().size() + 1;
 
 		Element diagramSource = getSource();
-		MessageEnd domainSource = null;
-		if (diagramSource instanceof Gate) {
-			domainSource = (Gate) diagramSource;
-		} else if (diagramSource instanceof Lifeline) {
-			diagramSource = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramSource, count, true);
-		}
-
-		if (diagramSource instanceof BehaviorExecutionSpecification) {
-			BehaviorExecutionSpecification execution = (BehaviorExecutionSpecification) diagramSource;
-			if (execution.getStart() instanceof MessageOccurrenceSpecification) {
-				domainSource = (MessageOccurrenceSpecification) execution.getStart();
-			}
-		}
-
 		Element diagramTarget = getTarget();
-		MessageEnd domainTarget = null;
-		if (diagramTarget instanceof Gate) {
-			domainTarget = (Gate) diagramTarget;
-		} else if (diagramTarget instanceof Lifeline) {
-			diagramTarget = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramTarget, count, false);
-		}
-
-		if (diagramTarget instanceof BehaviorExecutionSpecification) {
-			BehaviorExecutionSpecification execution = (BehaviorExecutionSpecification) diagramTarget;
-			if (execution.getStart() instanceof MessageOccurrenceSpecification) { //or finish???
-				domainTarget = (MessageOccurrenceSpecification) execution.getStart();
-			}
+		MessageEnd domainSource;
+		MessageEnd domainTarget;
+		
+		if (diagramSource instanceof Gate && diagramTarget instanceof Lifeline){
+			domainSource = (Gate) diagramSource;
+			BehaviorExecutionSpecification targetExecution = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramTarget, count, false); 
+			domainTarget = (MessageOccurrenceSpecification)targetExecution.getStart();
+		} else if (diagramTarget instanceof Gate && diagramSource instanceof Lifeline){
+			domainTarget = (Gate)diagramTarget;
+			BehaviorExecutionSpecification sourceInvocation = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramSource, count, true);
+			domainSource = (MessageOccurrenceSpecification)sourceInvocation.getStart();
+		} else if (diagramTarget instanceof Lifeline && diagramSource instanceof Lifeline){
+			Lifeline sourceLL = (Lifeline)diagramSource;
+			Lifeline targetLL = (Lifeline)diagramTarget;
+			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count);
+			BehaviorExecutionSpecification invocation = pair[0];
+			BehaviorExecutionSpecification execution = pair[1];
+			
+			domainSource = (MessageOccurrenceSpecification)invocation.getStart();
+			domainTarget = (MessageOccurrenceSpecification)execution.getStart();
+		} else {
+			throw new UnsupportedOperationException("Message between this elements can't be created: from: " + getSource() + " to: " + getTarget());
 		}
 
 		Message newElement = null;
