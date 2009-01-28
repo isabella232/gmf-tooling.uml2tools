@@ -88,7 +88,7 @@
                   Constraints defined in the applied stereotypes should be respected.
                </description>
                <message>
-                  A {0} violates constraint '{2}', defined in {1}.
+                  A {0} violates constraint {2}, defined in {1}.
                </message>
             </constraint>
          </constraints>
