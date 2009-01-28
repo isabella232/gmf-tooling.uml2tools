@@ -558,6 +558,13 @@
       <accessors
           figure="//@figures.0/@descriptors.15/@actualFigure/@customChildren.0/@typedFigure"/>
     </descriptors>
+    <descriptors
+        name="Message_label">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="Message_label"
+          text="Default"/>
+    </descriptors>
   </figures>
   <nodes
       name="InteractionNode"
@@ -712,4 +719,15 @@
       name="CombinedFragment_arguments"
       figure="CustomCombinedFragmentFigure"
       accessor="//@figures.0/@descriptors.11/@accessors.1"/>
+  <labels
+      name="MessageLink_label"
+      figure="Message_label"
+      elementIcon="false">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="-10"/>
+  </labels>
 </gmfgraph:Canvas>
