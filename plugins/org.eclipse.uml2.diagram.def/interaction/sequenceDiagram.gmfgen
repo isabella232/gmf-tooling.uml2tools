@@ -447,9 +447,10 @@
         itemSemanticEditPolicyClassName="BehaviorExecutionSpecificationItemSemanticEditPolicy"
         notationViewFactoryClassName="BehaviorExecutionSpecificationViewFactory"
         canonicalEditPolicyClassName="BehaviorExecutionSpecificationCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.7"
         graphicalNodeEditPolicyClassName="BehaviorExecutionSpecificationGraphicalNodeEditPolicy"
         createCommandClassName="BehaviorExecutionSpecificationCreateCommand"
-        containers="//@diagram/@childNodes.4">
+        containers="//@diagram/@childNodes.7 //@diagram/@childNodes.4">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -877,6 +878,9 @@
     <childReferences
         parent="//@diagram/@childNodes.4"
         child="//@diagram/@childNodes.6"/>
+    <childReferences
+        parent="//@diagram/@childNodes.7"
+        child="//@diagram/@childNodes.7"/>
     <childReferences
         parent="//@diagram/@childNodes.4"
         child="//@diagram/@childNodes.7"/>

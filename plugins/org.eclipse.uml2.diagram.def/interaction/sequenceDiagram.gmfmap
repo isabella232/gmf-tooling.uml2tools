@@ -209,6 +209,13 @@
                   href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
               <diagramNode
                   href="sequenceDiagram.gmfgraph#BehaviorExecutionNode"/>
+              <children
+                  referencedChild="//@nodes.0/@ownedChild/@children.3/@ownedChild/@children.2/@ownedChild">
+	            <containmentFeature
+	                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Interaction/fragment"/>
+                <childrenFeature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Lifeline/coveredBy"/>
+              </children>
             </ownedChild>
           </children>
           <children>
