@@ -67,6 +67,7 @@ public class MountingLinkEditPart extends ConnectionNodeEditPart implements ITre
 		 * @generated
 		 */
 		public MountingLinkFigure() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASHDOT);
 			this.setForegroundColor(ColorConstants.green);
 

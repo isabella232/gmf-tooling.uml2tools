@@ -464,6 +464,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 
