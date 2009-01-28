@@ -49,6 +49,9 @@ public class OCLFromStereoConstraint extends AbstractModelConstraint {
 
 	private boolean runConstraintOn(Helper oclHelper, Element selected, Constraint umlConstraint) throws ParserException {
 		String body = ConstraintUtils.getOCLConstraintBody(umlConstraint);
+		if (body == null) {
+			return true;
+		}
 		Constraint constraint = oclHelper.createInvariant(body);
 		return myOCL.check(selected, constraint);
 	}
