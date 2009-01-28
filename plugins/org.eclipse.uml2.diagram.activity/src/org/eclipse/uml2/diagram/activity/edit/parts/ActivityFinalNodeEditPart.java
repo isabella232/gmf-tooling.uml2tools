@@ -231,7 +231,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart) {
@@ -462,7 +462,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart) {

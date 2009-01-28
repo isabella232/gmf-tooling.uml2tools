@@ -54,7 +54,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPoli
  * @generated
  */
 
-public class AcceptEventActionName3EditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class AcceptTimeEventActionNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -90,13 +90,13 @@ public class AcceptEventActionName3EditPart extends LabelEditPart implements ITe
 	 * @generated
 	 */
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName3EditPart.VISUAL_ID), new Point(0, 0));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionNameEditPart.VISUAL_ID), new Point(0, 0));
 	}
 
 	/**
 	 * @generated
 	 */
-	public AcceptEventActionName3EditPart(View view) {
+	public AcceptTimeEventActionNameEditPart(View view) {
 		super(view);
 	}
 
@@ -307,7 +307,7 @@ public class AcceptEventActionName3EditPart extends LabelEditPart implements ITe
 	public IParser getParser() {
 		if (parser == null) {
 			parser = UMLParserProvider.getParser(UMLElementTypes.AcceptEventAction_3031, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionName3EditPart.VISUAL_ID));
+					.getType(org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

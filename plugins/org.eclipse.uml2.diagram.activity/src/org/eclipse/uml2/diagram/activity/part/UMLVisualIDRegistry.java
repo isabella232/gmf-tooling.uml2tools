@@ -459,7 +459,7 @@ public class UMLVisualIDRegistry {
 				return AcceptEventActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3031((AcceptEventAction) domainElement)) {
-				return AcceptEventAction2EditPart.VISUAL_ID;
+				return AcceptTimeEventActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3032((ActivityFinalNode) domainElement)) {
 				return ActivityFinalNodeEditPart.VISUAL_ID;
@@ -1447,7 +1447,7 @@ public class UMLVisualIDRegistry {
 			if (AcceptEventActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AcceptEventAction2EditPart.VISUAL_ID == nodeVisualID) {
+			if (AcceptTimeEventActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ActivityFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
@@ -1544,8 +1544,8 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case AcceptEventAction2EditPart.VISUAL_ID:
-			if (AcceptEventActionName3EditPart.VISUAL_ID == nodeVisualID) {
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
+			if (AcceptTimeEventActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3733,7 +3733,7 @@ public class UMLVisualIDRegistry {
 				return AcceptEventActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3031((AcceptEventAction) domainElement)) {
-				return AcceptEventAction2EditPart.VISUAL_ID;
+				return AcceptTimeEventActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getActivityFinalNode().isSuperTypeOf(domainElement.eClass()) && isActivityFinalNode_3032((ActivityFinalNode) domainElement)) {
 				return ActivityFinalNodeEditPart.VISUAL_ID;
@@ -4755,7 +4755,7 @@ public class UMLVisualIDRegistry {
 		case ConstraintEditPart.VISUAL_ID:
 		case Constraint2EditPart.VISUAL_ID:
 		case AcceptEventActionEditPart.VISUAL_ID:
-		case AcceptEventAction2EditPart.VISUAL_ID:
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 		case DecisionNodeEditPart.VISUAL_ID:
 		case MergeNodeEditPart.VISUAL_ID:

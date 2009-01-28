@@ -161,7 +161,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == AcceptEventAction2EditPart.VISUAL_ID) {
+			if (visualID == AcceptTimeEventActionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1999,7 +1999,7 @@ public class UMLDiagramUpdater {
 			return getConstraint_2028ContainedLinks(view);
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3030ContainedLinks(view);
-		case AcceptEventAction2EditPart.VISUAL_ID:
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3031ContainedLinks(view);
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return getActivityFinalNode_3032ContainedLinks(view);
@@ -2188,7 +2188,7 @@ public class UMLDiagramUpdater {
 			return getConstraint_2028IncomingLinks(view);
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3030IncomingLinks(view);
-		case AcceptEventAction2EditPart.VISUAL_ID:
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3031IncomingLinks(view);
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return getActivityFinalNode_3032IncomingLinks(view);
@@ -2377,7 +2377,7 @@ public class UMLDiagramUpdater {
 			return getConstraint_2028OutgoingLinks(view);
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3030OutgoingLinks(view);
-		case AcceptEventAction2EditPart.VISUAL_ID:
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3031OutgoingLinks(view);
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return getActivityFinalNode_3032OutgoingLinks(view);

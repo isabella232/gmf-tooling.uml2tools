@@ -308,7 +308,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
@@ -539,7 +539,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
@@ -782,7 +782,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof OpaqueActionEditPart) {

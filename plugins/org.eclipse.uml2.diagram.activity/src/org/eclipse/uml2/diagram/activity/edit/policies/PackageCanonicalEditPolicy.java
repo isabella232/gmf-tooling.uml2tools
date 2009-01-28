@@ -27,12 +27,12 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.Ratio;
 import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode3EditPart;
@@ -164,7 +164,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		switch (visualID) {
 		case AcceptEventActionEditPart.VISUAL_ID:
-		case AcceptEventAction2EditPart.VISUAL_ID:
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 		case DecisionNodeEditPart.VISUAL_ID:
 		case MergeNodeEditPart.VISUAL_ID:
@@ -447,7 +447,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case AcceptEventAction2EditPart.VISUAL_ID: {
+		case AcceptTimeEventActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getAcceptEventAction_3031ContainedLinks(view));
 			}

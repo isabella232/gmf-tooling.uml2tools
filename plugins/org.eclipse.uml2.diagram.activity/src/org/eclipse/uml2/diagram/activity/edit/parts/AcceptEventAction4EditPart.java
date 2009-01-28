@@ -280,7 +280,7 @@ public class AcceptEventAction4EditPart extends AbstractBorderedShapeEditPart im
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
@@ -511,7 +511,7 @@ public class AcceptEventAction4EditPart extends AbstractBorderedShapeEditPart im
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
@@ -754,7 +754,7 @@ public class AcceptEventAction4EditPart extends AbstractBorderedShapeEditPart im
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof OpaqueActionEditPart) {

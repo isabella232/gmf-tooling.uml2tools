@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 
-public class AcceptEventActionName3ViewFactory extends AbstractLabelViewFactory {
+public class AcceptTimeEventActionNameViewFactory extends AbstractLabelViewFactory {
 
 	/**
 	 * @generated

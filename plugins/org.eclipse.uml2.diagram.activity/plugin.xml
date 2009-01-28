@@ -292,7 +292,7 @@
                id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3031"
                name="%metatype.name.AcceptEventAction_3031"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AcceptEventActionEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AcceptTimeEventActionEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3030"/>
             <param name="semanticHint" value="3031"/>
          </specializationType>
@@ -1733,7 +1733,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

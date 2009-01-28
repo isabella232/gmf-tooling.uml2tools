@@ -20,12 +20,12 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode3EditPart;
@@ -603,8 +603,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof AcceptEventActionEditPart) {
 			return ((AcceptEventActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof AcceptEventAction2EditPart) {
-			return ((AcceptEventAction2EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof AcceptTimeEventActionEditPart) {
+			return ((AcceptTimeEventActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ActivityFinalNodeEditPart) {
 			return ((ActivityFinalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -851,8 +851,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			return ((AcceptEventActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
-			return ((AcceptEventAction2EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
+			return ((AcceptTimeEventActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
 			return ((ActivityFinalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -1094,8 +1094,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof AcceptEventActionEditPart) {
 			return ((AcceptEventActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof AcceptEventAction2EditPart) {
-			return ((AcceptEventAction2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof AcceptTimeEventActionEditPart) {
+			return ((AcceptTimeEventActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ActivityFinalNodeEditPart) {
 			return ((ActivityFinalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1342,8 +1342,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			return ((AcceptEventActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
-			return ((AcceptEventAction2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
+			return ((AcceptTimeEventActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
 			return ((ActivityFinalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -1584,8 +1584,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof AcceptEventActionEditPart) {
 			return ((AcceptEventActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof AcceptEventAction2EditPart) {
-			return ((AcceptEventAction2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof AcceptTimeEventActionEditPart) {
+			return ((AcceptTimeEventActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ActivityFinalNodeEditPart) {
 			return ((ActivityFinalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);

@@ -231,7 +231,7 @@ public class ActivityFinalNode3EditPart extends ShapeNodeEditPart implements Pri
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
@@ -462,7 +462,7 @@ public class ActivityFinalNode3EditPart extends ShapeNodeEditPart implements Pri
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {

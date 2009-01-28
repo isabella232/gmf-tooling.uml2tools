@@ -12,8 +12,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.edit.commands.AcceptEventAction2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.AcceptEventActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.AcceptTimeEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityFinalNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityParameterNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartitionCreateCommand;
@@ -41,8 +41,8 @@ import org.eclipse.uml2.diagram.activity.edit.commands.PinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.SendSignalActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ValueSpecificationAction2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
@@ -93,7 +93,7 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			return getGEFWrapper(new AcceptEventActionCreateCommand(req));
 		}
 		if (UMLElementTypes.AcceptEventAction_3031 == req.getElementType()) {
-			return getGEFWrapper(new AcceptEventAction2CreateCommand(req));
+			return getGEFWrapper(new AcceptTimeEventActionCreateCommand(req));
 		}
 		if (UMLElementTypes.ActivityFinalNode_3032 == req.getElementType()) {
 			return getGEFWrapper(new ActivityFinalNodeCreateCommand(req));
@@ -203,7 +203,7 @@ public class ActivityItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 			case AcceptEventActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case AcceptEventAction2EditPart.VISUAL_ID:
+			case AcceptTimeEventActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case ActivityFinalNodeEditPart.VISUAL_ID:

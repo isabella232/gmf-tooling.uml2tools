@@ -58,11 +58,11 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AcceptEventActionStereotypeEditPart.VISUAL_ID:
 				return new AcceptEventActionStereotypeEditPart(view);
 
-			case AcceptEventAction2EditPart.VISUAL_ID:
-				return new AcceptEventAction2EditPart(view);
+			case AcceptTimeEventActionEditPart.VISUAL_ID:
+				return new AcceptTimeEventActionEditPart(view);
 
-			case AcceptEventActionName3EditPart.VISUAL_ID:
-				return new AcceptEventActionName3EditPart(view);
+			case AcceptTimeEventActionNameEditPart.VISUAL_ID:
+				return new AcceptTimeEventActionNameEditPart(view);
 
 			case ActivityFinalNodeEditPart.VISUAL_ID:
 				return new ActivityFinalNodeEditPart(view);

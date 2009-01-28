@@ -16,12 +16,12 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
@@ -1033,7 +1033,7 @@ public class UMLElementTypes extends ElementInitializers {
 			return Constraint_2028;
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return AcceptEventAction_3030;
-		case AcceptEventAction2EditPart.VISUAL_ID:
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
 			return AcceptEventAction_3031;
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return ActivityFinalNode_3032;

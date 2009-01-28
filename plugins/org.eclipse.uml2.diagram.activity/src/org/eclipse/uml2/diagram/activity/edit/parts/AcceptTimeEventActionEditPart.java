@@ -44,8 +44,8 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.uml2.diagram.activity.edit.policies.AcceptEventAction2CanonicalEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.AcceptEventAction2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.AcceptTimeEventActionCanonicalEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.AcceptTimeEventActionItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -61,7 +61,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 
-public class AcceptEventAction2EditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
+public class AcceptTimeEventActionEditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
@@ -86,7 +86,7 @@ public class AcceptEventAction2EditPart extends AbstractBorderedShapeEditPart im
 	/**
 	 * @generated
 	 */
-	public AcceptEventAction2EditPart(View view) {
+	public AcceptTimeEventActionEditPart(View view) {
 		super(view);
 	}
 
@@ -98,8 +98,8 @@ public class AcceptEventAction2EditPart extends AbstractBorderedShapeEditPart im
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AcceptEventAction2ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AcceptEventAction2CanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AcceptTimeEventActionItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AcceptTimeEventActionCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -115,7 +115,7 @@ public class AcceptEventAction2EditPart extends AbstractBorderedShapeEditPart im
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
-				case AcceptEventActionName3EditPart.VISUAL_ID:
+				case AcceptTimeEventActionNameEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						protected List createSelectionHandles() {
@@ -162,7 +162,7 @@ public class AcceptEventAction2EditPart extends AbstractBorderedShapeEditPart im
 	 * @generated
 	 */
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof AcceptEventActionName3EditPart) {
+		if (borderItemEditPart instanceof AcceptTimeEventActionNameEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
@@ -256,7 +256,7 @@ public class AcceptEventAction2EditPart extends AbstractBorderedShapeEditPart im
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(AcceptEventActionName3EditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(AcceptTimeEventActionNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -280,7 +280,7 @@ public class AcceptEventAction2EditPart extends AbstractBorderedShapeEditPart im
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
@@ -511,7 +511,7 @@ public class AcceptEventAction2EditPart extends AbstractBorderedShapeEditPart im
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
@@ -754,7 +754,7 @@ public class AcceptEventAction2EditPart extends AbstractBorderedShapeEditPart im
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof OpaqueActionEditPart) {

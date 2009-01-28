@@ -95,7 +95,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				}
 				case ActivityEditPart.VISUAL_ID:
 				case AcceptEventActionEditPart.VISUAL_ID:
-				case AcceptEventAction2EditPart.VISUAL_ID:
+				case AcceptTimeEventActionEditPart.VISUAL_ID:
 				case ActivityFinalNodeEditPart.VISUAL_ID:
 				case DecisionNodeEditPart.VISUAL_ID:
 				case MergeNodeEditPart.VISUAL_ID:
@@ -204,8 +204,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case AcceptEventActionName3EditPart.VISUAL_ID:
-					if (AcceptEventAction2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case AcceptTimeEventActionNameEditPart.VISUAL_ID:
+					if (AcceptTimeEventActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -631,10 +631,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AcceptEventActionNameViewFactory.class;
 		case AcceptEventActionStereotypeEditPart.VISUAL_ID:
 			return AcceptEventActionStereotypeViewFactory.class;
-		case AcceptEventAction2EditPart.VISUAL_ID:
-			return AcceptEventAction2ViewFactory.class;
-		case AcceptEventActionName3EditPart.VISUAL_ID:
-			return AcceptEventActionName3ViewFactory.class;
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
+			return AcceptTimeEventActionViewFactory.class;
+		case AcceptTimeEventActionNameEditPart.VISUAL_ID:
+			return AcceptTimeEventActionNameViewFactory.class;
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return ActivityFinalNodeViewFactory.class;
 		case DecisionNodeEditPart.VISUAL_ID:

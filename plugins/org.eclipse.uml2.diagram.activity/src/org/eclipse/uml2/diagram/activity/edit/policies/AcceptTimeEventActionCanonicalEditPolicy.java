@@ -15,7 +15,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
  * @generated
  */
 
-public class AcceptEventAction2CanonicalEditPolicy extends CanonicalEditPolicy {
+public class AcceptTimeEventActionCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated

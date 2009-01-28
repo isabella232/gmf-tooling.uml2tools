@@ -20,12 +20,12 @@ import org.eclipse.uml2.uml.UMLFactory;
  * @generated
  */
 
-public class AcceptEventAction2CreateCommand extends EditElementCommand {
+public class AcceptTimeEventActionCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public AcceptEventAction2CreateCommand(CreateElementRequest req) {
+	public AcceptTimeEventActionCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 

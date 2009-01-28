@@ -28,12 +28,12 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
  * @generated
  */
 
-public class AcceptEventAction2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class AcceptTimeEventActionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public AcceptEventAction2ItemSemanticEditPolicy() {
+	public AcceptTimeEventActionItemSemanticEditPolicy() {
 		super(UMLElementTypes.AcceptEventAction_3031);
 	}
 

@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode3EditPart;
@@ -138,7 +138,7 @@ public class CallBehaviorAction3CanonicalEditPolicy extends CanonicalEditPolicy 
 		case ConstraintEditPart.VISUAL_ID:
 		case Constraint2EditPart.VISUAL_ID:
 		case AcceptEventActionEditPart.VISUAL_ID:
-		case AcceptEventAction2EditPart.VISUAL_ID:
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 		case DecisionNodeEditPart.VISUAL_ID:
 		case MergeNodeEditPart.VISUAL_ID:

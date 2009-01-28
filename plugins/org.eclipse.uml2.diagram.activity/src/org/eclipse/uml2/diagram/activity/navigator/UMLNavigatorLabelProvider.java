@@ -94,7 +94,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Constraint", UMLElementTypes.Constraint_2028); //$NON-NLS-1$
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3030); //$NON-NLS-1$
-		case AcceptEventAction2EditPart.VISUAL_ID:
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3031); //$NON-NLS-1$
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ActivityFinalNode", UMLElementTypes.ActivityFinalNode_3032); //$NON-NLS-1$
@@ -332,7 +332,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getConstraint_2028Text(view);
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3030Text(view);
-		case AcceptEventAction2EditPart.VISUAL_ID:
+		case AcceptTimeEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3031Text(view);
 		case ActivityFinalNodeEditPart.VISUAL_ID:
 			return getActivityFinalNode_3032Text(view);
@@ -585,7 +585,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getAcceptEventAction_3031Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.AcceptEventAction_3031, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(AcceptEventActionName3EditPart.VISUAL_ID));
+				.getType(AcceptTimeEventActionNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {

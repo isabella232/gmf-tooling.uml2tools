@@ -112,12 +112,12 @@
     </childNodes>
     <childNodes
         visualID="3031"
-        editPartClassName="AcceptEventAction2EditPart"
-        itemSemanticEditPolicyClassName="AcceptEventAction2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="AcceptEventAction2ViewFactory"
-        canonicalEditPolicyClassName="AcceptEventAction2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="AcceptEventAction2GraphicalNodeEditPolicy"
-        createCommandClassName="AcceptEventAction2CreateCommand"
+        editPartClassName="AcceptTimeEventActionEditPart"
+        itemSemanticEditPolicyClassName="AcceptTimeEventActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="AcceptTimeEventActionViewFactory"
+        canonicalEditPolicyClassName="AcceptTimeEventActionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="AcceptTimeEventActionGraphicalNodeEditPolicy"
+        createCommandClassName="AcceptTimeEventActionCreateCommand"
         containers="//@diagram/@topLevelNodes.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -125,7 +125,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Accept Time Event Action"
           metamodelType="//@diagram/@childNodes.0/@elementType"
-          editHelperAdviceClassName="AcceptEventActionEditHelperAdvice"/>
+          editHelperAdviceClassName="AcceptTimeEventActionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="AcceptTimeEventActionFigure"
@@ -162,9 +162,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5042"
-          editPartClassName="AcceptEventActionName3EditPart"
-          itemSemanticEditPolicyClassName="AcceptEventActionName3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="AcceptEventActionName3ViewFactory">
+          editPartClassName="AcceptTimeEventActionNameEditPart"
+          itemSemanticEditPolicyClassName="AcceptTimeEventActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="AcceptTimeEventActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4390,12 +4390,12 @@
     </childNodes>
     <childNodes
         visualID="3071"
-        editPartClassName="Pin3EditPart"
-        itemSemanticEditPolicyClassName="Pin3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pin3ViewFactory"
+        editPartClassName="ActivityPartition_PinEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartition_PinItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartition_PinViewFactory"
         canonicalEditPolicyClassName="Pin3CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Pin3GraphicalNodeEditPolicy"
-        createCommandClassName="Pin3CreateCommand"
+        graphicalNodeEditPolicyClassName="ActivityPartition_PinGraphicalNodeEditPolicy"
+        createCommandClassName="ActivityPartition_PinCreateCommand"
         containers="//@diagram/@childNodes.48 //@diagram/@childNodes.47">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -4426,9 +4426,9 @@
       </modelFacet>
       <labels
           visualID="5074"
-          editPartClassName="PinName3EditPart"
-          itemSemanticEditPolicyClassName="PinName3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="PinName3ViewFactory">
+          editPartClassName="ActivityPartition_PinNameEditPart"
+          itemSemanticEditPolicyClassName="ActivityPartition_PinNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ActivityPartition_PinNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4444,9 +4444,9 @@
       </labels>
       <labels
           visualID="5075"
-          editPartClassName="PinInState3EditPart"
-          itemSemanticEditPolicyClassName="PinInState3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="PinInState3ViewFactory">
+          editPartClassName="ActivityPartition_PinInStateEditPart"
+          itemSemanticEditPolicyClassName="ActivityPartition_PinInStateItemSemanticEditPolicy"
+          notationViewFactoryClassName="ActivityPartition_PinInStateViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4463,9 +4463,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5123"
-          editPartClassName="PinOrdering3EditPart"
-          itemSemanticEditPolicyClassName="PinOrdering3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="PinOrdering3ViewFactory"
+          editPartClassName="ActivityPartition_PinOrderingEditPart"
+          itemSemanticEditPolicyClassName="ActivityPartition_PinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="ActivityPartition_PinOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -4481,9 +4481,9 @@
       </labels>
       <labels
           visualID="5132"
-          editPartClassName="PinStereotype3EditPart"
-          itemSemanticEditPolicyClassName="PinStereotype3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="PinStereotype3ViewFactory">
+          editPartClassName="ActivityPartition_PinStereotypeEditPart"
+          itemSemanticEditPolicyClassName="ActivityPartition_PinStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="ActivityPartition_PinStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
