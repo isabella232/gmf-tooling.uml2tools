@@ -37,6 +37,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.sequence.edit.create.SDCreationEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
@@ -127,6 +128,8 @@ public class LifelineGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		while (originalCommandsIt.hasNext()){
 			withFixedViewCreation.compose((IUndoableOperation)originalCommandsIt.next());
 		}
+		
+		withFixedViewCreation.compose(SDCreationEditPolicy.getInvalidateSDModelCommand(sourceEP));
 
 		CompoundCommand gefResult = new CompoundCommand();
 		gefResult.add(new ICommandProxy(withFixedViewCreation));
