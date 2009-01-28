@@ -7,6 +7,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 
 public class LifelineBracketContainerShape extends Shape {
     public LifelineBracketContainerShape () {
+    	setLineWidthFloat(1.0f);
     	setLayoutManager(new XYLayout());
     }
     
