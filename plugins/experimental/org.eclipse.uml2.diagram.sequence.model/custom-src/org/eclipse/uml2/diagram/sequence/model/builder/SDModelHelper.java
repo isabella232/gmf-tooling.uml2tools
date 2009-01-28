@@ -2,23 +2,17 @@ package org.eclipse.uml2.diagram.sequence.model.builder;
 
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGate;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessageEnd;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.util.SDSwitch;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Gate;
-import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.Lifeline;
+import org.eclipse.uml2.uml.Message;
 
 
 public class SDModelHelper {
@@ -41,6 +35,15 @@ public class SDModelHelper {
 	public static SDLifeLine findLifeline(SDFrame frame, Lifeline umlLifeline){
 		for (SDLifeLine next : frame.getLifelines()){
 			if (umlLifeline == next.getUmlLifeline()){
+				return next;
+			}
+		}
+		return null;
+	}
+	
+	public static SDAbstractMessage findMessage(SDFrame frame, Message umlMessage){
+		for (SDAbstractMessage next : frame.getMessages()){
+			if (umlMessage == next.getUmlMessage()){
 				return next;
 			}
 		}
