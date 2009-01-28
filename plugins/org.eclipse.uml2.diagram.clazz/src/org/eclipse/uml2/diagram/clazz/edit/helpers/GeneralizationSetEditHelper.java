@@ -33,6 +33,9 @@ public class GeneralizationSetEditHelper extends UMLBaseEditHelper {
 		return null;
 	}
 
+	/**
+	 * @NOT-generated 
+	 */
 	private Generalization getGeneralization(ConfigureRequest req) {
 		Object parameter = req.getParameter(PARAMETER_SET_GENERALIZATION);
 		if (parameter instanceof Generalization) {

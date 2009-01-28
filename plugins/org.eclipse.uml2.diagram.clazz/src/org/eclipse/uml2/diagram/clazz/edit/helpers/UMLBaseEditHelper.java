@@ -88,47 +88,46 @@ public class UMLBaseEditHelper extends AbstractEditHelper {
 	protected ICommand getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return null;
 	}
-	
-	
+
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	final protected ICommand getConfigureCommand(ConfigureRequest req) {
 		ICommand configureStereotype = getConfigureStereotypeCommand(req);
 		ICommand afterConfugure = getAfterConfigureCommand(req);
-		if (configureStereotype!= null && afterConfugure != null) {
+		if (configureStereotype != null && afterConfugure != null) {
 			CompositeCommand result = new CompositeCommand("");
 			result.add(configureStereotype);
 			result.add(afterConfugure);
-			return result; 
+			return result;
 		}
-		if (configureStereotype!= null) {
-			return configureStereotype; 
+		if (configureStereotype != null) {
+			return configureStereotype;
 		}
 		if (afterConfugure != null) {
-			return afterConfugure; 
+			return afterConfugure;
 		}
 		return super.getConfigureCommand(req);
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	protected ICommand getConfigureStereotypeCommand(ConfigureRequest req) {
 		if (req.getElementToConfigure() instanceof Element && req.getParameter(CreationToolConstants.PARAMETER_CONFUGURE_STEREOTYPE) instanceof Stereotype) {
-			Element element = (Element)req.getElementToConfigure();
-			Stereotype stereo = (Stereotype)req.getParameter(CreationToolConstants.PARAMETER_CONFUGURE_STEREOTYPE);
+			Element element = (Element) req.getElementToConfigure();
+			Stereotype stereo = (Stereotype) req.getParameter(CreationToolConstants.PARAMETER_CONFUGURE_STEREOTYPE);
 			ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest request = new ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest(element, stereo, true);
 			return new ApplyOrUnapplyStereotypeCommand(request);
 		}
 		return null;
 	}
-	
+
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	protected ICommand getAfterConfigureCommand(ConfigureRequest req) {
 		return null;
 	}
-	
+
 }
