@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sequenced"
+    nsURI="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/1.0" nsPrefix="uml2t.seqd">
+  <eClassifiers xsi:type="ecore:EClass" name="SDFrame">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlInteraction" lowerBound="1"
+        eType="#//UMLInteraction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lifelines" upperBound="-1"
+        eType="#//SDLifeLine" containment="true" eOpposite="#//SDLifeLine/frame"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//SDAbstractMessage" containment="true" eOpposite="#//SDAbstractMessage/frame"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gates" upperBound="-1"
+        eType="#//SDGate" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDGate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlGate" eType="#//UMLGate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDLifeLineElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SDBracketContainer" abstract="true"
+      eSuperTypes="#//SDLifeLineElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="brackets" upperBound="-1"
+        eType="#//SDBracket" containment="true" eOpposite="#//SDBracket/bracketContainer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDBracket" abstract="true" eSuperTypes="#//SDLifeLineElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bracketContainer" lowerBound="1"
+        eType="#//SDBracketContainer" changeable="false" eOpposite="#//SDBracketContainer/brackets"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDLifeLine" eSuperTypes="#//SDBracketContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlLifeline" lowerBound="1"
+        eType="#//UMLLifeline"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDFrame"
+        changeable="false" eOpposite="#//SDFrame/lifelines"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDBehaviorSpec" abstract="true" eSuperTypes="#//SDBracket #//SDBracketContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlExecutionSpec" eType="#//UMLExecutionSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlStart" eType="#//UMLOccurrenceSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlFinish" eType="#//UMLOccurrenceSpecification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDExecution" eSuperTypes="#//SDBehaviorSpec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invocation" lowerBound="1"
+        eType="#//SDInvocation" eOpposite="#//SDInvocation/receiveExecution"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingMessage" lowerBound="1"
+        eType="#//SDMessage" eOpposite="#//SDMessage/target"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDInvocation" eSuperTypes="#//SDBehaviorSpec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiveExecution" lowerBound="1"
+        eType="#//SDExecution" eOpposite="#//SDExecution/invocation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingMessage" lowerBound="1"
+        eType="#//SDMessage" eOpposite="#//SDMessage/source"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDAbstractMessage" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlMessage" eType="#//UMLMessage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDFrame"
+        changeable="false" eOpposite="#//SDFrame/messages"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDMessage" eSuperTypes="#//SDAbstractMessage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//SDInvocation"
+        eOpposite="#//SDInvocation/outgoingMessage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//SDExecution"
+        eOpposite="#//SDExecution/incomingMessage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDGateMessage" eSuperTypes="#//SDAbstractMessage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromNotToGate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gate" eType="#//SDGate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="normalEnd" eType="#//SDGateMessageEnd"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDGateMessageEnd" eSuperTypes="#//SDBracket">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlMessageEnd" eType="#//UMLOccurrenceSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStartNotFinish" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDSimpleNode" eSuperTypes="#//SDBracket">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlFragment" eType="#//UMLInteractionFragment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLConstraint" instanceClassName="org.eclipse.uml2.uml.Constraint"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLStateInvariant" instanceClassName="org.eclipse.uml2.uml.StateInvariant"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLInteraction" instanceClassName="org.eclipse.uml2.uml.Interaction"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLPackage" instanceClassName="org.eclipse.uml2.uml.Package"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLLifeline" instanceClassName="org.eclipse.uml2.uml.Lifeline"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLOccurrenceSpecification" instanceClassName="org.eclipse.uml2.uml.OccurrenceSpecification"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLMessage" instanceClassName="org.eclipse.uml2.uml.Message"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLDurationConstraint" instanceClassName="org.eclipse.uml2.uml.DurationConstraint"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLInteractionFragment" instanceClassName="org.eclipse.uml2.uml.InteractionFragment"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLExecutionSpecification" instanceClassName="org.eclipse.uml2.uml.ExecutionSpecification"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLGate" instanceClassName="org.eclipse.uml2.uml.Gate"
+      abstract="true" interface="true"/>
+</ecore:EPackage>

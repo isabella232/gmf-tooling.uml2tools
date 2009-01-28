@@ -1,0 +1,84 @@
+@namespace(uri="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/1.0", prefix="uml2t.seqd")
+package sequenced;
+
+class SDFrame {
+	ref UMLInteraction[1] umlInteraction;
+	ordered val SDLifeLine[*]#frame lifelines;
+	ordered val SDAbstractMessage[*]#frame messages; 
+	val SDGate[*] gates; 
+}
+
+class SDGate {
+	ref UMLGate umlGate;
+}
+
+abstract class SDLifeLineElement {
+	// ref UMLInteractionFragment[1] umlFragment;
+}
+
+abstract class SDBracketContainer extends SDLifeLineElement {
+	ordered val SDBracket[*]#bracketContainer brackets;
+}
+
+abstract class SDBracket extends SDLifeLineElement {
+	readonly ref SDBracketContainer[1]#brackets bracketContainer;
+}
+
+class SDLifeLine extends SDBracketContainer {
+	ref UMLLifeline[1] umlLifeline;
+	readonly ref SDFrame[1]#lifelines frame;
+}
+
+abstract class SDBehaviorSpec extends SDBracket, SDBracketContainer {
+	ref UMLExecutionSpecification umlExecutionSpec;
+	ref UMLOccurrenceSpecification umlStart;
+	ref UMLOccurrenceSpecification umlFinish;
+}
+
+class SDExecution extends SDBehaviorSpec {
+	ref SDInvocation[1]#receiveExecution invocation;
+	ref SDMessage[1]#target incomingMessage;
+}
+
+class SDInvocation extends SDBehaviorSpec {
+	ref SDExecution[1]#invocation receiveExecution;
+	ref SDMessage[1]#source outgoingMessage;
+}
+
+abstract class SDAbstractMessage {
+	ref UMLMessage umlMessage;
+	readonly ref SDFrame[1]#messages frame; 
+}
+
+class SDMessage extends SDAbstractMessage {
+	ref SDInvocation#outgoingMessage source;
+	ref SDExecution#incomingMessage target;
+}
+
+class SDGateMessage extends SDAbstractMessage {
+	attr boolean fromNotToGate = false;
+	ref SDGate gate;
+	ref SDGateMessageEnd normalEnd;
+}
+
+class SDGateMessageEnd extends SDBracket {
+	ref UMLOccurrenceSpecification umlMessageEnd;
+	attr boolean isStartNotFinish = true;
+}
+
+class SDSimpleNode extends SDBracket {
+	ref UMLInteractionFragment umlFragment;
+}
+
+abstract interface UMLConstraint : org.eclipse.uml2.uml.Constraint {}
+abstract interface UMLStateInvariant : org.eclipse.uml2.uml.StateInvariant {}
+abstract interface UMLInteraction : org.eclipse.uml2.uml.Interaction {}
+abstract interface UMLPackage : org.eclipse.uml2.uml.Package {}
+abstract interface UMLLifeline : org.eclipse.uml2.uml.Lifeline {}
+abstract interface UMLOccurrenceSpecification : org.eclipse.uml2.uml.OccurrenceSpecification {}
+abstract interface UMLMessage : org.eclipse.uml2.uml.Message {}
+abstract interface UMLDurationConstraint : org.eclipse.uml2.uml.DurationConstraint {}
+
+abstract interface UMLInteractionFragment : org.eclipse.uml2.uml.InteractionFragment {}
+abstract interface UMLExecutionSpecification : org.eclipse.uml2.uml.ExecutionSpecification {}
+abstract interface UMLGate : org.eclipse.uml2.uml.Gate {}

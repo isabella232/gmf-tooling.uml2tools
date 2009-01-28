@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.uml2.diagram.sequence.model/src"
+    modelPluginID="org.eclipse.uml2.diagram.sequence.model" modelName="SDModel" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>sequence-diagram.ecore</foreignModel>
+  <genPackages prefix="SD" basePackage="org.eclipse.uml2.diagram.sequence.model" disposableProviderFactory="true"
+      ecorePackage="sequence-diagram.ecore#/">
+    <genClasses ecoreClass="sequence-diagram.ecore#//SDFrame">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDFrame/umlInteraction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDFrame/lifelines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDFrame/messages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDFrame/gates"/>
+    </genClasses>
+    <genClasses ecoreClass="sequence-diagram.ecore#//SDGate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDGate/umlGate"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDLifeLineElement"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDBracketContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDBracketContainer/brackets"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDBracket">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDBracket/bracketContainer"/>
+    </genClasses>
+    <genClasses ecoreClass="sequence-diagram.ecore#//SDLifeLine">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDLifeLine/umlLifeline"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDLifeLine/frame"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDBehaviorSpec">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDBehaviorSpec/umlExecutionSpec"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDBehaviorSpec/umlStart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDBehaviorSpec/umlFinish"/>
+    </genClasses>
+    <genClasses ecoreClass="sequence-diagram.ecore#//SDExecution">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDExecution/invocation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDExecution/incomingMessage"/>
+    </genClasses>
+    <genClasses ecoreClass="sequence-diagram.ecore#//SDInvocation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDInvocation/receiveExecution"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDInvocation/outgoingMessage"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDAbstractMessage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDAbstractMessage/umlMessage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDAbstractMessage/frame"/>
+    </genClasses>
+    <genClasses ecoreClass="sequence-diagram.ecore#//SDMessage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDMessage/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDMessage/target"/>
+    </genClasses>
+    <genClasses ecoreClass="sequence-diagram.ecore#//SDGateMessage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sequence-diagram.ecore#//SDGateMessage/fromNotToGate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDGateMessage/gate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDGateMessage/normalEnd"/>
+    </genClasses>
+    <genClasses ecoreClass="sequence-diagram.ecore#//SDGateMessageEnd">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDGateMessageEnd/umlMessageEnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sequence-diagram.ecore#//SDGateMessageEnd/isStartNotFinish"/>
+    </genClasses>
+    <genClasses ecoreClass="sequence-diagram.ecore#//SDSimpleNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDSimpleNode/umlFragment"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLConstraint"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLStateInvariant"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLInteraction"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLPackage"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLLifeline"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLOccurrenceSpecification"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLMessage"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLDurationConstraint"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLInteractionFragment"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLExecutionSpecification"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLGate"/>
+  </genPackages>
+</genmodel:GenModel>
