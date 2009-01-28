@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -48,6 +49,7 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.StateInvariant;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -183,12 +185,12 @@ public class UMLDiagramUpdater {
 			return Collections.EMPTY_LIST;
 		}
 		BehaviorExecutionSpecification parentSpec = (BehaviorExecutionSpecification) view.getElement();
-		List<BehaviorExecutionSpecification> nestedSpecs = getNestedSpecs(parentSpec); 
-		if (nestedSpecs.isEmpty()){
+		List<BehaviorExecutionSpecification> nestedSpecs = getNestedSpecs(parentSpec);
+		if (nestedSpecs.isEmpty()) {
 			return Collections.emptyList();
 		}
 		List<IUpdaterNodeDescriptor> result = new ArrayList<IUpdaterNodeDescriptor>(nestedSpecs.size());
-		for (BehaviorExecutionSpecification nextNested : nestedSpecs){
+		for (BehaviorExecutionSpecification nextNested : nestedSpecs) {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, nextNested);
 			if (visualID == BehaviorExecutionSpecificationEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(nextNested, visualID));
@@ -196,8 +198,8 @@ public class UMLDiagramUpdater {
 		}
 		return result;
 	}
-	
-	public static List<BehaviorExecutionSpecification> getNestedSpecs(BehaviorExecutionSpecification parentSpec){
+
+	public static List<BehaviorExecutionSpecification> getNestedSpecs(BehaviorExecutionSpecification parentSpec) {
 		Interaction interaction = parentSpec.getEnclosingInteraction();
 		OccurrenceSpecification parentStart = parentSpec.getStart();
 		OccurrenceSpecification parentEnd = parentSpec.getFinish();
@@ -213,33 +215,33 @@ public class UMLDiagramUpdater {
 		BehaviorExecutionSpecification last = null;
 		boolean inside = false;
 		boolean inDeep = false;
-		for (InteractionFragment next : interaction.getFragments()){
-			if (next == parentSpec.getStart()){
+		for (InteractionFragment next : interaction.getFragments()) {
+			if (next == parentSpec.getStart()) {
 				inside = true;
 				continue;
 			}
-			if (next == parentSpec.getFinish()){
+			if (next == parentSpec.getFinish()) {
 				inside = false;
 				break;
 			}
-			if (next == parentSpec){
+			if (next == parentSpec) {
 				continue;
 			}
-			if (last != null && next == last.getStart()){
+			if (last != null && next == last.getStart()) {
 				inDeep = true;
 				continue;
 			}
-			if (last != null && next == last.getFinish()){
+			if (last != null && next == last.getFinish()) {
 				inDeep = false;
 				continue;
 			}
-			
-			if (next instanceof BehaviorExecutionSpecification){
-				BehaviorExecutionSpecification nextSpec = (BehaviorExecutionSpecification)next;
-				if (!nextSpec.getCovereds().contains(lifeline)){
+
+			if (next instanceof BehaviorExecutionSpecification) {
+				BehaviorExecutionSpecification nextSpec = (BehaviorExecutionSpecification) next;
+				if (!nextSpec.getCovereds().contains(lifeline)) {
 					continue;
 				}
-				if (inside && !inDeep){
+				if (inside && !inDeep) {
 					last = nextSpec;
 					result.add(nextSpec);
 					inDeep = true;
@@ -248,7 +250,6 @@ public class UMLDiagramUpdater {
 		}
 		return result;
 	}
-
 
 	/**
 	 * @generated

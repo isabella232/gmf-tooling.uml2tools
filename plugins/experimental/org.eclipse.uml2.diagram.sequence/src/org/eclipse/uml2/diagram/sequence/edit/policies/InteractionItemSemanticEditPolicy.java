@@ -45,27 +45,15 @@ public class InteractionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.Gate_3005 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInteraction_FormalGate());
-			}
 			return getGEFWrapper(new GateCreateCommand(req));
 		}
 		if (UMLElementTypes.InteractionUse_3007 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInteraction_Fragment());
-			}
 			return getGEFWrapper(new LayeredInteractionUseCreateCommand(req));
 		}
 		if (UMLElementTypes.CombinedFragment_3008 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInteraction_Fragment());
-			}
 			return getGEFWrapper(new LayeredCombinedFragmentCreateCommand(req));
 		}
 		if (UMLElementTypes.Lifeline_3001 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInteraction_Lifeline());
-			}
 			return getGEFWrapper(new LifelineCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

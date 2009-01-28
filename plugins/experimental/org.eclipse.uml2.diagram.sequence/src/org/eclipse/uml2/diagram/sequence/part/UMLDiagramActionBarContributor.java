@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.sequence.part;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramActionBarContributor;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.ui.IActionBars;
+import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchPage;
 
 /**
@@ -30,7 +31,8 @@ public class UMLDiagramActionBarContributor extends DiagramActionBarContributor 
 	 */
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
-		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath("file"); //$NON-NLS-1$
+		// print preview
+		IMenuManager fileMenu = bars.getMenuManager().findMenuUsingPath(IWorkbenchActionConstants.M_FILE);
 		assert fileMenu != null;
 		fileMenu.remove("pageSetupAction"); //$NON-NLS-1$
 	}

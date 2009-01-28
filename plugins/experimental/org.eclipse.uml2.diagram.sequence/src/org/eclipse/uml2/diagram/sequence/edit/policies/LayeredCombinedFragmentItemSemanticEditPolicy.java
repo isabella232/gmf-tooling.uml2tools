@@ -39,9 +39,6 @@ public class LayeredCombinedFragmentItemSemanticEditPolicy extends UMLBaseItemSe
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.InteractionOperand_3009 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getCombinedFragment_Operand());
-			}
 			return getGEFWrapper(new LayeredOperandCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

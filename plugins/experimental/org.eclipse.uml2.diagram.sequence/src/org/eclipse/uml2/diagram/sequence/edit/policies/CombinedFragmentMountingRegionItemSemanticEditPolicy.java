@@ -39,9 +39,6 @@ public class CombinedFragmentMountingRegionItemSemanticEditPolicy extends UMLBas
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.InteractionOperand_3011 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getCombinedFragment_Operand());
-			}
 			return getGEFWrapper(new InteractionOperandMountingRegionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

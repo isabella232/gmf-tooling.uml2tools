@@ -38,9 +38,6 @@ public class BehaviorExecutionSpecificationItemSemanticEditPolicy extends UMLBas
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.BehaviorExecutionSpecification_3004 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInteraction_Fragment());
-			}
 			return getGEFWrapper(new BehaviorExecutionSpecificationCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

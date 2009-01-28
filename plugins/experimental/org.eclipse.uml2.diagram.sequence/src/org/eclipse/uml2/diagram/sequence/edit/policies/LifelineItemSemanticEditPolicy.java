@@ -47,33 +47,18 @@ public class LifelineItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.ActionExecutionSpecification_3002 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInteraction_Fragment());
-			}
 			return getGEFWrapper(new ActionExecutionSpecificationCreateCommand(req));
 		}
 		if (UMLElementTypes.StateInvariant_3003 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInteraction_Fragment());
-			}
 			return getGEFWrapper(new StateInvariantCreateCommand(req));
 		}
 		if (UMLElementTypes.BehaviorExecutionSpecification_3004 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInteraction_Fragment());
-			}
 			return getGEFWrapper(new BehaviorExecutionSpecificationCreateCommand(req));
 		}
 		if (UMLElementTypes.InteractionUse_3006 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInteraction_Fragment());
-			}
 			return getGEFWrapper(new InteractionUseMountingRegionCreateCommand(req));
 		}
 		if (UMLElementTypes.CombinedFragment_3010 == req.getElementType()) {
-			if (req.getContainmentFeature() == null) {
-				req.setContainmentFeature(UMLPackage.eINSTANCE.getInteraction_Fragment());
-			}
 			return getGEFWrapper(new CombinedFragmentMountingRegionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
