@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 
-<!--
- <copyright>
- </copyright>
-
- $Id: plugin.xml,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
--->
-
 <plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/notation/2008"
+            class="org.eclipse.uml2.diagram.sequence.model.sdnotation.SDNotationPackage"
+            genModel="model/sequence-diagram-notation.genmodel"/>
+   </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package

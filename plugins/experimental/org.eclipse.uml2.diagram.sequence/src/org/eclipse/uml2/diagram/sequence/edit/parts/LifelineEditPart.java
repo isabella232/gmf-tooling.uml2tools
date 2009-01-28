@@ -33,13 +33,13 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.NeedsParentEditPart;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
-import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.layered.MultiLayeredContainer;
 import org.eclipse.uml2.diagram.common.layered.MultilayeredFigure;
 import org.eclipse.uml2.diagram.sequence.edit.create.CreateCombinedFragmentEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.create.CreateInteractionUseEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.create.CreateStateInvariantEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.create.SDCreationEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.create.TieInteractionUseToLifeLineEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.LifelineCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.LifelineGraphicalNodeEditPolicy;
@@ -86,7 +86,7 @@ public class LifelineEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new SDCreationEditPolicy(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LifelineItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());

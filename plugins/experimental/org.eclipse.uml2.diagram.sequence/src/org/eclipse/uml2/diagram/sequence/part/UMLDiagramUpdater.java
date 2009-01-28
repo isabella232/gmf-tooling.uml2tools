@@ -31,6 +31,11 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
+import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
+import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.ActionExecutionSpecification;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
@@ -162,18 +167,47 @@ public class UMLDiagramUpdater {
 			return Collections.EMPTY_LIST;
 		}
 
-		Lifeline lifeline = (Lifeline) view.getElement();
-		List<UMLNodeDescriptor> result = getLifeline_3001SemanticChildrenGen(view);
-		for (Iterator<UMLNodeDescriptor> it = result.iterator(); it.hasNext();) {
-			UMLNodeDescriptor next = it.next();
-			if (next.getModelElement() instanceof InteractionFragment) {
-				InteractionFragment nextFragment = (InteractionFragment) next.getModelElement();
-				if (!nextFragment.getCovereds().contains(lifeline)) {
-					it.remove();
-				}
-			}
+		SDFrame sdFrame = SDModelAccess.findSDModel(view, true);
+		if (sdFrame == null) {
+			return Collections.emptyList();
 		}
 
+		Lifeline umlLifeline = (Lifeline) view.getElement();
+		SDLifeLine sdLifeLine = SDModelHelper.findLifeline(sdFrame, umlLifeline);
+		if (sdLifeLine == null) {
+			return Collections.emptyList();
+		}
+
+		List<IUpdaterNodeDescriptor> result = new LinkedList<IUpdaterNodeDescriptor>();
+		for (SDBracket nextBracket : sdLifeLine.getBrackets()) {
+			Element child = SDModelHelper.UML_ELEMENT_EXTRACTOR.doSwitch(nextBracket);
+			if (false == child instanceof InteractionFragment) {
+				continue;
+			}
+
+			InteractionFragment childElement = (InteractionFragment) child;
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ActionExecutionSpecificationEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StateInvariantEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == BehaviorExecutionSpecificationEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == InteractionUseMountingRegionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == CombinedFragmentMountingRegionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		return result;
 	}
 

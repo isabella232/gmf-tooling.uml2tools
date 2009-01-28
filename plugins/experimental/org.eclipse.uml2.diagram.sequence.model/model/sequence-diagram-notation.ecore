@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sdnotation"
+    nsURI="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/notation/2008" nsPrefix="uml2t.seqd.notation">
+  <eClassifiers xsi:type="ecore:EClass" name="SDModelAccessStyle" eSuperTypes="../../org.eclipse.gmf.runtime.notation/model/notation.ecore#//NamedStyle">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" eType="ecore:EClass sequence-diagram.ecore#//SDFrame"
+        transient="true"/>
+  </eClassifiers>
+</ecore:EPackage>

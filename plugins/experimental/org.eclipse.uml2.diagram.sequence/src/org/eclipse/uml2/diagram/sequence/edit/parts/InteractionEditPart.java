@@ -45,7 +45,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.NeedsParentEditPart;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
-import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
@@ -53,6 +52,7 @@ import org.eclipse.uml2.diagram.common.layered.MultiLayeredContainer;
 import org.eclipse.uml2.diagram.common.layered.MultilayeredFigure;
 import org.eclipse.uml2.diagram.sequence.draw2d.GateLocator;
 import org.eclipse.uml2.diagram.sequence.edit.create.CreateLifeLineEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.create.SDCreationEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.BlockArrangeContainerEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.InteractionCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.InteractionItemSemanticEditPolicy;
@@ -106,7 +106,7 @@ public class InteractionEditPart extends AbstractBorderedShapeEditPart implement
 		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new SDCreationEditPolicy(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InteractionItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());

@@ -14,5 +14,9 @@
 «EXTENSION xpt::diagram::editparts::Utils»
 
 «DEFINE newInstance FOR gmfgen::GenCommonBase»«-»
+«IF 'org.eclipse.uml2.diagram.sequence' = getDiagram().editorGen.plugin.iD-»
+new org.eclipse.uml2.diagram.sequence.edit.create.SDCreationEditPolicy(«EXPAND aspects::xpt::editor::VisualIDRegistry::typedSharedInstanceCall FOR self.getDiagram()»)«-»
+«ELSE-»
 new org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent(«EXPAND aspects::xpt::editor::VisualIDRegistry::typedSharedInstanceCall FOR self.getDiagram()»)«-»
+«ENDIF-»
 «ENDDEFINE»
