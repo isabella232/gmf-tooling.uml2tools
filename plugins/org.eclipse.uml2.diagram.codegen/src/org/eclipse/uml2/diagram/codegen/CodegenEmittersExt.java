@@ -77,7 +77,21 @@ public class CodegenEmittersExt extends CodegenEmitters {
 		String result = getText(emitter, input);
 		return Boolean.valueOf(result); 
 	}	
+	
+	public TextEmitter getPaletteProviderEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::extendedpalette::PaletteProvider::paletteProvider"); //$NON-NLS-1$
+	}
 
+	public String getPaletteProviderFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::extendedpalette::PaletteProvider::qualifiedClassName", input); //$NON-NLS-1$
+	}
+	
+	public boolean isPaletteProviderNeeded(Object... input) throws UnexpectedBehaviourException {
+		TextEmitter emitter = newXpandEmitter("xpt::extendedpalette::PaletteProvider::needsExtendedPalette");//$NON-NLS-1$
+		String result = getText(emitter, input);
+		return Boolean.valueOf(result); 
+	}	
+	
 	/**
 	 * Returns qualified class name defined in template.
 	 */

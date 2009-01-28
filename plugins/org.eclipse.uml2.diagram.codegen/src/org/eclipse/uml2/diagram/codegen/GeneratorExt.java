@@ -65,6 +65,7 @@ public class GeneratorExt extends Generator {
 		generateIconStylePreferencesPage(myDiagram);
 		generateViewFiltersPreferencesPage(myDiagram);
 		generateSwitchBetweenCommentAndNodeActions();
+		generatePaletteProvider(myDiagram);
 	}
 	
 	private void generateSwitchBetweenCommentAndNodeActions() throws InterruptedException, UnexpectedBehaviourException {
@@ -176,5 +177,11 @@ public class GeneratorExt extends Generator {
 			return false;
 		}
 		return isTheSameEClass(candidate.getEContainingClass(), pattern.getEContainingClass()) && pattern.getName().equals(candidate.getName());
+	}
+
+	private void generatePaletteProvider(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
+		if (myEmitters.isPaletteProviderNeeded(new Object[] { diagram })) {
+			doGenerateJavaClass(myEmitters.getPaletteProviderEmitter(), myEmitters.getPaletteProviderFQN(new Object[] { diagram }), diagram);
+		}
 	}
 }

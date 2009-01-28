@@ -2823,13 +2823,16 @@
 		 </popupContribution>
 	</contributionItemProvider>
 	</extension>
-	
-
-
-
-   
-
-
+<extension  point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders" id="palette-provider">
+<?gmfgen generated="true"?>
+   <paletteProvider
+         class="org.eclipse.uml2.diagram.clazz.part.PaletteFactoryProvider">
+      <Priority
+            name="Lowest">
+      </Priority>
+         <editor id="org.eclipse.uml2.diagram.clazz"/>
+   </paletteProvider>
+</extension> 
 
 
 

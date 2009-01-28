@@ -54,6 +54,7 @@
 «EXPAND iconStylePreferencesPage FOR editorGen.diagram»
 «EXPAND xpt::async::extensions::asyncDiagramSupport FOR editorGen.diagram»
 «EXPAND xpt::validation::extensions::validateActionSupport FOR editorGen.diagram»
+«EXPAND xpt::extendedpalette::extensions::paletteProvider FOR editorGen.diagram»
 «ENDAROUND»
 
 «DEFINE iconStylePreferencesPage FOR gmfgen::GenDiagram»

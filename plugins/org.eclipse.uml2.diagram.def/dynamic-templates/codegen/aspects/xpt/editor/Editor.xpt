@@ -8,10 +8,27 @@
  *
  * Contributors:
  *    Michael Golubev (Borland) - custom icons for diagram elements
+ *    Tatiana Fesenko (Borland) - #262592 'Contribute UMLPaletteFactory via gmf-runtime IPaletteProvider'
  */
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+
+«EXTENSION xpt::extendedpalette::Utils»
+
+«AROUND createPaletteRoot FOR gmfgen::Palette-»
+«IF not supportsExtendedPalette(diagram)-»
+«targetDef.proceed()-»
+«ELSE-»
+	«EXPAND xpt::Common::generatedMemberComment»
+protected org.eclipse.gef.palette.PaletteRoot createPaletteRoot(org.eclipse.gef.palette.PaletteRoot existingPaletteRoot) {
+	org.eclipse.gef.palette.PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
+«REM» #262592 'Contribute UMLPaletteFactory via gmf-runtime IPaletteProvider'«ENDREM»«-»
+//	new «getFactoryQualifiedClassName()»().fillPalette(root);
+	return root;
+}
+«ENDIF-»
+«ENDAROUND»
 
 «AROUND xpt::editor::Editor::additions FOR gmfgen::GenEditorView-»
 	«EXPAND xpt::Common::generatedMemberComment»	
@@ -27,7 +44,7 @@
 
 
 	«EXPAND xpt::Common::generatedMemberComment»
-	private void refreshPalette() {
+	public void refreshPalette() {
 		org.eclipse.gef.palette.PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
 		cleanPaletteRoot(paletteRoot);
 		createPaletteRoot(paletteRoot);

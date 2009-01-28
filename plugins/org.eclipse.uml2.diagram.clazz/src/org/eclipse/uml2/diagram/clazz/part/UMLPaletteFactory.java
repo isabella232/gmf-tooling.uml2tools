@@ -12,6 +12,8 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.part.LinkToolEntry;
+import org.eclipse.uml2.diagram.common.part.NodeToolEntry;
 
 /**
  * @generated
@@ -679,6 +681,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
+
 	private static class NodeToolEntry extends ToolEntry {
 
 		/**
@@ -707,6 +710,7 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
+
 	private static class LinkToolEntry extends ToolEntry {
 
 		/**
@@ -731,4 +735,5 @@ public class UMLPaletteFactory {
 			return tool;
 		}
 	}
+
 }
