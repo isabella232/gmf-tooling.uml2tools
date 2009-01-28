@@ -1034,7 +1034,20 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart implements PrimarySh
 	 * @generated
 	 */
 	public void refreshDiagram() {
-		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+		//@see #4896 -- double image of Generalization
+		//the guard below should be generated but actually is not
+		boolean canonicalEnabled = true;
+		EditPolicy canonical = getEditPolicy(EditPolicyRoles.CANONICAL_ROLE); 
+		if (canonical instanceof CanonicalEditPolicy){
+			canonicalEnabled = ((CanonicalEditPolicy)canonical).isEnabled();
+		} else {
+			canonical = getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE);
+			canonicalEnabled = (canonical instanceof CanonicalEditPolicy) && ((CanonicalEditPolicy)canonical).isEnabled();
+		}
+		
+		if (canonicalEnabled){
+			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+		}
 	}
 
 	/**
