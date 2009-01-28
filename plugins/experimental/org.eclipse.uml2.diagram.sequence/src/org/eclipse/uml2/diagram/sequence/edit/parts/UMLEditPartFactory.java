@@ -92,6 +92,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case MessageEditPart.VISUAL_ID:
 				return new MessageEditPart(view);
 
+			case MessageNameEditPart.VISUAL_ID:
+				return new MessageNameEditPart(view);
+
 			case MountingLinkEditPart.VISUAL_ID:
 				return new MountingLinkEditPart(view);
 			}

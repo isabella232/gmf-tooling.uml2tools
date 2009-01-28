@@ -17,8 +17,10 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentInteractionO
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionUseSignatureEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineNameEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.MessageNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantLabelEditPart;
 import org.eclipse.uml2.diagram.sequence.parsers.MessageFormatParser;
+import org.eclipse.uml2.diagram.sequence.parsers.MessageNumberParser;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -175,6 +177,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser messageName_6001Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getMessageName_6001Parser() {
+		if (messageName_6001Parser == null) {
+			messageName_6001Parser = createMessageName_6001Parser();
+		}
+		return messageName_6001Parser;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createMessageName_6001Parser() {
+		return new MessageNumberParser();
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case InteractionNameEditPart.VISUAL_ID:
@@ -189,6 +213,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getActionExecutionSpecificationName_5003Parser();
 		case StateInvariantLabelEditPart.VISUAL_ID:
 			return getStateInvariantName_5004Parser();
+		case MessageNameEditPart.VISUAL_ID:
+			return getMessageName_6001Parser();
 		}
 		return null;
 	}

@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineRefLabelEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.MessageNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
@@ -46,6 +47,7 @@ import org.eclipse.uml2.diagram.sequence.view.factories.LayeredOperandViewFactor
 import org.eclipse.uml2.diagram.sequence.view.factories.LifelineNameViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.LifelineRefLabelViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.LifelineViewFactory;
+import org.eclipse.uml2.diagram.sequence.view.factories.MessageNameViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.MessageViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.MountingLinkViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.PackageViewFactory;
@@ -160,6 +162,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case MessageNameEditPart.VISUAL_ID:
+					if (MessageEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
 				default:
 					return null;
 				}
@@ -214,6 +221,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return CombinedFragmentMountingRegionViewFactory.class;
 		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
 			return InteractionOperandMountingRegionViewFactory.class;
+		case MessageNameEditPart.VISUAL_ID:
+			return MessageNameViewFactory.class;
 		}
 		return null;
 	}

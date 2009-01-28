@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineRefLabelEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.MessageNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantLabelEditPart;
@@ -278,6 +279,11 @@ public class UMLVisualIDRegistry {
 			break;
 		case PackageEditPart.VISUAL_ID:
 			if (InteractionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case MessageEditPart.VISUAL_ID:
+			if (MessageNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
