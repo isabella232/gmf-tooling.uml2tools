@@ -411,8 +411,8 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
-			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), null, ViewUtil.APPEND,
-					false, ((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
+			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), UMLVisualIDRegistry
+					.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false, ((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
 			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
@@ -588,5 +588,16 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			return (View) ((List) viewOrList).get(0);
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected String getFactoryHint(IAdaptable elementAdapter) {
+		EObject domainModelElment = (EObject) elementAdapter.getAdapter(EObject.class);
+		View containerView = ((IGraphicalEditPart) getHost()).getNotationView();
+		int hint = UMLVisualIDRegistry.getNodeVisualID(containerView, domainModelElment);
+		return (hint != -1) ? UMLVisualIDRegistry.getType(hint) : super.getFactoryHint(elementAdapter);
 	}
 }

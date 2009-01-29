@@ -108,7 +108,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-		new UMLPaletteFactory().fillPalette(root);
+		//	new org.eclipse.uml2.diagram.profile.part.UMLPaletteFactory().fillPalette(root);
 		return root;
 	}
 
@@ -392,7 +392,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	/**
 	 * @generated
 	 */
-	private void refreshPalette() {
+	public void refreshPalette() {
 		PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
 		cleanPaletteRoot(paletteRoot);
 		createPaletteRoot(paletteRoot);
