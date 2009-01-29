@@ -6,11 +6,16 @@ import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelper;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.IEditHelperAdvice;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
+import org.eclipse.uml2.diagram.common.commands.ApplyOrUnapplyStereotypeCommand;
+import org.eclipse.uml2.diagram.common.part.CreationToolConstants;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * @generated
@@ -81,6 +86,47 @@ public class UMLBaseEditHelper extends AbstractEditHelper {
 	 * @generated
 	 */
 	protected ICommand getDestroyReferenceCommand(DestroyReferenceRequest req) {
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	final protected ICommand getConfigureCommand(ConfigureRequest req) {
+		ICommand configureStereotype = getConfigureStereotypeCommand(req);
+		ICommand afterConfugure = getAfterConfigureCommand(req);
+		if (configureStereotype != null && afterConfugure != null) {
+			CompositeCommand result = new CompositeCommand("");
+			result.add(configureStereotype);
+			result.add(afterConfugure);
+			return result;
+		}
+		if (configureStereotype != null) {
+			return configureStereotype;
+		}
+		if (afterConfugure != null) {
+			return afterConfugure;
+		}
+		return super.getConfigureCommand(req);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ICommand getConfigureStereotypeCommand(ConfigureRequest req) {
+		if (req.getElementToConfigure() instanceof Element && req.getParameter(CreationToolConstants.PARAMETER_CONFUGURE_STEREOTYPE) instanceof Stereotype) {
+			Element element = (Element) req.getElementToConfigure();
+			Stereotype stereo = (Stereotype) req.getParameter(CreationToolConstants.PARAMETER_CONFUGURE_STEREOTYPE);
+			ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest request = new ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest(element, stereo, true);
+			return new ApplyOrUnapplyStereotypeCommand(request);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ICommand getAfterConfigureCommand(ConfigureRequest req) {
 		return null;
 	}
 }

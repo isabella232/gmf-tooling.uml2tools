@@ -11,14 +11,20 @@ import org.eclipse.uml2.uml.Association;
  */
 public class AssociationEditHelper extends UMLBaseEditHelper {
 
+	/**
+	 * @NOT-generated
+	 */
 	public static final String PARAMETER_CONFIGURE_AGGREGATION_KIND = AssociationEditHelper.class.getName() + ":ConfigureAggregationKind"; //$NON-NLS-1$
 
+	/**
+	 * @NOT-generated
+	 */
 	public static final String PARAMETER_SET_TARGET_NAVIGABILITY = AssociationEditHelper.class.getName() + ":ConfigureTargetNavigability"; //$NON-NLS-1$
 
 	/**
-	 * @generated NOT
+	 * @NOT-generated
 	 */
-	protected ICommand getConfigureCommand(ConfigureRequest req) {
+	protected ICommand getAfterConfigureCommand(ConfigureRequest req) {
 		if (req.getElementToConfigure() instanceof Association && req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND) instanceof AggregationKind) {
 			return new ChangeAssociationKindCommand((Association) req.getElementToConfigure(), (AggregationKind) req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND));
 		}

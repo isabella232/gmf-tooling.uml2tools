@@ -3,6 +3,8 @@ package org.eclipse.uml2.diagram.csd.edit.parts;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.commands.Command;
@@ -15,13 +17,17 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;
 import org.eclipse.uml2.diagram.csd.edit.commands.UMLCreateShortcutDecorationsCommand;
 import org.eclipse.uml2.diagram.csd.edit.policies.PackageCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.PackageItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.csd.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -85,6 +91,26 @@ public class PackageEditPart extends DiagramEditPart {
 	 */
 	public void refreshDiagram() {
 		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addSemanticListeners() {
+		super.addSemanticListeners();
+		Package pakkage = (Package) resolveSemanticElement();
+		addListenerFilter("SemanticModel", this, pakkage, UMLPackage.eINSTANCE.getPackage_ProfileApplication());
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification notification) {
+		super.handleNotificationEvent(notification);
+		if (UMLPackage.eINSTANCE.getPackage_ProfileApplication().equals(notification.getFeature())) {
+			UMLDiagramEditor editor = (UMLDiagramEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+			editor.refreshPalette();
+		}
 	}
 
 }
