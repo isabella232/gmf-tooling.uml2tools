@@ -57,8 +57,8 @@
 	«ENDIF-»
 	
 	«IF not isDiagramHeader(self) and (not getOutgoingAndContainedTypeLinks(self)->isEmpty() or not getOutgoingLinksFeatureModelFacets(self)->isEmpty())-»
-		«EXPAND isCanonicalEnabled-»
-		«EXPAND aspects::diagram::editparts::DiagramEditPart::refreshDiagram-»
+		«EXPAND isCanonicalDisabled-»
+		«EXPAND guardedRefreshDiagram-»
 	«ENDIF-»
 	
 «ENDAROUND»
@@ -260,14 +260,14 @@
 
 «DEFINE conditionalRefreshInLoop FOR Set(genmodel::GenClass)-»
 	if («EXPAND conditionalRefreshCondition FOREACH self SEPARATOR ' || '») {
-		refreshDiagram();
+		guardedRefreshDiagram();
 		break;
 	}
 «ENDDEFINE»
 
 «DEFINE conditionalRefresh FOR Set(genmodel::GenClass)-»
 	if («EXPAND conditionalRefreshCondition FOREACH self SEPARATOR ' || '») {
-		refreshDiagram();
+		guardedRefreshDiagram();
 	}
 «ENDDEFINE»
 
@@ -287,7 +287,7 @@
 
 «DEFINE refreshLinkForTypeModelFacet FOR genmodel::GenFeature-»
 	if (event.getFeature() == «EXPAND MetaModel::MetaFeature»){
-		refreshDiagram();
+		guardedRefreshDiagram();
 		return;
 	}
 «ENDDEFINE»
@@ -309,14 +309,12 @@
 		«EXPAND handleNotificationEventForShortcuts-»
 		«IF not isDiagramHeader(self)-»
 		«IF not getOutgoingAndContainedTypeLinks(self)->isEmpty() or not getOutgoingLinksFeatureModelFacets(self)->isEmpty()-»
-		if (isCanonicalEnabled()){
 			«IF not getOutgoingAndContainedTypeLinks(self)->isEmpty()-»
 				handleTypeLinkModification(event);
 			«ENDIF-»
 			«IF not getOutgoingLinksFeatureModelFacets(self)->isEmpty()-»
 				handleFeatureLinkModification(event);
 			«ENDIF-»
-		}
 		«ENDIF-»
 		«ENDIF-»
 	}	
@@ -338,24 +336,43 @@
 	}	
 «ENDDEFINE»
 
-«DEFINE isCanonicalEnabled FOR gmfgen::GenNode»
+«DEFINE isCanonicalDisabled FOR gmfgen::GenNode»
 	«EXPAND xpt::Common::generatedMemberComment»
-	private boolean isCanonicalEnabled(){
+	private boolean isCanonicalDisabled(){
+		if (isCanonicalDisabled(getEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE))){
+			return true;
+		}
+		if (getParent() != null && isCanonicalDisabled(getParent().getEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE))){
+			return true;
+		}
 		//this particular edit part may not have editpolicy at all, 
 		//but its compartments still may have it
 		org.eclipse.emf.ecore.EObject semantic = resolveSemanticElement();
-		if (semantic == null){
-			return false;
-		}
-		for (Object next : org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy.getRegisteredEditPolicies(semantic)){
-			if (next instanceof org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy){
-				org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy nextPolicy = (org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy)next;
-				if (nextPolicy.isEnabled()){
-					return true;
+		if (semantic != null) {
+			for (Object next : org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+				if (next instanceof org.eclipse.gef.EditPolicy) {
+					org.eclipse.gef.EditPolicy nextEP = (org.eclipse.gef.EditPolicy)next;
+					if (isCanonicalDisabled(nextEP)){
+						return true;
+					}
 				}
 			}
 		}
 		return false;
 	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	private static boolean isCanonicalDisabled(org.eclipse.gef.EditPolicy editPolicy){
+		return editPolicy instanceof org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy && !((org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy)editPolicy).isEnabled();	
+	}
 
+«ENDDEFINE»
+
+«DEFINE guardedRefreshDiagram FOR gmfgen::GenNode-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	private void guardedRefreshDiagram() {
+		if (!isCanonicalDisabled()){
+			«EXPAND aspects::xpt::diagram::updater::UpdateCommand::performCanonicalUpdateMethodCall»(getDiagramView().getElement());
+		}
+	}
 «ENDDEFINE»

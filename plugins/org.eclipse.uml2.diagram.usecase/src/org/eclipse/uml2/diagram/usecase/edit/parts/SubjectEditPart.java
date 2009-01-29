@@ -606,9 +606,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		} else {
 			super.handleNotificationEvent(event);
 		}
-		if (isCanonicalEnabled()) {
-			handleTypeLinkModification(event);
-		}
+		handleTypeLinkModification(event);
 	}
 
 	/**
@@ -695,7 +693,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		 */
 		public void notifyChanged(Notification event) {
 			if (event.getFeature() == UMLPackage.eINSTANCE.getGeneralization_General()) {
-				refreshDiagram();
+				guardedRefreshDiagram();
 				return;
 			}
 		}
@@ -750,7 +748,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getGeneralization_General());
 				}
 				if (link instanceof Generalization) {
-					refreshDiagram();
+					guardedRefreshDiagram();
 				}
 				break;
 			}
@@ -760,7 +758,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getGeneralization_General());
 				}
 				if (link instanceof Generalization) {
-					refreshDiagram();
+					guardedRefreshDiagram();
 				}
 				break;
 			}
@@ -773,7 +771,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 				}
 				for (Object link : links) {
 					if (link instanceof Generalization) {
-						refreshDiagram();
+						guardedRefreshDiagram();
 						break;
 					}
 				}
@@ -788,7 +786,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 				}
 				for (Object link : links) {
 					if (link instanceof Generalization) {
-						refreshDiagram();
+						guardedRefreshDiagram();
 						break;
 					}
 				}
@@ -801,18 +799,23 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	/**
 	 * @generated
 	 */
-	private boolean isCanonicalEnabled() {
+	private boolean isCanonicalDisabled() {
+		if (isCanonicalDisabled(getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
+		if (getParent() != null && isCanonicalDisabled(getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
 		//this particular edit part may not have editpolicy at all, 
 		//but its compartments still may have it
 		EObject semantic = resolveSemanticElement();
-		if (semantic == null) {
-			return false;
-		}
-		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
-			if (next instanceof CanonicalEditPolicy) {
-				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
-				if (nextPolicy.isEnabled()) {
-					return true;
+		if (semantic != null) {
+			for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+				if (next instanceof EditPolicy) {
+					EditPolicy nextEP = (EditPolicy) next;
+					if (isCanonicalDisabled(nextEP)) {
+						return true;
+					}
 				}
 			}
 		}
@@ -822,8 +825,17 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	/**
 	 * @generated
 	 */
-	public void refreshDiagram() {
-		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+	private static boolean isCanonicalDisabled(EditPolicy editPolicy) {
+		return editPolicy instanceof CanonicalEditPolicy && !((CanonicalEditPolicy) editPolicy).isEnabled();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void guardedRefreshDiagram() {
+		if (!isCanonicalDisabled()) {
+			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+		}
 	}
 
 	/**
