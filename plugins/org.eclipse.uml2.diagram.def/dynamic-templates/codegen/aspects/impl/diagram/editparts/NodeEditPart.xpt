@@ -8,6 +8,7 @@
  *
  * Contributors:
  *    Michael Golubev (Borland) - initial API and implementation
+ *    Michael Golubev - U2T specific graphical node edit policy 
  */
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
@@ -274,6 +275,7 @@
 	«EXPAND aspects::impl::diagram::editparts::updateDescriptionEditPolicy::installUpdateDescriptionEditPolicy-»
 	«targetDef.proceed()»
 	«EXPAND xpt::async::editPolicies::nodeComponentEditPolicy-»
+	«EXPAND xpt::graphicalnodeep::graphicalNodeEditPolicy::install(true)-»
 «ENDAROUND»
 
 «AROUND _creationEditPolicyNewInstance FOR gmfgen::GenNode»«EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»«ENDAROUND»

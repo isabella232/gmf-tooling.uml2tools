@@ -1,0 +1,8 @@
+modeltype genModel uses "http://www.eclipse.org/gmf/2008/GenModel";
+
+library Guard;
+
+helper supportsU2TSpecificGraphicalNodeEditPolicy(diagram : genModel::GenDiagram) : Boolean {
+	return 
+		('org.eclipse.uml2.diagram.sequence' = diagram.editorGen.plugin.iD)
+}

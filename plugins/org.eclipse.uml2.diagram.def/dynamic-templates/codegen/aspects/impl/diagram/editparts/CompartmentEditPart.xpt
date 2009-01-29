@@ -8,6 +8,7 @@
  *
  * Contributors:
  *    Michael Golubev - U2T specific creation/layout edit policy 
+ *    Michael Golubev - U2T specific graphical node edit policy 
  */
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
@@ -35,6 +36,7 @@
 	«ENDIF-»
 	«EXPAND xpt::diagram::editparts::Common::installCanonicalEditPolicy-»
 	«EXPAND aspects::impl::diagram::editparts::updateDescriptionEditPolicy::installUpdateDescriptionEditPolicy-»
+	«EXPAND xpt::graphicalnodeep::graphicalNodeEditPolicy::install(true)-»
 	«EXPAND xpt::diagram::editparts::Common::behaviour-»
 	
 «ENDAROUND»
