@@ -79,7 +79,8 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.UseCase_2003);
 		types.add(UMLElementTypes.UseCase_3004);
 		types.add(UMLElementTypes.UseCase_3006);
-		NodeToolEntry entry = new NodeToolEntry(Messages.UseCase1CreationTool_title, Messages.UseCase1CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.NodeToolEntry entry = new org.eclipse.uml2.diagram.common.part.NodeToolEntry(Messages.UseCase1CreationTool_title, Messages.UseCase1CreationTool_desc,
+				types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.UseCase_2003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -92,7 +93,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Actor_2002);
 		types.add(UMLElementTypes.Actor_3005);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Actor2CreationTool_title, Messages.Actor2CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.NodeToolEntry entry = new org.eclipse.uml2.diagram.common.part.NodeToolEntry(Messages.Actor2CreationTool_title, Messages.Actor2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Actor_2002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -104,7 +105,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createSubject3CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Component_2006);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Subject3CreationTool_title, Messages.Subject3CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.NodeToolEntry entry = new org.eclipse.uml2.diagram.common.part.NodeToolEntry(Messages.Subject3CreationTool_title, Messages.Subject3CreationTool_desc,
+				types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Component_2006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -116,7 +118,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createPackage4CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Package_2007);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Package4CreationTool_title, Messages.Package4CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.NodeToolEntry entry = new org.eclipse.uml2.diagram.common.part.NodeToolEntry(Messages.Package4CreationTool_title, Messages.Package4CreationTool_desc,
+				types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Package_2007));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -128,7 +131,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createConstraint5CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Constraint_2008);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint5CreationTool_title, Messages.Constraint5CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.NodeToolEntry entry = new org.eclipse.uml2.diagram.common.part.NodeToolEntry(Messages.Constraint5CreationTool_title,
+				Messages.Constraint5CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Constraint_2008));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -140,7 +144,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createComment6CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Comment_2009);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Comment6CreationTool_title, Messages.Comment6CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.NodeToolEntry entry = new org.eclipse.uml2.diagram.common.part.NodeToolEntry(Messages.Comment6CreationTool_title, Messages.Comment6CreationTool_desc,
+				types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Comment_2009));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -153,7 +158,8 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.ExtensionPoint_3002);
 		types.add(UMLElementTypes.ExtensionPoint_3003);
-		NodeToolEntry entry = new NodeToolEntry(Messages.ExtensionPoint1CreationTool_title, Messages.ExtensionPoint1CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.NodeToolEntry entry = new org.eclipse.uml2.diagram.common.part.NodeToolEntry(Messages.ExtensionPoint1CreationTool_title,
+				Messages.ExtensionPoint1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ExtensionPoint_3002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -165,7 +171,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createElementImport2CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.ElementImport_3001);
-		NodeToolEntry entry = new NodeToolEntry(Messages.ElementImport2CreationTool_title, Messages.ElementImport2CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.NodeToolEntry entry = new org.eclipse.uml2.diagram.common.part.NodeToolEntry(Messages.ElementImport2CreationTool_title,
+				Messages.ElementImport2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ElementImport_3001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -177,7 +184,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createAssociation1CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Association_4004);
-		LinkToolEntry entry = new LinkToolEntry(Messages.Association1CreationTool_title, Messages.Association1CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.LinkToolEntry entry = new org.eclipse.uml2.diagram.common.part.LinkToolEntry(Messages.Association1CreationTool_title,
+				Messages.Association1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Association_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -189,7 +197,7 @@ public class UMLPaletteFactory {
 	private ToolEntry createExtend2CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Extend_4002);
-		LinkToolEntry entry = new LinkToolEntry(Messages.Extend2CreationTool_title, Messages.Extend2CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.LinkToolEntry entry = new org.eclipse.uml2.diagram.common.part.LinkToolEntry(Messages.Extend2CreationTool_title, Messages.Extend2CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Extend_4002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -201,7 +209,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createInclude3CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Include_4001);
-		LinkToolEntry entry = new LinkToolEntry(Messages.Include3CreationTool_title, Messages.Include3CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.LinkToolEntry entry = new org.eclipse.uml2.diagram.common.part.LinkToolEntry(Messages.Include3CreationTool_title, Messages.Include3CreationTool_desc,
+				types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Include_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -213,7 +222,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createGeneralization4CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Generalization_4003);
-		LinkToolEntry entry = new LinkToolEntry(Messages.Generalization4CreationTool_title, Messages.Generalization4CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.LinkToolEntry entry = new org.eclipse.uml2.diagram.common.part.LinkToolEntry(Messages.Generalization4CreationTool_title,
+				Messages.Generalization4CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Generalization_4003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -225,7 +235,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createConstrainedElement5CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4005);
-		LinkToolEntry entry = new LinkToolEntry(Messages.ConstrainedElement5CreationTool_title, Messages.ConstrainedElement5CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.LinkToolEntry entry = new org.eclipse.uml2.diagram.common.part.LinkToolEntry(Messages.ConstrainedElement5CreationTool_title,
+				Messages.ConstrainedElement5CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ConstraintConstrainedElement_4005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -237,7 +248,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createDependency6CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Dependency_4006);
-		LinkToolEntry entry = new LinkToolEntry(Messages.Dependency6CreationTool_title, Messages.Dependency6CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.LinkToolEntry entry = new org.eclipse.uml2.diagram.common.part.LinkToolEntry(Messages.Dependency6CreationTool_title,
+				Messages.Dependency6CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Dependency_4006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -249,7 +261,8 @@ public class UMLPaletteFactory {
 	private ToolEntry createAnnotatedElement7CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.CommentAnnotatedElement_4007);
-		LinkToolEntry entry = new LinkToolEntry(Messages.AnnotatedElement7CreationTool_title, Messages.AnnotatedElement7CreationTool_desc, types);
+		org.eclipse.uml2.diagram.common.part.LinkToolEntry entry = new org.eclipse.uml2.diagram.common.part.LinkToolEntry(Messages.AnnotatedElement7CreationTool_title,
+				Messages.AnnotatedElement7CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CommentAnnotatedElement_4007));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
