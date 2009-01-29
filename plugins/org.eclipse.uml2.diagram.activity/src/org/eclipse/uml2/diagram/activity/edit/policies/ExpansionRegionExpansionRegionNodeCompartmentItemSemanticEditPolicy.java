@@ -18,8 +18,8 @@ import org.eclipse.uml2.diagram.activity.edit.commands.InputPin6CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.JoinNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueAction2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin4CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.Pin2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode2CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_PinCreateCommand;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
 /**
@@ -61,7 +61,7 @@ public class ExpansionRegionExpansionRegionNodeCompartmentItemSemanticEditPolicy
 			return getGEFWrapper(new FlowFinalNode2CreateCommand(req));
 		}
 		if (UMLElementTypes.Pin_3017 == req.getElementType()) {
-			return getGEFWrapper(new Pin2CreateCommand(req));
+			return getGEFWrapper(new StructuredActivityNode_PinCreateCommand(req));
 		}
 		if (UMLElementTypes.CreateObjectAction_3018 == req.getElementType()) {
 			return getGEFWrapper(new CreateObjectAction2CreateCommand(req));

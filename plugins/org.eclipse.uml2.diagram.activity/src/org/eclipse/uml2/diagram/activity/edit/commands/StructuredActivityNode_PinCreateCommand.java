@@ -20,12 +20,12 @@ import org.eclipse.uml2.uml.UMLFactory;
  * @generated
  */
 
-public class Pin2CreateCommand extends EditElementCommand {
+public class StructuredActivityNode_PinCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public Pin2CreateCommand(CreateElementRequest req) {
+	public StructuredActivityNode_PinCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 

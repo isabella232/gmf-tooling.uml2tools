@@ -2405,12 +2405,12 @@
     </childNodes>
     <childNodes
         visualID="3017"
-        editPartClassName="Pin2EditPart"
-        itemSemanticEditPolicyClassName="Pin2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Pin2ViewFactory"
-        canonicalEditPolicyClassName="Pin2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Pin2GraphicalNodeEditPolicy"
-        createCommandClassName="Pin2CreateCommand"
+        editPartClassName="StructuredActivityNode_PinEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_PinItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_PinViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_PinCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_PinGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_PinCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2442,9 +2442,9 @@
       </modelFacet>
       <labels
           visualID="5016"
-          editPartClassName="PinName2EditPart"
-          itemSemanticEditPolicyClassName="PinName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="PinName2ViewFactory">
+          editPartClassName="StructuredActivityNode_PinNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_PinNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_PinNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2460,8 +2460,8 @@
       </labels>
       <labels
           visualID="5053"
-          editPartClassName="PinInState2EditPart"
-          itemSemanticEditPolicyClassName="PinInState2ItemSemanticEditPolicy"
+          editPartClassName="StructuredActivityNode_PinInStateEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_PinInStateItemSemanticEditPolicy"
           notationViewFactoryClassName="PinInState2ViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2479,9 +2479,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5086"
-          editPartClassName="PinOrdering2EditPart"
-          itemSemanticEditPolicyClassName="PinOrdering2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="PinOrdering2ViewFactory"
+          editPartClassName="StructuredActivityNode_PinOrderingEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_PinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_PinOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2497,9 +2497,9 @@
       </labels>
       <labels
           visualID="5131"
-          editPartClassName="PinStereotype2EditPart"
-          itemSemanticEditPolicyClassName="PinStereotype2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="PinStereotype2ViewFactory">
+          editPartClassName="StructuredActivityNode_PinStereotypeEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_PinStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_PinStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4393,7 +4393,7 @@
         editPartClassName="ActivityPartition_PinEditPart"
         itemSemanticEditPolicyClassName="ActivityPartition_PinItemSemanticEditPolicy"
         notationViewFactoryClassName="ActivityPartition_PinViewFactory"
-        canonicalEditPolicyClassName="Pin3CanonicalEditPolicy"
+        canonicalEditPolicyClassName="ActivityPartition_PinCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ActivityPartition_PinGraphicalNodeEditPolicy"
         createCommandClassName="ActivityPartition_PinCreateCommand"
         containers="//@diagram/@childNodes.48 //@diagram/@childNodes.47">

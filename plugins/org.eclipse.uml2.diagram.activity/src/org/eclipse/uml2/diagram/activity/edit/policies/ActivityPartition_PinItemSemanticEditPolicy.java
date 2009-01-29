@@ -22,13 +22,13 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
  * @generated
  */
 
-public class Pin2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class ActivityPartition_PinItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public Pin2ItemSemanticEditPolicy() {
-		super(UMLElementTypes.Pin_3017);
+	public ActivityPartition_PinItemSemanticEditPolicy() {
+		super(UMLElementTypes.Pin_3071);
 	}
 
 	/**

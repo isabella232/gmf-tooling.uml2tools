@@ -37,8 +37,8 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.uml2.diagram.activity.edit.policies.Pin2CanonicalEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.Pin2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition_PinCanonicalEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition_PinItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -52,12 +52,12 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 
-public class Pin2EditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
+public class ActivityPartition_PinEditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3017;
+	public static final int VISUAL_ID = 3071;
 
 	/**
 	 * @generated
@@ -72,7 +72,7 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart implements Prima
 	/**
 	 * @generated
 	 */
-	public Pin2EditPart(View view) {
+	public ActivityPartition_PinEditPart(View view) {
 		super(view);
 	}
 
@@ -84,8 +84,8 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart implements Prima
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Pin2ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new Pin2CanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityPartition_PinItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityPartition_PinCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -101,7 +101,7 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart implements Prima
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
-				case PinOrdering2EditPart.VISUAL_ID:
+				case ActivityPartition_PinOrderingEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
 						protected List createSelectionHandles() {
@@ -148,16 +148,16 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart implements Prima
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof PinName2EditPart) {
-			((PinName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureStandalonePinFigure_name());
+		if (childEditPart instanceof ActivityPartition_PinNameEditPart) {
+			((ActivityPartition_PinNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStandalonePinFigure_name());
 			return true;
 		}
-		if (childEditPart instanceof PinInState2EditPart) {
-			((PinInState2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureStandalonePinFigure_states());
+		if (childEditPart instanceof ActivityPartition_PinInStateEditPart) {
+			((ActivityPartition_PinInStateEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStandalonePinFigure_states());
 			return true;
 		}
-		if (childEditPart instanceof PinStereotype2EditPart) {
-			((PinStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureStandalonePinFigure_stereo());
+		if (childEditPart instanceof ActivityPartition_PinStereotypeEditPart) {
+			((ActivityPartition_PinStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStandalonePinFigure_stereo());
 			return true;
 		}
 		return false;
@@ -205,7 +205,7 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart implements Prima
 	 * @generated
 	 */
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof PinOrdering2EditPart) {
+		if (borderItemEditPart instanceof ActivityPartition_PinOrderingEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
@@ -304,7 +304,7 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart implements Prima
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(PinName2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityPartition_PinNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -422,7 +422,7 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart implements Prima
 		if (targetEditPart instanceof FlowFinalNode2EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_PinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof CreateObjectAction2EditPart) {
@@ -497,7 +497,7 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart implements Prima
 		if (targetEditPart instanceof JoinNode3EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof Pin3EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof CreateObjectAction3EditPart) {
@@ -653,7 +653,7 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart implements Prima
 		if (targetEditPart instanceof FlowFinalNode2EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_PinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof CreateObjectAction2EditPart) {
@@ -728,7 +728,7 @@ public class Pin2EditPart extends AbstractBorderedShapeEditPart implements Prima
 		if (targetEditPart instanceof JoinNode3EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof Pin3EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof CreateObjectAction3EditPart) {

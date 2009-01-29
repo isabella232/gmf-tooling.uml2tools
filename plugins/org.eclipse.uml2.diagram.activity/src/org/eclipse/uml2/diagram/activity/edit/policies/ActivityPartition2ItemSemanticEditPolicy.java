@@ -14,6 +14,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.AcceptEventAction5CreateC
 import org.eclipse.uml2.diagram.activity.edit.commands.AcceptEventAction6CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityFinalNode3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition2CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_PinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueAction3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CallBehaviorAction3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CallOperationAction3CreateCommand;
@@ -30,7 +31,6 @@ import org.eclipse.uml2.diagram.activity.edit.commands.JoinNode3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.LoopNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.MergeNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueAction3CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.Pin3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.SendSignalAction2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ValueSpecificationActionCreateCommand;
@@ -38,6 +38,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
@@ -54,7 +55,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.Pin3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart;
@@ -118,7 +118,7 @@ public class ActivityPartition2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 			return getGEFWrapper(new JoinNode3CreateCommand(req));
 		}
 		if (UMLElementTypes.Pin_3071 == req.getElementType()) {
-			return getGEFWrapper(new Pin3CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_PinCreateCommand(req));
 		}
 		if (UMLElementTypes.CreateObjectAction_3072 == req.getElementType()) {
 			return getGEFWrapper(new CreateObjectAction3CreateCommand(req));
@@ -215,7 +215,7 @@ public class ActivityPartition2ItemSemanticEditPolicy extends UMLBaseItemSemanti
 			case JoinNode3EditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case Pin3EditPart.VISUAL_ID:
+			case ActivityPartition_PinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case CreateObjectAction3EditPart.VISUAL_ID:

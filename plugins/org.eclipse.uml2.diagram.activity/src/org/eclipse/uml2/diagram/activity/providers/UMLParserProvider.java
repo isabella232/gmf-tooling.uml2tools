@@ -2919,13 +2919,13 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAcceptEventActionQualifiedName_5096Parser();
 		case AcceptEventActionName4EditPart.VISUAL_ID:
 			return getAcceptEventActionName_5043Parser();
-		case PinName2EditPart.VISUAL_ID:
+		case StructuredActivityNode_PinNameEditPart.VISUAL_ID:
 			return getPinName_5016Parser();
-		case PinInState2EditPart.VISUAL_ID:
+		case StructuredActivityNode_PinInStateEditPart.VISUAL_ID:
 			return getPinName_5053Parser();
-		case PinOrdering2EditPart.VISUAL_ID:
+		case StructuredActivityNode_PinOrderingEditPart.VISUAL_ID:
 			return getPinOrdering_5086Parser();
-		case PinStereotype2EditPart.VISUAL_ID:
+		case StructuredActivityNode_PinStereotypeEditPart.VISUAL_ID:
 			return getPinQualifiedName_5131Parser();
 		case CreateObjectActionName2EditPart.VISUAL_ID:
 			return getCreateObjectActionName_5017Parser();
@@ -3007,13 +3007,13 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOpaqueActionName_5073Parser();
 		case OpaqueActionStereotype3EditPart.VISUAL_ID:
 			return getOpaqueActionQualifiedName_5112Parser();
-		case PinName3EditPart.VISUAL_ID:
+		case ActivityPartition_PinNameEditPart.VISUAL_ID:
 			return getPinName_5074Parser();
-		case PinInState3EditPart.VISUAL_ID:
+		case ActivityPartition_PinInStateEditPart.VISUAL_ID:
 			return getPinName_5075Parser();
-		case PinOrdering3EditPart.VISUAL_ID:
+		case ActivityPartition_PinOrderingEditPart.VISUAL_ID:
 			return getPinOrdering_5123Parser();
-		case PinStereotype3EditPart.VISUAL_ID:
+		case ActivityPartition_PinStereotypeEditPart.VISUAL_ID:
 			return getPinQualifiedName_5132Parser();
 		case CreateObjectActionName3EditPart.VISUAL_ID:
 			return getCreateObjectActionName_5076Parser();

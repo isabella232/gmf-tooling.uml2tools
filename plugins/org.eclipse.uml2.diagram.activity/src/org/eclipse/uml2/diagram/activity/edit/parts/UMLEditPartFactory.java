@@ -298,20 +298,20 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case FlowFinalNode2EditPart.VISUAL_ID:
 				return new FlowFinalNode2EditPart(view);
 
-			case Pin2EditPart.VISUAL_ID:
-				return new Pin2EditPart(view);
+			case StructuredActivityNode_PinEditPart.VISUAL_ID:
+				return new StructuredActivityNode_PinEditPart(view);
 
-			case PinName2EditPart.VISUAL_ID:
-				return new PinName2EditPart(view);
+			case StructuredActivityNode_PinNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_PinNameEditPart(view);
 
-			case PinInState2EditPart.VISUAL_ID:
-				return new PinInState2EditPart(view);
+			case StructuredActivityNode_PinInStateEditPart.VISUAL_ID:
+				return new StructuredActivityNode_PinInStateEditPart(view);
 
-			case PinOrdering2EditPart.VISUAL_ID:
-				return new PinOrdering2EditPart(view);
+			case StructuredActivityNode_PinOrderingEditPart.VISUAL_ID:
+				return new StructuredActivityNode_PinOrderingEditPart(view);
 
-			case PinStereotype2EditPart.VISUAL_ID:
-				return new PinStereotype2EditPart(view);
+			case StructuredActivityNode_PinStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_PinStereotypeEditPart(view);
 
 			case CreateObjectAction2EditPart.VISUAL_ID:
 				return new CreateObjectAction2EditPart(view);
@@ -514,20 +514,20 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case JoinNode3EditPart.VISUAL_ID:
 				return new JoinNode3EditPart(view);
 
-			case Pin3EditPart.VISUAL_ID:
-				return new Pin3EditPart(view);
+			case ActivityPartition_PinEditPart.VISUAL_ID:
+				return new ActivityPartition_PinEditPart(view);
 
-			case PinName3EditPart.VISUAL_ID:
-				return new PinName3EditPart(view);
+			case ActivityPartition_PinNameEditPart.VISUAL_ID:
+				return new ActivityPartition_PinNameEditPart(view);
 
-			case PinInState3EditPart.VISUAL_ID:
-				return new PinInState3EditPart(view);
+			case ActivityPartition_PinInStateEditPart.VISUAL_ID:
+				return new ActivityPartition_PinInStateEditPart(view);
 
-			case PinOrdering3EditPart.VISUAL_ID:
-				return new PinOrdering3EditPart(view);
+			case ActivityPartition_PinOrderingEditPart.VISUAL_ID:
+				return new ActivityPartition_PinOrderingEditPart(view);
 
-			case PinStereotype3EditPart.VISUAL_ID:
-				return new PinStereotype3EditPart(view);
+			case ActivityPartition_PinStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_PinStereotypeEditPart(view);
 
 			case CreateObjectAction3EditPart.VISUAL_ID:
 				return new CreateObjectAction3EditPart(view);

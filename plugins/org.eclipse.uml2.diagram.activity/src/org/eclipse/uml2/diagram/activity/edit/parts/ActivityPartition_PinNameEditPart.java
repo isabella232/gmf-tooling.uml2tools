@@ -52,18 +52,17 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
-import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 
 /**
  * @generated
  */
 
-public class PinStereotype3EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class ActivityPartition_PinNameEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5132;
+	public static final int VISUAL_ID = 5074;
 
 	/**
 	 * @generated
@@ -93,7 +92,7 @@ public class PinStereotype3EditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	public PinStereotype3EditPart(View view) {
+	public ActivityPartition_PinNameEditPart(View view) {
 		super(view);
 	}
 
@@ -121,7 +120,6 @@ public class PinStereotype3EditPart extends CompartmentEditPart implements IText
 				return false;
 			}
 		});
-		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
 	}
 
 	/**
@@ -299,7 +297,7 @@ public class PinStereotype3EditPart extends CompartmentEditPart implements IText
 	public IParser getParser() {
 		if (parser == null) {
 			parser = UMLParserProvider.getParser(UMLElementTypes.Pin_3071, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.PinStereotype3EditPart.VISUAL_ID));
+					.getType(org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

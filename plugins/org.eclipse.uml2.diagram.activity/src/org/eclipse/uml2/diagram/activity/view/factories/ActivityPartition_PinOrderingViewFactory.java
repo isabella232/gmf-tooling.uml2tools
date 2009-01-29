@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 
-public class PinOrdering3ViewFactory extends AbstractLabelViewFactory {
+public class ActivityPartition_PinOrderingViewFactory extends AbstractLabelViewFactory {
 
 	/**
 	 * @generated

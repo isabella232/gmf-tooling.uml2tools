@@ -1861,7 +1861,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.Pin2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_PinEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -1973,7 +1973,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.Pin3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

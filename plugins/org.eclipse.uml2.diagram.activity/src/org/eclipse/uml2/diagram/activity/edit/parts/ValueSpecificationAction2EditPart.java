@@ -431,7 +431,7 @@ public class ValueSpecificationAction2EditPart extends AbstractBorderedShapeEdit
 		if (targetEditPart instanceof FlowFinalNode2EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof Pin2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_PinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof CreateObjectAction2EditPart) {
@@ -506,7 +506,7 @@ public class ValueSpecificationAction2EditPart extends AbstractBorderedShapeEdit
 		if (targetEditPart instanceof JoinNode3EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof Pin3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_PinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof CreateObjectAction3EditPart) {
@@ -662,7 +662,7 @@ public class ValueSpecificationAction2EditPart extends AbstractBorderedShapeEdit
 		if (targetEditPart instanceof FlowFinalNode2EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof Pin2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_PinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof CreateObjectAction2EditPart) {
@@ -737,7 +737,7 @@ public class ValueSpecificationAction2EditPart extends AbstractBorderedShapeEdit
 		if (targetEditPart instanceof JoinNode3EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof Pin3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_PinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof CreateObjectAction3EditPart) {

@@ -127,7 +127,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ActivityFinalNode2EditPart.VISUAL_ID:
 				case DecisionNode2EditPart.VISUAL_ID:
 				case FlowFinalNode2EditPart.VISUAL_ID:
-				case Pin2EditPart.VISUAL_ID:
+				case StructuredActivityNode_PinEditPart.VISUAL_ID:
 				case CreateObjectAction2EditPart.VISUAL_ID:
 				case CallBehaviorAction2EditPart.VISUAL_ID:
 				case CallOperationAction2EditPart.VISUAL_ID:
@@ -155,7 +155,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case FlowFinalNode3EditPart.VISUAL_ID:
 				case ForkNode3EditPart.VISUAL_ID:
 				case JoinNode3EditPart.VISUAL_ID:
-				case Pin3EditPart.VISUAL_ID:
+				case ActivityPartition_PinEditPart.VISUAL_ID:
 				case CreateObjectAction3EditPart.VISUAL_ID:
 				case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
 				case CallBehaviorAction3EditPart.VISUAL_ID:
@@ -342,11 +342,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case PinName2EditPart.VISUAL_ID:
-				case PinInState2EditPart.VISUAL_ID:
-				case PinOrdering2EditPart.VISUAL_ID:
-				case PinStereotype2EditPart.VISUAL_ID:
-					if (Pin2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case StructuredActivityNode_PinNameEditPart.VISUAL_ID:
+				case StructuredActivityNode_PinInStateEditPart.VISUAL_ID:
+				case StructuredActivityNode_PinOrderingEditPart.VISUAL_ID:
+				case StructuredActivityNode_PinStereotypeEditPart.VISUAL_ID:
+					if (StructuredActivityNode_PinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -462,11 +462,11 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case PinName3EditPart.VISUAL_ID:
-				case PinInState3EditPart.VISUAL_ID:
-				case PinOrdering3EditPart.VISUAL_ID:
-				case PinStereotype3EditPart.VISUAL_ID:
-					if (Pin3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case ActivityPartition_PinNameEditPart.VISUAL_ID:
+				case ActivityPartition_PinInStateEditPart.VISUAL_ID:
+				case ActivityPartition_PinOrderingEditPart.VISUAL_ID:
+				case ActivityPartition_PinStereotypeEditPart.VISUAL_ID:
+					if (ActivityPartition_PinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -791,16 +791,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return DecisionNode2ViewFactory.class;
 		case FlowFinalNode2EditPart.VISUAL_ID:
 			return FlowFinalNode2ViewFactory.class;
-		case Pin2EditPart.VISUAL_ID:
-			return Pin2ViewFactory.class;
-		case PinName2EditPart.VISUAL_ID:
-			return PinName2ViewFactory.class;
-		case PinInState2EditPart.VISUAL_ID:
+		case StructuredActivityNode_PinEditPart.VISUAL_ID:
+			return StructuredActivityNode_PinViewFactory.class;
+		case StructuredActivityNode_PinNameEditPart.VISUAL_ID:
+			return StructuredActivityNode_PinNameViewFactory.class;
+		case StructuredActivityNode_PinInStateEditPart.VISUAL_ID:
 			return PinInState2ViewFactory.class;
-		case PinOrdering2EditPart.VISUAL_ID:
-			return PinOrdering2ViewFactory.class;
-		case PinStereotype2EditPart.VISUAL_ID:
-			return PinStereotype2ViewFactory.class;
+		case StructuredActivityNode_PinOrderingEditPart.VISUAL_ID:
+			return StructuredActivityNode_PinOrderingViewFactory.class;
+		case StructuredActivityNode_PinStereotypeEditPart.VISUAL_ID:
+			return StructuredActivityNode_PinStereotypeViewFactory.class;
 		case CreateObjectAction2EditPart.VISUAL_ID:
 			return CreateObjectAction2ViewFactory.class;
 		case CreateObjectActionName2EditPart.VISUAL_ID:
@@ -935,16 +935,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ForkNode3ViewFactory.class;
 		case JoinNode3EditPart.VISUAL_ID:
 			return JoinNode3ViewFactory.class;
-		case Pin3EditPart.VISUAL_ID:
-			return Pin3ViewFactory.class;
-		case PinName3EditPart.VISUAL_ID:
-			return PinName3ViewFactory.class;
-		case PinInState3EditPart.VISUAL_ID:
-			return PinInState3ViewFactory.class;
-		case PinOrdering3EditPart.VISUAL_ID:
-			return PinOrdering3ViewFactory.class;
-		case PinStereotype3EditPart.VISUAL_ID:
-			return PinStereotype3ViewFactory.class;
+		case ActivityPartition_PinEditPart.VISUAL_ID:
+			return ActivityPartition_PinViewFactory.class;
+		case ActivityPartition_PinNameEditPart.VISUAL_ID:
+			return ActivityPartition_PinNameViewFactory.class;
+		case ActivityPartition_PinInStateEditPart.VISUAL_ID:
+			return ActivityPartition_PinInStateViewFactory.class;
+		case ActivityPartition_PinOrderingEditPart.VISUAL_ID:
+			return ActivityPartition_PinOrderingViewFactory.class;
+		case ActivityPartition_PinStereotypeEditPart.VISUAL_ID:
+			return ActivityPartition_PinStereotypeViewFactory.class;
 		case CreateObjectAction3EditPart.VISUAL_ID:
 			return CreateObjectAction3ViewFactory.class;
 		case CreateObjectActionName3EditPart.VISUAL_ID:

@@ -20,16 +20,18 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * @generated
  */
-public class Pin3CreateCommand extends EditElementCommand {
+
+public class ActivityPartition_PinCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public Pin3CreateCommand(CreateElementRequest req) {
+	public ActivityPartition_PinCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
+	 * FIXME: replace with setElementToEdit()
 	 * @generated
 	 */
 	protected EObject getElementToEditGen() {
@@ -107,4 +109,5 @@ public class Pin3CreateCommand extends EditElementCommand {
 			configureCommand.execute(monitor, info);
 		}
 	}
+
 }

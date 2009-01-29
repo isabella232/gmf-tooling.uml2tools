@@ -158,7 +158,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?DecisionNode", UMLElementTypes.DecisionNode_3015); //$NON-NLS-1$
 		case FlowFinalNode2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?FlowFinalNode", UMLElementTypes.FlowFinalNode_3016); //$NON-NLS-1$
-		case Pin2EditPart.VISUAL_ID:
+		case StructuredActivityNode_PinEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pin", UMLElementTypes.Pin_3017); //$NON-NLS-1$
 		case CreateObjectAction2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?CreateObjectAction", UMLElementTypes.CreateObjectAction_3018); //$NON-NLS-1$
@@ -214,7 +214,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ForkNode", UMLElementTypes.ForkNode_3069); //$NON-NLS-1$
 		case JoinNode3EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?JoinNode", UMLElementTypes.JoinNode_3070); //$NON-NLS-1$
-		case Pin3EditPart.VISUAL_ID:
+		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pin", UMLElementTypes.Pin_3071); //$NON-NLS-1$
 		case CreateObjectAction3EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?CreateObjectAction", UMLElementTypes.CreateObjectAction_3072); //$NON-NLS-1$
@@ -396,7 +396,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getDecisionNode_3015Text(view);
 		case FlowFinalNode2EditPart.VISUAL_ID:
 			return getFlowFinalNode_3016Text(view);
-		case Pin2EditPart.VISUAL_ID:
+		case StructuredActivityNode_PinEditPart.VISUAL_ID:
 			return getPin_3017Text(view);
 		case CreateObjectAction2EditPart.VISUAL_ID:
 			return getCreateObjectAction_3018Text(view);
@@ -452,7 +452,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getForkNode_3069Text(view);
 		case JoinNode3EditPart.VISUAL_ID:
 			return getJoinNode_3070Text(view);
-		case Pin3EditPart.VISUAL_ID:
+		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return getPin_3071Text(view);
 		case CreateObjectAction3EditPart.VISUAL_ID:
 			return getCreateObjectAction_3072Text(view);
@@ -1016,7 +1016,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPin_3017Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pin_3017, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(PinName2EditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pin_3017, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(StructuredActivityNode_PinNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -1397,7 +1398,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPin_3071Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pin_3071, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(PinName3EditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pin_3071, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(ActivityPartition_PinNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {

@@ -619,7 +619,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -735,7 +735,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1020,7 +1020,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1112,7 +1112,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1204,7 +1204,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1296,7 +1296,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1388,7 +1388,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1480,7 +1480,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1572,7 +1572,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1664,7 +1664,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1756,7 +1756,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1848,7 +1848,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == Pin2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -2063,7 +2063,7 @@ public class UMLDiagramUpdater {
 			return getDecisionNode_3015ContainedLinks(view);
 		case FlowFinalNode2EditPart.VISUAL_ID:
 			return getFlowFinalNode_3016ContainedLinks(view);
-		case Pin2EditPart.VISUAL_ID:
+		case StructuredActivityNode_PinEditPart.VISUAL_ID:
 			return getPin_3017ContainedLinks(view);
 		case CreateObjectAction2EditPart.VISUAL_ID:
 			return getCreateObjectAction_3018ContainedLinks(view);
@@ -2119,7 +2119,7 @@ public class UMLDiagramUpdater {
 			return getForkNode_3069ContainedLinks(view);
 		case JoinNode3EditPart.VISUAL_ID:
 			return getJoinNode_3070ContainedLinks(view);
-		case Pin3EditPart.VISUAL_ID:
+		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return getPin_3071ContainedLinks(view);
 		case CreateObjectAction3EditPart.VISUAL_ID:
 			return getCreateObjectAction_3072ContainedLinks(view);
@@ -2252,7 +2252,7 @@ public class UMLDiagramUpdater {
 			return getDecisionNode_3015IncomingLinks(view);
 		case FlowFinalNode2EditPart.VISUAL_ID:
 			return getFlowFinalNode_3016IncomingLinks(view);
-		case Pin2EditPart.VISUAL_ID:
+		case StructuredActivityNode_PinEditPart.VISUAL_ID:
 			return getPin_3017IncomingLinks(view);
 		case CreateObjectAction2EditPart.VISUAL_ID:
 			return getCreateObjectAction_3018IncomingLinks(view);
@@ -2308,7 +2308,7 @@ public class UMLDiagramUpdater {
 			return getForkNode_3069IncomingLinks(view);
 		case JoinNode3EditPart.VISUAL_ID:
 			return getJoinNode_3070IncomingLinks(view);
-		case Pin3EditPart.VISUAL_ID:
+		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return getPin_3071IncomingLinks(view);
 		case CreateObjectAction3EditPart.VISUAL_ID:
 			return getCreateObjectAction_3072IncomingLinks(view);
@@ -2441,7 +2441,7 @@ public class UMLDiagramUpdater {
 			return getDecisionNode_3015OutgoingLinks(view);
 		case FlowFinalNode2EditPart.VISUAL_ID:
 			return getFlowFinalNode_3016OutgoingLinks(view);
-		case Pin2EditPart.VISUAL_ID:
+		case StructuredActivityNode_PinEditPart.VISUAL_ID:
 			return getPin_3017OutgoingLinks(view);
 		case CreateObjectAction2EditPart.VISUAL_ID:
 			return getCreateObjectAction_3018OutgoingLinks(view);
@@ -2497,7 +2497,7 @@ public class UMLDiagramUpdater {
 			return getForkNode_3069OutgoingLinks(view);
 		case JoinNode3EditPart.VISUAL_ID:
 			return getJoinNode_3070OutgoingLinks(view);
-		case Pin3EditPart.VISUAL_ID:
+		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return getPin_3071OutgoingLinks(view);
 		case CreateObjectAction3EditPart.VISUAL_ID:
 			return getCreateObjectAction_3072OutgoingLinks(view);

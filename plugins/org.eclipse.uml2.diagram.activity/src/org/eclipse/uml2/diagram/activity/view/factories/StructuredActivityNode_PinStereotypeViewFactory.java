@@ -10,7 +10,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 
-public class PinName2ViewFactory extends BasicNodeViewFactory {
+public class StructuredActivityNode_PinStereotypeViewFactory extends BasicNodeViewFactory {
 
 	/**
 	 * @generated
