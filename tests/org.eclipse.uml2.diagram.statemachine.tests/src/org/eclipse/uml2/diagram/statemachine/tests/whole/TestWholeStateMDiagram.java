@@ -12,7 +12,7 @@ import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.uml2.diagram.common.wholediagram.TestWholeDiagram;
 import org.eclipse.uml2.diagram.common.wholediagram.UMLInitDiagramFacade;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.osgi.framework.Bundle;
@@ -29,7 +29,7 @@ public class TestWholeStateMDiagram extends TestWholeDiagram {
 
 			@Override
 			protected Diagram createDiagramView(EObject modelRoot) {
-				return ViewService.createDiagram(modelRoot, StateMachineEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				return ViewService.createDiagram(modelRoot, PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 			}
 			
 		};
