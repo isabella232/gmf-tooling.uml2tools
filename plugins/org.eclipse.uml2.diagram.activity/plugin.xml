@@ -522,7 +522,7 @@
                id="org.eclipse.uml2.diagram.activity.InputPin_3008"
                name="%metatype.name.InputPin_3008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.InputPin4EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.CallOperationAction_target_InputPinEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.InputPin_3003"/>
             <param name="semanticHint" value="3008"/>
          </specializationType>

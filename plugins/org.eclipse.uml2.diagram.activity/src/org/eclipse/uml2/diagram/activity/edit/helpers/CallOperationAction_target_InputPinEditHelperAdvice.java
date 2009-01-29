@@ -6,5 +6,5 @@ import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice
  * @generated
  */
 
-public class InputPin4EditHelperAdvice extends AbstractEditHelperAdvice {
+public class CallOperationAction_target_InputPinEditHelperAdvice extends AbstractEditHelperAdvice {
 }

@@ -1821,7 +1821,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Input Pin target"
           metamodelType="//@diagram/@childNodes.17/@elementType"
-          editHelperAdviceClassName="InputPin4EditHelperAdvice"/>
+          editHelperAdviceClassName="CallOperationAction_target_InputPinEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="SmallSquareFigure"
