@@ -673,9 +673,7 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		} else {
 			super.handleNotificationEvent(event);
 		}
-		if (isCanonicalEnabled()) {
-			handleTypeLinkModification(event);
-		}
+		handleTypeLinkModification(event);
 	}
 
 	/**
@@ -762,7 +760,7 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		 */
 		public void notifyChanged(Notification event) {
 			if (event.getFeature() == UMLPackage.eINSTANCE.getManifestation_UtilizedElement()) {
-				refreshDiagram();
+				guardedRefreshDiagram();
 				return;
 			}
 		}
@@ -817,7 +815,7 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getManifestation_UtilizedElement());
 				}
 				if (link instanceof Manifestation) {
-					refreshDiagram();
+					guardedRefreshDiagram();
 				}
 				break;
 			}
@@ -827,7 +825,7 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getManifestation_UtilizedElement());
 				}
 				if (link instanceof Manifestation) {
-					refreshDiagram();
+					guardedRefreshDiagram();
 				}
 				break;
 			}
@@ -840,7 +838,7 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 				}
 				for (Object link : links) {
 					if (link instanceof Manifestation) {
-						refreshDiagram();
+						guardedRefreshDiagram();
 						break;
 					}
 				}
@@ -855,7 +853,7 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 				}
 				for (Object link : links) {
 					if (link instanceof Manifestation) {
-						refreshDiagram();
+						guardedRefreshDiagram();
 						break;
 					}
 				}
@@ -868,18 +866,23 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	/**
 	 * @generated
 	 */
-	private boolean isCanonicalEnabled() {
+	private boolean isCanonicalDisabled() {
+		if (isCanonicalDisabled(getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
+		if (getParent() != null && isCanonicalDisabled(getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
 		//this particular edit part may not have editpolicy at all, 
 		//but its compartments still may have it
 		EObject semantic = resolveSemanticElement();
-		if (semantic == null) {
-			return false;
-		}
-		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
-			if (next instanceof CanonicalEditPolicy) {
-				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
-				if (nextPolicy.isEnabled()) {
-					return true;
+		if (semantic != null) {
+			for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+				if (next instanceof EditPolicy) {
+					EditPolicy nextEP = (EditPolicy) next;
+					if (isCanonicalDisabled(nextEP)) {
+						return true;
+					}
 				}
 			}
 		}
@@ -889,8 +892,17 @@ public class Artifact2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	/**
 	 * @generated
 	 */
-	public void refreshDiagram() {
-		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+	private static boolean isCanonicalDisabled(EditPolicy editPolicy) {
+		return editPolicy instanceof CanonicalEditPolicy && !((CanonicalEditPolicy) editPolicy).isEnabled();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void guardedRefreshDiagram() {
+		if (!isCanonicalDisabled()) {
+			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+		}
 	}
 
 	/**

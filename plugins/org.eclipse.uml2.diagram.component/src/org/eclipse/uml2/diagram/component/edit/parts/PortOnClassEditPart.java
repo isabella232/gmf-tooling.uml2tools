@@ -493,9 +493,7 @@ public class PortOnClassEditPart extends BorderedBorderItemEditPart implements P
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		if (isCanonicalEnabled()) {
-			handleFeatureLinkModification(event);
-		}
+		handleFeatureLinkModification(event);
 	}
 
 	/**
@@ -503,11 +501,11 @@ public class PortOnClassEditPart extends BorderedBorderItemEditPart implements P
 	 */
 	private void handleFeatureLinkModification(Notification event) {
 		if (event.getFeature() == UMLPackage.eINSTANCE.getPort_Provided()) {
-			refreshDiagram();
+			guardedRefreshDiagram();
 			return;
 		}
 		if (event.getFeature() == UMLPackage.eINSTANCE.getPort_Required()) {
-			refreshDiagram();
+			guardedRefreshDiagram();
 			return;
 		}
 	}
@@ -515,18 +513,23 @@ public class PortOnClassEditPart extends BorderedBorderItemEditPart implements P
 	/**
 	 * @generated
 	 */
-	private boolean isCanonicalEnabled() {
+	private boolean isCanonicalDisabled() {
+		if (isCanonicalDisabled(getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
+		if (getParent() != null && isCanonicalDisabled(getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
 		//this particular edit part may not have editpolicy at all, 
 		//but its compartments still may have it
 		EObject semantic = resolveSemanticElement();
-		if (semantic == null) {
-			return false;
-		}
-		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
-			if (next instanceof CanonicalEditPolicy) {
-				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
-				if (nextPolicy.isEnabled()) {
-					return true;
+		if (semantic != null) {
+			for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+				if (next instanceof EditPolicy) {
+					EditPolicy nextEP = (EditPolicy) next;
+					if (isCanonicalDisabled(nextEP)) {
+						return true;
+					}
 				}
 			}
 		}
@@ -536,8 +539,17 @@ public class PortOnClassEditPart extends BorderedBorderItemEditPart implements P
 	/**
 	 * @generated
 	 */
-	public void refreshDiagram() {
-		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+	private static boolean isCanonicalDisabled(EditPolicy editPolicy) {
+		return editPolicy instanceof CanonicalEditPolicy && !((CanonicalEditPolicy) editPolicy).isEnabled();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void guardedRefreshDiagram() {
+		if (!isCanonicalDisabled()) {
+			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+		}
 	}
 
 	/**

@@ -638,10 +638,8 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		if (isCanonicalEnabled()) {
-			handleTypeLinkModification(event);
-			handleFeatureLinkModification(event);
-		}
+		handleTypeLinkModification(event);
+		handleFeatureLinkModification(event);
 	}
 
 	/**
@@ -855,7 +853,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		 */
 		public void notifyChanged(Notification event) {
 			if (event.getFeature() == UMLPackage.eINSTANCE.getInterfaceRealization_Contract()) {
-				refreshDiagram();
+				guardedRefreshDiagram();
 				return;
 			}
 		}
@@ -910,7 +908,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getInterfaceRealization_Contract());
 				}
 				if (link instanceof InterfaceRealization) {
-					refreshDiagram();
+					guardedRefreshDiagram();
 				}
 				break;
 			}
@@ -920,7 +918,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getInterfaceRealization_Contract());
 				}
 				if (link instanceof InterfaceRealization) {
-					refreshDiagram();
+					guardedRefreshDiagram();
 				}
 				break;
 			}
@@ -933,7 +931,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 				}
 				for (Object link : links) {
 					if (link instanceof InterfaceRealization) {
-						refreshDiagram();
+						guardedRefreshDiagram();
 						break;
 					}
 				}
@@ -948,7 +946,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 				}
 				for (Object link : links) {
 					if (link instanceof InterfaceRealization) {
-						refreshDiagram();
+						guardedRefreshDiagram();
 						break;
 					}
 				}
@@ -963,7 +961,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 	 */
 	private void handleFeatureLinkModification(Notification event) {
 		if (event.getFeature() == UMLPackage.eINSTANCE.getComponent_Required()) {
-			refreshDiagram();
+			guardedRefreshDiagram();
 			return;
 		}
 	}
@@ -971,18 +969,23 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 	/**
 	 * @generated
 	 */
-	private boolean isCanonicalEnabled() {
+	private boolean isCanonicalDisabled() {
+		if (isCanonicalDisabled(getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
+		if (getParent() != null && isCanonicalDisabled(getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
 		//this particular edit part may not have editpolicy at all, 
 		//but its compartments still may have it
 		EObject semantic = resolveSemanticElement();
-		if (semantic == null) {
-			return false;
-		}
-		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
-			if (next instanceof CanonicalEditPolicy) {
-				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
-				if (nextPolicy.isEnabled()) {
-					return true;
+		if (semantic != null) {
+			for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+				if (next instanceof EditPolicy) {
+					EditPolicy nextEP = (EditPolicy) next;
+					if (isCanonicalDisabled(nextEP)) {
+						return true;
+					}
 				}
 			}
 		}
@@ -992,8 +995,17 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 	/**
 	 * @generated
 	 */
-	public void refreshDiagram() {
-		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+	private static boolean isCanonicalDisabled(EditPolicy editPolicy) {
+		return editPolicy instanceof CanonicalEditPolicy && !((CanonicalEditPolicy) editPolicy).isEnabled();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void guardedRefreshDiagram() {
+		if (!isCanonicalDisabled()) {
+			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+		}
 	}
 
 }
