@@ -95,7 +95,7 @@ public class PackageEditPart extends DiagramEditPart {
 	public void refreshDiagram() {
 		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 	}
-	
+
 	/**
 	 * @NOT-GENERATED
 	 */
@@ -115,6 +115,5 @@ public class PackageEditPart extends DiagramEditPart {
 			editor.refreshPalette();
 		}
 	}
-
 
 }

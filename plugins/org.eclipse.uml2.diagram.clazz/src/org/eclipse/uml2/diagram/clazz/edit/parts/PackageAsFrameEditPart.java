@@ -1169,9 +1169,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 		} else {
 			super.handleNotificationEvent(event);
 		}
-		if (isCanonicalEnabled()) {
-			handleTypeLinkModification(event);
-		}
+		handleTypeLinkModification(event);
 	}
 
 	/**
@@ -1258,19 +1256,19 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 		 */
 		public void notifyChanged(Notification event) {
 			if (event.getFeature() == UMLPackage.eINSTANCE.getDependency_Supplier()) {
-				refreshDiagram();
+				guardedRefreshDiagram();
 				return;
 			}
 			if (event.getFeature() == UMLPackage.eINSTANCE.getDependency_Supplier()) {
-				refreshDiagram();
+				guardedRefreshDiagram();
 				return;
 			}
 			if (event.getFeature() == UMLPackage.eINSTANCE.getDependency_Supplier()) {
-				refreshDiagram();
+				guardedRefreshDiagram();
 				return;
 			}
 			if (event.getFeature() == UMLPackage.eINSTANCE.getTemplateSignature_Template()) {
-				refreshDiagram();
+				guardedRefreshDiagram();
 				return;
 			}
 		}
@@ -1343,7 +1341,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getDependency_Supplier());
 				}
 				if (link instanceof Dependency || link instanceof Realization || link instanceof Usage) {
-					refreshDiagram();
+					guardedRefreshDiagram();
 				}
 				break;
 			}
@@ -1359,7 +1357,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getDependency_Supplier());
 				}
 				if (link instanceof Dependency || link instanceof Realization || link instanceof Usage) {
-					refreshDiagram();
+					guardedRefreshDiagram();
 				}
 				break;
 			}
@@ -1378,7 +1376,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 				}
 				for (Object link : links) {
 					if (link instanceof Dependency || link instanceof Realization || link instanceof Usage) {
-						refreshDiagram();
+						guardedRefreshDiagram();
 						break;
 					}
 				}
@@ -1399,7 +1397,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 				}
 				for (Object link : links) {
 					if (link instanceof Dependency || link instanceof Realization || link instanceof Usage) {
-						refreshDiagram();
+						guardedRefreshDiagram();
 						break;
 					}
 				}
@@ -1415,7 +1413,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 					getLinkTargetListener().addReferenceListener((EObject) link, UMLPackage.eINSTANCE.getTemplateSignature_Template());
 				}
 				if (link instanceof TemplateBinding) {
-					refreshDiagram();
+					guardedRefreshDiagram();
 				}
 				break;
 			}
@@ -1425,7 +1423,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 					getLinkTargetListener().removeReferenceListener((EObject) link, UMLPackage.eINSTANCE.getTemplateSignature_Template());
 				}
 				if (link instanceof TemplateBinding) {
-					refreshDiagram();
+					guardedRefreshDiagram();
 				}
 				break;
 			}
@@ -1438,7 +1436,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 				}
 				for (Object link : links) {
 					if (link instanceof TemplateBinding) {
-						refreshDiagram();
+						guardedRefreshDiagram();
 						break;
 					}
 				}
@@ -1453,7 +1451,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 				}
 				for (Object link : links) {
 					if (link instanceof TemplateBinding) {
-						refreshDiagram();
+						guardedRefreshDiagram();
 						break;
 					}
 				}
@@ -1466,18 +1464,23 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 	/**
 	 * @generated
 	 */
-	private boolean isCanonicalEnabled() {
+	private boolean isCanonicalDisabled() {
+		if (isCanonicalDisabled(getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
+		if (getParent() != null && isCanonicalDisabled(getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
 		//this particular edit part may not have editpolicy at all, 
 		//but its compartments still may have it
 		EObject semantic = resolveSemanticElement();
-		if (semantic == null) {
-			return false;
-		}
-		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
-			if (next instanceof CanonicalEditPolicy) {
-				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
-				if (nextPolicy.isEnabled()) {
-					return true;
+		if (semantic != null) {
+			for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+				if (next instanceof EditPolicy) {
+					EditPolicy nextEP = (EditPolicy) next;
+					if (isCanonicalDisabled(nextEP)) {
+						return true;
+					}
 				}
 			}
 		}
@@ -1487,8 +1490,17 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 	/**
 	 * @generated
 	 */
-	public void refreshDiagram() {
-		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+	private static boolean isCanonicalDisabled(EditPolicy editPolicy) {
+		return editPolicy instanceof CanonicalEditPolicy && !((CanonicalEditPolicy) editPolicy).isEnabled();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void guardedRefreshDiagram() {
+		if (!isCanonicalDisabled()) {
+			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+		}
 	}
 
 	/**
