@@ -53,7 +53,7 @@ public class UMLContainmentFilter extends ViewerFilter {
 					UML.getTemplateParameter_OwnedParameteredElement(), 
 					UML.getTemplateParameter_OwnedDefault(),
 			});
-			return new MetaclassContainmentFilter(UML, templateRelated);
+			TEMPLATE_EXCLUDED = new MetaclassContainmentFilter(UML, templateRelated);
 		}
 		return TEMPLATE_EXCLUDED;
 	}
