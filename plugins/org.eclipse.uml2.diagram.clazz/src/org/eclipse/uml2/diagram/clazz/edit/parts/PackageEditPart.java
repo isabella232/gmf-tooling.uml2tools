@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.ProfileApplication;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -97,16 +98,16 @@ public class PackageEditPart extends DiagramEditPart {
 	}
 
 	/**
-	 * @NOT-GENERATED
+	 * @generated
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		org.eclipse.uml2.uml.Package pakkage = (org.eclipse.uml2.uml.Package) resolveSemanticElement();
+		Package pakkage = (Package) resolveSemanticElement();
 		addListenerFilter("SemanticModel", this, pakkage, UMLPackage.eINSTANCE.getPackage_ProfileApplication());
 	}
 
 	/**
-	 * @NOT-GENERATED
+	 * @generated
 	 */
 	protected void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);

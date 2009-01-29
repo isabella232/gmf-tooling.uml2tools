@@ -14,6 +14,9 @@
 	«IF not childNodes->isEmpty()-»
 		«EXPAND refreshDiagram-»
 	«ENDIF-»
+	«IF supportsExtendedPalette(self)-»
+		«EXPAND refreshPalette-»
+	«ENDIF-»
 «ENDAROUND»
 
 «DEFINE refreshDiagram FOR gmfgen::GenCommonBase-»
@@ -22,12 +25,6 @@
 		«EXPAND aspects::xpt::diagram::updater::UpdateCommand::performCanonicalUpdateMethodCall»(getDiagramView().getElement());
 	}
 «ENDDEFINE»
-
-«AROUND additions FOR gmfgen::GenDiagram»
-«IF supportsExtendedPalette(self)-»
-«EXPAND refreshPalette»
-«ENDIF-»
-«ENDAROUND»
 
 «DEFINE refreshPalette FOR gmfgen::GenDiagram»
 	«EXPAND xpt::Common::generatedMemberComment»
