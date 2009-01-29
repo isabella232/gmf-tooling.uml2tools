@@ -33,10 +33,10 @@
 	installEditPolicy(«-»
 		org.eclipse.gef.EditPolicy.LAYOUT_ROLE, «-»
 		new org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels()); //replace with U2T specific version
+	«EXPAND xpt::graphicalnodeep::graphicalNodeEditPolicy::install(true)-»		
 	«ENDIF-»
 	«EXPAND xpt::diagram::editparts::Common::installCanonicalEditPolicy-»
 	«EXPAND aspects::impl::diagram::editparts::updateDescriptionEditPolicy::installUpdateDescriptionEditPolicy-»
-	«EXPAND xpt::graphicalnodeep::graphicalNodeEditPolicy::install(true)-»
 	«EXPAND xpt::diagram::editparts::Common::behaviour-»
 	
 «ENDAROUND»
