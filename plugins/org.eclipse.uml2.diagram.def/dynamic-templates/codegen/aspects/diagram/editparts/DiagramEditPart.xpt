@@ -15,7 +15,7 @@
 		«EXPAND refreshDiagram-»
 	«ENDIF-»
 	«IF supportsExtendedPalette(self)-»
-		«EXPAND refreshPalette-»
+		«EXPAND xpt::extendedpalette::DiagramEditPart::refreshPalette-»
 	«ENDIF-»
 «ENDAROUND»
 
@@ -23,23 +23,5 @@
 	«EXPAND xpt::Common::generatedMemberComment»
 	public void refreshDiagram() {
 		«EXPAND aspects::xpt::diagram::updater::UpdateCommand::performCanonicalUpdateMethodCall»(getDiagramView().getElement());
-	}
-«ENDDEFINE»
-
-«DEFINE refreshPalette FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
-	protected void addSemanticListeners() {
-		super.addSemanticListeners();
-		org.eclipse.uml2.uml.Package pakkage = (org.eclipse.uml2.uml.Package) resolveSemanticElement();
-		addListenerFilter("SemanticModel", this, pakkage, org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPackage_ProfileApplication());
-	}
-
-	«EXPAND xpt::Common::generatedMemberComment»
-	protected void handleNotificationEvent(Notification notification) {
-		super.handleNotificationEvent(notification);
-		if (UMLPackage.eINSTANCE.getPackage_ProfileApplication().equals(notification.getFeature())) {
-			org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditor editor = (org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditor) org.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-			editor.refreshPalette();
-		}
 	}
 «ENDDEFINE»
