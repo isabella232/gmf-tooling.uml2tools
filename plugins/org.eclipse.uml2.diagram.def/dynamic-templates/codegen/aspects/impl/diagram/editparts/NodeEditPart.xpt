@@ -273,9 +273,9 @@
 
 «AROUND impl::diagram::editparts::NodeEditPart::createDefaultEditPoliciesBody FOR gmfgen::GenNode-»
 	«EXPAND aspects::impl::diagram::editparts::updateDescriptionEditPolicy::installUpdateDescriptionEditPolicy-»
-	«EXPAND installCreationRolePolicy-»
+	«EXPAND impl::diagram::editparts::NodeEditPart::installCreationRolePolicy-»
 	super.createDefaultEditPolicies();
-	«EXPAND installPrimaryDragEditPolicy-»
+	«EXPAND impl::diagram::editparts::NodeEditPart::installPrimaryDragEditPolicy-»
 	«EXPAND xpt::diagram::editparts::Common::installSemanticEditPolicy-»
 	«IF needsGraphicalNodeEditPolicy(self)-»
 		installEditPolicy(org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE, new «getGraphicalNodeEditPolicyQualifiedClassName()»());
