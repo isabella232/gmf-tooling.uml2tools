@@ -39,7 +39,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubve
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.Messages;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 
@@ -209,8 +209,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof JunctionPseudostateEditPart) {
 			return ((JunctionPseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof ÑhoicePseudostateEditPart) {
-			return ((ÑhoicePseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ChoicePseudostateEditPart) {
+			return ((ChoicePseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof TerminatePseudostateEditPart) {
 			return ((TerminatePseudostateEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -265,8 +265,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof JunctionPseudostateEditPart) {
 			return ((JunctionPseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof ÑhoicePseudostateEditPart) {
-			return ((ÑhoicePseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ChoicePseudostateEditPart) {
+			return ((ChoicePseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof TerminatePseudostateEditPart) {
 			return ((TerminatePseudostateEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -322,8 +322,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof JunctionPseudostateEditPart) {
 			return ((JunctionPseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof ÑhoicePseudostateEditPart) {
-			return ((ÑhoicePseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ChoicePseudostateEditPart) {
+			return ((ChoicePseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof TerminatePseudostateEditPart) {
 			return ((TerminatePseudostateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -378,8 +378,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof JunctionPseudostateEditPart) {
 			return ((JunctionPseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof ÑhoicePseudostateEditPart) {
-			return ((ÑhoicePseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ChoicePseudostateEditPart) {
+			return ((ChoicePseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof TerminatePseudostateEditPart) {
 			return ((TerminatePseudostateEditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -434,8 +434,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof JunctionPseudostateEditPart) {
 			return ((JunctionPseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof ÑhoicePseudostateEditPart) {
-			return ((ÑhoicePseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ChoicePseudostateEditPart) {
+			return ((ChoicePseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof TerminatePseudostateEditPart) {
 			return ((TerminatePseudostateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);

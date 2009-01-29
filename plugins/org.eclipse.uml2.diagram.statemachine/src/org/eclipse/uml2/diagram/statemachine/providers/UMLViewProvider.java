@@ -50,7 +50,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_Internal
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.view.factories.CompositeStateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.CompositeStateStereotypeViewFactory;
@@ -96,7 +96,7 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.SubmachineState_Inte
 import org.eclipse.uml2.diagram.statemachine.view.factories.TerminatePseudostateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.TransitionNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.TransitionViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.ÑhoicePseudostateViewFactory;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ChoicePseudostateViewFactory;
 
 /**
  * @generated
@@ -178,7 +178,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ForkPseudostateEditPart.VISUAL_ID:
 				case JoinPseudostateEditPart.VISUAL_ID:
 				case JunctionPseudostateEditPart.VISUAL_ID:
-				case ÑhoicePseudostateEditPart.VISUAL_ID:
+				case ChoicePseudostateEditPart.VISUAL_ID:
 				case TerminatePseudostateEditPart.VISUAL_ID:
 				case EntryPointPseudostateEditPart.VISUAL_ID:
 				case ExitPointPseudostateEditPart.VISUAL_ID:
@@ -324,8 +324,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return JoinPseudostateViewFactory.class;
 		case JunctionPseudostateEditPart.VISUAL_ID:
 			return JunctionPseudostateViewFactory.class;
-		case ÑhoicePseudostateEditPart.VISUAL_ID:
-			return ÑhoicePseudostateViewFactory.class;
+		case ChoicePseudostateEditPart.VISUAL_ID:
+			return ChoicePseudostateViewFactory.class;
 		case TerminatePseudostateEditPart.VISUAL_ID:
 			return TerminatePseudostateViewFactory.class;
 		case EntryPointPseudostateEditPart.VISUAL_ID:

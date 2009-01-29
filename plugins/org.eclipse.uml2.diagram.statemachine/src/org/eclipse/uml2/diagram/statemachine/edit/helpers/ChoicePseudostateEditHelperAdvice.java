@@ -6,5 +6,5 @@ import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice
  * @generated
  */
 
-public class ÑhoicePseudostateEditHelperAdvice extends AbstractEditHelperAdvice {
+public class ChoicePseudostateEditHelperAdvice extends AbstractEditHelperAdvice {
 }

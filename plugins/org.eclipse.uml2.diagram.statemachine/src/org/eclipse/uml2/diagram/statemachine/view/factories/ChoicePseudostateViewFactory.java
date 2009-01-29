@@ -7,14 +7,14 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactory;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
 
-public class ÑhoicePseudostateViewFactory extends AbstractShapeViewFactory {
+public class ChoicePseudostateViewFactory extends AbstractShapeViewFactory {
 
 	/**
 	 * @generated
@@ -30,7 +30,7 @@ public class ÑhoicePseudostateViewFactory extends AbstractShapeViewFactory {
 	 */
 	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
-			semanticHint = UMLVisualIDRegistry.getType(ÑhoicePseudostateEditPart.VISUAL_ID);
+			semanticHint = UMLVisualIDRegistry.getType(ChoicePseudostateEditPart.VISUAL_ID);
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);

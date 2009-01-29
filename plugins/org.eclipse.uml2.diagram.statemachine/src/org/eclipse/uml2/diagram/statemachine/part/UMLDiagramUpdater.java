@@ -46,7 +46,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_Internal
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.ConnectionPointReference;
@@ -239,7 +239,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ÑhoicePseudostateEditPart.VISUAL_ID) {
+			if (visualID == ChoicePseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -405,7 +405,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ÑhoicePseudostateEditPart.VISUAL_ID) {
+			if (visualID == ChoicePseudostateEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -543,7 +543,7 @@ public class UMLDiagramUpdater {
 			return getPseudostate_3008ContainedLinks(view);
 		case JunctionPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3009ContainedLinks(view);
-		case ÑhoicePseudostateEditPart.VISUAL_ID:
+		case ChoicePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3010ContainedLinks(view);
 		case TerminatePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3011ContainedLinks(view);
@@ -600,7 +600,7 @@ public class UMLDiagramUpdater {
 			return getPseudostate_3008IncomingLinks(view);
 		case JunctionPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3009IncomingLinks(view);
-		case ÑhoicePseudostateEditPart.VISUAL_ID:
+		case ChoicePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3010IncomingLinks(view);
 		case TerminatePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3011IncomingLinks(view);
@@ -657,7 +657,7 @@ public class UMLDiagramUpdater {
 			return getPseudostate_3008OutgoingLinks(view);
 		case JunctionPseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3009OutgoingLinks(view);
-		case ÑhoicePseudostateEditPart.VISUAL_ID:
+		case ChoicePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3010OutgoingLinks(view);
 		case TerminatePseudostateEditPart.VISUAL_ID:
 			return getPseudostate_3011OutgoingLinks(view);

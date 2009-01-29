@@ -119,8 +119,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case JunctionPseudostateEditPart.VISUAL_ID:
 				return new JunctionPseudostateEditPart(view);
 
-			case ÑhoicePseudostateEditPart.VISUAL_ID:
-				return new ÑhoicePseudostateEditPart(view);
+			case ChoicePseudostateEditPart.VISUAL_ID:
+				return new ChoicePseudostateEditPart(view);
 
 			case TerminatePseudostateEditPart.VISUAL_ID:
 				return new TerminatePseudostateEditPart(view);

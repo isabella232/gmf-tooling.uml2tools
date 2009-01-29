@@ -48,7 +48,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditP
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
@@ -100,7 +100,7 @@ public class SimpleState_InternalActivitiesCanonicalEditPolicy extends Canonical
 		case ForkPseudostateEditPart.VISUAL_ID:
 		case JoinPseudostateEditPart.VISUAL_ID:
 		case JunctionPseudostateEditPart.VISUAL_ID:
-		case ÑhoicePseudostateEditPart.VISUAL_ID:
+		case ChoicePseudostateEditPart.VISUAL_ID:
 		case TerminatePseudostateEditPart.VISUAL_ID:
 		case EntryPointPseudostateEditPart.VISUAL_ID:
 		case ExitPointPseudostateEditPart.VISUAL_ID:

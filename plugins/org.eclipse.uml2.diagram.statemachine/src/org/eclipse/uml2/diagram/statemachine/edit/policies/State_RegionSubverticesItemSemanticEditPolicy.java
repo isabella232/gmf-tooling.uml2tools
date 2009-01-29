@@ -13,7 +13,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.commands.SimpleStateCreateComm
 import org.eclipse.uml2.diagram.statemachine.edit.commands.State2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.SubmachineStateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TerminatePseudostateCreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.ÑhoicePseudostateCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.ChoicePseudostateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 /**
@@ -64,7 +64,7 @@ public class State_RegionSubverticesItemSemanticEditPolicy extends UMLBaseItemSe
 			return getGEFWrapper(new JunctionPseudostateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3010 == req.getElementType()) {
-			return getGEFWrapper(new ÑhoicePseudostateCreateCommand(req));
+			return getGEFWrapper(new ChoicePseudostateCreateCommand(req));
 		}
 		if (UMLElementTypes.Pseudostate_3011 == req.getElementType()) {
 			return getGEFWrapper(new TerminatePseudostateCreateCommand(req));

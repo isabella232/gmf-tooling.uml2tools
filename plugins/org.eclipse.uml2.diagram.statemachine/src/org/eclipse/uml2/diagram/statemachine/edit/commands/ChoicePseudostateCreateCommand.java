@@ -20,12 +20,12 @@ import org.eclipse.uml2.uml.UMLFactory;
  * @generated
  */
 
-public class ÑhoicePseudostateCreateCommand extends EditElementCommand {
+public class ChoicePseudostateCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public ÑhoicePseudostateCreateCommand(CreateElementRequest req) {
+	public ChoicePseudostateCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 

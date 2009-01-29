@@ -41,7 +41,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -509,7 +509,7 @@ public class UMLElementTypes extends ElementInitializers {
 			return Pseudostate_3008;
 		case JunctionPseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3009;
-		case ÑhoicePseudostateEditPart.VISUAL_ID:
+		case ChoicePseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3010;
 		case TerminatePseudostateEditPart.VISUAL_ID:
 			return Pseudostate_3011;

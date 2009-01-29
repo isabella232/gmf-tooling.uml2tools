@@ -254,7 +254,7 @@ public class JoinPseudostateEditPart extends ShapeNodeEditPart implements Primar
 		if (targetEditPart instanceof JunctionPseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof ÑhoicePseudostateEditPart) {
+		if (targetEditPart instanceof ChoicePseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
 		if (targetEditPart instanceof TerminatePseudostateEditPart) {

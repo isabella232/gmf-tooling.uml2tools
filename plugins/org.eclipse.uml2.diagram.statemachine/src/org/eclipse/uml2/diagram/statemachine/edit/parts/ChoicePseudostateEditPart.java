@@ -28,7 +28,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
-import org.eclipse.uml2.diagram.statemachine.edit.policies.ÑhoicePseudostateItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.edit.policies.ChoicePseudostateItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -37,7 +37,7 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
  * @generated
  */
 
-public class ÑhoicePseudostateEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class ChoicePseudostateEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
@@ -57,7 +57,7 @@ public class ÑhoicePseudostateEditPart extends ShapeNodeEditPart implements Prim
 	/**
 	 * @generated
 	 */
-	public ÑhoicePseudostateEditPart(View view) {
+	public ChoicePseudostateEditPart(View view) {
 		super(view);
 	}
 
@@ -69,7 +69,7 @@ public class ÑhoicePseudostateEditPart extends ShapeNodeEditPart implements Prim
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ÑhoicePseudostateItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ChoicePseudostateItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -247,7 +247,7 @@ public class ÑhoicePseudostateEditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof JunctionPseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
 		if (targetEditPart instanceof TerminatePseudostateEditPart) {

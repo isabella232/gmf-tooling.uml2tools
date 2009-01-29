@@ -15,12 +15,12 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
  * @generated
  */
 
-public class ÑhoicePseudostateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class ChoicePseudostateItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public ÑhoicePseudostateItemSemanticEditPolicy() {
+	public ChoicePseudostateItemSemanticEditPolicy() {
 		super(UMLElementTypes.Pseudostate_3010);
 	}
 

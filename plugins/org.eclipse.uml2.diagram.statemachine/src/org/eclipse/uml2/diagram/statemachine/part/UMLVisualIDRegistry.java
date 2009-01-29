@@ -50,7 +50,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_Internal
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ÑhoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.statemachine.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.Behavior;
@@ -319,7 +319,7 @@ public class UMLVisualIDRegistry {
 				return JunctionPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
-				return ÑhoicePseudostateEditPart.VISUAL_ID;
+				return ChoicePseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
 				return TerminatePseudostateEditPart.VISUAL_ID;
@@ -384,7 +384,7 @@ public class UMLVisualIDRegistry {
 				return JunctionPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
-				return ÑhoicePseudostateEditPart.VISUAL_ID;
+				return ChoicePseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
 				return TerminatePseudostateEditPart.VISUAL_ID;
@@ -563,7 +563,7 @@ public class UMLVisualIDRegistry {
 			if (JunctionPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ÑhoicePseudostateEditPart.VISUAL_ID == nodeVisualID) {
+			if (ChoicePseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (TerminatePseudostateEditPart.VISUAL_ID == nodeVisualID) {
@@ -628,7 +628,7 @@ public class UMLVisualIDRegistry {
 			if (JunctionPseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ÑhoicePseudostateEditPart.VISUAL_ID == nodeVisualID) {
+			if (ChoicePseudostateEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (TerminatePseudostateEditPart.VISUAL_ID == nodeVisualID) {
@@ -980,7 +980,7 @@ public class UMLVisualIDRegistry {
 				return JunctionPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
-				return ÑhoicePseudostateEditPart.VISUAL_ID;
+				return ChoicePseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
 				return TerminatePseudostateEditPart.VISUAL_ID;
@@ -1046,7 +1046,7 @@ public class UMLVisualIDRegistry {
 				return JunctionPseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3010((Pseudostate) domainElement)) {
-				return ÑhoicePseudostateEditPart.VISUAL_ID;
+				return ChoicePseudostateEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPseudostate().isSuperTypeOf(domainElement.eClass()) && isPseudostate_3011((Pseudostate) domainElement)) {
 				return TerminatePseudostateEditPart.VISUAL_ID;
@@ -1146,7 +1146,7 @@ public class UMLVisualIDRegistry {
 		case ForkPseudostateEditPart.VISUAL_ID:
 		case JoinPseudostateEditPart.VISUAL_ID:
 		case JunctionPseudostateEditPart.VISUAL_ID:
-		case ÑhoicePseudostateEditPart.VISUAL_ID:
+		case ChoicePseudostateEditPart.VISUAL_ID:
 		case TerminatePseudostateEditPart.VISUAL_ID:
 		case EntryPointPseudostateEditPart.VISUAL_ID:
 		case ExitPointPseudostateEditPart.VISUAL_ID:

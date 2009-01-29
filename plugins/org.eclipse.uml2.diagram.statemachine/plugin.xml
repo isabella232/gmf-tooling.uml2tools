@@ -505,7 +505,7 @@
                id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3010"
                name="%metatype.name.Pseudostate_3010"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.СhoicePseudostateEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.statemachine.edit.helpers.ChoicePseudostateEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.statemachine.Pseudostate_3004"/>
             <param name="semanticHint" value="3010"/>
          </specializationType>
@@ -982,7 +982,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.СhoicePseudostateEditPart"
+                   objectClass="org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
