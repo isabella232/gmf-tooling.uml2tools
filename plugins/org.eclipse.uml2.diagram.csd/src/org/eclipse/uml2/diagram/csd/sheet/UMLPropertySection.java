@@ -37,7 +37,6 @@ public class UMLPropertySection extends AdvancedPropertySection implements IProp
 		if (af != null) {
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object, IItemPropertySource.class);
 			if (ips != null) {
-				AbstractUIPlugin plugin = UMLDiagramEditorPlugin.getInstance();
 				return new PropertySourceExtension(object, ips, af);
 			}
 		}
