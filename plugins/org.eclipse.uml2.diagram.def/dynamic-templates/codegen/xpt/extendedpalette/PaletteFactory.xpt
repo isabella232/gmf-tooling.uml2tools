@@ -14,10 +14,10 @@
 
 «EXTENSION xpt::editor::palette::Utils»
 
-«DEFINE nodeToolEntry FOR gmfgen::GenEditorGenerator»
+«DEFINE nodeToolEntry FOR gmfgen::Palette»
 «ENDDEFINE»
 
-«DEFINE linkToolEntry FOR gmfgen::GenEditorGenerator»
+«DEFINE linkToolEntry FOR gmfgen::Palette»
 «ENDDEFINE»
 
 «DEFINE newEntry(toolVarName : String) FOR gmfgen::ToolEntry-»

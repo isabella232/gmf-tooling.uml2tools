@@ -25,7 +25,7 @@
       <Priority
             name="Lowest">
       </Priority>
-         <editor id="«editorGen.plugin.iD»"/>
+         <editor id="«editorGen.editor.iD»"/>
    </paletteProvider>
 </extension> 
 «ENDIF-»

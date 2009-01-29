@@ -15,14 +15,18 @@
 «EXTENSION xpt::editor::palette::Utils»
 «EXTENSION xpt::extendedpalette::Utils»
 
-«AROUND nodeToolEntry FOR gmfgen::Palette»
-«IF not supportsExtendedPalette(diagram)-»
+«AROUND nodeToolEntry FOR OclAny»
+«IF self.oclIsKindOf(gmfgen::Palette)-»
+«EXPAND xpt::extendedpalette::PaletteFactory::nodeToolEntry FOR self.oclAsType(gmfgen::Palette)»
+«ELSE-»
 «targetDef.proceed()-»
 «ENDIF-»
 «ENDAROUND»
 
-«AROUND linkToolEntry FOR gmfgen::Palette»
-«IF not supportsExtendedPalette(diagram)-»
+«AROUND linkToolEntry FOR OclAny»
+«IF self.oclIsKindOf(gmfgen::Palette)-»
+«EXPAND xpt::extendedpalette::PaletteFactory::linkToolEntry FOR self.oclAsType(gmfgen::Palette)»
+«ELSE-»
 «targetDef.proceed()-»
 «ENDIF-»
 «ENDAROUND»
