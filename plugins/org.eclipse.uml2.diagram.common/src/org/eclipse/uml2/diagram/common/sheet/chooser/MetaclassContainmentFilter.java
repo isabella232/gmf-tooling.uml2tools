@@ -17,7 +17,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 
 public class MetaclassContainmentFilter {
-	private static final boolean DEBUG = Boolean.TRUE.booleanValue();
+	private static final boolean DEBUG = Boolean.FALSE.booleanValue();
 	private final EPackage myMetamodel;
 	private final EPackageRegistry myRegistry;
 	private final Map<EClass, Set<EClass>> myAncestorsOrSelfMap;
