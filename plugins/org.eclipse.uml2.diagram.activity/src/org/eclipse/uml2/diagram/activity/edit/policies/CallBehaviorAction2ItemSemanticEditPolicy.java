@@ -17,19 +17,19 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPostconditionC
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPostconditionReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionReorientCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CallAction_argument_InputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerReorientCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.InputPin4CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_argument_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -56,7 +56,7 @@ public class CallBehaviorAction2ItemSemanticEditPolicy extends UMLBaseItemSemant
 			return getGEFWrapper(new OutputPin3CreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3007 == req.getElementType()) {
-			return getGEFWrapper(new InputPin4CreateCommand(req));
+			return getGEFWrapper(new CallAction_argument_InputPinCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -87,7 +87,7 @@ public class CallBehaviorAction2ItemSemanticEditPolicy extends UMLBaseItemSemant
 			case OutputPin3EditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case InputPin4EditPart.VISUAL_ID:
+			case CallAction_argument_InputPinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

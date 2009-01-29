@@ -462,7 +462,7 @@
                id="org.eclipse.uml2.diagram.activity.InputPin_3004"
                name="%metatype.name.InputPin_3004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.InputPinEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AddStructuralFeatureValueAction_value_InputPinEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.InputPin_3003"/>
             <param name="semanticHint" value="3004"/>
          </specializationType>
@@ -472,7 +472,7 @@
                id="org.eclipse.uml2.diagram.activity.InputPin_3005"
                name="%metatype.name.InputPin_3005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.InputPin2EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AddStructuralFeatureValueAction_object_InputPinEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.InputPin_3003"/>
             <param name="semanticHint" value="3005"/>
          </specializationType>
@@ -502,7 +502,7 @@
                id="org.eclipse.uml2.diagram.activity.InputPin_3007"
                name="%metatype.name.InputPin_3007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.InputPin3EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.CallAction_argument_InputPinEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.InputPin_3003"/>
             <param name="semanticHint" value="3007"/>
          </specializationType>
@@ -1797,15 +1797,15 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_insertAt_InputPinEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InputPin2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_value_InputPinEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InputPin3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_object_InputPinEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -1817,7 +1817,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InputPin4EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallAction_argument_InputPinEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -1825,7 +1825,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InputPin5EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_target_InputPinEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -1897,7 +1897,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InputPin6EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InputPinEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -2001,7 +2001,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InputPin7EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_InputPinEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

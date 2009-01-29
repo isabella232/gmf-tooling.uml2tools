@@ -351,13 +351,13 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof InputPinEditPart) {
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_insertAt_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof InputPin2EditPart) {
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_value_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof InputPin3EditPart) {
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_object_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof CallBehaviorActionEditPart) {
@@ -366,13 +366,13 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		if (targetEditPart instanceof OutputPin3EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof InputPin4EditPart) {
+		if (targetEditPart instanceof CallAction_argument_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof InputPin5EditPart) {
+		if (targetEditPart instanceof CallOperationAction_target_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
@@ -426,7 +426,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		if (targetEditPart instanceof CentralBufferNode2EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof InputPin6EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof OutputPin4EditPart) {
@@ -495,7 +495,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		if (targetEditPart instanceof StructuredActivityNode4EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof InputPin7EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof OutputPin5EditPart) {
@@ -582,13 +582,13 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof InputPinEditPart) {
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_insertAt_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof InputPin2EditPart) {
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_value_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof InputPin3EditPart) {
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_object_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof CallBehaviorActionEditPart) {
@@ -597,13 +597,13 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		if (targetEditPart instanceof OutputPin3EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof InputPin4EditPart) {
+		if (targetEditPart instanceof CallAction_argument_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof InputPin5EditPart) {
+		if (targetEditPart instanceof CallOperationAction_target_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
@@ -657,7 +657,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		if (targetEditPart instanceof CentralBufferNode2EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof InputPin6EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof OutputPin4EditPart) {
@@ -726,7 +726,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		if (targetEditPart instanceof StructuredActivityNode4EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof InputPin7EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof OutputPin5EditPart) {
@@ -1732,9 +1732,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		if (isCanonicalEnabled()) {
-			handleFeatureLinkModification(event);
-		}
+		handleFeatureLinkModification(event);
 	}
 
 	/**
@@ -1822,7 +1820,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 	 */
 	private void handleFeatureLinkModification(Notification event) {
 		if (event.getFeature() == UMLPackage.eINSTANCE.getObjectNode_Selection()) {
-			refreshDiagram();
+			guardedRefreshDiagram();
 			return;
 		}
 	}
@@ -1830,18 +1828,23 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 	/**
 	 * @generated
 	 */
-	private boolean isCanonicalEnabled() {
+	private boolean isCanonicalDisabled() {
+		if (isCanonicalDisabled(getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
+		if (getParent() != null && isCanonicalDisabled(getParent().getEditPolicy(EditPolicyRoles.CANONICAL_ROLE))) {
+			return true;
+		}
 		//this particular edit part may not have editpolicy at all, 
 		//but its compartments still may have it
 		EObject semantic = resolveSemanticElement();
-		if (semantic == null) {
-			return false;
-		}
-		for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
-			if (next instanceof CanonicalEditPolicy) {
-				CanonicalEditPolicy nextPolicy = (CanonicalEditPolicy) next;
-				if (nextPolicy.isEnabled()) {
-					return true;
+		if (semantic != null) {
+			for (Object next : CanonicalEditPolicy.getRegisteredEditPolicies(semantic)) {
+				if (next instanceof EditPolicy) {
+					EditPolicy nextEP = (EditPolicy) next;
+					if (isCanonicalDisabled(nextEP)) {
+						return true;
+					}
 				}
 			}
 		}
@@ -1851,8 +1854,17 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 	/**
 	 * @generated
 	 */
-	public void refreshDiagram() {
-		UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+	private static boolean isCanonicalDisabled(EditPolicy editPolicy) {
+		return editPolicy instanceof CanonicalEditPolicy && !((CanonicalEditPolicy) editPolicy).isEnabled();
+	}
+
+	/**
+	 * @generated
+	 */
+	private void guardedRefreshDiagram() {
+		if (!isCanonicalDisabled()) {
+			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
+		}
 	}
 
 }

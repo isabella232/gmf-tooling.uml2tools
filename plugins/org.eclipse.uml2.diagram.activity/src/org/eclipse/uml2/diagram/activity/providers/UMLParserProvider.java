@@ -2869,17 +2869,17 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAddStructuralFeatureValueActionName_5026Parser();
 		case AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueActionQualifiedName_5097Parser();
-		case InputPinNameEditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_insertAt_InputPinNameEditPart.VISUAL_ID:
 			return getInputPinName_5006Parser();
-		case InputPinOrderingEditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_insertAt_InputPinOrderingEditPart.VISUAL_ID:
 			return getInputPinOrdering_5057Parser();
-		case InputPinName2EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_value_InputPinNameEditPart.VISUAL_ID:
 			return getInputPinName_5007Parser();
-		case InputPinOrdering2EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_value_InputPinOrderingEditPart.VISUAL_ID:
 			return getInputPinOrdering_5058Parser();
-		case InputPinName3EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_object_InputPinNameEditPart.VISUAL_ID:
 			return getInputPinName_5008Parser();
-		case InputPinOrdering3EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_object_InputPinOrderingEditPart.VISUAL_ID:
 			return getInputPinOrdering_5059Parser();
 		case CallBehaviorActionNameEditPart.VISUAL_ID:
 			return getCallBehaviorActionName_5027Parser();
@@ -2889,17 +2889,17 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOutputPinName_5010Parser();
 		case OutputPinOrdering3EditPart.VISUAL_ID:
 			return getOutputPinOrdering_5060Parser();
-		case InputPinName4EditPart.VISUAL_ID:
+		case CallAction_argument_InputPinNameEditPart.VISUAL_ID:
 			return getInputPinName_5011Parser();
-		case InputPinOrdering4EditPart.VISUAL_ID:
+		case CallAction_argument_InputPinOrderingEditPart.VISUAL_ID:
 			return getInputPinOrdering_5061Parser();
 		case CallOperationActionNameEditPart.VISUAL_ID:
 			return getCallOperationActionName_5028Parser();
 		case CallOperationActionStereotypeEditPart.VISUAL_ID:
 			return getCallOperationActionQualifiedName_5101Parser();
-		case InputPinName5EditPart.VISUAL_ID:
+		case CallOperationAction_target_InputPinNameEditPart.VISUAL_ID:
 			return getInputPinName_5013Parser();
-		case InputPinOrdering5EditPart.VISUAL_ID:
+		case CallOperationAction_target_InputPinOrderingEditPart.VISUAL_ID:
 			return getInputPinOrdering_5062Parser();
 		case StructuredActivityNodeNameEditPart.VISUAL_ID:
 			return getStructuredActivityNodeName_5090Parser();
@@ -2959,9 +2959,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCentralBufferNodeOrdering_5050Parser();
 		case CentralBufferNodeStereotype2EditPart.VISUAL_ID:
 			return getCentralBufferNodeQualifiedName_5125Parser();
-		case InputPinName6EditPart.VISUAL_ID:
+		case StructuredActivityNode_InputPinNameEditPart.VISUAL_ID:
 			return getInputPinName_5047Parser();
-		case InputPinOrdering6EditPart.VISUAL_ID:
+		case StructuredActivityNode_InputPinOrderingEditPart.VISUAL_ID:
 			return getInputPinOrdering_5063Parser();
 		case OutputPinName4EditPart.VISUAL_ID:
 			return getOutputPinName_5048Parser();
@@ -3035,9 +3035,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStructuredActivityNodeQualifiedName_5122Parser();
 		case StructuredActivityNodeStereotype4EditPart.VISUAL_ID:
 			return getStructuredActivityNodeQualifiedName_5121Parser();
-		case InputPinName7EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNode_InputPinNameEditPart.VISUAL_ID:
 			return getInputPinName_5081Parser();
-		case InputPinOrdering7EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNode_InputPinOrderingEditPart.VISUAL_ID:
 			return getInputPinOrdering_5082Parser();
 		case OutputPinName5EditPart.VISUAL_ID:
 			return getOutputPinName_5083Parser();

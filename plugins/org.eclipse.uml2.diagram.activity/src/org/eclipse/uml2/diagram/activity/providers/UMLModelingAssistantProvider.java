@@ -37,12 +37,17 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPar
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_insertAt_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_object_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_value_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_argument_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_target_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
@@ -73,13 +78,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin4EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin5EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin6EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin7EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
@@ -112,7 +110,9 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStruct
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_PinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart;
 import org.eclipse.uml2.diagram.activity.part.Messages;
@@ -651,14 +651,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof AddStructuralFeatureValueActionEditPart) {
 			return ((AddStructuralFeatureValueActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof InputPinEditPart) {
-			return ((InputPinEditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction_insertAt_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_insertAt_InputPinEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof InputPin2EditPart) {
-			return ((InputPin2EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction_value_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_value_InputPinEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof InputPin3EditPart) {
-			return ((InputPin3EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction_object_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_object_InputPinEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof CallBehaviorActionEditPart) {
 			return ((CallBehaviorActionEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -666,14 +666,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof OutputPin3EditPart) {
 			return ((OutputPin3EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof InputPin4EditPart) {
-			return ((InputPin4EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof CallAction_argument_InputPinEditPart) {
+			return ((CallAction_argument_InputPinEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof CallOperationActionEditPart) {
 			return ((CallOperationActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof InputPin5EditPart) {
-			return ((InputPin5EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof CallOperationAction_target_InputPinEditPart) {
+			return ((CallOperationAction_target_InputPinEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof StructuredActivityNodeEditPart) {
 			return ((StructuredActivityNodeEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -726,8 +726,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof CentralBufferNode2EditPart) {
 			return ((CentralBufferNode2EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof InputPin6EditPart) {
-			return ((InputPin6EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof StructuredActivityNode_InputPinEditPart) {
+			return ((StructuredActivityNode_InputPinEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof OutputPin4EditPart) {
 			return ((OutputPin4EditPart) sourceEditPart).getMARelTypesOnSource();
@@ -795,8 +795,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof StructuredActivityNode4EditPart) {
 			return ((StructuredActivityNode4EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof InputPin7EditPart) {
-			return ((InputPin7EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
+			return ((StructuredActivityNode_StructuredActivityNode_InputPinEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof OutputPin5EditPart) {
 			return ((OutputPin5EditPart) sourceEditPart).getMARelTypesOnSource();
@@ -899,14 +899,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
 			return ((AddStructuralFeatureValueActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof InputPinEditPart) {
-			return ((InputPinEditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_insertAt_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_insertAt_InputPinEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof InputPin2EditPart) {
-			return ((InputPin2EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_value_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_value_InputPinEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof InputPin3EditPart) {
-			return ((InputPin3EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_object_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_object_InputPinEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof CallBehaviorActionEditPart) {
 			return ((CallBehaviorActionEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -914,14 +914,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof OutputPin3EditPart) {
 			return ((OutputPin3EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof InputPin4EditPart) {
-			return ((InputPin4EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof CallAction_argument_InputPinEditPart) {
+			return ((CallAction_argument_InputPinEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof CallOperationActionEditPart) {
 			return ((CallOperationActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof InputPin5EditPart) {
-			return ((InputPin5EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof CallOperationAction_target_InputPinEditPart) {
+			return ((CallOperationAction_target_InputPinEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			return ((StructuredActivityNodeEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -974,8 +974,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof CentralBufferNode2EditPart) {
 			return ((CentralBufferNode2EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof InputPin6EditPart) {
-			return ((InputPin6EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof StructuredActivityNode_InputPinEditPart) {
+			return ((StructuredActivityNode_InputPinEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof OutputPin4EditPart) {
 			return ((OutputPin4EditPart) targetEditPart).getMARelTypesOnTarget();
@@ -1046,8 +1046,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof StructuredActivityNode4EditPart) {
 			return ((StructuredActivityNode4EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof InputPin7EditPart) {
-			return ((InputPin7EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
+			return ((StructuredActivityNode_StructuredActivityNode_InputPinEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof OutputPin5EditPart) {
 			return ((OutputPin5EditPart) targetEditPart).getMARelTypesOnTarget();
@@ -1142,14 +1142,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof AddStructuralFeatureValueActionEditPart) {
 			return ((AddStructuralFeatureValueActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof InputPinEditPart) {
-			return ((InputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction_insertAt_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_insertAt_InputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof InputPin2EditPart) {
-			return ((InputPin2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction_value_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_value_InputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof InputPin3EditPart) {
-			return ((InputPin3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction_object_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_object_InputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof CallBehaviorActionEditPart) {
 			return ((CallBehaviorActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1157,14 +1157,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof OutputPin3EditPart) {
 			return ((OutputPin3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof InputPin4EditPart) {
-			return ((InputPin4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof CallAction_argument_InputPinEditPart) {
+			return ((CallAction_argument_InputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof CallOperationActionEditPart) {
 			return ((CallOperationActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof InputPin5EditPart) {
-			return ((InputPin5EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof CallOperationAction_target_InputPinEditPart) {
+			return ((CallOperationAction_target_InputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof StructuredActivityNodeEditPart) {
 			return ((StructuredActivityNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1217,8 +1217,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof CentralBufferNode2EditPart) {
 			return ((CentralBufferNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof InputPin6EditPart) {
-			return ((InputPin6EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof StructuredActivityNode_InputPinEditPart) {
+			return ((StructuredActivityNode_InputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof OutputPin4EditPart) {
 			return ((OutputPin4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1286,8 +1286,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof StructuredActivityNode4EditPart) {
 			return ((StructuredActivityNode4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof InputPin7EditPart) {
-			return ((InputPin7EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
+			return ((StructuredActivityNode_StructuredActivityNode_InputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof OutputPin5EditPart) {
 			return ((OutputPin5EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1390,14 +1390,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
 			return ((AddStructuralFeatureValueActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof InputPinEditPart) {
-			return ((InputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_insertAt_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_insertAt_InputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof InputPin2EditPart) {
-			return ((InputPin2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_value_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_value_InputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof InputPin3EditPart) {
-			return ((InputPin3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof AddStructuralFeatureValueAction_object_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_object_InputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof CallBehaviorActionEditPart) {
 			return ((CallBehaviorActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -1405,14 +1405,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof OutputPin3EditPart) {
 			return ((OutputPin3EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof InputPin4EditPart) {
-			return ((InputPin4EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof CallAction_argument_InputPinEditPart) {
+			return ((CallAction_argument_InputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof CallOperationActionEditPart) {
 			return ((CallOperationActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof InputPin5EditPart) {
-			return ((InputPin5EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof CallOperationAction_target_InputPinEditPart) {
+			return ((CallOperationAction_target_InputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			return ((StructuredActivityNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -1465,8 +1465,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof CentralBufferNode2EditPart) {
 			return ((CentralBufferNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof InputPin6EditPart) {
-			return ((InputPin6EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof StructuredActivityNode_InputPinEditPart) {
+			return ((StructuredActivityNode_InputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof OutputPin4EditPart) {
 			return ((OutputPin4EditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -1537,8 +1537,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof StructuredActivityNode4EditPart) {
 			return ((StructuredActivityNode4EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof InputPin7EditPart) {
-			return ((InputPin7EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
+			return ((StructuredActivityNode_StructuredActivityNode_InputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof OutputPin5EditPart) {
 			return ((OutputPin5EditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -1632,14 +1632,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof AddStructuralFeatureValueActionEditPart) {
 			return ((AddStructuralFeatureValueActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof InputPinEditPart) {
-			return ((InputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction_insertAt_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_insertAt_InputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof InputPin2EditPart) {
-			return ((InputPin2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction_value_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_value_InputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof InputPin3EditPart) {
-			return ((InputPin3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof AddStructuralFeatureValueAction_object_InputPinEditPart) {
+			return ((AddStructuralFeatureValueAction_object_InputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof CallBehaviorActionEditPart) {
 			return ((CallBehaviorActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
@@ -1647,14 +1647,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof OutputPin3EditPart) {
 			return ((OutputPin3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof InputPin4EditPart) {
-			return ((InputPin4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof CallAction_argument_InputPinEditPart) {
+			return ((CallAction_argument_InputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof CallOperationActionEditPart) {
 			return ((CallOperationActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof InputPin5EditPart) {
-			return ((InputPin5EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof CallOperationAction_target_InputPinEditPart) {
+			return ((CallOperationAction_target_InputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof StructuredActivityNodeEditPart) {
 			return ((StructuredActivityNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
@@ -1707,8 +1707,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof CentralBufferNode2EditPart) {
 			return ((CentralBufferNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof InputPin6EditPart) {
-			return ((InputPin6EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof StructuredActivityNode_InputPinEditPart) {
+			return ((StructuredActivityNode_InputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof OutputPin4EditPart) {
 			return ((OutputPin4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
@@ -1776,8 +1776,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof StructuredActivityNode4EditPart) {
 			return ((StructuredActivityNode4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof InputPin7EditPart) {
-			return ((InputPin7EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
+			return ((StructuredActivityNode_StructuredActivityNode_InputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof OutputPin5EditPart) {
 			return ((OutputPin5EditPart) sourceEditPart).getMATypesForTarget(relationshipType);

@@ -332,21 +332,21 @@ public class UMLDiagramUpdater {
 		{
 			InputPin childElement = modelElement.getInsertAt();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPinEditPart.VISUAL_ID) {
+			if (visualID == AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			InputPin childElement = modelElement.getValue();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin2EditPart.VISUAL_ID) {
+			if (visualID == AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			InputPin childElement = modelElement.getObject();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin3EditPart.VISUAL_ID) {
+			if (visualID == AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
@@ -373,7 +373,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getArguments().iterator(); it.hasNext();) {
 			InputPin childElement = (InputPin) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin4EditPart.VISUAL_ID) {
+			if (visualID == CallAction_argument_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -401,7 +401,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getArguments().iterator(); it.hasNext();) {
 			InputPin childElement = (InputPin) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin4EditPart.VISUAL_ID) {
+			if (visualID == CallAction_argument_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -409,7 +409,7 @@ public class UMLDiagramUpdater {
 		{
 			InputPin childElement = modelElement.getTarget();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin5EditPart.VISUAL_ID) {
+			if (visualID == CallOperationAction_target_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
@@ -475,7 +475,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getArguments().iterator(); it.hasNext();) {
 			InputPin childElement = (InputPin) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin4EditPart.VISUAL_ID) {
+			if (visualID == CallAction_argument_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -503,7 +503,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getArguments().iterator(); it.hasNext();) {
 			InputPin childElement = (InputPin) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin4EditPart.VISUAL_ID) {
+			if (visualID == CallAction_argument_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -511,7 +511,7 @@ public class UMLDiagramUpdater {
 		{
 			InputPin childElement = modelElement.getTarget();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin5EditPart.VISUAL_ID) {
+			if (visualID == CallOperationAction_target_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
@@ -530,21 +530,21 @@ public class UMLDiagramUpdater {
 		{
 			InputPin childElement = modelElement.getInsertAt();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPinEditPart.VISUAL_ID) {
+			if (visualID == AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			InputPin childElement = modelElement.getValue();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin2EditPart.VISUAL_ID) {
+			if (visualID == AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			InputPin childElement = modelElement.getObject();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin3EditPart.VISUAL_ID) {
+			if (visualID == AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
@@ -834,21 +834,21 @@ public class UMLDiagramUpdater {
 		{
 			InputPin childElement = modelElement.getInsertAt();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPinEditPart.VISUAL_ID) {
+			if (visualID == AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			InputPin childElement = modelElement.getValue();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin2EditPart.VISUAL_ID) {
+			if (visualID == AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
 		{
 			InputPin childElement = modelElement.getObject();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin3EditPart.VISUAL_ID) {
+			if (visualID == AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
@@ -875,7 +875,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getArguments().iterator(); it.hasNext();) {
 			InputPin childElement = (InputPin) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin4EditPart.VISUAL_ID) {
+			if (visualID == CallAction_argument_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -903,7 +903,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getArguments().iterator(); it.hasNext();) {
 			InputPin childElement = (InputPin) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin4EditPart.VISUAL_ID) {
+			if (visualID == CallAction_argument_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -911,7 +911,7 @@ public class UMLDiagramUpdater {
 		{
 			InputPin childElement = modelElement.getTarget();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InputPin5EditPart.VISUAL_ID) {
+			if (visualID == CallOperationAction_target_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 			}
 		}
@@ -1056,7 +1056,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InputPin6EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1148,7 +1148,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InputPin6EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1240,7 +1240,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InputPin7EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1332,7 +1332,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InputPin7EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1424,7 +1424,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InputPin6EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1516,7 +1516,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InputPin6EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1608,7 +1608,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InputPin6EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1700,7 +1700,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InputPin6EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1792,7 +1792,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InputPin6EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1884,7 +1884,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InputPin6EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -2031,21 +2031,21 @@ public class UMLDiagramUpdater {
 			return getOutputPin_3002ContainedLinks(view);
 		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueAction_3043ContainedLinks(view);
-		case InputPinEditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3003ContainedLinks(view);
-		case InputPin2EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3004ContainedLinks(view);
-		case InputPin3EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3005ContainedLinks(view);
 		case CallBehaviorActionEditPart.VISUAL_ID:
 			return getCallBehaviorAction_3044ContainedLinks(view);
 		case OutputPin3EditPart.VISUAL_ID:
 			return getOutputPin_3006ContainedLinks(view);
-		case InputPin4EditPart.VISUAL_ID:
+		case CallAction_argument_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3007ContainedLinks(view);
 		case CallOperationActionEditPart.VISUAL_ID:
 			return getCallOperationAction_3045ContainedLinks(view);
-		case InputPin5EditPart.VISUAL_ID:
+		case CallOperationAction_target_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3008ContainedLinks(view);
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3046ContainedLinks(view);
@@ -2081,7 +2081,7 @@ public class UMLDiagramUpdater {
 			return getDataStoreNode_3024ContainedLinks(view);
 		case CentralBufferNode2EditPart.VISUAL_ID:
 			return getCentralBufferNode_3025ContainedLinks(view);
-		case InputPin6EditPart.VISUAL_ID:
+		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3054ContainedLinks(view);
 		case OutputPin4EditPart.VISUAL_ID:
 			return getOutputPin_3055ContainedLinks(view);
@@ -2133,7 +2133,7 @@ public class UMLDiagramUpdater {
 			return getStructuredActivityNode_3076ContainedLinks(view);
 		case StructuredActivityNode4EditPart.VISUAL_ID:
 			return getStructuredActivityNode_3079ContainedLinks(view);
-		case InputPin7EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3080ContainedLinks(view);
 		case OutputPin5EditPart.VISUAL_ID:
 			return getOutputPin_3081ContainedLinks(view);
@@ -2220,21 +2220,21 @@ public class UMLDiagramUpdater {
 			return getOutputPin_3002IncomingLinks(view);
 		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueAction_3043IncomingLinks(view);
-		case InputPinEditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3003IncomingLinks(view);
-		case InputPin2EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3004IncomingLinks(view);
-		case InputPin3EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3005IncomingLinks(view);
 		case CallBehaviorActionEditPart.VISUAL_ID:
 			return getCallBehaviorAction_3044IncomingLinks(view);
 		case OutputPin3EditPart.VISUAL_ID:
 			return getOutputPin_3006IncomingLinks(view);
-		case InputPin4EditPart.VISUAL_ID:
+		case CallAction_argument_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3007IncomingLinks(view);
 		case CallOperationActionEditPart.VISUAL_ID:
 			return getCallOperationAction_3045IncomingLinks(view);
-		case InputPin5EditPart.VISUAL_ID:
+		case CallOperationAction_target_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3008IncomingLinks(view);
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3046IncomingLinks(view);
@@ -2270,7 +2270,7 @@ public class UMLDiagramUpdater {
 			return getDataStoreNode_3024IncomingLinks(view);
 		case CentralBufferNode2EditPart.VISUAL_ID:
 			return getCentralBufferNode_3025IncomingLinks(view);
-		case InputPin6EditPart.VISUAL_ID:
+		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3054IncomingLinks(view);
 		case OutputPin4EditPart.VISUAL_ID:
 			return getOutputPin_3055IncomingLinks(view);
@@ -2322,7 +2322,7 @@ public class UMLDiagramUpdater {
 			return getStructuredActivityNode_3076IncomingLinks(view);
 		case StructuredActivityNode4EditPart.VISUAL_ID:
 			return getStructuredActivityNode_3079IncomingLinks(view);
-		case InputPin7EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3080IncomingLinks(view);
 		case OutputPin5EditPart.VISUAL_ID:
 			return getOutputPin_3081IncomingLinks(view);
@@ -2409,21 +2409,21 @@ public class UMLDiagramUpdater {
 			return getOutputPin_3002OutgoingLinks(view);
 		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueAction_3043OutgoingLinks(view);
-		case InputPinEditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3003OutgoingLinks(view);
-		case InputPin2EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3004OutgoingLinks(view);
-		case InputPin3EditPart.VISUAL_ID:
+		case AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3005OutgoingLinks(view);
 		case CallBehaviorActionEditPart.VISUAL_ID:
 			return getCallBehaviorAction_3044OutgoingLinks(view);
 		case OutputPin3EditPart.VISUAL_ID:
 			return getOutputPin_3006OutgoingLinks(view);
-		case InputPin4EditPart.VISUAL_ID:
+		case CallAction_argument_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3007OutgoingLinks(view);
 		case CallOperationActionEditPart.VISUAL_ID:
 			return getCallOperationAction_3045OutgoingLinks(view);
-		case InputPin5EditPart.VISUAL_ID:
+		case CallOperationAction_target_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3008OutgoingLinks(view);
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3046OutgoingLinks(view);
@@ -2459,7 +2459,7 @@ public class UMLDiagramUpdater {
 			return getDataStoreNode_3024OutgoingLinks(view);
 		case CentralBufferNode2EditPart.VISUAL_ID:
 			return getCentralBufferNode_3025OutgoingLinks(view);
-		case InputPin6EditPart.VISUAL_ID:
+		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3054OutgoingLinks(view);
 		case OutputPin4EditPart.VISUAL_ID:
 			return getOutputPin_3055OutgoingLinks(view);
@@ -2511,7 +2511,7 @@ public class UMLDiagramUpdater {
 			return getStructuredActivityNode_3076OutgoingLinks(view);
 		case StructuredActivityNode4EditPart.VISUAL_ID:
 			return getStructuredActivityNode_3079OutgoingLinks(view);
-		case InputPin7EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 			return getInputPin_3080OutgoingLinks(view);
 		case OutputPin5EditPart.VISUAL_ID:
 			return getOutputPin_3081OutgoingLinks(view);

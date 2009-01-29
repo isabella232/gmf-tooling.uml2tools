@@ -17,22 +17,22 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPostconditionC
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPostconditionReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionReorientCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueAction_insertAt_InputPinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueAction_object_InputPinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueAction_value_InputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerReorientCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.InputPin2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.InputPin3CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.InputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_insertAt_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_object_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_value_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPin3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -55,13 +55,13 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.InputPin_3003 == req.getElementType()) {
-			return getGEFWrapper(new InputPinCreateCommand(req));
+			return getGEFWrapper(new AddStructuralFeatureValueAction_insertAt_InputPinCreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3004 == req.getElementType()) {
-			return getGEFWrapper(new InputPin2CreateCommand(req));
+			return getGEFWrapper(new AddStructuralFeatureValueAction_value_InputPinCreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3005 == req.getElementType()) {
-			return getGEFWrapper(new InputPin3CreateCommand(req));
+			return getGEFWrapper(new AddStructuralFeatureValueAction_object_InputPinCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -89,13 +89,13 @@ public class AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBa
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case InputPinEditPart.VISUAL_ID:
+			case AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case InputPin2EditPart.VISUAL_ID:
+			case AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case InputPin3EditPart.VISUAL_ID:
+			case AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

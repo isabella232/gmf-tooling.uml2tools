@@ -111,14 +111,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case CreateObjectActionEditPart.VISUAL_ID:
 				case OutputPin2EditPart.VISUAL_ID:
 				case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
-				case InputPinEditPart.VISUAL_ID:
-				case InputPin2EditPart.VISUAL_ID:
-				case InputPin3EditPart.VISUAL_ID:
+				case AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID:
+				case AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID:
+				case AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID:
 				case CallBehaviorActionEditPart.VISUAL_ID:
 				case OutputPin3EditPart.VISUAL_ID:
-				case InputPin4EditPart.VISUAL_ID:
+				case CallAction_argument_InputPinEditPart.VISUAL_ID:
 				case CallOperationActionEditPart.VISUAL_ID:
-				case InputPin5EditPart.VISUAL_ID:
+				case CallOperationAction_target_InputPinEditPart.VISUAL_ID:
 				case StructuredActivityNodeEditPart.VISUAL_ID:
 				case StructuredActivityNode2EditPart.VISUAL_ID:
 				case OpaqueAction2EditPart.VISUAL_ID:
@@ -136,7 +136,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
 				case DataStoreNode2EditPart.VISUAL_ID:
 				case CentralBufferNode2EditPart.VISUAL_ID:
-				case InputPin6EditPart.VISUAL_ID:
+				case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 				case OutputPin4EditPart.VISUAL_ID:
 				case OpaqueBehaviorEditPart.VISUAL_ID:
 				case ActivityParameterNodeEditPart.VISUAL_ID:
@@ -162,7 +162,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case CallOperationAction3EditPart.VISUAL_ID:
 				case StructuredActivityNode3EditPart.VISUAL_ID:
 				case StructuredActivityNode4EditPart.VISUAL_ID:
-				case InputPin7EditPart.VISUAL_ID:
+				case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 				case OutputPin5EditPart.VISUAL_ID:
 				case SendSignalAction2EditPart.VISUAL_ID:
 				case LoopNode2EditPart.VISUAL_ID:
@@ -263,21 +263,21 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case InputPinNameEditPart.VISUAL_ID:
-				case InputPinOrderingEditPart.VISUAL_ID:
-					if (InputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case AddStructuralFeatureValueAction_insertAt_InputPinNameEditPart.VISUAL_ID:
+				case AddStructuralFeatureValueAction_insertAt_InputPinOrderingEditPart.VISUAL_ID:
+					if (AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
-				case InputPinName2EditPart.VISUAL_ID:
-				case InputPinOrdering2EditPart.VISUAL_ID:
-					if (InputPin2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case AddStructuralFeatureValueAction_value_InputPinNameEditPart.VISUAL_ID:
+				case AddStructuralFeatureValueAction_value_InputPinOrderingEditPart.VISUAL_ID:
+					if (AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
-				case InputPinName3EditPart.VISUAL_ID:
-				case InputPinOrdering3EditPart.VISUAL_ID:
-					if (InputPin3EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case AddStructuralFeatureValueAction_object_InputPinNameEditPart.VISUAL_ID:
+				case AddStructuralFeatureValueAction_object_InputPinOrderingEditPart.VISUAL_ID:
+					if (AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -293,9 +293,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case InputPinName4EditPart.VISUAL_ID:
-				case InputPinOrdering4EditPart.VISUAL_ID:
-					if (InputPin4EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case CallAction_argument_InputPinNameEditPart.VISUAL_ID:
+				case CallAction_argument_InputPinOrderingEditPart.VISUAL_ID:
+					if (CallAction_argument_InputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -305,9 +305,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case InputPinName5EditPart.VISUAL_ID:
-				case InputPinOrdering5EditPart.VISUAL_ID:
-					if (InputPin5EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case CallOperationAction_target_InputPinNameEditPart.VISUAL_ID:
+				case CallOperationAction_target_InputPinOrderingEditPart.VISUAL_ID:
+					if (CallOperationAction_target_InputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -390,9 +390,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case InputPinName6EditPart.VISUAL_ID:
-				case InputPinOrdering6EditPart.VISUAL_ID:
-					if (InputPin6EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case StructuredActivityNode_InputPinNameEditPart.VISUAL_ID:
+				case StructuredActivityNode_InputPinOrderingEditPart.VISUAL_ID:
+					if (StructuredActivityNode_InputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -506,9 +506,9 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case InputPinName7EditPart.VISUAL_ID:
-				case InputPinOrdering7EditPart.VISUAL_ID:
-					if (InputPin7EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case StructuredActivityNode_StructuredActivityNode_InputPinNameEditPart.VISUAL_ID:
+				case StructuredActivityNode_StructuredActivityNode_InputPinOrderingEditPart.VISUAL_ID:
+					if (StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -709,24 +709,24 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return AddStructuralFeatureValueActionNameViewFactory.class;
 		case AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID:
 			return AddStructuralFeatureValueActionStereotypeViewFactory.class;
-		case InputPinEditPart.VISUAL_ID:
-			return InputPinViewFactory.class;
-		case InputPinNameEditPart.VISUAL_ID:
-			return InputPinNameViewFactory.class;
-		case InputPinOrderingEditPart.VISUAL_ID:
-			return InputPinOrderingViewFactory.class;
-		case InputPin2EditPart.VISUAL_ID:
-			return InputPin2ViewFactory.class;
-		case InputPinName2EditPart.VISUAL_ID:
-			return InputPinName2ViewFactory.class;
-		case InputPinOrdering2EditPart.VISUAL_ID:
-			return InputPinOrdering2ViewFactory.class;
-		case InputPin3EditPart.VISUAL_ID:
-			return InputPin3ViewFactory.class;
-		case InputPinName3EditPart.VISUAL_ID:
-			return InputPinName3ViewFactory.class;
-		case InputPinOrdering3EditPart.VISUAL_ID:
-			return InputPinOrdering3ViewFactory.class;
+		case AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_insertAt_InputPinViewFactory.class;
+		case AddStructuralFeatureValueAction_insertAt_InputPinNameEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_insertAt_InputPinNameViewFactory.class;
+		case AddStructuralFeatureValueAction_insertAt_InputPinOrderingEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_insertAt_InputPinOrderingViewFactory.class;
+		case AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_value_InputPinViewFactory.class;
+		case AddStructuralFeatureValueAction_value_InputPinNameEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_value_InputPinNameViewFactory.class;
+		case AddStructuralFeatureValueAction_value_InputPinOrderingEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_value_InputPinOrderingViewFactory.class;
+		case AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_object_InputPinViewFactory.class;
+		case AddStructuralFeatureValueAction_object_InputPinNameEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_object_InputPinNameViewFactory.class;
+		case AddStructuralFeatureValueAction_object_InputPinOrderingEditPart.VISUAL_ID:
+			return AddStructuralFeatureValueAction_object_InputPinOrderingViewFactory.class;
 		case CallBehaviorActionEditPart.VISUAL_ID:
 			return CallBehaviorActionViewFactory.class;
 		case CallBehaviorActionNameEditPart.VISUAL_ID:
@@ -739,24 +739,24 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return OutputPinName3ViewFactory.class;
 		case OutputPinOrdering3EditPart.VISUAL_ID:
 			return OutputPinOrdering3ViewFactory.class;
-		case InputPin4EditPart.VISUAL_ID:
-			return InputPin4ViewFactory.class;
-		case InputPinName4EditPart.VISUAL_ID:
-			return InputPinName4ViewFactory.class;
-		case InputPinOrdering4EditPart.VISUAL_ID:
-			return InputPinOrdering4ViewFactory.class;
+		case CallAction_argument_InputPinEditPart.VISUAL_ID:
+			return CallAction_argument_InputPinViewFactory.class;
+		case CallAction_argument_InputPinNameEditPart.VISUAL_ID:
+			return CallAction_argument_InputPinNameViewFactory.class;
+		case CallAction_argument_InputPinOrderingEditPart.VISUAL_ID:
+			return CallAction_argument_InputPinOrderingViewFactory.class;
 		case CallOperationActionEditPart.VISUAL_ID:
 			return CallOperationActionViewFactory.class;
 		case CallOperationActionNameEditPart.VISUAL_ID:
 			return CallOperationActionNameViewFactory.class;
 		case CallOperationActionStereotypeEditPart.VISUAL_ID:
 			return CallOperationActionStereotypeViewFactory.class;
-		case InputPin5EditPart.VISUAL_ID:
-			return InputPin5ViewFactory.class;
-		case InputPinName5EditPart.VISUAL_ID:
-			return InputPinName5ViewFactory.class;
-		case InputPinOrdering5EditPart.VISUAL_ID:
-			return InputPinOrdering5ViewFactory.class;
+		case CallOperationAction_target_InputPinEditPart.VISUAL_ID:
+			return CallOperationAction_target_InputPinViewFactory.class;
+		case CallOperationAction_target_InputPinNameEditPart.VISUAL_ID:
+			return CallOperationAction_target_InputPinNameViewFactory.class;
+		case CallOperationAction_target_InputPinOrderingEditPart.VISUAL_ID:
+			return CallOperationAction_target_InputPinOrderingViewFactory.class;
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return StructuredActivityNodeViewFactory.class;
 		case StructuredActivityNodeNameEditPart.VISUAL_ID:
@@ -849,12 +849,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return CentralBufferNodeOrdering2ViewFactory.class;
 		case CentralBufferNodeStereotype2EditPart.VISUAL_ID:
 			return CentralBufferNodeStereotype2ViewFactory.class;
-		case InputPin6EditPart.VISUAL_ID:
-			return InputPin6ViewFactory.class;
-		case InputPinName6EditPart.VISUAL_ID:
-			return InputPinName6ViewFactory.class;
-		case InputPinOrdering6EditPart.VISUAL_ID:
-			return InputPinOrdering6ViewFactory.class;
+		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
+			return StructuredActivityNode_InputPinViewFactory.class;
+		case StructuredActivityNode_InputPinNameEditPart.VISUAL_ID:
+			return StructuredActivityNode_InputPinNameViewFactory.class;
+		case StructuredActivityNode_InputPinOrderingEditPart.VISUAL_ID:
+			return StructuredActivityNode_InputPinOrderingViewFactory.class;
 		case OutputPin4EditPart.VISUAL_ID:
 			return OutputPin4ViewFactory.class;
 		case OutputPinName4EditPart.VISUAL_ID:
@@ -977,12 +977,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return StructuredActivityNode4ViewFactory.class;
 		case StructuredActivityNodeStereotype4EditPart.VISUAL_ID:
 			return StructuredActivityNodeStereotype4ViewFactory.class;
-		case InputPin7EditPart.VISUAL_ID:
-			return InputPin7ViewFactory.class;
-		case InputPinName7EditPart.VISUAL_ID:
-			return InputPinName7ViewFactory.class;
-		case InputPinOrdering7EditPart.VISUAL_ID:
-			return InputPinOrdering7ViewFactory.class;
+		case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
+			return StructuredActivityNode_StructuredActivityNode_InputPinViewFactory.class;
+		case StructuredActivityNode_StructuredActivityNode_InputPinNameEditPart.VISUAL_ID:
+			return StructuredActivityNode_StructuredActivityNode_InputPinNameViewFactory.class;
+		case StructuredActivityNode_StructuredActivityNode_InputPinOrderingEditPart.VISUAL_ID:
+			return StructuredActivityNode_StructuredActivityNode_InputPinOrderingViewFactory.class;
 		case OutputPin5EditPart.VISUAL_ID:
 			return OutputPin5ViewFactory.class;
 		case OutputPinName5EditPart.VISUAL_ID:
