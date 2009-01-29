@@ -966,12 +966,12 @@
     </childNodes>
     <childNodes
         visualID="3010"
-        editPartClassName="СhoicePseudostateEditPart"
-        itemSemanticEditPolicyClassName="СhoicePseudostateItemSemanticEditPolicy"
-        notationViewFactoryClassName="СhoicePseudostateViewFactory"
-        canonicalEditPolicyClassName="СhoicePseudostateCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="СhoicePseudostateGraphicalNodeEditPolicy"
-        createCommandClassName="СhoicePseudostateCreateCommand"
+        editPartClassName="ChoicePseudostateEditPart"
+        itemSemanticEditPolicyClassName="ChoicePseudostateItemSemanticEditPolicy"
+        notationViewFactoryClassName="ChoicePseudostateViewFactory"
+        canonicalEditPolicyClassName="ChoicePseudostateCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ChoicePseudostateGraphicalNodeEditPolicy"
+        createCommandClassName="ChoicePseudostateCreateCommand"
         containers="//@diagram/@compartments.4 //@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -979,7 +979,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Choice Pseudostate"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="СhoicePseudostateEditHelperAdvice"/>
+          editHelperAdviceClassName="ChoicePseudostateEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ScalableRhombFigure"
