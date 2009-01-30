@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.sequence.edit.commands;
 
+import java.text.MessageFormat;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -10,15 +11,27 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.NotationFactory;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateLinkCommand;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateLinkParameters;
 import org.eclipse.uml2.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
+import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle;
+import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
+import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
-import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Gate;
@@ -53,7 +66,7 @@ public class MessageCreateCommand extends EditElementCommand {
 	private final Interaction container;
 
 	/**
-	 * @generated
+	 * @generated 
 	 */
 	public MessageCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
@@ -175,23 +188,26 @@ public class MessageCreateCommand extends EditElementCommand {
 		MessageEnd domainSource;
 		MessageEnd domainTarget;
 
+		BehaviorExecutionSpecification sourceInvocation = null;
+		BehaviorExecutionSpecification targetExecution = null;
+
 		if (diagramSource instanceof Gate && diagramTarget instanceof Lifeline) {
 			domainSource = (Gate) diagramSource;
-			BehaviorExecutionSpecification targetExecution = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramTarget, count, false);
+			targetExecution = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramTarget, count, false);
 			domainTarget = (MessageOccurrenceSpecification) targetExecution.getStart();
 		} else if (diagramTarget instanceof Gate && diagramSource instanceof Lifeline) {
 			domainTarget = (Gate) diagramTarget;
-			BehaviorExecutionSpecification sourceInvocation = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramSource, count, true);
+			sourceInvocation = createBehaviorExecutionSpecification(interaction, (Lifeline) diagramSource, count, true);
 			domainSource = (MessageOccurrenceSpecification) sourceInvocation.getStart();
 		} else if (diagramTarget instanceof Lifeline && diagramSource instanceof Lifeline) {
 			Lifeline sourceLL = (Lifeline) diagramSource;
 			Lifeline targetLL = (Lifeline) diagramTarget;
 			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count);
-			BehaviorExecutionSpecification invocation = pair[0];
-			BehaviorExecutionSpecification execution = pair[1];
+			sourceInvocation = pair[0];
+			targetExecution = pair[1];
 
-			domainSource = (MessageOccurrenceSpecification) invocation.getStart();
-			domainTarget = (MessageOccurrenceSpecification) execution.getStart();
+			domainSource = (MessageOccurrenceSpecification) sourceInvocation.getStart();
+			domainTarget = (MessageOccurrenceSpecification) targetExecution.getStart();
 		} else {
 			throw new UnsupportedOperationException("Message between this elements can't be created: from: " + getSource() + " to: " + getTarget());
 		}
@@ -210,7 +226,68 @@ public class MessageCreateCommand extends EditElementCommand {
 		ElementInitializers.init_Message_4001(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
+
+		createAdditionalViews(sourceInvocation, targetExecution, newElement);
+
 		return CommandResult.newOKCommandResult(newElement);
+	}
+	
+	private View createBehaviorExecutionView(U2TCreateLinkParameters createLinkParameters, EObject behaviorExecution){
+		View sourceView = createLinkParameters.getParentView();
+		int visualID = UMLVisualIDRegistry.getNodeVisualID(sourceView, behaviorExecution);
+		Node result = ViewService.getInstance().createNode(//
+				new EObjectAdapter(behaviorExecution), sourceView, 
+				UMLVisualIDRegistry.getType(visualID), 
+				ViewUtil.APPEND, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+		
+		if (createLinkParameters.getRelativeLocation() != null){
+			if (result.getLayoutConstraint() == null){
+				result.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+			}
+			ViewUtil.setStructuralFeatureValue(result, NotationPackage.eINSTANCE.getLocation_Y(), Integer.valueOf(createLinkParameters.getRelativeLocation().y));
+			ViewUtil.setStructuralFeatureValue(result, NotationPackage.eINSTANCE.getLocation_X(), Integer.valueOf(0));
+		}
+		
+		return result;
+	}
+
+	private void createAdditionalViews(BehaviorExecutionSpecification sourceInvocation, BehaviorExecutionSpecification targetExecution, Message message) {
+		if (message == null){
+			return;
+		}
+		U2TCreateLinkCommand linkCreationPack = U2TCreateLinkCommand.getFromRequest(getRequest()) ;
+		if (linkCreationPack == null || linkCreationPack.getSourceParameters() == null || linkCreationPack.getTargetParameters() == null){
+			return;
+		}
+		
+		SDModelStorageStyle sdModelAccessor = SDModelAccess.findSDModelAccessor(linkCreationPack.getSourceParameters().getParentView());
+		if (sdModelAccessor != null){
+			sdModelAccessor.invalidateModel();
+		}
+		
+		assert sourceInvocation == null || message.getSendEvent() == sourceInvocation.getStart();
+		assert targetExecution == null || message.getReceiveEvent() == targetExecution.getStart();
+		
+		if (sourceInvocation != null){
+			if (message.getSendEvent() != sourceInvocation.getStart()){
+				throw new IllegalStateException(MessageFormat.format(//
+						"Invocation: {0}, \n start: {1}, message: {2}, sendEvent {3}", //
+						new Object[] {sourceInvocation, sourceInvocation.getStart(), message, message.getSendEvent()}));
+			}
+			View invocationView = createBehaviorExecutionView(linkCreationPack.getSourceParameters(), sourceInvocation);
+			linkCreationPack.getSetConnectionEndsCommand().setNewSourceAdaptor(new EObjectAdapter(invocationView));
+		}
+		
+		if (targetExecution != null){
+			if (message.getReceiveEvent() != targetExecution.getStart()){
+				throw new IllegalStateException(MessageFormat.format(//
+						"Execution: {0}, \n start: {1}, message: {2}, receiveEvent {3}", //
+						new Object[] {targetExecution, targetExecution.getStart(), message, message.getReceiveEvent()}));
+				
+			}
+			View executionView = createBehaviorExecutionView(linkCreationPack.getTargetParameters(), targetExecution);
+			linkCreationPack.getSetConnectionEndsCommand().setNewTargetAdaptor(new EObjectAdapter(executionView));
+		}
 	}
 
 	/**
