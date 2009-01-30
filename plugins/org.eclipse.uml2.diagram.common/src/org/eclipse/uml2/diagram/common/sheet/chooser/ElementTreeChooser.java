@@ -80,8 +80,8 @@ public class ElementTreeChooser implements ElementChooserPage {
 			//false -- for now always ignore template-related containments, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=261691#c3
 			myTreeViewer.addFilter(new UMLContainmentFilter((EReference)myFeature, false));  
 		}
-		myTreeViewer.expandToLevel(root.getCurrentResourceRoot(), 20);
-		myTreeViewer.expandToLevel(root.getLoadedResourcesRoot(), 20);
+		myTreeViewer.expandToLevel(root.getCurrentResourceRoot(), 1);
+		myTreeViewer.expandToLevel(root.getLoadedResourcesRoot(), 1);
 		return composite;
 	}
 
