@@ -23,13 +23,13 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerCreateCom
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.OutputPinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueAction_OutputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
@@ -51,7 +51,7 @@ public class OpaqueAction2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.OutputPin_3001 == req.getElementType()) {
-			return getGEFWrapper(new OutputPinCreateCommand(req));
+			return getGEFWrapper(new OpaqueAction_OutputPinCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -79,7 +79,7 @@ public class OpaqueAction2ItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case OutputPinEditPart.VISUAL_ID:
+			case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

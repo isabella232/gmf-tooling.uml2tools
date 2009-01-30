@@ -17,23 +17,23 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPostconditionC
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPostconditionReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionReorientCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.CallAction_argument_InputPinCreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.CallOperationAction_target_InputPinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CallAction_InputPinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CallAction_OutputPinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CallOperationAction_InputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_argument_InputPinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_target_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_OutputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
@@ -55,13 +55,13 @@ public class CallOperationAction3ItemSemanticEditPolicy extends UMLBaseItemSeman
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.OutputPin_3006 == req.getElementType()) {
-			return getGEFWrapper(new OutputPin3CreateCommand(req));
+			return getGEFWrapper(new CallAction_OutputPinCreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3007 == req.getElementType()) {
-			return getGEFWrapper(new CallAction_argument_InputPinCreateCommand(req));
+			return getGEFWrapper(new CallAction_InputPinCreateCommand(req));
 		}
 		if (UMLElementTypes.InputPin_3008 == req.getElementType()) {
-			return getGEFWrapper(new CallOperationAction_target_InputPinCreateCommand(req));
+			return getGEFWrapper(new CallOperationAction_InputPinCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -89,13 +89,13 @@ public class CallOperationAction3ItemSemanticEditPolicy extends UMLBaseItemSeman
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case OutputPin3EditPart.VISUAL_ID:
+			case CallAction_OutputPinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case CallAction_argument_InputPinEditPart.VISUAL_ID:
+			case CallAction_InputPinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case CallOperationAction_target_InputPinEditPart.VISUAL_ID:
+			case CallOperationAction_InputPinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

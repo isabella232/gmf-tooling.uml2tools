@@ -16,10 +16,10 @@ import org.eclipse.uml2.diagram.activity.edit.commands.FlowFinalNode2CreateComma
 import org.eclipse.uml2.diagram.activity.edit.commands.ForkNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.JoinNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.OpaqueAction2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin5CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode4CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_PinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_StructuredActivityNode_InputPinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_StructuredActivityNode_OutputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
 /**
@@ -91,7 +91,7 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment4Item
 			return getGEFWrapper(new StructuredActivityNode_StructuredActivityNode_InputPinCreateCommand(req));
 		}
 		if (UMLElementTypes.OutputPin_3081 == req.getElementType()) {
-			return getGEFWrapper(new OutputPin5CreateCommand(req));
+			return getGEFWrapper(new StructuredActivityNode_StructuredActivityNode_OutputPinCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

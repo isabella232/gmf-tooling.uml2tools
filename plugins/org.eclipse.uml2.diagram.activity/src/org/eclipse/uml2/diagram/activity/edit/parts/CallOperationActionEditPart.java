@@ -121,9 +121,9 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
-				case OutputPin3EditPart.VISUAL_ID:
-				case CallAction_argument_InputPinEditPart.VISUAL_ID:
-				case CallOperationAction_target_InputPinEditPart.VISUAL_ID:
+				case CallAction_OutputPinEditPart.VISUAL_ID:
+				case CallAction_InputPinEditPart.VISUAL_ID:
+				case CallOperationAction_InputPinEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -171,19 +171,19 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 			((CallOperationActionStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActionBaseFigure_stereo());
 			return true;
 		}
-		if (childEditPart instanceof OutputPin3EditPart) {
+		if (childEditPart instanceof CallAction_OutputPinEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
-			getBorderedFigure().getBorderItemContainer().add(((OutputPin3EditPart) childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((CallAction_OutputPinEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof CallAction_argument_InputPinEditPart) {
+		if (childEditPart instanceof CallAction_InputPinEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
-			getBorderedFigure().getBorderItemContainer().add(((CallAction_argument_InputPinEditPart) childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((CallAction_InputPinEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof CallOperationAction_target_InputPinEditPart) {
+		if (childEditPart instanceof CallOperationAction_InputPinEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
-			getBorderedFigure().getBorderItemContainer().add(((CallOperationAction_target_InputPinEditPart) childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((CallOperationAction_InputPinEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return false;
@@ -194,16 +194,16 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof OutputPin3EditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((OutputPin3EditPart) childEditPart).getFigure());
+		if (childEditPart instanceof CallAction_OutputPinEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((CallAction_OutputPinEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof CallAction_argument_InputPinEditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((CallAction_argument_InputPinEditPart) childEditPart).getFigure());
+		if (childEditPart instanceof CallAction_InputPinEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((CallAction_InputPinEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if (childEditPart instanceof CallOperationAction_target_InputPinEditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((CallOperationAction_target_InputPinEditPart) childEditPart).getFigure());
+		if (childEditPart instanceof CallOperationAction_InputPinEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((CallOperationAction_InputPinEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -377,7 +377,7 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 		if (targetEditPart instanceof OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPinEditPart) {
+		if (targetEditPart instanceof OpaqueAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof FlowFinalNodeEditPart) {
@@ -395,7 +395,7 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 		if (targetEditPart instanceof CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin2EditPart) {
+		if (targetEditPart instanceof CreateObjectAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
@@ -413,16 +413,16 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 		if (targetEditPart instanceof CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin3EditPart) {
+		if (targetEditPart instanceof CallAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CallAction_argument_InputPinEditPart) {
+		if (targetEditPart instanceof CallAction_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CallOperationAction_target_InputPinEditPart) {
+		if (targetEditPart instanceof CallOperationAction_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
@@ -479,7 +479,7 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 		if (targetEditPart instanceof StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin4EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -548,7 +548,7 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin5EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof SendSignalAction2EditPart) {
@@ -608,7 +608,7 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 		if (targetEditPart instanceof OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPinEditPart) {
+		if (targetEditPart instanceof OpaqueAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof FlowFinalNodeEditPart) {
@@ -626,7 +626,7 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 		if (targetEditPart instanceof CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin2EditPart) {
+		if (targetEditPart instanceof CreateObjectAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
@@ -644,16 +644,16 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 		if (targetEditPart instanceof CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin3EditPart) {
+		if (targetEditPart instanceof CallAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CallAction_argument_InputPinEditPart) {
+		if (targetEditPart instanceof CallAction_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CallOperationAction_target_InputPinEditPart) {
+		if (targetEditPart instanceof CallOperationAction_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
@@ -710,7 +710,7 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 		if (targetEditPart instanceof StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin4EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -779,7 +779,7 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin5EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof SendSignalAction2EditPart) {

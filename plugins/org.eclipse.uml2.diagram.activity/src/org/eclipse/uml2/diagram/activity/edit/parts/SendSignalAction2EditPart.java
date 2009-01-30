@@ -332,7 +332,7 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPinEditPart) {
+		if (targetEditPart instanceof OpaqueAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof FlowFinalNodeEditPart) {
@@ -350,7 +350,7 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin2EditPart) {
+		if (targetEditPart instanceof CreateObjectAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
@@ -368,16 +368,16 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin3EditPart) {
+		if (targetEditPart instanceof CallAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CallAction_argument_InputPinEditPart) {
+		if (targetEditPart instanceof CallAction_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CallOperationAction_target_InputPinEditPart) {
+		if (targetEditPart instanceof CallOperationAction_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
@@ -434,7 +434,7 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin4EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -503,7 +503,7 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin5EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.SendSignalAction2EditPart) {
@@ -563,7 +563,7 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPinEditPart) {
+		if (targetEditPart instanceof OpaqueAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof FlowFinalNodeEditPart) {
@@ -581,7 +581,7 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin2EditPart) {
+		if (targetEditPart instanceof CreateObjectAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
@@ -599,16 +599,16 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin3EditPart) {
+		if (targetEditPart instanceof CallAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CallAction_argument_InputPinEditPart) {
+		if (targetEditPart instanceof CallAction_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CallOperationAction_target_InputPinEditPart) {
+		if (targetEditPart instanceof CallOperationAction_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
@@ -665,7 +665,7 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin4EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -734,7 +734,7 @@ public class SendSignalAction2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin5EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.SendSignalAction2EditPart) {

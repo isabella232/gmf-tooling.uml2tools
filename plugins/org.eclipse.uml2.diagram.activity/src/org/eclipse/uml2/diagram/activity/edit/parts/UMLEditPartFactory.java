@@ -115,14 +115,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case OpaqueActionStereotypeEditPart.VISUAL_ID:
 				return new OpaqueActionStereotypeEditPart(view);
 
-			case OutputPinEditPart.VISUAL_ID:
-				return new OutputPinEditPart(view);
+			case OpaqueAction_OutputPinEditPart.VISUAL_ID:
+				return new OpaqueAction_OutputPinEditPart(view);
 
-			case OutputPinNameEditPart.VISUAL_ID:
-				return new OutputPinNameEditPart(view);
+			case OpaqueAction_OutputPinNameEditPart.VISUAL_ID:
+				return new OpaqueAction_OutputPinNameEditPart(view);
 
-			case OutputPinOrderingEditPart.VISUAL_ID:
-				return new OutputPinOrderingEditPart(view);
+			case OpaqueAction_OutputPinOrderingEditPart.VISUAL_ID:
+				return new OpaqueAction_OutputPinOrderingEditPart(view);
 
 			case FlowFinalNodeEditPart.VISUAL_ID:
 				return new FlowFinalNodeEditPart(view);
@@ -157,14 +157,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case CreateObjectActionStereotypeEditPart.VISUAL_ID:
 				return new CreateObjectActionStereotypeEditPart(view);
 
-			case OutputPin2EditPart.VISUAL_ID:
-				return new OutputPin2EditPart(view);
+			case CreateObjectAction_OutputPinEditPart.VISUAL_ID:
+				return new CreateObjectAction_OutputPinEditPart(view);
 
-			case OutputPinName2EditPart.VISUAL_ID:
-				return new OutputPinName2EditPart(view);
+			case CreateObjectAction_OutputPinNameEditPart.VISUAL_ID:
+				return new CreateObjectAction_OutputPinNameEditPart(view);
 
-			case OutputPinOrdering2EditPart.VISUAL_ID:
-				return new OutputPinOrdering2EditPart(view);
+			case CreateObjectAction_OutputPinOrderingEditPart.VISUAL_ID:
+				return new CreateObjectAction_OutputPinOrderingEditPart(view);
 
 			case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 				return new AddStructuralFeatureValueActionEditPart(view);
@@ -211,23 +211,23 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case CallBehaviorActionStereotypeEditPart.VISUAL_ID:
 				return new CallBehaviorActionStereotypeEditPart(view);
 
-			case OutputPin3EditPart.VISUAL_ID:
-				return new OutputPin3EditPart(view);
+			case CallAction_OutputPinEditPart.VISUAL_ID:
+				return new CallAction_OutputPinEditPart(view);
 
-			case OutputPinName3EditPart.VISUAL_ID:
-				return new OutputPinName3EditPart(view);
+			case CallAction_OutputPinNameEditPart.VISUAL_ID:
+				return new CallAction_OutputPinNameEditPart(view);
 
-			case OutputPinOrdering3EditPart.VISUAL_ID:
-				return new OutputPinOrdering3EditPart(view);
+			case CallAction_OutputPinOrderingEditPart.VISUAL_ID:
+				return new CallAction_OutputPinOrderingEditPart(view);
 
-			case CallAction_argument_InputPinEditPart.VISUAL_ID:
-				return new CallAction_argument_InputPinEditPart(view);
+			case CallAction_InputPinEditPart.VISUAL_ID:
+				return new CallAction_InputPinEditPart(view);
 
-			case CallAction_argument_InputPinNameEditPart.VISUAL_ID:
-				return new CallAction_argument_InputPinNameEditPart(view);
+			case CallAction_InputPinNameEditPart.VISUAL_ID:
+				return new CallAction_InputPinNameEditPart(view);
 
-			case CallAction_argument_InputPinOrderingEditPart.VISUAL_ID:
-				return new CallAction_argument_InputPinOrderingEditPart(view);
+			case CallAction_InputPinOrderingEditPart.VISUAL_ID:
+				return new CallAction_InputPinOrderingEditPart(view);
 
 			case CallOperationActionEditPart.VISUAL_ID:
 				return new CallOperationActionEditPart(view);
@@ -238,14 +238,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case CallOperationActionStereotypeEditPart.VISUAL_ID:
 				return new CallOperationActionStereotypeEditPart(view);
 
-			case CallOperationAction_target_InputPinEditPart.VISUAL_ID:
-				return new CallOperationAction_target_InputPinEditPart(view);
+			case CallOperationAction_InputPinEditPart.VISUAL_ID:
+				return new CallOperationAction_InputPinEditPart(view);
 
-			case CallOperationAction_target_InputPinNameEditPart.VISUAL_ID:
-				return new CallOperationAction_target_InputPinNameEditPart(view);
+			case CallOperationAction_InputPinNameEditPart.VISUAL_ID:
+				return new CallOperationAction_InputPinNameEditPart(view);
 
-			case CallOperationAction_target_InputPinOrderingEditPart.VISUAL_ID:
-				return new CallOperationAction_target_InputPinOrderingEditPart(view);
+			case CallOperationAction_InputPinOrderingEditPart.VISUAL_ID:
+				return new CallOperationAction_InputPinOrderingEditPart(view);
 
 			case StructuredActivityNodeEditPart.VISUAL_ID:
 				return new StructuredActivityNodeEditPart(view);
@@ -394,14 +394,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNode_InputPinOrderingEditPart.VISUAL_ID:
 				return new StructuredActivityNode_InputPinOrderingEditPart(view);
 
-			case OutputPin4EditPart.VISUAL_ID:
-				return new OutputPin4EditPart(view);
+			case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
+				return new StructuredActivityNode_OutputPinEditPart(view);
 
-			case OutputPinName4EditPart.VISUAL_ID:
-				return new OutputPinName4EditPart(view);
+			case StructuredActivityNode_OutputPinNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_OutputPinNameEditPart(view);
 
-			case OutputPinOrdering4EditPart.VISUAL_ID:
-				return new OutputPinOrdering4EditPart(view);
+			case StructuredActivityNode_OutputPinOrderingEditPart.VISUAL_ID:
+				return new StructuredActivityNode_OutputPinOrderingEditPart(view);
 
 			case OpaqueBehaviorEditPart.VISUAL_ID:
 				return new OpaqueBehaviorEditPart(view);
@@ -586,14 +586,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNode_StructuredActivityNode_InputPinOrderingEditPart.VISUAL_ID:
 				return new StructuredActivityNode_StructuredActivityNode_InputPinOrderingEditPart(view);
 
-			case OutputPin5EditPart.VISUAL_ID:
-				return new OutputPin5EditPart(view);
+			case StructuredActivityNode_StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
+				return new StructuredActivityNode_StructuredActivityNode_OutputPinEditPart(view);
 
-			case OutputPinName5EditPart.VISUAL_ID:
-				return new OutputPinName5EditPart(view);
+			case StructuredActivityNode_StructuredActivityNode_OutputPinNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_StructuredActivityNode_OutputPinNameEditPart(view);
 
-			case OutputPinOrdering5EditPart.VISUAL_ID:
-				return new OutputPinOrdering5EditPart(view);
+			case StructuredActivityNode_StructuredActivityNode_OutputPinOrderingEditPart.VISUAL_ID:
+				return new StructuredActivityNode_StructuredActivityNode_OutputPinOrderingEditPart(view);
 
 			case SendSignalAction2EditPart.VISUAL_ID:
 				return new SendSignalAction2EditPart(view);

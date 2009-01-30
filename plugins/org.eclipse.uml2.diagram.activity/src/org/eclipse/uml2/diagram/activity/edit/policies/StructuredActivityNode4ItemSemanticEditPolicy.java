@@ -41,11 +41,11 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
@@ -140,7 +140,7 @@ public class StructuredActivityNode4ItemSemanticEditPolicy extends UMLBaseItemSe
 					case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case OutputPin5EditPart.VISUAL_ID:
+					case StructuredActivityNode_StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

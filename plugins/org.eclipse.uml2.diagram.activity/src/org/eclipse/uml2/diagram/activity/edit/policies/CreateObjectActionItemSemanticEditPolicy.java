@@ -19,17 +19,17 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionCr
 import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowReorientCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CreateObjectAction_OutputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
@@ -51,7 +51,7 @@ public class CreateObjectActionItemSemanticEditPolicy extends UMLBaseItemSemanti
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.OutputPin_3002 == req.getElementType()) {
-			return getGEFWrapper(new OutputPin2CreateCommand(req));
+			return getGEFWrapper(new CreateObjectAction_OutputPinCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -79,7 +79,7 @@ public class CreateObjectActionItemSemanticEditPolicy extends UMLBaseItemSemanti
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case OutputPin2EditPart.VISUAL_ID:
+			case CreateObjectAction_OutputPinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

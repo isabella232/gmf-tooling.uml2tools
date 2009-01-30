@@ -650,12 +650,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3001"
-        editPartClassName="OutputPinEditPart"
-        itemSemanticEditPolicyClassName="OutputPinItemSemanticEditPolicy"
-        notationViewFactoryClassName="OutputPinViewFactory"
-        canonicalEditPolicyClassName="OutputPinCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="OutputPinGraphicalNodeEditPolicy"
-        createCommandClassName="OutputPinCreateCommand"
+        editPartClassName="OpaqueAction_OutputPinEditPart"
+        itemSemanticEditPolicyClassName="OpaqueAction_OutputPinItemSemanticEditPolicy"
+        notationViewFactoryClassName="OpaqueAction_OutputPinViewFactory"
+        canonicalEditPolicyClassName="OpaqueAction_OutputPinCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="OpaqueAction_OutputPinGraphicalNodeEditPolicy"
+        createCommandClassName="OpaqueAction_OutputPinCreateCommand"
         containers="//@diagram/@childNodes.8 //@diagram/@childNodes.27 //@diagram/@childNodes.57"
         preferredSideName="EAST">
       <diagramRunTimeClass
@@ -695,9 +695,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5003"
-          editPartClassName="OutputPinNameEditPart"
-          itemSemanticEditPolicyClassName="OutputPinNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinNameViewFactory">
+          editPartClassName="OpaqueAction_OutputPinNameEditPart"
+          itemSemanticEditPolicyClassName="OpaqueAction_OutputPinNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="OpaqueAction_OutputPinNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -713,9 +713,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5055"
-          editPartClassName="OutputPinOrderingEditPart"
-          itemSemanticEditPolicyClassName="OutputPinOrderingItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinOrderingViewFactory"
+          editPartClassName="OpaqueAction_OutputPinOrderingEditPart"
+          itemSemanticEditPolicyClassName="OpaqueAction_OutputPinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="OpaqueAction_OutputPinOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -1052,12 +1052,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3002"
-        editPartClassName="OutputPin2EditPart"
-        itemSemanticEditPolicyClassName="OutputPin2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="OutputPin2ViewFactory"
-        canonicalEditPolicyClassName="OutputPin2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="OutputPin2GraphicalNodeEditPolicy"
-        createCommandClassName="OutputPin2CreateCommand"
+        editPartClassName="CreateObjectAction_OutputPinEditPart"
+        itemSemanticEditPolicyClassName="CreateObjectAction_OutputPinItemSemanticEditPolicy"
+        notationViewFactoryClassName="CreateObjectAction_OutputPinViewFactory"
+        canonicalEditPolicyClassName="CreateObjectAction_OutputPinCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="CreateObjectAction_OutputPinGraphicalNodeEditPolicy"
+        createCommandClassName="CreateObjectAction_OutputPinCreateCommand"
         containers="//@diagram/@childNodes.14 //@diagram/@childNodes.34 //@diagram/@childNodes.62"
         preferredSideName="EAST">
       <diagramRunTimeClass
@@ -1066,7 +1066,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Output Pin"
           metamodelType="//@diagram/@childNodes.9/@elementType"
-          editHelperAdviceClassName="OutputPinEditHelperAdvice"/>
+          editHelperAdviceClassName="CreateObjectAction_OutputPinEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="SmallSquareFigure"
@@ -1098,9 +1098,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5004"
-          editPartClassName="OutputPinName2EditPart"
-          itemSemanticEditPolicyClassName="OutputPinName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinName2ViewFactory">
+          editPartClassName="CreateObjectAction_OutputPinNameEditPart"
+          itemSemanticEditPolicyClassName="CreateObjectAction_OutputPinNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="CreateObjectAction_OutputPinNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1116,9 +1116,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5056"
-          editPartClassName="OutputPinOrdering2EditPart"
-          itemSemanticEditPolicyClassName="OutputPinOrdering2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinOrdering2ViewFactory"
+          editPartClassName="CreateObjectAction_OutputPinOrderingEditPart"
+          itemSemanticEditPolicyClassName="CreateObjectAction_OutputPinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="CreateObjectAction_OutputPinOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -1555,12 +1555,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3006"
-        editPartClassName="OutputPin3EditPart"
-        itemSemanticEditPolicyClassName="OutputPin3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="OutputPin3ViewFactory"
-        canonicalEditPolicyClassName="OutputPin3CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="OutputPin3GraphicalNodeEditPolicy"
-        createCommandClassName="OutputPin3CreateCommand"
+        editPartClassName="CallAction_OutputPinEditPart"
+        itemSemanticEditPolicyClassName="CallAction_OutputPinItemSemanticEditPolicy"
+        notationViewFactoryClassName="CallAction_OutputPinViewFactory"
+        canonicalEditPolicyClassName="CallAction_OutputPinCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="CallAction_OutputPinGraphicalNodeEditPolicy"
+        createCommandClassName="CallAction_OutputPinCreateCommand"
         containers="//@diagram/@childNodes.20 //@diagram/@childNodes.23 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.64 //@diagram/@childNodes.65"
         preferredSideName="EAST">
       <diagramRunTimeClass
@@ -1569,7 +1569,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Output Pin result"
           metamodelType="//@diagram/@childNodes.9/@elementType"
-          editHelperAdviceClassName="OutputPin2EditHelperAdvice"/>
+          editHelperAdviceClassName="CallAction_OutputPinEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="SmallSquareFigure"
@@ -1601,9 +1601,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5010"
-          editPartClassName="OutputPinName3EditPart"
-          itemSemanticEditPolicyClassName="OutputPinName3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinName3ViewFactory">
+          editPartClassName="CallAction_OutputPinNameEditPart"
+          itemSemanticEditPolicyClassName="CallAction_OutputPinNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="CallAction_OutputPinNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1619,9 +1619,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5060"
-          editPartClassName="OutputPinOrdering3EditPart"
-          itemSemanticEditPolicyClassName="OutputPinOrdering3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinOrdering3ViewFactory"
+          editPartClassName="CallAction_OutputPinOrderingEditPart"
+          itemSemanticEditPolicyClassName="CallAction_OutputPinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="CallAction_OutputPinOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -1639,12 +1639,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3007"
-        editPartClassName="CallAction_argument_InputPinEditPart"
-        itemSemanticEditPolicyClassName="CallAction_argument_InputPinItemSemanticEditPolicy"
-        notationViewFactoryClassName="CallAction_argument_InputPinViewFactory"
-        canonicalEditPolicyClassName="CallAction_argument_InputPinCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="CallAction_argument_InputPinGraphicalNodeEditPolicy"
-        createCommandClassName="CallAction_argument_InputPinCreateCommand"
+        editPartClassName="CallAction_InputPinEditPart"
+        itemSemanticEditPolicyClassName="CallAction_InputPinItemSemanticEditPolicy"
+        notationViewFactoryClassName="CallAction_InputPinViewFactory"
+        canonicalEditPolicyClassName="CallAction_InputPinCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="CallAction_InputPinGraphicalNodeEditPolicy"
+        createCommandClassName="CallAction_InputPinCreateCommand"
         containers="//@diagram/@childNodes.20 //@diagram/@childNodes.23 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.64 //@diagram/@childNodes.65"
         preferredSideName="WEST">
       <diagramRunTimeClass
@@ -1653,7 +1653,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Input Pin argument"
           metamodelType="//@diagram/@childNodes.17/@elementType"
-          editHelperAdviceClassName="CallAction_argument_InputPinEditHelperAdvice"/>
+          editHelperAdviceClassName="CallAction_InputPinEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="SmallSquareFigure"
@@ -1685,9 +1685,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5011"
-          editPartClassName="CallAction_argument_InputPinNameEditPart"
-          itemSemanticEditPolicyClassName="CallAction_argument_InputPinNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="CallAction_argument_InputPinNameViewFactory">
+          editPartClassName="CallAction_InputPinNameEditPart"
+          itemSemanticEditPolicyClassName="CallAction_InputPinNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="CallAction_InputPinNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1703,9 +1703,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5061"
-          editPartClassName="CallAction_argument_InputPinOrderingEditPart"
-          itemSemanticEditPolicyClassName="CallAction_argument_InputPinOrderingItemSemanticEditPolicy"
-          notationViewFactoryClassName="CallAction_argument_InputPinOrderingViewFactory"
+          editPartClassName="CallAction_InputPinOrderingEditPart"
+          itemSemanticEditPolicyClassName="CallAction_InputPinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="CallAction_InputPinOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -1807,12 +1807,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3008"
-        editPartClassName="CallOperationAction_target_InputPinEditPart"
-        itemSemanticEditPolicyClassName="CallOperationAction_target_InputPinItemSemanticEditPolicy"
-        notationViewFactoryClassName="CallOperationAction_target_InputPinViewFactory"
-        canonicalEditPolicyClassName="CallOperationAction_target_InputPinCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="CallOperationAction_target_InputPinGraphicalNodeEditPolicy"
-        createCommandClassName="CallOperationAction_target_InputPinCreateCommand"
+        editPartClassName="CallOperationAction_InputPinEditPart"
+        itemSemanticEditPolicyClassName="CallOperationAction_InputPinItemSemanticEditPolicy"
+        notationViewFactoryClassName="CallOperationAction_InputPinViewFactory"
+        canonicalEditPolicyClassName="CallOperationAction_InputPinCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="CallOperationAction_InputPinGraphicalNodeEditPolicy"
+        createCommandClassName="CallOperationAction_InputPinCreateCommand"
         containers="//@diagram/@childNodes.23 //@diagram/@childNodes.36 //@diagram/@childNodes.65"
         preferredSideName="WEST">
       <diagramRunTimeClass
@@ -1821,7 +1821,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Input Pin target"
           metamodelType="//@diagram/@childNodes.17/@elementType"
-          editHelperAdviceClassName="CallOperationAction_target_InputPinEditHelperAdvice"/>
+          editHelperAdviceClassName="CallOperationAction_InputPinEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="SmallSquareFigure"
@@ -1853,9 +1853,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5013"
-          editPartClassName="CallOperationAction_target_InputPinNameEditPart"
-          itemSemanticEditPolicyClassName="CallOperationAction_target_InputPinNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="CallOperationAction_target_InputPinNameViewFactory">
+          editPartClassName="CallOperationAction_InputPinNameEditPart"
+          itemSemanticEditPolicyClassName="CallOperationAction_InputPinNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="CallOperationAction_InputPinNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1871,9 +1871,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5062"
-          editPartClassName="CallOperationAction_target_InputPinOrderingEditPart"
-          itemSemanticEditPolicyClassName="CallOperationAction_target_InputPinOrderingItemSemanticEditPolicy"
-          notationViewFactoryClassName="CallOperationAction_target_InputPinOrderingViewFactory"
+          editPartClassName="CallOperationAction_InputPinOrderingEditPart"
+          itemSemanticEditPolicyClassName="CallOperationAction_InputPinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="CallOperationAction_InputPinOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -3250,12 +3250,12 @@
     </childNodes>
     <childNodes
         visualID="3055"
-        editPartClassName="OutputPin4EditPart"
-        itemSemanticEditPolicyClassName="OutputPin4ItemSemanticEditPolicy"
-        notationViewFactoryClassName="OutputPin4ViewFactory"
-        canonicalEditPolicyClassName="OutputPin4CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="OutputPin4GraphicalNodeEditPolicy"
-        createCommandClassName="OutputPin4CreateCommand"
+        editPartClassName="StructuredActivityNode_OutputPinEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_OutputPinItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_OutputPinViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_OutputPinCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_OutputPinGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_OutputPinCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -3285,9 +3285,9 @@
       </modelFacet>
       <labels
           visualID="5048"
-          editPartClassName="OutputPinName4EditPart"
-          itemSemanticEditPolicyClassName="OutputPinName4ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinName4ViewFactory">
+          editPartClassName="StructuredActivityNode_OutputPinNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_OutputPinNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_OutputPinNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3304,9 +3304,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5064"
-          editPartClassName="OutputPinOrdering4EditPart"
-          itemSemanticEditPolicyClassName="OutputPinOrdering4ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinOrdering4ViewFactory"
+          editPartClassName="StructuredActivityNode_OutputPinOrderingEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_OutputPinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_OutputPinOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -5011,12 +5011,12 @@
     </childNodes>
     <childNodes
         visualID="3081"
-        editPartClassName="OutputPin5EditPart"
-        itemSemanticEditPolicyClassName="OutputPin5ItemSemanticEditPolicy"
-        notationViewFactoryClassName="OutputPin5ViewFactory"
-        canonicalEditPolicyClassName="OutputPin5CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="OutputPin5GraphicalNodeEditPolicy"
-        createCommandClassName="OutputPin5CreateCommand"
+        editPartClassName="StructuredActivityNode_StructuredActivityNode_OutputPinEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_StructuredActivityNode_OutputPinItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_StructuredActivityNode_OutputPinViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_StructuredActivityNode_OutputPinCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_StructuredActivityNode_OutputPinGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_StructuredActivityNode_OutputPinCreateCommand"
         containers="//@diagram/@compartments.3 //@diagram/@compartments.2">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -5046,9 +5046,9 @@
       </modelFacet>
       <labels
           visualID="5083"
-          editPartClassName="OutputPinName5EditPart"
-          itemSemanticEditPolicyClassName="OutputPinName5ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinName5ViewFactory">
+          editPartClassName="StructuredActivityNode_StructuredActivityNode_OutputPinNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_StructuredActivityNode_OutputPinNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_StructuredActivityNode_OutputPinNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5065,9 +5065,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5084"
-          editPartClassName="OutputPinOrdering5EditPart"
-          itemSemanticEditPolicyClassName="OutputPinOrdering5ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinOrdering5ViewFactory"
+          editPartClassName="StructuredActivityNode_StructuredActivityNode_OutputPinOrderingEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_StructuredActivityNode_OutputPinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_StructuredActivityNode_OutputPinOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>

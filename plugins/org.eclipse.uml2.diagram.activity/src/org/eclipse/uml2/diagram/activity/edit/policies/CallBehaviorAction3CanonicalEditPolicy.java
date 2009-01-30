@@ -32,14 +32,15 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAct
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_insertAt_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_object_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_value_InputPinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_argument_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_target_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
@@ -50,6 +51,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
@@ -78,13 +80,9 @@ import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin6EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
@@ -95,8 +93,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditP
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
@@ -146,20 +146,20 @@ public class CallBehaviorAction3CanonicalEditPolicy extends CanonicalEditPolicy 
 		case DataStoreNodeEditPart.VISUAL_ID:
 		case CentralBufferNodeEditPart.VISUAL_ID:
 		case OpaqueActionEditPart.VISUAL_ID:
-		case OutputPinEditPart.VISUAL_ID:
+		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 		case FlowFinalNodeEditPart.VISUAL_ID:
 		case ForkNodeEditPart.VISUAL_ID:
 		case JoinNodeEditPart.VISUAL_ID:
 		case PinEditPart.VISUAL_ID:
 		case CreateObjectActionEditPart.VISUAL_ID:
-		case OutputPin2EditPart.VISUAL_ID:
+		case CreateObjectAction_OutputPinEditPart.VISUAL_ID:
 		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 		case AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID:
 		case AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID:
 		case AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID:
 		case CallBehaviorActionEditPart.VISUAL_ID:
 		case CallOperationActionEditPart.VISUAL_ID:
-		case CallOperationAction_target_InputPinEditPart.VISUAL_ID:
+		case CallOperationAction_InputPinEditPart.VISUAL_ID:
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 		case StructuredActivityNode2EditPart.VISUAL_ID:
 		case OpaqueAction2EditPart.VISUAL_ID:
@@ -178,7 +178,7 @@ public class CallBehaviorAction3CanonicalEditPolicy extends CanonicalEditPolicy 
 		case DataStoreNode2EditPart.VISUAL_ID:
 		case CentralBufferNode2EditPart.VISUAL_ID:
 		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
-		case OutputPin4EditPart.VISUAL_ID:
+		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 		case ActivityParameterNodeEditPart.VISUAL_ID:
 		case SendSignalActionEditPart.VISUAL_ID:
@@ -204,7 +204,7 @@ public class CallBehaviorAction3CanonicalEditPolicy extends CanonicalEditPolicy 
 		case StructuredActivityNode3EditPart.VISUAL_ID:
 		case StructuredActivityNode4EditPart.VISUAL_ID:
 		case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
-		case OutputPin5EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 		case SendSignalAction2EditPart.VISUAL_ID:
 		case LoopNode2EditPart.VISUAL_ID:
 		case ConditionalNode2EditPart.VISUAL_ID:
@@ -220,8 +220,8 @@ public class CallBehaviorAction3CanonicalEditPolicy extends CanonicalEditPolicy 
 		case LiteralStringEditPart.VISUAL_ID:
 		case LiteralString2EditPart.VISUAL_ID:
 			return true;
-		case OutputPin3EditPart.VISUAL_ID:
-		case CallAction_argument_InputPinEditPart.VISUAL_ID:
+		case CallAction_OutputPinEditPart.VISUAL_ID:
+		case CallAction_InputPinEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}

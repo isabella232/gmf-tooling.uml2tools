@@ -38,14 +38,15 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAct
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_insertAt_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_object_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_value_InputPinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_argument_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_target_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
@@ -57,6 +58,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
@@ -88,13 +90,9 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin4EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin5EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin6EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
@@ -106,8 +104,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditP
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
@@ -1049,7 +1049,7 @@ public class UMLElementTypes extends ElementInitializers {
 			return CentralBufferNode_3037;
 		case OpaqueActionEditPart.VISUAL_ID:
 			return OpaqueAction_3029;
-		case OutputPinEditPart.VISUAL_ID:
+		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 			return OutputPin_3001;
 		case FlowFinalNodeEditPart.VISUAL_ID:
 			return FlowFinalNode_3038;
@@ -1061,7 +1061,7 @@ public class UMLElementTypes extends ElementInitializers {
 			return Pin_3041;
 		case CreateObjectActionEditPart.VISUAL_ID:
 			return CreateObjectAction_3042;
-		case OutputPin2EditPart.VISUAL_ID:
+		case CreateObjectAction_OutputPinEditPart.VISUAL_ID:
 			return OutputPin_3002;
 		case AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return AddStructuralFeatureValueAction_3043;
@@ -1073,13 +1073,13 @@ public class UMLElementTypes extends ElementInitializers {
 			return InputPin_3005;
 		case CallBehaviorActionEditPart.VISUAL_ID:
 			return CallBehaviorAction_3044;
-		case OutputPin3EditPart.VISUAL_ID:
+		case CallAction_OutputPinEditPart.VISUAL_ID:
 			return OutputPin_3006;
-		case CallAction_argument_InputPinEditPart.VISUAL_ID:
+		case CallAction_InputPinEditPart.VISUAL_ID:
 			return InputPin_3007;
 		case CallOperationActionEditPart.VISUAL_ID:
 			return CallOperationAction_3045;
-		case CallOperationAction_target_InputPinEditPart.VISUAL_ID:
+		case CallOperationAction_InputPinEditPart.VISUAL_ID:
 			return InputPin_3008;
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return StructuredActivityNode_3046;
@@ -1117,7 +1117,7 @@ public class UMLElementTypes extends ElementInitializers {
 			return CentralBufferNode_3025;
 		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 			return InputPin_3054;
-		case OutputPin4EditPart.VISUAL_ID:
+		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 			return OutputPin_3055;
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return OpaqueBehavior_3047;
@@ -1169,7 +1169,7 @@ public class UMLElementTypes extends ElementInitializers {
 			return StructuredActivityNode_3079;
 		case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 			return InputPin_3080;
-		case OutputPin5EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 			return OutputPin_3081;
 		case SendSignalAction2EditPart.VISUAL_ID:
 			return SendSignalAction_3077;
