@@ -139,12 +139,40 @@ public class SDModelBuilderTest extends TestCase {
 		
 		for (SDBracket nextABracket : a.getBrackets()){
 			assertTrue(nextABracket instanceof SDInvocation);
+			SDInvocation invocation = (SDInvocation)nextABracket;
+			assertTrue(invocation.getBrackets().isEmpty());
+			assertNotNull(invocation.getOutgoingMessage());
+			assertNotNull(invocation.getReceiveExecution());
+			assertNotNull(invocation.getReceiveExecution().getIncomingMessage());
+			assertSame(invocation.getOutgoingMessage(), invocation.getReceiveExecution().getIncomingMessage());
+			assertEquals(a.getBrackets().indexOf(invocation), b.getBrackets().indexOf(invocation.getReceiveExecution()));
 		}
+		
+		SDMessage firstMessage = null;
+		SDMessage secondMessage = null;
 		
 		for (SDBracket nextBBracket : b.getBrackets()){
 			assertTrue(nextBBracket instanceof SDExecution);
+			SDExecution execution = (SDExecution)nextBBracket;
+			
+			assertTrue(execution.getBrackets().isEmpty());
+			assertNotNull(execution.getIncomingMessage());
+		
+			if (firstMessage == null){
+				firstMessage = execution.getIncomingMessage();
+			} else {
+				secondMessage = execution.getIncomingMessage();
+			}
 		}
 		
+		assertNotNull(firstMessage.getUmlMessage());
+		assertNotNull(secondMessage.getUmlMessage());
+		assertFalse(firstMessage == secondMessage);
+		assertFalse(firstMessage.getUmlMessage() == secondMessage.getUmlMessage());
+		
+		assertEquals("1", firstMessage.getMessageNumber());
+		assertEquals("2", secondMessage.getMessageNumber());
+
 		checkCallStackCompleted(builder);
 	}
 	
