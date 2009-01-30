@@ -22,28 +22,28 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerCreateCom
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptTimeEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ActivityFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AddStructuralFeatureValueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CallBehaviorActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CallOperationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CreateObjectActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DataStoreNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DecisionNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_FlowFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_JoinNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_PinEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -92,49 +92,49 @@ public class ConditionalNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticE
 					case StructuredActivityNode2EditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case OpaqueAction2EditPart.VISUAL_ID:
+					case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case AcceptEventAction3EditPart.VISUAL_ID:
+					case StructuredActivityNode_AcceptEventActionEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case AcceptEventAction4EditPart.VISUAL_ID:
+					case StructuredActivityNode_AcceptTimeEventActionEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case ActivityFinalNode2EditPart.VISUAL_ID:
+					case StructuredActivityNode_ActivityFinalNodeEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case DecisionNode2EditPart.VISUAL_ID:
+					case StructuredActivityNode_DecisionNodeEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case FlowFinalNode2EditPart.VISUAL_ID:
+					case StructuredActivityNode_FlowFinalNodeEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					case StructuredActivityNode_PinEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case CreateObjectAction2EditPart.VISUAL_ID:
+					case StructuredActivityNode_CreateObjectActionEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case CallBehaviorAction2EditPart.VISUAL_ID:
+					case StructuredActivityNode_CallBehaviorActionEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case CallOperationAction2EditPart.VISUAL_ID:
+					case StructuredActivityNode_CallOperationActionEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case ForkNode2EditPart.VISUAL_ID:
+					case StructuredActivityNode_ForkNodeEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case JoinNode2EditPart.VISUAL_ID:
+					case StructuredActivityNode_JoinNodeEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
+					case StructuredActivityNode_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case DataStoreNode2EditPart.VISUAL_ID:
+					case StructuredActivityNode_DataStoreNodeEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
-					case CentralBufferNode2EditPart.VISUAL_ID:
+					case StructuredActivityNode_CentralBufferNodeEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					case StructuredActivityNode_InputPinEditPart.VISUAL_ID:

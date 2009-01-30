@@ -302,49 +302,49 @@ public class ForkNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OpaqueAction2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AcceptEventAction3EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AcceptEventAction4EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ActivityFinalNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_ActivityFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof DecisionNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_DecisionNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof FlowFinalNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_PinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CreateObjectAction2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CallBehaviorAction2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CallOperationAction2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ForkNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_ForkNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof JoinNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_JoinNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof DataStoreNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_DataStoreNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CentralBufferNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_CentralBufferNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_InputPinEditPart) {
@@ -383,7 +383,7 @@ public class ForkNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof CentralBufferNode3EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OpaqueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof FlowFinalNode3EditPart) {
@@ -533,49 +533,49 @@ public class ForkNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OpaqueAction2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AcceptEventAction3EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AcceptEventAction4EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ActivityFinalNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_ActivityFinalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof DecisionNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_DecisionNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof FlowFinalNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_PinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CreateObjectAction2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CallBehaviorAction2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CallOperationAction2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ForkNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_ForkNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof JoinNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_JoinNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof DataStoreNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_DataStoreNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CentralBufferNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_CentralBufferNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_InputPinEditPart) {
@@ -614,7 +614,7 @@ public class ForkNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof CentralBufferNode3EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OpaqueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof FlowFinalNode3EditPart) {

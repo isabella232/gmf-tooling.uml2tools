@@ -552,7 +552,7 @@
                id="org.eclipse.uml2.diagram.activity.OpaqueAction_3011"
                name="%metatype.name.OpaqueAction_3011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.OpaqueActionEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_OpaqueActionEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.OpaqueAction_3029"/>
             <param name="semanticHint" value="3011"/>
          </specializationType>
@@ -562,7 +562,7 @@
                id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3012"
                name="%metatype.name.AcceptEventAction_3012"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AcceptEventAction2EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_AcceptEventActionEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3030"/>
             <param name="semanticHint" value="3012"/>
          </specializationType>
@@ -572,7 +572,7 @@
                id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3013"
                name="%metatype.name.AcceptEventAction_3013"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AcceptEventAction3EditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_AcceptTimeEventActionEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.AcceptEventAction_3030"/>
             <param name="semanticHint" value="3013"/>
          </specializationType>
@@ -582,7 +582,7 @@
                id="org.eclipse.uml2.diagram.activity.ActivityFinalNode_3014"
                name="%metatype.name.ActivityFinalNode_3014"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.ActivityFinalNodeEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_ActivityFinalNodeEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.ActivityFinalNode_3032"/>
             <param name="semanticHint" value="3014"/>
          </specializationType>
@@ -592,7 +592,7 @@
                id="org.eclipse.uml2.diagram.activity.DecisionNode_3015"
                name="%metatype.name.DecisionNode_3015"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.DecisionNodeEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_DecisionNodeEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.DecisionNode_3033"/>
             <param name="semanticHint" value="3015"/>
          </specializationType>
@@ -602,7 +602,7 @@
                id="org.eclipse.uml2.diagram.activity.FlowFinalNode_3016"
                name="%metatype.name.FlowFinalNode_3016"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.FlowFinalNodeEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_FlowFinalNodeEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.FlowFinalNode_3038"/>
             <param name="semanticHint" value="3016"/>
          </specializationType>
@@ -622,7 +622,7 @@
                id="org.eclipse.uml2.diagram.activity.CreateObjectAction_3018"
                name="%metatype.name.CreateObjectAction_3018"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.CreateObjectActionEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_CreateObjectActionEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.CreateObjectAction_3042"/>
             <param name="semanticHint" value="3018"/>
          </specializationType>
@@ -632,7 +632,7 @@
                id="org.eclipse.uml2.diagram.activity.CallBehaviorAction_3019"
                name="%metatype.name.CallBehaviorAction_3019"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.CallBehaviorActionEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_CallBehaviorActionEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.CallBehaviorAction_3044"/>
             <param name="semanticHint" value="3019"/>
          </specializationType>
@@ -642,7 +642,7 @@
                id="org.eclipse.uml2.diagram.activity.CallOperationAction_3020"
                name="%metatype.name.CallOperationAction_3020"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.CallOperationActionEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_CallOperationActionEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.CallOperationAction_3045"/>
             <param name="semanticHint" value="3020"/>
          </specializationType>
@@ -652,7 +652,7 @@
                id="org.eclipse.uml2.diagram.activity.ForkNode_3021"
                name="%metatype.name.ForkNode_3021"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.ForkNodeEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_ForkNodeEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.ForkNode_3039"/>
             <param name="semanticHint" value="3021"/>
          </specializationType>
@@ -662,7 +662,7 @@
                id="org.eclipse.uml2.diagram.activity.JoinNode_3022"
                name="%metatype.name.JoinNode_3022"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.JoinNodeEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_JoinNodeEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.JoinNode_3040"/>
             <param name="semanticHint" value="3022"/>
          </specializationType>
@@ -672,7 +672,7 @@
                id="org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_3023"
                name="%metatype.name.AddStructuralFeatureValueAction_3023"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.AddStructuralFeatureValueActionEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_AddStructuralFeatureValueActionEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.AddStructuralFeatureValueAction_3043"/>
             <param name="semanticHint" value="3023"/>
          </specializationType>
@@ -682,7 +682,7 @@
                id="org.eclipse.uml2.diagram.activity.DataStoreNode_3024"
                name="%metatype.name.DataStoreNode_3024"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.DataStoreNodeEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_DataStoreNodeEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.DataStoreNode_3036"/>
             <param name="semanticHint" value="3024"/>
          </specializationType>
@@ -692,7 +692,7 @@
                id="org.eclipse.uml2.diagram.activity.CentralBufferNode_3025"
                name="%metatype.name.CentralBufferNode_3025"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.CentralBufferNodeEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_CentralBufferNodeEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.CentralBufferNode_3037"/>
             <param name="semanticHint" value="3025"/>
          </specializationType>
@@ -1568,10 +1568,10 @@
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"><or> 
                      <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart"/>
-                     <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_JoinNodeEditPart"/>
                      <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart"/>
                      <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart"/>
-                     <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ForkNodeEditPart"/>
                      <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart"/>
                   </or></iterate></with>
                </and>
@@ -1837,27 +1837,27 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OpaqueActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptEventActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction4EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptTimeEventActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ActivityFinalNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DecisionNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_FlowFinalNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -1865,35 +1865,35 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CreateObjectActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CallBehaviorActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CallOperationActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ForkNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ForkNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.JoinNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_JoinNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AddStructuralFeatureValueActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DataStoreNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CentralBufferNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -1957,7 +1957,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_OpaqueActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

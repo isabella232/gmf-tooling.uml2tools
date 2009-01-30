@@ -265,38 +265,38 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNodeStereotype2EditPart.VISUAL_ID:
 				return new StructuredActivityNodeStereotype2EditPart(view);
 
-			case OpaqueAction2EditPart.VISUAL_ID:
-				return new OpaqueAction2EditPart(view);
+			case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:
+				return new StructuredActivityNode_OpaqueActionEditPart(view);
 
-			case OpaqueActionName2EditPart.VISUAL_ID:
-				return new OpaqueActionName2EditPart(view);
+			case StructuredActivityNode_OpaqueActionNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_OpaqueActionNameEditPart(view);
 
-			case OpaqueActionStereotype2EditPart.VISUAL_ID:
-				return new OpaqueActionStereotype2EditPart(view);
+			case StructuredActivityNode_OpaqueActionStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_OpaqueActionStereotypeEditPart(view);
 
-			case AcceptEventAction3EditPart.VISUAL_ID:
-				return new AcceptEventAction3EditPart(view);
+			case StructuredActivityNode_AcceptEventActionEditPart.VISUAL_ID:
+				return new StructuredActivityNode_AcceptEventActionEditPart(view);
 
-			case AcceptEventActionName2EditPart.VISUAL_ID:
-				return new AcceptEventActionName2EditPart(view);
+			case StructuredActivityNode_AcceptEventActionNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_AcceptEventActionNameEditPart(view);
 
-			case AcceptEventActionStereotype2EditPart.VISUAL_ID:
-				return new AcceptEventActionStereotype2EditPart(view);
+			case StructuredActivityNode_AcceptEventActionStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_AcceptEventActionStereotypeEditPart(view);
 
-			case AcceptEventAction4EditPart.VISUAL_ID:
-				return new AcceptEventAction4EditPart(view);
+			case StructuredActivityNode_AcceptTimeEventActionEditPart.VISUAL_ID:
+				return new StructuredActivityNode_AcceptTimeEventActionEditPart(view);
 
-			case AcceptEventActionName4EditPart.VISUAL_ID:
-				return new AcceptEventActionName4EditPart(view);
+			case StructuredActivityNode_AcceptTimeEventActionNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_AcceptTimeEventActionNameEditPart(view);
 
-			case ActivityFinalNode2EditPart.VISUAL_ID:
-				return new ActivityFinalNode2EditPart(view);
+			case StructuredActivityNode_ActivityFinalNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_ActivityFinalNodeEditPart(view);
 
-			case DecisionNode2EditPart.VISUAL_ID:
-				return new DecisionNode2EditPart(view);
+			case StructuredActivityNode_DecisionNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_DecisionNodeEditPart(view);
 
-			case FlowFinalNode2EditPart.VISUAL_ID:
-				return new FlowFinalNode2EditPart(view);
+			case StructuredActivityNode_FlowFinalNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_FlowFinalNodeEditPart(view);
 
 			case StructuredActivityNode_PinEditPart.VISUAL_ID:
 				return new StructuredActivityNode_PinEditPart(view);
@@ -313,77 +313,77 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNode_PinStereotypeEditPart.VISUAL_ID:
 				return new StructuredActivityNode_PinStereotypeEditPart(view);
 
-			case CreateObjectAction2EditPart.VISUAL_ID:
-				return new CreateObjectAction2EditPart(view);
+			case StructuredActivityNode_CreateObjectActionEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CreateObjectActionEditPart(view);
 
-			case CreateObjectActionName2EditPart.VISUAL_ID:
-				return new CreateObjectActionName2EditPart(view);
+			case StructuredActivityNode_CreateObjectActionNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CreateObjectActionNameEditPart(view);
 
-			case CreateObjectActionStereotype2EditPart.VISUAL_ID:
-				return new CreateObjectActionStereotype2EditPart(view);
+			case StructuredActivityNode_CreateObjectActionStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CreateObjectActionStereotypeEditPart(view);
 
-			case CallBehaviorAction2EditPart.VISUAL_ID:
-				return new CallBehaviorAction2EditPart(view);
+			case StructuredActivityNode_CallBehaviorActionEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CallBehaviorActionEditPart(view);
 
-			case CallBehaviorActionName2EditPart.VISUAL_ID:
-				return new CallBehaviorActionName2EditPart(view);
+			case StructuredActivityNode_CallBehaviorActionNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CallBehaviorActionNameEditPart(view);
 
-			case CallBehaviorActionStereotype2EditPart.VISUAL_ID:
-				return new CallBehaviorActionStereotype2EditPart(view);
+			case StructuredActivityNode_CallBehaviorActionStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CallBehaviorActionStereotypeEditPart(view);
 
-			case CallOperationAction2EditPart.VISUAL_ID:
-				return new CallOperationAction2EditPart(view);
+			case StructuredActivityNode_CallOperationActionEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CallOperationActionEditPart(view);
 
-			case CallOperationActionName2EditPart.VISUAL_ID:
-				return new CallOperationActionName2EditPart(view);
+			case StructuredActivityNode_CallOperationActionNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CallOperationActionNameEditPart(view);
 
-			case CallOperationActionStereotype2EditPart.VISUAL_ID:
-				return new CallOperationActionStereotype2EditPart(view);
+			case StructuredActivityNode_CallOperationActionStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CallOperationActionStereotypeEditPart(view);
 
-			case ForkNode2EditPart.VISUAL_ID:
-				return new ForkNode2EditPart(view);
+			case StructuredActivityNode_ForkNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_ForkNodeEditPart(view);
 
-			case JoinNode2EditPart.VISUAL_ID:
-				return new JoinNode2EditPart(view);
+			case StructuredActivityNode_JoinNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_JoinNodeEditPart(view);
 
-			case AddStructuralFeatureValueAction2EditPart.VISUAL_ID:
-				return new AddStructuralFeatureValueAction2EditPart(view);
+			case StructuredActivityNode_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+				return new StructuredActivityNode_AddStructuralFeatureValueActionEditPart(view);
 
-			case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
-				return new AddStructuralFeatureValueActionName2EditPart(view);
+			case StructuredActivityNode_AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_AddStructuralFeatureValueActionNameEditPart(view);
 
-			case AddStructuralFeatureValueActionStereotype2EditPart.VISUAL_ID:
-				return new AddStructuralFeatureValueActionStereotype2EditPart(view);
+			case StructuredActivityNode_AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_AddStructuralFeatureValueActionStereotypeEditPart(view);
 
-			case DataStoreNode2EditPart.VISUAL_ID:
-				return new DataStoreNode2EditPart(view);
+			case StructuredActivityNode_DataStoreNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_DataStoreNodeEditPart(view);
 
-			case DataStoreNodeName2EditPart.VISUAL_ID:
-				return new DataStoreNodeName2EditPart(view);
+			case StructuredActivityNode_DataStoreNodeNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_DataStoreNodeNameEditPart(view);
 
-			case DataStoreNodeInState2EditPart.VISUAL_ID:
-				return new DataStoreNodeInState2EditPart(view);
+			case StructuredActivityNode_DataStoreNodeInStateEditPart.VISUAL_ID:
+				return new StructuredActivityNode_DataStoreNodeInStateEditPart(view);
 
-			case DataStoreNodeOrdering2EditPart.VISUAL_ID:
-				return new DataStoreNodeOrdering2EditPart(view);
+			case StructuredActivityNode_DataStoreNodeOrderingEditPart.VISUAL_ID:
+				return new StructuredActivityNode_DataStoreNodeOrderingEditPart(view);
 
-			case DataStoreNodeStereotype2EditPart.VISUAL_ID:
-				return new DataStoreNodeStereotype2EditPart(view);
+			case StructuredActivityNode_DataStoreNodeStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_DataStoreNodeStereotypeEditPart(view);
 
-			case CentralBufferNode2EditPart.VISUAL_ID:
-				return new CentralBufferNode2EditPart(view);
+			case StructuredActivityNode_CentralBufferNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CentralBufferNodeEditPart(view);
 
-			case CentralBufferNodeName2EditPart.VISUAL_ID:
-				return new CentralBufferNodeName2EditPart(view);
+			case StructuredActivityNode_CentralBufferNodeNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CentralBufferNodeNameEditPart(view);
 
-			case CentralBufferNodeInState2EditPart.VISUAL_ID:
-				return new CentralBufferNodeInState2EditPart(view);
+			case StructuredActivityNode_CentralBufferNodeInStateEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CentralBufferNodeInStateEditPart(view);
 
-			case CentralBufferNodeOrdering2EditPart.VISUAL_ID:
-				return new CentralBufferNodeOrdering2EditPart(view);
+			case StructuredActivityNode_CentralBufferNodeOrderingEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CentralBufferNodeOrderingEditPart(view);
 
-			case CentralBufferNodeStereotype2EditPart.VISUAL_ID:
-				return new CentralBufferNodeStereotype2EditPart(view);
+			case StructuredActivityNode_CentralBufferNodeStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_CentralBufferNodeStereotypeEditPart(view);
 
 			case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 				return new StructuredActivityNode_InputPinEditPart(view);
@@ -496,14 +496,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case CentralBufferNodeStereotype3EditPart.VISUAL_ID:
 				return new CentralBufferNodeStereotype3EditPart(view);
 
-			case OpaqueAction3EditPart.VISUAL_ID:
-				return new OpaqueAction3EditPart(view);
+			case ActivityPartition_OpaqueActionEditPart.VISUAL_ID:
+				return new ActivityPartition_OpaqueActionEditPart(view);
 
-			case OpaqueActionName3EditPart.VISUAL_ID:
-				return new OpaqueActionName3EditPart(view);
+			case ActivityPartition_OpaqueActionNameEditPart.VISUAL_ID:
+				return new ActivityPartition_OpaqueActionNameEditPart(view);
 
-			case OpaqueActionStereotype3EditPart.VISUAL_ID:
-				return new OpaqueActionStereotype3EditPart(view);
+			case ActivityPartition_OpaqueActionStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_OpaqueActionStereotypeEditPart(view);
 
 			case FlowFinalNode3EditPart.VISUAL_ID:
 				return new FlowFinalNode3EditPart(view);

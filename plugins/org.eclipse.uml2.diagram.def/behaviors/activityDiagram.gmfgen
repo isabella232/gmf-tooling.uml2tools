@@ -2049,13 +2049,13 @@
     </childNodes>
     <childNodes
         visualID="3011"
-        editPartClassName="OpaqueAction2EditPart"
-        itemSemanticEditPolicyClassName="OpaqueAction2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="OpaqueAction2ViewFactory"
-        canonicalEditPolicyClassName="OpaqueAction2CanonicalEditPolicy"
+        editPartClassName="StructuredActivityNode_OpaqueActionEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_OpaqueActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_OpaqueActionViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_OpaqueActionCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.9"
-        graphicalNodeEditPolicyClassName="OpaqueAction2GraphicalNodeEditPolicy"
-        createCommandClassName="OpaqueAction2CreateCommand"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_OpaqueActionGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_OpaqueActionCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2063,7 +2063,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Opaque Action"
           metamodelType="//@diagram/@childNodes.8/@elementType"
-          editHelperAdviceClassName="OpaqueActionEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_OpaqueActionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionBaseFigure"
@@ -2093,9 +2093,9 @@
       </modelFacet>
       <labels
           visualID="5015"
-          editPartClassName="OpaqueActionName2EditPart"
-          itemSemanticEditPolicyClassName="OpaqueActionName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OpaqueActionName2ViewFactory">
+          editPartClassName="StructuredActivityNode_OpaqueActionNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_OpaqueActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_OpaqueActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2111,9 +2111,9 @@
       </labels>
       <labels
           visualID="5111"
-          editPartClassName="OpaqueActionStereotype2EditPart"
-          itemSemanticEditPolicyClassName="OpaqueActionStereotype2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OpaqueActionStereotype2ViewFactory">
+          editPartClassName="StructuredActivityNode_OpaqueActionStereotypeEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_OpaqueActionStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_OpaqueActionStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2134,12 +2134,12 @@
     </childNodes>
     <childNodes
         visualID="3012"
-        editPartClassName="AcceptEventAction3EditPart"
-        itemSemanticEditPolicyClassName="AcceptEventAction3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="AcceptEventAction3ViewFactory"
-        canonicalEditPolicyClassName="AcceptEventAction3CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="AcceptEventAction3GraphicalNodeEditPolicy"
-        createCommandClassName="AcceptEventAction3CreateCommand"
+        editPartClassName="StructuredActivityNode_AcceptEventActionEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_AcceptEventActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_AcceptEventActionViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_AcceptEventActionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_AcceptEventActionGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_AcceptEventActionCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2147,7 +2147,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Accept Event Action"
           metamodelType="//@diagram/@childNodes.0/@elementType"
-          editHelperAdviceClassName="AcceptEventAction2EditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_AcceptEventActionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="AcceptEventActionFigure"
@@ -2177,9 +2177,9 @@
       </modelFacet>
       <labels
           visualID="5041"
-          editPartClassName="AcceptEventActionName2EditPart"
-          itemSemanticEditPolicyClassName="AcceptEventActionName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="AcceptEventActionName2ViewFactory">
+          editPartClassName="StructuredActivityNode_AcceptEventActionNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_AcceptEventActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_AcceptEventActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2195,9 +2195,9 @@
       </labels>
       <labels
           visualID="5096"
-          editPartClassName="AcceptEventActionStereotype2EditPart"
-          itemSemanticEditPolicyClassName="AcceptEventActionStereotype2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="AcceptEventActionStereotype2ViewFactory">
+          editPartClassName="StructuredActivityNode_AcceptEventActionStereotypeEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_AcceptEventActionStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_AcceptEventActionStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2218,12 +2218,12 @@
     </childNodes>
     <childNodes
         visualID="3013"
-        editPartClassName="AcceptEventAction4EditPart"
-        itemSemanticEditPolicyClassName="AcceptEventAction4ItemSemanticEditPolicy"
-        notationViewFactoryClassName="AcceptEventAction4ViewFactory"
-        canonicalEditPolicyClassName="AcceptEventAction4CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="AcceptEventAction4GraphicalNodeEditPolicy"
-        createCommandClassName="AcceptEventAction4CreateCommand"
+        editPartClassName="StructuredActivityNode_AcceptTimeEventActionEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_AcceptTimeEventAction4ItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_AcceptTimeEventActionViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_AcceptTimeEventActionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_AcceptTimeEventActionGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_AcceptTimeEventActionCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2231,7 +2231,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Accept Time Event Action"
           metamodelType="//@diagram/@childNodes.0/@elementType"
-          editHelperAdviceClassName="AcceptEventAction3EditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_AcceptTimeEventActionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="AcceptTimeEventActionFigure"
@@ -2268,9 +2268,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5043"
-          editPartClassName="AcceptEventActionName4EditPart"
-          itemSemanticEditPolicyClassName="AcceptEventActionName4ItemSemanticEditPolicy"
-          notationViewFactoryClassName="AcceptEventActionName4ViewFactory">
+          editPartClassName="StructuredActivityNode_AcceptTimeEventActionNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_AcceptTimeEventActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_AcceptTimeEventActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2286,12 +2286,12 @@
     </childNodes>
     <childNodes
         visualID="3014"
-        editPartClassName="ActivityFinalNode2EditPart"
-        itemSemanticEditPolicyClassName="ActivityFinalNode2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ActivityFinalNode2ViewFactory"
-        canonicalEditPolicyClassName="ActivityFinalNode2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ActivityFinalNode2GraphicalNodeEditPolicy"
-        createCommandClassName="ActivityFinalNode2CreateCommand"
+        editPartClassName="StructuredActivityNode_ActivityFinalNodeEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_ActivityFinalNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_ActivityFinalNodeViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_ActivityFinalNodeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_ActivityFinalNodeGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_ActivityFinalNodeCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2299,7 +2299,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Activity Final Node"
           metamodelType="//@diagram/@childNodes.2/@elementType"
-          editHelperAdviceClassName="ActivityFinalNodeEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_ActivityFinalNodeEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActivityFinalFigure"
@@ -2326,12 +2326,12 @@
     </childNodes>
     <childNodes
         visualID="3015"
-        editPartClassName="DecisionNode2EditPart"
-        itemSemanticEditPolicyClassName="DecisionNode2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="DecisionNode2ViewFactory"
-        canonicalEditPolicyClassName="DecisionNode2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="DecisionNode2GraphicalNodeEditPolicy"
-        createCommandClassName="DecisionNode2CreateCommand"
+        editPartClassName="StructuredActivityNode_DecisionNodeEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_DecisionNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_DecisionNodeViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_DecisionNodeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_DecisionNodeGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_DecisionNodeCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2339,7 +2339,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Decision Node"
           metamodelType="//@diagram/@childNodes.3/@elementType"
-          editHelperAdviceClassName="DecisionNodeEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_DecisionNodeEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ScalableRhombFigure"
@@ -2365,12 +2365,12 @@
     </childNodes>
     <childNodes
         visualID="3016"
-        editPartClassName="FlowFinalNode2EditPart"
-        itemSemanticEditPolicyClassName="FlowFinalNode2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="FlowFinalNode2ViewFactory"
-        canonicalEditPolicyClassName="FlowFinalNode2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="FlowFinalNode2GraphicalNodeEditPolicy"
-        createCommandClassName="FlowFinalNode2CreateCommand"
+        editPartClassName="StructuredActivityNode_FlowFinalNodeEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_FlowFinalNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_FlowFinalNodeViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_FlowFinalNodeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_FlowFinalNodeGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_FlowFinalNodeCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2378,7 +2378,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Flow Final Node"
           metamodelType="//@diagram/@childNodes.10/@elementType"
-          editHelperAdviceClassName="FlowFinalNodeEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_FlowFinalNodeEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="FlowFinalFigure"
@@ -2520,13 +2520,13 @@
     </childNodes>
     <childNodes
         visualID="3018"
-        editPartClassName="CreateObjectAction2EditPart"
-        itemSemanticEditPolicyClassName="CreateObjectAction2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="CreateObjectAction2ViewFactory"
-        canonicalEditPolicyClassName="CreateObjectAction2CanonicalEditPolicy"
+        editPartClassName="StructuredActivityNode_CreateObjectActionEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_CreateObjectActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_CreateObjectActionViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_CreateObjectActionCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.15"
-        graphicalNodeEditPolicyClassName="CreateObjectAction2GraphicalNodeEditPolicy"
-        createCommandClassName="CreateObjectAction2CreateCommand"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_CreateObjectActionGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_CreateObjectActionCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2534,7 +2534,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Create Object Action"
           metamodelType="//@diagram/@childNodes.14/@elementType"
-          editHelperAdviceClassName="CreateObjectActionEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_CreateObjectActionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionBaseFigure"
@@ -2564,9 +2564,9 @@
       </modelFacet>
       <labels
           visualID="5017"
-          editPartClassName="CreateObjectActionName2EditPart"
-          itemSemanticEditPolicyClassName="CreateObjectActionName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CreateObjectActionName2ViewFactory">
+          editPartClassName="StructuredActivityNode_CreateObjectActionNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_CreateObjectActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_CreateObjectActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2582,9 +2582,9 @@
       </labels>
       <labels
           visualID="5108"
-          editPartClassName="CreateObjectActionStereotype2EditPart"
-          itemSemanticEditPolicyClassName="CreateObjectActionStereotype2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CreateObjectActionStereotype2ViewFactory">
+          editPartClassName="StructuredActivityNode_CreateObjectActionStereotypeEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_CreateObjectActionStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_CreateObjectActionStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2605,13 +2605,13 @@
     </childNodes>
     <childNodes
         visualID="3019"
-        editPartClassName="CallBehaviorAction2EditPart"
-        itemSemanticEditPolicyClassName="CallBehaviorAction2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="CallBehaviorAction2ViewFactory"
-        canonicalEditPolicyClassName="CallBehaviorAction2CanonicalEditPolicy"
+        editPartClassName="StructuredActivityNode_CallBehaviorActionEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_CallBehaviorActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_CallBehaviorActionViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_CallBehaviorActionCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.21 //@diagram/@childNodes.22"
-        graphicalNodeEditPolicyClassName="CallBehaviorAction2GraphicalNodeEditPolicy"
-        createCommandClassName="CallBehaviorAction2CreateCommand"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_CallBehaviorActionGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_CallBehaviorActionCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2619,7 +2619,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Call Behavior Action"
           metamodelType="//@diagram/@childNodes.20/@elementType"
-          editHelperAdviceClassName="CallBehaviorActionEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_CallBehaviorActionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionCallBehaviorFigure"
@@ -2649,9 +2649,9 @@
       </modelFacet>
       <labels
           visualID="5018"
-          editPartClassName="CallBehaviorActionName2EditPart"
-          itemSemanticEditPolicyClassName="CallBehaviorActionName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CallBehaviorActionName2ViewFactory">
+          editPartClassName="StructuredActivityNode_CallBehaviorActionNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_CallBehaviorActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_CallBehaviorActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2667,9 +2667,9 @@
       </labels>
       <labels
           visualID="5100"
-          editPartClassName="CallBehaviorActionStereotype2EditPart"
-          itemSemanticEditPolicyClassName="CallBehaviorActionStereotype2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CallBehaviorActionStereotype2ViewFactory">
+          editPartClassName="StructuredActivityNode_CallBehaviorActionStereotypeEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_CallBehaviorActionStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_CallBehaviorActionStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2690,13 +2690,13 @@
     </childNodes>
     <childNodes
         visualID="3020"
-        editPartClassName="CallOperationAction2EditPart"
-        itemSemanticEditPolicyClassName="CallOperationAction2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="CallOperationAction2ViewFactory"
-        canonicalEditPolicyClassName="CallOperationAction2CanonicalEditPolicy"
+        editPartClassName="StructuredActivityNode_CallOperationActionEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_CallOperationActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_CallOperationActionViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_CallOperationActionCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.21 //@diagram/@childNodes.22 //@diagram/@childNodes.24"
-        graphicalNodeEditPolicyClassName="CallOperationAction2GraphicalNodeEditPolicy"
-        createCommandClassName="CallOperationAction2CreateCommand"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_CallOperationActionGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_CallOperationActionCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2704,7 +2704,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Call Operation Action"
           metamodelType="//@diagram/@childNodes.23/@elementType"
-          editHelperAdviceClassName="CallOperationActionEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_CallOperationActionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionBaseFigure"
@@ -2734,9 +2734,9 @@
       </modelFacet>
       <labels
           visualID="5019"
-          editPartClassName="CallOperationActionName2EditPart"
-          itemSemanticEditPolicyClassName="CallOperationActionName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CallOperationActionName2ViewFactory">
+          editPartClassName="StructuredActivityNode_CallOperationActionNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_CallOperationActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_CallOperationActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2752,9 +2752,9 @@
       </labels>
       <labels
           visualID="5102"
-          editPartClassName="CallOperationActionStereotype2EditPart"
-          itemSemanticEditPolicyClassName="CallOperationActionStereotype2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CallOperationActionStereotype2ViewFactory">
+          editPartClassName="StructuredActivityNode_CallOperationActionStereotypeEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_CallOperationActionStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_CallOperationActionStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2775,13 +2775,13 @@
     </childNodes>
     <childNodes
         visualID="3021"
-        editPartClassName="ForkNode2EditPart"
-        itemSemanticEditPolicyClassName="ForkNode2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ForkNode2ViewFactory"
-        canonicalEditPolicyClassName="ForkNode2CanonicalEditPolicy"
+        editPartClassName="StructuredActivityNode_ForkNodeEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_ForkNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_ForkNodeViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_ForkNodeCanonicalEditPolicy"
         primaryDragEditPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.DynamicResizeDirectionsEditPolicy"
-        graphicalNodeEditPolicyClassName="ForkNode2GraphicalNodeEditPolicy"
-        createCommandClassName="ForkNode2CreateCommand"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_ForkNodeGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_ForkNodeCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2789,7 +2789,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Fork Node"
           metamodelType="//@diagram/@childNodes.11/@elementType"
-          editHelperAdviceClassName="ForkNodeEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_ForkNodeEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ForkJoinFigure"
@@ -2817,13 +2817,13 @@
     </childNodes>
     <childNodes
         visualID="3022"
-        editPartClassName="JoinNode2EditPart"
-        itemSemanticEditPolicyClassName="JoinNode2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="JoinNode2ViewFactory"
-        canonicalEditPolicyClassName="JoinNode2CanonicalEditPolicy"
+        editPartClassName="StructuredActivityNode_JoinNodeEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_JoinNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_JoinNodeViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_JoinNodeCanonicalEditPolicy"
         primaryDragEditPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.DynamicResizeDirectionsEditPolicy"
-        graphicalNodeEditPolicyClassName="JoinNode2GraphicalNodeEditPolicy"
-        createCommandClassName="JoinNode2CreateCommand"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_JoinNodeGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_JoinNodeCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2831,7 +2831,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Join Node"
           metamodelType="//@diagram/@childNodes.12/@elementType"
-          editHelperAdviceClassName="JoinNodeEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_JoinNodeEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ForkJoinFigure"
@@ -2859,13 +2859,13 @@
     </childNodes>
     <childNodes
         visualID="3023"
-        editPartClassName="AddStructuralFeatureValueAction2EditPart"
-        itemSemanticEditPolicyClassName="AddStructuralFeatureValueAction2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="AddStructuralFeatureValueAction2ViewFactory"
-        canonicalEditPolicyClassName="AddStructuralFeatureValueAction2CanonicalEditPolicy"
+        editPartClassName="StructuredActivityNode_AddStructuralFeatureValueActionEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_AddStructuralFeatureValueActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_AddStructuralFeatureValueActionViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_AddStructuralFeatureValueActionCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.17 //@diagram/@childNodes.18 //@diagram/@childNodes.19"
-        graphicalNodeEditPolicyClassName="AddStructuralFeatureValueAction2GraphicalNodeEditPolicy"
-        createCommandClassName="AddStructuralFeatureValueAction2CreateCommand"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_AddStructuralFeatureValueActionGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_AddStructuralFeatureValueActionCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2873,7 +2873,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Add Structural Feature Value Action"
           metamodelType="//@diagram/@childNodes.16/@elementType"
-          editHelperAdviceClassName="AddStructuralFeatureValueActionEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_AddStructuralFeatureValueActionEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ActionBaseFigure"
@@ -2903,9 +2903,9 @@
       </modelFacet>
       <labels
           visualID="5020"
-          editPartClassName="AddStructuralFeatureValueActionName2EditPart"
-          itemSemanticEditPolicyClassName="AddStructuralFeatureValueActionName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="AddStructuralFeatureValueActionName2ViewFactory">
+          editPartClassName="StructuredActivityNode_AddStructuralFeatureValueActionNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_AddStructuralFeatureValueActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_AddStructuralFeatureValueActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2921,9 +2921,9 @@
       </labels>
       <labels
           visualID="5098"
-          editPartClassName="AddStructuralFeatureValueActionStereotype2EditPart"
-          itemSemanticEditPolicyClassName="AddStructuralFeatureValueActionStereotype2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="AddStructuralFeatureValueActionStereotype2ViewFactory">
+          editPartClassName="StructuredActivityNode_AddStructuralFeatureValueActionStereotypeEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_AddStructuralFeatureValueActionStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_AddStructuralFeatureValueActionStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2944,12 +2944,12 @@
     </childNodes>
     <childNodes
         visualID="3024"
-        editPartClassName="DataStoreNode2EditPart"
-        itemSemanticEditPolicyClassName="DataStoreNode2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="DataStoreNode2ViewFactory"
-        canonicalEditPolicyClassName="DataStoreNode2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="DataStoreNode2GraphicalNodeEditPolicy"
-        createCommandClassName="DataStoreNode2CreateCommand"
+        editPartClassName="StructuredActivityNode_DataStoreNodeEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_DataStoreNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_DataStoreNodeViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_DataStoreNodeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_DataStoreNodeGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_DataStoreNodeCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -2957,7 +2957,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Data Store Node"
           metamodelType="//@diagram/@childNodes.6/@elementType"
-          editHelperAdviceClassName="DataStoreNodeEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_DataStoreNodeEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="DataStoreFigure"
@@ -2982,9 +2982,9 @@
       </modelFacet>
       <labels
           visualID="5035"
-          editPartClassName="DataStoreNodeName2EditPart"
-          itemSemanticEditPolicyClassName="DataStoreNodeName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DataStoreNodeName2ViewFactory">
+          editPartClassName="StructuredActivityNode_DataStoreNodeNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_DataStoreNodeNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_DataStoreNodeNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3000,9 +3000,9 @@
       </labels>
       <labels
           visualID="5037"
-          editPartClassName="DataStoreNodeInState2EditPart"
-          itemSemanticEditPolicyClassName="DataStoreNodeInState2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DataStoreNodeInState2ViewFactory"
+          editPartClassName="StructuredActivityNode_DataStoreNodeInStateEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_DataStoreNodeInStateItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_DataStoreNodeInStateViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -3020,9 +3020,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5054"
-          editPartClassName="DataStoreNodeOrdering2EditPart"
-          itemSemanticEditPolicyClassName="DataStoreNodeOrdering2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DataStoreNodeOrdering2ViewFactory"
+          editPartClassName="StructuredActivityNode_DataStoreNodeOrderingEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_DataStoreNodeOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_DataStoreNodeOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -3038,9 +3038,9 @@
       </labels>
       <labels
           visualID="5128"
-          editPartClassName="DataStoreNodeStereotype2EditPart"
-          itemSemanticEditPolicyClassName="DataStoreNodeStereotype2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="DataStoreNodeStereotype2ViewFactory">
+          editPartClassName="StructuredActivityNode_DataStoreNodeStereotypeEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_DataStoreNodeStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_DataStoreNodeStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3061,12 +3061,12 @@
     </childNodes>
     <childNodes
         visualID="3025"
-        editPartClassName="CentralBufferNode2EditPart"
-        itemSemanticEditPolicyClassName="CentralBufferNode2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="CentralBufferNode2ViewFactory"
-        canonicalEditPolicyClassName="CentralBufferNode2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="CentralBufferNode2GraphicalNodeEditPolicy"
-        createCommandClassName="CentralBufferNode2CreateCommand"
+        editPartClassName="StructuredActivityNode_CentralBufferNodeEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_CentralBufferNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_CentralBufferNodeViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_CentralBufferNodeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StructuredActivityNode_CentralBufferNodeGraphicalNodeEditPolicy"
+        createCommandClassName="StructuredActivityNode_CentralBufferNodeCreateCommand"
         containers="//@diagram/@compartments.1 //@diagram/@compartments.0 //@diagram/@compartments.3 //@diagram/@compartments.2 //@diagram/@compartments.4 //@diagram/@compartments.5 //@diagram/@compartments.6 //@diagram/@compartments.7 //@diagram/@compartments.8 //@diagram/@compartments.9">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -3074,7 +3074,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Central Buffer Node"
           metamodelType="//@diagram/@childNodes.7/@elementType"
-          editHelperAdviceClassName="CentralBufferNodeEditHelperAdvice"/>
+          editHelperAdviceClassName="StructuredActivityNode_CentralBufferNodeEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="CentralBufferFigure"
@@ -3099,9 +3099,9 @@
       </modelFacet>
       <labels
           visualID="5033"
-          editPartClassName="CentralBufferNodeName2EditPart"
-          itemSemanticEditPolicyClassName="CentralBufferNodeName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CentralBufferNodeName2ViewFactory">
+          editPartClassName="StructuredActivityNode_CentralBufferNodeNameEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_CentralBufferNodeNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_CentralBufferNodeNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3117,9 +3117,9 @@
       </labels>
       <labels
           visualID="5039"
-          editPartClassName="CentralBufferNodeInState2EditPart"
-          itemSemanticEditPolicyClassName="CentralBufferNodeInState2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CentralBufferNodeInState2ViewFactory">
+          editPartClassName="StructuredActivityNode_CentralBufferNodeInStateEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_CentralBufferNodeInStateItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_CentralBufferNodeInStateViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3136,9 +3136,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5050"
-          editPartClassName="CentralBufferNodeOrdering2EditPart"
-          itemSemanticEditPolicyClassName="CentralBufferNodeOrdering2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CentralBufferNodeOrdering2ViewFactory"
+          editPartClassName="StructuredActivityNode_CentralBufferNodeOrderingEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_CentralBufferNodeOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_CentralBufferNodeOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -3154,9 +3154,9 @@
       </labels>
       <labels
           visualID="5125"
-          editPartClassName="CentralBufferNodeStereotype2EditPart"
-          itemSemanticEditPolicyClassName="CentralBufferNodeStereotype2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CentralBufferNodeStereotype2ViewFactory">
+          editPartClassName="StructuredActivityNode_CentralBufferNodeStereotypeEditPart"
+          itemSemanticEditPolicyClassName="StructuredActivityNode_CentralBufferNodeStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="StructuredActivityNode_CentralBufferNodeStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4191,13 +4191,13 @@
     </childNodes>
     <childNodes
         visualID="3067"
-        editPartClassName="OpaqueAction3EditPart"
-        itemSemanticEditPolicyClassName="OpaqueAction3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="OpaqueAction3ViewFactory"
-        canonicalEditPolicyClassName="OpaqueAction3CanonicalEditPolicy"
+        editPartClassName="ActivityPartition_OpaqueActionEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartition_OpaqueActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartition_OpaqueActionViewFactory"
+        canonicalEditPolicyClassName="ActivityPartition_OpaqueActionCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.9"
-        graphicalNodeEditPolicyClassName="OpaqueAction3GraphicalNodeEditPolicy"
-        createCommandClassName="OpaqueAction3CreateCommand"
+        graphicalNodeEditPolicyClassName="ActivityPartition_OpaqueActionGraphicalNodeEditPolicy"
+        createCommandClassName="ActivityPartition_OpaqueActionCreateCommand"
         containers="//@diagram/@childNodes.48 //@diagram/@childNodes.47">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -4233,9 +4233,9 @@
       </modelFacet>
       <labels
           visualID="5073"
-          editPartClassName="OpaqueActionName3EditPart"
-          itemSemanticEditPolicyClassName="OpaqueActionName3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OpaqueActionName3ViewFactory">
+          editPartClassName="ActivityPartition_OpaqueActionNameEditPart"
+          itemSemanticEditPolicyClassName="ActivityPartition_OpaqueActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ActivityPartition_OpaqueActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4251,9 +4251,9 @@
       </labels>
       <labels
           visualID="5112"
-          editPartClassName="OpaqueActionStereotype3EditPart"
-          itemSemanticEditPolicyClassName="OpaqueActionStereotype3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OpaqueActionStereotype3ViewFactory">
+          editPartClassName="ActivityPartition_OpaqueActionStereotypeEditPart"
+          itemSemanticEditPolicyClassName="ActivityPartition_OpaqueActionStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="ActivityPartition_OpaqueActionStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap

@@ -2909,15 +2909,15 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStructuredActivityNodeName_5089Parser();
 		case StructuredActivityNodeStereotype2EditPart.VISUAL_ID:
 			return getStructuredActivityNodeQualifiedName_5119Parser();
-		case OpaqueActionName2EditPart.VISUAL_ID:
+		case StructuredActivityNode_OpaqueActionNameEditPart.VISUAL_ID:
 			return getOpaqueActionName_5015Parser();
-		case OpaqueActionStereotype2EditPart.VISUAL_ID:
+		case StructuredActivityNode_OpaqueActionStereotypeEditPart.VISUAL_ID:
 			return getOpaqueActionQualifiedName_5111Parser();
-		case AcceptEventActionName2EditPart.VISUAL_ID:
+		case StructuredActivityNode_AcceptEventActionNameEditPart.VISUAL_ID:
 			return getAcceptEventActionName_5041Parser();
-		case AcceptEventActionStereotype2EditPart.VISUAL_ID:
+		case StructuredActivityNode_AcceptEventActionStereotypeEditPart.VISUAL_ID:
 			return getAcceptEventActionQualifiedName_5096Parser();
-		case AcceptEventActionName4EditPart.VISUAL_ID:
+		case StructuredActivityNode_AcceptTimeEventActionNameEditPart.VISUAL_ID:
 			return getAcceptEventActionName_5043Parser();
 		case StructuredActivityNode_PinNameEditPart.VISUAL_ID:
 			return getPinName_5016Parser();
@@ -2927,37 +2927,37 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPinOrdering_5086Parser();
 		case StructuredActivityNode_PinStereotypeEditPart.VISUAL_ID:
 			return getPinQualifiedName_5131Parser();
-		case CreateObjectActionName2EditPart.VISUAL_ID:
+		case StructuredActivityNode_CreateObjectActionNameEditPart.VISUAL_ID:
 			return getCreateObjectActionName_5017Parser();
-		case CreateObjectActionStereotype2EditPart.VISUAL_ID:
+		case StructuredActivityNode_CreateObjectActionStereotypeEditPart.VISUAL_ID:
 			return getCreateObjectActionQualifiedName_5108Parser();
-		case CallBehaviorActionName2EditPart.VISUAL_ID:
+		case StructuredActivityNode_CallBehaviorActionNameEditPart.VISUAL_ID:
 			return getCallBehaviorActionName_5018Parser();
-		case CallBehaviorActionStereotype2EditPart.VISUAL_ID:
+		case StructuredActivityNode_CallBehaviorActionStereotypeEditPart.VISUAL_ID:
 			return getCallBehaviorActionQualifiedName_5100Parser();
-		case CallOperationActionName2EditPart.VISUAL_ID:
+		case StructuredActivityNode_CallOperationActionNameEditPart.VISUAL_ID:
 			return getCallOperationActionName_5019Parser();
-		case CallOperationActionStereotype2EditPart.VISUAL_ID:
+		case StructuredActivityNode_CallOperationActionStereotypeEditPart.VISUAL_ID:
 			return getCallOperationActionQualifiedName_5102Parser();
-		case AddStructuralFeatureValueActionName2EditPart.VISUAL_ID:
+		case StructuredActivityNode_AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueActionName_5020Parser();
-		case AddStructuralFeatureValueActionStereotype2EditPart.VISUAL_ID:
+		case StructuredActivityNode_AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueActionQualifiedName_5098Parser();
-		case DataStoreNodeName2EditPart.VISUAL_ID:
+		case StructuredActivityNode_DataStoreNodeNameEditPart.VISUAL_ID:
 			return getDataStoreNodeName_5035Parser();
-		case DataStoreNodeInState2EditPart.VISUAL_ID:
+		case StructuredActivityNode_DataStoreNodeInStateEditPart.VISUAL_ID:
 			return getDataStoreNodeQualifiedName_5037Parser();
-		case DataStoreNodeOrdering2EditPart.VISUAL_ID:
+		case StructuredActivityNode_DataStoreNodeOrderingEditPart.VISUAL_ID:
 			return getDataStoreNodeOrdering_5054Parser();
-		case DataStoreNodeStereotype2EditPart.VISUAL_ID:
+		case StructuredActivityNode_DataStoreNodeStereotypeEditPart.VISUAL_ID:
 			return getDataStoreNodeQualifiedName_5128Parser();
-		case CentralBufferNodeName2EditPart.VISUAL_ID:
+		case StructuredActivityNode_CentralBufferNodeNameEditPart.VISUAL_ID:
 			return getCentralBufferNodeName_5033Parser();
-		case CentralBufferNodeInState2EditPart.VISUAL_ID:
+		case StructuredActivityNode_CentralBufferNodeInStateEditPart.VISUAL_ID:
 			return getCentralBufferNodeQualifiedName_5039Parser();
-		case CentralBufferNodeOrdering2EditPart.VISUAL_ID:
+		case StructuredActivityNode_CentralBufferNodeOrderingEditPart.VISUAL_ID:
 			return getCentralBufferNodeOrdering_5050Parser();
-		case CentralBufferNodeStereotype2EditPart.VISUAL_ID:
+		case StructuredActivityNode_CentralBufferNodeStereotypeEditPart.VISUAL_ID:
 			return getCentralBufferNodeQualifiedName_5125Parser();
 		case StructuredActivityNode_InputPinNameEditPart.VISUAL_ID:
 			return getInputPinName_5047Parser();
@@ -3003,9 +3003,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCentralBufferNodeOrdering_5072Parser();
 		case CentralBufferNodeStereotype3EditPart.VISUAL_ID:
 			return getCentralBufferNodeQualifiedName_5126Parser();
-		case OpaqueActionName3EditPart.VISUAL_ID:
+		case ActivityPartition_OpaqueActionNameEditPart.VISUAL_ID:
 			return getOpaqueActionName_5073Parser();
-		case OpaqueActionStereotype3EditPart.VISUAL_ID:
+		case ActivityPartition_OpaqueActionStereotypeEditPart.VISUAL_ID:
 			return getOpaqueActionQualifiedName_5112Parser();
 		case ActivityPartition_PinNameEditPart.VISUAL_ID:
 			return getPinName_5074Parser();
