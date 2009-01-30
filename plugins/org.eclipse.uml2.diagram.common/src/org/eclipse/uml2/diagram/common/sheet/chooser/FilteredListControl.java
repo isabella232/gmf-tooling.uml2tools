@@ -26,6 +26,7 @@ import org.eclipse.ui.dialogs.FilteredList.FilterMatcher;
  * This control repeats functionality from org.eclipse.ui.dialogs.AbstractElementListSelectionDialog.
  * We don't need any dialog here, that's why we cannot use the original class, but copy the code instead.
  * See #263012 'Add FilterText composite to FilteredList'
+ * See #263035 'Filtered List: Provide access to fList field'
  */
 public class FilteredListControl extends Composite {
 
@@ -121,6 +122,10 @@ public class FilteredListControl extends Composite {
 		return text;
 	}
 
+/* 
+ * Hack to add Double-Click Listener
+ * See #263035 'Filtered List: Provide access to fList field'
+ */
 	private Table getTable(FilteredList list) {
 		try {
 			Field field = list.getClass().getDeclaredField("fList");
