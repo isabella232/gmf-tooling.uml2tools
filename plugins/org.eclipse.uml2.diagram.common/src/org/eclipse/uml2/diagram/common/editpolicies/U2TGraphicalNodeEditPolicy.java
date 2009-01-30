@@ -2,6 +2,8 @@ package org.eclipse.uml2.diagram.common.editpolicies;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.ConnectionAnchor;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -36,6 +38,9 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		TransactionalEditingDomain editingDomain = getHostImpl().getEditingDomain();
 
 		U2TCreateLinkCommand result = new U2TCreateLinkCommand(editingDomain);
+		result.setSourceParameters(computeParameters(request));
+		result.registerInRequest(request);
+		
 		Diagram diagramView = getView().getDiagram();
 
 		CreateCommand createCommand = new CreateCommand(editingDomain, req.getConnectionViewDescriptor(), diagramView);
@@ -53,14 +58,14 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 		Command c = new ICommandProxy(result);
 		request.setStartCommand(c);
+
 		return c;
 	}
 
-	
 	@SuppressWarnings("restriction")
 	protected Command getConnectionCompleteCommand(CreateConnectionRequest request) {
-		ICommandProxy proxy = (ICommandProxy) request.getStartCommand();
-		if (proxy == null) {
+		U2TCreateLinkCommand cc = unwrapStartCommand(request);
+		if (cc == null) {
 			return null;
 		}
 
@@ -70,15 +75,13 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 			return null;
 		}
 
-		U2TCreateLinkCommand cc = (U2TCreateLinkCommand) proxy.getICommand();
-		
 		ConnectionAnchor targetAnchor = targetEP.getTargetConnectionAnchor(request);
 		SetConnectionEndsCommand sceCommand = cc.getSetConnectionEndsCommand();
 		sceCommand.setNewTargetAdaptor(new EObjectAdapter(((IGraphicalEditPart) targetEP).getNotationView()));
-		
+
 		SetConnectionAnchorsCommand scaCommand = cc.getSetConnectionAnchorsCommand();
 		scaCommand.setNewTargetTerminal(targetEP.mapConnectionAnchorToTerminal(targetAnchor));
-		
+
 		INodeEditPart sourceEditPart = (INodeEditPart) request.getSourceEditPart();
 		ConnectionAnchor sourceAnchor = sourceEditPart.mapTerminalToConnectionAnchor(scaCommand.getNewSourceTerminal());
 		PointList pointList = new PointList();
@@ -99,15 +102,15 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		CreateElementRequestAdapter requestAdapter = request.getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
 		// get the semantic request
 		CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class);
-		
+
 		createElementRequest.setPrompt(!request.isUISupressed());
-		
+
 		// complete the semantic request by filling in the source and
 		// destination
 		INodeEditPart targetEP = getConnectionCompleteEditPart(request);
-		View sourceView = (View)request.getSourceEditPart().getModel();
-		View targetView = (View)targetEP.getModel();
-		
+		View sourceView = (View) request.getSourceEditPart().getModel();
+		View targetView = (View) targetEP.getModel();
+
 		// resolve the source
 		EObject source = ViewUtil.resolveSemanticElement(sourceView);
 		if (source == null) {
@@ -115,35 +118,35 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		}
 
 		createElementRequest.setSource(source);
-		
+
 		// resolve the target
 		EObject target = ViewUtil.resolveSemanticElement(targetView);
 		if (target == null) {
 			target = targetView;
 		}
 		createElementRequest.setTarget(target);
-		
-		// get the create element request based on the elementdescriptor's
-		// request
-		Command createElementCommand = targetEP
-				.getCommand(new EditCommandRequestWrapper(
-						(CreateRelationshipRequest) requestAdapter
-								.getAdapter(CreateRelationshipRequest.class), request.getExtendedData()));
-		
+
+		unwrapStartCommand(request).setTargetParameters(computeParameters(request));
+
+		Command createElementCommand = targetEP.getCommand(//
+				new EditCommandRequestWrapper(//
+						(CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class), //
+						request.getExtendedData()));
+
 		// create the create semantic element wrapper command
-		if (null == createElementCommand){
+		if (null == createElementCommand) {
 			return null;
 		}
-		
+
 		SemanticCreateCommand semanticCommand = new SemanticCreateCommand(requestAdapter, createElementCommand);
 
 		// get the view command
-		ICommandProxy result = (ICommandProxy)getConnectionCompleteCommand(request);
-		if (null == result){
+		ICommandProxy result = (ICommandProxy) getConnectionCompleteCommand(request);
+		if (null == result) {
 			return null;
 		}
-		
-		U2TCreateLinkCommand viewCommandImpl = (U2TCreateLinkCommand)result.getICommand();
+
+		U2TCreateLinkCommand viewCommandImpl = (U2TCreateLinkCommand) result.getICommand();
 
 		// set semantic creation to be executed before edge creation and setup
 		viewCommandImpl.setSemanticCreation(semanticCommand);
@@ -154,4 +157,67 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	private IGraphicalEditPart getHostImpl() {
 		return (IGraphicalEditPart) getHost();
 	}
+
+	protected U2TCreateLinkCommand unwrapStartCommand(CreateConnectionRequest request) {
+		ICommandProxy proxy = (ICommandProxy) request.getStartCommand();
+		if (proxy == null) {
+			return null;
+		}
+		return (U2TCreateLinkCommand) proxy.getICommand();
+	}
+	
+	protected U2TCreateLinkParameters computeParameters(CreateConnectionRequest request){
+		U2TCreateLinkParametersImpl parameters = new U2TCreateLinkParametersImpl(); 
+		parameters.setParentView(getHostImpl().getNotationView());
+		
+		IFigure hostContentPane = getHostImpl().getContentPane();
+		Point origin = hostContentPane.getClientArea().getLocation();
+		Point relativeLocation = new Point(request.getLocation());
+		hostContentPane.translateToRelative(relativeLocation);
+		relativeLocation.translate(origin.getNegated());
+		parameters.setRelativeLocation(relativeLocation);
+		
+		return parameters;
+	}
+	
+	protected static class U2TCreateLinkParametersImpl implements U2TCreateLinkParameters {
+		private Point myRelativeLocation;
+		private View myParentView;
+		private View myAnchorSibling;
+		private boolean myIsBeforeAnchor;
+		
+		public Point getRelativeLocation() {
+			return myRelativeLocation;
+		}
+		
+		public void setRelativeLocation(Point relativeLocation) {
+			myRelativeLocation = relativeLocation;
+		}
+		
+		public View getAnchorSibling() {
+			return myAnchorSibling;
+		}
+		
+		public void setAnchorSibling(View anchorSibling) {
+			myAnchorSibling = anchorSibling;
+		}
+		
+		public boolean isBeforeNotAfterAnchor() {
+			return myIsBeforeAnchor;
+		}
+		
+		public void setBeforeNotAfterAnchor(boolean isBeforeAnchor) {
+			myIsBeforeAnchor = isBeforeAnchor;
+		}
+		
+		public View getParentView() {
+			return myParentView;
+		}
+		
+		public void setParentView(View parentView) {
+			myParentView = parentView;
+		}
+	}
+	
+	
 }
