@@ -1,14 +1,3 @@
-/*
- * Copyright (c) 2008 Borland Software Corporation
- * 
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *    Tatiana Fesenko (Borland) - initial API and implementation
- */
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
 import java.lang.reflect.Field;
@@ -33,6 +22,11 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.FilteredList;
 import org.eclipse.ui.dialogs.FilteredList.FilterMatcher;
 
+/*
+ * This control repeats functionality from org.eclipse.ui.dialogs.AbstractElementListSelectionDialog.
+ * We don't need any dialog here, that's why we cannot use the original class, but copy the code instead.
+ * See #263012 'Add FilterText composite to FilteredList'
+ */
 public class FilteredListControl extends Composite {
 
 	private boolean fIgnoreCase = true;
