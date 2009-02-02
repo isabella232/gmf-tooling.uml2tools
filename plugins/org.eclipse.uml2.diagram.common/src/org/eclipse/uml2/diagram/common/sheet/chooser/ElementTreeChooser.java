@@ -11,9 +11,12 @@
  */
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
@@ -37,6 +40,7 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.TreePath;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -64,6 +68,8 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	private final EStructuralFeature myFeature;
 
+	private MainRoot myRoot;
+
 	public ElementTreeChooser(AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature, TransactionalEditingDomain editingDomain) {
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
 		mySourceObject = sourceObject;
@@ -73,15 +79,16 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	public Control createControl(Composite parent) {
 		Composite composite = createModelBrowser(parent);
-		MainRoot root = new MainRoot(mySourceObject);
-		myTreeViewer.setInput(root);
+		myRoot = new MainRoot(mySourceObject);
+		myTreeViewer.setInput(myRoot);
 		myTreeViewer.addFilter(new UMLFileFilter());
-		if (myFeature instanceof EReference){
-			//false -- for now always ignore template-related containments, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=261691#c3
-			myTreeViewer.addFilter(new UMLContainmentFilter((EReference)myFeature, false));  
+		if (myFeature instanceof EReference) {
+			// false -- for now always ignore template-related containments, see
+			// https://bugs.eclipse.org/bugs/show_bug.cgi?id=261691#c3
+			myTreeViewer.addFilter(new UMLContainmentFilter((EReference) myFeature, false));
 		}
-		myTreeViewer.expandToLevel(root.getCurrentResourceRoot(), 1);
-		myTreeViewer.expandToLevel(root.getLoadedResourcesRoot(), 1);
+		myTreeViewer.expandToLevel(myRoot.getCurrentResourceRoot(), 1);
+		myTreeViewer.expandToLevel(myRoot.getLoadedResourcesRoot(), 1);
 		return composite;
 	}
 
@@ -93,9 +100,17 @@ public class ElementTreeChooser implements ElementChooserPage {
 		if (selection == null || selection.isEmpty()) {
 			myTreeViewer.setSelection(null);
 		} else {
-			myTreeViewer.setSelection(new StructuredSelection(selection), true);
+			ArrayList<TreePath> paths = new ArrayList<TreePath>(selection.size());
+			for (Object next : selection) {
+				TreePath path = getTreePath(next);
+				if (path != null) {
+					paths.add(path);
+				}
+			}
+			myTreeViewer.setSelection(new StructuredSelection(paths), true);
 		}
 	}
+
 
 	private Composite createModelBrowser(Composite composite) {
 		myTreeViewer = new TreeViewer(composite, SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
@@ -122,7 +137,58 @@ public class ElementTreeChooser implements ElementChooserPage {
 		myEditingDomain.dispose();
 	}
 
+	private TreePath getTreePath(Object element) {
+		if (element == null) {
+			return null;
+		}
+		if (false == element instanceof EObject) {
+			return new TreePath(new Object[] { element });
+		}
+		List<Object> segments = buildPathSegments((EObject) element);
+		Collections.reverse(segments);
+		TreePath path = new TreePath(segments.toArray(new Object[segments.size()]));
+		return path;
+	}
+
+	private List<Object> buildPathSegments(EObject element) {
+		List<Object> segments = new ArrayList<Object>();
+		EObject container = element;
+		while (container != null) {
+			segments.add(container);
+			container = container.eContainer();
+		}
+		if (isInCurrentResource(element)) {
+			segments.add(myRoot.getCurrentResourceRoot());
+			segments.add(myRoot);
+			return segments;
+		}
+		if (inInLoadedResource(element)) {
+			segments.add(element.eResource());
+			segments.add(myRoot.getLoadedResourcesRoot());
+			segments.add(myRoot);
+			return segments;
+		}
+		Path path = new Path(element.eResource().getURI().toFileString());
+		IResource resource = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
+		while(resource != null) {
+			segments.add(resource);
+			resource = resource.getParent();
+		}
+		segments.add(myRoot.getWorkspaceRoot());
+		segments.add(myRoot);
+		return segments;
+	}
+
+	private boolean inInLoadedResource(EObject element) {
+		return mySourceObject.eResource().getResourceSet().getResources().contains(element.eResource());
+	}
+
+	private boolean isInCurrentResource(EObject element) {
+		return mySourceObject.eResource().equals(element.eResource());
+	}
+
 	private static class ModelElementsTreeContentProvider implements ITreeContentProvider {
+
 		private static final Object[] NOTHING = new Object[0];
 
 		private static final ITreeContentProvider myWorkbenchContentProvider = new WorkbenchContentProvider();
