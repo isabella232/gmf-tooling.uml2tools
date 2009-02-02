@@ -18,12 +18,12 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
  * @generated
  */
 
-public class ForkNode3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class ActivityPartition_ForkNodeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public ForkNode3ItemSemanticEditPolicy() {
+	public ActivityPartition_ForkNodeItemSemanticEditPolicy() {
 		super(UMLElementTypes.ForkNode_3069);
 	}
 

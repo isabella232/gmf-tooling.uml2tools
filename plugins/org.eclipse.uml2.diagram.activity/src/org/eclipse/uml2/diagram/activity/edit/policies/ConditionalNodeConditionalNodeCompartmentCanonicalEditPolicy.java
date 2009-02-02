@@ -39,7 +39,9 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CentralBuf
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_FlowFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_InitialNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart;
@@ -68,10 +70,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
@@ -192,8 +192,8 @@ public class ConditionalNodeConditionalNodeCompartmentCanonicalEditPolicy extend
 		case ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID:
 		case ActivityPartition_OpaqueActionEditPart.VISUAL_ID:
 		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
-		case ForkNode3EditPart.VISUAL_ID:
-		case JoinNode3EditPart.VISUAL_ID:
+		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
+		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 		case ActivityPartition_PinEditPart.VISUAL_ID:
 		case CreateObjectAction3EditPart.VISUAL_ID:
 		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:

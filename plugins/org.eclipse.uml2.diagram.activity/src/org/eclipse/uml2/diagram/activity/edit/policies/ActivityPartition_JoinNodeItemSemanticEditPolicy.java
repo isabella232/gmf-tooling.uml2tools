@@ -18,12 +18,12 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
  * @generated
  */
 
-public class JoinNode3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class ActivityPartition_JoinNodeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public JoinNode3ItemSemanticEditPolicy() {
+	public ActivityPartition_JoinNodeItemSemanticEditPolicy() {
 		super(UMLElementTypes.JoinNode_3070);
 	}
 

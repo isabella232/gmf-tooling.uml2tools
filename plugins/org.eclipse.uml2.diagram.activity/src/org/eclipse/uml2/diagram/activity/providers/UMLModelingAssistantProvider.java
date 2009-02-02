@@ -34,7 +34,9 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CentralBuf
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_FlowFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_InitialNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart;
@@ -67,10 +69,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionExpansionRegionNodeCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionExpansionRegionNodeCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
@@ -768,11 +768,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			return ((ActivityPartition_FlowFinalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof ForkNode3EditPart) {
-			return ((ForkNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_ForkNodeEditPart) {
+			return ((ActivityPartition_ForkNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof JoinNode3EditPart) {
-			return ((JoinNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_JoinNodeEditPart) {
+			return ((ActivityPartition_JoinNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ActivityPartition_PinEditPart) {
 			return ((ActivityPartition_PinEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -1019,11 +1019,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			return ((ActivityPartition_FlowFinalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof ForkNode3EditPart) {
-			return ((ForkNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_ForkNodeEditPart) {
+			return ((ActivityPartition_ForkNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof JoinNode3EditPart) {
-			return ((JoinNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_JoinNodeEditPart) {
+			return ((ActivityPartition_JoinNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ActivityPartition_PinEditPart) {
 			return ((ActivityPartition_PinEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -1259,11 +1259,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			return ((ActivityPartition_FlowFinalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof ForkNode3EditPart) {
-			return ((ForkNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_ForkNodeEditPart) {
+			return ((ActivityPartition_ForkNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof JoinNode3EditPart) {
-			return ((JoinNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_JoinNodeEditPart) {
+			return ((ActivityPartition_JoinNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ActivityPartition_PinEditPart) {
 			return ((ActivityPartition_PinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1510,11 +1510,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			return ((ActivityPartition_FlowFinalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof ForkNode3EditPart) {
-			return ((ForkNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_ForkNodeEditPart) {
+			return ((ActivityPartition_ForkNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof JoinNode3EditPart) {
-			return ((JoinNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_JoinNodeEditPart) {
+			return ((ActivityPartition_JoinNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ActivityPartition_PinEditPart) {
 			return ((ActivityPartition_PinEditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -1749,11 +1749,11 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			return ((ActivityPartition_FlowFinalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof ForkNode3EditPart) {
-			return ((ForkNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_ForkNodeEditPart) {
+			return ((ActivityPartition_ForkNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof JoinNode3EditPart) {
-			return ((JoinNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_JoinNodeEditPart) {
+			return ((ActivityPartition_JoinNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ActivityPartition_PinEditPart) {
 			return ((ActivityPartition_PinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);

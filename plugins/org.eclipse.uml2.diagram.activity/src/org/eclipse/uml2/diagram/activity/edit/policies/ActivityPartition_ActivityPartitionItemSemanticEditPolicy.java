@@ -18,7 +18,9 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_Central
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_DataStoreNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_DecisionNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_FlowFinalNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_ForkNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_InitialNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_JoinNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_MergeNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_OpaqueActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_PinCreateCommand;
@@ -28,8 +30,6 @@ import org.eclipse.uml2.diagram.activity.edit.commands.CallOperationAction3Creat
 import org.eclipse.uml2.diagram.activity.edit.commands.ConditionalNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.CreateObjectAction3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExpansionRegion2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.ForkNode3CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.JoinNode3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.LoopNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.SendSignalAction2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode3CreateCommand;
@@ -42,7 +42,9 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CentralBuf
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_FlowFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_InitialNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart;
@@ -52,8 +54,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditPart;
@@ -112,10 +112,10 @@ public class ActivityPartition_ActivityPartitionItemSemanticEditPolicy extends U
 			return getGEFWrapper(new ActivityPartition_FlowFinalNodeCreateCommand(req));
 		}
 		if (UMLElementTypes.ForkNode_3069 == req.getElementType()) {
-			return getGEFWrapper(new ForkNode3CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_ForkNodeCreateCommand(req));
 		}
 		if (UMLElementTypes.JoinNode_3070 == req.getElementType()) {
-			return getGEFWrapper(new JoinNode3CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_JoinNodeCreateCommand(req));
 		}
 		if (UMLElementTypes.Pin_3071 == req.getElementType()) {
 			return getGEFWrapper(new ActivityPartition_PinCreateCommand(req));
@@ -209,10 +209,10 @@ public class ActivityPartition_ActivityPartitionItemSemanticEditPolicy extends U
 			case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case ForkNode3EditPart.VISUAL_ID:
+			case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case JoinNode3EditPart.VISUAL_ID:
+			case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case ActivityPartition_PinEditPart.VISUAL_ID:

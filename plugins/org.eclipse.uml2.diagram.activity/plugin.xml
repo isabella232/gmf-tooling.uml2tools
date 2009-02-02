@@ -1569,10 +1569,10 @@
                   <with variable="selection"><iterate ifEmpty="false"><or> 
                      <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart"/>
                      <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_JoinNodeEditPart"/>
-                     <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEditPart"/>
                      <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart"/>
                      <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ForkNodeEditPart"/>
-                     <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ForkNodeEditPart"/>
                   </or></iterate></with>
                </and>
             </visibleWhen>
@@ -1965,11 +1965,11 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ForkNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

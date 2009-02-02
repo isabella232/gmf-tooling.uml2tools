@@ -4312,12 +4312,12 @@
     </childNodes>
     <childNodes
         visualID="3069"
-        editPartClassName="ForkNode3EditPart"
-        itemSemanticEditPolicyClassName="ForkNode3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ForkNode3ViewFactory"
-        canonicalEditPolicyClassName="ForkNode3CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ForkNode3GraphicalNodeEditPolicy"
-        createCommandClassName="ForkNode3CreateCommand"
+        editPartClassName="ActivityPartition_ForkNodeEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartition_ForkNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartition_ForkNodeViewFactory"
+        canonicalEditPolicyClassName="ActivityPartition_ForkNodeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ActivityPartition_ForkNodeGraphicalNodeEditPolicy"
+        createCommandClassName="ActivityPartition_ForkNodeCreateCommand"
         containers="//@diagram/@childNodes.48 //@diagram/@childNodes.47">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -4351,12 +4351,12 @@
     </childNodes>
     <childNodes
         visualID="3070"
-        editPartClassName="JoinNode3EditPart"
-        itemSemanticEditPolicyClassName="JoinNode3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="JoinNode3ViewFactory"
-        canonicalEditPolicyClassName="JoinNode3CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="JoinNode3GraphicalNodeEditPolicy"
-        createCommandClassName="JoinNode3CreateCommand"
+        editPartClassName="ActivityPartition_JoinNodeEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartition_JoinNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartition_JoinNodeViewFactory"
+        canonicalEditPolicyClassName="ActivityPartition_JoinNodeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ActivityPartition_JoinNodeGraphicalNodeEditPolicy"
+        createCommandClassName="ActivityPartition_JoinNodeCreateCommand"
         containers="//@diagram/@childNodes.48 //@diagram/@childNodes.47">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>

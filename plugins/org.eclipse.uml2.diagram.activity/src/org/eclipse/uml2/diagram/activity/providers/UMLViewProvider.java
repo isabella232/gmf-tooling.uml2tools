@@ -153,8 +153,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID:
 				case ActivityPartition_OpaqueActionEditPart.VISUAL_ID:
 				case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
-				case ForkNode3EditPart.VISUAL_ID:
-				case JoinNode3EditPart.VISUAL_ID:
+				case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
+				case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 				case ActivityPartition_PinEditPart.VISUAL_ID:
 				case CreateObjectAction3EditPart.VISUAL_ID:
 				case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
@@ -931,10 +931,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActivityPartition_OpaqueActionStereotypeViewFactory.class;
 		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 			return ActivityPartition_FlowFinalNodeViewFactory.class;
-		case ForkNode3EditPart.VISUAL_ID:
-			return ForkNode3ViewFactory.class;
-		case JoinNode3EditPart.VISUAL_ID:
-			return JoinNode3ViewFactory.class;
+		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
+			return ActivityPartition_ForkNodeViewFactory.class;
+		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
+			return ActivityPartition_JoinNodeViewFactory.class;
 		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return ActivityPartition_PinViewFactory.class;
 		case ActivityPartition_PinNameEditPart.VISUAL_ID:

@@ -653,10 +653,10 @@ public class UMLVisualIDRegistry {
 				return ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3069((ForkNode) domainElement)) {
-				return ForkNode3EditPart.VISUAL_ID;
+				return ActivityPartition_ForkNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3070((JoinNode) domainElement)) {
-				return JoinNode3EditPart.VISUAL_ID;
+				return ActivityPartition_JoinNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3071((Pin) domainElement)) {
 				return ActivityPartition_PinEditPart.VISUAL_ID;
@@ -728,10 +728,10 @@ public class UMLVisualIDRegistry {
 				return ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3069((ForkNode) domainElement)) {
-				return ForkNode3EditPart.VISUAL_ID;
+				return ActivityPartition_ForkNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3070((JoinNode) domainElement)) {
-				return JoinNode3EditPart.VISUAL_ID;
+				return ActivityPartition_JoinNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3071((Pin) domainElement)) {
 				return ActivityPartition_PinEditPart.VISUAL_ID;
@@ -1946,10 +1946,10 @@ public class UMLVisualIDRegistry {
 			if (ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ForkNode3EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_ForkNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (JoinNode3EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_JoinNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ActivityPartition_PinEditPart.VISUAL_ID == nodeVisualID) {
@@ -2023,10 +2023,10 @@ public class UMLVisualIDRegistry {
 			if (ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ForkNode3EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_ForkNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (JoinNode3EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_JoinNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ActivityPartition_PinEditPart.VISUAL_ID == nodeVisualID) {
@@ -4051,10 +4051,10 @@ public class UMLVisualIDRegistry {
 				return ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3069((ForkNode) domainElement)) {
-				return ForkNode3EditPart.VISUAL_ID;
+				return ActivityPartition_ForkNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3070((JoinNode) domainElement)) {
-				return JoinNode3EditPart.VISUAL_ID;
+				return ActivityPartition_JoinNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3071((Pin) domainElement)) {
 				return ActivityPartition_PinEditPart.VISUAL_ID;
@@ -4126,10 +4126,10 @@ public class UMLVisualIDRegistry {
 				return ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getForkNode().isSuperTypeOf(domainElement.eClass()) && isForkNode_3069((ForkNode) domainElement)) {
-				return ForkNode3EditPart.VISUAL_ID;
+				return ActivityPartition_ForkNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getJoinNode().isSuperTypeOf(domainElement.eClass()) && isJoinNode_3070((JoinNode) domainElement)) {
-				return JoinNode3EditPart.VISUAL_ID;
+				return ActivityPartition_JoinNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getPin().isSuperTypeOf(domainElement.eClass()) && isPin_3071((Pin) domainElement)) {
 				return ActivityPartition_PinEditPart.VISUAL_ID;
@@ -4800,8 +4800,8 @@ public class UMLVisualIDRegistry {
 		case ActivityPartition_DataStoreNodeEditPart.VISUAL_ID:
 		case ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID:
 		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
-		case ForkNode3EditPart.VISUAL_ID:
-		case JoinNode3EditPart.VISUAL_ID:
+		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
+		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 		case ActivityPartition_PinEditPart.VISUAL_ID:
 		case StructuredActivityNode3EditPart.VISUAL_ID:
 		case StructuredActivityNode4EditPart.VISUAL_ID:

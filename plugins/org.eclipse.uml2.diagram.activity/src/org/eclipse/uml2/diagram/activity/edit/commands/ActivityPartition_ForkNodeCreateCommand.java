@@ -19,16 +19,18 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * @generated
  */
-public class ForkNode3CreateCommand extends EditElementCommand {
+
+public class ActivityPartition_ForkNodeCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public ForkNode3CreateCommand(CreateElementRequest req) {
+	public ActivityPartition_ForkNodeCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
+	 * FIXME: replace with setElementToEdit()
 	 * @generated
 	 */
 	protected EObject getElementToEditGen() {
@@ -102,4 +104,5 @@ public class ForkNode3CreateCommand extends EditElementCommand {
 			configureCommand.execute(monitor, info);
 		}
 	}
+
 }

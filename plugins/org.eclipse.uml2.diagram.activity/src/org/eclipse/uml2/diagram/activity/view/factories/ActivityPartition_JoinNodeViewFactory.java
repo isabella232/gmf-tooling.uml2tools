@@ -7,14 +7,14 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactory;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
 
-public class ForkNode3ViewFactory extends AbstractShapeViewFactory {
+public class ActivityPartition_JoinNodeViewFactory extends AbstractShapeViewFactory {
 
 	/**
 	 * @generated
@@ -30,7 +30,7 @@ public class ForkNode3ViewFactory extends AbstractShapeViewFactory {
 	 */
 	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
-			semanticHint = UMLVisualIDRegistry.getType(ForkNode3EditPart.VISUAL_ID);
+			semanticHint = UMLVisualIDRegistry.getType(ActivityPartition_JoinNodeEditPart.VISUAL_ID);
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);

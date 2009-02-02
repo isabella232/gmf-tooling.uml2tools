@@ -508,11 +508,11 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_FlowFinalNodeEditPart(view);
 
-			case ForkNode3EditPart.VISUAL_ID:
-				return new ForkNode3EditPart(view);
+			case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_ForkNodeEditPart(view);
 
-			case JoinNode3EditPart.VISUAL_ID:
-				return new JoinNode3EditPart(view);
+			case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_JoinNodeEditPart(view);
 
 			case ActivityPartition_PinEditPart.VISUAL_ID:
 				return new ActivityPartition_PinEditPart(view);

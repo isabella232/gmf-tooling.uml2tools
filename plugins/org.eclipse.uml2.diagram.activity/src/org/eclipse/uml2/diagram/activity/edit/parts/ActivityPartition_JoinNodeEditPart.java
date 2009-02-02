@@ -27,8 +27,8 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.uml2.diagram.activity.edit.policies.ForkNode3CanonicalEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.ForkNode3ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition_JoinNodeCanonicalEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition_JoinNodeItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -39,12 +39,12 @@ import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
  * @generated
  */
 
-public class ForkNode3EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class ActivityPartition_JoinNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3069;
+	public static final int VISUAL_ID = 3070;
 
 	/**
 	 * @generated
@@ -59,7 +59,7 @@ public class ForkNode3EditPart extends ShapeNodeEditPart implements PrimaryShape
 	/**
 	 * @generated
 	 */
-	public ForkNode3EditPart(View view) {
+	public ActivityPartition_JoinNodeEditPart(View view) {
 		super(view);
 	}
 
@@ -71,8 +71,8 @@ public class ForkNode3EditPart extends ShapeNodeEditPart implements PrimaryShape
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ForkNode3ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ForkNode3CanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityPartition_JoinNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityPartition_JoinNodeCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -395,10 +395,10 @@ public class ForkNode3EditPart extends ShapeNodeEditPart implements PrimaryShape
 		if (targetEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ForkNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof JoinNode3EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityPartition_PinEditPart) {
@@ -626,10 +626,10 @@ public class ForkNode3EditPart extends ShapeNodeEditPart implements PrimaryShape
 		if (targetEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ForkNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof JoinNode3EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityPartition_PinEditPart) {

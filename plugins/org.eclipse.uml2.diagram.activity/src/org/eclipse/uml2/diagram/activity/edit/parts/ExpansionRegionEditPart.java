@@ -481,10 +481,10 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart implements Primar
 		if (targetEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ForkNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ForkNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof JoinNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_JoinNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityPartition_PinEditPart) {
@@ -712,10 +712,10 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart implements Primar
 		if (targetEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ForkNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ForkNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof JoinNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_JoinNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityPartition_PinEditPart) {

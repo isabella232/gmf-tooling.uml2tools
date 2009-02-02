@@ -210,9 +210,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?OpaqueAction", UMLElementTypes.OpaqueAction_3067); //$NON-NLS-1$
 		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?FlowFinalNode", UMLElementTypes.FlowFinalNode_3068); //$NON-NLS-1$
-		case ForkNode3EditPart.VISUAL_ID:
+		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ForkNode", UMLElementTypes.ForkNode_3069); //$NON-NLS-1$
-		case JoinNode3EditPart.VISUAL_ID:
+		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?JoinNode", UMLElementTypes.JoinNode_3070); //$NON-NLS-1$
 		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pin", UMLElementTypes.Pin_3071); //$NON-NLS-1$
@@ -448,9 +448,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getOpaqueAction_3067Text(view);
 		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3068Text(view);
-		case ForkNode3EditPart.VISUAL_ID:
+		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
 			return getForkNode_3069Text(view);
-		case JoinNode3EditPart.VISUAL_ID:
+		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 			return getJoinNode_3070Text(view);
 		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return getPin_3071Text(view);

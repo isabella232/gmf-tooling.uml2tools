@@ -611,11 +611,11 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ForkNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_ForkNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == JoinNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_JoinNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -727,11 +727,11 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ForkNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_ForkNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == JoinNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_JoinNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -2115,9 +2115,9 @@ public class UMLDiagramUpdater {
 			return getOpaqueAction_3067ContainedLinks(view);
 		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3068ContainedLinks(view);
-		case ForkNode3EditPart.VISUAL_ID:
+		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
 			return getForkNode_3069ContainedLinks(view);
-		case JoinNode3EditPart.VISUAL_ID:
+		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 			return getJoinNode_3070ContainedLinks(view);
 		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return getPin_3071ContainedLinks(view);
@@ -2304,9 +2304,9 @@ public class UMLDiagramUpdater {
 			return getOpaqueAction_3067IncomingLinks(view);
 		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3068IncomingLinks(view);
-		case ForkNode3EditPart.VISUAL_ID:
+		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
 			return getForkNode_3069IncomingLinks(view);
-		case JoinNode3EditPart.VISUAL_ID:
+		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 			return getJoinNode_3070IncomingLinks(view);
 		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return getPin_3071IncomingLinks(view);
@@ -2493,9 +2493,9 @@ public class UMLDiagramUpdater {
 			return getOpaqueAction_3067OutgoingLinks(view);
 		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3068OutgoingLinks(view);
-		case ForkNode3EditPart.VISUAL_ID:
+		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
 			return getForkNode_3069OutgoingLinks(view);
-		case JoinNode3EditPart.VISUAL_ID:
+		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 			return getJoinNode_3070OutgoingLinks(view);
 		case ActivityPartition_PinEditPart.VISUAL_ID:
 			return getPin_3071OutgoingLinks(view);
