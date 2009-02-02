@@ -453,34 +453,34 @@ public class StructuredActivityNode_InputPinEditPart extends AbstractBorderedSha
 		if (targetEditPart instanceof SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AcceptEventAction5EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AcceptEventAction6EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ActivityFinalNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ActivityFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof DecisionNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_DecisionNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof MergeNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_MergeNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof InitialNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_InitialNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof DataStoreNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_DataStoreNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CentralBufferNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CentralBufferNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityPartition_OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof FlowFinalNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ForkNode3EditPart) {
@@ -684,34 +684,34 @@ public class StructuredActivityNode_InputPinEditPart extends AbstractBorderedSha
 		if (targetEditPart instanceof SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AcceptEventAction5EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AcceptEventAction6EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AcceptTimeEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ActivityFinalNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ActivityFinalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof DecisionNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_DecisionNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof MergeNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_MergeNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof InitialNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_InitialNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof DataStoreNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_DataStoreNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CentralBufferNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CentralBufferNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityPartition_OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof FlowFinalNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ForkNode3EditPart) {

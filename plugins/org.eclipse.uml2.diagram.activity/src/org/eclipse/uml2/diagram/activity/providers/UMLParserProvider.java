@@ -2979,29 +2979,29 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getSendSignalActionQualifiedName_5113Parser();
 		case ActivityPartitionNameEditPart.VISUAL_ID:
 			return getActivityPartitionName_5045Parser();
-		case ActivityPartitionName2EditPart.VISUAL_ID:
+		case ActivityPartition_ActivityPartitionNameEditPart.VISUAL_ID:
 			return getActivityPartitionName_5046Parser();
-		case AcceptEventActionName5EditPart.VISUAL_ID:
+		case ActivityPartition_AcceptEventActionNameEditPart.VISUAL_ID:
 			return getAcceptEventActionName_5065Parser();
-		case AcceptEventActionStereotype5EditPart.VISUAL_ID:
+		case ActivityPartition_AcceptEventActionStereotypeEditPart.VISUAL_ID:
 			return getAcceptEventActionQualifiedName_5105Parser();
-		case AcceptEventActionName6EditPart.VISUAL_ID:
+		case ActivityPartition_AcceptTimeEventActionNameEditPart.VISUAL_ID:
 			return getAcceptEventActionName_5066Parser();
-		case DataStoreNodeName3EditPart.VISUAL_ID:
+		case ActivityPartition_DataStoreNodeNameEditPart.VISUAL_ID:
 			return getDataStoreNodeName_5067Parser();
-		case DataStoreNodeInState3EditPart.VISUAL_ID:
+		case ActivityPartition_DataStoreNodeInStateEditPart.VISUAL_ID:
 			return getDataStoreNodeQualifiedName_5068Parser();
-		case DataStoreNodeOrdering3EditPart.VISUAL_ID:
+		case ActivityPartition_DataStoreNodeOrderingEditPart.VISUAL_ID:
 			return getDataStoreNodeOrdering_5069Parser();
-		case DataStoreNodeStereotype3EditPart.VISUAL_ID:
+		case ActivityPartition_DataStoreNodeStereotypeEditPart.VISUAL_ID:
 			return getDataStoreNodeQualifiedName_5129Parser();
-		case CentralBufferNodeName3EditPart.VISUAL_ID:
+		case ActivityPartition_CentralBufferNodeNameEditPart.VISUAL_ID:
 			return getCentralBufferNodeName_5070Parser();
-		case CentralBufferNodeInState3EditPart.VISUAL_ID:
+		case ActivityPartition_CentralBufferNodeInStateEditPart.VISUAL_ID:
 			return getCentralBufferNodeQualifiedName_5071Parser();
-		case CentralBufferNodeOrdering3EditPart.VISUAL_ID:
+		case ActivityPartition_CentralBufferNodeOrderingEditPart.VISUAL_ID:
 			return getCentralBufferNodeOrdering_5072Parser();
-		case CentralBufferNodeStereotype3EditPart.VISUAL_ID:
+		case ActivityPartition_CentralBufferNodeStereotypeEditPart.VISUAL_ID:
 			return getCentralBufferNodeQualifiedName_5126Parser();
 		case ActivityPartition_OpaqueActionNameEditPart.VISUAL_ID:
 			return getOpaqueActionName_5073Parser();

@@ -433,68 +433,68 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartitionNameEditPart.VISUAL_ID:
 				return new ActivityPartitionNameEditPart(view);
 
-			case ActivityPartition2EditPart.VISUAL_ID:
-				return new ActivityPartition2EditPart(view);
+			case ActivityPartition_ActivityPartitionEditPart.VISUAL_ID:
+				return new ActivityPartition_ActivityPartitionEditPart(view);
 
-			case ActivityPartitionName2EditPart.VISUAL_ID:
-				return new ActivityPartitionName2EditPart(view);
+			case ActivityPartition_ActivityPartitionNameEditPart.VISUAL_ID:
+				return new ActivityPartition_ActivityPartitionNameEditPart(view);
 
-			case AcceptEventAction5EditPart.VISUAL_ID:
-				return new AcceptEventAction5EditPart(view);
+			case ActivityPartition_AcceptEventActionEditPart.VISUAL_ID:
+				return new ActivityPartition_AcceptEventActionEditPart(view);
 
-			case AcceptEventActionName5EditPart.VISUAL_ID:
-				return new AcceptEventActionName5EditPart(view);
+			case ActivityPartition_AcceptEventActionNameEditPart.VISUAL_ID:
+				return new ActivityPartition_AcceptEventActionNameEditPart(view);
 
-			case AcceptEventActionStereotype5EditPart.VISUAL_ID:
-				return new AcceptEventActionStereotype5EditPart(view);
+			case ActivityPartition_AcceptEventActionStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_AcceptEventActionStereotypeEditPart(view);
 
-			case AcceptEventAction6EditPart.VISUAL_ID:
-				return new AcceptEventAction6EditPart(view);
+			case ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID:
+				return new ActivityPartition_AcceptTimeEventActionEditPart(view);
 
-			case AcceptEventActionName6EditPart.VISUAL_ID:
-				return new AcceptEventActionName6EditPart(view);
+			case ActivityPartition_AcceptTimeEventActionNameEditPart.VISUAL_ID:
+				return new ActivityPartition_AcceptTimeEventActionNameEditPart(view);
 
-			case ActivityFinalNode3EditPart.VISUAL_ID:
-				return new ActivityFinalNode3EditPart(view);
+			case ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_ActivityFinalNodeEditPart(view);
 
-			case DecisionNode3EditPart.VISUAL_ID:
-				return new DecisionNode3EditPart(view);
+			case ActivityPartition_DecisionNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_DecisionNodeEditPart(view);
 
-			case MergeNode2EditPart.VISUAL_ID:
-				return new MergeNode2EditPart(view);
+			case ActivityPartition_MergeNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_MergeNodeEditPart(view);
 
-			case InitialNode2EditPart.VISUAL_ID:
-				return new InitialNode2EditPart(view);
+			case ActivityPartition_InitialNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_InitialNodeEditPart(view);
 
-			case DataStoreNode3EditPart.VISUAL_ID:
-				return new DataStoreNode3EditPart(view);
+			case ActivityPartition_DataStoreNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_DataStoreNodeEditPart(view);
 
-			case DataStoreNodeName3EditPart.VISUAL_ID:
-				return new DataStoreNodeName3EditPart(view);
+			case ActivityPartition_DataStoreNodeNameEditPart.VISUAL_ID:
+				return new ActivityPartition_DataStoreNodeNameEditPart(view);
 
-			case DataStoreNodeInState3EditPart.VISUAL_ID:
-				return new DataStoreNodeInState3EditPart(view);
+			case ActivityPartition_DataStoreNodeInStateEditPart.VISUAL_ID:
+				return new ActivityPartition_DataStoreNodeInStateEditPart(view);
 
-			case DataStoreNodeOrdering3EditPart.VISUAL_ID:
-				return new DataStoreNodeOrdering3EditPart(view);
+			case ActivityPartition_DataStoreNodeOrderingEditPart.VISUAL_ID:
+				return new ActivityPartition_DataStoreNodeOrderingEditPart(view);
 
-			case DataStoreNodeStereotype3EditPart.VISUAL_ID:
-				return new DataStoreNodeStereotype3EditPart(view);
+			case ActivityPartition_DataStoreNodeStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_DataStoreNodeStereotypeEditPart(view);
 
-			case CentralBufferNode3EditPart.VISUAL_ID:
-				return new CentralBufferNode3EditPart(view);
+			case ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_CentralBufferNodeEditPart(view);
 
-			case CentralBufferNodeName3EditPart.VISUAL_ID:
-				return new CentralBufferNodeName3EditPart(view);
+			case ActivityPartition_CentralBufferNodeNameEditPart.VISUAL_ID:
+				return new ActivityPartition_CentralBufferNodeNameEditPart(view);
 
-			case CentralBufferNodeInState3EditPart.VISUAL_ID:
-				return new CentralBufferNodeInState3EditPart(view);
+			case ActivityPartition_CentralBufferNodeInStateEditPart.VISUAL_ID:
+				return new ActivityPartition_CentralBufferNodeInStateEditPart(view);
 
-			case CentralBufferNodeOrdering3EditPart.VISUAL_ID:
-				return new CentralBufferNodeOrdering3EditPart(view);
+			case ActivityPartition_CentralBufferNodeOrderingEditPart.VISUAL_ID:
+				return new ActivityPartition_CentralBufferNodeOrderingEditPart(view);
 
-			case CentralBufferNodeStereotype3EditPart.VISUAL_ID:
-				return new CentralBufferNodeStereotype3EditPart(view);
+			case ActivityPartition_CentralBufferNodeStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_CentralBufferNodeStereotypeEditPart(view);
 
 			case ActivityPartition_OpaqueActionEditPart.VISUAL_ID:
 				return new ActivityPartition_OpaqueActionEditPart(view);
@@ -505,8 +505,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartition_OpaqueActionStereotypeEditPart.VISUAL_ID:
 				return new ActivityPartition_OpaqueActionStereotypeEditPart(view);
 
-			case FlowFinalNode3EditPart.VISUAL_ID:
-				return new FlowFinalNode3EditPart(view);
+			case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_FlowFinalNodeEditPart(view);
 
 			case ForkNode3EditPart.VISUAL_ID:
 				return new ForkNode3EditPart(view);

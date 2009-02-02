@@ -20,16 +20,22 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction5EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptTimeEventActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityPartitionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DataStoreNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DecisionNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_FlowFinalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_InitialNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart;
@@ -44,7 +50,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_InputPinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartment2EditPart;
@@ -55,19 +60,15 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionExpansionRegionNodeCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionExpansionRegionNodeCompartmentEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.InitialNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
@@ -75,7 +76,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeLoopNodeContentPaneCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeLoopNodeContentPaneCompartmentEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.MergeNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_OutputPinEditPart;
@@ -273,7 +273,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
-		if (editPart instanceof ActivityPartition2EditPart) {
+		if (editPart instanceof ActivityPartition_ActivityPartitionEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ActivityPartition_3057);
 			types.add(UMLElementTypes.AcceptEventAction_3059);
@@ -738,35 +738,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof SendSignalActionEditPart) {
 			return ((SendSignalActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof AcceptEventAction5EditPart) {
-			return ((AcceptEventAction5EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_AcceptEventActionEditPart) {
+			return ((ActivityPartition_AcceptEventActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof AcceptEventAction6EditPart) {
-			return ((AcceptEventAction6EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_AcceptTimeEventActionEditPart) {
+			return ((ActivityPartition_AcceptTimeEventActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof ActivityFinalNode3EditPart) {
-			return ((ActivityFinalNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_ActivityFinalNodeEditPart) {
+			return ((ActivityPartition_ActivityFinalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof DecisionNode3EditPart) {
-			return ((DecisionNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_DecisionNodeEditPart) {
+			return ((ActivityPartition_DecisionNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof MergeNode2EditPart) {
-			return ((MergeNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_MergeNodeEditPart) {
+			return ((ActivityPartition_MergeNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof InitialNode2EditPart) {
-			return ((InitialNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_InitialNodeEditPart) {
+			return ((ActivityPartition_InitialNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof DataStoreNode3EditPart) {
-			return ((DataStoreNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_DataStoreNodeEditPart) {
+			return ((ActivityPartition_DataStoreNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof CentralBufferNode3EditPart) {
-			return ((CentralBufferNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_CentralBufferNodeEditPart) {
+			return ((ActivityPartition_CentralBufferNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ActivityPartition_OpaqueActionEditPart) {
 			return ((ActivityPartition_OpaqueActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof FlowFinalNode3EditPart) {
-			return ((FlowFinalNode3EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
+			return ((ActivityPartition_FlowFinalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ForkNode3EditPart) {
 			return ((ForkNode3EditPart) sourceEditPart).getMARelTypesOnSource();
@@ -989,35 +989,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof SendSignalActionEditPart) {
 			return ((SendSignalActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof AcceptEventAction5EditPart) {
-			return ((AcceptEventAction5EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_AcceptEventActionEditPart) {
+			return ((ActivityPartition_AcceptEventActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof AcceptEventAction6EditPart) {
-			return ((AcceptEventAction6EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_AcceptTimeEventActionEditPart) {
+			return ((ActivityPartition_AcceptTimeEventActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof ActivityFinalNode3EditPart) {
-			return ((ActivityFinalNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_ActivityFinalNodeEditPart) {
+			return ((ActivityPartition_ActivityFinalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof DecisionNode3EditPart) {
-			return ((DecisionNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_DecisionNodeEditPart) {
+			return ((ActivityPartition_DecisionNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof MergeNode2EditPart) {
-			return ((MergeNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_MergeNodeEditPart) {
+			return ((ActivityPartition_MergeNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof InitialNode2EditPart) {
-			return ((InitialNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_InitialNodeEditPart) {
+			return ((ActivityPartition_InitialNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof DataStoreNode3EditPart) {
-			return ((DataStoreNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_DataStoreNodeEditPart) {
+			return ((ActivityPartition_DataStoreNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof CentralBufferNode3EditPart) {
-			return ((CentralBufferNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_CentralBufferNodeEditPart) {
+			return ((ActivityPartition_CentralBufferNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ActivityPartition_OpaqueActionEditPart) {
 			return ((ActivityPartition_OpaqueActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof FlowFinalNode3EditPart) {
-			return ((FlowFinalNode3EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
+			return ((ActivityPartition_FlowFinalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ForkNode3EditPart) {
 			return ((ForkNode3EditPart) targetEditPart).getMARelTypesOnTarget();
@@ -1229,35 +1229,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof SendSignalActionEditPart) {
 			return ((SendSignalActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof AcceptEventAction5EditPart) {
-			return ((AcceptEventAction5EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_AcceptEventActionEditPart) {
+			return ((ActivityPartition_AcceptEventActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof AcceptEventAction6EditPart) {
-			return ((AcceptEventAction6EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_AcceptTimeEventActionEditPart) {
+			return ((ActivityPartition_AcceptTimeEventActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof ActivityFinalNode3EditPart) {
-			return ((ActivityFinalNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_ActivityFinalNodeEditPart) {
+			return ((ActivityPartition_ActivityFinalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof DecisionNode3EditPart) {
-			return ((DecisionNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_DecisionNodeEditPart) {
+			return ((ActivityPartition_DecisionNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof MergeNode2EditPart) {
-			return ((MergeNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_MergeNodeEditPart) {
+			return ((ActivityPartition_MergeNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof InitialNode2EditPart) {
-			return ((InitialNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_InitialNodeEditPart) {
+			return ((ActivityPartition_InitialNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof DataStoreNode3EditPart) {
-			return ((DataStoreNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_DataStoreNodeEditPart) {
+			return ((ActivityPartition_DataStoreNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof CentralBufferNode3EditPart) {
-			return ((CentralBufferNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_CentralBufferNodeEditPart) {
+			return ((ActivityPartition_CentralBufferNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ActivityPartition_OpaqueActionEditPart) {
 			return ((ActivityPartition_OpaqueActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof FlowFinalNode3EditPart) {
-			return ((FlowFinalNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
+			return ((ActivityPartition_FlowFinalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ForkNode3EditPart) {
 			return ((ForkNode3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1480,35 +1480,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof SendSignalActionEditPart) {
 			return ((SendSignalActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof AcceptEventAction5EditPart) {
-			return ((AcceptEventAction5EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_AcceptEventActionEditPart) {
+			return ((ActivityPartition_AcceptEventActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof AcceptEventAction6EditPart) {
-			return ((AcceptEventAction6EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_AcceptTimeEventActionEditPart) {
+			return ((ActivityPartition_AcceptTimeEventActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof ActivityFinalNode3EditPart) {
-			return ((ActivityFinalNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_ActivityFinalNodeEditPart) {
+			return ((ActivityPartition_ActivityFinalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof DecisionNode3EditPart) {
-			return ((DecisionNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_DecisionNodeEditPart) {
+			return ((ActivityPartition_DecisionNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof MergeNode2EditPart) {
-			return ((MergeNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_MergeNodeEditPart) {
+			return ((ActivityPartition_MergeNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof InitialNode2EditPart) {
-			return ((InitialNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_InitialNodeEditPart) {
+			return ((ActivityPartition_InitialNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof DataStoreNode3EditPart) {
-			return ((DataStoreNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_DataStoreNodeEditPart) {
+			return ((ActivityPartition_DataStoreNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof CentralBufferNode3EditPart) {
-			return ((CentralBufferNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_CentralBufferNodeEditPart) {
+			return ((ActivityPartition_CentralBufferNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ActivityPartition_OpaqueActionEditPart) {
 			return ((ActivityPartition_OpaqueActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof FlowFinalNode3EditPart) {
-			return ((FlowFinalNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
+			return ((ActivityPartition_FlowFinalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ForkNode3EditPart) {
 			return ((ForkNode3EditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -1719,35 +1719,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof SendSignalActionEditPart) {
 			return ((SendSignalActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof AcceptEventAction5EditPart) {
-			return ((AcceptEventAction5EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_AcceptEventActionEditPart) {
+			return ((ActivityPartition_AcceptEventActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof AcceptEventAction6EditPart) {
-			return ((AcceptEventAction6EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_AcceptTimeEventActionEditPart) {
+			return ((ActivityPartition_AcceptTimeEventActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof ActivityFinalNode3EditPart) {
-			return ((ActivityFinalNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_ActivityFinalNodeEditPart) {
+			return ((ActivityPartition_ActivityFinalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof DecisionNode3EditPart) {
-			return ((DecisionNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_DecisionNodeEditPart) {
+			return ((ActivityPartition_DecisionNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof MergeNode2EditPart) {
-			return ((MergeNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_MergeNodeEditPart) {
+			return ((ActivityPartition_MergeNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof InitialNode2EditPart) {
-			return ((InitialNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_InitialNodeEditPart) {
+			return ((ActivityPartition_InitialNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof DataStoreNode3EditPart) {
-			return ((DataStoreNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_DataStoreNodeEditPart) {
+			return ((ActivityPartition_DataStoreNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof CentralBufferNode3EditPart) {
-			return ((CentralBufferNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_CentralBufferNodeEditPart) {
+			return ((ActivityPartition_CentralBufferNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ActivityPartition_OpaqueActionEditPart) {
 			return ((ActivityPartition_OpaqueActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof FlowFinalNode3EditPart) {
-			return ((FlowFinalNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_FlowFinalNodeEditPart) {
+			return ((ActivityPartition_FlowFinalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ForkNode3EditPart) {
 			return ((ForkNode3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);

@@ -1625,27 +1625,27 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 
 		case ActivityPartitionEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition2EditPart.VISUAL_ID));
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_ActivityPartitionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction5EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptEventActionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction6EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DecisionNode3EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DecisionNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(MergeNode2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_MergeNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InitialNode2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_InitialNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DataStoreNode3EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DataStoreNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(CentralBufferNode3EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_OpaqueActionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(FlowFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ForkNode3EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
@@ -1676,29 +1676,29 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case ActivityPartition2EditPart.VISUAL_ID: {
+		case ActivityPartition_ActivityPartitionEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
-			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition2EditPart.VISUAL_ID));
+			Collection connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_ActivityPartitionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction5EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptEventActionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction6EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DecisionNode3EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DecisionNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(MergeNode2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_MergeNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InitialNode2EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_InitialNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DataStoreNode3EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DataStoreNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(CentralBufferNode3EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_OpaqueActionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(FlowFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ForkNode3EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
@@ -1729,7 +1729,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case AcceptEventAction5EditPart.VISUAL_ID: {
+		case ActivityPartition_AcceptEventActionEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_AcceptEventAction_3059_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_AcceptEventAction_3059_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -1758,7 +1758,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case AcceptEventAction6EditPart.VISUAL_ID: {
+		case ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_AcceptEventAction_3060_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_AcceptEventAction_3060_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -1787,7 +1787,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case ActivityFinalNode3EditPart.VISUAL_ID: {
+		case ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_ActivityFinalNode_3061_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_ActivityFinalNode_3061_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -1808,7 +1808,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case DecisionNode3EditPart.VISUAL_ID: {
+		case ActivityPartition_DecisionNodeEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_DecisionNode_3062_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_DecisionNode_3062_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -1829,7 +1829,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case MergeNode2EditPart.VISUAL_ID: {
+		case ActivityPartition_MergeNodeEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_MergeNode_3063_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_MergeNode_3063_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -1850,7 +1850,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case InitialNode2EditPart.VISUAL_ID: {
+		case ActivityPartition_InitialNodeEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_InitialNode_3064_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_InitialNode_3064_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -1871,7 +1871,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case DataStoreNode3EditPart.VISUAL_ID: {
+		case ActivityPartition_DataStoreNodeEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_DataStoreNode_3065_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_DataStoreNode_3065_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -1894,7 +1894,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case CentralBufferNode3EditPart.VISUAL_ID: {
+		case ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_CentralBufferNode_3066_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_CentralBufferNode_3066_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -1948,7 +1948,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case FlowFinalNode3EditPart.VISUAL_ID: {
+		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID: {
 			Collection result = new ArrayList();
 			UMLNavigatorGroup incominglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_FlowFinalNode_3068_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			UMLNavigatorGroup outgoinglinks = new UMLNavigatorGroup(Messages.NavigatorGroupName_FlowFinalNode_3068_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -3097,25 +3097,25 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(SendSignalActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction5EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptEventActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction6EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DecisionNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DecisionNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(MergeNode2EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_MergeNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InitialNode2EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_InitialNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DataStoreNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DataStoreNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(CentralBufferNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_OpaqueActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(FlowFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ForkNode3EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
@@ -3251,25 +3251,25 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(SendSignalActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction5EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptEventActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction6EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DecisionNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DecisionNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(MergeNode2EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_MergeNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InitialNode2EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_InitialNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DataStoreNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DataStoreNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(CentralBufferNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_OpaqueActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(FlowFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ForkNode3EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -3418,25 +3418,25 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(SendSignalActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction5EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptEventActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction6EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DecisionNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DecisionNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(MergeNode2EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_MergeNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InitialNode2EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_InitialNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DataStoreNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DataStoreNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(CentralBufferNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_OpaqueActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(FlowFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ForkNode3EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
@@ -3572,25 +3572,25 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(SendSignalActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction5EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptEventActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction6EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DecisionNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DecisionNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(MergeNode2EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_MergeNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(InitialNode2EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_InitialNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DataStoreNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DataStoreNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(CentralBufferNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_OpaqueActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(FlowFinalNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ForkNode3EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -3685,9 +3685,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(SendSignalActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction5EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptEventActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction6EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_OpaqueActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -3772,9 +3772,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(SendSignalActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction5EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptEventActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction6EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_OpaqueActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -3859,9 +3859,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityParameterNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DataStoreNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_DataStoreNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(CentralBufferNode3EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_PinEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -3918,9 +3918,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(SendSignalActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction5EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptEventActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction6EditPart.VISUAL_ID));
+			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_OpaqueActionEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
@@ -3988,9 +3988,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(SendSignalActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction5EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptEventActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(AcceptEventAction6EditPart.VISUAL_ID));
+			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ActivityPartition_OpaqueActionEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));

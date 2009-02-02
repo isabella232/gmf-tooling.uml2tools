@@ -1921,39 +1921,39 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityPartitionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction5EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptEventActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventAction6EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptTimeEventActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityFinalNode3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityFinalNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.DecisionNode3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DecisionNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.MergeNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_MergeNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.InitialNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_InitialNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNode3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DataStoreNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNode3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CentralBufferNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -1961,7 +1961,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNode3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_FlowFinalNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

@@ -22,7 +22,7 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
-import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityPartitionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
 
 
@@ -94,6 +94,6 @@ public class PartitionLayout extends XYLayout {
 			return false;
 		}
 		return editPart instanceof ActivityPartitionEditPart ||
-			editPart instanceof ActivityPartition2EditPart;
+			editPart instanceof ActivityPartition_ActivityPartitionEditPart;
 	}
 }

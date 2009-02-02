@@ -97,7 +97,7 @@ public class UMLDiagramUpdater {
 			return getAddStructuralFeatureValueAction_3023SemanticChildren(view);
 		case ActivityPartitionEditPart.VISUAL_ID:
 			return getActivityPartition_3056SemanticChildren(view);
-		case ActivityPartition2EditPart.VISUAL_ID:
+		case ActivityPartition_ActivityPartitionEditPart.VISUAL_ID:
 			return getActivityPartition_3057SemanticChildren(view);
 		case ActivityPartition_OpaqueActionEditPart.VISUAL_ID:
 			return getOpaqueAction_3067SemanticChildren(view);
@@ -563,7 +563,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getSubpartitions().iterator(); it.hasNext();) {
 			ActivityPartition childElement = (ActivityPartition) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == ActivityPartition2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_ActivityPartitionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -571,35 +571,35 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == AcceptEventAction5EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_AcceptEventActionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == AcceptEventAction6EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ActivityFinalNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == DecisionNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_DecisionNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == MergeNode2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_MergeNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InitialNode2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_InitialNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == DataStoreNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_DataStoreNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == CentralBufferNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -607,7 +607,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == FlowFinalNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -679,7 +679,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getSubpartitions().iterator(); it.hasNext();) {
 			ActivityPartition childElement = (ActivityPartition) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == ActivityPartition2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_ActivityPartitionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -687,35 +687,35 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == AcceptEventAction5EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_AcceptEventActionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == AcceptEventAction6EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ActivityFinalNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == DecisionNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_DecisionNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == MergeNode2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_MergeNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == InitialNode2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_InitialNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == DataStoreNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_DataStoreNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == CentralBufferNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -723,7 +723,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == FlowFinalNode3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -2093,27 +2093,27 @@ public class UMLDiagramUpdater {
 			return getSendSignalAction_3053ContainedLinks(view);
 		case ActivityPartitionEditPart.VISUAL_ID:
 			return getActivityPartition_3056ContainedLinks(view);
-		case ActivityPartition2EditPart.VISUAL_ID:
+		case ActivityPartition_ActivityPartitionEditPart.VISUAL_ID:
 			return getActivityPartition_3057ContainedLinks(view);
-		case AcceptEventAction5EditPart.VISUAL_ID:
+		case ActivityPartition_AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3059ContainedLinks(view);
-		case AcceptEventAction6EditPart.VISUAL_ID:
+		case ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3060ContainedLinks(view);
-		case ActivityFinalNode3EditPart.VISUAL_ID:
+		case ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID:
 			return getActivityFinalNode_3061ContainedLinks(view);
-		case DecisionNode3EditPart.VISUAL_ID:
+		case ActivityPartition_DecisionNodeEditPart.VISUAL_ID:
 			return getDecisionNode_3062ContainedLinks(view);
-		case MergeNode2EditPart.VISUAL_ID:
+		case ActivityPartition_MergeNodeEditPart.VISUAL_ID:
 			return getMergeNode_3063ContainedLinks(view);
-		case InitialNode2EditPart.VISUAL_ID:
+		case ActivityPartition_InitialNodeEditPart.VISUAL_ID:
 			return getInitialNode_3064ContainedLinks(view);
-		case DataStoreNode3EditPart.VISUAL_ID:
+		case ActivityPartition_DataStoreNodeEditPart.VISUAL_ID:
 			return getDataStoreNode_3065ContainedLinks(view);
-		case CentralBufferNode3EditPart.VISUAL_ID:
+		case ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID:
 			return getCentralBufferNode_3066ContainedLinks(view);
 		case ActivityPartition_OpaqueActionEditPart.VISUAL_ID:
 			return getOpaqueAction_3067ContainedLinks(view);
-		case FlowFinalNode3EditPart.VISUAL_ID:
+		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3068ContainedLinks(view);
 		case ForkNode3EditPart.VISUAL_ID:
 			return getForkNode_3069ContainedLinks(view);
@@ -2282,27 +2282,27 @@ public class UMLDiagramUpdater {
 			return getSendSignalAction_3053IncomingLinks(view);
 		case ActivityPartitionEditPart.VISUAL_ID:
 			return getActivityPartition_3056IncomingLinks(view);
-		case ActivityPartition2EditPart.VISUAL_ID:
+		case ActivityPartition_ActivityPartitionEditPart.VISUAL_ID:
 			return getActivityPartition_3057IncomingLinks(view);
-		case AcceptEventAction5EditPart.VISUAL_ID:
+		case ActivityPartition_AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3059IncomingLinks(view);
-		case AcceptEventAction6EditPart.VISUAL_ID:
+		case ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3060IncomingLinks(view);
-		case ActivityFinalNode3EditPart.VISUAL_ID:
+		case ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID:
 			return getActivityFinalNode_3061IncomingLinks(view);
-		case DecisionNode3EditPart.VISUAL_ID:
+		case ActivityPartition_DecisionNodeEditPart.VISUAL_ID:
 			return getDecisionNode_3062IncomingLinks(view);
-		case MergeNode2EditPart.VISUAL_ID:
+		case ActivityPartition_MergeNodeEditPart.VISUAL_ID:
 			return getMergeNode_3063IncomingLinks(view);
-		case InitialNode2EditPart.VISUAL_ID:
+		case ActivityPartition_InitialNodeEditPart.VISUAL_ID:
 			return getInitialNode_3064IncomingLinks(view);
-		case DataStoreNode3EditPart.VISUAL_ID:
+		case ActivityPartition_DataStoreNodeEditPart.VISUAL_ID:
 			return getDataStoreNode_3065IncomingLinks(view);
-		case CentralBufferNode3EditPart.VISUAL_ID:
+		case ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID:
 			return getCentralBufferNode_3066IncomingLinks(view);
 		case ActivityPartition_OpaqueActionEditPart.VISUAL_ID:
 			return getOpaqueAction_3067IncomingLinks(view);
-		case FlowFinalNode3EditPart.VISUAL_ID:
+		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3068IncomingLinks(view);
 		case ForkNode3EditPart.VISUAL_ID:
 			return getForkNode_3069IncomingLinks(view);
@@ -2471,27 +2471,27 @@ public class UMLDiagramUpdater {
 			return getSendSignalAction_3053OutgoingLinks(view);
 		case ActivityPartitionEditPart.VISUAL_ID:
 			return getActivityPartition_3056OutgoingLinks(view);
-		case ActivityPartition2EditPart.VISUAL_ID:
+		case ActivityPartition_ActivityPartitionEditPart.VISUAL_ID:
 			return getActivityPartition_3057OutgoingLinks(view);
-		case AcceptEventAction5EditPart.VISUAL_ID:
+		case ActivityPartition_AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3059OutgoingLinks(view);
-		case AcceptEventAction6EditPart.VISUAL_ID:
+		case ActivityPartition_AcceptTimeEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3060OutgoingLinks(view);
-		case ActivityFinalNode3EditPart.VISUAL_ID:
+		case ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID:
 			return getActivityFinalNode_3061OutgoingLinks(view);
-		case DecisionNode3EditPart.VISUAL_ID:
+		case ActivityPartition_DecisionNodeEditPart.VISUAL_ID:
 			return getDecisionNode_3062OutgoingLinks(view);
-		case MergeNode2EditPart.VISUAL_ID:
+		case ActivityPartition_MergeNodeEditPart.VISUAL_ID:
 			return getMergeNode_3063OutgoingLinks(view);
-		case InitialNode2EditPart.VISUAL_ID:
+		case ActivityPartition_InitialNodeEditPart.VISUAL_ID:
 			return getInitialNode_3064OutgoingLinks(view);
-		case DataStoreNode3EditPart.VISUAL_ID:
+		case ActivityPartition_DataStoreNodeEditPart.VISUAL_ID:
 			return getDataStoreNode_3065OutgoingLinks(view);
-		case CentralBufferNode3EditPart.VISUAL_ID:
+		case ActivityPartition_CentralBufferNodeEditPart.VISUAL_ID:
 			return getCentralBufferNode_3066OutgoingLinks(view);
 		case ActivityPartition_OpaqueActionEditPart.VISUAL_ID:
 			return getOpaqueAction_3067OutgoingLinks(view);
-		case FlowFinalNode3EditPart.VISUAL_ID:
+		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3068OutgoingLinks(view);
 		case ForkNode3EditPart.VISUAL_ID:
 			return getForkNode_3069OutgoingLinks(view);
