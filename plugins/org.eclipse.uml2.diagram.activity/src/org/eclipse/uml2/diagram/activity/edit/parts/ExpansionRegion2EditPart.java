@@ -391,7 +391,7 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {
@@ -622,7 +622,7 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {
@@ -811,7 +811,7 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {

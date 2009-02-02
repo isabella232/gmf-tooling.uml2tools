@@ -57,7 +57,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPoli
  * @generated
  */
 
-public class StructuredActivityNodeName2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class StructuredActivityNode_StructuredActivityNodeNameEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
@@ -92,7 +92,7 @@ public class StructuredActivityNodeName2EditPart extends CompartmentEditPart imp
 	/**
 	 * @generated
 	 */
-	public StructuredActivityNodeName2EditPart(View view) {
+	public StructuredActivityNode_StructuredActivityNodeNameEditPart(View view) {
 		super(view);
 	}
 
@@ -297,7 +297,7 @@ public class StructuredActivityNodeName2EditPart extends CompartmentEditPart imp
 	public IParser getParser() {
 		if (parser == null) {
 			parser = UMLParserProvider.getParser(UMLElementTypes.StructuredActivityNode_3009, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeName2EditPart.VISUAL_ID));
+					.getType(org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

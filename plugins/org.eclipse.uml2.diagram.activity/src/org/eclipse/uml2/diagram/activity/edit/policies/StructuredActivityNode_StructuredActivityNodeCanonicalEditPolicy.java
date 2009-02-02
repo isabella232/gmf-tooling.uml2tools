@@ -15,7 +15,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
  * @generated
  */
 
-public class StructuredActivityNode2CanonicalEditPolicy extends CanonicalEditPolicy {
+public class StructuredActivityNode_StructuredActivityNodeCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated

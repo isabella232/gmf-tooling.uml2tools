@@ -2905,9 +2905,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStructuredActivityNodeName_5090Parser();
 		case StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
 			return getStructuredActivityNodeQualifiedName_5120Parser();
-		case StructuredActivityNodeName2EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNodeNameEditPart.VISUAL_ID:
 			return getStructuredActivityNodeName_5089Parser();
-		case StructuredActivityNodeStereotype2EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
 			return getStructuredActivityNodeQualifiedName_5119Parser();
 		case StructuredActivityNode_OpaqueActionNameEditPart.VISUAL_ID:
 			return getOpaqueActionName_5015Parser();

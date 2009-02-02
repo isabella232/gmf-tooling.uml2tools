@@ -6,5 +6,5 @@ import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice
  * @generated
  */
 
-public class StructuredActivityNodeEditHelperAdvice extends AbstractEditHelperAdvice {
+public class StructuredActivityNode_StructuredActivityNodeEditHelperAdvice extends AbstractEditHelperAdvice {
 }

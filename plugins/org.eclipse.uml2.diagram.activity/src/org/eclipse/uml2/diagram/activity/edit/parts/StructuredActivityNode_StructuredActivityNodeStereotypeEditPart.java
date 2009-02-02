@@ -58,7 +58,7 @@ import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
  * @generated
  */
 
-public class StructuredActivityNodeStereotype2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class StructuredActivityNode_StructuredActivityNodeStereotypeEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
@@ -93,7 +93,7 @@ public class StructuredActivityNodeStereotype2EditPart extends CompartmentEditPa
 	/**
 	 * @generated
 	 */
-	public StructuredActivityNodeStereotype2EditPart(View view) {
+	public StructuredActivityNode_StructuredActivityNodeStereotypeEditPart(View view) {
 		super(view);
 	}
 
@@ -299,7 +299,7 @@ public class StructuredActivityNodeStereotype2EditPart extends CompartmentEditPa
 	public IParser getParser() {
 		if (parser == null) {
 			parser = UMLParserProvider.getParser(UMLElementTypes.StructuredActivityNode_3009, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStereotype2EditPart.VISUAL_ID));
+					.getType(org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

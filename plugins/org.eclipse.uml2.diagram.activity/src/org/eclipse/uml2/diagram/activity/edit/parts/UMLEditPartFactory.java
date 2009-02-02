@@ -256,14 +256,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
 				return new StructuredActivityNodeStereotypeEditPart(view);
 
-			case StructuredActivityNode2EditPart.VISUAL_ID:
-				return new StructuredActivityNode2EditPart(view);
+			case StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_StructuredActivityNodeEditPart(view);
 
-			case StructuredActivityNodeName2EditPart.VISUAL_ID:
-				return new StructuredActivityNodeName2EditPart(view);
+			case StructuredActivityNode_StructuredActivityNodeNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_StructuredActivityNodeNameEditPart(view);
 
-			case StructuredActivityNodeStereotype2EditPart.VISUAL_ID:
-				return new StructuredActivityNodeStereotype2EditPart(view);
+			case StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_StructuredActivityNodeStereotypeEditPart(view);
 
 			case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:
 				return new StructuredActivityNode_OpaqueActionEditPart(view);

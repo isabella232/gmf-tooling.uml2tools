@@ -28,7 +28,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNo
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ActivityFinalNodeEditPart;
@@ -46,6 +45,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_JoinN
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_PinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
@@ -89,7 +89,7 @@ public class ConditionalNodeItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
-					case StructuredActivityNode2EditPart.VISUAL_ID:
+					case StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:

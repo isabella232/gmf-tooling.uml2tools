@@ -74,7 +74,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
@@ -95,6 +94,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_JoinN
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_PinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationAction2EditPart;
@@ -162,7 +162,7 @@ public class ActivityPartition_OpaqueActionCanonicalEditPolicy extends Canonical
 		case CallOperationActionEditPart.VISUAL_ID:
 		case CallOperationAction_InputPinEditPart.VISUAL_ID:
 		case StructuredActivityNodeEditPart.VISUAL_ID:
-		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 		case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:
 		case StructuredActivityNode_AcceptEventActionEditPart.VISUAL_ID:
 		case StructuredActivityNode_AcceptTimeEventActionEditPart.VISUAL_ID:

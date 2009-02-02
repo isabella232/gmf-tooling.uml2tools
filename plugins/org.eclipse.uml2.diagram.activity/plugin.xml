@@ -542,7 +542,7 @@
                id="org.eclipse.uml2.diagram.activity.StructuredActivityNode_3009"
                name="%metatype.name.StructuredActivityNode_3009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNodeEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.StructuredActivityNode_StructuredActivityNodeEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.StructuredActivityNode_3046"/>
             <param name="semanticHint" value="3009"/>
          </specializationType>
@@ -1833,7 +1833,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

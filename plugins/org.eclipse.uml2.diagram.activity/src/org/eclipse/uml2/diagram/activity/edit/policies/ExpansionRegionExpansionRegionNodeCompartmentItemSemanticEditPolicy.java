@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.activity.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_AcceptEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_AcceptTimeEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_ActivityFinalNodeCreateCommand;
@@ -20,6 +19,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_Jo
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_OpaqueActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_OutputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_PinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_StructuredActivityNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
 /**
@@ -40,7 +40,7 @@ public class ExpansionRegionExpansionRegionNodeCompartmentItemSemanticEditPolicy
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.StructuredActivityNode_3009 == req.getElementType()) {
-			return getGEFWrapper(new StructuredActivityNode2CreateCommand(req));
+			return getGEFWrapper(new StructuredActivityNode_StructuredActivityNodeCreateCommand(req));
 		}
 		if (UMLElementTypes.OpaqueAction_3011 == req.getElementType()) {
 			return getGEFWrapper(new StructuredActivityNode_OpaqueActionCreateCommand(req));

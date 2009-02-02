@@ -19,12 +19,12 @@ import org.eclipse.uml2.uml.UMLFactory;
  * @generated
  */
 
-public class StructuredActivityNode2CreateCommand extends EditElementCommand {
+public class StructuredActivityNode_StructuredActivityNodeCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public StructuredActivityNode2CreateCommand(CreateElementRequest req) {
+	public StructuredActivityNode_StructuredActivityNodeCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 

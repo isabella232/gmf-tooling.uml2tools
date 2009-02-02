@@ -292,7 +292,7 @@ public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {
@@ -523,7 +523,7 @@ public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {

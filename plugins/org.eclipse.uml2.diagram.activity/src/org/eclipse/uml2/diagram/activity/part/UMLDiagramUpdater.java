@@ -992,7 +992,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StructuredActivityNode2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1084,7 +1084,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StructuredActivityNode2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1360,7 +1360,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StructuredActivityNode2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1452,7 +1452,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StructuredActivityNode2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1544,7 +1544,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StructuredActivityNode2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1636,7 +1636,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StructuredActivityNode2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1728,7 +1728,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StructuredActivityNode2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -1820,7 +1820,7 @@ public class UMLDiagramUpdater {
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == StructuredActivityNode2EditPart.VISUAL_ID) {
+			if (visualID == StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -2049,7 +2049,7 @@ public class UMLDiagramUpdater {
 			return getInputPin_3008ContainedLinks(view);
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3046ContainedLinks(view);
-		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3009ContainedLinks(view);
 		case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:
 			return getOpaqueAction_3011ContainedLinks(view);
@@ -2238,7 +2238,7 @@ public class UMLDiagramUpdater {
 			return getInputPin_3008IncomingLinks(view);
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3046IncomingLinks(view);
-		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3009IncomingLinks(view);
 		case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:
 			return getOpaqueAction_3011IncomingLinks(view);
@@ -2427,7 +2427,7 @@ public class UMLDiagramUpdater {
 			return getInputPin_3008OutgoingLinks(view);
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3046OutgoingLinks(view);
-		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3009OutgoingLinks(view);
 		case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:
 			return getOpaqueAction_3011OutgoingLinks(view);

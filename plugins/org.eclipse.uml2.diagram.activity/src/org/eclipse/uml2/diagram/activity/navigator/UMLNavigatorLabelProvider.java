@@ -144,7 +144,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?InputPin", UMLElementTypes.InputPin_3008); //$NON-NLS-1$
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?StructuredActivityNode", UMLElementTypes.StructuredActivityNode_3046); //$NON-NLS-1$
-		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?StructuredActivityNode", UMLElementTypes.StructuredActivityNode_3009); //$NON-NLS-1$
 		case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?OpaqueAction", UMLElementTypes.OpaqueAction_3011); //$NON-NLS-1$
@@ -382,7 +382,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getInputPin_3008Text(view);
 		case StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3046Text(view);
-		case StructuredActivityNode2EditPart.VISUAL_ID:
+		case StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 			return getStructuredActivityNode_3009Text(view);
 		case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:
 			return getOpaqueAction_3011Text(view);
@@ -927,7 +927,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getStructuredActivityNode_3009Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.StructuredActivityNode_3009, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(StructuredActivityNodeName2EditPart.VISUAL_ID));
+				.getType(StructuredActivityNode_StructuredActivityNodeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {

@@ -41,8 +41,8 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNode2CanonicalEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNode2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNode_StructuredActivityNodeCanonicalEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNode_StructuredActivityNodeItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -58,7 +58,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 
-public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class StructuredActivityNode_StructuredActivityNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
@@ -83,7 +83,7 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implement
 	/**
 	 * @generated
 	 */
-	public StructuredActivityNode2EditPart(View view) {
+	public StructuredActivityNode_StructuredActivityNodeEditPart(View view) {
 		super(view);
 	}
 
@@ -95,8 +95,8 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implement
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StructuredActivityNode2ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StructuredActivityNode2CanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StructuredActivityNode_StructuredActivityNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StructuredActivityNode_StructuredActivityNodeCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -147,12 +147,12 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implement
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof StructuredActivityNodeName2EditPart) {
-			((StructuredActivityNodeName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_name());
+		if (childEditPart instanceof StructuredActivityNode_StructuredActivityNodeNameEditPart) {
+			((StructuredActivityNode_StructuredActivityNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_name());
 			return true;
 		}
-		if (childEditPart instanceof StructuredActivityNodeStereotype2EditPart) {
-			((StructuredActivityNodeStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_stereo());
+		if (childEditPart instanceof StructuredActivityNode_StructuredActivityNodeStereotypeEditPart) {
+			((StructuredActivityNode_StructuredActivityNodeStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart) {
@@ -297,7 +297,7 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implement
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(StructuredActivityNodeName2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(StructuredActivityNode_StructuredActivityNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -396,7 +396,7 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implement
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {
@@ -627,7 +627,7 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implement
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {
@@ -816,7 +816,7 @@ public class StructuredActivityNode2EditPart extends ShapeNodeEditPart implement
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {

@@ -353,7 +353,7 @@ public class AddStructuralFeatureValueAction_insertAt_InputPinEditPart extends B
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {
@@ -584,7 +584,7 @@ public class AddStructuralFeatureValueAction_insertAt_InputPinEditPart extends B
 		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof StructuredActivityNode2EditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OpaqueActionEditPart) {
