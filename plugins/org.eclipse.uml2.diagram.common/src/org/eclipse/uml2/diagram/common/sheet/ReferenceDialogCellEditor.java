@@ -31,5 +31,14 @@ public class ReferenceDialogCellEditor extends ExtendedDialogCellEditor {
 		myElementChooserDialog.open();
 		return myElementChooserDialog.getResult();
 	}
+	
+	//#263278 'Unset' doesn't work
+	@Override
+	protected void doSetValue(Object value) {
+		if (ReferencedElementChooserDialog.NULL_VALUE.equals(value)) {
+			value = null;
+		}
+		super.doSetValue(value);
+	}
 
 }

@@ -22,9 +22,12 @@ import org.eclipse.uml2.diagram.common.sheet.chooser.ElementChooserPage.Validato
 
 public class ReferencedElementChooserDialog extends TrayDialog {
 
-	private final static int UNSET_BUTTON_ID = IDialogConstants.NO_TO_ALL_ID + 1;
+	//#263278 'Unset' doesn't work
+	public final static Object NULL_VALUE = new String("Null EObject"); 
+	
+	private final static int UNSET_BUTTON_ID = IDialogConstants.NO_TO_ALL_ID + 1;	
 
-	public EObject myResult;
+	public Object myResult;
 
 	private final EStructuralFeature myFeature;
 
@@ -84,7 +87,7 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 	}
 
 	private void unsetPressed() {
-		myResult = null;
+		myResult = NULL_VALUE;
 		close();
 	}
 
