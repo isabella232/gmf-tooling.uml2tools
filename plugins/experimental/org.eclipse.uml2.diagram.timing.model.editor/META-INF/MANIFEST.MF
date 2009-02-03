@@ -2,12 +2,12 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.uml2.diagram.timing.model.editor;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 0.9.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.uml2.diagram.timing.model.timingd.presentation.TimingDEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.eclipse.uml2.diagram.timing.model.timingd.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
