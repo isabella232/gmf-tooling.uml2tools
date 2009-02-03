@@ -37,7 +37,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptEven
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityPartitionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CallBehaviorActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_FlowFinalNodeEditPart;
@@ -47,6 +50,9 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEd
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_SendSignalActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_insertAt_InputPinEditPart;
@@ -54,9 +60,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAct
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_value_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallAction_OutputPinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
@@ -65,7 +69,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
@@ -91,10 +94,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalActionEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode4EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptTimeEventActionEditPart;
@@ -225,15 +225,15 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
 		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 		case ActivityPartition_PinEditPart.VISUAL_ID:
-		case CreateObjectAction3EditPart.VISUAL_ID:
+		case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID:
 		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
-		case CallBehaviorAction3EditPart.VISUAL_ID:
-		case CallOperationAction3EditPart.VISUAL_ID:
-		case StructuredActivityNode3EditPart.VISUAL_ID:
-		case StructuredActivityNode4EditPart.VISUAL_ID:
+		case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
+		case ActivityPartition_CallOperationActionEditPart.VISUAL_ID:
+		case ActivityPartition_StructuredActivityNodeEditPart.VISUAL_ID:
+		case ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 		case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
-		case SendSignalAction2EditPart.VISUAL_ID:
+		case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
 		case LoopNode2EditPart.VISUAL_ID:
 		case ConditionalNode2EditPart.VISUAL_ID:
 		case ExpansionRegion2EditPart.VISUAL_ID:
@@ -874,7 +874,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case CreateObjectAction3EditPart.VISUAL_ID: {
+		case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getCreateObjectAction_3072ContainedLinks(view));
 			}
@@ -888,28 +888,28 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case CallBehaviorAction3EditPart.VISUAL_ID: {
+		case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getCallBehaviorAction_3074ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case CallOperationAction3EditPart.VISUAL_ID: {
+		case ActivityPartition_CallOperationActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getCallOperationAction_3075ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case StructuredActivityNode3EditPart.VISUAL_ID: {
+		case ActivityPartition_StructuredActivityNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getStructuredActivityNode_3076ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case StructuredActivityNode4EditPart.VISUAL_ID: {
+		case ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getStructuredActivityNode_3079ContainedLinks(view));
 			}
@@ -930,7 +930,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
-		case SendSignalAction2EditPart.VISUAL_ID: {
+		case ActivityPartition_SendSignalActionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getSendSignalAction_3077ContainedLinks(view));
 			}

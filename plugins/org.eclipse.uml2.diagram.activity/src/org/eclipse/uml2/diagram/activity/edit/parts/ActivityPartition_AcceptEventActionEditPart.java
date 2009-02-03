@@ -482,22 +482,22 @@ public class ActivityPartition_AcceptEventActionEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof ActivityPartition_PinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CreateObjectAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CallBehaviorAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof CallOperationAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof StructuredActivityNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof StructuredActivityNode4EditPart) {
+		if (targetEditPart instanceof ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
@@ -506,7 +506,7 @@ public class ActivityPartition_AcceptEventActionEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof SendSignalAction2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof LoopNode2EditPart) {
@@ -713,22 +713,22 @@ public class ActivityPartition_AcceptEventActionEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof ActivityPartition_PinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CreateObjectAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CallBehaviorAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof CallOperationAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof StructuredActivityNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof StructuredActivityNode4EditPart) {
+		if (targetEditPart instanceof ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_InputPinEditPart) {
@@ -737,7 +737,7 @@ public class ActivityPartition_AcceptEventActionEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof StructuredActivityNode_StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof SendSignalAction2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof LoopNode2EditPart) {
@@ -839,25 +839,25 @@ public class ActivityPartition_AcceptEventActionEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof ActivityPartition_OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof CreateObjectAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof CallBehaviorAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof CallOperationAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof StructuredActivityNode3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof StructuredActivityNode4EditPart) {
+		if (targetEditPart instanceof ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof SendSignalAction2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof LoopNode2EditPart) {

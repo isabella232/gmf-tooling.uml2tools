@@ -529,14 +529,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartition_PinStereotypeEditPart.VISUAL_ID:
 				return new ActivityPartition_PinStereotypeEditPart(view);
 
-			case CreateObjectAction3EditPart.VISUAL_ID:
-				return new CreateObjectAction3EditPart(view);
+			case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID:
+				return new ActivityPartition_CreateObjectActionEditPart(view);
 
-			case CreateObjectActionName3EditPart.VISUAL_ID:
-				return new CreateObjectActionName3EditPart(view);
+			case ActivityPartition_CreateObjectActionNameEditPart.VISUAL_ID:
+				return new ActivityPartition_CreateObjectActionNameEditPart(view);
 
-			case CreateObjectActionStereotype3EditPart.VISUAL_ID:
-				return new CreateObjectActionStereotype3EditPart(view);
+			case ActivityPartition_CreateObjectActionStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_CreateObjectActionStereotypeEditPart(view);
 
 			case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
 				return new AddStructuralFeatureValueAction3EditPart(view);
@@ -547,35 +547,35 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case AddStructuralFeatureValueActionStereotype3EditPart.VISUAL_ID:
 				return new AddStructuralFeatureValueActionStereotype3EditPart(view);
 
-			case CallBehaviorAction3EditPart.VISUAL_ID:
-				return new CallBehaviorAction3EditPart(view);
+			case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
+				return new ActivityPartition_CallBehaviorActionEditPart(view);
 
-			case CallBehaviorActionName3EditPart.VISUAL_ID:
-				return new CallBehaviorActionName3EditPart(view);
+			case ActivityPartition_CallBehaviorActionNameEditPart.VISUAL_ID:
+				return new ActivityPartition_CallBehaviorActionNameEditPart(view);
 
-			case CallBehaviorActionStereotype3EditPart.VISUAL_ID:
-				return new CallBehaviorActionStereotype3EditPart(view);
+			case ActivityPartition_CallBehaviorActionStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_CallBehaviorActionStereotypeEditPart(view);
 
-			case CallOperationAction3EditPart.VISUAL_ID:
-				return new CallOperationAction3EditPart(view);
+			case ActivityPartition_CallOperationActionEditPart.VISUAL_ID:
+				return new ActivityPartition_CallOperationActionEditPart(view);
 
-			case CallOperationActionName3EditPart.VISUAL_ID:
-				return new CallOperationActionName3EditPart(view);
+			case ActivityPartition_CallOperationActionNameEditPart.VISUAL_ID:
+				return new ActivityPartition_CallOperationActionNameEditPart(view);
 
-			case CallOperationActionStereotype3EditPart.VISUAL_ID:
-				return new CallOperationActionStereotype3EditPart(view);
+			case ActivityPartition_CallOperationActionStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_CallOperationActionStereotypeEditPart(view);
 
-			case StructuredActivityNode3EditPart.VISUAL_ID:
-				return new StructuredActivityNode3EditPart(view);
+			case ActivityPartition_StructuredActivityNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_StructuredActivityNodeEditPart(view);
 
-			case StructuredActivityNodeStereotype3EditPart.VISUAL_ID:
-				return new StructuredActivityNodeStereotype3EditPart(view);
+			case ActivityPartition_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_StructuredActivityNodeStereotypeEditPart(view);
 
-			case StructuredActivityNode4EditPart.VISUAL_ID:
-				return new StructuredActivityNode4EditPart(view);
+			case ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart(view);
 
-			case StructuredActivityNodeStereotype4EditPart.VISUAL_ID:
-				return new StructuredActivityNodeStereotype4EditPart(view);
+			case ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeEditPart(view);
 
 			case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 				return new StructuredActivityNode_StructuredActivityNode_InputPinEditPart(view);
@@ -595,14 +595,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNode_StructuredActivityNode_OutputPinOrderingEditPart.VISUAL_ID:
 				return new StructuredActivityNode_StructuredActivityNode_OutputPinOrderingEditPart(view);
 
-			case SendSignalAction2EditPart.VISUAL_ID:
-				return new SendSignalAction2EditPart(view);
+			case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
+				return new ActivityPartition_SendSignalActionEditPart(view);
 
-			case SendSignalActionName2EditPart.VISUAL_ID:
-				return new SendSignalActionName2EditPart(view);
+			case ActivityPartition_SendSignalActionNameEditPart.VISUAL_ID:
+				return new ActivityPartition_SendSignalActionNameEditPart(view);
 
-			case SendSignalActionStereotype2EditPart.VISUAL_ID:
-				return new SendSignalActionStereotype2EditPart(view);
+			case ActivityPartition_SendSignalActionStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_SendSignalActionStereotypeEditPart(view);
 
 			case LoopNode2EditPart.VISUAL_ID:
 				return new LoopNode2EditPart(view);

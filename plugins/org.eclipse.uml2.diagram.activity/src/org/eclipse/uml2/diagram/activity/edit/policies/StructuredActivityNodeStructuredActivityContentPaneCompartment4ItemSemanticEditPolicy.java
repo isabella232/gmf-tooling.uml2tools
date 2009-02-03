@@ -2,7 +2,7 @@ package org.eclipse.uml2.diagram.activity.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
-import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode4CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_StructuredActivityNode_StructuredActivityNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_AcceptEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_AcceptTimeEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_ActivityFinalNodeCreateCommand;
@@ -40,7 +40,7 @@ public class StructuredActivityNodeStructuredActivityContentPaneCompartment4Item
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.StructuredActivityNode_3079 == req.getElementType()) {
-			return getGEFWrapper(new StructuredActivityNode4CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_StructuredActivityNode_StructuredActivityNodeCreateCommand(req));
 		}
 		if (UMLElementTypes.OpaqueAction_3011 == req.getElementType()) {
 			return getGEFWrapper(new StructuredActivityNode_OpaqueActionCreateCommand(req));

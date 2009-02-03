@@ -14,7 +14,10 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_AcceptE
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_AcceptTimeEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_ActivityFinalNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_ActivityPartitionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_CallBehaviorActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_CallOperationActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_CentralBufferNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_CreateObjectActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_DataStoreNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_DecisionNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_FlowFinalNodeCreateCommand;
@@ -24,21 +27,21 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_JoinNod
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_MergeNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_OpaqueActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_PinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_SendSignalActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_StructuredActivityNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueAction3CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.CallBehaviorAction3CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.CallOperationAction3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ConditionalNode2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.CreateObjectAction3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExpansionRegion2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.LoopNode2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.SendSignalAction2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode3CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ValueSpecificationActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityPartitionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CallBehaviorActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_FlowFinalNodeEditPart;
@@ -48,15 +51,12 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEd
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_SendSignalActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorAction3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.SendSignalAction2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -121,22 +121,22 @@ public class ActivityPartition_ActivityPartitionItemSemanticEditPolicy extends U
 			return getGEFWrapper(new ActivityPartition_PinCreateCommand(req));
 		}
 		if (UMLElementTypes.CreateObjectAction_3072 == req.getElementType()) {
-			return getGEFWrapper(new CreateObjectAction3CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_CreateObjectActionCreateCommand(req));
 		}
 		if (UMLElementTypes.AddStructuralFeatureValueAction_3073 == req.getElementType()) {
 			return getGEFWrapper(new AddStructuralFeatureValueAction3CreateCommand(req));
 		}
 		if (UMLElementTypes.CallBehaviorAction_3074 == req.getElementType()) {
-			return getGEFWrapper(new CallBehaviorAction3CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_CallBehaviorActionCreateCommand(req));
 		}
 		if (UMLElementTypes.CallOperationAction_3075 == req.getElementType()) {
-			return getGEFWrapper(new CallOperationAction3CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_CallOperationActionCreateCommand(req));
 		}
 		if (UMLElementTypes.StructuredActivityNode_3076 == req.getElementType()) {
-			return getGEFWrapper(new StructuredActivityNode3CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_StructuredActivityNodeCreateCommand(req));
 		}
 		if (UMLElementTypes.SendSignalAction_3077 == req.getElementType()) {
-			return getGEFWrapper(new SendSignalAction2CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_SendSignalActionCreateCommand(req));
 		}
 		if (UMLElementTypes.LoopNode_3078 == req.getElementType()) {
 			return getGEFWrapper(new LoopNode2CreateCommand(req));
@@ -218,22 +218,22 @@ public class ActivityPartition_ActivityPartitionItemSemanticEditPolicy extends U
 			case ActivityPartition_PinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case CreateObjectAction3EditPart.VISUAL_ID:
+			case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case CallBehaviorAction3EditPart.VISUAL_ID:
+			case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case CallOperationAction3EditPart.VISUAL_ID:
+			case ActivityPartition_CallOperationActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case StructuredActivityNode3EditPart.VISUAL_ID:
+			case ActivityPartition_StructuredActivityNodeEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case SendSignalAction2EditPart.VISUAL_ID:
+			case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case LoopNode2EditPart.VISUAL_ID:
