@@ -59,4 +59,5 @@ Export-Package: org.eclipse.uml2.diagram.common.actions,
 Bundle-Vendor: %providerName
 Bundle-ClassPath: .
 Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-Activator: org.eclipse.uml2.diagram.common.UMLCommonPlugin

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.uml2.diagram.codegen.edit; singleton:=true
-Bundle-Version: 0.8.0.qualifier
+Bundle-Version: 0.9.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.eclipse.uml2.diagram.codegen.gmfgenext.provider.GMFGenExtEditPlugin$Implementation
 Bundle-Vendor: %providerName
@@ -24,4 +24,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.graphdef.edit;visibility:=reexport,
  org.eclipse.gmf.tooling;visibility:=reexport,
  org.eclipse.gmf.tooldef.edit;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy

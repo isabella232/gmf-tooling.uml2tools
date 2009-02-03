@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.uml2.diagram.parser; singleton:=true
-Bundle-Version: 0.8.0.qualifier
+Bundle-Version: 0.9.0.qualifier
 Bundle-Localization: plugin
 Bundle-Activator: org.eclipse.uml2.internal.diagram.parser.MDTDiagramParserPlugin
 Require-Bundle: org.eclipse.core.runtime,
@@ -28,5 +28,6 @@ Export-Package: org.eclipse.uml2.diagram.parser,
  org.eclipse.uml2.internal.diagram.parser;x-internal:=true
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ClassPath: .
 
