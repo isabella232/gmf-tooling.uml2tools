@@ -149,10 +149,11 @@ public class UMLDiagramEditorUtil {
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
 		final Resource modelResource = editingDomain.getResourceSet().createResource(modelURI);
 		final String diagramName = diagramURI.lastSegment();
+		final String diagramNameWithoutExtension = diagramURI.trimFileExtension().lastSegment();
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.UMLDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				Package model = createInitialModel();
+				Package model = createInitialModel(diagramNameWithoutExtension);
 				attachModelToResource(model, modelResource);
 
 				Diagram diagram = ViewService.createDiagram(model, PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
@@ -188,17 +189,10 @@ public class UMLDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static Package createInitialModelGen() {
-		return UMLFactory.eINSTANCE.createPackage();
-	}
-
-	/**
-	 * @generated NOT
-	 */
-	private static Package createInitialModel() {
-		Package package_ = createInitialModelGen();
-		package_.setName("Package");
-		return package_;
+	private static Package createInitialModel(java.lang.String diagramName) {
+		Package diagram = UMLFactory.eINSTANCE.createPackage();
+		diagram.setName(diagramName);
+		return diagram;
 	}
 
 	/**
