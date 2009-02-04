@@ -512,7 +512,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -536,13 +536,13 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {
@@ -743,7 +743,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -767,13 +767,13 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {
@@ -869,7 +869,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -887,13 +887,13 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {

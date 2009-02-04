@@ -14,49 +14,49 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_AcceptE
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_AcceptTimeEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_ActivityFinalNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_ActivityPartitionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_AddStructuralFeatureValueActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_CallBehaviorActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_CallOperationActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_CentralBufferNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_ConditionalNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_CreateObjectActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_DataStoreNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_DecisionNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_ExpansionRegionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_FlowFinalNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_ForkNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_InitialNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_JoinNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_LoopNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_MergeNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_OpaqueActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_PinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_SendSignalActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_StructuredActivityNodeCreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueAction3CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.ConditionalNode2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.ExpansionRegion2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.LoopNode2CreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ValueSpecificationActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityPartitionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DecisionNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_SendSignalActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -124,7 +124,7 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 			return getGEFWrapper(new ActivityPartition_CreateObjectActionCreateCommand(req));
 		}
 		if (UMLElementTypes.AddStructuralFeatureValueAction_3073 == req.getElementType()) {
-			return getGEFWrapper(new AddStructuralFeatureValueAction3CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_AddStructuralFeatureValueActionCreateCommand(req));
 		}
 		if (UMLElementTypes.CallBehaviorAction_3074 == req.getElementType()) {
 			return getGEFWrapper(new ActivityPartition_CallBehaviorActionCreateCommand(req));
@@ -139,13 +139,13 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 			return getGEFWrapper(new ActivityPartition_SendSignalActionCreateCommand(req));
 		}
 		if (UMLElementTypes.LoopNode_3078 == req.getElementType()) {
-			return getGEFWrapper(new LoopNode2CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_LoopNodeCreateCommand(req));
 		}
 		if (UMLElementTypes.ConditionalNode_3083 == req.getElementType()) {
-			return getGEFWrapper(new ConditionalNode2CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_ConditionalNodeCreateCommand(req));
 		}
 		if (UMLElementTypes.ExpansionRegion_3085 == req.getElementType()) {
-			return getGEFWrapper(new ExpansionRegion2CreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_ExpansionRegionCreateCommand(req));
 		}
 		if (UMLElementTypes.ValueSpecificationAction_3088 == req.getElementType()) {
 			return getGEFWrapper(new ValueSpecificationActionCreateCommand(req));
@@ -221,7 +221,7 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 			case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+			case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
@@ -236,13 +236,13 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 			case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case LoopNode2EditPart.VISUAL_ID:
+			case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case ConditionalNode2EditPart.VISUAL_ID:
+			case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case ExpansionRegion2EditPart.VISUAL_ID:
+			case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			case ValueSpecificationActionEditPart.VISUAL_ID:

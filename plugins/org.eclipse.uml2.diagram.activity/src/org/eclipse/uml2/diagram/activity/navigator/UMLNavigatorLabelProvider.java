@@ -218,7 +218,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Pin", UMLElementTypes.Pin_3071); //$NON-NLS-1$
 		case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?CreateObjectAction", UMLElementTypes.CreateObjectAction_3072); //$NON-NLS-1$
-		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+		case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?AddStructuralFeatureValueAction", UMLElementTypes.AddStructuralFeatureValueAction_3073); //$NON-NLS-1$
 		case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?CallBehaviorAction", UMLElementTypes.CallBehaviorAction_3074); //$NON-NLS-1$
@@ -234,11 +234,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?OutputPin", UMLElementTypes.OutputPin_3081); //$NON-NLS-1$
 		case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?SendSignalAction", UMLElementTypes.SendSignalAction_3077); //$NON-NLS-1$
-		case LoopNode2EditPart.VISUAL_ID:
+		case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?LoopNode", UMLElementTypes.LoopNode_3078); //$NON-NLS-1$
-		case ConditionalNode2EditPart.VISUAL_ID:
+		case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ConditionalNode", UMLElementTypes.ConditionalNode_3083); //$NON-NLS-1$
-		case ExpansionRegion2EditPart.VISUAL_ID:
+		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ExpansionRegion", UMLElementTypes.ExpansionRegion_3085); //$NON-NLS-1$
 		case ValueSpecificationActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ValueSpecificationAction", UMLElementTypes.ValueSpecificationAction_3088); //$NON-NLS-1$
@@ -456,7 +456,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getPin_3071Text(view);
 		case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID:
 			return getCreateObjectAction_3072Text(view);
-		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+		case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueAction_3073Text(view);
 		case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
 			return getCallBehaviorAction_3074Text(view);
@@ -472,11 +472,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getOutputPin_3081Text(view);
 		case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
 			return getSendSignalAction_3077Text(view);
-		case LoopNode2EditPart.VISUAL_ID:
+		case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
 			return getLoopNode_3078Text(view);
-		case ConditionalNode2EditPart.VISUAL_ID:
+		case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3083Text(view);
-		case ExpansionRegion2EditPart.VISUAL_ID:
+		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3085Text(view);
 		case ValueSpecificationActionEditPart.VISUAL_ID:
 			return getValueSpecificationAction_3088Text(view);
@@ -1433,7 +1433,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getAddStructuralFeatureValueAction_3073Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.AddStructuralFeatureValueAction_3073, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(AddStructuralFeatureValueActionName3EditPart.VISUAL_ID));
+				.getType(ActivityPartition_AddStructuralFeatureValueActionNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -1545,7 +1545,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getLoopNode_3078Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.LoopNode_3078, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(LoopNodeStereotype2EditPart.VISUAL_ID));
+				.getType(ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -1559,7 +1559,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getConditionalNode_3083Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ConditionalNode_3083, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ConditionalNodeStereotypeEditPart.VISUAL_ID));
+				.getType(ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -1573,7 +1573,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getExpansionRegion_3085Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ExpansionRegion_3085, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ExpansionRegionMode2EditPart.VISUAL_ID));
+				.getType(ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {

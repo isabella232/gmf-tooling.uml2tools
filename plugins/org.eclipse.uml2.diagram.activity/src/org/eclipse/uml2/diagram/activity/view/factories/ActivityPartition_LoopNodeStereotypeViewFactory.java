@@ -10,7 +10,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 
-public class LoopNodeStereotype2ViewFactory extends BasicNodeViewFactory {
+public class ActivityPartition_LoopNodeStereotypeViewFactory extends BasicNodeViewFactory {
 
 	/**
 	 * @generated

@@ -30,23 +30,26 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptEven
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityPartitionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_DecisionNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_JoinNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_SendSignalActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_insertAt_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_object_InputPinEditPart;
@@ -57,7 +60,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeEditPart;
@@ -67,7 +69,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionExpansionRegionNodeCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionExpansionRegionNodeCompartmentEditPart;
@@ -75,7 +76,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeLoopNodeContentPaneCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeLoopNodeContentPaneCompartmentEditPart;
@@ -314,7 +314,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
-		if (editPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (editPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.InputPin_3003);
 			types.add(UMLElementTypes.InputPin_3004);
@@ -780,8 +780,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			return ((ActivityPartition_CreateObjectActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
-			return ((AddStructuralFeatureValueAction3EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
+			return ((ActivityPartition_AddStructuralFeatureValueActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
 			return ((ActivityPartition_CallBehaviorActionEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -804,14 +804,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			return ((ActivityPartition_SendSignalActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof LoopNode2EditPart) {
-			return ((LoopNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_LoopNodeEditPart) {
+			return ((ActivityPartition_LoopNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof ConditionalNode2EditPart) {
-			return ((ConditionalNode2EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
+			return ((ActivityPartition_ConditionalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof ExpansionRegion2EditPart) {
-			return ((ExpansionRegion2EditPart) sourceEditPart).getMARelTypesOnSource();
+		if (sourceEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
+			return ((ActivityPartition_ExpansionRegionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ValueSpecificationActionEditPart) {
 			return ((ValueSpecificationActionEditPart) sourceEditPart).getMARelTypesOnSource();
@@ -1031,8 +1031,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			return ((ActivityPartition_CreateObjectActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
-			return ((AddStructuralFeatureValueAction3EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
+			return ((ActivityPartition_AddStructuralFeatureValueActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
 			return ((ActivityPartition_CallBehaviorActionEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -1055,14 +1055,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			return ((ActivityPartition_SendSignalActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
-			return ((LoopNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
+			return ((ActivityPartition_LoopNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
-			return ((ConditionalNode2EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
+			return ((ActivityPartition_ConditionalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
-			return ((ExpansionRegion2EditPart) targetEditPart).getMARelTypesOnTarget();
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
+			return ((ActivityPartition_ExpansionRegionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			return ((ValueSpecificationActionEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -1271,8 +1271,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			return ((ActivityPartition_CreateObjectActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
-			return ((AddStructuralFeatureValueAction3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
+			return ((ActivityPartition_AddStructuralFeatureValueActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
 			return ((ActivityPartition_CallBehaviorActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1295,14 +1295,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			return ((ActivityPartition_SendSignalActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof LoopNode2EditPart) {
-			return ((LoopNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_LoopNodeEditPart) {
+			return ((ActivityPartition_LoopNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof ConditionalNode2EditPart) {
-			return ((ConditionalNode2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
+			return ((ActivityPartition_ConditionalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof ExpansionRegion2EditPart) {
-			return ((ExpansionRegion2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		if (sourceEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
+			return ((ActivityPartition_ExpansionRegionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ValueSpecificationActionEditPart) {
 			return ((ValueSpecificationActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1522,8 +1522,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			return ((ActivityPartition_CreateObjectActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
-			return ((AddStructuralFeatureValueAction3EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
+			return ((ActivityPartition_AddStructuralFeatureValueActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
 			return ((ActivityPartition_CallBehaviorActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -1546,14 +1546,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			return ((ActivityPartition_SendSignalActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
-			return ((LoopNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
+			return ((ActivityPartition_LoopNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
-			return ((ConditionalNode2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
+			return ((ActivityPartition_ConditionalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
-			return ((ExpansionRegion2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
+			return ((ActivityPartition_ExpansionRegionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			return ((ValueSpecificationActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -1761,8 +1761,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			return ((ActivityPartition_CreateObjectActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
-			return ((AddStructuralFeatureValueAction3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
+			return ((ActivityPartition_AddStructuralFeatureValueActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
 			return ((ActivityPartition_CallBehaviorActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
@@ -1785,14 +1785,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			return ((ActivityPartition_SendSignalActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof LoopNode2EditPart) {
-			return ((LoopNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_LoopNodeEditPart) {
+			return ((ActivityPartition_LoopNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof ConditionalNode2EditPart) {
-			return ((ConditionalNode2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
+			return ((ActivityPartition_ConditionalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof ExpansionRegion2EditPart) {
-			return ((ExpansionRegion2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		if (sourceEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
+			return ((ActivityPartition_ExpansionRegionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ValueSpecificationActionEditPart) {
 			return ((ValueSpecificationActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);

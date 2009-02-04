@@ -19,16 +19,18 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * @generated
  */
-public class LoopNode2CreateCommand extends EditElementCommand {
+
+public class ActivityPartition_LoopNodeCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public LoopNode2CreateCommand(CreateElementRequest req) {
+	public ActivityPartition_LoopNodeCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
+	 * FIXME: replace with setElementToEdit()
 	 * @generated
 	 */
 	protected EObject getElementToEditGen() {
@@ -102,4 +104,5 @@ public class LoopNode2CreateCommand extends EditElementCommand {
 			configureCommand.execute(monitor, info);
 		}
 	}
+
 }

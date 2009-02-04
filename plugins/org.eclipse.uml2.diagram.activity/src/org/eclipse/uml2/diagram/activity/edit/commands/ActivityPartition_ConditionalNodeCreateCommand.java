@@ -11,25 +11,26 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityPartition;
-import org.eclipse.uml2.uml.ExpansionRegion;
+import org.eclipse.uml2.uml.ConditionalNode;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * @generated
  */
-public class ExpansionRegion2CreateCommand extends EditElementCommand {
+
+public class ActivityPartition_ConditionalNodeCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public ExpansionRegion2CreateCommand(CreateElementRequest req) {
+	public ActivityPartition_ConditionalNodeCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
+	 * FIXME: replace with setElementToEdit()
 	 * @generated
 	 */
 	protected EObject getElementToEditGen() {
@@ -59,14 +60,12 @@ public class ExpansionRegion2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResultGen(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		ExpansionRegion newElement = UMLFactory.eINSTANCE.createExpansionRegion();
+		ConditionalNode newElement = UMLFactory.eINSTANCE.createConditionalNode();
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
-
-		UMLElementTypes.init_ExpansionRegion_3085(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -78,15 +77,13 @@ public class ExpansionRegion2CreateCommand extends EditElementCommand {
 	 * @generated NOT
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		ExpansionRegion newElement = UMLFactory.eINSTANCE.createExpansionRegion();
+		ConditionalNode newElement = UMLFactory.eINSTANCE.createConditionalNode();
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
 
 		ActivityPartition partition = (ActivityPartition) getElementToEditGen();
 		newElement.getInPartitions().add(partition);
-
-		UMLElementTypes.init_ExpansionRegion_3085(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -97,7 +94,7 @@ public class ExpansionRegion2CreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(ExpansionRegion newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	protected void doConfigure(ConditionalNode newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
 		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
@@ -107,4 +104,5 @@ public class ExpansionRegion2CreateCommand extends EditElementCommand {
 			configureCommand.execute(monitor, info);
 		}
 	}
+
 }

@@ -41,12 +41,12 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
  * @generated
  */
 
-public class AddStructuralFeatureValueAction3ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class ActivityPartition_AddStructuralFeatureValueActionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public AddStructuralFeatureValueAction3ItemSemanticEditPolicy() {
+	public ActivityPartition_AddStructuralFeatureValueActionItemSemanticEditPolicy() {
 		super(UMLElementTypes.AddStructuralFeatureValueAction_3073);
 	}
 

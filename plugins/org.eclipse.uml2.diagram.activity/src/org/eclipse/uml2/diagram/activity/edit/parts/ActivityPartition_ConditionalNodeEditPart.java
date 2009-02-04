@@ -41,8 +41,8 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.uml2.diagram.activity.edit.policies.LoopNode2CanonicalEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.LoopNode2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition_ConditionalNodeCanonicalEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition_ConditionalNodeItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -58,12 +58,12 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 
-public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class ActivityPartition_ConditionalNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3078;
+	public static final int VISUAL_ID = 3083;
 
 	/**
 	 * @generated
@@ -83,7 +83,7 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	/**
 	 * @generated
 	 */
-	public LoopNode2EditPart(View view) {
+	public ActivityPartition_ConditionalNodeEditPart(View view) {
 		super(view);
 	}
 
@@ -95,8 +95,8 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LoopNode2ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new LoopNode2CanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityPartition_ConditionalNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityPartition_ConditionalNodeCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -147,14 +147,14 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof LoopNodeStereotype2EditPart) {
-			((LoopNodeStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_stereo());
+		if (childEditPart instanceof ActivityPartition_ConditionalNodeStereotypeEditPart) {
+			((ActivityPartition_ConditionalNodeStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_stereo());
 			return true;
 		}
-		if (childEditPart instanceof LoopNodeLoopNodeContentPaneCompartment2EditPart) {
+		if (childEditPart instanceof ConditionalNodeConditionalNodeCompartment2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((LoopNodeLoopNodeContentPaneCompartment2EditPart) childEditPart).getFigure());
+			pane.add(((ConditionalNodeConditionalNodeCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -165,9 +165,9 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof LoopNodeLoopNodeContentPaneCompartment2EditPart) {
+		if (childEditPart instanceof ConditionalNodeConditionalNodeCompartment2EditPart) {
 			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
-			pane.remove(((LoopNodeLoopNodeContentPaneCompartment2EditPart) childEditPart).getFigure());
+			pane.remove(((ConditionalNodeConditionalNodeCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -197,7 +197,7 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof LoopNodeLoopNodeContentPaneCompartment2EditPart) {
+		if (editPart instanceof ConditionalNodeConditionalNodeCompartment2EditPart) {
 			return getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 		}
 		return getContentPane();
@@ -293,7 +293,7 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeStereotype2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -494,7 +494,7 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -518,13 +518,13 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -725,7 +725,7 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -749,13 +749,13 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -851,7 +851,7 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -869,13 +869,13 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -2311,7 +2311,7 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (IUpdaterNodeDescriptor next : getLoopNode_3078ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getConditionalNode_3083ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -2331,8 +2331,8 @@ public class LoopNode2EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getLoopNode_3078ContainedLinks() {
-		return UMLDiagramUpdater.getLoopNode_3078ContainedLinks(getNotationView());
+	private List<IUpdaterLinkDescriptor> getConditionalNode_3083ContainedLinks() {
+		return UMLDiagramUpdater.getConditionalNode_3083ContainedLinks(getNotationView());
 	}
 
 	/**

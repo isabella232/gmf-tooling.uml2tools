@@ -408,7 +408,7 @@ public class ActivityPartition_ActivityFinalNodeEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -432,13 +432,13 @@ public class ActivityPartition_ActivityFinalNodeEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -639,7 +639,7 @@ public class ActivityPartition_ActivityFinalNodeEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -663,13 +663,13 @@ public class ActivityPartition_ActivityFinalNodeEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {

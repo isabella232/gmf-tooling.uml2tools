@@ -3019,9 +3019,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCreateObjectActionName_5076Parser();
 		case ActivityPartition_CreateObjectActionStereotypeEditPart.VISUAL_ID:
 			return getCreateObjectActionQualifiedName_5109Parser();
-		case AddStructuralFeatureValueActionName3EditPart.VISUAL_ID:
+		case ActivityPartition_AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueActionName_5077Parser();
-		case AddStructuralFeatureValueActionStereotype3EditPart.VISUAL_ID:
+		case ActivityPartition_AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueActionQualifiedName_5106Parser();
 		case ActivityPartition_CallBehaviorActionNameEditPart.VISUAL_ID:
 			return getCallBehaviorActionName_5078Parser();
@@ -3047,11 +3047,11 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getSendSignalActionName_5080Parser();
 		case ActivityPartition_SendSignalActionStereotypeEditPart.VISUAL_ID:
 			return getSendSignalActionQualifiedName_5114Parser();
-		case LoopNodeStereotype2EditPart.VISUAL_ID:
+		case ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID:
 			return getLoopNodeQualifiedName_5117Parser();
-		case ConditionalNodeStereotypeEditPart.VISUAL_ID:
+		case ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID:
 			return getConditionalNodeQualifiedName_5115Parser();
-		case ExpansionRegionMode2EditPart.VISUAL_ID:
+		case ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID:
 			return getExpansionRegionMode_5088Parser();
 		case ValueSpecificationActionNameEditPart.VISUAL_ID:
 			return getValueSpecificationActionName_5133Parser();

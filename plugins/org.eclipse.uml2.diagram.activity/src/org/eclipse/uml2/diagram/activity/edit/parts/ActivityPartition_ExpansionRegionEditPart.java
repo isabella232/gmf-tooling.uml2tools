@@ -40,8 +40,8 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.uml2.diagram.activity.edit.policies.ExpansionRegion2CanonicalEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.ExpansionRegion2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition_ExpansionRegionCanonicalEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition_ExpansionRegionItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
@@ -57,7 +57,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 
-public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
@@ -82,7 +82,7 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 	/**
 	 * @generated
 	 */
-	public ExpansionRegion2EditPart(View view) {
+	public ActivityPartition_ExpansionRegionEditPart(View view) {
 		super(view);
 	}
 
@@ -94,8 +94,8 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ExpansionRegion2ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ExpansionRegion2CanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityPartition_ExpansionRegionItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityPartition_ExpansionRegionCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -146,8 +146,8 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ExpansionRegionMode2EditPart) {
-			((ExpansionRegionMode2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureExpansionRegionFigure_keyword());
+		if (childEditPart instanceof ActivityPartition_ExpansionRegionModeEditPart) {
+			((ActivityPartition_ExpansionRegionModeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureExpansionRegionFigure_keyword());
 			return true;
 		}
 		if (childEditPart instanceof ExpansionRegionExpansionRegionNodeCompartment2EditPart) {
@@ -292,7 +292,7 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ExpansionRegionMode2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -493,7 +493,7 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -517,13 +517,13 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -724,7 +724,7 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -748,13 +748,13 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -850,7 +850,7 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -868,13 +868,13 @@ public class ExpansionRegion2EditPart extends ShapeNodeEditPart implements Prima
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {

@@ -10,7 +10,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 
-public class ExpansionRegionMode2ViewFactory extends BasicNodeViewFactory {
+public class ActivityPartition_ExpansionRegionModeViewFactory extends BasicNodeViewFactory {
 
 	/**
 	 * @generated

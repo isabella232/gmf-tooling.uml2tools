@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.MarginBorder;
-import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
@@ -32,29 +31,23 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.uml2.diagram.activity.edit.policies.AddStructuralFeatureValueAction3CanonicalEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.AddStructuralFeatureValueAction3ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition_LoopNodeCanonicalEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.ActivityPartition_LoopNodeItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
-import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
-import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
@@ -65,12 +58,12 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 
-public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
+public class ActivityPartition_LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3073;
+	public static final int VISUAL_ID = 3078;
 
 	/**
 	 * @generated
@@ -90,7 +83,7 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	/**
 	 * @generated
 	 */
-	public AddStructuralFeatureValueAction3EditPart(View view) {
+	public ActivityPartition_LoopNodeEditPart(View view) {
 		super(view);
 	}
 
@@ -101,11 +94,9 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AddStructuralFeatureValueAction3ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AddStructuralFeatureValueAction3CanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityPartition_LoopNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityPartition_LoopNodeCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -119,13 +110,6 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View) child.getModel();
-				switch (UMLVisualIDRegistry.getVisualID(childView)) {
-				case AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID:
-				case AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID:
-				case AddStructuralFeatureValueAction_object_InputPinEditPart.VISUAL_ID:
-					return new BorderItemSelectionEditPolicy();
-				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -148,42 +132,29 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ActionBaseFigure figure = new ActionBaseFigure();
+		StructuredActivityFigure figure = new StructuredActivityFigure();
 		return primaryShape = figure;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ActionBaseFigure getPrimaryShape() {
-		return (ActionBaseFigure) primaryShape;
+	public StructuredActivityFigure getPrimaryShape() {
+		return (StructuredActivityFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof AddStructuralFeatureValueActionName3EditPart) {
-			((AddStructuralFeatureValueActionName3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureActionBaseFigure_name());
+		if (childEditPart instanceof ActivityPartition_LoopNodeStereotypeEditPart) {
+			((ActivityPartition_LoopNodeStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_stereo());
 			return true;
 		}
-		if (childEditPart instanceof AddStructuralFeatureValueActionStereotype3EditPart) {
-			((AddStructuralFeatureValueActionStereotype3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureActionBaseFigure_stereo());
-			return true;
-		}
-		if (childEditPart instanceof AddStructuralFeatureValueAction_insertAt_InputPinEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
-			getBorderedFigure().getBorderItemContainer().add(((AddStructuralFeatureValueAction_insertAt_InputPinEditPart) childEditPart).getFigure(), locator);
-			return true;
-		}
-		if (childEditPart instanceof AddStructuralFeatureValueAction_value_InputPinEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
-			getBorderedFigure().getBorderItemContainer().add(((AddStructuralFeatureValueAction_value_InputPinEditPart) childEditPart).getFigure(), locator);
-			return true;
-		}
-		if (childEditPart instanceof AddStructuralFeatureValueAction_object_InputPinEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
-			getBorderedFigure().getBorderItemContainer().add(((AddStructuralFeatureValueAction_object_InputPinEditPart) childEditPart).getFigure(), locator);
+		if (childEditPart instanceof LoopNodeLoopNodeContentPaneCompartment2EditPart) {
+			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((LoopNodeLoopNodeContentPaneCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -194,16 +165,9 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof AddStructuralFeatureValueAction_insertAt_InputPinEditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((AddStructuralFeatureValueAction_insertAt_InputPinEditPart) childEditPart).getFigure());
-			return true;
-		}
-		if (childEditPart instanceof AddStructuralFeatureValueAction_value_InputPinEditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((AddStructuralFeatureValueAction_value_InputPinEditPart) childEditPart).getFigure());
-			return true;
-		}
-		if (childEditPart instanceof AddStructuralFeatureValueAction_object_InputPinEditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((AddStructuralFeatureValueAction_object_InputPinEditPart) childEditPart).getFigure());
+		if (childEditPart instanceof LoopNodeLoopNodeContentPaneCompartment2EditPart) {
+			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
+			pane.remove(((LoopNodeLoopNodeContentPaneCompartment2EditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -233,8 +197,8 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof IBorderItemEditPart) {
-			return getBorderedFigure().getBorderItemContainer();
+		if (editPart instanceof LoopNodeLoopNodeContentPaneCompartment2EditPart) {
+			return getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 		}
 		return getContentPane();
 	}
@@ -243,7 +207,7 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(80), getMapMode().DPtoLP(50));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
 		return result;
 	}
 
@@ -255,7 +219,7 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createMainFigure() {
+	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -329,7 +293,7 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(AddStructuralFeatureValueActionName3EditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -530,7 +494,7 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -554,13 +518,13 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -761,7 +725,7 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -785,13 +749,13 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -887,7 +851,7 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 		if (targetEditPart instanceof ActivityPartition_CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart) {
+		if (targetEditPart instanceof ActivityPartition_AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof ActivityPartition_CallBehaviorActionEditPart) {
@@ -905,13 +869,13 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 		if (targetEditPart instanceof ActivityPartition_SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof LoopNode2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_LoopNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ConditionalNode2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ExpansionRegion2EditPart) {
+		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -2117,28 +2081,33 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	/**
 	 * @generated
 	 */
-	public class ActionBaseFigure extends RoundedRectangle {
+	public class StructuredActivityFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureActionBaseFigure_name;
+		private Label fFigureStructuredActivityFigure_name;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureActionBaseFigure_stereo;
+		private RectangleFigure fFigureStructuredActivityFigure_ContentPane;
 
 		/**
 		 * @generated
 		 */
-		public ActionBaseFigure() {
+		private Label fFigureStructuredActivityFigure_stereo;
 
-			CenterLayout layoutThis = new CenterLayout();
+		/**
+		 * @generated
+		 */
+		public StructuredActivityFigure() {
 
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
+			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
 
@@ -2147,32 +2116,61 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 		 */
 		private void createContents() {
 
-			RectangleFigure actionBaseFigure_name0 = new RectangleFigure();
-			actionBaseFigure_name0.setFill(false);
-			actionBaseFigure_name0.setOutline(false);
+			RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new RectangleFigure();
+			aux_StructuredActivityFigure_LabelContainer0.setFill(false);
+			aux_StructuredActivityFigure_LabelContainer0.setOutline(false);
 
-			actionBaseFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			aux_StructuredActivityFigure_LabelContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
-			this.add(actionBaseFigure_name0);
+			this.add(aux_StructuredActivityFigure_LabelContainer0, BorderLayout.TOP);
 
-			ToolbarLayout layoutActionBaseFigure_name0 = new ToolbarLayout();
-			layoutActionBaseFigure_name0.setStretchMinorAxis(false);
-			layoutActionBaseFigure_name0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+			BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new BorderLayout();
+			aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);
 
-			layoutActionBaseFigure_name0.setSpacing(0);
-			layoutActionBaseFigure_name0.setVertical(true);
+			RectangleFigure structuredActivityFigure_KeywordContainer1 = new RectangleFigure();
+			structuredActivityFigure_KeywordContainer1.setFill(false);
+			structuredActivityFigure_KeywordContainer1.setOutline(false);
 
-			actionBaseFigure_name0.setLayoutManager(layoutActionBaseFigure_name0);
+			aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, BorderLayout.TOP);
 
-			fFigureActionBaseFigure_stereo = new Label();
-			fFigureActionBaseFigure_stereo.setText("");
+			BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new BorderLayout();
+			structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);
 
-			actionBaseFigure_name0.add(fFigureActionBaseFigure_stereo);
+			Label structuredActivityFigure_keyword2 = new Label();
+			structuredActivityFigure_keyword2.setText("\u00ABstructured\u00BB");
 
-			fFigureActionBaseFigure_name = new Label();
-			fFigureActionBaseFigure_name.setText("");
+			structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, BorderLayout.LEFT);
 
-			actionBaseFigure_name0.add(fFigureActionBaseFigure_name);
+			RectangleFigure structuredActivityFigure_NameContainer1 = new RectangleFigure();
+			structuredActivityFigure_NameContainer1.setFill(false);
+			structuredActivityFigure_NameContainer1.setOutline(false);
+
+			aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_NameContainer1, BorderLayout.CENTER);
+
+			ToolbarLayout layoutStructuredActivityFigure_NameContainer1 = new ToolbarLayout();
+			layoutStructuredActivityFigure_NameContainer1.setStretchMinorAxis(false);
+			layoutStructuredActivityFigure_NameContainer1.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutStructuredActivityFigure_NameContainer1.setSpacing(0);
+			layoutStructuredActivityFigure_NameContainer1.setVertical(true);
+
+			structuredActivityFigure_NameContainer1.setLayoutManager(layoutStructuredActivityFigure_NameContainer1);
+
+			fFigureStructuredActivityFigure_stereo = new Label();
+			fFigureStructuredActivityFigure_stereo.setText("");
+
+			structuredActivityFigure_NameContainer1.add(fFigureStructuredActivityFigure_stereo);
+
+			fFigureStructuredActivityFigure_name = new Label();
+			fFigureStructuredActivityFigure_name.setText("");
+
+			structuredActivityFigure_NameContainer1.add(fFigureStructuredActivityFigure_name);
+
+			fFigureStructuredActivityFigure_ContentPane = new RectangleFigure();
+			fFigureStructuredActivityFigure_ContentPane.setFill(false);
+			fFigureStructuredActivityFigure_ContentPane.setOutline(false);
+
+			this.add(fFigureStructuredActivityFigure_ContentPane, BorderLayout.CENTER);
 
 		}
 
@@ -2198,33 +2196,24 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 		/**
 		 * @generated
 		 */
-		public Label getFigureActionBaseFigure_name() {
-			return fFigureActionBaseFigure_name;
+		public Label getFigureStructuredActivityFigure_name() {
+			return fFigureStructuredActivityFigure_name;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureActionBaseFigure_stereo() {
-			return fFigureActionBaseFigure_stereo;
+		public RectangleFigure getFigureStructuredActivityFigure_ContentPane() {
+			return fFigureStructuredActivityFigure_ContentPane;
 		}
 
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void reorderChild(EditPart child, int index) {
-		// Save the constraint of the child so that it does not
-		// get lost during the remove and re-add.
-		IFigure childFigure = ((GraphicalEditPart) child).getFigure();
-		LayoutManager layout = getContentPaneFor((IGraphicalEditPart) child).getLayoutManager();
-		Object constraint = null;
-		if (layout != null) {
-			constraint = layout.getConstraint(childFigure);
+		/**
+		 * @generated
+		 */
+		public Label getFigureStructuredActivityFigure_stereo() {
+			return fFigureStructuredActivityFigure_stereo;
 		}
-		super.reorderChild(child, index);
-		setLayoutConstraint(child, childFigure, constraint);
+
 	}
 
 	/**
@@ -2322,7 +2311,7 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (IUpdaterNodeDescriptor next : getAddStructuralFeatureValueAction_3073ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getLoopNode_3078ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -2342,8 +2331,8 @@ public class AddStructuralFeatureValueAction3EditPart extends AbstractBorderedSh
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getAddStructuralFeatureValueAction_3073ContainedLinks() {
-		return UMLDiagramUpdater.getAddStructuralFeatureValueAction_3073ContainedLinks(getNotationView());
+	private List<IUpdaterLinkDescriptor> getLoopNode_3078ContainedLinks() {
+		return UMLDiagramUpdater.getLoopNode_3078ContainedLinks(getNotationView());
 	}
 
 	/**

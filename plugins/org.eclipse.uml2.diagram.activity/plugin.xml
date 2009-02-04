@@ -1981,7 +1981,7 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction3EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AddStructuralFeatureValueActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -2013,15 +2013,15 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.LoopNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_LoopNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegion2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ExpansionRegionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

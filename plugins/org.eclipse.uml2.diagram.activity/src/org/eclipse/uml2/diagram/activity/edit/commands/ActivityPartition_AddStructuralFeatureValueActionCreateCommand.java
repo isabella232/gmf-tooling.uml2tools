@@ -20,16 +20,18 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * @generated
  */
-public class AddStructuralFeatureValueAction3CreateCommand extends EditElementCommand {
+
+public class ActivityPartition_AddStructuralFeatureValueActionCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public AddStructuralFeatureValueAction3CreateCommand(CreateElementRequest req) {
+	public ActivityPartition_AddStructuralFeatureValueActionCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
 	/**
+	 * FIXME: replace with setElementToEdit()
 	 * @generated
 	 */
 	protected EObject getElementToEditGen() {
@@ -107,4 +109,5 @@ public class AddStructuralFeatureValueAction3CreateCommand extends EditElementCo
 			configureCommand.execute(monitor, info);
 		}
 	}
+
 }

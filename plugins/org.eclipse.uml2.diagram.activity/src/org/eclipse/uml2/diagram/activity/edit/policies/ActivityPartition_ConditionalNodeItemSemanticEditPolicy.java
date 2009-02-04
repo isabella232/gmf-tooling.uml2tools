@@ -24,9 +24,9 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionExpansionRegionNodeCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptTimeEventActionEditPart;
@@ -53,13 +53,13 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
  * @generated
  */
 
-public class ExpansionRegion2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class ActivityPartition_ConditionalNodeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public ExpansionRegion2ItemSemanticEditPolicy() {
-		super(UMLElementTypes.ExpansionRegion_3085);
+	public ActivityPartition_ConditionalNodeItemSemanticEditPolicy() {
+		super(UMLElementTypes.ConditionalNode_3083);
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class ExpansionRegion2ItemSemanticEditPolicy extends UMLBaseItemSemanticE
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID:
+			case ConditionalNodeConditionalNodeCompartment2EditPart.VISUAL_ID:
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {

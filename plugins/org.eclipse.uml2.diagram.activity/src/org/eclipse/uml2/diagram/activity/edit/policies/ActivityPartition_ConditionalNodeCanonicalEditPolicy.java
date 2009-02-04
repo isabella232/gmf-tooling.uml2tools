@@ -15,7 +15,7 @@ import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
  * @generated
  */
 
-public class LoopNode2CanonicalEditPolicy extends CanonicalEditPolicy {
+public class ActivityPartition_ConditionalNodeCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated

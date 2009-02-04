@@ -52,17 +52,18 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 
 /**
  * @generated
  */
 
-public class ExpansionRegionMode2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class ActivityPartition_LoopNodeStereotypeEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5088;
+	public static final int VISUAL_ID = 5117;
 
 	/**
 	 * @generated
@@ -92,7 +93,7 @@ public class ExpansionRegionMode2EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public ExpansionRegionMode2EditPart(View view) {
+	public ActivityPartition_LoopNodeStereotypeEditPart(View view) {
 		super(view);
 	}
 
@@ -120,6 +121,7 @@ public class ExpansionRegionMode2EditPart extends CompartmentEditPart implements
 				return false;
 			}
 		});
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
 	}
 
 	/**
@@ -242,7 +244,7 @@ public class ExpansionRegionMode2EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**
@@ -296,8 +298,8 @@ public class ExpansionRegionMode2EditPart extends CompartmentEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.ExpansionRegion_3085, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionMode2EditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.LoopNode_3078, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

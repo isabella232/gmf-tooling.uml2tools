@@ -538,14 +538,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartition_CreateObjectActionStereotypeEditPart.VISUAL_ID:
 				return new ActivityPartition_CreateObjectActionStereotypeEditPart(view);
 
-			case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
-				return new AddStructuralFeatureValueAction3EditPart(view);
+			case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+				return new ActivityPartition_AddStructuralFeatureValueActionEditPart(view);
 
-			case AddStructuralFeatureValueActionName3EditPart.VISUAL_ID:
-				return new AddStructuralFeatureValueActionName3EditPart(view);
+			case ActivityPartition_AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
+				return new ActivityPartition_AddStructuralFeatureValueActionNameEditPart(view);
 
-			case AddStructuralFeatureValueActionStereotype3EditPart.VISUAL_ID:
-				return new AddStructuralFeatureValueActionStereotype3EditPart(view);
+			case ActivityPartition_AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_AddStructuralFeatureValueActionStereotypeEditPart(view);
 
 			case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
 				return new ActivityPartition_CallBehaviorActionEditPart(view);
@@ -604,23 +604,23 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartition_SendSignalActionStereotypeEditPart.VISUAL_ID:
 				return new ActivityPartition_SendSignalActionStereotypeEditPart(view);
 
-			case LoopNode2EditPart.VISUAL_ID:
-				return new LoopNode2EditPart(view);
+			case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_LoopNodeEditPart(view);
 
-			case LoopNodeStereotype2EditPart.VISUAL_ID:
-				return new LoopNodeStereotype2EditPart(view);
+			case ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_LoopNodeStereotypeEditPart(view);
 
-			case ConditionalNode2EditPart.VISUAL_ID:
-				return new ConditionalNode2EditPart(view);
+			case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
+				return new ActivityPartition_ConditionalNodeEditPart(view);
 
-			case ConditionalNodeStereotypeEditPart.VISUAL_ID:
-				return new ConditionalNodeStereotypeEditPart(view);
+			case ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_ConditionalNodeStereotypeEditPart(view);
 
-			case ExpansionRegion2EditPart.VISUAL_ID:
-				return new ExpansionRegion2EditPart(view);
+			case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
+				return new ActivityPartition_ExpansionRegionEditPart(view);
 
-			case ExpansionRegionMode2EditPart.VISUAL_ID:
-				return new ExpansionRegionMode2EditPart(view);
+			case ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID:
+				return new ActivityPartition_ExpansionRegionModeEditPart(view);
 
 			case ValueSpecificationActionEditPart.VISUAL_ID:
 				return new ValueSpecificationActionEditPart(view);

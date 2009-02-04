@@ -58,12 +58,12 @@ import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
  * @generated
  */
 
-public class LoopNodeStereotype2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class ActivityPartition_ConditionalNodeStereotypeEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5117;
+	public static final int VISUAL_ID = 5115;
 
 	/**
 	 * @generated
@@ -93,7 +93,7 @@ public class LoopNodeStereotype2EditPart extends CompartmentEditPart implements 
 	/**
 	 * @generated
 	 */
-	public LoopNodeStereotype2EditPart(View view) {
+	public ActivityPartition_ConditionalNodeStereotypeEditPart(View view) {
 		super(view);
 	}
 
@@ -298,8 +298,8 @@ public class LoopNodeStereotype2EditPart extends CompartmentEditPart implements 
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.LoopNode_3078, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeStereotype2EditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.ConditionalNode_3083, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

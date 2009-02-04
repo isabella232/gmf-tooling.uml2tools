@@ -52,17 +52,18 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 
 /**
  * @generated
  */
 
-public class AddStructuralFeatureValueActionName3EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class ActivityPartition_AddStructuralFeatureValueActionStereotypeEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5077;
+	public static final int VISUAL_ID = 5106;
 
 	/**
 	 * @generated
@@ -92,7 +93,7 @@ public class AddStructuralFeatureValueActionName3EditPart extends CompartmentEdi
 	/**
 	 * @generated
 	 */
-	public AddStructuralFeatureValueActionName3EditPart(View view) {
+	public ActivityPartition_AddStructuralFeatureValueActionStereotypeEditPart(View view) {
 		super(view);
 	}
 
@@ -120,6 +121,7 @@ public class AddStructuralFeatureValueActionName3EditPart extends CompartmentEdi
 				return false;
 			}
 		});
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
 	}
 
 	/**
@@ -297,7 +299,7 @@ public class AddStructuralFeatureValueActionName3EditPart extends CompartmentEdi
 	public IParser getParser() {
 		if (parser == null) {
 			parser = UMLParserProvider.getParser(UMLElementTypes.AddStructuralFeatureValueAction_3073, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionName3EditPart.VISUAL_ID));
+					.getType(org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

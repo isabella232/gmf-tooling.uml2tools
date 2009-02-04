@@ -666,7 +666,7 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
 					&& isAddStructuralFeatureValueAction_3073((AddStructuralFeatureValueAction) domainElement)) {
-				return AddStructuralFeatureValueAction3EditPart.VISUAL_ID;
+				return ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3074((CallBehaviorAction) domainElement)) {
 				return ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID;
@@ -681,13 +681,13 @@ public class UMLVisualIDRegistry {
 				return ActivityPartition_SendSignalActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass()) && isLoopNode_3078((LoopNode) domainElement)) {
-				return LoopNode2EditPart.VISUAL_ID;
+				return ActivityPartition_LoopNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3083((ConditionalNode) domainElement)) {
-				return ConditionalNode2EditPart.VISUAL_ID;
+				return ActivityPartition_ConditionalNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3085((ExpansionRegion) domainElement)) {
-				return ExpansionRegion2EditPart.VISUAL_ID;
+				return ActivityPartition_ExpansionRegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getValueSpecificationAction().isSuperTypeOf(domainElement.eClass()) && isValueSpecificationAction_3088((ValueSpecificationAction) domainElement)) {
 				return ValueSpecificationActionEditPart.VISUAL_ID;
@@ -741,7 +741,7 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
 					&& isAddStructuralFeatureValueAction_3073((AddStructuralFeatureValueAction) domainElement)) {
-				return AddStructuralFeatureValueAction3EditPart.VISUAL_ID;
+				return ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3074((CallBehaviorAction) domainElement)) {
 				return ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID;
@@ -756,13 +756,13 @@ public class UMLVisualIDRegistry {
 				return ActivityPartition_SendSignalActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass()) && isLoopNode_3078((LoopNode) domainElement)) {
-				return LoopNode2EditPart.VISUAL_ID;
+				return ActivityPartition_LoopNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3083((ConditionalNode) domainElement)) {
-				return ConditionalNode2EditPart.VISUAL_ID;
+				return ActivityPartition_ConditionalNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3085((ExpansionRegion) domainElement)) {
-				return ExpansionRegion2EditPart.VISUAL_ID;
+				return ActivityPartition_ExpansionRegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getValueSpecificationAction().isSuperTypeOf(domainElement.eClass()) && isValueSpecificationAction_3088((ValueSpecificationAction) domainElement)) {
 				return ValueSpecificationActionEditPart.VISUAL_ID;
@@ -778,7 +778,7 @@ public class UMLVisualIDRegistry {
 				return CreateObjectAction_OutputPinEditPart.VISUAL_ID;
 			}
 			break;
-		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+		case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
 				return AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID;
 			}
@@ -1958,7 +1958,7 @@ public class UMLVisualIDRegistry {
 			if (ActivityPartition_CreateObjectActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AddStructuralFeatureValueAction3EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID == nodeVisualID) {
@@ -1973,13 +1973,13 @@ public class UMLVisualIDRegistry {
 			if (ActivityPartition_SendSignalActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (LoopNode2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_LoopNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ConditionalNode2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_ConditionalNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ExpansionRegion2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_ExpansionRegionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ValueSpecificationActionEditPart.VISUAL_ID == nodeVisualID) {
@@ -2035,7 +2035,7 @@ public class UMLVisualIDRegistry {
 			if (ActivityPartition_CreateObjectActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AddStructuralFeatureValueAction3EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID == nodeVisualID) {
@@ -2050,13 +2050,13 @@ public class UMLVisualIDRegistry {
 			if (ActivityPartition_SendSignalActionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (LoopNode2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_LoopNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ConditionalNode2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_ConditionalNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ExpansionRegion2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_ExpansionRegionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ValueSpecificationActionEditPart.VISUAL_ID == nodeVisualID) {
@@ -2140,11 +2140,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
-			if (AddStructuralFeatureValueActionName3EditPart.VISUAL_ID == nodeVisualID) {
+		case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
+			if (ActivityPartition_AddStructuralFeatureValueActionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AddStructuralFeatureValueActionStereotype3EditPart.VISUAL_ID == nodeVisualID) {
+			if (ActivityPartition_AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID == nodeVisualID) {
@@ -2228,24 +2228,24 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case LoopNode2EditPart.VISUAL_ID:
-			if (LoopNodeStereotype2EditPart.VISUAL_ID == nodeVisualID) {
+		case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
+			if (ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (LoopNodeLoopNodeContentPaneCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ConditionalNode2EditPart.VISUAL_ID:
-			if (ConditionalNodeStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+		case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
+			if (ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ConditionalNodeConditionalNodeCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ExpansionRegion2EditPart.VISUAL_ID:
-			if (ExpansionRegionMode2EditPart.VISUAL_ID == nodeVisualID) {
+		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
+			if (ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID == nodeVisualID) {
@@ -4064,7 +4064,7 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
 					&& isAddStructuralFeatureValueAction_3073((AddStructuralFeatureValueAction) domainElement)) {
-				return AddStructuralFeatureValueAction3EditPart.VISUAL_ID;
+				return ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3074((CallBehaviorAction) domainElement)) {
 				return ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID;
@@ -4079,13 +4079,13 @@ public class UMLVisualIDRegistry {
 				return ActivityPartition_SendSignalActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass()) && isLoopNode_3078((LoopNode) domainElement)) {
-				return LoopNode2EditPart.VISUAL_ID;
+				return ActivityPartition_LoopNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3083((ConditionalNode) domainElement)) {
-				return ConditionalNode2EditPart.VISUAL_ID;
+				return ActivityPartition_ConditionalNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3085((ExpansionRegion) domainElement)) {
-				return ExpansionRegion2EditPart.VISUAL_ID;
+				return ActivityPartition_ExpansionRegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getValueSpecificationAction().isSuperTypeOf(domainElement.eClass()) && isValueSpecificationAction_3088((ValueSpecificationAction) domainElement)) {
 				return ValueSpecificationActionEditPart.VISUAL_ID;
@@ -4139,7 +4139,7 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction().isSuperTypeOf(domainElement.eClass())
 					&& isAddStructuralFeatureValueAction_3073((AddStructuralFeatureValueAction) domainElement)) {
-				return AddStructuralFeatureValueAction3EditPart.VISUAL_ID;
+				return ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getCallBehaviorAction().isSuperTypeOf(domainElement.eClass()) && isCallBehaviorAction_3074((CallBehaviorAction) domainElement)) {
 				return ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID;
@@ -4154,13 +4154,13 @@ public class UMLVisualIDRegistry {
 				return ActivityPartition_SendSignalActionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getLoopNode().isSuperTypeOf(domainElement.eClass()) && isLoopNode_3078((LoopNode) domainElement)) {
-				return LoopNode2EditPart.VISUAL_ID;
+				return ActivityPartition_LoopNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3083((ConditionalNode) domainElement)) {
-				return ConditionalNode2EditPart.VISUAL_ID;
+				return ActivityPartition_ConditionalNodeEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getExpansionRegion().isSuperTypeOf(domainElement.eClass()) && isExpansionRegion_3085((ExpansionRegion) domainElement)) {
-				return ExpansionRegion2EditPart.VISUAL_ID;
+				return ActivityPartition_ExpansionRegionEditPart.VISUAL_ID;
 			}
 			if (UMLPackage.eINSTANCE.getValueSpecificationAction().isSuperTypeOf(domainElement.eClass()) && isValueSpecificationAction_3088((ValueSpecificationAction) domainElement)) {
 				return ValueSpecificationActionEditPart.VISUAL_ID;
@@ -4176,7 +4176,7 @@ public class UMLVisualIDRegistry {
 				return CreateObjectAction_OutputPinEditPart.VISUAL_ID;
 			}
 			break;
-		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+		case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInputPin().isSuperTypeOf(domainElement.eClass())) {
 				return AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID;
 			}
@@ -4320,7 +4320,7 @@ public class UMLVisualIDRegistry {
 				return StructuredActivityNode_StructuredActivityNode_OutputPinEditPart.VISUAL_ID;
 			}
 			break;
-		case LoopNode2EditPart.VISUAL_ID:
+		case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
 				return StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID;
 			}
@@ -4377,7 +4377,7 @@ public class UMLVisualIDRegistry {
 				return StructuredActivityNode_OutputPinEditPart.VISUAL_ID;
 			}
 			break;
-		case ConditionalNode2EditPart.VISUAL_ID:
+		case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
 				return StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID;
 			}
@@ -4434,7 +4434,7 @@ public class UMLVisualIDRegistry {
 				return StructuredActivityNode_OutputPinEditPart.VISUAL_ID;
 			}
 			break;
-		case ExpansionRegion2EditPart.VISUAL_ID:
+		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
 				return StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID;
 			}
@@ -4808,9 +4808,9 @@ public class UMLVisualIDRegistry {
 		case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 		case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
-		case LoopNode2EditPart.VISUAL_ID:
-		case ConditionalNode2EditPart.VISUAL_ID:
-		case ExpansionRegion2EditPart.VISUAL_ID:
+		case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
+		case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
+		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 		case OutputPin6EditPart.VISUAL_ID:
 		case LoopNodeEditPart.VISUAL_ID:
 		case ConditionalNodeEditPart.VISUAL_ID:

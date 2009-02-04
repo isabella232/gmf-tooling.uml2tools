@@ -10,16 +10,16 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactor
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNode2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartment2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeStereotypeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AddStructuralFeatureValueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AddStructuralFeatureValueActionNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AddStructuralFeatureValueActionStereotypeEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
 /**
  * @generated
  */
 
-public class ConditionalNode2ViewFactory extends AbstractShapeViewFactory {
+public class ActivityPartition_AddStructuralFeatureValueActionViewFactory extends AbstractShapeViewFactory {
 
 	/**
 	 * @generated
@@ -35,7 +35,7 @@ public class ConditionalNode2ViewFactory extends AbstractShapeViewFactory {
 	 */
 	protected void decorateView(View containerView, View view, IAdaptable semanticAdapter, String semanticHint, int index, boolean persisted) {
 		if (semanticHint == null) {
-			semanticHint = UMLVisualIDRegistry.getType(ConditionalNode2EditPart.VISUAL_ID);
+			semanticHint = UMLVisualIDRegistry.getType(ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID);
 			view.setType(semanticHint);
 		}
 		super.decorateView(containerView, view, semanticAdapter, semanticHint, index, persisted);
@@ -44,8 +44,10 @@ public class ConditionalNode2ViewFactory extends AbstractShapeViewFactory {
 		if (eObject != null) {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ConditionalNodeStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ConditionalNodeConditionalNodeCompartment2EditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ActivityPartition_AddStructuralFeatureValueActionNameEditPart.VISUAL_ID), ViewUtil.APPEND, true,
+				getPreferencesHint());
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ActivityPartition_AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true,
+				getPreferencesHint());
 	}
 
 }

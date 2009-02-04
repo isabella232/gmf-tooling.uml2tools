@@ -103,7 +103,7 @@ public class UMLDiagramUpdater {
 			return getOpaqueAction_3067SemanticChildren(view);
 		case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID:
 			return getCreateObjectAction_3072SemanticChildren(view);
-		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+		case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueAction_3073SemanticChildren(view);
 		case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
 			return getCallBehaviorAction_3074SemanticChildren(view);
@@ -627,7 +627,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == AddStructuralFeatureValueAction3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -647,15 +647,15 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == LoopNode2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_LoopNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ConditionalNode2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_ConditionalNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ExpansionRegion2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_ExpansionRegionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -743,7 +743,7 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == AddStructuralFeatureValueAction3EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -763,15 +763,15 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == LoopNode2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_LoopNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ConditionalNode2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_ConditionalNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
-			if (visualID == ExpansionRegion2EditPart.VISUAL_ID) {
+			if (visualID == ActivityPartition_ExpansionRegionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -2123,7 +2123,7 @@ public class UMLDiagramUpdater {
 			return getPin_3071ContainedLinks(view);
 		case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID:
 			return getCreateObjectAction_3072ContainedLinks(view);
-		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+		case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueAction_3073ContainedLinks(view);
 		case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
 			return getCallBehaviorAction_3074ContainedLinks(view);
@@ -2139,11 +2139,11 @@ public class UMLDiagramUpdater {
 			return getOutputPin_3081ContainedLinks(view);
 		case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
 			return getSendSignalAction_3077ContainedLinks(view);
-		case LoopNode2EditPart.VISUAL_ID:
+		case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
 			return getLoopNode_3078ContainedLinks(view);
-		case ConditionalNode2EditPart.VISUAL_ID:
+		case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3083ContainedLinks(view);
-		case ExpansionRegion2EditPart.VISUAL_ID:
+		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3085ContainedLinks(view);
 		case ValueSpecificationActionEditPart.VISUAL_ID:
 			return getValueSpecificationAction_3088ContainedLinks(view);
@@ -2312,7 +2312,7 @@ public class UMLDiagramUpdater {
 			return getPin_3071IncomingLinks(view);
 		case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID:
 			return getCreateObjectAction_3072IncomingLinks(view);
-		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+		case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueAction_3073IncomingLinks(view);
 		case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
 			return getCallBehaviorAction_3074IncomingLinks(view);
@@ -2328,11 +2328,11 @@ public class UMLDiagramUpdater {
 			return getOutputPin_3081IncomingLinks(view);
 		case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
 			return getSendSignalAction_3077IncomingLinks(view);
-		case LoopNode2EditPart.VISUAL_ID:
+		case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
 			return getLoopNode_3078IncomingLinks(view);
-		case ConditionalNode2EditPart.VISUAL_ID:
+		case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3083IncomingLinks(view);
-		case ExpansionRegion2EditPart.VISUAL_ID:
+		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3085IncomingLinks(view);
 		case ValueSpecificationActionEditPart.VISUAL_ID:
 			return getValueSpecificationAction_3088IncomingLinks(view);
@@ -2501,7 +2501,7 @@ public class UMLDiagramUpdater {
 			return getPin_3071OutgoingLinks(view);
 		case ActivityPartition_CreateObjectActionEditPart.VISUAL_ID:
 			return getCreateObjectAction_3072OutgoingLinks(view);
-		case AddStructuralFeatureValueAction3EditPart.VISUAL_ID:
+		case ActivityPartition_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueAction_3073OutgoingLinks(view);
 		case ActivityPartition_CallBehaviorActionEditPart.VISUAL_ID:
 			return getCallBehaviorAction_3074OutgoingLinks(view);
@@ -2517,11 +2517,11 @@ public class UMLDiagramUpdater {
 			return getOutputPin_3081OutgoingLinks(view);
 		case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
 			return getSendSignalAction_3077OutgoingLinks(view);
-		case LoopNode2EditPart.VISUAL_ID:
+		case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
 			return getLoopNode_3078OutgoingLinks(view);
-		case ConditionalNode2EditPart.VISUAL_ID:
+		case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3083OutgoingLinks(view);
-		case ExpansionRegion2EditPart.VISUAL_ID:
+		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3085OutgoingLinks(view);
 		case ValueSpecificationActionEditPart.VISUAL_ID:
 			return getValueSpecificationAction_3088OutgoingLinks(view);

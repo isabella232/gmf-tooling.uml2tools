@@ -26,7 +26,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEdit
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeLoopNodeContentPaneCompartment2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionExpansionRegionNodeCompartment2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptTimeEventActionEditPart;
@@ -53,13 +53,13 @@ import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
  * @generated
  */
 
-public class LoopNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class ActivityPartition_ExpansionRegionItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public LoopNode2ItemSemanticEditPolicy() {
-		super(UMLElementTypes.LoopNode_3078);
+	public ActivityPartition_ExpansionRegionItemSemanticEditPolicy() {
+		super(UMLElementTypes.ExpansionRegion_3085);
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class LoopNode2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case LoopNodeLoopNodeContentPaneCompartment2EditPart.VISUAL_ID:
+			case ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID:
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
