@@ -51,6 +51,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 
 /**
@@ -169,7 +170,7 @@ public class ClassStereotype2EditPart extends CompartmentEditPart implements ITe
 	/**
 	 * @generated
 	 */
-	public void setLabel(WrappingLabel figure) {
+	public void setLabel(StereotypeLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

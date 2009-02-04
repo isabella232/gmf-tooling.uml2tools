@@ -63,6 +63,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -1578,7 +1579,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureClassFigure_stereo;
+		private StereotypeLabel fFigureClassFigure_stereo;
 
 		/**
 		 * @generated
@@ -1662,9 +1663,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 
 			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
 
-			fFigureClassFigure_stereo = new WrappingLabel();
-
-			fFigureClassFigure_stereo.setTextPlacement(PositionConstants.SOUTH);
+			fFigureClassFigure_stereo = new StereotypeLabel();
 
 			classFigure_StereoContainer1.add(fFigureClassFigure_stereo);
 
@@ -1741,7 +1740,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureClassFigure_stereo() {
+		public StereotypeLabel getFigureClassFigure_stereo() {
 			return fFigureClassFigure_stereo;
 		}
 

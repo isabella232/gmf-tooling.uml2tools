@@ -98,10 +98,10 @@ public class AssociationClassRhombEditPart extends ShapeNodeEditPart implements 
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AssociationClassRhombItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 	}
 
 	/**
@@ -1866,6 +1866,7 @@ public class AssociationClassRhombEditPart extends ShapeNodeEditPart implements 
 			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			this.setFill(true);
+			this.setLineWidth(1);
 		}
 
 		/**

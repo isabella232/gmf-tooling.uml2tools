@@ -46,11 +46,7 @@
             <children
                 xsi:type="gmfgraph:CustomFigure"
                 name="ClassFigure_stereo"
-                qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-              <attributes
-                  name="TextPlacement"
-                  value="org.eclipse.draw2d.PositionConstants.SOUTH"/>
-            </children>
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel"/>
           </children>
           <children
               xsi:type="gmfgraph:Rectangle"
