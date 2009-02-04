@@ -10,7 +10,7 @@ import org.eclipse.gmf.runtime.diagram.ui.view.factories.AbstractShapeViewFactor
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeStereotypeEditPart;
@@ -49,7 +49,7 @@ public class StructuredActivityNode_StructuredActivityNodeViewFactory extends Ab
 				.createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StructuredActivityNode_StructuredActivityNodeNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true,
 				getPreferencesHint());
-		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID), ViewUtil.APPEND, true,
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID), ViewUtil.APPEND, true,
 				getPreferencesHint());
 	}
 

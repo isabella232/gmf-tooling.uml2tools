@@ -150,10 +150,10 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 			((ActivityPartition_ExpansionRegionModeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureExpansionRegionFigure_keyword());
 			return true;
 		}
-		if (childEditPart instanceof ExpansionRegionExpansionRegionNodeCompartment2EditPart) {
+		if (childEditPart instanceof ActivityPartition_ExpansionRegionNodeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureExpansionRegionFigure_ContentPane();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ExpansionRegionExpansionRegionNodeCompartment2EditPart) childEditPart).getFigure());
+			pane.add(((ActivityPartition_ExpansionRegionNodeCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -164,9 +164,9 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof ExpansionRegionExpansionRegionNodeCompartment2EditPart) {
+		if (childEditPart instanceof ActivityPartition_ExpansionRegionNodeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureExpansionRegionFigure_ContentPane();
-			pane.remove(((ExpansionRegionExpansionRegionNodeCompartment2EditPart) childEditPart).getFigure());
+			pane.remove(((ActivityPartition_ExpansionRegionNodeCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -196,7 +196,7 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof ExpansionRegionExpansionRegionNodeCompartment2EditPart) {
+		if (editPart instanceof ActivityPartition_ExpansionRegionNodeCompartmentEditPart) {
 			return getPrimaryShape().getFigureExpansionRegionFigure_ContentPane();
 		}
 		return getContentPane();
@@ -526,10 +526,10 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin6EditPart) {
+		if (targetEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -541,7 +541,7 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -757,10 +757,10 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin6EditPart) {
+		if (targetEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -772,19 +772,19 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof LocalPreconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
 		}
-		if (targetEditPart instanceof Constraint2EditPart) {
+		if (targetEditPart instanceof LocalPostconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
 		}
-		if (targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof LocalPreconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 		}
-		if (targetEditPart instanceof Constraint2EditPart) {
+		if (targetEditPart instanceof LocalPostconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -877,7 +877,7 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -889,7 +889,7 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		return types;

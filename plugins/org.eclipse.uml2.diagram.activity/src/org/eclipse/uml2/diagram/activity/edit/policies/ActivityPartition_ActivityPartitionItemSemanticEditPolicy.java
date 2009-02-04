@@ -33,7 +33,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_OpaqueA
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_PinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_SendSignalActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_StructuredActivityNodeCreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.ValueSpecificationActionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ActivityPartition_ValueSpecificationActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityFinalNodeEditPart;
@@ -57,7 +57,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_OpaqueActi
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_SendSignalActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ValueSpecificationActionEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
@@ -148,7 +148,7 @@ public class ActivityPartition_ActivityPartitionItemSemanticEditPolicy extends U
 			return getGEFWrapper(new ActivityPartition_ExpansionRegionCreateCommand(req));
 		}
 		if (UMLElementTypes.ValueSpecificationAction_3088 == req.getElementType()) {
-			return getGEFWrapper(new ValueSpecificationActionCreateCommand(req));
+			return getGEFWrapper(new ActivityPartition_ValueSpecificationActionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -245,7 +245,7 @@ public class ActivityPartition_ActivityPartitionItemSemanticEditPolicy extends U
 			case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
-			case ValueSpecificationActionEditPart.VISUAL_ID:
+			case ActivityPartition_ValueSpecificationActionEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

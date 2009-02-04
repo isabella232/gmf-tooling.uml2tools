@@ -440,10 +440,10 @@ public class ActivityPartition_ForkNodeEditPart extends ShapeNodeEditPart implem
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin6EditPart) {
+		if (targetEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -455,7 +455,7 @@ public class ActivityPartition_ForkNodeEditPart extends ShapeNodeEditPart implem
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -671,10 +671,10 @@ public class ActivityPartition_ForkNodeEditPart extends ShapeNodeEditPart implem
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin6EditPart) {
+		if (targetEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -686,7 +686,7 @@ public class ActivityPartition_ForkNodeEditPart extends ShapeNodeEditPart implem
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		return types;

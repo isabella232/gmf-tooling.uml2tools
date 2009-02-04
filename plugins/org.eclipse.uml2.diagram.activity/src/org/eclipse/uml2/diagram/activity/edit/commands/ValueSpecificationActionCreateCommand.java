@@ -13,7 +13,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Activity;
-import org.eclipse.uml2.uml.ActivityPartition;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecificationAction;
 
@@ -34,19 +33,12 @@ public class ValueSpecificationActionCreateCommand extends EditElementCommand {
 	 * FIXME: replace with setElementToEdit()
 	 * @generated
 	 */
-	protected EObject getElementToEditGen() {
+	protected EObject getElementToEdit() {
 		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
 		return container;
-	}
-
-	/**
-	 * @generated NOT
-	 */
-	protected EObject getElementToEdit() {
-		return getElementToEditGen().eContainer();
 	}
 
 	/**
@@ -60,36 +52,13 @@ public class ValueSpecificationActionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResultGen(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		ValueSpecificationAction newElement = UMLFactory.eINSTANCE.createValueSpecificationAction();
-
-		Activity owner = (Activity) getElementToEdit();
-		owner.getNodes().add(newElement);
-		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
-		childHolder.getNodes().add(newElement);
-
-		UMLElementTypes.init_ValueSpecificationAction_3088(newElement);
-
-		doConfigure(newElement, monitor, info);
-
-		((CreateElementRequest) getRequest()).setNewElement(newElement);
-		return CommandResult.newOKCommandResult(newElement);
-	}
-
-	/**
-	 * @generated NOT
-	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		System.out.println("ValueSpecificationActionCreateCommand.doExecuteWithResult()");
 		ValueSpecificationAction newElement = UMLFactory.eINSTANCE.createValueSpecificationAction();
 
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
 
-		ActivityPartition partition = (ActivityPartition) getElementToEditGen();
-		newElement.getInPartitions().add(partition);
-
-		UMLElementTypes.init_ValueSpecificationAction_3088(newElement);
+		UMLElementTypes.init_ValueSpecificationAction_3089(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -43,11 +43,11 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityStereotypeEditPart.VISUAL_ID:
 				return new ActivityStereotypeEditPart(view);
 
-			case ConstraintEditPart.VISUAL_ID:
-				return new ConstraintEditPart(view);
+			case LocalPreconditionEditPart.VISUAL_ID:
+				return new LocalPreconditionEditPart(view);
 
-			case Constraint2EditPart.VISUAL_ID:
-				return new Constraint2EditPart(view);
+			case LocalPostconditionEditPart.VISUAL_ID:
+				return new LocalPostconditionEditPart(view);
 
 			case AcceptEventActionEditPart.VISUAL_ID:
 				return new AcceptEventActionEditPart(view);
@@ -622,23 +622,23 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID:
 				return new ActivityPartition_ExpansionRegionModeEditPart(view);
 
-			case ValueSpecificationActionEditPart.VISUAL_ID:
-				return new ValueSpecificationActionEditPart(view);
+			case ActivityPartition_ValueSpecificationActionEditPart.VISUAL_ID:
+				return new ActivityPartition_ValueSpecificationActionEditPart(view);
 
-			case ValueSpecificationActionNameEditPart.VISUAL_ID:
-				return new ValueSpecificationActionNameEditPart(view);
+			case ActivityPartition_ValueSpecificationActionNameEditPart.VISUAL_ID:
+				return new ActivityPartition_ValueSpecificationActionNameEditPart(view);
 
-			case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
-				return new ValueSpecificationActionStereotypeEditPart(view);
+			case ActivityPartition_ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+				return new ActivityPartition_ValueSpecificationActionStereotypeEditPart(view);
 
-			case OutputPin6EditPart.VISUAL_ID:
-				return new OutputPin6EditPart(view);
+			case ValueSpecificationAction_OutputPinEditPart.VISUAL_ID:
+				return new ValueSpecificationAction_OutputPinEditPart(view);
 
-			case OutputPinName6EditPart.VISUAL_ID:
-				return new OutputPinName6EditPart(view);
+			case ValueSpecificationAction_OutputPinNameEditPart.VISUAL_ID:
+				return new ValueSpecificationAction_OutputPinNameEditPart(view);
 
-			case OutputPinOrdering6EditPart.VISUAL_ID:
-				return new OutputPinOrdering6EditPart(view);
+			case ValueSpecificationAction_OutputPinOrderingEditPart.VISUAL_ID:
+				return new ValueSpecificationAction_OutputPinOrderingEditPart(view);
 
 			case LoopNodeEditPart.VISUAL_ID:
 				return new LoopNodeEditPart(view);
@@ -670,56 +670,56 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ParameterEditPart.VISUAL_ID:
 				return new ParameterEditPart(view);
 
-			case ValueSpecificationAction2EditPart.VISUAL_ID:
-				return new ValueSpecificationAction2EditPart(view);
+			case ValueSpecificationActionEditPart.VISUAL_ID:
+				return new ValueSpecificationActionEditPart(view);
 
-			case ValueSpecificationActionName2EditPart.VISUAL_ID:
-				return new ValueSpecificationActionName2EditPart(view);
+			case ValueSpecificationActionNameEditPart.VISUAL_ID:
+				return new ValueSpecificationActionNameEditPart(view);
 
-			case ValueSpecificationActionStereotype2EditPart.VISUAL_ID:
-				return new ValueSpecificationActionStereotype2EditPart(view);
+			case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+				return new ValueSpecificationActionStereotypeEditPart(view);
 
-			case LiteralStringEditPart.VISUAL_ID:
-				return new LiteralStringEditPart(view);
+			case LocalPrecondition_LiteralStringEditPart.VISUAL_ID:
+				return new LocalPrecondition_LiteralStringEditPart(view);
 
-			case LiteralString2EditPart.VISUAL_ID:
-				return new LiteralString2EditPart(view);
+			case LocalPostcondition_LiteralStringEditPart.VISUAL_ID:
+				return new LocalPostcondition_LiteralStringEditPart(view);
 
-			case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
-				return new StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart(view);
+			case StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
+				return new StructuredActivityNodeContentPaneCompartmentEditPart(view);
 
-			case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
-				return new StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart(view);
+			case StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
+				return new StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart(view);
 
-			case StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart.VISUAL_ID:
-				return new StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart(view);
+			case ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
+				return new ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart(view);
 
-			case StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart.VISUAL_ID:
-				return new StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart(view);
+			case ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
+				return new ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart(view);
 
-			case LoopNodeLoopNodeContentPaneCompartment2EditPart.VISUAL_ID:
-				return new LoopNodeLoopNodeContentPaneCompartment2EditPart(view);
+			case ActivityPartition_LoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
+				return new ActivityPartition_LoopNodeContentPaneCompartmentEditPart(view);
 
-			case ConditionalNodeConditionalNodeCompartment2EditPart.VISUAL_ID:
-				return new ConditionalNodeConditionalNodeCompartment2EditPart(view);
+			case ActivityPartition_ConditionalNodeCompartmentEditPart.VISUAL_ID:
+				return new ActivityPartition_ConditionalNodeCompartmentEditPart(view);
 
-			case ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID:
-				return new ExpansionRegionExpansionRegionNodeCompartment2EditPart(view);
+			case ActivityPartition_ExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
+				return new ActivityPartition_ExpansionRegionNodeCompartmentEditPart(view);
 
-			case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
-				return new LoopNodeLoopNodeContentPaneCompartmentEditPart(view);
+			case LoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
+				return new LoopNodeContentPaneCompartmentEditPart(view);
 
-			case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
-				return new ConditionalNodeConditionalNodeCompartmentEditPart(view);
+			case ConditionalNodeCompartmentEditPart.VISUAL_ID:
+				return new ConditionalNodeCompartmentEditPart(view);
 
-			case ExpansionRegionExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
-				return new ExpansionRegionExpansionRegionNodeCompartmentEditPart(view);
+			case ExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
+				return new ExpansionRegionNodeCompartmentEditPart(view);
 
-			case ConstraintPreconditionEditPart.VISUAL_ID:
-				return new ConstraintPreconditionEditPart(view);
+			case LocalPreconditionCompartmentEditPart.VISUAL_ID:
+				return new LocalPreconditionCompartmentEditPart(view);
 
-			case ConstraintPostconditionEditPart.VISUAL_ID:
-				return new ConstraintPostconditionEditPart(view);
+			case LocalPostconditionCompartmentEditPart.VISUAL_ID:
+				return new LocalPostconditionCompartmentEditPart(view);
 
 			case ControlFlowEditPart.VISUAL_ID:
 				return new ControlFlowEditPart(view);

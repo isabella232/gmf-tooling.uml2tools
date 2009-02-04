@@ -689,62 +689,62 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart_title;
+	public static String StructuredActivityNodeContentPaneCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart_title;
+	public static String StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart_title;
+	public static String ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart_title;
+	public static String ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String LoopNodeLoopNodeContentPaneCompartment2EditPart_title;
+	public static String ActivityPartition_LoopNodeContentPaneCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ConditionalNodeConditionalNodeCompartment2EditPart_title;
+	public static String ActivityPartition_ConditionalNodeCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ExpansionRegionExpansionRegionNodeCompartment2EditPart_title;
+	public static String ActivityPartition_ExpansionRegionNodeCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String LoopNodeLoopNodeContentPaneCompartmentEditPart_title;
+	public static String LoopNodeContentPaneCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ConditionalNodeConditionalNodeCompartmentEditPart_title;
+	public static String ConditionalNodeCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ExpansionRegionExpansionRegionNodeCompartmentEditPart_title;
+	public static String ExpansionRegionNodeCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ConstraintPreconditionEditPart_title;
+	public static String LocalPreconditionCompartmentEditPart_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ConstraintPostconditionEditPart_title;
+	public static String LocalPostconditionCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -1646,41 +1646,41 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String TurnIntoConstraint2Action_text;
+	public static String TurnIntoLocalPostconditionAction_text;
 
 	/**
 	 * @generated
 	 */
-	public static String TurnIntoConstraint2Action_tooltiptext;
+	public static String TurnIntoLocalPostconditionAction_tooltiptext;
 
 	/**
 	 * @generated
 	 */
-	public static String TurnIntoConstraintAction_text;
+	public static String TurnIntoLocalPreconditionAction_text;
 
 	/**
 	 * @generated
 	 */
-	public static String TurnIntoConstraintAction_tooltiptext;
+	public static String TurnIntoLocalPreconditionAction_tooltiptext;
 
 	/**
 	 * @generated
 	 */
-	public static String ConstraintContributionItemProvider_menu;
+	public static String LocalPreconditionContributionItemProvider_menu;
 
 	/**
 	 * @generated
 	 */
-	public static String ConstraintContributionItemProvider_group;
+	public static String LocalPreconditionContributionItemProvider_group;
 
 	/**
 	 * @generated
 	 */
-	public static String Constraint2ContributionItemProvider_menu;
+	public static String LocalPostconditionContributionItemProvider_menu;
 
 	/**
 	 * @generated
 	 */
-	public static String Constraint2ContributionItemProvider_group;
+	public static String LocalPostconditionContributionItemProvider_group;
 
 }

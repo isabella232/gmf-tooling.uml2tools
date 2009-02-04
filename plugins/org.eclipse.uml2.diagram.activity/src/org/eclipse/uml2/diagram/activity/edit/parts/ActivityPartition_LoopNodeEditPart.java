@@ -151,10 +151,10 @@ public class ActivityPartition_LoopNodeEditPart extends ShapeNodeEditPart implem
 			((ActivityPartition_LoopNodeStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_stereo());
 			return true;
 		}
-		if (childEditPart instanceof LoopNodeLoopNodeContentPaneCompartment2EditPart) {
+		if (childEditPart instanceof ActivityPartition_LoopNodeContentPaneCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((LoopNodeLoopNodeContentPaneCompartment2EditPart) childEditPart).getFigure());
+			pane.add(((ActivityPartition_LoopNodeContentPaneCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -165,9 +165,9 @@ public class ActivityPartition_LoopNodeEditPart extends ShapeNodeEditPart implem
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof LoopNodeLoopNodeContentPaneCompartment2EditPart) {
+		if (childEditPart instanceof ActivityPartition_LoopNodeContentPaneCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
-			pane.remove(((LoopNodeLoopNodeContentPaneCompartment2EditPart) childEditPart).getFigure());
+			pane.remove(((ActivityPartition_LoopNodeContentPaneCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -197,7 +197,7 @@ public class ActivityPartition_LoopNodeEditPart extends ShapeNodeEditPart implem
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof LoopNodeLoopNodeContentPaneCompartment2EditPart) {
+		if (editPart instanceof ActivityPartition_LoopNodeContentPaneCompartmentEditPart) {
 			return getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 		}
 		return getContentPane();
@@ -527,10 +527,10 @@ public class ActivityPartition_LoopNodeEditPart extends ShapeNodeEditPart implem
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin6EditPart) {
+		if (targetEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -542,7 +542,7 @@ public class ActivityPartition_LoopNodeEditPart extends ShapeNodeEditPart implem
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -758,10 +758,10 @@ public class ActivityPartition_LoopNodeEditPart extends ShapeNodeEditPart implem
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin6EditPart) {
+		if (targetEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -773,19 +773,19 @@ public class ActivityPartition_LoopNodeEditPart extends ShapeNodeEditPart implem
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof LocalPreconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
 		}
-		if (targetEditPart instanceof Constraint2EditPart) {
+		if (targetEditPart instanceof LocalPostconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
 		}
-		if (targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof LocalPreconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 		}
-		if (targetEditPart instanceof Constraint2EditPart) {
+		if (targetEditPart instanceof LocalPostconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -878,7 +878,7 @@ public class ActivityPartition_LoopNodeEditPart extends ShapeNodeEditPart implem
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -890,7 +890,7 @@ public class ActivityPartition_LoopNodeEditPart extends ShapeNodeEditPart implem
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		return types;

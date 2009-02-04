@@ -88,9 +88,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_1000); //$NON-NLS-1$
 		case ActivityEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Activity", UMLElementTypes.Activity_2026); //$NON-NLS-1$
-		case ConstraintEditPart.VISUAL_ID:
+		case LocalPreconditionEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Constraint", UMLElementTypes.Constraint_2027); //$NON-NLS-1$
-		case Constraint2EditPart.VISUAL_ID:
+		case LocalPostconditionEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Constraint", UMLElementTypes.Constraint_2028); //$NON-NLS-1$
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?AcceptEventAction", UMLElementTypes.AcceptEventAction_3030); //$NON-NLS-1$
@@ -240,9 +240,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ConditionalNode", UMLElementTypes.ConditionalNode_3083); //$NON-NLS-1$
 		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ExpansionRegion", UMLElementTypes.ExpansionRegion_3085); //$NON-NLS-1$
-		case ValueSpecificationActionEditPart.VISUAL_ID:
+		case ActivityPartition_ValueSpecificationActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ValueSpecificationAction", UMLElementTypes.ValueSpecificationAction_3088); //$NON-NLS-1$
-		case OutputPin6EditPart.VISUAL_ID:
+		case ValueSpecificationAction_OutputPinEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?OutputPin", UMLElementTypes.OutputPin_3090); //$NON-NLS-1$
 		case LoopNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?LoopNode", UMLElementTypes.LoopNode_3058); //$NON-NLS-1$
@@ -254,11 +254,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ParameterSet", UMLElementTypes.ParameterSet_3086); //$NON-NLS-1$
 		case ParameterEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Parameter", UMLElementTypes.Parameter_3087); //$NON-NLS-1$
-		case ValueSpecificationAction2EditPart.VISUAL_ID:
+		case ValueSpecificationActionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ValueSpecificationAction", UMLElementTypes.ValueSpecificationAction_3089); //$NON-NLS-1$
-		case LiteralStringEditPart.VISUAL_ID:
+		case LocalPrecondition_LiteralStringEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?LiteralString", UMLElementTypes.LiteralString_3049); //$NON-NLS-1$
-		case LiteralString2EditPart.VISUAL_ID:
+		case LocalPostcondition_LiteralStringEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?LiteralString", UMLElementTypes.LiteralString_3051); //$NON-NLS-1$
 		case ControlFlowEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?ControlFlow", UMLElementTypes.ControlFlow_4001); //$NON-NLS-1$
@@ -326,9 +326,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getPackage_1000Text(view);
 		case ActivityEditPart.VISUAL_ID:
 			return getActivity_2026Text(view);
-		case ConstraintEditPart.VISUAL_ID:
+		case LocalPreconditionEditPart.VISUAL_ID:
 			return getConstraint_2027Text(view);
-		case Constraint2EditPart.VISUAL_ID:
+		case LocalPostconditionEditPart.VISUAL_ID:
 			return getConstraint_2028Text(view);
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3030Text(view);
@@ -478,9 +478,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getConditionalNode_3083Text(view);
 		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3085Text(view);
-		case ValueSpecificationActionEditPart.VISUAL_ID:
+		case ActivityPartition_ValueSpecificationActionEditPart.VISUAL_ID:
 			return getValueSpecificationAction_3088Text(view);
-		case OutputPin6EditPart.VISUAL_ID:
+		case ValueSpecificationAction_OutputPinEditPart.VISUAL_ID:
 			return getOutputPin_3090Text(view);
 		case LoopNodeEditPart.VISUAL_ID:
 			return getLoopNode_3058Text(view);
@@ -492,11 +492,11 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getParameterSet_3086Text(view);
 		case ParameterEditPart.VISUAL_ID:
 			return getParameter_3087Text(view);
-		case ValueSpecificationAction2EditPart.VISUAL_ID:
+		case ValueSpecificationActionEditPart.VISUAL_ID:
 			return getValueSpecificationAction_3089Text(view);
-		case LiteralStringEditPart.VISUAL_ID:
+		case LocalPrecondition_LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049Text(view);
-		case LiteralString2EditPart.VISUAL_ID:
+		case LocalPostcondition_LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3051Text(view);
 		case ControlFlowEditPart.VISUAL_ID:
 			return getControlFlow_4001Text(view);
@@ -1587,7 +1587,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getValueSpecificationAction_3088Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ValueSpecificationAction_3088, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ValueSpecificationActionNameEditPart.VISUAL_ID));
+				.getType(ActivityPartition_ValueSpecificationActionNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -1601,7 +1601,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getOutputPin_3090Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.OutputPin_3090, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(OutputPinName6EditPart.VISUAL_ID));
+				.getType(ValueSpecificationAction_OutputPinNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -1682,7 +1682,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getValueSpecificationAction_3089Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ValueSpecificationAction_3089, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ValueSpecificationActionName2EditPart.VISUAL_ID));
+				.getType(ValueSpecificationActionNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -1696,7 +1696,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getLiteralString_3049Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.LiteralString_3049, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(LiteralStringEditPart.VISUAL_ID));
+				.getType(LocalPrecondition_LiteralStringEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -1710,7 +1710,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getLiteralString_3051Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.LiteralString_3051, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(LiteralString2EditPart.VISUAL_ID));
+				.getType(LocalPostcondition_LiteralStringEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {

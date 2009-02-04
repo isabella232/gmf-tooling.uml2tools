@@ -155,10 +155,10 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			((LoopNodeStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_stereo());
 			return true;
 		}
-		if (childEditPart instanceof LoopNodeLoopNodeContentPaneCompartmentEditPart) {
+		if (childEditPart instanceof LoopNodeContentPaneCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((LoopNodeLoopNodeContentPaneCompartmentEditPart) childEditPart).getFigure());
+			pane.add(((LoopNodeContentPaneCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -169,9 +169,9 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof LoopNodeLoopNodeContentPaneCompartmentEditPart) {
+		if (childEditPart instanceof LoopNodeContentPaneCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
-			pane.remove(((LoopNodeLoopNodeContentPaneCompartmentEditPart) childEditPart).getFigure());
+			pane.remove(((LoopNodeContentPaneCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -201,7 +201,7 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof LoopNodeLoopNodeContentPaneCompartmentEditPart) {
+		if (editPart instanceof LoopNodeContentPaneCompartmentEditPart) {
 			return getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
 		}
 		return getContentPane();
@@ -531,10 +531,10 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin6EditPart) {
+		if (targetEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart) {
@@ -546,7 +546,7 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -762,10 +762,10 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin6EditPart) {
+		if (targetEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart) {
@@ -777,19 +777,19 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof LocalPreconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
 		}
-		if (targetEditPart instanceof Constraint2EditPart) {
+		if (targetEditPart instanceof LocalPostconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
 		}
-		if (targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof LocalPreconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 		}
-		if (targetEditPart instanceof Constraint2EditPart) {
+		if (targetEditPart instanceof LocalPostconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -882,7 +882,7 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart) {
@@ -894,7 +894,7 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		return types;

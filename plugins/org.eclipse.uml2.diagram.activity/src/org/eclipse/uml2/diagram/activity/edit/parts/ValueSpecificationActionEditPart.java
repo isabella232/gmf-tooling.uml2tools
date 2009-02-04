@@ -71,7 +71,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3088;
+	public static final int VISUAL_ID = 3089;
 
 	/**
 	 * @generated
@@ -123,7 +123,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
-				case OutputPin6EditPart.VISUAL_ID:
+				case ValueSpecificationAction_OutputPinEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
@@ -171,9 +171,9 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 			((ValueSpecificationActionStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActionBaseFigure_stereo());
 			return true;
 		}
-		if (childEditPart instanceof OutputPin6EditPart) {
+		if (childEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.EAST);
-			getBorderedFigure().getBorderItemContainer().add(((OutputPin6EditPart) childEditPart).getFigure(), locator);
+			getBorderedFigure().getBorderItemContainer().add(((ValueSpecificationAction_OutputPinEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
 		return false;
@@ -184,8 +184,8 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
-		if (childEditPart instanceof OutputPin6EditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((OutputPin6EditPart) childEditPart).getFigure());
+		if (childEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((ValueSpecificationAction_OutputPinEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -545,10 +545,10 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof OutputPin6EditPart) {
+		if (targetEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -560,7 +560,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -776,10 +776,10 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof OutputPin6EditPart) {
+		if (targetEditPart instanceof ValueSpecificationAction_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -791,19 +791,19 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof LocalPreconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
 		}
-		if (targetEditPart instanceof Constraint2EditPart) {
+		if (targetEditPart instanceof LocalPostconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPrecondition_4003);
 		}
-		if (targetEditPart instanceof ConstraintEditPart) {
+		if (targetEditPart instanceof LocalPreconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 		}
-		if (targetEditPart instanceof Constraint2EditPart) {
+		if (targetEditPart instanceof LocalPostconditionEditPart) {
 			types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
@@ -896,7 +896,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ActivityPartition_ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ActivityPartition_ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof LoopNodeEditPart) {
@@ -908,7 +908,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
-		if (targetEditPart instanceof ValueSpecificationAction2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		return types;
@@ -2304,7 +2304,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 	 */
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		for (IUpdaterNodeDescriptor next : getValueSpecificationAction_3088ContainedLinks()) {
+		for (IUpdaterNodeDescriptor next : getValueSpecificationAction_3089ContainedLinks()) {
 			EObject nextLink = next.getModelElement();
 			if (nextLink == null) {
 				continue;
@@ -2324,8 +2324,8 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getValueSpecificationAction_3088ContainedLinks() {
-		return UMLDiagramUpdater.getValueSpecificationAction_3088ContainedLinks(getNotationView());
+	private List<IUpdaterLinkDescriptor> getValueSpecificationAction_3089ContainedLinks() {
+		return UMLDiagramUpdater.getValueSpecificationAction_3089ContainedLinks(getNotationView());
 	}
 
 	/**

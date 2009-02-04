@@ -7,8 +7,8 @@ import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsComma
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityCreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.Constraint2CreateCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.ConstraintCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.LocalPostconditionCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.LocalPreconditionCreateCommand;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
 /**
@@ -32,10 +32,10 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 			return getGEFWrapper(new ActivityCreateCommand(req));
 		}
 		if (UMLElementTypes.Constraint_2027 == req.getElementType()) {
-			return getGEFWrapper(new ConstraintCreateCommand(req));
+			return getGEFWrapper(new LocalPreconditionCreateCommand(req));
 		}
 		if (UMLElementTypes.Constraint_2028 == req.getElementType()) {
-			return getGEFWrapper(new Constraint2CreateCommand(req));
+			return getGEFWrapper(new LocalPostconditionCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

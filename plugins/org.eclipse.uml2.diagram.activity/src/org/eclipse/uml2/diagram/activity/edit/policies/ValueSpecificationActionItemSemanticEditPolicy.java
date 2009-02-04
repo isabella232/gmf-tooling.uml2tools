@@ -23,13 +23,13 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerCreateCom
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
-import org.eclipse.uml2.diagram.activity.edit.commands.OutputPin6CreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.ValueSpecificationAction_OutputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin6EditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 
@@ -43,7 +43,7 @@ public class ValueSpecificationActionItemSemanticEditPolicy extends UMLBaseItemS
 	 * @generated
 	 */
 	public ValueSpecificationActionItemSemanticEditPolicy() {
-		super(UMLElementTypes.ValueSpecificationAction_3088);
+		super(UMLElementTypes.ValueSpecificationAction_3089);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class ValueSpecificationActionItemSemanticEditPolicy extends UMLBaseItemS
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.OutputPin_3090 == req.getElementType()) {
-			return getGEFWrapper(new OutputPin6CreateCommand(req));
+			return getGEFWrapper(new ValueSpecificationAction_OutputPinCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}
@@ -79,7 +79,7 @@ public class ValueSpecificationActionItemSemanticEditPolicy extends UMLBaseItemS
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case OutputPin6EditPart.VISUAL_ID:
+			case ValueSpecificationAction_OutputPinEditPart.VISUAL_ID:
 				cmd.add(getDestroyElementCommand(node));
 				break;
 			}

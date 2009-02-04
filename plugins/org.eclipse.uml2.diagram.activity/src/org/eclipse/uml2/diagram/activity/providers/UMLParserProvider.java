@@ -3053,13 +3053,13 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConditionalNodeQualifiedName_5115Parser();
 		case ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID:
 			return getExpansionRegionMode_5088Parser();
-		case ValueSpecificationActionNameEditPart.VISUAL_ID:
+		case ActivityPartition_ValueSpecificationActionNameEditPart.VISUAL_ID:
 			return getValueSpecificationActionName_5133Parser();
-		case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+		case ActivityPartition_ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
 			return getValueSpecificationActionQualifiedName_5134Parser();
-		case OutputPinName6EditPart.VISUAL_ID:
+		case ValueSpecificationAction_OutputPinNameEditPart.VISUAL_ID:
 			return getOutputPinName_5137Parser();
-		case OutputPinOrdering6EditPart.VISUAL_ID:
+		case ValueSpecificationAction_OutputPinOrderingEditPart.VISUAL_ID:
 			return getOutputPinOrdering_5138Parser();
 		case LoopNodeNameEditPart.VISUAL_ID:
 			return getLoopNodeName_5091Parser();
@@ -3071,13 +3071,13 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConditionalNodeQualifiedName_5116Parser();
 		case ExpansionRegionModeEditPart.VISUAL_ID:
 			return getExpansionRegionMode_5087Parser();
-		case ValueSpecificationActionName2EditPart.VISUAL_ID:
+		case ValueSpecificationActionNameEditPart.VISUAL_ID:
 			return getValueSpecificationActionName_5135Parser();
-		case ValueSpecificationActionStereotype2EditPart.VISUAL_ID:
+		case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
 			return getValueSpecificationActionQualifiedName_5136Parser();
-		case LiteralStringEditPart.VISUAL_ID:
+		case LocalPrecondition_LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3049Parser();
-		case LiteralString2EditPart.VISUAL_ID:
+		case LocalPostcondition_LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3051Parser();
 		case ControlFlowNameEditPart.VISUAL_ID:
 			return getControlFlowName_6003Parser();

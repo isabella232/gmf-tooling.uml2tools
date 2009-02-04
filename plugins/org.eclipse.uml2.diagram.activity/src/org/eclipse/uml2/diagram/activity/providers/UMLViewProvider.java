@@ -71,24 +71,24 @@ public class UMLViewProvider extends AbstractViewProvider {
 					return null; // foreign diagram
 				}
 				switch (visualID) {
-				case ConstraintEditPart.VISUAL_ID: {
+				case LocalPreconditionEditPart.VISUAL_ID: {
 					if (domainElement == null) {
 						return null;
 					}
 
 					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
-					if (visualID != suggestedID && Constraint2EditPart.VISUAL_ID != suggestedID && true) {
+					if (visualID != suggestedID && LocalPostconditionEditPart.VISUAL_ID != suggestedID && true) {
 						return null;
 					}
 					break;
 				}
-				case Constraint2EditPart.VISUAL_ID: {
+				case LocalPostconditionEditPart.VISUAL_ID: {
 					if (domainElement == null) {
 						return null;
 					}
 
 					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
-					if (visualID != suggestedID && ConstraintEditPart.VISUAL_ID != suggestedID && true) {
+					if (visualID != suggestedID && LocalPreconditionEditPart.VISUAL_ID != suggestedID && true) {
 						return null;
 					}
 					break;
@@ -168,16 +168,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
 				case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
 				case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
-				case ValueSpecificationActionEditPart.VISUAL_ID:
-				case OutputPin6EditPart.VISUAL_ID:
+				case ActivityPartition_ValueSpecificationActionEditPart.VISUAL_ID:
+				case ValueSpecificationAction_OutputPinEditPart.VISUAL_ID:
 				case LoopNodeEditPart.VISUAL_ID:
 				case ConditionalNodeEditPart.VISUAL_ID:
 				case ExpansionRegionEditPart.VISUAL_ID:
 				case ParameterSetEditPart.VISUAL_ID:
 				case ParameterEditPart.VISUAL_ID:
-				case ValueSpecificationAction2EditPart.VISUAL_ID:
-				case LiteralStringEditPart.VISUAL_ID:
-				case LiteralString2EditPart.VISUAL_ID:
+				case ValueSpecificationActionEditPart.VISUAL_ID:
+				case LocalPrecondition_LiteralStringEditPart.VISUAL_ID:
+				case LocalPostcondition_LiteralStringEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement)) {
 						return null; // visual id in semantic hint should match visual id for domain element
 					}
@@ -188,13 +188,13 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
-				case ConstraintPreconditionEditPart.VISUAL_ID:
-					if (ConstraintEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case LocalPreconditionCompartmentEditPart.VISUAL_ID:
+					if (LocalPreconditionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
-				case ConstraintPostconditionEditPart.VISUAL_ID:
-					if (Constraint2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case LocalPostconditionCompartmentEditPart.VISUAL_ID:
+					if (LocalPostconditionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -313,14 +313,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case StructuredActivityNodeNameEditPart.VISUAL_ID:
 				case StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
-				case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
+				case StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 					if (StructuredActivityNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case StructuredActivityNode_StructuredActivityNodeNameEditPart.VISUAL_ID:
 				case StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
-				case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
+				case StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 					if (StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -495,13 +495,13 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ActivityPartition_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
-				case StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart.VISUAL_ID:
+				case ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 					if (ActivityPartition_StructuredActivityNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
-				case StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart.VISUAL_ID:
+				case ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 					if (ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView)
 							|| containerView.getElement() != domainElement) {
 						return null; // wrong container
@@ -526,58 +526,58 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID:
-				case LoopNodeLoopNodeContentPaneCompartment2EditPart.VISUAL_ID:
+				case ActivityPartition_LoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
 					if (ActivityPartition_LoopNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID:
-				case ConditionalNodeConditionalNodeCompartment2EditPart.VISUAL_ID:
+				case ActivityPartition_ConditionalNodeCompartmentEditPart.VISUAL_ID:
 					if (ActivityPartition_ConditionalNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID:
-				case ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID:
+				case ActivityPartition_ExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
 					if (ActivityPartition_ExpansionRegionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
-				case ValueSpecificationActionNameEditPart.VISUAL_ID:
-				case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
-					if (ValueSpecificationActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case ActivityPartition_ValueSpecificationActionNameEditPart.VISUAL_ID:
+				case ActivityPartition_ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+					if (ActivityPartition_ValueSpecificationActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
-				case OutputPinName6EditPart.VISUAL_ID:
-				case OutputPinOrdering6EditPart.VISUAL_ID:
-					if (OutputPin6EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case ValueSpecificationAction_OutputPinNameEditPart.VISUAL_ID:
+				case ValueSpecificationAction_OutputPinOrderingEditPart.VISUAL_ID:
+					if (ValueSpecificationAction_OutputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case LoopNodeNameEditPart.VISUAL_ID:
 				case LoopNodeStereotypeEditPart.VISUAL_ID:
-				case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
+				case LoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
 					if (LoopNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ConditionalNodeNameEditPart.VISUAL_ID:
 				case ConditionalNodeStereotype2EditPart.VISUAL_ID:
-				case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
+				case ConditionalNodeCompartmentEditPart.VISUAL_ID:
 					if (ConditionalNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
 				case ExpansionRegionModeEditPart.VISUAL_ID:
-				case ExpansionRegionExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
+				case ExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
 					if (ExpansionRegionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
-				case ValueSpecificationActionName2EditPart.VISUAL_ID:
-				case ValueSpecificationActionStereotype2EditPart.VISUAL_ID:
-					if (ValueSpecificationAction2EditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+				case ValueSpecificationActionNameEditPart.VISUAL_ID:
+				case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+					if (ValueSpecificationActionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -622,10 +622,10 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActivityNameViewFactory.class;
 		case ActivityStereotypeEditPart.VISUAL_ID:
 			return ActivityStereotypeViewFactory.class;
-		case ConstraintEditPart.VISUAL_ID:
-			return ConstraintViewFactory.class;
-		case Constraint2EditPart.VISUAL_ID:
-			return Constraint2ViewFactory.class;
+		case LocalPreconditionEditPart.VISUAL_ID:
+			return LocalPreconditionViewFactory.class;
+		case LocalPostconditionEditPart.VISUAL_ID:
+			return LocalPostconditionViewFactory.class;
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return AcceptEventActionViewFactory.class;
 		case AcceptEventActionNameEditPart.VISUAL_ID:
@@ -1008,18 +1008,18 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActivityPartition_ExpansionRegionViewFactory.class;
 		case ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID:
 			return ActivityPartition_ExpansionRegionModeViewFactory.class;
-		case ValueSpecificationActionEditPart.VISUAL_ID:
-			return ValueSpecificationActionViewFactory.class;
-		case ValueSpecificationActionNameEditPart.VISUAL_ID:
-			return ValueSpecificationActionNameViewFactory.class;
-		case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
-			return ValueSpecificationActionStereotypeViewFactory.class;
-		case OutputPin6EditPart.VISUAL_ID:
-			return OutputPin6ViewFactory.class;
-		case OutputPinName6EditPart.VISUAL_ID:
-			return OutputPinName6ViewFactory.class;
-		case OutputPinOrdering6EditPart.VISUAL_ID:
-			return OutputPinOrdering6ViewFactory.class;
+		case ActivityPartition_ValueSpecificationActionEditPart.VISUAL_ID:
+			return ActivityPartition_ValueSpecificationActionViewFactory.class;
+		case ActivityPartition_ValueSpecificationActionNameEditPart.VISUAL_ID:
+			return ActivityPartition_ValueSpecificationActionNameViewFactory.class;
+		case ActivityPartition_ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+			return ActivityPartition_ValueSpecificationActionStereotypeViewFactory.class;
+		case ValueSpecificationAction_OutputPinEditPart.VISUAL_ID:
+			return ValueSpecificationAction_OutputPinViewFactory.class;
+		case ValueSpecificationAction_OutputPinNameEditPart.VISUAL_ID:
+			return ValueSpecificationAction_OutputPinNameViewFactory.class;
+		case ValueSpecificationAction_OutputPinOrderingEditPart.VISUAL_ID:
+			return ValueSpecificationAction_OutputPinOrderingViewFactory.class;
 		case LoopNodeEditPart.VISUAL_ID:
 			return LoopNodeViewFactory.class;
 		case LoopNodeNameEditPart.VISUAL_ID:
@@ -1040,40 +1040,40 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ParameterSetViewFactory.class;
 		case ParameterEditPart.VISUAL_ID:
 			return ParameterViewFactory.class;
-		case ValueSpecificationAction2EditPart.VISUAL_ID:
-			return ValueSpecificationAction2ViewFactory.class;
-		case ValueSpecificationActionName2EditPart.VISUAL_ID:
-			return ValueSpecificationActionName2ViewFactory.class;
-		case ValueSpecificationActionStereotype2EditPart.VISUAL_ID:
-			return ValueSpecificationActionStereotype2ViewFactory.class;
-		case LiteralStringEditPart.VISUAL_ID:
-			return LiteralStringViewFactory.class;
-		case LiteralString2EditPart.VISUAL_ID:
-			return LiteralString2ViewFactory.class;
-		case StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart.VISUAL_ID:
-			return StructuredActivityNodeStructuredActivityContentPaneCompartmentViewFactory.class;
-		case StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart.VISUAL_ID:
-			return StructuredActivityNodeStructuredActivityContentPaneCompartment2ViewFactory.class;
-		case StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart.VISUAL_ID:
-			return StructuredActivityNodeStructuredActivityContentPaneCompartment3ViewFactory.class;
-		case StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart.VISUAL_ID:
-			return StructuredActivityNodeStructuredActivityContentPaneCompartment4ViewFactory.class;
-		case LoopNodeLoopNodeContentPaneCompartment2EditPart.VISUAL_ID:
-			return LoopNodeLoopNodeContentPaneCompartment2ViewFactory.class;
-		case ConditionalNodeConditionalNodeCompartment2EditPart.VISUAL_ID:
-			return ConditionalNodeConditionalNodeCompartment2ViewFactory.class;
-		case ExpansionRegionExpansionRegionNodeCompartment2EditPart.VISUAL_ID:
-			return ExpansionRegionExpansionRegionNodeCompartment2ViewFactory.class;
-		case LoopNodeLoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
-			return LoopNodeLoopNodeContentPaneCompartmentViewFactory.class;
-		case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
-			return ConditionalNodeConditionalNodeCompartmentViewFactory.class;
-		case ExpansionRegionExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
-			return ExpansionRegionExpansionRegionNodeCompartmentViewFactory.class;
-		case ConstraintPreconditionEditPart.VISUAL_ID:
-			return ConstraintPreconditionViewFactory.class;
-		case ConstraintPostconditionEditPart.VISUAL_ID:
-			return ConstraintPostconditionViewFactory.class;
+		case ValueSpecificationActionEditPart.VISUAL_ID:
+			return ValueSpecificationActionViewFactory.class;
+		case ValueSpecificationActionNameEditPart.VISUAL_ID:
+			return ValueSpecificationActionNameViewFactory.class;
+		case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:
+			return ValueSpecificationActionStereotypeViewFactory.class;
+		case LocalPrecondition_LiteralStringEditPart.VISUAL_ID:
+			return LocalPrecondition_LiteralStringViewFactory.class;
+		case LocalPostcondition_LiteralStringEditPart.VISUAL_ID:
+			return LocalPostcondition_LiteralStringViewFactory.class;
+		case StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
+			return StructuredActivityNodeContentPaneCompartmentViewFactory.class;
+		case StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
+			return StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentViewFactory.class;
+		case ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
+			return ActivityPartition_StructuredActivityNodeContentPaneCompartmentViewFactory.class;
+		case ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
+			return ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentViewFactory.class;
+		case ActivityPartition_LoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
+			return ActivityPartition_LoopNodeContentPaneCompartmentViewFactory.class;
+		case ActivityPartition_ConditionalNodeCompartmentEditPart.VISUAL_ID:
+			return ActivityPartition_ConditionalNodeCompartmentViewFactory.class;
+		case ActivityPartition_ExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
+			return ActivityPartition_ExpansionRegionNodeCompartmentViewFactory.class;
+		case LoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
+			return LoopNodeContentPaneCompartmentViewFactory.class;
+		case ConditionalNodeCompartmentEditPart.VISUAL_ID:
+			return ConditionalNodeCompartmentViewFactory.class;
+		case ExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
+			return ExpansionRegionNodeCompartmentViewFactory.class;
+		case LocalPreconditionCompartmentEditPart.VISUAL_ID:
+			return LocalPreconditionCompartmentViewFactory.class;
+		case LocalPostconditionCompartmentEditPart.VISUAL_ID:
+			return LocalPostconditionCompartmentViewFactory.class;
 		case ControlFlowNameEditPart.VISUAL_ID:
 			return ControlFlowNameViewFactory.class;
 		case ControlFlowName2EditPart.VISUAL_ID:

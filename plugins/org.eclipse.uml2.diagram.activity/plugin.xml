@@ -99,7 +99,7 @@
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
-            class="org.eclipse.uml2.diagram.activity.action.ConstraintContributionItemProvider">
+            class="org.eclipse.uml2.diagram.activity.action.LocalPreconditionContributionItemProvider">
          <Priority name="Medium"/>
 		 <popupContribution
                class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -118,10 +118,10 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_Constraint2_notation">
+				id="set_LocalPostcondition_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.LocalPreconditionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
@@ -215,8 +215,8 @@
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.activity.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart" id="Activity_2026"/>
-         <object class="org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart" id="Constraint_2027"/>
-         <object class="org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart" id="Constraint_2028"/>
+         <object class="org.eclipse.uml2.diagram.activity.edit.parts.LocalPreconditionEditPart" id="Constraint_2027"/>
+         <object class="org.eclipse.uml2.diagram.activity.edit.parts.LocalPostconditionEditPart" id="Constraint_2028"/>
          <context elements="Activity_2026,Constraint_2027,Constraint_2028"/>
       </modelingAssistantProvider>
    </extension>
@@ -1073,7 +1073,7 @@
                name="%metatype.name.LiteralString_3049"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="LiteralString"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.LiteralStringEditHelper">
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.LocalPrecondition_LiteralStringEditHelper">
             <param name="semanticHint" value="3049"/>
          </metamodelType>
       </metamodel>
@@ -1082,7 +1082,7 @@
                id="org.eclipse.uml2.diagram.activity.LiteralString_3051"
                name="%metatype.name.LiteralString_3051"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.LiteralStringEditHelperAdvice">
+               edithelperadvice="org.eclipse.uml2.diagram.activity.edit.helpers.LocalPostcondition_LiteralStringEditHelperAdvice">
             <specializes id="org.eclipse.uml2.diagram.activity.LiteralString_3049"/>
             <param name="semanticHint" value="3051"/>
          </specializationType>
@@ -1480,7 +1480,7 @@
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
-            class="org.eclipse.uml2.diagram.activity.action.Constraint2ContributionItemProvider">
+            class="org.eclipse.uml2.diagram.activity.action.LocalPostconditionContributionItemProvider">
          <Priority name="Medium"/>
 		 <popupContribution
                class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -1499,10 +1499,10 @@
 							
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="set_Constraint_notation">
+				id="set_LocalPrecondition_notation">
 			</popupAction>            
 				<popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.LocalPostconditionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
@@ -1721,11 +1721,11 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.LocalPreconditionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.LocalPostconditionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -2025,11 +2025,11 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ValueSpecificationActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.OutputPin6EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationAction_OutputPinEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
@@ -2053,15 +2053,15 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationAction2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.LocalPrecondition_LiteralStringEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart"
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.LocalPostcondition_LiteralStringEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>

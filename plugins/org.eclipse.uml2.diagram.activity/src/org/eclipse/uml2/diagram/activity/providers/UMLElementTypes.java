@@ -48,6 +48,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_PinEditPar
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_SendSignalActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ValueSpecificationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_insertAt_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_object_InputPinEditPart;
@@ -59,8 +60,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.Constraint2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPinEditPart;
@@ -72,8 +71,10 @@ import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.JoinNodeEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.LiteralString2EditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.LiteralStringEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LocalPostconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LocalPostcondition_LiteralStringEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LocalPreconditionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.LocalPrecondition_LiteralStringEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
@@ -81,7 +82,6 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.OutputPin6EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
@@ -108,8 +108,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_PinEd
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_StructuredActivityNode_OutputPinEditPart;
-import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationAction2EditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -1027,9 +1027,9 @@ public class UMLElementTypes extends ElementInitializers {
 			return Package_1000;
 		case ActivityEditPart.VISUAL_ID:
 			return Activity_2026;
-		case ConstraintEditPart.VISUAL_ID:
+		case LocalPreconditionEditPart.VISUAL_ID:
 			return Constraint_2027;
-		case Constraint2EditPart.VISUAL_ID:
+		case LocalPostconditionEditPart.VISUAL_ID:
 			return Constraint_2028;
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return AcceptEventAction_3030;
@@ -1179,9 +1179,9 @@ public class UMLElementTypes extends ElementInitializers {
 			return ConditionalNode_3083;
 		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 			return ExpansionRegion_3085;
-		case ValueSpecificationActionEditPart.VISUAL_ID:
+		case ActivityPartition_ValueSpecificationActionEditPart.VISUAL_ID:
 			return ValueSpecificationAction_3088;
-		case OutputPin6EditPart.VISUAL_ID:
+		case ValueSpecificationAction_OutputPinEditPart.VISUAL_ID:
 			return OutputPin_3090;
 		case LoopNodeEditPart.VISUAL_ID:
 			return LoopNode_3058;
@@ -1193,11 +1193,11 @@ public class UMLElementTypes extends ElementInitializers {
 			return ParameterSet_3086;
 		case ParameterEditPart.VISUAL_ID:
 			return Parameter_3087;
-		case ValueSpecificationAction2EditPart.VISUAL_ID:
+		case ValueSpecificationActionEditPart.VISUAL_ID:
 			return ValueSpecificationAction_3089;
-		case LiteralStringEditPart.VISUAL_ID:
+		case LocalPrecondition_LiteralStringEditPart.VISUAL_ID:
 			return LiteralString_3049;
-		case LiteralString2EditPart.VISUAL_ID:
+		case LocalPostcondition_LiteralStringEditPart.VISUAL_ID:
 			return LiteralString_3051;
 		case ControlFlowEditPart.VISUAL_ID:
 			return ControlFlow_4001;

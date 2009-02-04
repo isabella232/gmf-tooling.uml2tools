@@ -5321,13 +5321,13 @@
     </childNodes>
     <childNodes
         visualID="3088"
-        editPartClassName="ValueSpecificationActionEditPart"
-        itemSemanticEditPolicyClassName="ValueSpecificationActionItemSemanticEditPolicy"
-        notationViewFactoryClassName="ValueSpecificationActionViewFactory"
-        canonicalEditPolicyClassName="ValueSpecificationActionCanonicalEditPolicy"
+        editPartClassName="ActivityPartition_ValueSpecificationActionEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartition_ValueSpecificationActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartition_ValueSpecificationActionViewFactory"
+        canonicalEditPolicyClassName="ActivityPartition_ValueSpecificationActionCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.75"
-        graphicalNodeEditPolicyClassName="ValueSpecificationActionGraphicalNodeEditPolicy"
-        createCommandClassName="ValueSpecificationActionCreateCommand"
+        graphicalNodeEditPolicyClassName="ActivityPartition_ValueSpecificationActionGraphicalNodeEditPolicy"
+        createCommandClassName="ActivityPartition_ValueSpecificationActionCreateCommand"
         containers="//@diagram/@childNodes.48 //@diagram/@childNodes.47">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -5367,9 +5367,9 @@
       </modelFacet>
       <labels
           visualID="5133"
-          editPartClassName="ValueSpecificationActionNameEditPart"
-          itemSemanticEditPolicyClassName="ValueSpecificationActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ValueSpecificationActionNameViewFactory">
+          editPartClassName="ActivityPartition_ValueSpecificationActionNameEditPart"
+          itemSemanticEditPolicyClassName="ActivityPartition_ValueSpecificationActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ActivityPartition_ValueSpecificationActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5385,9 +5385,9 @@
       </labels>
       <labels
           visualID="5134"
-          editPartClassName="ValueSpecificationActionStereotypeEditPart"
-          itemSemanticEditPolicyClassName="ValueSpecificationActionStereotypeItemSemanticEditPolicy"
-          notationViewFactoryClassName="ValueSpecificationActionStereotypeViewFactory">
+          editPartClassName="ActivityPartition_ValueSpecificationActionStereotypeEditPart"
+          itemSemanticEditPolicyClassName="ActivityPartition_ValueSpecificationActionStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="ActivityPartition_ValueSpecificationActionStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5409,12 +5409,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3090"
-        editPartClassName="OutputPin6EditPart"
-        itemSemanticEditPolicyClassName="OutputPin6ItemSemanticEditPolicy"
-        notationViewFactoryClassName="OutputPin6ViewFactory"
-        canonicalEditPolicyClassName="OutputPin6CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="OutputPin6GraphicalNodeEditPolicy"
-        createCommandClassName="OutputPin6CreateCommand"
+        editPartClassName="ValueSpecificationAction_OutputPinEditPart"
+        itemSemanticEditPolicyClassName="ValueSpecificationAction_OutputPinItemSemanticEditPolicy"
+        notationViewFactoryClassName="ValueSpecificationAction_OutputPinViewFactory"
+        canonicalEditPolicyClassName="ValueSpecificationAction_OutputPinCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ValueSpecificationAction_OutputPinGraphicalNodeEditPolicy"
+        createCommandClassName="ValueSpecificationAction_OutputPinCreateCommand"
         containers="//@diagram/@childNodes.74 //@diagram/@childNodes.81"
         preferredSideName="EAST">
       <diagramRunTimeClass
@@ -5453,9 +5453,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5137"
-          editPartClassName="OutputPinName6EditPart"
-          itemSemanticEditPolicyClassName="OutputPinName6ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinName6ViewFactory">
+          editPartClassName="ValueSpecificationAction_OutputPinNameEditPart"
+          itemSemanticEditPolicyClassName="ValueSpecificationAction_OutputPinNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ValueSpecificationAction_OutputPinNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5471,9 +5471,9 @@
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5138"
-          editPartClassName="OutputPinOrdering6EditPart"
-          itemSemanticEditPolicyClassName="OutputPinOrdering6ItemSemanticEditPolicy"
-          notationViewFactoryClassName="OutputPinOrdering6ViewFactory"
+          editPartClassName="ValueSpecificationAction_OutputPinOrderingEditPart"
+          itemSemanticEditPolicyClassName="ValueSpecificationAction_OutputPinOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="ValueSpecificationAction_OutputPinOrderingViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -5780,13 +5780,13 @@
     </childNodes>
     <childNodes
         visualID="3089"
-        editPartClassName="ValueSpecificationAction2EditPart"
-        itemSemanticEditPolicyClassName="ValueSpecificationAction2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ValueSpecificationAction2ViewFactory"
-        canonicalEditPolicyClassName="ValueSpecificationAction2CanonicalEditPolicy"
+        editPartClassName="ValueSpecificationActionEditPart"
+        itemSemanticEditPolicyClassName="ValueSpecificationActionItemSemanticEditPolicy"
+        notationViewFactoryClassName="ValueSpecificationActionViewFactory"
+        canonicalEditPolicyClassName="ValueSpecificationActionCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.75"
-        graphicalNodeEditPolicyClassName="ValueSpecificationAction2GraphicalNodeEditPolicy"
-        createCommandClassName="ValueSpecificationAction2CreateCommand"
+        graphicalNodeEditPolicyClassName="ValueSpecificationActionGraphicalNodeEditPolicy"
+        createCommandClassName="ValueSpecificationActionCreateCommand"
         containers="//@diagram/@topLevelNodes.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -5826,9 +5826,9 @@
       </modelFacet>
       <labels
           visualID="5135"
-          editPartClassName="ValueSpecificationActionName2EditPart"
-          itemSemanticEditPolicyClassName="ValueSpecificationActionName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ValueSpecificationActionName2ViewFactory">
+          editPartClassName="ValueSpecificationActionNameEditPart"
+          itemSemanticEditPolicyClassName="ValueSpecificationActionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ValueSpecificationActionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5844,9 +5844,9 @@
       </labels>
       <labels
           visualID="5136"
-          editPartClassName="ValueSpecificationActionStereotype2EditPart"
-          itemSemanticEditPolicyClassName="ValueSpecificationActionStereotype2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="ValueSpecificationActionStereotype2ViewFactory">
+          editPartClassName="ValueSpecificationActionStereotypeEditPart"
+          itemSemanticEditPolicyClassName="ValueSpecificationActionStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="ValueSpecificationActionStereotypeViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5868,19 +5868,19 @@
     <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
         visualID="3049"
-        editPartClassName="LiteralStringEditPart"
-        itemSemanticEditPolicyClassName="LiteralStringItemSemanticEditPolicy"
-        notationViewFactoryClassName="LiteralStringViewFactory"
-        canonicalEditPolicyClassName="LiteralStringCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="LiteralStringGraphicalNodeEditPolicy"
-        createCommandClassName="LiteralStringCreateCommand"
+        editPartClassName="LocalPrecondition_LiteralStringEditPart"
+        itemSemanticEditPolicyClassName="LocalPrecondition_LiteralStringItemSemanticEditPolicy"
+        notationViewFactoryClassName="LocalPrecondition_LiteralStringViewFactory"
+        canonicalEditPolicyClassName="LocalPrecondition_LiteralStringCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="LocalPrecondition_LiteralStringGraphicalNodeEditPolicy"
+        createCommandClassName="LocalPrecondition_LiteralStringCreateCommand"
         containers="//@diagram/@compartments.10">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
           displayName="Literal String"
-          editHelperClassName="LiteralStringEditHelper"/>
+          editHelperClassName="LocalPrecondition_LiteralStringEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label"/>
@@ -5912,12 +5912,12 @@
     <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
         visualID="3051"
-        editPartClassName="LiteralString2EditPart"
-        itemSemanticEditPolicyClassName="LiteralString2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="LiteralString2ViewFactory"
-        canonicalEditPolicyClassName="LiteralString2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="LiteralString2GraphicalNodeEditPolicy"
-        createCommandClassName="LiteralString2CreateCommand"
+        editPartClassName="LocalPostcondition_LiteralStringEditPart"
+        itemSemanticEditPolicyClassName="LocalPostcondition_LiteralStringItemSemanticEditPolicy"
+        notationViewFactoryClassName="LocalPostcondition_LiteralStringViewFactory"
+        canonicalEditPolicyClassName="LocalPostcondition_LiteralStringCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="LocalPostcondition_LiteralStringGraphicalNodeEditPolicy"
+        createCommandClassName="LocalPostcondition_LiteralStringCreateCommand"
         containers="//@diagram/@compartments.11">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -5925,7 +5925,7 @@
           xsi:type="gmfgen:SpecializationType"
           displayName="Literal String"
           metamodelType="//@diagram/@childNodes.82/@elementType"
-          editHelperAdviceClassName="LiteralStringEditHelperAdvice"/>
+          editHelperAdviceClassName="LocalPostcondition_LiteralStringEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label"/>
@@ -6041,13 +6041,13 @@
     </topLevelNodes>
     <topLevelNodes
         visualID="2027"
-        editPartClassName="ConstraintEditPart"
-        itemSemanticEditPolicyClassName="ConstraintItemSemanticEditPolicy"
-        notationViewFactoryClassName="ConstraintViewFactory"
-        canonicalEditPolicyClassName="ConstraintCanonicalEditPolicy"
+        editPartClassName="LocalPreconditionEditPart"
+        itemSemanticEditPolicyClassName="LocalPreconditionItemSemanticEditPolicy"
+        notationViewFactoryClassName="LocalPreconditionViewFactory"
+        canonicalEditPolicyClassName="LocalPreconditionCanonicalEditPolicy"
         compartments="//@diagram/@compartments.10"
-        graphicalNodeEditPolicyClassName="ConstraintGraphicalNodeEditPolicy"
-        createCommandClassName="ConstraintCreateCommand">
+        graphicalNodeEditPolicyClassName="LocalPreconditionGraphicalNodeEditPolicy"
+        createCommandClassName="LocalPreconditionCreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -6071,13 +6071,13 @@
     </topLevelNodes>
     <topLevelNodes
         visualID="2028"
-        editPartClassName="Constraint2EditPart"
-        itemSemanticEditPolicyClassName="Constraint2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="Constraint2ViewFactory"
-        canonicalEditPolicyClassName="Constraint2CanonicalEditPolicy"
+        editPartClassName="LocalPostconditionEditPart"
+        itemSemanticEditPolicyClassName="LocalPostconditionItemSemanticEditPolicy"
+        notationViewFactoryClassName="LocalPostconditionViewFactory"
+        canonicalEditPolicyClassName="LocalPostconditionCanonicalEditPolicy"
         compartments="//@diagram/@compartments.11"
-        graphicalNodeEditPolicyClassName="Constraint2GraphicalNodeEditPolicy"
-        createCommandClassName="Constraint2CreateCommand">
+        graphicalNodeEditPolicyClassName="LocalPostconditionGraphicalNodeEditPolicy"
+        createCommandClassName="LocalPostconditionCreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -6427,10 +6427,10 @@
     </links>
     <compartments
         visualID="7008"
-        editPartClassName="StructuredActivityNodeStructuredActivityContentPaneCompartmentEditPart"
-        itemSemanticEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="StructuredActivityNodeStructuredActivityContentPaneCompartmentViewFactory"
-        canonicalEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartmentCanonicalEditPolicy"
+        editPartClassName="StructuredActivityNodeContentPaneCompartmentEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNodeContentPaneCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNodeContentPaneCompartmentViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNodeContentPaneCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43"
         title="StructuredActivityContentPaneCompartment"
         canCollapse="false"
@@ -6446,10 +6446,10 @@
     </compartments>
     <compartments
         visualID="7002"
-        editPartClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment2EditPart"
-        itemSemanticEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment2ViewFactory"
-        canonicalEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment2CanonicalEditPolicy"
+        editPartClassName="StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart"
+        itemSemanticEditPolicyClassName="StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentViewFactory"
+        canonicalEditPolicyClassName="StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43"
         title="StructuredActivityContentPaneCompartment"
         canCollapse="false"
@@ -6465,10 +6465,10 @@
     </compartments>
     <compartments
         visualID="7016"
-        editPartClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment3EditPart"
-        itemSemanticEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment3ViewFactory"
-        canonicalEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment3CanonicalEditPolicy"
+        editPartClassName="ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartition_StructuredActivityNodeContentPaneCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartition_StructuredActivityNodeContentPaneCompartmentViewFactory"
+        canonicalEditPolicyClassName="ActivityPartition_StructuredActivityNodeContentPaneCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.67 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.68 //@diagram/@childNodes.69"
         title="StructuredActivityContentPaneCompartment"
         canCollapse="false"
@@ -6484,10 +6484,10 @@
     </compartments>
     <compartments
         visualID="7018"
-        editPartClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment4EditPart"
-        itemSemanticEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment4ItemSemanticEditPolicy"
-        notationViewFactoryClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment4ViewFactory"
-        canonicalEditPolicyClassName="StructuredActivityNodeStructuredActivityContentPaneCompartment4CanonicalEditPolicy"
+        editPartClassName="ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentViewFactory"
+        canonicalEditPolicyClassName="ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.67 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.68 //@diagram/@childNodes.69"
         title="StructuredActivityContentPaneCompartment"
         canCollapse="false"
@@ -6503,10 +6503,10 @@
     </compartments>
     <compartments
         visualID="7017"
-        editPartClassName="LoopNodeLoopNodeContentPaneCompartment2EditPart"
-        itemSemanticEditPolicyClassName="LoopNodeLoopNodeContentPaneCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="LoopNodeLoopNodeContentPaneCompartment2ViewFactory"
-        canonicalEditPolicyClassName="LoopNodeLoopNodeContentPaneCompartment2CanonicalEditPolicy"
+        editPartClassName="ActivityPartition_LoopNodeContentPaneCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartition_LoopNodeContentPaneCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartition_LoopNodeContentPaneCompartmentViewFactory"
+        canonicalEditPolicyClassName="ActivityPartition_LoopNodeContentPaneCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43"
         title="LoopNodeContentPaneCompartment"
         canCollapse="false"
@@ -6522,10 +6522,10 @@
     </compartments>
     <compartments
         visualID="7020"
-        editPartClassName="ConditionalNodeConditionalNodeCompartment2EditPart"
-        itemSemanticEditPolicyClassName="ConditionalNodeConditionalNodeCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ConditionalNodeConditionalNodeCompartment2ViewFactory"
-        canonicalEditPolicyClassName="ConditionalNodeConditionalNodeCompartment2CanonicalEditPolicy"
+        editPartClassName="ActivityPartition_ConditionalNodeCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartition_ConditionalNodeCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartition_ConditionalNodeCompartmentViewFactory"
+        canonicalEditPolicyClassName="ActivityPartition_ConditionalNodeCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43"
         title="ConditionalNodeCompartment"
         canCollapse="false"
@@ -6541,10 +6541,10 @@
     </compartments>
     <compartments
         visualID="7022"
-        editPartClassName="ExpansionRegionExpansionRegionNodeCompartment2EditPart"
-        itemSemanticEditPolicyClassName="ExpansionRegionExpansionRegionNodeCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ExpansionRegionExpansionRegionNodeCompartment2ViewFactory"
-        canonicalEditPolicyClassName="ExpansionRegionExpansionRegionNodeCompartment2CanonicalEditPolicy"
+        editPartClassName="ActivityPartition_ExpansionRegionNodeCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ActivityPartition_ExpansionRegionNodeCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ActivityPartition_ExpansionRegionNodeCompartmentViewFactory"
+        canonicalEditPolicyClassName="ActivityPartition_ExpansionRegionNodeCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43"
         title="ExpansionRegionNodeCompartment"
         canCollapse="false"
@@ -6560,10 +6560,10 @@
     </compartments>
     <compartments
         visualID="7015"
-        editPartClassName="LoopNodeLoopNodeContentPaneCompartmentEditPart"
-        itemSemanticEditPolicyClassName="LoopNodeLoopNodeContentPaneCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="LoopNodeLoopNodeContentPaneCompartmentViewFactory"
-        canonicalEditPolicyClassName="LoopNodeLoopNodeContentPaneCompartmentCanonicalEditPolicy"
+        editPartClassName="LoopNodeContentPaneCompartmentEditPart"
+        itemSemanticEditPolicyClassName="LoopNodeContentPaneCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="LoopNodeContentPaneCompartmentViewFactory"
+        canonicalEditPolicyClassName="LoopNodeContentPaneCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43"
         title="LoopNodeContentPaneCompartment"
         canCollapse="false"
@@ -6579,10 +6579,10 @@
     </compartments>
     <compartments
         visualID="7019"
-        editPartClassName="ConditionalNodeConditionalNodeCompartmentEditPart"
-        itemSemanticEditPolicyClassName="ConditionalNodeConditionalNodeCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="ConditionalNodeConditionalNodeCompartmentViewFactory"
-        canonicalEditPolicyClassName="ConditionalNodeConditionalNodeCompartmentCanonicalEditPolicy"
+        editPartClassName="ConditionalNodeCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ConditionalNodeCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ConditionalNodeCompartmentViewFactory"
+        canonicalEditPolicyClassName="ConditionalNodeCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43"
         title="ConditionalNodeCompartment"
         canCollapse="false"
@@ -6598,10 +6598,10 @@
     </compartments>
     <compartments
         visualID="7021"
-        editPartClassName="ExpansionRegionExpansionRegionNodeCompartmentEditPart"
-        itemSemanticEditPolicyClassName="ExpansionRegionExpansionRegionNodeCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="ExpansionRegionExpansionRegionNodeCompartmentViewFactory"
-        canonicalEditPolicyClassName="ExpansionRegionExpansionRegionNodeCompartmentCanonicalEditPolicy"
+        editPartClassName="ExpansionRegionNodeCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ExpansionRegionNodeCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ExpansionRegionNodeCompartmentViewFactory"
+        canonicalEditPolicyClassName="ExpansionRegionNodeCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43"
         title="ExpansionRegionNodeCompartment"
         canCollapse="false"
@@ -6617,10 +6617,10 @@
     </compartments>
     <compartments
         visualID="7013"
-        editPartClassName="ConstraintPreconditionEditPart"
-        itemSemanticEditPolicyClassName="ConstraintPreconditionItemSemanticEditPolicy"
-        notationViewFactoryClassName="ConstraintPreconditionViewFactory"
-        canonicalEditPolicyClassName="ConstraintPreconditionCanonicalEditPolicy"
+        editPartClassName="LocalPreconditionCompartmentEditPart"
+        itemSemanticEditPolicyClassName="LocalPreconditionCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="LocalPreconditionCompartmentViewFactory"
+        canonicalEditPolicyClassName="LocalPreconditionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.82"
         title="precondition"
         canCollapse="false"
@@ -6635,10 +6635,10 @@
     </compartments>
     <compartments
         visualID="7014"
-        editPartClassName="ConstraintPostconditionEditPart"
-        itemSemanticEditPolicyClassName="ConstraintPostconditionItemSemanticEditPolicy"
-        notationViewFactoryClassName="ConstraintPostconditionViewFactory"
-        canonicalEditPolicyClassName="ConstraintPostconditionCanonicalEditPolicy"
+        editPartClassName="LocalPostconditionCompartmentEditPart"
+        itemSemanticEditPolicyClassName="LocalPostconditionCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="LocalPostconditionCompartmentViewFactory"
+        canonicalEditPolicyClassName="LocalPostconditionCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.83"
         title="postcondition"
         canCollapse="false"

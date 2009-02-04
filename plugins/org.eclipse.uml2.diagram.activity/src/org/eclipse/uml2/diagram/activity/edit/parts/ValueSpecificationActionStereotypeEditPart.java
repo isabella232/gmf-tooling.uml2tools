@@ -63,7 +63,7 @@ public class ValueSpecificationActionStereotypeEditPart extends CompartmentEditP
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5134;
+	public static final int VISUAL_ID = 5136;
 
 	/**
 	 * @generated
@@ -298,7 +298,7 @@ public class ValueSpecificationActionStereotypeEditPart extends CompartmentEditP
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.ValueSpecificationAction_3088, getParserElement(), UMLVisualIDRegistry
+			parser = UMLParserProvider.getParser(UMLElementTypes.ValueSpecificationAction_3089, getParserElement(), UMLVisualIDRegistry
 					.getType(org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionStereotypeEditPart.VISUAL_ID));
 		}
 		return parser;
