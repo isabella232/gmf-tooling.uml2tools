@@ -64,6 +64,7 @@ public class PortRequiredEditPart extends ConnectionNodeEditPart implements ITre
 		 * @generated
 		 */
 		public RequiredInterfaceConnectionFigure() {
+			this.setLineWidth(1);
 
 			setTargetDecoration(createTargetDecoration());
 		}

@@ -169,7 +169,7 @@ public class PrimitiveTypeStereotype2EditPart extends CompartmentEditPart implem
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

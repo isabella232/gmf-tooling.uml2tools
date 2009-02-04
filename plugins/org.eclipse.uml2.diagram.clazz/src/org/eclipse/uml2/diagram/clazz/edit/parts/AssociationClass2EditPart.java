@@ -13,6 +13,7 @@ import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -44,6 +45,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -118,10 +120,10 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new AssociationClass2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 	}
 
 	/**
@@ -1576,7 +1578,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 		/**
 		 * @generated
 		 */
-		private Label fFigureClassFigure_stereo;
+		private WrappingLabel fFigureClassFigure_stereo;
 
 		/**
 		 * @generated
@@ -1622,6 +1624,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -1631,6 +1634,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 		private void createContents() {
 
 			RectangleFigure classFigure_Header0 = new RectangleFigure();
+			classFigure_Header0.setLineWidth(1);
 			classFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
 
 			this.add(classFigure_Header0);
@@ -1646,6 +1650,11 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 
 			RectangleFigure classFigure_StereoContainer1 = new RectangleFigure();
 			classFigure_StereoContainer1.setOutline(false);
+			classFigure_StereoContainer1.setLineWidth(1);
+
+			classFigure_StereoContainer1.setFont(CLASSFIGURE_STEREOCONTAINER1_FONT);
+
+			classFigure_StereoContainer1.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			classFigure_Header0.add(classFigure_StereoContainer1);
 
@@ -1653,17 +1662,15 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 
 			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
 
-			fFigureClassFigure_stereo = new Label();
-			fFigureClassFigure_stereo.setText("");
+			fFigureClassFigure_stereo = new WrappingLabel();
 
-			fFigureClassFigure_stereo.setFont(FFIGURECLASSFIGURE_STEREO_FONT);
-
-			fFigureClassFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			fFigureClassFigure_stereo.setTextPlacement(PositionConstants.SOUTH);
 
 			classFigure_StereoContainer1.add(fFigureClassFigure_stereo);
 
 			RectangleFigure classFigure_NameContainer1 = new RectangleFigure();
 			classFigure_NameContainer1.setOutline(false);
+			classFigure_NameContainer1.setLineWidth(1);
 
 			classFigure_Header0.add(classFigure_NameContainer1);
 
@@ -1681,26 +1688,31 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 			classFigure_NameContainer1.add(fFigureClassFigure_name);
 
 			fFigureClassFigure_PropertiesCompartment = new RectangleFigure();
+			fFigureClassFigure_PropertiesCompartment.setLineWidth(1);
 
 			this.add(fFigureClassFigure_PropertiesCompartment);
 			fFigureClassFigure_PropertiesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_OperationsCompartment = new RectangleFigure();
+			fFigureClassFigure_OperationsCompartment.setLineWidth(1);
 
 			this.add(fFigureClassFigure_OperationsCompartment);
 			fFigureClassFigure_OperationsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_ClassesCompartment = new RectangleFigure();
+			fFigureClassFigure_ClassesCompartment.setLineWidth(1);
 
 			this.add(fFigureClassFigure_ClassesCompartment);
 			fFigureClassFigure_ClassesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_LiteralsCompartment = new RectangleFigure();
+			fFigureClassFigure_LiteralsCompartment.setLineWidth(1);
 
 			this.add(fFigureClassFigure_LiteralsCompartment);
 			fFigureClassFigure_LiteralsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_OthersCompartment = new RectangleFigure();
+			fFigureClassFigure_OthersCompartment.setLineWidth(1);
 
 			this.add(fFigureClassFigure_OthersCompartment);
 			fFigureClassFigure_OthersCompartment.setLayoutManager(new StackLayout());
@@ -1729,7 +1741,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 		/**
 		 * @generated
 		 */
-		public Label getFigureClassFigure_stereo() {
+		public WrappingLabel getFigureClassFigure_stereo() {
 			return fFigureClassFigure_stereo;
 		}
 
@@ -1780,7 +1792,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 	/**
 	 * @generated
 	 */
-	static final Font FFIGURECLASSFIGURE_STEREO_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+	static final Font CLASSFIGURE_STEREOCONTAINER1_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated

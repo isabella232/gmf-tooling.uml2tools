@@ -103,10 +103,10 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new InstanceSpecification4CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 	}
 
 	/**
@@ -1323,6 +1323,7 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
@@ -1334,6 +1335,7 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 
 			RectangleFigure rectangleInstanceLabelContainer0 = new RectangleFigure();
 			rectangleInstanceLabelContainer0.setOutline(false);
+			rectangleInstanceLabelContainer0.setLineWidth(1);
 
 			this.add(rectangleInstanceLabelContainer0);
 

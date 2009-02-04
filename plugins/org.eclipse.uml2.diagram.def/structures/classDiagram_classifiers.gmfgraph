@@ -37,15 +37,19 @@
             <layout
                 xsi:type="gmfgraph:CustomLayout"
                 qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+            <font
+                xsi:type="gmfgraph:BasicFont"/>
+            <insets
+                top="5"
+                left="5"
+                right="5"/>
             <children
-                xsi:type="gmfgraph:Label"
-                name="ClassFigure_stereo">
-              <font
-                  xsi:type="gmfgraph:BasicFont"/>
-              <insets
-                  top="5"
-                  left="5"
-                  right="5"/>
+                xsi:type="gmfgraph:CustomFigure"
+                name="ClassFigure_stereo"
+                qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              <attributes
+                  name="TextPlacement"
+                  value="org.eclipse.draw2d.PositionConstants.SOUTH"/>
             </children>
           </children>
           <children

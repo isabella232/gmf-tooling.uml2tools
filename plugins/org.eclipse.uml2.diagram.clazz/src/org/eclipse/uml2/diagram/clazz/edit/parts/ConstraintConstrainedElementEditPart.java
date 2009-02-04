@@ -62,6 +62,7 @@ public class ConstraintConstrainedElementEditPart extends ConnectionNodeEditPart
 		 * @generated
 		 */
 		public DashedLineConnection() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 
 		}

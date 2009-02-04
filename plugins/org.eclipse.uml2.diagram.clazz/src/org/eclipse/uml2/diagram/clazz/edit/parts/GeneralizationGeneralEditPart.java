@@ -65,6 +65,7 @@ public class GeneralizationGeneralEditPart extends ConnectionNodeEditPart implem
 		 * @generated
 		 */
 		public SolidLineWDstClosedArrow() {
+			this.setLineWidth(1);
 
 			setTargetDecoration(createTargetDecoration());
 		}
@@ -75,6 +76,7 @@ public class GeneralizationGeneralEditPart extends ConnectionNodeEditPart implem
 		private RotatableDecoration createTargetDecoration() {
 			PolygonDecoration df = new PolygonDecoration();
 			df.setFill(true);
+			df.setLineWidth(1);
 			df.setBackgroundColor(ColorConstants.white);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

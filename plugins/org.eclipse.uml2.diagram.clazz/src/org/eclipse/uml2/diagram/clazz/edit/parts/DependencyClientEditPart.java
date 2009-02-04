@@ -63,6 +63,7 @@ public class DependencyClientEditPart extends ConnectionNodeEditPart implements 
 		 * @generated
 		 */
 		public Dependency_NoArrow_Polyline() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			this.setForegroundColor(ColorConstants.lightGray);
 

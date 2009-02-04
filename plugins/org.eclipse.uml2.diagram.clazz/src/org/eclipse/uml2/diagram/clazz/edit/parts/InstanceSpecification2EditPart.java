@@ -103,10 +103,10 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InstanceSpecification2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 	}
 
 	/**
@@ -1328,6 +1328,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
@@ -1339,6 +1340,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 
 			RectangleFigure instanceNode_NameContainerFigure0 = new RectangleFigure();
 			instanceNode_NameContainerFigure0.setOutline(false);
+			instanceNode_NameContainerFigure0.setLineWidth(1);
 			instanceNode_NameContainerFigure0.setBorder(createBorder0());
 
 			this.add(instanceNode_NameContainerFigure0);
@@ -1372,6 +1374,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 
 			fFigureInstanceNode_SlotsCompartmentFigure = new RectangleFigure();
 			fFigureInstanceNode_SlotsCompartmentFigure.setOutline(false);
+			fFigureInstanceNode_SlotsCompartmentFigure.setLineWidth(1);
 
 			this.add(fFigureInstanceNode_SlotsCompartmentFigure);
 

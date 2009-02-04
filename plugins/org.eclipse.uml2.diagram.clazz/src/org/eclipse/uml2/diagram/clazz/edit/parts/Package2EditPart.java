@@ -105,11 +105,11 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new Package2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 	}
 
 	/**
@@ -1602,6 +1602,7 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 
 			this.setFill(false);
 			this.setOutline(false);
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -1613,6 +1614,7 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			RectangleFigure packageFigure_AuxTop0 = new RectangleFigure();
 			packageFigure_AuxTop0.setFill(false);
 			packageFigure_AuxTop0.setOutline(false);
+			packageFigure_AuxTop0.setLineWidth(1);
 
 			this.add(packageFigure_AuxTop0, BorderLayout.TOP);
 
@@ -1625,6 +1627,7 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			packageFigure_AuxTop0.setLayoutManager(layoutPackageFigure_AuxTop0);
 
 			RectangleFigure packageFigure_AuxLeftTab1 = new RectangleFigure();
+			packageFigure_AuxLeftTab1.setLineWidth(1);
 			packageFigure_AuxLeftTab1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));
 
 			packageFigure_AuxTop0.add(packageFigure_AuxLeftTab1);
@@ -1632,11 +1635,13 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			RectangleFigure packageFigure_AuxRightPadding1 = new RectangleFigure();
 			packageFigure_AuxRightPadding1.setFill(false);
 			packageFigure_AuxRightPadding1.setOutline(false);
+			packageFigure_AuxRightPadding1.setLineWidth(1);
 			packageFigure_AuxRightPadding1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));
 
 			packageFigure_AuxTop0.add(packageFigure_AuxRightPadding1);
 
 			RectangleFigure packageFigure_AuxCenter0 = new RectangleFigure();
+			packageFigure_AuxCenter0.setLineWidth(1);
 
 			this.add(packageFigure_AuxCenter0, BorderLayout.CENTER);
 
@@ -1650,6 +1655,7 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			packageFigure_AuxCenter0.setLayoutManager(layoutPackageFigure_AuxCenter0);
 
 			RectangleFigure packageFigure_NameContainer1 = new RectangleFigure();
+			packageFigure_NameContainer1.setLineWidth(1);
 			packageFigure_NameContainer1.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 
 			packageFigure_AuxCenter0.add(packageFigure_NameContainer1);
@@ -1666,14 +1672,17 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			packageFigure_NameContainer1.add(fFigurePackageFigure_name);
 
 			fFigurePackageFigure_PackagesCompartment = new RectangleFigure();
+			fFigurePackageFigure_PackagesCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_PackagesCompartment);
 
 			fFigurePackageFigure_ClassesCompartment = new RectangleFigure();
+			fFigurePackageFigure_ClassesCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_ClassesCompartment);
 
 			fFigurePackageFigure_OthersCompartment = new RectangleFigure();
+			fFigurePackageFigure_OthersCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_OthersCompartment);
 

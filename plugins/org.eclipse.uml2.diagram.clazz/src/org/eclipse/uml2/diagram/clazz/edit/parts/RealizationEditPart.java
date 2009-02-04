@@ -101,6 +101,7 @@ public class RealizationEditPart extends ConnectionNodeEditPart implements ITree
 		 * @generated
 		 */
 		public Realization_Polyline() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			this.setForegroundColor(ColorConstants.lightGray);
 
@@ -113,6 +114,7 @@ public class RealizationEditPart extends ConnectionNodeEditPart implements ITree
 		private RotatableDecoration createSourceDecoration() {
 			PolylineDecoration df = new PolylineDecoration();
 			df.setFill(false);
+			df.setLineWidth(1);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

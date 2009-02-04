@@ -169,7 +169,7 @@ public class DataTypeStereotype2EditPart extends CompartmentEditPart implements 
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

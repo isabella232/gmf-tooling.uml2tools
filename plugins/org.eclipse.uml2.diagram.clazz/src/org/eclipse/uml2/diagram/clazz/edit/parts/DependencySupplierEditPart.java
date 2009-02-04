@@ -66,6 +66,7 @@ public class DependencySupplierEditPart extends ConnectionNodeEditPart implement
 		 * @generated
 		 */
 		public Dependency_WithArrow_Polyline() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			this.setForegroundColor(ColorConstants.lightGray);
 
@@ -77,6 +78,7 @@ public class DependencySupplierEditPart extends ConnectionNodeEditPart implement
 		 */
 		private RotatableDecoration createTargetDecoration() {
 			PolylineDecoration df = new PolylineDecoration();
+			df.setLineWidth(1);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

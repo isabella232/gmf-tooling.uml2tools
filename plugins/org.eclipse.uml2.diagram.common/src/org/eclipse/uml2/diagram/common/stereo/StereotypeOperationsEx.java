@@ -1,6 +1,8 @@
 package org.eclipse.uml2.diagram.common.stereo;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
@@ -11,11 +13,15 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.URIConverter;
+import org.eclipse.jface.resource.CompositeImageDescriptor;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.graphics.ImageData;
+import org.eclipse.swt.graphics.Point;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.uml.Association;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Image;
 import org.eclipse.uml2.uml.Profile;
@@ -29,6 +35,39 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 public class StereotypeOperationsEx extends UMLUtil {
 
 	private static final ImageDescriptor CORRUPTED_ICON = PlatformUI.getWorkbench().getSharedImages().getImageDescriptor(ISharedImages.IMG_OBJS_WARN_TSK);
+
+	public static List<org.eclipse.swt.graphics.Image> getStereotypeImages(Element element) {
+		EList<Stereotype> stereos = element.getAppliedStereotypes();
+		List<org.eclipse.swt.graphics.Image> result = new ArrayList<org.eclipse.swt.graphics.Image>(stereos.size());
+		for (Stereotype stereo: stereos) {
+			ImageDescriptor imageDescriptor = StereotypeOperationsEx.getImage(stereo);
+			if (imageDescriptor == null) {
+				continue;
+			}
+			result.add(imageDescriptor.createImage());
+		}
+		return result;
+	}
+	
+	public static org.eclipse.swt.graphics.Image getAppliedStereotypeImage(Element element) {
+		EList<Stereotype> stereos = element.getAppliedStereotypes();
+		if (stereos.isEmpty()) {
+			return null;
+		}
+		List<ImageDescriptor> result = new ArrayList<ImageDescriptor>(stereos.size());
+		for (Stereotype stereo: stereos) {
+			ImageDescriptor imageDescriptor = StereotypeOperationsEx.getImage(stereo);
+			if (imageDescriptor == null) {
+				continue;
+			}
+			result.add(imageDescriptor);
+		}
+		if (result.isEmpty()) {
+			return null;
+		}
+		StereotypeImageDescriptor im = new StereotypeImageDescriptor(result.toArray(new ImageDescriptor[result.size()]));
+		return im.createImage();
+	}
 
 	public static ImageDescriptor getImage(Stereotype appliedStereotype) {
 		Resource eResource = appliedStereotype.eResource();
@@ -113,6 +152,39 @@ public class StereotypeOperationsEx extends UMLUtil {
 		}
 
 		return null;
+	}
+	
+	private static class StereotypeImageDescriptor extends CompositeImageDescriptor {
+		
+		private ImageDescriptor[] myImages;
+		
+		private StereotypeImageDescriptor(ImageDescriptor... images) {
+			myImages = images;
+		}
+
+		@Override
+		protected void drawCompositeImage(int width, int height) {
+			int ox = 0;
+			int oy = 0;
+			for (ImageDescriptor image: myImages) {
+				ImageData imageData = image.getImageData();
+				drawImage(imageData, ox, oy);
+				ox += imageData.width;
+			}
+		}
+
+		@Override
+		protected Point getSize() {
+			int ox = 0;
+			int oy = 0;
+			for (ImageDescriptor image: myImages) {
+				ImageData imageData = image.getImageData();
+				ox += imageData.width;
+				oy = Math.max(oy, imageData.height);
+			}
+			return new Point(ox, oy);
+		}
+		
 	}
 
 }

@@ -102,6 +102,7 @@ public class UsageEditPart extends ConnectionNodeEditPart implements ITreeBranch
 		 * @generated
 		 */
 		public RequiredInterfaceConnectionFigure() {
+			this.setLineWidth(1);
 
 			setTargetDecoration(createTargetDecoration());
 		}

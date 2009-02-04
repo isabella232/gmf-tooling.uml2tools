@@ -63,6 +63,7 @@ public class AssociationClassConnectorEditPart extends ConnectionNodeEditPart im
 		 * @generated
 		 */
 		public AssociationClass2RhombConnectorFigure() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 
 		}

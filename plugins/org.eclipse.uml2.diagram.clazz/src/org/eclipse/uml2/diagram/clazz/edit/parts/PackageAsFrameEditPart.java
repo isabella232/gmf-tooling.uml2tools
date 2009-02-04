@@ -104,11 +104,11 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackageAsFrameItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 	}
 
 	/**
@@ -1531,6 +1531,8 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
+
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
@@ -1542,6 +1544,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 
 			RectangleFigure packageAsFrameFigure_TopRow0 = new RectangleFigure();
 			packageAsFrameFigure_TopRow0.setOutline(false);
+			packageAsFrameFigure_TopRow0.setLineWidth(1);
 
 			this.add(packageAsFrameFigure_TopRow0, BorderLayout.TOP);
 
@@ -1643,6 +1646,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 			packageAsFrameFigure_header1.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
 			packageAsFrameFigure_header1.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
 			packageAsFrameFigure_header1.setFill(true);
+			packageAsFrameFigure_header1.setLineWidth(1);
 
 			packageAsFrameFigure_header1.setBorder(new MarginBorder(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10), getMapMode().DPtoLP(13), getMapMode().DPtoLP(13)));
 
@@ -1669,6 +1673,7 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 
 			fPackageAsFrameFigure_contents = new RectangleFigure();
 			fPackageAsFrameFigure_contents.setOutline(false);
+			fPackageAsFrameFigure_contents.setLineWidth(1);
 			fPackageAsFrameFigure_contents.setForegroundColor(ColorConstants.white);
 
 			this.add(fPackageAsFrameFigure_contents, BorderLayout.CENTER);
