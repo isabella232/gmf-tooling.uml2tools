@@ -1718,6 +1718,7 @@ public class CallAction_InputPinEditPart extends BorderedBorderItemEditPart impl
 		 * @generated
 		 */
 		public SmallSquareFigure() {
+			this.setLineWidth(1);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));

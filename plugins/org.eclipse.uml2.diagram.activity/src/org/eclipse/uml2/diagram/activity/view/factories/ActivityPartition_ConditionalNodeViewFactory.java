@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ConditionalNodeStereotypeEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
@@ -44,6 +45,7 @@ public class ActivityPartition_ConditionalNodeViewFactory extends AbstractShapeV
 		if (eObject != null) {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ActivityPartition_ConditionalNodeNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ActivityPartition_ConditionalNodeCompartmentEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 	}

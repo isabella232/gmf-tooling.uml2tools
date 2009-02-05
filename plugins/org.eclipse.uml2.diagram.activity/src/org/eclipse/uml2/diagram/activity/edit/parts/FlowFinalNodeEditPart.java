@@ -1666,6 +1666,7 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart implements PrimaryS
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setForegroundColor(ColorConstants.black);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
@@ -1681,12 +1682,14 @@ public class FlowFinalNodeEditPart extends ShapeNodeEditPart implements PrimaryS
 			Polyline aux_FlowFinalFigure_BackSlash0 = new Polyline();
 			aux_FlowFinalFigure_BackSlash0.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
 			aux_FlowFinalFigure_BackSlash0.addPoint(new Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(19)));
+			aux_FlowFinalFigure_BackSlash0.setLineWidth(1);
 
 			this.add(aux_FlowFinalFigure_BackSlash0);
 
 			Polyline aux_FlowFinalFigure_Slash0 = new Polyline();
 			aux_FlowFinalFigure_Slash0.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(19)));
 			aux_FlowFinalFigure_Slash0.addPoint(new Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(4)));
+			aux_FlowFinalFigure_Slash0.setLineWidth(1);
 
 			this.add(aux_FlowFinalFigure_Slash0);
 

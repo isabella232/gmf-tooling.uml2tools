@@ -1658,6 +1658,7 @@ public class ActivityPartition_JoinNodeEditPart extends ShapeNodeEditPart implem
 		 * @generated
 		 */
 		public ForkJoinFigure() {
+			this.setLineWidth(1);
 			this.setBackgroundColor(ColorConstants.black);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
 		}

@@ -1787,6 +1787,7 @@ public class DataStoreNodeEditPart extends AbstractBorderedShapeEditPart impleme
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 			createContents();
 		}
@@ -1799,6 +1800,7 @@ public class DataStoreNodeEditPart extends AbstractBorderedShapeEditPart impleme
 			RectangleFigure dataStoreFigure_NameContainer0 = new RectangleFigure();
 			dataStoreFigure_NameContainer0.setFill(false);
 			dataStoreFigure_NameContainer0.setOutline(false);
+			dataStoreFigure_NameContainer0.setLineWidth(1);
 
 			this.add(dataStoreFigure_NameContainer0);
 

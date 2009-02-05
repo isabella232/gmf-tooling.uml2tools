@@ -282,6 +282,7 @@ public class ActivityPartition_ActivityPartitionEditPart extends ShapeNodeEditPa
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -297,6 +298,7 @@ public class ActivityPartition_ActivityPartitionEditPart extends ShapeNodeEditPa
 			this.add(fFigureActivityPartitionFigure_name, BorderLayout.LEFT);
 
 			fFigureActivityPartitionFigure_body = new RectangleFigure();
+			fFigureActivityPartitionFigure_body.setLineWidth(1);
 
 			this.add(fFigureActivityPartitionFigure_body, BorderLayout.CENTER);
 

@@ -568,6 +568,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartition_StructuredActivityNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_StructuredActivityNodeEditPart(view);
 
+			case ActivityPartition_StructuredActivityNodeNameEditPart.VISUAL_ID:
+				return new ActivityPartition_StructuredActivityNodeNameEditPart(view);
+
 			case ActivityPartition_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
 				return new ActivityPartition_StructuredActivityNodeStereotypeEditPart(view);
 
@@ -576,6 +579,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
 				return new ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeEditPart(view);
+
+			case StructuredActivityNodeQualifiedName2EditPart.VISUAL_ID:
+				return new StructuredActivityNodeQualifiedName2EditPart(view);
 
 			case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 				return new StructuredActivityNode_StructuredActivityNode_InputPinEditPart(view);
@@ -607,11 +613,17 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_LoopNodeEditPart(view);
 
+			case ActivityPartition_LoopNodeNameEditPart.VISUAL_ID:
+				return new ActivityPartition_LoopNodeNameEditPart(view);
+
 			case ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID:
 				return new ActivityPartition_LoopNodeStereotypeEditPart(view);
 
 			case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_ConditionalNodeEditPart(view);
+
+			case ActivityPartition_ConditionalNodeNameEditPart.VISUAL_ID:
+				return new ActivityPartition_ConditionalNodeNameEditPart(view);
 
 			case ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID:
 				return new ActivityPartition_ConditionalNodeStereotypeEditPart(view);

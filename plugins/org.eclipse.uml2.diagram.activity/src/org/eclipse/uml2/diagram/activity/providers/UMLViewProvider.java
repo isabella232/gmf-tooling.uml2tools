@@ -494,6 +494,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case ActivityPartition_StructuredActivityNodeNameEditPart.VISUAL_ID:
 				case ActivityPartition_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
 				case ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 					if (ActivityPartition_StructuredActivityNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
@@ -501,6 +502,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 					}
 					break;
 				case ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
+				case StructuredActivityNodeQualifiedName2EditPart.VISUAL_ID:
 				case ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 					if (ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView)
 							|| containerView.getElement() != domainElement) {
@@ -525,12 +527,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 						return null; // wrong container
 					}
 					break;
+				case ActivityPartition_LoopNodeNameEditPart.VISUAL_ID:
 				case ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID:
 				case ActivityPartition_LoopNodeContentPaneCompartmentEditPart.VISUAL_ID:
 					if (ActivityPartition_LoopNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
+				case ActivityPartition_ConditionalNodeNameEditPart.VISUAL_ID:
 				case ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID:
 				case ActivityPartition_ConditionalNodeCompartmentEditPart.VISUAL_ID:
 					if (ActivityPartition_ConditionalNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
@@ -972,12 +976,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActivityPartition_CallOperationActionStereotypeViewFactory.class;
 		case ActivityPartition_StructuredActivityNodeEditPart.VISUAL_ID:
 			return ActivityPartition_StructuredActivityNodeViewFactory.class;
+		case ActivityPartition_StructuredActivityNodeNameEditPart.VISUAL_ID:
+			return ActivityPartition_StructuredActivityNodeNameViewFactory.class;
 		case ActivityPartition_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
 			return ActivityPartition_StructuredActivityNodeStereotypeViewFactory.class;
 		case ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 			return ActivityPartition_StructuredActivityNode_StructuredActivityNodeViewFactory.class;
 		case ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
 			return ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeViewFactory.class;
+		case StructuredActivityNodeQualifiedName2EditPart.VISUAL_ID:
+			return StructuredActivityNodeQualifiedName2ViewFactory.class;
 		case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 			return StructuredActivityNode_StructuredActivityNode_InputPinViewFactory.class;
 		case StructuredActivityNode_StructuredActivityNode_InputPinNameEditPart.VISUAL_ID:
@@ -998,10 +1006,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ActivityPartition_SendSignalActionStereotypeViewFactory.class;
 		case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
 			return ActivityPartition_LoopNodeViewFactory.class;
+		case ActivityPartition_LoopNodeNameEditPart.VISUAL_ID:
+			return ActivityPartition_LoopNodeNameViewFactory.class;
 		case ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID:
 			return ActivityPartition_LoopNodeStereotypeViewFactory.class;
 		case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
 			return ActivityPartition_ConditionalNodeViewFactory.class;
+		case ActivityPartition_ConditionalNodeNameEditPart.VISUAL_ID:
+			return ActivityPartition_ConditionalNodeNameViewFactory.class;
 		case ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID:
 			return ActivityPartition_ConditionalNodeStereotypeViewFactory.class;
 		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:

@@ -102,6 +102,7 @@ public class ControlFlowEditPart extends ConnectionNodeEditPart implements ITree
 		 * @generated
 		 */
 		public ActivityEdgeConnection() {
+			this.setLineWidth(1);
 			this.setForegroundColor(ColorConstants.black);
 
 			setTargetDecoration(createTargetDecoration());
@@ -112,6 +113,7 @@ public class ControlFlowEditPart extends ConnectionNodeEditPart implements ITree
 		 */
 		private RotatableDecoration createTargetDecoration() {
 			PolylineDecoration df = new PolylineDecoration();
+			df.setLineWidth(1);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

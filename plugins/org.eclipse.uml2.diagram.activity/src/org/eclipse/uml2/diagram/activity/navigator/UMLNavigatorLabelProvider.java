@@ -1475,7 +1475,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getStructuredActivityNode_3076Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.StructuredActivityNode_3076, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ActivityPartition_StructuredActivityNodeStereotypeEditPart.VISUAL_ID));
+				.getType(ActivityPartition_StructuredActivityNodeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -1545,7 +1545,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getLoopNode_3078Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.LoopNode_3078, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID));
+				.getType(ActivityPartition_LoopNodeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -1559,7 +1559,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getConditionalNode_3083Text(View view) {
 		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ConditionalNode_3083, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID));
+				.getType(ActivityPartition_ConditionalNodeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {

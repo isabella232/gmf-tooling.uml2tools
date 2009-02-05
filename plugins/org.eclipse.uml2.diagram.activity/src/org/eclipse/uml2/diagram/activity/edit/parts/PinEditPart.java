@@ -1787,6 +1787,7 @@ public class PinEditPart extends AbstractBorderedShapeEditPart implements Primar
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -1798,6 +1799,7 @@ public class PinEditPart extends AbstractBorderedShapeEditPart implements Primar
 			RectangleFigure standalonePinFigure_NameContainer0 = new RectangleFigure();
 			standalonePinFigure_NameContainer0.setFill(false);
 			standalonePinFigure_NameContainer0.setOutline(false);
+			standalonePinFigure_NameContainer0.setLineWidth(1);
 
 			standalonePinFigure_NameContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 

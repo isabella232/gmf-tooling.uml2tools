@@ -534,6 +534,7 @@ public class LocalPreconditionEditPart extends ShapeNodeEditPart implements Prim
 
 			fFigureLocalPreconditionFigure_Body = new RectangleFigure();
 			fFigureLocalPreconditionFigure_Body.setOutline(false);
+			fFigureLocalPreconditionFigure_Body.setLineWidth(1);
 
 			this.add(fFigureLocalPreconditionFigure_Body);
 

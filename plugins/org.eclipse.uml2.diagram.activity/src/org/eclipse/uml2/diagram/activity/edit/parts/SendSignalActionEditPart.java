@@ -2099,6 +2099,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart implements Prima
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
 			this.setFill(true);
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -2110,6 +2111,7 @@ public class SendSignalActionEditPart extends ShapeNodeEditPart implements Prima
 			RectangleFigure sendSignalActionFigure_NameContainer0 = new RectangleFigure();
 			sendSignalActionFigure_NameContainer0.setFill(false);
 			sendSignalActionFigure_NameContainer0.setOutline(false);
+			sendSignalActionFigure_NameContainer0.setLineWidth(1);
 
 			sendSignalActionFigure_NameContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(17)));
 

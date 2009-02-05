@@ -63,7 +63,7 @@ public class ActivityPartition_ConditionalNodeStereotypeEditPart extends Compart
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5115;
+	public static final int VISUAL_ID = 5142;
 
 	/**
 	 * @generated

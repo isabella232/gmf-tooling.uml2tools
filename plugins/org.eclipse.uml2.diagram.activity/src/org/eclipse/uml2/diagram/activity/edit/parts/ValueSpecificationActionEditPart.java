@@ -2121,6 +2121,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -2132,6 +2133,7 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 			RectangleFigure actionBaseFigure_name0 = new RectangleFigure();
 			actionBaseFigure_name0.setFill(false);
 			actionBaseFigure_name0.setOutline(false);
+			actionBaseFigure_name0.setLineWidth(1);
 
 			actionBaseFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 

@@ -1787,6 +1787,7 @@ public class ActivityPartition_CentralBufferNodeEditPart extends AbstractBordere
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 			createContents();
 		}
@@ -1799,6 +1800,7 @@ public class ActivityPartition_CentralBufferNodeEditPart extends AbstractBordere
 			RectangleFigure centralBufferFigure_NameContainer0 = new RectangleFigure();
 			centralBufferFigure_NameContainer0.setFill(false);
 			centralBufferFigure_NameContainer0.setOutline(false);
+			centralBufferFigure_NameContainer0.setLineWidth(1);
 
 			this.add(centralBufferFigure_NameContainer0);
 

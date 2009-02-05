@@ -2133,6 +2133,7 @@ public class StructuredActivityNode_CallBehaviorActionEditPart extends AbstractB
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -2144,6 +2145,7 @@ public class StructuredActivityNode_CallBehaviorActionEditPart extends AbstractB
 			RectangleFigure actionCallBehaviorFigure_AuxBottom0 = new RectangleFigure();
 			actionCallBehaviorFigure_AuxBottom0.setFill(false);
 			actionCallBehaviorFigure_AuxBottom0.setOutline(false);
+			actionCallBehaviorFigure_AuxBottom0.setLineWidth(1);
 
 			this.add(actionCallBehaviorFigure_AuxBottom0, BorderLayout.BOTTOM);
 
@@ -2153,6 +2155,7 @@ public class StructuredActivityNode_CallBehaviorActionEditPart extends AbstractB
 			RectangleFigure actionCallBehaviorFigure_AuxBottomLeft1 = new RectangleFigure();
 			actionCallBehaviorFigure_AuxBottomLeft1.setFill(false);
 			actionCallBehaviorFigure_AuxBottomLeft1.setOutline(false);
+			actionCallBehaviorFigure_AuxBottomLeft1.setLineWidth(1);
 
 			actionCallBehaviorFigure_AuxBottom0.add(actionCallBehaviorFigure_AuxBottomLeft1, BorderLayout.LEFT);
 			actionCallBehaviorFigure_AuxBottomLeft1.setLayoutManager(new StackLayout());
@@ -2192,6 +2195,7 @@ public class StructuredActivityNode_CallBehaviorActionEditPart extends AbstractB
 			RectangleFigure actionCallBehaviorFigure_AuxCenter0 = new RectangleFigure();
 			actionCallBehaviorFigure_AuxCenter0.setFill(false);
 			actionCallBehaviorFigure_AuxCenter0.setOutline(false);
+			actionCallBehaviorFigure_AuxCenter0.setLineWidth(1);
 
 			actionCallBehaviorFigure_AuxCenter0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
@@ -2204,6 +2208,7 @@ public class StructuredActivityNode_CallBehaviorActionEditPart extends AbstractB
 			RectangleFigure actionCallBehaviorFigure_NameContainer1 = new RectangleFigure();
 			actionCallBehaviorFigure_NameContainer1.setFill(false);
 			actionCallBehaviorFigure_NameContainer1.setOutline(false);
+			actionCallBehaviorFigure_NameContainer1.setLineWidth(1);
 
 			actionCallBehaviorFigure_AuxCenter0.add(actionCallBehaviorFigure_NameContainer1);
 

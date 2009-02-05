@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_StructuredActivityNodeStereotypeEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
@@ -44,6 +45,7 @@ public class ActivityPartition_StructuredActivityNodeViewFactory extends Abstrac
 		if (eObject != null) {
 			eObjectAdapter = new EObjectAdapter(eObject);
 		}
+		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ActivityPartition_StructuredActivityNodeNameEditPart.VISUAL_ID), ViewUtil.APPEND, true, getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ActivityPartition_StructuredActivityNodeStereotypeEditPart.VISUAL_ID), ViewUtil.APPEND, true,
 				getPreferencesHint());
 		getViewService().createNode(eObjectAdapter, view, UMLVisualIDRegistry.getType(ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID), ViewUtil.APPEND, true,

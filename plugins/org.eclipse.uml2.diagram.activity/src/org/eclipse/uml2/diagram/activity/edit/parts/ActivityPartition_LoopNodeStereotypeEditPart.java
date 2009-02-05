@@ -63,7 +63,7 @@ public class ActivityPartition_LoopNodeStereotypeEditPart extends CompartmentEdi
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5117;
+	public static final int VISUAL_ID = 5141;
 
 	/**
 	 * @generated

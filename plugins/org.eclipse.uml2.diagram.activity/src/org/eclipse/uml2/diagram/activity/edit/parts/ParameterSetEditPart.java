@@ -225,6 +225,8 @@ public class ParameterSetEditPart extends AbstractBorderItemEditPart implements 
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
+
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(3), getMapMode().DPtoLP(3), getMapMode().DPtoLP(3)));
 		}
 

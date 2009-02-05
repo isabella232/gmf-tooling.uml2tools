@@ -2222,31 +2222,79 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser structuredActivityNodeQualifiedName_5122Parser;
+	private IParser structuredActivityNodeName_5122Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getStructuredActivityNodeQualifiedName_5122Parser() {
-		if (structuredActivityNodeQualifiedName_5122Parser == null) {
-			structuredActivityNodeQualifiedName_5122Parser = new AppliedStereotypeParser();
+	private IParser getStructuredActivityNodeName_5122Parser() {
+		if (structuredActivityNodeName_5122Parser == null) {
+			structuredActivityNodeName_5122Parser = createStructuredActivityNodeName_5122Parser();
 		}
-		return structuredActivityNodeQualifiedName_5122Parser;
+		return structuredActivityNodeName_5122Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser structuredActivityNodeQualifiedName_5121Parser;
+	protected IParser createStructuredActivityNodeName_5122Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
 
 	/**
 	 * @generated
 	 */
-	private IParser getStructuredActivityNodeQualifiedName_5121Parser() {
-		if (structuredActivityNodeQualifiedName_5121Parser == null) {
-			structuredActivityNodeQualifiedName_5121Parser = new AppliedStereotypeParser();
+	private AppliedStereotypeParser structuredActivityNodeQualifiedName_5140Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStructuredActivityNodeQualifiedName_5140Parser() {
+		if (structuredActivityNodeQualifiedName_5140Parser == null) {
+			structuredActivityNodeQualifiedName_5140Parser = new AppliedStereotypeParser();
 		}
-		return structuredActivityNodeQualifiedName_5121Parser;
+		return structuredActivityNodeQualifiedName_5140Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser structuredActivityNodeName_5121Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStructuredActivityNodeName_5121Parser() {
+		if (structuredActivityNodeName_5121Parser == null) {
+			structuredActivityNodeName_5121Parser = new AppliedStereotypeParser();
+		}
+		return structuredActivityNodeName_5121Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser structuredActivityNodeQualifiedName_5139Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStructuredActivityNodeQualifiedName_5139Parser() {
+		if (structuredActivityNodeQualifiedName_5139Parser == null) {
+			structuredActivityNodeQualifiedName_5139Parser = createStructuredActivityNodeQualifiedName_5139Parser();
+		}
+		return structuredActivityNodeQualifiedName_5139Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createStructuredActivityNodeQualifiedName_5139Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_QualifiedName() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -2351,31 +2399,79 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser loopNodeQualifiedName_5117Parser;
+	private IParser loopNodeName_5117Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getLoopNodeQualifiedName_5117Parser() {
-		if (loopNodeQualifiedName_5117Parser == null) {
-			loopNodeQualifiedName_5117Parser = new AppliedStereotypeParser();
+	private IParser getLoopNodeName_5117Parser() {
+		if (loopNodeName_5117Parser == null) {
+			loopNodeName_5117Parser = createLoopNodeName_5117Parser();
 		}
-		return loopNodeQualifiedName_5117Parser;
+		return loopNodeName_5117Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private AppliedStereotypeParser conditionalNodeQualifiedName_5115Parser;
+	protected IParser createLoopNodeName_5117Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
 
 	/**
 	 * @generated
 	 */
-	private IParser getConditionalNodeQualifiedName_5115Parser() {
-		if (conditionalNodeQualifiedName_5115Parser == null) {
-			conditionalNodeQualifiedName_5115Parser = new AppliedStereotypeParser();
+	private AppliedStereotypeParser loopNodeQualifiedName_5141Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getLoopNodeQualifiedName_5141Parser() {
+		if (loopNodeQualifiedName_5141Parser == null) {
+			loopNodeQualifiedName_5141Parser = new AppliedStereotypeParser();
 		}
-		return conditionalNodeQualifiedName_5115Parser;
+		return loopNodeQualifiedName_5141Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser conditionalNodeName_5115Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConditionalNodeName_5115Parser() {
+		if (conditionalNodeName_5115Parser == null) {
+			conditionalNodeName_5115Parser = createConditionalNodeName_5115Parser();
+		}
+		return conditionalNodeName_5115Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConditionalNodeName_5115Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser conditionalNodeQualifiedName_5142Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConditionalNodeQualifiedName_5142Parser() {
+		if (conditionalNodeQualifiedName_5142Parser == null) {
+			conditionalNodeQualifiedName_5142Parser = new AppliedStereotypeParser();
+		}
+		return conditionalNodeQualifiedName_5142Parser;
 	}
 
 	/**
@@ -3031,10 +3127,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCallOperationActionName_5079Parser();
 		case ActivityPartition_CallOperationActionStereotypeEditPart.VISUAL_ID:
 			return getCallOperationActionQualifiedName_5104Parser();
+		case ActivityPartition_StructuredActivityNodeNameEditPart.VISUAL_ID:
+			return getStructuredActivityNodeName_5122Parser();
 		case ActivityPartition_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
-			return getStructuredActivityNodeQualifiedName_5122Parser();
+			return getStructuredActivityNodeQualifiedName_5140Parser();
 		case ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID:
-			return getStructuredActivityNodeQualifiedName_5121Parser();
+			return getStructuredActivityNodeName_5121Parser();
+		case StructuredActivityNodeQualifiedName2EditPart.VISUAL_ID:
+			return getStructuredActivityNodeQualifiedName_5139Parser();
 		case StructuredActivityNode_StructuredActivityNode_InputPinNameEditPart.VISUAL_ID:
 			return getInputPinName_5081Parser();
 		case StructuredActivityNode_StructuredActivityNode_InputPinOrderingEditPart.VISUAL_ID:
@@ -3047,10 +3147,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getSendSignalActionName_5080Parser();
 		case ActivityPartition_SendSignalActionStereotypeEditPart.VISUAL_ID:
 			return getSendSignalActionQualifiedName_5114Parser();
+		case ActivityPartition_LoopNodeNameEditPart.VISUAL_ID:
+			return getLoopNodeName_5117Parser();
 		case ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID:
-			return getLoopNodeQualifiedName_5117Parser();
+			return getLoopNodeQualifiedName_5141Parser();
+		case ActivityPartition_ConditionalNodeNameEditPart.VISUAL_ID:
+			return getConditionalNodeName_5115Parser();
 		case ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID:
-			return getConditionalNodeQualifiedName_5115Parser();
+			return getConditionalNodeQualifiedName_5142Parser();
 		case ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID:
 			return getExpansionRegionMode_5088Parser();
 		case ActivityPartition_ValueSpecificationActionNameEditPart.VISUAL_ID:

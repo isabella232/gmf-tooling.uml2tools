@@ -147,6 +147,10 @@ public class ActivityPartition_ConditionalNodeEditPart extends ShapeNodeEditPart
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof ActivityPartition_ConditionalNodeNameEditPart) {
+			((ActivityPartition_ConditionalNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_name());
+			return true;
+		}
 		if (childEditPart instanceof ActivityPartition_ConditionalNodeStereotypeEditPart) {
 			((ActivityPartition_ConditionalNodeStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_stereo());
 			return true;
@@ -293,7 +297,7 @@ public class ActivityPartition_ConditionalNodeEditPart extends ShapeNodeEditPart
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityPartition_ConditionalNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -2107,6 +2111,7 @@ public class ActivityPartition_ConditionalNodeEditPart extends ShapeNodeEditPart
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
@@ -2119,6 +2124,7 @@ public class ActivityPartition_ConditionalNodeEditPart extends ShapeNodeEditPart
 			RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new RectangleFigure();
 			aux_StructuredActivityFigure_LabelContainer0.setFill(false);
 			aux_StructuredActivityFigure_LabelContainer0.setOutline(false);
+			aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);
 
 			aux_StructuredActivityFigure_LabelContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
@@ -2130,6 +2136,7 @@ public class ActivityPartition_ConditionalNodeEditPart extends ShapeNodeEditPart
 			RectangleFigure structuredActivityFigure_KeywordContainer1 = new RectangleFigure();
 			structuredActivityFigure_KeywordContainer1.setFill(false);
 			structuredActivityFigure_KeywordContainer1.setOutline(false);
+			structuredActivityFigure_KeywordContainer1.setLineWidth(1);
 
 			aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, BorderLayout.TOP);
 
@@ -2144,6 +2151,7 @@ public class ActivityPartition_ConditionalNodeEditPart extends ShapeNodeEditPart
 			RectangleFigure structuredActivityFigure_NameContainer1 = new RectangleFigure();
 			structuredActivityFigure_NameContainer1.setFill(false);
 			structuredActivityFigure_NameContainer1.setOutline(false);
+			structuredActivityFigure_NameContainer1.setLineWidth(1);
 
 			aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_NameContainer1, BorderLayout.CENTER);
 
@@ -2169,6 +2177,7 @@ public class ActivityPartition_ConditionalNodeEditPart extends ShapeNodeEditPart
 			fFigureStructuredActivityFigure_ContentPane = new RectangleFigure();
 			fFigureStructuredActivityFigure_ContentPane.setFill(false);
 			fFigureStructuredActivityFigure_ContentPane.setOutline(false);
+			fFigureStructuredActivityFigure_ContentPane.setLineWidth(1);
 
 			this.add(fFigureStructuredActivityFigure_ContentPane, BorderLayout.CENTER);
 

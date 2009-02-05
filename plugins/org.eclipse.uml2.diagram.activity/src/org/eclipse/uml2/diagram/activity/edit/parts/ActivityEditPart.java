@@ -424,6 +424,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -435,6 +436,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 			RectangleFigure activityFigureRectangle_name0 = new RectangleFigure();
 			activityFigureRectangle_name0.setFill(false);
 			activityFigureRectangle_name0.setOutline(false);
+			activityFigureRectangle_name0.setLineWidth(1);
 			activityFigureRectangle_name0.setBorder(createBorder0());
 
 			this.add(activityFigureRectangle_name0, BorderLayout.TOP);
@@ -455,6 +457,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 			fFigureActivityFigure_Body = new RectangleFigure();
 			fFigureActivityFigure_Body.setFill(false);
 			fFigureActivityFigure_Body.setOutline(false);
+			fFigureActivityFigure_Body.setLineWidth(1);
 
 			this.add(fFigureActivityFigure_Body, BorderLayout.CENTER);
 

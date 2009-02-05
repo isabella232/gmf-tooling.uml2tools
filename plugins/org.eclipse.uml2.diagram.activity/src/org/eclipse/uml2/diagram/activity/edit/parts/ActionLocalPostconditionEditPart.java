@@ -64,6 +64,7 @@ public class ActionLocalPostconditionEditPart extends ConnectionNodeEditPart imp
 		 * @generated
 		 */
 		public DashedLineConnection() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 
 		}

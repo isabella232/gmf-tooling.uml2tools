@@ -533,6 +533,7 @@ public class LocalPostconditionEditPart extends ShapeNodeEditPart implements Pri
 		private void createContents() {
 
 			fFigureLocalPostconditionFigure_Body = new RectangleFigure();
+			fFigureLocalPostconditionFigure_Body.setLineWidth(1);
 
 			this.add(fFigureLocalPostconditionFigure_Body);
 

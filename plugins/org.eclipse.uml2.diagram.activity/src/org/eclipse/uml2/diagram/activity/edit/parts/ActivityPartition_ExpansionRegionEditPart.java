@@ -2101,6 +2101,7 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
@@ -2113,12 +2114,14 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 			fFigureExpansionRegionFigure_ContentPane = new RectangleFigure();
 			fFigureExpansionRegionFigure_ContentPane.setFill(false);
 			fFigureExpansionRegionFigure_ContentPane.setOutline(false);
+			fFigureExpansionRegionFigure_ContentPane.setLineWidth(1);
 
 			this.add(fFigureExpansionRegionFigure_ContentPane, BorderLayout.CENTER);
 
 			RectangleFigure expansionRegionFigure_LabelContainer0 = new RectangleFigure();
 			expansionRegionFigure_LabelContainer0.setFill(false);
 			expansionRegionFigure_LabelContainer0.setOutline(false);
+			expansionRegionFigure_LabelContainer0.setLineWidth(1);
 
 			expansionRegionFigure_LabelContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
 

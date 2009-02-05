@@ -2099,6 +2099,7 @@ public class ActivityPartition_AcceptEventActionEditPart extends ShapeNodeEditPa
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(20)));
 			this.setFill(true);
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -2110,6 +2111,7 @@ public class ActivityPartition_AcceptEventActionEditPart extends ShapeNodeEditPa
 			RectangleFigure acceptEventActionFigure_NameContainer0 = new RectangleFigure();
 			acceptEventActionFigure_NameContainer0.setFill(false);
 			acceptEventActionFigure_NameContainer0.setOutline(false);
+			acceptEventActionFigure_NameContainer0.setLineWidth(1);
 
 			acceptEventActionFigure_NameContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20), getMapMode().DPtoLP(0), getMapMode().DPtoLP(2)));
 

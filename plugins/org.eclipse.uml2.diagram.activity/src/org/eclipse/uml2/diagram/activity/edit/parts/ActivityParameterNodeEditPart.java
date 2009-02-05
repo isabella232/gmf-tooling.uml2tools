@@ -1758,6 +1758,7 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 

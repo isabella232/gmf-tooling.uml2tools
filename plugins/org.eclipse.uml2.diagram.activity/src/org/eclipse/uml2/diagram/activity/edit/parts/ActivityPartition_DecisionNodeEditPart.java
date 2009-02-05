@@ -1650,6 +1650,7 @@ public class ActivityPartition_DecisionNodeEditPart extends ShapeNodeEditPart im
 			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(40)));
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			this.setFill(true);
+			this.setLineWidth(1);
 		}
 
 		/**

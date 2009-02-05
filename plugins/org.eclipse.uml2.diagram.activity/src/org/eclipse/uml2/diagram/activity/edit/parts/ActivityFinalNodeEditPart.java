@@ -1664,6 +1664,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart implements Prim
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setForegroundColor(ColorConstants.black);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
@@ -1677,6 +1678,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart implements Prim
 		private void createContents() {
 
 			Ellipse activityFinalFigure_inner0 = new Ellipse();
+			activityFinalFigure_inner0.setLineWidth(1);
 			activityFinalFigure_inner0.setBackgroundColor(ColorConstants.black);
 			activityFinalFigure_inner0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			activityFinalFigure_inner0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
