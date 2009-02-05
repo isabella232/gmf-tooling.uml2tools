@@ -335,6 +335,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setForegroundColor(ColorConstants.gray);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
@@ -348,6 +349,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 			RectangleFigure referencedMetaclassFigure_FixedLabelPane0 = new RectangleFigure();
 			referencedMetaclassFigure_FixedLabelPane0.setFill(false);
 			referencedMetaclassFigure_FixedLabelPane0.setOutline(false);
+			referencedMetaclassFigure_FixedLabelPane0.setLineWidth(1);
 
 			referencedMetaclassFigure_FixedLabelPane0.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
@@ -365,6 +367,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 			RectangleFigure referencedMetaclassFigure_LabelPane0 = new RectangleFigure();
 			referencedMetaclassFigure_LabelPane0.setFill(false);
 			referencedMetaclassFigure_LabelPane0.setOutline(false);
+			referencedMetaclassFigure_LabelPane0.setLineWidth(1);
 
 			this.add(referencedMetaclassFigure_LabelPane0);
 

@@ -28,9 +28,9 @@
               right="1"/>
         </border>
         <children
-            xsi:type="gmfgraph:Label"
+            xsi:type="gmfgraph:CustomFigure"
             name="StereotypeFigure_StereotypeLabel"
-            text="">
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel">
           <layout
               xsi:type="gmfgraph:CustomLayout"
               qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>

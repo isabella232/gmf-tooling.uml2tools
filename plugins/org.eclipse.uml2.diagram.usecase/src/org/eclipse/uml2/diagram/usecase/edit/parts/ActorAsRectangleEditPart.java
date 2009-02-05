@@ -36,6 +36,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
@@ -824,7 +825,7 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 		/**
 		 * @generated
 		 */
-		private Label fActorAsRectangleFigure_fixed_actor;
+		private StereotypeLabel fActorAsRectangleFigure_fixed_actor;
 
 		/**
 		 * @generated
@@ -840,6 +841,7 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -848,14 +850,14 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 		 */
 		private void createContents() {
 
-			fActorAsRectangleFigure_fixed_actor = new Label();
-			fActorAsRectangleFigure_fixed_actor.setText("");
+			fActorAsRectangleFigure_fixed_actor = new StereotypeLabel();
 
 			this.add(fActorAsRectangleFigure_fixed_actor);
 
 			RectangleFigure actorAsRectangleFigure_NameContainer0 = new RectangleFigure();
 			actorAsRectangleFigure_NameContainer0.setFill(false);
 			actorAsRectangleFigure_NameContainer0.setOutline(false);
+			actorAsRectangleFigure_NameContainer0.setLineWidth(1);
 
 			this.add(actorAsRectangleFigure_NameContainer0);
 
@@ -899,7 +901,7 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 		/**
 		 * @generated
 		 */
-		public Label getActorAsRectangleFigure_fixed_actor() {
+		public StereotypeLabel getActorAsRectangleFigure_fixed_actor() {
 			return fActorAsRectangleFigure_fixed_actor;
 		}
 

@@ -45,6 +45,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -1060,7 +1061,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 		/**
 		 * @generated
 		 */
-		private Label fUseCaseAsClassFigure_stereo;
+		private StereotypeLabel fUseCaseAsClassFigure_stereo;
 
 		/**
 		 * @generated
@@ -1086,6 +1087,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -1095,6 +1097,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 		private void createContents() {
 
 			RectangleFigure useCaseAsClassFigure_Header0 = new RectangleFigure();
+			useCaseAsClassFigure_Header0.setLineWidth(1);
 			useCaseAsClassFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
 
 			this.add(useCaseAsClassFigure_Header0);
@@ -1110,6 +1113,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 
 			RectangleFigure useCaseAsClassFigure_StereoContainer1 = new RectangleFigure();
 			useCaseAsClassFigure_StereoContainer1.setOutline(false);
+			useCaseAsClassFigure_StereoContainer1.setLineWidth(1);
 
 			useCaseAsClassFigure_Header0.add(useCaseAsClassFigure_StereoContainer1);
 
@@ -1117,8 +1121,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 
 			useCaseAsClassFigure_StereoContainer1.setLayoutManager(layoutUseCaseAsClassFigure_StereoContainer1);
 
-			fUseCaseAsClassFigure_stereo = new Label();
-			fUseCaseAsClassFigure_stereo.setText("");
+			fUseCaseAsClassFigure_stereo = new StereotypeLabel();
 
 			fUseCaseAsClassFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
@@ -1126,6 +1129,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 
 			RectangleFigure useCaseAsClassFigure_NameContainer1 = new RectangleFigure();
 			useCaseAsClassFigure_NameContainer1.setOutline(false);
+			useCaseAsClassFigure_NameContainer1.setLineWidth(1);
 
 			useCaseAsClassFigure_Header0.add(useCaseAsClassFigure_NameContainer1);
 
@@ -1143,6 +1147,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 			useCaseAsClassFigure_NameContainer1.add(fUseCaseAsClassFigure_name);
 
 			fUseCaseAsClass_points = new RectangleFigure();
+			fUseCaseAsClass_points.setLineWidth(1);
 
 			this.add(fUseCaseAsClass_points);
 			fUseCaseAsClass_points.setLayoutManager(new StackLayout());
@@ -1171,7 +1176,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 		/**
 		 * @generated
 		 */
-		public Label getUseCaseAsClassFigure_stereo() {
+		public StereotypeLabel getUseCaseAsClassFigure_stereo() {
 			return fUseCaseAsClassFigure_stereo;
 		}
 

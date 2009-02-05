@@ -100,6 +100,7 @@ public class ExtensionEditPart extends ConnectionNodeEditPart implements ITreeBr
 		 * @generated
 		 */
 		public ExtensionPolyline() {
+			this.setLineWidth(1);
 			this.setForegroundColor(ColorConstants.black);
 			this.setBackgroundColor(ColorConstants.black);
 
@@ -112,6 +113,7 @@ public class ExtensionEditPart extends ConnectionNodeEditPart implements ITreeBr
 		private RotatableDecoration createTargetDecoration() {
 			PolygonDecoration df = new PolygonDecoration();
 			df.setFill(true);
+			df.setLineWidth(1);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-1), getMapMode().DPtoLP(1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

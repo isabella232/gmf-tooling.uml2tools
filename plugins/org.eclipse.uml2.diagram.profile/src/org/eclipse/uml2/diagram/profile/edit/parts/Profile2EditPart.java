@@ -361,6 +361,7 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 
 			this.setFill(false);
 			this.setOutline(false);
+			this.setLineWidth(1);
 			this.setForegroundColor(ColorConstants.lightGray);
 			createContents();
 		}
@@ -371,12 +372,14 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		private void createContents() {
 
 			RectangleFigure profile_leftTab0 = new RectangleFigure();
+			profile_leftTab0.setLineWidth(1);
 			profile_leftTab0.setPreferredSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 			profile_leftTab0.setMaximumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
 
 			this.add(profile_leftTab0);
 
 			RectangleFigure profile_body0 = new RectangleFigure();
+			profile_body0.setLineWidth(1);
 
 			this.add(profile_body0);
 
@@ -412,6 +415,7 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			fFigureProfileFigure_NameLabel.setLayoutManager(layoutFFigureProfileFigure_NameLabel);
 
 			fFigureProfileFigure_ContentsCompartment = new RectangleFigure();
+			fFigureProfileFigure_ContentsCompartment.setLineWidth(1);
 
 			profile_body0.add(fFigureProfileFigure_ContentsCompartment);
 

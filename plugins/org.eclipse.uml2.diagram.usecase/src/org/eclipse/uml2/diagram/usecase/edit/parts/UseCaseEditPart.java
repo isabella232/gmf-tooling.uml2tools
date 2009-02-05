@@ -1078,6 +1078,7 @@ public class UseCaseEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -1096,6 +1097,7 @@ public class UseCaseEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 			fUseCaseFigure_contents = new RectangleFigure();
 			fUseCaseFigure_contents.setFill(false);
 			fUseCaseFigure_contents.setOutline(false);
+			fUseCaseFigure_contents.setLineWidth(1);
 			fUseCaseFigure_contents.setBorder(createBorder0());
 
 			this.add(fUseCaseFigure_contents, BorderLayout.CENTER);

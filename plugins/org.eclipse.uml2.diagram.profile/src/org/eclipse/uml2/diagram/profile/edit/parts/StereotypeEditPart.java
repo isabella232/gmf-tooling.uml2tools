@@ -42,6 +42,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -665,7 +666,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		/**
 		 * @generated
 		 */
-		private Label fFigureStereotypeFigure_StereotypeLabel;
+		private StereotypeLabel fFigureStereotypeFigure_StereotypeLabel;
 
 		/**
 		 * @generated
@@ -681,6 +682,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
@@ -690,8 +692,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		 */
 		private void createContents() {
 
-			fFigureStereotypeFigure_StereotypeLabel = new Label();
-			fFigureStereotypeFigure_StereotypeLabel.setText("");
+			fFigureStereotypeFigure_StereotypeLabel = new StereotypeLabel();
 
 			fFigureStereotypeFigure_StereotypeLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
@@ -703,6 +704,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 
 			RectangleFigure stereotypeFigure_NameContainer0 = new RectangleFigure();
 			stereotypeFigure_NameContainer0.setOutline(false);
+			stereotypeFigure_NameContainer0.setLineWidth(1);
 			stereotypeFigure_NameContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
 
 			this.add(stereotypeFigure_NameContainer0);
@@ -718,11 +720,13 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 
 			fFigureStereotypeFigure_AttributesCompartment = new RectangleFigure();
 			fFigureStereotypeFigure_AttributesCompartment.setOutline(false);
+			fFigureStereotypeFigure_AttributesCompartment.setLineWidth(1);
 
 			this.add(fFigureStereotypeFigure_AttributesCompartment);
 
 			fFigureStereotypeFigure_ConstraintsCompartment = new RectangleFigure();
 			fFigureStereotypeFigure_ConstraintsCompartment.setOutline(false);
+			fFigureStereotypeFigure_ConstraintsCompartment.setLineWidth(1);
 
 			this.add(fFigureStereotypeFigure_ConstraintsCompartment);
 
@@ -752,7 +756,7 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		/**
 		 * @generated
 		 */
-		public Label getFigureStereotypeFigure_StereotypeLabel() {
+		public StereotypeLabel getFigureStereotypeFigure_StereotypeLabel() {
 			return fFigureStereotypeFigure_StereotypeLabel;
 		}
 

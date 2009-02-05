@@ -44,6 +44,7 @@ import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.draw2d.PileLayout;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
@@ -856,7 +857,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		/**
 		 * @generated
 		 */
-		private Label fUseCaseSubjectFigure_stereo;
+		private StereotypeLabel fUseCaseSubjectFigure_stereo;
 
 		/**
 		 * @generated
@@ -869,6 +870,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}
@@ -879,6 +881,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		private void createContents() {
 
 			RectangleFigure useCaseSubjectFigure_header0 = new RectangleFigure();
+			useCaseSubjectFigure_header0.setLineWidth(1);
 			useCaseSubjectFigure_header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
 
 			this.add(useCaseSubjectFigure_header0);
@@ -894,6 +897,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 
 			RectangleFigure useCaseSubjectFigure_StereoContainer1 = new RectangleFigure();
 			useCaseSubjectFigure_StereoContainer1.setOutline(false);
+			useCaseSubjectFigure_StereoContainer1.setLineWidth(1);
 
 			useCaseSubjectFigure_header0.add(useCaseSubjectFigure_StereoContainer1);
 
@@ -901,8 +905,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 
 			useCaseSubjectFigure_StereoContainer1.setLayoutManager(layoutUseCaseSubjectFigure_StereoContainer1);
 
-			fUseCaseSubjectFigure_stereo = new Label();
-			fUseCaseSubjectFigure_stereo.setText("");
+			fUseCaseSubjectFigure_stereo = new StereotypeLabel();
 
 			fUseCaseSubjectFigure_stereo.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 
@@ -910,6 +913,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 
 			RectangleFigure useCaseSubjectFigure_NameContainer1 = new RectangleFigure();
 			useCaseSubjectFigure_NameContainer1.setOutline(false);
+			useCaseSubjectFigure_NameContainer1.setLineWidth(1);
 
 			useCaseSubjectFigure_header0.add(useCaseSubjectFigure_NameContainer1);
 
@@ -927,6 +931,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 			useCaseSubjectFigure_NameContainer1.add(fUseCaseSubjectFigure_name);
 
 			fUseCaseSubjectFigure_contents = new RectangleFigure();
+			fUseCaseSubjectFigure_contents.setLineWidth(1);
 
 			this.add(fUseCaseSubjectFigure_contents);
 			fUseCaseSubjectFigure_contents.setLayoutManager(new StackLayout());
@@ -969,7 +974,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		/**
 		 * @generated
 		 */
-		public Label getUseCaseSubjectFigure_stereo() {
+		public StereotypeLabel getUseCaseSubjectFigure_stereo() {
 			return fUseCaseSubjectFigure_stereo;
 		}
 

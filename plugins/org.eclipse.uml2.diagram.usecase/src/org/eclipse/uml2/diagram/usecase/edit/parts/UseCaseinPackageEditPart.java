@@ -1073,6 +1073,7 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart implements Prima
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -1091,6 +1092,7 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart implements Prima
 			fUseCaseFigure_contents = new RectangleFigure();
 			fUseCaseFigure_contents.setFill(false);
 			fUseCaseFigure_contents.setOutline(false);
+			fUseCaseFigure_contents.setLineWidth(1);
 			fUseCaseFigure_contents.setBorder(createBorder0());
 
 			this.add(fUseCaseFigure_contents, BorderLayout.CENTER);
