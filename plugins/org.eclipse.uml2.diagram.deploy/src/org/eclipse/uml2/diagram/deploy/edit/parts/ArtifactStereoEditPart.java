@@ -47,13 +47,16 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
 import org.eclipse.uml2.diagram.deploy.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.deploy.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
+import org.eclipse.uml2.uml.Element;
 
 /**
  * @generated
@@ -172,7 +175,7 @@ public class ArtifactStereoEditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(StereotypeLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -205,7 +208,14 @@ public class ArtifactStereoEditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		return null;
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		if (false == parserElement instanceof Element) {
+			return null;
+		}
+		return StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement);
 	}
 
 	/**

@@ -35,6 +35,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
@@ -867,7 +868,7 @@ public class NodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditP
 		/**
 		 * @generated
 		 */
-		public Label getNodeTypeLabel() {
+		public StereotypeLabel getNodeTypeLabel() {
 			return getTypeLabel();
 		}
 

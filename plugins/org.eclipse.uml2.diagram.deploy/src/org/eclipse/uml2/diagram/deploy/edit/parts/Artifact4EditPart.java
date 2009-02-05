@@ -38,6 +38,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
@@ -686,7 +687,7 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 		/**
 		 * @generated
 		 */
-		private Label fFigureArtifactFigure_fixed_artifact;
+		private StereotypeLabel fFigureArtifactFigure_fixed_artifact;
 
 		/**
 		 * @generated
@@ -696,6 +697,7 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -707,6 +709,7 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 			RectangleFigure artifactFigure_NameContainer0 = new RectangleFigure();
 			artifactFigure_NameContainer0.setFill(false);
 			artifactFigure_NameContainer0.setOutline(false);
+			artifactFigure_NameContainer0.setLineWidth(1);
 
 			this.add(artifactFigure_NameContainer0, BorderLayout.TOP);
 
@@ -719,8 +722,7 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 
 			artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);
 
-			fFigureArtifactFigure_fixed_artifact = new Label();
-			fFigureArtifactFigure_fixed_artifact.setText("\u00ABartifact\u00BB");
+			fFigureArtifactFigure_fixed_artifact = new StereotypeLabel();
 
 			artifactFigure_NameContainer0.add(fFigureArtifactFigure_fixed_artifact);
 
@@ -730,6 +732,7 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
 
 			fFigureArtifactFigure_Body = new RectangleFigure();
+			fFigureArtifactFigure_Body.setLineWidth(1);
 			fFigureArtifactFigure_Body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
 
 			this.add(fFigureArtifactFigure_Body, BorderLayout.CENTER);
@@ -772,7 +775,7 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 		/**
 		 * @generated
 		 */
-		public Label getFigureArtifactFigure_fixed_artifact() {
+		public StereotypeLabel getFigureArtifactFigure_fixed_artifact() {
 			return fFigureArtifactFigure_fixed_artifact;
 		}
 

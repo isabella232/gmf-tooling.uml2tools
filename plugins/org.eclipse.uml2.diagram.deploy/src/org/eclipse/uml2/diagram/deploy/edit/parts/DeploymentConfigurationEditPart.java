@@ -64,6 +64,7 @@ public class DeploymentConfigurationEditPart extends ConnectionNodeEditPart impl
 		 * @generated
 		 */
 		public SpecificationPolyline() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			this.setForegroundColor(ColorConstants.black);
 

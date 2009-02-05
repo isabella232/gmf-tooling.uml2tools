@@ -29,8 +29,9 @@
         <customChildren
             accessor="getTypeLabel">
           <typedFigure
-              xsi:type="gmfgraph:Label"
-              name="DeviceFigure_type"/>
+              xsi:type="gmfgraph:CustomFigure"
+              name="DeviceFigure_type"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel"/>
         </customChildren>
       </actualFigure>
       <accessors
@@ -61,8 +62,9 @@
         <customChildren
             accessor="getTypeLabel">
           <typedFigure
-              xsi:type="gmfgraph:Label"
-              name="NodeFigure_type"/>
+              xsi:type="gmfgraph:CustomFigure"
+              name="NodeFigure_type"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel"/>
         </customChildren>
       </actualFigure>
       <accessors
@@ -96,8 +98,9 @@
         <customChildren
             accessor="getTypeLabel">
           <typedFigure
-              xsi:type="gmfgraph:Label"
-              name="EnvironmentFigure_type"/>
+              xsi:type="gmfgraph:CustomFigure"
+              name="EnvironmentFigure_type"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel"/>
         </customChildren>
       </actualFigure>
       <accessors
@@ -142,9 +145,9 @@
                 xsi:type="gmfgraph:CustomLayout"
                 qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
             <children
-                xsi:type="gmfgraph:Label"
+                xsi:type="gmfgraph:CustomFigure"
                 name="DeploymentSpecificationFigure_stereo"
-                text="\u00ABdeployment spec\u00BB">
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel">
               <font
                   xsi:type="gmfgraph:BasicFont"/>
               <insets

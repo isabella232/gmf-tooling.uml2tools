@@ -45,6 +45,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -926,7 +927,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		/**
 		 * @generated
 		 */
-		private Label fFigureDeploymentSpecificationFigure_stereo;
+		private StereotypeLabel fFigureDeploymentSpecificationFigure_stereo;
 
 		/**
 		 * @generated
@@ -952,6 +953,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -961,6 +963,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		private void createContents() {
 
 			RectangleFigure deploymentSpecificationFigure_Header0 = new RectangleFigure();
+			deploymentSpecificationFigure_Header0.setLineWidth(1);
 			deploymentSpecificationFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
 
 			this.add(deploymentSpecificationFigure_Header0);
@@ -976,6 +979,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 
 			RectangleFigure deploymentSpecificationFigure_StereoContainer1 = new RectangleFigure();
 			deploymentSpecificationFigure_StereoContainer1.setOutline(false);
+			deploymentSpecificationFigure_StereoContainer1.setLineWidth(1);
 
 			deploymentSpecificationFigure_Header0.add(deploymentSpecificationFigure_StereoContainer1);
 
@@ -983,8 +987,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 
 			deploymentSpecificationFigure_StereoContainer1.setLayoutManager(layoutDeploymentSpecificationFigure_StereoContainer1);
 
-			fFigureDeploymentSpecificationFigure_stereo = new Label();
-			fFigureDeploymentSpecificationFigure_stereo.setText("\u00ABdeployment spec\u00BB");
+			fFigureDeploymentSpecificationFigure_stereo = new StereotypeLabel();
 
 			fFigureDeploymentSpecificationFigure_stereo.setFont(FFIGUREDEPLOYMENTSPECIFICATIONFIGURE_STEREO_FONT);
 
@@ -994,6 +997,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 
 			RectangleFigure deploymentSpecificationFigure_NameContainer1 = new RectangleFigure();
 			deploymentSpecificationFigure_NameContainer1.setOutline(false);
+			deploymentSpecificationFigure_NameContainer1.setLineWidth(1);
 
 			deploymentSpecificationFigure_Header0.add(deploymentSpecificationFigure_NameContainer1);
 
@@ -1011,6 +1015,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 			deploymentSpecificationFigure_NameContainer1.add(fFigureDeploymentSpecificationFigure_name);
 
 			fFigureDeploymentSpecificationFigure_PropertiesCompartment = new RectangleFigure();
+			fFigureDeploymentSpecificationFigure_PropertiesCompartment.setLineWidth(1);
 
 			this.add(fFigureDeploymentSpecificationFigure_PropertiesCompartment);
 			fFigureDeploymentSpecificationFigure_PropertiesCompartment.setLayoutManager(new StackLayout());
@@ -1039,7 +1044,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		/**
 		 * @generated
 		 */
-		public Label getFigureDeploymentSpecificationFigure_stereo() {
+		public StereotypeLabel getFigureDeploymentSpecificationFigure_stereo() {
 			return fFigureDeploymentSpecificationFigure_stereo;
 		}
 

@@ -36,6 +36,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.draw2d.Cube3DFigure;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
@@ -885,7 +886,7 @@ public class Device2EditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		/**
 		 * @generated
 		 */
-		public Label getDeviceTypeLabel() {
+		public StereotypeLabel getDeviceTypeLabel() {
 			return getTypeLabel();
 		}
 

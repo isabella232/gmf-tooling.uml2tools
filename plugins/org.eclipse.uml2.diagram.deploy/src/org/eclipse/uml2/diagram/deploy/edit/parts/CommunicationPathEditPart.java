@@ -98,6 +98,7 @@ public class CommunicationPathEditPart extends ConnectionNodeEditPart implements
 		 * @generated
 		 */
 		public CommunicationPathPolyline() {
+			this.setLineWidth(1);
 			this.setForegroundColor(ColorConstants.blue);
 
 		}
