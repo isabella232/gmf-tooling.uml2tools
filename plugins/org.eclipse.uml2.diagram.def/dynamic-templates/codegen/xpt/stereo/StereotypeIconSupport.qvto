@@ -1,0 +1,14 @@
+modeltype genModel uses "http://www.eclipse.org/gmf/2008/GenModel";
+
+library StereotypeIconSupport;
+
+helper isStereotypeLabel(genCommon : genModel::GenCommonBase) : Boolean {
+	return (if genCommon.viewmap.oclIsKindOf(genModel::ParentAssignedViewmap) 
+		then isStereotypeViewmap(genCommon.viewmap.oclAsType(genModel::ParentAssignedViewmap)) 
+		else false 
+		endif)
+}
+
+helper isStereotypeViewmap(viewmap : genModel::ParentAssignedViewmap) : Boolean {
+	return 'org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel' = viewmap.figureQualifiedClassName
+}

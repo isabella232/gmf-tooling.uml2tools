@@ -7,13 +7,15 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
-*    Michael Golubev (Borland) - #238308, #238307, #246402
+ *   Michael Golubev (Borland) - #238308, #238307, #246402
+ *   Tatiana Fesenko (Borland) - #246358 - Show image of stereotype on the extended element
  */
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION xpt::rotatedlabel::RotatedLabelsSupport»
+«EXTENSION xpt::stereo::StereotypeIconSupport»
 
 «AROUND methods(needsRefreshBounds : Boolean, readOnly : Boolean, useElementIcon : Boolean, viewmap : gmfgen::Viewmap,
 		modelFacet : gmfgen::LabelModelFacet, host : gmfgen::GenCommonBase, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
@@ -139,6 +141,15 @@
 		return manager;
 	}
 «ENDAROUND»
+
+«AROUND getLabelIcon(useElementIcon : Boolean, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
+«IF isStereotypeLabel(self)-»
+«EXPAND xpt::stereo::TextAware::getLabelIcon(useElementIcon, diagram)»
+«ELSE-»
+«targetDef.proceed()-»
+«ENDIF-»	
+«ENDAROUND»
+
 
 «DEFINE getLabelDelegate FOR gmfgen::GenCommonBase-»
 	«EXPAND xpt::Common::generatedMemberComment»

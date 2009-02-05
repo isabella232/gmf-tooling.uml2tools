@@ -203,7 +203,7 @@ public class ClassStereotypeEditPart extends CompartmentEditPart implements ITex
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	protected Image getLabelIcon() {
 		EObject parserElement = getParserElement();

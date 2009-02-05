@@ -53,6 +53,8 @@ import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
+import org.eclipse.uml2.uml.Element;
 
 /**
  * @generated
@@ -203,7 +205,14 @@ public class EnumerationStereotype2EditPart extends CompartmentEditPart implemen
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		return null;
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		if (false == parserElement instanceof Element) {
+			return null;
+		}
+		return StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement);
 	}
 
 	/**
