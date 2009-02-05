@@ -728,6 +728,7 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 

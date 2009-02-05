@@ -50,6 +50,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -1307,7 +1308,7 @@ public class InstanceSpecification3EditPart extends ShapeNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		private Label fFigureInstanceNode_StereoLabel;
+		private StereotypeLabel fFigureInstanceNode_StereoLabel;
 
 		/**
 		 * @generated
@@ -1349,8 +1350,7 @@ public class InstanceSpecification3EditPart extends ShapeNodeEditPart implements
 
 			instanceNode_NameContainerFigure0.setLayoutManager(layoutInstanceNode_NameContainerFigure0);
 
-			fFigureInstanceNode_StereoLabel = new Label();
-			fFigureInstanceNode_StereoLabel.setText("");
+			fFigureInstanceNode_StereoLabel = new StereotypeLabel();
 
 			instanceNode_NameContainerFigure0.add(fFigureInstanceNode_StereoLabel);
 
@@ -1422,7 +1422,7 @@ public class InstanceSpecification3EditPart extends ShapeNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		public Label getFigureInstanceNode_StereoLabel() {
+		public StereotypeLabel getFigureInstanceNode_StereoLabel() {
 			return fFigureInstanceNode_StereoLabel;
 		}
 

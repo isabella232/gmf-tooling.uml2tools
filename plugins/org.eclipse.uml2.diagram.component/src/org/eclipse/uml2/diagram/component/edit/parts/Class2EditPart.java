@@ -627,6 +627,7 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 

@@ -97,6 +97,7 @@ public class AssemblyConnectorEndRoleEditPart extends ConnectionNodeEditPart imp
 		 * @generated
 		 */
 		public AssemblyConnectorConnection() {
+			this.setLineWidth(1);
 			this.setForegroundColor(ColorConstants.blue);
 
 			setSourceDecoration(createSourceDecoration());

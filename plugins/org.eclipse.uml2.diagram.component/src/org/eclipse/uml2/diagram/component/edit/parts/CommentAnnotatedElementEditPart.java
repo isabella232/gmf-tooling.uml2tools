@@ -64,6 +64,7 @@ public class CommentAnnotatedElementEditPart extends ConnectionNodeEditPart impl
 		 * @generated
 		 */
 		public AnnotatedElementLinkFigure() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DOT);
 
 		}

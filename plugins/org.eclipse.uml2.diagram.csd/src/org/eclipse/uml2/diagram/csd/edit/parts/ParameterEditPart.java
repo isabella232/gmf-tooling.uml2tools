@@ -657,6 +657,7 @@ public class ParameterEditPart extends ShapeNodeEditPart implements PrimaryShape
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 

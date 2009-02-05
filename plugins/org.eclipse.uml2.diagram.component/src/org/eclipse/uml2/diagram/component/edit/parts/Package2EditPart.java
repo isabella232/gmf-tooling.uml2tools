@@ -536,6 +536,7 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
 			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
 			this.setFill(true);
+			this.setLineWidth(1);
 
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(13), getMapMode().DPtoLP(10)));
 			createContents();
@@ -558,6 +559,7 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 
 			fFigureSecondaryPackage_Imports = new RectangleFigure();
 			fFigureSecondaryPackage_Imports.setOutline(false);
+			fFigureSecondaryPackage_Imports.setLineWidth(1);
 
 			this.add(fFigureSecondaryPackage_Imports);
 

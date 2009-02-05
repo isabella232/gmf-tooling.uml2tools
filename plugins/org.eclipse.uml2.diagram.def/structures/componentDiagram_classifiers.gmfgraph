@@ -34,9 +34,9 @@
           <minimumSize
               dy="35"/>
           <children
-              xsi:type="gmfgraph:Label"
+              xsi:type="gmfgraph:CustomFigure"
               name="ComponentFigure_fixed_component"
-              text="\u00ABcomponent\u00BB"/>
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel"/>
           <children
               xsi:type="gmfgraph:Label"
               name="ComponentFigure_name"/>
@@ -84,9 +84,9 @@
               majorSpacing="0"
               minorSpacing="0"/>
           <children
-              xsi:type="gmfgraph:Label"
+              xsi:type="gmfgraph:CustomFigure"
               name="ArtifactFigure_fixed_artifact"
-              text="\u00ABartifact\u00BB"/>
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel"/>
           <children
               xsi:type="gmfgraph:Label"
               name="ArtifactFigure_name"/>

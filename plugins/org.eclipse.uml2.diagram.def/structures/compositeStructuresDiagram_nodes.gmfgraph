@@ -38,9 +38,9 @@
                 xsi:type="gmfgraph:CustomLayout"
                 qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
             <children
-                xsi:type="gmfgraph:Label"
+                xsi:type="gmfgraph:CustomFigure"
                 name="CollaborationFigure_stereo"
-                text="">
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel">
               <insets
                   top="5"
                   left="5"
@@ -97,8 +97,9 @@
             forceSingleLine="true"
             majorSpacing="0"/>
         <children
-            xsi:type="gmfgraph:Label"
-            name="CollaborationUseFigure_stereo"/>
+            xsi:type="gmfgraph:CustomFigure"
+            name="CollaborationUseFigure_stereo"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel"/>
         <children
             xsi:type="gmfgraph:Label"
             name="CollaborationUseFigure_name"/>

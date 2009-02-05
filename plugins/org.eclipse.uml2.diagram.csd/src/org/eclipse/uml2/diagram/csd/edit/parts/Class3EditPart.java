@@ -732,6 +732,7 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2)));
 			createContents();
 		}
@@ -748,6 +749,7 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 
 			fFigureExpandedClassFigure_contents = new RectangleFigure();
 			fFigureExpandedClassFigure_contents.setOutline(false);
+			fFigureExpandedClassFigure_contents.setLineWidth(1);
 
 			this.add(fFigureExpandedClassFigure_contents, BorderLayout.CENTER);
 

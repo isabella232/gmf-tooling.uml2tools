@@ -66,6 +66,7 @@ public class ConnectorEditPart extends ConnectionNodeEditPart implements ITreeBr
 		 * @generated
 		 */
 		public DelegationConnectorConnection() {
+			this.setLineWidth(1);
 			this.setForegroundColor(ColorConstants.blue);
 
 			setTargetDecoration(createTargetDecoration());
@@ -76,6 +77,7 @@ public class ConnectorEditPart extends ConnectionNodeEditPart implements ITreeBr
 		 */
 		private RotatableDecoration createTargetDecoration() {
 			PolylineDecoration df = new PolylineDecoration();
+			df.setLineWidth(1);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

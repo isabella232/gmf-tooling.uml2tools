@@ -47,6 +47,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -660,7 +661,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		/**
 		 * @generated
 		 */
-		private Label fFigureComponentFigure_fixed_component;
+		private StereotypeLabel fFigureComponentFigure_fixed_component;
 
 		/**
 		 * @generated
@@ -672,6 +673,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 
 			this.setFill(false);
 			this.setOutline(false);
+			this.setLineWidth(1);
 			createContents();
 		}
 
@@ -681,6 +683,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		private void createContents() {
 
 			RectangleFigure componentFigure_LabelsContainer0 = new RectangleFigure();
+			componentFigure_LabelsContainer0.setLineWidth(1);
 			componentFigure_LabelsContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(35)));
 
 			this.add(componentFigure_LabelsContainer0, BorderLayout.TOP);
@@ -694,8 +697,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 
 			componentFigure_LabelsContainer0.setLayoutManager(layoutComponentFigure_LabelsContainer0);
 
-			fFigureComponentFigure_fixed_component = new Label();
-			fFigureComponentFigure_fixed_component.setText("\u00ABcomponent\u00BB");
+			fFigureComponentFigure_fixed_component = new StereotypeLabel();
 
 			componentFigure_LabelsContainer0.add(fFigureComponentFigure_fixed_component);
 
@@ -705,6 +707,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 			componentFigure_LabelsContainer0.add(fFigureComponentFigure_name);
 
 			fFigureComponentFigure_Body = new RectangleFigure();
+			fFigureComponentFigure_Body.setLineWidth(1);
 			fFigureComponentFigure_Body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
 
 			this.add(fFigureComponentFigure_Body, BorderLayout.CENTER);
@@ -728,7 +731,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		/**
 		 * @generated
 		 */
-		public Label getFigureComponentFigure_fixed_component() {
+		public StereotypeLabel getFigureComponentFigure_fixed_component() {
 			return fFigureComponentFigure_fixed_component;
 		}
 

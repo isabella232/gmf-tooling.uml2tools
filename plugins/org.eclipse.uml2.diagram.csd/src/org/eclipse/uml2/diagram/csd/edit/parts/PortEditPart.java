@@ -711,6 +711,7 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		 * @generated
 		 */
 		public PortFigure() {
+			this.setLineWidth(1);
 			this.setForegroundColor(ColorConstants.gray);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));

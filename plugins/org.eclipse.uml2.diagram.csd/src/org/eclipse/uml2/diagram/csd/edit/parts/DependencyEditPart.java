@@ -98,6 +98,7 @@ public class DependencyEditPart extends ConnectionNodeEditPart implements ITreeB
 		 * @generated
 		 */
 		public DependencyConnection() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 
 		}

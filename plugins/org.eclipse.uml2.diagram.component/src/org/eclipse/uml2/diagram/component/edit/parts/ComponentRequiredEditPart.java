@@ -64,6 +64,7 @@ public class ComponentRequiredEditPart extends ConnectionNodeEditPart implements
 		 * @generated
 		 */
 		public RequiredInterfaceConnectionFigure() {
+			this.setLineWidth(1);
 
 			setTargetDecoration(createTargetDecoration());
 		}

@@ -498,6 +498,7 @@ public class PropertyEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 

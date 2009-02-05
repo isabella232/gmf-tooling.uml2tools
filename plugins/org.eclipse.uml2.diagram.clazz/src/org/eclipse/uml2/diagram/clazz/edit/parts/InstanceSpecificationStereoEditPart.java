@@ -51,8 +51,11 @@ import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
 import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
+import org.eclipse.uml2.uml.Element;
 
 /**
  * @generated
@@ -171,7 +174,7 @@ public class InstanceSpecificationStereoEditPart extends CompartmentEditPart imp
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(StereotypeLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -204,7 +207,14 @@ public class InstanceSpecificationStereoEditPart extends CompartmentEditPart imp
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		return null;
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		if (false == parserElement instanceof Element) {
+			return null;
+		}
+		return StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement);
 	}
 
 	/**

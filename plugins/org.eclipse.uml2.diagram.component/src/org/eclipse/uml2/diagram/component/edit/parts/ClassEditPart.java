@@ -627,6 +627,7 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			createContents();
 		}
 

@@ -42,6 +42,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.draw2d.DefaultSizeOvalAnchorableFigure;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
@@ -877,7 +878,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 		/**
 		 * @generated
 		 */
-		private Label fFigureCollaborationUseFigure_stereo;
+		private StereotypeLabel fFigureCollaborationUseFigure_stereo;
 
 		/**
 		 * @generated
@@ -893,6 +894,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
@@ -902,8 +904,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 		 */
 		private void createContents() {
 
-			fFigureCollaborationUseFigure_stereo = new Label();
-			fFigureCollaborationUseFigure_stereo.setText("");
+			fFigureCollaborationUseFigure_stereo = new StereotypeLabel();
 
 			this.add(fFigureCollaborationUseFigure_stereo);
 
@@ -943,7 +944,7 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 		/**
 		 * @generated
 		 */
-		public Label getFigureCollaborationUseFigure_stereo() {
+		public StereotypeLabel getFigureCollaborationUseFigure_stereo() {
 			return fFigureCollaborationUseFigure_stereo;
 		}
 

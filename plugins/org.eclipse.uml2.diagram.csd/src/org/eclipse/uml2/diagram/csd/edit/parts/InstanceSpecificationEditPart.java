@@ -44,6 +44,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -889,7 +890,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 		/**
 		 * @generated
 		 */
-		private Label fFigureInstanceNode_StereoLabel;
+		private StereotypeLabel fFigureInstanceNode_StereoLabel;
 
 		/**
 		 * @generated
@@ -905,6 +906,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
@@ -916,6 +918,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 
 			RectangleFigure instanceNode_NameContainerFigure0 = new RectangleFigure();
 			instanceNode_NameContainerFigure0.setOutline(false);
+			instanceNode_NameContainerFigure0.setLineWidth(1);
 			instanceNode_NameContainerFigure0.setBorder(createBorder0());
 
 			this.add(instanceNode_NameContainerFigure0);
@@ -929,8 +932,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 
 			instanceNode_NameContainerFigure0.setLayoutManager(layoutInstanceNode_NameContainerFigure0);
 
-			fFigureInstanceNode_StereoLabel = new Label();
-			fFigureInstanceNode_StereoLabel.setText("");
+			fFigureInstanceNode_StereoLabel = new StereotypeLabel();
 
 			instanceNode_NameContainerFigure0.add(fFigureInstanceNode_StereoLabel);
 
@@ -949,6 +951,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 
 			fFigureInstanceNode_SlotsCompartmentFigure = new RectangleFigure();
 			fFigureInstanceNode_SlotsCompartmentFigure.setOutline(false);
+			fFigureInstanceNode_SlotsCompartmentFigure.setLineWidth(1);
 
 			this.add(fFigureInstanceNode_SlotsCompartmentFigure);
 
@@ -998,7 +1001,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 		/**
 		 * @generated
 		 */
-		public Label getFigureInstanceNode_StereoLabel() {
+		public StereotypeLabel getFigureInstanceNode_StereoLabel() {
 			return fFigureInstanceNode_StereoLabel;
 		}
 
