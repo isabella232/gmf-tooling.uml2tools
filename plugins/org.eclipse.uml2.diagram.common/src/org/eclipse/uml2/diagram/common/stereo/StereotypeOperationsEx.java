@@ -185,6 +185,13 @@ public class StereotypeOperationsEx extends UMLUtil {
 			return new Point(ox, oy);
 		}
 		
+		@Override
+		public boolean equals(Object obj) {
+			System.out.println("StereotypeImageDescriptor.equals()");
+			// TODO Auto-generated method stub
+			return super.equals(obj);
+		}
+		
 	}
 
 }

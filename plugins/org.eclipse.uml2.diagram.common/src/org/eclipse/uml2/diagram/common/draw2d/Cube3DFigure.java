@@ -19,7 +19,7 @@ public class Cube3DFigure extends Shape {
 	private final RectangleFigure myLabelPane;
 	private final RectangleFigure myContentPane;
 	private final Label myNameLabel;
-	private final Label myTypeLabel; 
+	private final StereotypeLabel myTypeLabel; 
 	
 	public Cube3DFigure(){
 		setDepthGap(DEFAULT_DEPTH_GAP);
@@ -36,7 +36,7 @@ public class Cube3DFigure extends Shape {
 		labelPaneLayout.setSpacing(5);
 		myLabelPane.setLayoutManager(labelPaneLayout);
 		
-		myTypeLabel = wrapLabel();
+		myTypeLabel = stereoLabel();
 		myNameLabel = wrapLabel();
 		myLabelPane.add(myTypeLabel);
 		myLabelPane.add(myNameLabel);
@@ -64,7 +64,7 @@ public class Cube3DFigure extends Shape {
 		return myNameLabel;
 	}
 	
-	public Label getTypeLabel() {
+	public StereotypeLabel getTypeLabel() {
 		return myTypeLabel;
 	}
 	
@@ -138,6 +138,12 @@ public class Cube3DFigure extends Shape {
 	
 	private static Label wrapLabel(){
 		Label result = new Label();
+		result.setBorder(new MarginBorder(0, 3, 0, 3));
+		return result;
+	}
+
+	private static StereotypeLabel stereoLabel(){
+		StereotypeLabel result = new StereotypeLabel();
 		result.setBorder(new MarginBorder(0, 3, 0, 3));
 		return result;
 	}
