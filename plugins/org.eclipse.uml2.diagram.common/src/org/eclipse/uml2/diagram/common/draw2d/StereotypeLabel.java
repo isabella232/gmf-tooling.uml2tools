@@ -7,7 +7,9 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 public class StereotypeLabel extends WrappingLabel {
 	
 	public StereotypeLabel() {
-		setTextPlacement(PositionConstants.SOUTH);
+		setTextPlacement(PositionConstants.EAST);
+		setIconAlignment(PositionConstants.BOTTOM);
+		setTextAlignment(PositionConstants.BOTTOM);
 		setAlignment(PositionConstants.CENTER);
 	}
 
