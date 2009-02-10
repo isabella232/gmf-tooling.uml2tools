@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.activity.parsers;
 
 import java.text.FieldPosition;
-import java.text.MessageFormat;
 import java.text.ParsePosition;
 
 import org.eclipse.core.runtime.IAdaptable;
@@ -13,6 +12,8 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.uml2.diagram.activity.part.Messages;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorPlugin;
+
+import com.ibm.icu.text.MessageFormat;
 
 /**
  * @generated
