@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.sequence.tests;
 
+import java.util.LinkedList;
+
 import junit.framework.TestCase;
 
 import org.eclipse.emf.common.util.URI;
@@ -8,9 +10,12 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.uml2.diagram.sequence.model.builder.LifeLineCallStack;
 import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilder;
+import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilderTrace;
 import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
@@ -122,6 +127,7 @@ public class SDModelBuilderTest extends TestCase {
 	public void testCallStackCompleted(){
 		SDBuilder builder = buildFrame(MEMORY_GAME_FILE, "ReDraw"); 
 		checkCallStackCompleted(builder);
+		checkTraces(builder);
 	}
 	
 	public void testTwoMessagesCreatedFromDiagram(){
@@ -174,6 +180,7 @@ public class SDModelBuilderTest extends TestCase {
 		assertEquals("2", secondMessage.getMessageNumber());
 
 		checkCallStackCompleted(builder);
+		checkTraces(builder);
 	}
 	
 	protected SDAbstractMessage findMessageByName(SDFrame frame, String name){
@@ -199,6 +206,37 @@ public class SDModelBuilderTest extends TestCase {
 			assertSame("CallStack not completed for LL: " + umlLifeline, nextLifeLine, callStack.peek(umlLifeline));
 		}
 		
+	}
+	
+	protected void checkTraces(SDBuilder builder){
+		SDFrame frame = builder.getSDFrame();
+		SDBuilderTrace trace = builder.getTrace();
+		
+		for (SDAbstractMessage next : frame.getMessages()){
+			assertNotNull(next.getUmlMessage());
+			assertSame(next, trace.findMessage(next.getUmlMessage()));
+		}
+		
+		LinkedList<SDBracketContainer> queue = new LinkedList<SDBracketContainer>();
+		queue.addAll(frame.getLifelines());
+		
+		while(!queue.isEmpty()){
+			SDBracketContainer next = queue.removeFirst();
+			if (next instanceof SDBehaviorSpec){
+				SDBehaviorSpec nextToCheck = (SDBehaviorSpec)next;
+				if (nextToCheck.getUmlExecutionSpec() == null){
+					assertTrue(nextToCheck instanceof SDInvocation);
+				} else {
+					assertSame(nextToCheck, trace.findBehaviorSpec(nextToCheck.getUmlExecutionSpec()));	
+				}
+			}
+			
+			for (SDBracket nextBracket : next.getBrackets()){
+				if (nextBracket instanceof SDBracketContainer){
+					queue.add((SDBracketContainer) nextBracket);
+				}
+			}
+		}
 	}
 	
 	protected SDLifeLine findLifeLineByName(SDFrame frame, String name){

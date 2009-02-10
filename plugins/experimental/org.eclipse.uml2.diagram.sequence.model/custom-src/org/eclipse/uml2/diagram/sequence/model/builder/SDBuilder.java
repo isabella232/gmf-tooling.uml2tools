@@ -6,8 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import javax.sound.midi.ShortMessage;
-
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
@@ -43,12 +41,14 @@ public class SDBuilder {
 	private final Interaction myInteraction;
 	private final StartAndFinishRegistry myStartsAndFinishes;
 	private final LifeLineCallStack myCallStack;
+	private final SDBuilderTrace myTrace;
 	private SDFrame mySDFrame;
-
+	
 	public SDBuilder(Interaction interaction) {
 		myInteraction = interaction;
 		myStartsAndFinishes = new StartAndFinishRegistry(myInteraction);
 		myCallStack = new LifeLineCallStack();
+		myTrace = new SDBuilderTrace();
 	}
 	
 	public void updateMessageNumbers(){
@@ -118,8 +118,15 @@ public class SDBuilder {
 		return sdMessages;
 	}
 	
+	/**
+	 * For tests only
+	 */
 	public LifeLineCallStack getCallStack() {
 		return myCallStack;
+	}
+	
+	public SDBuilderTrace getTrace(){
+		return myTrace;
 	}
 	
 	public SDFrame getSDFrame(){
@@ -130,10 +137,12 @@ public class SDBuilder {
 	}
 	
 	public SDFrame reBuildFrame() {
+		myTrace.clear();
 		myCallStack.clear();
 		myStartsAndFinishes.forceRemap();
 		mySDFrame = SDFactory.eINSTANCE.createSDFrame();
 		mySDFrame.setUmlInteraction(myInteraction);
+		
 
 		buildGates(mySDFrame, myInteraction);
 		buildFrameLifeLines(mySDFrame, myInteraction);
@@ -344,15 +353,10 @@ public class SDBuilder {
 			throw new UMLModelProblem("Message " + umlMessage + " does not have receiving ExecutionSpecification at receiveEvent: " + messageTarget);
 		}
 		
-		SDMessage sdMessage = SDFactory.eINSTANCE.createSDMessage();
-		SDInvocation sdInvocation = SDFactory.eINSTANCE.createSDInvocation();
-		SDExecution sdExecution = SDFactory.eINSTANCE.createSDExecution();
+		SDMessage sdMessage = myTrace.bindNewMessage(umlMessage);
+		SDInvocation sdInvocation = myTrace.bindNewInvocation(umlInvocation);
+		SDExecution sdExecution = myTrace.bindNewExecution(umlExecution);
 
-		sdMessage.setUmlMessage(umlMessage);
-		
-		sdInvocation.setUmlExecutionSpec(umlInvocation);
-		sdExecution.setUmlExecutionSpec(umlExecution);
-		
 		sdInvocation.setOutgoingMessage(sdMessage);
 		sdExecution.setIncomingMessage(sdMessage);
 		
@@ -427,7 +431,7 @@ public class SDBuilder {
 		sdInvariant.setUmlFragment(umlInvariant);
 		sdContainer.getBrackets().add(sdInvariant);
 	}
-
+	
 	private static Lifeline ensureSingleCovered(InteractionFragment fragment) {
 		List<Lifeline> covered = fragment.getCovereds();
 		if (covered.size() > 1) {

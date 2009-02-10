@@ -11,11 +11,11 @@ import org.eclipse.uml2.uml.Lifeline;
 public class LifeLineCallStack {
 	private final HashMap<Lifeline, SDBracketContainer> myLifeline2Container = new HashMap<Lifeline, SDBracketContainer>();
 	
-	public void clear(){
+	void clear(){
 		myLifeline2Container.clear();
 	}
 	
-	public void push(Lifeline lifeline, SDBracketContainer sdContainer){
+	void push(Lifeline lifeline, SDBracketContainer sdContainer){
 		if (sdContainer instanceof SDBracket && ((SDBracket)sdContainer).getBracketContainer() == null){
 			throw new SDBuilderInternalProblem("SDBracket without container: " + sdContainer);
 		}
@@ -30,7 +30,7 @@ public class LifeLineCallStack {
 		return result;
 	}
 	
-	public void pop(Lifeline lifeline){
+	void pop(Lifeline lifeline){
 		SDBracketContainer bottom = myLifeline2Container.remove(lifeline);
 		if (bottom == null){
 			throw new SDBuilderInternalProblem("No active bracket containers for lifeline: " + lifeline);
