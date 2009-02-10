@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.clazz.action;
 
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +18,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.CreateRelationshipCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.clazz.edit.commands.CreateAssociationViewCommand;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Property2EditPart;
@@ -61,8 +61,8 @@ public class CreateAssociationFromProperty extends DiagramAction {
 	private void updateText() {
 		setText(DISABLED_TEXT);
 		if (myOtherEnd != null) {
-			MessageFormat labelFormat = new MessageFormat("{0}: {1}"); //$NON-NLS-1$
-			setText(labelFormat.format(new Object[]{myOtherEnd.getClass_().getName(), myOtherEnd.getName()}));
+			String labelFormat = "{0}: {1}"; //$NON-NLS-1$
+			setText(NLS.bind(labelFormat, new Object[]{myOtherEnd.getClass_().getName(), myOtherEnd.getName()}));
 			return;
 		}
 		GraphicalEditPart propertyEditPart = getSelectedPropertyEditPart();
