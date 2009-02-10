@@ -11,6 +11,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.osgi.util.NLS;
 
 
 public class ArchivePathMapResolver extends PathMapResolver {
@@ -32,7 +33,7 @@ public class ArchivePathMapResolver extends PathMapResolver {
 			if (entryName.startsWith(pathmapEntryName) && isProfileFile(entryName)) {
 				String profileName = entryName;
 				profileName = profileName.substring(pathmapEntryName.length());
-				String pathmap = PATHMAP_FORMAT.format(new Object[] { pathmapVarName, profileName});
+				String pathmap = NLS.bind(PATHMAP_FORMAT, new Object[] { pathmapVarName, profileName});
 				pathmaps.add(pathmap);
 			}
 		}

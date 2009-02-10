@@ -1,13 +1,13 @@
 package org.eclipse.uml2.diagram.common.pathmap;
 
 import java.io.File;
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 public abstract class PathMapResolver {
@@ -29,13 +29,13 @@ public abstract class PathMapResolver {
 		for (int i = 0; i < files.length; i++) {
 			String currFile = files[i];
 			if (isProfileFile(currFile)) {
-				String pathmap = PATHMAP_FORMAT.format(new Object[] { pathmapVarName, currFile });
+				String pathmap = NLS.bind(PATHMAP_FORMAT, new Object[] { pathmapVarName, currFile });
 				pathmaps.add(pathmap);
 			}
 		}
 		return pathmaps;
 	}
 
-	protected static final MessageFormat PATHMAP_FORMAT = new MessageFormat("pathmap://{0}/{1}"); //$NON-NLS-1$
+	protected static final String PATHMAP_FORMAT = "pathmap://{0}/{1}"; //$NON-NLS-1$
 
 }

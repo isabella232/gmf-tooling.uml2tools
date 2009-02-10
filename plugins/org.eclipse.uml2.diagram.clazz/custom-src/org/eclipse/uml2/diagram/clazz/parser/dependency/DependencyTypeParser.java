@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006 Borland Software Corporation
+ * Copyright (c) 2006, 2009 Borland Software Corporation
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -11,7 +11,6 @@
 
 package org.eclipse.uml2.diagram.clazz.parser.dependency;
 
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -34,6 +33,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.diagram.clazz.edit.commands.ChangeDependencyTypeCommand;
 import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
@@ -143,13 +143,14 @@ public class DependencyTypeParser implements ISemanticParser {
 		return (selected instanceof ConnectionEditPart) ? (ConnectionEditPart)selected : null;
 	}
 	
+	@SuppressWarnings("serial")
 	private HashMap<String, EClass> getEditStringToTypeTable() {
 		if (myEditStringToType == null) {
 			myEditStringToType = new HashMap<String, EClass>(){
 				@Override
 				public EClass put(String key, EClass value) {
 					EClass result = super.put(key, value);
-					super.put(QUOTE_FORMAT.format(new Object[]{key}), value);
+					super.put(NLS.bind(QUOTE_FORMAT, new Object[]{key}), value);
 					return result;
 				}
 			};
@@ -204,7 +205,7 @@ public class DependencyTypeParser implements ISemanticParser {
 	private static class ViewSwitch extends EditSwitch {
 		@Override
 		protected String quote(String text) {
-			 return QUOTE_FORMAT.format(new Object[]{text});
+			 return NLS.bind(QUOTE_FORMAT, new Object[]{text});
 		}
 		
 		@Override
@@ -213,6 +214,6 @@ public class DependencyTypeParser implements ISemanticParser {
 		}
 	}
 	
-	private static final MessageFormat QUOTE_FORMAT = new MessageFormat("\u00AB{0}\u00BB"); //$NON-NLS-1$
+	private static final String QUOTE_FORMAT = "\u00AB{0}\u00BB"; //$NON-NLS-1$
 
 }

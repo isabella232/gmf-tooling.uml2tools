@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.csd.parser.connector;
 
-import java.text.MessageFormat;
 import java.text.ParseException;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -24,6 +23,8 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
+
+import com.ibm.icu.text.MessageFormat;
 
 
 public class ConnectorNameParser implements ISemanticParser {

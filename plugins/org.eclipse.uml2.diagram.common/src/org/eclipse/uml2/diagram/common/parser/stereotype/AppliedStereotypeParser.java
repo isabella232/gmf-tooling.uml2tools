@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006, 2008 Borland Software Corporation
+ * Copyright (c) 2008, 2009 Borland Software Corporation
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -12,7 +12,6 @@
  */
 package org.eclipse.uml2.diagram.common.parser.stereotype;
 
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,6 +27,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.uml2.diagram.common.commands.ApplyStereotypeHelper;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Extension;
@@ -35,7 +35,7 @@ import org.eclipse.uml2.uml.Stereotype;
 
 public class AppliedStereotypeParser implements ISemanticParser {
 
-	private static final MessageFormat APPLIED_PROFILE = new MessageFormat("\u00AB{0}\u00BB"); //$NON-NLS-1$
+	private static final String APPLIED_PROFILE = "\u00AB{0}\u00BB"; //$NON-NLS-1$
 
 	protected static final String STEREOTYPE_SEPARATOR = ","; //$NON-NLS-1$
 	
@@ -94,9 +94,9 @@ public class AppliedStereotypeParser implements ISemanticParser {
 			if (editString != null && editString.length() > 0) {
 				result+=STEREOTYPE_SEPARATOR + " " + editString;
 			}
-			return APPLIED_PROFILE.format(new Object[] { result });
+			return NLS.bind(APPLIED_PROFILE, new Object[] { result });
 		}
-		return editString == null || editString.length() == 0 ? editString : APPLIED_PROFILE.format(new Object[] { editString });
+		return editString == null || editString.length() == 0 ? editString : NLS.bind(APPLIED_PROFILE, new Object[] { editString });
 	}
 
 	public boolean isAffectingEvent(Object event, int flags) {

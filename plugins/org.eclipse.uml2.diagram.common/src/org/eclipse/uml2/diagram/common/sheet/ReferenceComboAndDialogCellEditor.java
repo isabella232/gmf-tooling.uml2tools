@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006 Borland Software Corporation
+ * Copyright (c) 2009 Borland Software Corporation
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -11,13 +11,13 @@
  */
 package org.eclipse.uml2.diagram.common.sheet;
 
-import java.text.MessageFormat;
 import java.util.List;
 
 import org.eclipse.emf.common.ui.celleditor.ExtendedComboBoxCellEditor;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.window.Window;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
@@ -47,11 +47,8 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 
 	final private ReferencedElementChooserDialog myElementChooserDialog;
 
-	final private TransactionalEditingDomain myEditingDomain;
-
 	public ReferenceComboAndDialogCellEditor(Composite parent, List<?> list, ILabelProvider labelProvider, boolean sorted, ReferencedElementChooserDialog chooserDialog, TransactionalEditingDomain editingDomain) {
 		super(parent, list, labelProvider, sorted);
-		myEditingDomain = editingDomain;
 		myElementChooserDialog = chooserDialog;
 	}
 
@@ -130,7 +127,7 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 				} else {
 					// try to insert the current value into the error
 					// message.
-					setErrorMessage(MessageFormat.format(getErrorMessage(), new Object[] { newValue == null ? "" : newValue.toString() }));
+					setErrorMessage(NLS.bind(getErrorMessage(), new Object[] { newValue == null ? "" : newValue.toString() }));
 				}
 				fireApplyEditorValue();
 			}
