@@ -170,8 +170,7 @@ public class SDBuilder {
 	private void buildFrameLifeLines(SDFrame frame, Interaction interaction) {
 		assert frame.getLifelines().isEmpty();
 		for (Lifeline umlLifeline : interaction.getLifelines()) {
-			SDLifeLine sdLifeLine = SDFactory.eINSTANCE.createSDLifeLine();
-			sdLifeLine.setUmlLifeline(umlLifeline);
+			SDLifeLine sdLifeLine = myTrace.bindNewLifeline(umlLifeline);
 			frame.getLifelines().add(sdLifeLine);
 			myCallStack.push(umlLifeline, sdLifeLine);
 		}

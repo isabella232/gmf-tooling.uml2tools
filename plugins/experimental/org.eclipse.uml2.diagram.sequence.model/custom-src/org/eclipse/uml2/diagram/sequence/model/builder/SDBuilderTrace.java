@@ -8,24 +8,41 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFactory;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExecutionSpecification;
+import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 
 
 public class SDBuilderTrace {
 	private final HashMap<ExecutionSpecification, SDBehaviorSpec> myExecutionSpecs;
 	private final HashMap<Message, SDAbstractMessage> myMessages;
+	private final HashMap<Lifeline, SDLifeLine> myLifelines;
 	
 	public SDBuilderTrace(){
 		myExecutionSpecs = new HashMap<ExecutionSpecification, SDBehaviorSpec>();
 		myMessages = new HashMap<Message, SDAbstractMessage>();
+		myLifelines = new HashMap<Lifeline, SDLifeLine>();
 	}
 	
 	void clear(){
 		myExecutionSpecs.clear();
 		myMessages.clear();
+		myLifelines.clear();
+	}
+	
+	SDLifeLine bindNewLifeline(Lifeline umlLifeline){
+		assert umlLifeline != null;
+		SDLifeLine result = SDFactory.eINSTANCE.createSDLifeLine();
+		result.setUmlLifeline(umlLifeline);
+		
+		SDLifeLine oldOne = myLifelines.put(umlLifeline, result);
+		if (oldOne != null){
+			throw new SDBuilderInternalProblem("Only one SDLifeline is expected for :" + umlLifeline + ", old: " + oldOne);
+		}
+		return result;
 	}
 	
 	SDExecution bindNewExecution(ExecutionSpecification umlSpec){
@@ -86,6 +103,10 @@ public class SDBuilderTrace {
 	
 	public SDAbstractMessage findMessage(Message umlMessage){
 		return myMessages.get(umlMessage);
+	}
+	
+	public SDLifeLine findLifeLine(Lifeline umlLifeline){
+		return myLifelines.get(umlLifeline);
 	}
 	
 	private static void checkBindToNull(Element umlElement, Object sdElement){

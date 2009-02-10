@@ -217,6 +217,11 @@ public class SDModelBuilderTest extends TestCase {
 			assertSame(next, trace.findMessage(next.getUmlMessage()));
 		}
 		
+		for (SDLifeLine next : frame.getLifelines()){
+			assertNotNull(next.getUmlLifeline());
+			assertSame(next, trace.findLifeLine(next.getUmlLifeline()));
+		}
+		
 		LinkedList<SDBracketContainer> queue = new LinkedList<SDBracketContainer>();
 		queue.addAll(frame.getLifelines());
 		
