@@ -126,6 +126,9 @@ public class SDBuilder {
 	}
 	
 	public SDBuilderTrace getTrace(){
+		if (mySDFrame == null){
+			reBuildFrame();
+		}
 		return myTrace;
 	}
 	
