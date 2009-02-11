@@ -38,11 +38,11 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 // Extend UMLUtil in order to use  protected static method #getEClassifier() 
 public class StereotypeOperationsEx extends UMLUtil {
 
-	public static List<org.eclipse.swt.graphics.Image> getStereotypeImages(Element element) {
+	private static List<org.eclipse.swt.graphics.Image> getStereotypeImages(Element element) {
 		EList<EObject> stereoApplications = element.getStereotypeApplications();
 		List<org.eclipse.swt.graphics.Image> result = new ArrayList<org.eclipse.swt.graphics.Image>(stereoApplications.size());
 		for (EObject stereoApplication: stereoApplications) {
-			ImageDescriptor imageDescriptor = StereotypeOperationsEx.getImage(stereoApplication);
+			ImageDescriptor imageDescriptor = StereotypeImages.getImageDescriptorForStereotypeApplication(stereoApplication);
 			if (imageDescriptor == null) {
 				continue;
 			}
@@ -58,7 +58,7 @@ public class StereotypeOperationsEx extends UMLUtil {
 		}
 		List<ImageDescriptor> result = new ArrayList<ImageDescriptor>(stereotypeApps.size());
 		for (EObject stereoApp: stereotypeApps) {
-			ImageDescriptor imageDescriptor = StereotypeOperationsEx.getImage(stereoApp);
+			ImageDescriptor imageDescriptor = StereotypeImages.getImageDescriptorForStereotypeApplication(stereoApp);
 			if (imageDescriptor == null) {
 				continue;
 			}
@@ -71,8 +71,8 @@ public class StereotypeOperationsEx extends UMLUtil {
 		return im.createImage();
 	}
 
-	public static ImageDescriptor getImage(EObject stereotypeApplication) {
-		return StereotypeImages.getImageDescriptor(stereotypeApplication);
+	public static ImageDescriptor getImage(Stereotype stereo) {
+		return StereotypeImages.getImageDescriptor(stereo);
 	}
 	
 	
@@ -166,13 +166,6 @@ public class StereotypeOperationsEx extends UMLUtil {
 				oy = Math.max(oy, imageData.height);
 			}
 			return new Point(ox, oy);
-		}
-		
-		@Override
-		public boolean equals(Object obj) {
-			System.out.println("StereotypeImageDescriptor.equals()");
-			// TODO Auto-generated method stub
-			return super.equals(obj);
 		}
 		
 	}
