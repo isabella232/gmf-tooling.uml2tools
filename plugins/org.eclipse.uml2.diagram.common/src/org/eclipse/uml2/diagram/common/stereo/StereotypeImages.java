@@ -36,8 +36,6 @@ public class StereotypeImages {
 
 	private static final ImageDescriptor CORRUPTED_ICON = PlatformUI.getWorkbench().getSharedImages().getImageDescriptor(ISharedImages.IMG_OBJS_WARN_TSK);
 
-	private static final ExtendedImageRegistry myExtendedImageRegistry = ExtendedImageRegistry.INSTANCE;
-
 	public static ImageDescriptor getImageDescriptorForStereotypeApplication(EObject stereotypeApplication, ImageDescriptor metaclassImage) {
 		String key = getImageRegistryKey(stereotypeApplication);
 		Stereotype stereo = UMLUtil.getStereotype(stereotypeApplication);
@@ -100,7 +98,7 @@ public class StereotypeImages {
 		images.add(metaclassImage);
 		images.add(stereoImage);
 		ComposedImage ci = new ComposedImage(images);
-		return myExtendedImageRegistry.getImageDescriptor(ci);
+		return ExtendedImageRegistry.INSTANCE.getImageDescriptor(ci);
 	}
 
 	private static String getImageRegistryKey(EObject stereotypeApplicationOrStereotype) {
