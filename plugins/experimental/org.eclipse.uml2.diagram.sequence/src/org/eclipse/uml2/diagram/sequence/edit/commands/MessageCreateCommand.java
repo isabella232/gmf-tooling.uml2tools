@@ -1,13 +1,15 @@
 package org.eclipse.uml2.diagram.sequence.edit.commands;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ListIterator;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -27,9 +29,12 @@ import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateLinkCommand;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateLinkParameters;
 import org.eclipse.uml2.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
+import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilder;
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
-import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
@@ -41,9 +46,7 @@ import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.MessageEnd;
 import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
-import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -82,10 +85,10 @@ public class MessageCreateCommand extends EditElementCommand {
 		if (source == null && target == null) {
 			return false;
 		}
-		if (source != null && !isValidEnd(source, true)) {
+		if (source != null && !isValidEnd(source)) {
 			return false;
 		}
-		if (target != null && !isValidEnd(target, false)) {
+		if (target != null && !isValidEnd(target)) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -95,32 +98,40 @@ public class MessageCreateCommand extends EditElementCommand {
 		if (null == getContainer()) {
 			return false;
 		}
+		
+		if (source == target){
+			return false; //self links don't supported for now
+		}
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateMessage_4001(getContainer(), getSource(), getTarget());
 	}
 
-	private BehaviorExecutionSpecification createBehaviorExecutionSpecification(Interaction interaction, Lifeline lifeline, int index, boolean forSource) {
+	private BehaviorExecutionSpecification createBehaviorExecutionSpecification(Interaction interaction, Lifeline lifeline, int nameIndex, boolean forSource) {
 		String prefix = forSource ? "invocation-" : "execution-";
-		String withIndex = prefix + index + "-";
-		MessageOccurrenceSpecification start = doCreateMessageOccurrence(interaction, withIndex + "start");
-		BehaviorExecutionSpecification result = doCreateBehaviorExecution(interaction, withIndex + "body");
-		MessageOccurrenceSpecification finish = doCreateMessageOccurrence(interaction, withIndex + "finish");
+		String withIndex = prefix + nameIndex + "-";
+		
+		ListIterator<InteractionFragment> listPosition = getAppendPosition(interaction);
+		
+		MessageOccurrenceSpecification start = doCreateMessageOccurrence(listPosition, withIndex + "start");
+		BehaviorExecutionSpecification result = doCreateBehaviorExecution(listPosition, withIndex + "body");
+		MessageOccurrenceSpecification finish = doCreateMessageOccurrence(listPosition, withIndex + "finish");
 
 		setupBehaviorSpec(result, start, finish, lifeline);
 
 		return result;
 	}
 
-	private BehaviorExecutionSpecification[] createBehaviorExecutionSpecificationsPair(Interaction interaction, Lifeline sourceLL, Lifeline targetLL, int messageIndex) {
+	private BehaviorExecutionSpecification[] createBehaviorExecutionSpecificationsPair(Interaction interaction, Lifeline sourceLL, Lifeline targetLL, int messageIndex, ListIterator<InteractionFragment> listPosition) {
 		String invocationPrefix = "invocation-" + messageIndex + "-";
 		String executionPrefix = "execution-" + messageIndex + "-";
-		MessageOccurrenceSpecification invocationStart = doCreateMessageOccurrence(interaction, invocationPrefix + "start");
-		MessageOccurrenceSpecification executionStart = doCreateMessageOccurrence(interaction, executionPrefix + "start");
+		
+		MessageOccurrenceSpecification invocationStart = doCreateMessageOccurrence(listPosition, invocationPrefix + "start");
+		MessageOccurrenceSpecification executionStart = doCreateMessageOccurrence(listPosition, executionPrefix + "start");
 
-		BehaviorExecutionSpecification invocation = doCreateBehaviorExecution(interaction, invocationPrefix + "body");
-		BehaviorExecutionSpecification execution = doCreateBehaviorExecution(interaction, executionPrefix + "body");
+		BehaviorExecutionSpecification invocation = doCreateBehaviorExecution(listPosition, invocationPrefix + "body");
+		BehaviorExecutionSpecification execution = doCreateBehaviorExecution(listPosition, executionPrefix + "body");
 
-		MessageOccurrenceSpecification executionFinish = doCreateMessageOccurrence(interaction, executionPrefix + "finish");
-		MessageOccurrenceSpecification invocationFinish = doCreateMessageOccurrence(interaction, invocationPrefix + "finish");
+		MessageOccurrenceSpecification executionFinish = doCreateMessageOccurrence(listPosition, executionPrefix + "finish");
+		MessageOccurrenceSpecification invocationFinish = doCreateMessageOccurrence(listPosition, invocationPrefix + "finish");
 
 		setupBehaviorSpec(invocation, invocationStart, invocationFinish, sourceLL);
 		setupBehaviorSpec(execution, executionStart, executionFinish, targetLL);
@@ -141,35 +152,6 @@ public class MessageCreateCommand extends EditElementCommand {
 		if (!fragment.getCovereds().contains(lifeline)) {
 			fragment.getCovereds().add(lifeline);
 		}
-	}
-
-	private BehaviorExecutionSpecification createBehaviorExecutionSpecification(Interaction interaction, BehaviorExecutionSpecification parentSpec, int index, boolean forSource) {
-		String prefix = forSource ? "invocation-" : "execution-";
-		String withIndex = prefix + index + "-";
-		MessageOccurrenceSpecification start = UMLFactory.eINSTANCE.createMessageOccurrenceSpecification();
-		start.setName(withIndex + "start");
-
-		BehaviorExecutionSpecification result = UMLFactory.eINSTANCE.createBehaviorExecutionSpecification();
-		result.setName(withIndex + "body");
-
-		MessageOccurrenceSpecification finish = UMLFactory.eINSTANCE.createMessageOccurrenceSpecification();
-		start.setName(withIndex + "finish");
-
-		List<BehaviorExecutionSpecification> existingNested = UMLDiagramUpdater.getNestedSpecs(parentSpec);
-		InteractionFragment justBeforeNewStart = existingNested.isEmpty() ? parentSpec : existingNested.get(existingNested.size() - 1).getFinish();
-		for (ListIterator<InteractionFragment> it = interaction.getFragments().listIterator(); it.hasNext();) {
-			InteractionFragment next = it.next();
-			if (next == justBeforeNewStart) {
-				it.add(start);
-				it.add(result);
-				it.add(finish);
-			}
-		}
-
-		Lifeline parentLifeline = parentSpec.getCovereds().get(0);
-		setupBehaviorSpec(result, start, finish, parentLifeline);
-
-		return result;
 	}
 
 	/**
@@ -202,12 +184,41 @@ public class MessageCreateCommand extends EditElementCommand {
 		} else if (diagramTarget instanceof Lifeline && diagramSource instanceof Lifeline) {
 			Lifeline sourceLL = (Lifeline) diagramSource;
 			Lifeline targetLL = (Lifeline) diagramTarget;
-			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count);
+			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count, getAppendPosition(interaction));
 			sourceInvocation = pair[0];
 			targetExecution = pair[1];
 
 			domainSource = (MessageOccurrenceSpecification) sourceInvocation.getStart();
 			domainTarget = (MessageOccurrenceSpecification) targetExecution.getStart();
+		} else if (diagramSource instanceof BehaviorExecutionSpecification && diagramTarget instanceof Lifeline) {
+			BehaviorExecutionSpecification parentExecution = (BehaviorExecutionSpecification)diagramSource;
+			Lifeline sourceLL = parentExecution.getCovereds().get(0);
+			Lifeline targetLL = (Lifeline)diagramTarget;
+			
+			SDBuilder sdBuilder = new SDBuilder(sourceLL.getInteraction());
+			SDBehaviorSpec sdExecution = sdBuilder.getTrace().findBehaviorSpec(parentExecution);
+			if (false == sdExecution instanceof SDExecution){
+				//XXX
+				throw new IllegalArgumentException("SDExecution expected: " + sdExecution);
+			}
+			
+			List<InteractionFragment> thePast = new ArrayList<InteractionFragment>(5);
+			thePast.add(parentExecution);
+			thePast.add(parentExecution.getStart());
+			
+			SDInvocation sdParentInvocation = ((SDExecution)sdExecution).getInvocation();
+			if (sdParentInvocation != null){
+				 thePast.add(sdParentInvocation.getUmlExecutionSpec());
+				 thePast.add(sdParentInvocation.getUmlStart());
+			}
+			ListIterator<InteractionFragment> position = getAfterTheLastOfPosition(interaction, thePast);
+			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count, position);
+			
+			sourceInvocation = pair[0];
+			targetExecution = pair[1];
+			domainSource = (MessageOccurrenceSpecification) sourceInvocation.getStart();
+			domainTarget = (MessageOccurrenceSpecification) targetExecution.getStart();
+		
 		} else {
 			throw new UnsupportedOperationException("Message between this elements can't be created: from: " + getSource() + " to: " + getTarget());
 		}
@@ -351,30 +362,67 @@ public class MessageCreateCommand extends EditElementCommand {
 		return null;
 	}
 
-	private boolean isValidEnd(EObject diagramEnd, boolean startNotFinish) {
+	private boolean isValidEnd(EObject diagramEnd) {
 		if (diagramEnd instanceof Gate) {
 			return true;
 		}
 		if (diagramEnd instanceof Lifeline) {
 			return true;
 		}
-		if (diagramEnd instanceof BehaviorExecutionSpecification) {
-			BehaviorExecutionSpecification execution = (BehaviorExecutionSpecification) diagramEnd;
-			//FIXME (???)
-			//OccurrenceSpecification occurr = (startNotFinish) ? execution.getStart() : execution.getFinish();
-			OccurrenceSpecification occurr = execution.getStart();
-			return occurr instanceof MessageOccurrenceSpecification;
+		if (diagramEnd instanceof BehaviorExecutionSpecification){
+			return ((BehaviorExecutionSpecification)diagramEnd).getCovereds().size() == 1;
 		}
 		return false;
 	}
 
-	private static MessageOccurrenceSpecification doCreateMessageOccurrence(Interaction interaction, String name) {
-		EClass meta = UMLPackage.eINSTANCE.getMessageOccurrenceSpecification();
-		return (MessageOccurrenceSpecification) interaction.createFragment(name, meta);
+	private static MessageOccurrenceSpecification doCreateMessageOccurrence(ListIterator<InteractionFragment> position, String name) {
+		MessageOccurrenceSpecification result = UMLFactory.eINSTANCE.createMessageOccurrenceSpecification();
+		if (name != null){
+			result.setName(name);
+		}
+		position.add(result);
+		return result;
 	}
 
-	private static BehaviorExecutionSpecification doCreateBehaviorExecution(Interaction interaction, String name) {
-		EClass meta = UMLPackage.eINSTANCE.getBehaviorExecutionSpecification();
-		return (BehaviorExecutionSpecification) interaction.createFragment(name, meta);
+	private static BehaviorExecutionSpecification doCreateBehaviorExecution(ListIterator<InteractionFragment> position, String name) {
+		BehaviorExecutionSpecification result = UMLFactory.eINSTANCE.createBehaviorExecutionSpecification();
+		if (name != null){
+			result.setName(name);
+		}
+		position.add(result);
+		return result;
+	}
+	
+	private static ListIterator<InteractionFragment> getAppendPosition(Interaction interaction){
+		int size = interaction.getFragments().size();
+		ListIterator<InteractionFragment> result = interaction.getFragments().listIterator(size);
+		if (result.hasNext()){
+			throw new IllegalStateException("Wow!");
+		}
+		return result;
+	}
+	
+	private static ListIterator<InteractionFragment> getAfterTheLastOfPosition(Interaction interaction, Collection<InteractionFragment> fragments){
+		if (fragments.isEmpty()){
+			return getAppendPosition(interaction);
+		}
+		
+		HashSet<InteractionFragment> notFound = new HashSet<InteractionFragment>();
+		for (InteractionFragment next : fragments){
+			if (next == null){
+				continue;
+			}
+			if (next.getEnclosingInteraction() != interaction){
+				throw new IllegalArgumentException("Alien fragment found: " + next + " for interaction: " + interaction);
+			}
+			notFound.add(next);
+		}
+		
+		ListIterator<InteractionFragment> result = interaction.getFragments().listIterator();
+		while(!notFound.isEmpty() && result.hasNext()){
+			InteractionFragment next = result.next();
+			notFound.remove(next);
+		}
+		return result;
 	}
 }

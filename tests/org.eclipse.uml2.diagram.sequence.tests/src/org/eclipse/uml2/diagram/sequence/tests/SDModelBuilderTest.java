@@ -137,9 +137,6 @@ public class SDModelBuilderTest extends TestCase {
 		SDLifeLine a = findLifeLineByName(sdFrame, "a");
 		SDLifeLine b = findLifeLineByName(sdFrame, "b");
 		
-		assertNotNull(a);
-		assertNotNull(b);
-		
 		assertEquals(2, a.getBrackets().size());
 		assertEquals(2, b.getBrackets().size());
 		
@@ -181,6 +178,86 @@ public class SDModelBuilderTest extends TestCase {
 
 		checkCallStackCompleted(builder);
 		checkTraces(builder);
+	}
+	
+	public void testMessageChain_ABCD(){
+		SDBuilder builder = buildFrame("Message Chain From Diagram - abcd.uml", "Interaction");
+		SDFrame sdFrame = builder.getSDFrame();
+		
+		SDLifeLine a = findLifeLineByName(sdFrame, "a");
+		SDLifeLine b = findLifeLineByName(sdFrame, "b");
+		SDLifeLine c = findLifeLineByName(sdFrame, "c");
+		SDLifeLine d = findLifeLineByName(sdFrame, "d");
+		
+		assertEquals(1, a.getBrackets().size());
+		assertEquals(1, b.getBrackets().size());
+		assertEquals(1, c.getBrackets().size());
+		assertEquals(1, d.getBrackets().size());
+		
+		assertTrue(a.getBrackets().get(0) instanceof SDInvocation);
+		assertTrue(b.getBrackets().get(0) instanceof SDExecution);
+		assertTrue(c.getBrackets().get(0) instanceof SDExecution);
+		assertTrue(d.getBrackets().get(0) instanceof SDExecution);
+		
+		SDInvocation rootInvocation = (SDInvocation) a.getBrackets().get(0);
+		SDExecution bExecution = (SDExecution) b.getBrackets().get(0);
+		checkInvocationExecutionPair(rootInvocation, bExecution);
+		
+		assertEquals(1, bExecution.getBrackets().size());
+		assertTrue(bExecution.getBrackets().get(0) instanceof SDInvocation);
+		SDInvocation bDeepInvocation = (SDInvocation) bExecution.getBrackets().get(0);
+		SDExecution cExecution = (SDExecution)c.getBrackets().get(0);
+		checkInvocationExecutionPair(bDeepInvocation, cExecution);
+		
+		assertEquals(1, cExecution.getBrackets().size());
+		assertTrue(cExecution.getBrackets().get(0) instanceof SDInvocation);
+		SDInvocation cDeepInvocation = (SDInvocation) cExecution.getBrackets().get(0);
+		SDExecution dExecution = (SDExecution)d.getBrackets().get(0);
+		checkInvocationExecutionPair(cDeepInvocation, dExecution);
+		
+		assertTrue(rootInvocation.getBrackets().isEmpty());
+		assertTrue(bDeepInvocation.getBrackets().isEmpty());
+		assertTrue(cDeepInvocation.getBrackets().isEmpty());
+		assertTrue(dExecution.getBrackets().isEmpty());
+		
+		checkCallStackCompleted(builder);
+		checkTraces(builder);
+		
+		assertEquals(3, sdFrame.getMessages().size());
+		SDMessage ab = rootInvocation.getOutgoingMessage();
+		SDMessage bc = bDeepInvocation.getOutgoingMessage();
+		SDMessage cd = cDeepInvocation.getOutgoingMessage();
+		
+		assertNotNull(ab);
+		assertNotNull(bc);
+		assertNotNull(cd);
+		assertTrue(ab != bc);
+		assertTrue(ab != cd);
+		assertTrue(bc != cd);
+		
+		assertEquals("1", ab.getMessageNumber());
+		assertEquals("1.1", bc.getMessageNumber());
+		assertEquals("1.1.1", cd.getMessageNumber());
+		
+		
+	}
+	
+	protected void checkInvocationExecutionPair(SDInvocation invocation, SDExecution execution){
+		assertNotNull(invocation);
+		assertNotNull(execution);
+		assertNotNull(invocation.getUmlExecutionSpec());
+		assertNotNull(execution.getUmlExecutionSpec());
+		
+		assertSame(execution, invocation.getReceiveExecution());
+		assertSame(invocation, execution.getInvocation());
+		assertSame(invocation.getOutgoingMessage(), execution.getIncomingMessage());
+		
+		SDMessage sdMessage = execution.getIncomingMessage();
+		assertNotNull(sdMessage);
+		assertNotNull(sdMessage.getUmlMessage());
+		
+		assertSame(invocation.getUmlExecutionSpec().getStart(), sdMessage.getUmlMessage().getSendEvent());
+		assertSame(execution.getUmlExecutionSpec().getStart(), sdMessage.getUmlMessage().getReceiveEvent());
 	}
 	
 	protected SDAbstractMessage findMessageByName(SDFrame frame, String name){
@@ -251,7 +328,8 @@ public class SDModelBuilderTest extends TestCase {
 				return next;
 			}
 		}
-		return null;
+		fail("Can't find SDLifeline " + name);
+		throw new InternalError("Never thrown");
 	}
 
 	private Package loadExampleFile(String example){
