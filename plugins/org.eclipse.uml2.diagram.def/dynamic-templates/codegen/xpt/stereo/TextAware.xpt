@@ -26,6 +26,6 @@
 		if (false == parserElement instanceof org.eclipse.uml2.uml.Element) {
 			return null;
 		}
-		return org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx.getAppliedStereotypeImage((org.eclipse.uml2.uml.Element) parserElement);
+		return org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx.getAppliedStereotypeImage((org.eclipse.uml2.uml.Element) parserElement, «diagram.getElementTypesQualifiedClassName()».getImageDescriptor(parserElement.eClass()));
 	}
 «ENDDEFINE»
