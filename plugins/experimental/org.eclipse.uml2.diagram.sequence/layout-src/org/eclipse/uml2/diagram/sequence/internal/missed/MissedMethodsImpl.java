@@ -47,6 +47,8 @@ import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.InteractionUse;
+import org.eclipse.uml2.uml.Message;
+import org.eclipse.uml2.uml.MessageSort;
 
 
 public class MissedMethodsImpl {
@@ -262,8 +264,14 @@ public class MissedMethodsImpl {
 		}
 		
 		public boolean isAsynchonousMessage(AbsLink link) {
-			// TODO Auto-generated method stub
-			return false;
+			View reference = link.getReference();
+			if (reference == null || false == reference.getElement() instanceof Message){
+				//wow
+				return false;
+			}
+			Message message = (Message) reference.getElement();
+			MessageSort messageSort = message.getMessageSort();
+			return messageSort == MessageSort.ASYNCH_CALL_LITERAL || messageSort == MessageSort.ASYNCH_SIGNAL_LITERAL;
 		}
 		
 		public boolean isFoundMessageInvocation(EObject object) {
