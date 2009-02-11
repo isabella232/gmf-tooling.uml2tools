@@ -41,32 +41,6 @@ public class SDModelAccess {
 		return null;
 	}
 
-//	private static void invalidateSDModel(View view){
-//		View interactionView = findInteractionView(view);
-//		if (interactionView == null){
-//			return;
-//		}
-//		
-//		SDModelAccessStyle sdModelAccess = findSDModelAccess(interactionView);
-//		if (sdModelAccess == null){
-//			return;
-//		}
-//		safeSetSDModel(interactionView, sdModelAccess, null);
-//	}
-//	
-//	private static SDFrame safeSetSDModel(View view, SDModelAccessStyle sdModelAccess, SDFrame value) {
-//		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(view);
-//		SetRequest setRequest = new SetRequest(domain, sdModelAccess, SDNotationPackage.eINSTANCE.getSDModelAccessStyle_Frame(), value);
-//		SetValueCommand setValueCommand = new SetValueCommand(setRequest);
-//		try {
-//			OperationHistoryFactory.getOperationHistory().execute(setValueCommand, new NullProgressMonitor(), null);
-//		} catch (ExecutionException e) {
-//			e.printStackTrace();
-//			return null;
-//		}
-//		return sdModelAccess.getFrame();
-//	}
-	
 	public static ICommand getInvalidateSDModelCommand(IGraphicalEditPart editPart){
 		return getInvalidateSDModelCommand(editPart.getNotationView());
 	}
@@ -76,8 +50,6 @@ public class SDModelAccess {
 			return null;
 		}
 		return new InvalidateSDModelCommand(view);
-		
 	}
-	
 
 }
