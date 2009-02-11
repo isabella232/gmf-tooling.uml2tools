@@ -11,9 +11,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.csd.edit.helpers.AssociationEditHelper;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLBaseItemSemanticEditPolicy;
-import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
@@ -80,13 +80,8 @@ public class AssociationCreateCommand extends EditElementCommand {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		//due to association end conventiontions (see AssociationEndConvention) 
-		//we need to have member end of type SourceType to be the first one created
-		//thus, we are calling UML2 createAssociation() in opposite order
 		boolean setNavigability = getRequest().getParameter(AssociationEditHelper.PARAMETER_SET_TARGET_NAVIGABILITY) != null;
-		Association newElement = getTarget().createAssociation(//
-				false, AggregationKind.NONE_LITERAL, "src", 1, 1, // 
-				getSource(), setNavigability, AggregationKind.NONE_LITERAL, "dst", 1, 1);
+		Association newElement = AssociationEndConvention.createAssociation(getSource(), getTarget(), setNavigability);
 
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

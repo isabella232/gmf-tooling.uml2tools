@@ -11,8 +11,8 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLBaseItemSemanticEditPolicy;
-import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
@@ -79,10 +79,7 @@ public class AssociationCreateCommand extends EditElementCommand {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		boolean setNavigability = true;
-		Association newElement = getTarget().createAssociation(//
-				true, AggregationKind.NONE_LITERAL, "src", 1, 1, // 
-				getSource(), setNavigability, AggregationKind.NONE_LITERAL, "dst", 1, 1);
+		Association newElement = AssociationEndConvention.createAssociation(getSource(), getTarget(), true);
 
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
