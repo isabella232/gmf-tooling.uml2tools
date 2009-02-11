@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFrameImpl.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDFrameImpl.java,v 1.2 2009/02/11 14:36:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -30,6 +30,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGate;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
 
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.uml.Interaction;
 
 /**
@@ -49,6 +50,8 @@ import org.eclipse.uml2.uml.Interaction;
  * @generated
  */
 public class SDFrameImpl extends EObjectImpl implements SDFrame {
+	private SDTrace myUMLTracing;
+	
 	/**
 	 * The cached value of the '{@link #getUmlInteraction() <em>Uml Interaction</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -185,6 +188,15 @@ public class SDFrameImpl extends EObjectImpl implements SDFrame {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public SDTrace getUMLTracing() {
+		return myUMLTracing;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -308,6 +320,14 @@ public class SDFrameImpl extends EObjectImpl implements SDFrame {
 				return gates != null && !gates.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+	
+	/**
+	 * Intentionally not exposed in API, only SDBuilder is expected to call this method (via cast to implementation).
+	 * Clients are guarded from calling this because implementation package is not exposed to external plugins.
+	 */
+	public void setUMLTracing(SDTrace tracing){
+		myUMLTracing = tracing;
 	}
 
 } //SDFrameImpl

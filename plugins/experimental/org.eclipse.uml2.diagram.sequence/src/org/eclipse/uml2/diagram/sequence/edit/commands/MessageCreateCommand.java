@@ -196,7 +196,7 @@ public class MessageCreateCommand extends EditElementCommand {
 			Lifeline targetLL = (Lifeline)diagramTarget;
 			
 			SDBuilder sdBuilder = new SDBuilder(sourceLL.getInteraction());
-			SDBehaviorSpec sdExecution = sdBuilder.getTrace().findBehaviorSpec(parentExecution);
+			SDBehaviorSpec sdExecution = sdBuilder.getSDFrame().getUMLTracing().findBehaviorSpec(parentExecution);
 			if (false == sdExecution instanceof SDExecution){
 				//XXX
 				throw new IllegalArgumentException("SDExecution expected: " + sdExecution);
@@ -425,4 +425,5 @@ public class MessageCreateCommand extends EditElementCommand {
 		}
 		return result;
 	}
+	
 }

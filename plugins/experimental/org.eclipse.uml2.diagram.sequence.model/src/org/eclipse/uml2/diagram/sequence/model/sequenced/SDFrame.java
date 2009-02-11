@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFrame.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDFrame.java,v 1.2 2009/02/11 14:36:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -109,5 +109,13 @@ public interface SDFrame extends EObject {
 	 * @generated
 	 */
 	EList<SDGate> getGates();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" type="org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace"
+	 * @generated
+	 */
+	SDTrace getUMLTracing();
 
 } // SDFrame

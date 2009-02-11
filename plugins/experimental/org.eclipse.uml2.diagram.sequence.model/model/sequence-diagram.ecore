@@ -4,6 +4,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sequenced"
     nsURI="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/1.0" nsPrefix="uml2t.seqd">
   <eClassifiers xsi:type="ecore:EClass" name="SDFrame">
+    <eOperations name="getUMLTracing" eType="#//SDTrace"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlInteraction" lowerBound="1"
         eType="#//UMLInteraction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lifelines" upperBound="-1"
@@ -96,5 +97,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="UMLExecutionSpecification" instanceClassName="org.eclipse.uml2.uml.ExecutionSpecification"
       abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="UMLGate" instanceClassName="org.eclipse.uml2.uml.Gate"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SDTrace" instanceClassName="org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace"
       abstract="true" interface="true"/>
 </ecore:EPackage>

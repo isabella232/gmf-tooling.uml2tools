@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDSwitch.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDSwitch.java,v 1.2 2009/02/11 14:36:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.util;
 
@@ -579,6 +579,21 @@ public class SDSwitch<T> {
 	 * @generated
 	 */
 	public T caseUMLGate(Gate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Trace</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Trace</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSDTrace(SDTrace object) {
 		return null;
 	}
 

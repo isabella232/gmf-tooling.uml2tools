@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackage.java,v 1.2 2009/01/28 17:43:06 mgolubev Exp $
+ * $Id: SDPackage.java,v 1.3 2009/02/11 14:36:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -968,6 +968,26 @@ public interface SDPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace <em>Trace</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDTrace()
+	 * @generated
+	 */
+	int SD_TRACE = 25;
+
+	/**
+	 * The number of structural features of the '<em>Trace</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_TRACE_FEATURE_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame <em>Frame</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1526,6 +1546,17 @@ public interface SDPackage extends EPackage {
 	EClass getUMLGate();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace <em>Trace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Trace</em>'.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace
+	 * @model instanceClass="org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace"
+	 * @generated
+	 */
+	EClass getSDTrace();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2012,6 +2043,16 @@ public interface SDPackage extends EPackage {
 		 * @generated
 		 */
 		EClass UML_GATE = eINSTANCE.getUMLGate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace <em>Trace</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace
+		 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDTrace()
+		 * @generated
+		 */
+		EClass SD_TRACE = eINSTANCE.getSDTrace();
 
 	}
 

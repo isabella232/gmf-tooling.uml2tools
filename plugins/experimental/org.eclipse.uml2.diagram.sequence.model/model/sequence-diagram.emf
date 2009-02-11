@@ -5,7 +5,9 @@ class SDFrame {
 	ref UMLInteraction[1] umlInteraction;
 	ordered val SDLifeLine[*]#frame lifelines;
 	ordered val SDAbstractMessage[*]#frame messages; 
-	val SDGate[*] gates; 
+	val SDGate[*] gates;
+	
+	op SDTrace getUMLTracing();
 }
 
 class SDGate {
@@ -83,3 +85,5 @@ abstract interface UMLDurationConstraint : org.eclipse.uml2.uml.DurationConstrai
 abstract interface UMLInteractionFragment : org.eclipse.uml2.uml.InteractionFragment {}
 abstract interface UMLExecutionSpecification : org.eclipse.uml2.uml.ExecutionSpecification {}
 abstract interface UMLGate : org.eclipse.uml2.uml.Gate {}
+
+abstract interface SDTrace : org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace {}

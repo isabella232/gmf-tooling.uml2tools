@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackageImpl.java,v 1.2 2009/01/28 17:43:06 mgolubev Exp $
+ * $Id: SDPackageImpl.java,v 1.3 2009/02/11 14:36:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -30,6 +30,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode;
 
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DurationConstraint;
 import org.eclipse.uml2.uml.ExecutionSpecification;
@@ -222,6 +223,13 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * @generated
 	 */
 	private EClass umlGateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sdTraceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -764,6 +772,15 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSDTrace() {
+		return sdTraceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SDFactory getSDFactory() {
 		return (SDFactory)getEFactoryInstance();
 	}
@@ -863,6 +880,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		umlExecutionSpecificationEClass = createEClass(UML_EXECUTION_SPECIFICATION);
 
 		umlGateEClass = createEClass(UML_GATE);
+
+		sdTraceEClass = createEClass(SD_TRACE);
 	}
 
 	/**
@@ -911,6 +930,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		initEReference(getSDFrame_Lifelines(), this.getSDLifeLine(), this.getSDLifeLine_Frame(), "lifelines", null, 0, -1, SDFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSDFrame_Messages(), this.getSDAbstractMessage(), this.getSDAbstractMessage_Frame(), "messages", null, 0, -1, SDFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSDFrame_Gates(), this.getSDGate(), null, "gates", null, 0, -1, SDFrame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(sdFrameEClass, this.getSDTrace(), "getUMLTracing", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(sdGateEClass, SDGate.class, "SDGate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDGate_UmlGate(), this.getUMLGate(), null, "umlGate", null, 0, 1, SDGate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -982,6 +1003,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		initEClass(umlExecutionSpecificationEClass, ExecutionSpecification.class, "UMLExecutionSpecification", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(umlGateEClass, Gate.class, "UMLGate", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(sdTraceEClass, SDTrace.class, "SDTrace", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

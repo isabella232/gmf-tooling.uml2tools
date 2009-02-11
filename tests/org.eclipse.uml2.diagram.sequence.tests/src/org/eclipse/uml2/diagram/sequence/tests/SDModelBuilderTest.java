@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.uml2.diagram.sequence.model.builder.LifeLineCallStack;
 import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilder;
-import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilderTrace;
 import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
@@ -22,6 +21,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
@@ -274,7 +274,7 @@ public class SDModelBuilderTest extends TestCase {
 
 	protected void checkTraces(SDBuilder builder) {
 		SDFrame frame = builder.getSDFrame();
-		SDBuilderTrace trace = builder.getTrace();
+		SDTrace trace = frame.getUMLTracing();
 
 		for (SDAbstractMessage next : frame.getMessages()) {
 			assertNotNull(next.getUmlMessage());

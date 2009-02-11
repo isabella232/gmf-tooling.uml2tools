@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDFrameImpl;
 import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Continuation;
 import org.eclipse.uml2.uml.ExecutionOccurrenceSpecification;
@@ -36,7 +37,6 @@ public class SDBuilder {
 	private final Interaction myInteraction;
 	private final StartAndFinishRegistry myStartsAndFinishes;
 	private final LifeLineCallStack myCallStack;
-	private final SDBuilderTrace myTrace;
 	private final MessageNumbers myMessageNumbers; 
 	private SDFrame mySDFrame;
 	
@@ -44,7 +44,6 @@ public class SDBuilder {
 		myInteraction = interaction;
 		myStartsAndFinishes = new StartAndFinishRegistry(myInteraction);
 		myCallStack = new LifeLineCallStack();
-		myTrace = new SDBuilderTrace();
 		myMessageNumbers = new MessageNumbers(this);
 	}
 	
@@ -63,13 +62,6 @@ public class SDBuilder {
 		return myCallStack;
 	}
 	
-	public SDBuilderTrace getTrace(){
-		if (mySDFrame == null){
-			reBuildFrame();
-		}
-		return myTrace;
-	}
-	
 	public SDFrame getSDFrame(){
 		if (mySDFrame == null){
 			reBuildFrame();
@@ -78,12 +70,15 @@ public class SDBuilder {
 	}
 	
 	public SDFrame reBuildFrame() {
-		myTrace.clear();
 		myCallStack.clear();
 		myStartsAndFinishes.forceRemap();
 		mySDFrame = SDFactory.eINSTANCE.createSDFrame();
 		mySDFrame.setUmlInteraction(myInteraction);
 		
+		/**
+		 * intentionally cast to implementation -- we don't want to allow clients to call this 
+		 */
+		((SDFrameImpl)mySDFrame).setUMLTracing(new SDBuilderTrace());
 
 		buildGates(mySDFrame, myInteraction);
 		buildFrameLifeLines(mySDFrame, myInteraction);
@@ -108,7 +103,7 @@ public class SDBuilder {
 	private void buildFrameLifeLines(SDFrame frame, Interaction interaction) {
 		assert frame.getLifelines().isEmpty();
 		for (Lifeline umlLifeline : interaction.getLifelines()) {
-			SDLifeLine sdLifeLine = myTrace.bindNewLifeline(umlLifeline);
+			SDLifeLine sdLifeLine = getTraceImpl().bindNewLifeline(umlLifeline);
 			frame.getLifelines().add(sdLifeLine);
 			myCallStack.push(umlLifeline, sdLifeLine);
 		}
@@ -293,9 +288,9 @@ public class SDBuilder {
 			throw new UMLModelProblem("Message " + umlMessage + " does not have receiving ExecutionSpecification at receiveEvent: " + messageTarget);
 		}
 		
-		SDMessage sdMessage = myTrace.bindNewMessage(umlMessage);
-		SDInvocation sdInvocation = myTrace.bindNewInvocation(umlInvocation);
-		SDExecution sdExecution = myTrace.bindNewExecution(umlExecution);
+		SDMessage sdMessage = getTraceImpl().bindNewMessage(umlMessage);
+		SDInvocation sdInvocation = getTraceImpl().bindNewInvocation(umlInvocation);
+		SDExecution sdExecution = getTraceImpl().bindNewExecution(umlExecution);
 
 		sdInvocation.setOutgoingMessage(sdMessage);
 		sdExecution.setIncomingMessage(sdMessage);
@@ -382,6 +377,10 @@ public class SDBuilder {
 	
 	private static void warning(String message) {
 		//
+	}
+	
+	private SDBuilderTrace getTraceImpl(){
+		return (SDBuilderTrace) getSDFrame().getUMLTracing();
 	}
 
 }

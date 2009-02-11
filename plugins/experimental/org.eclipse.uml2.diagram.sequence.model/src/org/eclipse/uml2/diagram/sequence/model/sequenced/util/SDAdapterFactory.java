@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAdapterFactory.java,v 1.1 2009/01/28 05:27:47 mgolubev Exp $
+ * $Id: SDAdapterFactory.java,v 1.2 2009/02/11 14:36:18 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.util;
 
@@ -181,6 +181,10 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseUMLGate(Gate object) {
 				return createUMLGateAdapter();
+			}
+			@Override
+			public Adapter caseSDTrace(SDTrace object) {
+				return createSDTraceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -549,6 +553,20 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUMLGateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace <em>Trace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace
+	 * @generated
+	 */
+	public Adapter createSDTraceAdapter() {
 		return null;
 	}
 

@@ -10,13 +10,14 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 
 
-public class SDBuilderTrace {
+public class SDBuilderTrace implements SDTrace {
 	private final HashMap<ExecutionSpecification, SDBehaviorSpec> myExecutionSpecs;
 	private final HashMap<Message, SDAbstractMessage> myMessages;
 	private final HashMap<Lifeline, SDLifeLine> myLifelines;
