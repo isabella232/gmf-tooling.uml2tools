@@ -38,32 +38,15 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 // Extend UMLUtil in order to use  protected static method #getEClassifier() 
 public class StereotypeOperationsEx extends UMLUtil {
 
-	private static List<org.eclipse.swt.graphics.Image> getStereotypeImages(Element element) {
-		EList<EObject> stereoApplications = element.getStereotypeApplications();
-		List<org.eclipse.swt.graphics.Image> result = new ArrayList<org.eclipse.swt.graphics.Image>(stereoApplications.size());
-		for (EObject stereoApplication: stereoApplications) {
-			ImageDescriptor imageDescriptor = StereotypeImages.getImageDescriptorForStereotypeApplication(stereoApplication);
-			if (imageDescriptor == null) {
-				continue;
-			}
-			result.add(imageDescriptor.createImage());
-		}
-		return result;
-	}
-	
 	public static org.eclipse.swt.graphics.Image getAppliedStereotypeImage(Element element) {
-		EList<EObject> stereotypeApps = element.getStereotypeApplications();
-		if (stereotypeApps.isEmpty()) {
+		return getAppliedStereotypeImage(element, null);
+	}
+
+	public static org.eclipse.swt.graphics.Image getAppliedStereotypeImage(Element element, ImageDescriptor metaclassImage) {
+		if (element.getStereotypeApplications().isEmpty()) {
 			return null;
 		}
-		List<ImageDescriptor> result = new ArrayList<ImageDescriptor>(stereotypeApps.size());
-		for (EObject stereoApp: stereotypeApps) {
-			ImageDescriptor imageDescriptor = StereotypeImages.getImageDescriptorForStereotypeApplication(stereoApp);
-			if (imageDescriptor == null) {
-				continue;
-			}
-			result.add(imageDescriptor);
-		}
+		List<ImageDescriptor> result = getListOfAppliedStereotypeImages(element, metaclassImage);
 		if (result.isEmpty()) {
 			return null;
 		}
@@ -72,9 +55,21 @@ public class StereotypeOperationsEx extends UMLUtil {
 	}
 
 	public static ImageDescriptor getImage(Stereotype stereo) {
-		return StereotypeImages.getImageDescriptor(stereo);
+		return StereotypeImages.getImageDescriptor(stereo, null);
 	}
 	
+	private static List<ImageDescriptor> getListOfAppliedStereotypeImages(Element element, ImageDescriptor metaclassImage) {
+		EList<EObject> stereoApplications = element.getStereotypeApplications();
+		List<ImageDescriptor> result = new ArrayList<ImageDescriptor>(stereoApplications.size());
+		for (EObject stereoApplication: stereoApplications) {
+			ImageDescriptor imageDescriptor = StereotypeImages.getImageDescriptorForStereotypeApplication(stereoApplication, metaclassImage);
+			if (imageDescriptor == null) {
+				continue;
+			}
+			result.add(imageDescriptor);
+		}
+		return result;
+	}
 	
 // Almost copy of ElementOperations#getApplicableStereotypes()
 // But we operate with metaclass of the element, not with the element itself

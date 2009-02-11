@@ -27,6 +27,7 @@ import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.common.util.UML2Util;
+import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
 import org.eclipse.uml2.uml.Image;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -35,43 +36,27 @@ public class StereotypeImages {
 
 	private static final ImageDescriptor CORRUPTED_ICON = PlatformUI.getWorkbench().getSharedImages().getImageDescriptor(ISharedImages.IMG_OBJS_WARN_TSK);
 
-	private static ImageRegistry imageRegistry;
 	private static final ExtendedImageRegistry myExtendedImageRegistry = ExtendedImageRegistry.INSTANCE;
 
-	public static ImageDescriptor getImageDescriptorForStereotypeApplication(EObject stereotypeApplication) {
-		return getImageDescriptorForStereotypeApplication(stereotypeApplication, null);
-	}
-
-	public static ImageDescriptor getImageDescriptor(Stereotype stereotype) {
-		return getImageDescriptorForStereotype(stereotype, null);
-	}
-
 	public static ImageDescriptor getImageDescriptorForStereotypeApplication(EObject stereotypeApplication, ImageDescriptor metaclassImage) {
-		Stereotype stereo = UMLUtil.getStereotype(stereotypeApplication);
-		if (stereo == null) {
-			return null;
-		}
 		String key = getImageRegistryKey(stereotypeApplication);
-		ImageDescriptor imageDescriptor = getImageRegistry().getDescriptor(key);
-		if (imageDescriptor == null) {
-			imageDescriptor = getProvidedImageDescriptor(stereo, metaclassImage);
-			if (imageDescriptor == null) {
-				return null;
-			}
-			getImageRegistry().put(key, imageDescriptor);
-		}
-		return imageDescriptor;
+		Stereotype stereo = UMLUtil.getStereotype(stereotypeApplication);
+		return getImageDescriptorForStereotype(stereo, metaclassImage, key);
 	}
 
-	public static ImageDescriptor getImageDescriptorForStereotype(Stereotype stereo, ImageDescriptor metaclassImage) {
+	public static ImageDescriptor getImageDescriptor(Stereotype stereo, ImageDescriptor metaclassImage) {
 		String key = getImageRegistryKey(stereo);
-		ImageDescriptor imageDescriptor = getImageRegistry().getDescriptor(key);
+		return getImageDescriptorForStereotype(stereo, metaclassImage, key);
+	}
+
+	private static ImageDescriptor getImageDescriptorForStereotype(Stereotype stereo, ImageDescriptor metaclassImage, String imgRegistryKey) {
+		ImageDescriptor imageDescriptor = getImageRegistry().getDescriptor(imgRegistryKey);
 		if (imageDescriptor == null) {
 			imageDescriptor = getProvidedImageDescriptor(stereo, metaclassImage);
 			if (imageDescriptor == null) {
 				return null;
 			}
-			getImageRegistry().put(key, imageDescriptor);
+			getImageRegistry().put(imgRegistryKey, imageDescriptor);
 		}
 		return imageDescriptor;
 	}
@@ -118,15 +103,14 @@ public class StereotypeImages {
 		return myExtendedImageRegistry.getImageDescriptor(ci);
 	}
 
-	private static String getImageRegistryKey(EObject stereotypeApplication) {
-		return EcoreUtil.getURI(stereotypeApplication).toString();
+	private static String getImageRegistryKey(EObject stereotypeApplicationOrStereotype) {
+		// we try to use stereotypeApplication in order to handle changes of its 'images' property wherever it is possible
+		// when stereotypeApplication is not accessible, we use Stereotype
+		return EcoreUtil.getURI(stereotypeApplicationOrStereotype).toString();
 	}
 
 	private static ImageRegistry getImageRegistry() {
-		if (imageRegistry == null) {
-			imageRegistry = new ImageRegistry();
-		}
-		return imageRegistry;
+		return UMLCommonPlugin.getInstance().getImageRegistry();
 	}
 
 }
