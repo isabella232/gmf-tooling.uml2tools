@@ -59,6 +59,9 @@ public class SDBuilder {
 		for (SDAbstractMessage next : orderedSDMessages){
 			if (next instanceof SDMessage){
 				SDMessage nextMessage = (SDMessage)next;
+				if (guard.contains(nextMessage)){
+					continue;
+				}
 				SDMessage firstInChain = findFirstMessageInChain(nextMessage);
 				firstInChain.setMessageNumber(String.valueOf(rootNumber++));
 				setupMessageNumbersForChain(firstInChain, guard);
