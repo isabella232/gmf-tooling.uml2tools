@@ -1,7 +1,7 @@
 package org.eclipse.uml2.diagram.sequence.parsers;
 
+
 import java.text.FieldPosition;
-import java.text.MessageFormat;
 import java.text.ParsePosition;
 
 import org.eclipse.core.runtime.IAdaptable;
@@ -14,10 +14,11 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.uml2.diagram.sequence.part.Messages;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 
+import com.ibm.icu.text.MessageFormat;
+
 /**
  * @generated
  */
-
 public class MessageFormatParser extends AbstractParser {
 
 	/**

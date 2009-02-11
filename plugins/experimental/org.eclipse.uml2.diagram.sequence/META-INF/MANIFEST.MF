@@ -41,6 +41,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport,
  org.eclipse.uml2.diagram.common;visibility:=reexport,
  org.eclipse.draw2d;visibility:=reexport,
- org.eclipse.uml2.diagram.sequence.model
+ org.eclipse.uml2.diagram.sequence.model,
+ com.ibm.icu
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
