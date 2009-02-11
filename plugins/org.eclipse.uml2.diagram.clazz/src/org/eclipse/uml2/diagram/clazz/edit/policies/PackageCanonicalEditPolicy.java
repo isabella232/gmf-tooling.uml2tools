@@ -394,10 +394,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated NOT
 	 */
 	private Collection collectAllLinks(View view, Domain2Notation domain2NotationMap) {
+		Collection result = collectAllLinksGen(view, domain2NotationMap);
 		if (view instanceof Diagram) {
-			return new UMLInterfaceLinkManager(collectAllLinksGen(view, domain2NotationMap)).getFilteredLinkDescriptors();
+			result = new UMLInterfaceLinkManager(result).getFilteredLinkDescriptors();
 		}
-		return collectAllLinksGen(view, domain2NotationMap);
+		return result;
 	}
 
 	/**
