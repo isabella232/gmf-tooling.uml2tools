@@ -13,8 +13,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.helpers.AssociationEditHelper;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
-import org.eclipse.uml2.uml.AggregationKind;
+import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
@@ -76,6 +75,7 @@ public class AssociationCreateCommand extends EditElementCommand {
 	/**
 	 * @generated NOT
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
@@ -84,14 +84,8 @@ public class AssociationCreateCommand extends EditElementCommand {
 		Type sourceType = (Type) getSource();
 		Type targetType = (Type) getTarget();
 
-		//due to association end conventions (see AssociationEndConvention) 
-		//we need to have member end of type SourceType to be the first one created
-		//thus, we are calling UML2 createAssociation() in opposite order
 		boolean setNavigability = getRequest().getParameter(AssociationEditHelper.PARAMETER_SET_TARGET_NAVIGABILITY) != null;
-		Association newElement = targetType.createAssociation(//
-				false, AggregationKind.NONE_LITERAL, CustomMessages.AssociationCreateCommand_source_end, 1, 1, // 
-				sourceType, setNavigability, AggregationKind.NONE_LITERAL, CustomMessages.AssociationCreateCommand_target_end, 1, 1);
-
+		Association newElement = AssociationEndConvention.createAssociation(sourceType, targetType, setNavigability);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);

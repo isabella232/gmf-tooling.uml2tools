@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006 Borland Software Corporation
+ * Copyright (c) 2006, 2009 Borland Software Corporation
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -12,8 +12,11 @@
 
 package org.eclipse.uml2.diagram.common.conventions;
 
+import org.eclipse.uml2.diagram.common.Messages;
+import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Type;
 
 public class AssociationEndConvention {
 	public static Property getMemberEnd(Association association, boolean sourceNotTarget){
@@ -26,5 +29,20 @@ public class AssociationEndConvention {
 
 	public static Property getTargetEnd(Association association){
 		return getMemberEnd(association, false);
+	}
+	
+	public static Association createAssociation(Type sourceType, Type targetType, boolean setNavigability){
+		//due to association end conventions (see AssociationEndConvention) 
+		//we need to have member end of type SourceType to be the first one created
+		//thus, we are calling UML2 createAssociation() in opposite order
+		Association newElement = targetType.createAssociation(//
+				false, AggregationKind.NONE_LITERAL, Messages.AssociationEndConvention_source_end_name, 1, 1, // 
+				sourceType, setNavigability, AggregationKind.NONE_LITERAL, Messages.AssociationEndConvention_target_end_name, 1, 1);
+		
+		//also we need to have associations stored at the same package as a source (not target like it is done in UML), scr #264509
+		if (sourceType.getNearestPackage() != targetType.getNearestPackage() && newElement.getNearestPackage() != sourceType.getNearestPackage()){
+			sourceType.getNearestPackage().getOwnedTypes().add(newElement);
+		}
+		return newElement;
 	}
 }

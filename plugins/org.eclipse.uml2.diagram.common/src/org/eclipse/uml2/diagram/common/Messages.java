@@ -33,6 +33,10 @@ public class Messages extends NLS {
 	public static String ApplyStereotypeAction_apply_stereotype_command;
 
 	public static String ApplyStereotypeAction_empty_name;
+
+	public static String AssociationEndConvention_source_end_name;
+
+	public static String AssociationEndConvention_target_end_name;
 	
 	public static String EventParser_any_receive_event_denotation;
 	
