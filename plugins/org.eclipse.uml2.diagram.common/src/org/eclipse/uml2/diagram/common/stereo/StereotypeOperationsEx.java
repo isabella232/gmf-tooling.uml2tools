@@ -58,6 +58,10 @@ public class StereotypeOperationsEx extends UMLUtil {
 		return StereotypeImages.getImageDescriptor(stereo, null);
 	}
 	
+	public static ImageDescriptor getImage(Stereotype stereo, ImageDescriptor metaclassImage) {
+		return StereotypeImages.getImageDescriptor(stereo, metaclassImage);
+	}
+
 	private static List<ImageDescriptor> getListOfAppliedStereotypeImages(Element element, ImageDescriptor metaclassImage) {
 		EList<EObject> stereoApplications = element.getStereotypeApplications();
 		List<ImageDescriptor> result = new ArrayList<ImageDescriptor>(stereoApplications.size());
