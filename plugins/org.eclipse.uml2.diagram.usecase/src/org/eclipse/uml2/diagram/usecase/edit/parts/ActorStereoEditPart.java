@@ -215,7 +215,7 @@ public class ActorStereoEditPart extends CompartmentEditPart implements ITextAwa
 		if (false == parserElement instanceof Element) {
 			return null;
 		}
-		return StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement);
+		return StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
 	}
 
 	/**
