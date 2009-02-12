@@ -35,6 +35,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorUtil;
 
 
@@ -52,24 +53,17 @@ public class StateMachineDiagramTestCase extends TestCase {
 		return diagramWorkbenchPart;
 	}
 
-	public void flushEventQueue() {
-		Display display = Display.getDefault();
-		while (display.readAndDispatch()) {
-			// do nothing
-		}
-	}
-
 	protected void setUp() throws Exception {
 		createProject();
 
 		diagramResource = createDiagram();
 		openDiagram();
 
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 	}
 
 	protected void tearDown() throws Exception {
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 
 		closeDiagram();
         

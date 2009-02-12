@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:StateMachine xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_sXbnkKJSEdyjMdUT4ZzKyQ" name="StateMachine">
-  <region xmi:id="_t0td4KJSEdyjMdUT4ZzKyQ">
-    <subvertex xmi:type="uml:State" xmi:id="_uNmfAKJSEdyjMdUT4ZzKyQ" name="Typing Password">
-      <entry xmi:type="uml:Activity" xmi:id="_HeOOsKJTEdyjMdUT4ZzKyQ" name="set echo invisible"/>
-      <exit xmi:type="uml:Activity" xmi:id="_MNnWAKJTEdyjMdUT4ZzKyQ" name="set echo normal"/>
-    </subvertex>
-    <subvertex xmi:type="uml:State" xmi:id="_u1Y3wKJSEdyjMdUT4ZzKyQ" name="Typing Password">
-      <entry xmi:type="uml:Activity" xmi:id="_JwjdsKJTEdyjMdUT4ZzKyQ" name="set echo invisible"/>
-      <exit xmi:type="uml:Activity" xmi:id="_NeE4UKJTEdyjMdUT4ZzKyQ" name="set echo normal"/>
-      <region xmi:id="_u1-toKJSEdyjMdUT4ZzKyQ" name="Region">
-        <subvertex xmi:type="uml:State" xmi:id="_Tw3FAKJTEdyjMdUT4ZzKyQ" name="State"/>
-      </region>
-    </subvertex>
-  </region>
-</uml:StateMachine>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_SRlVMM__Ed2lF6ZbJF5ZwQ">
+  <elementImport xmi:id="_SSLyIM__Ed2lF6ZbJF5ZwQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_SSLyIc__Ed2lF6ZbJF5ZwQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_SSLyIs__Ed2lF6ZbJF5ZwQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_SSLyI8__Ed2lF6ZbJF5ZwQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_XNNhsM__Ed2lF6ZbJF5ZwQ" name="StateMachine">
+    <region xmi:id="_XNNhsc__Ed2lF6ZbJF5ZwQ">
+      <subvertex xmi:type="uml:State" xmi:id="_XNNhtc__Ed2lF6ZbJF5ZwQ" name="Typing Password">
+        <entry xmi:type="uml:Activity" xmi:id="_XNNhts__Ed2lF6ZbJF5ZwQ" name="set echo invisible"/>
+        <exit xmi:type="uml:Activity" xmi:id="_XNNht8__Ed2lF6ZbJF5ZwQ" name="set echo normal"/>
+        <region xmi:id="_XNNhuM__Ed2lF6ZbJF5ZwQ" name="Region">
+          <subvertex xmi:type="uml:State" xmi:id="_XNNhss__Ed2lF6ZbJF5ZwQ" name="Typing Password">
+            <entry xmi:type="uml:Activity" xmi:id="_XNNhs8__Ed2lF6ZbJF5ZwQ" name="set echo invisible"/>
+            <exit xmi:type="uml:Activity" xmi:id="_XNNhtM__Ed2lF6ZbJF5ZwQ" name="set echo normal"/>
+          </subvertex>
+          <transition xmi:id="_OAJhQOI_Ed27ga8QhccSnw" name="Handle Character" kind="internal" source="_XNNhtc__Ed2lF6ZbJF5ZwQ" target="_XNNhtc__Ed2lF6ZbJF5ZwQ">
+            <effect xmi:type="uml:Activity" xmi:id="_Ge-ckOJEEd27ga8QhccSnw" name="handleCharacter"/>
+            <trigger xmi:id="_bWvu8OI_Ed27ga8QhccSnw" name="Handle Character Trigger">
+              <event xmi:type="uml:SignalEvent" href="events.uml#_58yrMOI_Ed27ga8QhccSnw"/>
+            </trigger>
+          </transition>
+          <transition xmi:id="_tfAcEOPEEd2zc-IGfy6z-g" name="Display Help" kind="internal" source="_XNNhtc__Ed2lF6ZbJF5ZwQ" target="_XNNhtc__Ed2lF6ZbJF5ZwQ">
+            <effect xmi:type="uml:Activity" xmi:id="_85oXAOPEEd2zc-IGfy6z-g" name="displayHelp"/>
+            <trigger xmi:id="_zvaDIOPEEd2zc-IGfy6z-g" name="Display Help Trigger">
+              <event xmi:type="uml:SignalEvent" href="events.uml#_pnNEEOPEEd2zc-IGfy6z-g"/>
+            </trigger>
+          </transition>
+        </region>
+      </subvertex>
+    </region>
+  </packagedElement>
+</uml:Package>

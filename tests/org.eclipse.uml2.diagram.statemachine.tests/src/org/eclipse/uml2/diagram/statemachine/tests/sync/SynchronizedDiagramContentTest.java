@@ -37,11 +37,13 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorUtil;
 import org.eclipse.uml2.diagram.statemachine.tests.StateMachineDiagramTestCase;
 import org.eclipse.uml2.uml.FinalState;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.PseudostateKind;
 import org.eclipse.uml2.uml.Region;
@@ -57,7 +59,7 @@ public class SynchronizedDiagramContentTest extends StateMachineDiagramTestCase 
 	}
 	
 	public void test_synchronizedContent() {
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
 		DiagramEditPart diagramEditPart = getDiagramEditPart();
 		assertNotNull("There is no diagram edit part.", diagramEditPart); //$NON-NLS-1$
 		
@@ -115,16 +117,10 @@ public class SynchronizedDiagramContentTest extends StateMachineDiagramTestCase 
 			if (element instanceof FinalState) {
 				hasFinalState = true;
 			} else if (element instanceof State) {
-				EList stateChildren = regionChild.getChildren(); 
-				if (stateChildren.size() == 1) {
+				if (isCompositeState(regionChild)) {
+					hasCompositeState = true;
+				} else {
 					hasSimpleState = true;
-				} else if (stateChildren.size() == 2) {
-					for (Iterator stateChildrenIterator = stateChildren.iterator(); stateChildrenIterator.hasNext();) {
-						View stateChild = (View) stateChildrenIterator.next();
-						if (stateChild.getElement() instanceof Region) {
-							hasCompositeState = true;
-						}
-					}
 				}
 			} else if (element instanceof Pseudostate) {
 				PseudostateKind kind = ((Pseudostate) element).getKind();
@@ -171,13 +167,13 @@ public class SynchronizedDiagramContentTest extends StateMachineDiagramTestCase 
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, "Creating diagram and model", Collections.EMPTY_LIST) { //$NON-NLS-1$
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				StateMachine model = createStateMachine();
-				modelResource.getContents().add(model);
-				Diagram diagram = ViewService.createDiagram(model, PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Package context = createContext();
+				modelResource.getContents().add(context);
+				Diagram diagram = ViewService.createDiagram(context, PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
 					diagram.setName(diagramName);
-					diagram.setElement(model);
+					diagram.setElement(context);
 				}
 				try {
 					Map<String,String> options = new HashMap<String,String>();
@@ -206,8 +202,9 @@ public class SynchronizedDiagramContentTest extends StateMachineDiagramTestCase 
 		return diagramResource;
 	}
 	
-	private StateMachine createStateMachine() {
-		StateMachine stateMachine = UMLFactory.eINSTANCE.createStateMachine();
+	private Package createContext() {
+		Package rootPackage = UMLFactory.eINSTANCE.createPackage();
+		StateMachine stateMachine = (StateMachine) rootPackage.createPackagedElement("State Machine", UMLPackage.eINSTANCE.getStateMachine());
 		stateMachine.setName("State Machine"); //$NON-NLS-1$
 		Pseudostate entryPoint = stateMachine.createConnectionPoint("Entry Point"); //$NON-NLS-1$
 		entryPoint.setKind(PseudostateKind.ENTRY_POINT_LITERAL);
@@ -236,6 +233,17 @@ public class SynchronizedDiagramContentTest extends StateMachineDiagramTestCase 
 		choice.setKind(PseudostateKind.CHOICE_LITERAL);
 		Pseudostate terminate = (Pseudostate) region.createSubvertex("Terminate Pseudostate", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
 		terminate.setKind(PseudostateKind.TERMINATE_LITERAL);
-		return stateMachine;
+		return rootPackage;
+	}
+	
+	private boolean isCompositeState(View stateView) {
+		EList stateChildren = stateView.getChildren(); 
+		for (Iterator stateChildrenIterator = stateChildren.iterator(); stateChildrenIterator.hasNext();) {
+			View stateChild = (View) stateChildrenIterator.next();
+			if (stateChild.getElement() instanceof Region) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

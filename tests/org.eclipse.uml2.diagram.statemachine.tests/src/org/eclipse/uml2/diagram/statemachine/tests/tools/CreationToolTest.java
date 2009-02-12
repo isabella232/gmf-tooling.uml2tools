@@ -13,7 +13,10 @@
 package org.eclipse.uml2.diagram.statemachine.tests.tools;
 
 import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditDomain;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
@@ -23,6 +26,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.widgets.Event;
+import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
@@ -36,6 +40,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditP
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
@@ -51,33 +57,59 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 		super("Testing element creation by tools"); //$NON-NLS-1$
 	}
 
-	public void test_topLevelEditPart() {
-		IGraphicalEditPart statemachineEditPart = 
-			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachineEditPart.VISUAL_ID));
-		assertNotNull("Top level edit part is not found.", statemachineEditPart); //$NON-NLS-1$
+	public void test_rootEditPart() {
+		assertNotNull("Root edit part is NULL.", getDiagramEditPart()); //$NON-NLS-1$
 	}
 	
-	public void test_regionCreation() throws Exception {
-		createNodeByTool(UMLElementTypes.Region_3013);
-		
+	public void test_stateMachineCreation() {
+		createNodeByTool(UMLElementTypes.StateMachine_2005);
+
 		IGraphicalEditPart statemachineEditPart = 
 			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachineEditPart.VISUAL_ID));
 		assertNotNull("StateMachine edit part was not found.", statemachineEditPart); //$NON-NLS-1$
+		
 		IGraphicalEditPart regionEditPart = 
-			statemachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(State_RegionEditPart.VISUAL_ID));
+			statemachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionEditPart.VISUAL_ID));
 		assertNotNull("Region was not created.", regionEditPart); //$NON-NLS-1$
 	}
 	
-	public void test_entryExitPointCreation() {
-		createNodeByTool(UMLElementTypes.Pseudostate_3014);
-		createNodeByTool(UMLElementTypes.Pseudostate_3015);
-		
-		IGraphicalEditPart statemachineEditPart = 
+	public void test_regionCreation() throws Exception {
+		createNodeByTool(UMLElementTypes.StateMachine_2005, 10, 10);
+		IGraphicalEditPart stateMachineEditPart = 
 			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachineEditPart.VISUAL_ID));
-		assertNotNull("StateMachine edit part was not found.", statemachineEditPart); //$NON-NLS-1$
+		assertNotNull("StateMachine edit part was not found.", stateMachineEditPart); //$NON-NLS-1$
 
+		UMLDiagramFacade.flushEventQueue();
+		Rectangle stateMachineBounds = stateMachineEditPart.getFigure().getBounds();
+
+		createNodeByTool(UMLElementTypes.Region_3013, stateMachineBounds.x + 10, stateMachineBounds.y + 10);
+		List children = stateMachineEditPart.getChildren();
+		int counter = 0;
+		for (Iterator childrenIterator = children.iterator(); childrenIterator.hasNext();) {
+			IGraphicalEditPart childEditPart = (IGraphicalEditPart) childrenIterator.next();
+			if (childEditPart instanceof StateMachine_RegionEditPart) {
+				counter++;
+			}
+		}
+		
+		assertEquals("Only one region is found", 2, counter); //$NON-NLS-1$
+	}
+	
+	public void test_entryExitPointCreation() {
+		createNodeByTool(UMLElementTypes.StateMachine_2005, 10, 10);
+
+		IGraphicalEditPart stateMachineEditPart = 
+			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachineEditPart.VISUAL_ID));
+		assertNotNull("StateMachine edit part was not found.", stateMachineEditPart); //$NON-NLS-1$
+		
+		UMLDiagramFacade.flushEventQueue();
+		Rectangle stateMachineBounds = stateMachineEditPart.getFigure().getBounds();
+
+		createNodeByTool(UMLElementTypes.Pseudostate_3014, stateMachineBounds.x + 10, stateMachineBounds.y + 10);
+		createNodeByTool(UMLElementTypes.Pseudostate_3015, stateMachineBounds.x + 10, stateMachineBounds.y + 10);
+		
 		IGraphicalEditPart entryPointEditPart = 
-			statemachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(EntryPointPseudostateEditPart.VISUAL_ID));
+			stateMachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(EntryPointPseudostateEditPart.VISUAL_ID));
 		assertNotNull("Entry point was not created.", entryPointEditPart); //$NON-NLS-1$
 		assertEquals("Created entry point had incorrect kind.",  //$NON-NLS-1$
 				PseudostateKind.ENTRY_POINT_LITERAL, 
@@ -85,7 +117,7 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 		
 		
 		IGraphicalEditPart exitPointEditPart = 
-			statemachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(ExitPointPseudostateEditPart.VISUAL_ID));
+			stateMachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(ExitPointPseudostateEditPart.VISUAL_ID));
 		assertNotNull("Entry point was not created.", exitPointEditPart); //$NON-NLS-1$
 		assertEquals("Created exit point had incorrect kind.",  //$NON-NLS-1$
 				PseudostateKind.EXIT_POINT_LITERAL, 
@@ -93,28 +125,29 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 	}
 	
 	public void test_stateCreation() {
-		IGraphicalEditPart statemachineEditPart = 
-			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachineEditPart.VISUAL_ID));
-		assertNotNull("StateMachine edit part was not found.", statemachineEditPart); //$NON-NLS-1$
+		createNodeByTool(UMLElementTypes.StateMachine_2005, 10, 10);
 
-		createNodeByTool(UMLElementTypes.Region_3013);
+		IGraphicalEditPart stateMachineEditPart = 
+			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachineEditPart.VISUAL_ID));
+		assertNotNull("StateMachine edit part was not found.", stateMachineEditPart); //$NON-NLS-1$
 
 		IGraphicalEditPart regionEditPart = 
-			statemachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(State_RegionEditPart.VISUAL_ID));
+			stateMachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionEditPart.VISUAL_ID));
 		assertNotNull("Region edit part was not found.", regionEditPart); //$NON-NLS-1$
 		IGraphicalEditPart subverticesEditPart = 
-			regionEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(State_RegionSubverticesEditPart.VISUAL_ID));
+			regionEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
 		assertNotNull("Region subvertices edit part was not found.", subverticesEditPart); //$NON-NLS-1$
 		
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
+		Rectangle subverticesBounds = subverticesEditPart.getFigure().getBounds();
 		
-		createNodeByTool(UMLElementTypes.State_3001);
+		createNodeByTool(UMLElementTypes.State_3001, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		
 		IGraphicalEditPart simpleStateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(SimpleStateEditPart.VISUAL_ID));
 		assertNotNull("Simple state was not created.", simpleStateEditPart); //$NON-NLS-1$
 
-		createNodeByTool(UMLElementTypes.State_3012);
+		createNodeByTool(UMLElementTypes.State_3012, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		IGraphicalEditPart compositeStateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(CompositeStateEditPart.VISUAL_ID));
 		assertNotNull("Composite state was not created.", compositeStateEditPart); //$NON-NLS-1$
@@ -122,29 +155,30 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 				1, 
 				((State) ((Node) compositeStateEditPart.getModel()).getElement()).getRegions().size());
 
-		createNodeByTool(UMLElementTypes.FinalState_3003);
+		createNodeByTool(UMLElementTypes.FinalState_3003, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		IGraphicalEditPart finalStateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(FinalStateEditPart.VISUAL_ID));
 		assertNotNull("Final state was not created.", finalStateEditPart); //$NON-NLS-1$
 	}
 	
 	public void test_pseudostateCreation() {
+		createNodeByTool(UMLElementTypes.StateMachine_2005, 10, 10);
+
 		IGraphicalEditPart statemachineEditPart = 
 			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachineEditPart.VISUAL_ID));
 		assertNotNull("StateMachine edit part was not found.", statemachineEditPart); //$NON-NLS-1$
 
-		createNodeByTool(UMLElementTypes.Region_3013);
-
 		IGraphicalEditPart regionEditPart = 
-			statemachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(State_RegionEditPart.VISUAL_ID));
+			statemachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionEditPart.VISUAL_ID));
 		assertNotNull("Region edit part was not found.", regionEditPart); //$NON-NLS-1$
 		IGraphicalEditPart subverticesEditPart = 
-			regionEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(State_RegionSubverticesEditPart.VISUAL_ID));
+			regionEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
 		assertNotNull("Region subvertices edit part was not found.", subverticesEditPart); //$NON-NLS-1$
 		
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
+		Rectangle subverticesBounds = subverticesEditPart.getFigure().getBounds();
 		
-		createNodeByTool(UMLElementTypes.Pseudostate_3004);
+		createNodeByTool(UMLElementTypes.Pseudostate_3004, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		IGraphicalEditPart initialPseudostateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(InitialPseudostateEditPart.VISUAL_ID));
 		assertNotNull("Initial pseudostate was not created.", initialPseudostateEditPart); //$NON-NLS-1$
@@ -152,7 +186,7 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 				PseudostateKind.INITIAL_LITERAL, 
 				((Pseudostate) ((Node) initialPseudostateEditPart.getModel()).getElement()).getKind());
 
-		createNodeByTool(UMLElementTypes.Pseudostate_3005);
+		createNodeByTool(UMLElementTypes.Pseudostate_3005, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		IGraphicalEditPart shallowHistoryPseudostateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(ShallowHistoryPseudostateEditPart.VISUAL_ID));
 		assertNotNull("Shallow history pseudostate was not created.", shallowHistoryPseudostateEditPart); //$NON-NLS-1$
@@ -160,7 +194,7 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 				PseudostateKind.SHALLOW_HISTORY_LITERAL, 
 				((Pseudostate) ((Node) shallowHistoryPseudostateEditPart.getModel()).getElement()).getKind());
 
-		createNodeByTool(UMLElementTypes.Pseudostate_3006);
+		createNodeByTool(UMLElementTypes.Pseudostate_3006, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		IGraphicalEditPart deepHistoryPseudostateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(DeepHistoryPseudostateEditPart.VISUAL_ID));
 		assertNotNull("Deep history pseudostate was not created.", deepHistoryPseudostateEditPart); //$NON-NLS-1$
@@ -168,7 +202,7 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 				PseudostateKind.DEEP_HISTORY_LITERAL, 
 				((Pseudostate) ((Node) deepHistoryPseudostateEditPart.getModel()).getElement()).getKind());
 
-		createNodeByTool(UMLElementTypes.Pseudostate_3007);
+		createNodeByTool(UMLElementTypes.Pseudostate_3007, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		IGraphicalEditPart forkPseudostateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(ForkPseudostateEditPart.VISUAL_ID));
 		assertNotNull("Fork pseudostate was not created.", forkPseudostateEditPart); //$NON-NLS-1$
@@ -176,7 +210,7 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 				PseudostateKind.FORK_LITERAL, 
 				((Pseudostate) ((Node) forkPseudostateEditPart.getModel()).getElement()).getKind());
 
-		createNodeByTool(UMLElementTypes.Pseudostate_3008);
+		createNodeByTool(UMLElementTypes.Pseudostate_3008, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		IGraphicalEditPart joinPseudostateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(JoinPseudostateEditPart.VISUAL_ID));
 		assertNotNull("Join pseudostate was not created.", joinPseudostateEditPart); //$NON-NLS-1$
@@ -184,7 +218,7 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 				PseudostateKind.JOIN_LITERAL, 
 				((Pseudostate) ((Node) joinPseudostateEditPart.getModel()).getElement()).getKind());
 
-		createNodeByTool(UMLElementTypes.Pseudostate_3009);
+		createNodeByTool(UMLElementTypes.Pseudostate_3009, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		IGraphicalEditPart junctionPseudostateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(JunctionPseudostateEditPart.VISUAL_ID));
 		assertNotNull("Junction pseudostate was not created.", junctionPseudostateEditPart); //$NON-NLS-1$
@@ -192,7 +226,7 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 				PseudostateKind.JUNCTION_LITERAL, 
 				((Pseudostate) ((Node) junctionPseudostateEditPart.getModel()).getElement()).getKind());
 
-		createNodeByTool(UMLElementTypes.Pseudostate_3010);
+		createNodeByTool(UMLElementTypes.Pseudostate_3010, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		IGraphicalEditPart choicePseudostateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(ChoicePseudostateEditPart.VISUAL_ID));
 		assertNotNull("Junction pseudostate was not created.", choicePseudostateEditPart); //$NON-NLS-1$
@@ -200,7 +234,7 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 				PseudostateKind.CHOICE_LITERAL, 
 				((Pseudostate) ((Node) choicePseudostateEditPart.getModel()).getElement()).getKind());
 
-		createNodeByTool(UMLElementTypes.Pseudostate_3011);
+		createNodeByTool(UMLElementTypes.Pseudostate_3011, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		IGraphicalEditPart terminatePseudostateEditPart = 
 			subverticesEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(TerminatePseudostateEditPart.VISUAL_ID));
 		assertNotNull("Terminate pseudostate was not created.", terminatePseudostateEditPart); //$NON-NLS-1$
@@ -210,23 +244,23 @@ public class CreationToolTest extends StateMachineDiagramTestCase {
 	}
 	
 	public void test_transitionCreation() {
+		createNodeByTool(UMLElementTypes.StateMachine_2005, 10, 10);
 		IGraphicalEditPart statemachineEditPart = 
 			getDiagramEditPart().getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachineEditPart.VISUAL_ID));
 		assertNotNull("StateMachine edit part was not found.", statemachineEditPart); //$NON-NLS-1$
 
-		createNodeByTool(UMLElementTypes.Region_3013);
-
 		IGraphicalEditPart regionEditPart = 
-			statemachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(State_RegionEditPart.VISUAL_ID));
+			statemachineEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionEditPart.VISUAL_ID));
 		assertNotNull("Region edit part was not found.", regionEditPart); //$NON-NLS-1$
 		IGraphicalEditPart subverticesEditPart = 
-			regionEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(State_RegionSubverticesEditPart.VISUAL_ID));
+			regionEditPart.getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
 		assertNotNull("Region subvertices edit part was not found.", subverticesEditPart); //$NON-NLS-1$
 		
-		flushEventQueue();
+		UMLDiagramFacade.flushEventQueue();
+		Rectangle subverticesBounds = subverticesEditPart.getFigure().getBounds();
 		
-		createNodeByTool(UMLElementTypes.State_3001);
-		createNodeByTool(UMLElementTypes.State_3001);
+		createNodeByTool(UMLElementTypes.State_3001, subverticesBounds.x + 10, subverticesBounds.y + 10);
+		createNodeByTool(UMLElementTypes.State_3001, subverticesBounds.x + 10, subverticesBounds.y + 10);
 		
 		getDiagramEditPart().getViewer().setSelection(new StructuredSelection(subverticesEditPart.getChildren())); 
 		

@@ -20,6 +20,7 @@ public class TestWholeDiagramSuite extends TestSuite {
 		oursDiagramFiles.add("15.32.State with compartments");
 		oursDiagramFiles.add("15.35.Orthogonal state with regions");
 		oursDiagramFiles.add("15.38.State machine with exit point on the border of the statemachine");
+		oursDiagramFiles.add("15.41.State machine diagram representing a state machine");
 	}
 
 }

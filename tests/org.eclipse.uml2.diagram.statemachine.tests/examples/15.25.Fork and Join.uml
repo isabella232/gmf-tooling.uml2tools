@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:StateMachine xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_MTl9wAkqEdyF_oRbgI8ypA" name="StateMachine">
-  <region xmi:id="_cWXd0AkqEdyF_oRbgI8ypA">
-    <subvertex xmi:type="uml:State" xmi:id="_dQx3oAkqEdyF_oRbgI8ypA" name="Setup"/>
-    <subvertex xmi:type="uml:State" xmi:id="_gLofMAkqEdyF_oRbgI8ypA" name="Process">
-      <region xmi:id="_gMEkEAkqEdyF_oRbgI8ypA" name="Region">
-        <subvertex xmi:type="uml:State" xmi:id="_kLK24AkqEdyF_oRbgI8ypA" name="A1"/>
-        <subvertex xmi:type="uml:State" xmi:id="_k7v_QAkqEdyF_oRbgI8ypA" name="A2"/>
-        <transition xmi:id="_1Ihv4AkqEdyF_oRbgI8ypA" target="_k7v_QAkqEdyF_oRbgI8ypA" source="_kLK24AkqEdyF_oRbgI8ypA"/>
-        <transition xmi:id="_4pOPcAkqEdyF_oRbgI8ypA" target="_tRx2EAkqEdyF_oRbgI8ypA" source="_k7v_QAkqEdyF_oRbgI8ypA"/>
-      </region>
-      <region xmi:id="_hWIjcAkqEdyF_oRbgI8ypA">
-        <subvertex xmi:type="uml:State" xmi:id="_nQ54wAkqEdyF_oRbgI8ypA" name="B1"/>
-        <subvertex xmi:type="uml:State" xmi:id="_oCqs4AkqEdyF_oRbgI8ypA" name="B2"/>
-        <transition xmi:id="_2IJZ0AkqEdyF_oRbgI8ypA" target="_oCqs4AkqEdyF_oRbgI8ypA" source="_nQ54wAkqEdyF_oRbgI8ypA"/>
-        <transition xmi:id="_3VL0sAkqEdyF_oRbgI8ypA" target="_tRx2EAkqEdyF_oRbgI8ypA" source="_oCqs4AkqEdyF_oRbgI8ypA"/>
-      </region>
-    </subvertex>
-    <subvertex xmi:type="uml:State" xmi:id="_rfWPIAkqEdyF_oRbgI8ypA" name="Cleanup"/>
-    <subvertex xmi:type="uml:Pseudostate" xmi:id="_s0SBwAkqEdyF_oRbgI8ypA" kind="fork"/>
-    <subvertex xmi:type="uml:Pseudostate" xmi:id="_tRx2EAkqEdyF_oRbgI8ypA" kind="join"/>
-    <transition xmi:id="_zn98EAkqEdyF_oRbgI8ypA" target="_s0SBwAkqEdyF_oRbgI8ypA" source="_dQx3oAkqEdyF_oRbgI8ypA"/>
-    <transition xmi:id="_6KOIIAkqEdyF_oRbgI8ypA" target="_rfWPIAkqEdyF_oRbgI8ypA" source="_tRx2EAkqEdyF_oRbgI8ypA"/>
-    <transition xmi:id="_F0JYoAkrEdyF_oRbgI8ypA" target="_kLK24AkqEdyF_oRbgI8ypA" source="_s0SBwAkqEdyF_oRbgI8ypA"/>
-    <transition xmi:id="_Gg_3kAkrEdyF_oRbgI8ypA" target="_nQ54wAkqEdyF_oRbgI8ypA" source="_s0SBwAkqEdyF_oRbgI8ypA"/>
-  </region>
-</uml:StateMachine>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_APsH8M_9Ed2lF6ZbJF5ZwQ">
+  <elementImport xmi:id="_AQbu0M_9Ed2lF6ZbJF5ZwQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_AQbu0c_9Ed2lF6ZbJF5ZwQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_AQbu0s_9Ed2lF6ZbJF5ZwQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_AQbu08_9Ed2lF6ZbJF5ZwQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_HL6TMM_9Ed2lF6ZbJF5ZwQ" name="StateMachine">
+    <region xmi:id="_HL6TMc_9Ed2lF6ZbJF5ZwQ">
+      <subvertex xmi:type="uml:State" xmi:id="_HL6TMs_9Ed2lF6ZbJF5ZwQ" name="Setup"/>
+      <subvertex xmi:type="uml:State" xmi:id="_HL6TM8_9Ed2lF6ZbJF5ZwQ" name="Process">
+        <region xmi:id="_HL6TNM_9Ed2lF6ZbJF5ZwQ" name="Region">
+          <subvertex xmi:type="uml:State" xmi:id="_HL6TNc_9Ed2lF6ZbJF5ZwQ" name="A1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_HL6TNs_9Ed2lF6ZbJF5ZwQ" name="A2"/>
+          <transition xmi:id="_HL6TN8_9Ed2lF6ZbJF5ZwQ" source="_HL6TNc_9Ed2lF6ZbJF5ZwQ" target="_HL6TNs_9Ed2lF6ZbJF5ZwQ"/>
+          <transition xmi:id="_HL6TOM_9Ed2lF6ZbJF5ZwQ" source="_HL6TNs_9Ed2lF6ZbJF5ZwQ" target="_HL6TQM_9Ed2lF6ZbJF5ZwQ"/>
+        </region>
+        <region xmi:id="_HL6TOc_9Ed2lF6ZbJF5ZwQ">
+          <subvertex xmi:type="uml:State" xmi:id="_HL6TOs_9Ed2lF6ZbJF5ZwQ" name="B1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_HL6TO8_9Ed2lF6ZbJF5ZwQ" name="B2"/>
+          <transition xmi:id="_HL6TPM_9Ed2lF6ZbJF5ZwQ" source="_HL6TOs_9Ed2lF6ZbJF5ZwQ" target="_HL6TO8_9Ed2lF6ZbJF5ZwQ"/>
+          <transition xmi:id="_HL6TPc_9Ed2lF6ZbJF5ZwQ" source="_HL6TO8_9Ed2lF6ZbJF5ZwQ" target="_HL6TQM_9Ed2lF6ZbJF5ZwQ"/>
+        </region>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_HL6TPs_9Ed2lF6ZbJF5ZwQ" name="Cleanup"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_HL6TP8_9Ed2lF6ZbJF5ZwQ" kind="fork"/>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_HL6TQM_9Ed2lF6ZbJF5ZwQ" kind="join"/>
+      <transition xmi:id="_HL6TQc_9Ed2lF6ZbJF5ZwQ" source="_HL6TMs_9Ed2lF6ZbJF5ZwQ" target="_HL6TP8_9Ed2lF6ZbJF5ZwQ"/>
+      <transition xmi:id="_HL6TQs_9Ed2lF6ZbJF5ZwQ" source="_HL6TQM_9Ed2lF6ZbJF5ZwQ" target="_HL6TPs_9Ed2lF6ZbJF5ZwQ"/>
+      <transition xmi:id="_HL6TQ8_9Ed2lF6ZbJF5ZwQ" source="_HL6TP8_9Ed2lF6ZbJF5ZwQ" target="_HL6TNc_9Ed2lF6ZbJF5ZwQ"/>
+      <transition xmi:id="_HL6TRM_9Ed2lF6ZbJF5ZwQ" source="_HL6TP8_9Ed2lF6ZbJF5ZwQ" target="_HL6TOs_9Ed2lF6ZbJF5ZwQ"/>
+    </region>
+  </packagedElement>
+</uml:Package>
