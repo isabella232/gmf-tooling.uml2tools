@@ -90,7 +90,7 @@
 «ENDIF-»
 		final String diagramName = diagramURI.lastSegment();
 		«REM» #263482 'Give a diagram a default name'«ENDREM»«-»
-		final java.lang.String diagramNameWithoutExtension = diagramURI.trimFileExtension().lastSegment();
+		final String diagramNameWithoutExtension = diagramURI.trimFileExtension().lastSegment();
 		«REM» END #263482 «ENDREM»«-»
 		org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand command = new org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand(editingDomain, «EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreateDiagramCommandLabel(self)) FOR editorGen», java.util.Collections.EMPTY_LIST) {
 			protected org.eclipse.gmf.runtime.common.core.command.CommandResult doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor monitor, org.eclipse.core.runtime.IAdaptable info) throws org.eclipse.core.commands.ExecutionException {
