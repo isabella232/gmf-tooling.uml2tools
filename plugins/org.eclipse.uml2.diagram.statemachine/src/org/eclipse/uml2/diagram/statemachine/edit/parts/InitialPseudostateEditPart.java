@@ -412,6 +412,7 @@ public class InitialPseudostateEditPart extends ShapeNodeEditPart implements Pri
 		 * @generated
 		 */
 		public ActivityInitialFigure() {
+			this.setLineWidth(1);
 			this.setBackgroundColor(ColorConstants.black);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));

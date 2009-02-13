@@ -522,6 +522,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
+			this.setLineWidth(1);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
 			createContents();
 		}
@@ -543,6 +544,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 
 			fFigureSimpleStateFigure_InternalActivitiesCompartment = new RectangleFigure();
 			fFigureSimpleStateFigure_InternalActivitiesCompartment.setOutline(false);
+			fFigureSimpleStateFigure_InternalActivitiesCompartment.setLineWidth(1);
 
 			this.add(fFigureSimpleStateFigure_InternalActivitiesCompartment);
 			fFigureSimpleStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());

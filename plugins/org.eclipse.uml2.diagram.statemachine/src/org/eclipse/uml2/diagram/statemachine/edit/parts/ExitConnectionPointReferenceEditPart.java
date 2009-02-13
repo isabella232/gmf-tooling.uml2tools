@@ -446,6 +446,7 @@ public class ExitConnectionPointReferenceEditPart extends BorderedBorderItemEdit
 		 */
 		public ExitPointFigure() {
 			this.setLayoutManager(new StackLayout());
+			this.setLineWidth(1);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
@@ -548,6 +549,7 @@ public class ExitConnectionPointReferenceEditPart extends BorderedBorderItemEdit
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
 			exitPointFigure_Cross0.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
 			exitPointFigure_Cross0.setFill(true);
+			exitPointFigure_Cross0.setLineWidth(1);
 
 			this.add(exitPointFigure_Cross0);
 

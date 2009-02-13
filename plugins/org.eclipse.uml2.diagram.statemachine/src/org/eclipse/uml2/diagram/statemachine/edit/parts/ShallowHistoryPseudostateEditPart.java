@@ -403,6 +403,7 @@ public class ShallowHistoryPseudostateEditPart extends ShapeNodeEditPart impleme
 		 */
 		public ShallowHistoryFigure() {
 			this.setLayoutManager(new StackLayout());
+			this.setLineWidth(1);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
@@ -507,6 +508,7 @@ public class ShallowHistoryPseudostateEditPart extends ShapeNodeEditPart impleme
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			shallowHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			shallowHistoryFigure_Letter0.setFill(true);
+			shallowHistoryFigure_Letter0.setLineWidth(1);
 
 			this.add(shallowHistoryFigure_Letter0);
 

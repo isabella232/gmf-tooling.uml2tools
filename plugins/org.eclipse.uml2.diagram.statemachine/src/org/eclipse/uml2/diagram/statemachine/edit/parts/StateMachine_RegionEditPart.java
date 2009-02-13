@@ -267,6 +267,7 @@ public class StateMachine_RegionEditPart extends ShapeNodeEditPart implements Pr
 		 * @generated
 		 */
 		public RegionFigure() {
+			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
 		}
@@ -279,6 +280,7 @@ public class StateMachine_RegionEditPart extends ShapeNodeEditPart implements Pr
 			fFigureRegionFigure_Compartment = new RectangleFigure();
 			fFigureRegionFigure_Compartment.setFill(false);
 			fFigureRegionFigure_Compartment.setOutline(false);
+			fFigureRegionFigure_Compartment.setLineWidth(1);
 
 			this.add(fFigureRegionFigure_Compartment);
 

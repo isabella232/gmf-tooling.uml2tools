@@ -415,6 +415,7 @@ public class DeepHistoryPseudostateEditPart extends ShapeNodeEditPart implements
 			layoutThis.marginHeight = 0;
 			this.setLayoutManager(layoutThis);
 
+			this.setLineWidth(1);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25)));
@@ -519,6 +520,7 @@ public class DeepHistoryPseudostateEditPart extends ShapeNodeEditPart implements
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Letter0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			deepHistoryFigure_Letter0.setFill(true);
+			deepHistoryFigure_Letter0.setLineWidth(1);
 			deepHistoryFigure_Letter0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			deepHistoryFigure_Letter0.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 
@@ -535,6 +537,7 @@ public class DeepHistoryPseudostateEditPart extends ShapeNodeEditPart implements
 			RectangleFigure deepHistoryFigure_AsteriskContainer0 = new RectangleFigure();
 			deepHistoryFigure_AsteriskContainer0.setFill(false);
 			deepHistoryFigure_AsteriskContainer0.setOutline(false);
+			deepHistoryFigure_AsteriskContainer0.setLineWidth(1);
 			deepHistoryFigure_AsteriskContainer0.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			deepHistoryFigure_AsteriskContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			deepHistoryFigure_AsteriskContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0)));
@@ -644,6 +647,7 @@ public class DeepHistoryPseudostateEditPart extends ShapeNodeEditPart implements
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Asterisk1.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(20)));
 			deepHistoryFigure_Asterisk1.setFill(true);
+			deepHistoryFigure_Asterisk1.setLineWidth(1);
 
 			deepHistoryFigure_AsteriskContainer0.add(deepHistoryFigure_Asterisk1);
 

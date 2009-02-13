@@ -101,6 +101,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements ITreeB
 		 * @generated
 		 */
 		public TransitionConnection() {
+			this.setLineWidth(1);
 
 			setTargetDecoration(createTargetDecoration());
 		}
@@ -110,6 +111,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements ITreeB
 		 */
 		private RotatableDecoration createTargetDecoration() {
 			PolylineDecoration df = new PolylineDecoration();
+			df.setLineWidth(1);
 			PointList pl = new PointList();
 			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-1));
 			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));

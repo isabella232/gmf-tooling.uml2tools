@@ -454,6 +454,7 @@ public class EntryPointPseudostateEditPart extends BorderedBorderItemEditPart im
 		 * @generated
 		 */
 		public EntryPointFigure() {
+			this.setLineWidth(1);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));

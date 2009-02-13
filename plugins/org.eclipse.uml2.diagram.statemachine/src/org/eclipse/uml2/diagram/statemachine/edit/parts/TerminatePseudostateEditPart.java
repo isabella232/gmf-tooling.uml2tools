@@ -407,6 +407,7 @@ public class TerminatePseudostateEditPart extends ShapeNodeEditPart implements P
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(30)));
 			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(15)));
 			this.setFill(true);
+			this.setLineWidth(1);
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));
 			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25)));

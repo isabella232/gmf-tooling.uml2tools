@@ -594,6 +594,7 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(18), getMapMode().DPtoLP(18)));
+			this.setLineWidth(1);
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
 			createContents();
 		}
@@ -605,6 +606,7 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 
 			RectangleFigure compositeStateFigure_UpperContainer0 = new RectangleFigure();
 			compositeStateFigure_UpperContainer0.setOutline(false);
+			compositeStateFigure_UpperContainer0.setLineWidth(1);
 
 			this.add(compositeStateFigure_UpperContainer0, BorderLayout.TOP);
 
@@ -629,18 +631,21 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 
 			fFigureCompositeStateFigure_InternalActivitiesCompartment = new RectangleFigure();
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setOutline(false);
+			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLineWidth(1);
 
 			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalActivitiesCompartment);
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureCompositeStateFigure_InternalTransitionsCompartment = new RectangleFigure();
 			fFigureCompositeStateFigure_InternalTransitionsCompartment.setOutline(false);
+			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLineWidth(1);
 
 			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalTransitionsCompartment);
 			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureCompositeStateFigure_Body = new RectangleFigure();
 			fFigureCompositeStateFigure_Body.setOutline(false);
+			fFigureCompositeStateFigure_Body.setLineWidth(1);
 
 			this.add(fFigureCompositeStateFigure_Body, BorderLayout.CENTER);
 
