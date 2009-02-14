@@ -19,10 +19,12 @@ import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.ProfileApplication;
 
-
 public class ApplyProfileAction extends DiagramAction {
-	private static final String EMPTY_NAME = Messages.ApplyProfileAction_empty_name;
-	private  org.eclipse.uml2.uml.Package myPackage;
+
+	protected static final String EMPTY_NAME = Messages.ApplyProfileAction_empty_name;
+
+	protected org.eclipse.uml2.uml.Package myPackage;
+
 	private Profile myProfile;
 
 	public ApplyProfileAction(IWorkbenchPage workbenchPage, org.eclipse.uml2.uml.Package package_, Profile profile) {
@@ -40,6 +42,7 @@ public class ApplyProfileAction extends DiagramAction {
 	protected boolean isSelectionListener() {
 		return true;
 	}
+
 	@Override
 	protected Command getCommand() {
 		DiagramEditPart packageEditPart = getDiagramEditPart();
@@ -52,14 +55,18 @@ public class ApplyProfileAction extends DiagramAction {
 			public Object getEditHelperContext() {
 				// TODO Auto-generated method stub
 				return null;
-			}};
+			}
+		};
 		boolean toApply = !isProfileAppliedTo(myPackage, myProfile);
 		if (toApply) {
-			return new ICommandProxy(new ApplyProfileCommand(Messages.ApplyProfileAction_apply_profile_command, myPackage, myProfile, request));
-		} 
+			return new ICommandProxy(getApplyProfileCommand(request));
+		}
 		return new ICommandProxy(new UnapplyProfileCommand(Messages.ApplyProfileAction_unapply_profile_command, myPackage, myProfile, request));
 	}
 
+	protected ApplyProfileCommand getApplyProfileCommand(IEditCommandRequest request) {
+		return new ApplyProfileCommand(Messages.ApplyProfileAction_apply_profile_command, myPackage, myProfile, request);
+	}
 
 	@Override
 	public boolean isEnabled() {
@@ -72,35 +79,35 @@ public class ApplyProfileAction extends DiagramAction {
 		setText(calculateText());
 		setChecked(calculateChecked());
 	}
-	
-	private String calculateText() {
-		String name = myProfile.getName(); 
+
+	protected String calculateText() {
+		String name = myProfile.getName();
 		return name != null ? name : EMPTY_NAME;
 	}
 
-	private boolean calculateChecked() {
+	protected boolean calculateChecked() {
 		return isProfileAppliedTo(myPackage, myProfile);
 	}
 
 	private DiagramEditPart getPackageEditPart() {
 		for (Object next : getSelectedObjects()) {
 			if (next instanceof DiagramEditPart) {
-				DiagramEditPart packageEditPart = (DiagramEditPart)next;
+				DiagramEditPart packageEditPart = (DiagramEditPart) next;
 				return packageEditPart;
 			}
 		}
 		return null;
 	}
 
-	private boolean isProfileAppliedTo( org.eclipse.uml2.uml.Package package_, Profile profile) {
+	private boolean isProfileAppliedTo(org.eclipse.uml2.uml.Package package_, Profile profile) {
 		ProfileApplication profileApplication = package_.getProfileApplication(profile);
 		return profileApplication != null && profileApplication.getAppliedDefinition() == profile.getDefinition();
 	}
-	
 
-	private class ApplyProfileCommand extends EditElementCommand {
-		
+	protected class ApplyProfileCommand extends EditElementCommand {
+
 		org.eclipse.uml2.uml.Package myPackage;
+
 		private Profile myProfile;
 
 		protected ApplyProfileCommand(String label, org.eclipse.uml2.uml.Package package_, Profile profile, IEditCommandRequest request) {
@@ -114,11 +121,13 @@ public class ApplyProfileAction extends DiagramAction {
 			myPackage.applyProfile(myProfile);
 			return CommandResult.newOKCommandResult(myProfile);
 		}
-		
+
 	}
+
 	private class UnapplyProfileCommand extends EditElementCommand {
-		
+
 		org.eclipse.uml2.uml.Package myPackage;
+
 		private Profile myProfile;
 
 		protected UnapplyProfileCommand(String label, org.eclipse.uml2.uml.Package package_, Profile profile, IEditCommandRequest request) {
@@ -132,6 +141,6 @@ public class ApplyProfileAction extends DiagramAction {
 			myPackage.unapplyProfile(myProfile);
 			return CommandResult.newOKCommandResult(myProfile);
 		}
-		
+
 	}
 }

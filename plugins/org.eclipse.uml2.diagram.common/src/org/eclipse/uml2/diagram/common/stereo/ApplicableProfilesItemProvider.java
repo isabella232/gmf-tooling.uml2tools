@@ -3,24 +3,23 @@ package org.eclipse.uml2.diagram.common.stereo;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.common.core.service.IProvider;
 import org.eclipse.gmf.runtime.common.ui.services.action.contributionitem.AbstractContributionItemProvider;
 import org.eclipse.gmf.runtime.common.ui.util.IWorkbenchPartDescriptor;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.emf.core.internal.resources.PathmapManager;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.common.Messages;
-import org.eclipse.uml2.diagram.common.pathmap.PathMapService;
+import org.eclipse.uml2.diagram.common.stereo.ProfileRegistry.ProfileInfo;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPlugin;
 import org.eclipse.uml2.uml.util.UMLSwitch;
@@ -60,7 +59,7 @@ public class ApplicableProfilesItemProvider extends AbstractContributionItemProv
 			GraphicalEditPart selected = (GraphicalEditPart) getSelectedObject(myWorkbenchPart);
 
 			org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) selected.getNotationView().getElement();
-			loadProfilesFromRegistry(package_);
+			loadProfilesFromUML2Registry(package_);
 
 			List<Profile> profiles = getProfiles(package_);
 			for (Profile profile : profiles) {
@@ -69,9 +68,24 @@ public class ApplicableProfilesItemProvider extends AbstractContributionItemProv
 				action.init();
 				manager.add(action);
 			}
+			
+			Collection<ProfileInfo> profilesFromRegistry = getProfilesFromRegistry(package_);
+			List<String> loadedProfileUris = new ArrayList<String>(profiles.size());
+			for (Profile profile: profiles) {
+				loadedProfileUris.add(EcoreUtil.getURI(profile).toString());
+			}
+			for (ProfileInfo profileInfo : profilesFromRegistry) {
+				// filter profiles, that have already been loaded
+				if (loadedProfileUris.contains(profileInfo.uri)) {
+					continue;
+				}
+				ApplyProfileInfoAction action = new ApplyProfileInfoAction(getWorkbenchPage(), package_, profileInfo);
+				action.init();
+				manager.add(action);
+			}
 		}
 
-		private void loadProfilesFromRegistry(org.eclipse.uml2.uml.Package package_) {
+		private void loadProfilesFromUML2Registry(org.eclipse.uml2.uml.Package package_) {
 			ResourceSet resourceSet = package_.eResource().getResourceSet();
 			for (URI profileURI : UMLPlugin.getEPackageNsURIToProfileLocationMap().values()) {
 				try {
@@ -93,48 +107,18 @@ public class ApplicableProfilesItemProvider extends AbstractContributionItemProv
 
 		ResourceSet resourceSet = package_.eResource().getResourceSet();
 
-		addResourcesFromPathMap(resourceSet);
-
 		for (Resource resource : resourceSet.getResources()) {
-			TreeIterator<EObject> allContents = resource.getAllContents();
-
-			while (allContents.hasNext()) {
-
-				new UMLSwitch<Object>() {
-
-					@Override
-					public Object caseProfile(Profile profile) {
-						if (profile.isDefined()) {
-							choiceOfValues.add(profile);
-						}
-						return profile;
-					}
-				}.doSwitch(allContents.next());
+			Profile profile = ProfileUtil.getProfile(resource);
+			if (profile != null) {
+				choiceOfValues.add(profile);
 			}
 		}
 		return choiceOfValues;
 
 	}
 
-	private void addResourcesFromPathMap(ResourceSet resourceSet) {
-		try {
-			Set<?> pathVariables = PathmapManager.getAllPathVariables();
-			for (Object currVariable : pathVariables) {
-				String varName = (String) currVariable;
-				String varValue = PathmapManager.getRegisteredValue(varName);
-				Collection<String> profiles = PathMapService.getInstance().getProfiles(varName, varValue);
-				for (String pathmap : profiles) {
-					loadResource(resourceSet, pathmap);
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	private Resource loadResource(ResourceSet resourceSet, String pathmap) {
-		URI profileURI = URI.createURI(pathmap);
-		return resourceSet.getResource(profileURI, true);
+	private Collection<ProfileInfo> getProfilesFromRegistry(org.eclipse.uml2.uml.Package package_) {
+		return ProfileRegistry.getInstance().getProfiles();
 	}
 
 }

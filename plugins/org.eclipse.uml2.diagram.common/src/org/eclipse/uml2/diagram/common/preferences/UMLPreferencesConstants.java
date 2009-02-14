@@ -21,4 +21,6 @@ public interface UMLPreferencesConstants {
 	String PREF_PROP_SHEET_REFERENCE_COMBO = "propertysheet.reference.combo"; //$NON-NLS-1$
 	String PREF_PROP_SHEET_REFERENCE = "propertysheet.reference"; //$NON-NLS-1$
 
+	String PREF_PROFILE_REGISTRY = "profileRegistry"; //$NON-NLS-1$
+
 }
