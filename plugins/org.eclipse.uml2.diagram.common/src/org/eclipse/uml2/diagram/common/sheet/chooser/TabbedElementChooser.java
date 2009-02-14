@@ -14,7 +14,6 @@ import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
@@ -30,7 +29,6 @@ import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ElementChooserPage.Validator;
 import org.eclipse.uml2.uml.ElementImport;
-import org.eclipse.uml2.uml.NamedElement;
 
 public class TabbedElementChooser {
 
@@ -181,7 +179,7 @@ public class TabbedElementChooser {
 	
 	protected List<?> getInitialSelection() {
 		Object featureValue = mySourceObject.eGet(myFeature);
-		if (featureValue instanceof Collection) {
+		if (myFeature.isMany()) {
 			@SuppressWarnings("unchecked") 
 			Collection<Object> a = (Collection)featureValue;
 			return new ArrayList<Object>(a);
