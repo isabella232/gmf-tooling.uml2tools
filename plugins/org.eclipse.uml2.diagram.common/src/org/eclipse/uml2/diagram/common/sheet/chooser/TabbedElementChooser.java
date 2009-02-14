@@ -211,37 +211,6 @@ public class TabbedElementChooser {
 		void setContext(Object... context);
 	}
 	
-	private static class QualifiedNameLabelProvider extends LabelProvider implements LabelProviderWithContext {
-		
-		private final ILabelProvider myImageProvider;
-
-		public QualifiedNameLabelProvider(ILabelProvider imageProvider) {
-			myImageProvider = imageProvider;			
-		}
-
-		public void setContext(Object... context) {
-		}
-
-		@Override
-		public Image getImage(Object element) {
-			return myImageProvider.getImage(element);
-		}
-
-		@Override
-		public String getText(Object element) {
-			if (element instanceof NamedElement) {
-				return ((NamedElement)element).getQualifiedName();
-			}
-			return "";
-		}
-		
-		@Override
-		public void dispose() {
-			myImageProvider.dispose();
-		}
-
-	}
-
 	private static class FeatureValueValidator implements Validator {
 		private final EStructuralFeature myFeature;
 
