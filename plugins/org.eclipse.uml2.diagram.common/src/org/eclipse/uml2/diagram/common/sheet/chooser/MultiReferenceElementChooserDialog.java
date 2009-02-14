@@ -25,6 +25,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -75,7 +76,7 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		shell.setText("Choose " + myFeature.getName() + " for " + labelProvider.getText(mySourceObject));
+		shell.setText(NLS.bind("Choose {0} for {1}", new Object[]{myFeature.getName(), labelProvider.getText(mySourceObject)}));
 		shell.setImage(labelProvider.getImage(mySourceObject));
 	}
 
@@ -111,7 +112,7 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 		}
 
 		Label choiceLabel = new Label(choiceComposite, SWT.NONE);
-		choiceLabel.setText("Choose " + myFeature.getEType().getName() + ":");
+		choiceLabel.setText(NLS.bind("Choose {0}:", new Object[]{myFeature.getEType().getName()}));
 		GridData choiceLabelGridData = new GridData();
 		choiceLabelGridData.verticalAlignment = SWT.FILL;
 		choiceLabelGridData.horizontalAlignment = SWT.FILL;

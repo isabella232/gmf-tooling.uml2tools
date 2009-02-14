@@ -19,7 +19,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -32,21 +31,21 @@ import org.eclipse.uml2.diagram.common.part.ModelElementsContentHelper;
 
 public class ElementFilteredListChooser implements ElementChooserPage {
 
-	private AdapterFactoryContentProvider myAdapterFctoryContentProvier;
-
-	private final AdapterFactory myItemProvidersAdapterFactory;
-
-	private final EObject mySourceObject;
-
-	private final EStructuralFeature myFeature;
-
 	private FilteredListControl myFilteredList;
 
 	private final Validator myValidator;
 	
-	private final TransactionalEditingDomain myEditingDomain;
-	
 	private Object[] myListElements;
+
+	private final AdapterFactoryContentProvider myAdapterFctoryContentProvier;
+
+	private final AdapterFactory myItemProvidersAdapterFactory;
+
+	private final TransactionalEditingDomain myEditingDomain;	
+
+	private final EObject mySourceObject;
+
+	private final EStructuralFeature myFeature;
 
 	public ElementFilteredListChooser(AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature, Validator validator, TransactionalEditingDomain editingDomain) {
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
@@ -70,12 +69,12 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		return myFilteredList;
 	}
 
-	public List<?> getSelection() {
+	public final List<?> getSelection() {
         Object[] result = myFilteredList.getSelectedElements();
         return Arrays.asList(result);
 	}
 
-	public void setSelection(List<?> selection) {
+	public final void setSelection(List<?> selection) {
 		if (selection == null || selection.isEmpty()) {
 			myFilteredList.setSelection(null);
 		} else {
@@ -99,10 +98,6 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		addElements(elementsToAdd.toArray(new Object[elementsToAdd.size()]));		
 	}
 	
-	protected void addElementsFromResource(Resource newResource) {
-		addElements(collectElements(newResource));
-	}
-
 	private void addElements(Object[] elements) {
 		myListElements = concatArrays(myListElements, elements);
 		myFilteredList.setListElements(myListElements);
@@ -115,8 +110,6 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		return result;
 	}
 	
-	
-
 	protected EObject[] collectElements(Object inputElement) {
 		List<EObject> result = new LinkedList<EObject>();
 		for (Object next : getAllChildren(inputElement)) {

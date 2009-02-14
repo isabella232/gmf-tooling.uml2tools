@@ -15,6 +15,7 @@ import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.dialogs.TrayDialog;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
@@ -73,7 +74,7 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		shell.setText("Choose " + myFeature.getName() + " for " + labelProvider.getText(mySourceObject));
+		shell.setText(NLS.bind("Choose {0} for {1}", new Object[]{myFeature.getName(), labelProvider.getText(mySourceObject)}));
 		shell.setImage(labelProvider.getImage(mySourceObject));
 	}
 
