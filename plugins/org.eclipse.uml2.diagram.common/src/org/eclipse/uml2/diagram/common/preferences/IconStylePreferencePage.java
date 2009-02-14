@@ -10,33 +10,34 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.uml2.diagram.common.Messages;
 
-
 public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 
 	@Override
-	protected void addFields(Composite parent) {	  	
+	protected void addFields(Composite parent) {
 		Composite main = new Composite(parent, SWT.NULL);
 		main.setLayout(new GridLayout());
-		main.setLayoutData(
-			new GridData(
-				GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
+		main.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 		createIconStyleGroup(main);
-    }
-    
-    protected void createIconStyleGroup(Composite parent) {
-    	String[][] choices= new String[][]{{ALTERNATIVE_STYLE_ICON_LABEL, UMLPreferencesConstants.PREF_ICON_STYLE_CHEERFUL},{ECLIPSE_STYLE_ICON_LABEL, UMLPreferencesConstants.PREF_ICON_STYLE_STANDARD}};
-    	myIconStyleFieldEditor = new RadioGroupFieldEditor(UMLPreferencesConstants.PREF_ICON_STYLE, ICONSTYLE_GROUPBOX_LABEL, 1, choices, parent, true);
-    	addField(myIconStyleFieldEditor);
-    }
-    
-    public static void initDefaults(IPreferenceStore store) {
-    	AppearancePreferencePage.initDefaults(store);
-    	store.setDefault(UMLPreferencesConstants.PREF_ICON_STYLE, UMLPreferencesConstants.PREF_ICON_STYLE_STANDARD);
-    }
+	}
 
-    private static final String ICONSTYLE_GROUPBOX_LABEL = Messages.IconStylePreferencePage_icon_style_group;
+	protected void createIconStyleGroup(Composite parent) {
+		String[][] choices = new String[][] { { ALTERNATIVE_STYLE_ICON_LABEL, UMLPreferencesConstants.PREF_ICON_STYLE_CHEERFUL },
+				{ ECLIPSE_STYLE_ICON_LABEL, UMLPreferencesConstants.PREF_ICON_STYLE_STANDARD } };
+		myIconStyleFieldEditor = new RadioGroupFieldEditor(UMLPreferencesConstants.PREF_ICON_STYLE, ICONSTYLE_GROUPBOX_LABEL, 1, choices, parent, true);
+		addField(myIconStyleFieldEditor);
+	}
+
+	public static void initDefaults(IPreferenceStore store) {
+		AppearancePreferencePage.initDefaults(store);
+		store.setDefault(UMLPreferencesConstants.PREF_ICON_STYLE, UMLPreferencesConstants.PREF_ICON_STYLE_STANDARD);
+	}
+
+	private static final String ICONSTYLE_GROUPBOX_LABEL = Messages.IconStylePreferencePage_icon_style_group;
+
 	private static final String ALTERNATIVE_STYLE_ICON_LABEL = Messages.IconStylePreferencePage_cheerful_style;
+
 	private static final String ECLIPSE_STYLE_ICON_LABEL = Messages.IconStylePreferencePage_eclipse_style;
-    private RadioGroupFieldEditor myIconStyleFieldEditor;
+
+	private RadioGroupFieldEditor myIconStyleFieldEditor;
 
 }
