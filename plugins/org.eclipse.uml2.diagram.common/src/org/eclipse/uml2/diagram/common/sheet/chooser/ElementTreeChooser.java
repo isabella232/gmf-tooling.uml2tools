@@ -43,7 +43,6 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreePath;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
@@ -273,27 +272,6 @@ public class ElementTreeChooser implements ElementChooserPage {
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 			myWorkbenchContentProvider.inputChanged(viewer, oldInput, newInput);
 			myAdapterFctoryContentProvier.inputChanged(viewer, oldInput, newInput);
-		}
-
-	}
-
-	private class UMLFileFilter extends ViewerFilter {
-
-		private static final String UML_FILE_EXTENSION = "uml"; //$NON-NLS-1$
-
-		@Override
-		public boolean select(Viewer viewer, Object parentElement, Object element) {
-			if (element instanceof IFile) {
-				IFile file = (IFile) element;
-				String fileExtension = file.getFullPath().getFileExtension();
-				return UML_FILE_EXTENSION.equals(fileExtension); //$NON-NLS-1$
-			}
-			if (element instanceof Resource) {
-				Resource res = (Resource) element;
-				String fileExtension = res.getURI().fileExtension();
-				return UML_FILE_EXTENSION.equals(fileExtension); //$NON-NLS-1$
-			}
-			return true;
 		}
 
 	}
