@@ -163,6 +163,12 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 			pane.add(((StereotypeConstraintsEditPart) childEditPart).getFigure());
 			return true;
 		}
+		if (childEditPart instanceof StereotypeImagesEditPart) {
+			IFigure pane = getPrimaryShape().getFigureStereotypeFigure_ImagesCompartment();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((StereotypeImagesEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -179,6 +185,11 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		if (childEditPart instanceof StereotypeConstraintsEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStereotypeFigure_ConstraintsCompartment();
 			pane.remove(((StereotypeConstraintsEditPart) childEditPart).getFigure());
+			return true;
+		}
+		if (childEditPart instanceof StereotypeImagesEditPart) {
+			IFigure pane = getPrimaryShape().getFigureStereotypeFigure_ImagesCompartment();
+			pane.remove(((StereotypeImagesEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -213,6 +224,9 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		}
 		if (editPart instanceof StereotypeConstraintsEditPart) {
 			return getPrimaryShape().getFigureStereotypeFigure_ConstraintsCompartment();
+		}
+		if (editPart instanceof StereotypeImagesEditPart) {
+			return getPrimaryShape().getFigureStereotypeFigure_ImagesCompartment();
 		}
 		return getContentPane();
 	}
@@ -380,6 +394,9 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 			}
 			if (type == UMLElementTypes.Constraint_3008) {
 				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StereotypeConstraintsEditPart.VISUAL_ID));
+			}
+			if (type == UMLElementTypes.Image_3010) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StereotypeImagesEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);
@@ -671,6 +688,11 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureStereotypeFigure_ImagesCompartment;
+
+		/**
+		 * @generated
+		 */
 		public StereotypeFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
@@ -730,6 +752,12 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 
 			this.add(fFigureStereotypeFigure_ConstraintsCompartment);
 
+			fFigureStereotypeFigure_ImagesCompartment = new RectangleFigure();
+			fFigureStereotypeFigure_ImagesCompartment.setOutline(false);
+			fFigureStereotypeFigure_ImagesCompartment.setLineWidth(1);
+
+			this.add(fFigureStereotypeFigure_ImagesCompartment);
+
 		}
 
 		/**
@@ -758,6 +786,13 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		 */
 		public StereotypeLabel getFigureStereotypeFigure_StereotypeLabel() {
 			return fFigureStereotypeFigure_StereotypeLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureStereotypeFigure_ImagesCompartment() {
+			return fFigureStereotypeFigure_ImagesCompartment;
 		}
 
 		/**

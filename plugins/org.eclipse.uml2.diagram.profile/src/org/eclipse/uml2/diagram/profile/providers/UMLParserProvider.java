@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationQualifiedNameEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ImageEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileName2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileStereoEditPart;
@@ -254,6 +255,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser image_3010Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getImage_3010Parser() {
+		if (image_3010Parser == null) {
+			image_3010Parser = createImage_3010Parser();
+		}
+		return image_3010Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createImage_3010Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getImage_Location() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser stereotype_3003Parser;
 
 	/**
@@ -359,6 +384,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCommentBody_5014Parser();
 		case ConstraintEditPart.VISUAL_ID:
 			return getConstraint_3008Parser();
+		case ImageEditPart.VISUAL_ID:
+			return getImage_3010Parser();
 		case Stereotype2EditPart.VISUAL_ID:
 			return getStereotype_3003Parser();
 		case EnumerationLiteralEditPart.VISUAL_ID:

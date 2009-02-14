@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.ElementImport2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ImageEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
@@ -67,6 +68,7 @@ public class EnumerationLiteralsCanonicalEditPolicy extends CanonicalEditPolicy 
 		case CommentEditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
+		case ImageEditPart.VISUAL_ID:
 		case Stereotype2EditPart.VISUAL_ID:
 		case ElementImport2EditPart.VISUAL_ID:
 			return true;

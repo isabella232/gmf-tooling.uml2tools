@@ -22,6 +22,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationQualifiedNameEditP
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ImageEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileContentsEditPart;
@@ -36,6 +37,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeAttributesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeImagesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeStereoEditPart;
 import org.eclipse.uml2.diagram.profile.expressions.UMLAbstractExpression;
@@ -175,6 +177,11 @@ public class UMLVisualIDRegistry {
 				return ConstraintEditPart.VISUAL_ID;
 			}
 			break;
+		case StereotypeImagesEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getImage().isSuperTypeOf(domainElement.eClass())) {
+				return ImageEditPart.VISUAL_ID;
+			}
+			break;
 		case ProfileContentsEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass())) {
 				return Stereotype2EditPart.VISUAL_ID;
@@ -255,6 +262,9 @@ public class UMLVisualIDRegistry {
 			if (StereotypeConstraintsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (StereotypeImagesEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case Profile2EditPart.VISUAL_ID:
 			if (ProfileNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -311,6 +321,11 @@ public class UMLVisualIDRegistry {
 			break;
 		case StereotypeConstraintsEditPart.VISUAL_ID:
 			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StereotypeImagesEditPart.VISUAL_ID:
+			if (ImageEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -470,6 +485,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
 				return ConstraintEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getImage().isSuperTypeOf(domainElement.eClass())) {
+				return ImageEditPart.VISUAL_ID;
+			}
 			break;
 		case Profile2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass())) {
@@ -539,6 +557,7 @@ public class UMLVisualIDRegistry {
 		switch (visualID) {
 		case StereotypeAttributesEditPart.VISUAL_ID:
 		case StereotypeConstraintsEditPart.VISUAL_ID:
+		case StereotypeImagesEditPart.VISUAL_ID:
 		case ProfileContentsEditPart.VISUAL_ID:
 		case EnumerationLiteralsEditPart.VISUAL_ID:
 		case ProfileProfileLabelsEditPart.VISUAL_ID:
@@ -563,6 +582,7 @@ public class UMLVisualIDRegistry {
 		case CommentEditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
+		case ImageEditPart.VISUAL_ID:
 		case Stereotype2EditPart.VISUAL_ID:
 		case EnumerationLiteralEditPart.VISUAL_ID:
 		case ElementImport2EditPart.VISUAL_ID:

@@ -91,6 +91,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ConstraintEditPart.VISUAL_ID:
 				return new ConstraintEditPart(view);
 
+			case ImageEditPart.VISUAL_ID:
+				return new ImageEditPart(view);
+
 			case Stereotype2EditPart.VISUAL_ID:
 				return new Stereotype2EditPart(view);
 
@@ -105,6 +108,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case StereotypeConstraintsEditPart.VISUAL_ID:
 				return new StereotypeConstraintsEditPart(view);
+
+			case StereotypeImagesEditPart.VISUAL_ID:
+				return new StereotypeImagesEditPart(view);
 
 			case ProfileContentsEditPart.VISUAL_ID:
 				return new ProfileContentsEditPart(view);

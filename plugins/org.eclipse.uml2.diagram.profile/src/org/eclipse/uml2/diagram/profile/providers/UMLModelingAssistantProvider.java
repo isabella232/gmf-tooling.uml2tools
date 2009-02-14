@@ -49,6 +49,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Property_3001);
 			types.add(UMLElementTypes.Constraint_3008);
+			types.add(UMLElementTypes.Image_3010);
 			return types;
 		}
 

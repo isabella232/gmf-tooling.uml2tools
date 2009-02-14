@@ -121,6 +121,38 @@
               href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.2">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Stereotype/icon"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Image"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Image/location"/>
+              <value
+                  body="'/icons'"/>
+            </initializers>
+          </domainInitializer>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+            <features
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Image/location"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="profiles.gmftool#//@palette/@tools.0/@tools.4"/>
+          <diagramNode
+              href="classDiagram_auxiliary.gmfgraph#AuxiliaryPureLabel"/>
+        </ownedChild>
+      </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0">
         <compartment
@@ -130,6 +162,11 @@
           children="//@nodes.0/@ownedChild/@children.1">
         <compartment
             href="profileDiagram_stereotype.gmfgraph#constraints"/>
+      </compartments>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.2">
+        <compartment
+            href="profileDiagram_stereotype.gmfgraph#images"/>
       </compartments>
     </ownedChild>
   </nodes>

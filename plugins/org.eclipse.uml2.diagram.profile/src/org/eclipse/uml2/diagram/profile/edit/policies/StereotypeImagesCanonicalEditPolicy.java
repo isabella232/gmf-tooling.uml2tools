@@ -33,7 +33,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class ProfileProfileLabelsCanonicalEditPolicy extends CanonicalEditPolicy {
+
+public class StereotypeImagesCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -46,7 +47,7 @@ public class ProfileProfileLabelsCanonicalEditPolicy extends CanonicalEditPolicy
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getProfileProfile_imports_7005SemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getStereotypeImages_7006SemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((IUpdaterNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
@@ -68,11 +69,11 @@ public class ProfileProfileLabelsCanonicalEditPolicy extends CanonicalEditPolicy
 		case CommentEditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
-		case ImageEditPart.VISUAL_ID:
 		case Stereotype2EditPart.VISUAL_ID:
 		case EnumerationLiteralEditPart.VISUAL_ID:
-			return true;
 		case ElementImport2EditPart.VISUAL_ID:
+			return true;
+		case ImageEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
@@ -93,7 +94,7 @@ public class ProfileProfileLabelsCanonicalEditPolicy extends CanonicalEditPolicy
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getNamespace_ElementImport());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getStereotype_Icon());
 		}
 		return myFeaturesToSynchronize;
 	}

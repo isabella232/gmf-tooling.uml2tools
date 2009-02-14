@@ -47,6 +47,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ImageEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
@@ -99,6 +100,7 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		switch (visualID) {
 		case PropertyEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
+		case ImageEditPart.VISUAL_ID:
 		case Stereotype2EditPart.VISUAL_ID:
 		case EnumerationLiteralEditPart.VISUAL_ID:
 		case ElementImport2EditPart.VISUAL_ID:
@@ -350,6 +352,13 @@ public class ProfileCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ConstraintEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getConstraint_3008ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case ImageEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getImage_3010ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

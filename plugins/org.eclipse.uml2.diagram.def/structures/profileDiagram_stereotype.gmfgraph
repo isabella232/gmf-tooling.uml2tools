@@ -61,6 +61,10 @@
             xsi:type="gmfgraph:Rectangle"
             name="StereotypeFigure_ConstraintsCompartment"
             outline="false"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="StereotypeFigure_ImagesCompartment"
+            outline="false"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.0"/>
@@ -70,6 +74,8 @@
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.4"/>
     </descriptors>
   </figures>
   <nodes
@@ -94,6 +100,12 @@
       collapsible="true"
       needsTitle="true"
       accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <compartments
+      name="images"
+      figure="StereotypeFigure"
+      collapsible="true"
+      needsTitle="true"
+      accessor="//@figures.0/@descriptors.0/@accessors.4"/>
   <labels
       name="StereotypeNode_name"
       figure="StereotypeFigure"

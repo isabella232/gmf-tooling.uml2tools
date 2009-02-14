@@ -293,6 +293,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Image5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Image5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Enumeration1CreationTool_title;
 
 	/**
@@ -393,6 +403,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String StereotypeImagesEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String ProfileContentsEditPart_title;
 
 	/**
@@ -484,6 +499,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Constraint_3008_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Image_3010_incominglinks;
 
 	/**
 	 * @generated

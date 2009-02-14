@@ -123,6 +123,48 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildLabelNode"
+        visualID="3010"
+        editPartClassName="ImageEditPart"
+        itemSemanticEditPolicyClassName="ImageItemSemanticEditPolicy"
+        notationViewFactoryClassName="ImageViewFactory"
+        canonicalEditPolicyClassName="ImageCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ImageGraphicalNodeEditPolicy"
+        createCommandClassName="ImageCreateCommand"
+        containers="//@diagram/@compartments.2">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ImageEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+      <modelFacet>
+        <metaClass
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Image"/>
+        <containmentMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Stereotype/icon"/>
+        <childMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Stereotype/icon"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.5">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Image/location"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labelModelFacet
+          xsi:type="gmfgen:FeatureLabelModelFacet"
+          parser="//@labelParsers/@implementations.1">
+        <metaFeatures
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Image/location"/>
+      </labelModelFacet>
+    </childNodes>
+    <childNodes
+        xsi:type="gmfgen:GenChildLabelNode"
         visualID="3003"
         editPartClassName="Stereotype2EditPart"
         itemSemanticEditPolicyClassName="Stereotype2ItemSemanticEditPolicy"
@@ -130,7 +172,7 @@
         canonicalEditPolicyClassName="Stereotype2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="Stereotype2GraphicalNodeEditPolicy"
         createCommandClassName="Stereotype2CreateCommand"
-        containers="//@diagram/@compartments.2">
+        containers="//@diagram/@compartments.3">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -151,7 +193,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.6">
+              value="//@expressionProviders/@providers.0/@expressions.7">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -173,7 +215,7 @@
         canonicalEditPolicyClassName="EnumerationLiteralCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EnumerationLiteralGraphicalNodeEditPolicy"
         createCommandClassName="EnumerationLiteralCreateCommand"
-        containers="//@diagram/@compartments.3">
+        containers="//@diagram/@compartments.4">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -193,7 +235,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.8">
+              value="//@expressionProviders/@providers.0/@expressions.9">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -216,7 +258,7 @@
         canonicalEditPolicyClassName="ElementImport2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ElementImport2GraphicalNodeEditPolicy"
         createCommandClassName="ElementImport2CreateCommand"
-        containers="//@diagram/@compartments.4">
+        containers="//@diagram/@compartments.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -227,7 +269,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label"/>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.10">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.11">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ElementImport"/>
         <containmentMetaFeature
@@ -245,7 +287,7 @@
         itemSemanticEditPolicyClassName="StereotypeItemSemanticEditPolicy"
         notationViewFactoryClassName="StereotypeViewFactory"
         canonicalEditPolicyClassName="StereotypeCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.0 //@diagram/@compartments.1"
+        compartments="//@diagram/@compartments.0 //@diagram/@compartments.1 //@diagram/@compartments.2"
         graphicalNodeEditPolicyClassName="StereotypeGraphicalNodeEditPolicy"
         createCommandClassName="StereotypeCreateCommand">
       <diagramRunTimeClass
@@ -257,7 +299,7 @@
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="TOOLBAR_LAYOUT"
           className="StereotypeFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StereotypeFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStereotypeFigure_NameLabel; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStereotypeFigure_AttributesCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStereotypeFigure_ConstraintsCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel fFigureStereotypeFigure_StereotypeLabel; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StereotypeFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutThis = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutThis.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutThis.setSpacing(0);&#xD;&#xA;&#x9;layoutThis.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;));&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_StereotypeLabel = new org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_StereotypeLabel.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureStereotypeFigure_StereotypeLabel);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutFFigureStereotypeFigure_StereotypeLabel = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;fFigureStereotypeFigure_StereotypeLabel.setLayoutManager(layoutFFigureStereotypeFigure_StereotypeLabel);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure stereotypeFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;stereotypeFigure_NameContainer0.setOutline(false);&#xD;&#xA;stereotypeFigure_NameContainer0.setLineWidth(1);&#xD;&#xA;stereotypeFigure_NameContainer0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(25)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(stereotypeFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutStereotypeFigure_NameContainer0 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;stereotypeFigure_NameContainer0.setLayoutManager(layoutStereotypeFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_NameLabel = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStereotypeFigure_NameLabel.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;stereotypeFigure_NameContainer0.add(fFigureStereotypeFigure_NameLabel);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_AttributesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStereotypeFigure_AttributesCompartment.setOutline(false);&#xD;&#xA;fFigureStereotypeFigure_AttributesCompartment.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStereotypeFigure_AttributesCompartment);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_ConstraintsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStereotypeFigure_ConstraintsCompartment.setOutline(false);&#xD;&#xA;fFigureStereotypeFigure_ConstraintsCompartment.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStereotypeFigure_ConstraintsCompartment);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStereotypeFigure_NameLabel() {&#xD;&#xA;&#x9;&#x9;return fFigureStereotypeFigure_NameLabel;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStereotypeFigure_AttributesCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureStereotypeFigure_AttributesCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStereotypeFigure_ConstraintsCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureStereotypeFigure_ConstraintsCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel getFigureStereotypeFigure_StereotypeLabel() {&#xD;&#xA;&#x9;&#x9;return fFigureStereotypeFigure_StereotypeLabel;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StereotypeFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureStereotypeFigure_NameLabel; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStereotypeFigure_AttributesCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStereotypeFigure_ConstraintsCompartment; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel fFigureStereotypeFigure_StereotypeLabel; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStereotypeFigure_ImagesCompartment; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StereotypeFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutThis = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutThis.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutThis.setSpacing(0);&#xD;&#xA;&#x9;layoutThis.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;));&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_StereotypeLabel = new org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_StereotypeLabel.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fFigureStereotypeFigure_StereotypeLabel);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutFFigureStereotypeFigure_StereotypeLabel = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;fFigureStereotypeFigure_StereotypeLabel.setLayoutManager(layoutFFigureStereotypeFigure_StereotypeLabel);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure stereotypeFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;stereotypeFigure_NameContainer0.setOutline(false);&#xD;&#xA;stereotypeFigure_NameContainer0.setLineWidth(1);&#xD;&#xA;stereotypeFigure_NameContainer0.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(25)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(stereotypeFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutStereotypeFigure_NameContainer0 = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;stereotypeFigure_NameContainer0.setLayoutManager(layoutStereotypeFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_NameLabel = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureStereotypeFigure_NameLabel.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;stereotypeFigure_NameContainer0.add(fFigureStereotypeFigure_NameLabel);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_AttributesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStereotypeFigure_AttributesCompartment.setOutline(false);&#xD;&#xA;fFigureStereotypeFigure_AttributesCompartment.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStereotypeFigure_AttributesCompartment);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_ConstraintsCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStereotypeFigure_ConstraintsCompartment.setOutline(false);&#xD;&#xA;fFigureStereotypeFigure_ConstraintsCompartment.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStereotypeFigure_ConstraintsCompartment);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStereotypeFigure_ImagesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStereotypeFigure_ImagesCompartment.setOutline(false);&#xD;&#xA;fFigureStereotypeFigure_ImagesCompartment.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStereotypeFigure_ImagesCompartment);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureStereotypeFigure_NameLabel() {&#xD;&#xA;&#x9;&#x9;return fFigureStereotypeFigure_NameLabel;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStereotypeFigure_AttributesCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureStereotypeFigure_AttributesCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStereotypeFigure_ConstraintsCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureStereotypeFigure_ConstraintsCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel getFigureStereotypeFigure_StereotypeLabel() {&#xD;&#xA;&#x9;&#x9;return fFigureStereotypeFigure_StereotypeLabel;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStereotypeFigure_ImagesCompartment() {&#xD;&#xA;&#x9;&#x9;return fFigureStereotypeFigure_ImagesCompartment;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
@@ -334,7 +376,7 @@
         itemSemanticEditPolicyClassName="Profile2ItemSemanticEditPolicy"
         notationViewFactoryClassName="Profile2ViewFactory"
         canonicalEditPolicyClassName="Profile2CanonicalEditPolicy"
-        compartments="//@diagram/@compartments.2"
+        compartments="//@diagram/@compartments.3"
         graphicalNodeEditPolicyClassName="ProfileGraphicalNodeEditPolicy"
         createCommandClassName="ProfileCreateCommand">
       <diagramRunTimeClass
@@ -368,7 +410,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.5">
+              value="//@expressionProviders/@providers.0/@expressions.6">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -423,7 +465,7 @@
         itemSemanticEditPolicyClassName="EnumerationItemSemanticEditPolicy"
         notationViewFactoryClassName="EnumerationViewFactory"
         canonicalEditPolicyClassName="EnumerationCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.3"
+        compartments="//@diagram/@compartments.4"
         graphicalNodeEditPolicyClassName="EnumerationGraphicalNodeEditPolicy"
         createCommandClassName="EnumerationCreateCommand">
       <diagramRunTimeClass
@@ -452,7 +494,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.7">
+              value="//@expressionProviders/@providers.0/@expressions.8">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -537,7 +579,7 @@
             fixedForeground="true"/>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.9">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.10">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ElementImport"/>
         <containmentMetaFeature
@@ -566,7 +608,7 @@
         itemSemanticEditPolicyClassName="Profile3ItemSemanticEditPolicy"
         notationViewFactoryClassName="Profile3ViewFactory"
         canonicalEditPolicyClassName="Profile3CanonicalEditPolicy"
-        compartments="//@diagram/@compartments.4"
+        compartments="//@diagram/@compartments.5"
         primaryDragEditPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.UnmovableUnselectableShapeEditPolicy"
         graphicalNodeEditPolicyClassName="Profile2GraphicalNodeEditPolicy"
         createCommandClassName="Profile2CreateCommand">
@@ -655,7 +697,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.11">
+                  value="//@expressionProviders/@providers.0/@expressions.12">
                 <feature
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OpaqueExpression/body"/>
               </initializers>
@@ -670,7 +712,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.12">
+                  value="//@expressionProviders/@providers.0/@expressions.13">
                 <feature
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OpaqueExpression/language"/>
               </initializers>
@@ -846,7 +888,7 @@
             parser="//@labelParsers/@implementations.0"/>
       </labels>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.13"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.14"/>
     </links>
     <links
         visualID="4003"
@@ -923,12 +965,28 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
+        visualID="7006"
+        editPartClassName="StereotypeImagesEditPart"
+        itemSemanticEditPolicyClassName="StereotypeImagesItemSemanticEditPolicy"
+        notationViewFactoryClassName="StereotypeImagesViewFactory"
+        canonicalEditPolicyClassName="StereotypeImagesCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.2"
+        title="images"
+        node="//@diagram/@topLevelNodes.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureStereotypeFigure_ImagesCompartment"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments
         visualID="7003"
         editPartClassName="ProfileContentsEditPart"
         itemSemanticEditPolicyClassName="ProfileContentsItemSemanticEditPolicy"
         notationViewFactoryClassName="ProfileContentsViewFactory"
         canonicalEditPolicyClassName="ProfileContentsCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.2"
+        childNodes="//@diagram/@childNodes.3"
         title="contents"
         node="//@diagram/@topLevelNodes.1">
       <diagramRunTimeClass
@@ -944,7 +1002,7 @@
         itemSemanticEditPolicyClassName="EnumerationLiteralsItemSemanticEditPolicy"
         notationViewFactoryClassName="EnumerationLiteralsViewFactory"
         canonicalEditPolicyClassName="EnumerationLiteralsCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.3"
+        childNodes="//@diagram/@childNodes.4"
         title="literals"
         node="//@diagram/@topLevelNodes.2">
       <diagramRunTimeClass
@@ -960,7 +1018,7 @@
         itemSemanticEditPolicyClassName="ProfileProfileLabelsItemSemanticEditPolicy"
         notationViewFactoryClassName="ProfileProfileLabelsViewFactory"
         canonicalEditPolicyClassName="ProfileProfileLabelsCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.4"
+        childNodes="//@diagram/@childNodes.5"
         title="profile_imports"
         needsTitle="false"
         node="//@diagram/@topLevelNodes.4">
@@ -983,7 +1041,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Stereotype"
             description="Create Profile Stereotype"
-            genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.2"/>
+            genNodes="//@diagram/@topLevelNodes.0 //@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Metaclass"
@@ -994,6 +1052,11 @@
             title="Extension"
             description="Create Profile Extension"
             genLinks="//@diagram/@links.1"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Image"
+            description="Create Image"
+            genNodes="//@diagram/@childNodes.2"/>
       </groups>
       <groups
           title="UML">
@@ -1021,12 +1084,12 @@
             xsi:type="gmfgen:ToolEntry"
             title="Literal"
             description="Create Literal"
-            genNodes="//@diagram/@childNodes.3"/>
+            genNodes="//@diagram/@childNodes.4"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Element Import"
             description="Create Element Import"
-            genNodes="//@diagram/@childNodes.4"/>
+            genNodes="//@diagram/@childNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Constrained Element"
@@ -1091,17 +1154,20 @@
         parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@childNodes.1"/>
     <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.2"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@childNodes.2"/>
+        child="//@diagram/@childNodes.3"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.1"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@childNodes.3"/>
+        child="//@diagram/@childNodes.4"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.2"/>
@@ -1110,7 +1176,7 @@
         child="//@diagram/@topLevelNodes.3"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.4"
-        child="//@diagram/@childNodes.4"/>
+        child="//@diagram/@childNodes.5"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.4"/>
@@ -1151,12 +1217,12 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@childNodes.2"
+        child="//@diagram/@childNodes.3"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.2"
+        parent="//@diagram/@childNodes.3"
         child="//@diagram/@links.0"
         referenceType="in_source"
         groupName="incoming links"
@@ -1187,12 +1253,12 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@childNodes.2"
+        child="//@diagram/@childNodes.3"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.2"
+        parent="//@diagram/@childNodes.3"
         child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1216,12 +1282,12 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.4"
+        child="//@diagram/@childNodes.5"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.4"
+        parent="//@diagram/@childNodes.5"
         child="//@diagram/@links.1"
         referenceType="in_source"
         groupName="incoming links"
@@ -1240,12 +1306,12 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.2"
+        child="//@diagram/@childNodes.3"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.2"
+        parent="//@diagram/@childNodes.3"
         child="//@diagram/@links.1"
         referenceType="out_target"
         groupName="outgoing links"
@@ -1401,6 +1467,18 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
+        child="//@diagram/@childNodes.5"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.5"
+        child="//@diagram/@links.2"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
         child="//@diagram/@topLevelNodes.5"
         referenceType="in_source"
         groupName="source"
@@ -1568,6 +1646,18 @@
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.4"
+        child="//@diagram/@links.3"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@childNodes.5"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.5"
         child="//@diagram/@links.3"
         referenceType="in_source"
         groupName="incoming links"
@@ -1624,6 +1714,8 @@
       <expressions
           body="'OpaqueExpression'"/>
       <expressions
+          body="'/icons'"/>
+      <expressions
           body="let base : String = 'Profile' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
           body="let base : String = 'stereotype' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
@@ -1653,14 +1745,14 @@
         uses="//@diagram/@childNodes.0/@labelModelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.2/@labelModelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.2/@labelModelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.5/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.1/@labelModelFacet"
+        uses="//@diagram/@childNodes.1/@labelModelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser.ConstraintParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet"
+        uses="//@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ProfileAppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"

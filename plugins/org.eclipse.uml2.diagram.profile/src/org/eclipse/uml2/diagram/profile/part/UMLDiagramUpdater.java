@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ImageEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileContentsEditPart;
@@ -36,6 +37,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeAttributesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeImagesEditPart;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
@@ -46,6 +48,7 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Extension;
 import org.eclipse.uml2.uml.Generalization;
+import org.eclipse.uml2.uml.Image;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Profile;
@@ -76,6 +79,8 @@ public class UMLDiagramUpdater {
 			return getStereotypeAttributes_7001SemanticChildren(view);
 		case StereotypeConstraintsEditPart.VISUAL_ID:
 			return getStereotypeConstraints_7002SemanticChildren(view);
+		case StereotypeImagesEditPart.VISUAL_ID:
+			return getStereotypeImages_7006SemanticChildren(view);
 		case ProfileContentsEditPart.VISUAL_ID:
 			return getProfileContents_7003SemanticChildren(view);
 		case EnumerationLiteralsEditPart.VISUAL_ID:
@@ -140,6 +145,30 @@ public class UMLDiagramUpdater {
 			Constraint childElement = (Constraint) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ConstraintEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getStereotypeImages_7006SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Stereotype modelElement = (Stereotype) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getIcons().iterator(); it.hasNext();) {
+			Image childElement = (Image) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ImageEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -300,6 +329,8 @@ public class UMLDiagramUpdater {
 			return getProperty_3001ContainedLinks(view);
 		case ConstraintEditPart.VISUAL_ID:
 			return getConstraint_3008ContainedLinks(view);
+		case ImageEditPart.VISUAL_ID:
+			return getImage_3010ContainedLinks(view);
 		case Stereotype2EditPart.VISUAL_ID:
 			return getStereotype_3003ContainedLinks(view);
 		case EnumerationLiteralEditPart.VISUAL_ID:
@@ -337,6 +368,8 @@ public class UMLDiagramUpdater {
 			return getProperty_3001IncomingLinks(view);
 		case ConstraintEditPart.VISUAL_ID:
 			return getConstraint_3008IncomingLinks(view);
+		case ImageEditPart.VISUAL_ID:
+			return getImage_3010IncomingLinks(view);
 		case Stereotype2EditPart.VISUAL_ID:
 			return getStereotype_3003IncomingLinks(view);
 		case EnumerationLiteralEditPart.VISUAL_ID:
@@ -374,6 +407,8 @@ public class UMLDiagramUpdater {
 			return getProperty_3001OutgoingLinks(view);
 		case ConstraintEditPart.VISUAL_ID:
 			return getConstraint_3008OutgoingLinks(view);
+		case ImageEditPart.VISUAL_ID:
+			return getImage_3010OutgoingLinks(view);
 		case Stereotype2EditPart.VISUAL_ID:
 			return getStereotype_3003OutgoingLinks(view);
 		case EnumerationLiteralEditPart.VISUAL_ID:
@@ -468,6 +503,13 @@ public class UMLDiagramUpdater {
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getImage_3010ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -608,6 +650,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getImage_3010IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getStereotype_3003IncomingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -725,6 +774,13 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getConstraint_3008OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getImage_3010OutgoingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
 

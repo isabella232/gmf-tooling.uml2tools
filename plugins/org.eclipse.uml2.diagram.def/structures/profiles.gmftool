@@ -25,6 +25,10 @@
           xsi:type="gmftool:CreationTool"
           title="Extension"
           description="Create Profile Extension"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Image"
+          description="Create Image"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

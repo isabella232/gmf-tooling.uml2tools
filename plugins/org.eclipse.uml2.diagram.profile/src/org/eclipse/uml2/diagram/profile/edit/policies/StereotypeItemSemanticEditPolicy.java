@@ -25,9 +25,11 @@ import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintConstrainedElementE
 import org.eclipse.uml2.diagram.profile.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ImageEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeAttributesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeImagesEditPart;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 
@@ -85,6 +87,16 @@ public class StereotypeItemSemanticEditPolicy extends UMLBaseItemSemanticEditPol
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
 					case ConstraintEditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
+					}
+				}
+				break;
+			case StereotypeImagesEditPart.VISUAL_ID:
+				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
+					Node cnode = (Node) cit.next();
+					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
+					case ImageEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

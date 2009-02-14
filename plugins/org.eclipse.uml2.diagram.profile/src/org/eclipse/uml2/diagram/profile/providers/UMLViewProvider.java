@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationQualifiedNameEditP
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ImageEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileContentsEditPart;
@@ -38,6 +39,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.Stereotype2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeAttributesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeConstraintsEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeImagesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeStereoEditPart;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
@@ -59,6 +61,7 @@ import org.eclipse.uml2.diagram.profile.view.factories.EnumerationViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ExtensionLink_requiredViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ExtensionViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.GeneralizationViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.ImageViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.Profile2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.Profile3ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.ProfileContentsViewFactory;
@@ -72,6 +75,7 @@ import org.eclipse.uml2.diagram.profile.view.factories.ReferencedMetaclassNode_c
 import org.eclipse.uml2.diagram.profile.view.factories.Stereotype2ViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.StereotypeAttributesViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.StereotypeConstraintsViewFactory;
+import org.eclipse.uml2.diagram.profile.view.factories.StereotypeImagesViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.StereotypeNameViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.StereotypeStereoViewFactory;
 import org.eclipse.uml2.diagram.profile.view.factories.StereotypeViewFactory;
@@ -145,6 +149,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case CommentEditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
 				case ConstraintEditPart.VISUAL_ID:
+				case ImageEditPart.VISUAL_ID:
 				case Stereotype2EditPart.VISUAL_ID:
 				case EnumerationLiteralEditPart.VISUAL_ID:
 				case ElementImport2EditPart.VISUAL_ID:
@@ -156,6 +161,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case StereotypeStereoEditPart.VISUAL_ID:
 				case StereotypeAttributesEditPart.VISUAL_ID:
 				case StereotypeConstraintsEditPart.VISUAL_ID:
+				case StereotypeImagesEditPart.VISUAL_ID:
 					if (StereotypeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
@@ -257,6 +263,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PropertyViewFactory.class;
 		case ConstraintEditPart.VISUAL_ID:
 			return ConstraintViewFactory.class;
+		case ImageEditPart.VISUAL_ID:
+			return ImageViewFactory.class;
 		case Stereotype2EditPart.VISUAL_ID:
 			return Stereotype2ViewFactory.class;
 		case EnumerationLiteralEditPart.VISUAL_ID:
@@ -267,6 +275,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return StereotypeAttributesViewFactory.class;
 		case StereotypeConstraintsEditPart.VISUAL_ID:
 			return StereotypeConstraintsViewFactory.class;
+		case StereotypeImagesEditPart.VISUAL_ID:
+			return StereotypeImagesViewFactory.class;
 		case ProfileContentsEditPart.VISUAL_ID:
 			return ProfileContentsViewFactory.class;
 		case EnumerationLiteralsEditPart.VISUAL_ID:

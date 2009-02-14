@@ -17,6 +17,7 @@ import org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
+import org.eclipse.uml2.uml.Image;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Property;
@@ -140,6 +141,18 @@ public class ElementInitializers {
 				newInstance_0_0.getBodies().add((String) value_0_0_0);
 			}
 
+		} catch (RuntimeException e) {
+			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public static void init_Image_3010(Image instance) {
+		try {
+			Object value_0 = UMLOCLFactory.getExpression("\'/icons\'", UMLPackage.eINSTANCE.getImage()).evaluate(instance);
+			instance.setLocation((String) value_0);
 		} catch (RuntimeException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}

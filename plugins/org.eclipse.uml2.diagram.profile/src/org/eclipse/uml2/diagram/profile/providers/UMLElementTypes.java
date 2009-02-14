@@ -27,6 +27,7 @@ import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.EnumerationLiteralEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart;
+import org.eclipse.uml2.diagram.profile.edit.parts.ImageEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart;
@@ -111,6 +112,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Constraint_3008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.profile.Constraint_3008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Image_3010 = (IHintedType) getElementType("org.eclipse.uml2.diagram.profile.Image_3010"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -273,6 +279,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Constraint_3008, UMLPackage.eINSTANCE.getConstraint());
 
+			elements.put(Image_3010, UMLPackage.eINSTANCE.getImage());
+
 			elements.put(Stereotype_3003, UMLPackage.eINSTANCE.getStereotype());
 
 			elements.put(EnumerationLiteral_3005, UMLPackage.eINSTANCE.getEnumerationLiteral());
@@ -313,6 +321,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Comment_2009);
 			KNOWN_ELEMENT_TYPES.add(Property_3001);
 			KNOWN_ELEMENT_TYPES.add(Constraint_3008);
+			KNOWN_ELEMENT_TYPES.add(Image_3010);
 			KNOWN_ELEMENT_TYPES.add(Stereotype_3003);
 			KNOWN_ELEMENT_TYPES.add(EnumerationLiteral_3005);
 			KNOWN_ELEMENT_TYPES.add(ElementImport_3009);
@@ -349,6 +358,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Property_3001;
 		case ConstraintEditPart.VISUAL_ID:
 			return Constraint_3008;
+		case ImageEditPart.VISUAL_ID:
+			return Image_3010;
 		case Stereotype2EditPart.VISUAL_ID:
 			return Stereotype_3003;
 		case EnumerationLiteralEditPart.VISUAL_ID:
