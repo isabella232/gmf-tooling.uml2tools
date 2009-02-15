@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.uml2.uml.Profile;
-import org.eclipse.uml2.uml.util.UMLSwitch;
 
 
 public class ProfileUtil {
@@ -19,15 +18,8 @@ public class ProfileUtil {
 		TreeIterator<EObject> allContents = resource.getAllContents();
 		while (allContents.hasNext()) {
 			EObject next = allContents.next();
-			Object profile = new UMLSwitch<Object>() {
-
-				@Override
-				public Object caseProfile(Profile profile) {
-					return profile;
-				}
-			}.doSwitch(next);
-			if (profile != null) {
-				return (Profile)profile;
+			if (next instanceof Profile){
+				return (Profile)next;
 			}
 		}
 		return null;
