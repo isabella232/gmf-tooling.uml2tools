@@ -5388,7 +5388,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ExpansionRegionFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ExpansionRegionFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureExpansionRegionFigure_keyword; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureExpansionRegionFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ExpansionRegionFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureExpansionRegionFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure expansionRegionFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;expansionRegionFigure_LabelContainer0.setFill(false);&#xD;&#xA;expansionRegionFigure_LabelContainer0.setOutline(false);&#xD;&#xA;expansionRegionFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;expansionRegionFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(expansionRegionFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutExpansionRegionFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;expansionRegionFigure_LabelContainer0.setLayoutManager(layoutExpansionRegionFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_keyword = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureExpansionRegionFigure_keyword.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;expansionRegionFigure_LabelContainer0.add(fFigureExpansionRegionFigure_keyword, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureExpansionRegionFigure_keyword() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_keyword;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureExpansionRegionFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ExpansionRegionFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureExpansionRegionFigure_keyword; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureExpansionRegionFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureExpansionRegionFigure_ExpansionNodeContainer; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ExpansionRegionFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureExpansionRegionFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure expansionRegionFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;expansionRegionFigure_LabelContainer0.setFill(false);&#xD;&#xA;expansionRegionFigure_LabelContainer0.setOutline(false);&#xD;&#xA;expansionRegionFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;expansionRegionFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(expansionRegionFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutExpansionRegionFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;expansionRegionFigure_LabelContainer0.setLayoutManager(layoutExpansionRegionFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_keyword = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureExpansionRegionFigure_keyword.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;expansionRegionFigure_LabelContainer0.add(fFigureExpansionRegionFigure_keyword, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_ExpansionNodeContainer = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureExpansionRegionFigure_ExpansionNodeContainer.setOutline(false);&#xD;&#xA;fFigureExpansionRegionFigure_ExpansionNodeContainer.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureExpansionRegionFigure_ExpansionNodeContainer);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureExpansionRegionFigure_keyword() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_keyword;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureExpansionRegionFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureExpansionRegionFigure_ExpansionNodeContainer() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_ExpansionNodeContainer;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.79">
         <metaClass
@@ -5523,7 +5523,7 @@
         canonicalEditPolicyClassName="ValueSpecificationAction_OutputPinCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ValueSpecificationAction_OutputPinGraphicalNodeEditPolicy"
         createCommandClassName="ValueSpecificationAction_OutputPinCreateCommand"
-        containers="//@diagram/@childNodes.74 //@diagram/@childNodes.81"
+        containers="//@diagram/@childNodes.74 //@diagram/@childNodes.82"
         preferredSideName="EAST">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -5770,7 +5770,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ExpansionRegionFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ExpansionRegionFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureExpansionRegionFigure_keyword; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureExpansionRegionFigure_ContentPane; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ExpansionRegionFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureExpansionRegionFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure expansionRegionFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;expansionRegionFigure_LabelContainer0.setFill(false);&#xD;&#xA;expansionRegionFigure_LabelContainer0.setOutline(false);&#xD;&#xA;expansionRegionFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;expansionRegionFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(expansionRegionFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutExpansionRegionFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;expansionRegionFigure_LabelContainer0.setLayoutManager(layoutExpansionRegionFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_keyword = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureExpansionRegionFigure_keyword.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;expansionRegionFigure_LabelContainer0.add(fFigureExpansionRegionFigure_keyword, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureExpansionRegionFigure_keyword() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_keyword;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureExpansionRegionFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ExpansionRegionFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureExpansionRegionFigure_keyword; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureExpansionRegionFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureExpansionRegionFigure_ExpansionNodeContainer; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ExpansionRegionFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureExpansionRegionFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureExpansionRegionFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure expansionRegionFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;expansionRegionFigure_LabelContainer0.setFill(false);&#xD;&#xA;expansionRegionFigure_LabelContainer0.setOutline(false);&#xD;&#xA;expansionRegionFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;expansionRegionFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(expansionRegionFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutExpansionRegionFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;expansionRegionFigure_LabelContainer0.setLayoutManager(layoutExpansionRegionFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_keyword = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureExpansionRegionFigure_keyword.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;expansionRegionFigure_LabelContainer0.add(fFigureExpansionRegionFigure_keyword, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureExpansionRegionFigure_ExpansionNodeContainer = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureExpansionRegionFigure_ExpansionNodeContainer.setOutline(false);&#xD;&#xA;fFigureExpansionRegionFigure_ExpansionNodeContainer.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureExpansionRegionFigure_ExpansionNodeContainer);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureExpansionRegionFigure_keyword() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_keyword;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureExpansionRegionFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureExpansionRegionFigure_ExpansionNodeContainer() {&#xD;&#xA;&#x9;&#x9;return fFigureExpansionRegionFigure_ExpansionNodeContainer;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.87">
         <metaClass
@@ -5810,13 +5810,127 @@
       </labels>
     </childNodes>
     <childNodes
+        visualID="3091"
+        editPartClassName="ExpansionNodeEditPart"
+        itemSemanticEditPolicyClassName="ExpansionNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="ExpansionNodeViewFactory"
+        canonicalEditPolicyClassName="ExpansionNodeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ExpansionNodeGraphicalNodeEditPolicy"
+        createCommandClassName="ExpansionNodeCreateCommand"
+        containers="//@diagram/@compartments.9">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ExpansionNodeEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ObjectNodeFigure"
+          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class ObjectNodeFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureObjectNodeFigure_name; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureObjectNodeFigure_states; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureObjectNodeFigure_stereo; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public ObjectNodeFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure objectNodeFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;objectNodeFigure_NameContainer0.setFill(false);&#xD;&#xA;objectNodeFigure_NameContainer0.setOutline(false);&#xD;&#xA;objectNodeFigure_NameContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(objectNodeFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutObjectNodeFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutObjectNodeFigure_NameContainer0.setStretchMinorAxis(false);&#xD;&#xA;&#x9;layoutObjectNodeFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutObjectNodeFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutObjectNodeFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;objectNodeFigure_NameContainer0.setLayoutManager(layoutObjectNodeFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureObjectNodeFigure_stereo = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureObjectNodeFigure_stereo.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;objectNodeFigure_NameContainer0.add(fFigureObjectNodeFigure_stereo);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureObjectNodeFigure_name = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureObjectNodeFigure_name.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;objectNodeFigure_NameContainer0.add(fFigureObjectNodeFigure_name);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureObjectNodeFigure_states = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureObjectNodeFigure_states.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;objectNodeFigure_NameContainer0.add(fFigureObjectNodeFigure_states);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureObjectNodeFigure_name() {&#xD;&#xA;&#x9;&#x9;return fFigureObjectNodeFigure_name;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureObjectNodeFigure_states() {&#xD;&#xA;&#x9;&#x9;return fFigureObjectNodeFigure_states;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureObjectNodeFigure_stereo() {&#xD;&#xA;&#x9;&#x9;return fFigureObjectNodeFigure_stereo;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ExpansionNode"/>
+        <containmentMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <childMetaFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StructuredActivityNode/node"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.89">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5143"
+          editPartClassName="ExpansionNodeNameEditPart"
+          itemSemanticEditPolicyClassName="ExpansionNodeNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExpansionNodeNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureObjectNodeFigure_name"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5144"
+          editPartClassName="ExpansionNodeInStateEditPart"
+          itemSemanticEditPolicyClassName="ExpansionNodeInStateItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExpansionNodeInStateViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureObjectNodeFigure_states"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5145"
+          editPartClassName="ExpansionNodeOrderingEditPart"
+          itemSemanticEditPolicyClassName="ExpansionNodeOrderingItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExpansionNodeOrderingViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.4">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ObjectNode/ordering"/>
+        </modelFacet>
+      </labels>
+      <labels
+          visualID="5146"
+          editPartClassName="ExpansionNodeStereotypeEditPart"
+          itemSemanticEditPolicyClassName="ExpansionNodeStereotypeItemSemanticEditPolicy"
+          notationViewFactoryClassName="ExpansionNodeStereotypeViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureObjectNodeFigure_stereo"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.2">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3086"
         editPartClassName="ParameterSetEditPart"
         itemSemanticEditPolicyClassName="ParameterSetItemSemanticEditPolicy"
         notationViewFactoryClassName="ParameterSetViewFactory"
         canonicalEditPolicyClassName="ParameterSetCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.80"
+        childNodes="//@diagram/@childNodes.81"
         graphicalNodeEditPolicyClassName="ParameterSetGraphicalNodeEditPolicy"
         createCommandClassName="ParameterSetCreateCommand"
         containers="//@diagram/@topLevelNodes.0"
@@ -5847,7 +5961,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.89">
+              value="//@expressionProviders/@providers.0/@expressions.90">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -5862,7 +5976,7 @@
         canonicalEditPolicyClassName="ParameterCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ParameterGraphicalNodeEditPolicy"
         createCommandClassName="ParameterCreateCommand"
-        containers="//@diagram/@childNodes.79">
+        containers="//@diagram/@childNodes.80">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -5915,7 +6029,7 @@
           key="&quot;VisualEffect.ValueSpecificationAction&quot;"
           editPolicyQualifiedClassName="org.eclipse.uml2.diagram.activity.edit.policies.ValueSpecificationActionVisualEffectEditPolicy"/>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.90">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.91">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ValueSpecificationAction"/>
         <containmentMetaFeature
@@ -5926,7 +6040,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.91">
+              value="//@expressionProviders/@providers.0/@expressions.92">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -6003,7 +6117,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.92">
+              value="//@expressionProviders/@providers.0/@expressions.93">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -6032,7 +6146,7 @@
       <elementType
           xsi:type="gmfgen:SpecializationType"
           displayName="Literal String"
-          metamodelType="//@diagram/@childNodes.82/@elementType"
+          metamodelType="//@diagram/@childNodes.83/@elementType"
           editHelperAdviceClassName="LocalPostcondition_LiteralStringEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
@@ -6048,7 +6162,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.93">
+              value="//@expressionProviders/@providers.0/@expressions.94">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -6068,7 +6182,7 @@
         itemSemanticEditPolicyClassName="ActivityItemSemanticEditPolicy"
         notationViewFactoryClassName="ActivityViewFactory"
         canonicalEditPolicyClassName="ActivityCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.16 //@diagram/@childNodes.20 //@diagram/@childNodes.23 //@diagram/@childNodes.25 //@diagram/@childNodes.44 //@diagram/@childNodes.45 //@diagram/@childNodes.46 //@diagram/@childNodes.47 //@diagram/@childNodes.76 //@diagram/@childNodes.77 //@diagram/@childNodes.78 //@diagram/@childNodes.79 //@diagram/@childNodes.81"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4 //@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.7 //@diagram/@childNodes.8 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12 //@diagram/@childNodes.13 //@diagram/@childNodes.14 //@diagram/@childNodes.16 //@diagram/@childNodes.20 //@diagram/@childNodes.23 //@diagram/@childNodes.25 //@diagram/@childNodes.44 //@diagram/@childNodes.45 //@diagram/@childNodes.46 //@diagram/@childNodes.47 //@diagram/@childNodes.76 //@diagram/@childNodes.77 //@diagram/@childNodes.78 //@diagram/@childNodes.80 //@diagram/@childNodes.82"
         graphicalNodeEditPolicyClassName="ActivityGraphicalNodeEditPolicy"
         createCommandClassName="ActivityCreateCommand">
       <diagramRunTimeClass
@@ -6310,8 +6424,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.94"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.95"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.95"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.96"/>
     </links>
     <links
         visualID="4002"
@@ -6710,7 +6824,7 @@
         itemSemanticEditPolicyClassName="ExpansionRegionNodeCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ExpansionRegionNodeCompartmentViewFactory"
         canonicalEditPolicyClassName="ExpansionRegionNodeCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43"
+        childNodes="//@diagram/@childNodes.26 //@diagram/@childNodes.27 //@diagram/@childNodes.28 //@diagram/@childNodes.29 //@diagram/@childNodes.30 //@diagram/@childNodes.31 //@diagram/@childNodes.32 //@diagram/@childNodes.33 //@diagram/@childNodes.34 //@diagram/@childNodes.35 //@diagram/@childNodes.36 //@diagram/@childNodes.37 //@diagram/@childNodes.38 //@diagram/@childNodes.39 //@diagram/@childNodes.40 //@diagram/@childNodes.41 //@diagram/@childNodes.42 //@diagram/@childNodes.43 //@diagram/@childNodes.79"
         title="ExpansionRegionNodeCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -6729,7 +6843,7 @@
         itemSemanticEditPolicyClassName="LocalPreconditionCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="LocalPreconditionCompartmentViewFactory"
         canonicalEditPolicyClassName="LocalPreconditionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.82"
+        childNodes="//@diagram/@childNodes.83"
         title="precondition"
         canCollapse="false"
         needsTitle="false"
@@ -6747,7 +6861,7 @@
         itemSemanticEditPolicyClassName="LocalPostconditionCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="LocalPostconditionCompartmentViewFactory"
         canonicalEditPolicyClassName="LocalPostconditionCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.83"
+        childNodes="//@diagram/@childNodes.84"
         title="postcondition"
         canCollapse="false"
         needsTitle="false"
@@ -6772,12 +6886,12 @@
             xsi:type="gmfgen:ToolEntry"
             title="Parameter Set"
             description="Create Parameter Set"
-            genNodes="//@diagram/@childNodes.79"/>
+            genNodes="//@diagram/@childNodes.80"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Parameter"
             description="Create Parameter"
-            genNodes="//@diagram/@childNodes.80"/>
+            genNodes="//@diagram/@childNodes.81"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Activity Parameter Node"
@@ -6847,7 +6961,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Value Specification Action"
             description="Create Value Specification Action"
-            genNodes="//@diagram/@childNodes.74 //@diagram/@childNodes.81"/>
+            genNodes="//@diagram/@childNodes.74 //@diagram/@childNodes.82"/>
       </groups>
       <groups
           title="Control Nodes"
@@ -6937,6 +7051,11 @@
             title="Datastore"
             description="Create Datastore"
             genNodes="//@diagram/@childNodes.6 //@diagram/@childNodes.40 //@diagram/@childNodes.55"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Expansion Node"
+            description="Create Expansion Node"
+            genNodes="//@diagram/@childNodes.79"/>
         <entries
             xsi:type="gmfgen:ToolGroup"
             title="Pin"
@@ -7873,32 +7992,35 @@
         parent="//@diagram/@childNodes.78"
         child="//@diagram/@childNodes.43"/>
     <childReferences
+        parent="//@diagram/@childNodes.78"
+        child="//@diagram/@childNodes.79"/>
+    <childReferences
         parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@childNodes.78"/>
     <childReferences
-        parent="//@diagram/@childNodes.79"
-        child="//@diagram/@childNodes.80"/>
+        parent="//@diagram/@childNodes.80"
+        child="//@diagram/@childNodes.81"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.79"/>
+        child="//@diagram/@childNodes.80"/>
     <childReferences
-        parent="//@diagram/@childNodes.81"
+        parent="//@diagram/@childNodes.82"
         child="//@diagram/@childNodes.75"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@childNodes.81"/>
+        child="//@diagram/@childNodes.82"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@childNodes.82"/>
+        child="//@diagram/@childNodes.83"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.1"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@childNodes.83"/>
+        child="//@diagram/@childNodes.84"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.2"/>
@@ -8821,12 +8943,24 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@childNodes.81"
+        child="//@diagram/@childNodes.79"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.81"
+        parent="//@diagram/@childNodes.79"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.82"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.82"
         child="//@diagram/@links.0"
         referenceType="in_source"
         groupName="incoming links"
@@ -9745,12 +9879,24 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@childNodes.81"
+        child="//@diagram/@childNodes.79"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.81"
+        parent="//@diagram/@childNodes.79"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@childNodes.82"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.82"
         child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"
@@ -10674,12 +10820,24 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.81"
+        child="//@diagram/@childNodes.79"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.81"
+        parent="//@diagram/@childNodes.79"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.82"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.82"
         child="//@diagram/@links.1"
         referenceType="in_source"
         groupName="incoming links"
@@ -11598,12 +11756,24 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
-        child="//@diagram/@childNodes.81"
+        child="//@diagram/@childNodes.79"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.81"
+        parent="//@diagram/@childNodes.79"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@childNodes.82"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.82"
         child="//@diagram/@links.1"
         referenceType="out_target"
         groupName="outgoing links"
@@ -12047,12 +12217,12 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
-        child="//@diagram/@childNodes.81"
+        child="//@diagram/@childNodes.82"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.81"
+        parent="//@diagram/@childNodes.82"
         child="//@diagram/@links.2"
         referenceType="out_target"
         groupName="outgoing links"
@@ -12496,12 +12666,12 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.3"
-        child="//@diagram/@childNodes.81"
+        child="//@diagram/@childNodes.82"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.81"
+        parent="//@diagram/@childNodes.82"
         child="//@diagram/@links.3"
         referenceType="out_target"
         groupName="outgoing links"
@@ -12812,6 +12982,18 @@
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
+        parent="//@diagram/@links.4"
+        child="//@diagram/@childNodes.79"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@childNodes.79"
+        child="//@diagram/@links.4"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@links.5"
         groupName="links"
@@ -13226,12 +13408,12 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.5"
-        child="//@diagram/@childNodes.81"
+        child="//@diagram/@childNodes.82"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.81"
+        parent="//@diagram/@childNodes.82"
         child="//@diagram/@links.5"
         referenceType="in_source"
         groupName="incoming links"
@@ -13646,12 +13828,12 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.5"
-        child="//@diagram/@childNodes.81"
+        child="//@diagram/@childNodes.82"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@childNodes.81"
+        parent="//@diagram/@childNodes.82"
         child="//@diagram/@links.5"
         referenceType="out_target"
         groupName="outgoing links"
@@ -13907,6 +14089,8 @@
       <expressions
           body=" let base : String = 'Expansion Region' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
+          body=" let base : String = 'ExpansionNode' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+      <expressions
           body=" let base : String = 'ParameterSet' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
@@ -13942,29 +14126,29 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.16/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.23/@labels.0/@modelFacet //@diagram/@childNodes.27/@labels.0/@modelFacet //@diagram/@childNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.29/@labels.0/@modelFacet //@diagram/@childNodes.34/@labels.0/@modelFacet //@diagram/@childNodes.35/@labels.0/@modelFacet //@diagram/@childNodes.36/@labels.0/@modelFacet //@diagram/@childNodes.39/@labels.0/@modelFacet //@diagram/@childNodes.26/@labels.0/@modelFacet //@diagram/@childNodes.25/@labels.0/@modelFacet //@diagram/@childNodes.44/@labels.0/@modelFacet //@diagram/@childNodes.45/@labels.0/@modelFacet //@diagram/@childNodes.46/@labels.0/@modelFacet //@diagram/@childNodes.49/@labels.0/@modelFacet //@diagram/@childNodes.50/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.62/@labels.0/@modelFacet //@diagram/@childNodes.63/@labels.0/@modelFacet //@diagram/@childNodes.64/@labels.0/@modelFacet //@diagram/@childNodes.65/@labels.0/@modelFacet //@diagram/@childNodes.67/@labels.1/@modelFacet //@diagram/@childNodes.66/@labels.0/@modelFacet //@diagram/@childNodes.70/@labels.0/@modelFacet //@diagram/@childNodes.71/@labels.0/@modelFacet //@diagram/@childNodes.73/@labels.0/@modelFacet //@diagram/@childNodes.74/@labels.0/@modelFacet //@diagram/@childNodes.74/@labels.1/@modelFacet //@diagram/@childNodes.48/@labels.0/@modelFacet //@diagram/@childNodes.47/@labels.0/@modelFacet //@diagram/@childNodes.76/@labels.0/@modelFacet //@diagram/@childNodes.77/@labels.0/@modelFacet //@diagram/@childNodes.78/@labels.0/@modelFacet //@diagram/@childNodes.81/@labels.0/@modelFacet //@diagram/@childNodes.81/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.82/@labelModelFacet //@diagram/@childNodes.83/@labelModelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.0/@labels.2/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.1/@labels.1/@modelFacet //@diagram/@links.1/@labels.2/@modelFacet //@diagram/@childNodes.72/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.16/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.23/@labels.0/@modelFacet //@diagram/@childNodes.27/@labels.0/@modelFacet //@diagram/@childNodes.28/@labels.0/@modelFacet //@diagram/@childNodes.29/@labels.0/@modelFacet //@diagram/@childNodes.34/@labels.0/@modelFacet //@diagram/@childNodes.35/@labels.0/@modelFacet //@diagram/@childNodes.36/@labels.0/@modelFacet //@diagram/@childNodes.39/@labels.0/@modelFacet //@diagram/@childNodes.26/@labels.0/@modelFacet //@diagram/@childNodes.25/@labels.0/@modelFacet //@diagram/@childNodes.44/@labels.0/@modelFacet //@diagram/@childNodes.45/@labels.0/@modelFacet //@diagram/@childNodes.46/@labels.0/@modelFacet //@diagram/@childNodes.49/@labels.0/@modelFacet //@diagram/@childNodes.50/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.62/@labels.0/@modelFacet //@diagram/@childNodes.63/@labels.0/@modelFacet //@diagram/@childNodes.64/@labels.0/@modelFacet //@diagram/@childNodes.65/@labels.0/@modelFacet //@diagram/@childNodes.67/@labels.1/@modelFacet //@diagram/@childNodes.66/@labels.0/@modelFacet //@diagram/@childNodes.70/@labels.0/@modelFacet //@diagram/@childNodes.71/@labels.0/@modelFacet //@diagram/@childNodes.72/@labels.0/@modelFacet //@diagram/@childNodes.73/@labels.0/@modelFacet //@diagram/@childNodes.74/@labels.0/@modelFacet //@diagram/@childNodes.74/@labels.1/@modelFacet //@diagram/@childNodes.48/@labels.0/@modelFacet //@diagram/@childNodes.47/@labels.0/@modelFacet //@diagram/@childNodes.76/@labels.0/@modelFacet //@diagram/@childNodes.77/@labels.0/@modelFacet //@diagram/@childNodes.79/@labels.0/@modelFacet //@diagram/@childNodes.78/@labels.0/@modelFacet //@diagram/@childNodes.82/@labels.0/@modelFacet //@diagram/@childNodes.82/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.83/@labelModelFacet //@diagram/@childNodes.84/@labelModelFacet //@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.1/@modelFacet //@diagram/@links.0/@labels.2/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.1/@labels.1/@modelFacet //@diagram/@links.1/@labels.2/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExternalParser"
         uses="//@diagram/@links.5/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.45/@labels.1/@modelFacet //@diagram/@childNodes.23/@labels.1/@modelFacet //@diagram/@childNodes.33/@labels.3/@modelFacet //@diagram/@childNodes.66/@labels.1/@modelFacet //@diagram/@childNodes.49/@labels.1/@modelFacet //@diagram/@childNodes.62/@labels.1/@modelFacet //@diagram/@childNodes.34/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.3/@modelFacet //@diagram/@childNodes.63/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.3/@modelFacet //@diagram/@childNodes.39/@labels.1/@modelFacet //@diagram/@childNodes.14/@labels.1/@modelFacet //@diagram/@childNodes.77/@labels.1/@modelFacet //@diagram/@childNodes.16/@labels.1/@modelFacet //@diagram/@childNodes.27/@labels.1/@modelFacet //@diagram/@childNodes.41/@labels.3/@modelFacet //@diagram/@childNodes.26/@labels.1/@modelFacet //@diagram/@childNodes.56/@labels.3/@modelFacet //@diagram/@childNodes.67/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.3/@modelFacet //@diagram/@childNodes.36/@labels.1/@modelFacet //@diagram/@childNodes.64/@labels.1/@modelFacet //@diagram/@childNodes.20/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.13/@labels.3/@modelFacet //@diagram/@childNodes.46/@labels.1/@modelFacet //@diagram/@childNodes.25/@labels.1/@modelFacet //@diagram/@childNodes.76/@labels.1/@modelFacet //@diagram/@childNodes.65/@labels.1/@modelFacet //@diagram/@childNodes.70/@labels.1/@modelFacet //@diagram/@childNodes.71/@labels.1/@modelFacet //@diagram/@childNodes.55/@labels.3/@modelFacet //@diagram/@childNodes.57/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.28/@labels.1/@modelFacet //@diagram/@childNodes.35/@labels.1/@modelFacet //@diagram/@childNodes.61/@labels.3/@modelFacet //@diagram/@childNodes.72/@labels.1/@modelFacet"
+        uses="//@diagram/@childNodes.79/@labels.3/@modelFacet //@diagram/@childNodes.57/@labels.1/@modelFacet //@diagram/@childNodes.61/@labels.3/@modelFacet //@diagram/@childNodes.77/@labels.1/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.45/@labels.1/@modelFacet //@diagram/@childNodes.23/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.65/@labels.1/@modelFacet //@diagram/@childNodes.34/@labels.1/@modelFacet //@diagram/@childNodes.16/@labels.1/@modelFacet //@diagram/@childNodes.63/@labels.1/@modelFacet //@diagram/@childNodes.46/@labels.1/@modelFacet //@diagram/@childNodes.36/@labels.1/@modelFacet //@diagram/@childNodes.62/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.3/@modelFacet //@diagram/@childNodes.7/@labels.3/@modelFacet //@diagram/@childNodes.66/@labels.1/@modelFacet //@diagram/@childNodes.55/@labels.3/@modelFacet //@diagram/@childNodes.39/@labels.1/@modelFacet //@diagram/@childNodes.20/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.35/@labels.1/@modelFacet //@diagram/@childNodes.70/@labels.1/@modelFacet //@diagram/@childNodes.33/@labels.3/@modelFacet //@diagram/@childNodes.49/@labels.1/@modelFacet //@diagram/@childNodes.64/@labels.1/@modelFacet //@diagram/@childNodes.25/@labels.1/@modelFacet //@diagram/@childNodes.71/@labels.1/@modelFacet //@diagram/@childNodes.41/@labels.3/@modelFacet //@diagram/@childNodes.27/@labels.1/@modelFacet //@diagram/@childNodes.28/@labels.1/@modelFacet //@diagram/@childNodes.56/@labels.3/@modelFacet //@diagram/@childNodes.14/@labels.1/@modelFacet //@diagram/@childNodes.67/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.3/@modelFacet //@diagram/@childNodes.40/@labels.3/@modelFacet //@diagram/@childNodes.72/@labels.1/@modelFacet //@diagram/@childNodes.76/@labels.1/@modelFacet //@diagram/@childNodes.26/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.56/@labels.1/@modelFacet //@diagram/@childNodes.13/@labels.1/@modelFacet //@diagram/@childNodes.61/@labels.1/@modelFacet //@diagram/@childNodes.55/@labels.1/@modelFacet //@diagram/@childNodes.33/@labels.1/@modelFacet //@diagram/@childNodes.41/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.1/@modelFacet"
+        uses="//@diagram/@childNodes.41/@labels.1/@modelFacet //@diagram/@childNodes.61/@labels.1/@modelFacet //@diagram/@childNodes.79/@labels.1/@modelFacet //@diagram/@childNodes.56/@labels.1/@modelFacet //@diagram/@childNodes.33/@labels.1/@modelFacet //@diagram/@childNodes.13/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.1/@modelFacet //@diagram/@childNodes.55/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.activity.parser.ObjectNodeInStateParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.24/@labels.1/@modelFacet //@diagram/@childNodes.17/@labels.1/@modelFacet //@diagram/@childNodes.55/@labels.2/@modelFacet //@diagram/@childNodes.7/@labels.2/@modelFacet //@diagram/@childNodes.69/@labels.1/@modelFacet //@diagram/@childNodes.75/@labels.1/@modelFacet //@diagram/@childNodes.9/@labels.1/@modelFacet //@diagram/@childNodes.19/@labels.1/@modelFacet //@diagram/@childNodes.61/@labels.2/@modelFacet //@diagram/@childNodes.15/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.2/@modelFacet //@diagram/@childNodes.43/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.2/@modelFacet //@diagram/@childNodes.13/@labels.2/@modelFacet //@diagram/@childNodes.21/@labels.1/@modelFacet //@diagram/@childNodes.42/@labels.1/@modelFacet //@diagram/@childNodes.33/@labels.2/@modelFacet //@diagram/@childNodes.41/@labels.2/@modelFacet //@diagram/@childNodes.18/@labels.1/@modelFacet //@diagram/@childNodes.56/@labels.2/@modelFacet //@diagram/@childNodes.22/@labels.1/@modelFacet //@diagram/@childNodes.68/@labels.1/@modelFacet"
+        uses="//@diagram/@childNodes.68/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.2/@modelFacet //@diagram/@childNodes.22/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.2/@modelFacet //@diagram/@childNodes.79/@labels.2/@modelFacet //@diagram/@childNodes.69/@labels.1/@modelFacet //@diagram/@childNodes.75/@labels.1/@modelFacet //@diagram/@childNodes.13/@labels.2/@modelFacet //@diagram/@childNodes.6/@labels.2/@modelFacet //@diagram/@childNodes.61/@labels.2/@modelFacet //@diagram/@childNodes.18/@labels.1/@modelFacet //@diagram/@childNodes.24/@labels.1/@modelFacet //@diagram/@childNodes.9/@labels.1/@modelFacet //@diagram/@childNodes.55/@labels.2/@modelFacet //@diagram/@childNodes.43/@labels.1/@modelFacet //@diagram/@childNodes.56/@labels.2/@modelFacet //@diagram/@childNodes.21/@labels.1/@modelFacet //@diagram/@childNodes.19/@labels.1/@modelFacet //@diagram/@childNodes.15/@labels.1/@modelFacet //@diagram/@childNodes.41/@labels.2/@modelFacet //@diagram/@childNodes.33/@labels.2/@modelFacet //@diagram/@childNodes.17/@labels.1/@modelFacet //@diagram/@childNodes.42/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.activity.parser.ObjectNodeAttributesParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.55/@labels.0/@modelFacet //@diagram/@childNodes.41/@labels.0/@modelFacet //@diagram/@childNodes.40/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.61/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.56/@labels.0/@modelFacet"
+        uses="//@diagram/@childNodes.41/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.61/@labels.0/@modelFacet //@diagram/@childNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.55/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.40/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.56/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.43/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.22/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.75/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.69/@labels.0/@modelFacet //@diagram/@childNodes.68/@labels.0/@modelFacet"
+        uses="//@diagram/@childNodes.43/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.69/@labels.0/@modelFacet //@diagram/@childNodes.68/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.75/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@childNodes.22/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeAndInStateParser"/>
   </labelParsers>
   <contextMenus

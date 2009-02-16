@@ -105,8 +105,9 @@ public class UMLPaletteFactory {
 		paletteContainer.setDescription(Messages.Objects5Group_desc);
 		paletteContainer.add(createCentralBuffer1CreationTool());
 		paletteContainer.add(createDatastore2CreationTool());
-		paletteContainer.add(createPin3Group());
-		paletteContainer.add(createSelection4CreationTool());
+		paletteContainer.add(createExpansionNode3CreationTool());
+		paletteContainer.add(createPin4Group());
+		paletteContainer.add(createSelection5CreationTool());
 		return paletteContainer;
 	}
 
@@ -163,9 +164,9 @@ public class UMLPaletteFactory {
 	 * Creates "Pin" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createPin3Group() {
-		PaletteStack paletteContainer = new PaletteStack(Messages.Pin3Group_title, null, null);
-		paletteContainer.setDescription(Messages.Pin3Group_desc);
+	private PaletteContainer createPin4Group() {
+		PaletteStack paletteContainer = new PaletteStack(Messages.Pin4Group_title, null, null);
+		paletteContainer.setDescription(Messages.Pin4Group_desc);
 		paletteContainer.add(createPin1CreationTool());
 		paletteContainer.add(createInputPin2CreationTool());
 		paletteContainer.add(createOutputPin3CreationTool());
@@ -599,10 +600,22 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSelection4CreationToolGen() {
+	private ToolEntry createExpansionNode3CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ExpansionNode_3091);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ExpansionNode3CreationTool_title, Messages.ExpansionNode3CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ExpansionNode_3091));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createSelection5CreationToolGen() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.ObjectNodeSelection_4004);
-		LinkToolEntry entry = new LinkToolEntry(Messages.Selection4CreationTool_title, Messages.Selection4CreationTool_desc, types);
+		LinkToolEntry entry = new LinkToolEntry(Messages.Selection5CreationTool_title, Messages.Selection5CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ObjectNodeSelection_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -611,8 +624,8 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated NOT
 	 */
-	private ToolEntry createSelection4CreationTool() {
-		ToolEntry entry = createSelection4CreationToolGen();
+	private ToolEntry createSelection5CreationTool() {
+		ToolEntry entry = createSelection5CreationToolGen();
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLPackage.eINSTANCE.getStateMachine()));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;

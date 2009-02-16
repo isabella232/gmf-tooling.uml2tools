@@ -385,6 +385,9 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.OutputPin_3090);
 		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
+		}
 		return types;
 	}
 

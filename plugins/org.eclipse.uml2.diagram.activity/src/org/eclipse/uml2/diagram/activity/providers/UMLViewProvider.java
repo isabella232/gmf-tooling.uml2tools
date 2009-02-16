@@ -173,6 +173,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case LoopNodeEditPart.VISUAL_ID:
 				case ConditionalNodeEditPart.VISUAL_ID:
 				case ExpansionRegionEditPart.VISUAL_ID:
+				case ExpansionNodeEditPart.VISUAL_ID:
 				case ParameterSetEditPart.VISUAL_ID:
 				case ParameterEditPart.VISUAL_ID:
 				case ValueSpecificationActionEditPart.VISUAL_ID:
@@ -576,6 +577,14 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case ExpansionRegionModeEditPart.VISUAL_ID:
 				case ExpansionRegionNodeCompartmentEditPart.VISUAL_ID:
 					if (ExpansionRegionEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case ExpansionNodeNameEditPart.VISUAL_ID:
+				case ExpansionNodeInStateEditPart.VISUAL_ID:
+				case ExpansionNodeOrderingEditPart.VISUAL_ID:
+				case ExpansionNodeStereotypeEditPart.VISUAL_ID:
+					if (ExpansionNodeEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -1048,6 +1057,16 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return ExpansionRegionViewFactory.class;
 		case ExpansionRegionModeEditPart.VISUAL_ID:
 			return ExpansionRegionModeViewFactory.class;
+		case ExpansionNodeEditPart.VISUAL_ID:
+			return ExpansionNodeViewFactory.class;
+		case ExpansionNodeNameEditPart.VISUAL_ID:
+			return ExpansionNodeNameViewFactory.class;
+		case ExpansionNodeInStateEditPart.VISUAL_ID:
+			return ExpansionNodeInStateViewFactory.class;
+		case ExpansionNodeOrderingEditPart.VISUAL_ID:
+			return ExpansionNodeOrderingViewFactory.class;
+		case ExpansionNodeStereotypeEditPart.VISUAL_ID:
+			return ExpansionNodeStereotypeViewFactory.class;
 		case ParameterSetEditPart.VISUAL_ID:
 			return ParameterSetViewFactory.class;
 		case ParameterEditPart.VISUAL_ID:

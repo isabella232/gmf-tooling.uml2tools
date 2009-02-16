@@ -161,6 +161,10 @@
           title="Datastore"
           description="Create Datastore"/>
       <tools
+          xsi:type="gmftool:CreationTool"
+          title="Expansion Node"
+          description="Create Expansion Node"/>
+      <tools
           xsi:type="gmftool:ToolGroup"
           title="Pin"
           description="Create new Pin"

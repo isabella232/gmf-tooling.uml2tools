@@ -541,6 +541,9 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
+		if (targetEditPart instanceof ExpansionNodeEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
@@ -770,6 +773,9 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof ExpansionNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -1129,6 +1135,9 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 			types.add(UMLElementTypes.ExpansionRegion_3084);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1358,6 +1367,9 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
@@ -1727,6 +1739,9 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 			types.add(UMLElementTypes.ExpansionRegion_3084);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1958,6 +1973,9 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 			types.add(UMLElementTypes.ExpansionRegion_3084);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
@@ -2095,6 +2113,11 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureExpansionRegionFigure_ExpansionNodeContainer;
+
+		/**
+		 * @generated
+		 */
 		public ExpansionRegionFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
@@ -2135,6 +2158,12 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 
 			expansionRegionFigure_LabelContainer0.add(fFigureExpansionRegionFigure_keyword, BorderLayout.LEFT);
 
+			fFigureExpansionRegionFigure_ExpansionNodeContainer = new RectangleFigure();
+			fFigureExpansionRegionFigure_ExpansionNodeContainer.setOutline(false);
+			fFigureExpansionRegionFigure_ExpansionNodeContainer.setLineWidth(1);
+
+			this.add(fFigureExpansionRegionFigure_ExpansionNodeContainer);
+
 		}
 
 		/**
@@ -2168,6 +2197,13 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		 */
 		public RectangleFigure getFigureExpansionRegionFigure_ContentPane() {
 			return fFigureExpansionRegionFigure_ContentPane;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureExpansionRegionFigure_ExpansionNodeContainer() {
+			return fFigureExpansionRegionFigure_ExpansionNodeContainer;
 		}
 
 	}

@@ -216,6 +216,53 @@
           xsi:type="gmfgraph:Label"
           name="ObjectNodeAttributesLabel"/>
     </descriptors>
+    <descriptors
+        name="ObjectNodeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ObjectNodeFigure">
+        <layout
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
+        </border>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ObjectNodeFigure_NameContainer"
+            outline="false"
+            fill="false">
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              forceSingleLine="true"
+              minorAlignment="CENTER"
+              majorSpacing="0"
+              minorSpacing="0"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ObjectNodeFigure_stereo"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ObjectNodeFigure_name"
+              text=""/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ObjectNodeFigure_states"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="DataStoreNode"
@@ -248,6 +295,9 @@
           dy="25"/>
     </facets>
   </nodes>
+  <nodes
+      name="ObjectNode"
+      figure="ObjectNodeFigure"/>
   <labels
       name="StandalonePinNode_stereo"
       figure="StandalonePinFigure"
@@ -311,4 +361,19 @@
       name="ObjectNodeAttributesLabel"
       figure="ObjectNodeAttributesLabelFigre"
       elementIcon="false"/>
+  <labels
+      name="ObjectNode_stereo"
+      figure="ObjectNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.7/@accessors.2"/>
+  <labels
+      name="ObjectNode_name"
+      figure="ObjectNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels
+      name="ObjectNode_states"
+      figure="ObjectNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.7/@accessors.1"/>
 </gmfgraph:Canvas>

@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.activity.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.uml2.diagram.activity.edit.commands.ExpansionNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_AcceptEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_AcceptTimeEventActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_ActivityFinalNodeCreateCommand;
@@ -92,6 +93,9 @@ public class ExpansionRegionNodeCompartmentItemSemanticEditPolicy extends UMLBas
 		}
 		if (UMLElementTypes.OutputPin_3055 == req.getElementType()) {
 			return getGEFWrapper(new StructuredActivityNode_OutputPinCreateCommand(req));
+		}
+		if (UMLElementTypes.ExpansionNode_3091 == req.getElementType()) {
+			return getGEFWrapper(new ExpansionNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

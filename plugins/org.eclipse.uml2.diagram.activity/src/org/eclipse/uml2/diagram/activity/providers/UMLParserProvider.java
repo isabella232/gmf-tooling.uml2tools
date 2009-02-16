@@ -2677,6 +2677,75 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser expansionNodeName_5143Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getExpansionNodeName_5143Parser() {
+		if (expansionNodeName_5143Parser == null) {
+			expansionNodeName_5143Parser = createExpansionNodeName_5143Parser();
+		}
+		return expansionNodeName_5143Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createExpansionNodeName_5143Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ObjectNodeInStateParser expansionNodeQualifiedName_5144Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getExpansionNodeQualifiedName_5144Parser() {
+		if (expansionNodeQualifiedName_5144Parser == null) {
+			expansionNodeQualifiedName_5144Parser = new ObjectNodeInStateParser();
+		}
+		return expansionNodeQualifiedName_5144Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ObjectNodeAttributesParser expansionNodeOrdering_5145Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getExpansionNodeOrdering_5145Parser() {
+		if (expansionNodeOrdering_5145Parser == null) {
+			expansionNodeOrdering_5145Parser = new ObjectNodeAttributesParser();
+		}
+		return expansionNodeOrdering_5145Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AppliedStereotypeParser expansionNodeQualifiedName_5146Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getExpansionNodeQualifiedName_5146Parser() {
+		if (expansionNodeQualifiedName_5146Parser == null) {
+			expansionNodeQualifiedName_5146Parser = new AppliedStereotypeParser();
+		}
+		return expansionNodeQualifiedName_5146Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser valueSpecificationActionName_5135Parser;
 
 	/**
@@ -3175,6 +3244,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConditionalNodeQualifiedName_5116Parser();
 		case ExpansionRegionModeEditPart.VISUAL_ID:
 			return getExpansionRegionMode_5087Parser();
+		case ExpansionNodeNameEditPart.VISUAL_ID:
+			return getExpansionNodeName_5143Parser();
+		case ExpansionNodeInStateEditPart.VISUAL_ID:
+			return getExpansionNodeQualifiedName_5144Parser();
+		case ExpansionNodeOrderingEditPart.VISUAL_ID:
+			return getExpansionNodeOrdering_5145Parser();
+		case ExpansionNodeStereotypeEditPart.VISUAL_ID:
+			return getExpansionNodeQualifiedName_5146Parser();
 		case ValueSpecificationActionNameEditPart.VISUAL_ID:
 			return getValueSpecificationActionName_5135Parser();
 		case ValueSpecificationActionStereotypeEditPart.VISUAL_ID:

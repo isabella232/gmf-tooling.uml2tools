@@ -334,12 +334,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Pin3Group_title;
+	public static String Pin4Group_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Pin3Group_desc;
+	public static String Pin4Group_desc;
 
 	/**
 	 * @generated
@@ -564,12 +564,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Selection4CreationTool_title;
+	public static String ExpansionNode3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Selection4CreationTool_desc;
+	public static String ExpansionNode3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Selection5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Selection5CreationTool_desc;
 
 	/**
 	 * @generated
@@ -1535,6 +1545,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ExpansionRegion_3084_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpansionNode_3091_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpansionNode_3091_outgoinglinks;
 
 	/**
 	 * @generated

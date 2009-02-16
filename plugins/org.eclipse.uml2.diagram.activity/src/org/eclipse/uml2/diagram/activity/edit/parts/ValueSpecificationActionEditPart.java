@@ -560,6 +560,9 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
+		if (targetEditPart instanceof ExpansionNodeEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
@@ -789,6 +792,9 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof ExpansionNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.ValueSpecificationActionEditPart) {
@@ -1148,6 +1154,9 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 			types.add(UMLElementTypes.ExpansionRegion_3084);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1377,6 +1386,9 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
@@ -1746,6 +1758,9 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 			types.add(UMLElementTypes.ExpansionRegion_3084);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1975,6 +1990,9 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);

@@ -75,6 +75,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPin
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
@@ -242,6 +243,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case LoopNodeEditPart.VISUAL_ID:
 		case ConditionalNodeEditPart.VISUAL_ID:
 		case ExpansionRegionEditPart.VISUAL_ID:
+		case ExpansionNodeEditPart.VISUAL_ID:
 		case ParameterSetEditPart.VISUAL_ID:
 		case ParameterEditPart.VISUAL_ID:
 		case ValueSpecificationActionEditPart.VISUAL_ID:
@@ -989,6 +991,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ExpansionRegionEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getExpansionRegion_3084ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case ExpansionNodeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getExpansionNode_3091ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

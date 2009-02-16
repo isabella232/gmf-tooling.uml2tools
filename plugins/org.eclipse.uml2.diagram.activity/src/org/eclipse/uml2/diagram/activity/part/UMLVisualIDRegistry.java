@@ -1392,6 +1392,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
 				return StructuredActivityNode_OutputPinEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getExpansionNode().isSuperTypeOf(domainElement.eClass())) {
+				return ExpansionNodeEditPart.VISUAL_ID;
+			}
 			break;
 		case LocalPreconditionCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getLiteralString().isSuperTypeOf(domainElement.eClass())) {
@@ -2313,6 +2316,20 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ExpansionNodeEditPart.VISUAL_ID:
+			if (ExpansionNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ExpansionNodeInStateEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ExpansionNodeOrderingEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ExpansionNodeStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ParameterSetEditPart.VISUAL_ID:
 			if (ParameterEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -2886,6 +2903,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (StructuredActivityNode_OutputPinEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ExpansionNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -4678,6 +4698,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
 				return StructuredActivityNode_OutputPinEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getExpansionNode().isSuperTypeOf(domainElement.eClass())) {
+				return ExpansionNodeEditPart.VISUAL_ID;
+			}
 			break;
 		case ParameterSetEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
@@ -4827,6 +4850,7 @@ public class UMLVisualIDRegistry {
 		case LoopNodeEditPart.VISUAL_ID:
 		case ConditionalNodeEditPart.VISUAL_ID:
 		case ExpansionRegionEditPart.VISUAL_ID:
+		case ExpansionNodeEditPart.VISUAL_ID:
 		case ParameterEditPart.VISUAL_ID:
 		case LocalPrecondition_LiteralStringEditPart.VISUAL_ID:
 		case LocalPostcondition_LiteralStringEditPart.VISUAL_ID:

@@ -127,11 +127,17 @@
                 alignment="BEGINNING"/>
           </children>
         </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ExpansionRegionFigure_ExpansionNodeContainer"
+            outline="false"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
     </descriptors>
   </figures>
   <nodes
@@ -162,6 +168,10 @@
       name="ExpansionRegionNodeCompartment"
       figure="ExpansionRegionFigure"
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <compartments
+      name="ExpansionNodeContainer"
+      figure="ExpansionRegionFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
   <labels
       name="ExpansionRegionNode_keyword"
       figure="ExpansionRegionFigure"

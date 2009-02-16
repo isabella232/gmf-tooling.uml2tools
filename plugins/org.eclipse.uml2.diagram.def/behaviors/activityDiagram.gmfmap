@@ -457,7 +457,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.0"/>
+              href="activityDiagram.gmftool#//@palette/@tools.4/@tools.3/@tools.0"/>
           <diagramNode
               href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
         </ownedChild>
@@ -845,7 +845,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.1"/>
+                  href="activityDiagram.gmftool#//@palette/@tools.4/@tools.3/@tools.1"/>
               <diagramNode
                   href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
             </ownedChild>
@@ -885,7 +885,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.2"/>
+                  href="activityDiagram.gmftool#//@palette/@tools.4/@tools.3/@tools.2"/>
               <diagramNode
                   href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
             </ownedChild>
@@ -1473,7 +1473,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.0"/>
+                  href="activityDiagram.gmftool#//@palette/@tools.4/@tools.3/@tools.0"/>
               <diagramNode
                   href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
             </ownedChild>
@@ -1871,7 +1871,7 @@
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
-                      href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.1"/>
+                      href="activityDiagram.gmftool#//@palette/@tools.4/@tools.3/@tools.1"/>
                   <diagramNode
                       href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
                 </ownedChild>
@@ -1911,7 +1911,7 @@
                   </labelMappings>
                   <tool
                       xsi:type="gmftool:CreationTool"
-                      href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2/@tools.2"/>
+                      href="activityDiagram.gmftool#//@palette/@tools.4/@tools.3/@tools.2"/>
                   <diagramNode
                       href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
                 </ownedChild>
@@ -2920,8 +2920,63 @@
             <containmentFeature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
           </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.24/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ExpansionNode"/>
+              <domainInitializer
+                  xsi:type="gmfmap:FeatureSeqInitializer">
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+                  <value
+                      body=" let base : String = 'ExpansionNode' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+                </initializers>
+              </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#ObjectNode_name"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#ObjectNode_states"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ObjectNode/ordering"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="activityDiagram_objects.gmfgraph#ObjectNode_stereo"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="activityDiagram.gmftool#//@palette/@tools.4/@tools.2"/>
+              <diagramNode
+                  href="activityDiagram_objects.gmfgraph#ObjectNode"/>
+            </ownedChild>
+          </children>
           <compartments
-              children="//@nodes.0/@ownedChild/@children.24/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.9 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.10 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.11 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.12 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.13 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.14 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.15 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.16 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.17">
+              children="//@nodes.0/@ownedChild/@children.24/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.9 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.10 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.11 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.12 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.13 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.14 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.15 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.16 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.17 //@nodes.0/@ownedChild/@children.24/@ownedChild/@children.18">
             <compartment
                 href="activityDiagram_structured.gmfgraph#ExpansionRegionNodeCompartment"/>
           </compartments>
@@ -3211,7 +3266,7 @@
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="activityDiagram.gmftool#//@palette/@tools.4/@tools.3"/>
+        href="activityDiagram.gmftool#//@palette/@tools.4/@tools.4"/>
     <diagramLink
         href="../../../plugin/org.eclipse.gmf.graphdef/models/classDiagram.gmfgraph#DashedConnection"/>
     <linkMetaFeature

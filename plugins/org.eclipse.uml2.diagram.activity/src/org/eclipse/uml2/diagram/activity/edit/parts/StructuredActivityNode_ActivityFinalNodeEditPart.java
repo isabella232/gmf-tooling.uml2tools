@@ -456,6 +456,9 @@ public class StructuredActivityNode_ActivityFinalNodeEditPart extends ShapeNodeE
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
+		if (targetEditPart instanceof ExpansionNodeEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
@@ -685,6 +688,9 @@ public class StructuredActivityNode_ActivityFinalNodeEditPart extends ShapeNodeE
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ExpansionRegionEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof ExpansionNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
@@ -927,6 +933,9 @@ public class StructuredActivityNode_ActivityFinalNodeEditPart extends ShapeNodeE
 			types.add(UMLElementTypes.ExpansionRegion_3084);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1156,6 +1165,9 @@ public class StructuredActivityNode_ActivityFinalNodeEditPart extends ShapeNodeE
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
@@ -1407,6 +1419,9 @@ public class StructuredActivityNode_ActivityFinalNodeEditPart extends ShapeNodeE
 			types.add(UMLElementTypes.ExpansionRegion_3084);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1636,6 +1651,9 @@ public class StructuredActivityNode_ActivityFinalNodeEditPart extends ShapeNodeE
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ExpansionNode_3091);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);

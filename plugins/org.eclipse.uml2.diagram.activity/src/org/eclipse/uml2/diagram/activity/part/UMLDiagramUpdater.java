@@ -38,6 +38,7 @@ import org.eclipse.uml2.uml.DataStoreNode;
 import org.eclipse.uml2.uml.DecisionNode;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
+import org.eclipse.uml2.uml.ExpansionNode;
 import org.eclipse.uml2.uml.ExpansionRegion;
 import org.eclipse.uml2.uml.FlowFinalNode;
 import org.eclipse.uml2.uml.ForkNode;
@@ -1892,6 +1893,10 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
+			if (visualID == ExpansionNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
 		}
 		return result;
 	}
@@ -2155,6 +2160,8 @@ public class UMLDiagramUpdater {
 			return getConditionalNode_3082ContainedLinks(view);
 		case ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3084ContainedLinks(view);
+		case ExpansionNodeEditPart.VISUAL_ID:
+			return getExpansionNode_3091ContainedLinks(view);
 		case ParameterSetEditPart.VISUAL_ID:
 			return getParameterSet_3086ContainedLinks(view);
 		case ParameterEditPart.VISUAL_ID:
@@ -2344,6 +2351,8 @@ public class UMLDiagramUpdater {
 			return getConditionalNode_3082IncomingLinks(view);
 		case ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3084IncomingLinks(view);
+		case ExpansionNodeEditPart.VISUAL_ID:
+			return getExpansionNode_3091IncomingLinks(view);
 		case ParameterSetEditPart.VISUAL_ID:
 			return getParameterSet_3086IncomingLinks(view);
 		case ParameterEditPart.VISUAL_ID:
@@ -2533,6 +2542,8 @@ public class UMLDiagramUpdater {
 			return getConditionalNode_3082OutgoingLinks(view);
 		case ExpansionRegionEditPart.VISUAL_ID:
 			return getExpansionRegion_3084OutgoingLinks(view);
+		case ExpansionNodeEditPart.VISUAL_ID:
+			return getExpansionNode_3091OutgoingLinks(view);
 		case ParameterSetEditPart.VISUAL_ID:
 			return getParameterSet_3086OutgoingLinks(view);
 		case ParameterEditPart.VISUAL_ID:
@@ -3374,6 +3385,16 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getExpansionNode_3091ContainedLinks(View view) {
+		ExpansionNode modelElement = (ExpansionNode) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
 		return result;
 	}
 
@@ -4447,6 +4468,18 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getExpansionNode_3091IncomingLinks(View view) {
+		ExpansionNode modelElement = (ExpansionNode) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getParameterSet_3086IncomingLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -5506,6 +5539,18 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getExpansionNode_3091OutgoingLinks(View view) {
+		ExpansionNode modelElement = (ExpansionNode) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
 		return result;
 	}
 

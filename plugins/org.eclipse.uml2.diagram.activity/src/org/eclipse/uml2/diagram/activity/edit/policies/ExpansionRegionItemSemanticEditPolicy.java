@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEdit
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionNodeCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AcceptEventActionEditPart;
@@ -141,6 +142,9 @@ public class ExpansionRegionItemSemanticEditPolicy extends UMLBaseItemSemanticEd
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
+						cmd.add(getDestroyElementCommand(cnode));
+						break;
+					case ExpansionNodeEditPart.VISUAL_ID:
 						cmd.add(getDestroyElementCommand(cnode));
 						break;
 					}

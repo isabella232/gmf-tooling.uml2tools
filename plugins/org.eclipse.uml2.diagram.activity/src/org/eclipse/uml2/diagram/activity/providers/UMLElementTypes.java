@@ -66,6 +66,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPin
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExpansionRegionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ForkNodeEditPart;
@@ -558,6 +559,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType ExpansionNode_3091 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.ExpansionNode_3091"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IHintedType ParameterSet_3086 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.ParameterSet_3086"); //$NON-NLS-1$
 
 	/**
@@ -707,7 +713,7 @@ public class UMLElementTypes extends ElementInitializers {
 	}
 
 	/**
-	 * Returns 'type' of the ecore object associated with the hint.
+	 * Returns type of the ecore object associated with the hint.
 	 * 
 	 * @generated
 	 */
@@ -882,6 +888,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(ExpansionRegion_3084, UMLPackage.eINSTANCE.getExpansionRegion());
 
+			elements.put(ExpansionNode_3091, UMLPackage.eINSTANCE.getExpansionNode());
+
 			elements.put(ParameterSet_3086, UMLPackage.eINSTANCE.getParameterSet());
 
 			elements.put(Parameter_3087, UMLPackage.eINSTANCE.getParameter());
@@ -1003,6 +1011,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(LoopNode_3058);
 			KNOWN_ELEMENT_TYPES.add(ConditionalNode_3082);
 			KNOWN_ELEMENT_TYPES.add(ExpansionRegion_3084);
+			KNOWN_ELEMENT_TYPES.add(ExpansionNode_3091);
 			KNOWN_ELEMENT_TYPES.add(ParameterSet_3086);
 			KNOWN_ELEMENT_TYPES.add(Parameter_3087);
 			KNOWN_ELEMENT_TYPES.add(ValueSpecificationAction_3089);
@@ -1189,6 +1198,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return ConditionalNode_3082;
 		case ExpansionRegionEditPart.VISUAL_ID:
 			return ExpansionRegion_3084;
+		case ExpansionNodeEditPart.VISUAL_ID:
+			return ExpansionNode_3091;
 		case ParameterSetEditPart.VISUAL_ID:
 			return ParameterSet_3086;
 		case ParameterEditPart.VISUAL_ID:
