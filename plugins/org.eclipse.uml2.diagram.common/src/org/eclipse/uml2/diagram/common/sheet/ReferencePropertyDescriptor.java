@@ -26,20 +26,22 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.common.sheet.chooser.MultiReferenceElementChooserDialog;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ReferencedElementChooserDialog;
+import org.eclipse.uml2.uml.UMLPackage;
 
 public class ReferencePropertyDescriptor extends PropertyDescriptor {
 
 	private final AdapterFactory myItemProvidersAdapterFactory;
 
 	private final IDialogSettings myDialogSettings;
-	
+
 	private final IPreferenceStore myPreferenceStore;
 
 	private final IItemPropertyDescriptor myItemPropertyDescriptor;
 
 	private final Object mySourceObject;
 
-	public ReferencePropertyDescriptor(Object sourceObject, IItemPropertyDescriptor itemPropertyDescriptor, AdapterFactory itemProvidersAdapterFactory, IDialogSettings dialogSettings, IPreferenceStore store) {
+	public ReferencePropertyDescriptor(Object sourceObject, IItemPropertyDescriptor itemPropertyDescriptor, AdapterFactory itemProvidersAdapterFactory, IDialogSettings dialogSettings,
+			IPreferenceStore store) {
 		super(sourceObject, itemPropertyDescriptor);
 		mySourceObject = sourceObject;
 		myItemPropertyDescriptor = itemPropertyDescriptor;
@@ -47,29 +49,34 @@ public class ReferencePropertyDescriptor extends PropertyDescriptor {
 		myDialogSettings = dialogSettings;
 		myPreferenceStore = store;
 	}
-	
+
 	@Override
 	public CellEditor createPropertyEditor(final Composite composite) {
 		final EStructuralFeature feature = (EStructuralFeature) myItemPropertyDescriptor.getFeature(mySourceObject);
-        if (itemPropertyDescriptor.getFeature(object) instanceof EReference && !myItemPropertyDescriptor.getChoiceOfValues(mySourceObject).isEmpty()) {
-        	if (itemPropertyDescriptor.isMany(object)) {
-    			return new ExtendedDialogCellEditor(composite, getEditLabelProvider()) {
-    				@Override
-    				protected Object openDialogBox(Control cellEditorWindow) {
-    					MultiReferenceElementChooserDialog dialog = new MultiReferenceElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object, feature);
-    					dialog.open();
-    					return dialog.getResult();
-    				}
-    			};
-        	}
-        	if (useDialogNotComboCellEditor()) {
-        		ReferencedElementChooserDialog dialog = new ReferencedElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object, feature);
-        		return new ReferenceDialogCellEditor(composite, dialog, getLabelProvider());
-        	}
-        }
+		if (UMLPackage.eINSTANCE.getImage_Location().equals(feature)) {
+			return new ImageLocationCellEditor((EObject) object, composite, getEditLabelProvider());
+		}
+		if (itemPropertyDescriptor.getFeature(object) instanceof EReference && !myItemPropertyDescriptor.getChoiceOfValues(mySourceObject).isEmpty()) {
+			if (itemPropertyDescriptor.isMany(object)) {
+				return new ExtendedDialogCellEditor(composite, getEditLabelProvider()) {
+					@Override
+					protected Object openDialogBox(Control cellEditorWindow) {
+						
+						MultiReferenceElementChooserDialog dialog = new MultiReferenceElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object,
+								feature);
+						dialog.open();
+						return dialog.getResult();
+					}
+				};
+			}
+			if (useDialogNotComboCellEditor()) {
+				ReferencedElementChooserDialog dialog = new ReferencedElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object, feature);
+				return new ReferenceDialogCellEditor(composite, dialog, getLabelProvider());
+			}
+		}
 		return super.createPropertyEditor(composite);
 	}
-	
+
 	private boolean useDialogNotComboCellEditor() {
 		String value = myPreferenceStore.getString(UMLPreferencesConstants.PREF_PROP_SHEET_REFERENCE);
 		// XXX remove the check, when Preference Page will be added to UI
@@ -78,5 +85,5 @@ public class ReferencePropertyDescriptor extends PropertyDescriptor {
 		}
 		return UMLPreferencesConstants.PREF_PROP_SHEET_REFERENCE_DIALOG.equals(value);
 	}
-
+	
 }
