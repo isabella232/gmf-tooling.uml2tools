@@ -61,6 +61,7 @@
 		«EXPAND guardedRefreshDiagram-»
 	«ENDIF-»
 	
+	«EXPAND xpt::stereo::TextAware::performDirectEditRequest_chooseLabelForNode»
 «ENDAROUND»
 
 «AROUND implementsList FOR gmfgen::GenNode»«EXPAND implementsPrimaryShapeEditPart FOR viewmap»«ENDAROUND»

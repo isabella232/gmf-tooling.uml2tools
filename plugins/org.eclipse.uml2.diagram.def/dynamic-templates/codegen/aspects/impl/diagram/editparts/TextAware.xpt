@@ -182,3 +182,19 @@
 	}
 
 «ENDDEFINE»
+
+«AROUND performDirectEditRequest FOR gmfgen::GenCommonBase-»
+«IF isStereotypeAndNameGroupName(self)-»
+«EXPAND xpt::stereo::TextAware::performDirectEditRequest_redirectToStereotypeLabel FOR self.oclAsType(gmfgen::GenNodeLabel)-»
+«ELSE-»
+«targetDef.proceed()-»
+«ENDIF-»
+«ENDAROUND»
+
+«AROUND performDirectEditWithInitialChar FOR gmfgen::GenCommonBase-»
+«IF isStereotypeAndNameGroupStereotype(self)-»
+«EXPAND xpt::stereo::TextAware::performDirectEditWithInitialChar FOR self.oclAsType(gmfgen::GenNodeLabel)-»
+«ELSE-»
+«targetDef.proceed()-»
+«ENDIF-»
+«ENDAROUND»
