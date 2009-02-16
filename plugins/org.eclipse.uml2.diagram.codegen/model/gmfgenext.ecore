@@ -58,6 +58,14 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RotatedLabelAttributes" eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypeSupportAttribute" eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="#//StereotypeSupportRole"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StereotypeSupportRole">
+    <eLiterals name="CONTAINER"/>
+    <eLiterals name="NAME_LABEL" value="1"/>
+    <eLiterals name="STEREOTYPE_LABEL" value="2"/>
+  </eClassifiers>
   <eSubpackages name="u2tmap" nsURI="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping"
       nsPrefix="u2tmap">
     <eClassifiers xsi:type="ecore:EClass" name="MappingExt" eSuperTypes="platform:/plugin/org.eclipse.gmf.map/models/gmfmap.ecore#//Mapping">

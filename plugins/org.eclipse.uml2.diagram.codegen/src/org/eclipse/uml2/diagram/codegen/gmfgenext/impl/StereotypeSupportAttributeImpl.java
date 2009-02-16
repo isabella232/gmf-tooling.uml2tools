@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: InteractionDiagramAttributesImpl.java,v 1.3 2009/02/16 16:05:56 mgolubev Exp $
+ * $Id: StereotypeSupportAttributeImpl.java,v 1.1 2009/02/16 16:05:56 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -14,48 +14,49 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
-import org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportAttribute;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportRole;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Interaction Diagram Attributes</b></em>'.
+ * An implementation of the model object '<em><b>Stereotype Support Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.InteractionDiagramAttributesImpl#isMultiLayered <em>Multi Layered</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.StereotypeSupportAttributeImpl#getRole <em>Role</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class InteractionDiagramAttributesImpl extends EObjectImpl implements InteractionDiagramAttributes {
+public class StereotypeSupportAttributeImpl extends EObjectImpl implements StereotypeSupportAttribute {
 	/**
-	 * The default value of the '{@link #isMultiLayered() <em>Multi Layered</em>}' attribute.
+	 * The default value of the '{@link #getRole() <em>Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isMultiLayered()
+	 * @see #getRole()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean MULTI_LAYERED_EDEFAULT = true;
+	protected static final StereotypeSupportRole ROLE_EDEFAULT = StereotypeSupportRole.CONTAINER;
 
 	/**
-	 * The cached value of the '{@link #isMultiLayered() <em>Multi Layered</em>}' attribute.
+	 * The cached value of the '{@link #getRole() <em>Role</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isMultiLayered()
+	 * @see #getRole()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean multiLayered = MULTI_LAYERED_EDEFAULT;
+	protected StereotypeSupportRole role = ROLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InteractionDiagramAttributesImpl() {
+	protected StereotypeSupportAttributeImpl() {
 		super();
 	}
 
@@ -66,7 +67,7 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return GMFGenExtPackage.Literals.INTERACTION_DIAGRAM_ATTRIBUTES;
+		return GMFGenExtPackage.Literals.STEREOTYPE_SUPPORT_ATTRIBUTE;
 	}
 
 	/**
@@ -74,8 +75,8 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isMultiLayered() {
-		return multiLayered;
+	public StereotypeSupportRole getRole() {
+		return role;
 	}
 
 	/**
@@ -83,11 +84,11 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMultiLayered(boolean newMultiLayered) {
-		boolean oldMultiLayered = multiLayered;
-		multiLayered = newMultiLayered;
+	public void setRole(StereotypeSupportRole newRole) {
+		StereotypeSupportRole oldRole = role;
+		role = newRole == null ? ROLE_EDEFAULT : newRole;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED, oldMultiLayered, multiLayered));
+			eNotify(new ENotificationImpl(this, Notification.SET, GMFGenExtPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE, oldRole, role));
 	}
 
 	/**
@@ -98,8 +99,8 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
-				return isMultiLayered();
+			case GMFGenExtPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
+				return getRole();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,8 +113,8 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
-				setMultiLayered((Boolean)newValue);
+			case GMFGenExtPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
+				setRole((StereotypeSupportRole)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -127,8 +128,8 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
-				setMultiLayered(MULTI_LAYERED_EDEFAULT);
+			case GMFGenExtPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
+				setRole(ROLE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -142,8 +143,8 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GMFGenExtPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
-				return multiLayered != MULTI_LAYERED_EDEFAULT;
+			case GMFGenExtPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
+				return role != ROLE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -158,10 +159,10 @@ public class InteractionDiagramAttributesImpl extends EObjectImpl implements Int
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (multiLayered: ");
-		result.append(multiLayered);
+		result.append(" (role: ");
+		result.append(role);
 		result.append(')');
 		return result.toString();
 	}
 
-} //InteractionDiagramAttributesImpl
+} //StereotypeSupportAttributeImpl

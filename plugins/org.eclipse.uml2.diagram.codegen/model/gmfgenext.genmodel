@@ -8,6 +8,11 @@
   <foreignModel>gmfgenext.ecore</foreignModel>
   <genPackages prefix="GMFGenExt" basePackage="org.eclipse.uml2.diagram.codegen" disposableProviderFactory="true"
       childCreationExtenders="true" ecorePackage="gmfgenext.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gmfgenext.ecore#//StereotypeSupportRole">
+      <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//StereotypeSupportRole/CONTAINER"/>
+      <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//StereotypeSupportRole/NAME_LABEL"/>
+      <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//StereotypeSupportRole/STEREOTYPE_LABEL"/>
+    </genEnums>
     <genClasses ecoreClass="gmfgenext.ecore#//AuxSecondaryDiagramNodeAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//AuxSecondaryDiagramNodeAttribute/substituteWithCanvasElement"/>
     </genClasses>
@@ -33,6 +38,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//InteractionDiagramAttributes/multiLayered"/>
     </genClasses>
     <genClasses ecoreClass="gmfgenext.ecore#//RotatedLabelAttributes"/>
+    <genClasses ecoreClass="gmfgenext.ecore#//StereotypeSupportAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//StereotypeSupportAttribute/role"/>
+    </genClasses>
     <nestedGenPackages prefix="U2TMap" basePackage="org.eclipse.uml2.diagram.codegen"
         disposableProviderFactory="true" ecorePackage="gmfgenext.ecore#//u2tmap">
       <genClasses ecoreClass="gmfgenext.ecore#//u2tmap/MappingExt">

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AbstractDynamicCanonicalContainerImpl.java,v 1.2 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: AbstractDynamicCanonicalContainerImpl.java,v 1.3 2009/02/16 16:05:56 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -142,7 +142,7 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 			case GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
 				return getAlwaysCanonicalIDs();
 			case GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
-				return isInitiallyCanonical() ? Boolean.TRUE : Boolean.FALSE;
+				return isInitiallyCanonical();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,7 +161,7 @@ public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl 
 				getAlwaysCanonicalIDs().addAll((Collection<? extends Integer>)newValue);
 				return;
 			case GMFGenExtPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
-				setInitiallyCanonical(((Boolean)newValue).booleanValue());
+				setInitiallyCanonical((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

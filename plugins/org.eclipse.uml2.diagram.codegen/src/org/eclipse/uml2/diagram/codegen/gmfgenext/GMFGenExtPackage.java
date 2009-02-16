@@ -2,12 +2,13 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackage.java,v 1.6 2008/09/05 19:40:28 mgolubev Exp $
+ * $Id: GMFGenExtPackage.java,v 1.7 2009/02/16 16:05:56 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
 
@@ -314,6 +315,44 @@ public interface GMFGenExtPackage extends EPackage {
 	int ROTATED_LABEL_ATTRIBUTES_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.StereotypeSupportAttributeImpl <em>Stereotype Support Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.StereotypeSupportAttributeImpl
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getStereotypeSupportAttribute()
+	 * @generated
+	 */
+	int STEREOTYPE_SUPPORT_ATTRIBUTE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Role</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Stereotype Support Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEREOTYPE_SUPPORT_ATTRIBUTE_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportRole <em>Stereotype Support Role</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportRole
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getStereotypeSupportRole()
+	 * @generated
+	 */
+	int STEREOTYPE_SUPPORT_ROLE = 9;
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.AuxSecondaryDiagramNodeAttribute <em>Aux Secondary Diagram Node Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -493,6 +532,37 @@ public interface GMFGenExtPackage extends EPackage {
 	EClass getRotatedLabelAttributes();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportAttribute <em>Stereotype Support Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Stereotype Support Attribute</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportAttribute
+	 * @generated
+	 */
+	EClass getStereotypeSupportAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportAttribute#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Role</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportAttribute#getRole()
+	 * @see #getStereotypeSupportAttribute()
+	 * @generated
+	 */
+	EAttribute getStereotypeSupportAttribute_Role();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportRole <em>Stereotype Support Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Stereotype Support Role</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportRole
+	 * @generated
+	 */
+	EEnum getStereotypeSupportRole();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -665,6 +735,34 @@ public interface GMFGenExtPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROTATED_LABEL_ATTRIBUTES = eINSTANCE.getRotatedLabelAttributes();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.impl.StereotypeSupportAttributeImpl <em>Stereotype Support Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.StereotypeSupportAttributeImpl
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getStereotypeSupportAttribute()
+		 * @generated
+		 */
+		EClass STEREOTYPE_SUPPORT_ATTRIBUTE = eINSTANCE.getStereotypeSupportAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Role</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE = eINSTANCE.getStereotypeSupportAttribute_Role();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportRole <em>Stereotype Support Role</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportRole
+		 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl#getStereotypeSupportRole()
+		 * @generated
+		 */
+		EEnum STEREOTYPE_SUPPORT_ROLE = eINSTANCE.getStereotypeSupportRole();
 
 	}
 

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtSwitch.java,v 1.6 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: GMFGenExtSwitch.java,v 1.7 2009/02/16 16:05:57 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -152,6 +152,13 @@ public class GMFGenExtSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GMFGenExtPackage.STEREOTYPE_SUPPORT_ATTRIBUTE: {
+				StereotypeSupportAttribute stereotypeSupportAttribute = (StereotypeSupportAttribute)theEObject;
+				T result = caseStereotypeSupportAttribute(stereotypeSupportAttribute);
+				if (result == null) result = caseAttributes(stereotypeSupportAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -273,6 +280,21 @@ public class GMFGenExtSwitch<T> {
 	 * @generated
 	 */
 	public T caseRotatedLabelAttributes(RotatedLabelAttributes object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stereotype Support Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stereotype Support Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStereotypeSupportAttribute(StereotypeSupportAttribute object) {
 		return null;
 	}
 

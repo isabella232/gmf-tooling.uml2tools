@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SubstitutableByAttributesImpl.java,v 1.5 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: SubstitutableByAttributesImpl.java,v 1.6 2009/02/16 16:05:56 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -170,7 +170,7 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__SUBSTITUTABLE_BY_IDS:
 				return getSubstitutableByIDs();
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL:
-				return isRequiresAll() ? Boolean.TRUE : Boolean.FALSE;
+				return isRequiresAll();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -189,7 +189,7 @@ public class SubstitutableByAttributesImpl extends EObjectImpl implements Substi
 				getSubstitutableByIDs().addAll((Collection<? extends Integer>)newValue);
 				return;
 			case GMFGenExtPackage.SUBSTITUTABLE_BY_ATTRIBUTES__REQUIRES_ALL:
-				setRequiresAll(((Boolean)newValue).booleanValue());
+				setRequiresAll((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

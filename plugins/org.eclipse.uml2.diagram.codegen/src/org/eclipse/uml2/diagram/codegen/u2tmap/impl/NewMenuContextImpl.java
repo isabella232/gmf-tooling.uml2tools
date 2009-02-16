@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: NewMenuContextImpl.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: NewMenuContextImpl.java,v 1.2 2009/02/16 16:05:57 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.impl;
 
@@ -237,7 +237,7 @@ public class NewMenuContextImpl extends EObjectImpl implements NewMenuContext {
 				if (resolve) return getMetaclass();
 				return basicGetMetaclass();
 			case U2TMapPackage.NEW_MENU_CONTEXT__INCLUDE_SUB_CLASSES:
-				return isIncludeSubClasses() ? Boolean.TRUE : Boolean.FALSE;
+				return isIncludeSubClasses();
 			case U2TMapPackage.NEW_MENU_CONTEXT__ENTRIES:
 				return getEntries();
 			case U2TMapPackage.NEW_MENU_CONTEXT__IMPORTED_ENTRIES:
@@ -259,7 +259,7 @@ public class NewMenuContextImpl extends EObjectImpl implements NewMenuContext {
 				setMetaclass((EClass)newValue);
 				return;
 			case U2TMapPackage.NEW_MENU_CONTEXT__INCLUDE_SUB_CLASSES:
-				setIncludeSubClasses(((Boolean)newValue).booleanValue());
+				setIncludeSubClasses((Boolean)newValue);
 				return;
 			case U2TMapPackage.NEW_MENU_CONTEXT__ENTRIES:
 				getEntries().clear();

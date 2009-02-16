@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.8 2009/01/14 20:47:07 mgolubev Exp $
+ * $Id: GMFGenExtItemProviderAdapterFactory.java,v 1.9 2009/02/16 16:05:58 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.provider;
 
@@ -254,6 +254,29 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StereotypeSupportAttributeItemProvider stereotypeSupportAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStereotypeSupportAttributeAdapter() {
+		if (stereotypeSupportAttributeItemProvider == null) {
+			stereotypeSupportAttributeItemProvider = new StereotypeSupportAttributeItemProvider(this);
+		}
+
+		return stereotypeSupportAttributeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,6 +382,7 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 		if (dynamicCanonicalCompartmentItemProvider != null) dynamicCanonicalCompartmentItemProvider.dispose();
 		if (interactionDiagramAttributesItemProvider != null) interactionDiagramAttributesItemProvider.dispose();
 		if (rotatedLabelAttributesItemProvider != null) rotatedLabelAttributesItemProvider.dispose();
+		if (stereotypeSupportAttributeItemProvider != null) stereotypeSupportAttributeItemProvider.dispose();
 	}
 
 	/**
@@ -442,6 +466,11 @@ public class GMFGenExtItemProviderAdapterFactory extends GMFGenExtAdapterFactory
 					(createChildParameter
 						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
 						 GMFGenExtFactory.eINSTANCE.createRotatedLabelAttributes()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 GMFGenExtFactory.eINSTANCE.createStereotypeSupportAttribute()));
 
 				return null;
 			}

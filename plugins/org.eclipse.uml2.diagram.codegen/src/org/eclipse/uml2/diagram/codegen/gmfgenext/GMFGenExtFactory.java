@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtFactory.java,v 1.5 2008/09/05 19:40:28 mgolubev Exp $
+ * $Id: GMFGenExtFactory.java,v 1.6 2009/02/16 16:05:56 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext;
 
@@ -87,6 +87,15 @@ public interface GMFGenExtFactory extends EFactory {
 	 * @generated
 	 */
 	RotatedLabelAttributes createRotatedLabelAttributes();
+
+	/**
+	 * Returns a new object of class '<em>Stereotype Support Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Stereotype Support Attribute</em>'.
+	 * @generated
+	 */
+	StereotypeSupportAttribute createStereotypeSupportAttribute();
 
 	/**
 	 * Returns the package supported by this factory.

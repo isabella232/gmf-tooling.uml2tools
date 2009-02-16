@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: DetailsLevelAttributesImpl.java,v 1.3 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: DetailsLevelAttributesImpl.java,v 1.4 2009/02/16 16:05:56 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -141,9 +141,9 @@ public class DetailsLevelAttributesImpl extends EObjectImpl implements DetailsLe
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES__FILTERING_COMPARTMENT:
-				return isFilteringCompartment() ? Boolean.TRUE : Boolean.FALSE;
+				return isFilteringCompartment();
 			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES__DETAILS_AWARE_PARSER:
-				return isDetailsAwareParser() ? Boolean.TRUE : Boolean.FALSE;
+				return isDetailsAwareParser();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,10 +157,10 @@ public class DetailsLevelAttributesImpl extends EObjectImpl implements DetailsLe
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES__FILTERING_COMPARTMENT:
-				setFilteringCompartment(((Boolean)newValue).booleanValue());
+				setFilteringCompartment((Boolean)newValue);
 				return;
 			case GMFGenExtPackage.DETAILS_LEVEL_ATTRIBUTES__DETAILS_AWARE_PARSER:
-				setDetailsAwareParser(((Boolean)newValue).booleanValue());
+				setDetailsAwareParser((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -49,6 +49,16 @@ class InteractionDiagramAttributes extends gmfgen.Attributes {
 class RotatedLabelAttributes extends gmfgen.Attributes {
 }
 
+class StereotypeSupportAttribute extends gmfgen.Attributes {
+	attr StereotypeSupportRole role;
+}
+
+enum StereotypeSupportRole {
+	CONTAINER;
+	NAME_LABEL; 
+	STEREOTYPE_LABEL;
+} 
+
 @namespace(uri="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping", prefix="u2tmap")
 package u2tmap {
 	class MappingExt extends mappings.Mapping {

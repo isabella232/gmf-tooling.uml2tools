@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtAdapterFactory.java,v 1.7 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: GMFGenExtAdapterFactory.java,v 1.8 2009/02/16 16:05:57 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.util;
 
@@ -108,6 +108,10 @@ public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRotatedLabelAttributes(RotatedLabelAttributes object) {
 				return createRotatedLabelAttributesAdapter();
+			}
+			@Override
+			public Adapter caseStereotypeSupportAttribute(StereotypeSupportAttribute object) {
+				return createStereotypeSupportAttributeAdapter();
 			}
 			@Override
 			public Adapter caseAttributes(Attributes object) {
@@ -242,6 +246,20 @@ public class GMFGenExtAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRotatedLabelAttributesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportAttribute <em>Stereotype Support Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportAttribute
+	 * @generated
+	 */
+	public Adapter createStereotypeSupportAttributeAdapter() {
 		return null;
 	}
 

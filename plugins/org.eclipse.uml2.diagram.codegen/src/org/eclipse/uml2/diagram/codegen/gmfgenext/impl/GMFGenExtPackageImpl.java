@@ -2,12 +2,13 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackageImpl.java,v 1.8 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: GMFGenExtPackageImpl.java,v 1.9 2009/02/16 16:05:56 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
@@ -21,6 +22,8 @@ import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtFactory;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.InteractionDiagramAttributes;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.RotatedLabelAttributes;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportAttribute;
+import org.eclipse.uml2.diagram.codegen.gmfgenext.StereotypeSupportRole;
 import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
 import org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage;
 import org.eclipse.uml2.diagram.codegen.u2tmap.impl.U2TMapPackageImpl;
@@ -87,6 +90,20 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 	 * @generated
 	 */
 	private EClass rotatedLabelAttributesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stereotypeSupportAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum stereotypeSupportRoleEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -323,6 +340,33 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStereotypeSupportAttribute() {
+		return stereotypeSupportAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStereotypeSupportAttribute_Role() {
+		return (EAttribute)stereotypeSupportAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getStereotypeSupportRole() {
+		return stereotypeSupportRoleEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GMFGenExtFactory getGMFGenExtFactory() {
 		return (GMFGenExtFactory)getEFactoryInstance();
 	}
@@ -370,6 +414,12 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		createEAttribute(interactionDiagramAttributesEClass, INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED);
 
 		rotatedLabelAttributesEClass = createEClass(ROTATED_LABEL_ATTRIBUTES);
+
+		stereotypeSupportAttributeEClass = createEClass(STEREOTYPE_SUPPORT_ATTRIBUTE);
+		createEAttribute(stereotypeSupportAttributeEClass, STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE);
+
+		// Create enums
+		stereotypeSupportRoleEEnum = createEEnum(STEREOTYPE_SUPPORT_ROLE);
 	}
 
 	/**
@@ -415,6 +465,7 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		dynamicCanonicalCompartmentEClass.getESuperTypes().add(this.getAbstractDynamicCanonicalContainer());
 		interactionDiagramAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 		rotatedLabelAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
+		stereotypeSupportAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(auxSecondaryDiagramNodeAttributeEClass, AuxSecondaryDiagramNodeAttribute.class, "AuxSecondaryDiagramNodeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -445,6 +496,15 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		initEAttribute(getInteractionDiagramAttributes_MultiLayered(), ecorePackage.getEBoolean(), "multiLayered", "true", 0, 1, InteractionDiagramAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rotatedLabelAttributesEClass, RotatedLabelAttributes.class, "RotatedLabelAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(stereotypeSupportAttributeEClass, StereotypeSupportAttribute.class, "StereotypeSupportAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStereotypeSupportAttribute_Role(), this.getStereotypeSupportRole(), "role", null, 0, 1, StereotypeSupportAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(stereotypeSupportRoleEEnum, StereotypeSupportRole.class, "StereotypeSupportRole");
+		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.CONTAINER);
+		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.NAME_LABEL);
+		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.STEREOTYPE_LABEL);
 
 		// Create resource
 		createResource(eNS_URI);

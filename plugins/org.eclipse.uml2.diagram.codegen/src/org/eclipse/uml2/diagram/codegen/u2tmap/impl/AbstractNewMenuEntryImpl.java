@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AbstractNewMenuEntryImpl.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: AbstractNewMenuEntryImpl.java,v 1.2 2009/02/16 16:05:57 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.impl;
 
@@ -56,7 +56,7 @@ public abstract class AbstractNewMenuEntryImpl extends EObjectImpl implements Ab
 	 * @generated
 	 */
 	public NewMenuContext getContext() {
-		if (eContainerFeatureID != U2TMapPackage.ABSTRACT_NEW_MENU_ENTRY__CONTEXT) return null;
+		if (eContainerFeatureID() != U2TMapPackage.ABSTRACT_NEW_MENU_ENTRY__CONTEXT) return null;
 		return (NewMenuContext)eContainer();
 	}
 
@@ -97,7 +97,7 @@ public abstract class AbstractNewMenuEntryImpl extends EObjectImpl implements Ab
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID) {
+		switch (eContainerFeatureID()) {
 			case U2TMapPackage.ABSTRACT_NEW_MENU_ENTRY__CONTEXT:
 				return eInternalContainer().eInverseRemove(this, U2TMapPackage.NEW_MENU_CONTEXT__ENTRIES, NewMenuContext.class, msgs);
 		}

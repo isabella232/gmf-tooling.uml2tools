@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AuxSecondaryDiagramNodeAttributeImpl.java,v 1.3 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: AuxSecondaryDiagramNodeAttributeImpl.java,v 1.4 2009/02/16 16:05:56 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -99,7 +99,7 @@ public class AuxSecondaryDiagramNodeAttributeImpl extends EObjectImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GMFGenExtPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
-				return isSubstituteWithCanvasElement() ? Boolean.TRUE : Boolean.FALSE;
+				return isSubstituteWithCanvasElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,7 +113,7 @@ public class AuxSecondaryDiagramNodeAttributeImpl extends EObjectImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GMFGenExtPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
-				setSubstituteWithCanvasElement(((Boolean)newValue).booleanValue());
+				setSubstituteWithCanvasElement((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
