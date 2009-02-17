@@ -11,7 +11,8 @@ helper isStereotypeLabel(genCommon : gmf::GenCommonBase) : Boolean {
 }
 
 helper isStereotypeViewmap(viewmap : gmf::ParentAssignedViewmap) : Boolean {
-	return 'org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel' = viewmap.figureQualifiedClassName
+	return 'org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel' = viewmap.figureQualifiedClassName 
+		or 'org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2' = viewmap.figureQualifiedClassName 
 }
 
 -- this is future replacement for isStereotypeLabel helper, 
