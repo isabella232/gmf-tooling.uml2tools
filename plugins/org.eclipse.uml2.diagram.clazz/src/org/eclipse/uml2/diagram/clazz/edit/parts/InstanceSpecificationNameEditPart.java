@@ -170,7 +170,7 @@ public class InstanceSpecificationNameEditPart extends CompartmentEditPart imple
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

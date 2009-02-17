@@ -38,6 +38,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -1303,7 +1304,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		private Label fFigureInstanceNode_NameLabel;
+		private WrappingLabel fFigureInstanceNode_NameLabel;
 
 		/**
 		 * @generated
@@ -1342,7 +1343,6 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 			RectangleFigure instanceNode_NameContainerFigure0 = new RectangleFigure();
 			instanceNode_NameContainerFigure0.setOutline(false);
 			instanceNode_NameContainerFigure0.setLineWidth(1);
-			instanceNode_NameContainerFigure0.setBorder(createBorder0());
 
 			this.add(instanceNode_NameContainerFigure0);
 
@@ -1363,8 +1363,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 
 			fFigureInstanceNode_StereoLabel.setLayoutManager(layoutFFigureInstanceNode_StereoLabel);
 
-			fFigureInstanceNode_NameLabel = new Label();
-			fFigureInstanceNode_NameLabel.setText("");
+			fFigureInstanceNode_NameLabel = new WrappingLabel();
 
 			instanceNode_NameContainerFigure0.add(fFigureInstanceNode_NameLabel);
 
@@ -1391,7 +1390,7 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		public Label getFigureInstanceNode_NameLabel() {
+		public WrappingLabel getFigureInstanceNode_NameLabel() {
 			return fFigureInstanceNode_NameLabel;
 		}
 
