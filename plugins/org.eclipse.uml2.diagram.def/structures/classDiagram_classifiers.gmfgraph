@@ -20,52 +20,34 @@
             majorSpacing="0"
             minorSpacing="0"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ClassFigure_Header">
-          <layout
-              xsi:type="gmfgraph:FlowLayout"
-              vertical="true"
-              matchMinorSize="true"
-              forceSingleLine="true"
-              majorSpacing="0"/>
-          <border
-              xsi:type="gmfgraph:LineBorder"/>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="ClassFigure_StereoContainer"
-              outline="false">
-            <layout
-                xsi:type="gmfgraph:CustomLayout"
-                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-            <font
-                xsi:type="gmfgraph:BasicFont"/>
-            <insets
-                top="5"
-                left="5"
-                right="5"/>
-            <children
+            xsi:type="gmfgraph:CustomFigure"
+            name="ClassFigure_nameAndStereotype"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
+          <insets
+              top="8"
+              left="5"
+              bottom="6"
+              right="5"/>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+            <typedFigure
                 xsi:type="gmfgraph:CustomFigure"
                 name="ClassFigure_stereo"
-                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel"/>
-          </children>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="ClassFigure_NameContainer"
-              outline="false">
-            <layout
-                xsi:type="gmfgraph:CustomLayout"
-                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="ClassFigure_name">
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
               <font
                   xsi:type="gmfgraph:BasicFont"/>
-              <insets
-                  left="5"
-                  bottom="5"
-                  right="5"/>
-            </children>
-          </children>
+            </typedFigure>
+          </customChildren>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getNameLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="ClassFigure_name"
+                qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              <font
+                  xsi:type="gmfgraph:BasicFont"/>
+            </typedFigure>
+          </customChildren>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -99,9 +81,11 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0/@children.0"/>
+          accessor="getFigureClassFigure_StereoLabel"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@customChildren.0/@typedFigure"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1/@children.0"/>
+          accessor="getFigureClassFigure_NameLabel"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@customChildren.1/@typedFigure"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
@@ -112,6 +96,9 @@
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.4"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.5"/>
+      <accessors
+          accessor="getNameAndStereotypeBlock"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="AssociationClassRhomb">
