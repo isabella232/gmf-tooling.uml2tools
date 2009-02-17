@@ -188,11 +188,11 @@
   <labels
       name="SecondaryPackage_package"
       figure="SecondaryPackageFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="SecondaryPackage_name"
       figure="SecondaryPackageFigure"
+      elementIcon="false"
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="PackageAsFrameNode_name"
