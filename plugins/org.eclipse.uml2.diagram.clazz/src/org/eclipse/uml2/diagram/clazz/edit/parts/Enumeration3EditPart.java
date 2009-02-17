@@ -62,7 +62,9 @@ import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -168,11 +170,11 @@ public class Enumeration3EditPart extends AbstractBorderedShapeEditPart implemen
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof EnumerationName2EditPart) {
-			((EnumerationName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
+			((EnumerationName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_NameLabel());
 			return true;
 		}
 		if (childEditPart instanceof EnumerationStereotype2EditPart) {
-			((EnumerationStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+			((EnumerationStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_StereoLabel());
 			return true;
 		}
 		if (childEditPart instanceof EnumerationLiterals2EditPart) {
@@ -1486,16 +1488,6 @@ public class Enumeration3EditPart extends AbstractBorderedShapeEditPart implemen
 		/**
 		 * @generated
 		 */
-		private StereotypeLabel fFigureClassFigure_stereo;
-
-		/**
-		 * @generated
-		 */
-		private Label fFigureClassFigure_name;
-
-		/**
-		 * @generated
-		 */
 		private RectangleFigure fFigureClassFigure_PropertiesCompartment;
 
 		/**
@@ -1521,6 +1513,11 @@ public class Enumeration3EditPart extends AbstractBorderedShapeEditPart implemen
 		/**
 		 * @generated
 		 */
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
+
+		/**
+		 * @generated
+		 */
 		public ClassFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
@@ -1541,57 +1538,11 @@ public class Enumeration3EditPart extends AbstractBorderedShapeEditPart implemen
 		 */
 		private void createContents() {
 
-			RectangleFigure classFigure_Header0 = new RectangleFigure();
-			classFigure_Header0.setLineWidth(1);
-			classFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			this.add(classFigure_Header0);
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			ToolbarLayout layoutClassFigure_Header0 = new ToolbarLayout();
-			layoutClassFigure_Header0.setStretchMinorAxis(true);
-			layoutClassFigure_Header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
-
-			layoutClassFigure_Header0.setSpacing(0);
-			layoutClassFigure_Header0.setVertical(true);
-
-			classFigure_Header0.setLayoutManager(layoutClassFigure_Header0);
-
-			RectangleFigure classFigure_StereoContainer1 = new RectangleFigure();
-			classFigure_StereoContainer1.setOutline(false);
-			classFigure_StereoContainer1.setLineWidth(1);
-
-			classFigure_StereoContainer1.setFont(CLASSFIGURE_STEREOCONTAINER1_FONT);
-
-			classFigure_StereoContainer1.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
-
-			classFigure_Header0.add(classFigure_StereoContainer1);
-
-			CenterLayout layoutClassFigure_StereoContainer1 = new CenterLayout();
-
-			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
-
-			fFigureClassFigure_stereo = new StereotypeLabel();
-
-			classFigure_StereoContainer1.add(fFigureClassFigure_stereo);
-
-			RectangleFigure classFigure_NameContainer1 = new RectangleFigure();
-			classFigure_NameContainer1.setOutline(false);
-			classFigure_NameContainer1.setLineWidth(1);
-
-			classFigure_Header0.add(classFigure_NameContainer1);
-
-			CenterLayout layoutClassFigure_NameContainer1 = new CenterLayout();
-
-			classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);
-
-			fFigureClassFigure_name = new Label();
-			fFigureClassFigure_name.setText("");
-
-			fFigureClassFigure_name.setFont(FFIGURECLASSFIGURE_NAME_FONT);
-
-			fFigureClassFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
-
-			classFigure_NameContainer1.add(fFigureClassFigure_name);
+			this.add(fNameAndStereotypeBlock);
 
 			fFigureClassFigure_PropertiesCompartment = new RectangleFigure();
 			fFigureClassFigure_PropertiesCompartment.setLineWidth(1);
@@ -1647,20 +1598,6 @@ public class Enumeration3EditPart extends AbstractBorderedShapeEditPart implemen
 		/**
 		 * @generated
 		 */
-		public StereotypeLabel getFigureClassFigure_stereo() {
-			return fFigureClassFigure_stereo;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureClassFigure_name() {
-			return fFigureClassFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureClassFigure_PropertiesCompartment() {
 			return fFigureClassFigure_PropertiesCompartment;
 		}
@@ -1693,17 +1630,28 @@ public class Enumeration3EditPart extends AbstractBorderedShapeEditPart implemen
 			return fFigureClassFigure_OthersCompartment;
 		}
 
+		/**
+		 * @generated
+		 */
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getFigureClassFigure_StereoLabel() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureClassFigure_NameLabel() {
+			return getNameAndStereotypeBlock().getNameLabel();
+		}
+
 	}
-
-	/**
-	 * @generated
-	 */
-	static final Font CLASSFIGURE_STEREOCONTAINER1_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
-
-	/**
-	 * @generated
-	 */
-	static final Font FFIGURECLASSFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated

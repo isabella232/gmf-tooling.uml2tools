@@ -52,6 +52,8 @@ import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
 import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
@@ -123,7 +125,7 @@ public class ClassStereotypeEditPart extends CompartmentEditPart implements ITex
 				return false;
 			}
 		});
-		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new StereotypeLabelDirectEditPolicy());
 	}
 
 	/**
@@ -173,7 +175,7 @@ public class ClassStereotypeEditPart extends CompartmentEditPart implements ITex
 	/**
 	 * @generated
 	 */
-	public void setLabel(StereotypeLabel figure) {
+	public void setLabel(StereotypeLabel2 figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

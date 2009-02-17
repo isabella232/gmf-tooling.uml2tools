@@ -170,7 +170,7 @@ public class ClassName2EditPart extends CompartmentEditPart implements ITextAwar
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);

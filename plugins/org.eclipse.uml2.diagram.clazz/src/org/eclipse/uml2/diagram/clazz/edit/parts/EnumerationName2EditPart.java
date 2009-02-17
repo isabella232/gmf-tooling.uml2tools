@@ -170,7 +170,7 @@ public class EnumerationName2EditPart extends CompartmentEditPart implements ITe
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
