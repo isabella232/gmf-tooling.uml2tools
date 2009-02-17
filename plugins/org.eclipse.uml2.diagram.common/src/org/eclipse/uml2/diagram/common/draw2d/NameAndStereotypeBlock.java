@@ -10,7 +10,6 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
-import org.eclipse.swt.graphics.Color;
 
 
 public class NameAndStereotypeBlock extends RectangleFigure {
@@ -25,27 +24,7 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 		
 		myStereotypeLabel = new StereotypeLabel2();
 		
-		myNameLabel = new WrappingLabel(){
-			{
-				super.setBackgroundColor(ColorConstants.green);
-				super.setForegroundColor(ColorConstants.cyan);
-			}
-			
-			@Override
-			public void setBackgroundColor(Color bg) {
-				//super.setBackgroundColor(bg);
-			}
-			
-			@Override
-			public void setForegroundColor(Color fg) {
-				//super.setForegroundColor(fg);
-			}
-			
-			@Override
-			public void setBounds(Rectangle rect) {
-				super.setBounds(rect);
-			}
-		};
+		myNameLabel = new WrappingLabel();
 		myNameLabel.setAlignment(PositionConstants.CENTER);
 		myNameLabel.setBackgroundColor(ColorConstants.yellow);
 		
