@@ -353,7 +353,7 @@ public class ComponentStereo2EditPart extends CompartmentEditPart implements ITe
 	 */
 	private void performDirectEdit(char initialCharacter) {
 		// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
-		// we want to actiavate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+		// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
 		// notation, also we don't include '<' and '>' into actual inplace text).
 		// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
 
