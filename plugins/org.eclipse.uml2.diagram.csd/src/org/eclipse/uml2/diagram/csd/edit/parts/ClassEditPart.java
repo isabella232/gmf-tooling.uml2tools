@@ -18,10 +18,12 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -30,6 +32,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.handles.MoveHandle;
+import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
@@ -44,7 +47,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -54,7 +59,9 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -164,11 +171,11 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ClassNameEditPart) {
-			((ClassNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_name());
+			((ClassNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_NameLabel());
 			return true;
 		}
 		if (childEditPart instanceof ClassStereoEditPart) {
-			((ClassStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_stereo());
+			((ClassStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_StereoLabel());
 			return true;
 		}
 		if (childEditPart instanceof ClassAttributesEditPart) {
@@ -772,16 +779,6 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		/**
 		 * @generated
 		 */
-		private StereotypeLabel fFigureClassFigure_stereo;
-
-		/**
-		 * @generated
-		 */
-		private Label fFigureClassFigure_name;
-
-		/**
-		 * @generated
-		 */
 		private RectangleFigure fFigureClassFigure_PropertiesCompartment;
 
 		/**
@@ -807,6 +804,11 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		/**
 		 * @generated
 		 */
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
+
+		/**
+		 * @generated
+		 */
 		public ClassFigure() {
 
 			ToolbarLayout layoutThis = new ToolbarLayout();
@@ -827,57 +829,11 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		 */
 		private void createContents() {
 
-			RectangleFigure classFigure_Header0 = new RectangleFigure();
-			classFigure_Header0.setLineWidth(1);
-			classFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			this.add(classFigure_Header0);
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			ToolbarLayout layoutClassFigure_Header0 = new ToolbarLayout();
-			layoutClassFigure_Header0.setStretchMinorAxis(true);
-			layoutClassFigure_Header0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
-
-			layoutClassFigure_Header0.setSpacing(0);
-			layoutClassFigure_Header0.setVertical(true);
-
-			classFigure_Header0.setLayoutManager(layoutClassFigure_Header0);
-
-			RectangleFigure classFigure_StereoContainer1 = new RectangleFigure();
-			classFigure_StereoContainer1.setOutline(false);
-			classFigure_StereoContainer1.setLineWidth(1);
-
-			classFigure_StereoContainer1.setFont(CLASSFIGURE_STEREOCONTAINER1_FONT);
-
-			classFigure_StereoContainer1.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
-
-			classFigure_Header0.add(classFigure_StereoContainer1);
-
-			CenterLayout layoutClassFigure_StereoContainer1 = new CenterLayout();
-
-			classFigure_StereoContainer1.setLayoutManager(layoutClassFigure_StereoContainer1);
-
-			fFigureClassFigure_stereo = new StereotypeLabel();
-
-			classFigure_StereoContainer1.add(fFigureClassFigure_stereo);
-
-			RectangleFigure classFigure_NameContainer1 = new RectangleFigure();
-			classFigure_NameContainer1.setOutline(false);
-			classFigure_NameContainer1.setLineWidth(1);
-
-			classFigure_Header0.add(classFigure_NameContainer1);
-
-			CenterLayout layoutClassFigure_NameContainer1 = new CenterLayout();
-
-			classFigure_NameContainer1.setLayoutManager(layoutClassFigure_NameContainer1);
-
-			fFigureClassFigure_name = new Label();
-			fFigureClassFigure_name.setText("");
-
-			fFigureClassFigure_name.setFont(FFIGURECLASSFIGURE_NAME_FONT);
-
-			fFigureClassFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
-
-			classFigure_NameContainer1.add(fFigureClassFigure_name);
+			this.add(fNameAndStereotypeBlock);
 
 			fFigureClassFigure_PropertiesCompartment = new RectangleFigure();
 			fFigureClassFigure_PropertiesCompartment.setLineWidth(1);
@@ -933,20 +889,6 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		/**
 		 * @generated
 		 */
-		public StereotypeLabel getFigureClassFigure_stereo() {
-			return fFigureClassFigure_stereo;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureClassFigure_name() {
-			return fFigureClassFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureClassFigure_PropertiesCompartment() {
 			return fFigureClassFigure_PropertiesCompartment;
 		}
@@ -979,17 +921,28 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 			return fFigureClassFigure_OthersCompartment;
 		}
 
+		/**
+		 * @generated
+		 */
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getFigureClassFigure_StereoLabel() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureClassFigure_NameLabel() {
+			return getNameAndStereotypeBlock().getNameLabel();
+		}
+
 	}
-
-	/**
-	 * @generated
-	 */
-	static final Font CLASSFIGURE_STEREOCONTAINER1_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
-
-	/**
-	 * @generated
-	 */
-	static final Font FFIGURECLASSFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated
@@ -1234,6 +1187,55 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		if (!isCanonicalDisabled()) {
 			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void performDirectEditRequest(final Request request) {
+		EditPart editPart = this;
+		if (request instanceof DirectEditRequest) {
+			Point p = new Point(((DirectEditRequest) request).getLocation());
+			getFigure().translateToRelative(p);
+			IFigure fig = getFigure().findFigureAt(p);
+			editPart = (EditPart) getViewer().getVisualPartMap().get(fig);
+		}
+		if (editPart == this) {
+			try {
+				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+
+					public void run() {
+						setResult(chooseLabelEditPartForDirectEditRequest(request));
+					}
+				});
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			if (editPart != null && editPart != this) {
+				editPart.performRequest(request);
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
+			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+			// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+			// notation, also we don't include '<' and '>' into actual inplace text).
+			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+			if (initialChar.charValue() == '<') {
+				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(ClassStereoEditPart.VISUAL_ID));
+				if (result != null) {
+					return result;
+				}
+			}
+		}
+		return getPrimaryChildEditPart();
 	}
 
 }
