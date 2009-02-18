@@ -50,8 +50,11 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
+import org.eclipse.uml2.diagram.common.async.ICanonicalHelper;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationPackage;
+import org.eclipse.uml2.diagram.common.providers.ImageUtils;
 import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 
 /**
@@ -201,14 +204,17 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	 * @generated
-	 */
+	 * @generated NOT
+	 */	
 	protected Image getLabelIcon() {
-		EObject parserElement = getParserElement();
-		if (parserElement == null) {
+		//#265174 Visual distinction between Synchronized and Non-Sync diagrams
+		View node = getNotationView().getDiagram();
+		EObject pakkage = resolveSemanticElement();
+		if (node == null || pakkage == null) {
 			return null;
 		}
-		return UMLElementTypes.getImage(parserElement.eClass());
+		boolean isSync = ICanonicalHelper.IMPLEMENTATION.isAutoSynchronized(node);
+		return ImageUtils.getPackageImage(UMLElementTypes.getImage(pakkage.eClass()), isSync);
 	}
 
 	/**
@@ -527,17 +533,36 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	protected void addNotationalListeners() {
+	protected void addNotationalListenersGen() {
 		super.addNotationalListeners();
 		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
 	}
 
 	/**
+	 * NOT-generated
+	 */
+	protected void addNotationalListeners() {
+		addNotationalListenersGen();
+		//#265174 Visual distinction between Synchronized and Non-Sync diagrams
+		//Refresh icon label, when diagram status is changed 
+		addListenerFilter("CanonicalStyle", this, getPrimaryView().getDiagram().getStyle(NotationPackage.eINSTANCE.getCanonicalStyle()), U2TNotationPackage.eINSTANCE.getU2TDiagramCanonicalStyle_SyncNodes()); //$NON-NLS-1$
+	}
+
+	/**
 	 * @generated
 	 */
-	protected void removeNotationalListeners() {
+	protected void removeNotationalListenersGen() {
 		super.removeNotationalListeners();
 		removeListenerFilter("PrimaryView"); //$NON-NLS-1$
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	protected void removeNotationalListeners() {
+		removeNotationalListenersGen();
+		//#265174 Visual distinction between Synchronized and Non-Sync diagrams
+		removeListenerFilter("CanonicalStyle"); //$NON-NLS-1$
 	}
 
 	/**

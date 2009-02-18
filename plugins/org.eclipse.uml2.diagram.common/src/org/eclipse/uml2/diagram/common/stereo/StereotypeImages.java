@@ -12,22 +12,19 @@
 package org.eclipse.uml2.diagram.common.stereo;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.edit.provider.ComposedImage;
-import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.common.util.UML2Util;
 import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
+import org.eclipse.uml2.diagram.common.providers.ImageUtils;
 import org.eclipse.uml2.uml.Image;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.util.UMLUtil;
@@ -71,7 +68,7 @@ public class StereotypeImages {
 			ImageDescriptor imgDescriptor = getProvidedImageDescriptor(location, uriConverter, normalizedURI);
 			if (imgDescriptor != null) {
 				if (metaclassImage != null && location.indexOf("ovr16") != -1) {
-					return overlay(metaclassImage, imgDescriptor);
+					return ImageUtils.overlay(metaclassImage, imgDescriptor);
 				}
 				return imgDescriptor;
 			}
@@ -93,14 +90,6 @@ public class StereotypeImages {
 		return null;
 	}
 	
-	private static ImageDescriptor overlay(ImageDescriptor metaclassImage, ImageDescriptor stereoImage) {
-		List<ImageDescriptor> images = new ArrayList<ImageDescriptor>(2);
-		images.add(metaclassImage);
-		images.add(stereoImage);
-		ComposedImage ci = new ComposedImage(images);
-		return ExtendedImageRegistry.INSTANCE.getImageDescriptor(ci);
-	}
-
 	private static String getImageRegistryKey(EObject stereotypeApplicationOrStereotype) {
 		// we try to use stereotypeApplication in order to handle changes of its 'images' property wherever it is possible
 		// when stereotypeApplication is not accessible, we use Stereotype
