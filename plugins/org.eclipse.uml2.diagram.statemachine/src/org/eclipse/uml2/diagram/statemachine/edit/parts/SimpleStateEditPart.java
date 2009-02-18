@@ -12,11 +12,14 @@ import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -24,6 +27,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -592,6 +596,55 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 			return fNameAndStereotypeBlock;
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void performDirectEditRequest(final Request request) {
+		EditPart editPart = this;
+		if (request instanceof DirectEditRequest) {
+			Point p = new Point(((DirectEditRequest) request).getLocation());
+			getFigure().translateToRelative(p);
+			IFigure fig = getFigure().findFigureAt(p);
+			editPart = (EditPart) getViewer().getVisualPartMap().get(fig);
+		}
+		if (editPart == this) {
+			try {
+				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+
+					public void run() {
+						setResult(chooseLabelEditPartForDirectEditRequest(request));
+					}
+				});
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			if (editPart != null && editPart != this) {
+				editPart.performRequest(request);
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
+			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+			// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+			// notation, also we don't include '<' and '>' into actual inplace text).
+			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+			if (initialChar.charValue() == '<') {
+				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(SimpleStateStereotypeEditPart.VISUAL_ID));
+				if (result != null) {
+					return result;
+				}
+			}
+		}
+		return getPrimaryChildEditPart();
 	}
 
 }
