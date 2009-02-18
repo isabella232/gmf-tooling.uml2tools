@@ -58,6 +58,7 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 		private int vGap = 5; 
 		private int hGap = 0;
 
+		@Override
 		protected Dimension calculateMinimumSize(IFigure container, int wHint, int hHint) {
 			int minWHint = 0, minHHint = 0;
 			if (wHint < 0) {
@@ -103,6 +104,7 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 			return figure.getMinimumSize(wHint, hHint);
 		}
 
+		@Override
 		protected Dimension calculatePreferredSize(IFigure container, int wHint, int hHint) {
 			int minWHint = 0, minHHint = 0;
 			if (wHint < 0)
@@ -166,6 +168,7 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 			}
 		}
 
+		@Override
 		public void remove(IFigure child) {
 			if (top == child) {
 				top = null;
@@ -174,6 +177,7 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 			}
 		}
 
+		@Override
 		public void setConstraint(IFigure child, Object constraint) {
 			remove(child);
 			super.setConstraint(child, constraint);
