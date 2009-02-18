@@ -459,7 +459,7 @@ public class StateMachineEditPart extends AbstractBorderedShapeEditPart implemen
 		 * @generated
 		 */
 		public WrappingLabel getCompositeStateFigure_name() {
-			return getNameAndStereotypeBlock().getStereotypeLabel();
+			return getNameAndStereotypeBlock().getNameLabel();
 		}
 
 	}

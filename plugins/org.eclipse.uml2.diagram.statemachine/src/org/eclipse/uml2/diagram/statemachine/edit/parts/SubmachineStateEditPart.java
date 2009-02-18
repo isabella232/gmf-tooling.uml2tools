@@ -707,7 +707,7 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 		 * @generated
 		 */
 		public WrappingLabel getCompositeStateFigure_name() {
-			return getNameAndStereotypeBlock().getStereotypeLabel();
+			return getNameAndStereotypeBlock().getNameLabel();
 		}
 
 	}

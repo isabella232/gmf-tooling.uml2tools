@@ -109,7 +109,7 @@
                   qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2"/>
             </customChildren>
             <customChildren
-                accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+                accessor="getNameAndStereotypeBlock().getNameLabel">
               <typedFigure
                   xsi:type="gmfgraph:CustomFigure"
                   name="CompositeStateFigure_nameAndStereo_name"

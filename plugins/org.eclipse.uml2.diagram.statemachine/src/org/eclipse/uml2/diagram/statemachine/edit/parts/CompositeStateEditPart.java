@@ -666,7 +666,7 @@ public class CompositeStateEditPart extends ShapeNodeEditPart implements Primary
 		 * @generated
 		 */
 		public WrappingLabel getCompositeStateFigure_name() {
-			return getNameAndStereotypeBlock().getStereotypeLabel();
+			return getNameAndStereotypeBlock().getNameLabel();
 		}
 
 	}
