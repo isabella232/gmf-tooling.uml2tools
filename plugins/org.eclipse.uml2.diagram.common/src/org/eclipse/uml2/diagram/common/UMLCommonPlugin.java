@@ -11,9 +11,15 @@
  */
 package org.eclipse.uml2.diagram.common;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 public class UMLCommonPlugin extends AbstractUIPlugin {
+	public static final String IMAGE_PLUS = "icons/plus.gif"; //$NON-NLS-1$
+	public static final String IMAGE_MINUS  = "icons/minus.gif"; //$NON-NLS-1$
 
 	private static UMLCommonPlugin plugin;
 
@@ -42,5 +48,16 @@ public class UMLCommonPlugin extends AbstractUIPlugin {
 	public static String getPluginId() {
 		return getInstance().getBundle().getSymbolicName();
 	}
-
+	
+	@Override
+	protected void initializeImageRegistry(ImageRegistry reg) {
+		super.initializeImageRegistry(reg);
+		
+		addImage(reg, IMAGE_PLUS);
+		addImage(reg, IMAGE_MINUS);
+	}
+	
+	private void addImage(ImageRegistry registry, String pluginPath){
+		registry.put(pluginPath, ImageDescriptor.createFromURL(FileLocator.find(getBundle(), new Path(pluginPath), null)));
+	}
 }
