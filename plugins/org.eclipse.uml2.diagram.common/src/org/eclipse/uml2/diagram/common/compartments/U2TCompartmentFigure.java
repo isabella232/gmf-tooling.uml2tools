@@ -89,8 +89,6 @@ public class U2TCompartmentFigure extends ResizableCompartmentFigure {
 			myHost = host;
 			myTextMeasure = new Label();
 			setFill(true);
-			setMinimumSize(new Dimension(100, 20));
-			setPreferredSize(new Dimension(100, 20));
 		}
 		
 		@Override

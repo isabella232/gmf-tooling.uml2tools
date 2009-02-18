@@ -116,7 +116,7 @@ public class U2TResizableCompartmentEditPolicy extends ResizableCompartmentEditP
 		}
 
 		protected class U2THandleLocator implements Locator {
-			private static final int LABEL_LINE_GAP = 10;
+			private static final int LABEL_LINE_GAP = 6;
 
 			public void relocate(IFigure target) {
 				if (getOwnerFigure() instanceof U2TCompartmentFigure) {
