@@ -578,7 +578,7 @@ public class CompositeStateEditPart extends ShapeNodeEditPart implements Primary
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(5), getMapMode().DPtoLP(2), getMapMode().DPtoLP(5)));
 
 			compositeStateFigure_UpperContainer_old0.add(fNameAndStereotypeBlock);
 

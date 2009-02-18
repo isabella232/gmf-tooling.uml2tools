@@ -25,11 +25,14 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutE
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -495,17 +498,12 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 		/**
 		 * @generated
 		 */
-		private Label fFigureSimpleStateFigure_stereo;
-
-		/**
-		 * @generated
-		 */
-		private Label fFigureSimpleStateFigure_name;
-
-		/**
-		 * @generated
-		 */
 		private RectangleFigure fFigureSimpleStateFigure_InternalActivitiesCompartment;
+
+		/**
+		 * @generated
+		 */
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -532,15 +530,11 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 		 */
 		private void createContents() {
 
-			fFigureSimpleStateFigure_stereo = new Label();
-			fFigureSimpleStateFigure_stereo.setText("");
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			this.add(fFigureSimpleStateFigure_stereo);
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(5), getMapMode().DPtoLP(2), getMapMode().DPtoLP(5)));
 
-			fFigureSimpleStateFigure_name = new Label();
-			fFigureSimpleStateFigure_name.setText("");
-
-			this.add(fFigureSimpleStateFigure_name);
+			this.add(fNameAndStereotypeBlock);
 
 			fFigureSimpleStateFigure_InternalActivitiesCompartment = new RectangleFigure();
 			fFigureSimpleStateFigure_InternalActivitiesCompartment.setOutline(false);
@@ -573,15 +567,15 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 		/**
 		 * @generated
 		 */
-		public Label getFigureSimpleStateFigure_stereo() {
-			return fFigureSimpleStateFigure_stereo;
+		public StereotypeLabel2 getFigureSimpleStateFigure_stereo() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureSimpleStateFigure_name() {
-			return fFigureSimpleStateFigure_name;
+		public WrappingLabel getFigureSimpleStateFigure_name() {
+			return getNameAndStereotypeBlock().getNameLabel();
 		}
 
 		/**
@@ -589,6 +583,13 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 		 */
 		public RectangleFigure getFigureSimpleStateFigure_InternalActivitiesCompartment() {
 			return fFigureSimpleStateFigure_InternalActivitiesCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
 		}
 
 	}
