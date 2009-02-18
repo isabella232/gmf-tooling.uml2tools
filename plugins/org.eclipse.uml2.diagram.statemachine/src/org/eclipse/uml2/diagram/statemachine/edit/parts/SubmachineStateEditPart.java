@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -40,6 +41,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.draw2d.BisectionBorderItemLocator;
 import org.eclipse.uml2.diagram.common.draw2d.LaneLayout;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy;
@@ -150,11 +153,11 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof SubmachineStateNameEditPart) {
-			((SubmachineStateNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_name());
+			((SubmachineStateNameEditPart) childEditPart).setLabel(getPrimaryShape().getCompositeStateFigure_name());
 			return true;
 		}
 		if (childEditPart instanceof SubmachineStateStereotypeEditPart) {
-			((SubmachineStateStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_stereo());
+			((SubmachineStateStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getCompositeStateFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof SubmachineState_InternalActivitiesEditPart) {
@@ -563,16 +566,6 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 		/**
 		 * @generated
 		 */
-		private Label fFigureCompositeStateFigure_stereo;
-
-		/**
-		 * @generated
-		 */
-		private Label fFigureCompositeStateFigure_name;
-
-		/**
-		 * @generated
-		 */
 		private RectangleFigure fFigureCompositeStateFigure_Body;
 
 		/**
@@ -584,6 +577,11 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 		 * @generated
 		 */
 		private RectangleFigure fFigureCompositeStateFigure_InternalTransitionsCompartment;
+
+		/**
+		 * @generated
+		 */
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -604,43 +602,39 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 		 */
 		private void createContents() {
 
-			RectangleFigure compositeStateFigure_UpperContainer0 = new RectangleFigure();
-			compositeStateFigure_UpperContainer0.setOutline(false);
-			compositeStateFigure_UpperContainer0.setLineWidth(1);
+			RectangleFigure compositeStateFigure_UpperContainer_old0 = new RectangleFigure();
+			compositeStateFigure_UpperContainer_old0.setOutline(false);
+			compositeStateFigure_UpperContainer_old0.setLineWidth(1);
 
-			this.add(compositeStateFigure_UpperContainer0, BorderLayout.TOP);
+			this.add(compositeStateFigure_UpperContainer_old0, BorderLayout.TOP);
 
-			ToolbarLayout layoutCompositeStateFigure_UpperContainer0 = new ToolbarLayout();
-			layoutCompositeStateFigure_UpperContainer0.setStretchMinorAxis(true);
-			layoutCompositeStateFigure_UpperContainer0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+			ToolbarLayout layoutCompositeStateFigure_UpperContainer_old0 = new ToolbarLayout();
+			layoutCompositeStateFigure_UpperContainer_old0.setStretchMinorAxis(true);
+			layoutCompositeStateFigure_UpperContainer_old0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
 
-			layoutCompositeStateFigure_UpperContainer0.setSpacing(0);
-			layoutCompositeStateFigure_UpperContainer0.setVertical(true);
+			layoutCompositeStateFigure_UpperContainer_old0.setSpacing(0);
+			layoutCompositeStateFigure_UpperContainer_old0.setVertical(true);
 
-			compositeStateFigure_UpperContainer0.setLayoutManager(layoutCompositeStateFigure_UpperContainer0);
+			compositeStateFigure_UpperContainer_old0.setLayoutManager(layoutCompositeStateFigure_UpperContainer_old0);
 
-			fFigureCompositeStateFigure_stereo = new Label();
-			fFigureCompositeStateFigure_stereo.setText("");
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_stereo);
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			fFigureCompositeStateFigure_name = new Label();
-			fFigureCompositeStateFigure_name.setText("");
-
-			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_name);
+			compositeStateFigure_UpperContainer_old0.add(fNameAndStereotypeBlock);
 
 			fFigureCompositeStateFigure_InternalActivitiesCompartment = new RectangleFigure();
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setOutline(false);
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLineWidth(1);
 
-			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalActivitiesCompartment);
+			compositeStateFigure_UpperContainer_old0.add(fFigureCompositeStateFigure_InternalActivitiesCompartment);
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureCompositeStateFigure_InternalTransitionsCompartment = new RectangleFigure();
 			fFigureCompositeStateFigure_InternalTransitionsCompartment.setOutline(false);
 			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLineWidth(1);
 
-			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalTransitionsCompartment);
+			compositeStateFigure_UpperContainer_old0.add(fFigureCompositeStateFigure_InternalTransitionsCompartment);
 			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureCompositeStateFigure_Body = new RectangleFigure();
@@ -677,20 +671,6 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 		/**
 		 * @generated
 		 */
-		public Label getFigureCompositeStateFigure_stereo() {
-			return fFigureCompositeStateFigure_stereo;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureCompositeStateFigure_name() {
-			return fFigureCompositeStateFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureCompositeStateFigure_Body() {
 			return fFigureCompositeStateFigure_Body;
 		}
@@ -707,6 +687,27 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 		 */
 		public RectangleFigure getFigureCompositeStateFigure_InternalTransitionsCompartment() {
 			return fFigureCompositeStateFigure_InternalTransitionsCompartment;
+		}
+
+		/**
+		 * @generated
+		 */
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getCompositeStateFigure_stereo() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getCompositeStateFigure_name() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 	}

@@ -13,7 +13,9 @@ import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -21,19 +23,24 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.draw2d.LaneLayout;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.LaneLayoutEditPolicy;
@@ -136,11 +143,11 @@ public class CompositeStateEditPart extends ShapeNodeEditPart implements Primary
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof CompositeStateNameEditPart) {
-			((CompositeStateNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_name());
+			((CompositeStateNameEditPart) childEditPart).setLabel(getPrimaryShape().getCompositeStateFigure_name());
 			return true;
 		}
 		if (childEditPart instanceof CompositeStateStereotypeEditPart) {
-			((CompositeStateStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCompositeStateFigure_stereo());
+			((CompositeStateStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getCompositeStateFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof CompositeState_InternalActivitiesEditPart) {
@@ -518,16 +525,6 @@ public class CompositeStateEditPart extends ShapeNodeEditPart implements Primary
 		/**
 		 * @generated
 		 */
-		private Label fFigureCompositeStateFigure_stereo;
-
-		/**
-		 * @generated
-		 */
-		private Label fFigureCompositeStateFigure_name;
-
-		/**
-		 * @generated
-		 */
 		private RectangleFigure fFigureCompositeStateFigure_Body;
 
 		/**
@@ -539,6 +536,11 @@ public class CompositeStateEditPart extends ShapeNodeEditPart implements Primary
 		 * @generated
 		 */
 		private RectangleFigure fFigureCompositeStateFigure_InternalTransitionsCompartment;
+
+		/**
+		 * @generated
+		 */
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -559,43 +561,39 @@ public class CompositeStateEditPart extends ShapeNodeEditPart implements Primary
 		 */
 		private void createContents() {
 
-			RectangleFigure compositeStateFigure_UpperContainer0 = new RectangleFigure();
-			compositeStateFigure_UpperContainer0.setOutline(false);
-			compositeStateFigure_UpperContainer0.setLineWidth(1);
+			RectangleFigure compositeStateFigure_UpperContainer_old0 = new RectangleFigure();
+			compositeStateFigure_UpperContainer_old0.setOutline(false);
+			compositeStateFigure_UpperContainer_old0.setLineWidth(1);
 
-			this.add(compositeStateFigure_UpperContainer0, BorderLayout.TOP);
+			this.add(compositeStateFigure_UpperContainer_old0, BorderLayout.TOP);
 
-			ToolbarLayout layoutCompositeStateFigure_UpperContainer0 = new ToolbarLayout();
-			layoutCompositeStateFigure_UpperContainer0.setStretchMinorAxis(true);
-			layoutCompositeStateFigure_UpperContainer0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+			ToolbarLayout layoutCompositeStateFigure_UpperContainer_old0 = new ToolbarLayout();
+			layoutCompositeStateFigure_UpperContainer_old0.setStretchMinorAxis(true);
+			layoutCompositeStateFigure_UpperContainer_old0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
 
-			layoutCompositeStateFigure_UpperContainer0.setSpacing(0);
-			layoutCompositeStateFigure_UpperContainer0.setVertical(true);
+			layoutCompositeStateFigure_UpperContainer_old0.setSpacing(0);
+			layoutCompositeStateFigure_UpperContainer_old0.setVertical(true);
 
-			compositeStateFigure_UpperContainer0.setLayoutManager(layoutCompositeStateFigure_UpperContainer0);
+			compositeStateFigure_UpperContainer_old0.setLayoutManager(layoutCompositeStateFigure_UpperContainer_old0);
 
-			fFigureCompositeStateFigure_stereo = new Label();
-			fFigureCompositeStateFigure_stereo.setText("");
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_stereo);
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			fFigureCompositeStateFigure_name = new Label();
-			fFigureCompositeStateFigure_name.setText("");
-
-			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_name);
+			compositeStateFigure_UpperContainer_old0.add(fNameAndStereotypeBlock);
 
 			fFigureCompositeStateFigure_InternalActivitiesCompartment = new RectangleFigure();
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setOutline(false);
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLineWidth(1);
 
-			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalActivitiesCompartment);
+			compositeStateFigure_UpperContainer_old0.add(fFigureCompositeStateFigure_InternalActivitiesCompartment);
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureCompositeStateFigure_InternalTransitionsCompartment = new RectangleFigure();
 			fFigureCompositeStateFigure_InternalTransitionsCompartment.setOutline(false);
 			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLineWidth(1);
 
-			compositeStateFigure_UpperContainer0.add(fFigureCompositeStateFigure_InternalTransitionsCompartment);
+			compositeStateFigure_UpperContainer_old0.add(fFigureCompositeStateFigure_InternalTransitionsCompartment);
 			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureCompositeStateFigure_Body = new RectangleFigure();
@@ -632,20 +630,6 @@ public class CompositeStateEditPart extends ShapeNodeEditPart implements Primary
 		/**
 		 * @generated
 		 */
-		public Label getFigureCompositeStateFigure_stereo() {
-			return fFigureCompositeStateFigure_stereo;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Label getFigureCompositeStateFigure_name() {
-			return fFigureCompositeStateFigure_name;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureCompositeStateFigure_Body() {
 			return fFigureCompositeStateFigure_Body;
 		}
@@ -664,6 +648,76 @@ public class CompositeStateEditPart extends ShapeNodeEditPart implements Primary
 			return fFigureCompositeStateFigure_InternalTransitionsCompartment;
 		}
 
+		/**
+		 * @generated
+		 */
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getCompositeStateFigure_stereo() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getCompositeStateFigure_name() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void performDirectEditRequest(final Request request) {
+		EditPart editPart = this;
+		if (request instanceof DirectEditRequest) {
+			Point p = new Point(((DirectEditRequest) request).getLocation());
+			getFigure().translateToRelative(p);
+			IFigure fig = getFigure().findFigureAt(p);
+			editPart = (EditPart) getViewer().getVisualPartMap().get(fig);
+		}
+		if (editPart == this) {
+			try {
+				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+
+					public void run() {
+						setResult(chooseLabelEditPartForDirectEditRequest(request));
+					}
+				});
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			if (editPart != null && editPart != this) {
+				editPart.performRequest(request);
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
+			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+			// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+			// notation, also we don't include '<' and '>' into actual inplace text).
+			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+			if (initialChar.charValue() == '<') {
+				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(CompositeStateStereotypeEditPart.VISUAL_ID));
+				if (result != null) {
+					return result;
+				}
+			}
+		}
+		return getPrimaryChildEditPart();
 	}
 
 }

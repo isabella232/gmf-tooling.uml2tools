@@ -79,7 +79,7 @@
         </border>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="CompositeStateFigure_UpperContainer"
+            name="CompositeStateFigure_UpperContainer_old"
             outline="false">
           <layoutData
               xsi:type="gmfgraph:BorderLayoutData"
@@ -93,12 +93,29 @@
               majorSpacing="0"
               minorSpacing="0"/>
           <children
-              xsi:type="gmfgraph:Label"
-              name="CompositeStateFigure_stereo"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="CompositeStateFigure_name"
-              text=""/>
+              xsi:type="gmfgraph:CustomFigure"
+              name="CompositeStateFigure_NameAndStereo"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
+            <insets
+                top="8"
+                left="5"
+                bottom="6"
+                right="5"/>
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="CompositeStateFigure_nameAndStereo_stereo"
+                  qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2"/>
+            </customChildren>
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="CompositeStateFigure_nameAndStereo_name"
+                  qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            </customChildren>
+          </children>
           <children
               xsi:type="gmfgraph:Rectangle"
               name="CompositeStateFigure_InternalActivitiesCompartment"
@@ -128,15 +145,20 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+          accessor="getCompositeStateFigure_stereo"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@customChildren.0/@typedFigure"/>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
+          accessor="getCompositeStateFigure_name"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@customChildren.1/@typedFigure"/>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
       <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
+      <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.3"/>
+          accessor="getNameAndStereotypeBlock"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="RegionFigure">
