@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
 import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
@@ -124,7 +125,7 @@ public class SimpleStateStereotypeEditPart extends CompartmentEditPart implement
 				return false;
 			}
 		});
-		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new StereotypeLabelDirectEditPolicy());
 	}
 
 	/**
