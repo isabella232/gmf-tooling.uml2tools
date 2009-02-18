@@ -14,6 +14,8 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.PackageAsFrameContentsItemSe
 import org.eclipse.uml2.diagram.clazz.part.Messages;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.compartments.U2TCompartmentFigure;
+import org.eclipse.uml2.diagram.common.compartments.U2TResizableCompartmentEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;
@@ -45,9 +47,16 @@ public class PackageAsFrameContentsEditPart extends ShapeCompartmentEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
-		result.setTitleVisibility(false);
+		U2TCompartmentFigure result = new U2TCompartmentFigure(getCompartmentName(), getMapMode());
+
+		ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+		layout.setStretchMajorAxis(false);
+		layout.setStretchMinorAxis(false);
+		layout.setMinorAlignment(ConstrainedToolbarLayout.ALIGN_TOPLEFT);
+		result.getContentPane().setLayoutManager(layout);
+
 		return result;
 	}
 
@@ -56,7 +65,8 @@ public class PackageAsFrameContentsEditPart extends ShapeCompartmentEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new U2TResizableCompartmentEditPolicy());
+
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackageAsFrameContentsItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());

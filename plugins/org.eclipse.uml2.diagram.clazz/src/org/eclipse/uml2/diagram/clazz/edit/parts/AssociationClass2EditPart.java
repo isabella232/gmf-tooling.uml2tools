@@ -1623,6 +1623,8 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 			this.setLayoutManager(layoutThis);
 
 			this.setLineWidth(1);
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -1638,31 +1640,46 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 			this.add(fNameAndStereotypeBlock);
 
 			fFigureClassFigure_PropertiesCompartment = new RectangleFigure();
+			fFigureClassFigure_PropertiesCompartment.setOutline(false);
 			fFigureClassFigure_PropertiesCompartment.setLineWidth(1);
+
+			fFigureClassFigure_PropertiesCompartment.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
 
 			this.add(fFigureClassFigure_PropertiesCompartment);
 			fFigureClassFigure_PropertiesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_OperationsCompartment = new RectangleFigure();
+			fFigureClassFigure_OperationsCompartment.setOutline(false);
 			fFigureClassFigure_OperationsCompartment.setLineWidth(1);
+
+			fFigureClassFigure_OperationsCompartment.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
 
 			this.add(fFigureClassFigure_OperationsCompartment);
 			fFigureClassFigure_OperationsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_ClassesCompartment = new RectangleFigure();
+			fFigureClassFigure_ClassesCompartment.setOutline(false);
 			fFigureClassFigure_ClassesCompartment.setLineWidth(1);
+
+			fFigureClassFigure_ClassesCompartment.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
 
 			this.add(fFigureClassFigure_ClassesCompartment);
 			fFigureClassFigure_ClassesCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_LiteralsCompartment = new RectangleFigure();
+			fFigureClassFigure_LiteralsCompartment.setOutline(false);
 			fFigureClassFigure_LiteralsCompartment.setLineWidth(1);
+
+			fFigureClassFigure_LiteralsCompartment.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
 
 			this.add(fFigureClassFigure_LiteralsCompartment);
 			fFigureClassFigure_LiteralsCompartment.setLayoutManager(new StackLayout());
 
 			fFigureClassFigure_OthersCompartment = new RectangleFigure();
+			fFigureClassFigure_OthersCompartment.setOutline(false);
 			fFigureClassFigure_OthersCompartment.setLineWidth(1);
+
+			fFigureClassFigure_OthersCompartment.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
 
 			this.add(fFigureClassFigure_OthersCompartment);
 			fFigureClassFigure_OthersCompartment.setLayoutManager(new StackLayout());

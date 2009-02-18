@@ -13,12 +13,11 @@
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «EXTENSION xpt::diagram::editparts::Utils»
+«EXTENSION xpt::compartments::Utils»
 
 «AROUND createDefaultEditPoliciesBody FOR gmfgen::GenCompartment-»
 	super.createDefaultEditPolicies();
-	«IF canCollapse-»
-		installEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy());
-	«ENDIF-»
+	«EXPAND xpt::compartments::CompartmentEditPart::installResizableCompartmentEditPolicy»
 	«EXPAND xpt::diagram::editparts::Common::installSemanticEditPolicy-»
 	«IF childNodes->size() > 0-»
 		«REM»The change is here -- we are using U2T specific CreationEditPolicy«ENDREM»«-»
@@ -39,4 +38,12 @@
 	«EXPAND aspects::impl::diagram::editparts::updateDescriptionEditPolicy::installUpdateDescriptionEditPolicy-»
 	«EXPAND xpt::diagram::editparts::Common::behaviour-»
 	
+«ENDAROUND»
+
+«AROUND createFigure FOR gmfgen::GenCompartment-»
+«IF not supportsU2TCompartments(self.getDiagram())-»
+«targetDef.proceed()»
+«ELSE-»
+«EXPAND xpt::compartments::CompartmentEditPart::createU2TFigure»
+«ENDIF-»
 «ENDAROUND»

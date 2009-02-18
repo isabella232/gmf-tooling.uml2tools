@@ -19,6 +19,11 @@
             minorAlignment="CENTER"
             majorSpacing="0"
             minorSpacing="0"/>
+        <insets
+            top="1"
+            left="1"
+            bottom="1"
+            right="1"/>
         <children
             xsi:type="gmfgraph:CustomFigure"
             name="ClassFigure_nameAndStereotype"
@@ -51,33 +56,53 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ClassFigure_PropertiesCompartment">
+            name="ClassFigure_PropertiesCompartment"
+            outline="false">
           <layout
               xsi:type="gmfgraph:StackLayout"/>
+          <insets
+              top="1"
+              bottom="1"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ClassFigure_OperationsCompartment">
+            name="ClassFigure_OperationsCompartment"
+            outline="false">
           <layout
               xsi:type="gmfgraph:StackLayout"/>
+          <insets
+              top="1"
+              bottom="1"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ClassFigure_ClassesCompartment">
+            name="ClassFigure_ClassesCompartment"
+            outline="false">
           <layout
               xsi:type="gmfgraph:StackLayout"/>
+          <insets
+              top="1"
+              bottom="1"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ClassFigure_LiteralsCompartment">
+            name="ClassFigure_LiteralsCompartment"
+            outline="false">
           <layout
               xsi:type="gmfgraph:StackLayout"/>
+          <insets
+              top="1"
+              bottom="1"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ClassFigure_OthersCompartment">
+            name="ClassFigure_OthersCompartment"
+            outline="false">
           <layout
               xsi:type="gmfgraph:StackLayout"/>
+          <insets
+              top="1"
+              bottom="1"/>
         </children>
       </actualFigure>
       <accessors

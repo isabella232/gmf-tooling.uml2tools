@@ -205,7 +205,7 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 
 	/**
 	 * @generated NOT
-	 */	
+	 */
 	protected Image getLabelIcon() {
 		//#265174 Visual distinction between Synchronized and Non-Sync diagrams
 		View node = getNotationView().getDiagram();
@@ -545,7 +545,8 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 		addNotationalListenersGen();
 		//#265174 Visual distinction between Synchronized and Non-Sync diagrams
 		//Refresh icon label, when diagram status is changed 
-		addListenerFilter("CanonicalStyle", this, getPrimaryView().getDiagram().getStyle(NotationPackage.eINSTANCE.getCanonicalStyle()), U2TNotationPackage.eINSTANCE.getU2TDiagramCanonicalStyle_SyncNodes()); //$NON-NLS-1$
+		addListenerFilter(
+				"CanonicalStyle", this, getPrimaryView().getDiagram().getStyle(NotationPackage.eINSTANCE.getCanonicalStyle()), U2TNotationPackage.eINSTANCE.getU2TDiagramCanonicalStyle_SyncNodes()); //$NON-NLS-1$
 	}
 
 	/**
