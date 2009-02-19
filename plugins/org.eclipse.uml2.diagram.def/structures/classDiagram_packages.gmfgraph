@@ -35,11 +35,15 @@
                 value="false"/>
           </layout>
           <children
-              xsi:type="gmfgraph:Rectangle"
-              name="PackageFigure_AuxLeftTab">
+              xsi:type="gmfgraph:CustomFigure"
+              name="PackageFigure_AuxLeftTab"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.PartialRectangleFigure">
             <preferredSize
                 dx="1"
                 dy="30"/>
+            <attributes
+                name="bottomShown"
+                value="false"/>
           </children>
           <children
               xsi:type="gmfgraph:Rectangle"
@@ -71,7 +75,8 @@
               right="1"/>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="PackageFigure_NameContainer">
+              name="PackageFigure_NameContainer"
+              outline="false">
             <layout
                 xsi:type="gmfgraph:CustomLayout"
                 qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>

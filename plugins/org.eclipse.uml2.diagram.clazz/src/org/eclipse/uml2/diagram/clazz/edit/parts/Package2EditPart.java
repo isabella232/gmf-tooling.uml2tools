@@ -50,6 +50,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.PartialRectangleFigure;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -1626,8 +1627,9 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 
 			packageFigure_AuxTop0.setLayoutManager(layoutPackageFigure_AuxTop0);
 
-			RectangleFigure packageFigure_AuxLeftTab1 = new RectangleFigure();
-			packageFigure_AuxLeftTab1.setLineWidth(1);
+			PartialRectangleFigure packageFigure_AuxLeftTab1 = new PartialRectangleFigure();
+			packageFigure_AuxLeftTab1.setBottomShown(false);
+
 			packageFigure_AuxLeftTab1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));
 
 			packageFigure_AuxTop0.add(packageFigure_AuxLeftTab1);
@@ -1657,6 +1659,7 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			packageFigure_AuxCenter0.setLayoutManager(layoutPackageFigure_AuxCenter0);
 
 			RectangleFigure packageFigure_NameContainer1 = new RectangleFigure();
+			packageFigure_NameContainer1.setOutline(false);
 			packageFigure_NameContainer1.setLineWidth(1);
 			packageFigure_NameContainer1.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 
