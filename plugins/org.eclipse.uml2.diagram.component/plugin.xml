@@ -1268,8 +1268,4 @@
       </Priority>
          <editor id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"/>
    </paletteProvider>
-</extension>
-
-
-
-</plugin>
+</extension></plugin>

@@ -1035,7 +1035,7 @@
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"/></with>
-                  <with variable="selection"><iterate ifEmpty="false">
+                  <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart"/>
                   </iterate></with>
                </and>
@@ -1045,7 +1045,7 @@
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"/></with>
-                  <with variable="selection"><iterate ifEmpty="false">
+                  <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart"/>
                   </iterate></with>
                </and>
@@ -1251,8 +1251,6 @@
          <editor id="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"/>
    </paletteProvider>
 </extension>
-
-
 
 
 </plugin>
