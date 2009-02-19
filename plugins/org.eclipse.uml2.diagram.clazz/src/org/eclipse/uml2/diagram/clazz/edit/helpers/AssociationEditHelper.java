@@ -28,7 +28,7 @@ public class AssociationEditHelper extends UMLBaseEditHelper {
 	protected ICommand getAfterConfigureCommand(ConfigureRequest req) {
 		if (req.getElementToConfigure() instanceof Association && req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND) instanceof AggregationKind) {
 			ChangeAssociationKindCommand changeAssociation = new ChangeAssociationKindCommand( //
-				(Association) req.getElementToConfigure(), (AggregationKind) req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND));
+					(Association) req.getElementToConfigure(), (AggregationKind) req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND));
 			return changeAssociation;
 		}
 		return null;
