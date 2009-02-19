@@ -9,8 +9,11 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.compartments.U2TCompartmentFigure;
+import org.eclipse.uml2.diagram.common.compartments.U2TResizableCompartmentEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.deploy.edit.policies.PackageImportsCanonicalEditPolicy;
@@ -54,9 +57,16 @@ public class PackageImportsEditPart extends ListCompartmentEditPart implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
-		result.setTitleVisibility(false);
+		U2TCompartmentFigure result = new U2TCompartmentFigure(getCompartmentName(), getMapMode());
+
+		ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+		layout.setStretchMajorAxis(false);
+		layout.setStretchMinorAxis(false);
+		layout.setMinorAlignment(ConstrainedToolbarLayout.ALIGN_TOPLEFT);
+		result.getContentPane().setLayoutManager(layout);
+
 		return result;
 	}
 
@@ -65,7 +75,7 @@ public class PackageImportsEditPart extends ListCompartmentEditPart implements I
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new U2TResizableCompartmentEditPolicy());
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackageImportsItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
