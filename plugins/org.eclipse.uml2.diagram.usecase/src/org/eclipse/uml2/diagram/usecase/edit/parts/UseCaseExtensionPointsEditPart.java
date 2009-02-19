@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.compartments.U2TCompartmentFigure;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UseCaseExtensionPointsCanonicalEditPolicy;
@@ -53,9 +54,16 @@ public class UseCaseExtensionPointsEditPart extends ListCompartmentEditPart impl
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
-		result.setTitleVisibility(false);
+		U2TCompartmentFigure result = new U2TCompartmentFigure(getCompartmentName(), getMapMode());
+
+		ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+		layout.setStretchMajorAxis(false);
+		layout.setStretchMinorAxis(false);
+		layout.setMinorAlignment(ConstrainedToolbarLayout.ALIGN_TOPLEFT);
+		result.getContentPane().setLayoutManager(layout);
+
 		return result;
 	}
 
