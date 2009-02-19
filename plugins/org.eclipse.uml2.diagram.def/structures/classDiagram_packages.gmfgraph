@@ -64,6 +64,11 @@
               minorAlignment="CENTER"
               majorSpacing="0"
               minorSpacing="0"/>
+          <insets
+              top="1"
+              left="1"
+              bottom="1"
+              right="1"/>
           <children
               xsi:type="gmfgraph:Rectangle"
               name="PackageFigure_NameContainer">
@@ -84,13 +89,16 @@
           </children>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="PackageFigure_PackagesCompartment"/>
+              name="PackageFigure_PackagesCompartment"
+              outline="false"/>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="PackageFigure_ClassesCompartment"/>
+              name="PackageFigure_ClassesCompartment"
+              outline="false"/>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="PackageFigure_OthersCompartment"/>
+              name="PackageFigure_OthersCompartment"
+              outline="false"/>
         </children>
       </actualFigure>
       <accessors
