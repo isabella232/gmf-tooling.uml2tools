@@ -1643,6 +1643,8 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			RectangleFigure packageFigure_AuxCenter0 = new RectangleFigure();
 			packageFigure_AuxCenter0.setLineWidth(1);
 
+			packageFigure_AuxCenter0.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
+
 			this.add(packageFigure_AuxCenter0, BorderLayout.CENTER);
 
 			ToolbarLayout layoutPackageFigure_AuxCenter0 = new ToolbarLayout();
@@ -1672,16 +1674,19 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			packageFigure_NameContainer1.add(fFigurePackageFigure_name);
 
 			fFigurePackageFigure_PackagesCompartment = new RectangleFigure();
+			fFigurePackageFigure_PackagesCompartment.setOutline(false);
 			fFigurePackageFigure_PackagesCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_PackagesCompartment);
 
 			fFigurePackageFigure_ClassesCompartment = new RectangleFigure();
+			fFigurePackageFigure_ClassesCompartment.setOutline(false);
 			fFigurePackageFigure_ClassesCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_ClassesCompartment);
 
 			fFigurePackageFigure_OthersCompartment = new RectangleFigure();
+			fFigurePackageFigure_OthersCompartment.setOutline(false);
 			fFigurePackageFigure_OthersCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_OthersCompartment);
