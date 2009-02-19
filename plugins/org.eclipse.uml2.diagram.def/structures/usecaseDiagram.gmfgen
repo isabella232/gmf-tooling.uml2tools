@@ -391,8 +391,7 @@
           visualID="5001"
           editPartClassName="PackageNameEditPart"
           itemSemanticEditPolicyClassName="PackageNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="PackageNameViewFactory"
-          elementIcon="true">
+          notationViewFactoryClassName="PackageNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -410,7 +409,8 @@
           visualID="5016"
           editPartClassName="PackageStereo2EditPart"
           itemSemanticEditPolicyClassName="PackageStereo2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="PackageStereo2ViewFactory">
+          notationViewFactoryClassName="PackageStereo2ViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3060,7 +3060,7 @@
         uses="//@diagram/@links.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.4/@labels.1/@modelFacet //@diagram/@topLevelNodes.5/@labels.1/@modelFacet"
+        uses="//@diagram/@topLevelNodes.4/@labels.1/@modelFacet //@diagram/@topLevelNodes.5/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"

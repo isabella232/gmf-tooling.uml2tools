@@ -42,6 +42,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.PartialRectangleFigure;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -818,8 +819,10 @@ public class Package3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 
 			packageFigure_AuxTop0.setLayoutManager(layoutPackageFigure_AuxTop0);
 
-			RectangleFigure packageFigure_AuxLeftTab1 = new RectangleFigure();
-			packageFigure_AuxLeftTab1.setLineWidth(1);
+			PartialRectangleFigure packageFigure_AuxLeftTab1 = new PartialRectangleFigure();
+
+			packageFigure_AuxLeftTab1.setBottomShown(false);
+
 			packageFigure_AuxLeftTab1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));
 
 			packageFigure_AuxTop0.add(packageFigure_AuxLeftTab1);
@@ -835,6 +838,8 @@ public class Package3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			RectangleFigure packageFigure_AuxCenter0 = new RectangleFigure();
 			packageFigure_AuxCenter0.setLineWidth(1);
 
+			packageFigure_AuxCenter0.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
+
 			this.add(packageFigure_AuxCenter0, BorderLayout.CENTER);
 
 			ToolbarLayout layoutPackageFigure_AuxCenter0 = new ToolbarLayout();
@@ -847,6 +852,7 @@ public class Package3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			packageFigure_AuxCenter0.setLayoutManager(layoutPackageFigure_AuxCenter0);
 
 			RectangleFigure packageFigure_NameContainer1 = new RectangleFigure();
+			packageFigure_NameContainer1.setOutline(false);
 			packageFigure_NameContainer1.setLineWidth(1);
 			packageFigure_NameContainer1.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 
@@ -864,16 +870,19 @@ public class Package3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			packageFigure_NameContainer1.add(fFigurePackageFigure_name);
 
 			fFigurePackageFigure_PackagesCompartment = new RectangleFigure();
+			fFigurePackageFigure_PackagesCompartment.setOutline(false);
 			fFigurePackageFigure_PackagesCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_PackagesCompartment);
 
 			fFigurePackageFigure_ClassesCompartment = new RectangleFigure();
+			fFigurePackageFigure_ClassesCompartment.setOutline(false);
 			fFigurePackageFigure_ClassesCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_ClassesCompartment);
 
 			fFigurePackageFigure_OthersCompartment = new RectangleFigure();
+			fFigurePackageFigure_OthersCompartment.setOutline(false);
 			fFigurePackageFigure_OthersCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_OthersCompartment);

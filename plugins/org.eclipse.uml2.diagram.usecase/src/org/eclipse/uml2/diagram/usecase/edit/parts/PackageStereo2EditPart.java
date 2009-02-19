@@ -204,7 +204,11 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		return null;
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		return UMLElementTypes.getImage(parserElement.eClass());
 	}
 
 	/**
