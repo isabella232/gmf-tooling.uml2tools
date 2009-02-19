@@ -17,7 +17,7 @@
 
 «AROUND createDefaultEditPoliciesBody FOR gmfgen::GenCompartment-»
 	super.createDefaultEditPolicies();
-	«EXPAND xpt::compartments::CompartmentEditPart::installResizableCompartmentEditPolicy»
+	«EXPAND xpt::compartments::CompartmentEditPart::installResizableCompartmentEditPolicy-»
 	«EXPAND xpt::diagram::editparts::Common::installSemanticEditPolicy-»
 	«IF childNodes->size() > 0-»
 		«REM»The change is here -- we are using U2T specific CreationEditPolicy«ENDREM»«-»
