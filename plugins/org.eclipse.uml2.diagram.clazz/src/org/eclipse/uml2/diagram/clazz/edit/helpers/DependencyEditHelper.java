@@ -31,7 +31,7 @@ public class DependencyEditHelper extends UMLBaseEditHelper {
 			Dependency dependency = (Dependency) req.getElementToConfigure();
 			String name = (String) req.getParameter(PARAMETER_DEPENDENCY_NAME);
 			SetRequest request = new SetRequest(dependency, UMLPackage.eINSTANCE.getNamedElement_Name(), name);
-			SetValueCommand setType = new SetValueCommand(request); 
+			SetValueCommand setType = new SetValueCommand(request);
 			return setType;
 		}
 		return null;
