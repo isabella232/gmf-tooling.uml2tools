@@ -1,6 +1,11 @@
 modeltype genModel uses "http://www.eclipse.org/gmf/2008/GenModel";
 
-library Utils;
+library Guard;
+
+helper u2tSupportedCompartment(compartment : genModel::GenCompartment) : Boolean {
+	return 
+		compartment.listLayout and supportsU2TCompartments(compartment.getDiagram())
+}
 
 helper supportsU2TCompartments(diagram : genModel::GenDiagram) : Boolean {
 	return 

@@ -13,7 +13,7 @@
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «EXTENSION xpt::diagram::editparts::Utils»
-«EXTENSION xpt::compartments::Utils»
+«EXTENSION xpt::compartments::Guard»
 
 «AROUND createDefaultEditPoliciesBody FOR gmfgen::GenCompartment-»
 	super.createDefaultEditPolicies();
@@ -41,7 +41,7 @@
 «ENDAROUND»
 
 «AROUND createFigure FOR gmfgen::GenCompartment-»
-«IF not supportsU2TCompartments(self.getDiagram()) or not self.listLayout-»
+«IF not u2tSupportedCompartment(self)-»
 «targetDef.proceed()»
 «ELSE-»
 «EXPAND xpt::compartments::CompartmentEditPart::createU2TFigure»

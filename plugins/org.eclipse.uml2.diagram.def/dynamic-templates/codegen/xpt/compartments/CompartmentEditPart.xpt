@@ -12,9 +12,12 @@
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 
-«EXTENSION xpt::compartments::Utils»
+«EXTENSION xpt::compartments::Guard»
 
 «DEFINE createU2TFigure FOR gmfgen::GenCompartment-»
+«IF not u2tSupportedCompartment(self)-»
+«ERROR 'This compartment is not supported in U2T custom templates: ' + self.repr()»
+«ENDIF-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	@Override
 	public org.eclipse.draw2d.IFigure createFigure() {
@@ -33,7 +36,7 @@
 
 «DEFINE installResizableCompartmentEditPolicy FOR gmfgen::GenCompartment-»
 	«IF canCollapse-»
-	«IF supportsU2TCompartments(self.getDiagram()) and self.listLayout-»
+	«IF u2tSupportedCompartment(self)-»
 		installEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE, «-»
 			new org.eclipse.uml2.diagram.common.compartments.U2TResizableCompartmentEditPolicy());
 	«ELSE-»
