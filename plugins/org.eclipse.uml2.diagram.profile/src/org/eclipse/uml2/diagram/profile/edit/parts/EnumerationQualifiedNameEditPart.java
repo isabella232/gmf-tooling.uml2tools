@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
@@ -175,7 +176,7 @@ public class EnumerationQualifiedNameEditPart extends CompartmentEditPart implem
 	/**
 	 * @generated
 	 */
-	public void setLabel(StereotypeLabel figure) {
+	public void setLabel(StereotypeLabel2 figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
