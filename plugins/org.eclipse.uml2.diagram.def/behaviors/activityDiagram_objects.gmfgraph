@@ -175,39 +175,41 @@
           xsi:type="gmfgraph:Rectangle"
           name="ActivityParameterFigure">
         <layout
-            xsi:type="gmfgraph:BorderLayout"/>
+            xsi:type="gmfgraph:CustomLayout"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <insets
+            top="2"
+            left="5"
+            bottom="2"
+            right="5"/>
         <children
-            xsi:type="gmfgraph:Label"
-            name="ActivityParameterFigure_stereo">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="BEGINNING"
-              vertical="true"/>
-          <border
-              xsi:type="gmfgraph:MarginBorder">
-            <insets
-                left="5"
-                right="5"/>
-          </border>
-        </children>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ActivityParameterFigure_name">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              vertical="true"/>
-          <border
-              xsi:type="gmfgraph:MarginBorder">
-            <insets
-                top="3"
-                left="5"
-                right="5"/>
-          </border>
+            xsi:type="gmfgraph:CustomFigure"
+            name="ActivityParameterFigure_NameAndStereo"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="ActivityParameterFigure_NameAndStereo_stereo"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2"/>
+          </customChildren>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getNameLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="ActivityParameterFigure_NameAndStereo_name"
+                qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+          </customChildren>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+          accessor="getFigureActivityParameterFigure_name"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@customChildren.1/@typedFigure"/>
       <accessors
+          accessor="getFigureActivityParameterFigure_stereo"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@customChildren.0/@typedFigure"/>
+      <accessors
+          accessor="getNameAndStereotypeBlock"
           figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors

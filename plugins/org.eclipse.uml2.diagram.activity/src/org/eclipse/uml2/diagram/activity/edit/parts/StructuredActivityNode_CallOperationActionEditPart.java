@@ -41,6 +41,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -53,6 +54,8 @@ import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -2140,12 +2143,7 @@ public class StructuredActivityNode_CallOperationActionEditPart extends Abstract
 		/**
 		 * @generated
 		 */
-		private Label fFigureActionBaseFigure_name;
-
-		/**
-		 * @generated
-		 */
-		private Label fFigureActionBaseFigure_stereo;
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -2158,6 +2156,8 @@ public class StructuredActivityNode_CallOperationActionEditPart extends Abstract
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(16), getMapMode().DPtoLP(16)));
 			this.setLineWidth(1);
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 			createContents();
 		}
 
@@ -2166,33 +2166,9 @@ public class StructuredActivityNode_CallOperationActionEditPart extends Abstract
 		 */
 		private void createContents() {
 
-			RectangleFigure actionBaseFigure_name0 = new RectangleFigure();
-			actionBaseFigure_name0.setFill(false);
-			actionBaseFigure_name0.setOutline(false);
-			actionBaseFigure_name0.setLineWidth(1);
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			actionBaseFigure_name0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
-
-			this.add(actionBaseFigure_name0);
-
-			ToolbarLayout layoutActionBaseFigure_name0 = new ToolbarLayout();
-			layoutActionBaseFigure_name0.setStretchMinorAxis(false);
-			layoutActionBaseFigure_name0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
-
-			layoutActionBaseFigure_name0.setSpacing(0);
-			layoutActionBaseFigure_name0.setVertical(true);
-
-			actionBaseFigure_name0.setLayoutManager(layoutActionBaseFigure_name0);
-
-			fFigureActionBaseFigure_stereo = new Label();
-			fFigureActionBaseFigure_stereo.setText("");
-
-			actionBaseFigure_name0.add(fFigureActionBaseFigure_stereo);
-
-			fFigureActionBaseFigure_name = new Label();
-			fFigureActionBaseFigure_name.setText("");
-
-			actionBaseFigure_name0.add(fFigureActionBaseFigure_name);
+			this.add(fNameAndStereotypeBlock);
 
 		}
 
@@ -2218,15 +2194,22 @@ public class StructuredActivityNode_CallOperationActionEditPart extends Abstract
 		/**
 		 * @generated
 		 */
-		public Label getFigureActionBaseFigure_name() {
-			return fFigureActionBaseFigure_name;
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureActionBaseFigure_stereo() {
-			return fFigureActionBaseFigure_stereo;
+		public WrappingLabel getFigureActionBaseFigure_name() {
+			return getNameAndStereotypeBlock().getNameLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getFigureActionBaseFigure_stereo() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 	}

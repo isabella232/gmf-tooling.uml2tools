@@ -14,33 +14,38 @@
         <layout
             xsi:type="gmfgraph:CustomLayout"
             qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <insets
+            left="5"
+            right="5"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ActionBaseFigure_name"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:FlowLayout"
-              vertical="true"
-              forceSingleLine="true"
-              minorAlignment="CENTER"
-              majorSpacing="0"
-              minorSpacing="0"/>
-          <insets
-              left="5"
-              right="5"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="ActionBaseFigure_stereo"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="ActionBaseFigure_name"/>
+            xsi:type="gmfgraph:CustomFigure"
+            name="ActionBaseFigure_NameAndStereo"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="ActionBaseFigure_NameAndStereo_stereo"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2"/>
+          </customChildren>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getNameLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="ActionBaseFigure_NameAndStereo_name"
+                qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+          </customChildren>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
+          accessor="getFigureActionBaseFigure_name"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@customChildren.1/@typedFigure"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
+          accessor="getFigureActionBaseFigure_stereo"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@customChildren.0/@typedFigure"/>
+      <accessors
+          accessor="getNameAndStereotypeBlock"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="AcceptEventActionFigure">
@@ -312,8 +317,8 @@
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="80"
-          dy="50"/>
+          dx="60"
+          dy="40"/>
     </facets>
   </nodes>
   <nodes
@@ -328,8 +333,8 @@
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="80"
-          dy="50"/>
+          dx="60"
+          dy="40"/>
     </facets>
   </nodes>
   <nodes
