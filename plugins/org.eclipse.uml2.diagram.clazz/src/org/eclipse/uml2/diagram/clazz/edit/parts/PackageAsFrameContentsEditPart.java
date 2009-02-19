@@ -49,14 +49,8 @@ public class PackageAsFrameContentsEditPart extends ShapeCompartmentEditPart {
 	 */
 	@Override
 	public IFigure createFigure() {
-		U2TCompartmentFigure result = new U2TCompartmentFigure(getCompartmentName(), getMapMode());
-
-		ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
-		layout.setStretchMajorAxis(false);
-		layout.setStretchMinorAxis(false);
-		layout.setMinorAlignment(ConstrainedToolbarLayout.ALIGN_TOPLEFT);
-		result.getContentPane().setLayoutManager(layout);
-
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
+		result.setTitleVisibility(false);
 		return result;
 	}
 
@@ -65,7 +59,7 @@ public class PackageAsFrameContentsEditPart extends ShapeCompartmentEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new U2TResizableCompartmentEditPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
 
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackageAsFrameContentsItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));

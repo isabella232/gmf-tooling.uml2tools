@@ -41,7 +41,7 @@
 «ENDAROUND»
 
 «AROUND createFigure FOR gmfgen::GenCompartment-»
-«IF not supportsU2TCompartments(self.getDiagram())-»
+«IF not supportsU2TCompartments(self.getDiagram()) or not self.listLayout-»
 «targetDef.proceed()»
 «ELSE-»
 «EXPAND xpt::compartments::CompartmentEditPart::createU2TFigure»

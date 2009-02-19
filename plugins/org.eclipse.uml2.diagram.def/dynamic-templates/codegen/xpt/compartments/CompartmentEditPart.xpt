@@ -33,7 +33,7 @@
 
 «DEFINE installResizableCompartmentEditPolicy FOR gmfgen::GenCompartment-»
 	«IF canCollapse-»
-	«IF supportsU2TCompartments(self.getDiagram())-»
+	«IF supportsU2TCompartments(self.getDiagram()) and self.listLayout-»
 		installEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE, «-»
 			new org.eclipse.uml2.diagram.common.compartments.U2TResizableCompartmentEditPolicy());
 	«ELSE-»
