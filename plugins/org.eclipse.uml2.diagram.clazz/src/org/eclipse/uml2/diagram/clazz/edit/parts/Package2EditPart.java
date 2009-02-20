@@ -1628,6 +1628,7 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			packageFigure_AuxTop0.setLayoutManager(layoutPackageFigure_AuxTop0);
 
 			PartialRectangleFigure packageFigure_AuxLeftTab1 = new PartialRectangleFigure();
+
 			packageFigure_AuxLeftTab1.setBottomShown(false);
 
 			packageFigure_AuxLeftTab1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));

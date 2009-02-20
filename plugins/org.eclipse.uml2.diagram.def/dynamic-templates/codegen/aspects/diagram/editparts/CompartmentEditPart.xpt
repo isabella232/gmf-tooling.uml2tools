@@ -20,6 +20,11 @@ implements org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart«-»
 «ENDAROUND»
 
 «AROUND diagram::editparts::CompartmentEditPart::additions FOR gmfgen::GenCompartment»
+«EXPAND insertableEditPart_getElementType FOR self-»
+«EXPAND xpt::compartments::CompartmentEditPart::hideIfEmptySupport FOR self-»
+«ENDAROUND»
+
+«DEFINE insertableEditPart_getElementType FOR gmfgen::GenCompartment-»
 «IF self.listLayout and self.childNodes->size() = 1-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public org.eclipse.gmf.runtime.emf.type.core.IElementType getElementType() {
@@ -27,4 +32,4 @@ implements org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart«-»
 	}
 	
 «ENDIF-»
-«ENDAROUND»
+«ENDDEFINE»

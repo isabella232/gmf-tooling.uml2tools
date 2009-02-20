@@ -45,3 +45,33 @@
 	«ENDIF-»
 	«ENDIF-»
 «ENDDEFINE»
+
+«DEFINE hideIfEmptySupport FOR gmfgen::GenCompartment-»
+«IF u2tSupportedCompartment(self) and self.hideIfEmpty -»
+	«EXPAND xpt::Common::generatedMemberComment»	 
+	@Override
+	protected void refreshVisibility() {
+		boolean visibility = getNotationView().isVisible() && !getChildren().isEmpty(); 
+        setVisibility(visibility);
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»	
+	@Override
+	protected void addChild(org.eclipse.gef.EditPart child, int index) {
+		super.addChild(child, index);
+		if (isActive()){
+			refreshVisibility();
+		}
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»	
+	@Override
+	protected void removeChild(org.eclipse.gef.EditPart child) {
+		super.removeChild(child);
+		if (isActive()){
+			refreshVisibility();
+		}
+	}
+
+«ENDIF-»
+«ENDDEFINE»
