@@ -59,50 +59,60 @@
             name="ClassFigure_PropertiesCompartment"
             outline="false">
           <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <insets
-              top="1"
-              bottom="1"/>
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.draw2d.StackLayout">
+            <attributes
+                name="observeVisibility"
+                value="true"/>
+          </layout>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ClassFigure_OperationsCompartment"
             outline="false">
           <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <insets
-              top="1"
-              bottom="1"/>
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.draw2d.StackLayout">
+            <attributes
+                name="observeVisibility"
+                value="true"/>
+          </layout>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ClassFigure_ClassesCompartment"
             outline="false">
           <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <insets
-              top="1"
-              bottom="1"/>
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.draw2d.StackLayout">
+            <attributes
+                name="observeVisibility"
+                value="true"/>
+          </layout>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ClassFigure_LiteralsCompartment"
             outline="false">
           <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <insets
-              top="1"
-              bottom="1"/>
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.draw2d.StackLayout">
+            <attributes
+                name="observeVisibility"
+                value="true"/>
+          </layout>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="ClassFigure_OthersCompartment"
             outline="false">
           <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <insets
-              top="1"
-              bottom="1"/>
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.draw2d.StackLayout">
+            <attributes
+                name="observeVisibility"
+                value="true"/>
+          </layout>
         </children>
       </actualFigure>
       <accessors
