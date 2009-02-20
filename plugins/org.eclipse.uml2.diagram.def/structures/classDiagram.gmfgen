@@ -2879,6 +2879,8 @@
             xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
           <substitutableByIDs>2010</substitutableByIDs>
         </attributes>
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -2912,6 +2914,9 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -2935,11 +2940,14 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3"
@@ -4611,7 +4619,6 @@
         canonicalEditPolicyClassName="InterfaceOperationsCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.24"
         title="operations"
-        canCollapse="false"
         node="//@diagram/@topLevelNodes.11">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -4628,7 +4635,6 @@
         canonicalEditPolicyClassName="InterfaceClassesCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.25"
         title="classes"
-        canCollapse="false"
         node="//@diagram/@topLevelNodes.11">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
