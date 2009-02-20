@@ -17,7 +17,6 @@
 «IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
 
 «EXTENSION aspects::xpt::FileExtensionUtils»
-«EXTENSION org::eclipse::uml2::diagram::codegen::qvt::EMFUtils»
 «EXTENSION org::eclipse::uml2::diagram::codegen::qvt::NativeEMFUtils»
 
 «AROUND xpt::plugin::plugin::fileTypes FOR gmfgen::GenPlugin-»
