@@ -120,9 +120,7 @@ public class AssociationClassAttributesEditPart extends ListCompartmentEditPart 
 	@Override
 	protected void addChild(EditPart child, int index) {
 		super.addChild(child, index);
-		if (isActive()) {
-			refreshVisibility();
-		}
+		refreshVisibility();
 	}
 
 	/**

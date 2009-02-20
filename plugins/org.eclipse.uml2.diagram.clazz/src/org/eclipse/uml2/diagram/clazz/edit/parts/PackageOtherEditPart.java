@@ -121,9 +121,7 @@ public class PackageOtherEditPart extends ListCompartmentEditPart implements IIn
 	@Override
 	protected void addChild(EditPart child, int index) {
 		super.addChild(child, index);
-		if (isActive()) {
-			refreshVisibility();
-		}
+		refreshVisibility();
 	}
 
 	/**

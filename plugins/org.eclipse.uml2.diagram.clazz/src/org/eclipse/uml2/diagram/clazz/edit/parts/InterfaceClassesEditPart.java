@@ -119,9 +119,7 @@ public class InterfaceClassesEditPart extends ListCompartmentEditPart implements
 	@Override
 	protected void addChild(EditPart child, int index) {
 		super.addChild(child, index);
-		if (isActive()) {
-			refreshVisibility();
-		}
+		refreshVisibility();
 	}
 
 	/**

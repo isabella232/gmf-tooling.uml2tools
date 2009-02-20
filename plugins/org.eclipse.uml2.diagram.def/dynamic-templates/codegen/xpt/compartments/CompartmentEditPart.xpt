@@ -59,9 +59,7 @@
 	@Override
 	protected void addChild(org.eclipse.gef.EditPart child, int index) {
 		super.addChild(child, index);
-		if (isActive()){
-			refreshVisibility();
-		}
+		refreshVisibility();
 	}
 	
 	«EXPAND xpt::Common::generatedMemberComment»	

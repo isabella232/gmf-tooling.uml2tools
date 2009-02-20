@@ -120,9 +120,7 @@ public class DataTypeAttributesEditPart extends ListCompartmentEditPart implemen
 	@Override
 	protected void addChild(EditPart child, int index) {
 		super.addChild(child, index);
-		if (isActive()) {
-			refreshVisibility();
-		}
+		refreshVisibility();
 	}
 
 	/**

@@ -116,9 +116,7 @@ public class EnumerationLiterals2EditPart extends ListCompartmentEditPart implem
 	@Override
 	protected void addChild(EditPart child, int index) {
 		super.addChild(child, index);
-		if (isActive()) {
-			refreshVisibility();
-		}
+		refreshVisibility();
 	}
 
 	/**

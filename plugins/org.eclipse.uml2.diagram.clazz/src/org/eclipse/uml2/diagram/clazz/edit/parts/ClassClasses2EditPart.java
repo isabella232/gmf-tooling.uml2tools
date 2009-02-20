@@ -116,9 +116,7 @@ public class ClassClasses2EditPart extends ListCompartmentEditPart implements II
 	@Override
 	protected void addChild(EditPart child, int index) {
 		super.addChild(child, index);
-		if (isActive()) {
-			refreshVisibility();
-		}
+		refreshVisibility();
 	}
 
 	/**
