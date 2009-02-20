@@ -695,46 +695,61 @@ public class EnumerationEditPart extends ShapeNodeEditPart implements PrimarySha
 			fFigureClassFigure_PropertiesCompartment.setOutline(false);
 			fFigureClassFigure_PropertiesCompartment.setLineWidth(1);
 
-			fFigureClassFigure_PropertiesCompartment.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
-
 			this.add(fFigureClassFigure_PropertiesCompartment);
-			fFigureClassFigure_PropertiesCompartment.setLayoutManager(new StackLayout());
+
+			StackLayout layoutFFigureClassFigure_PropertiesCompartment = new StackLayout();
+
+			layoutFFigureClassFigure_PropertiesCompartment.setObserveVisibility(true);
+
+			fFigureClassFigure_PropertiesCompartment.setLayoutManager(layoutFFigureClassFigure_PropertiesCompartment);
 
 			fFigureClassFigure_OperationsCompartment = new RectangleFigure();
 			fFigureClassFigure_OperationsCompartment.setOutline(false);
 			fFigureClassFigure_OperationsCompartment.setLineWidth(1);
 
-			fFigureClassFigure_OperationsCompartment.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
-
 			this.add(fFigureClassFigure_OperationsCompartment);
-			fFigureClassFigure_OperationsCompartment.setLayoutManager(new StackLayout());
+
+			StackLayout layoutFFigureClassFigure_OperationsCompartment = new StackLayout();
+
+			layoutFFigureClassFigure_OperationsCompartment.setObserveVisibility(true);
+
+			fFigureClassFigure_OperationsCompartment.setLayoutManager(layoutFFigureClassFigure_OperationsCompartment);
 
 			fFigureClassFigure_ClassesCompartment = new RectangleFigure();
 			fFigureClassFigure_ClassesCompartment.setOutline(false);
 			fFigureClassFigure_ClassesCompartment.setLineWidth(1);
 
-			fFigureClassFigure_ClassesCompartment.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
-
 			this.add(fFigureClassFigure_ClassesCompartment);
-			fFigureClassFigure_ClassesCompartment.setLayoutManager(new StackLayout());
+
+			StackLayout layoutFFigureClassFigure_ClassesCompartment = new StackLayout();
+
+			layoutFFigureClassFigure_ClassesCompartment.setObserveVisibility(true);
+
+			fFigureClassFigure_ClassesCompartment.setLayoutManager(layoutFFigureClassFigure_ClassesCompartment);
 
 			fFigureClassFigure_LiteralsCompartment = new RectangleFigure();
 			fFigureClassFigure_LiteralsCompartment.setOutline(false);
 			fFigureClassFigure_LiteralsCompartment.setLineWidth(1);
 
-			fFigureClassFigure_LiteralsCompartment.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
-
 			this.add(fFigureClassFigure_LiteralsCompartment);
-			fFigureClassFigure_LiteralsCompartment.setLayoutManager(new StackLayout());
+
+			StackLayout layoutFFigureClassFigure_LiteralsCompartment = new StackLayout();
+
+			layoutFFigureClassFigure_LiteralsCompartment.setObserveVisibility(true);
+
+			fFigureClassFigure_LiteralsCompartment.setLayoutManager(layoutFFigureClassFigure_LiteralsCompartment);
 
 			fFigureClassFigure_OthersCompartment = new RectangleFigure();
 			fFigureClassFigure_OthersCompartment.setOutline(false);
 			fFigureClassFigure_OthersCompartment.setLineWidth(1);
 
-			fFigureClassFigure_OthersCompartment.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
-
 			this.add(fFigureClassFigure_OthersCompartment);
-			fFigureClassFigure_OthersCompartment.setLayoutManager(new StackLayout());
+
+			StackLayout layoutFFigureClassFigure_OthersCompartment = new StackLayout();
+
+			layoutFFigureClassFigure_OthersCompartment.setObserveVisibility(true);
+
+			fFigureClassFigure_OthersCompartment.setLayoutManager(layoutFFigureClassFigure_OthersCompartment);
 
 		}
 
