@@ -143,12 +143,24 @@ public class ElementInitializers {
 
 			instance.setSpecification(newInstance_0_0);
 			;
-			Object value_0_0_0 = UMLOCLFactory.getExpression("\'OpaqueExpression\'", UMLPackage.eINSTANCE.getOpaqueExpression()).evaluate(newInstance_0_0);
+			Object value_0_0_0 = UMLOCLFactory.getExpression("\'true\'", UMLPackage.eINSTANCE.getOpaqueExpression()).evaluate(newInstance_0_0);
 			if (value_0_0_0 instanceof Collection) {
 				newInstance_0_0.getBodies().clear();
 				newInstance_0_0.getBodies().addAll(((Collection) value_0_0_0));
 			} else {
 				newInstance_0_0.getBodies().add((String) value_0_0_0);
+			}
+
+			OpaqueExpression newInstance_1_0 = UMLFactory.eINSTANCE.createOpaqueExpression();
+
+			instance.setSpecification(newInstance_1_0);
+			;
+			Object value_1_0_0 = UMLOCLFactory.getExpression("\'OCL\'", UMLPackage.eINSTANCE.getOpaqueExpression()).evaluate(newInstance_1_0);
+			if (value_1_0_0 instanceof Collection) {
+				newInstance_1_0.getLanguages().clear();
+				newInstance_1_0.getLanguages().addAll(((Collection) value_1_0_0));
+			} else {
+				newInstance_1_0.getLanguages().add((String) value_1_0_0);
 			}
 
 		} catch (RuntimeException e) {

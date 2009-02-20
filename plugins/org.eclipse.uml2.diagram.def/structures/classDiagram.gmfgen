@@ -1083,7 +1083,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label"/>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.40">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.41">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Slot"/>
         <containmentMetaFeature
@@ -1119,7 +1119,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label"/>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.44">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.45">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property"/>
         <containmentMetaFeature
@@ -1130,13 +1130,13 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.45">
+              value="//@expressionProviders/@providers.0/@expressions.46">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property/aggregation"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.46">
+              value="//@expressionProviders/@providers.0/@expressions.47">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -1180,7 +1180,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.47">
+              value="//@expressionProviders/@providers.0/@expressions.48">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -1308,7 +1308,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.48">
+              value="//@expressionProviders/@providers.0/@expressions.49">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -1548,7 +1548,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.39">
+              value="//@expressionProviders/@providers.0/@expressions.40">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -2570,6 +2570,21 @@
                   href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OpaqueExpression"/>
             </newElementInitializers>
           </initializers>
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Constraint/specification"/>
+            <newElementInitializers>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.39">
+                <feature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OpaqueExpression/language"/>
+              </initializers>
+              <elementClass
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OpaqueExpression"/>
+            </newElementInitializers>
+          </initializers>
         </modelElementInitializer>
       </modelFacet>
       <labels
@@ -2647,7 +2662,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.39">
+              value="//@expressionProviders/@providers.0/@expressions.40">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -2725,7 +2740,7 @@
             height="10"/>
       </viewmap>
       <modelFacet
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.41">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.42">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Dependency"/>
         <containmentMetaFeature
@@ -2736,7 +2751,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.42">
+              value="//@expressionProviders/@providers.0/@expressions.43">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -2893,7 +2908,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.43">
+              value="//@expressionProviders/@providers.0/@expressions.44">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3118,7 +3133,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.48">
+              value="//@expressionProviders/@providers.0/@expressions.49">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3179,7 +3194,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.49">
+              value="//@expressionProviders/@providers.0/@expressions.50">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
           </initializers>
@@ -3269,7 +3284,7 @@
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class SolidLineWDstClosedArrow extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public SolidLineWDstClosedArrow() {&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xD;&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xD;&#xA;df.setFill(true);&#xD;&#xA;df.setLineWidth(1);&#xD;&#xA;&#x9;df.setBackgroundColor(org.eclipse.draw2d.ColorConstants.white);&#xD;&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xD;&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;);&#xD;&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xD;&#xA;, getMapMode().DPtoLP(2)&#xD;&#xA;);&#xD;&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xD;&#xA;, getMapMode().DPtoLP(-2)&#xD;&#xA;);&#xD;&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(0)&#xD;&#xA;);&#xD;&#xA;df.setTemplate(pl);&#xD;&#xA;df.setScale(getMapMode().DPtoLP(7)&#xD;&#xA;, getMapMode().DPtoLP(3)&#xD;&#xA;);&#xD;&#xA;&#x9;&#x9;return df;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.50">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.51">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Generalization"/>
         <containmentMetaFeature
@@ -3329,7 +3344,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.51">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.52">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Dependency"/>
         <containmentMetaFeature
@@ -3385,7 +3400,7 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.52"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.53"/>
     </links>
     <links
         visualID="4003"
@@ -3410,7 +3425,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.53">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.54">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property"/>
         <containmentMetaFeature
@@ -3531,7 +3546,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.54">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.55">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Association"/>
         <containmentMetaFeature
@@ -3793,7 +3808,7 @@
           figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.55">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.56">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InterfaceRealization"/>
         <containmentMetaFeature
@@ -3832,7 +3847,7 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.56"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.57"/>
     </links>
     <links
         visualID="4010"
@@ -3856,7 +3871,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.57">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.58">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Realization"/>
         <containmentMetaFeature
@@ -4011,7 +4026,7 @@
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class RequiredInterfaceConnectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public RequiredInterfaceConnectionFigure() {&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xD;&#xA;&#x9;&#x9;org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration df = new org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;df.setRadius(&#xD;&#xA;10);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return df;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.58">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.59">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Usage"/>
         <containmentMetaFeature
@@ -4050,8 +4065,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.59"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.60"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.60"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.61"/>
     </links>
     <links
         visualID="4014"
@@ -4106,7 +4121,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.61">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.62">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Slot"/>
         <containmentMetaFeature
@@ -4254,7 +4269,7 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.62"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.63"/>
     </links>
     <links
         visualID="4017"
@@ -4276,7 +4291,7 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Port/provided"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.63"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.64"/>
     </links>
     <links
         visualID="4018"
@@ -4299,7 +4314,7 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Port/required"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.64"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.65"/>
     </links>
     <links
         visualID="4019"
@@ -14552,7 +14567,9 @@
       <expressions
           body=" let base : String = 'Interface' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
-          body="'OpaqueExpression'"/>
+          body="'true'"/>
+      <expressions
+          body="'OCL'"/>
       <expressions
           body=" let base : String = 'InstanceSpecification' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions

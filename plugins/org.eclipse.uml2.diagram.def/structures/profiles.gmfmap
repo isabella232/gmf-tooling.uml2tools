@@ -412,7 +412,7 @@
                   xsi:type="ecore:EAttribute"
                   href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression/body"/>
               <value
-                  body="'OpaqueExpression'"/>
+                  body="'true'"/>
             </initializers>
             <elementClass
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression"/>

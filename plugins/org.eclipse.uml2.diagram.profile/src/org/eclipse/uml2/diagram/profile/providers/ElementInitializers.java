@@ -84,7 +84,7 @@ public class ElementInitializers {
 
 			instance.setSpecification(newInstance_0_0);
 			;
-			Object value_0_0_0 = UMLOCLFactory.getExpression("\'OpaqueExpression\'", UMLPackage.eINSTANCE.getOpaqueExpression()).evaluate(newInstance_0_0);
+			Object value_0_0_0 = UMLOCLFactory.getExpression("\'true\'", UMLPackage.eINSTANCE.getOpaqueExpression()).evaluate(newInstance_0_0);
 			if (value_0_0_0 instanceof Collection) {
 				newInstance_0_0.getBodies().clear();
 				newInstance_0_0.getBodies().addAll(((Collection) value_0_0_0));
