@@ -417,12 +417,6 @@
             <elementClass
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression"/>
           </newElementInitializers>
-        </initializers>
-        <initializers
-            xsi:type="gmfmap:ReferenceNewElementSpec">
-          <feature
-              xsi:type="ecore:EReference"
-              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint/specification"/>
           <newElementInitializers>
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">

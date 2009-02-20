@@ -704,11 +704,6 @@
               <elementClass
                   href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OpaqueExpression"/>
             </newElementInitializers>
-          </initializers>
-          <initializers
-              xsi:type="gmfgen:GenReferenceNewElementSpec">
-            <feature
-                href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Constraint/specification"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
@@ -1752,7 +1747,7 @@
         qualifiedName="org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser.ConstraintParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet"
+        uses="//@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ProfileAppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
