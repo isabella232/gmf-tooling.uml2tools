@@ -294,14 +294,17 @@ private java.util.Collection refreshConnections() {
 				//no choice, will return what we have
 				return (org.eclipse.gmf.runtime.notation.View)viewOrList;
 			}
-			for (Object next : (java.util.List)viewOrList){
-				org.eclipse.gmf.runtime.notation.View nextView = (org.eclipse.gmf.runtime.notation.View)next;
-				if (hint.equals(nextView.getType())){
-					return nextView;
+			if (viewOrList instanceof java.util.List){ 
+				for (Object next : (java.util.List)viewOrList){
+					org.eclipse.gmf.runtime.notation.View nextView = (org.eclipse.gmf.runtime.notation.View)next;
+					if (hint.equals(nextView.getType())){
+						return nextView;
+					}
 				}
+				//hint not found -- return what we have
+				return (org.eclipse.gmf.runtime.notation.View)((java.util.List)viewOrList).get(0);
 			}
-			//hint not found -- return what we have
-			return (org.eclipse.gmf.runtime.notation.View)((java.util.List)viewOrList).get(0);
+			return null;
 		}
 	
 	}

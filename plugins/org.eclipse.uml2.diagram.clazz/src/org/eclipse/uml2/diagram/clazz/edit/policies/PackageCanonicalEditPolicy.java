@@ -1077,14 +1077,17 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				//no choice, will return what we have
 				return (View) viewOrList;
 			}
-			for (Object next : (List) viewOrList) {
-				View nextView = (View) next;
-				if (hint.equals(nextView.getType())) {
-					return nextView;
+			if (viewOrList instanceof List) {
+				for (Object next : (List) viewOrList) {
+					View nextView = (View) next;
+					if (hint.equals(nextView.getType())) {
+						return nextView;
+					}
 				}
+				//hint not found -- return what we have
+				return (View) ((List) viewOrList).get(0);
 			}
-			//hint not found -- return what we have
-			return (View) ((List) viewOrList).get(0);
+			return null;
 		}
 
 	}
