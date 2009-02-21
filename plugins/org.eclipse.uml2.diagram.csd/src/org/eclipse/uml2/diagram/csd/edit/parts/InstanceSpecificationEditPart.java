@@ -16,16 +16,19 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
@@ -36,6 +39,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -45,7 +49,9 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -147,11 +153,11 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof InstanceSpecificationNameEditPart) {
-			((InstanceSpecificationNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNode_NameLabel());
+			((InstanceSpecificationNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceFigure_NameLabel());
 			return true;
 		}
 		if (childEditPart instanceof InstanceSpecificationStereoEditPart) {
-			((InstanceSpecificationStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNode_StereoLabel());
+			((InstanceSpecificationStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceFigure_StereoLabel());
 			return true;
 		}
 		return false;
@@ -876,12 +882,56 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 	/**
 	 * @generated
 	 */
-	public class InstanceNodeFigure extends RectangleFigure {
+	protected void performDirectEditRequest(final Request request) {
+		EditPart editPart = this;
+		if (request instanceof DirectEditRequest) {
+			Point p = new Point(((DirectEditRequest) request).getLocation());
+			getFigure().translateToRelative(p);
+			IFigure fig = getFigure().findFigureAt(p);
+			editPart = (EditPart) getViewer().getVisualPartMap().get(fig);
+		}
+		if (editPart == this) {
+			try {
+				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureInstanceNode_NameLabel;
+					public void run() {
+						setResult(chooseLabelEditPartForDirectEditRequest(request));
+					}
+				});
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			if (editPart != null && editPart != this) {
+				editPart.performRequest(request);
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
+			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+			// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+			// notation, also we don't include '<' and '>' into actual inplace text).
+			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+			if (initialChar.charValue() == '<') {
+				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(InstanceSpecificationStereoEditPart.VISUAL_ID));
+				if (result != null) {
+					return result;
+				}
+			}
+		}
+		return getPrimaryChildEditPart();
+	}
+
+	/**
+	 * @generated
+	 */
+	public class InstanceNodeFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -891,7 +941,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 		/**
 		 * @generated
 		 */
-		private StereotypeLabel fFigureInstanceNode_StereoLabel;
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -908,6 +958,7 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 			this.setLayoutManager(layoutThis);
 
 			this.setLineWidth(1);
+
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
@@ -917,36 +968,11 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 		 */
 		private void createContents() {
 
-			RectangleFigure instanceNode_NameContainerFigure0 = new RectangleFigure();
-			instanceNode_NameContainerFigure0.setOutline(false);
-			instanceNode_NameContainerFigure0.setLineWidth(1);
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			this.add(instanceNode_NameContainerFigure0);
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			ToolbarLayout layoutInstanceNode_NameContainerFigure0 = new ToolbarLayout();
-			layoutInstanceNode_NameContainerFigure0.setStretchMinorAxis(true);
-			layoutInstanceNode_NameContainerFigure0.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
-
-			layoutInstanceNode_NameContainerFigure0.setSpacing(0);
-			layoutInstanceNode_NameContainerFigure0.setVertical(true);
-
-			instanceNode_NameContainerFigure0.setLayoutManager(layoutInstanceNode_NameContainerFigure0);
-
-			fFigureInstanceNode_StereoLabel = new StereotypeLabel();
-
-			instanceNode_NameContainerFigure0.add(fFigureInstanceNode_StereoLabel);
-
-			CenterLayout layoutFFigureInstanceNode_StereoLabel = new CenterLayout();
-
-			fFigureInstanceNode_StereoLabel.setLayoutManager(layoutFFigureInstanceNode_StereoLabel);
-
-			fFigureInstanceNode_NameLabel = new WrappingLabel();
-
-			instanceNode_NameContainerFigure0.add(fFigureInstanceNode_NameLabel);
-
-			CenterLayout layoutFFigureInstanceNode_NameLabel = new CenterLayout();
-
-			fFigureInstanceNode_NameLabel.setLayoutManager(layoutFFigureInstanceNode_NameLabel);
+			this.add(fNameAndStereotypeBlock);
 
 			fFigureInstanceNode_SlotsCompartmentFigure = new RectangleFigure();
 			fFigureInstanceNode_SlotsCompartmentFigure.setOutline(false);
@@ -986,13 +1012,6 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureInstanceNode_NameLabel() {
-			return fFigureInstanceNode_NameLabel;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureInstanceNode_SlotsCompartmentFigure() {
 			return fFigureInstanceNode_SlotsCompartmentFigure;
 		}
@@ -1000,8 +1019,22 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 		/**
 		 * @generated
 		 */
-		public StereotypeLabel getFigureInstanceNode_StereoLabel() {
-			return fFigureInstanceNode_StereoLabel;
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getFigureInstanceFigure_StereoLabel() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureInstanceFigure_NameLabel() {
+			return getNameAndStereotypeBlock().getNameLabel();
 		}
 
 	}

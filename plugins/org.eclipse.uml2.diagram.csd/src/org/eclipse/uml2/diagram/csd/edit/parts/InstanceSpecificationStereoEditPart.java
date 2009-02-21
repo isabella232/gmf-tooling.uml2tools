@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
@@ -175,7 +176,7 @@ public class InstanceSpecificationStereoEditPart extends CompartmentEditPart imp
 	/**
 	 * @generated
 	 */
-	public void setLabel(StereotypeLabel figure) {
+	public void setLabel(StereotypeLabel2 figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -352,7 +353,12 @@ public class InstanceSpecificationStereoEditPart extends CompartmentEditPart imp
 	 * @generated
 	 */
 	private void performDirectEdit(char initialCharacter) {
-		if (getManager() instanceof TextDirectEditManager) {
+		// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+		// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+		// notation, also we don't include '<' and '>' into actual inplace text).
+		// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+		if (initialCharacter != '<' && getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
 		} else {
 			performDirectEdit();
@@ -492,7 +498,7 @@ public class InstanceSpecificationStereoEditPart extends CompartmentEditPart imp
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**
