@@ -38,42 +38,40 @@
             minorAlignment="CENTER"
             majorSpacing="0"
             minorSpacing="0"/>
-        <border
-            xsi:type="gmfgraph:MarginBorder">
-          <insets
-              top="1"
-              left="1"
-              bottom="1"
-              right="1"/>
-        </border>
+        <insets
+            top="1"
+            left="1"
+            bottom="1"
+            right="1"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="InstanceNode_NameContainerFigure"
-            outline="false">
-          <layout
-              xsi:type="gmfgraph:FlowLayout"
-              vertical="true"
-              matchMinorSize="true"
-              forceSingleLine="true"
-              minorAlignment="CENTER"
-              majorSpacing="0"
-              minorSpacing="0"/>
-          <children
-              xsi:type="gmfgraph:CustomFigure"
-              name="InstanceNode_StereoLabel"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel">
-            <layout
-                xsi:type="gmfgraph:CustomLayout"
-                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-          </children>
-          <children
-              xsi:type="gmfgraph:CustomFigure"
-              name="InstanceNode_NameLabel"
-              qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-            <layout
-                xsi:type="gmfgraph:CustomLayout"
-                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-          </children>
+            xsi:type="gmfgraph:CustomFigure"
+            name="InstanceFigure_nameAndStereotype"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
+          <insets
+              top="8"
+              left="5"
+              bottom="6"
+              right="5"/>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="InstanceFigure_stereo"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
+              <font
+                  xsi:type="gmfgraph:BasicFont"/>
+            </typedFigure>
+          </customChildren>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getNameLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="InstanceFigure_name"
+                qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              <font
+                  xsi:type="gmfgraph:BasicFont"/>
+            </typedFigure>
+          </customChildren>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -81,11 +79,16 @@
             outline="false"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
+          accessor="getFigureInstanceFigure_StereoLabel"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@customChildren.0/@typedFigure"/>
+      <accessors
+          accessor="getFigureInstanceFigure_NameLabel"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@customChildren.1/@typedFigure"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
+          accessor="getNameAndStereotypeBlock"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="Slot_InplaceLabel">
@@ -151,7 +154,7 @@
       name="slots"
       figure="InstanceNodeFigure"
       needsTitle="true"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <compartments
       name="value"
       figure="RectangleInstanceNodeFigure"
@@ -159,7 +162,7 @@
   <labels
       name="InstanceNode_name"
       figure="InstanceNodeFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="Slot_inplace"
       figure="Slot_InplaceLabel"
@@ -180,5 +183,5 @@
       name="InstanceNode_stereo"
       figure="InstanceNodeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

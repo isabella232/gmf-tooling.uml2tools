@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
@@ -52,6 +53,7 @@ import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
 import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
@@ -124,7 +126,6 @@ public class InstanceSpecificationStereo2EditPart extends CompartmentEditPart im
 				return false;
 			}
 		});
-		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
 	}
 
 	/**
@@ -174,7 +175,7 @@ public class InstanceSpecificationStereo2EditPart extends CompartmentEditPart im
 	/**
 	 * @generated
 	 */
-	public void setLabel(StereotypeLabel figure) {
+	public void setLabel(StereotypeLabel2 figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -351,7 +352,12 @@ public class InstanceSpecificationStereo2EditPart extends CompartmentEditPart im
 	 * @generated
 	 */
 	private void performDirectEdit(char initialCharacter) {
-		if (getManager() instanceof TextDirectEditManager) {
+		// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+		// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+		// notation, also we don't include '<' and '>' into actual inplace text).
+		// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+		if (initialCharacter != '<' && getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
 		} else {
 			performDirectEdit();
@@ -491,7 +497,7 @@ public class InstanceSpecificationStereo2EditPart extends CompartmentEditPart im
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**
