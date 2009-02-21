@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.csd.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
@@ -95,6 +96,35 @@ public class InstanceSpecificationSlotsEditPart extends ListCompartmentEditPart 
 	 */
 	public IElementType getElementType() {
 		return UMLElementTypes.Slot_3015;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void refreshVisibility() {
+		boolean visibility = getNotationView().isVisible() && !getChildren().isEmpty();
+		setVisibility(visibility);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void addChild(EditPart child, int index) {
+		super.addChild(child, index);
+		refreshVisibility();
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void removeChild(EditPart child) {
+		super.removeChild(child);
+		if (isActive()) {
+			refreshVisibility();
+		}
 	}
 
 }
