@@ -139,7 +139,7 @@ public class U2TCompartmentFigure extends ResizableCompartmentFigure {
 			Rectangle localBounds = getBounds();
 			if (localBounds.width > 2 * myLineBorderGap) {
 				final int lineY = localBounds.height / 2 - getLineWidth() / 2 + 1;
-				graphics.drawLine(myLineBorderGap, lineY, localBounds.width - myLineBorderGap - 1, lineY);
+				graphics.drawLine(myLineBorderGap, lineY, localBounds.width - myLineBorderGap, lineY);
 			}
 		}
 		
