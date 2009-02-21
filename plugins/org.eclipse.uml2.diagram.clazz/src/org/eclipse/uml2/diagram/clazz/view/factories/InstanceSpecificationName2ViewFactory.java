@@ -31,7 +31,7 @@ public class InstanceSpecificationName2ViewFactory extends BasicNodeViewFactory 
 		styles.add(NotationFactory.eINSTANCE.createFontStyle());
 		return styles;
 	}
-	
+
 	/**
 	 * @NOT-generated
 	 */
