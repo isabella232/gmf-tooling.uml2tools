@@ -1151,10 +1151,6 @@
               <value
                   body="'OCL'"/>
             </initializers>
-            <elementClass
-                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression"/>
-          </newElementInitializers>
-          <newElementInitializers>
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature

@@ -55,6 +55,7 @@
               vertical="true"
               matchMinorSize="true"
               forceSingleLine="true"
+              minorAlignment="CENTER"
               majorSpacing="0"
               minorSpacing="0"/>
           <children

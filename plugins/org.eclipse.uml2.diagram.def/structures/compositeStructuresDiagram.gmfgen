@@ -1241,6 +1241,12 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.19">
                 <feature
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OpaqueExpression/language"/>
+              </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.20">
+                <feature
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/OpaqueExpression/body"/>
               </initializers>
               <elementClass
@@ -1350,7 +1356,7 @@
           figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.20">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.21">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Connector"/>
         <containmentMetaFeature
@@ -1361,7 +1367,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.21">
+              value="//@expressionProviders/@providers.0/@expressions.22">
             <feature
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Connector/kind"/>
           </initializers>
@@ -1549,7 +1555,7 @@
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class DependencyConnection extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public DependencyConnection() {&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.22">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Dependency"/>
         <containmentMetaFeature
@@ -1602,7 +1608,7 @@
           figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.24">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InterfaceRealization"/>
         <containmentMetaFeature
@@ -1615,7 +1621,7 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InterfaceRealization/contract"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.24"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.25"/>
     </links>
     <links
         visualID="4008"
@@ -1635,7 +1641,7 @@
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class RequiredInterfaceConnectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public RequiredInterfaceConnectionFigure() {&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xD;&#xA;&#x9;&#x9;org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration df = new org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;df.setRadius(&#xD;&#xA;10);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return df;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;"/>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.25">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.26">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Usage"/>
         <containmentMetaFeature
@@ -1648,8 +1654,8 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Dependency/supplier"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.26"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.27"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.27"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.28"/>
     </links>
     <links
         visualID="4010"
@@ -1671,7 +1677,7 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Port/provided"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.28"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.29"/>
     </links>
     <links
         visualID="4011"
@@ -1903,7 +1909,7 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Port/required"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.29"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.30"/>
     </links>
     <links
         visualID="4015"
@@ -1927,7 +1933,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.30">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.31">
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Slot"/>
         <containmentMetaFeature
@@ -4261,7 +4267,9 @@
       <expressions
           body=" let base : String = 'InstanceSpecification' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
-          body="'OpaqueExpression'"/>
+          body="'OCL'"/>
+      <expressions
+          body="'true'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="kind =ConnectorKind::delegation"/>

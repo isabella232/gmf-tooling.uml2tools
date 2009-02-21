@@ -642,9 +642,17 @@
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EAttribute"
+                  href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression/language"/>
+              <value
+                  body="'OCL'"/>
+            </initializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
                   href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression/body"/>
               <value
-                  body="'OpaqueExpression'"/>
+                  body="'true'"/>
             </initializers>
             <elementClass
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueExpression"/>

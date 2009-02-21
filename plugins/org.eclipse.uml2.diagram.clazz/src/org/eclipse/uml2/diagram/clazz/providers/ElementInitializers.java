@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.clazz.providers;
 
 import java.util.Collection;
+
 import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
@@ -14,7 +15,6 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.Interface;
-import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Package;
@@ -150,17 +150,12 @@ public class ElementInitializers {
 			} else {
 				newInstance_0_0.getLanguages().add((String) value_0_0_0);
 			}
-
-			OpaqueExpression newInstance_0_1 = UMLFactory.eINSTANCE.createOpaqueExpression();
-
-			instance.setSpecification(newInstance_0_1);
-			;
-			Object value_0_1_0 = UMLOCLFactory.getExpression("\'true\'", UMLPackage.eINSTANCE.getOpaqueExpression()).evaluate(newInstance_0_1);
-			if (value_0_1_0 instanceof Collection) {
-				newInstance_0_1.getBodies().clear();
-				newInstance_0_1.getBodies().addAll(((Collection) value_0_1_0));
+			Object value_0_0_1 = UMLOCLFactory.getExpression("\'true\'", UMLPackage.eINSTANCE.getOpaqueExpression()).evaluate(newInstance_0_0);
+			if (value_0_0_1 instanceof Collection) {
+				newInstance_0_0.getBodies().clear();
+				newInstance_0_0.getBodies().addAll(((Collection) value_0_0_1));
 			} else {
-				newInstance_0_1.getBodies().add((String) value_0_1_0);
+				newInstance_0_0.getBodies().add((String) value_0_0_1);
 			}
 
 		} catch (RuntimeException e) {
