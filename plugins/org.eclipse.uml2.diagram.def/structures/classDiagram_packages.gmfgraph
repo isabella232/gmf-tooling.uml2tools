@@ -71,7 +71,7 @@
           <insets
               top="1"
               left="1"
-              bottom="1"
+              bottom="10"
               right="1"/>
           <children
               xsi:type="gmfgraph:Rectangle"
@@ -95,15 +95,39 @@
           <children
               xsi:type="gmfgraph:Rectangle"
               name="PackageFigure_PackagesCompartment"
-              outline="false"/>
+              outline="false">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.draw2d.StackLayout">
+              <attributes
+                  name="observeVisibility"
+                  value="true"/>
+            </layout>
+          </children>
           <children
               xsi:type="gmfgraph:Rectangle"
               name="PackageFigure_ClassesCompartment"
-              outline="false"/>
+              outline="false">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.draw2d.StackLayout">
+              <attributes
+                  name="observeVisibility"
+                  value="true"/>
+            </layout>
+          </children>
           <children
               xsi:type="gmfgraph:Rectangle"
               name="PackageFigure_OthersCompartment"
-              outline="false"/>
+              outline="false">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.draw2d.StackLayout">
+              <attributes
+                  name="observeVisibility"
+                  value="true"/>
+            </layout>
+          </children>
         </children>
       </actualFigure>
       <accessors
