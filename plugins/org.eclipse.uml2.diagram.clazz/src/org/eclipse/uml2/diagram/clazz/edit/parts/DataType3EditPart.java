@@ -1514,7 +1514,7 @@ public class DataType3EditPart extends AbstractBorderedShapeEditPart implements 
 
 			this.setLineWidth(1);
 
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(10), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 

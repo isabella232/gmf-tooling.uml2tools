@@ -1565,7 +1565,7 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 
 			this.setLineWidth(1);
 
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(10), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
