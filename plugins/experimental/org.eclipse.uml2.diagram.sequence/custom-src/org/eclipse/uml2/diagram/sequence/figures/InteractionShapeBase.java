@@ -9,6 +9,7 @@ import org.eclipse.uml2.diagram.common.draw2d.FillingBorderLayout;
 
 public class InteractionShapeBase extends RectangleFigure {
     public InteractionShapeBase() {
+    	setLineWidth(1);
         setLayoutManager(new FillingBorderLayout());
         myPentagonPane = new Figure();
         //myPentagonPane.setFont(f);
