@@ -838,7 +838,7 @@ public class Package3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			RectangleFigure packageFigure_AuxCenter0 = new RectangleFigure();
 			packageFigure_AuxCenter0.setLineWidth(1);
 
-			packageFigure_AuxCenter0.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
+			packageFigure_AuxCenter0.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(10), getMapMode().DPtoLP(1)));
 
 			this.add(packageFigure_AuxCenter0, BorderLayout.CENTER);
 
@@ -875,17 +875,35 @@ public class Package3EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_PackagesCompartment);
 
+			StackLayout layoutFFigurePackageFigure_PackagesCompartment = new StackLayout();
+
+			layoutFFigurePackageFigure_PackagesCompartment.setObserveVisibility(true);
+
+			fFigurePackageFigure_PackagesCompartment.setLayoutManager(layoutFFigurePackageFigure_PackagesCompartment);
+
 			fFigurePackageFigure_ClassesCompartment = new RectangleFigure();
 			fFigurePackageFigure_ClassesCompartment.setOutline(false);
 			fFigurePackageFigure_ClassesCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_ClassesCompartment);
 
+			StackLayout layoutFFigurePackageFigure_ClassesCompartment = new StackLayout();
+
+			layoutFFigurePackageFigure_ClassesCompartment.setObserveVisibility(true);
+
+			fFigurePackageFigure_ClassesCompartment.setLayoutManager(layoutFFigurePackageFigure_ClassesCompartment);
+
 			fFigurePackageFigure_OthersCompartment = new RectangleFigure();
 			fFigurePackageFigure_OthersCompartment.setOutline(false);
 			fFigurePackageFigure_OthersCompartment.setLineWidth(1);
 
 			packageFigure_AuxCenter0.add(fFigurePackageFigure_OthersCompartment);
+
+			StackLayout layoutFFigurePackageFigure_OthersCompartment = new StackLayout();
+
+			layoutFFigurePackageFigure_OthersCompartment.setObserveVisibility(true);
+
+			fFigurePackageFigure_OthersCompartment.setLayoutManager(layoutFFigurePackageFigure_OthersCompartment);
 
 		}
 
