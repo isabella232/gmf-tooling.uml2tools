@@ -1003,8 +1003,4 @@
          <editor id="org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditorID"/>
    </paletteProvider>
 </extension>
-
-
-
-
 </plugin>

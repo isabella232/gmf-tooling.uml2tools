@@ -1182,5 +1182,4 @@
          <editor id="org.eclipse.uml2.diagram.usecase.part.UMLDiagramEditorID"/>
    </paletteProvider>
 </extension>
-
 </plugin>
