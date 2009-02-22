@@ -22,6 +22,7 @@ public class Cube3DFigure extends Shape {
 	private final StereotypeLabel myTypeLabel; 
 	
 	public Cube3DFigure(){
+		setLineWidth(1);
 		setDepthGap(DEFAULT_DEPTH_GAP);
 		
 		setLayoutManager(new StackLayout());
