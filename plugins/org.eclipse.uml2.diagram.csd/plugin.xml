@@ -1251,5 +1251,4 @@
          <editor id="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"/>
    </paletteProvider>
 </extension>
-
 </plugin>
