@@ -50,6 +50,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
+import org.eclipse.uml2.diagram.common.draw2d.PackageFrameFigure;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
@@ -1501,177 +1502,14 @@ public class Package6EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	/**
 	 * @generated
 	 */
-	public class PackageAsFrameFigure extends RectangleFigure {
-
-		/**
-		 * @generated
-		 */
-		private Label fPackageAsFrameFigure_name;
-
-		/**
-		 * @generated
-		 */
-		private Label fPackageAsFrameFigure_fixed_package;
-
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fPackageAsFrameFigure_contents;
+	public class PackageAsFrameFigure extends PackageFrameFigure {
 
 		/**
 		 * @generated
 		 */
 		public PackageAsFrameFigure() {
 
-			BorderLayout layoutThis = new BorderLayout();
-			this.setLayoutManager(layoutThis);
-
-			this.setLineWidth(1);
-
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			RectangleFigure packageAsFrameFigure_TopRow0 = new RectangleFigure();
-			packageAsFrameFigure_TopRow0.setOutline(false);
-			packageAsFrameFigure_TopRow0.setLineWidth(1);
-
-			this.add(packageAsFrameFigure_TopRow0, BorderLayout.TOP);
-
-			ToolbarLayout layoutPackageAsFrameFigure_TopRow0 = new ToolbarLayout();
-			layoutPackageAsFrameFigure_TopRow0.setStretchMinorAxis(true);
-			layoutPackageAsFrameFigure_TopRow0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
-
-			layoutPackageAsFrameFigure_TopRow0.setSpacing(0);
-			layoutPackageAsFrameFigure_TopRow0.setVertical(false);
-
-			packageAsFrameFigure_TopRow0.setLayoutManager(layoutPackageAsFrameFigure_TopRow0);
-
-			class PackageAsFrameFigure_header1Class extends Shape {
-
-				/**
-				 * @generated
-				 */
-				private final PointList myTemplate = new PointList();
-
-				/**
-				 * @generated
-				 */
-				private Rectangle myTemplateBounds;
-
-				/**
-				 * @generated
-				 */
-				public void addPoint(Point point) {
-					myTemplate.addPoint(point);
-					myTemplateBounds = null;
-				}
-
-				/**
-				 * @generated
-				 */
-				protected void fillShape(Graphics graphics) {
-					Rectangle bounds = getBounds();
-					graphics.pushState();
-					graphics.translate(bounds.x, bounds.y);
-					graphics.fillPolygon(scalePointList());
-					graphics.popState();
-				}
-
-				/**
-				 * @generated
-				 */
-				protected void outlineShape(Graphics graphics) {
-					Rectangle bounds = getBounds();
-					graphics.pushState();
-					graphics.translate(bounds.x, bounds.y);
-					graphics.drawPolygon(scalePointList());
-					graphics.popState();
-				}
-
-				/**
-				 * @generated
-				 */
-				private Rectangle getTemplateBounds() {
-					if (myTemplateBounds == null) {
-						myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
-						//just safety -- we are going to use this as divider 
-						if (myTemplateBounds.width < 1) {
-							myTemplateBounds.width = 1;
-						}
-						if (myTemplateBounds.height < 1) {
-							myTemplateBounds.height = 1;
-						}
-					}
-					return myTemplateBounds;
-				}
-
-				/**
-				 * @generated
-				 */
-				private int[] scalePointList() {
-					Rectangle pointsBounds = getTemplateBounds();
-					Rectangle actualBounds = getBounds();
-
-					float xScale = ((float) actualBounds.width) / pointsBounds.width;
-					float yScale = ((float) actualBounds.height) / pointsBounds.height;
-
-					if (xScale == 1 && yScale == 1) {
-						return myTemplate.toIntArray();
-					}
-					int[] scaled = (int[]) myTemplate.toIntArray().clone();
-					for (int i = 0; i < scaled.length; i += 2) {
-						scaled[i] = (int) Math.floor(scaled[i] * xScale);
-						scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
-					}
-					return scaled;
-				}
-			}
-			;
-			PackageAsFrameFigure_header1Class packageAsFrameFigure_header1 = new PackageAsFrameFigure_header1Class();
-
-			packageAsFrameFigure_header1.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			packageAsFrameFigure_header1.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(40)));
-			packageAsFrameFigure_header1.addPoint(new Point(getMapMode().DPtoLP(35), getMapMode().DPtoLP(40)));
-			packageAsFrameFigure_header1.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(35)));
-			packageAsFrameFigure_header1.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(0)));
-			packageAsFrameFigure_header1.setFill(true);
-			packageAsFrameFigure_header1.setLineWidth(1);
-
-			packageAsFrameFigure_header1.setBorder(new MarginBorder(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10), getMapMode().DPtoLP(13), getMapMode().DPtoLP(13)));
-
-			packageAsFrameFigure_TopRow0.add(packageAsFrameFigure_header1);
-
-			ToolbarLayout layoutPackageAsFrameFigure_header1 = new ToolbarLayout();
-			layoutPackageAsFrameFigure_header1.setStretchMinorAxis(true);
-			layoutPackageAsFrameFigure_header1.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
-
-			layoutPackageAsFrameFigure_header1.setSpacing(10);
-			layoutPackageAsFrameFigure_header1.setVertical(false);
-
-			packageAsFrameFigure_header1.setLayoutManager(layoutPackageAsFrameFigure_header1);
-
-			fPackageAsFrameFigure_fixed_package = new Label();
-			fPackageAsFrameFigure_fixed_package.setText("package");
-
-			packageAsFrameFigure_header1.add(fPackageAsFrameFigure_fixed_package);
-
-			fPackageAsFrameFigure_name = new Label();
-			fPackageAsFrameFigure_name.setText("");
-
-			packageAsFrameFigure_header1.add(fPackageAsFrameFigure_name);
-
-			fPackageAsFrameFigure_contents = new RectangleFigure();
-			fPackageAsFrameFigure_contents.setOutline(false);
-			fPackageAsFrameFigure_contents.setLineWidth(1);
-			fPackageAsFrameFigure_contents.setForegroundColor(ColorConstants.white);
-
-			this.add(fPackageAsFrameFigure_contents, BorderLayout.CENTER);
+			this.setKindLabelText("package");
 
 		}
 
@@ -1698,21 +1536,21 @@ public class Package6EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		 * @generated
 		 */
 		public Label getPackageAsFrameFigure_name() {
-			return fPackageAsFrameFigure_name;
+			return getNameLabel();
 		}
 
 		/**
 		 * @generated
 		 */
 		public Label getPackageAsFrameFigure_fixed_package() {
-			return fPackageAsFrameFigure_fixed_package;
+			return getKindLabel();
 		}
 
 		/**
 		 * @generated
 		 */
 		public RectangleFigure getPackageAsFrameFigure_contents() {
-			return fPackageAsFrameFigure_contents;
+			return getContentPane();
 		}
 
 	}

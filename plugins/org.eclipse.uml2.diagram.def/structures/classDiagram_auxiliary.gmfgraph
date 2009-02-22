@@ -64,87 +64,43 @@
     <descriptors
         name="PackageAsFrameFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="PackageAsFrameFigure">
-        <layout
-            xsi:type="gmfgraph:BorderLayout"/>
-        <insets
-            top="1"
-            left="1"
-            bottom="1"
-            right="1"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="PackageAsFrameFigure_TopRow"
-            outline="false">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="BEGINNING"
-              vertical="true"/>
-          <layout
-              xsi:type="gmfgraph:FlowLayout"
-              matchMinorSize="true"
-              forceSingleLine="true"
-              minorAlignment="FILL"
-              majorSpacing="0"
-              minorSpacing="0"/>
-          <children
-              xsi:type="gmfgraph:ScalablePolygon"
-              name="PackageAsFrameFigure_header">
+          xsi:type="gmfgraph:CustomFigure"
+          name="PackageAsFrameFigure"
+          qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.PackageFrameFigure">
+        <attributes
+            name="kindLabelText"
+            value="&quot;package&quot;"/>
+        <customChildren
+            accessor="getContentPane">
+          <typedFigure
+              xsi:type="gmfgraph:Rectangle"
+              name="packageAsFrame_contentPane_aux">
             <layout
-                xsi:type="gmfgraph:FlowLayout"
-                matchMinorSize="true"
-                forceSingleLine="true"
-                minorAlignment="FILL"
-                majorSpacing="10"
-                minorSpacing="0"/>
-            <insets
-                top="10"
-                left="10"
-                bottom="13"
-                right="13"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="PackageAsFrameFigure_fixed_package"
-                text="package"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="PackageAsFrameFigure_name"
-                text=""/>
-            <template/>
-            <template
-                y="40"/>
-            <template
-                x="35"
-                y="40"/>
-            <template
-                x="40"
-                y="35"/>
-            <template
-                x="40"/>
-          </children>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="PackageAsFrameFigure_contents"
-            outline="false">
-          <layoutData
-              xsi:type="gmfgraph:BorderLayoutData"
-              alignment="FILL"
-              vertical="true"/>
-          <foregroundColor
-              xsi:type="gmfgraph:ConstantColor"/>
-        </children>
+                xsi:type="gmfgraph:XYLayout"/>
+          </typedFigure>
+        </customChildren>
+        <customChildren
+            accessor="getKindLabel">
+          <typedFigure
+              xsi:type="gmfgraph:Label"
+              name="packageAsFrame_kindLabel_aux"/>
+        </customChildren>
+        <customChildren
+            accessor="getNameLabel">
+          <typedFigure
+              xsi:type="gmfgraph:Label"
+              name="packageAsFrame_nameLabel_aux"/>
+        </customChildren>
       </actualFigure>
       <accessors
           accessor="getPackageAsFrameFigure_name"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@customChildren.2/@typedFigure"/>
       <accessors
           accessor="getPackageAsFrameFigure_fixed_package"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@customChildren.1/@typedFigure"/>
       <accessors
           accessor="getPackageAsFrameFigure_contents"
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@customChildren.0/@typedFigure"/>
     </descriptors>
   </figures>
   <nodes
