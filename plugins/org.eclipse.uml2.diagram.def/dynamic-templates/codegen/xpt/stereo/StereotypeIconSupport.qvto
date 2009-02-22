@@ -6,8 +6,12 @@ library StereotypeIconSupport;
 helper isStereotypeLabel(genCommon : gmf::GenCommonBase) : Boolean {
 	return (if genCommon.viewmap.oclIsKindOf(gmf::ParentAssignedViewmap) 
 		then isStereotypeViewmap(genCommon.viewmap.oclAsType(gmf::ParentAssignedViewmap)) 
-		else false 
+		else genCommon.oclIsKindOf(gmf::GenChildLabelNode) and inListCompartmentsOnly(genCommon.oclAsType(gmf::GenChildLabelNode))
 		endif)
+}
+
+helper inListCompartmentsOnly(label : gmf::GenChildLabelNode) : Boolean {
+	return label.containers->forAll(c | c.oclIsKindOf(gmf::GenCompartment) and c.oclAsType(gmf::GenCompartment).listLayout)
 }
 
 helper isStereotypeViewmap(viewmap : gmf::ParentAssignedViewmap) : Boolean {
