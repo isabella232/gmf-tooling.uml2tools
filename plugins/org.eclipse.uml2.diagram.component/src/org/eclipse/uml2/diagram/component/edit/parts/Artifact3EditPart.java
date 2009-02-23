@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.component.edit.parts;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -28,6 +29,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -597,6 +599,8 @@ public class Artifact3EditPart extends ShapeNodeEditPart implements PrimaryShape
 			this.setLayoutManager(layoutThis);
 
 			this.setLineWidth(1);
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -612,11 +616,22 @@ public class Artifact3EditPart extends ShapeNodeEditPart implements PrimaryShape
 			this.add(fNameAndStereotypeBlock, BorderLayout.TOP);
 
 			fFigureArtifactFigure_body = new RectangleFigure();
+			fFigureArtifactFigure_body.setOutline(false);
 			fFigureArtifactFigure_body.setLineWidth(1);
 			fFigureArtifactFigure_body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
+			fFigureArtifactFigure_body.setBorder(createBorder0());
 
 			this.add(fFigureArtifactFigure_body, BorderLayout.CENTER);
 
+		}
+
+		/**
+		 * @generated
+		 */
+		private Border createBorder0() {
+			OneLineBorder result = new OneLineBorder();
+
+			return result;
 		}
 
 		/**

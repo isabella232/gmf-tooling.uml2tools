@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -47,6 +48,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -675,8 +677,9 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(false);
-			this.setOutline(false);
 			this.setLineWidth(1);
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -692,11 +695,22 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 			this.add(fNameAndStereotypeBlock, BorderLayout.TOP);
 
 			fFigureComponentFigure_body = new RectangleFigure();
+			fFigureComponentFigure_body.setOutline(false);
 			fFigureComponentFigure_body.setLineWidth(1);
 			fFigureComponentFigure_body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
+			fFigureComponentFigure_body.setBorder(createBorder0());
 
 			this.add(fFigureComponentFigure_body, BorderLayout.CENTER);
 
+		}
+
+		/**
+		 * @generated
+		 */
+		private Border createBorder0() {
+			OneLineBorder result = new OneLineBorder();
+
+			return result;
 		}
 
 		/**

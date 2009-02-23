@@ -2,19 +2,23 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ComponentD_classifiers">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="BasicComponentDFigures_canvas">
   <figures
       name="BasicComponentDFigures"
-      implementationBundle="org.eclipse.uml2.diagram.common">
+      implementationBundle="org.eclipse.gmf.runtime.draw2d.ui">
     <descriptors
         name="ComponentFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="ComponentFigure"
-          outline="false"
           fill="false">
         <layout
             xsi:type="gmfgraph:BorderLayout"/>
+        <insets
+            top="1"
+            left="1"
+            bottom="1"
+            right="1"/>
         <children
             xsi:type="gmfgraph:CustomFigure"
             name="ComponentFigure_nameAndStereotype"
@@ -51,12 +55,16 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ComponentFigure_Body">
+            name="ComponentFigure_Body"
+            outline="false">
           <layoutData
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="FILL"/>
           <minimumSize
               dy="55"/>
+          <border
+              xsi:type="gmfgraph:CustomBorder"
+              qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder"/>
         </children>
       </actualFigure>
       <accessors
@@ -79,6 +87,11 @@
           name="ArtifactFigure">
         <layout
             xsi:type="gmfgraph:BorderLayout"/>
+        <insets
+            top="1"
+            left="1"
+            bottom="1"
+            right="1"/>
         <children
             xsi:type="gmfgraph:CustomFigure"
             name="ArtifactFigure_nameAndStereotype"
@@ -115,12 +128,16 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ArtifactFigure_Body">
+            name="ArtifactFigure_Body"
+            outline="false">
           <layoutData
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="FILL"/>
           <minimumSize
               dy="55"/>
+          <border
+              xsi:type="gmfgraph:CustomBorder"
+              qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder"/>
         </children>
       </actualFigure>
       <accessors
