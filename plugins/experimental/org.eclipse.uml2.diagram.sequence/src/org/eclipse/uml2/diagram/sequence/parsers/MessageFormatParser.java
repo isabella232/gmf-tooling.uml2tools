@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.sequence.parsers;
 
-
 import java.text.FieldPosition;
 import java.text.ParsePosition;
 

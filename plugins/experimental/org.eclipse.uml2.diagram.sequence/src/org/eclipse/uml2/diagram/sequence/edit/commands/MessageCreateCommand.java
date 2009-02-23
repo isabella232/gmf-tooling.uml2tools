@@ -37,6 +37,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
+import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Gate;
@@ -98,8 +99,8 @@ public class MessageCreateCommand extends EditElementCommand {
 		if (null == getContainer()) {
 			return false;
 		}
-		
-		if (source == target){
+
+		if (source == target) {
 			return false; //self links don't supported for now
 		}
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateMessage_4001(getContainer(), getSource(), getTarget());
@@ -108,9 +109,9 @@ public class MessageCreateCommand extends EditElementCommand {
 	private BehaviorExecutionSpecification createBehaviorExecutionSpecification(Interaction interaction, Lifeline lifeline, int nameIndex, boolean forSource) {
 		String prefix = forSource ? "invocation-" : "execution-";
 		String withIndex = prefix + nameIndex + "-";
-		
+
 		ListIterator<InteractionFragment> listPosition = getAppendPosition(interaction);
-		
+
 		MessageOccurrenceSpecification start = doCreateMessageOccurrence(listPosition, withIndex + "start");
 		BehaviorExecutionSpecification result = doCreateBehaviorExecution(listPosition, withIndex + "body");
 		MessageOccurrenceSpecification finish = doCreateMessageOccurrence(listPosition, withIndex + "finish");
@@ -120,10 +121,11 @@ public class MessageCreateCommand extends EditElementCommand {
 		return result;
 	}
 
-	private BehaviorExecutionSpecification[] createBehaviorExecutionSpecificationsPair(Interaction interaction, Lifeline sourceLL, Lifeline targetLL, int messageIndex, ListIterator<InteractionFragment> listPosition) {
+	private BehaviorExecutionSpecification[] createBehaviorExecutionSpecificationsPair(Interaction interaction, Lifeline sourceLL, Lifeline targetLL, int messageIndex,
+			ListIterator<InteractionFragment> listPosition) {
 		String invocationPrefix = "invocation-" + messageIndex + "-";
 		String executionPrefix = "execution-" + messageIndex + "-";
-		
+
 		MessageOccurrenceSpecification invocationStart = doCreateMessageOccurrence(listPosition, invocationPrefix + "start");
 		MessageOccurrenceSpecification executionStart = doCreateMessageOccurrence(listPosition, executionPrefix + "start");
 
@@ -191,34 +193,34 @@ public class MessageCreateCommand extends EditElementCommand {
 			domainSource = (MessageOccurrenceSpecification) sourceInvocation.getStart();
 			domainTarget = (MessageOccurrenceSpecification) targetExecution.getStart();
 		} else if (diagramSource instanceof BehaviorExecutionSpecification && diagramTarget instanceof Lifeline) {
-			BehaviorExecutionSpecification parentExecution = (BehaviorExecutionSpecification)diagramSource;
+			BehaviorExecutionSpecification parentExecution = (BehaviorExecutionSpecification) diagramSource;
 			Lifeline sourceLL = parentExecution.getCovereds().get(0);
-			Lifeline targetLL = (Lifeline)diagramTarget;
-			
+			Lifeline targetLL = (Lifeline) diagramTarget;
+
 			SDBuilder sdBuilder = new SDBuilder(sourceLL.getInteraction());
 			SDBehaviorSpec sdExecution = sdBuilder.getSDFrame().getUMLTracing().findBehaviorSpec(parentExecution);
-			if (false == sdExecution instanceof SDExecution){
+			if (false == sdExecution instanceof SDExecution) {
 				//XXX
 				throw new IllegalArgumentException("SDExecution expected: " + sdExecution);
 			}
-			
+
 			List<InteractionFragment> thePast = new ArrayList<InteractionFragment>(5);
 			thePast.add(parentExecution);
 			thePast.add(parentExecution.getStart());
-			
-			SDInvocation sdParentInvocation = ((SDExecution)sdExecution).getInvocation();
-			if (sdParentInvocation != null){
-				 thePast.add(sdParentInvocation.getUmlExecutionSpec());
-				 thePast.add(sdParentInvocation.getUmlStart());
+
+			SDInvocation sdParentInvocation = ((SDExecution) sdExecution).getInvocation();
+			if (sdParentInvocation != null) {
+				thePast.add(sdParentInvocation.getUmlExecutionSpec());
+				thePast.add(sdParentInvocation.getUmlStart());
 			}
 			ListIterator<InteractionFragment> position = getAfterTheLastOfPosition(interaction, thePast);
 			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count, position);
-			
+
 			sourceInvocation = pair[0];
 			targetExecution = pair[1];
 			domainSource = (MessageOccurrenceSpecification) sourceInvocation.getStart();
 			domainTarget = (MessageOccurrenceSpecification) targetExecution.getStart();
-		
+
 		} else {
 			throw new UnsupportedOperationException("Message between this elements can't be created: from: " + getSource() + " to: " + getTarget());
 		}
@@ -242,59 +244,57 @@ public class MessageCreateCommand extends EditElementCommand {
 
 		return CommandResult.newOKCommandResult(newElement);
 	}
-	
-	private View createBehaviorExecutionView(U2TCreateLinkParameters createLinkParameters, EObject behaviorExecution){
+
+	private View createBehaviorExecutionView(U2TCreateLinkParameters createLinkParameters, EObject behaviorExecution) {
 		View sourceView = createLinkParameters.getParentView();
 		int visualID = UMLVisualIDRegistry.getNodeVisualID(sourceView, behaviorExecution);
 		Node result = ViewService.getInstance().createNode(//
-				new EObjectAdapter(behaviorExecution), sourceView, 
-				UMLVisualIDRegistry.getType(visualID), 
-				ViewUtil.APPEND, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
-		
-		if (createLinkParameters.getRelativeLocation() != null){
-			if (result.getLayoutConstraint() == null){
+				new EObjectAdapter(behaviorExecution), sourceView, UMLVisualIDRegistry.getType(visualID), ViewUtil.APPEND, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+
+		if (createLinkParameters.getRelativeLocation() != null) {
+			if (result.getLayoutConstraint() == null) {
 				result.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 			}
 			ViewUtil.setStructuralFeatureValue(result, NotationPackage.eINSTANCE.getLocation_Y(), Integer.valueOf(createLinkParameters.getRelativeLocation().y));
 			ViewUtil.setStructuralFeatureValue(result, NotationPackage.eINSTANCE.getLocation_X(), Integer.valueOf(0));
 		}
-		
+
 		return result;
 	}
 
 	private void createAdditionalViews(BehaviorExecutionSpecification sourceInvocation, BehaviorExecutionSpecification targetExecution, Message message) {
-		if (message == null){
+		if (message == null) {
 			return;
 		}
-		U2TCreateLinkCommand linkCreationPack = U2TCreateLinkCommand.getFromRequest(getRequest()) ;
-		if (linkCreationPack == null || linkCreationPack.getSourceParameters() == null || linkCreationPack.getTargetParameters() == null){
+		U2TCreateLinkCommand linkCreationPack = U2TCreateLinkCommand.getFromRequest(getRequest());
+		if (linkCreationPack == null || linkCreationPack.getSourceParameters() == null || linkCreationPack.getTargetParameters() == null) {
 			return;
 		}
-		
+
 		SDModelStorageStyle sdModelAccessor = SDModelAccess.findSDModelAccessor(linkCreationPack.getSourceParameters().getParentView());
-		if (sdModelAccessor != null){
+		if (sdModelAccessor != null) {
 			sdModelAccessor.invalidateModel();
 		}
-		
+
 		assert sourceInvocation == null || message.getSendEvent() == sourceInvocation.getStart();
 		assert targetExecution == null || message.getReceiveEvent() == targetExecution.getStart();
-		
-		if (sourceInvocation != null){
-			if (message.getSendEvent() != sourceInvocation.getStart()){
+
+		if (sourceInvocation != null) {
+			if (message.getSendEvent() != sourceInvocation.getStart()) {
 				throw new IllegalStateException(MessageFormat.format(//
 						"Invocation: {0}, \n start: {1}, message: {2}, sendEvent {3}", //
-						new Object[] {sourceInvocation, sourceInvocation.getStart(), message, message.getSendEvent()}));
+						new Object[] { sourceInvocation, sourceInvocation.getStart(), message, message.getSendEvent() }));
 			}
 			View invocationView = createBehaviorExecutionView(linkCreationPack.getSourceParameters(), sourceInvocation);
 			linkCreationPack.getSetConnectionEndsCommand().setNewSourceAdaptor(new EObjectAdapter(invocationView));
 		}
-		
-		if (targetExecution != null){
-			if (message.getReceiveEvent() != targetExecution.getStart()){
+
+		if (targetExecution != null) {
+			if (message.getReceiveEvent() != targetExecution.getStart()) {
 				throw new IllegalStateException(MessageFormat.format(//
 						"Execution: {0}, \n start: {1}, message: {2}, receiveEvent {3}", //
-						new Object[] {targetExecution, targetExecution.getStart(), message, message.getReceiveEvent()}));
-				
+						new Object[] { targetExecution, targetExecution.getStart(), message, message.getReceiveEvent() }));
+
 			}
 			View executionView = createBehaviorExecutionView(linkCreationPack.getTargetParameters(), targetExecution);
 			linkCreationPack.getSetConnectionEndsCommand().setNewTargetAdaptor(new EObjectAdapter(executionView));
@@ -369,15 +369,15 @@ public class MessageCreateCommand extends EditElementCommand {
 		if (diagramEnd instanceof Lifeline) {
 			return true;
 		}
-		if (diagramEnd instanceof BehaviorExecutionSpecification){
-			return ((BehaviorExecutionSpecification)diagramEnd).getCovereds().size() == 1;
+		if (diagramEnd instanceof BehaviorExecutionSpecification) {
+			return ((BehaviorExecutionSpecification) diagramEnd).getCovereds().size() == 1;
 		}
 		return false;
 	}
 
 	private static MessageOccurrenceSpecification doCreateMessageOccurrence(ListIterator<InteractionFragment> position, String name) {
 		MessageOccurrenceSpecification result = UMLFactory.eINSTANCE.createMessageOccurrenceSpecification();
-		if (name != null){
+		if (name != null) {
 			result.setName(name);
 		}
 		position.add(result);
@@ -386,44 +386,44 @@ public class MessageCreateCommand extends EditElementCommand {
 
 	private static BehaviorExecutionSpecification doCreateBehaviorExecution(ListIterator<InteractionFragment> position, String name) {
 		BehaviorExecutionSpecification result = UMLFactory.eINSTANCE.createBehaviorExecutionSpecification();
-		if (name != null){
+		if (name != null) {
 			result.setName(name);
 		}
 		position.add(result);
 		return result;
 	}
-	
-	private static ListIterator<InteractionFragment> getAppendPosition(Interaction interaction){
+
+	private static ListIterator<InteractionFragment> getAppendPosition(Interaction interaction) {
 		int size = interaction.getFragments().size();
 		ListIterator<InteractionFragment> result = interaction.getFragments().listIterator(size);
-		if (result.hasNext()){
+		if (result.hasNext()) {
 			throw new IllegalStateException("Wow!");
 		}
 		return result;
 	}
-	
-	private static ListIterator<InteractionFragment> getAfterTheLastOfPosition(Interaction interaction, Collection<InteractionFragment> fragments){
-		if (fragments.isEmpty()){
+
+	private static ListIterator<InteractionFragment> getAfterTheLastOfPosition(Interaction interaction, Collection<InteractionFragment> fragments) {
+		if (fragments.isEmpty()) {
 			return getAppendPosition(interaction);
 		}
-		
+
 		HashSet<InteractionFragment> notFound = new HashSet<InteractionFragment>();
-		for (InteractionFragment next : fragments){
-			if (next == null){
+		for (InteractionFragment next : fragments) {
+			if (next == null) {
 				continue;
 			}
-			if (next.getEnclosingInteraction() != interaction){
+			if (next.getEnclosingInteraction() != interaction) {
 				throw new IllegalArgumentException("Alien fragment found: " + next + " for interaction: " + interaction);
 			}
 			notFound.add(next);
 		}
-		
+
 		ListIterator<InteractionFragment> result = interaction.getFragments().listIterator();
-		while(!notFound.isEmpty() && result.hasNext()){
+		while (!notFound.isEmpty() && result.hasNext()) {
 			InteractionFragment next = result.next();
 			notFound.remove(next);
 		}
 		return result;
 	}
-	
+
 }
