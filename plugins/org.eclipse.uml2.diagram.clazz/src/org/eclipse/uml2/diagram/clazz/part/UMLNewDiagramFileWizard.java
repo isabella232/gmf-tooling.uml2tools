@@ -57,8 +57,11 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private TransactionalEditingDomain myEditingDomain;
+	private TransactionalEditingDomain editingDomain;
 
+	/**
+	 * @NOT-generated
+	 */
 	private NewDiagramSynchronizationPage synchronizationPage;
 
 	/**
@@ -69,6 +72,57 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
+		createFileCreationPage(domainModelURI);
+		createDiagramRootSelectorPage(diagramRoot);
+		createSynchronizationPage(editingDomain);
+
+		this.editingDomain = editingDomain;
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	protected WizardNewFileCreationPage getFileCreationPage() {
+		return myFileCreationPage;
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	protected ModelElementSelectionPage getDiagramRootElementSelectionPage() {
+		return diagramRootElementSelectionPage;
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	protected TransactionalEditingDomain getEditingDomain() {
+		return editingDomain;
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private void createSynchronizationPage(TransactionalEditingDomain editingDomain) {
+		synchronizationPage = new NewDiagramSynchronizationPage("Select diagram synchronization scheme", editingDomain);
+		synchronizationPage.setTitle("Diagram synchronization");
+		synchronizationPage.setDescription("Select diagram contents and its synchronization mode");
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private void createDiagramRootSelectorPage(EObject diagramRoot) {
+		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(Messages.UMLNewDiagramFileWizard_RootSelectionPageName);
+		diagramRootElementSelectionPage.setTitle(Messages.UMLNewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage.setDescription(Messages.UMLNewDiagramFileWizard_RootSelectionPageDescription);
+		diagramRootElementSelectionPage.setModelElement(diagramRoot);
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private void createFileCreationPage(URI domainModelURI) {
 		myFileCreationPage = new WizardNewFileCreationPage(Messages.UMLNewDiagramFileWizard_CreationPageName, StructuredSelection.EMPTY);
 		myFileCreationPage.setTitle(Messages.UMLNewDiagramFileWizard_CreationPageTitle);
 		myFileCreationPage.setDescription(NLS.bind(Messages.UMLNewDiagramFileWizard_CreationPageDescription, PackageEditPart.MODEL_ID));
@@ -84,16 +138,6 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage.setFileName(UMLDiagramEditorUtil.getUniqueFileName(filePath, fileName, "umlclass")); //$NON-NLS-1$
-		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(Messages.UMLNewDiagramFileWizard_RootSelectionPageName);
-		diagramRootElementSelectionPage.setTitle(Messages.UMLNewDiagramFileWizard_RootSelectionPageTitle);
-		diagramRootElementSelectionPage.setDescription(Messages.UMLNewDiagramFileWizard_RootSelectionPageDescription);
-		diagramRootElementSelectionPage.setModelElement(diagramRoot);
-
-		synchronizationPage = new NewDiagramSynchronizationPage("Select diagram synchronization scheme", editingDomain);
-		synchronizationPage.setTitle("Diagram synchronization");
-		synchronizationPage.setDescription("Select diagram contents and its synchronization mode");
-
-		myEditingDomain = editingDomain;
 	}
 
 	/**
@@ -114,49 +158,22 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		UMLDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
 		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
-		ResourceSet resourceSet = myEditingDomain.getResourceSet();
+		ResourceSet resourceSet = editingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
 
-		CompositeTransactionalCommand result = new CompositeTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand);
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
-
-			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				int diagramVID = UMLVisualIDRegistry.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
-				if (diagramVID != PackageEditPart.VISUAL_ID) {
-					return CommandResult.newErrorCommandResult(Messages.UMLNewDiagramFileWizard_IncorrectRootError);
-				}
-				Diagram diagram = synchronizationPage.getDiagram();
-				if (diagram == null) {
-					diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(), PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
-				}
-				diagramResource.getContents().add(diagram);
-
-				return CommandResult.newOKCommandResult();
-			}
-		};
+		CompositeTransactionalCommand result = new CompositeTransactionalCommand(editingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand);
+		AbstractTransactionalCommand command = getCreateDiagramCommand(diagramResource, affectedFiles);
 		result.add(command);
-		if (synchronizationPage.wasVisible() && synchronizationPage.getSyncRoot() != null) {
-			result.add(new ApplySynchronizationCommand(synchronizationPage.getSyncRoot()));
+		AbstractTransactionalCommand syncCommand = getApplySynchronizationCommand();
+		if (syncCommand != null) {
+			result.add(syncCommand);
 		}
 		try {
 			OperationHistoryFactory.getOperationHistory().execute(result.reduce(), new NullProgressMonitor(), null);
 			diagramResource.save(UMLDiagramEditorUtil.getSaveOptions());
 			UMLDiagramEditorUtil.openDiagram(diagramResource);
-			if (synchronizationPage.wasVisible() && synchronizationPage.getSyncRoot() != null) {
-				IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-				DiagramEditPart diagramEditPart = ((IDiagramWorkbenchPart) editorPart).getDiagramEditPart();
-				if (!diagramEditPart.getChildren().isEmpty()) {
-					List<IAdaptable> viewAdapters = new ArrayList<IAdaptable>(diagramEditPart.getChildren().size());
-					for (Object next : diagramEditPart.getChildren()) {
-						if (next instanceof IGraphicalEditPart) {
-							viewAdapters.add(new EObjectAdapter(((IGraphicalEditPart) next).getNotationView()));
-						}
-					}
-					if (!viewAdapters.isEmpty()) {
-						DeferredLayoutCommand layout = new DeferredLayoutCommand(myEditingDomain, viewAdapters, diagramEditPart);
-						OperationHistoryFactory.getOperationHistory().execute(layout, new NullProgressMonitor(), null);
-					}
-				}
+			if (needsLayoutAll()) {
+				layoutAll();
 			}
 		} catch (ExecutionException e) {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
@@ -166,6 +183,70 @@ public class UMLNewDiagramFileWizard extends Wizard {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	protected boolean needsLayoutAll() throws ExecutionException {
+		return (synchronizationPage.wasVisible() && synchronizationPage.getSyncRoot() != null);
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	protected void layoutAll() throws ExecutionException {
+		IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+		DiagramEditPart diagramEditPart = ((IDiagramWorkbenchPart) editorPart).getDiagramEditPart();
+		if (!diagramEditPart.getChildren().isEmpty()) {
+			List<IAdaptable> viewAdapters = new ArrayList<IAdaptable>(diagramEditPart.getChildren().size());
+			for (Object next : diagramEditPart.getChildren()) {
+				if (next instanceof IGraphicalEditPart) {
+					viewAdapters.add(new EObjectAdapter(((IGraphicalEditPart) next).getNotationView()));
+				}
+			}
+			if (!viewAdapters.isEmpty()) {
+				DeferredLayoutCommand layout = new DeferredLayoutCommand(editingDomain, viewAdapters, diagramEditPart);
+				OperationHistoryFactory.getOperationHistory().execute(layout, new NullProgressMonitor(), null);
+			}
+		}
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	protected AbstractTransactionalCommand getApplySynchronizationCommand() {
+		if (synchronizationPage.wasVisible() && synchronizationPage.getSyncRoot() != null) {
+			return new ApplySynchronizationCommand(synchronizationPage.getSyncRoot());
+		}
+		return null;
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private AbstractTransactionalCommand getCreateDiagramCommand(final Resource diagramResource, List affectedFiles) {
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
+
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+				int diagramVID = UMLVisualIDRegistry.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
+				if (diagramVID != PackageEditPart.VISUAL_ID) {
+					return CommandResult.newErrorCommandResult(Messages.UMLNewDiagramFileWizard_IncorrectRootError);
+				}
+				Diagram diagram = getDiagram();
+				if (diagram == null) {
+					diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(), PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				}
+				diagramResource.getContents().add(diagram);
+
+				return CommandResult.newOKCommandResult();
+			}
+		};
+		return command;
+	}
+
+	protected Diagram getDiagram() {
+		return synchronizationPage.getDiagram();
 	}
 
 	/**

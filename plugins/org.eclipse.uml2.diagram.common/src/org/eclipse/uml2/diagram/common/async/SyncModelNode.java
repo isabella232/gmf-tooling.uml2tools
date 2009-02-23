@@ -42,7 +42,7 @@ public class SyncModelNode implements IAdaptable {
 		initWithDiagramView(diagramRoot);
 	}
 
-	private SyncModelNode(View syncModelView, SyncModelNode parent) {
+	protected SyncModelNode(View syncModelView, SyncModelNode parent) {
 		this(syncModelView, parent, parent.getContext());
 	}
 
@@ -143,7 +143,7 @@ public class SyncModelNode implements IAdaptable {
 	private void doCreateSyncModelChildren() {
 		List<View> directChildren = createChildViews(mySyncModelView);
 		for (View nextDirect : directChildren) {
-			SyncModelNode child = new SyncModelNode(nextDirect, this);
+			SyncModelNode child = doCreateNodeView(nextDirect, this);
 			View diagramCounterpart = findCounterpart(nextDirect, myDiagramView);
 			child.initWithDiagramView(diagramCounterpart);
 		}
@@ -154,13 +154,17 @@ public class SyncModelNode implements IAdaptable {
 				View diagramCompartment = findCounterpart(nextSyncCompartment, myDiagramView);
 				List<View> syncCompartmentChildren = createChildViews(nextSyncCompartment);
 				for (View nextCompartmentChild : syncCompartmentChildren) {
-					SyncModelNode nextResult = new SyncModelNode(nextCompartmentChild, this);
+					SyncModelNode nextResult = doCreateNodeView(nextCompartmentChild, this);
 					nextResult.setCompartment(nextSyncCompartment);
 					View diagramCounterpart = findCounterpart(nextCompartmentChild, diagramCompartment);
 					nextResult.initWithDiagramView(diagramCounterpart);
 				}
 			}
 		}
+	}
+	
+	protected SyncModelNode doCreateNodeView(View syncModelView, SyncModelNode parent) {
+		return new SyncModelNode(syncModelView, parent);
 	}
 
 	private boolean isCompartment(View view) {
@@ -247,7 +251,7 @@ public class SyncModelNode implements IAdaptable {
 		ICanonicalHelper.IMPLEMENTATION.setAutoSynchronized(target, isAutoSynchronized());
 	}
 	
-	private void initWithDiagramView(View diagramView) {
+	protected void initWithDiagramView(View diagramView) {
 		myDiagramView = diagramView;
 		if (myDiagramView != null){
 			setChecked(true);

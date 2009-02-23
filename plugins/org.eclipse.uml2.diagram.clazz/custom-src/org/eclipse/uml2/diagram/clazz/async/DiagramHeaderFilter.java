@@ -14,7 +14,7 @@ public class DiagramHeaderFilter extends ViewerFilter {
 		return element instanceof SyncModelNode && !isDiagramHeader((SyncModelNode)element);
 	}
 	
-	private boolean isDiagramHeader(SyncModelNode node){
+	public static boolean isDiagramHeader(SyncModelNode node){
 		View view = node.getSyncModelView();
 		return Package4EditPart.VISUAL_ID == UMLVisualIDRegistry.getVisualID(view);
 	}
