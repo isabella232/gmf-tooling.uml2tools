@@ -20,45 +20,12 @@
    </extension>
    -->
   
-   <extension
-         point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="false"?>
-      <viewerContribution
-            targetID="org.eclipse.uml2.uml.editor.presentation.UMLEditorID"
-            id="org.eclipse.uml2.diagram.clazz.UMLEditorMenu">
-      <visibility>
-      		<objectClass name="org.eclipse.uml2.uml.PackageableElement"/>
-      </visibility>
-      <menu
-         label="%UMLEditor_NewDiagramMenu_label"
-         path="additions"
-         id="org.eclipse.uml2.diagram.UMLMenuID">
-        <separator name="additions"/>
-      </menu>   
-      <action
-         label="%UMLEditor_InitializeClassDiagramAction_label"
-         class="org.eclipse.uml2.diagram.clazz.action.NewClassDiagramAction"
-         menubarPath="org.eclipse.uml2.diagram.UMLMenuID/additions"
-         enablesFor="+"
-         id="org.eclipse.uml2.diagram.clazz.UML2ToolsEditorMenu.NewDiagramActionID">
-      </action>    
-      </viewerContribution>
-      
-      <objectContribution
-            id="org.eclipse.uml2.diagram.clazz.UMLEditorMenu.NewDiagramFromElements"
-            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">            
-      <action
-         label="%UML2ToolsEditor_InitializeClassDiagramAction_label"
-         class="org.eclipse.uml2.diagram.clazz.action.NewClassDiagramAction"
-         menubarPath="org.eclipse.uml2.diagram.newDiagram/newDiagram"
-         enablesFor="+"
-         id="org.eclipse.uml2.diagram.clazz.UMLEditorMenu.NewDiagramActionID">
-      </action>    
-      </objectContribution>
-   </extension>
-
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
+      <handler
+            class="org.eclipse.uml2.diagram.clazz.action.NewClassDiagramActionHandler"
+            commandId="org.eclipse.uml2.diagram.NewClassDiagramAction">
+      </handler>
       <handler
             class="org.eclipse.uml2.diagram.clazz.action.TurnNoteIntoCommentAction"
             commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">

@@ -14,36 +14,51 @@
 -->
 
 <plugin>
-   <extension
-         point="org.eclipse.ui.popupMenus">
-      <?gmfgen generated="false"?>
-<!--      <viewerContribution
-            targetID="org.eclipse.uml2.uml.editor.presentation.UMLEditorID"
-            id="org.eclipse.uml2.diagram.UMLEditorMenu">
-      <visibility>
-      		<objectClass name="org.eclipse.uml2.uml.PackageableElement"/>
-      </visibility>
-      <menu
-         label="%UMLEditor_NewDiagramMenu_label"
-         path="additions"
-         id="org.eclipse.uml2.diagram.UMLMenuID">
-        <separator name="additions"/>
-      </menu>   
-      </viewerContribution>-->
 
-      <objectContribution
-            id="org.eclipse.uml2.diagram.clazz.UMLEditorMenu.NewDiagramFromElements"
-            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">            
-      <menu
-         label="%UML2ToolsEditor_NewDiagramMenu_label"
-           path="additions"
-           id="org.eclipse.uml2.diagram.newDiagram">
-           <separator
-                name="newDiagram">
-           </separator>
-      </menu>
-      </objectContribution>
+<extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="false"?>
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+          <menu 
+              id="org.eclipse.uml2.diagram.new" 
+         	  label="New Diagram">
+         <separator name="newDiagram" visible="true"/>
+         <visibleWhen>
+               <or>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.usecase.part.UMLDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
+               </or>
+         </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction"/>
+         <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction"/>
+       </menu>         
+       </menuContribution>
+
+      <menuContribution locationURI="popup:org.eclipse.uml2.uml.editor.presentation.UMLEditorID">
+      <menu 
+              id="org.eclipse.uml2.uml2editor.new" 
+         	  label="New Diagram">
+         <separator name="newDiagram" visible="true"/>
+         <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction"/>
+         <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction"/>
+       </menu>
+       </menuContribution>
    </extension>
+   
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="false"?>
+      <category id="org.eclipse.uml2.diagram.NewUMLDiagrams" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.eclipse.uml2.diagram.NewClassDiagramAction"
+         name="Class Diagram"
+         categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
+      <command id="org.eclipse.uml2.diagram.NewComponentDiagramAction"
+         name="Component Diagram"
+         categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
+   </extension>
+
 
    <extension point="org.eclipse.ui.newWizards">
       <category
