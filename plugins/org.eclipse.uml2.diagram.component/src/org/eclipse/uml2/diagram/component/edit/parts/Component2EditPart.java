@@ -12,6 +12,7 @@ import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LayoutManager;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
@@ -46,12 +47,15 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -170,11 +174,11 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 			return true;
 		}
 		if (childEditPart instanceof ComponentStereo2EditPart) {
-			((ComponentStereo2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureComponentFigure_fixed_component());
+			((ComponentStereo2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureComponentFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof ComponentContents2EditPart) {
-			IFigure pane = getPrimaryShape().getFigureComponentFigure_Body();
+			IFigure pane = getPrimaryShape().getFigureComponentFigure_body();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ComponentContents2EditPart) childEditPart).getFigure());
 			return true;
@@ -193,7 +197,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof ComponentContents2EditPart) {
-			IFigure pane = getPrimaryShape().getFigureComponentFigure_Body();
+			IFigure pane = getPrimaryShape().getFigureComponentFigure_body();
 			pane.remove(((ComponentContents2EditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -229,7 +233,7 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof ComponentContents2EditPart) {
-			return getPrimaryShape().getFigureComponentFigure_Body();
+			return getPrimaryShape().getFigureComponentFigure_body();
 		}
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
@@ -655,17 +659,12 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		/**
 		 * @generated
 		 */
-		private Label fFigureComponentFigure_name;
+		private RectangleFigure fFigureComponentFigure_body;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureComponentFigure_Body;
-
-		/**
-		 * @generated
-		 */
-		private StereotypeLabel fFigureComponentFigure_fixed_component;
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -686,57 +685,32 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		 */
 		private void createContents() {
 
-			RectangleFigure componentFigure_LabelsContainer0 = new RectangleFigure();
-			componentFigure_LabelsContainer0.setLineWidth(1);
-			componentFigure_LabelsContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(35)));
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			this.add(componentFigure_LabelsContainer0, BorderLayout.TOP);
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			ToolbarLayout layoutComponentFigure_LabelsContainer0 = new ToolbarLayout();
-			layoutComponentFigure_LabelsContainer0.setStretchMinorAxis(true);
-			layoutComponentFigure_LabelsContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+			this.add(fNameAndStereotypeBlock, BorderLayout.TOP);
 
-			layoutComponentFigure_LabelsContainer0.setSpacing(0);
-			layoutComponentFigure_LabelsContainer0.setVertical(true);
+			fFigureComponentFigure_body = new RectangleFigure();
+			fFigureComponentFigure_body.setLineWidth(1);
+			fFigureComponentFigure_body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
 
-			componentFigure_LabelsContainer0.setLayoutManager(layoutComponentFigure_LabelsContainer0);
-
-			fFigureComponentFigure_fixed_component = new StereotypeLabel();
-
-			componentFigure_LabelsContainer0.add(fFigureComponentFigure_fixed_component);
-
-			fFigureComponentFigure_name = new Label();
-			fFigureComponentFigure_name.setText("");
-
-			componentFigure_LabelsContainer0.add(fFigureComponentFigure_name);
-
-			fFigureComponentFigure_Body = new RectangleFigure();
-			fFigureComponentFigure_Body.setLineWidth(1);
-			fFigureComponentFigure_Body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
-
-			this.add(fFigureComponentFigure_Body, BorderLayout.CENTER);
+			this.add(fFigureComponentFigure_body, BorderLayout.CENTER);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureComponentFigure_name() {
-			return fFigureComponentFigure_name;
+		public WrappingLabel getFigureComponentFigure_name() {
+			return getNameAndStereotypeBlock().getNameLabel();
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureComponentFigure_Body() {
-			return fFigureComponentFigure_Body;
-		}
-
-		/**
-		 * @generated
-		 */
-		public StereotypeLabel getFigureComponentFigure_fixed_component() {
-			return fFigureComponentFigure_fixed_component;
+		public StereotypeLabel2 getFigureComponentFigure_stereo() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 		/**
@@ -756,6 +730,20 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureComponentFigure_body() {
+			return fFigureComponentFigure_body;
+		}
+
+		/**
+		 * @generated
+		 */
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
 		}
 
 	}

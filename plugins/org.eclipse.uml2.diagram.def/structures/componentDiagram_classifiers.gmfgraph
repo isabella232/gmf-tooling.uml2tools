@@ -2,7 +2,7 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ComponentD_classifiers">
   <figures
       name="BasicComponentDFigures"
       implementationBundle="org.eclipse.uml2.diagram.common">
@@ -16,30 +16,38 @@
         <layout
             xsi:type="gmfgraph:BorderLayout"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentFigure_LabelsContainer">
+            xsi:type="gmfgraph:CustomFigure"
+            name="ComponentFigure_nameAndStereotype"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
           <layoutData
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="BEGINNING"
               vertical="true"/>
-          <layout
-              xsi:type="gmfgraph:FlowLayout"
-              vertical="true"
-              matchMinorSize="true"
-              forceSingleLine="true"
-              majorAlignment="FILL"
-              minorAlignment="FILL"
-              majorSpacing="0"
-              minorSpacing="0"/>
-          <minimumSize
-              dy="35"/>
-          <children
-              xsi:type="gmfgraph:CustomFigure"
-              name="ComponentFigure_fixed_component"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="ComponentFigure_name"/>
+          <insets
+              top="8"
+              left="5"
+              bottom="6"
+              right="5"/>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="ComponentFigure_stereo"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
+              <font
+                  xsi:type="gmfgraph:BasicFont"/>
+            </typedFigure>
+          </customChildren>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getNameLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="ComponentFigure_name"
+                qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              <font
+                  xsi:type="gmfgraph:BasicFont"/>
+            </typedFigure>
+          </customChildren>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -52,11 +60,17 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
+          accessor="getFigureComponentFigure_name"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@customChildren.1/@typedFigure"/>
       <accessors
+          accessor="getFigureComponentFigure_stereo"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@customChildren.0/@typedFigure"/>
+      <accessors
+          accessor="getFigureComponentFigure_body"
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.0"/>
+          accessor="getNameAndStereotypeBlock"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="ArtifactFigure">
@@ -66,30 +80,38 @@
         <layout
             xsi:type="gmfgraph:BorderLayout"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ArtifactFigure_NameContainer"
-            outline="false"
-            fill="false">
+            xsi:type="gmfgraph:CustomFigure"
+            name="ArtifactFigure_nameAndStereotype"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
           <layoutData
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="BEGINNING"
               vertical="true"/>
-          <layout
-              xsi:type="gmfgraph:FlowLayout"
-              vertical="true"
-              matchMinorSize="true"
-              forceSingleLine="true"
-              majorAlignment="FILL"
-              minorAlignment="FILL"
-              majorSpacing="0"
-              minorSpacing="0"/>
-          <children
-              xsi:type="gmfgraph:CustomFigure"
-              name="ArtifactFigure_fixed_artifact"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="ArtifactFigure_name"/>
+          <insets
+              top="8"
+              left="5"
+              bottom="6"
+              right="5"/>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="ArtifactFigure_stereo"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
+              <font
+                  xsi:type="gmfgraph:BasicFont"/>
+            </typedFigure>
+          </customChildren>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getNameLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="ArtifactFigure_name"
+                qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+              <font
+                  xsi:type="gmfgraph:BasicFont"/>
+            </typedFigure>
+          </customChildren>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -102,11 +124,17 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
+          accessor="getFigureArtifactFigure_name"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@customChildren.1/@typedFigure"/>
       <accessors
+          accessor="getFigureArtifactFigure_stereo"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@customChildren.0/@typedFigure"/>
+      <accessors
+          accessor="getFigureArtifactFigure_body"
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+          accessor="getNameAndStereotypeBlock"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="ComponentClassFigure">
@@ -177,12 +205,12 @@
       name="ComponentFigure_contents"
       figure="ComponentFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <compartments
       name="ArtifactFigure_contents"
       figure="ArtifactFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
   <labels
       name="ComponentNode_name"
       figure="ComponentFigure"
@@ -204,10 +232,10 @@
       name="ComponentNode_stereo"
       figure="ComponentFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="ArtifactNode_stereo"
       figure="ArtifactFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
 </gmfgraph:Canvas>

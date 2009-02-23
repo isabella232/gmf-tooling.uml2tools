@@ -12,15 +12,18 @@ import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LayoutManager;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -31,6 +34,7 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
@@ -41,13 +45,17 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -166,11 +174,11 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 			return true;
 		}
 		if (childEditPart instanceof ComponentStereoEditPart) {
-			((ComponentStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureComponentFigure_fixed_component());
+			((ComponentStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureComponentFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof ComponentContentsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureComponentFigure_Body();
+			IFigure pane = getPrimaryShape().getFigureComponentFigure_body();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ComponentContentsEditPart) childEditPart).getFigure());
 			return true;
@@ -189,7 +197,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof ComponentContentsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureComponentFigure_Body();
+			IFigure pane = getPrimaryShape().getFigureComponentFigure_body();
 			pane.remove(((ComponentContentsEditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -225,7 +233,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof ComponentContentsEditPart) {
-			return getPrimaryShape().getFigureComponentFigure_Body();
+			return getPrimaryShape().getFigureComponentFigure_body();
 		}
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
@@ -651,17 +659,12 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		/**
 		 * @generated
 		 */
-		private Label fFigureComponentFigure_name;
+		private RectangleFigure fFigureComponentFigure_body;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureComponentFigure_Body;
-
-		/**
-		 * @generated
-		 */
-		private StereotypeLabel fFigureComponentFigure_fixed_component;
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -682,57 +685,32 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		 */
 		private void createContents() {
 
-			RectangleFigure componentFigure_LabelsContainer0 = new RectangleFigure();
-			componentFigure_LabelsContainer0.setLineWidth(1);
-			componentFigure_LabelsContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(35)));
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			this.add(componentFigure_LabelsContainer0, BorderLayout.TOP);
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			ToolbarLayout layoutComponentFigure_LabelsContainer0 = new ToolbarLayout();
-			layoutComponentFigure_LabelsContainer0.setStretchMinorAxis(true);
-			layoutComponentFigure_LabelsContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+			this.add(fNameAndStereotypeBlock, BorderLayout.TOP);
 
-			layoutComponentFigure_LabelsContainer0.setSpacing(0);
-			layoutComponentFigure_LabelsContainer0.setVertical(true);
+			fFigureComponentFigure_body = new RectangleFigure();
+			fFigureComponentFigure_body.setLineWidth(1);
+			fFigureComponentFigure_body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
 
-			componentFigure_LabelsContainer0.setLayoutManager(layoutComponentFigure_LabelsContainer0);
-
-			fFigureComponentFigure_fixed_component = new StereotypeLabel();
-
-			componentFigure_LabelsContainer0.add(fFigureComponentFigure_fixed_component);
-
-			fFigureComponentFigure_name = new Label();
-			fFigureComponentFigure_name.setText("");
-
-			componentFigure_LabelsContainer0.add(fFigureComponentFigure_name);
-
-			fFigureComponentFigure_Body = new RectangleFigure();
-			fFigureComponentFigure_Body.setLineWidth(1);
-			fFigureComponentFigure_Body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
-
-			this.add(fFigureComponentFigure_Body, BorderLayout.CENTER);
+			this.add(fFigureComponentFigure_body, BorderLayout.CENTER);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureComponentFigure_name() {
-			return fFigureComponentFigure_name;
+		public WrappingLabel getFigureComponentFigure_name() {
+			return getNameAndStereotypeBlock().getNameLabel();
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureComponentFigure_Body() {
-			return fFigureComponentFigure_Body;
-		}
-
-		/**
-		 * @generated
-		 */
-		public StereotypeLabel getFigureComponentFigure_fixed_component() {
-			return fFigureComponentFigure_fixed_component;
+		public StereotypeLabel2 getFigureComponentFigure_stereo() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 		/**
@@ -752,6 +730,20 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		 */
 		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
 			myUseLocalCoordinates = useLocalCoordinates;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureComponentFigure_body() {
+			return fFigureComponentFigure_body;
+		}
+
+		/**
+		 * @generated
+		 */
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
 		}
 
 	}
@@ -1009,6 +1001,55 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 		if (!isCanonicalDisabled()) {
 			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void performDirectEditRequest(final Request request) {
+		EditPart editPart = this;
+		if (request instanceof DirectEditRequest) {
+			Point p = new Point(((DirectEditRequest) request).getLocation());
+			getFigure().translateToRelative(p);
+			IFigure fig = getFigure().findFigureAt(p);
+			editPart = (EditPart) getViewer().getVisualPartMap().get(fig);
+		}
+		if (editPart == this) {
+			try {
+				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+
+					public void run() {
+						setResult(chooseLabelEditPartForDirectEditRequest(request));
+					}
+				});
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			if (editPart != null && editPart != this) {
+				editPart.performRequest(request);
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
+			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+			// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+			// notation, also we don't include '<' and '>' into actual inplace text).
+			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+			if (initialChar.charValue() == '<') {
+				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(ComponentStereoEditPart.VISUAL_ID));
+				if (result != null) {
+					return result;
+				}
+			}
+		}
+		return getPrimaryChildEditPart();
 	}
 
 }
