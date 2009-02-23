@@ -40,6 +40,7 @@ import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
@@ -186,7 +187,11 @@ public class MessageCreateCommand extends EditElementCommand {
 		} else if (diagramTarget instanceof Lifeline && diagramSource instanceof Lifeline) {
 			Lifeline sourceLL = (Lifeline) diagramSource;
 			Lifeline targetLL = (Lifeline) diagramTarget;
-			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count, getAppendPosition(interaction));
+
+			List<InteractionFragment> thePast = computeThePast();
+			ListIterator<InteractionFragment> position = getAfterTheLastOfPosition(interaction, thePast);
+
+			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count, position);
 			sourceInvocation = pair[0];
 			targetExecution = pair[1];
 
@@ -204,7 +209,7 @@ public class MessageCreateCommand extends EditElementCommand {
 				throw new IllegalArgumentException("SDExecution expected: " + sdExecution);
 			}
 
-			List<InteractionFragment> thePast = new ArrayList<InteractionFragment>(5);
+			List<InteractionFragment> thePast = computeThePast();
 			thePast.add(parentExecution);
 			thePast.add(parentExecution.getStart());
 
@@ -245,11 +250,11 @@ public class MessageCreateCommand extends EditElementCommand {
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
-	private View createBehaviorExecutionView(U2TCreateLinkParameters createLinkParameters, EObject behaviorExecution) {
+	private View createBehaviorExecutionView(U2TCreateLinkParameters createLinkParameters, EObject behaviorExecution, int position) {
 		View sourceView = createLinkParameters.getParentView();
 		int visualID = UMLVisualIDRegistry.getNodeVisualID(sourceView, behaviorExecution);
 		Node result = ViewService.getInstance().createNode(//
-				new EObjectAdapter(behaviorExecution), sourceView, UMLVisualIDRegistry.getType(visualID), ViewUtil.APPEND, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				new EObjectAdapter(behaviorExecution), sourceView, UMLVisualIDRegistry.getType(visualID), position, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 
 		if (createLinkParameters.getRelativeLocation() != null) {
 			if (result.getLayoutConstraint() == null) {
@@ -285,7 +290,10 @@ public class MessageCreateCommand extends EditElementCommand {
 						"Invocation: {0}, \n start: {1}, message: {2}, sendEvent {3}", //
 						new Object[] { sourceInvocation, sourceInvocation.getStart(), message, message.getSendEvent() }));
 			}
-			View invocationView = createBehaviorExecutionView(linkCreationPack.getSourceParameters(), sourceInvocation);
+			U2TCreateLinkParameters sourceParams = linkCreationPack.getSourceParameters();
+			int sourceViewPosition = findAnchoredViewPosition(sourceParams);
+			View invocationView = createBehaviorExecutionView(sourceParams, sourceInvocation, sourceViewPosition);
+
 			linkCreationPack.getSetConnectionEndsCommand().setNewSourceAdaptor(new EObjectAdapter(invocationView));
 		}
 
@@ -296,7 +304,11 @@ public class MessageCreateCommand extends EditElementCommand {
 						new Object[] { targetExecution, targetExecution.getStart(), message, message.getReceiveEvent() }));
 
 			}
-			View executionView = createBehaviorExecutionView(linkCreationPack.getTargetParameters(), targetExecution);
+
+			U2TCreateLinkParameters targetParams = linkCreationPack.getTargetParameters();
+			int targetViewPosition = findAnchoredViewPosition(targetParams);
+			View executionView = createBehaviorExecutionView(linkCreationPack.getTargetParameters(), targetExecution, targetViewPosition);
+
 			linkCreationPack.getSetConnectionEndsCommand().setNewTargetAdaptor(new EObjectAdapter(executionView));
 		}
 	}
@@ -424,6 +436,42 @@ public class MessageCreateCommand extends EditElementCommand {
 			notFound.remove(next);
 		}
 		return result;
+	}
+
+	private int findAnchoredViewPosition(U2TCreateLinkParameters sourceParams) {
+		int viewPosition = ViewUtil.APPEND;
+		if (sourceParams.getAnchorSibling() != null && !sourceParams.isBeforeNotAfterAnchor()) {
+			View anchor = sourceParams.getAnchorSibling();
+			int anchorPos = sourceParams.getParentView().getChildren().indexOf(anchor);
+			if (anchorPos > 0) {
+				viewPosition = anchorPos + 1;
+			}
+		}
+		return viewPosition;
+	}
+	
+	private List<InteractionFragment> computeThePast(){
+		List<InteractionFragment> result =new ArrayList<InteractionFragment>(5);
+		addThePastFromAnchorr(true, result);
+		addThePastFromAnchorr(false, result);
+		return result;
+	}
+
+	private void addThePastFromAnchorr(boolean sourceNotTarget, List<InteractionFragment> thePast) {
+		if (U2TCreateLinkCommand.getFromRequest(getRequest()) != null) {
+			U2TCreateLinkCommand creationPack = U2TCreateLinkCommand.getFromRequest(getRequest());
+			U2TCreateLinkParameters params = sourceNotTarget ? creationPack.getSourceParameters() : creationPack.getTargetParameters();
+			View anchor = params.getAnchorSibling();
+			if (anchor != null && !params.isBeforeNotAfterAnchor()) {
+				InteractionFragment semanticAnchor = (InteractionFragment) anchor.getElement();
+				if (semanticAnchor instanceof ExecutionSpecification) {
+					thePast.add(((ExecutionSpecification) semanticAnchor).getFinish());
+				} else {
+					thePast.add(semanticAnchor);
+				}
+			}
+		}
+
 	}
 
 }
