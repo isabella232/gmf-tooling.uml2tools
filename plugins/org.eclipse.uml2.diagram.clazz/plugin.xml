@@ -47,18 +47,10 @@
       <objectContribution
             id="org.eclipse.uml2.diagram.clazz.UMLEditorMenu.NewDiagramFromElements"
             objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">            
-      <menu
-         label="%UML2ToolsEditor_NewDiagramMenu_label"
-           path="additions"
-           id="newDiagram">
-           <separator
-                name="newDiagram">
-           </separator>
-      </menu>
       <action
          label="%UML2ToolsEditor_InitializeClassDiagramAction_label"
          class="org.eclipse.uml2.diagram.clazz.action.NewClassDiagramAction"
-         menubarPath="newDiagram/newDiagram"
+         menubarPath="org.eclipse.uml2.diagram.newDiagram/newDiagram"
          enablesFor="+"
          id="org.eclipse.uml2.diagram.clazz.UMLEditorMenu.NewDiagramActionID">
       </action>    

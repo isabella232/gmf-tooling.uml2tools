@@ -14,6 +14,23 @@
 -->
 
 <plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="false"?>
+      <objectContribution
+            id="org.eclipse.uml2.diagram.clazz.UMLEditorMenu.NewDiagramFromElements"
+            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">            
+      <menu
+         label="%UML2ToolsEditor_NewDiagramMenu_label"
+           path="additions"
+           id="org.eclipse.uml2.diagram.newDiagram">
+           <separator
+                name="newDiagram">
+           </separator>
+      </menu>
+      </objectContribution>
+   </extension>
+
    <extension point="org.eclipse.ui.newWizards">
       <category
   	     name="%org.eclipse.uml2.diagram.NewWizardGroup"

@@ -4,6 +4,22 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="false"?>
+      <objectContribution
+            id="org.eclipse.uml2.diagram.clazz.UMLEditorMenu.NewDiagramFromElements"
+            objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">            
+      <action
+         label="%UML2ToolsEditor_InitializeComponentDiagramAction_label"
+         class="org.eclipse.uml2.diagram.component.part.NewComponentDiagramAction"
+         menubarPath="org.eclipse.uml2.diagram.newDiagram/newDiagram"
+         enablesFor="+"
+         id="org.eclipse.uml2.diagram.component.UMLEditorMenu.NewDiagramActionID">
+      </action>    
+      </objectContribution>
+   </extension>
+
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
       <?gmfgen generated="false"?>
       <contributionItemProvider
