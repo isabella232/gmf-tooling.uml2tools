@@ -171,7 +171,7 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		return (U2TCreateLinkCommand) proxy.getICommand();
 	}
 	
-	protected U2TCreateLinkParameters computeParameters(CreateConnectionRequest request){
+	protected U2TCreateLinkParametersImpl computeParameters(CreateConnectionRequest request){
 		U2TCreateLinkParametersImpl parameters = new U2TCreateLinkParametersImpl(); 
 		parameters.setParentView(getHostImpl().getNotationView());
 		
