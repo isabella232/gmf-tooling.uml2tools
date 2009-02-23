@@ -39,6 +39,7 @@ import org.eclipse.uml2.diagram.sequence.edit.policies.BehaviorExecutionSpecific
 import org.eclipse.uml2.diagram.sequence.edit.policies.BehaviorExecutionSpecificationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDResizableShapeEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.SDXYLayoutEditPolicy;
 import org.eclipse.uml2.diagram.sequence.figures.LifelineBracketContainerShape;
 import org.eclipse.uml2.diagram.sequence.frame.Frame;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
@@ -102,28 +103,10 @@ public class BehaviorExecutionSpecificationEditPart extends ShapeNodeEditPart im
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
-
-			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
-				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
-			}
-		};
-		return lep;
+		return new SDXYLayoutEditPolicy();
 	}
 
 	/**
