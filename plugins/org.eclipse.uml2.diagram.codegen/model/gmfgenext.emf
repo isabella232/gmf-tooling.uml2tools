@@ -57,6 +57,7 @@ enum StereotypeSupportRole {
 	CONTAINER;
 	NAME_LABEL; 
 	STEREOTYPE_LABEL;
+	COMBINED_LABEL;
 } 
 
 @namespace(uri="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping", prefix="u2tmap")

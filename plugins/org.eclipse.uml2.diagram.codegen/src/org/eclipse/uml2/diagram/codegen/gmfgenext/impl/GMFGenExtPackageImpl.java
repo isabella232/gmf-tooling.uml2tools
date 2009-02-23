@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtPackageImpl.java,v 1.9 2009/02/16 16:05:56 mgolubev Exp $
+ * $Id: GMFGenExtPackageImpl.java,v 1.10 2009/02/23 02:29:13 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.gmfgenext.impl;
 
@@ -505,6 +505,7 @@ public class GMFGenExtPackageImpl extends EPackageImpl implements GMFGenExtPacka
 		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.CONTAINER);
 		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.NAME_LABEL);
 		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.STEREOTYPE_LABEL);
+		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.COMBINED_LABEL);
 
 		// Create resource
 		createResource(eNS_URI);
