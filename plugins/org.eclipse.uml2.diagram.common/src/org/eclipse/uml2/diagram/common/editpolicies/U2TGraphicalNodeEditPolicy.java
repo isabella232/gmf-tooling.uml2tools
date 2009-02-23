@@ -61,6 +61,11 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 		return c;
 	}
+	
+	@Override
+	protected INodeEditPart getConnectableEditPart() {
+		return getHost() instanceof INodeEditPart ? (INodeEditPart)getHost() : null; 
+	}
 
 	@SuppressWarnings("restriction")
 	protected Command getConnectionCompleteCommand(CreateConnectionRequest request) {
