@@ -48,26 +48,26 @@
             </children>
           </children>
           <children
-              xsi:type="gmfgraph:Rectangle"
-              name="StructuredActivityFigure_NameContainer"
-              outline="false"
-              fill="false">
+              xsi:type="gmfgraph:CustomFigure"
+              name="StructuredActivityFigure_NameAndStereo"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
             <layoutData
                 xsi:type="gmfgraph:BorderLayoutData"
                 vertical="true"/>
-            <layout
-                xsi:type="gmfgraph:FlowLayout"
-                vertical="true"
-                forceSingleLine="true"
-                minorAlignment="CENTER"
-                majorSpacing="0"
-                minorSpacing="0"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="StructuredActivityFigure_stereo"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="StructuredActivityFigure_name"/>
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="StructuredActivityFigure_NameAndStereo_stereo"
+                  qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2"/>
+            </customChildren>
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getNameLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="StructuredActivityFigure_NameAndStereo_name"
+                  qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            </customChildren>
           </children>
         </children>
         <children
@@ -81,11 +81,16 @@
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1/@children.1"/>
+          accessor="getFigureStructuredActivityFigure_name"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1/@customChildren.1/@typedFigure"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1/@children.0"/>
+          accessor="getFigureStructuredActivityFigure_stereo"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1/@customChildren.0/@typedFigure"/>
+      <accessors
+          accessor="getNameAndStereotypeBlock"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="ExpansionRegionFigure">

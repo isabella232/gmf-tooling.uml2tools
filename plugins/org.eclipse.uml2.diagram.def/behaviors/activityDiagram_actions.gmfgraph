@@ -140,6 +140,9 @@
                 alignment="BEGINNING"/>
             <layout
                 xsi:type="gmfgraph:StackLayout"/>
+            <insets
+                left="5"
+                bottom="3"/>
             <children
                 xsi:type="gmfgraph:CustomFigure"
                 name="ActionCallBehaviorFigure_AuxIconOwner"
@@ -209,33 +212,39 @@
               xsi:type="gmfgraph:CustomLayout"
               qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
           <insets
+              top="2"
               left="5"
               right="5"/>
           <children
-              xsi:type="gmfgraph:Rectangle"
-              name="ActionCallBehaviorFigure_NameContainer"
-              outline="false"
-              fill="false">
-            <layout
-                xsi:type="gmfgraph:FlowLayout"
-                vertical="true"
-                forceSingleLine="true"
-                minorAlignment="CENTER"
-                majorSpacing="0"
-                minorSpacing="0"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="ActionCallBehaviorFigure_stereo"/>
-            <children
-                xsi:type="gmfgraph:Label"
-                name="ActionCallBehaviorFigure_name"/>
+              xsi:type="gmfgraph:CustomFigure"
+              name="ActionCallBehaviorFigure_NameAndStereo"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="ActionCallBehaviorFigure_NameAndStereo_stereo"
+                  qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2"/>
+            </customChildren>
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getNameLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="ActionCallBehaviorFigure_NameAndStereo_name"
+                  qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            </customChildren>
           </children>
         </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0/@children.1"/>
+          accessor="getFigureActionCallBehaviorFigure_name"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0/@customChildren.1/@typedFigure"/>
       <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0/@children.0"/>
+          accessor="getFigureActionCallBehaviorFigure_stereo"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0/@customChildren.0/@typedFigure"/>
+      <accessors
+          accessor="getNameAndStereotypeBlock"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1/@children.0"/>
     </descriptors>
     <descriptors
         name="AcceptTimeEventActionFigure_ExternalLabel">
@@ -343,8 +352,8 @@
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="80"
-          dy="50"/>
+          dx="60"
+          dy="40"/>
     </facets>
   </nodes>
   <nodes

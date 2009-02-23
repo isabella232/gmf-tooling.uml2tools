@@ -12,14 +12,6 @@
         <layout
             xsi:type="gmfgraph:CustomLayout"
             qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-        <border
-            xsi:type="gmfgraph:MarginBorder">
-          <insets
-              top="5"
-              left="5"
-              bottom="5"
-              right="5"/>
-        </border>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="CentralBufferFigure_NameContainer"
@@ -32,27 +24,48 @@
               minorAlignment="CENTER"
               majorSpacing="0"
               minorSpacing="0"/>
+          <insets
+              top="9"
+              left="5"
+              right="5"/>
           <children
               xsi:type="gmfgraph:Label"
               name="CentralBufferFigure_fixed_central"
               text="\u00ABcentralBuffer\u00BB"/>
           <children
-              xsi:type="gmfgraph:Label"
-              name="CentralBufferFigure_stereo"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="CentralBufferFigure_name"
-              text=""/>
+              xsi:type="gmfgraph:CustomFigure"
+              name="CentralBufferFigure_NameAndStereo"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="CentralBufferFigure_NameAndStereo_stereo"
+                  qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2"/>
+            </customChildren>
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getNameLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="CentralBufferFigure_NameAndStereo_name"
+                  qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            </customChildren>
+          </children>
           <children
               xsi:type="gmfgraph:Label"
               name="CentralBufferFigure_states"/>
         </children>
       </actualFigure>
       <accessors
+          accessor="getFigureCentralBufferFigure_name"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1/@customChildren.1/@typedFigure"/>
+      <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.3"/>
+          accessor="getFigureCentralBufferFigure_stereo"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1/@customChildren.0/@typedFigure"/>
       <accessors
+          accessor="getNameAndStereotypeBlock"
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0/@children.1"/>
     </descriptors>
     <descriptors
@@ -63,14 +76,6 @@
         <layout
             xsi:type="gmfgraph:CustomLayout"
             qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-        <border
-            xsi:type="gmfgraph:MarginBorder">
-          <insets
-              top="5"
-              left="5"
-              bottom="5"
-              right="5"/>
-        </border>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="DataStoreFigure_NameContainer"
@@ -83,27 +88,48 @@
               minorAlignment="CENTER"
               majorSpacing="0"
               minorSpacing="0"/>
+          <insets
+              top="9"
+              left="5"
+              right="5"/>
           <children
               xsi:type="gmfgraph:Label"
               name="DataStore_fixed_datastore"
               text="\u00ABdatastore\u00BB"/>
           <children
-              xsi:type="gmfgraph:Label"
-              name="DataStoreFigure_stereo"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="DataStoreFigure_name"
-              text=""/>
+              xsi:type="gmfgraph:CustomFigure"
+              name="DataStoreFigure_NameAndStereo"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="DataStoreFigure_NameAndStereo_stereo"
+                  qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2"/>
+            </customChildren>
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getNameLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="DataStoreFigure_NameAndStereo_name"
+                  qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            </customChildren>
+          </children>
           <children
               xsi:type="gmfgraph:Label"
               name="DataStoreFigure_states"/>
         </children>
       </actualFigure>
       <accessors
+          accessor="getFigureDataStoreFigure_name"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1/@customChildren.1/@typedFigure"/>
+      <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.3"/>
+          accessor="getFigureDataStoreFigure_stereo"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1/@customChildren.0/@typedFigure"/>
       <accessors
+          accessor="getNameAndStereotypeBlock"
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
     </descriptors>
     <descriptors

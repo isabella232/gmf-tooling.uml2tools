@@ -169,7 +169,7 @@ public class DataStoreNodeNameEditPart extends CompartmentEditPart implements IT
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -351,12 +351,32 @@ public class DataStoreNodeNameEditPart extends CompartmentEditPart implements IT
 	 */
 	protected void performDirectEditRequest(Request request) {
 		final Request theRequest = request;
+		final Character initialChar;
+		if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+			initialChar = (Character) theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+		} else {
+			initialChar = null;
+		}
+		// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+		// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+		// notation, also we don't include '<' and '>' into actual inplace text).
+		// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+		if (initialChar != null && '<' == initialChar.charValue()) {
+			DataStoreNodeEditPart parent = (DataStoreNodeEditPart) getParent();
+			DataStoreNodeStereotypeEditPart stereoLabel = (DataStoreNodeStereotypeEditPart) parent.getChildBySemanticHint(UMLVisualIDRegistry.getType(DataStoreNodeStereotypeEditPart.VISUAL_ID));
+			if (stereoLabel != null) {
+				stereoLabel.performRequest(theRequest);
+				return;
+			}
+		}
+
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
 
 				public void run() {
 					if (isActive() && isEditable()) {
-						if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+						if (initialChar != null) {
 							Character initialChar = (Character) theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 							performDirectEdit(initialChar.charValue());
 						} else if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {

@@ -48,6 +48,7 @@ public class ActivityPartition_StructuredActivityNode_StructuredActivityNodeCont
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
+		result.setBorder(null);
 		return result;
 	}
 
@@ -56,7 +57,6 @@ public class ActivityPartition_StructuredActivityNode_StructuredActivityNodeCont
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());

@@ -13,8 +13,10 @@ import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
@@ -24,6 +26,7 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -31,7 +34,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPo
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -44,6 +49,8 @@ import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -1784,17 +1791,12 @@ public class CentralBufferNodeEditPart extends AbstractBorderedShapeEditPart imp
 		/**
 		 * @generated
 		 */
-		private Label fFigureCentralBufferFigure_name;
-
-		/**
-		 * @generated
-		 */
 		private Label fFigureCentralBufferFigure_states;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureCentralBufferFigure_stereo;
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -1806,7 +1808,6 @@ public class CentralBufferNodeEditPart extends AbstractBorderedShapeEditPart imp
 			this.setLayoutManager(layoutThis);
 
 			this.setLineWidth(1);
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
 			createContents();
 		}
 
@@ -1819,6 +1820,8 @@ public class CentralBufferNodeEditPart extends AbstractBorderedShapeEditPart imp
 			centralBufferFigure_NameContainer0.setFill(false);
 			centralBufferFigure_NameContainer0.setOutline(false);
 			centralBufferFigure_NameContainer0.setLineWidth(1);
+
+			centralBufferFigure_NameContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(9), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
 
 			this.add(centralBufferFigure_NameContainer0);
 
@@ -1836,15 +1839,9 @@ public class CentralBufferNodeEditPart extends AbstractBorderedShapeEditPart imp
 
 			centralBufferFigure_NameContainer0.add(centralBufferFigure_fixed_central1);
 
-			fFigureCentralBufferFigure_stereo = new Label();
-			fFigureCentralBufferFigure_stereo.setText("");
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_stereo);
-
-			fFigureCentralBufferFigure_name = new Label();
-			fFigureCentralBufferFigure_name.setText("");
-
-			centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_name);
+			centralBufferFigure_NameContainer0.add(fNameAndStereotypeBlock);
 
 			fFigureCentralBufferFigure_states = new Label();
 			fFigureCentralBufferFigure_states.setText("");
@@ -1875,8 +1872,8 @@ public class CentralBufferNodeEditPart extends AbstractBorderedShapeEditPart imp
 		/**
 		 * @generated
 		 */
-		public Label getFigureCentralBufferFigure_name() {
-			return fFigureCentralBufferFigure_name;
+		public WrappingLabel getFigureCentralBufferFigure_name() {
+			return getNameAndStereotypeBlock().getNameLabel();
 		}
 
 		/**
@@ -1889,8 +1886,15 @@ public class CentralBufferNodeEditPart extends AbstractBorderedShapeEditPart imp
 		/**
 		 * @generated
 		 */
-		public Label getFigureCentralBufferFigure_stereo() {
-			return fFigureCentralBufferFigure_stereo;
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getFigureCentralBufferFigure_stereo() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 	}
@@ -1945,6 +1949,55 @@ public class CentralBufferNodeEditPart extends AbstractBorderedShapeEditPart imp
 		if (!isCanonicalDisabled()) {
 			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void performDirectEditRequest(final Request request) {
+		EditPart editPart = this;
+		if (request instanceof DirectEditRequest) {
+			Point p = new Point(((DirectEditRequest) request).getLocation());
+			getFigure().translateToRelative(p);
+			IFigure fig = getFigure().findFigureAt(p);
+			editPart = (EditPart) getViewer().getVisualPartMap().get(fig);
+		}
+		if (editPart == this) {
+			try {
+				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+
+					public void run() {
+						setResult(chooseLabelEditPartForDirectEditRequest(request));
+					}
+				});
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			if (editPart != null && editPart != this) {
+				editPart.performRequest(request);
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
+			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+			// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+			// notation, also we don't include '<' and '>' into actual inplace text).
+			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+			if (initialChar.charValue() == '<') {
+				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(CentralBufferNodeStereotypeEditPart.VISUAL_ID));
+				if (result != null) {
+					return result;
+				}
+			}
+		}
+		return getPrimaryChildEditPart();
 	}
 
 }
