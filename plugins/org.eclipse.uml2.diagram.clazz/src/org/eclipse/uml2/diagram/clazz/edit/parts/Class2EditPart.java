@@ -73,6 +73,7 @@ import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
@@ -2149,4 +2150,14 @@ public class Class2EditPart extends AbstractBorderedShapeEditPart implements Pri
 		return getPrimaryChildEditPart();
 	}
 
+	/**
+	 * @generated NOT
+	 * @see [265822]
+	 */
+	public EditPolicy getPrimaryDragEditPolicy() {
+		U2TResizableShapeEditPolicy result = new U2TResizableShapeEditPolicy();
+		result.setResizeDirections(PositionConstants.NSEW);
+		return result;
+	}
+	
 }
