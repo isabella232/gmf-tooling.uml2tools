@@ -46,6 +46,7 @@ import org.eclipse.uml2.diagram.sequence.edit.policies.LifelineCanonicalEditPoli
 import org.eclipse.uml2.diagram.sequence.edit.policies.LifelineGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.LifelineItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDResizableShapeEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.SDXYLayoutEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.TieFrameTargetEditPolicy;
 import org.eclipse.uml2.diagram.sequence.figures.LifelineViewMap;
 import org.eclipse.uml2.diagram.sequence.frame.Frame;
@@ -109,20 +110,7 @@ public class LifelineEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated NOT
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		XYLayoutEditPolicy lep = new XYLayoutEditPolicy() {
-
-			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if (child instanceof IBorderItemEditPart) {
-					return new BorderItemSelectionEditPolicy();
-				}
-				EditPolicy result = super.createChildEditPolicy(child);
-				if (result == null) {
-					return new ResizableShapeEditPolicy();
-				}
-				return result;
-			}
-		};
-		return lep;
+		return new SDXYLayoutEditPolicy();
 	}
 
 	/**
