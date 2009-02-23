@@ -41,9 +41,18 @@
 «ENDAROUND»
 
 «AROUND createFigure FOR gmfgen::GenCompartment-»
-«IF not u2tSupportedCompartment(self)-»
-«targetDef.proceed()»
+«IF u2tSupportedCompartment(self)-»
+«EXPAND xpt::compartments::CompartmentEditPart::createU2TFigure-»
 «ELSE-»
-«EXPAND xpt::compartments::CompartmentEditPart::createU2TFigure»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.draw2d.IFigure createFigure() {
+		org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure result = (org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure) super.createFigure();
+		«IF not needsTitle-»
+		«REM»By default titles are shown even if there are no TitleStyle, we need to switch it off«ENDREM»«-»	
+		result.setTitleVisibility(false);
+		«ENDIF-»
+		result.setBorder(null);
+		return result;
+	}
 «ENDIF-»
 «ENDAROUND»
