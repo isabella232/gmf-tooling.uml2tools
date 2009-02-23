@@ -1,0 +1,32 @@
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2008/GenModel');
+modeltype U2TGEN uses gmfgenext('http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0');
+	
+-- This is helper transformation, intended to be only once for given diagram kind. 
+-- It adds the StereotypeSupportAttribute with role COMBINED_LABEL for all of the GenChildLabels that 
+-- are contained exclusively in list-compartments
+-- After the buld update is completed, some of the attributes may be removed  	
+transformation SetupCombinedLabels(inout gmfgenModel : GMFGEN);
+
+property genEditor : GenEditorGenerator = null;
+ 
+main() {
+	this.genEditor := gmfgenModel.rootObjects()[GenEditorGenerator]->asOrderedSet()->first();
+	genEditor.diagram.compartments->select(c | c.listLayout)
+		->collect(c | c.childNodes[GMFGEN::GenChildLabelNode])
+		->flatten()->asSet()->select(label | inListCompartmentsOnly(label))
+		->collect( label | map setupLabelViewmap(label.viewmap));
+}
+
+mapping setupLabelViewmap(inout viewmap: GMFGEN::Viewmap) 
+{
+	viewmap.attributes += map createStereotypeSupportAttribute(viewmap)
+}
+
+mapping createStereotypeSupportAttribute(in viewmap: GMFGEN::Viewmap) : U2TGEN::StereotypeSupportAttribute 
+{
+	role := U2TGEN::StereotypeSupportRole::COMBINED_LABEL;	
+}
+
+query inListCompartmentsOnly(label : GMFGEN::GenChildLabelNode) : Boolean {
+	return label.containers->forAll(c | c.oclIsKindOf(GMFGEN::GenCompartment) and c.oclAsType(GMFGEN::GenCompartment).listLayout)
+}

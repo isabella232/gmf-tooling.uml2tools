@@ -18,6 +18,9 @@
 «EXTENSION xpt::stereo::StereotypeIconSupport»
 
 «DEFINE getLabelIcon(useElementIcon : Boolean, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
+«IF not isIconExtendedByStereotype(self)-»
+«ERROR 'this label''s icon is not affected by stereotype' + self.repr()»
+«ENDIF-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected org.eclipse.swt.graphics.Image getLabelIcon() {
 		EObject parserElement = getParserElement();
@@ -27,7 +30,12 @@
 		if (false == parserElement instanceof org.eclipse.uml2.uml.Element) {
 			return null;
 		}
-		return org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx.getAppliedStereotypeImage((org.eclipse.uml2.uml.Element) parserElement, «diagram.getElementTypesQualifiedClassName()».getImageDescriptor(parserElement.eClass()));
+		org.eclipse.swt.graphics.Image withStereo = org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx.getAppliedStereotypeImage((org.eclipse.uml2.uml.Element) parserElement, «diagram.getElementTypesQualifiedClassName()».getImageDescriptor(parserElement.eClass()));
+		«IF isCombinedNameAndStereotypeLabel(self)-»
+			return withStereo != null ? withStereo : «diagram.getElementTypesQualifiedClassName()».getImage(parserElement.eClass()); 
+		«ELSE-»
+			return withStereo;
+		«ENDIF-»
 	}
 «ENDDEFINE»
 

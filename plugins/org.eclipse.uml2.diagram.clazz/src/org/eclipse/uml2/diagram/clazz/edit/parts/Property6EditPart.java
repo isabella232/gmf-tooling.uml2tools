@@ -56,6 +56,8 @@ import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
+import org.eclipse.uml2.uml.Element;
 
 /**
  * @generated
@@ -201,7 +203,15 @@ public class Property6EditPart extends CompartmentEditPart implements ITextAware
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		return null;
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		if (false == parserElement instanceof Element) {
+			return null;
+		}
+		Image withStereo = StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
+		return withStereo != null ? withStereo : UMLElementTypes.getImage(parserElement.eClass());
 	}
 
 	/**

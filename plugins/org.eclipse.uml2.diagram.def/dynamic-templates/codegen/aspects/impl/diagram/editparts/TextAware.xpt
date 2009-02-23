@@ -143,7 +143,7 @@
 «ENDAROUND»
 
 «AROUND getLabelIcon(useElementIcon : Boolean, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
-«IF isStereotypeLabel(self)-»
+«IF isIconExtendedByStereotype(self)-»
 «EXPAND xpt::stereo::TextAware::getLabelIcon(useElementIcon, diagram)»
 «ELSE-»
 «targetDef.proceed()-»

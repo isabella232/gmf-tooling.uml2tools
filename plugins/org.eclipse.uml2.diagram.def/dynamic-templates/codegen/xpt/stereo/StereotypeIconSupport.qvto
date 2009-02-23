@@ -3,6 +3,12 @@ modeltype u2t uses "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/
 
 library StereotypeIconSupport;
 
+helper isIconExtendedByStereotype(genCommon : gmf::GenCommonBase) : Boolean {
+	return isStereotypeLabel(genCommon) 
+		   or isStereotypeAndNameGroupStereotype(genCommon)  
+		   or isCombinedNameAndStereotypeLabel(genCommon)
+}
+
 helper isStereotypeLabel(genCommon : gmf::GenCommonBase) : Boolean {
 	return (if genCommon.viewmap.oclIsKindOf(gmf::ParentAssignedViewmap) 
 		then isStereotypeViewmap(genCommon.viewmap.oclAsType(gmf::ParentAssignedViewmap)) 
@@ -43,6 +49,11 @@ helper isStereotypeAndNameGroupName(genCommon : gmf::GenCommonBase) : Boolean {
 helper isStereotypeAndNameGroupContainer(genCommon : gmf::GenCommonBase) : Boolean {
 	let attribute = getStereotypeSupportAttribute(genCommon) in 
 	return null <> attribute and attribute.role = u2t::StereotypeSupportRole::CONTAINER
+}
+
+helper isCombinedNameAndStereotypeLabel(genCommon : gmf::GenCommonBase) : Boolean {
+	let attribute = getStereotypeSupportAttribute(genCommon) in 
+	return null <> attribute and attribute.role = u2t::StereotypeSupportRole::COMBINED_LABEL
 }
 
 helper getStereotypeSupportAttribute(genCommon : gmf::GenCommonBase) : u2t::StereotypeSupportAttribute {

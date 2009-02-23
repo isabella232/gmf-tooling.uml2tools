@@ -51,7 +51,11 @@
           editHelperAdviceClassName="Package2EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package"/>
@@ -93,7 +97,11 @@
           editHelperClassName="ClassEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.2">
         <metaClass
@@ -136,7 +144,11 @@
           editHelperClassName="DataTypeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.4">
         <metaClass
@@ -179,7 +191,11 @@
           editHelperClassName="PrimitiveTypeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/PrimitiveType"/>
@@ -221,7 +237,11 @@
           editHelperClassName="EnumerationEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Enumeration"/>
@@ -263,7 +283,11 @@
           editHelperClassName="AssociationClassEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/AssociationClass"/>
@@ -305,7 +329,11 @@
           editHelperClassName="InterfaceEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Interface"/>
@@ -347,7 +375,11 @@
           editHelperClassName="InstanceSpecificationEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/InstanceSpecification"/>
@@ -389,7 +421,11 @@
           editHelperClassName="PropertyEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.13">
         <metaClass
@@ -439,7 +475,11 @@
           editHelperClassName="OperationEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Operation"/>
@@ -483,7 +523,11 @@
           editHelperAdviceClassName="Class2EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.2">
         <metaClass
@@ -663,7 +707,11 @@
           editHelperAdviceClassName="PropertyEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property"/>
@@ -713,7 +761,11 @@
           editHelperAdviceClassName="OperationEditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Operation"/>
@@ -757,7 +809,11 @@
           editHelperAdviceClassName="Property2EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property"/>
@@ -807,7 +863,11 @@
           editHelperAdviceClassName="Operation2EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Operation"/>
@@ -851,7 +911,11 @@
           editHelperAdviceClassName="Property3EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property"/>
@@ -901,7 +965,11 @@
           editHelperAdviceClassName="Operation3EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Operation"/>
@@ -944,7 +1012,11 @@
           editHelperClassName="EnumerationLiteralEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/EnumerationLiteral"/>
@@ -988,7 +1060,11 @@
           editHelperAdviceClassName="Property4EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Property"/>
@@ -1038,7 +1114,11 @@
           editHelperAdviceClassName="Operation4EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Operation"/>
@@ -1081,7 +1161,11 @@
           editHelperClassName="SlotEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.41">
         <metaClass
@@ -1117,7 +1201,11 @@
           editHelperAdviceClassName="Property5EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.45">
         <metaClass
@@ -1168,7 +1256,11 @@
           editHelperAdviceClassName="Operation5EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Operation"/>
@@ -1212,7 +1304,11 @@
           editHelperAdviceClassName="Class3EditHelperAdvice"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.2">
         <metaClass
@@ -1255,7 +1351,11 @@
           editHelperClassName="ElementImportEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ElementImport"/>
@@ -1864,7 +1964,11 @@
           editHelperClassName="LiteralStringEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/LiteralString"/>
@@ -1934,7 +2038,11 @@
           editHelperClassName="ExpressionEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+          figureQualifiedClassName="org.eclipse.draw2d.Label">
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            role="COMBINED_LABEL"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Expression"/>
@@ -14767,11 +14875,11 @@
         uses="//@diagram/@links.14/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.31/@labels.1/@modelFacet //@diagram/@topLevelNodes.11/@labels.1/@modelFacet //@diagram/@childNodes.32/@labels.1/@modelFacet //@diagram/@childNodes.28/@labels.1/@modelFacet //@diagram/@topLevelNodes.3/@labels.1/@modelFacet //@diagram/@topLevelNodes.5/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.4/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.29/@labels.1/@modelFacet"
+        uses="//@diagram/@topLevelNodes.5/@labels.1/@modelFacet //@diagram/@topLevelNodes.3/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.11/@labels.1/@modelFacet //@diagram/@childNodes.28/@labels.1/@modelFacet //@diagram/@topLevelNodes.4/@labels.1/@modelFacet //@diagram/@childNodes.32/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.31/@labels.1/@modelFacet //@diagram/@childNodes.29/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@links.11/@labels.0/@modelFacet //@diagram/@links.9/@labels.0/@modelFacet //@diagram/@topLevelNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.30/@labels.1/@modelFacet //@diagram/@links.8/@labels.1/@modelFacet //@diagram/@links.4/@labels.7/@modelFacet //@diagram/@links.14/@labels.2/@modelFacet //@diagram/@links.7/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"
+        uses="//@diagram/@links.8/@labels.1/@modelFacet //@diagram/@links.7/@labels.0/@modelFacet //@diagram/@links.4/@labels.7/@modelFacet //@diagram/@topLevelNodes.8/@labels.1/@modelFacet //@diagram/@links.9/@labels.0/@modelFacet //@diagram/@childNodes.30/@labels.1/@modelFacet //@diagram/@links.11/@labels.0/@modelFacet //@diagram/@links.14/@labels.2/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
