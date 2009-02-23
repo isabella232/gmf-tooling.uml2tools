@@ -103,6 +103,7 @@ public class LifelineViewMap {
 		private IFigure myDecomposedAsPanel;
 
 		public LifelineHeadShape(IFigure lifeLineShape) {
+			setLineWidth(1);
 			setLifelineHeadText(this);
 			assert getLayoutManager() instanceof PileLayout;
 			if (getLayoutManager() == null) {
