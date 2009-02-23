@@ -54,7 +54,7 @@
             	</and>            	
             </visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
             <visibleWhen checkEnabled="false">
             	<and>            	
                   <with variable="selection"><iterate ifEmpty="false"> 
@@ -84,7 +84,7 @@
             	</and>            	
             </visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
             <visibleWhen checkEnabled="false">
             	<and>            	
                   <with variable="selection"><iterate ifEmpty="false"> 
@@ -113,7 +113,7 @@
             	</and>            	
             </visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
             <visibleWhen checkEnabled="false">
             	<and>            	
                   <with variable="selection"><iterate ifEmpty="false"> 
@@ -143,7 +143,7 @@
             	</and>            	
             </visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
             <visibleWhen checkEnabled="false">
             	<and>            	
                   <with variable="selection"><iterate ifEmpty="false"> 
