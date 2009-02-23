@@ -74,12 +74,6 @@ public abstract class NewDiagramHandler extends AbstractHandler {
 		return selectedElements;
 	}
 
-	@Override
-	public boolean isEnabled() {
-		return super.isEnabled();
-		// myRoot != null;
-	}
-
 	private PackageableElement getValidElement(Object element) {
 		if (element instanceof IGraphicalEditPart) {
 			element = ((IGraphicalEditPart) element).getNotationView().getElement();
