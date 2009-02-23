@@ -7,11 +7,11 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.diagram.clazz.part.NewDiagramForFixedElementsWizard;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorUtil;
 import org.eclipse.uml2.diagram.clazz.part.UMLNewDiagramFileWizard;
-import org.eclipse.uml2.diagram.common.part.NewDiagramHandler;
+import org.eclipse.uml2.diagram.common.part.NewDiagramHandlerBase;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 
-public class NewClassDiagramActionHandler extends NewDiagramHandler {
+public class NewClassDiagramActionHandler extends NewDiagramHandlerBase {
 
 	@Override
 	protected Wizard getNewDiagramWizard(Package diagramRoot) {
