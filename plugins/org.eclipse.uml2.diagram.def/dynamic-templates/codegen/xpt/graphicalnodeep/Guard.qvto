@@ -4,5 +4,6 @@ library Guard;
 
 helper supportsU2TSpecificGraphicalNodeEditPolicy(diagram : genModel::GenDiagram) : Boolean {
 	return 
-		('org.eclipse.uml2.diagram.sequence' = diagram.editorGen.plugin.iD)
+		'org.eclipse.uml2.diagram.sequence' = diagram.editorGen.plugin.iD
+--		or 'org.eclipse.uml2.diagram.component' = diagram.editorGen.plugin.iD
 }
