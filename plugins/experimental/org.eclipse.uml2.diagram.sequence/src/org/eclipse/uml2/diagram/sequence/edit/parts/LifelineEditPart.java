@@ -45,6 +45,7 @@ import org.eclipse.uml2.diagram.sequence.edit.create.TieInteractionUseToLifeLine
 import org.eclipse.uml2.diagram.sequence.edit.policies.LifelineCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.LifelineGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.LifelineItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDXYLayoutEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.TieFrameTargetEditPolicy;
@@ -95,7 +96,7 @@ public class LifelineEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new LifelineCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new LifelineGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy());
 		installEditPolicy("SD-Create-InteractionUse", new CreateInteractionUseEditPolicy()); //$NON-NLS-1$
 		installEditPolicy("SD-Create-CombinedFragment", new CreateCombinedFragmentEditPolicy()); //$NON-NLS-1$
 		installEditPolicy("SD-Create-StateInvariant", new CreateStateInvariantEditPolicy()); //$NON-NLS-1$

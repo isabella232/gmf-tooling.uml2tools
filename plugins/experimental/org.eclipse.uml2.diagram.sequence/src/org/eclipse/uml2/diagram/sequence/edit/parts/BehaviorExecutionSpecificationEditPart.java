@@ -37,6 +37,7 @@ import org.eclipse.uml2.diagram.sequence.edit.create.SDCreationEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.BehaviorExecutionColorVisualEffect;
 import org.eclipse.uml2.diagram.sequence.edit.policies.BehaviorExecutionSpecificationCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.BehaviorExecutionSpecificationItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.figures.LifelineBracketContainerShape;
 import org.eclipse.uml2.diagram.sequence.frame.Frame;
@@ -85,6 +86,7 @@ public class BehaviorExecutionSpecificationEditPart extends ShapeNodeEditPart im
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new BehaviorExecutionSpecificationCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy());
 		installEditPolicy("BehaviorExecutionColorVisualEffect", new BehaviorExecutionColorVisualEffect()); //$NON-NLS-1$
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
