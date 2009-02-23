@@ -7,7 +7,7 @@
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
       <handler
-            class="org.eclipse.uml2.diagram.component.part.NewComponentDiagramHandler"
+            class="org.eclipse.uml2.diagram.component.part.NewDiagramHandler"
             commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction">
       </handler>
    </extension>

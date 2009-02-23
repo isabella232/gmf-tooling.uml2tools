@@ -21,7 +21,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 
-public abstract class NewDiagramHandler extends AbstractHandler {
+public abstract class NewDiagramHandlerBase extends AbstractHandler {
 
 	private final TransactionalEditingDomain myEditingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 

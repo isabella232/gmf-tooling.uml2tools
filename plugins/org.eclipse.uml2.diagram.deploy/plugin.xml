@@ -5,6 +5,10 @@
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
       <handler
+            class="org.eclipse.uml2.diagram.deploy.part.NewDiagramHandler"
+            commandId="org.eclipse.uml2.diagram.NewDeployDiagramAction">
+      </handler>
+      <handler
             class="org.eclipse.uml2.diagram.deploy.action.TurnNoteIntoCommentAction"
             commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
             <activeWhen>

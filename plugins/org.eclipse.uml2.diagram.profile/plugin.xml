@@ -50,6 +50,10 @@
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
       <handler
+            class="org.eclipse.uml2.diagram.profile.part.NewDiagramHandler"
+            commandId="org.eclipse.uml2.diagram.NewProfileDiagramAction">
+      </handler>
+      <handler
             class="org.eclipse.uml2.diagram.profile.action.TurnNoteIntoCommentAction"
             commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
             <activeWhen>

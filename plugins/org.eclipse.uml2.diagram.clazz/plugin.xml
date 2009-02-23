@@ -23,7 +23,7 @@
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
       <handler
-            class="org.eclipse.uml2.diagram.clazz.action.NewClassDiagramActionHandler"
+            class="org.eclipse.uml2.diagram.clazz.action.NewDiagramHandler"
             commandId="org.eclipse.uml2.diagram.NewClassDiagramAction">
       </handler>
       <handler

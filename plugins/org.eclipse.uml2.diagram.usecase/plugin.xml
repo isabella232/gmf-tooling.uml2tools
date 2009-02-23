@@ -6,6 +6,10 @@
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
       <handler
+            class="org.eclipse.uml2.diagram.usecase.part.NewDiagramHandler"
+            commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
+      </handler>
+      <handler
             class="org.eclipse.uml2.diagram.usecase.action.TurnNoteIntoCommentAction"
             commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
             <activeWhen>
