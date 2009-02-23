@@ -1359,6 +1359,8 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
             height="60"/>
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.11">
@@ -1393,6 +1395,9 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1416,7 +1421,14 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="STEREOTYPE_LABEL"/>
         </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3"
@@ -1451,6 +1463,8 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
             height="60"/>
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -1484,6 +1498,9 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1507,7 +1524,14 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="STEREOTYPE_LABEL"/>
         </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3"
@@ -1602,6 +1626,10 @@
               xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.4"
@@ -1636,6 +1664,8 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
             height="60"/>
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
@@ -1670,6 +1700,9 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1693,7 +1726,14 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="STEREOTYPE_LABEL"/>
         </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3"
@@ -1728,6 +1768,8 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
             height="60"/>
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -1761,6 +1803,9 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -1784,7 +1829,14 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="STEREOTYPE_LABEL"/>
         </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3"
@@ -2105,6 +2157,8 @@
             requiresAll="true">
           <substitutableByIDs>2015</substitutableByIDs>
         </attributes>
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -2138,6 +2192,9 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2165,11 +2222,14 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3"
@@ -2204,6 +2264,8 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
             height="60"/>
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
@@ -2238,6 +2300,9 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2265,11 +2330,14 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3"
@@ -2304,6 +2372,8 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
             height="60"/>
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -2337,6 +2407,9 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2364,11 +2437,14 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3"
@@ -2403,6 +2479,8 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="100"
             height="60"/>
+        <attributes
+            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -2436,6 +2514,9 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
@@ -2463,11 +2544,14 @@
           <attributes
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
+          <attributes
+              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
-            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy"/>
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.3"
@@ -2719,6 +2803,10 @@
               xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
+            editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.4"
