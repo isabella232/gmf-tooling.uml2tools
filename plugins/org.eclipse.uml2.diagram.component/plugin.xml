@@ -7,8 +7,23 @@
    <extension
          point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="false"?>
+      <viewerContribution
+            targetID="org.eclipse.uml2.uml.editor.presentation.UMLEditorID"
+            id="org.eclipse.uml2.diagram.component.UMLEditorMenu">
+      <visibility>
+      		<objectClass name="org.eclipse.uml2.uml.PackageableElement"/>
+      </visibility>
+      <action
+         label="%UML2ToolsEditor_InitializeComponentDiagramAction_label"
+         class="org.eclipse.uml2.diagram.component.part.NewComponentDiagramAction"
+         menubarPath="org.eclipse.uml2.diagram.UMLMenuID/additions"
+         enablesFor="+"
+         id="org.eclipse.uml2.diagram.component.UML2ToolsEditorMenu.NewDiagramActionID">
+      </action>    
+      </viewerContribution>
+
       <objectContribution
-            id="org.eclipse.uml2.diagram.clazz.UMLEditorMenu.NewDiagramFromElements"
+            id="org.eclipse.uml2.diagram.component.UMLEditorMenu.NewDiagramFromElements"
             objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">            
       <action
          label="%UML2ToolsEditor_InitializeComponentDiagramAction_label"

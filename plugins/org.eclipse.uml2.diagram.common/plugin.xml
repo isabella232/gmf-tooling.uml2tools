@@ -17,6 +17,20 @@
    <extension
          point="org.eclipse.ui.popupMenus">
       <?gmfgen generated="false"?>
+<!--      <viewerContribution
+            targetID="org.eclipse.uml2.uml.editor.presentation.UMLEditorID"
+            id="org.eclipse.uml2.diagram.UMLEditorMenu">
+      <visibility>
+      		<objectClass name="org.eclipse.uml2.uml.PackageableElement"/>
+      </visibility>
+      <menu
+         label="%UMLEditor_NewDiagramMenu_label"
+         path="additions"
+         id="org.eclipse.uml2.diagram.UMLMenuID">
+        <separator name="additions"/>
+      </menu>   
+      </viewerContribution>-->
+
       <objectContribution
             id="org.eclipse.uml2.diagram.clazz.UMLEditorMenu.NewDiagramFromElements"
             objectClass="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">            

@@ -32,13 +32,13 @@
       <menu
          label="%UMLEditor_NewDiagramMenu_label"
          path="additions"
-         id="org.eclipse.uml2.diagram.clazz.UMLMenuID">
+         id="org.eclipse.uml2.diagram.UMLMenuID">
         <separator name="additions"/>
       </menu>   
       <action
          label="%UMLEditor_InitializeClassDiagramAction_label"
          class="org.eclipse.uml2.diagram.clazz.action.NewClassDiagramAction"
-         menubarPath="org.eclipse.uml2.diagram.clazz.UMLMenuID/additions"
+         menubarPath="org.eclipse.uml2.diagram.UMLMenuID/additions"
          enablesFor="+"
          id="org.eclipse.uml2.diagram.clazz.UML2ToolsEditorMenu.NewDiagramActionID">
       </action>    
