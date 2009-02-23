@@ -15,7 +15,18 @@
 
 <plugin>
 
-<extension point="org.eclipse.ui.menus" id="context-menus">
+   <extension
+           point="org.eclipse.core.expressions.propertyTesters">
+        <propertyTester
+              class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.packagePropertyTester"
+              properties="isPackage"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+     </extension>
+
+	<extension point="org.eclipse.ui.menus" id="context-menus">
       <?gmfgen generated="false"?>
       <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
           <menu 
@@ -33,7 +44,16 @@
                </or>
          </visibleWhen>
          <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction"/>
-         <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction"/>
+         <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction">
+            <visibleWhen checkEnabled="false">
+            	<and>            	
+                  <with variable="selection"><iterate ifEmpty="false"> 
+               			<test property="org.eclipse.uml2.diagram.isPackage"/>
+                  </iterate></with>
+                  <count value="1"/>
+            	</and>            	
+            </visibleWhen>
+         </command>
        </menu>         
        </menuContribution>
 
@@ -43,7 +63,16 @@
          	  label="%UMLEditor_NewDiagramMenu_label">
          <separator name="newDiagram" visible="true"/>
          <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction"/>
-         <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction"/>
+         <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction">
+            <visibleWhen checkEnabled="false">
+            	<and>            	
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="org.eclipse.uml2.uml.Package"/>
+                  </iterate></with>
+                  <count value="1"/>
+            	</and>            	
+            </visibleWhen>
+         </command>
        </menu>
        </menuContribution>
    </extension>

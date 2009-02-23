@@ -48,9 +48,8 @@ public abstract class NewDiagramHandler extends AbstractHandler {
 		runWizard(wizard, part.getSite().getShell());
 		return null;
 	}
-	
-	protected TransactionalEditingDomain getEditingDomain()
-	{
+
+	protected TransactionalEditingDomain getEditingDomain() {
 		return myEditingDomain;
 	}
 
