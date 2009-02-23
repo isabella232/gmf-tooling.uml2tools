@@ -20,7 +20,7 @@
       <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
           <menu 
               id="org.eclipse.uml2.diagram.new" 
-         	  label="New Diagram">
+         	  label="%UML2ToolsEditor_NewDiagramMenu_label">
          <separator name="newDiagram" visible="true"/>
          <visibleWhen>
                <or>
@@ -40,7 +40,7 @@
       <menuContribution locationURI="popup:org.eclipse.uml2.uml.editor.presentation.UMLEditorID">
       <menu 
               id="org.eclipse.uml2.uml2editor.new" 
-         	  label="New Diagram">
+         	  label="%UMLEditor_NewDiagramMenu_label">
          <separator name="newDiagram" visible="true"/>
          <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction"/>
          <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction"/>
@@ -52,10 +52,10 @@
       <?gmfgen generated="false"?>
       <category id="org.eclipse.uml2.diagram.NewUMLDiagrams" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="org.eclipse.uml2.diagram.NewClassDiagramAction"
-         name="Class Diagram"
+         name="%UMLEditor_NewDiagramMenu_Class_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
       <command id="org.eclipse.uml2.diagram.NewComponentDiagramAction"
-         name="Component Diagram"
+         name="%UMLEditor_NewDiagramMenu_Component_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
    </extension>
 
