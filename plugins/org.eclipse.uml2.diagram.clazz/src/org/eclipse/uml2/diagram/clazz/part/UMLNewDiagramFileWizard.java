@@ -57,7 +57,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private TransactionalEditingDomain editingDomain;
+	private TransactionalEditingDomain myEditingDomain;
 
 	/**
 	 * @NOT-generated
@@ -76,7 +76,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		createDiagramRootSelectorPage(diagramRoot);
 		createSynchronizationPage(editingDomain);
 
-		this.editingDomain = editingDomain;
+		this.myEditingDomain = editingDomain;
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	 * @NOT-generated
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
-		return editingDomain;
+		return myEditingDomain;
 	}
 
 	/**
@@ -158,10 +158,10 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		UMLDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
 		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
-		ResourceSet resourceSet = editingDomain.getResourceSet();
+		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
 
-		CompositeTransactionalCommand result = new CompositeTransactionalCommand(editingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand);
+		CompositeTransactionalCommand result = new CompositeTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand);
 		AbstractTransactionalCommand command = getCreateDiagramCommand(diagramResource, affectedFiles);
 		result.add(command);
 		AbstractTransactionalCommand syncCommand = getApplySynchronizationCommand();
@@ -206,7 +206,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 				}
 			}
 			if (!viewAdapters.isEmpty()) {
-				DeferredLayoutCommand layout = new DeferredLayoutCommand(editingDomain, viewAdapters, diagramEditPart);
+				DeferredLayoutCommand layout = new DeferredLayoutCommand(myEditingDomain, viewAdapters, diagramEditPart);
 				OperationHistoryFactory.getOperationHistory().execute(layout, new NullProgressMonitor(), null);
 			}
 		}
@@ -226,7 +226,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	 * @NOT-generated
 	 */
 	private AbstractTransactionalCommand getCreateDiagramCommand(final Resource diagramResource, List affectedFiles) {
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				int diagramVID = UMLVisualIDRegistry.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
