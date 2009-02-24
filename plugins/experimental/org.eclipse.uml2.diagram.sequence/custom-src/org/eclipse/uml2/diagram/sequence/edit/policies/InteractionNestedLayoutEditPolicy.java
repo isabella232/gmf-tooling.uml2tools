@@ -29,14 +29,11 @@ import org.eclipse.uml2.diagram.sequence.internal.layout.manage.SdLayoutAsInnerL
 
 public class InteractionNestedLayoutEditPolicy extends AbstractEditPolicy {
 	private SdLayoutAsInnerLayout mySdLayout;
-	private EditPartTracker myEditPartTracker = new EditPartTracker();
+	private EditPartTracker myEditPartTracker;
 	
 	@Override
 	public void activate() {
-		mySdLayout = new SdLayoutAsInnerLayout(getHostImpl());
-		getHost().addEditPartListener(myEditPartTracker);
-		setupNodesTree(getHostImpl());
-		setupLinksTree(getHostImpl());
+		reinitSDLayout();
 		
 		try {
 			InteractionNestedLayoutRequest req = new InteractionNestedLayoutRequest();
@@ -46,6 +43,14 @@ public class InteractionNestedLayoutEditPolicy extends AbstractEditPolicy {
 			e.printStackTrace();
 			throw e;
 		}
+	}
+	
+	private void reinitSDLayout(){
+		myEditPartTracker = new EditPartTracker();
+		mySdLayout = new SdLayoutAsInnerLayout(getHostImpl());
+		getHost().addEditPartListener(myEditPartTracker);
+		setupNodesTree(getHostImpl());
+		setupLinksTree(getHostImpl());
 	}
 	
 	private void setupNodesTree(EditPart treeRoot){
@@ -77,7 +82,7 @@ public class InteractionNestedLayoutEditPolicy extends AbstractEditPolicy {
 	@Override
 	public void deactivate() {
 		mySdLayout = null;
-		getHost().addEditPartListener(myEditPartTracker);
+		getHost().removeEditPartListener(myEditPartTracker);
 	}
 	
 	@Override
@@ -103,6 +108,11 @@ public class InteractionNestedLayoutEditPolicy extends AbstractEditPolicy {
 		AbstractTransactionalCommand result = new AbstractTransactionalCommand(getHostImpl().getEditingDomain(), "Layouting", Collections.singletonList(WorkspaceSynchronizer.getFile(getHostImpl().getNotationView().eResource()))){
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+				
+				if (request.isTotalLayout()){
+					mySdLayout = null;
+					reinitSDLayout();
+				}
 				
 				for (IAdaptable nextViewAdapter : request.getViewAdapters()){
 					View view = (View) nextViewAdapter.getAdapter(View.class);

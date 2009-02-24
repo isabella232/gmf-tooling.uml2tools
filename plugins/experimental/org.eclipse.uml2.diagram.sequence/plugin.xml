@@ -2,6 +2,27 @@
 <?eclipse version="3.0"?>
 <plugin>
 
+   <extension point="org.eclipse.ui.popupMenus" id="org.eclipse.uml2.diagram.sequence.message.popup">
+      <objectContribution
+            id="org.eclipse.uml2.diagram.sequence.message.popupContribution"
+            objectClass="org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart">
+         <action
+               label="Destruction"
+               class="org.eclipse.uml2.diagram.sequence.part.MessageDestructionAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.sequence.message.destruction">
+         </action>
+         <action
+               label="Creation"
+               class="org.eclipse.uml2.diagram.sequence.part.MessageCreationAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.eclipse.uml2.diagram.sequence.message.creation">
+         </action>
+      </objectContribution>
+   </extension>
+
    <extension point="org.eclipse.team.core.fileTypes">
       <?gmfgen generated="true"?>
       <fileTypes

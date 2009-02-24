@@ -14,9 +14,18 @@ public class InteractionNestedLayoutRequest extends Request {
 	private final List<IAdaptable> myViewAdapters = new LinkedList<IAdaptable>();
 	private final List<IGraphicalEditPart> myReshapedElements = new LinkedList<IGraphicalEditPart>();
 	private int mySessionsCount = 1;
+	private boolean myTotalLayout;
 	
 	public InteractionNestedLayoutRequest(){
 		setType(REQ_TYPE);
+	}
+	
+	public void requestTotalLayout(){
+		myTotalLayout = true;
+	}
+	
+	public boolean isTotalLayout(){
+		return myTotalLayout;
 	}
 	
 	public void addViewAdapters(Collection<?> adapters){
@@ -26,7 +35,9 @@ public class InteractionNestedLayoutRequest extends Request {
 	}
 	
 	public void addReshapedElement(IGraphicalEditPart ep){
-		myReshapedElements.add(ep);
+		if (ep != null){
+			myReshapedElements.add(ep);
+		}
 	}
 	
 	/*
