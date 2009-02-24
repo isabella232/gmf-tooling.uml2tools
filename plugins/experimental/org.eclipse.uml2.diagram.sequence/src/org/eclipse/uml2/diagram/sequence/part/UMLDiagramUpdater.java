@@ -247,8 +247,8 @@ public class UMLDiagramUpdater {
 		if (sdFrame == null) {
 			return Collections.emptyList();
 		}
-		
-		ExecutionSpecification umlSpec = (ExecutionSpecification)view.getElement();
+
+		ExecutionSpecification umlSpec = (ExecutionSpecification) view.getElement();
 		SDBehaviorSpec sdSpec = sdFrame.getUMLTracing().findBehaviorSpec(umlSpec);
 		if (sdSpec == null) {
 			return Collections.emptyList();
@@ -286,7 +286,7 @@ public class UMLDiagramUpdater {
 		}
 		return result;
 	}
-	
+
 	public static List<BehaviorExecutionSpecification> getNestedSpecs(BehaviorExecutionSpecification parentSpec) {
 		Interaction interaction = parentSpec.getEnclosingInteraction();
 		OccurrenceSpecification parentStart = parentSpec.getStart();

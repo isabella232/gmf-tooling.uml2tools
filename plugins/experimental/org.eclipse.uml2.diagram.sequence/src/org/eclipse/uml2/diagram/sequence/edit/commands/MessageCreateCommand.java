@@ -38,6 +38,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
+import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExecutionSpecification;
@@ -104,7 +105,7 @@ public class MessageCreateCommand extends EditElementCommand {
 		if (source == target) {
 			return false; //self links don't supported for now
 		}
-		
+
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateMessage_4001(getContainer(), getSource(), getTarget());
 	}
 
@@ -212,8 +213,8 @@ public class MessageCreateCommand extends EditElementCommand {
 			}
 
 			ThePast thePast = createThePast();
-			thePast.executionStarted((SDExecution)sdExecution);
-			
+			thePast.executionStarted((SDExecution) sdExecution);
+
 			ListIterator<InteractionFragment> position = thePast.getAfterThePastPosition(interaction);
 			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count, position);
 
@@ -226,24 +227,24 @@ public class MessageCreateCommand extends EditElementCommand {
 			BehaviorExecutionSpecification diagramTargetImpl = (BehaviorExecutionSpecification) diagramTarget;
 			Lifeline sourceLL = parentExecution.getCovereds().get(0);
 			Lifeline targetLL = diagramTargetImpl.getCovereds().get(0);
-			
+
 			SDTrace sdTracing = new SDBuilder(sourceLL.getInteraction()).getSDFrame().getUMLTracing();
 			SDBehaviorSpec sdSourceExecution = sdTracing.findBehaviorSpec(parentExecution);
-			if (false == sdSourceExecution instanceof SDExecution){
+			if (false == sdSourceExecution instanceof SDExecution) {
 				//XXX
 				throw new IllegalArgumentException("SDExecution expected as source: " + sdSourceExecution);
 			}
 			SDBehaviorSpec sdTargetInvocation = sdTracing.findBehaviorSpec(diagramTargetImpl);
-			if (false == sdTargetInvocation instanceof SDInvocation){
+			if (false == sdTargetInvocation instanceof SDInvocation) {
 				throw new IllegalArgumentException("SDInvocation expected as target: " + sdSourceExecution);
 			}
-			
+
 			ThePast thePast = createThePast();
-			thePast.executionStarted((SDExecution)sdSourceExecution);
-			
+			thePast.executionStarted((SDExecution) sdSourceExecution);
+
 			ListIterator<InteractionFragment> position = thePast.getAfterThePastPosition(interaction);
 			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count, position);
-			
+
 			sourceInvocation = pair[0];
 			targetExecution = pair[1];
 			domainSource = (MessageOccurrenceSpecification) sourceInvocation.getStart();
@@ -287,7 +288,7 @@ public class MessageCreateCommand extends EditElementCommand {
 
 		return result;
 	}
-	
+
 	private View createBehaviorExecutionView(U2TCreateLinkParameters createParams, EObject behaviorExecution, int position) {
 		return createBehaviorExecutionView(createParams.getParentView(), behaviorExecution, position, createParams.getRelativeLocation());
 	}
@@ -330,10 +331,10 @@ public class MessageCreateCommand extends EditElementCommand {
 						new Object[] { targetExecution, targetExecution.getStart(), message, message.getReceiveEvent() }));
 
 			}
-			
-			U2TCreateLinkParameters targetParams = linkCreationPack.getTargetParameters();			
+
+			U2TCreateLinkParameters targetParams = linkCreationPack.getTargetParameters();
 			final View executionView;
-			if (sourceInvocation.getCovereds().get(0) == targetExecution.getCovereds().get(0)){
+			if (sourceInvocation.getCovereds().get(0) == targetExecution.getCovereds().get(0)) {
 				//for self message the target should be create inside the just created source, and ViewUtil.APPEND is good enough position
 				executionView = createBehaviorExecutionView(invocationView, targetExecution, ViewUtil.APPEND, new Point(10, 10));
 			} else {
@@ -447,19 +448,20 @@ public class MessageCreateCommand extends EditElementCommand {
 		}
 		return viewPosition;
 	}
-	
-	private ThePast createThePast(){
+
+	private ThePast createThePast() {
 		return new ThePast(U2TCreateLinkCommand.getFromRequest(getRequest()));
 	}
-	
+
 	private static class ThePast {
+
 		private final List<InteractionFragment> myPastFragments = new ArrayList<InteractionFragment>(5);
-		
-		public ThePast(U2TCreateLinkCommand creationPack){
+
+		public ThePast(U2TCreateLinkCommand creationPack) {
 			addThePastFromAnchor(creationPack.getSourceParameters());
 			addThePastFromAnchor(creationPack.getTargetParameters());
 		}
-		
+
 		public ListIterator<InteractionFragment> getAfterThePastPosition(Interaction interaction) {
 			if (myPastFragments.isEmpty()) {
 				return getAppendPosition(interaction);
@@ -483,9 +485,9 @@ public class MessageCreateCommand extends EditElementCommand {
 			}
 			return result;
 		}
-		
-		public void executionStarted(SDExecution sdExecution){
-			ExecutionSpecification umlExecution = sdExecution.getUmlExecutionSpec(); 
+
+		public void executionStarted(SDExecution sdExecution) {
+			ExecutionSpecification umlExecution = sdExecution.getUmlExecutionSpec();
 			considerAsPast_(umlExecution);
 			considerAsPast_(umlExecution.getStart());
 
@@ -495,13 +497,13 @@ public class MessageCreateCommand extends EditElementCommand {
 				considerAsPast_(sdParentInvocation.getUmlStart());
 			}
 		}
-		
-		public void considerAsPast_(InteractionFragment fragment){
-			if (fragment != null){
+
+		public void considerAsPast_(InteractionFragment fragment) {
+			if (fragment != null) {
 				myPastFragments.add(fragment);
 			}
 		}
-		
+
 		private void addThePastFromAnchor(U2TCreateLinkParameters params) {
 			View anchor = params.getAnchorSibling();
 			if (anchor != null && !params.isBeforeNotAfterAnchor()) {
@@ -513,7 +515,7 @@ public class MessageCreateCommand extends EditElementCommand {
 				}
 			}
 		}
-		
+
 		private static ListIterator<InteractionFragment> getAppendPosition(Interaction interaction) {
 			int size = interaction.getFragments().size();
 			ListIterator<InteractionFragment> result = interaction.getFragments().listIterator(size);
@@ -522,9 +524,7 @@ public class MessageCreateCommand extends EditElementCommand {
 			}
 			return result;
 		}
-	
+
 	}
-	
-	
-	
+
 }
