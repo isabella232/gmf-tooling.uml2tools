@@ -1,9 +1,11 @@
 package org.eclipse.uml2.diagram.sequence.internal.missed;
 
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.draw2d.AbsoluteBendpoint;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
@@ -292,9 +294,13 @@ public class MissedMethodsImpl {
 	static class MissedConnectionEditPartImpl implements _ConnectionEditPart {
 		private static final String SOURCE_ANCHOR_STYLE = "SourceAnchor";
 		private static final String TARGET_ANCHOR_STYLE = "TargetAnchor";
+		private static final String BENDPOINTS_LIST_STYLE = "BendpointsList";
 		
+		@SuppressWarnings("unchecked")
 		public List getBendpoints(ConnectionEditPart linkEP) {
-			return Collections.emptyList();
+			List result = new ArrayList(8);
+			loadPointListFromStyle((Edge)linkEP.getNotationView(), BENDPOINTS_LIST_STYLE, result);
+			return result;
 		}
 		
 		public Point getSourcePoint(ConnectionEditPart linkEP) {
@@ -343,6 +349,38 @@ public class MissedMethodsImpl {
 			return new Point(x, y);
 		}
 		
+		private void loadPointListFromStyle(Edge edge, String styleName, List<AbsoluteBendpoint> output){
+			IntListValueStyle style = (IntListValueStyle) edge.getNamedStyle(NotationPackage.eINSTANCE.getIntListValueStyle(), styleName);
+			if (style == null){
+				return;
+			}
+			for (Iterator<Integer> ints = style.getIntListValue().iterator(); ints.hasNext();){
+				int x = ints.next();
+				if (!ints.hasNext()){
+					System.err.println("Odd number of integers, points List expected: " + style + ", \n for edge: " + edge);
+					break;
+				}
+				int y = ints.next();
+				output.add(new AbsoluteBendpoint(x, y));
+			}
+		}
+		
+		@SuppressWarnings("unchecked")
+		private void savePointListAsStyle(Edge edge, String styleName, List points){
+			IntListValueStyle style = (IntListValueStyle) edge.getNamedStyle(NotationPackage.eINSTANCE.getIntListValueStyle(), styleName);
+			if (style == null){
+				style = (IntListValueStyle) edge.createStyle(NotationPackage.eINSTANCE.getIntListValueStyle());
+				style.setName(styleName);
+			}
+			List intList = style.getIntListValue();
+			intList.clear();
+			for (Object next : points){
+				Point nextPoint = (Point)next;
+				intList.add(Integer.valueOf(nextPoint.x));
+				intList.add(Integer.valueOf(nextPoint.y));
+			}
+		}
+		
 		private void savePointAsStyle(Edge edge, Point point, String styleName){
 			IntListValueStyle style = (IntListValueStyle) edge.getNamedStyle(NotationPackage.eINSTANCE.getIntListValueStyle(), styleName);
 			if (style == null){
@@ -355,10 +393,6 @@ public class MissedMethodsImpl {
 		}
 		
 		public void setupBendpoints(ConnectionEditPart linkEP, Point sourcePoint, Point targetPoint, List bendpoints) {
-			//System.err.println("Setup bendpoints: " + linkEP);
-			//System.err.println("Source: " + sourcePoint + ", Target: " + targetPoint);
-			//System.err.println("Bendpoints: " + bendpoints);
-			
 			Edge edge = (Edge) linkEP.getNotationView();
 			GraphicalEditPart sourceEP = (GraphicalEditPart) linkEP.getSource();
 			Rectangle sourceBounds = MissedMethods._graphicalEditPart().getBounds(sourceEP);
@@ -371,19 +405,13 @@ public class MissedMethodsImpl {
 			savePointAsStyle(edge, targetPoint, TARGET_ANCHOR_STYLE);
 			
 			if (!bendpoints.isEmpty()){
-				ConnectionRoutingHelper.setConnectionBendPoints(edge, bendpoints, sourcePoint, targetPoint, false);
+				List forHelper = new ArrayList(bendpoints.size() + 2);
+				forHelper.add(new AbsoluteBendpoint(sourcePoint));
+				forHelper.addAll(bendpoints);
+				forHelper.add(new AbsoluteBendpoint(targetPoint));
+				ConnectionRoutingHelper.setConnectionBendPoints(edge, forHelper, sourcePoint, targetPoint, false);
+				savePointListAsStyle(edge, BENDPOINTS_LIST_STYLE, bendpoints);
 			}
-//			
-//			BendpointsGate gate = new BendpointsGate(linkEP);
-//			gate.setEdgeAdapter(new EObjectAdapter(linkEP.getNotationView()));
-//			PointList pointList = new PointList();
-//			pointList.addPoint(sourcePoint);
-//			for (Object nextPoint : bendpoints){
-//				pointList.addPoint((Point)nextPoint);
-//			}
-//			pointList.addPoint(targetPoint);
-//			gate.setNewPointList(pointList, sourcePoint, targetPoint);
-//			gate.run();
 		}
 
 		public RelativeBendpoint convert(ConnectionEditPart linkEP, Point point) {
