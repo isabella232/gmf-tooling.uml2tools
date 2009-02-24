@@ -75,19 +75,19 @@ public class U2TCreateLinkCommand extends CompositeCommand {
 
 	@Override
 	public IStatus execute(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-		add(mySemanticCreation);
-		add(myEdgeCreation);
-		add(mySetConnectionEndsCommand);
-		add(mySetConnectionAnchorsCommand);
-		add(mySetConnectionBendpointsCommand);
+		addNotNull(mySemanticCreation);
+		addNotNull(myEdgeCreation);
+		addNotNull(mySetConnectionEndsCommand);
+		addNotNull(mySetConnectionAnchorsCommand);
+		addNotNull(mySetConnectionBendpointsCommand);
 
 		IStatus result = super.execute(progressMonitor, info);
 		if (result != null && result.getSeverity() == IStatus.CANCEL && !isExecuted()) {
-			remove(mySemanticCreation);
-			remove(myEdgeCreation);
-			remove(mySetConnectionEndsCommand);
-			remove(mySetConnectionAnchorsCommand);
-			remove(mySetConnectionBendpointsCommand);
+			removeNotNull(mySemanticCreation);
+			removeNotNull(myEdgeCreation);
+			removeNotNull(mySetConnectionEndsCommand);
+			removeNotNull(mySetConnectionAnchorsCommand);
+			removeNotNull(mySetConnectionBendpointsCommand);
 		}
 
 		return result;
@@ -169,6 +169,18 @@ public class U2TCreateLinkCommand extends CompositeCommand {
 	
 	public U2TCreateLinkParameters getTargetParameters() {
 		return myTargetParameters;
+	}
+	
+	private void addNotNull(IUndoableOperation operation){
+		if (operation != null){
+			add(operation);
+		}
+	}
+	
+	private void removeNotNull(IUndoableOperation operation){
+		if (operation != null){
+			remove(operation);
+		}
 	}
 
 	@SuppressWarnings("unchecked")

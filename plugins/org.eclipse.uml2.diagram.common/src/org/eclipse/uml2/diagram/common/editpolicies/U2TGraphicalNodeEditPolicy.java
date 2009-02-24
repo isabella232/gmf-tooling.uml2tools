@@ -176,17 +176,19 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		U2TCreateLinkParametersImpl parameters = new U2TCreateLinkParametersImpl(); 
 		parameters.setParentView(getHostImpl().getNotationView());
 		
-		IFigure hostContentPane = getHostImpl().getContentPane();
-		Point origin;
-		if (hostContentPane.getLayoutManager() instanceof XYLayout){
-			origin = ((XYLayout)hostContentPane.getLayoutManager()).getOrigin(hostContentPane);
-		} else {
-			origin = hostContentPane.getClientArea().getLocation();	
+		if (request.getLocation() != null){
+			IFigure hostContentPane = getHostImpl().getContentPane();
+			Point origin;
+			if (hostContentPane.getLayoutManager() instanceof XYLayout){
+				origin = ((XYLayout)hostContentPane.getLayoutManager()).getOrigin(hostContentPane);
+			} else {
+				origin = hostContentPane.getClientArea().getLocation();	
+			}
+			Point relativeLocation = new Point(request.getLocation());
+			hostContentPane.translateToRelative(relativeLocation);
+			relativeLocation.translate(origin.getNegated());
+			parameters.setRelativeLocation(relativeLocation);
 		}
-		Point relativeLocation = new Point(request.getLocation());
-		hostContentPane.translateToRelative(relativeLocation);
-		relativeLocation.translate(origin.getNegated());
-		parameters.setRelativeLocation(relativeLocation);
 		
 		return parameters;
 	}
