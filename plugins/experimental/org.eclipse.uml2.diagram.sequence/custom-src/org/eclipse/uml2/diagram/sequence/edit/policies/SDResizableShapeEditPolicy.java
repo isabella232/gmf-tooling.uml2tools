@@ -6,11 +6,11 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 
 
-public class SDResizableShapeEditPolicy extends ResizableShapeEditPolicy {
+public class SDResizableShapeEditPolicy extends U2TResizableShapeEditPolicy {
 	private final boolean myDoubledSession;
 
 	public SDResizableShapeEditPolicy(){
