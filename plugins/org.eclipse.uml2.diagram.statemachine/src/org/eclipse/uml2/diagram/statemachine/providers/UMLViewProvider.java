@@ -6,6 +6,7 @@ import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateStereotypeEditPart;
@@ -50,8 +51,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_Internal
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionNameEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.statemachine.view.factories.ChoicePseudostateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.CompositeStateNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.CompositeStateStereotypeViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.CompositeStateViewFactory;
@@ -96,7 +97,6 @@ import org.eclipse.uml2.diagram.statemachine.view.factories.SubmachineState_Inte
 import org.eclipse.uml2.diagram.statemachine.view.factories.TerminatePseudostateViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.TransitionNameViewFactory;
 import org.eclipse.uml2.diagram.statemachine.view.factories.TransitionViewFactory;
-import org.eclipse.uml2.diagram.statemachine.view.factories.ChoicePseudostateViewFactory;
 
 /**
  * @generated

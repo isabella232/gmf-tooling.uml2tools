@@ -15,7 +15,7 @@ helper supportsU2TCompartments(diagram : genModel::GenDiagram) : Boolean {
 		or 'org.eclipse.uml2.diagram.deploy' = diagram.editorGen.plugin.iD 
 		or 'org.eclipse.uml2.diagram.usecase' = diagram.editorGen.plugin.iD 
 --		or 'org.eclipse.uml2.diagram.activity' = diagram.editorGen.plugin.iD 
---		or 'org.eclipse.uml2.diagram.statemachine' = diagram.editorGen.plugin.iD
+		or 'org.eclipse.uml2.diagram.statemachine' = diagram.editorGen.plugin.iD
 		or 'org.eclipse.uml2.diagram.profile' = diagram.editorGen.plugin.iD 
 
 }

@@ -3,14 +3,11 @@ package org.eclipse.uml2.diagram.statemachine.part;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.gef.Tool;
 import org.eclipse.gef.palette.PaletteContainer;
 import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.PaletteStack;
 import org.eclipse.gef.palette.ToolEntry;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
-import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.uml2.diagram.common.part.LinkToolEntry;
 import org.eclipse.uml2.diagram.common.part.NodeToolEntry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -18,6 +15,7 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 /**
  * @generated
  */
+
 public class UMLPaletteFactory {
 
 	/**
@@ -281,4 +279,5 @@ public class UMLPaletteFactory {
 		entry.setToolClass(CreateSubmachineStateTool.class);
 		return entry;
 	}
+
 }

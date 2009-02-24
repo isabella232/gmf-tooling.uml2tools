@@ -2,14 +2,15 @@ package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.compartments.U2TCompartmentFigure;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.CompositeState_InternalTransitionsCanonicalEditPolicy;
@@ -54,10 +55,16 @@ public class CompositeState_InternalTransitionsEditPart extends ListCompartmentE
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
-		result.setTitleVisibility(false);
-		result.setBorder(null);
+		U2TCompartmentFigure result = new U2TCompartmentFigure(getCompartmentName(), getMapMode());
+
+		ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+		layout.setStretchMajorAxis(false);
+		layout.setStretchMinorAxis(false);
+		layout.setMinorAlignment(ConstrainedToolbarLayout.ALIGN_TOPLEFT);
+		result.getContentPane().setLayoutManager(layout);
+
 		return result;
 	}
 
@@ -90,6 +97,35 @@ public class CompositeState_InternalTransitionsEditPart extends ListCompartmentE
 	 */
 	public IElementType getElementType() {
 		return UMLElementTypes.Transition_3022;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void refreshVisibility() {
+		boolean visibility = getNotationView().isVisible() && !getChildren().isEmpty();
+		setVisibility(visibility);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void addChild(EditPart child, int index) {
+		super.addChild(child, index);
+		refreshVisibility();
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void removeChild(EditPart child) {
+		super.removeChild(child);
+		if (isActive()) {
+			refreshVisibility();
+		}
 	}
 
 }

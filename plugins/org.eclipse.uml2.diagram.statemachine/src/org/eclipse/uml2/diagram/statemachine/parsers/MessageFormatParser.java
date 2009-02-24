@@ -18,6 +18,7 @@ import com.ibm.icu.text.MessageFormat;
 /**
  * @generated
  */
+
 public class MessageFormatParser extends AbstractParser {
 
 	/**

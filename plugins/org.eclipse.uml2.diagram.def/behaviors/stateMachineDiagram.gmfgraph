@@ -68,7 +68,12 @@
             name="SimpleStateFigure_InternalActivitiesCompartment"
             outline="false">
           <layout
-              xsi:type="gmfgraph:StackLayout"/>
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.draw2d.StackLayout">
+            <attributes
+                name="observeVisibility"
+                value="true"/>
+          </layout>
         </children>
       </actualFigure>
       <accessors
@@ -144,14 +149,24 @@
               name="CompositeStateFigure_InternalActivitiesCompartment"
               outline="false">
             <layout
-                xsi:type="gmfgraph:StackLayout"/>
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.draw2d.StackLayout">
+              <attributes
+                  name="observeVisibility"
+                  value="true"/>
+            </layout>
           </children>
           <children
               xsi:type="gmfgraph:Rectangle"
               name="CompositeStateFigure_InternalTransitionsCompartment"
               outline="false">
             <layout
-                xsi:type="gmfgraph:StackLayout"/>
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.draw2d.StackLayout">
+              <attributes
+                  name="observeVisibility"
+                  value="true"/>
+            </layout>
           </children>
         </children>
         <children
@@ -564,14 +579,20 @@
   <compartments
       name="SimpleState_InternalActivities"
       figure="SimpleStateFigure"
+      collapsible="true"
+      needsTitle="true"
       accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <compartments
       name="CompositeState_InternalActivities"
       figure="CompositeStateFigure"
+      collapsible="true"
+      needsTitle="true"
       accessor="//@figures.0/@descriptors.1/@accessors.3"/>
   <compartments
       name="CompositeState_InternalTransitions"
       figure="CompositeStateFigure"
+      collapsible="true"
+      needsTitle="true"
       accessor="//@figures.0/@descriptors.1/@accessors.4"/>
   <labels
       name="CompositeStateNode_stereo"

@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.statemachine.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.ChoicePseudostateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.DeepHistoryPseudostateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.FinalStateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.ForkPseudostateCreateCommand;
@@ -13,7 +14,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.commands.SimpleStateCreateComm
 import org.eclipse.uml2.diagram.statemachine.edit.commands.State2CreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.SubmachineStateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TerminatePseudostateCreateCommand;
-import org.eclipse.uml2.diagram.statemachine.edit.commands.ChoicePseudostateCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 /**

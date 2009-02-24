@@ -380,14 +380,24 @@ public class StateMachineEditPart extends AbstractBorderedShapeEditPart implemen
 			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLineWidth(1);
 
 			compositeStateFigure_UpperContainer_old0.add(fFigureCompositeStateFigure_InternalActivitiesCompartment);
-			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLayoutManager(new StackLayout());
+
+			StackLayout layoutFFigureCompositeStateFigure_InternalActivitiesCompartment = new StackLayout();
+
+			layoutFFigureCompositeStateFigure_InternalActivitiesCompartment.setObserveVisibility(true);
+
+			fFigureCompositeStateFigure_InternalActivitiesCompartment.setLayoutManager(layoutFFigureCompositeStateFigure_InternalActivitiesCompartment);
 
 			fFigureCompositeStateFigure_InternalTransitionsCompartment = new RectangleFigure();
 			fFigureCompositeStateFigure_InternalTransitionsCompartment.setOutline(false);
 			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLineWidth(1);
 
 			compositeStateFigure_UpperContainer_old0.add(fFigureCompositeStateFigure_InternalTransitionsCompartment);
-			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLayoutManager(new StackLayout());
+
+			StackLayout layoutFFigureCompositeStateFigure_InternalTransitionsCompartment = new StackLayout();
+
+			layoutFFigureCompositeStateFigure_InternalTransitionsCompartment.setObserveVisibility(true);
+
+			fFigureCompositeStateFigure_InternalTransitionsCompartment.setLayoutManager(layoutFFigureCompositeStateFigure_InternalTransitionsCompartment);
 
 			fFigureCompositeStateFigure_Body = new RectangleFigure();
 			fFigureCompositeStateFigure_Body.setOutline(false);

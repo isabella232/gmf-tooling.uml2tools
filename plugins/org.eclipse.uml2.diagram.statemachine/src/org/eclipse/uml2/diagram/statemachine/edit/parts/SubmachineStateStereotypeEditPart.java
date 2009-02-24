@@ -51,7 +51,6 @@ import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
-import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
@@ -200,7 +199,7 @@ public class SubmachineStateStereotypeEditPart extends CompartmentEditPart imple
 	/**
 	 * @generated
 	 */
-	protected EObject getParserElement() {
+	protected org.eclipse.emf.ecore.EObject getParserElement() {
 		return resolveSemanticElement();
 	}
 
@@ -224,7 +223,7 @@ public class SubmachineStateStereotypeEditPart extends CompartmentEditPart imple
 	 */
 	protected String getLabelText() {
 		String text = null;
-		EObject parserElement = getParserElement();
+		org.eclipse.emf.ecore.EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
 			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 		}
@@ -267,7 +266,7 @@ public class SubmachineStateStereotypeEditPart extends CompartmentEditPart imple
 
 			public String isValid(final Object value) {
 				if (value instanceof String) {
-					final EObject element = getParserElement();
+					final org.eclipse.emf.ecore.EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
 						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
@@ -456,10 +455,10 @@ public class SubmachineStateStereotypeEditPart extends CompartmentEditPart imple
 	 */
 	protected void addSemanticListeners() {
 		if (getParser() instanceof ISemanticParser) {
-			EObject element = resolveSemanticElement();
+			org.eclipse.emf.ecore.EObject element = resolveSemanticElement();
 			parserElements = ((ISemanticParser) getParser()).getSemanticElementsBeingParsed(element);
 			for (int i = 0; i < parserElements.size(); i++) {
-				addListenerFilter("SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
+				addListenerFilter("SemanticModel" + i, this, (org.eclipse.emf.ecore.EObject) parserElements.get(i)); //$NON-NLS-1$
 			}
 		} else {
 			super.addSemanticListeners();
