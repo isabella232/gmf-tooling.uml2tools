@@ -16,7 +16,6 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
@@ -116,7 +115,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
-			protected EditPolicy createChildEditPolicy(EditPart child) {
+			protected EditPolicy createChildEditPolicy(org.eclipse.gef.EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -153,13 +152,13 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	protected boolean addFixedChild(EditPart childEditPart) {
+	protected boolean addFixedChild(org.eclipse.gef.EditPart childEditPart) {
 		if (childEditPart instanceof ConditionalNodeNameEditPart) {
 			((ConditionalNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_name());
 			return true;
 		}
-		if (childEditPart instanceof ConditionalNodeStereotype2EditPart) {
-			((ConditionalNodeStereotype2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_stereo());
+		if (childEditPart instanceof ConditionalNodeStereotypeEditPart) {
+			((ConditionalNodeStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof ConditionalNodeCompartmentEditPart) {
@@ -174,7 +173,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	protected boolean removeFixedChild(EditPart childEditPart) {
+	protected boolean removeFixedChild(org.eclipse.gef.EditPart childEditPart) {
 
 		if (childEditPart instanceof ConditionalNodeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
@@ -187,7 +186,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	protected void addChildVisual(EditPart childEditPart, int index) {
+	protected void addChildVisual(org.eclipse.gef.EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
 		}
@@ -197,7 +196,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	protected void removeChildVisual(EditPart childEditPart) {
+	protected void removeChildVisual(org.eclipse.gef.EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
 		}
@@ -303,7 +302,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	public EditPart getPrimaryChildEditPart() {
+	public org.eclipse.gef.EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ConditionalNodeNameEditPart.VISUAL_ID));
 	}
 
@@ -457,6 +456,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
+		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
@@ -691,6 +693,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
+		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
@@ -851,6 +856,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_AddStructuralFeatureValueActionEditPart) {
+			types.add(UMLElementTypes.ExceptionHandler_4005);
+		}
+		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof SendSignalActionEditPart) {
@@ -1051,6 +1059,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1285,6 +1296,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1445,6 +1459,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+		}
+		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.SendSignalAction_3053);
@@ -1655,6 +1672,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1889,6 +1909,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -2037,6 +2060,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+		}
+		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.SendSignalAction_3053);
@@ -2203,13 +2229,6 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureStructuredActivityFigure_name() {
-			return getNameAndStereotypeBlock().getNameLabel();
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureStructuredActivityFigure_ContentPane() {
 			return fFigureStructuredActivityFigure_ContentPane;
 		}
@@ -2219,6 +2238,13 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		 */
 		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
 			return fNameAndStereotypeBlock;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureStructuredActivityFigure_name() {
+			return getNameAndStereotypeBlock().getNameLabel();
 		}
 
 		/**
@@ -2477,7 +2503,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	 * @generated
 	 */
 	protected void performDirectEditRequest(final Request request) {
-		EditPart editPart = this;
+		org.eclipse.gef.EditPart editPart = this;
 		if (request instanceof DirectEditRequest) {
 			Point p = new Point(((DirectEditRequest) request).getLocation());
 			getFigure().translateToRelative(p);
@@ -2486,7 +2512,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		}
 		if (editPart == this) {
 			try {
-				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+				editPart = (org.eclipse.gef.EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
 					public void run() {
 						setResult(chooseLabelEditPartForDirectEditRequest(request));
@@ -2504,7 +2530,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+	protected org.eclipse.gef.EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
 		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
 			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
@@ -2513,7 +2539,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
 
 			if (initialChar.charValue() == '<') {
-				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(ConditionalNodeStereotype2EditPart.VISUAL_ID));
+				org.eclipse.gef.EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(ConditionalNodeStereotypeEditPart.VISUAL_ID));
 				if (result != null) {
 					return result;
 				}

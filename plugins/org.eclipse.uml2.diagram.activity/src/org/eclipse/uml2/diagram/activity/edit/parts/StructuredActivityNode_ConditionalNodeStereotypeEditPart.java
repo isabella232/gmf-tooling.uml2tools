@@ -55,19 +55,18 @@ import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
-import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 import org.eclipse.uml2.uml.Element;
 
 /**
  * @generated
  */
 
-public class ConditionalNodeStereotype2EditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class StructuredActivityNode_ConditionalNodeStereotypeEditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5116;
+	public static final int VISUAL_ID = 5148;
 
 	/**
 	 * @generated
@@ -97,7 +96,7 @@ public class ConditionalNodeStereotype2EditPart extends CompartmentEditPart impl
 	/**
 	 * @generated
 	 */
-	public ConditionalNodeStereotype2EditPart(View view) {
+	public StructuredActivityNode_ConditionalNodeStereotypeEditPart(View view) {
 		super(view);
 	}
 
@@ -200,7 +199,7 @@ public class ConditionalNodeStereotype2EditPart extends CompartmentEditPart impl
 	/**
 	 * @generated
 	 */
-	protected EObject getParserElement() {
+	protected org.eclipse.emf.ecore.EObject getParserElement() {
 		return resolveSemanticElement();
 	}
 
@@ -224,7 +223,7 @@ public class ConditionalNodeStereotype2EditPart extends CompartmentEditPart impl
 	 */
 	protected String getLabelText() {
 		String text = null;
-		EObject parserElement = getParserElement();
+		org.eclipse.emf.ecore.EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
 			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 		}
@@ -267,7 +266,7 @@ public class ConditionalNodeStereotype2EditPart extends CompartmentEditPart impl
 
 			public String isValid(final Object value) {
 				if (value instanceof String) {
-					final EObject element = getParserElement();
+					final org.eclipse.emf.ecore.EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
 						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
@@ -310,8 +309,8 @@ public class ConditionalNodeStereotype2EditPart extends CompartmentEditPart impl
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.ConditionalNode_3082, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeStereotype2EditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.ConditionalNode_3092, getParserElement(), UMLVisualIDRegistry
+					.getType(org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ConditionalNodeStereotypeEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -353,12 +352,7 @@ public class ConditionalNodeStereotype2EditPart extends CompartmentEditPart impl
 	 * @generated
 	 */
 	private void performDirectEdit(char initialCharacter) {
-		// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
-		// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
-		// notation, also we don't include '<' and '>' into actual inplace text).
-		// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
-
-		if (initialCharacter != '<' && getManager() instanceof TextDirectEditManager) {
+		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
 		} else {
 			performDirectEdit();
@@ -456,10 +450,10 @@ public class ConditionalNodeStereotype2EditPart extends CompartmentEditPart impl
 	 */
 	protected void addSemanticListeners() {
 		if (getParser() instanceof ISemanticParser) {
-			EObject element = resolveSemanticElement();
+			org.eclipse.emf.ecore.EObject element = resolveSemanticElement();
 			parserElements = ((ISemanticParser) getParser()).getSemanticElementsBeingParsed(element);
 			for (int i = 0; i < parserElements.size(); i++) {
-				addListenerFilter("SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
+				addListenerFilter("SemanticModel" + i, this, (org.eclipse.emf.ecore.EObject) parserElements.get(i)); //$NON-NLS-1$
 			}
 		} else {
 			super.addSemanticListeners();

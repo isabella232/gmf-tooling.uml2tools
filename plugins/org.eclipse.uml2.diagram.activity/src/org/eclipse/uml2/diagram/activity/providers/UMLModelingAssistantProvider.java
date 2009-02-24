@@ -67,6 +67,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeCompartmentEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeConditionalNodeCompartmentEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPinEditPart;
@@ -100,6 +101,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AddSt
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ConditionalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DecisionNodeEditPart;
@@ -376,10 +378,35 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.CentralBufferNode_3025);
 			types.add(UMLElementTypes.InputPin_3054);
 			types.add(UMLElementTypes.OutputPin_3055);
+			types.add(UMLElementTypes.ConditionalNode_3092);
 			return types;
 		}
 
 		if (editPart instanceof StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.StructuredActivityNode_3009);
+			types.add(UMLElementTypes.OpaqueAction_3011);
+			types.add(UMLElementTypes.AcceptEventAction_3012);
+			types.add(UMLElementTypes.AcceptEventAction_3013);
+			types.add(UMLElementTypes.ActivityFinalNode_3014);
+			types.add(UMLElementTypes.DecisionNode_3015);
+			types.add(UMLElementTypes.FlowFinalNode_3016);
+			types.add(UMLElementTypes.Pin_3017);
+			types.add(UMLElementTypes.CreateObjectAction_3018);
+			types.add(UMLElementTypes.CallBehaviorAction_3019);
+			types.add(UMLElementTypes.CallOperationAction_3020);
+			types.add(UMLElementTypes.ForkNode_3021);
+			types.add(UMLElementTypes.JoinNode_3022);
+			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+			types.add(UMLElementTypes.DataStoreNode_3024);
+			types.add(UMLElementTypes.CentralBufferNode_3025);
+			types.add(UMLElementTypes.InputPin_3054);
+			types.add(UMLElementTypes.OutputPin_3055);
+			types.add(UMLElementTypes.ConditionalNode_3092);
+			return types;
+		}
+
+		if (editPart instanceof ConditionalNodeConditionalNodeCompartmentEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
 			types.add(UMLElementTypes.OpaqueAction_3011);
@@ -734,6 +761,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			return ((StructuredActivityNode_OutputPinEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			return ((StructuredActivityNode_ConditionalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof ActivityParameterNodeEditPart) {
 			return ((ActivityParameterNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
@@ -985,6 +1015,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			return ((StructuredActivityNode_OutputPinEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			return ((StructuredActivityNode_ConditionalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof OpaqueBehaviorEditPart) {
 			return ((OpaqueBehaviorEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
@@ -1230,6 +1263,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			return ((StructuredActivityNode_OutputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			return ((StructuredActivityNode_ConditionalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ActivityParameterNodeEditPart) {
 			return ((ActivityParameterNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1482,6 +1518,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			return ((StructuredActivityNode_OutputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			return ((StructuredActivityNode_ConditionalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof OpaqueBehaviorEditPart) {
 			return ((OpaqueBehaviorEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -1726,6 +1765,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			return ((StructuredActivityNode_OutputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			return ((StructuredActivityNode_ConditionalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ActivityParameterNodeEditPart) {
 			return ((ActivityParameterNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);

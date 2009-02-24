@@ -364,8 +364,7 @@ public class ConditionalNodeNameEditPart extends CompartmentEditPart implements 
 
 		if (initialChar != null && '<' == initialChar.charValue()) {
 			ConditionalNodeEditPart parent = (ConditionalNodeEditPart) getParent();
-			ConditionalNodeStereotype2EditPart stereoLabel = (ConditionalNodeStereotype2EditPart) parent.getChildBySemanticHint(UMLVisualIDRegistry
-					.getType(ConditionalNodeStereotype2EditPart.VISUAL_ID));
+			ConditionalNodeStereotypeEditPart stereoLabel = (ConditionalNodeStereotypeEditPart) parent.getChildBySemanticHint(UMLVisualIDRegistry.getType(ConditionalNodeStereotypeEditPart.VISUAL_ID));
 			if (stereoLabel != null) {
 				stereoLabel.performRequest(theRequest);
 				return;

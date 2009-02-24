@@ -403,6 +403,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNode_OutputPinOrderingEditPart.VISUAL_ID:
 				return new StructuredActivityNode_OutputPinOrderingEditPart(view);
 
+			case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_ConditionalNodeEditPart(view);
+
+			case StructuredActivityNode_ConditionalNodeNameEditPart.VISUAL_ID:
+				return new StructuredActivityNode_ConditionalNodeNameEditPart(view);
+
+			case StructuredActivityNode_ConditionalNodeStereotypeEditPart.VISUAL_ID:
+				return new StructuredActivityNode_ConditionalNodeStereotypeEditPart(view);
+
 			case OpaqueBehaviorEditPart.VISUAL_ID:
 				return new OpaqueBehaviorEditPart(view);
 
@@ -667,8 +676,8 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ConditionalNodeNameEditPart.VISUAL_ID:
 				return new ConditionalNodeNameEditPart(view);
 
-			case ConditionalNodeStereotype2EditPart.VISUAL_ID:
-				return new ConditionalNodeStereotype2EditPart(view);
+			case ConditionalNodeStereotypeEditPart.VISUAL_ID:
+				return new ConditionalNodeStereotypeEditPart(view);
 
 			case ExpansionRegionEditPart.VISUAL_ID:
 				return new ExpansionRegionEditPart(view);
@@ -717,6 +726,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 				return new StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart(view);
+
+			case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
+				return new ConditionalNodeConditionalNodeCompartmentEditPart(view);
 
 			case ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 				return new ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart(view);

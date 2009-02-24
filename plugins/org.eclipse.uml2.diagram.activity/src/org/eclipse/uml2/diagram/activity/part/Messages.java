@@ -709,6 +709,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ConditionalNodeConditionalNodeCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart_title;
 
 	/**
@@ -1220,6 +1225,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_OutputPin_3055_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConditionalNode_3092_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ConditionalNode_3092_outgoinglinks;
 
 	/**
 	 * @generated

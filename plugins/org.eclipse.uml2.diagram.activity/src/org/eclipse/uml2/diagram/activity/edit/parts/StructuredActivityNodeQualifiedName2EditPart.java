@@ -199,7 +199,7 @@ public class StructuredActivityNodeQualifiedName2EditPart extends CompartmentEdi
 	/**
 	 * @generated
 	 */
-	protected EObject getParserElement() {
+	protected org.eclipse.emf.ecore.EObject getParserElement() {
 		return resolveSemanticElement();
 	}
 
@@ -223,7 +223,7 @@ public class StructuredActivityNodeQualifiedName2EditPart extends CompartmentEdi
 	 */
 	protected String getLabelText() {
 		String text = null;
-		EObject parserElement = getParserElement();
+		org.eclipse.emf.ecore.EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
 			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 		}
@@ -266,7 +266,7 @@ public class StructuredActivityNodeQualifiedName2EditPart extends CompartmentEdi
 
 			public String isValid(final Object value) {
 				if (value instanceof String) {
-					final EObject element = getParserElement();
+					final org.eclipse.emf.ecore.EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
 						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
@@ -455,10 +455,10 @@ public class StructuredActivityNodeQualifiedName2EditPart extends CompartmentEdi
 	 */
 	protected void addSemanticListeners() {
 		if (getParser() instanceof ISemanticParser) {
-			EObject element = resolveSemanticElement();
+			org.eclipse.emf.ecore.EObject element = resolveSemanticElement();
 			parserElements = ((ISemanticParser) getParser()).getSemanticElementsBeingParsed(element);
 			for (int i = 0; i < parserElements.size(); i++) {
-				addListenerFilter("SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
+				addListenerFilter("SemanticModel" + i, this, (org.eclipse.emf.ecore.EObject) parserElements.get(i)); //$NON-NLS-1$
 			}
 		} else {
 			super.addSemanticListeners();

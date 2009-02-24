@@ -120,6 +120,8 @@ public class UMLDiagramUpdater {
 			return getStructuredActivityNodeStructuredActivityContentPaneCompartment_7008SemanticChildren(view);
 		case StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 			return getStructuredActivityNodeStructuredActivityContentPaneCompartment_7002SemanticChildren(view);
+		case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
+			return getConditionalNodeConditionalNodeCompartment_7023SemanticChildren(view);
 		case ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 			return getStructuredActivityNodeStructuredActivityContentPaneCompartment_7016SemanticChildren(view);
 		case ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
@@ -1065,6 +1067,10 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
+			if (visualID == StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
 		}
 		return result;
 	}
@@ -1081,6 +1087,102 @@ public class UMLDiagramUpdater {
 			return Collections.EMPTY_LIST;
 		}
 		StructuredActivityNode modelElement = (StructuredActivityNode) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
+			ActivityNode childElement = (ActivityNode) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_AcceptEventActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_AcceptTimeEventActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_ActivityFinalNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_DecisionNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_FlowFinalNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_PinEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_CreateObjectActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_CallBehaviorActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_CallOperationActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_ForkNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_JoinNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_AddStructuralFeatureValueActionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_DataStoreNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_CentralBufferNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_InputPinEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_OutputPinEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getConditionalNodeConditionalNodeCompartment_7023SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		ConditionalNode modelElement = (ConditionalNode) containerView.getElement();
 		List result = new LinkedList();
 		for (Iterator it = modelElement.getNodes().iterator(); it.hasNext();) {
 			ActivityNode childElement = (ActivityNode) it.next();
@@ -2090,6 +2192,8 @@ public class UMLDiagramUpdater {
 			return getInputPin_3054ContainedLinks(view);
 		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 			return getOutputPin_3055ContainedLinks(view);
+		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
+			return getConditionalNode_3092ContainedLinks(view);
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return getOpaqueBehavior_3047ContainedLinks(view);
 		case ActivityParameterNodeEditPart.VISUAL_ID:
@@ -2281,6 +2385,8 @@ public class UMLDiagramUpdater {
 			return getInputPin_3054IncomingLinks(view);
 		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 			return getOutputPin_3055IncomingLinks(view);
+		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
+			return getConditionalNode_3092IncomingLinks(view);
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return getOpaqueBehavior_3047IncomingLinks(view);
 		case ActivityParameterNodeEditPart.VISUAL_ID:
@@ -2472,6 +2578,8 @@ public class UMLDiagramUpdater {
 			return getInputPin_3054OutgoingLinks(view);
 		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 			return getOutputPin_3055OutgoingLinks(view);
+		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
+			return getConditionalNode_3092OutgoingLinks(view);
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return getOpaqueBehavior_3047OutgoingLinks(view);
 		case ActivityParameterNodeEditPart.VISUAL_ID:
@@ -3029,6 +3137,18 @@ public class UMLDiagramUpdater {
 		OutputPin modelElement = (OutputPin) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getConditionalNode_3092ContainedLinks(View view) {
+		ConditionalNode modelElement = (ConditionalNode) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
 
@@ -4035,6 +4155,19 @@ public class UMLDiagramUpdater {
 		List result = new LinkedList();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getConditionalNode_3092IncomingLinks(View view) {
+		ConditionalNode modelElement = (ConditionalNode) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
 		return result;
 	}
 
@@ -5105,6 +5238,20 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getConditionalNode_3092OutgoingLinks(View view) {
+		ConditionalNode modelElement = (ConditionalNode) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
 

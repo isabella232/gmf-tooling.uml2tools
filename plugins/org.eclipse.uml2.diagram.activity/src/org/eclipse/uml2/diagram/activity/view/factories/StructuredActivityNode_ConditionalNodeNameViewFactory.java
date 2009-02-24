@@ -10,7 +10,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 
-public class ConditionalNodeStereotype2ViewFactory extends BasicNodeViewFactory {
+public class StructuredActivityNode_ConditionalNodeNameViewFactory extends BasicNodeViewFactory {
 
 	/**
 	 * @generated

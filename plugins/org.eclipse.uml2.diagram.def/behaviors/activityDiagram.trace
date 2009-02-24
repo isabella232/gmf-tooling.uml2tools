@@ -781,6 +781,19 @@
         visualID="5146"
         queryText="true"/>
   </childNodeTraces>
+  <childNodeTraces
+      visualID="3092"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'ConditionalNode') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'StructuredActivityNode') and _containmentMF_.name = 'node')">
+    <nodeLabelTraces
+        visualID="5147"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5148"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7023"
+        queryText="true"/>
+  </childNodeTraces>
   <linkTraces
       visualID="4001"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'ControlFlow')">

@@ -1569,6 +1569,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	 * @generated
+	 */
+	private IParser conditionalNodeName_5147Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConditionalNodeName_5147Parser() {
+		if (conditionalNodeName_5147Parser == null) {
+			conditionalNodeName_5147Parser = createConditionalNodeName_5147Parser();
+		}
+		return conditionalNodeName_5147Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConditionalNodeName_5147Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser conditionalNodeQualifiedName_5148Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getConditionalNodeQualifiedName_5148Parser() {
+		if (conditionalNodeQualifiedName_5148Parser == null) {
+			conditionalNodeQualifiedName_5148Parser = createConditionalNodeQualifiedName_5148Parser();
+		}
+		return conditionalNodeQualifiedName_5148Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createConditionalNodeQualifiedName_5148Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_QualifiedName() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
 	 * @generated NOT
 	 */
 	protected IParser createOutputPinOrdering_5064Parser() {
@@ -3132,6 +3180,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOutputPinName_5048Parser();
 		case StructuredActivityNode_OutputPinOrderingEditPart.VISUAL_ID:
 			return getOutputPinOrdering_5064Parser();
+		case StructuredActivityNode_ConditionalNodeNameEditPart.VISUAL_ID:
+			return getConditionalNodeName_5147Parser();
+		case StructuredActivityNode_ConditionalNodeStereotypeEditPart.VISUAL_ID:
+			return getConditionalNodeQualifiedName_5148Parser();
 		case OpaqueBehaviorNameEditPart.VISUAL_ID:
 			return getOpaqueBehaviorName_5029Parser();
 		case ActivityParameterNodeNameEditPart.VISUAL_ID:
@@ -3240,7 +3292,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getLoopNodeQualifiedName_5118Parser();
 		case ConditionalNodeNameEditPart.VISUAL_ID:
 			return getConditionalNodeName_5092Parser();
-		case ConditionalNodeStereotype2EditPart.VISUAL_ID:
+		case ConditionalNodeStereotypeEditPart.VISUAL_ID:
 			return getConditionalNodeQualifiedName_5116Parser();
 		case ExpansionRegionModeEditPart.VISUAL_ID:
 			return getExpansionRegionMode_5087Parser();

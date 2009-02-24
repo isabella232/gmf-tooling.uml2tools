@@ -409,6 +409,9 @@ public class StructuredActivityNode_AcceptTimeEventActionEditPart extends Abstra
 		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
+		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
@@ -643,6 +646,9 @@ public class StructuredActivityNode_AcceptTimeEventActionEditPart extends Abstra
 		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
+		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
@@ -803,6 +809,9 @@ public class StructuredActivityNode_AcceptTimeEventActionEditPart extends Abstra
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_AddStructuralFeatureValueActionEditPart) {
+			types.add(UMLElementTypes.ExceptionHandler_4005);
+		}
+		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ExceptionHandler_4005);
 		}
 		if (targetEditPart instanceof SendSignalActionEditPart) {
@@ -1003,6 +1012,9 @@ public class StructuredActivityNode_AcceptTimeEventActionEditPart extends Abstra
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1237,6 +1249,9 @@ public class StructuredActivityNode_AcceptTimeEventActionEditPart extends Abstra
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1397,6 +1412,9 @@ public class StructuredActivityNode_AcceptTimeEventActionEditPart extends Abstra
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+		}
+		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.SendSignalAction_3053);
@@ -1607,6 +1625,9 @@ public class StructuredActivityNode_AcceptTimeEventActionEditPart extends Abstra
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1841,6 +1862,9 @@ public class StructuredActivityNode_AcceptTimeEventActionEditPart extends Abstra
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1989,6 +2013,9 @@ public class StructuredActivityNode_AcceptTimeEventActionEditPart extends Abstra
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+		}
+		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ExceptionHandler_4005) {
 			types.add(UMLElementTypes.SendSignalAction_3053);

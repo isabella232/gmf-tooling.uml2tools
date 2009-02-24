@@ -322,6 +322,9 @@ public class LocalPostconditionEditPart extends ShapeNodeEditPart implements Pri
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.SendSignalAction_3053);
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
@@ -425,6 +428,9 @@ public class LocalPostconditionEditPart extends ShapeNodeEditPart implements Pri
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
+		}
+		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.SendSignalAction_3053);

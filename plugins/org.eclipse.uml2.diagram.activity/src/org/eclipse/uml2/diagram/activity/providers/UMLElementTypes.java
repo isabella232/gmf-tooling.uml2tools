@@ -96,6 +96,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_AddSt
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ConditionalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DataStoreNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DecisionNodeEditPart;
@@ -380,6 +381,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType OutputPin_3055 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.OutputPin_3055"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType ConditionalNode_3092 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.ConditionalNode_3092"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -818,6 +824,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(OutputPin_3055, UMLPackage.eINSTANCE.getOutputPin());
 
+			elements.put(ConditionalNode_3092, UMLPackage.eINSTANCE.getConditionalNode());
+
 			elements.put(OpaqueBehavior_3047, UMLPackage.eINSTANCE.getOpaqueBehavior());
 
 			elements.put(ActivityParameterNode_3052, UMLPackage.eINSTANCE.getActivityParameterNode());
@@ -976,6 +984,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3025);
 			KNOWN_ELEMENT_TYPES.add(InputPin_3054);
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3055);
+			KNOWN_ELEMENT_TYPES.add(ConditionalNode_3092);
 			KNOWN_ELEMENT_TYPES.add(OpaqueBehavior_3047);
 			KNOWN_ELEMENT_TYPES.add(ActivityParameterNode_3052);
 			KNOWN_ELEMENT_TYPES.add(SendSignalAction_3053);
@@ -1128,6 +1137,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return InputPin_3054;
 		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 			return OutputPin_3055;
+		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
+			return ConditionalNode_3092;
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return OpaqueBehavior_3047;
 		case ActivityParameterNodeEditPart.VISUAL_ID:

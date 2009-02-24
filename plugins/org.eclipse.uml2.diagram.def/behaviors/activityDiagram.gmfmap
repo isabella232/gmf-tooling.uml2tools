@@ -890,8 +890,14 @@
                   href="activityDiagram_objects.gmfgraph#StandalonePinNode"/>
             </ownedChild>
           </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.17/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.23/@ownedChild">
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredActivityNode/node"/>
+          </children>
           <compartments
-              children="//@nodes.0/@ownedChild/@children.17/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.9 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.10 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.11 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.12 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.13 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.14 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.15 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.16 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.17">
+              children="//@nodes.0/@ownedChild/@children.17/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.9 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.10 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.11 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.12 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.13 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.14 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.15 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.16 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.17 //@nodes.0/@ownedChild/@children.17/@ownedChild/@children.18">
             <compartment
                 href="activityDiagram_structured.gmfgraph#StructuredActivityContentPaneCompartment"/>
           </compartments>

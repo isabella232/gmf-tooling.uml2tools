@@ -105,7 +105,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
-			protected EditPolicy createChildEditPolicy(EditPart child) {
+			protected EditPolicy createChildEditPolicy(org.eclipse.gef.EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
 				case StructuredActivityNode_CentralBufferNodeOrderingEditPart.VISUAL_ID:
@@ -154,7 +154,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 	/**
 	 * @generated
 	 */
-	protected boolean addFixedChild(EditPart childEditPart) {
+	protected boolean addFixedChild(org.eclipse.gef.EditPart childEditPart) {
 		if (childEditPart instanceof StructuredActivityNode_CentralBufferNodeNameEditPart) {
 			((StructuredActivityNode_CentralBufferNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureCentralBufferFigure_name());
 			return true;
@@ -173,7 +173,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 	/**
 	 * @generated
 	 */
-	protected boolean removeFixedChild(EditPart childEditPart) {
+	protected boolean removeFixedChild(org.eclipse.gef.EditPart childEditPart) {
 
 		return false;
 	}
@@ -181,7 +181,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 	/**
 	 * @generated
 	 */
-	protected void addChildVisual(EditPart childEditPart, int index) {
+	protected void addChildVisual(org.eclipse.gef.EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
 		}
@@ -191,7 +191,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 	/**
 	 * @generated
 	 */
-	protected void removeChildVisual(EditPart childEditPart) {
+	protected void removeChildVisual(org.eclipse.gef.EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
 		}
@@ -310,7 +310,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 	/**
 	 * @generated
 	 */
-	public EditPart getPrimaryChildEditPart() {
+	public org.eclipse.gef.EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(StructuredActivityNode_CentralBufferNodeNameEditPart.VISUAL_ID));
 	}
 
@@ -460,6 +460,9 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
+		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -694,6 +697,9 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_OutputPinEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -945,6 +951,9 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1177,6 +1186,9 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.OutputPin_3055);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
@@ -1437,6 +1449,9 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1671,6 +1686,9 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 			types.add(UMLElementTypes.OutputPin_3055);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
@@ -1872,13 +1890,6 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureCentralBufferFigure_name() {
-			return getNameAndStereotypeBlock().getNameLabel();
-		}
-
-		/**
-		 * @generated
-		 */
 		public Label getFigureCentralBufferFigure_states() {
 			return fFigureCentralBufferFigure_states;
 		}
@@ -1888,6 +1899,13 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 		 */
 		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
 			return fNameAndStereotypeBlock;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureCentralBufferFigure_name() {
+			return getNameAndStereotypeBlock().getNameLabel();
 		}
 
 		/**
@@ -1955,7 +1973,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 	 * @generated
 	 */
 	protected void performDirectEditRequest(final Request request) {
-		EditPart editPart = this;
+		org.eclipse.gef.EditPart editPart = this;
 		if (request instanceof DirectEditRequest) {
 			Point p = new Point(((DirectEditRequest) request).getLocation());
 			getFigure().translateToRelative(p);
@@ -1964,7 +1982,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 		}
 		if (editPart == this) {
 			try {
-				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+				editPart = (org.eclipse.gef.EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
 					public void run() {
 						setResult(chooseLabelEditPartForDirectEditRequest(request));
@@ -1982,7 +2000,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 	/**
 	 * @generated
 	 */
-	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+	protected org.eclipse.gef.EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
 		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
 			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
@@ -1991,7 +2009,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
 
 			if (initialChar.charValue() == '<') {
-				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(StructuredActivityNode_CentralBufferNodeStereotypeEditPart.VISUAL_ID));
+				org.eclipse.gef.EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(StructuredActivityNode_CentralBufferNodeStereotypeEditPart.VISUAL_ID));
 				if (result != null) {
 					return result;
 				}

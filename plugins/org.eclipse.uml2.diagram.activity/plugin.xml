@@ -182,7 +182,7 @@
       <viewProvider class="org.eclipse.uml2.diagram.activity.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLActivity"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2026,2027,2028,3030,3031,3032,3033,3034,3035,3036,3037,3029,3001,3038,3039,3040,3041,3042,3002,3043,3003,3004,3005,3044,3006,3007,3045,3008,3046,3009,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3054,3055,3047,3052,3053,3056,3057,3059,3060,3061,3062,3063,3064,3065,3066,3067,3068,3069,3070,3071,3072,3073,3074,3075,3076,3079,3080,3081,3077,3078,3083,3085,3088,3090,3058,3082,3084,3091,3086,3087,3089,3049,3051"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2026,2027,2028,3030,3031,3032,3033,3034,3035,3036,3037,3029,3001,3038,3039,3040,3041,3042,3002,3043,3003,3004,3005,3044,3006,3007,3045,3008,3046,3009,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3054,3055,3092,3047,3052,3053,3056,3057,3059,3060,3061,3062,3063,3064,3065,3066,3067,3068,3069,3070,3071,3072,3073,3074,3075,3076,3079,3080,3081,3077,3078,3083,3085,3088,3090,3058,3082,3084,3091,3086,3087,3089,3049,3051"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4006,4004,4005"/>
       </viewProvider>
    </extension>
@@ -195,16 +195,16 @@
             <method name="getType()" value="UMLActivity"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2026,2027,2028,3030,3031,3032,3033,3034,3035,3036,3037,3029,3001,3038,3039,3040,3041,3042,3002,3043,3003,3004,3005,3044,3006,3007,3045,3008,3046,3009,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3054,3055,3047,3052,3053,3056,3057,3059,3060,3061,3062,3063,3064,3065,3066,3067,3068,3069,3070,3071,3072,3073,3074,3075,3076,3079,3080,3081,3077,3078,3083,3085,3088,3090,3058,3082,3084,3091,3086,3087,3089,3049,3051"/>
+            <method name="getType()" value="2026,2027,2028,3030,3031,3032,3033,3034,3035,3036,3037,3029,3001,3038,3039,3040,3041,3042,3002,3043,3003,3004,3005,3044,3006,3007,3045,3008,3046,3009,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3022,3023,3024,3025,3054,3055,3092,3047,3052,3053,3056,3057,3059,3060,3061,3062,3063,3064,3065,3066,3067,3068,3069,3070,3071,3072,3073,3074,3075,3076,3079,3080,3081,3077,3078,3083,3085,3088,3090,3058,3082,3084,3091,3086,3087,3089,3049,3051"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002,4003,4006,4004,4005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5030,5093,5040,5095,5042,5034,5036,5051,5127,5032,5038,5049,5124,5023,5110,5003,5055,5024,5052,5085,5130,5025,5107,5004,5056,5026,5097,5006,5057,5007,5058,5008,5059,5027,5099,5010,5060,5011,5061,5028,5101,5013,5062,5090,5120,5089,5119,5015,5111,5041,5096,5043,5016,5053,5086,5131,5017,5108,5018,5100,5019,5102,5020,5098,5035,5037,5054,5128,5033,5039,5050,5125,5047,5063,5048,5064,5029,5031,5094,5044,5113,5045,5046,5065,5105,5066,5067,5068,5069,5129,5070,5071,5072,5126,5073,5112,5074,5075,5123,5132,5076,5109,5077,5106,5078,5103,5079,5104,5122,5140,5121,5139,5081,5082,5083,5084,5080,5114,5117,5141,5115,5142,5088,5133,5134,5137,5138,5091,5118,5092,5116,5087,5143,5144,5145,5146,5135,5136"/>
+            <method name="getType()" value="5030,5093,5040,5095,5042,5034,5036,5051,5127,5032,5038,5049,5124,5023,5110,5003,5055,5024,5052,5085,5130,5025,5107,5004,5056,5026,5097,5006,5057,5007,5058,5008,5059,5027,5099,5010,5060,5011,5061,5028,5101,5013,5062,5090,5120,5089,5119,5015,5111,5041,5096,5043,5016,5053,5086,5131,5017,5108,5018,5100,5019,5102,5020,5098,5035,5037,5054,5128,5033,5039,5050,5125,5047,5063,5048,5064,5147,5148,5029,5031,5094,5044,5113,5045,5046,5065,5105,5066,5067,5068,5069,5129,5070,5071,5072,5126,5073,5112,5074,5075,5123,5132,5076,5109,5077,5106,5078,5103,5079,5104,5122,5140,5121,5139,5081,5082,5083,5084,5080,5114,5117,5141,5115,5142,5088,5133,5134,5137,5138,5091,5118,5092,5116,5087,5143,5144,5145,5146,5135,5136"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7008,7002,7016,7018,7017,7020,7022,7015,7019,7021,7013,7014"/>
+            <method name="getType()" value="7008,7002,7023,7016,7018,7017,7020,7022,7015,7019,7021,7013,7014"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -717,6 +717,16 @@
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
+               id="org.eclipse.uml2.diagram.activity.ConditionalNode_3092"
+               name="%metatype.name.ConditionalNode_3092"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ConditionalNode"
+               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ConditionalNodeEditHelper">
+            <param name="semanticHint" value="3092"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <metamodelType
                id="org.eclipse.uml2.diagram.activity.OpaqueBehavior_3047"
                name="%metatype.name.OpaqueBehavior_3047"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -973,14 +983,13 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
-         <metamodelType
+         <specializationType
                id="org.eclipse.uml2.diagram.activity.ConditionalNode_3083"
                name="%metatype.name.ConditionalNode_3083"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ConditionalNode"
-               edithelper="org.eclipse.uml2.diagram.activity.edit.helpers.ConditionalNodeEditHelper">
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.activity.ConditionalNode_3092"/>
             <param name="semanticHint" value="3083"/>
-         </metamodelType>
+         </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
@@ -1025,7 +1034,7 @@
                id="org.eclipse.uml2.diagram.activity.ConditionalNode_3082"
                name="%metatype.name.ConditionalNode_3082"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.uml2.diagram.activity.ConditionalNode_3083"/>
+            <specializes id="org.eclipse.uml2.diagram.activity.ConditionalNode_3092"/>
             <param name="semanticHint" value="3082"/>
          </specializationType>
       </metamodel>
@@ -1216,6 +1225,7 @@
          <elementType ref="org.eclipse.uml2.diagram.activity.CentralBufferNode_3025"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.InputPin_3054"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.OutputPin_3055"/>
+         <elementType ref="org.eclipse.uml2.diagram.activity.ConditionalNode_3092"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.OpaqueBehavior_3047"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.ActivityParameterNode_3052"/>
          <elementType ref="org.eclipse.uml2.diagram.activity.SendSignalAction_3053"/>
@@ -1913,6 +1923,10 @@
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OutputPinEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ConditionalNodeEditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria

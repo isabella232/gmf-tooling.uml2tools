@@ -9,6 +9,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_Ad
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_CallBehaviorActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_CallOperationActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_CentralBufferNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_ConditionalNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_CreateObjectActionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_DataStoreNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_DecisionNodeCreateCommand;
@@ -92,6 +93,9 @@ public class StructuredActivityNodeContentPaneCompartmentItemSemanticEditPolicy 
 		}
 		if (UMLElementTypes.OutputPin_3055 == req.getElementType()) {
 			return getGEFWrapper(new StructuredActivityNode_OutputPinCreateCommand(req));
+		}
+		if (UMLElementTypes.ConditionalNode_3092 == req.getElementType()) {
+			return getGEFWrapper(new StructuredActivityNode_ConditionalNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

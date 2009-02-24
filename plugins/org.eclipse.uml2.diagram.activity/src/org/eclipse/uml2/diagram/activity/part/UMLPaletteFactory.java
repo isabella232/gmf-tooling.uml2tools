@@ -519,11 +519,12 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createConditionalNode1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
+		types.add(UMLElementTypes.ConditionalNode_3092);
 		types.add(UMLElementTypes.ConditionalNode_3083);
 		types.add(UMLElementTypes.ConditionalNode_3082);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ConditionalNode1CreationTool_title, Messages.ConditionalNode1CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ConditionalNode_3083));
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ConditionalNode_3092));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
