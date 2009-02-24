@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
@@ -23,7 +22,6 @@ import org.eclipse.uml2.diagram.csd.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.InterfaceRealizationCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.InterfaceRealizationReorientCommand;
-import org.eclipse.uml2.diagram.csd.edit.commands.ParameterCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
@@ -33,12 +31,10 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -50,16 +46,6 @@ public class CollaborationItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 	 */
 	public CollaborationItemSemanticEditPolicy() {
 		super(UMLElementTypes.Collaboration_2005);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected Command getCreateCommand(CreateElementRequest req) {
-		if (UMLElementTypes.Parameter_3013 == req.getElementType()) {
-			return getGEFWrapper(new ParameterCreateCommand(req));
-		}
-		return super.getCreateCommand(req);
 	}
 
 	/**
@@ -89,9 +75,6 @@ public class CollaborationItemSemanticEditPolicy extends UMLBaseItemSemanticEdit
 		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
 			Node node = (Node) it.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
-			case ParameterEditPart.VISUAL_ID:
-				cmd.add(getDestroyElementCommand(node));
-				break;
 			case CollaborationContentsEditPart.VISUAL_ID:
 				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();

@@ -303,9 +303,6 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		if (targetEditPart instanceof PropertyEditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4016);
 		}
-		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(UMLElementTypes.CommentAnnotatedElement_4016);
-		}
 		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4016);
 		}
@@ -358,9 +355,6 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		}
 		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
 			types.add(UMLElementTypes.Class_3010);

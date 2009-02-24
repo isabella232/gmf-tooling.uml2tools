@@ -43,7 +43,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName7EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassNameEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ClassQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationStereoEditPart;
@@ -67,7 +66,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageStereo2EditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehavior2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehaviorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortName2EditPart;
@@ -437,30 +435,6 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 		return new SemanticParserAdapter(new PropertyParser(lookupSuite), new BasicApplyStrategy(), new PropertyToString.VIEW(), new PropertyToString.EDIT());
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser parameterName_5016Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getParameterName_5016Parser() {
-		if (parameterName_5016Parser == null) {
-			parameterName_5016Parser = createParameterName_5016Parser();
-		}
-		return parameterName_5016Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IParser createParameterName_5016Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
 	}
 
 	/**
@@ -1192,8 +1166,6 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCollaborationUseQualifiedName_5029Parser();
 		case PropertyNameEditPart.VISUAL_ID:
 			return getPropertyName_5011Parser();
-		case ParameterNameEditPart.VISUAL_ID:
-			return getParameterName_5016Parser();
 		case Property2EditPart.VISUAL_ID:
 			return getProperty_3008Parser();
 		case OperationEditPart.VISUAL_ID:

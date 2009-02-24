@@ -338,9 +338,6 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 		if (targetEditPart instanceof PropertyEditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
-		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(UMLElementTypes.Dependency_4006);
-		}
 		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
@@ -381,9 +378,6 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Usage_4008);
-		}
-		if (targetEditPart instanceof ParameterEditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof Class2EditPart) {
@@ -437,9 +431,6 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 			types.add(UMLElementTypes.Property_3007);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Parameter_3013);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
@@ -480,9 +471,6 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Class_3010);
@@ -541,9 +529,6 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 			types.add(UMLElementTypes.Property_3007);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Parameter_3013);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
@@ -584,9 +569,6 @@ public class CollaborationUse2EditPart extends ShapeNodeEditPart implements Prim
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Class_3010);

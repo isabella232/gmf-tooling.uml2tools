@@ -329,9 +329,6 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 		if (targetEditPart instanceof PropertyEditPart) {
 			types.add(UMLElementTypes.Connector_4005);
 		}
-		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(UMLElementTypes.Connector_4005);
-		}
 		if (targetEditPart instanceof PortEditPart) {
 			types.add(UMLElementTypes.Connector_4005);
 		}
@@ -369,9 +366,6 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Dependency_4006);
-		}
-		if (targetEditPart instanceof ParameterEditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof Class2EditPart) {
@@ -414,9 +408,6 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Usage_4008);
-		}
-		if (targetEditPart instanceof ParameterEditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof Class2EditPart) {
@@ -444,9 +435,6 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
 		if (relationshipType == UMLElementTypes.Connector_4005) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Connector_4005) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Connector_4005) {
 			types.add(UMLElementTypes.Port_3011);
@@ -486,9 +474,6 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Class_3010);
@@ -531,9 +516,6 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Class_3010);
@@ -568,9 +550,6 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 			types.add(UMLElementTypes.Property_3007);
 		}
 		if (relationshipType == UMLElementTypes.Connector_4005) {
-			types.add(UMLElementTypes.Parameter_3013);
-		}
-		if (relationshipType == UMLElementTypes.Connector_4005) {
 			types.add(UMLElementTypes.Port_3011);
 		}
 		if (relationshipType == UMLElementTypes.Connector_4005) {
@@ -608,9 +587,6 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Class_3010);
@@ -653,9 +629,6 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Class_3010);

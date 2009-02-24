@@ -25,7 +25,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
@@ -76,7 +75,6 @@ public class ClassOperationsCanonicalEditPolicy extends CanonicalEditPolicy {
 		case CommentEditPart.VISUAL_ID:
 		case CollaborationUse2EditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
-		case ParameterEditPart.VISUAL_ID:
 		case Property2EditPart.VISUAL_ID:
 		case Class2EditPart.VISUAL_ID:
 		case PortEditPart.VISUAL_ID:

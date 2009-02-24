@@ -134,13 +134,6 @@
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3013"
-      queryText="let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Parameter'">
-    <nodeLabelTraces
-        visualID="5016"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
       visualID="3014"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.eclipse.org/uml2/3.0.0/UML' and _eClass_.name = 'StructuredClassifier') and _containmentMF_.name = 'ownedAttribute')">
     <nodeLabelTraces

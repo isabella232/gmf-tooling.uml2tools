@@ -648,16 +648,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Parameter_3013_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Parameter_3013_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_Property_3008_incominglinks;
 
 	/**

@@ -13,7 +13,6 @@ import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
@@ -39,12 +38,10 @@ import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
@@ -54,11 +51,9 @@ import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
-import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
-import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.CollaborationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.OpenDiagramEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdateCommand;
@@ -107,11 +102,8 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CollaborationItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new CollaborationCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicyRoles.OPEN_ROLE, new OpenDiagramEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
@@ -373,9 +365,6 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		if (targetEditPart instanceof PropertyEditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
-		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(UMLElementTypes.Dependency_4006);
-		}
 		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
@@ -419,9 +408,6 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Usage_4008);
-		}
-		if (targetEditPart instanceof ParameterEditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof Class2EditPart) {
@@ -490,9 +476,6 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			types.add(UMLElementTypes.Property_3007);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Parameter_3013);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
@@ -533,9 +516,6 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Class_3010);
@@ -609,9 +589,6 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			types.add(UMLElementTypes.Property_3007);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Parameter_3013);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
@@ -655,9 +632,6 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Class_3010);

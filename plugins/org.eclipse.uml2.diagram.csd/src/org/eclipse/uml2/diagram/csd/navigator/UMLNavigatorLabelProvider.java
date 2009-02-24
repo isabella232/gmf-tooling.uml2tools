@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.csd.navigator;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
@@ -50,8 +49,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
@@ -156,8 +153,6 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?CollaborationUse", UMLElementTypes.CollaborationUse_3002); //$NON-NLS-1$
 		case PropertyEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_3007); //$NON-NLS-1$
-		case ParameterEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Parameter", UMLElementTypes.Parameter_3013); //$NON-NLS-1$
 		case Property2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_3008); //$NON-NLS-1$
 		case OperationEditPart.VISUAL_ID:
@@ -276,8 +271,6 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getCollaborationUse_3002Text(view);
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3007Text(view);
-		case ParameterEditPart.VISUAL_ID:
-			return getParameter_3013Text(view);
 		case Property2EditPart.VISUAL_ID:
 			return getProperty_3008Text(view);
 		case OperationEditPart.VISUAL_ID:
@@ -464,20 +457,6 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5011); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getParameter_3013Text(View view) {
-		IParser parser = UMLParserProvider
-				.getParser(UMLElementTypes.Parameter_3013, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(ParameterNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
-		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5016); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

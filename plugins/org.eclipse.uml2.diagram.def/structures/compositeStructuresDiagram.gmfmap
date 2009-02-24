@@ -106,25 +106,6 @@
               href="componentDiagram_classifiers.gmfgraph#PartNode"/>
         </ownedChild>
       </children>
-      <children>
-        <containmentFeature
-            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//StructuredClassifier/ownedAttribute"/>
-        <childrenFeature
-            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Collaboration/collaborationRole"/>
-        <ownedChild>
-          <domainMetaElement
-              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Parameter"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="componentDiagram_classifiers.gmfgraph#PartNode_name"/>
-            <features
-                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
-          </labelMappings>
-          <diagramNode
-              href="componentDiagram_classifiers.gmfgraph#PartNode"/>
-        </ownedChild>
-      </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1">
         <compartment

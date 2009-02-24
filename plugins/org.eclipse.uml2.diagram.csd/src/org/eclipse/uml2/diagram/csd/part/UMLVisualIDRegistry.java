@@ -26,7 +26,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassOperationsEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ClassQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationContentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
@@ -64,8 +63,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageStereo2EditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
@@ -242,11 +239,6 @@ public class UMLVisualIDRegistry {
 			}
 		}
 		switch (containerVisualID) {
-		case CollaborationEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
-				return ParameterEditPart.VISUAL_ID;
-			}
-			break;
 		case ClassEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
 				return PortEditPart.VISUAL_ID;
@@ -365,9 +357,6 @@ public class UMLVisualIDRegistry {
 			if (CollaborationContentsEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ParameterEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		case ClassEditPart.VISUAL_ID:
 			if (ClassNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -450,11 +439,6 @@ public class UMLVisualIDRegistry {
 			break;
 		case PropertyEditPart.VISUAL_ID:
 			if (PropertyNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ParameterEditPart.VISUAL_ID:
-			if (ParameterNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -792,9 +776,6 @@ public class UMLVisualIDRegistry {
 		}
 		switch (container.getVisualID()) {
 		case CollaborationEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
-				return ParameterEditPart.VISUAL_ID;
-			}
 			if (UMLPackage.eINSTANCE.getCollaborationUse().isSuperTypeOf(domainElement.eClass())) {
 				return CollaborationUse2EditPart.VISUAL_ID;
 			}
@@ -921,6 +902,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
+		case CollaborationEditPart.VISUAL_ID:
 		case Package2EditPart.VISUAL_ID:
 		case InterfaceEditPart.VISUAL_ID:
 		case InstanceSpecificationEditPart.VISUAL_ID:
@@ -928,7 +910,6 @@ public class UMLVisualIDRegistry {
 		case CommentEditPart.VISUAL_ID:
 		case CollaborationUse2EditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
-		case ParameterEditPart.VISUAL_ID:
 		case Property2EditPart.VISUAL_ID:
 		case OperationEditPart.VISUAL_ID:
 		case Class2EditPart.VISUAL_ID:

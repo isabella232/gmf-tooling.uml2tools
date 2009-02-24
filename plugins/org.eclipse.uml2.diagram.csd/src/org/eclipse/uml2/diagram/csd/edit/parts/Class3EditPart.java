@@ -378,9 +378,6 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		if (targetEditPart instanceof PropertyEditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
-		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(UMLElementTypes.Dependency_4006);
-		}
 		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
@@ -424,9 +421,6 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Usage_4008);
-		}
-		if (targetEditPart instanceof ParameterEditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof Class2EditPart) {
@@ -495,9 +489,6 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 			types.add(UMLElementTypes.Property_3007);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Parameter_3013);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
@@ -538,9 +529,6 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Class_3010);
@@ -614,9 +602,6 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 			types.add(UMLElementTypes.Property_3007);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Parameter_3013);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
@@ -660,9 +645,6 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Class_3010);

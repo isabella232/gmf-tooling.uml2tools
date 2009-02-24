@@ -280,9 +280,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		if (targetEditPart instanceof PropertyEditPart) {
 			types.add(UMLElementTypes.Connector_4005);
 		}
-		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(UMLElementTypes.Connector_4005);
-		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart) {
 			types.add(UMLElementTypes.Connector_4005);
 		}
@@ -320,9 +317,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Dependency_4006);
-		}
-		if (targetEditPart instanceof ParameterEditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof Class2EditPart) {
@@ -365,9 +359,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Usage_4008);
-		}
-		if (targetEditPart instanceof ParameterEditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof Class2EditPart) {
@@ -403,9 +394,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 			types.add(UMLElementTypes.Property_3007);
 		}
 		if (relationshipType == UMLElementTypes.Connector_4005) {
-			types.add(UMLElementTypes.Parameter_3013);
-		}
-		if (relationshipType == UMLElementTypes.Connector_4005) {
 			types.add(UMLElementTypes.Port_3011);
 		}
 		if (relationshipType == UMLElementTypes.Connector_4005) {
@@ -443,9 +431,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Class_3010);
@@ -488,9 +473,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Class_3010);
@@ -525,9 +507,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 			types.add(UMLElementTypes.Property_3007);
 		}
 		if (relationshipType == UMLElementTypes.Connector_4005) {
-			types.add(UMLElementTypes.Parameter_3013);
-		}
-		if (relationshipType == UMLElementTypes.Connector_4005) {
 			types.add(UMLElementTypes.Port_3011);
 		}
 		if (relationshipType == UMLElementTypes.Connector_4005) {
@@ -565,9 +544,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Class_3010);
@@ -610,9 +586,6 @@ public class PortEditPart extends BorderedBorderItemEditPart implements PrimaryS
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Parameter_3013);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Class_3010);

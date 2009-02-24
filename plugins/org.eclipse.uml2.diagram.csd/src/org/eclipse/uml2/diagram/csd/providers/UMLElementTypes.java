@@ -36,7 +36,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
@@ -130,11 +129,6 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Property_3007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Property_3007"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IHintedType Parameter_3013 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Parameter_3013"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -359,8 +353,6 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Property_3007, UMLPackage.eINSTANCE.getProperty());
 
-			elements.put(Parameter_3013, UMLPackage.eINSTANCE.getParameter());
-
 			elements.put(Property_3008, UMLPackage.eINSTANCE.getProperty());
 
 			elements.put(Operation_3009, UMLPackage.eINSTANCE.getOperation());
@@ -426,7 +418,6 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Comment_2013);
 			KNOWN_ELEMENT_TYPES.add(CollaborationUse_3002);
 			KNOWN_ELEMENT_TYPES.add(Property_3007);
-			KNOWN_ELEMENT_TYPES.add(Parameter_3013);
 			KNOWN_ELEMENT_TYPES.add(Property_3008);
 			KNOWN_ELEMENT_TYPES.add(Operation_3009);
 			KNOWN_ELEMENT_TYPES.add(Class_3010);
@@ -477,8 +468,6 @@ public class UMLElementTypes extends ElementInitializers {
 			return CollaborationUse_3002;
 		case PropertyEditPart.VISUAL_ID:
 			return Property_3007;
-		case ParameterEditPart.VISUAL_ID:
-			return Parameter_3013;
 		case Property2EditPart.VISUAL_ID:
 			return Property_3008;
 		case OperationEditPart.VISUAL_ID:

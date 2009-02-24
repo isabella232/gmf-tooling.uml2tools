@@ -26,7 +26,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassOperationsEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ClassQualifiedNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassStereoEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationContentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
@@ -66,8 +65,6 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageImportsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageStereo2EditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ParameterEditPart;
-import org.eclipse.uml2.diagram.csd.edit.parts.ParameterNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
@@ -105,7 +102,6 @@ import org.eclipse.uml2.diagram.csd.view.factories.ClassClassesViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ClassName2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ClassNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ClassOperationsViewFactory;
-import org.eclipse.uml2.diagram.csd.view.factories.ClassQualifiedNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ClassStereoViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.ClassViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.CollaborationContentsViewFactory;
@@ -146,8 +142,6 @@ import org.eclipse.uml2.diagram.csd.view.factories.PackageImportsViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PackageNameViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PackageStereo2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PackageViewFactory;
-import org.eclipse.uml2.diagram.csd.view.factories.ParameterNameViewFactory;
-import org.eclipse.uml2.diagram.csd.view.factories.ParameterViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Port2ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.Port3ViewFactory;
 import org.eclipse.uml2.diagram.csd.view.factories.PortIsBehavior2ViewFactory;
@@ -256,7 +250,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case CommentEditPart.VISUAL_ID:
 				case CollaborationUse2EditPart.VISUAL_ID:
 				case PropertyEditPart.VISUAL_ID:
-				case ParameterEditPart.VISUAL_ID:
 				case Property2EditPart.VISUAL_ID:
 				case OperationEditPart.VISUAL_ID:
 				case Class2EditPart.VISUAL_ID:
@@ -330,11 +323,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 					break;
 				case PropertyNameEditPart.VISUAL_ID:
 					if (PropertyEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
-						return null; // wrong container
-					}
-					break;
-				case ParameterNameEditPart.VISUAL_ID:
-					if (ParameterEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -461,10 +449,6 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return PropertyViewFactory.class;
 		case PropertyNameEditPart.VISUAL_ID:
 			return PropertyNameViewFactory.class;
-		case ParameterEditPart.VISUAL_ID:
-			return ParameterViewFactory.class;
-		case ParameterNameEditPart.VISUAL_ID:
-			return ParameterNameViewFactory.class;
 		case Property2EditPart.VISUAL_ID:
 			return Property2ViewFactory.class;
 		case OperationEditPart.VISUAL_ID:
