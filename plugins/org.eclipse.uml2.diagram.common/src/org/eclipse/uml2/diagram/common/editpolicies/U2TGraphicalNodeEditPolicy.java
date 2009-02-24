@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.common.editpolicies;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.ecore.EObject;
@@ -176,7 +177,12 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		parameters.setParentView(getHostImpl().getNotationView());
 		
 		IFigure hostContentPane = getHostImpl().getContentPane();
-		Point origin = hostContentPane.getClientArea().getLocation();
+		Point origin;
+		if (hostContentPane.getLayoutManager() instanceof XYLayout){
+			origin = ((XYLayout)hostContentPane.getLayoutManager()).getOrigin(hostContentPane);
+		} else {
+			origin = hostContentPane.getClientArea().getLocation();	
+		}
 		Point relativeLocation = new Point(request.getLocation());
 		hostContentPane.translateToRelative(relativeLocation);
 		relativeLocation.translate(origin.getNegated());
