@@ -91,6 +91,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DataS
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ForkNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OpaqueActionEditPart;
@@ -182,6 +183,7 @@ public class CallBehaviorActionCanonicalEditPolicy extends CanonicalEditPolicy {
 		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 		case ActivityParameterNodeEditPart.VISUAL_ID:
 		case SendSignalActionEditPart.VISUAL_ID:

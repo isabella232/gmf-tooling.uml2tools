@@ -1071,6 +1071,10 @@ public class UMLDiagramUpdater {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
+			if (visualID == StructuredActivityNode_InitialNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
 		}
 		return result;
 	}
@@ -1164,6 +1168,10 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 			if (visualID == StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StructuredActivityNode_InitialNodeEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -2194,6 +2202,8 @@ public class UMLDiagramUpdater {
 			return getOutputPin_3055ContainedLinks(view);
 		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3092ContainedLinks(view);
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
+			return getInitialNode_3093ContainedLinks(view);
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return getOpaqueBehavior_3047ContainedLinks(view);
 		case ActivityParameterNodeEditPart.VISUAL_ID:
@@ -2387,6 +2397,8 @@ public class UMLDiagramUpdater {
 			return getOutputPin_3055IncomingLinks(view);
 		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3092IncomingLinks(view);
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
+			return getInitialNode_3093IncomingLinks(view);
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return getOpaqueBehavior_3047IncomingLinks(view);
 		case ActivityParameterNodeEditPart.VISUAL_ID:
@@ -2580,6 +2592,8 @@ public class UMLDiagramUpdater {
 			return getOutputPin_3055OutgoingLinks(view);
 		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3092OutgoingLinks(view);
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
+			return getInitialNode_3093OutgoingLinks(view);
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return getOpaqueBehavior_3047OutgoingLinks(view);
 		case ActivityParameterNodeEditPart.VISUAL_ID:
@@ -3150,6 +3164,13 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInitialNode_3093ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -4168,6 +4189,18 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInitialNode_3093IncomingLinks(View view) {
+		InitialNode modelElement = (InitialNode) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -5252,6 +5285,17 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInitialNode_3093OutgoingLinks(View view) {
+		InitialNode modelElement = (InitialNode) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		return result;
 	}
 

@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_Da
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_DecisionNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_FlowFinalNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_ForkNodeCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_InitialNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_InputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_JoinNodeCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.StructuredActivityNode_OpaqueActionCreateCommand;
@@ -96,6 +97,9 @@ public class StructuredActivityNodeContentPaneCompartmentItemSemanticEditPolicy 
 		}
 		if (UMLElementTypes.ConditionalNode_3092 == req.getElementType()) {
 			return getGEFWrapper(new StructuredActivityNode_ConditionalNodeCreateCommand(req));
+		}
+		if (UMLElementTypes.InitialNode_3093 == req.getElementType()) {
+			return getGEFWrapper(new StructuredActivityNode_InitialNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

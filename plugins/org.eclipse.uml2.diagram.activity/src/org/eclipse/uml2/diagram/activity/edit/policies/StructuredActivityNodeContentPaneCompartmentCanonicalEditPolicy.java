@@ -104,6 +104,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DataS
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ForkNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OpaqueActionEditPart;
@@ -240,6 +241,7 @@ public class StructuredActivityNodeContentPaneCompartmentCanonicalEditPolicy ext
 		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}

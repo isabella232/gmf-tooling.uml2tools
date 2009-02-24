@@ -3,13 +3,13 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.draw2d.Graphics;
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.draw2d.geometry.PointList;
-import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -17,6 +17,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
@@ -26,8 +27,8 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNode_DecisionNodeCanonicalEditPolicy;
-import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNode_DecisionNodeItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNode_InitialNodeCanonicalEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.StructuredActivityNode_InitialNodeItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -38,12 +39,12 @@ import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
  * @generated
  */
 
-public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class StructuredActivityNode_InitialNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3015;
+	public static final int VISUAL_ID = 3093;
 
 	/**
 	 * @generated
@@ -58,7 +59,7 @@ public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPa
 	/**
 	 * @generated
 	 */
-	public StructuredActivityNode_DecisionNodeEditPart(View view) {
+	public StructuredActivityNode_InitialNodeEditPart(View view) {
 		super(view);
 	}
 
@@ -70,8 +71,8 @@ public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPa
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StructuredActivityNode_DecisionNodeItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StructuredActivityNode_DecisionNodeCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StructuredActivityNode_InitialNodeItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new StructuredActivityNode_InitialNodeCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -107,22 +108,34 @@ public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPa
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ScalableRhombFigure figure = new ScalableRhombFigure();
+		ActivityInitialFigure figure = new ActivityInitialFigure();
 		return primaryShape = figure;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ScalableRhombFigure getPrimaryShape() {
-		return (ScalableRhombFigure) primaryShape;
+	public ActivityInitialFigure getPrimaryShape() {
+		return (ActivityInitialFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPolicy getPrimaryDragEditPolicy() {
+		EditPolicy result = super.getPrimaryDragEditPolicy();
+		if (result instanceof ResizableEditPolicy) {
+			ResizableEditPolicy ep = (ResizableEditPolicy) result;
+			ep.setResizeDirections(PositionConstants.NONE);
+		}
 		return result;
 	}
 
@@ -307,7 +320,7 @@ public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof StructuredActivityNode_ActivityFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DecisionNodeEditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_DecisionNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_FlowFinalNodeEditPart) {
@@ -349,7 +362,7 @@ public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
-		if (targetEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InitialNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -547,7 +560,7 @@ public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof StructuredActivityNode_ActivityFinalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DecisionNodeEditPart) {
+		if (targetEditPart instanceof StructuredActivityNode_DecisionNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_FlowFinalNodeEditPart) {
@@ -589,7 +602,7 @@ public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPa
 		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
-		if (targetEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InitialNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -1693,96 +1706,36 @@ public class StructuredActivityNode_DecisionNodeEditPart extends ShapeNodeEditPa
 	/**
 	 * @generated
 	 */
-	public class ScalableRhombFigure extends Shape {
+	public class ActivityInitialFigure extends Ellipse {
 
 		/**
 		 * @generated
 		 */
-		public ScalableRhombFigure() {
-			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(0)));
-			this.addPoint(new Point(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
-			this.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode().DPtoLP(40)));
-			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
-			this.setFill(true);
+		public ActivityInitialFigure() {
 			this.setLineWidth(1);
+			this.setBackgroundColor(ColorConstants.black);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15)));
 		}
 
 		/**
 		 * @generated
 		 */
-		private final PointList myTemplate = new PointList();
+		private boolean myUseLocalCoordinates = false;
 
 		/**
 		 * @generated
 		 */
-		private Rectangle myTemplateBounds;
-
-		/**
-		 * @generated
-		 */
-		public void addPoint(Point point) {
-			myTemplate.addPoint(point);
-			myTemplateBounds = null;
+		protected boolean useLocalCoordinates() {
+			return myUseLocalCoordinates;
 		}
 
 		/**
 		 * @generated
 		 */
-		protected void fillShape(Graphics graphics) {
-			Rectangle bounds = getBounds();
-			graphics.pushState();
-			graphics.translate(bounds.x, bounds.y);
-			graphics.fillPolygon(scalePointList());
-			graphics.popState();
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void outlineShape(Graphics graphics) {
-			Rectangle bounds = getBounds();
-			graphics.pushState();
-			graphics.translate(bounds.x, bounds.y);
-			graphics.drawPolygon(scalePointList());
-			graphics.popState();
-		}
-
-		/**
-		 * @generated
-		 */
-		private Rectangle getTemplateBounds() {
-			if (myTemplateBounds == null) {
-				myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
-				//just safety -- we are going to use this as divider 
-				if (myTemplateBounds.width < 1) {
-					myTemplateBounds.width = 1;
-				}
-				if (myTemplateBounds.height < 1) {
-					myTemplateBounds.height = 1;
-				}
-			}
-			return myTemplateBounds;
-		}
-
-		/**
-		 * @generated
-		 */
-		private int[] scalePointList() {
-			Rectangle pointsBounds = getTemplateBounds();
-			Rectangle actualBounds = getBounds();
-
-			float xScale = ((float) actualBounds.width) / pointsBounds.width;
-			float yScale = ((float) actualBounds.height) / pointsBounds.height;
-
-			if (xScale == 1 && yScale == 1) {
-				return myTemplate.toIntArray();
-			}
-			int[] scaled = (int[]) myTemplate.toIntArray().clone();
-			for (int i = 0; i < scaled.length; i += 2) {
-				scaled[i] = (int) Math.floor(scaled[i] * xScale);
-				scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
-			}
-			return scaled;
+		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
+			myUseLocalCoordinates = useLocalCoordinates;
 		}
 
 	}

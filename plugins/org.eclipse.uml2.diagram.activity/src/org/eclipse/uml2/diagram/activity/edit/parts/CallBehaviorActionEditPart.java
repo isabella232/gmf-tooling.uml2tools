@@ -127,7 +127,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
-			protected EditPolicy createChildEditPolicy(org.eclipse.gef.EditPart child) {
+			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
 				switch (UMLVisualIDRegistry.getVisualID(childView)) {
 				case CallAction_OutputPinEditPart.VISUAL_ID:
@@ -170,7 +170,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 	/**
 	 * @generated
 	 */
-	protected boolean addFixedChild(org.eclipse.gef.EditPart childEditPart) {
+	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof CallBehaviorActionNameEditPart) {
 			((CallBehaviorActionNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActionCallBehaviorFigure_name());
 			return true;
@@ -195,7 +195,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 	/**
 	 * @generated
 	 */
-	protected boolean removeFixedChild(org.eclipse.gef.EditPart childEditPart) {
+	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof CallAction_OutputPinEditPart) {
 			getBorderedFigure().getBorderItemContainer().remove(((CallAction_OutputPinEditPart) childEditPart).getFigure());
@@ -211,7 +211,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 	/**
 	 * @generated
 	 */
-	protected void addChildVisual(org.eclipse.gef.EditPart childEditPart, int index) {
+	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
 		}
@@ -221,7 +221,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 	/**
 	 * @generated
 	 */
-	protected void removeChildVisual(org.eclipse.gef.EditPart childEditPart) {
+	protected void removeChildVisual(EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
 		}
@@ -327,7 +327,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 	/**
 	 * @generated
 	 */
-	public org.eclipse.gef.EditPart getPrimaryChildEditPart() {
+	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(CallBehaviorActionNameEditPart.VISUAL_ID));
 	}
 
@@ -482,6 +482,9 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
+		if (targetEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -719,6 +722,9 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -1087,6 +1093,9 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.InitialNode_3093);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1322,6 +1331,9 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.InitialNode_3093);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
@@ -1700,6 +1712,9 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.InitialNode_3093);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1935,6 +1950,9 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.InitialNode_3093);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
@@ -2302,7 +2320,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 	/**
 	 * @generated
 	 */
-	protected void reorderChild(org.eclipse.gef.EditPart child, int index) {
+	protected void reorderChild(EditPart child, int index) {
 		// Save the constraint of the child so that it does not
 		// get lost during the remove and re-add.
 		IFigure childFigure = ((GraphicalEditPart) child).getFigure();
@@ -2562,7 +2580,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 	 * @generated
 	 */
 	protected void performDirectEditRequest(final Request request) {
-		org.eclipse.gef.EditPart editPart = this;
+		EditPart editPart = this;
 		if (request instanceof DirectEditRequest) {
 			Point p = new Point(((DirectEditRequest) request).getLocation());
 			getFigure().translateToRelative(p);
@@ -2571,7 +2589,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 		}
 		if (editPart == this) {
 			try {
-				editPart = (org.eclipse.gef.EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
 					public void run() {
 						setResult(chooseLabelEditPartForDirectEditRequest(request));
@@ -2589,7 +2607,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 	/**
 	 * @generated
 	 */
-	protected org.eclipse.gef.EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
 		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
 			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
@@ -2598,7 +2616,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
 
 			if (initialChar.charValue() == '<') {
-				org.eclipse.gef.EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(CallBehaviorActionStereotypeEditPart.VISUAL_ID));
+				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(CallBehaviorActionStereotypeEditPart.VISUAL_ID));
 				if (result != null) {
 					return result;
 				}

@@ -199,7 +199,7 @@ public class CallOperationActionStereotypeEditPart extends CompartmentEditPart i
 	/**
 	 * @generated
 	 */
-	protected org.eclipse.emf.ecore.EObject getParserElement() {
+	protected EObject getParserElement() {
 		return resolveSemanticElement();
 	}
 
@@ -223,7 +223,7 @@ public class CallOperationActionStereotypeEditPart extends CompartmentEditPart i
 	 */
 	protected String getLabelText() {
 		String text = null;
-		org.eclipse.emf.ecore.EObject parserElement = getParserElement();
+		EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
 			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 		}
@@ -266,7 +266,7 @@ public class CallOperationActionStereotypeEditPart extends CompartmentEditPart i
 
 			public String isValid(final Object value) {
 				if (value instanceof String) {
-					final org.eclipse.emf.ecore.EObject element = getParserElement();
+					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
 						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
@@ -455,10 +455,10 @@ public class CallOperationActionStereotypeEditPart extends CompartmentEditPart i
 	 */
 	protected void addSemanticListeners() {
 		if (getParser() instanceof ISemanticParser) {
-			org.eclipse.emf.ecore.EObject element = resolveSemanticElement();
+			EObject element = resolveSemanticElement();
 			parserElements = ((ISemanticParser) getParser()).getSemanticElementsBeingParsed(element);
 			for (int i = 0; i < parserElements.size(); i++) {
-				addListenerFilter("SemanticModel" + i, this, (org.eclipse.emf.ecore.EObject) parserElements.get(i)); //$NON-NLS-1$
+				addListenerFilter("SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
 			}
 		} else {
 			super.addSemanticListeners();

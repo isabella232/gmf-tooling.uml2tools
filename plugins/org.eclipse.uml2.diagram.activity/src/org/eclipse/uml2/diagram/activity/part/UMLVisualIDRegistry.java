@@ -232,6 +232,11 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static UMLAbstractExpression InitialNode_3093_Constraint;
+
+	/**
+	 * @generated
+	 */
 	private static UMLAbstractExpression SendSignalAction_3053_Constraint;
 
 	/**
@@ -887,6 +892,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3092((ConditionalNode) domainElement)) {
 				return StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass()) && isInitialNode_3093((InitialNode) domainElement)) {
+				return StructuredActivityNode_InitialNodeEditPart.VISUAL_ID;
+			}
 			break;
 		case StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
@@ -946,6 +954,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3092((ConditionalNode) domainElement)) {
 				return StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass()) && isInitialNode_3093((InitialNode) domainElement)) {
+				return StructuredActivityNode_InitialNodeEditPart.VISUAL_ID;
 			}
 			break;
 		case ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID:
@@ -2483,6 +2494,9 @@ public class UMLVisualIDRegistry {
 			if (StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (StructuredActivityNode_InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID:
 			if (StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID == nodeVisualID) {
@@ -2540,6 +2554,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StructuredActivityNode_InitialNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3561,6 +3578,17 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static boolean isInitialNode_3093(InitialNode domainElement) {
+		if (InitialNode_3093_Constraint == null) { // lazy initialization
+			InitialNode_3093_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getInitialNode()); //$NON-NLS-1$
+		}
+		Object result = InitialNode_3093_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
 	private static boolean isSendSignalAction_3053(SendSignalAction domainElement) {
 		if (SendSignalAction_3053_Constraint == null) { // lazy initialization
 			SendSignalAction_3053_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getSendSignalAction()); //$NON-NLS-1$
@@ -4105,6 +4133,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3092((ConditionalNode) domainElement)) {
 				return StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass()) && isInitialNode_3093((InitialNode) domainElement)) {
+				return StructuredActivityNode_InitialNodeEditPart.VISUAL_ID;
+			}
 			break;
 		case StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStructuredActivityNode().isSuperTypeOf(domainElement.eClass()) && isStructuredActivityNode_3009((StructuredActivityNode) domainElement)) {
@@ -4164,6 +4195,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getConditionalNode().isSuperTypeOf(domainElement.eClass()) && isConditionalNode_3092((ConditionalNode) domainElement)) {
 				return StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInitialNode().isSuperTypeOf(domainElement.eClass()) && isInitialNode_3093((InitialNode) domainElement)) {
+				return StructuredActivityNode_InitialNodeEditPart.VISUAL_ID;
 			}
 			break;
 		case StructuredActivityNode_OpaqueActionEditPart.VISUAL_ID:
@@ -5040,6 +5074,7 @@ public class UMLVisualIDRegistry {
 		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 		case ActivityParameterNodeEditPart.VISUAL_ID:
 		case SendSignalActionEditPart.VISUAL_ID:

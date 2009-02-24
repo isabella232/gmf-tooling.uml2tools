@@ -110,6 +110,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DataS
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_DecisionNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_FlowFinalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_ForkNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InitialNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_JoinNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_OpaqueActionEditPart;
@@ -210,6 +211,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 		case ActivityParameterNodeEditPart.VISUAL_ID:
 		case SendSignalActionEditPart.VISUAL_ID:
@@ -755,6 +757,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getConditionalNode_3092ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getInitialNode_3093ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

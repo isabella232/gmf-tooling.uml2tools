@@ -182,6 +182,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?OutputPin", UMLElementTypes.OutputPin_3055); //$NON-NLS-1$
 		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ConditionalNode", UMLElementTypes.ConditionalNode_3092); //$NON-NLS-1$
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?InitialNode", UMLElementTypes.InitialNode_3093); //$NON-NLS-1$
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?OpaqueBehavior", UMLElementTypes.OpaqueBehavior_3047); //$NON-NLS-1$
 		case ActivityParameterNodeEditPart.VISUAL_ID:
@@ -424,6 +426,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getOutputPin_3055Text(view);
 		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
 			return getConditionalNode_3092Text(view);
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
+			return getInitialNode_3093Text(view);
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return getOpaqueBehavior_3047Text(view);
 		case ActivityParameterNodeEditPart.VISUAL_ID:
@@ -1187,6 +1191,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5147); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getInitialNode_3093Text(View view) {
+		InitialNode domainModelElement = (InitialNode) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3093); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

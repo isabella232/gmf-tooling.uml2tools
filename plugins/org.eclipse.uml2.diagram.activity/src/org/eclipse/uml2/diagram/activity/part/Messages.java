@@ -1239,6 +1239,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_InitialNode_3093_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InitialNode_3093_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_OpaqueBehavior_3047_incominglinks;
 
 	/**

@@ -450,6 +450,9 @@ public class StructuredActivityNode_StructuredActivityNode_OutputPinEditPart ext
 		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
+		if (targetEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
@@ -685,6 +688,9 @@ public class StructuredActivityNode_StructuredActivityNode_OutputPinEditPart ext
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -939,6 +945,9 @@ public class StructuredActivityNode_StructuredActivityNode_OutputPinEditPart ext
 			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.InitialNode_3093);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1174,6 +1183,9 @@ public class StructuredActivityNode_StructuredActivityNode_OutputPinEditPart ext
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.InitialNode_3093);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
@@ -1437,6 +1449,9 @@ public class StructuredActivityNode_StructuredActivityNode_OutputPinEditPart ext
 			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.InitialNode_3093);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1672,6 +1687,9 @@ public class StructuredActivityNode_StructuredActivityNode_OutputPinEditPart ext
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.InitialNode_3093);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);

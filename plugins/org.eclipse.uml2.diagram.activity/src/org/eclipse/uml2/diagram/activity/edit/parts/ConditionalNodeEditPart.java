@@ -115,7 +115,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		LayoutEditPolicy lep = new LayoutEditPolicy() {
 
-			protected EditPolicy createChildEditPolicy(org.eclipse.gef.EditPart child) {
+			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -152,7 +152,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	protected boolean addFixedChild(org.eclipse.gef.EditPart childEditPart) {
+	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ConditionalNodeNameEditPart) {
 			((ConditionalNodeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStructuredActivityFigure_name());
 			return true;
@@ -173,7 +173,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	protected boolean removeFixedChild(org.eclipse.gef.EditPart childEditPart) {
+	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof ConditionalNodeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureStructuredActivityFigure_ContentPane();
@@ -186,7 +186,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	protected void addChildVisual(org.eclipse.gef.EditPart childEditPart, int index) {
+	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
 		}
@@ -196,7 +196,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	protected void removeChildVisual(org.eclipse.gef.EditPart childEditPart) {
+	protected void removeChildVisual(EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
 		}
@@ -302,7 +302,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	public org.eclipse.gef.EditPart getPrimaryChildEditPart() {
+	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ConditionalNodeNameEditPart.VISUAL_ID));
 	}
 
@@ -457,6 +457,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			types.add(UMLElementTypes.ControlFlow_4001);
+		}
+		if (targetEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4001);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -694,6 +697,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
+			types.add(UMLElementTypes.ObjectFlow_4002);
+		}
+		if (targetEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4002);
 		}
 		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
@@ -1062,6 +1068,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.InitialNode_3093);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1297,6 +1306,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.InitialNode_3093);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
@@ -1675,6 +1687,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			types.add(UMLElementTypes.ConditionalNode_3092);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
+			types.add(UMLElementTypes.InitialNode_3093);
+		}
+		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
 		}
 		if (relationshipType == UMLElementTypes.ControlFlow_4001) {
@@ -1910,6 +1925,9 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ConditionalNode_3092);
+		}
+		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
+			types.add(UMLElementTypes.InitialNode_3093);
 		}
 		if (relationshipType == UMLElementTypes.ObjectFlow_4002) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
@@ -2503,7 +2521,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	 * @generated
 	 */
 	protected void performDirectEditRequest(final Request request) {
-		org.eclipse.gef.EditPart editPart = this;
+		EditPart editPart = this;
 		if (request instanceof DirectEditRequest) {
 			Point p = new Point(((DirectEditRequest) request).getLocation());
 			getFigure().translateToRelative(p);
@@ -2512,7 +2530,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 		}
 		if (editPart == this) {
 			try {
-				editPart = (org.eclipse.gef.EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
 					public void run() {
 						setResult(chooseLabelEditPartForDirectEditRequest(request));
@@ -2530,7 +2548,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 	/**
 	 * @generated
 	 */
-	protected org.eclipse.gef.EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
 		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
 			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
@@ -2539,7 +2557,7 @@ public class ConditionalNodeEditPart extends ShapeNodeEditPart implements Primar
 			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
 
 			if (initialChar.charValue() == '<') {
-				org.eclipse.gef.EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(ConditionalNodeStereotypeEditPart.VISUAL_ID));
+				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(ConditionalNodeStereotypeEditPart.VISUAL_ID));
 				if (result != null) {
 					return result;
 				}

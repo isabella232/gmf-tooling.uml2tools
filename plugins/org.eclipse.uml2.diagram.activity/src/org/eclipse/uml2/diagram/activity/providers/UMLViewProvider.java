@@ -139,6 +139,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 				case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 				case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
+				case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
 				case OpaqueBehaviorEditPart.VISUAL_ID:
 				case ActivityParameterNodeEditPart.VISUAL_ID:
 				case SendSignalActionEditPart.VISUAL_ID:
@@ -889,6 +890,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return StructuredActivityNode_ConditionalNodeNameViewFactory.class;
 		case StructuredActivityNode_ConditionalNodeStereotypeEditPart.VISUAL_ID:
 			return StructuredActivityNode_ConditionalNodeStereotypeViewFactory.class;
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
+			return StructuredActivityNode_InitialNodeViewFactory.class;
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 			return OpaqueBehaviorViewFactory.class;
 		case OpaqueBehaviorNameEditPart.VISUAL_ID:

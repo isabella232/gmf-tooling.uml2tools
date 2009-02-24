@@ -346,8 +346,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActivityInitialNode1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.InitialNode_3035);
+		types.add(UMLElementTypes.InitialNode_3093);
 		types.add(UMLElementTypes.InitialNode_3064);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActivityInitialNode1CreationTool_title, Messages.ActivityInitialNode1CreationTool_desc, types);
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InitialNode_3035));

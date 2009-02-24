@@ -20,6 +20,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+import org.eclipse.uml2.diagram.activity.edit.parts.*;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart;
@@ -379,6 +380,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InputPin_3054);
 			types.add(UMLElementTypes.OutputPin_3055);
 			types.add(UMLElementTypes.ConditionalNode_3092);
+			types.add(UMLElementTypes.InitialNode_3093);
 			return types;
 		}
 
@@ -403,6 +405,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InputPin_3054);
 			types.add(UMLElementTypes.OutputPin_3055);
 			types.add(UMLElementTypes.ConditionalNode_3092);
+			types.add(UMLElementTypes.InitialNode_3093);
 			return types;
 		}
 
@@ -764,6 +767,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			return ((StructuredActivityNode_ConditionalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
+			return ((StructuredActivityNode_InitialNodeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof ActivityParameterNodeEditPart) {
 			return ((ActivityParameterNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
@@ -1018,6 +1024,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			return ((StructuredActivityNode_ConditionalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
+			return ((StructuredActivityNode_InitialNodeEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof OpaqueBehaviorEditPart) {
 			return ((OpaqueBehaviorEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
@@ -1266,6 +1275,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			return ((StructuredActivityNode_ConditionalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
+			return ((StructuredActivityNode_InitialNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ActivityParameterNodeEditPart) {
 			return ((ActivityParameterNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1521,6 +1533,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			return ((StructuredActivityNode_ConditionalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
+			return ((StructuredActivityNode_InitialNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof OpaqueBehaviorEditPart) {
 			return ((OpaqueBehaviorEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -1768,6 +1783,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof StructuredActivityNode_ConditionalNodeEditPart) {
 			return ((StructuredActivityNode_ConditionalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof StructuredActivityNode_InitialNodeEditPart) {
+			return ((StructuredActivityNode_InitialNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ActivityParameterNodeEditPart) {
 			return ((ActivityParameterNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
