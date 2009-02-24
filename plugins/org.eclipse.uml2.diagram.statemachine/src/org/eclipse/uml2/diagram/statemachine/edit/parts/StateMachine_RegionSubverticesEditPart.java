@@ -48,6 +48,7 @@ public class StateMachine_RegionSubverticesEditPart extends ShapeCompartmentEdit
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
+		result.setBorder(null);
 		return result;
 	}
 

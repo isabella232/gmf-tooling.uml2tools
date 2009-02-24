@@ -54,6 +54,7 @@ public class CompositeState_InternalActivitiesEditPart extends ListCompartmentEd
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
+		result.setBorder(null);
 		return result;
 	}
 
