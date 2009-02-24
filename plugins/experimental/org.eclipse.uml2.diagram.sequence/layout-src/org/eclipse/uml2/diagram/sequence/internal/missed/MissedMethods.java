@@ -49,9 +49,9 @@ public class MissedMethods {
 	}
 	
 	public static interface _ExecutionSpecification {
-		public boolean isDestruction(ExecutionSpecification spec);
-		public boolean isCreation(ExecutionSpecification spec);
-		public boolean isHideFoundMessage(ExecutionSpecification spec);
+		public boolean isDestruction(View specView);
+		public boolean isCreation(View specView);
+		public boolean isHideFoundMessage(View specView);
 	}
 	
 	public static interface _ArcasMetamodelSpecific {

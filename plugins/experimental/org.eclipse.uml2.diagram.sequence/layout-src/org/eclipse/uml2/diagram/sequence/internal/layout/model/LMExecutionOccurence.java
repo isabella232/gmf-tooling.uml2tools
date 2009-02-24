@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.sequence.internal.layout.GeometryConstants;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsNode;
 import org.eclipse.uml2.diagram.sequence.internal.missed.MissedMethods;
@@ -210,21 +211,21 @@ public class LMExecutionOccurence extends LMGenCallOccurence implements LMReceiv
     }
 
     private static boolean isHideFoundMessage(AbsNode absNode){
-    	EObject entity = absNode.getModelEntity();
-    	return entity instanceof ExecutionSpecification && 
-    			MissedMethods._executionSpecification().isHideFoundMessage((ExecutionSpecification)entity);
+    	View reference = absNode.getReference();
+    	return reference != null && 
+    		MissedMethods._executionSpecification().isHideFoundMessage(reference);
     }
     
     private static boolean isDestruction(AbsNode absNode){
-    	EObject entity = absNode.getModelEntity();
-    	return entity instanceof ExecutionSpecification && 
-    			MissedMethods._executionSpecification().isDestruction((ExecutionSpecification)entity);
+    	View reference = absNode.getReference();
+    	return reference != null && 
+    		MissedMethods._executionSpecification().isDestruction(reference);
     }
     
     private static boolean isCreation(AbsNode absNode){
-    	EObject entity = absNode.getModelEntity();
-    	return entity instanceof ExecutionSpecification && 
-    			MissedMethods._executionSpecification().isCreation((ExecutionSpecification)entity);
+    	View reference = absNode.getReference();
+    	return reference != null && 
+    		MissedMethods._executionSpecification().isCreation(reference);
     }
 
 }

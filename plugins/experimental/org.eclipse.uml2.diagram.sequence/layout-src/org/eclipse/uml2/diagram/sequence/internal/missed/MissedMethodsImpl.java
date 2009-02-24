@@ -43,6 +43,14 @@ import org.eclipse.uml2.diagram.sequence.internal.missed.MissedMethods._Connecti
 import org.eclipse.uml2.diagram.sequence.internal.missed.MissedMethods._ExecutionSpecification;
 import org.eclipse.uml2.diagram.sequence.internal.missed.MissedMethods._GraphicalEditPart;
 import org.eclipse.uml2.diagram.sequence.internal.missed.MissedMethods._IGraphicalEditPart;
+import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.sequence.part.UMLNodeDescriptor;
 import org.eclipse.uml2.uml.CombinedFragment;
@@ -431,17 +439,51 @@ public class MissedMethodsImpl {
 	}
 	
 	static class MissedExecutionSpecificationImpl implements _ExecutionSpecification{
-		public boolean isCreation(ExecutionSpecification spec) {
-			// TODO Auto-generated method stub
-			return false;
+		public boolean isCreation(View specView) {
+			return isCreationDestruction(specView, true);
 		}
 		
-		public boolean isDestruction(ExecutionSpecification spec) {
-			// TODO Auto-generated method stub
-			return false;
+		public boolean isDestruction(View specView) {
+			return isCreationDestruction(specView, false);
 		}
 		
-		public boolean isHideFoundMessage(ExecutionSpecification spec) {
+		private boolean isCreationDestruction(View specView, boolean creationNotDectruction){
+			EObject entity = specView.getElement();
+			if (false == entity instanceof ExecutionSpecification){
+				return false;
+			}
+			SDFrame sdModel = SDModelAccess.findSDModel(specView);
+			if (sdModel == null){
+				return false;
+			}
+			
+			SDTrace tracing = sdModel.getUMLTracing();
+			SDBehaviorSpec sdSpec = tracing.findBehaviorSpec((ExecutionSpecification)entity);
+			if (false == sdSpec instanceof SDExecution){
+				return false;
+			}
+			
+			SDExecution sdExecution = (SDExecution)sdSpec;
+			if (false == sdExecution.getBracketContainer() instanceof SDLifeLine){
+				return false;
+			}
+			SDMessage incomingMessage = sdExecution.getIncomingMessage();
+			if (incomingMessage == null){
+				return false;
+			}
+			
+			MessageSort desired = creationNotDectruction ? MessageSort.CREATE_MESSAGE_LITERAL : MessageSort.DELETE_MESSAGE_LITERAL;
+			if (incomingMessage.getUmlMessage().getMessageSort() != desired){
+				return false;
+			}
+			
+			List<SDBracket> brackets = sdExecution.getBracketContainer().getBrackets();
+			int desiredIndex = creationNotDectruction ? 0 : brackets.size() - 1;
+			boolean result = brackets.indexOf(sdExecution) == desiredIndex;
+			return result;
+		}
+		
+		public boolean isHideFoundMessage(View specView) {
 			// TODO Auto-generated method stub
 			return false;
 		}
