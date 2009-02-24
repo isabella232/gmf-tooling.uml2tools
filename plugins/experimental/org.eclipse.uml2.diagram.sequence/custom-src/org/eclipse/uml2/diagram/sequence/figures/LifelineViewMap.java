@@ -16,6 +16,7 @@ import org.eclipse.draw2d.TreeSearch;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Insets;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.uml2.diagram.common.draw2d.PileLayout;
 import org.eclipse.uml2.diagram.sequence.draw2d.shadow.ShadowStealth;
@@ -182,13 +183,21 @@ public class LifelineViewMap {
 
 	public static class LifelineTailShape extends RectangleFigure implements ShadowStealth {
 
-		public LifelineTailShape(LifelineShape lifelineShape) {
+		public LifelineTailShape(final LifelineShape lifelineShape) {
 			setOpaque(false);
 			setFill(false);
 			setLineStyle(Graphics.LINE_DASH);
 			setMinimumSize(new Dimension());//to avoid head shrinking
 			
-			setLayoutManager(new XYLayout());
+			setLayoutManager(new XYLayout(){
+				@Override
+				public Point getOrigin(IFigure parent) {
+					if (parent == LifelineTailShape.this){
+						return lifelineShape.getClientArea().getLocation();	
+					}
+					return super.getOrigin(parent);
+				}
+			});
 		}
 
 		public IFigure findFigureAt(int x, int y, TreeSearch search) {
