@@ -40,7 +40,7 @@ import org.eclipse.uml2.diagram.sequence.edit.policies.BehaviorExecutionSpecific
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDXYLayoutEditPolicy;
-import org.eclipse.uml2.diagram.sequence.figures.LifelineBracketContainerShape;
+import org.eclipse.uml2.diagram.sequence.figures.ExecutionSpecificationShape;
 import org.eclipse.uml2.diagram.sequence.frame.Frame;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
@@ -113,7 +113,7 @@ public class BehaviorExecutionSpecificationEditPart extends ShapeNodeEditPart im
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		MountingRegionFigure figure = new MountingRegionFigure();
+		BehaviorExecutionFigure figure = new BehaviorExecutionFigure();
 		if (figure instanceof NeedsParentEditPart) {
 			((NeedsParentEditPart) figure).hookParentEditPart((GraphicalEditPart) getParent());
 		}
@@ -123,8 +123,8 @@ public class BehaviorExecutionSpecificationEditPart extends ShapeNodeEditPart im
 	/**
 	 * @generated
 	 */
-	public MountingRegionFigure getPrimaryShape() {
-		return (MountingRegionFigure) primaryShape;
+	public BehaviorExecutionFigure getPrimaryShape() {
+		return (BehaviorExecutionFigure) primaryShape;
 	}
 
 	/**
@@ -395,15 +395,15 @@ public class BehaviorExecutionSpecificationEditPart extends ShapeNodeEditPart im
 	/**
 	 * @generated
 	 */
-	public class MountingRegionFigure extends LifelineBracketContainerShape {
+	public class BehaviorExecutionFigure extends ExecutionSpecificationShape {
 
 		/**
-		 * @generated NOT
+		 * @generated
 		 */
-		public MountingRegionFigure() {
-			this.setFill(true);
-			this.setOpaque(false);
-			this.setOutline(true);
+		public BehaviorExecutionFigure() {
+
+			this.setCrossVisible(false);
+
 		}
 
 		/**

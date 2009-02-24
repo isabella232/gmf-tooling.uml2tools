@@ -190,11 +190,12 @@
     <descriptors
         name="BehaviorExecutionFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="BehaviorExecutionFigure">
-        <minimumSize
-            dx="20"
-            dy="-1"/>
+          xsi:type="gmfgraph:CustomFigure"
+          name="BehaviorExecutionFigure"
+          qualifiedClassName="org.eclipse.uml2.diagram.sequence.figures.ExecutionSpecificationShape">
+        <attributes
+            name="crossVisible"
+            value="false"/>
       </actualFigure>
     </descriptors>
     <descriptors
@@ -608,7 +609,7 @@
       resizeConstraint="NORTH_SOUTH"/>
   <nodes
       name="BehaviorExecutionNode"
-      figure="MountingRegionFigure"
+      figure="BehaviorExecutionFigure"
       resizeConstraint="NORTH_SOUTH">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
