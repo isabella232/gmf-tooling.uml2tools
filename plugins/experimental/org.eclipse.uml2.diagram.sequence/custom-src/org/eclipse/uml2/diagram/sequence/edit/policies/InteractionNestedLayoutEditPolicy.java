@@ -174,9 +174,9 @@ public class InteractionNestedLayoutEditPolicy extends AbstractEditPolicy {
 					//if (nextLink.getTarget() != null){
 						addToLayout(nextLink);
 					//}
-					
 				}
 			}
+			setupNodesTree(child);
 		}
 		
 		@Override

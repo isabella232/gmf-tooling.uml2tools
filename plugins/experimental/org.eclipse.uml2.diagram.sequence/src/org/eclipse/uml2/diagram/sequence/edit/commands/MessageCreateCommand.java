@@ -9,6 +9,7 @@ import java.util.ListIterator;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -271,21 +272,24 @@ public class MessageCreateCommand extends EditElementCommand {
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
-	private View createBehaviorExecutionView(U2TCreateLinkParameters createLinkParameters, EObject behaviorExecution, int position) {
-		View sourceView = createLinkParameters.getParentView();
+	private View createBehaviorExecutionView(View sourceView, EObject behaviorExecution, int position, Point relativeLocation) {
 		int visualID = UMLVisualIDRegistry.getNodeVisualID(sourceView, behaviorExecution);
 		Node result = ViewService.getInstance().createNode(//
 				new EObjectAdapter(behaviorExecution), sourceView, UMLVisualIDRegistry.getType(visualID), position, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 
-		if (createLinkParameters.getRelativeLocation() != null) {
+		if (relativeLocation != null) {
 			if (result.getLayoutConstraint() == null) {
 				result.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 			}
-			ViewUtil.setStructuralFeatureValue(result, NotationPackage.eINSTANCE.getLocation_Y(), Integer.valueOf(createLinkParameters.getRelativeLocation().y));
-			ViewUtil.setStructuralFeatureValue(result, NotationPackage.eINSTANCE.getLocation_X(), Integer.valueOf(0));
+			ViewUtil.setStructuralFeatureValue(result, NotationPackage.eINSTANCE.getLocation_Y(), Integer.valueOf(relativeLocation.y));
+			ViewUtil.setStructuralFeatureValue(result, NotationPackage.eINSTANCE.getLocation_X(), Integer.valueOf(10));
 		}
 
 		return result;
+	}
+	
+	private View createBehaviorExecutionView(U2TCreateLinkParameters createParams, EObject behaviorExecution, int position) {
+		return createBehaviorExecutionView(createParams.getParentView(), behaviorExecution, position, createParams.getRelativeLocation());
 	}
 
 	private void createAdditionalViews(BehaviorExecutionSpecification sourceInvocation, BehaviorExecutionSpecification targetExecution, Message message) {
@@ -305,6 +309,7 @@ public class MessageCreateCommand extends EditElementCommand {
 		assert sourceInvocation == null || message.getSendEvent() == sourceInvocation.getStart();
 		assert targetExecution == null || message.getReceiveEvent() == targetExecution.getStart();
 
+		View invocationView = null;
 		if (sourceInvocation != null) {
 			if (message.getSendEvent() != sourceInvocation.getStart()) {
 				throw new IllegalStateException(MessageFormat.format(//
@@ -312,8 +317,8 @@ public class MessageCreateCommand extends EditElementCommand {
 						new Object[] { sourceInvocation, sourceInvocation.getStart(), message, message.getSendEvent() }));
 			}
 			U2TCreateLinkParameters sourceParams = linkCreationPack.getSourceParameters();
-			int sourceViewPosition = findAnchoredViewPosition(sourceParams);
-			View invocationView = createBehaviorExecutionView(sourceParams, sourceInvocation, sourceViewPosition);
+			int sourceViewIndex = findAnchoredViewPosition(sourceParams);
+			invocationView = createBehaviorExecutionView(sourceParams, sourceInvocation, sourceViewIndex);
 
 			linkCreationPack.getSetConnectionEndsCommand().setNewSourceAdaptor(new EObjectAdapter(invocationView));
 		}
@@ -325,11 +330,16 @@ public class MessageCreateCommand extends EditElementCommand {
 						new Object[] { targetExecution, targetExecution.getStart(), message, message.getReceiveEvent() }));
 
 			}
-
-			U2TCreateLinkParameters targetParams = linkCreationPack.getTargetParameters();
-			int targetViewPosition = findAnchoredViewPosition(targetParams);
-			View executionView = createBehaviorExecutionView(linkCreationPack.getTargetParameters(), targetExecution, targetViewPosition);
-
+			
+			U2TCreateLinkParameters targetParams = linkCreationPack.getTargetParameters();			
+			final View executionView;
+			if (sourceInvocation.getCovereds().get(0) == targetExecution.getCovereds().get(0)){
+				//for self message the target should be create inside the just created source, and ViewUtil.APPEND is good enough position
+				executionView = createBehaviorExecutionView(invocationView, targetExecution, ViewUtil.APPEND, new Point(10, 10));
+			} else {
+				int targetViewIndex = findAnchoredViewPosition(targetParams);
+				executionView = createBehaviorExecutionView(targetParams, targetExecution, targetViewIndex);
+			}
 			linkCreationPack.getSetConnectionEndsCommand().setNewTargetAdaptor(new EObjectAdapter(executionView));
 		}
 	}

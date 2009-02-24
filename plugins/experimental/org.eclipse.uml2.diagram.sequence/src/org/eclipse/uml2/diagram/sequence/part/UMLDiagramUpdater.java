@@ -33,6 +33,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
 import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
 import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
@@ -41,6 +42,7 @@ import org.eclipse.uml2.uml.ActionExecutionSpecification;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
@@ -214,7 +216,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getBehaviorExecutionSpecification_3004SemanticChildren(View view) {
+	public static List getBehaviorExecutionSpecification_3004SemanticChildren__22(View view) {
 		if (!view.isSetElement()) {
 			return Collections.EMPTY_LIST;
 		}
@@ -233,6 +235,58 @@ public class UMLDiagramUpdater {
 		return result;
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	public static List getBehaviorExecutionSpecification_3004SemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.emptyList();
+		}
+
+		SDFrame sdFrame = SDModelAccess.findSDModel(view);
+		if (sdFrame == null) {
+			return Collections.emptyList();
+		}
+		
+		ExecutionSpecification umlSpec = (ExecutionSpecification)view.getElement();
+		SDBehaviorSpec sdSpec = sdFrame.getUMLTracing().findBehaviorSpec(umlSpec);
+		if (sdSpec == null) {
+			return Collections.emptyList();
+		}
+
+		List<IUpdaterNodeDescriptor> result = new LinkedList<IUpdaterNodeDescriptor>();
+		for (SDBracket nextBracket : sdSpec.getBrackets()) {
+			Element child = SDModelHelper.UML_ELEMENT_EXTRACTOR.doSwitch(nextBracket);
+			if (false == child instanceof InteractionFragment) {
+				continue;
+			}
+
+			InteractionFragment childElement = (InteractionFragment) child;
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ActionExecutionSpecificationEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StateInvariantEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == BehaviorExecutionSpecificationEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == InteractionUseMountingRegionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == CombinedFragmentMountingRegionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+	
 	public static List<BehaviorExecutionSpecification> getNestedSpecs(BehaviorExecutionSpecification parentSpec) {
 		Interaction interaction = parentSpec.getEnclosingInteraction();
 		OccurrenceSpecification parentStart = parentSpec.getStart();

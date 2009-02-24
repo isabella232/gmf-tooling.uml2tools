@@ -213,10 +213,39 @@ public class SDBuilder {
 		}
 		SDBracketContainer active = myCallStack.peek(umlLifeline);
 		//it should be bracket for this execution spec;
-		if (false == active instanceof SDBehaviorSpec || ((SDBehaviorSpec)active).getUmlExecutionSpec() != umlExecutionSpec){
+		if (false == active instanceof SDBehaviorSpec){
 			throw new UMLModelProblem("Lost ExecutionSpecification found: " + umlExecutionSpec + ", active bracket container :" + active);
 		}
+		SDBehaviorSpec activeSpec = (SDBehaviorSpec)active;
+		if (activeSpec.getUmlExecutionSpec() != umlExecutionSpec){
+			//in case of self message we can receive the umlSpec for invocation first, and it is not active 
+			//because the active one is the inner execution
+			if (!isSelfMessageExecution(activeSpec)){
+				throw new UMLModelProblem("Lost ExecutionSpecification found: " + umlExecutionSpec + ", active bracket container :" + active);
+			}
+			SDExecution execution = (SDExecution)active;
+			SDInvocation invocation = execution.getInvocation();
+			if (umlExecutionSpec != invocation.getUmlExecutionSpec()){
+				throw new UMLModelProblem("Self message found, but executionSpecification for its invocation is wrong: " + umlExecutionSpec + ", active bracket container :" + active + ", expected invocation execSpec: " + invocation.getUmlExecutionSpec());
+			}
+		}
 		//everything is fine, we already have behaviorSpec for this umlExecutionSpec -- nothing to do
+	}
+	
+	private boolean isSelfMessageExecution(SDBehaviorSpec spec){
+		if (false == spec instanceof SDExecution){
+			return false;
+		}
+		SDExecution execution = (SDExecution)spec;
+		SDInvocation invocation = execution.getInvocation();
+		if (invocation == null){
+			return false;
+		}
+		
+		Lifeline executionLL = ensureSingleCovered(execution.getUmlExecutionSpec());
+		Lifeline invocationLL = ensureSingleCovered(invocation.getUmlExecutionSpec());
+		
+		return executionLL != null && executionLL == invocationLL;
 	}
 	
 	private void buildMessageTarget(Iterator<InteractionFragment> orderedFragments, MessageOccurrenceSpecification messageTarget) {
