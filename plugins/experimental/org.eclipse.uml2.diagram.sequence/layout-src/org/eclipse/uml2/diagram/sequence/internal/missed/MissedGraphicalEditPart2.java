@@ -2,7 +2,7 @@ package org.eclipse.uml2.diagram.sequence.internal.missed;
 
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.LayoutConstraint;
 import org.eclipse.gmf.runtime.notation.Location;
@@ -26,8 +26,7 @@ public class MissedGraphicalEditPart2 extends MissedGraphicalEditPartImpl {
 		myLogSetBounds = debugSetBounds;
 	}
 	
-	@Override
-	public Rectangle getBounds(GraphicalEditPart nodeEP) {
+	public Rectangle getBounds(IGraphicalEditPart nodeEP) {
 		Rectangle notationModelResult = new Rectangle();
 		Node view = (Node) nodeEP.getNotationView();
 		LayoutConstraint constraint = view.getLayoutConstraint();
@@ -83,8 +82,7 @@ public class MissedGraphicalEditPart2 extends MissedGraphicalEditPartImpl {
 		return collectParentOrigin(parent, output);
 	}
 	
-	@Override
-	public void setBounds(GraphicalEditPart nodeEP, Rectangle bounds) {
+	public void setBounds(IGraphicalEditPart nodeEP, Rectangle bounds) {
 		if (nodeEP instanceof BehaviorExecutionSpecificationEditPart){
 			logSetBounds(">>>SetBounds(): for : " + nodeEP + ",\n\t bounds: " + bounds);	
 		}

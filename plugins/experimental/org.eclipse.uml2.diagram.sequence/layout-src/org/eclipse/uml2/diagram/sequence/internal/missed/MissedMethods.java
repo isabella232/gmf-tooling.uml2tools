@@ -24,8 +24,8 @@ public class MissedMethods {
 	}
 	
 	public static interface _GraphicalEditPart {
-		public Rectangle getBounds(GraphicalEditPart nodeEP);	
-		public void setBounds(GraphicalEditPart nodeEP, Rectangle bounds);
+		public Rectangle getBounds(IGraphicalEditPart nodeEP);	
+		public void setBounds(IGraphicalEditPart nodeEP, Rectangle bounds);
 		
 //		public boolean isUserMoved(GraphicalEditPart ep);
 //		public void setUserMoved(GraphicalEditPart ep, boolean moved);

@@ -62,7 +62,7 @@ import org.eclipse.uml2.uml.MessageSort;
 
 
 public class MissedMethodsImpl {
-	static class MissedGraphicalEditPartImpl implements _IGraphicalEditPart, _GraphicalEditPart {
+	static abstract class MissedGraphicalEditPartImpl implements _IGraphicalEditPart, _GraphicalEditPart {
 		public void setBackgroundColor(IGraphicalEditPart ep, RGB rgb) {
 			IFigure shape = getColorTargetFigure(ep);
 			Color color = getColor(rgb);
@@ -128,115 +128,6 @@ public class MissedMethodsImpl {
 			}
 			return editPart.getFigure();
 		}
-		
-		public void setBounds(GraphicalEditPart nodeEP, Rectangle bounds) {
-			Rectangle requested = bounds == null ? new Rectangle(0, 0, 0, 0) : bounds.getCopy();
-			if (nodeEP.getParent() == null) {
-				return;
-			}
-			if (bounds == null) {
-				bounds = new Rectangle(0, 0, 0, 0);
-			} else {
-				if (nodeEP instanceof LayeredInteractionUseEditPart){
-					if (bounds.width < 100){
-						System.err.println("Here");
-					}
-				}
-				IFigure actualContainer = nodeEP.getFigure().getParent();
-				if (actualContainer.getLayoutManager() instanceof XYLayout){
-					XYLayout layout = (XYLayout)actualContainer.getLayoutManager();
-					Point origin = layout.getOrigin(actualContainer);
-					bounds = bounds.getTranslated(origin.getNegated());
-				}
-			}
-			
-			System.err.println(">>>SetBounds: " + nodeEP + ":" + bounds + (bounds.equals(requested) ? "" : ", requested abs: " + requested));
-			
-			
-			Node view = (Node) nodeEP.getNotationView();
-			LayoutConstraint constraint = view.getLayoutConstraint();
-			if (constraint instanceof Location){
-				((Location)constraint).setX(bounds.x);
-				((Location)constraint).setY(bounds.y);
-			}
-			if (constraint instanceof Size){
-				((Size)constraint).setHeight(bounds.height);
-				((Size)constraint).setWidth(bounds.width);
-			}
-			
-//	        if (!bounds.equals(nodeEP.getFigure().getBounds())) {
-//	            setFigureBounds(nodeEP, bounds);
-//	        }
-		}
-		
-		public Rectangle getBounds(GraphicalEditPart nodeEP) {
-			Rectangle notationModelResult = new Rectangle();
-			Node view = (Node) nodeEP.getNotationView();
-			LayoutConstraint constraint = view.getLayoutConstraint();
-			if (constraint instanceof Location){
-				notationModelResult.x = ((Location)constraint).getX();
-				notationModelResult.y = ((Location)constraint).getY();
-			}
-			if (constraint instanceof Size){
-				notationModelResult.height = ((Size)constraint).getHeight();
-				notationModelResult.width = ((Size)constraint).getWidth();
-			}
-			
-			Rectangle absoluteResult = notationModelResult;
-			IFigure actualContainer = nodeEP.getFigure().getParent();
-			if (actualContainer.getLayoutManager() instanceof XYLayout){
-				XYLayout layout = (XYLayout)actualContainer.getLayoutManager();
-				Point origin = layout.getOrigin(actualContainer);
-				absoluteResult = notationModelResult.getTranslated(origin);
-			}
-			
-//			Rectangle figureResult = nodeEP.getFigure().getBounds().getCopy();
-//			System.err.println("<<<GetBounds: " + nodeEP.toString() + ":" + absoluteResult);
-//			if (!absoluteResult.equals(figureResult)){
-//				System.err.println("<<<     \t\t (figure bounds:) " + nodeEP.toString() + ":" + figureResult);
-//			}
-			return absoluteResult;
-		}
-		
-		private void setFigureBounds(GraphicalEditPart nodeEP, Rectangle absBounds) {
-			IFigure f = nodeEP.getFigure();
-			if (f != null) {
-				f.setBounds(absBounds);
-				updateFigureConstraint(f, absBounds);
-	            f.invalidateTree();
-				f.revalidate();
-			}
-		}
-		
-	    private void updateFigureConstraint(IFigure f, Rectangle absBounds) {
-	        IFigure parent = f.getParent();
-	        if (parent != null && parent.getLayoutManager() != null) {
-	            LayoutManager layout = parent.getLayoutManager();
-	            Rectangle relBounds = toRelative(parent, new Rectangle(absBounds));
-	            Object constraint = layout.getConstraint(f);
-//	            if (constraint instanceof XYConstraint) {
-//	                XYConstraint xyConstraint = (XYConstraint) constraint;
-//	                xyConstraint.getBounds().setBounds(relBounds);
-//	            }
-//	            else if (Draw2DLayoutUtil.isAbsoluteLayout(layout)) {
-//	                if (constraint == null || !constraint.equals(absBounds)) {
-//	                    layout.setConstraint(f, absBounds.getCopy());
-//	                }
-//	        	}
-//	            else 
-	            if (layout instanceof XYLayout) {
-	        		if (constraint == null || !constraint.equals(relBounds)) {
-	        			layout.setConstraint(f, relBounds);
-	        		}
-	        	}
-	        }
-	    }
-		
-	    private Rectangle toRelative(IFigure f, Rectangle b) {
-	        b.x -= f.getClientArea().x;
-	        b.y -= f.getClientArea().y;
-	        return b;
-	    }
 		
 		private final ColorRegistry myColorRegistry = new ColorRegistry();	
 	}
