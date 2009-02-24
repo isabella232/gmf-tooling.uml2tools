@@ -78,11 +78,13 @@ public class MessageNumberParser implements ISemanticParser {
 				result.append(number).append(": ");
 			}
 		}
-		String name = umlMessage.getName(); 
-		if (name == null){
-			name = "";
-		}
-		result.append(name);
+		
+//		String name = umlMessage.getName(); 
+//		if (name == null){
+//			name = "";
+//		}
+//		result.append(name);
+		result.append("* ");
 		return result.toString();
 	}
 
