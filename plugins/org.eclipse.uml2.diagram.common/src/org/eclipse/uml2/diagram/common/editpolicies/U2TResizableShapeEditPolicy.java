@@ -12,6 +12,7 @@ package org.eclipse.uml2.diagram.common.editpolicies;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.gef.Handle;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
@@ -19,7 +20,7 @@ import org.eclipse.uml2.diagram.common.internal.draw2d.handles.U2THandleKit;
 
 
 public class U2TResizableShapeEditPolicy extends ResizableShapeEditPolicy {
-	private int myDirections;
+	private int myDirections = PositionConstants.NSEW;
 
 	@Override
 	protected List<?> createSelectionHandles() {
