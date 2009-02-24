@@ -34,5 +34,10 @@ public class RefreshLabelsCommand extends Command {
 			}
 		}
 	}
-
+	
+	@Override
+	public void undo() {
+		execute();
+	}
+	
 }
