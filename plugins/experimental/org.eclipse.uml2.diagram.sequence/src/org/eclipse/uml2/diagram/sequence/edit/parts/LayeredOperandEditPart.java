@@ -33,6 +33,7 @@ import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.LayeredOperandItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.frame.Frame;
 import org.eclipse.uml2.diagram.sequence.frame.InteractionOperandShape;
@@ -77,7 +78,7 @@ public class LayeredOperandEditPart extends ShapeNodeEditPart implements Primary
 		}
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LayeredOperandItemSemanticEditPolicy());
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new U2TGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);

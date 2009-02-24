@@ -36,6 +36,7 @@ import org.eclipse.uml2.diagram.sequence.edit.create.SDCreationEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.CombinedFragmentMountingRegionCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.CombinedFragmentMountingRegionItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.MountingRegionPrimaryDragEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.figures.LifelineBracketContainerShape;
 import org.eclipse.uml2.diagram.sequence.frame.Frame;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
@@ -80,7 +81,7 @@ public class CombinedFragmentMountingRegionEditPart extends ShapeNodeEditPart im
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new SDCreationEditPolicy(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CombinedFragmentMountingRegionItemSemanticEditPolicy());
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new U2TGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new CombinedFragmentMountingRegionCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());

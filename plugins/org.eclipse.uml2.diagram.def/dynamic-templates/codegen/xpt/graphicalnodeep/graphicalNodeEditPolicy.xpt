@@ -16,7 +16,11 @@
 
 «DEFINE editPolicyFQN FOR gmfgen::GenCommonBase-»
 «IF supportsU2TSpecificGraphicalNodeEditPolicy(self.getDiagram())-»
-org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy
+	«IF 'org.eclipse.uml2.diagram.sequence' = self.getDiagram().editorGen.plugin.iD-»
+	org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy
+	«ELSE-»
+	org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy
+	«ENDIF-»
 «ELSE-»
 org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy
 «ENDIF-»

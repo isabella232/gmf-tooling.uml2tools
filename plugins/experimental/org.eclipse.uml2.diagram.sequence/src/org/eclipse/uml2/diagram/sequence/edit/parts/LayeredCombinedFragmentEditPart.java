@@ -42,6 +42,7 @@ import org.eclipse.uml2.diagram.common.layered.MultilayeredFigure;
 import org.eclipse.uml2.diagram.sequence.edit.create.SDCreationEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.LayeredCombinedFragmentCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.LayeredCombinedFragmentItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.TieFrameEditPolicy;
 import org.eclipse.uml2.diagram.sequence.figures.Pentagon;
 import org.eclipse.uml2.diagram.sequence.frame.CombinedFragmentShape;
@@ -88,7 +89,7 @@ public class LayeredCombinedFragmentEditPart extends ShapeNodeEditPart implement
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new SDCreationEditPolicy(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new LayeredCombinedFragmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new U2TGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new LayeredCombinedFragmentCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
