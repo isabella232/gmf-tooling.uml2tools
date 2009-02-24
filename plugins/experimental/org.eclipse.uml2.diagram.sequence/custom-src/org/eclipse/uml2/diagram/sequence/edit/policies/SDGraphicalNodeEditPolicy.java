@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.sequence.edit.policies;
 
+import org.eclipse.draw2d.ConnectionAnchor;
+import org.eclipse.draw2d.XYAnchor;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -57,6 +59,17 @@ public class SDGraphicalNodeEditPolicy extends U2TGraphicalNodeEditPolicy {
 		}
 		return result;
 	}
+	
+	@Override
+	protected ConnectionAnchor getSourceConnectionAnchor(CreateConnectionRequest request) {
+		return new XYAnchor(request.getLocation());
+	}
+	
+	@Override
+	protected ConnectionAnchor getTargetConnectionAnchor(CreateConnectionRequest request) {
+		return new XYAnchor(request.getLocation());
+	}
+
 
 	
 }
