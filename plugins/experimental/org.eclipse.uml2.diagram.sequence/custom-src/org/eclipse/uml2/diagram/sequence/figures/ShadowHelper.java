@@ -41,7 +41,7 @@ public class ShadowHelper {
 		
     	@Override
     	public String toString() {
-    		return "DebugChildrenContainerFigure for : " + myDebugKey;
+    		return "DebugChildrenContainerFigure for : " + myDebugKey + " - " + System.identityHashCode(this);
     	}
     }
 
