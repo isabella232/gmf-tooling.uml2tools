@@ -11,61 +11,72 @@
  */
 package org.eclipse.uml2.diagram.common.parameter.celleditors;
 
-import org.eclipse.core.resources.ResourcesPlugin;
+import java.util.Collections;
+import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.common.util.WrappedException;
+import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.jface.viewers.DialogCellEditor;
-import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.jface.window.Window;
-import org.eclipse.swt.SWT;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.uml2.diagram.common.part.UMLElementChooserDialog;
-import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
+import org.eclipse.uml2.diagram.common.sheet.chooser.ReferencedElementChooserDialog;
+import org.eclipse.uml2.diagram.common.sheet.chooser.TabbedElementChooser;
 
-public class TypeDialogCellEditor extends DialogCellEditor {
-	
-	private final TransactionalEditingDomain myEditingDomain;
-	private final AdapterFactory myAdapterFactory;
-	
-	public TypeDialogCellEditor(Table table, TransactionalEditingDomain editingDomain, AdapterFactory af) {
-		super(table, SWT.SINGLE);
-		myEditingDomain = editingDomain;
-		myAdapterFactory = af;
+public class TypeDialogCellEditor extends ExtendedDialogCellEditor {
+
+	private final EStructuralFeature myFeature;
+
+	private final AdapterFactory myAf;
+
+	public TypeDialogCellEditor(Composite composite, AdapterFactory af, Object object, EStructuralFeature feature) {
+		super(composite, new AdapterFactoryLabelProvider(af));
+		myAf = af;
+		myFeature = feature;
 	}
 
 	@Override
 	protected Object openDialogBox(Control cellEditorWindow) {
-		UMLElementChooserDialog dialog = new TypeChooserDialog(cellEditorWindow.getShell(), myAdapterFactory);
-		if (Window.OK == dialog.open()) {
-			URI uri = dialog.getSelectedModelElementURI();
-			try {
-				return myEditingDomain.getResourceSet().getEObject(uri, true);
-			} catch (WrappedException e) {
-				e.printStackTrace();
-				return null;
-			}
+		ReferencedElementChooserDialog myElementChooserDialog = new ReferencedElementChooserDialogEx(getControl().getShell(), UMLCommonPlugin.getInstance().getDialogSettings(), myAf,
+				(EObject) doGetValue(), myFeature, (EObject) doGetValue()){
+			
+		};
+		myElementChooserDialog.open();
+		return myElementChooserDialog.getResult();
+	}
+
+	// #263278 'Unset' doesn't work
+	@Override
+	protected void doSetValue(Object value) {
+		if (ReferencedElementChooserDialog.NULL_VALUE.equals(value)) {
+			value = null;
 		}
-		return null;
+		super.doSetValue(value);
+	}
+
+	@Override
+	protected Object doGetValue() {
+		return super.doGetValue();
 	}
 	
-	private static class TypeChooserDialog extends UMLElementChooserDialog {
-		public TypeChooserDialog(Shell parentShell, AdapterFactory af) {
-			super(parentShell, af);
-		}
-		@Override
-		protected boolean isValid(EObject selectedElement) {
-			return selectedElement instanceof Type;
+	private class ReferencedElementChooserDialogEx extends ReferencedElementChooserDialog {
+
+		public ReferencedElementChooserDialogEx(Shell shell, IDialogSettings settings, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature, final Object initialSelection) {
+			super(shell, settings, itemProvidersAdapterFactory, sourceObject, feature);
+			myChooser = new TabbedElementChooser(settings, itemProvidersAdapterFactory, sourceObject, feature, myEditingDomain) {
+				@Override
+				protected List<?> getInitialSelection() {
+					return Collections.singletonList(initialSelection);
+				}
+			};
 		}
 		
-		@Override
-		protected void setInput(TreeViewer treeViewer) {
-			treeViewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
-		}		
 	}
+	
+
 
 }

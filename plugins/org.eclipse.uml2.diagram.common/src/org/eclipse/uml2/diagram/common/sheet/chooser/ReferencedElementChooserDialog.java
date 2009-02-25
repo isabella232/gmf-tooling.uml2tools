@@ -36,7 +36,7 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 
 	private final EObject mySourceObject;
 	
-	protected final TabbedElementChooser myChooser;
+	protected TabbedElementChooser myChooser;
 	
 	protected final TransactionalEditingDomain myEditingDomain;
 

@@ -274,7 +274,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	private void addCellEditors(Table table, TableViewer viewer) {
 		CellEditor name = new TextCellEditor(table);
 //		CellEditor types = new TypeCellEditor(table, getTypeProposals());
-		CellEditor types = new TypeDialogCellEditor(table, TransactionUtil.getEditingDomain(myOldOperation), myAdapterFactory);
+		CellEditor types = new TypeDialogCellEditor(table, myAdapterFactory, myOldOperation, UMLPackage.eINSTANCE.getTypedElement_Type());
 		CellEditor direction = new DirectionCellEditor(table);
 		CellEditor multiplicity = new PositiveIntegerCellEditor(table);
 		CellEditor defaultValue = new TextCellEditor(table);
