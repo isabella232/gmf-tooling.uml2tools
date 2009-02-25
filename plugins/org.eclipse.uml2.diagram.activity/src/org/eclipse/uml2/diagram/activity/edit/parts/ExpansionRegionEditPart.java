@@ -2158,11 +2158,6 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart implements Primar
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureExpansionRegionFigure_ExpansionNodeContainer;
-
-		/**
-		 * @generated
-		 */
 		public ExpansionRegionFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
@@ -2203,12 +2198,6 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart implements Primar
 
 			expansionRegionFigure_LabelContainer0.add(fFigureExpansionRegionFigure_keyword, BorderLayout.LEFT);
 
-			fFigureExpansionRegionFigure_ExpansionNodeContainer = new RectangleFigure();
-			fFigureExpansionRegionFigure_ExpansionNodeContainer.setOutline(false);
-			fFigureExpansionRegionFigure_ExpansionNodeContainer.setLineWidth(1);
-
-			this.add(fFigureExpansionRegionFigure_ExpansionNodeContainer);
-
 		}
 
 		/**
@@ -2242,13 +2231,6 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart implements Primar
 		 */
 		public RectangleFigure getFigureExpansionRegionFigure_ContentPane() {
 			return fFigureExpansionRegionFigure_ContentPane;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureExpansionRegionFigure_ExpansionNodeContainer() {
-			return fFigureExpansionRegionFigure_ExpansionNodeContainer;
 		}
 
 	}
