@@ -146,7 +146,7 @@ public class ValueSpecificationParser implements ISemanticParser {
 			
 			@Override
 			public ICommand caseOpaqueExpression(OpaqueExpression object) {
-				String[] bodies = newString.split("(\\r|\\n|\\u0085|\\u2028|\u2029){2,}");
+				String[] bodies = newString.split("(\\r|\\n|\\u0085|\\u2028|\\u2029){2,}");
 				List<String> bodiesList = new ArrayList<String>(bodies.length);
 				for (String next : bodies){
 					if (next != null && next.length() != 0){
