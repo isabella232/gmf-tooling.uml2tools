@@ -23,7 +23,6 @@ public class StateInvariantShape extends RoundedRectangle implements Multilayere
     
     public StateInvariantShape () {
     	setLineWidth(1);
-        setOutline(false);
         setBackgroundColor(ColorConstants.lightGray);
         
         corner.width = DEFAULT_RADIUS;
