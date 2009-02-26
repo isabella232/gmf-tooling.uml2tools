@@ -21,11 +21,13 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.StateInvariant;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class SDModelBuilderTest extends TestCase {
@@ -245,6 +247,38 @@ public class SDModelBuilderTest extends TestCase {
 				d.getBrackets().get(2), //
 				b.getBrackets().get(2));
 		cadbChecker.checkChain("3");
+	}
+	
+	public void testStateInvariant(){
+		SDBuilder builder = buildFrame("StateInvariant From Diagram - invariantA-message-invariantB.uml", "Interaction");
+		SDFrame sdFrame = builder.getSDFrame();
+		checkCallStackCompleted(builder);
+		checkTraces(builder);
+		
+		SDLifeLine a = findLifeLineByName(sdFrame, "a");
+		SDLifeLine b = findLifeLineByName(sdFrame, "b");
+		
+		assertEquals(2, a.getBrackets().size());
+		assertEquals(2, b.getBrackets().size());
+		
+		assertTrue(a.getBrackets().get(0) instanceof SDSimpleNode);
+		assertTrue(a.getBrackets().get(1) instanceof SDInvocation);
+		assertTrue(b.getBrackets().get(0) instanceof SDExecution);
+		assertTrue(b.getBrackets().get(1) instanceof SDSimpleNode);
+		
+		SDSimpleNode invariantA = (SDSimpleNode) a.getBrackets().get(0);
+		SDSimpleNode invariantB = (SDSimpleNode) b.getBrackets().get(1);
+		SDInvocation invocation = (SDInvocation) a.getBrackets().get(1);
+		SDExecution execution = (SDExecution) b.getBrackets().get(0);
+		
+		assertNotNull(invariantA.getUmlFragment());
+		assertNotNull(invariantB.getUmlFragment());
+		assertTrue(invariantA.getUmlFragment() instanceof StateInvariant);
+		assertTrue(invariantB.getUmlFragment() instanceof StateInvariant);
+		assertFalse(invariantB.getUmlFragment() == invariantA.getUmlFragment());
+		
+		assertEquals(execution, invocation.getReceiveExecution());
+		assertEquals(invocation, execution.getInvocation());
 	}
 
 	protected SDAbstractMessage findMessageByName(SDFrame frame, String name) {
