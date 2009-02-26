@@ -11,7 +11,6 @@ import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.requests.CreateConnectionRequest;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewAndElementRequest;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 
@@ -51,10 +50,10 @@ public class SDGraphicalNodeEditPolicy extends U2TGraphicalNodeEditPolicy {
 		Point relativeLocation = result.getRelativeLocation();
 		if (relativeLocation != null && getHost().getEditPolicy(EditPolicy.LAYOUT_ROLE) instanceof OrderedLayoutEditPolicy){
 			OrderedLayoutEditPolicy layout = (OrderedLayoutEditPolicy)getHost().getEditPolicy(EditPolicy.LAYOUT_ROLE);
-			View prevAnchor = layout.findAnchorView(relativeLocation, false);
-			if (prevAnchor != null){
-				result.setAnchorSibling(prevAnchor);
-				result.setBeforeNotAfterAnchor(false);
+			OrderedLayoutEditPolicy.AnchoredSibling anchor = layout.findAnchoredSibling(relativeLocation);
+			if (anchor != null){
+				result.setAnchorSibling(anchor.getSiblingView());
+				result.setBeforeNotAfterAnchor(anchor.isBeforeNotAfterAnchor());
 			}
 		}
 		return result;

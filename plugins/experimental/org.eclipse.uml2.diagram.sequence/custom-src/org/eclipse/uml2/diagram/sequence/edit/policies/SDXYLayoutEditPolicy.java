@@ -29,10 +29,19 @@ public class SDXYLayoutEditPolicy extends XYLayoutEditPolicy implements OrderedL
 		return result;
 	}
 	
-	public View findAnchorView(Point relativeLocation, boolean isBeforeAnchor) {
-		if (isBeforeAnchor){
-			throw new UnsupportedOperationException("Not implemented yet");
+	public AnchoredSibling findAnchoredSibling(Point relativeLocation) {
+		AnchoredSibling result = findAnchorAfter(relativeLocation);
+		if (result == null){
+			result = findAnchorBefore(relativeLocation);
 		}
+		return result;
+	}
+	
+	private AnchoredSibling findAnchorBefore(Point relativeLocation) {
+		return null;
+	}
+	
+	private AnchoredSibling findAnchorAfter(Point relativeLocation) {
 		View hostView = getHostImpl().getNotationView();
 		View result = null;
 		int maxFoundPositionBefore = Integer.MIN_VALUE;
@@ -49,11 +58,9 @@ public class SDXYLayoutEditPolicy extends XYLayoutEditPolicy implements OrderedL
 			}
 			Bounds bounds = (Bounds) nextChild.getLayoutConstraint();
 			if (!bounds.eIsSet(NotationPackage.eINSTANCE.getLocation_Y())){
-				System.err.println("Y-location is not set for node: " + nextChild);
 				continue;
 			}
 			if (!bounds.eIsSet(NotationPackage.eINSTANCE.getSize_Height())){
-				System.err.println("Height is not set for node: " + nextChild);
 				continue;
 			}
 			int nextMaxY = bounds.getY() + bounds.getHeight();
@@ -62,7 +69,7 @@ public class SDXYLayoutEditPolicy extends XYLayoutEditPolicy implements OrderedL
 				result = nextChild;
 			}
 		}	
-		return result;
+		return result == null ? null : new AnchoredSibling(result, false);
 	}
 	
 	private IGraphicalEditPart getHostImpl(){
