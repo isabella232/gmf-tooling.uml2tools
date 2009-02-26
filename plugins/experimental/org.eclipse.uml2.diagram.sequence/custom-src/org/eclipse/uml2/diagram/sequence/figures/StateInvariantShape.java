@@ -22,6 +22,7 @@ public class StateInvariantShape extends RoundedRectangle implements Multilayere
     private Label myInplaceLabel;
     
     public StateInvariantShape () {
+    	setLineWidth(1);
         setOutline(false);
         setBackgroundColor(ColorConstants.lightGray);
         
