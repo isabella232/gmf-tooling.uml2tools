@@ -96,7 +96,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 
 		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
-			protected EditPolicy createChildEditPolicy(org.eclipse.gef.EditPart child) {
+			protected EditPolicy createChildEditPolicy(EditPart child) {
 				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
 					if (child instanceof ITextAwareEditPart) {
 						return new UMLTextSelectionEditPolicy();
@@ -126,7 +126,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 	/**
 	 * @generated
 	 */
-	protected boolean addFixedChild(org.eclipse.gef.EditPart childEditPart) {
+	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof SimpleStateNameEditPart) {
 			((SimpleStateNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureSimpleStateFigure_name());
 			return true;
@@ -147,7 +147,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 	/**
 	 * @generated
 	 */
-	protected boolean removeFixedChild(org.eclipse.gef.EditPart childEditPart) {
+	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof SimpleState_InternalActivitiesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureSimpleStateFigure_InternalActivitiesCompartment();
@@ -160,7 +160,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 	/**
 	 * @generated
 	 */
-	protected void addChildVisual(org.eclipse.gef.EditPart childEditPart, int index) {
+	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
 		}
@@ -170,7 +170,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 	/**
 	 * @generated
 	 */
-	protected void removeChildVisual(org.eclipse.gef.EditPart childEditPart) {
+	protected void removeChildVisual(EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
 		}
@@ -276,7 +276,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 	/**
 	 * @generated
 	 */
-	public org.eclipse.gef.EditPart getPrimaryChildEditPart() {
+	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(SimpleStateNameEditPart.VISUAL_ID));
 	}
 
@@ -469,7 +469,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 	/**
 	 * @generated
 	 */
-	public org.eclipse.gef.EditPart getTargetEditPart(Request request) {
+	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
@@ -606,7 +606,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 	 * @generated
 	 */
 	protected void performDirectEditRequest(final Request request) {
-		org.eclipse.gef.EditPart editPart = this;
+		EditPart editPart = this;
 		if (request instanceof DirectEditRequest) {
 			Point p = new Point(((DirectEditRequest) request).getLocation());
 			getFigure().translateToRelative(p);
@@ -615,7 +615,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 		}
 		if (editPart == this) {
 			try {
-				editPart = (org.eclipse.gef.EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
 					public void run() {
 						setResult(chooseLabelEditPartForDirectEditRequest(request));
@@ -633,7 +633,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 	/**
 	 * @generated
 	 */
-	protected org.eclipse.gef.EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
 		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
 			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
@@ -642,7 +642,7 @@ public class SimpleStateEditPart extends ShapeNodeEditPart implements PrimarySha
 			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
 
 			if (initialChar.charValue() == '<') {
-				org.eclipse.gef.EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(SimpleStateStereotypeEditPart.VISUAL_ID));
+				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(SimpleStateStereotypeEditPart.VISUAL_ID));
 				if (result != null) {
 					return result;
 				}

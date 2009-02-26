@@ -1402,8 +1402,6 @@
         canonicalEditPolicyClassName="SimpleState_InternalActivitiesCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4"
         title="SimpleState_InternalActivities"
-        canCollapse="false"
-        needsTitle="false"
         node="//@diagram/@childNodes.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -1420,8 +1418,6 @@
         canonicalEditPolicyClassName="CompositeState_InternalActivitiesCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4"
         title="CompositeState_InternalActivities"
-        canCollapse="false"
-        needsTitle="false"
         node="//@diagram/@childNodes.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -1438,8 +1434,6 @@
         canonicalEditPolicyClassName="CompositeState_InternalTransitionsCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.10"
         title="CompositeState_InternalTransitions"
-        canCollapse="false"
-        needsTitle="false"
         node="//@diagram/@childNodes.5">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
