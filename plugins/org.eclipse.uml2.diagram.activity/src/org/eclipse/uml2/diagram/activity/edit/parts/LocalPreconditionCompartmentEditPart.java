@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
@@ -16,6 +17,7 @@ import org.eclipse.uml2.diagram.activity.part.Messages;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.compartments.U2TCompartmentFigure;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 
@@ -54,10 +56,16 @@ public class LocalPreconditionCompartmentEditPart extends ListCompartmentEditPar
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
-		result.setTitleVisibility(false);
-		result.setBorder(null);
+		U2TCompartmentFigure result = new U2TCompartmentFigure(getCompartmentName(), getMapMode());
+
+		ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+		layout.setStretchMajorAxis(false);
+		layout.setStretchMinorAxis(false);
+		layout.setMinorAlignment(ConstrainedToolbarLayout.ALIGN_TOPLEFT);
+		result.getContentPane().setLayoutManager(layout);
+
 		return result;
 	}
 
@@ -90,6 +98,35 @@ public class LocalPreconditionCompartmentEditPart extends ListCompartmentEditPar
 	 */
 	public IElementType getElementType() {
 		return UMLElementTypes.LiteralString_3049;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void refreshVisibility() {
+		boolean visibility = getNotationView().isVisible() && !getChildren().isEmpty();
+		setVisibility(visibility);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void addChild(EditPart child, int index) {
+		super.addChild(child, index);
+		refreshVisibility();
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void removeChild(EditPart child) {
+		super.removeChild(child);
+		if (isActive()) {
+			refreshVisibility();
+		}
 	}
 
 }
