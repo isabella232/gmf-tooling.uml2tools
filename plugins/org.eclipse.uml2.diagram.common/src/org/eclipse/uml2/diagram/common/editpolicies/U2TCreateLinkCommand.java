@@ -31,9 +31,9 @@ public class U2TCreateLinkCommand extends CompositeCommand {
 
 	private SetConnectionBendpointsCommand mySetConnectionBendpointsCommand;
 	
-	private U2TCreateLinkParameters mySourceParameters;
+	private U2TCreateParameters mySourceParameters;
 	
-	private U2TCreateLinkParameters myTargetParameters;
+	private U2TCreateParameters myTargetParameters;
 	
 	public U2TCreateLinkCommand(TransactionalEditingDomain domain) {
 		super(DiagramUIMessages.Commands_CreateCommand_Connection_Label);
@@ -104,7 +104,7 @@ public class U2TCreateLinkCommand extends CompositeCommand {
 	/**
 	 * Intentionally package local, only U2TGraphicalNodeEditPolicy can call this. 
 	 */
-	void setSourceParameters(U2TCreateLinkParameters sourceParameters) {
+	void setSourceParameters(U2TCreateParameters sourceParameters) {
 		mySourceParameters = sourceParameters;
 	}
 	
@@ -112,7 +112,7 @@ public class U2TCreateLinkCommand extends CompositeCommand {
 	/**
 	 * Intentionally package local, only U2TGraphicalNodeEditPolicy can call this. 
 	 */
-	void setTargetParameters(U2TCreateLinkParameters targetParameters) {
+	void setTargetParameters(U2TCreateParameters targetParameters) {
 		myTargetParameters = targetParameters;
 	}
 
@@ -163,11 +163,11 @@ public class U2TCreateLinkCommand extends CompositeCommand {
 		return mySetConnectionBendpointsCommand;
 	}
 	
-	public U2TCreateLinkParameters getSourceParameters() {
+	public U2TCreateParameters getSourceParameters() {
 		return mySourceParameters;
 	}
 	
-	public U2TCreateLinkParameters getTargetParameters() {
+	public U2TCreateParameters getTargetParameters() {
 		return myTargetParameters;
 	}
 	

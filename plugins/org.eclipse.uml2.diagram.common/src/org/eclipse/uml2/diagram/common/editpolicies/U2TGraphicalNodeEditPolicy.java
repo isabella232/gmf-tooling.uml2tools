@@ -193,7 +193,7 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		return parameters;
 	}
 	
-	protected static class U2TCreateLinkParametersImpl implements U2TCreateLinkParameters {
+	protected static class U2TCreateLinkParametersImpl implements U2TCreateParameters {
 		private Point myRelativeLocation;
 		private View myParentView;
 		private View myAnchorSibling;

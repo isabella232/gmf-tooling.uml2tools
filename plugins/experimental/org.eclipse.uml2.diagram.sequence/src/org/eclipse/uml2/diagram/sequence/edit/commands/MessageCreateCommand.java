@@ -26,7 +26,7 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateLinkCommand;
-import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateLinkParameters;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateParameters;
 import org.eclipse.uml2.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
 import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilder;
@@ -289,7 +289,7 @@ public class MessageCreateCommand extends EditElementCommand {
 		return result;
 	}
 
-	private View createBehaviorExecutionView(U2TCreateLinkParameters createParams, EObject behaviorExecution, int position) {
+	private View createBehaviorExecutionView(U2TCreateParameters createParams, EObject behaviorExecution, int position) {
 		return createBehaviorExecutionView(createParams.getParentView(), behaviorExecution, position, createParams.getRelativeLocation());
 	}
 
@@ -317,7 +317,7 @@ public class MessageCreateCommand extends EditElementCommand {
 						"Invocation: {0}, \n start: {1}, message: {2}, sendEvent {3}", //
 						new Object[] { sourceInvocation, sourceInvocation.getStart(), message, message.getSendEvent() }));
 			}
-			U2TCreateLinkParameters sourceParams = linkCreationPack.getSourceParameters();
+			U2TCreateParameters sourceParams = linkCreationPack.getSourceParameters();
 			int sourceViewIndex = findAnchoredViewPosition(sourceParams);
 			invocationView = createBehaviorExecutionView(sourceParams, sourceInvocation, sourceViewIndex);
 
@@ -332,7 +332,7 @@ public class MessageCreateCommand extends EditElementCommand {
 
 			}
 
-			U2TCreateLinkParameters targetParams = linkCreationPack.getTargetParameters();
+			U2TCreateParameters targetParams = linkCreationPack.getTargetParameters();
 			final View executionView;
 			if (sourceInvocation.getCovereds().get(0) == targetExecution.getCovereds().get(0)) {
 				//for self message the target should be create inside the just created source, and ViewUtil.APPEND is good enough position
@@ -437,7 +437,7 @@ public class MessageCreateCommand extends EditElementCommand {
 		return result;
 	}
 
-	private int findAnchoredViewPosition(U2TCreateLinkParameters sourceParams) {
+	private int findAnchoredViewPosition(U2TCreateParameters sourceParams) {
 		int viewPosition = ViewUtil.APPEND;
 		if (sourceParams.getAnchorSibling() != null && !sourceParams.isBeforeNotAfterAnchor()) {
 			View anchor = sourceParams.getAnchorSibling();
@@ -504,7 +504,7 @@ public class MessageCreateCommand extends EditElementCommand {
 			}
 		}
 
-		private void addThePastFromAnchor(U2TCreateLinkParameters params) {
+		private void addThePastFromAnchor(U2TCreateParameters params) {
 			View anchor = params.getAnchorSibling();
 			if (anchor != null && !params.isBeforeNotAfterAnchor()) {
 				InteractionFragment semanticAnchor = (InteractionFragment) anchor.getElement();
