@@ -16,6 +16,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDFrameImpl;
+import org.eclipse.uml2.uml.ActionExecutionSpecification;
 import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Continuation;
 import org.eclipse.uml2.uml.ExecutionOccurrenceSpecification;
@@ -115,7 +116,11 @@ public class SDBuilder {
 		}
 		InteractionFragment fragment = orderedFragments.next();
 		if (fragment instanceof StateInvariant) {
-			buildStateInvariant((StateInvariant) fragment);
+			buildSimpleNode(fragment);
+			return;
+		}
+		if (fragment instanceof ActionExecutionSpecification) {
+			buildSimpleNode(fragment);
 			return;
 		}
 		if (fragment instanceof CombinedFragment) {
@@ -385,14 +390,14 @@ public class SDBuilder {
 		throw new SDBuilderInternalProblem(metaclass + " is not supported: " + fragment);
 	}
 
-	private void buildStateInvariant(StateInvariant umlInvariant) {
-		Lifeline umlLifeline = ensureSingleCovered(umlInvariant);
+	private void buildSimpleNode(InteractionFragment umlFragment) {
+		Lifeline umlLifeline = ensureSingleCovered(umlFragment);
 		if (umlLifeline == null) {
 			return;
 		}
 		SDBracketContainer sdContainer = myCallStack.peek(umlLifeline);
 		SDSimpleNode sdInvariant = SDFactory.eINSTANCE.createSDSimpleNode();
-		sdInvariant.setUmlFragment(umlInvariant);
+		sdInvariant.setUmlFragment(umlFragment);
 		sdContainer.getBrackets().add(sdInvariant);
 	}
 	
