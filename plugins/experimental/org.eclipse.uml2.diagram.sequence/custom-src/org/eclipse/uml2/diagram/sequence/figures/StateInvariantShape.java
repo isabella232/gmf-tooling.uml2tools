@@ -6,13 +6,15 @@ import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RoundedRectangle;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.uml2.diagram.common.editparts.NeedsParentEditPart;
 import org.eclipse.uml2.diagram.common.layered.MultiLayeredContainer;
 import org.eclipse.uml2.diagram.common.layered.MultilayeredFigure;
 import org.eclipse.uml2.diagram.common.layered.MultilayeredSupport;
 import org.eclipse.uml2.diagram.common.layered.MultilayeredSupportImpl;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 
-public class StateInvariantShape extends RoundedRectangle implements MultilayeredFigure {
+public class StateInvariantShape extends RoundedRectangle implements MultilayeredFigure, NeedsParentEditPart {
     protected static final int DEFAULT_RADIUS = 15;
     protected static final int VERTICAL_SPACING = 2;
 
@@ -38,8 +40,8 @@ public class StateInvariantShape extends RoundedRectangle implements Multilayere
         
         add(myInplaceLabel, BorderLayout.CENTER);
         
-        myMultilayeredSupport.setLayerToFigure(MultiLayeredContainer.FOREGROUND_LAYER, this);
-        myMultilayeredSupport.setLayerToContentPane(MultiLayeredContainer.FOREGROUND_LAYER, this);
+        myMultilayeredSupport.setLayerToFigure(MultiLayeredContainer.MIDDLE_LAYER, this);
+        myMultilayeredSupport.setLayerToContentPane(MultiLayeredContainer.MIDDLE_LAYER, this);
     }
     
 	public Label getStateInvariantInplaceLabel() {
@@ -48,6 +50,10 @@ public class StateInvariantShape extends RoundedRectangle implements Multilayere
     
     public MultilayeredSupport getMultilayeredSupport() {
         return myMultilayeredSupport;
+    }
+    
+    public void hookParentEditPart(GraphicalEditPart parentEditPart) {
+    	myMultilayeredSupport.setParentFromParentEditPart(parentEditPart);
     }
     
 }
