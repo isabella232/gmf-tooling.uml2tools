@@ -11,6 +11,7 @@ import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.requests.CreateConnectionRequest;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewAndElementRequest;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateParametersImpl;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 
@@ -45,8 +46,8 @@ public class SDGraphicalNodeEditPolicy extends U2TGraphicalNodeEditPolicy {
 	}
 	
 	@Override
-	protected U2TCreateLinkParametersImpl computeParameters(CreateConnectionRequest request) {
-		U2TCreateLinkParametersImpl result = super.computeParameters(request);
+	protected U2TCreateParametersImpl computeParameters(CreateConnectionRequest request) {
+		U2TCreateParametersImpl result = super.computeParameters(request);
 		Point relativeLocation = result.getRelativeLocation();
 		if (relativeLocation != null && getHost().getEditPolicy(EditPolicy.LAYOUT_ROLE) instanceof OrderedLayoutEditPolicy){
 			OrderedLayoutEditPolicy layout = (OrderedLayoutEditPolicy)getHost().getEditPolicy(EditPolicy.LAYOUT_ROLE);

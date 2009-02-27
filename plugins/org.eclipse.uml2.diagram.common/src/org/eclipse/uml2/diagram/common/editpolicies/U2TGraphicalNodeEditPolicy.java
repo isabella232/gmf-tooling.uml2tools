@@ -172,8 +172,8 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		return (U2TCreateLinkCommand) proxy.getICommand();
 	}
 	
-	protected U2TCreateLinkParametersImpl computeParameters(CreateConnectionRequest request){
-		U2TCreateLinkParametersImpl parameters = new U2TCreateLinkParametersImpl(); 
+	protected U2TCreateParametersImpl computeParameters(CreateConnectionRequest request){
+		U2TCreateParametersImpl parameters = new U2TCreateParametersImpl(); 
 		parameters.setParentView(getHostImpl().getNotationView());
 		
 		if (request.getLocation() != null){
@@ -191,45 +191,6 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		}
 		
 		return parameters;
-	}
-	
-	protected static class U2TCreateLinkParametersImpl implements U2TCreateParameters {
-		private Point myRelativeLocation;
-		private View myParentView;
-		private View myAnchorSibling;
-		private boolean myIsBeforeAnchor;
-		
-		public Point getRelativeLocation() {
-			return myRelativeLocation;
-		}
-		
-		public void setRelativeLocation(Point relativeLocation) {
-			myRelativeLocation = relativeLocation;
-		}
-		
-		public View getAnchorSibling() {
-			return myAnchorSibling;
-		}
-		
-		public void setAnchorSibling(View anchorSibling) {
-			myAnchorSibling = anchorSibling;
-		}
-		
-		public boolean isBeforeNotAfterAnchor() {
-			return myIsBeforeAnchor;
-		}
-		
-		public void setBeforeNotAfterAnchor(boolean isBeforeAnchor) {
-			myIsBeforeAnchor = isBeforeAnchor;
-		}
-		
-		public View getParentView() {
-			return myParentView;
-		}
-		
-		public void setParentView(View parentView) {
-			myParentView = parentView;
-		}
 	}
 	
 	
