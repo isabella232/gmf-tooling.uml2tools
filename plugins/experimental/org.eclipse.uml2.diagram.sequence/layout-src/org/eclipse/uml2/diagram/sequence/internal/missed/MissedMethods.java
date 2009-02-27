@@ -64,6 +64,9 @@ public class MissedMethods {
 		public boolean isMessageLink(AbsElement absElement);
 		public boolean isAlienLink(AbsLink link);
 		
+		public boolean isArcasExecution(View reference, ExecutionSpecification entity);
+		public boolean isArcasInvocation(View reference, ExecutionSpecification entity);
+		
 		public boolean isNoDuration(ExecutionSpecification spec);
 	}
 	

@@ -6,10 +6,11 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.sequence.internal.layout.GeometryConstants;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsNode;
+import org.eclipse.uml2.diagram.sequence.internal.layout.model.BracketMetaObject.Ruled.GetChildBracketLogic;
 import org.eclipse.uml2.diagram.sequence.internal.missed.MissedMethods;
-import org.eclipse.uml2.diagram.sequence.model.ArcasModel;
 import org.eclipse.uml2.uml.ActionExecutionSpecification;
 import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.ExecutionSpecification;
@@ -18,9 +19,6 @@ import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.InteractionUse;
 import org.eclipse.uml2.uml.StateInvariant;
 
-/**
- * 
- */
 class LmBracketsMetamodel {
 	
     final static BracketMetaObject LIFE_LINE_META_OBJECT;
@@ -28,7 +26,7 @@ class LmBracketsMetamodel {
     static {
         
         final BracketMetaObject stub = new BracketMetaObject.Adapter(5,5,5,false) {
-			public BracketMetaObject getChildBracketMetaObject(EObject entity) {
+			public BracketMetaObject getChildBracketMetaObject(View reference) {
                 return null;
 			}
 			public LMLifeLineBracket createChildBracket(AbsNode gdeNode, LmOwner lmOwner) {
@@ -94,12 +92,13 @@ class LmBracketsMetamodel {
         
         BracketMetaObject.Ruled.GetChildBracketLogic [] getChildBracketLogics = {
             	new BracketMetaObject.Ruled.GetChildBracketLogic() {
-					public BracketMetaObject getChildBracketMetaObject(EObject entity) {
+					public BracketMetaObject getChildBracketMetaObject(View reference) {
+						EObject entity = reference.getElement();
 						if (false == entity instanceof ExecutionSpecification){
 							return null;
 						}
 						ExecutionSpecification spec = (ExecutionSpecification)entity;
-                    	if (!ArcasModel.isArcasExecution(spec)){
+                    	if (!MissedMethods._arcasMetamodelSpecific().isArcasExecution(reference, spec)){
                     		return null;
                     	}
 						return isNoDuration(spec) ? executionNoDuration : execution;
@@ -111,12 +110,16 @@ class LmBracketsMetamodel {
 					
             	},				
                 new BracketMetaObject.Ruled.GetChildBracketLogic() {
-                    public BracketMetaObject getChildBracketMetaObject(EObject entity) {
+                    public BracketMetaObject getChildBracketMetaObject(View reference) {
+						EObject entity = reference.getElement();
                     	if (false == entity instanceof ExecutionSpecification){
                     		return null;
                     	}
+                    	if (entity instanceof ActionExecutionSpecification){
+                    		return null;
+                    	}	
                     	ExecutionSpecification spec = (ExecutionSpecification)entity;
-                    	if (!ArcasModel.isArcasInvocation(spec)){
+                    	if (!MissedMethods._arcasMetamodelSpecific().isArcasInvocation(reference, spec)){
                     		return null;
                     	}
                     	return isNoDuration(spec) ? invocationNoDuration : invocation;
@@ -127,7 +130,8 @@ class LmBracketsMetamodel {
             		
                 },              
             	new BracketMetaObject.Ruled.GetChildBracketLogic() {
-					public BracketMetaObject getChildBracketMetaObject(EObject entity) {
+					public BracketMetaObject getChildBracketMetaObject(View reference) {
+						EObject entity = reference.getElement();
 						if (entity instanceof InteractionConstraint){
 							return simpleBracket;
 						}
@@ -138,31 +142,15 @@ class LmBracketsMetamodel {
 							return simpleBracket;
 						}
 						return null;
-//                        Metainfo metainfo = entity.getModel().getMetainfo();
-//                        if (!metainfo.hasMetaclass(entity, SD20_Int_LifelineElement.METACLASS)) {
-//                            return null;
-//                        }
-//                        if (metainfo.hasMetaclass(entity, SD20_Int_LifelineBracket.METACLASS)) {
-//                            return null;
-//                        }
-//                        return simpleBracket;
 					}
                 }
             };
 
 
         abstract class MountingGetChildBracketLogic implements BracketMetaObject.Ruled.GetChildBracketLogic {
-			public BracketMetaObject getChildBracketMetaObject(EObject entity) {
-//				Metainfo metainfo = entity.getModel().getMetainfo();
-//				if (!metainfo.hasMetaclass(entity, SD20_Int_MountingRegion.METACLASS)) {
-//					return null;
-//				}
-//				EObject referencedFrame = SdModelUtil.findReferencedFrame(entity);
-//				if (referencedFrame != null) {
-//					return getChildBracketImpl(referencedFrame);
-//				}
-				
-				//in GMF-implementation, there are no mounting regions, the same EObject is used as model for "mounting-region"-like views
+			public BracketMetaObject getChildBracketMetaObject(View reference) {
+				EObject entity = reference.getElement();
+				//in GMF-implementation, there are no explicit mounting regions, the same EObject is used as model for "mounting-region"-like views
 				EObject referencedFrame = entity;
 				if (referencedFrame != null){
 					return getChildBracketImpl(referencedFrame);
@@ -175,8 +163,8 @@ class LmBracketsMetamodel {
         
         BracketMetaObject.Ruled.GetChildBracketLogic mountingChildBracketInCombinedFragment = 
         	new MountingGetChildBracketLogic() {
-                public BracketMetaObject getChildBracketMetaObject(EObject entity) {
-                    BracketMetaObject result = super.getChildBracketMetaObject(entity);
+                public BracketMetaObject getChildBracketMetaObject(View reference) {
+                    BracketMetaObject result = super.getChildBracketMetaObject(reference);
                     if (result == null) {
                         // do not return normal bracket, cause only LmTileMountingRegion can be added to combined fragment region 
                         return stub;
@@ -208,12 +196,7 @@ class LmBracketsMetamodel {
 				}
         	};				
             
-            
-        
-        
-        
-        
-        List getChildBracketLogicsListCommon = new ArrayList();
+        List<GetChildBracketLogic> getChildBracketLogicsListCommon = new ArrayList<GetChildBracketLogic>();
         getChildBracketLogicsListCommon.add(mountingChildBracketInCommon);
         getChildBracketLogicsListCommon.addAll(Arrays.asList(getChildBracketLogics));
         
@@ -230,8 +213,6 @@ class LmBracketsMetamodel {
         
         interactionOperandMountingRegion.addGetChildBracketLogics(getChildBracketLogicsListCommon);
         interactionOccurenceMountingRegion.addGetChildBracketLogics(getChildBracketLogicsListCommon);
-        
-        
         
         LIFE_LINE_META_OBJECT = lifeLine;
     }

@@ -4,6 +4,7 @@ package org.eclipse.uml2.diagram.sequence.internal.layout.model;
 import java.awt.Color;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsElementPropertyAccess;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsNode;
 
@@ -46,8 +47,8 @@ public abstract class LMLifeLineBracket extends LMBracketContainer {
         return getContainer().getContainingFrame();
     }
         
-	LMLifeLineBracket createChildBracketInstance(AbsNode gdeNode, EObject entity) {
-		BracketMetaObject bracketMetaObject = myBracketMetaObject.getChildBracketMetaObject(entity);
+	LMLifeLineBracket createChildBracketInstance(AbsNode gdeNode, View reference) {
+		BracketMetaObject bracketMetaObject = myBracketMetaObject.getChildBracketMetaObject(reference);
 		if (bracketMetaObject == null) {
 			return null;
 		}

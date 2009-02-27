@@ -165,7 +165,7 @@ public class SDLayoutModel {
                 return false;
             }
             
-            EObject nodeEntity = gdeNode.getModelEntity();
+            final EObject nodeEntity = gdeNode.getModelEntity();
             
             //System.out.println("[SDLayoutModel.processAddedGdeNode] nodeEntity="+Util.toString(nodeEntity));
             if (nodeEntity == null) {
@@ -225,7 +225,7 @@ public class SDLayoutModel {
                 if (parentLmElement instanceof LMBracketContainer) {
                     LMBracketContainer lmBracketContainer = (LMBracketContainer)parentLmElement;
 
-                    LMLifeLineBracket lmLifeLineBracket = lmBracketContainer.createChildBracketInstance(gdeNode, nodeEntity);
+                    LMLifeLineBracket lmLifeLineBracket = lmBracketContainer.createChildBracketInstance(gdeNode, gdeNode.getReference());
                     
                     if (lmLifeLineBracket == null) {
                         return false;
@@ -402,12 +402,12 @@ public class SDLayoutModel {
         private void readBrackets(AbsNode gdeNode, LMBracketContainer bracketContainer, BracketMetaObject bracketMetaObject) {
             for (AbsNodeEnumeration nodeEnum = gdeNode.subnodes(); nodeEnum.hasMoreElements(); ) {
                 AbsNode subNode1 = nodeEnum.nextGdeNode();
-                EObject subNodeEntity = subNode1.getModelEntity();
-                if (subNodeEntity == null) {
+                View subNodeReference = subNode1.getReference();
+                if (subNodeReference == null) {
                     continue;
                 }
                 
-                BracketMetaObject childMetaObject = bracketMetaObject.getChildBracketMetaObject(subNodeEntity);
+                BracketMetaObject childMetaObject = bracketMetaObject.getChildBracketMetaObject(subNodeReference);
                 if (childMetaObject == null) {
                     continue;
                 }

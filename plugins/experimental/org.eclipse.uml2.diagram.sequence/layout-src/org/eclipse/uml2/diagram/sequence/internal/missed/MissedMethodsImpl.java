@@ -8,9 +8,7 @@ import java.util.List;
 import org.eclipse.draw2d.AbsoluteBendpoint;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.PolylineConnection;
-import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -20,8 +18,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.IntListValueStyle;
-import org.eclipse.gmf.runtime.notation.LayoutConstraint;
-import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Size;
@@ -32,7 +28,6 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.links.ConnectionRoutingHelper;
-import org.eclipse.uml2.diagram.sequence.edit.parts.LayeredInteractionUseEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsElement;
@@ -48,6 +43,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
@@ -147,6 +143,16 @@ public class MissedMethodsImpl {
 		
 		public boolean isNoDuration(ExecutionSpecification spec) {
 			return false;
+		}
+		
+		public boolean isArcasExecution(View reference, ExecutionSpecification entity) {
+			SDFrame sdModel = SDModelAccess.findSDModel(reference);
+			return sdModel != null && sdModel.getUMLTracing().findBehaviorSpec(entity) instanceof SDExecution;
+		}
+		
+		public boolean isArcasInvocation(View reference, ExecutionSpecification entity) {
+			SDFrame sdModel = SDModelAccess.findSDModel(reference);
+			return sdModel != null && sdModel.getUMLTracing().findBehaviorSpec(entity) instanceof SDInvocation;
 		}
 		
 		public boolean isAlienLink(AbsLink link){

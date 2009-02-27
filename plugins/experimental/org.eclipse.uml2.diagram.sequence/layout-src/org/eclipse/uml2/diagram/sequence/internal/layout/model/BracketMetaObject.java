@@ -6,14 +6,12 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsNode;
 
 
-/**
- * 
- */
 interface BracketMetaObject {
-	BracketMetaObject getChildBracketMetaObject(EObject entity);
+	BracketMetaObject getChildBracketMetaObject(View reference);
     LMLifeLineBracket createChildBracket(AbsNode gdeNode, LmOwner lmOwner);
 	
 	boolean needsOffsetRight();
@@ -32,7 +30,7 @@ interface BracketMetaObject {
 			myVerticalBottomOutSpace = verticalBottomOutSpace;
 			myNeedsOffsetRight = needsOffsetRight;
 		}
-		public abstract BracketMetaObject getChildBracketMetaObject(EObject entity);
+		public abstract BracketMetaObject getChildBracketMetaObject(View reference);
 		
 		public boolean needsOffsetRight() {
 			return myNeedsOffsetRight;
@@ -66,10 +64,10 @@ interface BracketMetaObject {
 		public Ruled(int verticalInSpace, int verticalTopOutSpace, int verticalBottomOutSpace, boolean needsOffsetRight) {
 			super(verticalInSpace, verticalTopOutSpace, verticalBottomOutSpace, needsOffsetRight);
 		}
-		public BracketMetaObject getChildBracketMetaObject(EObject entity) {
+		public BracketMetaObject getChildBracketMetaObject(View reference) {
 			for (int i=0; i<myGetChildBracketLogics.size(); i++) {
 				GetChildBracketLogic getChildBracketLogic = (GetChildBracketLogic)myGetChildBracketLogics.get(i);
-				BracketMetaObject bracketMetaObject = getChildBracketLogic.getChildBracketMetaObject(entity);
+				BracketMetaObject bracketMetaObject = getChildBracketLogic.getChildBracketMetaObject(reference);
 				if (bracketMetaObject != null) {
 					return bracketMetaObject;
 				}
@@ -84,17 +82,17 @@ interface BracketMetaObject {
 			Rule rule = new Rule(condition, bracketMetaObject);
 			addGetChildBracketLogic(new GetChildBracketLogicImpl(rule));
 		}
-		void addGetChildBracketLogics(Collection getChildBracketLogics) {
+		void addGetChildBracketLogics(Collection<GetChildBracketLogic> getChildBracketLogics) {
 			myGetChildBracketLogics.addAll(getChildBracketLogics);
 		}
 		void addGetChildBracketLogic(GetChildBracketLogic getChildBracketLogic) {
 			myGetChildBracketLogics.add(getChildBracketLogic);
 		}
 		
-		private final List myGetChildBracketLogics = new ArrayList(4);
+		private final List<GetChildBracketLogic> myGetChildBracketLogics = new ArrayList<GetChildBracketLogic>(4);
 		
 		interface GetChildBracketLogic {
-			BracketMetaObject getChildBracketMetaObject(EObject entity);
+			BracketMetaObject getChildBracketMetaObject(View reference);
 		}
 		static class GetChildBracketLogicImpl implements GetChildBracketLogic {
 			GetChildBracketLogicImpl(EClass metaclass, BracketMetaObject bracketMetaObject) {
@@ -103,8 +101,8 @@ interface BracketMetaObject {
 			GetChildBracketLogicImpl(Rule rule) {
 				myRule = rule;
 			}
-			public BracketMetaObject getChildBracketMetaObject(EObject entity) {
-				if (!myRule.getCondition().matches(entity)) {
+			public BracketMetaObject getChildBracketMetaObject(View reference) {
+				if (!myRule.getCondition().matches(reference)) {
 					return null;
 				}
 				return myRule.getBracketMetaObject();
@@ -113,7 +111,7 @@ interface BracketMetaObject {
 		}
 		
 		interface Condition {
-			boolean matches(EObject entity);
+			boolean matches(View reference);
 		}
 		
 		static class EClassCondition implements Condition {
@@ -123,7 +121,11 @@ interface BracketMetaObject {
 				myEClasses = eClasses;
 			}
 			
-			public boolean matches(EObject entity) {
+			public boolean matches(View reference) {
+				EObject entity = reference.getElement();
+				if (entity == null){
+					return false;
+				}
 				for (EClass next : myEClasses){
 					if (next.isInstance(entity)){
 						return true;

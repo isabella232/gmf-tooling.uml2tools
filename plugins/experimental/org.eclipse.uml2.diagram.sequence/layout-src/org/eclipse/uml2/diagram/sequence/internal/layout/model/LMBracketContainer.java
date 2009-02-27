@@ -61,7 +61,7 @@ public abstract class LMBracketContainer implements LmReshapable, SelfReorderabl
 		}
 	}
 	
-	abstract LMLifeLineBracket createChildBracketInstance(AbsNode gdeNode, EObject entity);
+	abstract LMLifeLineBracket createChildBracketInstance(AbsNode gdeNode, View reference);
 	
 	protected abstract Integer getClueValue();
 	

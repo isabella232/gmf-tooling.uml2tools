@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.sequence.internal.layout.model;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.sequence.internal.layout.GeometryConstants;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsElementPropertyAccess;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsNode;
@@ -11,9 +12,6 @@ import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLine
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLineIterator;
 
 
-/**
- * 
- */
 public class LMLifeLine extends LMBracketContainer implements SDVerticalLayoutInputImpl.LifeLineSupply {
 		
     LMLifeLine(AbsNode gdeLifeLine, BracketMetaObject pseudoMetaObject, LmOwner lmOwner) {
@@ -244,8 +242,8 @@ public class LMLifeLine extends LMBracketContainer implements SDVerticalLayoutIn
 		return myLastLifeLineElement;
 	}
 	
-	LMLifeLineBracket createChildBracketInstance(AbsNode gdeNode, EObject entity) {
-		BracketMetaObject bracketMetaObject = myPseudoMetaObject.getChildBracketMetaObject(entity);
+	LMLifeLineBracket createChildBracketInstance(AbsNode gdeNode, View reference) {
+		BracketMetaObject bracketMetaObject = myPseudoMetaObject.getChildBracketMetaObject(reference);
 		if (bracketMetaObject == null) {
 			return null;
 		}
