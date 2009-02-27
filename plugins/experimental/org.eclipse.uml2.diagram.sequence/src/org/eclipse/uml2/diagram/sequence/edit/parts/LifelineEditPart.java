@@ -11,12 +11,17 @@ import org.eclipse.draw2d.TreeSearch;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -86,6 +91,7 @@ public class LifelineEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new LifelineCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new org.eclipse.uml2.diagram.sequence.edit.policies.SDCreationEditPolicy());
 		installEditPolicy("SD-Create-InteractionUse", new CreateInteractionUseEditPolicy()); //$NON-NLS-1$
 		installEditPolicy("SD-Create-CombinedFragment", new CreateCombinedFragmentEditPolicy()); //$NON-NLS-1$
 		installEditPolicy("SD-Create-StateInvariant", new CreateStateInvariantEditPolicy()); //$NON-NLS-1$

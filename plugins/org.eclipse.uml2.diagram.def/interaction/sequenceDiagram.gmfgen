@@ -245,6 +245,10 @@
           editPolicyQualifiedClassName="org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
+          key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE"
+          editPolicyQualifiedClassName="org.eclipse.uml2.diagram.sequence.edit.policies.SDCreationEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
           key="&quot;SD-Create-InteractionUse&quot;"
           editPolicyQualifiedClassName="org.eclipse.uml2.diagram.sequence.edit.create.CreateInteractionUseEditPolicy"/>
       <behaviour
