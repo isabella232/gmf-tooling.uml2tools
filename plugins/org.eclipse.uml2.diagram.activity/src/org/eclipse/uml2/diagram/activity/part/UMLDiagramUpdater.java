@@ -2964,7 +2964,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getStructuredActivityNode_3046ContainedLinks(View view) {
+	public static List getStructuredActivityNode_3046ContainedLinksGen(View view) {
 		StructuredActivityNode modelElement = (StructuredActivityNode) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement));
@@ -2972,7 +2972,18 @@ public class UMLDiagramUpdater {
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
-
+	
+	/**
+	 * @generated NOT
+	 */
+	public static List getStructuredActivityNode_3046ContainedLinks(View view) {
+		StructuredActivityNode modelElement = (StructuredActivityNode) view.getElement();
+		List result = getStructuredActivityNode_3046ContainedLinksGen(view);
+		result.addAll(getContainedTypeModelFacetLinks_ControlFlow_4001(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_ObjectFlow_4002(modelElement));
+		return result;
+	}
+	
 	/**
 	 * @generated
 	 */
@@ -5830,9 +5841,51 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
+	 * @NOT-generated
+	 */
+	private static Collection getContainedTypeModelFacetLinks_ControlFlow_4001(StructuredActivityNode container) {
+		Collection result = new LinkedList();
+		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof ControlFlow) {
+				continue;
+			}
+			ControlFlow link = (ControlFlow) linkObject;
+			if (ControlFlowEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			ActivityNode dst = link.getTarget();
+			ActivityNode src = link.getSource();
+			result.add(new UMLLinkDescriptor(src, dst, link, UMLElementTypes.ControlFlow_4001, ControlFlowEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	private static Collection getContainedTypeModelFacetLinks_ObjectFlow_4002(Activity container) {
+		Collection result = new LinkedList();
+		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof ObjectFlow) {
+				continue;
+			}
+			ObjectFlow link = (ObjectFlow) linkObject;
+			if (ObjectFlowEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			ActivityNode dst = link.getTarget();
+			ActivityNode src = link.getSource();
+			result.add(new UMLLinkDescriptor(src, dst, link, UMLElementTypes.ObjectFlow_4002, ObjectFlowEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private static Collection getContainedTypeModelFacetLinks_ObjectFlow_4002(StructuredActivityNode container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
@@ -5982,7 +6035,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_ControlFlow_4001(ActivityNode source) {
+	private static Collection getOutgoingTypeModelFacetLinks_ControlFlow_4001Gen(ActivityNode source) {
 		Activity container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -6016,9 +6069,45 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	private static Collection getOutgoingTypeModelFacetLinks_ControlFlow_4001(ActivityNode source) {
+		StructuredActivityNode container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
+			if (element instanceof StructuredActivityNode) {
+				container = (StructuredActivityNode) element;
+			}
+		}
+		if (container == null) {
+			return UMLDiagramUpdater.getOutgoingTypeModelFacetLinks_ControlFlow_4001Gen(source);
+		}
+		Collection result = UMLDiagramUpdater.getOutgoingTypeModelFacetLinks_ControlFlow_4001Gen(source);
+		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof ControlFlow) {
+				continue;
+			}
+			ControlFlow link = (ControlFlow) linkObject;
+			if (ControlFlowEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			ActivityNode dst = link.getTarget();
+			ActivityNode src = link.getSource();
+			if (src != source) {
+				continue;
+			}
+			result.add(new UMLLinkDescriptor(src, dst, link, UMLElementTypes.ControlFlow_4001, ControlFlowEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_ObjectFlow_4002(ActivityNode source) {
+	private static Collection getOutgoingTypeModelFacetLinks_ObjectFlow_4002Gen(ActivityNode source) {
 		Activity container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -6032,6 +6121,42 @@ public class UMLDiagramUpdater {
 			return Collections.EMPTY_LIST;
 		}
 		Collection result = new LinkedList();
+		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof ObjectFlow) {
+				continue;
+			}
+			ObjectFlow link = (ObjectFlow) linkObject;
+			if (ObjectFlowEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			ActivityNode dst = link.getTarget();
+			ActivityNode src = link.getSource();
+			if (src != source) {
+				continue;
+			}
+			result.add(new UMLLinkDescriptor(src, dst, link, UMLElementTypes.ObjectFlow_4002, ObjectFlowEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static Collection getOutgoingTypeModelFacetLinks_ObjectFlow_4002(ActivityNode source) {
+		StructuredActivityNode container = null;
+		// Find container element for the link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null && container == null; element = element.eContainer()) {
+			if (element instanceof StructuredActivityNode) {
+				container = (StructuredActivityNode) element;
+			}
+		}
+		if (container == null) {
+			return UMLDiagramUpdater.getOutgoingTypeModelFacetLinks_ObjectFlow_4002Gen(container);
+		}
+		Collection result = UMLDiagramUpdater.getOutgoingTypeModelFacetLinks_ObjectFlow_4002Gen(container);
 		for (Iterator links = container.getEdges().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof ObjectFlow) {

@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.activity.edit.policies.UMLBaseItemSemanticEditPo
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.ObjectFlow;
+import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
@@ -74,13 +75,36 @@ public class ObjectFlowCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResultGen(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		ObjectFlow newElement = UMLFactory.eINSTANCE.createObjectFlow();
 		getContainer().getEdges().add(newElement);
+		newElement.setSource(getSource());
+		newElement.setTarget(getTarget());
+		doConfigure(newElement, monitor, info);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
+		return CommandResult.newOKCommandResult(newElement);
+
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		if (!canExecute()) {
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
+		}
+
+		ObjectFlow newElement = UMLFactory.eINSTANCE.createObjectFlow();
+		StructuredActivityNode structuredActivityNode = getStructuredActivityNode();
+		if (structuredActivityNode != null) {
+			structuredActivityNode.getEdges().add(newElement);
+		} else {
+			getContainer().getEdges().add(newElement);
+		}
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
 		doConfigure(newElement, monitor, info);
@@ -131,6 +155,27 @@ public class ObjectFlowCreateCommand extends EditElementCommand {
 	 */
 	public Activity getContainer() {
 		return container;
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	private StructuredActivityNode getStructuredActivityNode() {
+		EObject sourceSAN = deduceStructuredActivityNode(source);
+		if (sourceSAN instanceof StructuredActivityNode &&
+				sourceSAN == deduceStructuredActivityNode(target)) {
+			return (StructuredActivityNode) sourceSAN;
+		}
+		return null;
+	}
+	
+	private StructuredActivityNode deduceStructuredActivityNode(EObject object) {
+		for (EObject element = object; element != null; element = element.eContainer()) {
+			if (element instanceof StructuredActivityNode) {
+				return (StructuredActivityNode) element;
+			}
+		}
+		return null;
 	}
 
 	/**
