@@ -38,10 +38,6 @@ public class SDXYLayoutEditPolicy extends XYLayoutEditPolicy implements OrderedL
 	}
 	
 	private AnchoredSibling findAnchorBefore(Point relativeLocation) {
-		return null;
-	}
-	
-	private AnchoredSibling findAnchorAfter(Point relativeLocation) {
 		View hostView = getHostImpl().getNotationView();
 		View result = null;
 		int maxFoundPositionBefore = Integer.MIN_VALUE;
@@ -70,6 +66,37 @@ public class SDXYLayoutEditPolicy extends XYLayoutEditPolicy implements OrderedL
 			}
 		}	
 		return result == null ? null : new AnchoredSibling(result, false);
+	}
+	
+	private AnchoredSibling findAnchorAfter(Point relativeLocation) {
+		View hostView = getHostImpl().getNotationView();
+		View result = null;
+		int minFoundPositionAfter = Integer.MAX_VALUE;
+		for (Object next : hostView.getChildren()){
+			if (false == next instanceof Node){
+				continue;	
+			}
+			Node nextChild = (Node)next;
+			if (!isConsiderableNode(nextChild)){
+				continue;
+			}
+			if (false == nextChild.getLayoutConstraint() instanceof Bounds){
+				continue;
+			}
+			Bounds bounds = (Bounds) nextChild.getLayoutConstraint();
+			if (!bounds.eIsSet(NotationPackage.eINSTANCE.getLocation_Y())){
+				continue;
+			}
+			if (!bounds.eIsSet(NotationPackage.eINSTANCE.getSize_Height())){
+				continue;
+			}
+			int nextY = bounds.getY();
+			if (nextY < minFoundPositionAfter && nextY > relativeLocation.y){
+				minFoundPositionAfter = nextY;
+				result = nextChild;
+			}
+		}	
+		return result == null ? null : new AnchoredSibling(result, true);
 	}
 	
 	private IGraphicalEditPart getHostImpl(){

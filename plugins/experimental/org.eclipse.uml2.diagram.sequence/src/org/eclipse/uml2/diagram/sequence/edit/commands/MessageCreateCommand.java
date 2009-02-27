@@ -38,7 +38,6 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
-import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExecutionSpecification;
@@ -439,11 +438,14 @@ public class MessageCreateCommand extends EditElementCommand {
 
 	private int findAnchoredViewPosition(U2TCreateParameters sourceParams) {
 		int viewPosition = ViewUtil.APPEND;
-		if (sourceParams.getAnchorSibling() != null && !sourceParams.isBeforeNotAfterAnchor()) {
+		if (sourceParams.getAnchorSibling() != null) {
 			View anchor = sourceParams.getAnchorSibling();
 			int anchorPos = sourceParams.getParentView().getChildren().indexOf(anchor);
 			if (anchorPos > 0) {
-				viewPosition = anchorPos + 1;
+				viewPosition = anchorPos;
+				if (!sourceParams.isBeforeNotAfterAnchor()){
+					viewPosition++;
+				}
 			}
 		}
 		return viewPosition;
@@ -464,7 +466,7 @@ public class MessageCreateCommand extends EditElementCommand {
 
 		public ListIterator<InteractionFragment> getAfterThePastPosition(Interaction interaction) {
 			if (myPastFragments.isEmpty()) {
-				return getAppendPosition(interaction);
+				return interaction.getFragments().listIterator();
 			}
 
 			HashSet<InteractionFragment> notFound = new HashSet<InteractionFragment>();
@@ -516,14 +518,14 @@ public class MessageCreateCommand extends EditElementCommand {
 			}
 		}
 
-		private static ListIterator<InteractionFragment> getAppendPosition(Interaction interaction) {
-			int size = interaction.getFragments().size();
-			ListIterator<InteractionFragment> result = interaction.getFragments().listIterator(size);
-			if (result.hasNext()) {
-				throw new IllegalStateException("Wow!");
-			}
-			return result;
-		}
+//		private static ListIterator<InteractionFragment> getAppendPosition(Interaction interaction) {
+//			int size = interaction.getFragments().size();
+//			ListIterator<InteractionFragment> result = interaction.getFragments().listIterator(size);
+//			if (result.hasNext()) {
+//				throw new IllegalStateException("Wow!");
+//			}
+//			return result;
+//		}
 
 	}
 
