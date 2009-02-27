@@ -1,9 +1,6 @@
 package org.eclipse.uml2.diagram.sequence.edit.commands;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import java.util.ListIterator;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -38,10 +35,8 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.providers.ElementInitializers;
-import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
@@ -454,71 +449,6 @@ public class MessageCreateCommand extends EditElementCommand {
 
 	private ThePast createThePast() {
 		return new ThePast(U2TCreateLinkCommand.getFromRequest(getRequest()));
-	}
-
-	private static class ThePast {
-
-		private final List<InteractionFragment> myPastFragments = new ArrayList<InteractionFragment>(5);
-
-		public ThePast(U2TCreateLinkCommand creationPack) {
-			addThePastFromAnchor(creationPack.getSourceParameters());
-			addThePastFromAnchor(creationPack.getTargetParameters());
-		}
-
-		public ListIterator<InteractionFragment> getAfterThePastPosition(Interaction interaction) {
-			if (myPastFragments.isEmpty()) {
-				return interaction.getFragments().listIterator();
-			}
-
-			HashSet<InteractionFragment> notFound = new HashSet<InteractionFragment>();
-			for (InteractionFragment next : myPastFragments) {
-				if (next == null) {
-					continue;
-				}
-				if (next.getEnclosingInteraction() != interaction) {
-					throw new IllegalArgumentException("Alien fragment found: " + next + " for interaction: " + interaction);
-				}
-				notFound.add(next);
-			}
-
-			ListIterator<InteractionFragment> result = interaction.getFragments().listIterator();
-			while (!notFound.isEmpty() && result.hasNext()) {
-				InteractionFragment next = result.next();
-				notFound.remove(next);
-			}
-			return result;
-		}
-
-		public void executionStarted(SDExecution sdExecution) {
-			ExecutionSpecification umlExecution = sdExecution.getUmlExecutionSpec();
-			considerAsPast_(umlExecution);
-			considerAsPast_(umlExecution.getStart());
-
-			SDInvocation sdParentInvocation = sdExecution.getInvocation();
-			if (sdParentInvocation != null) {
-				considerAsPast_(sdParentInvocation.getUmlExecutionSpec());
-				considerAsPast_(sdParentInvocation.getUmlStart());
-			}
-		}
-
-		public void considerAsPast_(InteractionFragment fragment) {
-			if (fragment != null) {
-				myPastFragments.add(fragment);
-			}
-		}
-
-		private void addThePastFromAnchor(U2TCreateParameters params) {
-			View anchor = params.getAnchorSibling();
-			if (anchor != null && !params.isBeforeNotAfterAnchor()) {
-				InteractionFragment semanticAnchor = (InteractionFragment) anchor.getElement();
-				if (semanticAnchor instanceof ExecutionSpecification) {
-					considerAsPast_(((ExecutionSpecification) semanticAnchor).getFinish());
-				} else {
-					considerAsPast_(semanticAnchor);
-				}
-			}
-		}
-
 	}
 
 }
