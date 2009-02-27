@@ -30,14 +30,14 @@ public class SDXYLayoutEditPolicy extends XYLayoutEditPolicy implements OrderedL
 	}
 	
 	public AnchoredSibling findAnchoredSibling(Point relativeLocation) {
-		AnchoredSibling result = findAnchorAfter(relativeLocation);
+		AnchoredSibling result = findAnchorAbove(relativeLocation);
 		if (result == null){
-			result = findAnchorBefore(relativeLocation);
+			result = findAnchorBelow(relativeLocation);
 		}
 		return result;
 	}
 	
-	private AnchoredSibling findAnchorBefore(Point relativeLocation) {
+	private AnchoredSibling findAnchorAbove(Point relativeLocation) {
 		View hostView = getHostImpl().getNotationView();
 		View result = null;
 		int maxFoundPositionBefore = Integer.MIN_VALUE;
@@ -68,7 +68,7 @@ public class SDXYLayoutEditPolicy extends XYLayoutEditPolicy implements OrderedL
 		return result == null ? null : new AnchoredSibling(result, false);
 	}
 	
-	private AnchoredSibling findAnchorAfter(Point relativeLocation) {
+	private AnchoredSibling findAnchorBelow(Point relativeLocation) {
 		View hostView = getHostImpl().getNotationView();
 		View result = null;
 		int minFoundPositionAfter = Integer.MAX_VALUE;
