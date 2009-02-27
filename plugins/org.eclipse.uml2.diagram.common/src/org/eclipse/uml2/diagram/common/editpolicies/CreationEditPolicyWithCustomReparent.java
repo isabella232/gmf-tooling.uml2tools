@@ -42,7 +42,7 @@ import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
  * @see #237059
  */
 public class CreationEditPolicyWithCustomReparent extends CreationEditPolicy {
-	public static final String REQUEST_KEY_U2T_EXTENDED_PARAMETERS = CreationEditPolicyWithCustomReparent.class.getSimpleName() + ":u2tParameters";
+	public static final String KEY_U2T_EXTENDED_PARAMETERS = CreationEditPolicyWithCustomReparent.class.getSimpleName() + ":u2tParameters";
 	private final IVisualIDRegistry myVisualIdRegistry;
 	private boolean myProvideU2TParameters;
 
@@ -191,7 +191,7 @@ public class CreationEditPolicyWithCustomReparent extends CreationEditPolicy {
 			U2TCreateParametersImpl result = computeCreateParameters(request);
 			if (result != null){
 				@SuppressWarnings("unchecked") Map<String, Object> extendedData = request.getExtendedData();
-				extendedData.put(REQUEST_KEY_U2T_EXTENDED_PARAMETERS, result);
+				extendedData.put(KEY_U2T_EXTENDED_PARAMETERS, result);
 			}
 		}
 	}
@@ -199,7 +199,7 @@ public class CreationEditPolicyWithCustomReparent extends CreationEditPolicy {
 	protected void cleanUpCreateParameters(Request request){
 		if (myProvideU2TParameters){
 			@SuppressWarnings("unchecked") Map<String, Object> extendedData = request.getExtendedData();
-			extendedData.remove(REQUEST_KEY_U2T_EXTENDED_PARAMETERS);
+			extendedData.remove(KEY_U2T_EXTENDED_PARAMETERS);
 		}
 	}
 	
