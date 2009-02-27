@@ -4,11 +4,10 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;
-import org.eclipse.uml2.diagram.sequence.edit.create.SDCreationEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.PackageCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.PackageItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.SDCreationEditPolicy;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdateCommand;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 
