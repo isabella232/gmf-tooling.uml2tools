@@ -281,6 +281,14 @@ public class SDModelBuilderTest extends TestCase {
 		assertEquals(invocation, execution.getInvocation());
 	}
 
+	public void testCombinedFragment(){
+		SDBuilder builder = buildFrame("CombinedFrgament-alt-x2-message-x2.uml", "Interaction");
+		SDModel sdModel = builder.getSDModel();
+		assertNotNull(sdModel);
+		checkCallStackCompleted(builder);
+		checkTraces(builder);
+	}
+
 	protected SDAbstractMessage findMessageByName(SDModel frame, String name) {
 		for (SDAbstractMessage next : frame.getMessages()) {
 			Message nextUML = next.getUmlMessage();
