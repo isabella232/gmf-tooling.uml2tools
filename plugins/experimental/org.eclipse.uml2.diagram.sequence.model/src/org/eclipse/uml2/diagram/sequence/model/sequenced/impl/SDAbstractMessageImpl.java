@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAbstractMessageImpl.java,v 1.3 2009/02/28 15:12:08 mgolubev Exp $
+ * $Id: SDAbstractMessageImpl.java,v 1.4 2009/02/28 15:21:20 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -194,7 +194,7 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID) {
 			case SDPackage.SD_ABSTRACT_MESSAGE__FRAME:
-				return eInternalContainer().eInverseRemove(this, SDPackage.SD_FRAME__MESSAGES, SDModel.class, msgs);
+				return eInternalContainer().eInverseRemove(this, SDPackage.SD_MODEL__MESSAGES, SDModel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

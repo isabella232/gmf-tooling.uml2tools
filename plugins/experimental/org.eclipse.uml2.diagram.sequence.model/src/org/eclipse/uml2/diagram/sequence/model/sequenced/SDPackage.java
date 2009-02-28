@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackage.java,v 1.4 2009/02/28 15:12:08 mgolubev Exp $
+ * $Id: SDPackage.java,v 1.5 2009/02/28 15:21:20 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -60,14 +60,14 @@ public interface SDPackage extends EPackage {
 	SDPackage eINSTANCE = org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl <em>Frame</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl <em>Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDFrame()
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDModel()
 	 * @generated
 	 */
-	int SD_FRAME = 0;
+	int SD_MODEL = 0;
 
 	/**
 	 * The feature id for the '<em><b>Uml Interaction</b></em>' reference.
@@ -76,7 +76,7 @@ public interface SDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SD_FRAME__UML_INTERACTION = 0;
+	int SD_MODEL__UML_INTERACTION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Lifelines</b></em>' containment reference list.
@@ -85,7 +85,7 @@ public interface SDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SD_FRAME__LIFELINES = 1;
+	int SD_MODEL__LIFELINES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Messages</b></em>' containment reference list.
@@ -94,7 +94,7 @@ public interface SDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SD_FRAME__MESSAGES = 2;
+	int SD_MODEL__MESSAGES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Gates</b></em>' containment reference list.
@@ -103,16 +103,16 @@ public interface SDPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SD_FRAME__GATES = 3;
+	int SD_MODEL__GATES = 3;
 
 	/**
-	 * The number of structural features of the '<em>Frame</em>' class.
+	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SD_FRAME_FEATURE_COUNT = 4;
+	int SD_MODEL_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDGateImpl <em>Gate</em>}' class.
@@ -988,14 +988,14 @@ public interface SDPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel <em>Frame</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Frame</em>'.
+	 * @return the meta object for class '<em>Model</em>'.
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel
 	 * @generated
 	 */
-	EClass getSDFrame();
+	EClass getSDModel();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getUmlInteraction <em>Uml Interaction</em>}'.
@@ -1003,10 +1003,10 @@ public interface SDPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Uml Interaction</em>'.
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getUmlInteraction()
-	 * @see #getSDFrame()
+	 * @see #getSDModel()
 	 * @generated
 	 */
-	EReference getSDFrame_UmlInteraction();
+	EReference getSDModel_UmlInteraction();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getLifelines <em>Lifelines</em>}'.
@@ -1014,10 +1014,10 @@ public interface SDPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Lifelines</em>'.
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getLifelines()
-	 * @see #getSDFrame()
+	 * @see #getSDModel()
 	 * @generated
 	 */
-	EReference getSDFrame_Lifelines();
+	EReference getSDModel_Lifelines();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getMessages <em>Messages</em>}'.
@@ -1025,10 +1025,10 @@ public interface SDPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Messages</em>'.
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getMessages()
-	 * @see #getSDFrame()
+	 * @see #getSDModel()
 	 * @generated
 	 */
-	EReference getSDFrame_Messages();
+	EReference getSDModel_Messages();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getGates <em>Gates</em>}'.
@@ -1036,10 +1036,10 @@ public interface SDPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Gates</em>'.
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getGates()
-	 * @see #getSDFrame()
+	 * @see #getSDModel()
 	 * @generated
 	 */
-	EReference getSDFrame_Gates();
+	EReference getSDModel_Gates();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDGate <em>Gate</em>}'.
@@ -1579,14 +1579,14 @@ public interface SDPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl <em>Frame</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl <em>Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl
-		 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDFrame()
+		 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDModel()
 		 * @generated
 		 */
-		EClass SD_FRAME = eINSTANCE.getSDFrame();
+		EClass SD_MODEL = eINSTANCE.getSDModel();
 
 		/**
 		 * The meta object literal for the '<em><b>Uml Interaction</b></em>' reference feature.
@@ -1594,7 +1594,7 @@ public interface SDPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SD_FRAME__UML_INTERACTION = eINSTANCE.getSDFrame_UmlInteraction();
+		EReference SD_MODEL__UML_INTERACTION = eINSTANCE.getSDModel_UmlInteraction();
 
 		/**
 		 * The meta object literal for the '<em><b>Lifelines</b></em>' containment reference list feature.
@@ -1602,7 +1602,7 @@ public interface SDPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SD_FRAME__LIFELINES = eINSTANCE.getSDFrame_Lifelines();
+		EReference SD_MODEL__LIFELINES = eINSTANCE.getSDModel_Lifelines();
 
 		/**
 		 * The meta object literal for the '<em><b>Messages</b></em>' containment reference list feature.
@@ -1610,7 +1610,7 @@ public interface SDPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SD_FRAME__MESSAGES = eINSTANCE.getSDFrame_Messages();
+		EReference SD_MODEL__MESSAGES = eINSTANCE.getSDModel_Messages();
 
 		/**
 		 * The meta object literal for the '<em><b>Gates</b></em>' containment reference list feature.
@@ -1618,7 +1618,7 @@ public interface SDPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SD_FRAME__GATES = eINSTANCE.getSDFrame_Gates();
+		EReference SD_MODEL__GATES = eINSTANCE.getSDModel_Gates();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDGateImpl <em>Gate</em>}' class.

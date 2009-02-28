@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFactoryImpl.java,v 1.3 2009/02/28 15:15:30 mgolubev Exp $
+ * $Id: SDFactoryImpl.java,v 1.4 2009/02/28 15:21:20 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -60,7 +60,7 @@ public class SDFactoryImpl extends EFactoryImpl implements SDFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case SDPackage.SD_FRAME: return createSDModel();
+			case SDPackage.SD_MODEL: return createSDModel();
 			case SDPackage.SD_GATE: return createSDGate();
 			case SDPackage.SD_LIFE_LINE: return createSDLifeLine();
 			case SDPackage.SD_EXECUTION: return createSDExecution();
@@ -80,8 +80,8 @@ public class SDFactoryImpl extends EFactoryImpl implements SDFactory {
 	 * @generated
 	 */
 	public SDModel createSDModel() {
-		SDModelImpl sdFrame = new SDModelImpl();
-		return sdFrame;
+		SDModelImpl sdModel = new SDModelImpl();
+		return sdModel;
 	}
 
 	/**

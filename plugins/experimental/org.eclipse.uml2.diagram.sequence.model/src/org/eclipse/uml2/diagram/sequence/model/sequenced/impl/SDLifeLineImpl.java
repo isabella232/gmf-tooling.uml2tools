@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDLifeLineImpl.java,v 1.2 2009/02/28 15:12:08 mgolubev Exp $
+ * $Id: SDLifeLineImpl.java,v 1.3 2009/02/28 15:21:20 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -152,7 +152,7 @@ public class SDLifeLineImpl extends SDBracketContainerImpl implements SDLifeLine
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID) {
 			case SDPackage.SD_LIFE_LINE__FRAME:
-				return eInternalContainer().eInverseRemove(this, SDPackage.SD_FRAME__LIFELINES, SDModel.class, msgs);
+				return eInternalContainer().eInverseRemove(this, SDPackage.SD_MODEL__LIFELINES, SDModel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

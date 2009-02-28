@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDModelImpl.java,v 1.1 2009/02/28 15:12:08 mgolubev Exp $
+ * $Id: SDModelImpl.java,v 1.2 2009/02/28 15:21:20 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -108,7 +108,7 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SDPackage.Literals.SD_FRAME;
+		return SDPackage.Literals.SD_MODEL;
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 			umlInteraction = (Interaction)eResolveProxy(oldUmlInteraction);
 			if (umlInteraction != oldUmlInteraction) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SDPackage.SD_FRAME__UML_INTERACTION, oldUmlInteraction, umlInteraction));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SDPackage.SD_MODEL__UML_INTERACTION, oldUmlInteraction, umlInteraction));
 			}
 		}
 		return umlInteraction;
@@ -146,7 +146,7 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 		Interaction oldUmlInteraction = umlInteraction;
 		umlInteraction = newUmlInteraction;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SDPackage.SD_FRAME__UML_INTERACTION, oldUmlInteraction, umlInteraction));
+			eNotify(new ENotificationImpl(this, Notification.SET, SDPackage.SD_MODEL__UML_INTERACTION, oldUmlInteraction, umlInteraction));
 	}
 
 	/**
@@ -156,7 +156,7 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	 */
 	public EList<SDLifeLine> getLifelines() {
 		if (lifelines == null) {
-			lifelines = new EObjectContainmentWithInverseEList<SDLifeLine>(SDLifeLine.class, this, SDPackage.SD_FRAME__LIFELINES, SDPackage.SD_LIFE_LINE__FRAME);
+			lifelines = new EObjectContainmentWithInverseEList<SDLifeLine>(SDLifeLine.class, this, SDPackage.SD_MODEL__LIFELINES, SDPackage.SD_LIFE_LINE__FRAME);
 		}
 		return lifelines;
 	}
@@ -168,7 +168,7 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	 */
 	public EList<SDAbstractMessage> getMessages() {
 		if (messages == null) {
-			messages = new EObjectContainmentWithInverseEList<SDAbstractMessage>(SDAbstractMessage.class, this, SDPackage.SD_FRAME__MESSAGES, SDPackage.SD_ABSTRACT_MESSAGE__FRAME);
+			messages = new EObjectContainmentWithInverseEList<SDAbstractMessage>(SDAbstractMessage.class, this, SDPackage.SD_MODEL__MESSAGES, SDPackage.SD_ABSTRACT_MESSAGE__FRAME);
 		}
 		return messages;
 	}
@@ -180,7 +180,7 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	 */
 	public EList<SDGate> getGates() {
 		if (gates == null) {
-			gates = new EObjectContainmentEList<SDGate>(SDGate.class, this, SDPackage.SD_FRAME__GATES);
+			gates = new EObjectContainmentEList<SDGate>(SDGate.class, this, SDPackage.SD_MODEL__GATES);
 		}
 		return gates;
 	}
@@ -203,9 +203,9 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SDPackage.SD_FRAME__LIFELINES:
+			case SDPackage.SD_MODEL__LIFELINES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLifelines()).basicAdd(otherEnd, msgs);
-			case SDPackage.SD_FRAME__MESSAGES:
+			case SDPackage.SD_MODEL__MESSAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMessages()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -219,11 +219,11 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SDPackage.SD_FRAME__LIFELINES:
+			case SDPackage.SD_MODEL__LIFELINES:
 				return ((InternalEList<?>)getLifelines()).basicRemove(otherEnd, msgs);
-			case SDPackage.SD_FRAME__MESSAGES:
+			case SDPackage.SD_MODEL__MESSAGES:
 				return ((InternalEList<?>)getMessages()).basicRemove(otherEnd, msgs);
-			case SDPackage.SD_FRAME__GATES:
+			case SDPackage.SD_MODEL__GATES:
 				return ((InternalEList<?>)getGates()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -237,14 +237,14 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SDPackage.SD_FRAME__UML_INTERACTION:
+			case SDPackage.SD_MODEL__UML_INTERACTION:
 				if (resolve) return getUmlInteraction();
 				return basicGetUmlInteraction();
-			case SDPackage.SD_FRAME__LIFELINES:
+			case SDPackage.SD_MODEL__LIFELINES:
 				return getLifelines();
-			case SDPackage.SD_FRAME__MESSAGES:
+			case SDPackage.SD_MODEL__MESSAGES:
 				return getMessages();
-			case SDPackage.SD_FRAME__GATES:
+			case SDPackage.SD_MODEL__GATES:
 				return getGates();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -259,18 +259,18 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SDPackage.SD_FRAME__UML_INTERACTION:
+			case SDPackage.SD_MODEL__UML_INTERACTION:
 				setUmlInteraction((Interaction)newValue);
 				return;
-			case SDPackage.SD_FRAME__LIFELINES:
+			case SDPackage.SD_MODEL__LIFELINES:
 				getLifelines().clear();
 				getLifelines().addAll((Collection<? extends SDLifeLine>)newValue);
 				return;
-			case SDPackage.SD_FRAME__MESSAGES:
+			case SDPackage.SD_MODEL__MESSAGES:
 				getMessages().clear();
 				getMessages().addAll((Collection<? extends SDAbstractMessage>)newValue);
 				return;
-			case SDPackage.SD_FRAME__GATES:
+			case SDPackage.SD_MODEL__GATES:
 				getGates().clear();
 				getGates().addAll((Collection<? extends SDGate>)newValue);
 				return;
@@ -286,16 +286,16 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SDPackage.SD_FRAME__UML_INTERACTION:
+			case SDPackage.SD_MODEL__UML_INTERACTION:
 				setUmlInteraction((Interaction)null);
 				return;
-			case SDPackage.SD_FRAME__LIFELINES:
+			case SDPackage.SD_MODEL__LIFELINES:
 				getLifelines().clear();
 				return;
-			case SDPackage.SD_FRAME__MESSAGES:
+			case SDPackage.SD_MODEL__MESSAGES:
 				getMessages().clear();
 				return;
-			case SDPackage.SD_FRAME__GATES:
+			case SDPackage.SD_MODEL__GATES:
 				getGates().clear();
 				return;
 		}
@@ -310,13 +310,13 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SDPackage.SD_FRAME__UML_INTERACTION:
+			case SDPackage.SD_MODEL__UML_INTERACTION:
 				return umlInteraction != null;
-			case SDPackage.SD_FRAME__LIFELINES:
+			case SDPackage.SD_MODEL__LIFELINES:
 				return lifelines != null && !lifelines.isEmpty();
-			case SDPackage.SD_FRAME__MESSAGES:
+			case SDPackage.SD_MODEL__MESSAGES:
 				return messages != null && !messages.isEmpty();
-			case SDPackage.SD_FRAME__GATES:
+			case SDPackage.SD_MODEL__GATES:
 				return gates != null && !gates.isEmpty();
 		}
 		return super.eIsSet(featureID);

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDNotationPackageImpl.java,v 1.2 2009/01/28 18:48:50 mgolubev Exp $
+ * $Id: SDNotationPackageImpl.java,v 1.3 2009/02/28 15:21:20 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sdnotation.impl;
 
@@ -194,7 +194,7 @@ public class SDNotationPackageImpl extends EPackageImpl implements SDNotationPac
 		initEClass(sdModelStorageStyleEClass, SDModelStorageStyle.class, "SDModelStorageStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSDModelStorageStyle_Version(), ecorePackage.getEInt(), "version", null, 0, 1, SDModelStorageStyle.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(sdModelStorageStyleEClass, theSDPackage.getSDFrame(), "getAttachedModel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(sdModelStorageStyleEClass, theSDPackage.getSDModel(), "getAttachedModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(sdModelStorageStyleEClass, null, "invalidateModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 

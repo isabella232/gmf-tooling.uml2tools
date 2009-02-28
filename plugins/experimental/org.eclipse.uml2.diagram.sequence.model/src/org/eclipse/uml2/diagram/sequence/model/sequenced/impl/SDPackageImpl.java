@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackageImpl.java,v 1.4 2009/02/28 15:12:08 mgolubev Exp $
+ * $Id: SDPackageImpl.java,v 1.5 2009/02/28 15:21:20 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -54,7 +54,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass sdFrameEClass = null;
+	private EClass sdModelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -304,8 +304,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSDFrame() {
-		return sdFrameEClass;
+	public EClass getSDModel() {
+		return sdModelEClass;
 	}
 
 	/**
@@ -313,8 +313,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSDFrame_UmlInteraction() {
-		return (EReference)sdFrameEClass.getEStructuralFeatures().get(0);
+	public EReference getSDModel_UmlInteraction() {
+		return (EReference)sdModelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -322,8 +322,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSDFrame_Lifelines() {
-		return (EReference)sdFrameEClass.getEStructuralFeatures().get(1);
+	public EReference getSDModel_Lifelines() {
+		return (EReference)sdModelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -331,8 +331,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSDFrame_Messages() {
-		return (EReference)sdFrameEClass.getEStructuralFeatures().get(2);
+	public EReference getSDModel_Messages() {
+		return (EReference)sdModelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -340,8 +340,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSDFrame_Gates() {
-		return (EReference)sdFrameEClass.getEStructuralFeatures().get(3);
+	public EReference getSDModel_Gates() {
+		return (EReference)sdModelEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -804,11 +804,11 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		sdFrameEClass = createEClass(SD_FRAME);
-		createEReference(sdFrameEClass, SD_FRAME__UML_INTERACTION);
-		createEReference(sdFrameEClass, SD_FRAME__LIFELINES);
-		createEReference(sdFrameEClass, SD_FRAME__MESSAGES);
-		createEReference(sdFrameEClass, SD_FRAME__GATES);
+		sdModelEClass = createEClass(SD_MODEL);
+		createEReference(sdModelEClass, SD_MODEL__UML_INTERACTION);
+		createEReference(sdModelEClass, SD_MODEL__LIFELINES);
+		createEReference(sdModelEClass, SD_MODEL__MESSAGES);
+		createEReference(sdModelEClass, SD_MODEL__GATES);
 
 		sdGateEClass = createEClass(SD_GATE);
 		createEReference(sdGateEClass, SD_GATE__UML_GATE);
@@ -925,13 +925,13 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		sdSimpleNodeEClass.getESuperTypes().add(this.getSDBracket());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(sdFrameEClass, SDModel.class, "SDFrame", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSDFrame_UmlInteraction(), this.getUMLInteraction(), null, "umlInteraction", null, 1, 1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSDFrame_Lifelines(), this.getSDLifeLine(), this.getSDLifeLine_Frame(), "lifelines", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSDFrame_Messages(), this.getSDAbstractMessage(), this.getSDAbstractMessage_Frame(), "messages", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSDFrame_Gates(), this.getSDGate(), null, "gates", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(sdModelEClass, SDModel.class, "SDModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSDModel_UmlInteraction(), this.getUMLInteraction(), null, "umlInteraction", null, 1, 1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDModel_Lifelines(), this.getSDLifeLine(), this.getSDLifeLine_Frame(), "lifelines", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDModel_Messages(), this.getSDAbstractMessage(), this.getSDAbstractMessage_Frame(), "messages", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDModel_Gates(), this.getSDGate(), null, "gates", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(sdFrameEClass, this.getSDTrace(), "getUMLTracing", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(sdModelEClass, this.getSDTrace(), "getUMLTracing", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(sdGateEClass, SDGate.class, "SDGate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDGate_UmlGate(), this.getUMLGate(), null, "umlGate", null, 0, 1, SDGate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -946,7 +946,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		initEClass(sdLifeLineEClass, SDLifeLine.class, "SDLifeLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDLifeLine_UmlLifeline(), this.getUMLLifeline(), null, "umlLifeline", null, 1, 1, SDLifeLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSDLifeLine_Frame(), this.getSDFrame(), this.getSDFrame_Lifelines(), "frame", null, 1, 1, SDLifeLine.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDLifeLine_Frame(), this.getSDModel(), this.getSDModel_Lifelines(), "frame", null, 1, 1, SDLifeLine.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sdBehaviorSpecEClass, SDBehaviorSpec.class, "SDBehaviorSpec", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDBehaviorSpec_UmlExecutionSpec(), this.getUMLExecutionSpecification(), null, "umlExecutionSpec", null, 0, 1, SDBehaviorSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -963,7 +963,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		initEClass(sdAbstractMessageEClass, SDAbstractMessage.class, "SDAbstractMessage", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDAbstractMessage_UmlMessage(), this.getUMLMessage(), null, "umlMessage", null, 0, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSDAbstractMessage_Frame(), this.getSDFrame(), this.getSDFrame_Messages(), "frame", null, 1, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDAbstractMessage_Frame(), this.getSDModel(), this.getSDModel_Messages(), "frame", null, 1, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSDAbstractMessage_MessageNumber(), ecorePackage.getEString(), "messageNumber", null, 0, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sdMessageEClass, SDMessage.class, "SDMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

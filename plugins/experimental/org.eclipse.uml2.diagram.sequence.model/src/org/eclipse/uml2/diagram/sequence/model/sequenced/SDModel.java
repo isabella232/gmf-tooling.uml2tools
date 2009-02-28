@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDModel.java,v 1.1 2009/02/28 15:12:08 mgolubev Exp $
+ * $Id: SDModel.java,v 1.2 2009/02/28 15:21:20 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -27,7 +27,7 @@ import org.eclipse.uml2.uml.Interaction;
  * </ul>
  * </p>
  *
- * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDFrame()
+ * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDModel()
  * @model
  * @generated
  */
@@ -42,7 +42,7 @@ public interface SDModel extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Uml Interaction</em>' reference.
 	 * @see #setUmlInteraction(Interaction)
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDFrame_UmlInteraction()
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDModel_UmlInteraction()
 	 * @model type="org.eclipse.uml2.diagram.sequence.model.sequenced.UMLInteraction" required="true"
 	 * @generated
 	 */
@@ -69,7 +69,7 @@ public interface SDModel extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Lifelines</em>' containment reference list.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDFrame_Lifelines()
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDModel_Lifelines()
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getFrame
 	 * @model opposite="frame" containment="true"
 	 * @generated
@@ -87,7 +87,7 @@ public interface SDModel extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Messages</em>' containment reference list.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDFrame_Messages()
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDModel_Messages()
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getFrame
 	 * @model opposite="frame" containment="true"
 	 * @generated
@@ -104,7 +104,7 @@ public interface SDModel extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gates</em>' containment reference list.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDFrame_Gates()
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDModel_Gates()
 	 * @model containment="true"
 	 * @generated
 	 */
