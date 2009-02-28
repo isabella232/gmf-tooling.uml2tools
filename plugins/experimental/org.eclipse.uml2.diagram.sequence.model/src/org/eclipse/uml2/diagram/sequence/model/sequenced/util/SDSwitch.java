@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDSwitch.java,v 1.3 2009/02/28 15:12:08 mgolubev Exp $
+ * $Id: SDSwitch.java,v 1.4 2009/02/28 15:21:20 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.util;
 
@@ -98,9 +98,9 @@ public class SDSwitch<T> {
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case SDPackage.SD_FRAME: {
-				SDModel sdFrame = (SDModel)theEObject;
-				T result = caseSDFrame(sdFrame);
+			case SDPackage.SD_MODEL: {
+				SDModel sdModel = (SDModel)theEObject;
+				T result = caseSDModel(sdModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -208,17 +208,17 @@ public class SDSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Frame</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Frame</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSDFrame(SDModel object) {
+	public T caseSDModel(SDModel object) {
 		return null;
 	}
 

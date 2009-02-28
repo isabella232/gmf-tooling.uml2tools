@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackageImpl.java,v 1.5 2009/02/28 15:21:20 mgolubev Exp $
+ * $Id: SDPackageImpl.java,v 1.6 2009/02/28 15:23:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -430,7 +430,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSDLifeLine_Frame() {
+	public EReference getSDLifeLine_Model() {
 		return (EReference)sdLifeLineEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -547,7 +547,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSDAbstractMessage_Frame() {
+	public EReference getSDAbstractMessage_Model() {
 		return (EReference)sdAbstractMessageEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -823,7 +823,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		sdLifeLineEClass = createEClass(SD_LIFE_LINE);
 		createEReference(sdLifeLineEClass, SD_LIFE_LINE__UML_LIFELINE);
-		createEReference(sdLifeLineEClass, SD_LIFE_LINE__FRAME);
+		createEReference(sdLifeLineEClass, SD_LIFE_LINE__MODEL);
 
 		sdBehaviorSpecEClass = createEClass(SD_BEHAVIOR_SPEC);
 		createEReference(sdBehaviorSpecEClass, SD_BEHAVIOR_SPEC__UML_EXECUTION_SPEC);
@@ -840,7 +840,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		sdAbstractMessageEClass = createEClass(SD_ABSTRACT_MESSAGE);
 		createEReference(sdAbstractMessageEClass, SD_ABSTRACT_MESSAGE__UML_MESSAGE);
-		createEReference(sdAbstractMessageEClass, SD_ABSTRACT_MESSAGE__FRAME);
+		createEReference(sdAbstractMessageEClass, SD_ABSTRACT_MESSAGE__MODEL);
 		createEAttribute(sdAbstractMessageEClass, SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER);
 
 		sdMessageEClass = createEClass(SD_MESSAGE);
@@ -927,8 +927,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(sdModelEClass, SDModel.class, "SDModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDModel_UmlInteraction(), this.getUMLInteraction(), null, "umlInteraction", null, 1, 1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSDModel_Lifelines(), this.getSDLifeLine(), this.getSDLifeLine_Frame(), "lifelines", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSDModel_Messages(), this.getSDAbstractMessage(), this.getSDAbstractMessage_Frame(), "messages", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDModel_Lifelines(), this.getSDLifeLine(), this.getSDLifeLine_Model(), "lifelines", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDModel_Messages(), this.getSDAbstractMessage(), this.getSDAbstractMessage_Model(), "messages", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSDModel_Gates(), this.getSDGate(), null, "gates", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(sdModelEClass, this.getSDTrace(), "getUMLTracing", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -946,7 +946,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		initEClass(sdLifeLineEClass, SDLifeLine.class, "SDLifeLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDLifeLine_UmlLifeline(), this.getUMLLifeline(), null, "umlLifeline", null, 1, 1, SDLifeLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSDLifeLine_Frame(), this.getSDModel(), this.getSDModel_Lifelines(), "frame", null, 1, 1, SDLifeLine.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDLifeLine_Model(), this.getSDModel(), this.getSDModel_Lifelines(), "model", null, 1, 1, SDLifeLine.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sdBehaviorSpecEClass, SDBehaviorSpec.class, "SDBehaviorSpec", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDBehaviorSpec_UmlExecutionSpec(), this.getUMLExecutionSpecification(), null, "umlExecutionSpec", null, 0, 1, SDBehaviorSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -963,7 +963,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		initEClass(sdAbstractMessageEClass, SDAbstractMessage.class, "SDAbstractMessage", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDAbstractMessage_UmlMessage(), this.getUMLMessage(), null, "umlMessage", null, 0, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSDAbstractMessage_Frame(), this.getSDModel(), this.getSDModel_Messages(), "frame", null, 1, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDAbstractMessage_Model(), this.getSDModel(), this.getSDModel_Messages(), "model", null, 1, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSDAbstractMessage_MessageNumber(), ecorePackage.getEString(), "messageNumber", null, 0, 1, SDAbstractMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sdMessageEClass, SDMessage.class, "SDMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

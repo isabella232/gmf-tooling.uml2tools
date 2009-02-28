@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDModelImpl.java,v 1.2 2009/02/28 15:21:20 mgolubev Exp $
+ * $Id: SDModelImpl.java,v 1.3 2009/02/28 15:23:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -156,7 +156,7 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	 */
 	public EList<SDLifeLine> getLifelines() {
 		if (lifelines == null) {
-			lifelines = new EObjectContainmentWithInverseEList<SDLifeLine>(SDLifeLine.class, this, SDPackage.SD_MODEL__LIFELINES, SDPackage.SD_LIFE_LINE__FRAME);
+			lifelines = new EObjectContainmentWithInverseEList<SDLifeLine>(SDLifeLine.class, this, SDPackage.SD_MODEL__LIFELINES, SDPackage.SD_LIFE_LINE__MODEL);
 		}
 		return lifelines;
 	}
@@ -168,7 +168,7 @@ public class SDModelImpl extends EObjectImpl implements SDModel {
 	 */
 	public EList<SDAbstractMessage> getMessages() {
 		if (messages == null) {
-			messages = new EObjectContainmentWithInverseEList<SDAbstractMessage>(SDAbstractMessage.class, this, SDPackage.SD_MODEL__MESSAGES, SDPackage.SD_ABSTRACT_MESSAGE__FRAME);
+			messages = new EObjectContainmentWithInverseEList<SDAbstractMessage>(SDAbstractMessage.class, this, SDPackage.SD_MODEL__MESSAGES, SDPackage.SD_ABSTRACT_MESSAGE__MODEL);
 		}
 		return messages;
 	}

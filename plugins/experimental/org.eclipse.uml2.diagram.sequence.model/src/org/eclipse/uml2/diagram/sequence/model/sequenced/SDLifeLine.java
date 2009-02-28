@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDLifeLine.java,v 1.2 2009/02/28 15:12:08 mgolubev Exp $
+ * $Id: SDLifeLine.java,v 1.3 2009/02/28 15:23:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -17,7 +17,7 @@ import org.eclipse.uml2.uml.Lifeline;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getUmlLifeline <em>Uml Lifeline</em>}</li>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getModel <em>Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,20 +53,20 @@ public interface SDLifeLine extends SDBracketContainer {
 	void setUmlLifeline(Lifeline value);
 
 	/**
-	 * Returns the value of the '<em><b>Frame</b></em>' container reference.
+	 * Returns the value of the '<em><b>Model</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getLifelines <em>Lifelines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Frame</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Model</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Frame</em>' container reference.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDLifeLine_Frame()
+	 * @return the value of the '<em>Model</em>' container reference.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDLifeLine_Model()
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getLifelines
 	 * @model opposite="lifelines" required="true" transient="false" changeable="false"
 	 * @generated
 	 */
-	SDModel getFrame();
+	SDModel getModel();
 
 } // SDLifeLine

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAbstractMessageImpl.java,v 1.4 2009/02/28 15:21:20 mgolubev Exp $
+ * $Id: SDAbstractMessageImpl.java,v 1.5 2009/02/28 15:23:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.Message;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDAbstractMessageImpl#getUmlMessage <em>Uml Message</em>}</li>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDAbstractMessageImpl#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDAbstractMessageImpl#getModel <em>Model</em>}</li>
  *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDAbstractMessageImpl#getMessageNumber <em>Message Number</em>}</li>
  * </ul>
  * </p>
@@ -129,8 +129,8 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SDModel getFrame() {
-		if (eContainerFeatureID != SDPackage.SD_ABSTRACT_MESSAGE__FRAME) return null;
+	public SDModel getModel() {
+		if (eContainerFeatureID != SDPackage.SD_ABSTRACT_MESSAGE__MODEL) return null;
 		return (SDModel)eContainer();
 	}
 
@@ -163,10 +163,10 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SDPackage.SD_ABSTRACT_MESSAGE__FRAME:
+			case SDPackage.SD_ABSTRACT_MESSAGE__MODEL:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return eBasicSetContainer(otherEnd, SDPackage.SD_ABSTRACT_MESSAGE__FRAME, msgs);
+				return eBasicSetContainer(otherEnd, SDPackage.SD_ABSTRACT_MESSAGE__MODEL, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -179,8 +179,8 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SDPackage.SD_ABSTRACT_MESSAGE__FRAME:
-				return eBasicSetContainer(null, SDPackage.SD_ABSTRACT_MESSAGE__FRAME, msgs);
+			case SDPackage.SD_ABSTRACT_MESSAGE__MODEL:
+				return eBasicSetContainer(null, SDPackage.SD_ABSTRACT_MESSAGE__MODEL, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -193,7 +193,7 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID) {
-			case SDPackage.SD_ABSTRACT_MESSAGE__FRAME:
+			case SDPackage.SD_ABSTRACT_MESSAGE__MODEL:
 				return eInternalContainer().eInverseRemove(this, SDPackage.SD_MODEL__MESSAGES, SDModel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -210,8 +210,8 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 			case SDPackage.SD_ABSTRACT_MESSAGE__UML_MESSAGE:
 				if (resolve) return getUmlMessage();
 				return basicGetUmlMessage();
-			case SDPackage.SD_ABSTRACT_MESSAGE__FRAME:
-				return getFrame();
+			case SDPackage.SD_ABSTRACT_MESSAGE__MODEL:
+				return getModel();
 			case SDPackage.SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER:
 				return getMessageNumber();
 		}
@@ -264,8 +264,8 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 		switch (featureID) {
 			case SDPackage.SD_ABSTRACT_MESSAGE__UML_MESSAGE:
 				return umlMessage != null;
-			case SDPackage.SD_ABSTRACT_MESSAGE__FRAME:
-				return getFrame() != null;
+			case SDPackage.SD_ABSTRACT_MESSAGE__MODEL:
+				return getModel() != null;
 			case SDPackage.SD_ABSTRACT_MESSAGE__MESSAGE_NUMBER:
 				return MESSAGE_NUMBER_EDEFAULT == null ? messageNumber != null : !MESSAGE_NUMBER_EDEFAULT.equals(messageNumber);
 		}

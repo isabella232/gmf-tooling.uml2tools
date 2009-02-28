@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDModel.java,v 1.2 2009/02/28 15:21:20 mgolubev Exp $
+ * $Id: SDModel.java,v 1.3 2009/02/28 15:23:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -61,7 +61,7 @@ public interface SDModel extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Lifelines</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine}.
-	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getFrame <em>Frame</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Lifelines</em>' containment reference list isn't clear,
@@ -70,8 +70,8 @@ public interface SDModel extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Lifelines</em>' containment reference list.
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDModel_Lifelines()
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getFrame
-	 * @model opposite="frame" containment="true"
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getModel
+	 * @model opposite="model" containment="true"
 	 * @generated
 	 */
 	EList<SDLifeLine> getLifelines();
@@ -79,7 +79,7 @@ public interface SDModel extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Messages</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage}.
-	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getFrame <em>Frame</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Messages</em>' containment reference list isn't clear,
@@ -88,8 +88,8 @@ public interface SDModel extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Messages</em>' containment reference list.
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDModel_Messages()
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getFrame
-	 * @model opposite="frame" containment="true"
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getModel
+	 * @model opposite="model" containment="true"
 	 * @generated
 	 */
 	EList<SDAbstractMessage> getMessages();

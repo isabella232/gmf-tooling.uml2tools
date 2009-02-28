@@ -8,9 +8,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlInteraction" lowerBound="1"
         eType="#//UMLInteraction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lifelines" upperBound="-1"
-        eType="#//SDLifeLine" containment="true" eOpposite="#//SDLifeLine/frame"/>
+        eType="#//SDLifeLine" containment="true" eOpposite="#//SDLifeLine/model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
-        eType="#//SDAbstractMessage" containment="true" eOpposite="#//SDAbstractMessage/frame"/>
+        eType="#//SDAbstractMessage" containment="true" eOpposite="#//SDAbstractMessage/model"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="gates" upperBound="-1"
         eType="#//SDGate" containment="true"/>
   </eClassifiers>
@@ -30,7 +30,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SDLifeLine" eSuperTypes="#//SDBracketContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlLifeline" lowerBound="1"
         eType="#//UMLLifeline"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDModel"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//SDModel"
         changeable="false" eOpposite="#//SDModel/lifelines"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDBehaviorSpec" abstract="true" eSuperTypes="#//SDBracket #//SDBracketContainer">
@@ -52,7 +52,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDAbstractMessage" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlMessage" eType="#//UMLMessage"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDModel"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//SDModel"
         changeable="false" eOpposite="#//SDModel/messages"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

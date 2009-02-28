@@ -3,8 +3,8 @@ package sequenced;
 
 class SDModel {
 	ref UMLInteraction[1] umlInteraction;
-	ordered val SDLifeLine[*]#frame lifelines;
-	ordered val SDAbstractMessage[*]#frame messages; 
+	ordered val SDLifeLine[*]#model lifelines;
+	ordered val SDAbstractMessage[*]#model messages; 
 	val SDGate[*] gates;
 	
 	op SDTrace getUMLTracing();
@@ -28,7 +28,7 @@ abstract class SDBracket extends SDLifeLineElement {
 
 class SDLifeLine extends SDBracketContainer {
 	ref UMLLifeline[1] umlLifeline;
-	readonly ref SDModel[1]#lifelines frame;
+	readonly ref SDModel[1]#lifelines model;
 }
 
 abstract class SDBehaviorSpec extends SDBracket, SDBracketContainer {
@@ -49,7 +49,7 @@ class SDInvocation extends SDBehaviorSpec {
 
 abstract class SDAbstractMessage {
 	ref UMLMessage umlMessage;
-	readonly ref SDModel[1]#messages frame;
+	readonly ref SDModel[1]#messages model;
 	attr String messageNumber; 
 }
 

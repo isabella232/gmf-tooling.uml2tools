@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDLifeLineImpl.java,v 1.3 2009/02/28 15:21:20 mgolubev Exp $
+ * $Id: SDLifeLineImpl.java,v 1.4 2009/02/28 15:23:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Lifeline;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDLifeLineImpl#getUmlLifeline <em>Uml Lifeline</em>}</li>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDLifeLineImpl#getFrame <em>Frame</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDLifeLineImpl#getModel <em>Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,8 +108,8 @@ public class SDLifeLineImpl extends SDBracketContainerImpl implements SDLifeLine
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SDModel getFrame() {
-		if (eContainerFeatureID != SDPackage.SD_LIFE_LINE__FRAME) return null;
+	public SDModel getModel() {
+		if (eContainerFeatureID != SDPackage.SD_LIFE_LINE__MODEL) return null;
 		return (SDModel)eContainer();
 	}
 
@@ -121,10 +121,10 @@ public class SDLifeLineImpl extends SDBracketContainerImpl implements SDLifeLine
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SDPackage.SD_LIFE_LINE__FRAME:
+			case SDPackage.SD_LIFE_LINE__MODEL:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return eBasicSetContainer(otherEnd, SDPackage.SD_LIFE_LINE__FRAME, msgs);
+				return eBasicSetContainer(otherEnd, SDPackage.SD_LIFE_LINE__MODEL, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -137,8 +137,8 @@ public class SDLifeLineImpl extends SDBracketContainerImpl implements SDLifeLine
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SDPackage.SD_LIFE_LINE__FRAME:
-				return eBasicSetContainer(null, SDPackage.SD_LIFE_LINE__FRAME, msgs);
+			case SDPackage.SD_LIFE_LINE__MODEL:
+				return eBasicSetContainer(null, SDPackage.SD_LIFE_LINE__MODEL, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -151,7 +151,7 @@ public class SDLifeLineImpl extends SDBracketContainerImpl implements SDLifeLine
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID) {
-			case SDPackage.SD_LIFE_LINE__FRAME:
+			case SDPackage.SD_LIFE_LINE__MODEL:
 				return eInternalContainer().eInverseRemove(this, SDPackage.SD_MODEL__LIFELINES, SDModel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -168,8 +168,8 @@ public class SDLifeLineImpl extends SDBracketContainerImpl implements SDLifeLine
 			case SDPackage.SD_LIFE_LINE__UML_LIFELINE:
 				if (resolve) return getUmlLifeline();
 				return basicGetUmlLifeline();
-			case SDPackage.SD_LIFE_LINE__FRAME:
-				return getFrame();
+			case SDPackage.SD_LIFE_LINE__MODEL:
+				return getModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,8 +214,8 @@ public class SDLifeLineImpl extends SDBracketContainerImpl implements SDLifeLine
 		switch (featureID) {
 			case SDPackage.SD_LIFE_LINE__UML_LIFELINE:
 				return umlLifeline != null;
-			case SDPackage.SD_LIFE_LINE__FRAME:
-				return getFrame() != null;
+			case SDPackage.SD_LIFE_LINE__MODEL:
+				return getModel() != null;
 		}
 		return super.eIsSet(featureID);
 	}

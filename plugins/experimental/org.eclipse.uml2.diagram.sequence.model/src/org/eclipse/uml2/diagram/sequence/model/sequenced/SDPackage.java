@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackage.java,v 1.5 2009/02/28 15:21:20 mgolubev Exp $
+ * $Id: SDPackage.java,v 1.6 2009/02/28 15:23:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -246,13 +246,13 @@ public interface SDPackage extends EPackage {
 	int SD_LIFE_LINE__UML_LIFELINE = SD_BRACKET_CONTAINER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Frame</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SD_LIFE_LINE__FRAME = SD_BRACKET_CONTAINER_FEATURE_COUNT + 1;
+	int SD_LIFE_LINE__MODEL = SD_BRACKET_CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Life Line</em>' class.
@@ -511,13 +511,13 @@ public interface SDPackage extends EPackage {
 	int SD_ABSTRACT_MESSAGE__UML_MESSAGE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Frame</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SD_ABSTRACT_MESSAGE__FRAME = 1;
+	int SD_ABSTRACT_MESSAGE__MODEL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Message Number</b></em>' attribute.
@@ -557,13 +557,13 @@ public interface SDPackage extends EPackage {
 	int SD_MESSAGE__UML_MESSAGE = SD_ABSTRACT_MESSAGE__UML_MESSAGE;
 
 	/**
-	 * The feature id for the '<em><b>Frame</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SD_MESSAGE__FRAME = SD_ABSTRACT_MESSAGE__FRAME;
+	int SD_MESSAGE__MODEL = SD_ABSTRACT_MESSAGE__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Message Number</b></em>' attribute.
@@ -621,13 +621,13 @@ public interface SDPackage extends EPackage {
 	int SD_GATE_MESSAGE__UML_MESSAGE = SD_ABSTRACT_MESSAGE__UML_MESSAGE;
 
 	/**
-	 * The feature id for the '<em><b>Frame</b></em>' container reference.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SD_GATE_MESSAGE__FRAME = SD_ABSTRACT_MESSAGE__FRAME;
+	int SD_GATE_MESSAGE__MODEL = SD_ABSTRACT_MESSAGE__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Message Number</b></em>' attribute.
@@ -1136,15 +1136,15 @@ public interface SDPackage extends EPackage {
 	EReference getSDLifeLine_UmlLifeline();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getFrame <em>Frame</em>}'.
+	 * Returns the meta object for the container reference '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Frame</em>'.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getFrame()
+	 * @return the meta object for the container reference '<em>Model</em>'.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine#getModel()
 	 * @see #getSDLifeLine()
 	 * @generated
 	 */
-	EReference getSDLifeLine_Frame();
+	EReference getSDLifeLine_Model();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec <em>Behavior Spec</em>}'.
@@ -1275,15 +1275,15 @@ public interface SDPackage extends EPackage {
 	EReference getSDAbstractMessage_UmlMessage();
 
 	/**
-	 * Returns the meta object for the container reference '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getFrame <em>Frame</em>}'.
+	 * Returns the meta object for the container reference '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Frame</em>'.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getFrame()
+	 * @return the meta object for the container reference '<em>Model</em>'.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getModel()
 	 * @see #getSDAbstractMessage()
 	 * @generated
 	 */
-	EReference getSDAbstractMessage_Frame();
+	EReference getSDAbstractMessage_Model();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage#getMessageNumber <em>Message Number</em>}'.
@@ -1703,12 +1703,12 @@ public interface SDPackage extends EPackage {
 		EReference SD_LIFE_LINE__UML_LIFELINE = eINSTANCE.getSDLifeLine_UmlLifeline();
 
 		/**
-		 * The meta object literal for the '<em><b>Frame</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SD_LIFE_LINE__FRAME = eINSTANCE.getSDLifeLine_Frame();
+		EReference SD_LIFE_LINE__MODEL = eINSTANCE.getSDLifeLine_Model();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDBehaviorSpecImpl <em>Behavior Spec</em>}' class.
@@ -1815,12 +1815,12 @@ public interface SDPackage extends EPackage {
 		EReference SD_ABSTRACT_MESSAGE__UML_MESSAGE = eINSTANCE.getSDAbstractMessage_UmlMessage();
 
 		/**
-		 * The meta object literal for the '<em><b>Frame</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SD_ABSTRACT_MESSAGE__FRAME = eINSTANCE.getSDAbstractMessage_Frame();
+		EReference SD_ABSTRACT_MESSAGE__MODEL = eINSTANCE.getSDAbstractMessage_Model();
 
 		/**
 		 * The meta object literal for the '<em><b>Message Number</b></em>' attribute feature.
