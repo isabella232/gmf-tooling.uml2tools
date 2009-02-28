@@ -15,12 +15,13 @@ package org.eclipse.uml2.diagram.sequence.tests;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
-public class AllTests {
+public class SDBuilderTests {
 
 	public static Test suite() {
 		TestSuite suite = new TestSuite("Test for org.eclipse.uml2.diagram.sequence");
 		//$JUnit-BEGIN$
 		suite.addTestSuite(SDModelBuilderTest.class);
+		suite.addTestSuite(SDFramesBuilderTest.class);
 		//$JUnit-END$
 		return suite;
 	}
