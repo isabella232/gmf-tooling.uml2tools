@@ -7,7 +7,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFactory;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGate;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessageEnd;
@@ -15,7 +15,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDFrameImpl;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl;
 import org.eclipse.uml2.uml.ActionExecutionSpecification;
 import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Continuation;
@@ -39,7 +39,7 @@ public class SDBuilder {
 	private final StartAndFinishRegistry myStartsAndFinishes;
 	private final LifeLineCallStack myCallStack;
 	private final MessageNumbers myMessageNumbers; 
-	private SDFrame mySDFrame;
+	private SDModel mySDModel;
 	
 	public SDBuilder(Interaction interaction) {
 		myInteraction = interaction;
@@ -63,26 +63,26 @@ public class SDBuilder {
 		return myCallStack;
 	}
 	
-	public SDFrame getSDFrame(){
-		if (mySDFrame == null){
+	public SDModel getSDFrame(){
+		if (mySDModel == null){
 			reBuildFrame();
 		}
-		return mySDFrame;
+		return mySDModel;
 	}
 	
-	public SDFrame reBuildFrame() {
+	public SDModel reBuildFrame() {
 		myCallStack.clear();
 		myStartsAndFinishes.forceRemap();
-		mySDFrame = SDFactory.eINSTANCE.createSDFrame();
-		mySDFrame.setUmlInteraction(myInteraction);
+		mySDModel = SDFactory.eINSTANCE.createSDModel();
+		mySDModel.setUmlInteraction(myInteraction);
 		
 		/**
 		 * intentionally cast to implementation -- we don't want to allow clients to call this 
 		 */
-		((SDFrameImpl)mySDFrame).setUMLTracing(new SDBuilderTrace());
+		((SDModelImpl)mySDModel).setUMLTracing(new SDBuilderTrace());
 
-		buildGates(mySDFrame, myInteraction);
-		buildFrameLifeLines(mySDFrame, myInteraction);
+		buildGates(mySDModel, myInteraction);
+		buildLifeLines(mySDModel, myInteraction);
 
 		for (Iterator<InteractionFragment> fragments = myInteraction.getFragments().iterator(); fragments.hasNext();) {
 			buildBrackets(fragments);
@@ -90,22 +90,22 @@ public class SDBuilder {
 		
 		updateMessageNumbers();
 
-		return mySDFrame;
+		return mySDModel;
 	}
 	
-	private void buildGates(SDFrame result, Interaction interaction) {
+	private void buildGates(SDModel model, Interaction interaction) {
 		for (Gate umlGate : interaction.getFormalGates()) {
 			SDGate sdGate = SDFactory.eINSTANCE.createSDGate();
 			sdGate.setUmlGate(umlGate);
-			result.getGates().add(sdGate);
+			model.getGates().add(sdGate);
 		}
 	}
 
-	private void buildFrameLifeLines(SDFrame frame, Interaction interaction) {
-		assert frame.getLifelines().isEmpty();
+	private void buildLifeLines(SDModel model, Interaction interaction) {
+		assert model.getLifelines().isEmpty();
 		for (Lifeline umlLifeline : interaction.getLifelines()) {
 			SDLifeLine sdLifeLine = getTraceImpl().bindNewLifeline(umlLifeline);
-			frame.getLifelines().add(sdLifeLine);
+			model.getLifelines().add(sdLifeLine);
 			myCallStack.push(umlLifeline, sdLifeLine);
 		}
 	}
@@ -340,7 +340,7 @@ public class SDBuilder {
 			sdInvocation.setUmlFinish(umlInvocation.getFinish());
 		}
 		
-		mySDFrame.getMessages().add(sdMessage);
+		mySDModel.getMessages().add(sdMessage);
 
 		SDBracketContainer sdSendingContainer = myCallStack.peek(umlSendingLifeline);
 		sdSendingContainer.getBrackets().add(sdInvocation);
@@ -367,10 +367,10 @@ public class SDBuilder {
 		SDGateMessage sdMessageToGate = SDFactory.eINSTANCE.createSDGateMessage();
 		sdMessageToGate.setUmlMessage(umlMessageEnd.getMessage());
 		sdMessageToGate.setFromNotToGate(fromNotToGate);
-		sdMessageToGate.setGate(SDModelHelper.findGate(mySDFrame, umlGate));
+		sdMessageToGate.setGate(SDModelHelper.findGate(mySDModel, umlGate));
 		sdMessageToGate.setNormalEnd(sdPureOccurrence);
 
-		mySDFrame.getMessages().add(sdMessageToGate);
+		mySDModel.getMessages().add(sdMessageToGate);
 	}
 
 	private void buildLostMessage(MessageOccurrenceSpecification messageSource) {

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFrameImpl.java,v 1.2 2009/02/11 14:36:18 mgolubev Exp $
+ * $Id: SDModelImpl.java,v 1.1 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGate;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
@@ -40,16 +40,16 @@ import org.eclipse.uml2.uml.Interaction;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDFrameImpl#getUmlInteraction <em>Uml Interaction</em>}</li>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDFrameImpl#getLifelines <em>Lifelines</em>}</li>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDFrameImpl#getMessages <em>Messages</em>}</li>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDFrameImpl#getGates <em>Gates</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl#getUmlInteraction <em>Uml Interaction</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl#getLifelines <em>Lifelines</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl#getMessages <em>Messages</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl#getGates <em>Gates</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SDFrameImpl extends EObjectImpl implements SDFrame {
+public class SDModelImpl extends EObjectImpl implements SDModel {
 	private SDTrace myUMLTracing;
 	
 	/**
@@ -97,7 +97,7 @@ public class SDFrameImpl extends EObjectImpl implements SDFrame {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SDFrameImpl() {
+	protected SDModelImpl() {
 		super();
 	}
 

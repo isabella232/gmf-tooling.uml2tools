@@ -63,7 +63,7 @@ public class SDModelHelper {
 		}
 
 		@Override
-		public Element caseSDFrame(SDModel object) {
+		public Element caseSDModel(SDModel object) {
 			return object.getUmlInteraction();
 		}
 

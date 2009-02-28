@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDSwitch.java,v 1.2 2009/02/11 14:36:18 mgolubev Exp $
+ * $Id: SDSwitch.java,v 1.3 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.util;
 
@@ -99,7 +99,7 @@ public class SDSwitch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case SDPackage.SD_FRAME: {
-				SDFrame sdFrame = (SDFrame)theEObject;
+				SDModel sdFrame = (SDModel)theEObject;
 				T result = caseSDFrame(sdFrame);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -218,7 +218,7 @@ public class SDSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSDFrame(SDFrame object) {
+	public T caseSDFrame(SDModel object) {
 		return null;
 	}
 

@@ -7,6 +7,6 @@ import "platform:/resource/org.eclipse.uml2.diagram.sequence.model/model/sequenc
 class SDModelStorageStyle extends notation.Style {
 	transient attr int version;
 
-	op sequenced.SDFrame getAttachedModel();
+	op sequenced.SDModel getAttachedModel();
 	op void invalidateModel();
 }

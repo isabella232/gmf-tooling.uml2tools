@@ -1,7 +1,7 @@
 @namespace(uri="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/1.0", prefix="uml2t.seqd")
 package sequenced;
 
-class SDFrame {
+class SDModel {
 	ref UMLInteraction[1] umlInteraction;
 	ordered val SDLifeLine[*]#frame lifelines;
 	ordered val SDAbstractMessage[*]#frame messages; 
@@ -28,7 +28,7 @@ abstract class SDBracket extends SDLifeLineElement {
 
 class SDLifeLine extends SDBracketContainer {
 	ref UMLLifeline[1] umlLifeline;
-	readonly ref SDFrame[1]#lifelines frame;
+	readonly ref SDModel[1]#lifelines frame;
 }
 
 abstract class SDBehaviorSpec extends SDBracket, SDBracketContainer {
@@ -49,7 +49,7 @@ class SDInvocation extends SDBehaviorSpec {
 
 abstract class SDAbstractMessage {
 	ref UMLMessage umlMessage;
-	readonly ref SDFrame[1]#messages frame;
+	readonly ref SDModel[1]#messages frame;
 	attr String messageNumber; 
 }
 

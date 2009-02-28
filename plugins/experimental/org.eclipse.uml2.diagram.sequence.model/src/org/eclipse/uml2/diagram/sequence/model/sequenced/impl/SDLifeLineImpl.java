@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDLifeLineImpl.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDLifeLineImpl.java,v 1.2 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
 
@@ -108,9 +108,9 @@ public class SDLifeLineImpl extends SDBracketContainerImpl implements SDLifeLine
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SDFrame getFrame() {
+	public SDModel getFrame() {
 		if (eContainerFeatureID != SDPackage.SD_LIFE_LINE__FRAME) return null;
-		return (SDFrame)eContainer();
+		return (SDModel)eContainer();
 	}
 
 	/**
@@ -152,7 +152,7 @@ public class SDLifeLineImpl extends SDBracketContainerImpl implements SDLifeLine
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID) {
 			case SDPackage.SD_LIFE_LINE__FRAME:
-				return eInternalContainer().eInverseRemove(this, SDPackage.SD_FRAME__LIFELINES, SDFrame.class, msgs);
+				return eInternalContainer().eInverseRemove(this, SDPackage.SD_FRAME__LIFELINES, SDModel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

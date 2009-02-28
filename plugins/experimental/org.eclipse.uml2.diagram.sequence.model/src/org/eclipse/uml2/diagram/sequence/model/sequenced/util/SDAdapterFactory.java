@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAdapterFactory.java,v 1.2 2009/02/11 14:36:18 mgolubev Exp $
+ * $Id: SDAdapterFactory.java,v 1.3 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.util;
 
@@ -83,7 +83,7 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 	protected SDSwitch<Adapter> modelSwitch =
 		new SDSwitch<Adapter>() {
 			@Override
-			public Adapter caseSDFrame(SDFrame object) {
+			public Adapter caseSDFrame(SDModel object) {
 				return createSDFrameAdapter();
 			}
 			@Override
@@ -207,13 +207,13 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame <em>Frame</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel <em>Frame</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel
 	 * @generated
 	 */
 	public Adapter createSDFrameAdapter() {

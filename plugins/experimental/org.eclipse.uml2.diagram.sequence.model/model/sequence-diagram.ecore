@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sequenced"
     nsURI="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/1.0" nsPrefix="uml2t.seqd">
-  <eClassifiers xsi:type="ecore:EClass" name="SDFrame">
+  <eClassifiers xsi:type="ecore:EClass" name="SDModel">
     <eOperations name="getUMLTracing" eType="#//SDTrace"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlInteraction" lowerBound="1"
         eType="#//UMLInteraction"/>
@@ -30,8 +30,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="SDLifeLine" eSuperTypes="#//SDBracketContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlLifeline" lowerBound="1"
         eType="#//UMLLifeline"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDFrame"
-        changeable="false" eOpposite="#//SDFrame/lifelines"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDModel"
+        changeable="false" eOpposite="#//SDModel/lifelines"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDBehaviorSpec" abstract="true" eSuperTypes="#//SDBracket #//SDBracketContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlExecutionSpec" eType="#//UMLExecutionSpecification"/>
@@ -52,8 +52,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDAbstractMessage" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlMessage" eType="#//UMLMessage"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDFrame"
-        changeable="false" eOpposite="#//SDFrame/messages"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDModel"
+        changeable="false" eOpposite="#//SDModel/messages"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDMessage" eSuperTypes="#//SDAbstractMessage">

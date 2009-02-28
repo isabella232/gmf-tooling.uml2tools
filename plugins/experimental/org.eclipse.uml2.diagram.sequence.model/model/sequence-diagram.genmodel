@@ -7,12 +7,12 @@
   <foreignModel>sequence-diagram.ecore</foreignModel>
   <genPackages prefix="SD" basePackage="org.eclipse.uml2.diagram.sequence.model" disposableProviderFactory="true"
       ecorePackage="sequence-diagram.ecore#/">
-    <genClasses ecoreClass="sequence-diagram.ecore#//SDFrame">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDFrame/umlInteraction"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDFrame/lifelines"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDFrame/messages"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDFrame/gates"/>
-      <genOperations ecoreOperation="sequence-diagram.ecore#//SDFrame/getUMLTracing"/>
+    <genClasses ecoreClass="sequence-diagram.ecore#//SDModel">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDModel/umlInteraction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDModel/lifelines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDModel/messages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDModel/gates"/>
+      <genOperations ecoreOperation="sequence-diagram.ecore#//SDModel/getUMLTracing"/>
     </genClasses>
     <genClasses ecoreClass="sequence-diagram.ecore#//SDGate">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDGate/umlGate"/>
