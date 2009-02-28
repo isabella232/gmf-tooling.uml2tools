@@ -17,13 +17,14 @@
     <genClasses ecoreClass="sequence-diagram.ecore#//SDGate">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDGate/umlGate"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDLifeLineElement"/>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDLifeLineElement">
+      <genOperations ecoreOperation="sequence-diagram.ecore#//SDLifeLineElement/getCoveredLifeLine"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDBracketContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDBracketContainer/brackets"/>
     </genClasses>
     <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDBracket">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDBracket/bracketContainer"/>
-      <genOperations ecoreOperation="sequence-diagram.ecore#//SDBracket/getCoveredLifeLine"/>
     </genClasses>
     <genClasses ecoreClass="sequence-diagram.ecore#//SDLifeLine">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDLifeLine/umlLifeline"/>

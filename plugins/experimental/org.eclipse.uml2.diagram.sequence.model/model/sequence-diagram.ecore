@@ -17,14 +17,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="SDGate">
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlGate" eType="#//UMLGate"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDLifeLineElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SDLifeLineElement" abstract="true">
+    <eOperations name="getCoveredLifeLine" eType="#//SDLifeLine"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDBracketContainer" abstract="true"
       eSuperTypes="#//SDLifeLineElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="brackets" upperBound="-1"
         eType="#//SDBracket" containment="true" eOpposite="#//SDBracket/bracketContainer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDBracket" abstract="true" eSuperTypes="#//SDLifeLineElement">
-    <eOperations name="getCoveredLifeLine" eType="#//SDLifeLine"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bracketContainer" lowerBound="1"
         eType="#//SDBracketContainer" changeable="false" eOpposite="#//SDBracketContainer/brackets"/>
   </eClassifiers>

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDLifeLineElementImpl.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDLifeLineElementImpl.java,v 1.2 2009/02/28 23:44:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
 
@@ -40,6 +41,15 @@ public abstract class SDLifeLineElementImpl extends EObjectImpl implements SDLif
 	@Override
 	protected EClass eStaticClass() {
 		return SDPackage.Literals.SD_LIFE_LINE_ELEMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public SDLifeLine getCoveredLifeLine() {
+		throw new IllegalStateException("This method should be defined in subclasses but it is not for: " + this);
 	}
 
 } //SDLifeLineElementImpl

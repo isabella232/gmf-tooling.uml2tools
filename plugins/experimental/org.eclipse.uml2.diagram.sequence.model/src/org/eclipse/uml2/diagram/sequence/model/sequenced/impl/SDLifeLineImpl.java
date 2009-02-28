@@ -2,23 +2,19 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDLifeLineImpl.java,v 1.4 2009/02/28 15:23:02 mgolubev Exp $
+ * $Id: SDLifeLineImpl.java,v 1.5 2009/02/28 23:44:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
-
 import org.eclipse.uml2.uml.Lifeline;
 
 /**
@@ -53,6 +49,15 @@ public class SDLifeLineImpl extends SDBracketContainerImpl implements SDLifeLine
 	 */
 	protected SDLifeLineImpl() {
 		super();
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public SDLifeLine getCoveredLifeLine() {
+		return this;
 	}
 
 	/**

@@ -15,7 +15,7 @@ class SDGate {
 }
 
 abstract class SDLifeLineElement {
-	// ref UMLInteractionFragment[1] umlFragment;
+	op SDLifeLine getCoveredLifeLine();
 }
 
 abstract class SDBracketContainer extends SDLifeLineElement {
@@ -24,7 +24,6 @@ abstract class SDBracketContainer extends SDLifeLineElement {
 
 abstract class SDBracket extends SDLifeLineElement {
 	readonly ref SDBracketContainer[1]#brackets bracketContainer;
-	op SDLifeLine getCoveredLifeLine();
 }
 
 class SDLifeLine extends SDBracketContainer {

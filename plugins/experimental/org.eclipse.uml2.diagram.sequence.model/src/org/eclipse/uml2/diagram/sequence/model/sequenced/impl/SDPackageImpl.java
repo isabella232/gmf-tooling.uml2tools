@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackageImpl.java,v 1.7 2009/02/28 21:17:06 mgolubev Exp $
+ * $Id: SDPackageImpl.java,v 1.8 2009/02/28 23:44:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -1197,13 +1197,13 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		initEClass(sdLifeLineElementEClass, SDLifeLineElement.class, "SDLifeLineElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(sdLifeLineElementEClass, this.getSDLifeLine(), "getCoveredLifeLine", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(sdBracketContainerEClass, SDBracketContainer.class, "SDBracketContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDBracketContainer_Brackets(), this.getSDBracket(), this.getSDBracket_BracketContainer(), "brackets", null, 0, -1, SDBracketContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sdBracketEClass, SDBracket.class, "SDBracket", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDBracket_BracketContainer(), this.getSDBracketContainer(), this.getSDBracketContainer_Brackets(), "bracketContainer", null, 1, 1, SDBracket.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(sdBracketEClass, this.getSDLifeLine(), "getCoveredLifeLine", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(sdLifeLineEClass, SDLifeLine.class, "SDLifeLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDLifeLine_UmlLifeline(), this.getUMLLifeline(), null, "umlLifeline", null, 1, 1, SDLifeLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

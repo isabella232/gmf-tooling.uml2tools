@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDLifeLineElement.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDLifeLineElement.java,v 1.2 2009/02/28 23:44:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -19,4 +19,12 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface SDLifeLineElement extends EObject {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	SDLifeLine getCoveredLifeLine();
 } // SDLifeLineElement

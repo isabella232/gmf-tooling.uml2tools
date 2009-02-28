@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDMountingRegionImpl.java,v 1.1 2009/02/28 21:17:06 mgolubev Exp $
+ * $Id: SDMountingRegionImpl.java,v 1.2 2009/02/28 23:44:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -156,7 +156,7 @@ public class SDMountingRegionImpl extends SDBracketImpl implements SDMountingReg
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public SDMountingRegion findMountingRegionForSubFrame(SDFrame subFrame) {
 		SDFrame selfFrame = getFrame();

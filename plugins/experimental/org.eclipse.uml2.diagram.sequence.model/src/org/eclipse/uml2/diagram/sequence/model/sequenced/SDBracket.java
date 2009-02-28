@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDBracket.java,v 1.2 2009/02/28 21:17:05 mgolubev Exp $
+ * $Id: SDBracket.java,v 1.3 2009/02/28 23:44:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -40,13 +40,5 @@ public interface SDBracket extends SDLifeLineElement {
 	 * @generated
 	 */
 	SDBracketContainer getBracketContainer();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
-	SDLifeLine getCoveredLifeLine();
 
 } // SDBracket

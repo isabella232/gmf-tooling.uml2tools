@@ -2,15 +2,13 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDBracketImpl.java,v 1.2 2009/02/28 21:17:05 mgolubev Exp $
+ * $Id: SDBracketImpl.java,v 1.3 2009/02/28 23:44:29 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
@@ -66,13 +64,10 @@ public abstract class SDBracketImpl extends SDLifeLineElementImpl implements SDB
 	 */
 	public SDLifeLine getCoveredLifeLine() {
 		SDBracketContainer container = getBracketContainer();
-		if (container instanceof SDBracket){
-			return ((SDBracket)container).getCoveredLifeLine();
+		if (container == null){
+			throw new IllegalStateException("SDBracket is not attached, cant find covered lifeline for " + this);
 		}
-		if (container instanceof SDLifeLine){
-			return (SDLifeLine)container;
-		}
-		throw new IllegalStateException("SDBracket container which is neither SDBracket not SDLifeLine: " + container);
+		return container.getCoveredLifeLine();
 	}
 
 	/**
