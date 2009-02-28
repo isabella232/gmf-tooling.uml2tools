@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDModelStorageStyleImpl.java,v 1.1 2009/01/28 18:48:50 mgolubev Exp $
+ * $Id: SDModelStorageStyleImpl.java,v 1.2 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sdnotation.impl;
 
@@ -17,7 +17,7 @@ import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilder;
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle;
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDNotationPackage;
 
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.uml.Interaction;
 
 /**
@@ -53,7 +53,7 @@ public class SDModelStorageStyleImpl extends EObjectImpl implements SDModelStora
 	 * @ordered
 	 */
 	protected int version = VERSION_EDEFAULT;
-	private transient SDFrame mySDModel;
+	private transient SDModel mySDModel;
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +100,7 @@ public class SDModelStorageStyleImpl extends EObjectImpl implements SDModelStora
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public SDFrame getAttachedModel() {
+	public SDModel getAttachedModel() {
 		if (mySDModel == null){
 			View owner = (View)eContainer();
 			if (owner != null && owner.getElement() instanceof Interaction){

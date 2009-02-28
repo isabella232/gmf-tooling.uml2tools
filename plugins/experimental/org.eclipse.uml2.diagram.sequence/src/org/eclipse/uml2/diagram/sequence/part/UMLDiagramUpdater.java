@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -35,8 +34,8 @@ import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
 import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.ActionExecutionSpecification;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
@@ -56,7 +55,6 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.StateInvariant;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -169,13 +167,13 @@ public class UMLDiagramUpdater {
 			return Collections.EMPTY_LIST;
 		}
 
-		SDFrame sdFrame = SDModelAccess.findSDModel(view);
-		if (sdFrame == null) {
+		SDModel sdModel = SDModelAccess.findSDModel(view);
+		if (sdModel == null) {
 			return Collections.emptyList();
 		}
 
 		Lifeline umlLifeline = (Lifeline) view.getElement();
-		SDLifeLine sdLifeLine = SDModelHelper.findLifeline(sdFrame, umlLifeline);
+		SDLifeLine sdLifeLine = SDModelHelper.findLifeline(sdModel, umlLifeline);
 		if (sdLifeLine == null) {
 			return Collections.emptyList();
 		}
@@ -216,40 +214,18 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getBehaviorExecutionSpecification_3004SemanticChildren__22(View view) {
-		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
-		}
-		BehaviorExecutionSpecification parentSpec = (BehaviorExecutionSpecification) view.getElement();
-		List<BehaviorExecutionSpecification> nestedSpecs = getNestedSpecs(parentSpec);
-		if (nestedSpecs.isEmpty()) {
-			return Collections.emptyList();
-		}
-		List<IUpdaterNodeDescriptor> result = new ArrayList<IUpdaterNodeDescriptor>(nestedSpecs.size());
-		for (BehaviorExecutionSpecification nextNested : nestedSpecs) {
-			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, nextNested);
-			if (visualID == BehaviorExecutionSpecificationEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(nextNested, visualID));
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated NOT
-	 */
 	public static List getBehaviorExecutionSpecification_3004SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
 
-		SDFrame sdFrame = SDModelAccess.findSDModel(view);
-		if (sdFrame == null) {
+		SDModel sdModel = SDModelAccess.findSDModel(view);
+		if (sdModel == null) {
 			return Collections.emptyList();
 		}
 
 		ExecutionSpecification umlSpec = (ExecutionSpecification) view.getElement();
-		SDBehaviorSpec sdSpec = sdFrame.getUMLTracing().findBehaviorSpec(umlSpec);
+		SDBehaviorSpec sdSpec = sdModel.getUMLTracing().findBehaviorSpec(umlSpec);
 		if (sdSpec == null) {
 			return Collections.emptyList();
 		}

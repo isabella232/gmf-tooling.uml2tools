@@ -19,7 +19,7 @@ import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle;
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDNotationPackage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -66,7 +66,7 @@ public class MessageNumberParser implements ISemanticParser {
 			return "Error";
 		}
 		Message umlMessage = (Message)view.getElement();
-		SDFrame sdModel = SDModelAccess.findSDModel(view);
+		SDModel sdModel = SDModelAccess.findSDModel(view);
 		StringBuilder result = new StringBuilder();
 		if (sdModel != null){
 			SDAbstractMessage sdMessage = SDModelHelper.findMessage(sdModel, umlMessage);

@@ -27,7 +27,7 @@ import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
@@ -88,7 +88,7 @@ public class MessageDestructionAction implements IObjectActionDelegate {
 		if (false == entity instanceof ExecutionSpecification){
 			return null;
 		}
-		SDFrame sdModel = SDModelAccess.findSDModel(specView);
+		SDModel sdModel = SDModelAccess.findSDModel(specView);
 		if (sdModel == null){
 			return null;
 		}

@@ -7,12 +7,12 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDModelStorageStyle;
 import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDNotationPackage;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.uml.Interaction;
 
 
 public class SDModelAccess {
-	public static SDFrame findSDModel(View view){
+	public static SDModel findSDModel(View view){
 		SDModelStorageStyle accessor = findSDModelAccessor(view);
 		return accessor == null ? null : accessor.getAttachedModel();
 	}

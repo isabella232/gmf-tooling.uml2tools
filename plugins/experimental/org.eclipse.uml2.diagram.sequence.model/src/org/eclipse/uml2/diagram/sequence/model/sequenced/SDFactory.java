@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFactory.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDFactory.java,v 1.2 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -32,7 +32,7 @@ public interface SDFactory extends EFactory {
 	 * @return a new object of class '<em>Frame</em>'.
 	 * @generated
 	 */
-	SDFrame createSDFrame();
+	SDModel createSDFrame();
 
 	/**
 	 * Returns a new object of class '<em>Gate</em>'.

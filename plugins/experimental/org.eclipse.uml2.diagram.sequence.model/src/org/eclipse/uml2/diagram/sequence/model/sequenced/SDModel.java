@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFrame.java,v 1.2 2009/02/11 14:36:18 mgolubev Exp $
+ * $Id: SDModel.java,v 1.1 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -20,10 +20,10 @@ import org.eclipse.uml2.uml.Interaction;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame#getUmlInteraction <em>Uml Interaction</em>}</li>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame#getLifelines <em>Lifelines</em>}</li>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame#getMessages <em>Messages</em>}</li>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame#getGates <em>Gates</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getUmlInteraction <em>Uml Interaction</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getLifelines <em>Lifelines</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getMessages <em>Messages</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getGates <em>Gates</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.Interaction;
  * @model
  * @generated
  */
-public interface SDFrame extends EObject {
+public interface SDModel extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Uml Interaction</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -49,7 +49,7 @@ public interface SDFrame extends EObject {
 	Interaction getUmlInteraction();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame#getUmlInteraction <em>Uml Interaction</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getUmlInteraction <em>Uml Interaction</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Uml Interaction</em>' reference.

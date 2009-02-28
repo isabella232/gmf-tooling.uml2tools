@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAbstractMessageImpl.java,v 1.2 2009/01/28 17:43:06 mgolubev Exp $
+ * $Id: SDAbstractMessageImpl.java,v 1.3 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
 
 import org.eclipse.uml2.uml.Message;
@@ -129,9 +129,9 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SDFrame getFrame() {
+	public SDModel getFrame() {
 		if (eContainerFeatureID != SDPackage.SD_ABSTRACT_MESSAGE__FRAME) return null;
-		return (SDFrame)eContainer();
+		return (SDModel)eContainer();
 	}
 
 	/**
@@ -194,7 +194,7 @@ public abstract class SDAbstractMessageImpl extends EObjectImpl implements SDAbs
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID) {
 			case SDPackage.SD_ABSTRACT_MESSAGE__FRAME:
-				return eInternalContainer().eInverseRemove(this, SDPackage.SD_FRAME__MESSAGES, SDFrame.class, msgs);
+				return eInternalContainer().eInverseRemove(this, SDPackage.SD_FRAME__MESSAGES, SDModel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

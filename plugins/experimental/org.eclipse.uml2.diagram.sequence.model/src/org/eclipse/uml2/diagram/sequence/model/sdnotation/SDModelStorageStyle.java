@@ -2,13 +2,13 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDModelStorageStyle.java,v 1.1 2009/01/28 18:48:50 mgolubev Exp $
+ * $Id: SDModelStorageStyle.java,v 1.2 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sdnotation;
 
 import org.eclipse.gmf.runtime.notation.Style;
 
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public interface SDModelStorageStyle extends Style {
 	 * @model kind="operation"
 	 * @generated
 	 */
-	SDFrame getAttachedModel();
+	SDModel getAttachedModel();
 
 	/**
 	 * <!-- begin-user-doc -->

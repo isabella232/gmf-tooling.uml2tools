@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDLifeLine.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDLifeLine.java,v 1.2 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -54,7 +54,7 @@ public interface SDLifeLine extends SDBracketContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Frame</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame#getLifelines <em>Lifelines</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getLifelines <em>Lifelines</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Frame</em>' container reference isn't clear,
@@ -63,10 +63,10 @@ public interface SDLifeLine extends SDBracketContainer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Frame</em>' container reference.
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDLifeLine_Frame()
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame#getLifelines
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getLifelines
 	 * @model opposite="lifelines" required="true" transient="false" changeable="false"
 	 * @generated
 	 */
-	SDFrame getFrame();
+	SDModel getFrame();
 
 } // SDLifeLine

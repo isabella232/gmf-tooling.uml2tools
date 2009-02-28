@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAbstractMessage.java,v 1.2 2009/01/28 17:43:06 mgolubev Exp $
+ * $Id: SDAbstractMessage.java,v 1.3 2009/02/28 15:12:08 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -57,7 +57,7 @@ public interface SDAbstractMessage extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Frame</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame#getMessages <em>Messages</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getMessages <em>Messages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Frame</em>' container reference isn't clear,
@@ -66,11 +66,11 @@ public interface SDAbstractMessage extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Frame</em>' container reference.
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDAbstractMessage_Frame()
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame#getMessages
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel#getMessages
 	 * @model opposite="messages" required="true" transient="false" changeable="false"
 	 * @generated
 	 */
-	SDFrame getFrame();
+	SDModel getFrame();
 
 	/**
 	 * Returns the value of the '<em><b>Message Number</b></em>' attribute.

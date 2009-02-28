@@ -42,7 +42,7 @@ import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
@@ -146,12 +146,12 @@ public class MissedMethodsImpl {
 		}
 		
 		public boolean isArcasExecution(View reference, ExecutionSpecification entity) {
-			SDFrame sdModel = SDModelAccess.findSDModel(reference);
+			SDModel sdModel = SDModelAccess.findSDModel(reference);
 			return sdModel != null && sdModel.getUMLTracing().findBehaviorSpec(entity) instanceof SDExecution;
 		}
 		
 		public boolean isArcasInvocation(View reference, ExecutionSpecification entity) {
-			SDFrame sdModel = SDModelAccess.findSDModel(reference);
+			SDModel sdModel = SDModelAccess.findSDModel(reference);
 			return sdModel != null && sdModel.getUMLTracing().findBehaviorSpec(entity) instanceof SDInvocation;
 		}
 		
@@ -349,7 +349,7 @@ public class MissedMethodsImpl {
 			if (false == entity instanceof ExecutionSpecification){
 				return false;
 			}
-			SDFrame sdModel = SDModelAccess.findSDModel(specView);
+			SDModel sdModel = SDModelAccess.findSDModel(specView);
 			if (sdModel == null){
 				return false;
 			}

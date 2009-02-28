@@ -3,7 +3,7 @@ package org.eclipse.uml2.diagram.sequence.model.builder;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGate;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessageEnd;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
@@ -16,8 +16,8 @@ import org.eclipse.uml2.uml.Message;
 
 
 public class SDModelHelper {
-	public static final SDGate findGate(SDFrame frame, Gate umlGate){
-		for (SDGate next : frame.getGates()){
+	public static final SDGate findGate(SDModel model, Gate umlGate){
+		for (SDGate next : model.getGates()){
 			if (umlGate == next.getUmlGate()){
 				return next;
 			}
@@ -32,8 +32,8 @@ public class SDModelHelper {
 		return bracketContainer instanceof SDLifeLine ? (SDLifeLine)bracketContainer : null;
 	}
 	
-	public static SDLifeLine findLifeline(SDFrame frame, Lifeline umlLifeline){
-		for (SDLifeLine next : frame.getLifelines()){
+	public static SDLifeLine findLifeline(SDModel model, Lifeline umlLifeline){
+		for (SDLifeLine next : model.getLifelines()){
 			if (umlLifeline == next.getUmlLifeline()){
 				return next;
 			}
@@ -41,8 +41,8 @@ public class SDModelHelper {
 		return null;
 	}
 	
-	public static SDAbstractMessage findMessage(SDFrame frame, Message umlMessage){
-		for (SDAbstractMessage next : frame.getMessages()){
+	public static SDAbstractMessage findMessage(SDModel model, Message umlMessage){
+		for (SDAbstractMessage next : model.getMessages()){
 			if (umlMessage == next.getUmlMessage()){
 				return next;
 			}
@@ -63,7 +63,7 @@ public class SDModelHelper {
 		}
 
 		@Override
-		public Element caseSDFrame(SDFrame object) {
+		public Element caseSDFrame(SDModel object) {
 			return object.getUmlInteraction();
 		}
 
