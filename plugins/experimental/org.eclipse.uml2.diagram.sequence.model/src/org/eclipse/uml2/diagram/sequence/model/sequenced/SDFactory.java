@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFactory.java,v 1.4 2009/02/28 15:21:20 mgolubev Exp $
+ * $Id: SDFactory.java,v 1.5 2009/02/28 21:17:05 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -51,6 +51,42 @@ public interface SDFactory extends EFactory {
 	 * @generated
 	 */
 	SDLifeLine createSDLifeLine();
+
+	/**
+	 * Returns a new object of class '<em>Mounting Region</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mounting Region</em>'.
+	 * @generated
+	 */
+	SDMountingRegion createSDMountingRegion();
+
+	/**
+	 * Returns a new object of class '<em>Interaction Use</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Interaction Use</em>'.
+	 * @generated
+	 */
+	SDInteractionUse createSDInteractionUse();
+
+	/**
+	 * Returns a new object of class '<em>Combined Fragment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Combined Fragment</em>'.
+	 * @generated
+	 */
+	SDCombinedFragment createSDCombinedFragment();
+
+	/**
+	 * Returns a new object of class '<em>Interaction Operand</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Interaction Operand</em>'.
+	 * @generated
+	 */
+	SDInteractionOperand createSDInteractionOperand();
 
 	/**
 	 * Returns a new object of class '<em>Execution</em>'.

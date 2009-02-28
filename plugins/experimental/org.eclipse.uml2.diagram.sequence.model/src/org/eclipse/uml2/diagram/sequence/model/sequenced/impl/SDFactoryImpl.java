@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFactoryImpl.java,v 1.4 2009/02/28 15:21:20 mgolubev Exp $
+ * $Id: SDFactoryImpl.java,v 1.5 2009/02/28 21:17:06 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -63,6 +63,10 @@ public class SDFactoryImpl extends EFactoryImpl implements SDFactory {
 			case SDPackage.SD_MODEL: return createSDModel();
 			case SDPackage.SD_GATE: return createSDGate();
 			case SDPackage.SD_LIFE_LINE: return createSDLifeLine();
+			case SDPackage.SD_MOUNTING_REGION: return createSDMountingRegion();
+			case SDPackage.SD_INTERACTION_USE: return createSDInteractionUse();
+			case SDPackage.SD_COMBINED_FRAGMENT: return createSDCombinedFragment();
+			case SDPackage.SD_INTERACTION_OPERAND: return createSDInteractionOperand();
 			case SDPackage.SD_EXECUTION: return createSDExecution();
 			case SDPackage.SD_INVOCATION: return createSDInvocation();
 			case SDPackage.SD_MESSAGE: return createSDMessage();
@@ -102,6 +106,46 @@ public class SDFactoryImpl extends EFactoryImpl implements SDFactory {
 	public SDLifeLine createSDLifeLine() {
 		SDLifeLineImpl sdLifeLine = new SDLifeLineImpl();
 		return sdLifeLine;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SDMountingRegion createSDMountingRegion() {
+		SDMountingRegionImpl sdMountingRegion = new SDMountingRegionImpl();
+		return sdMountingRegion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SDInteractionUse createSDInteractionUse() {
+		SDInteractionUseImpl sdInteractionUse = new SDInteractionUseImpl();
+		return sdInteractionUse;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SDCombinedFragment createSDCombinedFragment() {
+		SDCombinedFragmentImpl sdCombinedFragment = new SDCombinedFragmentImpl();
+		return sdCombinedFragment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SDInteractionOperand createSDInteractionOperand() {
+		SDInteractionOperandImpl sdInteractionOperand = new SDInteractionOperandImpl();
+		return sdInteractionOperand;
 	}
 
 	/**

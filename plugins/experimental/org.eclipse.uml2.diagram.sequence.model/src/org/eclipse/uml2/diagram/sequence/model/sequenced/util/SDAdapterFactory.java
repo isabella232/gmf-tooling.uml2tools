@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAdapterFactory.java,v 1.4 2009/02/28 15:21:20 mgolubev Exp $
+ * $Id: SDAdapterFactory.java,v 1.5 2009/02/28 21:17:05 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.util;
 
@@ -15,12 +15,15 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.uml2.diagram.sequence.model.sequenced.*;
 
+import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DurationConstraint;
 import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
+import org.eclipse.uml2.uml.InteractionOperand;
+import org.eclipse.uml2.uml.InteractionUse;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
@@ -111,6 +114,30 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 				return createSDBehaviorSpecAdapter();
 			}
 			@Override
+			public Adapter caseSDMountingRegion(SDMountingRegion object) {
+				return createSDMountingRegionAdapter();
+			}
+			@Override
+			public Adapter caseSDFrame(SDFrame object) {
+				return createSDFrameAdapter();
+			}
+			@Override
+			public Adapter caseSDInteractionUse(SDInteractionUse object) {
+				return createSDInteractionUseAdapter();
+			}
+			@Override
+			public Adapter caseSDCombinedFragment(SDCombinedFragment object) {
+				return createSDCombinedFragmentAdapter();
+			}
+			@Override
+			public Adapter caseSDInteractionOperand(SDInteractionOperand object) {
+				return createSDInteractionOperandAdapter();
+			}
+			@Override
+			public Adapter caseSDFrameContainer(SDFrameContainer object) {
+				return createSDFrameContainerAdapter();
+			}
+			@Override
 			public Adapter caseSDExecution(SDExecution object) {
 				return createSDExecutionAdapter();
 			}
@@ -181,6 +208,18 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseUMLGate(Gate object) {
 				return createUMLGateAdapter();
+			}
+			@Override
+			public Adapter caseUMLInteractionUse(InteractionUse object) {
+				return createUMLInteractionUseAdapter();
+			}
+			@Override
+			public Adapter caseUMLInteractionOperand(InteractionOperand object) {
+				return createUMLInteractionOperandAdapter();
+			}
+			@Override
+			public Adapter caseUMLCombinedFragment(CombinedFragment object) {
+				return createUMLCombinedFragmentAdapter();
 			}
 			@Override
 			public Adapter caseSDTrace(SDTrace object) {
@@ -301,6 +340,90 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSDBehaviorSpecAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion <em>Mounting Region</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion
+	 * @generated
+	 */
+	public Adapter createSDMountingRegionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame <em>Frame</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame
+	 * @generated
+	 */
+	public Adapter createSDFrameAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionUse <em>Interaction Use</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionUse
+	 * @generated
+	 */
+	public Adapter createSDInteractionUseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment <em>Combined Fragment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment
+	 * @generated
+	 */
+	public Adapter createSDCombinedFragmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand <em>Interaction Operand</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand
+	 * @generated
+	 */
+	public Adapter createSDInteractionOperandAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer <em>Frame Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer
+	 * @generated
+	 */
+	public Adapter createSDFrameContainerAdapter() {
 		return null;
 	}
 
@@ -553,6 +676,48 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUMLGateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.InteractionUse <em>UML Interaction Use</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.uml.InteractionUse
+	 * @generated
+	 */
+	public Adapter createUMLInteractionUseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.InteractionOperand <em>UML Interaction Operand</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.uml.InteractionOperand
+	 * @generated
+	 */
+	public Adapter createUMLInteractionOperandAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.CombinedFragment <em>UML Combined Fragment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.uml.CombinedFragment
+	 * @generated
+	 */
+	public Adapter createUMLCombinedFragmentAdapter() {
 		return null;
 	}
 

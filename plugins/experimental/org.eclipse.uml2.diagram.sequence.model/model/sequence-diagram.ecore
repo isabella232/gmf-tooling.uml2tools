@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sequenced"
     nsURI="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/1.0" nsPrefix="uml2t.seqd">
-  <eClassifiers xsi:type="ecore:EClass" name="SDModel">
+  <eClassifiers xsi:type="ecore:EClass" name="SDModel" eSuperTypes="#//SDFrameContainer">
     <eOperations name="getUMLTracing" eType="#//SDTrace"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlInteraction" lowerBound="1"
         eType="#//UMLInteraction"/>
@@ -24,6 +24,7 @@
         eType="#//SDBracket" containment="true" eOpposite="#//SDBracket/bracketContainer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDBracket" abstract="true" eSuperTypes="#//SDLifeLineElement">
+    <eOperations name="getCoveredLifeLine" eType="#//SDLifeLine"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bracketContainer" lowerBound="1"
         eType="#//SDBracketContainer" changeable="false" eOpposite="#//SDBracketContainer/brackets"/>
   </eClassifiers>
@@ -37,6 +38,42 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlExecutionSpec" eType="#//UMLExecutionSpecification"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlStart" eType="#//UMLOccurrenceSpecification"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlFinish" eType="#//UMLOccurrenceSpecification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDMountingRegion" eSuperTypes="#//SDBracket #//SDBracketContainer">
+    <eOperations name="findMountingRegionForSubFrame" eType="#//SDMountingRegion">
+      <eParameters name="subFrame" eType="#//SDFrame"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDFrame"
+        eOpposite="#//SDFrame/regions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDFrame" abstract="true" eSuperTypes="#//SDFrameContainer">
+    <eOperations name="findRegionForUmlLifeLine" eType="#//SDMountingRegion">
+      <eParameters name="umlLifeline" eType="#//UMLLifeline"/>
+    </eOperations>
+    <eOperations name="findRegionForSDLifeLine" eType="#//SDMountingRegion">
+      <eParameters name="sdLifeline" eType="#//SDLifeLine"/>
+    </eOperations>
+    <eOperations name="getUmlFragment" eType="#//UMLInteractionFragment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frameContainer" lowerBound="1"
+        eType="#//SDFrameContainer" changeable="false" eOpposite="#//SDFrameContainer/frames"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
+        eType="#//SDMountingRegion" eOpposite="#//SDMountingRegion/frame"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coveredLifeLines" upperBound="-1"
+        eType="#//SDLifeLine"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDInteractionUse" eSuperTypes="#//SDFrame">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlInteractionUse" eType="#//UMLInteractionUse"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDCombinedFragment" eSuperTypes="#//SDFrame">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlCombinedFragment" eType="#//UMLCombinedFragment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDInteractionOperand" eSuperTypes="#//SDFrame">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlInteractionOperand"
+        eType="#//UMLInteractionOperand"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDFrameContainer" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frames" upperBound="-1"
+        eType="#//SDFrame" containment="true" eOpposite="#//SDFrame/frameContainer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDExecution" eSuperTypes="#//SDBehaviorSpec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="invocation" lowerBound="1"
@@ -97,6 +134,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="UMLExecutionSpecification" instanceClassName="org.eclipse.uml2.uml.ExecutionSpecification"
       abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="UMLGate" instanceClassName="org.eclipse.uml2.uml.Gate"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLInteractionUse" instanceClassName="org.eclipse.uml2.uml.InteractionUse"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLInteractionOperand" instanceClassName="org.eclipse.uml2.uml.InteractionOperand"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UMLCombinedFragment" instanceClassName="org.eclipse.uml2.uml.CombinedFragment"
       abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="SDTrace" instanceClassName="org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace"
       abstract="true" interface="true"/>

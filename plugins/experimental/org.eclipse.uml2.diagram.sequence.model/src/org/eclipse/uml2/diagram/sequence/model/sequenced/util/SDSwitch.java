@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDSwitch.java,v 1.4 2009/02/28 15:21:20 mgolubev Exp $
+ * $Id: SDSwitch.java,v 1.5 2009/02/28 21:17:05 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.util;
 
@@ -13,12 +13,15 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.uml2.diagram.sequence.model.sequenced.*;
 
+import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DurationConstraint;
 import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
+import org.eclipse.uml2.uml.InteractionOperand;
+import org.eclipse.uml2.uml.InteractionUse;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
@@ -101,6 +104,7 @@ public class SDSwitch<T> {
 			case SDPackage.SD_MODEL: {
 				SDModel sdModel = (SDModel)theEObject;
 				T result = caseSDModel(sdModel);
+				if (result == null) result = caseSDFrameContainer(sdModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -144,6 +148,52 @@ public class SDSwitch<T> {
 				if (result == null) result = caseSDBracket(sdBehaviorSpec);
 				if (result == null) result = caseSDBracketContainer(sdBehaviorSpec);
 				if (result == null) result = caseSDLifeLineElement(sdBehaviorSpec);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SDPackage.SD_MOUNTING_REGION: {
+				SDMountingRegion sdMountingRegion = (SDMountingRegion)theEObject;
+				T result = caseSDMountingRegion(sdMountingRegion);
+				if (result == null) result = caseSDBracket(sdMountingRegion);
+				if (result == null) result = caseSDBracketContainer(sdMountingRegion);
+				if (result == null) result = caseSDLifeLineElement(sdMountingRegion);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SDPackage.SD_FRAME: {
+				SDFrame sdFrame = (SDFrame)theEObject;
+				T result = caseSDFrame(sdFrame);
+				if (result == null) result = caseSDFrameContainer(sdFrame);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SDPackage.SD_INTERACTION_USE: {
+				SDInteractionUse sdInteractionUse = (SDInteractionUse)theEObject;
+				T result = caseSDInteractionUse(sdInteractionUse);
+				if (result == null) result = caseSDFrame(sdInteractionUse);
+				if (result == null) result = caseSDFrameContainer(sdInteractionUse);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SDPackage.SD_COMBINED_FRAGMENT: {
+				SDCombinedFragment sdCombinedFragment = (SDCombinedFragment)theEObject;
+				T result = caseSDCombinedFragment(sdCombinedFragment);
+				if (result == null) result = caseSDFrame(sdCombinedFragment);
+				if (result == null) result = caseSDFrameContainer(sdCombinedFragment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SDPackage.SD_INTERACTION_OPERAND: {
+				SDInteractionOperand sdInteractionOperand = (SDInteractionOperand)theEObject;
+				T result = caseSDInteractionOperand(sdInteractionOperand);
+				if (result == null) result = caseSDFrame(sdInteractionOperand);
+				if (result == null) result = caseSDFrameContainer(sdInteractionOperand);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SDPackage.SD_FRAME_CONTAINER: {
+				SDFrameContainer sdFrameContainer = (SDFrameContainer)theEObject;
+				T result = caseSDFrameContainer(sdFrameContainer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -309,6 +359,96 @@ public class SDSwitch<T> {
 	 * @generated
 	 */
 	public T caseSDBehaviorSpec(SDBehaviorSpec object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mounting Region</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mounting Region</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSDMountingRegion(SDMountingRegion object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Frame</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Frame</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSDFrame(SDFrame object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interaction Use</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interaction Use</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSDInteractionUse(SDInteractionUse object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Combined Fragment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Combined Fragment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSDCombinedFragment(SDCombinedFragment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interaction Operand</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interaction Operand</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSDInteractionOperand(SDInteractionOperand object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Frame Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Frame Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSDFrameContainer(SDFrameContainer object) {
 		return null;
 	}
 
@@ -579,6 +719,51 @@ public class SDSwitch<T> {
 	 * @generated
 	 */
 	public T caseUMLGate(Gate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>UML Interaction Use</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>UML Interaction Use</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUMLInteractionUse(InteractionUse object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>UML Interaction Operand</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>UML Interaction Operand</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUMLInteractionOperand(InteractionOperand object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>UML Combined Fragment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>UML Combined Fragment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUMLCombinedFragment(CombinedFragment object) {
 		return null;
 	}
 

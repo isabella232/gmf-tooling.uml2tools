@@ -1,7 +1,7 @@
 @namespace(uri="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/1.0", prefix="uml2t.seqd")
 package sequenced;
 
-class SDModel {
+class SDModel extends SDFrameContainer {
 	ref UMLInteraction[1] umlInteraction;
 	ordered val SDLifeLine[*]#model lifelines;
 	ordered val SDAbstractMessage[*]#model messages; 
@@ -24,6 +24,7 @@ abstract class SDBracketContainer extends SDLifeLineElement {
 
 abstract class SDBracket extends SDLifeLineElement {
 	readonly ref SDBracketContainer[1]#brackets bracketContainer;
+	op SDLifeLine getCoveredLifeLine();
 }
 
 class SDLifeLine extends SDBracketContainer {
@@ -35,6 +36,38 @@ abstract class SDBehaviorSpec extends SDBracket, SDBracketContainer {
 	ref UMLExecutionSpecification umlExecutionSpec;
 	ref UMLOccurrenceSpecification umlStart;
 	ref UMLOccurrenceSpecification umlFinish;
+}
+
+class SDMountingRegion extends SDBracket, SDBracketContainer {
+	ref SDFrame[1]#regions frame;
+	
+	op SDMountingRegion findMountingRegionForSubFrame(SDFrame subFrame);
+}
+
+abstract class SDFrame extends SDFrameContainer {
+	readonly ref SDFrameContainer[1]#frames frameContainer;
+	ref SDMountingRegion[*]#frame regions;
+	ref SDLifeLine[*] coveredLifeLines;
+	
+	op SDMountingRegion findRegionForUmlLifeLine(UMLLifeline umlLifeline);
+	op SDMountingRegion findRegionForSDLifeLine(SDLifeLine sdLifeline);
+	op UMLInteractionFragment getUmlFragment();
+}
+
+class SDInteractionUse extends SDFrame {
+	ref UMLInteractionUse umlInteractionUse;
+}
+
+class SDCombinedFragment extends SDFrame {
+	ref UMLCombinedFragment umlCombinedFragment;
+}
+
+class SDInteractionOperand extends SDFrame {
+	ref UMLInteractionOperand umlInteractionOperand;
+}
+
+abstract class SDFrameContainer {
+	val SDFrame[*]#frameContainer frames;
 }
 
 class SDExecution extends SDBehaviorSpec {
@@ -85,5 +118,8 @@ abstract interface UMLDurationConstraint : org.eclipse.uml2.uml.DurationConstrai
 abstract interface UMLInteractionFragment : org.eclipse.uml2.uml.InteractionFragment {}
 abstract interface UMLExecutionSpecification : org.eclipse.uml2.uml.ExecutionSpecification {}
 abstract interface UMLGate : org.eclipse.uml2.uml.Gate {}
+abstract interface UMLInteractionUse : org.eclipse.uml2.uml.InteractionUse {}
+abstract interface UMLInteractionOperand : org.eclipse.uml2.uml.InteractionOperand {}
+abstract interface UMLCombinedFragment : org.eclipse.uml2.uml.CombinedFragment {}
 
 abstract interface SDTrace : org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace {}

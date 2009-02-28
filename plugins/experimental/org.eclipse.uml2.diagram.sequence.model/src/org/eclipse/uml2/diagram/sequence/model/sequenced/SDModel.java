@@ -2,14 +2,11 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDModel.java,v 1.3 2009/02/28 15:23:02 mgolubev Exp $
+ * $Id: SDModel.java,v 1.4 2009/02/28 21:17:05 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.uml2.uml.Interaction;
 
 /**
@@ -31,7 +28,7 @@ import org.eclipse.uml2.uml.Interaction;
  * @model
  * @generated
  */
-public interface SDModel extends EObject {
+public interface SDModel extends SDFrameContainer {
 	/**
 	 * Returns the value of the '<em><b>Uml Interaction</b></em>' reference.
 	 * <!-- begin-user-doc -->
