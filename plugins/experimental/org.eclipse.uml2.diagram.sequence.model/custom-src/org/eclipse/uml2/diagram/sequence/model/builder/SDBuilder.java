@@ -120,7 +120,7 @@ public class SDBuilder {
 			return;
 		}
 		if (fragment instanceof ActionExecutionSpecification) {
-			buildSimpleNode(fragment);
+			unsupportedFragment(fragment);
 			return;
 		}
 		if (fragment instanceof CombinedFragment) {
