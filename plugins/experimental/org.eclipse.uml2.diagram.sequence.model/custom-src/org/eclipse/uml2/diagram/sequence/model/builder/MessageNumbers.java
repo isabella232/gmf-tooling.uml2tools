@@ -55,7 +55,7 @@ public class MessageNumbers {
 				if (matchedUMLMessages.contains(umlMessage)){
 					continue;
 				}
-				SDAbstractMessage sdMessage = myBuilder.getSDFrame().getUMLTracing().findMessage(umlMessage);
+				SDAbstractMessage sdMessage = myBuilder.getSDModel().getUMLTracing().findMessage(umlMessage);
 				if (sdMessage == null){
 					continue;
 				}	

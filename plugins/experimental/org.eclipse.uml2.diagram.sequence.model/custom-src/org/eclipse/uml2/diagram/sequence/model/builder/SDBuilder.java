@@ -63,14 +63,14 @@ public class SDBuilder {
 		return myCallStack;
 	}
 	
-	public SDModel getSDFrame(){
+	public SDModel getSDModel(){
 		if (mySDModel == null){
-			reBuildFrame();
+			reBuildModel();
 		}
 		return mySDModel;
 	}
 	
-	public SDModel reBuildFrame() {
+	private SDModel reBuildModel() {
 		myCallStack.clear();
 		myStartsAndFinishes.forceRemap();
 		mySDModel = SDFactory.eINSTANCE.createSDModel();
@@ -414,7 +414,7 @@ public class SDBuilder {
 	}
 	
 	private SDBuilderTrace getTraceImpl(){
-		return (SDBuilderTrace) getSDFrame().getUMLTracing();
+		return (SDBuilderTrace) getSDModel().getUMLTracing();
 	}
 
 }

@@ -40,7 +40,7 @@ public class SDModelBuilderTest extends TestCase {
 
 	public void testBuildNormalAndSelfMessage() {
 		SDBuilder builder = buildFrame(MEMORY_GAME_FILE, "ReDraw");
-		SDModel sdModel = builder.getSDFrame();
+		SDModel sdModel = builder.getSDModel();
 
 		assertTrue(sdModel.getGates().isEmpty());
 		assertFalse(sdModel.getLifelines().isEmpty());
@@ -75,7 +75,7 @@ public class SDModelBuilderTest extends TestCase {
 
 	public void testNormalMessageDetails() {
 		SDBuilder builder = buildFrame(MEMORY_GAME_FILE, "ReDraw");
-		SDModel sdModel = builder.getSDFrame();
+		SDModel sdModel = builder.getSDModel();
 
 		SDMessage redraw = (SDMessage) findMessageByName(sdModel, "reDraw");
 
@@ -97,7 +97,7 @@ public class SDModelBuilderTest extends TestCase {
 
 	public void testSelfMessageDetails() {
 		SDBuilder builder = buildFrame(MEMORY_GAME_FILE, "ReDraw");
-		SDModel sdFrame = builder.getSDFrame();
+		SDModel sdFrame = builder.getSDModel();
 
 		SDMessage mouseClicked = (SDMessage) findMessageByName(sdFrame, "mouseClicked");
 		assertNotNull(mouseClicked);
@@ -134,7 +134,7 @@ public class SDModelBuilderTest extends TestCase {
 
 	public void testTwoMessagesCreatedFromDiagram() {
 		SDBuilder builder = buildFrame("Two Messages Created From Diagram.uml", "Interaction");
-		SDModel sdModel = builder.getSDFrame();
+		SDModel sdModel = builder.getSDModel();
 
 		SDLifeLine a = findLifeLineByName(sdModel, "a");
 		SDLifeLine b = findLifeLineByName(sdModel, "b");
@@ -184,7 +184,7 @@ public class SDModelBuilderTest extends TestCase {
 
 	public void testMessageChain_ABCD() {
 		SDBuilder builder = buildFrame("Message Chain From Diagram - abcd.uml", "Interaction");
-		SDModel sdModel = builder.getSDFrame();
+		SDModel sdModel = builder.getSDModel();
 		checkCallStackCompleted(builder);
 		checkTraces(builder);
 
@@ -211,7 +211,7 @@ public class SDModelBuilderTest extends TestCase {
 
 	public void testMessageChainX3_ABCD_BDAC_CADB() {
 		SDBuilder builder = buildFrame("Message Chain From Diagram - x3 - abcd - bdac - cadb.uml", "Interaction");
-		SDModel sdModel = builder.getSDFrame();
+		SDModel sdModel = builder.getSDModel();
 		checkCallStackCompleted(builder);
 		checkTraces(builder);
 
@@ -251,7 +251,7 @@ public class SDModelBuilderTest extends TestCase {
 	
 	public void testStateInvariant(){
 		SDBuilder builder = buildFrame("StateInvariant From Diagram - invariantA-message-invariantB.uml", "Interaction");
-		SDModel sdModel = builder.getSDFrame();
+		SDModel sdModel = builder.getSDModel();
 		checkCallStackCompleted(builder);
 		checkTraces(builder);
 		
@@ -292,7 +292,7 @@ public class SDModelBuilderTest extends TestCase {
 	}
 
 	protected void checkCallStackCompleted(SDBuilder builder) {
-		SDModel sdModel = builder.getSDFrame();
+		SDModel sdModel = builder.getSDModel();
 		assertNotNull(sdModel.getUmlInteraction());
 		assertEquals(sdModel.getUmlInteraction().getLifelines().size(), sdModel.getLifelines().size());
 
@@ -307,7 +307,7 @@ public class SDModelBuilderTest extends TestCase {
 	}
 
 	protected void checkTraces(SDBuilder builder) {
-		SDModel frame = builder.getSDFrame();
+		SDModel frame = builder.getSDModel();
 		SDTrace trace = frame.getUMLTracing();
 
 		for (SDAbstractMessage next : frame.getMessages()) {
@@ -369,7 +369,7 @@ public class SDModelBuilderTest extends TestCase {
 		assertNotNull(interaction);
 
 		SDBuilder builder = new SDBuilder(interaction);
-		SDModel sdModel = builder.reBuildFrame();
+		SDModel sdModel = builder.getSDModel();
 		assertNotNull(sdModel);
 		assertSame(interaction, sdModel.getUmlInteraction());
 		return builder;

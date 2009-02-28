@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDModelStorageStyleImpl.java,v 1.2 2009/02/28 15:12:08 mgolubev Exp $
+ * $Id: SDModelStorageStyleImpl.java,v 1.3 2009/02/28 16:13:53 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sdnotation.impl;
 
@@ -105,7 +105,7 @@ public class SDModelStorageStyleImpl extends EObjectImpl implements SDModelStora
 			View owner = (View)eContainer();
 			if (owner != null && owner.getElement() instanceof Interaction){
 				Interaction interaction = (Interaction)owner.getElement();
-				mySDModel = new SDBuilder(interaction).getSDFrame();
+				mySDModel = new SDBuilder(interaction).getSDModel();
 			}
 		}
 		return mySDModel;
