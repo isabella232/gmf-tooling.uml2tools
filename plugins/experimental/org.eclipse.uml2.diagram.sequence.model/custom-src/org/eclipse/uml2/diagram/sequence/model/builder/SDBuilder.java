@@ -38,48 +38,48 @@ public class SDBuilder {
 	private final Interaction myInteraction;
 	private final StartAndFinishRegistry myStartsAndFinishes;
 	private final LifeLineCallStack myCallStack;
-	private final MessageNumbers myMessageNumbers; 
+	private final MessageNumbers myMessageNumbers;
 	private SDModel mySDModel;
-	
+
 	public SDBuilder(Interaction interaction) {
 		myInteraction = interaction;
 		myStartsAndFinishes = new StartAndFinishRegistry(myInteraction);
 		myCallStack = new LifeLineCallStack();
 		myMessageNumbers = new MessageNumbers(this);
 	}
-	
+
 	public Interaction getInteraction() {
 		return myInteraction;
 	}
-	
-	public void updateMessageNumbers(){
+
+	public void updateMessageNumbers() {
 		myMessageNumbers.updateMessageNumbers();
 	}
-	
+
 	/**
 	 * For tests only
 	 */
 	public LifeLineCallStack getCallStack() {
 		return myCallStack;
 	}
-	
-	public SDModel getSDModel(){
-		if (mySDModel == null){
+
+	public SDModel getSDModel() {
+		if (mySDModel == null) {
 			reBuildModel();
 		}
 		return mySDModel;
 	}
-	
+
 	private SDModel reBuildModel() {
 		myCallStack.clear();
 		myStartsAndFinishes.forceRemap();
 		mySDModel = SDFactory.eINSTANCE.createSDModel();
 		mySDModel.setUmlInteraction(myInteraction);
-		
+
 		/**
 		 * intentionally cast to implementation -- we don't want to allow clients to call this 
 		 */
-		((SDModelImpl)mySDModel).setUMLTracing(new SDBuilderTrace());
+		((SDModelImpl) mySDModel).setUMLTracing(new SDBuilderTrace());
 
 		buildGates(mySDModel, myInteraction);
 		buildLifeLines(mySDModel, myInteraction);
@@ -87,12 +87,12 @@ public class SDBuilder {
 		for (Iterator<InteractionFragment> fragments = myInteraction.getFragments().iterator(); fragments.hasNext();) {
 			buildBrackets(fragments);
 		}
-		
+
 		updateMessageNumbers();
 
 		return mySDModel;
 	}
-	
+
 	private void buildGates(SDModel model, Interaction interaction) {
 		for (Gate umlGate : interaction.getFormalGates()) {
 			SDGate sdGate = SDFactory.eINSTANCE.createSDGate();
@@ -168,41 +168,42 @@ public class SDBuilder {
 				return;
 			}
 		}
-		if (fragment instanceof ExecutionSpecification){
-			buildExecutionSpecification((ExecutionSpecification)fragment);
+		if (fragment instanceof ExecutionSpecification) {
+			buildExecutionSpecification((ExecutionSpecification) fragment);
 			return;
 		}
 	}
 
 	private void processPossibleExecutionFinish(Iterator<InteractionFragment> orderedFragments, MessageOccurrenceSpecification messageEnd, Lifeline lifeline) {
 		ExecutionSpecification umlFinishedExecution = myStartsAndFinishes.findFinishedExecution(messageEnd);
-		if (umlFinishedExecution == null){
+		if (umlFinishedExecution == null) {
 			warning("Lost message end (no message) is found (will be ignored):" + messageEnd);
 			return;
 		}
-		
-		if (ensureSingleCovered(umlFinishedExecution) != lifeline){
+
+		if (ensureSingleCovered(umlFinishedExecution) != lifeline) {
 			throw new UMLModelProblem("Execution is finished at wrong lifeline: " + umlFinishedExecution + ", expected lifeline is: " + lifeline);
 		}
-		
+
 		SDBracketContainer sdFinishedContainer = myCallStack.peek(lifeline);
-		if (false == sdFinishedContainer instanceof SDBehaviorSpec && ((SDBehaviorSpec)sdFinishedContainer).getUmlExecutionSpec() != umlFinishedExecution){
+		if (false == sdFinishedContainer instanceof SDBehaviorSpec && ((SDBehaviorSpec) sdFinishedContainer).getUmlExecutionSpec() != umlFinishedExecution) {
 			throw new UMLModelProblem("ExecutionSpecification finished: " + umlFinishedExecution + ", while active bracket container was :" + sdFinishedContainer);
 		}
-		
-		if (sdFinishedContainer instanceof SDInvocation && ((SDInvocation)sdFinishedContainer).getUmlExecutionSpec() == null){
-			throw new SDBuilderInternalProblem("SDInvocation : " + sdFinishedContainer + " does not have uml counterpart. However, we have found finish for it: " + messageEnd + ", actual umlExecution: " + umlFinishedExecution);
+
+		if (sdFinishedContainer instanceof SDInvocation && ((SDInvocation) sdFinishedContainer).getUmlExecutionSpec() == null) {
+			throw new SDBuilderInternalProblem("SDInvocation : " + sdFinishedContainer + " does not have uml counterpart. However, we have found finish for it: " + messageEnd
+					+ ", actual umlExecution: " + umlFinishedExecution);
 		}
-		
+
 		myCallStack.pop(lifeline); //
-		if (sdFinishedContainer instanceof SDExecution){
-			SDExecution sdFinishedExecution = (SDExecution)sdFinishedContainer;
+		if (sdFinishedContainer instanceof SDExecution) {
+			SDExecution sdFinishedExecution = (SDExecution) sdFinishedContainer;
 			SDInvocation sdInvocation = sdFinishedExecution.getInvocation();
-			if (sdInvocation != null && sdInvocation.getUmlExecutionSpec() == null){
+			if (sdInvocation != null && sdInvocation.getUmlExecutionSpec() == null) {
 				//this invocation was created manually in builder without uml-counterpart, 
 				//it means that we won't find finish for it and should remove it manually
 				SDLifeLine invocationLifeLine = SDModelHelper.findLifeline(sdInvocation);
-				if (invocationLifeLine == null){
+				if (invocationLifeLine == null) {
 					throw new SDBuilderInternalProblem("Can't find lifeline for 'auxiliary' SDInvocation: " + sdInvocation);
 				}
 				myCallStack.pop(invocationLifeLine.getUmlLifeline());
@@ -212,59 +213,60 @@ public class SDBuilder {
 
 	private void buildExecutionSpecification(ExecutionSpecification umlExecutionSpec) {
 		Lifeline umlLifeline = ensureSingleCovered(umlExecutionSpec);
-		if (umlLifeline == null){
+		if (umlLifeline == null) {
 			warning("ExecutionSpecification without lifeline, ignored: " + umlExecutionSpec);
 			return;
 		}
 		SDBracketContainer active = myCallStack.peek(umlLifeline);
 		//it should be bracket for this execution spec;
-		if (false == active instanceof SDBehaviorSpec){
+		if (false == active instanceof SDBehaviorSpec) {
 			throw new UMLModelProblem("Lost ExecutionSpecification found: " + umlExecutionSpec + ", active bracket container :" + active);
 		}
-		SDBehaviorSpec activeSpec = (SDBehaviorSpec)active;
-		if (activeSpec.getUmlExecutionSpec() != umlExecutionSpec){
+		SDBehaviorSpec activeSpec = (SDBehaviorSpec) active;
+		if (activeSpec.getUmlExecutionSpec() != umlExecutionSpec) {
 			//in case of self message we can receive the umlSpec for invocation first, and it is not active 
 			//because the active one is the inner execution
-			if (!isSelfMessageExecution(activeSpec)){
+			if (!isSelfMessageExecution(activeSpec)) {
 				throw new UMLModelProblem("Lost ExecutionSpecification found: " + umlExecutionSpec + ", active bracket container :" + active);
 			}
-			SDExecution execution = (SDExecution)active;
+			SDExecution execution = (SDExecution) active;
 			SDInvocation invocation = execution.getInvocation();
-			if (umlExecutionSpec != invocation.getUmlExecutionSpec()){
-				throw new UMLModelProblem("Self message found, but executionSpecification for its invocation is wrong: " + umlExecutionSpec + ", active bracket container :" + active + ", expected invocation execSpec: " + invocation.getUmlExecutionSpec());
+			if (umlExecutionSpec != invocation.getUmlExecutionSpec()) {
+				throw new UMLModelProblem("Self message found, but executionSpecification for its invocation is wrong: " + umlExecutionSpec + ", active bracket container :" + active
+						+ ", expected invocation execSpec: " + invocation.getUmlExecutionSpec());
 			}
 		}
 		//everything is fine, we already have behaviorSpec for this umlExecutionSpec -- nothing to do
 	}
-	
-	private boolean isSelfMessageExecution(SDBehaviorSpec spec){
-		if (false == spec instanceof SDExecution){
+
+	private boolean isSelfMessageExecution(SDBehaviorSpec spec) {
+		if (false == spec instanceof SDExecution) {
 			return false;
 		}
-		SDExecution execution = (SDExecution)spec;
+		SDExecution execution = (SDExecution) spec;
 		SDInvocation invocation = execution.getInvocation();
-		if (invocation == null){
+		if (invocation == null) {
 			return false;
 		}
-		
+
 		Lifeline executionLL = ensureSingleCovered(execution.getUmlExecutionSpec());
 		Lifeline invocationLL = ensureSingleCovered(invocation.getUmlExecutionSpec());
-		
+
 		return executionLL != null && executionLL == invocationLL;
 	}
-	
+
 	private void buildMessageTarget(Iterator<InteractionFragment> orderedFragments, MessageOccurrenceSpecification messageTarget) {
 		Message message = messageTarget.getMessage();
 		MessageEnd sendEvent = message.getSendEvent();
-		if (sendEvent == null){
+		if (sendEvent == null) {
 			buildFoundMessage(messageTarget);
 			return;
 		}
-		if (sendEvent instanceof Gate){
-			buildGateMessage(messageTarget, (Gate)sendEvent, true);
+		if (sendEvent instanceof Gate) {
+			buildGateMessage(messageTarget, (Gate) sendEvent, true);
 			return;
 		}
-		
+
 		MessageOccurrenceSpecification messageSource = (MessageOccurrenceSpecification) sendEvent;
 		throw new UMLModelProblem("Message " + message + " is sent from the future: " + messageSource);
 	}
@@ -280,7 +282,7 @@ public class SDBuilder {
 			buildGateMessage(messageSource, (Gate) receiveEvent, false);
 			return;
 		}
-		
+
 		MessageOccurrenceSpecification messageTarget = (MessageOccurrenceSpecification) receiveEvent;
 		boolean targetFound = false;
 		while (orderedFragments.hasNext()) {
@@ -295,8 +297,8 @@ public class SDBuilder {
 		if (!targetFound) {
 			throw new UMLModelProblem("Message " + message + " is sent to the past");
 		}
-		
-		if (message.getMessageSort() == MessageSort.REPLY_LITERAL){
+
+		if (message.getMessageSort() == MessageSort.REPLY_LITERAL) {
 			buildReplyMessage(orderedFragments, messageSource, messageTarget);
 			return;
 		} else {
@@ -309,45 +311,45 @@ public class SDBuilder {
 		Message umlMessage = messageSource.getMessage();
 		Lifeline umlSendingLifeline = ensureSingleCovered(messageSource);
 		Lifeline umlReceivingLifeline = ensureSingleCovered(messageTarget);
-		if (umlSendingLifeline == null){
+		if (umlSendingLifeline == null) {
 			throw new UMLModelProblem("Message " + umlMessage + " has start :" + messageSource + " which does not belong to lifeline");
 		}
-		if (umlReceivingLifeline == null){
+		if (umlReceivingLifeline == null) {
 			throw new UMLModelProblem("Message " + umlMessage + " has target :" + messageTarget + " which does not belong to lifeline");
 		}
-		
+
 		ExecutionSpecification umlInvocation = myStartsAndFinishes.findStartedExecution(messageSource); //may be null
 		ExecutionSpecification umlExecution = myStartsAndFinishes.findStartedExecution(messageTarget);
-		if (umlExecution == null){
+		if (umlExecution == null) {
 			throw new UMLModelProblem("Message " + umlMessage + " does not have receiving ExecutionSpecification at receiveEvent: " + messageTarget);
 		}
-		
+
 		SDMessage sdMessage = getTraceImpl().bindNewMessage(umlMessage);
 		SDInvocation sdInvocation = getTraceImpl().bindNewInvocation(umlInvocation);
 		SDExecution sdExecution = getTraceImpl().bindNewExecution(umlExecution);
 
 		sdInvocation.setOutgoingMessage(sdMessage);
 		sdExecution.setIncomingMessage(sdMessage);
-		
+
 		sdInvocation.setReceiveExecution(sdExecution);
 		//sdExecution.setInvocation(sdInvocation); -- auto (bidi)
-		
+
 		sdExecution.setUmlStart(messageTarget);
 		sdExecution.setUmlFinish(umlExecution.getFinish());
-		
-		if (umlInvocation != null){
+
+		if (umlInvocation != null) {
 			sdInvocation.setUmlStart(messageSource);
 			sdInvocation.setUmlFinish(umlInvocation.getFinish());
 		}
-		
+
 		mySDModel.getMessages().add(sdMessage);
 
 		SDBracketContainer sdSendingContainer = myCallStack.peek(umlSendingLifeline);
 		sdSendingContainer.getBrackets().add(sdInvocation);
 		myCallStack.push(umlSendingLifeline, sdInvocation);
-		
+
 		//important to call after push for sending lifeline (consider self calls)
-		SDBracketContainer sdReceivingContainer = myCallStack.peek(umlReceivingLifeline); 
+		SDBracketContainer sdReceivingContainer = myCallStack.peek(umlReceivingLifeline);
 		sdReceivingContainer.getBrackets().add(sdExecution);
 		myCallStack.push(umlReceivingLifeline, sdExecution);
 	}
@@ -376,7 +378,7 @@ public class SDBuilder {
 	private void buildLostMessage(MessageOccurrenceSpecification messageSource) {
 		unsupportedFragment(messageSource);
 	}
-	
+
 	private void buildReplyMessage(Iterator<InteractionFragment> orderedFragments, MessageOccurrenceSpecification replySource, MessageOccurrenceSpecification replyTarget) {
 		throw new SDBuilderInternalProblem("Reply-message is not supported: " + replySource.getMessage());
 	}
@@ -400,7 +402,7 @@ public class SDBuilder {
 		sdInvariant.setUmlFragment(umlFragment);
 		sdContainer.getBrackets().add(sdInvariant);
 	}
-	
+
 	private static Lifeline ensureSingleCovered(InteractionFragment fragment) {
 		List<Lifeline> covered = fragment.getCovereds();
 		if (covered.size() > 1) {
@@ -408,12 +410,12 @@ public class SDBuilder {
 		}
 		return covered.isEmpty() ? null : covered.get(0);
 	}
-	
+
 	private static void warning(String message) {
 		//
 	}
-	
-	private SDBuilderTrace getTraceImpl(){
+
+	private SDBuilderTrace getTraceImpl() {
 		return (SDBuilderTrace) getSDModel().getUMLTracing();
 	}
 
