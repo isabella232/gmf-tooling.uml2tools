@@ -1,10 +1,13 @@
 package org.eclipse.uml2.diagram.sequence.model.builder;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
+import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.ExecutionSpecification;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
+import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
 
 
@@ -50,7 +53,12 @@ public class StartAndFinishRegistry {
 	private void doRemap(){
 		myStarts = new HashMap<OccurrenceSpecification, ExecutionSpecification>();
 		myFinishes = new HashMap<OccurrenceSpecification, ExecutionSpecification>();
-		for (InteractionFragment next : myInteraction.getFragments()){
+		doRemap(myInteraction.getFragments().iterator());
+	}
+	
+	private void doRemap(Iterator<InteractionFragment> fragments){
+		while (fragments.hasNext()){
+			InteractionFragment next = fragments.next();
 			if (next instanceof ExecutionSpecification){
 				ExecutionSpecification nextExecution = (ExecutionSpecification)next;
 				checkDistinctEnds(nextExecution);
@@ -65,6 +73,12 @@ public class StartAndFinishRegistry {
 				
 				myStarts.put(start, nextExecution);
 				myFinishes.put(finish, nextExecution);
+			}
+			if (next instanceof CombinedFragment){
+				CombinedFragment nextCombined = (CombinedFragment)next;
+				for (InteractionOperand nextOperand : nextCombined.getOperands()){
+					doRemap(nextOperand.getFragments().iterator());
+				}
 			}
 		}
 	}
