@@ -5,15 +5,20 @@ import java.util.List;
 
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFactory;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGate;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessageEnd;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl;
 import org.eclipse.uml2.uml.ActionExecutionSpecification;
@@ -40,6 +45,7 @@ public class SDBuilder {
 	private final LifeLineCallStack myCallStack;
 	private final MessageNumbers myMessageNumbers;
 	private SDModel mySDModel;
+	private SDFrameContainer myCurrentFrameContainer;
 
 	public SDBuilder(Interaction interaction) {
 		myInteraction = interaction;
@@ -75,6 +81,7 @@ public class SDBuilder {
 		myStartsAndFinishes.forceRemap();
 		mySDModel = SDFactory.eINSTANCE.createSDModel();
 		mySDModel.setUmlInteraction(myInteraction);
+		myCurrentFrameContainer = mySDModel;
 
 		/**
 		 * intentionally cast to implementation -- we don't want to allow clients to call this 
@@ -124,6 +131,10 @@ public class SDBuilder {
 			return;
 		}
 		if (fragment instanceof CombinedFragment) {
+			buildCombinedFragment((CombinedFragment) fragment);
+			return;
+		}
+		if (fragment instanceof InteractionOperand) {
 			unsupportedFragment(fragment);
 			return;
 		}
@@ -132,10 +143,6 @@ public class SDBuilder {
 			return;
 		}
 		if (fragment instanceof Interaction) {
-			unsupportedFragment(fragment);
-			return;
-		}
-		if (fragment instanceof InteractionOperand) {
 			unsupportedFragment(fragment);
 			return;
 		}
@@ -401,6 +408,128 @@ public class SDBuilder {
 		SDSimpleNode sdInvariant = SDFactory.eINSTANCE.createSDSimpleNode();
 		sdInvariant.setUmlFragment(umlFragment);
 		sdContainer.getBrackets().add(sdInvariant);
+	}
+
+	private void buildCombinedFragment(CombinedFragment umlFragment) {
+		if (umlFragment.getCovereds().isEmpty()) {
+			throw new UMLModelProblem("Combined fragment without a covered lifelines found: " + umlFragment);
+		}
+		for (Lifeline nextUmlCovered : umlFragment.getCovereds()) {
+			SDBracketContainer bracketContainer = myCallStack.peek(nextUmlCovered);
+			if (bracketContainer instanceof SDBehaviorSpec) {
+				throw new UMLModelProblem(//
+						"Combined fragment " + umlFragment + //
+								" covering lifeline: " + nextUmlCovered + //
+								", which is in the middle of the message-chain, active bracket: " + bracketContainer);
+			}
+			if (bracketContainer instanceof SDMountingRegion) {
+				SDMountingRegion activeRegion = (SDMountingRegion) bracketContainer;
+				if (activeRegion.getFrame() != myCurrentFrameContainer) {
+					throw new UMLModelProblem(//
+							"Combined fragment " + umlFragment + " covering lifeline: " + nextUmlCovered + //
+									", can not match mounting regions for parent frame: " + myCurrentFrameContainer + ", actual frame found: " + activeRegion.getFrame());
+				}
+			}
+			if (bracketContainer instanceof SDLifeLine) {
+				//XXX: we should check consistency of frames.getCovered() before and transform this to new internalSDBuilderProblem (?)
+				//same for above 
+				if (myCurrentFrameContainer != mySDModel) {
+					throw new UMLModelProblem(//
+							"Combined fragment " + umlFragment + " covering lifeline: " + nextUmlCovered + //
+									", but its parent frame: " + myCurrentFrameContainer + " does not.");
+				}
+				if (((SDLifeLine) bracketContainer).getUmlLifeline() != nextUmlCovered) {
+					throw new SDBuilderInternalProblem("Active SDLifeLine from call-stack " + bracketContainer + ", while expecting SD-wrapper for: " + nextUmlCovered);
+				}
+			}
+		}
+
+		//so far so good 
+		SDCombinedFragment sdFragment = SDFactory.eINSTANCE.createSDCombinedFragment();
+		sdFragment.setUmlCombinedFragment(umlFragment);
+		myCurrentFrameContainer.getFrames().add(sdFragment);
+
+		pushMountingRegionsForAllCovereds(sdFragment, umlFragment);
+		for (InteractionOperand nextOperand : umlFragment.getOperands()) {
+			buildInteractionOperand(nextOperand, sdFragment);
+		}
+		popMountingRegionsForAllCovereds(sdFragment, umlFragment);
+	}
+
+	private void buildInteractionOperand(InteractionOperand umlOperand, SDCombinedFragment sdEnclosingFragment) {
+		assert umlOperand.eContainer() == sdEnclosingFragment.getUmlCombinedFragment();
+		assert myCurrentFrameContainer == sdEnclosingFragment;
+
+		if (umlOperand.getCovereds().size() != sdEnclosingFragment.getCoveredLifeLines().size()) {
+			throw new UMLModelProblem("Set of covered lifelines differs for InteractionOperand: " + umlOperand + ", and its enclosing fragment: " + sdEnclosingFragment.getUmlCombinedFragment());
+		}
+		for (SDLifeLine nextCoveredByCombined : sdEnclosingFragment.getCoveredLifeLines()) {
+			if (!umlOperand.getCovereds().contains(nextCoveredByCombined.getUmlLifeline())) {
+				throw new UMLModelProblem(//
+						"CombinedFragment : " + sdEnclosingFragment.getUmlCombinedFragment() + //
+								" covers lifeline: " + nextCoveredByCombined.getUmlLifeline() + //
+								" while its operand : " + umlOperand + " does not.");
+			}
+		}
+
+		for (Lifeline nextUmlCovered : umlOperand.getCovereds()) {
+			SDBracketContainer bracketContainer = myCallStack.peek(nextUmlCovered);
+			if (false == bracketContainer instanceof SDMountingRegion) {
+				throw new UMLModelProblem(//
+						"Interaction operand : " + umlOperand + //
+								" found, while the message chain on lifeline: " + nextUmlCovered + //
+								" is not completed, active bracket: " + bracketContainer);
+			}
+		}
+
+		//
+		SDInteractionOperand sdOperand = SDFactory.eINSTANCE.createSDInteractionOperand();
+		sdOperand.setUmlInteractionOperand(umlOperand);
+		sdEnclosingFragment.getFrames().add(sdOperand);
+
+		pushMountingRegionsForAllCovereds(sdOperand, umlOperand);
+		for (Iterator<InteractionFragment> innerFragments = umlOperand.getFragments().iterator(); innerFragments.hasNext();) {
+			buildBrackets(innerFragments);
+		}
+		popMountingRegionsForAllCovereds(sdOperand, umlOperand);
+	}
+
+	private void pushMountingRegionsForAllCovereds(SDFrame sdFrame, InteractionFragment umlFrame) {
+		for (Lifeline nextUmlCovered : umlFrame.getCovereds()) {
+			SDBracketContainer bracketContainer = myCallStack.peek(nextUmlCovered);
+			assert bracketContainer.getCoveredLifeLine().getUmlLifeline() == nextUmlCovered;
+			sdFrame.getCoveredLifeLines().add(bracketContainer.getCoveredLifeLine());
+
+			SDMountingRegion nextRegion = SDFactory.eINSTANCE.createSDMountingRegion();
+			nextRegion.setFrame(sdFrame);
+			bracketContainer.getBrackets().add(nextRegion);
+			myCallStack.push(nextUmlCovered, nextRegion);
+		}
+		myCurrentFrameContainer = sdFrame;
+	}
+
+	private void popMountingRegionsForAllCovereds(SDFrame sdFrame, InteractionFragment umlFrame) {
+		for (Lifeline nextUmlCovered : umlFrame.getCovereds()) {
+			SDBracketContainer bracketContainer = myCallStack.peek(nextUmlCovered);
+			if (false == bracketContainer instanceof SDMountingRegion) {
+				throw new SDBuilderInternalProblem(//
+						"After processing contents for " + umlFrame + //
+								", can't match the active bracket container for lifeline: " + nextUmlCovered + //
+								", actual : " + bracketContainer + ", while expecting mounting region ");
+			}
+			SDMountingRegion nextRegion = (SDMountingRegion) bracketContainer;
+			if (nextRegion.getFrame() != sdFrame) {
+				throw new SDBuilderInternalProblem(//
+						"After processing contents for " + umlFrame + //
+								", can't match frame for mounting region: " + nextRegion + //
+								", actual frame: " + nextRegion.getFrame() + ", while expecting: " + sdFrame);
+			}
+			myCallStack.pop(nextUmlCovered);
+		}
+		if (myCurrentFrameContainer != sdFrame) {
+			throw new SDBuilderInternalProblem("Current frame container: " + myCurrentFrameContainer + ", while expecting: " + sdFrame);
+		}
+		myCurrentFrameContainer = sdFrame.getFrameContainer();
 	}
 
 	private static Lifeline ensureSingleCovered(InteractionFragment fragment) {
