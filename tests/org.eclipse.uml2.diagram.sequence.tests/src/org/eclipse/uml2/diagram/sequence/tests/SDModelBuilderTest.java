@@ -24,7 +24,7 @@ public class SDModelBuilderTest extends AbstractSDModelBuilderTest {
 		Interaction redraw = (Interaction) memoryGame.getPackagedElement("Redraw", true, UMLPackage.eINSTANCE.getInteraction(), false);
 		assertNotNull(redraw);
 	}
-
+	
 	public void testBuildNormalAndSelfMessage() {
 		SDBuilder builder = buildFrame(MEMORY_GAME_FILE, "ReDraw");
 		SDModel sdModel = builder.getSDModel();
@@ -234,6 +234,10 @@ public class SDModelBuilderTest extends AbstractSDModelBuilderTest {
 				d.getBrackets().get(2), //
 				b.getBrackets().get(2));
 		cadbChecker.checkChain("3");
+	}
+	
+	public void testWhenCantNavigateFromMessageEndToMessage(){
+		fail("We need to contsruct uml example where message.getSendEvent().getMessage() != null");
 	}
 	
 	public void testStateInvariant(){
