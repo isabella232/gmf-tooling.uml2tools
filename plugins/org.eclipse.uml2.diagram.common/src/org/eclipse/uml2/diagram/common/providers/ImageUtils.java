@@ -8,6 +8,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.edit.provider.ComposedImage;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
 import org.osgi.framework.Bundle;
@@ -16,7 +17,8 @@ public class ImageUtils {
 
 	private static final Bundle UML_BUNDLE = UMLCommonPlugin.getInstance().getBundle();
 
-	private static final String IMG_SYNC_DIAGRAM = "icons/ovr16/SyncDiagram.gif";
+	private static final String IMG_SYNC_DIAGRAM = "icons/ovr16/SyncDiagram.gif"; //$NON-NLS-1$
+	public static final String IMG_COLLAPSE_ALL  = "icons/collapseall.gif"; //$NON-NLS-1$
 
 	public static ImageDescriptor overlay(ImageDescriptor original, ImageDescriptor overlay) {
 		List<ImageDescriptor> images = new ArrayList<ImageDescriptor>(2);
@@ -33,17 +35,21 @@ public class ImageUtils {
 		return getOverlayedImage(original, getSyncPackageImage());
 	}
 
-	public static ImageDescriptor getSyncPackageImage() {
-		String imgRegistryKey = "SyncDiagram";
-		ImageDescriptor imageDescriptor = UMLCommonPlugin.getInstance().getImageRegistry().getDescriptor(imgRegistryKey);
+	public static ImageDescriptor getImageDescriptor(String location) {
+		ImageRegistry ir = UMLCommonPlugin.getInstance().getImageRegistry();
+		ImageDescriptor imageDescriptor = ir.getDescriptor(location);
 		if (imageDescriptor == null) {
-			imageDescriptor = ImageDescriptor.createFromURL(FileLocator.find(UML_BUNDLE, new Path(IMG_SYNC_DIAGRAM), null));
+			imageDescriptor = ImageDescriptor.createFromURL(FileLocator.find(UML_BUNDLE, new Path(location), null));
 			if (imageDescriptor == null) {
 				return null;
 			}
-			UMLCommonPlugin.getInstance().getImageRegistry().put(imgRegistryKey, imageDescriptor);
+			ir.put(location, imageDescriptor);
 		}
 		return imageDescriptor;
+	}
+
+	public static ImageDescriptor getSyncPackageImage() {
+		return getImageDescriptor(IMG_SYNC_DIAGRAM);
 	}
 
 	private static Image getOverlayedImage(Object original, Object overlay) {

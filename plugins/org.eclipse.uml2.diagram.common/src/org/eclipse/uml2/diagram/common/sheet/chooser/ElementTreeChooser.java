@@ -33,6 +33,13 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IMenuListener;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.action.Separator;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.viewers.AbstractTreeViewer;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
@@ -50,8 +57,12 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Tree;
+import org.eclipse.ui.ISharedImages;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.internal.UIPlugin;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
+import org.eclipse.uml2.diagram.common.providers.ImageUtils;
 
 public class ElementTreeChooser implements ElementChooserPage {
 
@@ -88,6 +99,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 		}
 		myTreeViewer.expandToLevel(myRoot.getCurrentResourceRoot(), 1);
 		myTreeViewer.expandToLevel(myRoot.getLoadedResourcesRoot(), 1);
+		new MenuBuilder(myTreeViewer).attachMenu();
 		return composite;
 	}
 
@@ -109,7 +121,6 @@ public class ElementTreeChooser implements ElementChooserPage {
 			myTreeViewer.setSelection(new StructuredSelection(paths), true);
 		}
 	}
-
 
 	private Composite createModelBrowser(Composite composite) {
 		myTreeViewer = new TreeViewer(composite, SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
@@ -169,7 +180,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 		}
 		Path path = new Path(element.eResource().getURI().toFileString());
 		IResource resource = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-		while(resource != null) {
+		while (resource != null) {
 			segments.add(resource);
 			resource = resource.getParent();
 		}
@@ -429,6 +440,89 @@ public class ElementTreeChooser implements ElementChooserPage {
 
 	public void addDoubleClickListener(IDoubleClickListener l) {
 		myTreeViewer.addDoubleClickListener(l);
+	}
+
+	private static class MenuBuilder implements IMenuListener {
+
+		private final TreeViewer myViewer;
+
+		private final ExpandNodeAction myExpandNodeChildrenAction;
+
+		private final CollapseAllAction myCollapseAllChildrenAction;
+		
+		private static final ImageDescriptor IMG_COLLAPSE_ALL= ImageUtils.getImageDescriptor(ImageUtils.IMG_COLLAPSE_ALL);
+
+		public MenuBuilder(final TreeViewer viewer) {
+			myViewer = viewer;
+			myCollapseAllChildrenAction = new CollapseAllAction(viewer);
+			myCollapseAllChildrenAction.setImageDescriptor(IMG_COLLAPSE_ALL);
+			myCollapseAllChildrenAction.setText("Collapse All");
+
+			myExpandNodeChildrenAction = new ExpandNodeAction(viewer);
+			myExpandNodeChildrenAction.setText("Expand Node");
+		}
+
+		public void attachMenu() {
+			MenuManager menuManager = new MenuManager();
+			menuManager.addMenuListener(this);
+			menuManager.add(myCollapseAllChildrenAction);
+			menuManager.add(new Separator());
+			menuManager.add(myExpandNodeChildrenAction);
+
+			myViewer.getTree().setMenu(menuManager.createContextMenu(myViewer.getTree()));
+		}
+
+		public void removeMenu() {
+			myViewer.getTree().setMenu(null);
+		}
+
+		public void menuAboutToShow(IMenuManager manager) {
+			myCollapseAllChildrenAction.update();
+			myExpandNodeChildrenAction.update();
+		}
+
+	}
+
+	private static class ExpandNodeAction extends Action {
+
+		private List<Object> mySelection;
+
+		private final TreeViewer myViewer;
+
+		ExpandNodeAction(TreeViewer viewer) {
+			myViewer = viewer;
+		}
+
+		@Override
+		public void run() {
+			Object firstSelected = mySelection.isEmpty() ? null : mySelection.get(0);
+			if (firstSelected == null) {
+				return;
+			}
+			myViewer.expandToLevel(firstSelected, AbstractTreeViewer.ALL_LEVELS);
+		}
+
+		@SuppressWarnings("unchecked")
+		public void update() {
+			mySelection = ((IStructuredSelection) myViewer.getSelection()).toList();
+		}
+	}
+
+	private static class CollapseAllAction extends Action {
+
+		private final TreeViewer myViewer;
+
+		CollapseAllAction(TreeViewer viewer) {
+			myViewer = viewer;
+		}
+
+		@Override
+		public void run() {
+			myViewer.collapseAll();
+		}
+
+		public void update() {
+		}
 	}
 
 }
