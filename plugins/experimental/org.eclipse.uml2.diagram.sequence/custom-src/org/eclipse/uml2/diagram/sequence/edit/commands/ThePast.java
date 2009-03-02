@@ -59,17 +59,17 @@ public class ThePast {
 
 	public void executionStarted(SDExecution sdExecution) {
 		ExecutionSpecification umlExecution = sdExecution.getUmlExecutionSpec();
-		considerAsPast_(umlExecution);
-		considerAsPast_(umlExecution.getStart());
+		considerAsPast(umlExecution);
+		considerAsPast(umlExecution.getStart());
 
 		SDInvocation sdParentInvocation = sdExecution.getInvocation();
 		if (sdParentInvocation != null) {
-			considerAsPast_(sdParentInvocation.getUmlExecutionSpec());
-			considerAsPast_(sdParentInvocation.getUmlStart());
+			considerAsPast(sdParentInvocation.getUmlExecutionSpec());
+			considerAsPast(sdParentInvocation.getUmlStart());
 		}
 	}
 
-	public void considerAsPast_(InteractionFragment fragment) {
+	public void considerAsPast(InteractionFragment fragment) {
 		if (fragment != null) {
 			myPastFragments.add(fragment);
 		}
@@ -80,9 +80,9 @@ public class ThePast {
 		if (anchor != null && !params.isBeforeNotAfterAnchor()) {
 			InteractionFragment semanticAnchor = (InteractionFragment) anchor.getElement();
 			if (semanticAnchor instanceof ExecutionSpecification) {
-				considerAsPast_(((ExecutionSpecification) semanticAnchor).getFinish());
+				considerAsPast(((ExecutionSpecification) semanticAnchor).getFinish());
 			} else {
-				considerAsPast_(semanticAnchor);
+				considerAsPast(semanticAnchor);
 			}
 		}
 	}
