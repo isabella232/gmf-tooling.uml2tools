@@ -2,13 +2,14 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFrameContainer.java,v 1.1 2009/02/28 21:17:05 mgolubev Exp $
+ * $Id: SDFrameContainer.java,v 1.2 2009/03/02 16:14:30 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.uml.InteractionFragment;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer#getFrames <em>Frames</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer#getFragmentsList <em>Fragments List</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,5 +46,21 @@ public interface SDFrameContainer extends EObject {
 	 * @generated
 	 */
 	EList<SDFrame> getFrames();
+
+	/**
+	 * Returns the value of the '<em><b>Fragments List</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.uml2.uml.InteractionFragment}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fragments List</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fragments List</em>' reference list.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage#getSDFrameContainer_FragmentsList()
+	 * @model type="org.eclipse.uml2.diagram.sequence.model.sequenced.UMLInteractionFragment" resolveProxies="false" transient="true" volatile="true" derived="true"
+	 * @generated
+	 */
+	EList<InteractionFragment> getFragmentsList();
 
 } // SDFrameContainer

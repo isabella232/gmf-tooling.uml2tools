@@ -2,13 +2,14 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFrameImpl.java,v 1.4 2009/02/28 21:17:06 mgolubev Exp $
+ * $Id: SDFrameImpl.java,v 1.5 2009/03/02 16:14:30 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -20,7 +21,9 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
+import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
+import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.Lifeline;
 
 /**
@@ -274,5 +277,25 @@ public abstract class SDFrameImpl extends SDFrameContainerImpl implements SDFram
 		}
 		return super.eIsSet(featureID);
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * The InteractionOperand is the only frame that has its own fragments list
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<InteractionFragment> getFragmentsList() {
+		InteractionFragment fragment = getUmlFragment();
+		if (fragment == null){
+			return ECollections.<InteractionFragment>emptyEList();
+		}
+		InteractionOperand operand = fragment.getEnclosingOperand();
+		if (operand != null){
+			return operand.getFragments();
+		}
+		Interaction interaction = fragment.getEnclosingInteraction();
+		return (interaction == null) ? ECollections.<InteractionFragment>emptyEList() : interaction.getFragments();
+	}
+	
 
 } //SDFrameImpl

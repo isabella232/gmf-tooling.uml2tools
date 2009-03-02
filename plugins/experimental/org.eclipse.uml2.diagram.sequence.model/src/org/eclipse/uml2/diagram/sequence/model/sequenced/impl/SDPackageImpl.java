@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackageImpl.java,v 1.8 2009/02/28 23:44:29 mgolubev Exp $
+ * $Id: SDPackageImpl.java,v 1.9 2009/03/02 16:14:30 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -674,6 +674,15 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSDFrameContainer_FragmentsList() {
+		return (EReference)sdFrameContainerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSDExecution() {
 		return sdExecutionEClass;
 	}
@@ -1075,6 +1084,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		sdFrameContainerEClass = createEClass(SD_FRAME_CONTAINER);
 		createEReference(sdFrameContainerEClass, SD_FRAME_CONTAINER__FRAMES);
+		createEReference(sdFrameContainerEClass, SD_FRAME_CONTAINER__FRAGMENTS_LIST);
 
 		sdExecutionEClass = createEClass(SD_EXECUTION);
 		createEReference(sdExecutionEClass, SD_EXECUTION__INVOCATION);
@@ -1244,6 +1254,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		initEClass(sdFrameContainerEClass, SDFrameContainer.class, "SDFrameContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDFrameContainer_Frames(), this.getSDFrame(), this.getSDFrame_FrameContainer(), "frames", null, 0, -1, SDFrameContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDFrameContainer_FragmentsList(), this.getUMLInteractionFragment(), null, "fragmentsList", null, 0, -1, SDFrameContainer.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(sdExecutionEClass, SDExecution.class, "SDExecution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDExecution_Invocation(), this.getSDInvocation(), this.getSDInvocation_ReceiveExecution(), "invocation", null, 1, 1, SDExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -2,21 +2,19 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDInteractionOperandImpl.java,v 1.1 2009/02/28 21:17:06 mgolubev Exp $
+ * $Id: SDInteractionOperandImpl.java,v 1.2 2009/03/02 16:14:30 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
-
 import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.InteractionOperand;
 
@@ -163,6 +161,17 @@ public class SDInteractionOperandImpl extends SDFrameImpl implements SDInteracti
 	@Override
 	public InteractionFragment getUmlFragment() {
 		return getUmlInteractionOperand();
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * The InteractionOperand is the only frame that has its own fragments list
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<InteractionFragment> getFragmentsList() {
+		InteractionOperand operand = getUmlInteractionOperand();
+		return (operand == null) ? ECollections.<InteractionFragment>emptyEList() : operand.getFragments();
 	}
 
 } //SDInteractionOperandImpl

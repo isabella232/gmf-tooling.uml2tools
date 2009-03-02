@@ -64,6 +64,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDFrameContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDFrameContainer/frames"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDFrameContainer/fragmentsList"/>
     </genClasses>
     <genClasses ecoreClass="sequence-diagram.ecore#//SDExecution">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDExecution/invocation"/>

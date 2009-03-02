@@ -67,6 +67,7 @@ class SDInteractionOperand extends SDFrame {
 
 abstract class SDFrameContainer {
 	val SDFrame[*]#frameContainer frames;
+	derived volatile transient !resolve ref UMLInteractionFragment[*] fragmentsList;
 }
 
 class SDExecution extends SDBehaviorSpec {

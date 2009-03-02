@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDModelImpl.java,v 1.4 2009/02/28 21:17:06 mgolubev Exp $
+ * $Id: SDModelImpl.java,v 1.5 2009/03/02 16:14:30 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -10,6 +10,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -25,6 +26,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.uml.Interaction;
+import org.eclipse.uml2.uml.InteractionFragment;
 
 /**
  * <!-- begin-user-doc -->
@@ -323,4 +325,14 @@ public class SDModelImpl extends SDFrameContainerImpl implements SDModel {
 		myUMLTracing = tracing;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<InteractionFragment> getFragmentsList() {
+		Interaction interaction = getUmlInteraction();
+		return (interaction == null) ? ECollections.<InteractionFragment>emptyEList() : interaction.getFragments();
+	}
+	
 } //SDFrameImpl

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackage.java,v 1.7 2009/02/28 21:17:05 mgolubev Exp $
+ * $Id: SDPackage.java,v 1.8 2009/03/02 16:14:30 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -79,13 +79,22 @@ public interface SDPackage extends EPackage {
 	int SD_FRAME_CONTAINER__FRAMES = 0;
 
 	/**
+	 * The feature id for the '<em><b>Fragments List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_FRAME_CONTAINER__FRAGMENTS_LIST = 1;
+
+	/**
 	 * The number of structural features of the '<em>Frame Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SD_FRAME_CONTAINER_FEATURE_COUNT = 1;
+	int SD_FRAME_CONTAINER_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDModelImpl <em>Model</em>}' class.
@@ -105,6 +114,15 @@ public interface SDPackage extends EPackage {
 	 * @ordered
 	 */
 	int SD_MODEL__FRAMES = SD_FRAME_CONTAINER__FRAMES;
+
+	/**
+	 * The feature id for the '<em><b>Fragments List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_MODEL__FRAGMENTS_LIST = SD_FRAME_CONTAINER__FRAGMENTS_LIST;
 
 	/**
 	 * The feature id for the '<em><b>Uml Interaction</b></em>' reference.
@@ -430,6 +448,15 @@ public interface SDPackage extends EPackage {
 	int SD_FRAME__FRAMES = SD_FRAME_CONTAINER__FRAMES;
 
 	/**
+	 * The feature id for the '<em><b>Fragments List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_FRAME__FRAGMENTS_LIST = SD_FRAME_CONTAINER__FRAGMENTS_LIST;
+
+	/**
 	 * The feature id for the '<em><b>Frame Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -483,6 +510,15 @@ public interface SDPackage extends EPackage {
 	 * @ordered
 	 */
 	int SD_INTERACTION_USE__FRAMES = SD_FRAME__FRAMES;
+
+	/**
+	 * The feature id for the '<em><b>Fragments List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_INTERACTION_USE__FRAGMENTS_LIST = SD_FRAME__FRAGMENTS_LIST;
 
 	/**
 	 * The feature id for the '<em><b>Frame Container</b></em>' container reference.
@@ -549,6 +585,15 @@ public interface SDPackage extends EPackage {
 	int SD_COMBINED_FRAGMENT__FRAMES = SD_FRAME__FRAMES;
 
 	/**
+	 * The feature id for the '<em><b>Fragments List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_COMBINED_FRAGMENT__FRAGMENTS_LIST = SD_FRAME__FRAGMENTS_LIST;
+
+	/**
 	 * The feature id for the '<em><b>Frame Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -611,6 +656,15 @@ public interface SDPackage extends EPackage {
 	 * @ordered
 	 */
 	int SD_INTERACTION_OPERAND__FRAMES = SD_FRAME__FRAMES;
+
+	/**
+	 * The feature id for the '<em><b>Fragments List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_INTERACTION_OPERAND__FRAGMENTS_LIST = SD_FRAME__FRAGMENTS_LIST;
 
 	/**
 	 * The feature id for the '<em><b>Frame Container</b></em>' container reference.
@@ -1725,6 +1779,17 @@ public interface SDPackage extends EPackage {
 	EReference getSDFrameContainer_Frames();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer#getFragmentsList <em>Fragments List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Fragments List</em>'.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer#getFragmentsList()
+	 * @see #getSDFrameContainer()
+	 * @generated
+	 */
+	EReference getSDFrameContainer_FragmentsList();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution <em>Execution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2435,6 +2500,14 @@ public interface SDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SD_FRAME_CONTAINER__FRAMES = eINSTANCE.getSDFrameContainer_Frames();
+
+		/**
+		 * The meta object literal for the '<em><b>Fragments List</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SD_FRAME_CONTAINER__FRAGMENTS_LIST = eINSTANCE.getSDFrameContainer_FragmentsList();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDExecutionImpl <em>Execution</em>}' class.

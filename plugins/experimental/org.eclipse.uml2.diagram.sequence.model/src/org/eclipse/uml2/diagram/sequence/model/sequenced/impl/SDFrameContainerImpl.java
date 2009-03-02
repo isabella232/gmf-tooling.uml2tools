@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFrameContainerImpl.java,v 1.1 2009/02/28 21:17:05 mgolubev Exp $
+ * $Id: SDFrameContainerImpl.java,v 1.2 2009/03/02 16:14:30 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
+import org.eclipse.uml2.uml.InteractionFragment;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +33,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDFrameContainerImpl#getFrames <em>Frames</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDFrameContainerImpl#getFragmentsList <em>Fragments List</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +83,15 @@ public abstract class SDFrameContainerImpl extends EObjectImpl implements SDFram
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<InteractionFragment> getFragmentsList() {
+		throw new IllegalStateException("This method should be redefined in subclass, but it is not for: " + this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -117,6 +128,8 @@ public abstract class SDFrameContainerImpl extends EObjectImpl implements SDFram
 		switch (featureID) {
 			case SDPackage.SD_FRAME_CONTAINER__FRAMES:
 				return getFrames();
+			case SDPackage.SD_FRAME_CONTAINER__FRAGMENTS_LIST:
+				return getFragmentsList();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -134,6 +147,10 @@ public abstract class SDFrameContainerImpl extends EObjectImpl implements SDFram
 				getFrames().clear();
 				getFrames().addAll((Collection<? extends SDFrame>)newValue);
 				return;
+			case SDPackage.SD_FRAME_CONTAINER__FRAGMENTS_LIST:
+				getFragmentsList().clear();
+				getFragmentsList().addAll((Collection<? extends InteractionFragment>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -149,6 +166,9 @@ public abstract class SDFrameContainerImpl extends EObjectImpl implements SDFram
 			case SDPackage.SD_FRAME_CONTAINER__FRAMES:
 				getFrames().clear();
 				return;
+			case SDPackage.SD_FRAME_CONTAINER__FRAGMENTS_LIST:
+				getFragmentsList().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -163,6 +183,8 @@ public abstract class SDFrameContainerImpl extends EObjectImpl implements SDFram
 		switch (featureID) {
 			case SDPackage.SD_FRAME_CONTAINER__FRAMES:
 				return frames != null && !frames.isEmpty();
+			case SDPackage.SD_FRAME_CONTAINER__FRAGMENTS_LIST:
+				return !getFragmentsList().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
