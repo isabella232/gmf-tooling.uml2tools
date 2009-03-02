@@ -108,7 +108,7 @@ public class MessageCreateCommand extends EditElementCommand {
 		String prefix = forSource ? "invocation-" : "execution-";
 		String withIndex = prefix + nameIndex + "-";
 
-		ThePast thePast = new ThePast(U2TCreateLinkCommand.getFromRequest(getRequest()));
+		ThePastImpl thePast = new ThePastImpl(U2TCreateLinkCommand.getFromRequest(getRequest()));
 		ListIterator<InteractionFragment> listPosition = thePast.getAfterThePastPosition(interaction);
 
 		MessageOccurrenceSpecification start = doCreateMessageOccurrence(listPosition, withIndex + "start");
@@ -186,7 +186,7 @@ public class MessageCreateCommand extends EditElementCommand {
 			Lifeline sourceLL = (Lifeline) diagramSource;
 			Lifeline targetLL = (Lifeline) diagramTarget;
 
-			ThePast thePast = createThePast();
+			ThePastImpl thePast = createThePast();
 			ListIterator<InteractionFragment> position = thePast.getAfterThePastPosition(interaction);
 
 			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count, position);
@@ -207,7 +207,7 @@ public class MessageCreateCommand extends EditElementCommand {
 				throw new IllegalArgumentException("SDExecution expected: " + sdExecution);
 			}
 
-			ThePast thePast = createThePast();
+			ThePastImpl thePast = createThePast();
 			thePast.executionStarted((SDExecution) sdExecution);
 
 			ListIterator<InteractionFragment> position = thePast.getAfterThePastPosition(interaction);
@@ -234,7 +234,7 @@ public class MessageCreateCommand extends EditElementCommand {
 				throw new IllegalArgumentException("SDInvocation expected as target: " + sdSourceExecution);
 			}
 
-			ThePast thePast = createThePast();
+			ThePastImpl thePast = createThePast();
 			thePast.executionStarted((SDExecution) sdSourceExecution);
 
 			ListIterator<InteractionFragment> position = thePast.getAfterThePastPosition(interaction);
@@ -447,8 +447,8 @@ public class MessageCreateCommand extends EditElementCommand {
 		return viewPosition;
 	}
 
-	private ThePast createThePast() {
-		return new ThePast(U2TCreateLinkCommand.getFromRequest(getRequest()));
+	private ThePastImpl createThePast() {
+		return new ThePastImpl(U2TCreateLinkCommand.getFromRequest(getRequest()));
 	}
 
 }

@@ -66,7 +66,7 @@ public class StateInvariantCreateCommand extends EditElementCommand {
 		Interaction owner = getInteraction();
 		
 		U2TCreateParameters anchorData = (U2TCreateParameters) getRequest().getParameter(SDCreationEditPolicy.KEY_U2T_EXTENDED_PARAMETERS);
-		ThePast thePast = new ThePast(anchorData);
+		ThePastImpl thePast = new ThePastImpl(anchorData);
 		ListIterator<InteractionFragment> appendPosition = thePast.getAfterThePastPosition(owner);
 		appendPosition.add(newElement);
 
