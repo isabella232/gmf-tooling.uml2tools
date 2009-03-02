@@ -30,7 +30,7 @@ public class InsertAfter<T> {
 		return result;
 	}
 
-	protected final void considerAsPast(T past) {
+	public final void considerAsPast(T past) {
 		if (past != null) {
 			myPast.add(past);
 		}
