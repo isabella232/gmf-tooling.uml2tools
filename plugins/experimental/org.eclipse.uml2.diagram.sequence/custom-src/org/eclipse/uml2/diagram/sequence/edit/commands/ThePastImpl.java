@@ -9,7 +9,7 @@ import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
 
 
-public class ThePastImpl extends org.eclipse.uml2.diagram.sequence.model.create.ThePast {
+public class ThePastImpl extends org.eclipse.uml2.diagram.sequence.model.create.InsertFragmentAfter {
 	public ThePastImpl(){
 		//
 	}
