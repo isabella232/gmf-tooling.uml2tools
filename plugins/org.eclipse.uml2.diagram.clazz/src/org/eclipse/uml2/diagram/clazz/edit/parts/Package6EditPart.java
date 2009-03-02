@@ -54,6 +54,7 @@ import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.PackageFrameFigure;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
@@ -222,15 +223,12 @@ public class Package6EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	}
 
 	/**
-	 * @generated NOT
-	 * @see [265822] 
+	 * @generated
 	 */
 	public EditPolicy getPrimaryDragEditPolicy() {
-		EditPolicy result = super.getPrimaryDragEditPolicy();
-		if (result instanceof ResizableEditPolicy) {
-			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-			ep.setResizeDirections(PositionConstants.NSEW);
-		}
+		// #265822 Improve appearance of selection feedback
+		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
+		result.setResizeDirections(PositionConstants.NSEW);
 		return result;
 	}
 

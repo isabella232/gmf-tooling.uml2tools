@@ -47,6 +47,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
@@ -173,11 +174,9 @@ public class GeneralizationSetEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	public EditPolicy getPrimaryDragEditPolicy() {
-		EditPolicy result = super.getPrimaryDragEditPolicy();
-		if (result instanceof ResizableEditPolicy) {
-			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-			ep.setResizeDirections(PositionConstants.WEST | PositionConstants.EAST);
-		}
+		// #265822 Improve appearance of selection feedback
+		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
+		result.setResizeDirections(PositionConstants.WEST | PositionConstants.EAST);
 		return result;
 	}
 

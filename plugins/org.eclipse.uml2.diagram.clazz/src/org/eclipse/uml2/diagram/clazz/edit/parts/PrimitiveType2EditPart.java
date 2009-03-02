@@ -31,6 +31,7 @@ import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
@@ -266,6 +267,16 @@ public class PrimitiveType2EditPart extends AbstractBorderedShapeEditPart implem
 	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(60));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPolicy getPrimaryDragEditPolicy() {
+		// #265822 Improve appearance of selection feedback
+		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
+		result.setResizeDirections(PositionConstants.NSEW);
 		return result;
 	}
 
@@ -2046,13 +2057,4 @@ public class PrimitiveType2EditPart extends AbstractBorderedShapeEditPart implem
 		return getPrimaryChildEditPart();
 	}
 
-	/**
-	 * @generated NOT
-	 * @see [265822]
-	 */
-	public EditPolicy getPrimaryDragEditPolicy() {
-		U2TResizableShapeEditPolicy result = new U2TResizableShapeEditPolicy();
-		result.setResizeDirections(PositionConstants.NSEW);
-		return result;
-	}
 }

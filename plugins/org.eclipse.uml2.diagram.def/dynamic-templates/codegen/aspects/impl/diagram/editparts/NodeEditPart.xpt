@@ -295,3 +295,22 @@
 «ENDAROUND»
 
 «AROUND _creationEditPolicyNewInstance FOR gmfgen::GenNode»«EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»«ENDAROUND»
+
+«AROUND getPrimaryDragEditPolicy FOR gmfgen::GenNode-»
+	«LET getResizeConstraints(viewmap) AS rc-»
+		«EXPAND xpt::Common::generatedMemberComment»
+		public org.eclipse.gef.EditPolicy getPrimaryDragEditPolicy() {
+		«IF null <> primaryDragEditPolicyQualifiedClassName-»
+			return new «primaryDragEditPolicyQualifiedClassName»();
+		«ELSE-»
+	        // #265822 Improve appearance of selection feedback
+			org.eclipse.gef.editpolicies.ResizableEditPolicy result = new org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy();
+				result.setResizeDirections(
+				«IF rc<>null and rc.resizeHandleNames->size() > 0-»
+				«FOREACH rc.resizeHandleNames->asSequence() AS name SEPARATOR ' | '»org.eclipse.draw2d.PositionConstants.«name»«ENDFOREACH-»
+				«ELSE»org.eclipse.draw2d.PositionConstants.NSEW«ENDIF»);
+				return result;
+		«ENDIF-»
+			}
+	«ENDLET-»
+«ENDAROUND»
