@@ -1,12 +1,15 @@
 package org.eclipse.uml2.diagram.sequence.model.builder;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGate;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessageEnd;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.util.SDSwitch;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Gate;
@@ -22,16 +25,22 @@ public class SDModelHelper {
 		return null;
 	}
 	
+	public static List<SDFrame> computeNestingChain(SDFrame sdFrame){
+		LinkedList<SDFrame> result = new LinkedList<SDFrame>();
+		SDFrame current = sdFrame;
+		result.addFirst(current);
+		while (current.getFrameContainer() instanceof SDFrame){
+			current = (SDFrame)current.getFrameContainer();
+			result.addFirst(current);
+		}
+		return result;
+	}
+	
 	public static final SDSwitch<Element> UML_ELEMENT_EXTRACTOR = new SDSwitch<Element>(){
 
 		@Override
 		public Element caseSDAbstractMessage(SDAbstractMessage object) {
 			return object.getUmlMessage();
-		}
-
-		@Override
-		public Element caseSDBehaviorSpec(SDBehaviorSpec object) {
-			return object.getUmlExecutionSpec();
 		}
 
 		@Override
@@ -53,12 +62,11 @@ public class SDModelHelper {
 		public Element caseSDLifeLine(SDLifeLine object) {
 			return object.getUmlLifeline();
 		}
-
+		
 		@Override
-		public Element caseSDSimpleNode(SDSimpleNode object) {
+		public Element caseSDBackedByFragment(SDBackedByFragment object) {
 			return object.getUmlFragment();
 		}
-		
 	};
 			
 			
