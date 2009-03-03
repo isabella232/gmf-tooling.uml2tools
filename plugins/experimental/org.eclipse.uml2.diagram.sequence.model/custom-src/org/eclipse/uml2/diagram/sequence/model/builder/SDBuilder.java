@@ -102,8 +102,7 @@ public class SDBuilder {
 
 	private void buildGates(SDModel model, Interaction interaction) {
 		for (Gate umlGate : interaction.getFormalGates()) {
-			SDGate sdGate = SDFactory.eINSTANCE.createSDGate();
-			sdGate.setUmlGate(umlGate);
+			SDGate sdGate = getTraceImpl().bindNewGate(umlGate);
 			model.getGates().add(sdGate);
 		}
 	}
@@ -368,13 +367,11 @@ public class SDBuilder {
 			return;
 		}
 		SDBracketContainer sdContainer = myCallStack.peek(umlLifeline);
-		SDGateMessageEnd sdPureOccurrence = SDFactory.eINSTANCE.createSDGateMessageEnd();
-		sdPureOccurrence.setUmlMessageEnd(umlMessageEnd);
+		SDGateMessageEnd sdPureOccurrence = getTraceImpl().bindGateMessageEnd(umlMessageEnd);
 		sdPureOccurrence.setIsStartNotFinish(!fromNotToGate);
 		sdContainer.getBrackets().add(sdPureOccurrence);
 
-		SDGateMessage sdMessageToGate = SDFactory.eINSTANCE.createSDGateMessage();
-		sdMessageToGate.setUmlMessage(umlMessageEnd.getMessage());
+		SDGateMessage sdMessageToGate = getTraceImpl().bindGateMessage(umlMessageEnd.getMessage());
 		sdMessageToGate.setFromNotToGate(fromNotToGate);
 		sdMessageToGate.setGate(SDModelHelper.findGate(mySDModel, umlGate));
 		sdMessageToGate.setNormalEnd(sdPureOccurrence);
@@ -405,8 +402,7 @@ public class SDBuilder {
 			return;
 		}
 		SDBracketContainer sdContainer = myCallStack.peek(umlLifeline);
-		SDSimpleNode sdInvariant = SDFactory.eINSTANCE.createSDSimpleNode();
-		sdInvariant.setUmlSimpleFragment(umlFragment);
+		SDSimpleNode sdInvariant = getTraceImpl().bindNewSimpleNode(umlFragment);
 		sdContainer.getBrackets().add(sdInvariant);
 	}
 
@@ -445,8 +441,7 @@ public class SDBuilder {
 		}
 
 		//so far so good 
-		SDCombinedFragment sdFragment = SDFactory.eINSTANCE.createSDCombinedFragment();
-		sdFragment.setUmlCombinedFragment(umlFragment);
+		SDCombinedFragment sdFragment = getTraceImpl().bindNewCombinedFragment(umlFragment);
 		myCurrentFrameContainer.getFrames().add(sdFragment);
 
 		pushMountingRegionsForAllCovereds(sdFragment, umlFragment);
@@ -483,8 +478,7 @@ public class SDBuilder {
 		}
 
 		//
-		SDInteractionOperand sdOperand = SDFactory.eINSTANCE.createSDInteractionOperand();
-		sdOperand.setUmlInteractionOperand(umlOperand);
+		SDInteractionOperand sdOperand = getTraceImpl().bindNewInteractionOperand(umlOperand);
 		sdEnclosingFragment.getFrames().add(sdOperand);
 
 		pushMountingRegionsForAllCovereds(sdOperand, umlOperand);
@@ -500,8 +494,7 @@ public class SDBuilder {
 			assert bracketContainer.getCoveredLifeLine().getUmlLifeline() == nextUmlCovered;
 			sdFrame.getCoveredLifeLines().add(bracketContainer.getCoveredLifeLine());
 
-			SDMountingRegion nextRegion = SDFactory.eINSTANCE.createSDMountingRegion();
-			nextRegion.setFrame(sdFrame);
+			SDMountingRegion nextRegion = getTraceImpl().bindNewMountingRegion(sdFrame);
 			bracketContainer.getBrackets().add(nextRegion);
 			myCallStack.push(nextUmlCovered, nextRegion);
 		}

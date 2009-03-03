@@ -6,7 +6,6 @@ import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilderTrace;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFactory;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand;
@@ -53,8 +52,7 @@ public class CreateCombinedFragment {
 		SDCombinedFragment sdCombined = getTraceImpl().bindNewCombinedFragment(umlCombined);
 		sdCombined.getCoveredLifeLines().add(sdLifeLine);
 		
-		SDMountingRegion sdCombinedMounter = SDFactory.eINSTANCE.createSDMountingRegion();
-		sdCombinedMounter.setFrame(sdCombined);
+		SDMountingRegion sdCombinedMounter = getTraceImpl().bindNewMountingRegion(sdCombined);
 		
 		for (int i = 0; i < operandsCount; i++){
 			InteractionOperand nextUMLOperand = umlCombined.createOperand(null);
@@ -64,8 +62,7 @@ public class CreateCombinedFragment {
 			sdCombined.getFrames().add(nextSDOperand);
 			nextSDOperand.getCoveredLifeLines().add(sdLifeLine);
 			
-			SDMountingRegion nextOperandMounter = SDFactory.eINSTANCE.createSDMountingRegion();
-			nextOperandMounter.setFrame(nextSDOperand);
+			SDMountingRegion nextOperandMounter = getTraceImpl().bindNewMountingRegion(nextSDOperand);
 			sdCombinedMounter.getBrackets().add(nextOperandMounter);
 		}
 		

@@ -8,19 +8,25 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFactory;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGate;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessage;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessageEnd;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
 import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExecutionSpecification;
+import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
+import org.eclipse.uml2.uml.OccurrenceSpecification;
 
 
 public class SDBuilderTrace implements SDTrace {
@@ -40,6 +46,36 @@ public class SDBuilderTrace implements SDTrace {
 		myExecutionSpecs.clear();
 		myMessages.clear();
 		myLifelines.clear();
+	}
+	
+	public SDGate bindNewGate(Gate umlGate){
+		SDGate result = SDFactory.eINSTANCE.createSDGate();
+		result.setUmlGate(umlGate);
+		return result;
+	}
+	
+	public SDGateMessageEnd bindGateMessageEnd(OccurrenceSpecification umlMessageEnd){
+		SDGateMessageEnd result = SDFactory.eINSTANCE.createSDGateMessageEnd();
+		result.setUmlMessageEnd(umlMessageEnd);
+		return result;
+	}
+	
+	public SDGateMessage bindGateMessage(Message umlMessage){
+		SDGateMessage result = SDFactory.eINSTANCE.createSDGateMessage();
+		result.setUmlMessage(umlMessage);
+		return result;
+	}
+	
+	public SDSimpleNode bindNewSimpleNode(InteractionFragment umlSimpleFragment){
+		SDSimpleNode result = SDFactory.eINSTANCE.createSDSimpleNode();
+		result.setUmlSimpleFragment(umlSimpleFragment);
+		return result;
+	}
+	
+	public SDMountingRegion bindNewMountingRegion(SDFrame frame){
+		SDMountingRegion result = SDFactory.eINSTANCE.createSDMountingRegion();
+		result.setFrame(frame);
+		return result;
 	}
 	
 	public SDLifeLine bindNewLifeline(Lifeline umlLifeline){
