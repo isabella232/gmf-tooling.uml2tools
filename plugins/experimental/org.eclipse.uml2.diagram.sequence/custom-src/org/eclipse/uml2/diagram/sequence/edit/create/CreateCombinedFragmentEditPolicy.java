@@ -5,38 +5,59 @@ import java.util.Collections;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
-import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
-import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor;
-import org.eclipse.gmf.runtime.diagram.ui.util.INotationType;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.uml2.diagram.sequence.edit.helpers.CoveredLifelineConfigurer;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateParametersImpl;
+import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionOperandMountingRegionEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionUseMountingRegionEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.LayeredCombinedFragmentEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.LayeredOperandEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.policies.InteractionNestedLayoutRequest;
-import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.sequence.edit.policies.OrderedLayoutEditPolicy;
+import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
+import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
+import org.eclipse.uml2.diagram.sequence.model.create.CreateCombinedFragment;
+import org.eclipse.uml2.diagram.sequence.model.create.SDAnchor;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
+import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
 import org.eclipse.uml2.uml.CombinedFragment;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.Lifeline;
 
 public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEditPolicy {
+	@Override
+	public void activate() {
+		super.activate();
+	}
+	
 	@Override
 	public boolean understandsRequest(Request req) {
 		if (req instanceof CreateInteractionUseRequest){
@@ -53,158 +74,134 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 		return super.getCommand(request);
 	}
 	
-	protected Command createCombinedFragment(CreateCombinedFragmentRequest request){
-		GraphicalEditPart bracketEP = getHostImpl();
-		GraphicalEditPart frameEP = findFrameEditPart(bracketEP);
-		
-		GraphicalEditPart lifeLineEP = findLifeLineEditPart(bracketEP);
-		final Lifeline lifeline = (Lifeline) lifeLineEP.resolveSemanticElement();
-		CoveredLifelineConfigurer.setCoveredLifeLines(request, lifeLineEP);
-		
-		if (frameEP == null){
-			System.out.println("CreateCombinedFragmentEditPolicy.createCombinedFragment(): NO-1");
-			return UnexecutableCommand.INSTANCE;
+	private SDBracketContainer findHostBracketContainer(SDModel sdModel){
+		Element umlHost = (Element) getHostImpl().getNotationView().getElement();
+		if (umlHost instanceof BehaviorExecutionSpecification){
+			return sdModel.getUMLTracing().findBehaviorSpec((BehaviorExecutionSpecification)umlHost);
 		}
+		if (umlHost instanceof Lifeline){
+			return sdModel.getUMLTracing().findLifeLine((Lifeline)umlHost);
+		}
+		if (umlHost instanceof InteractionOperand){
+			SDFrame sdFrame = sdModel.getUMLTracing().findInteractionOperand((InteractionOperand)umlHost);
+			Lifeline onLifeline = (Lifeline) findLifeLineEditPart(getHostImpl()).resolveSemanticElement();
+			return sdFrame.findRegionForUmlLifeLine(onLifeline);
+		}
+		
+		throw new IllegalStateException("EditPolicy " + this + " is not expected to be registered for host : " + umlHost);
+	}
+	
+	private Command createCombinedFragment(CreateCombinedFragmentRequest request){
+		LifelineEditPart lifeLineEP = findLifeLineEditPart(getHostImpl());
+		final Lifeline umlLifeline = (Lifeline) lifeLineEP.resolveSemanticElement();
+		final SDModel sdModel = SDModelAccess.findSDModel(getHostImpl().getNotationView());
+		final SDBracketContainer sdHost = findHostBracketContainer(sdModel); 
+		final IGraphicalEditPart frameContainerEP = findFrameContainerEditPart(sdHost);
+		
+		final OrderedLayoutEditPolicy.AnchoredSibling diagramAnchor = computeAnchoredSibling(request);
+		final SDAnchor sdAnchor;
+		if (diagramAnchor == null || diagramAnchor.isBeforeNotAfterAnchor()){
+			sdAnchor = SDAnchor.firstChildFor(sdHost);
+		} else {
+			sdAnchor = createSDAfterAnchor(diagramAnchor, sdModel, umlLifeline);
+		}
+		
+		final Helper2 helper2 = new Helper2(request.getPreferencesHint());
 		
 		final ShowDialogCommand dialog = new ShowDialogCommand(getEditingDomain());
-		
-		Helper helper = getHelper(request);
-		final CreateViewAndElementRequest semanticAndNodeInFrameRequest = helper.createNodeAndElement(UMLElementTypes.CombinedFragment_3008);
-		Command semanticAndNodeInFrameCommand = frameEP.getCommand(semanticAndNodeInFrameRequest);
-		if (!isValid(semanticAndNodeInFrameCommand)){
-			System.out.println("CreateCombinedFragmentEditPolicy.createCombinedFragment(): NO-2");
-			return UnexecutableCommand.INSTANCE;
-		}
-		
-		final CreateViewRequest mountingRegionRequest = helper.postCreateViewNode(UMLElementTypes.CombinedFragment_3010, semanticAndNodeInFrameRequest);
-		Command mountingRegionCommand = bracketEP.getCommand(mountingRegionRequest);
-		
-		if (!isValid(mountingRegionCommand)){
-			System.out.println("CreateCombinedFragmentEditPolicy.createCombinedFragment(): NO-3");
-			return UnexecutableCommand.INSTANCE;
-		}
-		
-		CreateConnectionViewRequest mountingLinkRequest = createMountingLinkRequest();
-		CompositeCommand mountingLinkCommand = createMountingLinkCommand(//
-				(IAdaptable)mountingRegionRequest.getViewDescriptors().get(0), //
-				semanticAndNodeInFrameRequest.getViewAndElementDescriptor(), mountingLinkRequest);
-		if (!mountingLinkCommand.canExecute()){
-			System.out.println("CreateCombinedFragmentEditPolicy.createCombinedFragment(): NO-4");
-			return UnexecutableCommand.INSTANCE;
-		}
-		
-		AbstractTransactionalCommand setupFragmentAndMountOperands = new AbstractTransactionalCommand(getEditingDomain(), "", Collections.emptyList()){
+		AbstractTransactionalCommand doTheJob = new AbstractTransactionalCommand(getEditingDomain(), "", Collections.emptyList()){
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				Node fragmentNode = getCreatedFragmentNode();
-				if (fragmentNode == null){
-					return CommandResult.newCancelledCommandResult();
-				}
-				
-				CombinedFragment fragment = (CombinedFragment)fragmentNode.getElement();
-				if (fragment == null){
-					return CommandResult.newCancelledCommandResult();
-				}
 				ChooseOperatorDialog.OperatorProperties config = dialog.getOperatorProperties();
-				fragment.setInteractionOperator(config.getOperatorKind());
+				if (config == null){
+					return CommandResult.newCancelledCommandResult();
+				}
 				
-				for (int i = 0; i < config.getNumberOfOperands(); i++){
-					InteractionOperand nextOperand = fragment.createOperand("Operand-" + i);
-					nextOperand.getCovereds().add(lifeline);
-					
-					class SemanticAdapter extends EObjectAdapter {
-						private final IElementType myType;
+				CreateCombinedFragment creator = new CreateCombinedFragment(sdModel);
+				SDCombinedFragment result = creator.createCombinedFragment(sdHost, sdAnchor, config.getOperatorKind(), config.getNumberOfOperands());
+				
+				if (result == null){
+					return CommandResult.newErrorCommandResult("Failed to created combined fragment in SDModel");
+				}
+				
+				CombinedFragment umlResult = result.getUmlCombinedFragment();
+				SDMountingRegion combinedMounter = result.findRegionForUmlLifeLine(umlLifeline);
+				Node combinedMounterView = helper2.createNode(//
+						getHostImpl().getNotationView(), umlResult, CombinedFragmentMountingRegionEditPart.VISUAL_ID, diagramAnchor);
 
-						public SemanticAdapter(IElementType type, EObject eObject){
-							super(eObject);
-							myType = type;
+				if (combinedMounterView == null){
+					throw new IllegalStateException("Can't create combined mounter view for sd-mounter: " + combinedMounter);
+				}
+				
+				//XXX: consider frames anchor!
+				View framesAnchor; 
+
+				Node combinedFrameView = helper2.createNode(//
+						frameContainerEP.getNotationView(), umlResult, LayeredCombinedFragmentEditPart.VISUAL_ID, null);
+
+				Edge combinedMountingLink = helper2.createMountingLink(combinedMounterView, combinedFrameView);
+				
+				for (SDBracket nextOperandMounter : combinedMounter.getBrackets()){
+					if (nextOperandMounter instanceof SDMountingRegion){
+						Node nextOperandMounterView = helper2.createNode(//
+								combinedMounterView, nextOperandMounter.getUmlFragment(), InteractionOperandMountingRegionEditPart.VISUAL_ID, null);
+						
+						if (nextOperandMounterView == null){
+							throw new IllegalStateException("Can't create operand mounter view for sd-mounter: " + nextOperandMounter);
 						}
 						
-						@SuppressWarnings("unchecked")
-						@Override
-						public Object getAdapter(Class adapter) {
-							if (IElementType.class.isAssignableFrom(adapter)){
-								return myType;
-							}
-							return super.getAdapter(adapter);
+						Node nextOperandFrameView = helper2.createNode(//
+								combinedFrameView, nextOperandMounter.getUmlFragment(), LayeredOperandEditPart.VISUAL_ID, null);
+
+						if (nextOperandFrameView == null){
+							throw new IllegalStateException("Can't create operand frame view for sd-mounter: " + nextOperandMounter);
 						}
+						
+						Edge operandMountingLink = helper2.createMountingLink(nextOperandMounterView, nextOperandFrameView);
 					}
-					
-					Node nextOperandNode = 
-						(Node)ViewService.getInstance().createView(
-							Node.class, 
-							new SemanticAdapter(UMLElementTypes.InteractionOperand_3009, nextOperand), 
-							fragmentNode,
-							UMLElementTypes.InteractionOperand_3009.getSemanticHint(),
-							ViewUtil.APPEND,
-							true,
-							getPreferencesHint());
-					
-					ViewDescriptor parentMRDescriptor = (ViewDescriptor)mountingRegionRequest.getViewDescriptors().get(0);
-					Node parentMR = (Node)parentMRDescriptor.getAdapter(Node.class);
-					
-					Node nextMountingRegionNode = 
-						(Node)ViewService.getInstance().createView(
-							Node.class, 
-							new SemanticAdapter(UMLElementTypes.InteractionOperand_3011, nextOperand), 
-							parentMR,
-							UMLElementTypes.InteractionOperand_3011.getSemanticHint(),
-							ViewUtil.APPEND,
-							true,
-							getPreferencesHint());
-					
-					Edge nextMountingLink = 
-						(Edge)ViewService.getInstance().createView(
-								Edge.class, 
-								UMLElementTypes.Link_4002, 
-								parentMR.getDiagram(),
-								((INotationType)UMLElementTypes.Link_4002).getSemanticHint(),
-								ViewUtil.APPEND,
-								true,
-								getPreferencesHint());
-					
-					nextMountingLink.setSource(nextMountingRegionNode);
-					nextMountingLink.setTarget(nextOperandNode);
 				}
 				
 				return CommandResult.newOKCommandResult();
 			}
-			
-			private Node getCreatedFragmentNode(){
-				EObject created = (EObject) semanticAndNodeInFrameRequest.getViewAndElementDescriptor().getAdapter(EObject.class);
-				if (created instanceof Node){
-					return (Node)created;
-				}
-				return null;
-			}
 		};
 		
-		
-		
 		InteractionNestedLayoutRequest layoutRequest = new InteractionNestedLayoutRequest();
-//		layoutRequest.addViewAdapter(semanticAndNodeInFrameRequest.getViewAndElementDescriptor());
-//		layoutRequest.addViewAdapters(mountingRegionRequest.getViewDescriptors());
-//		layoutRequest.addViewAdapter(mountingLinkRequest.getConnectionViewDescriptor());
+		layoutRequest.requestTotalLayout();
 		Command layoutCommand = getLayoutCommand(layoutRequest);
-//		Command layoutCommand = null;
-		
-		GEFAwareCompositeCommand result = new GEFAwareCompositeCommand(bracketEP.getEditingDomain(), "Creating Combined Fragment");
+		GEFAwareCompositeCommand result = new GEFAwareCompositeCommand(getHostImpl().getEditingDomain(), "Creating Combined Fragment");
 		result.add(dialog);
-		result.add(semanticAndNodeInFrameCommand);
-		result.add(mountingRegionCommand);
-		result.add(mountingLinkCommand);
-		result.add(setupFragmentAndMountOperands);
-		
+		result.add(doTheJob);
 		Command main = new ICommandProxy(result);
-
 		return postScheduleLayout(main, layoutCommand);
 	}
 	
-	private GraphicalEditPart findFrameEditPart(GraphicalEditPart bracketEP){
-		if (bracketEP instanceof LifelineEditPart){
-			return (GraphicalEditPart)bracketEP.getParent();
+	private GraphicalEditPart findFrameContainerEditPart(SDBracketContainer sdHost){
+		InteractionEditPart interactionEP = (InteractionEditPart) findLifeLineEditPart(getHostImpl()).getParent(); 
+		if (sdHost instanceof SDLifeLine){
+			return interactionEP;
 		}
-		return null;
+		if (sdHost instanceof SDMountingRegion){
+			SDMountingRegion mounter = (SDMountingRegion)sdHost;
+			SDFrame sdFrame = mounter.getFrame();
+			return findFrameEditPart(interactionEP, sdFrame);
+		}
+		throw new IllegalStateException("Unknown SDBracketContainer: " + sdHost);
+	}
+	
+	private static GraphicalEditPart findFrameEditPart(InteractionEditPart interactionEP, SDFrame sdFrame){
+		if (sdFrame == null){
+			return interactionEP;
+		}
+		GraphicalEditPart nextEP = interactionEP;
+		for (SDFrame nextFrame : SDModelHelper.computeNestingChain(sdFrame)){
+			nextEP = (GraphicalEditPart) nextEP.findEditPart(null, nextFrame.getUmlFragment());
+			if (nextEP == null){
+				throw new IllegalStateException(//
+						"Can't find frame editpart for SDFrame: " + nextFrame + //
+						", while searching for deep frame: " + sdFrame);
+			}
+		}
+		return nextEP;
 	}
 	
 	private static class ShowDialogCommand extends AbstractTransactionalCommand {
@@ -229,5 +226,47 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 		}
 	}
 	
+	private OrderedLayoutEditPolicy.AnchoredSibling computeAnchoredSibling(CreateRequest request){
+		U2TCreateParametersImpl result = U2TCreateParametersImpl.createFor(getHostImpl(), request);
+		Point relativeLocation = result.getRelativeLocation();
+		if (relativeLocation != null && getHost().getEditPolicy(EditPolicy.LAYOUT_ROLE) instanceof OrderedLayoutEditPolicy){
+			OrderedLayoutEditPolicy layout = (OrderedLayoutEditPolicy)getHost().getEditPolicy(EditPolicy.LAYOUT_ROLE);
+			return layout.findAnchoredSibling(relativeLocation);
+		}
+		return null;
+	}
+	
+	private SDAnchor createSDAfterAnchor(OrderedLayoutEditPolicy.AnchoredSibling anchor, SDModel sdModel, Lifeline onUmlLifeline){
+		if (anchor.isBeforeNotAfterAnchor()){
+			throw new IllegalArgumentException("I am for 'after' anchors only");
+		}
+		View notationAnchor = anchor.getSiblingView();
+		SDBracket sdAnchor;
+		switch(UMLVisualIDRegistry.getVisualID(notationAnchor)){
+			case BehaviorExecutionSpecificationEditPart.VISUAL_ID : 
+			{
+				BehaviorExecutionSpecification umlSpec = (BehaviorExecutionSpecification)notationAnchor.getElement();
+				sdAnchor = sdModel.getUMLTracing().findBehaviorSpec(umlSpec);
+				break;
+			}
+			case CombinedFragmentMountingRegionEditPart.VISUAL_ID:
+			{
+				CombinedFragment umlFrame = (CombinedFragment)notationAnchor.getElement();
+				SDFrame sdFrame = sdModel.getUMLTracing().findCombinedFragment(umlFrame);
+				sdAnchor = sdFrame.findRegionForUmlLifeLine(onUmlLifeline);
+				break;
+			}
+			case StateInvariantEditPart.VISUAL_ID:
+			case ActionExecutionSpecificationEditPart.VISUAL_ID:
+			case InteractionUseMountingRegionEditPart.VISUAL_ID:
+			{
+				throw new UnsupportedOperationException("Not yet implemented");
+			}
+			default: {
+				throw new IllegalStateException("Unknown/unexpected anchor view found: " + notationAnchor);
+			}
+		}
+		return SDAnchor.after(sdAnchor);
+	}
 	
 }

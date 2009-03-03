@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.diagram.core.commands.SetConnectionAnchorsCommand
 import org.eclipse.gmf.runtime.diagram.core.commands.SetConnectionEndsCommand;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CreateCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
@@ -34,11 +35,21 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.gmf.runtime.notation.Edge;
+import org.eclipse.gmf.runtime.notation.IdentityAnchor;
 import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.NotationFactory;
+import org.eclipse.gmf.runtime.notation.RelativeBendpoints;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.editpolicies.EObjectAndElementTypeAdapter;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.MountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.policies.InteractionNestedLayoutRequest;
+import org.eclipse.uml2.diagram.sequence.edit.policies.OrderedLayoutEditPolicy;
+import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Element;
 
 
 public abstract class AbstractCreateSDElementEditPolicy extends AbstractEditPolicy {
@@ -53,19 +64,6 @@ public abstract class AbstractCreateSDElementEditPolicy extends AbstractEditPoli
 	protected final TransactionalEditingDomain getEditingDomain(){
 		return getHostImpl().getEditingDomain();
 	}
-	
-//	protected final AnchoredDiagramTarget getAnchoredDiagramTarget(CreateSDElementRequest request){
-//    	EObject entity = getHostImpl().resolveSemanticElement();
-//        if (entity == null) {
-//            return null;
-//        }
-//        
-//        AnchoredDiagramTarget gdeTarget = new AnchoredDiagramTarget(getHostImpl(), request);
-//        if (!gdeTarget.checkSemantic()){
-//        	return null;
-//        }
-//        return gdeTarget;
-//	}
 	
 	protected PreferencesHint getPreferencesHint(){
 		return getHostImpl().getDiagramPreferencesHint();
@@ -139,7 +137,7 @@ public abstract class AbstractCreateSDElementEditPolicy extends AbstractEditPoli
 		return null;
 	}
 	
-	protected final GraphicalEditPart findLifeLineEditPart(EditPart ep){
+	protected final LifelineEditPart findLifeLineEditPart(EditPart ep){
 		RootEditPart root = ep.getRoot();
 		while (ep != root && ep != null){
 			if (ep instanceof LifelineEditPart){
@@ -237,6 +235,63 @@ public abstract class AbstractCreateSDElementEditPolicy extends AbstractEditPoli
 			}
 			return mySemanticAdapter.getAdapter(adapter);
 		}
+	}
+	
+	public static class Helper2 {
+		private final PreferencesHint myPreferencesHint;
+
+		public Helper2(PreferencesHint hint){
+			myPreferencesHint = hint;
+		}
+		
+		public Node createNode(View container, Element semanticChild, int visualId, OrderedLayoutEditPolicy.AnchoredSibling anchor){
+			int index = ViewUtil.APPEND;
+			if (anchor != null){
+				int anchorIndex = container.getChildren().indexOf(anchor.getSiblingView());
+				if (anchorIndex > -1){
+					index = anchorIndex;
+					if (!anchor.isBeforeNotAfterAnchor()){
+						index += 1;
+					}
+				}
+			}
+			IElementType elementType = UMLElementTypes.getElementType(visualId);
+			return ViewService.getInstance().createNode(//
+					new EObjectAndElementTypeAdapter(semanticChild, elementType), 
+					container, //
+					UMLVisualIDRegistry.getType(visualId), //
+					index, //
+					myPreferencesHint);
+		}	
+		
+		public Edge createMountingLink(View fromMountingRegion, View toFrame){
+			Edge result = ViewService.getInstance().createEdge(//
+					UMLElementTypes.Link_4002, 
+					fromMountingRegion.getDiagram(), 
+					UMLVisualIDRegistry.getType(MountingLinkEditPart.VISUAL_ID),
+					ViewUtil.APPEND, 
+					true, 
+					myPreferencesHint);
+			
+			result.setSource(fromMountingRegion);
+			result.setTarget(toFrame);
+			if (result.getSourceAnchor() == null){
+				IdentityAnchor anchor = NotationFactory.eINSTANCE.createIdentityAnchor();
+				anchor.setId("");
+				result.setSourceAnchor(anchor);
+			}
+			if (result.getTargetAnchor() == null){
+				IdentityAnchor anchor = NotationFactory.eINSTANCE.createIdentityAnchor();
+				anchor.setId("");
+				result.setTargetAnchor(anchor);
+			}
+			if (result.getBendpoints() == null){
+				RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
+				result.setBendpoints(bendpoints);
+			}
+			
+			return result;
+		}	
 	}
 	
 	protected static class GEFAwareCompositeCommand extends CompositeTransactionalCommand {
