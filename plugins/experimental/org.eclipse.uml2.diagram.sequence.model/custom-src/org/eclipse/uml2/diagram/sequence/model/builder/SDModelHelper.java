@@ -25,6 +25,9 @@ public class SDModelHelper {
 		return null;
 	}
 	
+	/**
+	 * @return the list of container frames for given deep frame (topmost frame - first).
+	 */
 	public static List<SDFrame> computeNestingChain(SDFrame sdFrame){
 		LinkedList<SDFrame> result = new LinkedList<SDFrame>();
 		SDFrame current = sdFrame;
