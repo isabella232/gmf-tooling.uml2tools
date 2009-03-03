@@ -14,6 +14,10 @@ class SDGate {
 	ref UMLGate umlGate;
 }
 
+abstract interface SDBackedByFragment {
+	op UMLInteractionFragment getUmlFragment();
+}
+
 abstract class SDLifeLineElement {
 	op SDLifeLine getCoveredLifeLine();
 }
@@ -22,7 +26,7 @@ abstract class SDBracketContainer extends SDLifeLineElement {
 	ordered val SDBracket[*]#bracketContainer brackets;
 }
 
-abstract class SDBracket extends SDLifeLineElement {
+abstract class SDBracket extends SDLifeLineElement, SDBackedByFragment {
 	readonly ref SDBracketContainer[1]#brackets bracketContainer;
 }
 
@@ -43,14 +47,13 @@ class SDMountingRegion extends SDBracket, SDBracketContainer {
 	op SDMountingRegion findMountingRegionForSubFrame(SDFrame subFrame);
 }
 
-abstract class SDFrame extends SDFrameContainer {
+abstract class SDFrame extends SDFrameContainer, SDBackedByFragment {
 	readonly ref SDFrameContainer[1]#frames frameContainer;
 	ref SDMountingRegion[*]#frame regions;
 	ref SDLifeLine[*] coveredLifeLines;
 	
 	op SDMountingRegion findRegionForUmlLifeLine(UMLLifeline umlLifeline);
 	op SDMountingRegion findRegionForSDLifeLine(SDLifeLine sdLifeline);
-	op UMLInteractionFragment getUmlFragment();
 }
 
 class SDInteractionUse extends SDFrame {
@@ -103,7 +106,7 @@ class SDGateMessageEnd extends SDBracket {
 }
 
 class SDSimpleNode extends SDBracket {
-	ref UMLInteractionFragment umlFragment;
+	ref UMLInteractionFragment umlSimpleFragment;
 }
 
 abstract interface UMLConstraint : org.eclipse.uml2.uml.Constraint {}

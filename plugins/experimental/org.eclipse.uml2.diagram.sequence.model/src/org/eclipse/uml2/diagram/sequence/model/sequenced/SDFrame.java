@@ -2,13 +2,11 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFrame.java,v 1.4 2009/02/28 21:17:05 mgolubev Exp $
+ * $Id: SDFrame.java,v 1.5 2009/03/03 14:17:28 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.Lifeline;
 
 /**
@@ -29,7 +27,7 @@ import org.eclipse.uml2.uml.Lifeline;
  * @model abstract="true"
  * @generated
  */
-public interface SDFrame extends SDFrameContainer {
+public interface SDFrame extends SDFrameContainer, SDBackedByFragment {
 	/**
 	 * Returns the value of the '<em><b>Frame Container</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer#getFrames <em>Frames</em>}'.
@@ -96,13 +94,5 @@ public interface SDFrame extends SDFrameContainer {
 	 * @generated
 	 */
 	SDMountingRegion findRegionForSDLifeLine(SDLifeLine sdLifeline);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" type="org.eclipse.uml2.diagram.sequence.model.sequenced.UMLInteractionFragment"
-	 * @generated
-	 */
-	InteractionFragment getUmlFragment();
 
 } // SDFrame

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDSimpleNodeImpl.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDSimpleNodeImpl.java,v 1.2 2009/03/03 14:17:27 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -26,7 +26,7 @@ import org.eclipse.uml2.uml.InteractionFragment;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDSimpleNodeImpl#getUmlFragment <em>Uml Fragment</em>}</li>
+ *   <li>{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDSimpleNodeImpl#getUmlSimpleFragment <em>Uml Simple Fragment</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,15 +34,14 @@ import org.eclipse.uml2.uml.InteractionFragment;
  */
 public class SDSimpleNodeImpl extends SDBracketImpl implements SDSimpleNode {
 	/**
-	 * The cached value of the '{@link #getUmlFragment() <em>Uml Fragment</em>}' reference.
+	 * The cached value of the '{@link #getUmlSimpleFragment() <em>Uml Simple Fragment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUmlFragment()
+	 * @see #getUmlSimpleFragment()
 	 * @generated
 	 * @ordered
 	 */
-	protected InteractionFragment umlFragment;
-
+	protected InteractionFragment umlSimpleFragment;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,16 +66,16 @@ public class SDSimpleNodeImpl extends SDBracketImpl implements SDSimpleNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InteractionFragment getUmlFragment() {
-		if (umlFragment != null && ((EObject)umlFragment).eIsProxy()) {
-			InternalEObject oldUmlFragment = (InternalEObject)umlFragment;
-			umlFragment = (InteractionFragment)eResolveProxy(oldUmlFragment);
-			if (umlFragment != oldUmlFragment) {
+	public InteractionFragment getUmlSimpleFragment() {
+		if (umlSimpleFragment != null && ((EObject)umlSimpleFragment).eIsProxy()) {
+			InternalEObject oldUmlSimpleFragment = (InternalEObject)umlSimpleFragment;
+			umlSimpleFragment = (InteractionFragment)eResolveProxy(oldUmlSimpleFragment);
+			if (umlSimpleFragment != oldUmlSimpleFragment) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SDPackage.SD_SIMPLE_NODE__UML_FRAGMENT, oldUmlFragment, umlFragment));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SDPackage.SD_SIMPLE_NODE__UML_SIMPLE_FRAGMENT, oldUmlSimpleFragment, umlSimpleFragment));
 			}
 		}
-		return umlFragment;
+		return umlSimpleFragment;
 	}
 
 	/**
@@ -84,8 +83,8 @@ public class SDSimpleNodeImpl extends SDBracketImpl implements SDSimpleNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InteractionFragment basicGetUmlFragment() {
-		return umlFragment;
+	public InteractionFragment basicGetUmlSimpleFragment() {
+		return umlSimpleFragment;
 	}
 
 	/**
@@ -93,11 +92,11 @@ public class SDSimpleNodeImpl extends SDBracketImpl implements SDSimpleNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUmlFragment(InteractionFragment newUmlFragment) {
-		InteractionFragment oldUmlFragment = umlFragment;
-		umlFragment = newUmlFragment;
+	public void setUmlSimpleFragment(InteractionFragment newUmlSimpleFragment) {
+		InteractionFragment oldUmlSimpleFragment = umlSimpleFragment;
+		umlSimpleFragment = newUmlSimpleFragment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SDPackage.SD_SIMPLE_NODE__UML_FRAGMENT, oldUmlFragment, umlFragment));
+			eNotify(new ENotificationImpl(this, Notification.SET, SDPackage.SD_SIMPLE_NODE__UML_SIMPLE_FRAGMENT, oldUmlSimpleFragment, umlSimpleFragment));
 	}
 
 	/**
@@ -108,9 +107,9 @@ public class SDSimpleNodeImpl extends SDBracketImpl implements SDSimpleNode {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SDPackage.SD_SIMPLE_NODE__UML_FRAGMENT:
-				if (resolve) return getUmlFragment();
-				return basicGetUmlFragment();
+			case SDPackage.SD_SIMPLE_NODE__UML_SIMPLE_FRAGMENT:
+				if (resolve) return getUmlSimpleFragment();
+				return basicGetUmlSimpleFragment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,8 +122,8 @@ public class SDSimpleNodeImpl extends SDBracketImpl implements SDSimpleNode {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SDPackage.SD_SIMPLE_NODE__UML_FRAGMENT:
-				setUmlFragment((InteractionFragment)newValue);
+			case SDPackage.SD_SIMPLE_NODE__UML_SIMPLE_FRAGMENT:
+				setUmlSimpleFragment((InteractionFragment)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -138,8 +137,8 @@ public class SDSimpleNodeImpl extends SDBracketImpl implements SDSimpleNode {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SDPackage.SD_SIMPLE_NODE__UML_FRAGMENT:
-				setUmlFragment((InteractionFragment)null);
+			case SDPackage.SD_SIMPLE_NODE__UML_SIMPLE_FRAGMENT:
+				setUmlSimpleFragment((InteractionFragment)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -153,10 +152,15 @@ public class SDSimpleNodeImpl extends SDBracketImpl implements SDSimpleNode {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SDPackage.SD_SIMPLE_NODE__UML_FRAGMENT:
-				return umlFragment != null;
+			case SDPackage.SD_SIMPLE_NODE__UML_SIMPLE_FRAGMENT:
+				return umlSimpleFragment != null;
 		}
 		return super.eIsSet(featureID);
+	}
+	
+	@Override
+	public final InteractionFragment getUmlFragment() {
+		return getUmlSimpleFragment();
 	}
 
 } //SDSimpleNodeImpl

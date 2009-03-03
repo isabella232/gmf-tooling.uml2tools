@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAdapterFactory.java,v 1.5 2009/02/28 21:17:05 mgolubev Exp $
+ * $Id: SDAdapterFactory.java,v 1.6 2009/03/03 14:17:27 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.util;
 
@@ -92,6 +92,10 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSDGate(SDGate object) {
 				return createSDGateAdapter();
+			}
+			@Override
+			public Adapter caseSDBackedByFragment(SDBackedByFragment object) {
+				return createSDBackedByFragmentAdapter();
 			}
 			@Override
 			public Adapter caseSDLifeLineElement(SDLifeLineElement object) {
@@ -270,6 +274,20 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSDGateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment <em>Backed By Fragment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment
+	 * @generated
+	 */
+	public Adapter createSDBackedByFragmentAdapter() {
 		return null;
 	}
 

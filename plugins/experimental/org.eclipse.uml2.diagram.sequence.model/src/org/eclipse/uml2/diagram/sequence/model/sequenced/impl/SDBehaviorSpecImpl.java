@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDBehaviorSpecImpl.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDBehaviorSpecImpl.java,v 1.2 2009/03/03 14:17:28 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
 
 import org.eclipse.uml2.uml.ExecutionSpecification;
+import org.eclipse.uml2.uml.InteractionFragment;
 import org.eclipse.uml2.uml.OccurrenceSpecification;
 
 /**
@@ -384,6 +385,11 @@ public abstract class SDBehaviorSpecImpl extends SDBracketImpl implements SDBeha
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+	
+	@Override
+	public final InteractionFragment getUmlFragment() {
+		return getUmlExecutionSpec();
 	}
 
 } //SDBehaviorSpecImpl

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDInteractionUseImpl.java,v 1.1 2009/02/28 21:17:05 mgolubev Exp $
+ * $Id: SDInteractionUseImpl.java,v 1.2 2009/03/03 14:17:27 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -161,7 +161,7 @@ public class SDInteractionUseImpl extends SDFrameImpl implements SDInteractionUs
 	}
 	
 	@Override
-	public InteractionFragment getUmlFragment() {
+	public final InteractionFragment getUmlFragment() {
 		return getUmlInteractionUse();
 	}
 

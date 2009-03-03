@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDCombinedFragmentImpl.java,v 1.1 2009/02/28 21:17:06 mgolubev Exp $
+ * $Id: SDCombinedFragmentImpl.java,v 1.2 2009/03/03 14:17:27 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -160,7 +160,7 @@ public class SDCombinedFragmentImpl extends SDFrameImpl implements SDCombinedFra
 	}
 	
 	@Override
-	public InteractionFragment getUmlFragment() {
+	public final InteractionFragment getUmlFragment() {
 		return getUmlCombinedFragment();
 	}
 

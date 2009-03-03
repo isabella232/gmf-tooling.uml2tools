@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDMountingRegionImpl.java,v 1.2 2009/02/28 23:44:29 mgolubev Exp $
+ * $Id: SDMountingRegionImpl.java,v 1.3 2009/03/03 14:17:27 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
+import org.eclipse.uml2.uml.InteractionFragment;
 
 /**
  * <!-- begin-user-doc -->
@@ -310,6 +311,15 @@ public class SDMountingRegionImpl extends SDBracketImpl implements SDMountingReg
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+	
+	@Override
+	public InteractionFragment getUmlFragment() {
+		SDFrame frame = getFrame();
+		if (frame == null){
+			throw new IllegalStateException("Mounting region is not attached to Frame yet: " + this);
+		}
+		return frame.getUmlFragment();
 	}
 
 } //SDMountingRegionImpl

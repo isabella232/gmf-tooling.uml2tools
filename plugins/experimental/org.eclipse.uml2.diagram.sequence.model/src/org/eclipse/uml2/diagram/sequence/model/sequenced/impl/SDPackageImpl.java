@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackageImpl.java,v 1.9 2009/03/02 16:14:30 mgolubev Exp $
+ * $Id: SDPackageImpl.java,v 1.10 2009/03/03 14:17:27 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
@@ -72,6 +73,13 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * @generated
 	 */
 	private EClass sdGateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sdBackedByFragmentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -433,6 +441,15 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 */
 	public EReference getSDGate_UmlGate() {
 		return (EReference)sdGateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSDBackedByFragment() {
+		return sdBackedByFragmentEClass;
 	}
 
 	/**
@@ -872,7 +889,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSDSimpleNode_UmlFragment() {
+	public EReference getSDSimpleNode_UmlSimpleFragment() {
 		return (EReference)sdSimpleNodeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1048,6 +1065,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		sdGateEClass = createEClass(SD_GATE);
 		createEReference(sdGateEClass, SD_GATE__UML_GATE);
 
+		sdBackedByFragmentEClass = createEClass(SD_BACKED_BY_FRAGMENT);
+
 		sdLifeLineElementEClass = createEClass(SD_LIFE_LINE_ELEMENT);
 
 		sdBracketContainerEClass = createEClass(SD_BRACKET_CONTAINER);
@@ -1113,7 +1132,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		createEAttribute(sdGateMessageEndEClass, SD_GATE_MESSAGE_END__IS_START_NOT_FINISH);
 
 		sdSimpleNodeEClass = createEClass(SD_SIMPLE_NODE);
-		createEReference(sdSimpleNodeEClass, SD_SIMPLE_NODE__UML_FRAGMENT);
+		createEReference(sdSimpleNodeEClass, SD_SIMPLE_NODE__UML_SIMPLE_FRAGMENT);
 
 		umlConstraintEClass = createEClass(UML_CONSTRAINT);
 
@@ -1177,12 +1196,14 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		sdModelEClass.getESuperTypes().add(this.getSDFrameContainer());
 		sdBracketContainerEClass.getESuperTypes().add(this.getSDLifeLineElement());
 		sdBracketEClass.getESuperTypes().add(this.getSDLifeLineElement());
+		sdBracketEClass.getESuperTypes().add(this.getSDBackedByFragment());
 		sdLifeLineEClass.getESuperTypes().add(this.getSDBracketContainer());
 		sdBehaviorSpecEClass.getESuperTypes().add(this.getSDBracket());
 		sdBehaviorSpecEClass.getESuperTypes().add(this.getSDBracketContainer());
 		sdMountingRegionEClass.getESuperTypes().add(this.getSDBracket());
 		sdMountingRegionEClass.getESuperTypes().add(this.getSDBracketContainer());
 		sdFrameEClass.getESuperTypes().add(this.getSDFrameContainer());
+		sdFrameEClass.getESuperTypes().add(this.getSDBackedByFragment());
 		sdInteractionUseEClass.getESuperTypes().add(this.getSDFrame());
 		sdCombinedFragmentEClass.getESuperTypes().add(this.getSDFrame());
 		sdInteractionOperandEClass.getESuperTypes().add(this.getSDFrame());
@@ -1204,6 +1225,10 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		initEClass(sdGateEClass, SDGate.class, "SDGate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDGate_UmlGate(), this.getUMLGate(), null, "umlGate", null, 0, 1, SDGate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sdBackedByFragmentEClass, SDBackedByFragment.class, "SDBackedByFragment", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(sdBackedByFragmentEClass, this.getUMLInteractionFragment(), "getUmlFragment", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(sdLifeLineElementEClass, SDLifeLineElement.class, "SDLifeLineElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1240,8 +1265,6 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		op = addEOperation(sdFrameEClass, this.getSDMountingRegion(), "findRegionForSDLifeLine", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getSDLifeLine(), "sdLifeline", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(sdFrameEClass, this.getUMLInteractionFragment(), "getUmlFragment", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(sdInteractionUseEClass, SDInteractionUse.class, "SDInteractionUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDInteractionUse_UmlInteractionUse(), this.getUMLInteractionUse(), null, "umlInteractionUse", null, 0, 1, SDInteractionUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1283,7 +1306,7 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		initEAttribute(getSDGateMessageEnd_IsStartNotFinish(), ecorePackage.getEBoolean(), "isStartNotFinish", "true", 0, 1, SDGateMessageEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sdSimpleNodeEClass, SDSimpleNode.class, "SDSimpleNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSDSimpleNode_UmlFragment(), this.getUMLInteractionFragment(), null, "umlFragment", null, 0, 1, SDSimpleNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSDSimpleNode_UmlSimpleFragment(), this.getUMLInteractionFragment(), null, "umlSimpleFragment", null, 0, 1, SDSimpleNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(umlConstraintEClass, Constraint.class, "UMLConstraint", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDBracket.java,v 1.3 2009/02/28 23:44:29 mgolubev Exp $
+ * $Id: SDBracket.java,v 1.4 2009/03/03 14:17:28 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -23,7 +23,7 @@ package org.eclipse.uml2.diagram.sequence.model.sequenced;
  * @model abstract="true"
  * @generated
  */
-public interface SDBracket extends SDLifeLineElement {
+public interface SDBracket extends SDLifeLineElement, SDBackedByFragment {
 	/**
 	 * Returns the value of the '<em><b>Bracket Container</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer#getBrackets <em>Brackets</em>}'.

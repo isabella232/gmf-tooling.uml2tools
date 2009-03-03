@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackage.java,v 1.8 2009/03/02 16:14:30 mgolubev Exp $
+ * $Id: SDPackage.java,v 1.9 2009/03/03 14:17:28 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -67,7 +67,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDFrameContainer()
 	 * @generated
 	 */
-	int SD_FRAME_CONTAINER = 12;
+	int SD_FRAME_CONTAINER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Frames</b></em>' containment reference list.
@@ -198,6 +198,25 @@ public interface SDPackage extends EPackage {
 	int SD_GATE_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment <em>Backed By Fragment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDBackedByFragment()
+	 * @generated
+	 */
+	int SD_BACKED_BY_FRAGMENT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Backed By Fragment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SD_BACKED_BY_FRAGMENT_FEATURE_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDLifeLineElementImpl <em>Life Line Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -205,7 +224,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDLifeLineElement()
 	 * @generated
 	 */
-	int SD_LIFE_LINE_ELEMENT = 2;
+	int SD_LIFE_LINE_ELEMENT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Life Line Element</em>' class.
@@ -224,7 +243,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDBracketContainer()
 	 * @generated
 	 */
-	int SD_BRACKET_CONTAINER = 3;
+	int SD_BRACKET_CONTAINER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Brackets</b></em>' containment reference list.
@@ -252,7 +271,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDBracket()
 	 * @generated
 	 */
-	int SD_BRACKET = 4;
+	int SD_BRACKET = 5;
 
 	/**
 	 * The feature id for the '<em><b>Bracket Container</b></em>' container reference.
@@ -280,7 +299,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDLifeLine()
 	 * @generated
 	 */
-	int SD_LIFE_LINE = 5;
+	int SD_LIFE_LINE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Brackets</b></em>' containment reference list.
@@ -326,7 +345,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDBehaviorSpec()
 	 * @generated
 	 */
-	int SD_BEHAVIOR_SPEC = 6;
+	int SD_BEHAVIOR_SPEC = 7;
 
 	/**
 	 * The feature id for the '<em><b>Bracket Container</b></em>' container reference.
@@ -390,7 +409,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDMountingRegion()
 	 * @generated
 	 */
-	int SD_MOUNTING_REGION = 7;
+	int SD_MOUNTING_REGION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Bracket Container</b></em>' container reference.
@@ -436,7 +455,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDFrame()
 	 * @generated
 	 */
-	int SD_FRAME = 8;
+	int SD_FRAME = 9;
 
 	/**
 	 * The feature id for the '<em><b>Frames</b></em>' containment reference list.
@@ -500,7 +519,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDInteractionUse()
 	 * @generated
 	 */
-	int SD_INTERACTION_USE = 9;
+	int SD_INTERACTION_USE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Frames</b></em>' containment reference list.
@@ -573,7 +592,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDCombinedFragment()
 	 * @generated
 	 */
-	int SD_COMBINED_FRAGMENT = 10;
+	int SD_COMBINED_FRAGMENT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Frames</b></em>' containment reference list.
@@ -646,7 +665,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDInteractionOperand()
 	 * @generated
 	 */
-	int SD_INTERACTION_OPERAND = 11;
+	int SD_INTERACTION_OPERAND = 12;
 
 	/**
 	 * The feature id for the '<em><b>Frames</b></em>' containment reference list.
@@ -719,7 +738,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDExecution()
 	 * @generated
 	 */
-	int SD_EXECUTION = 13;
+	int SD_EXECUTION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Bracket Container</b></em>' container reference.
@@ -801,7 +820,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDInvocation()
 	 * @generated
 	 */
-	int SD_INVOCATION = 14;
+	int SD_INVOCATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Bracket Container</b></em>' container reference.
@@ -883,7 +902,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDAbstractMessage()
 	 * @generated
 	 */
-	int SD_ABSTRACT_MESSAGE = 15;
+	int SD_ABSTRACT_MESSAGE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Uml Message</b></em>' reference.
@@ -929,7 +948,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDMessage()
 	 * @generated
 	 */
-	int SD_MESSAGE = 16;
+	int SD_MESSAGE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Uml Message</b></em>' reference.
@@ -993,7 +1012,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDGateMessage()
 	 * @generated
 	 */
-	int SD_GATE_MESSAGE = 17;
+	int SD_GATE_MESSAGE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Uml Message</b></em>' reference.
@@ -1066,7 +1085,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDGateMessageEnd()
 	 * @generated
 	 */
-	int SD_GATE_MESSAGE_END = 18;
+	int SD_GATE_MESSAGE_END = 19;
 
 	/**
 	 * The feature id for the '<em><b>Bracket Container</b></em>' container reference.
@@ -1112,7 +1131,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDSimpleNode()
 	 * @generated
 	 */
-	int SD_SIMPLE_NODE = 19;
+	int SD_SIMPLE_NODE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Bracket Container</b></em>' container reference.
@@ -1124,13 +1143,13 @@ public interface SDPackage extends EPackage {
 	int SD_SIMPLE_NODE__BRACKET_CONTAINER = SD_BRACKET__BRACKET_CONTAINER;
 
 	/**
-	 * The feature id for the '<em><b>Uml Fragment</b></em>' reference.
+	 * The feature id for the '<em><b>Uml Simple Fragment</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SD_SIMPLE_NODE__UML_FRAGMENT = SD_BRACKET_FEATURE_COUNT + 0;
+	int SD_SIMPLE_NODE__UML_SIMPLE_FRAGMENT = SD_BRACKET_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Simple Node</em>' class.
@@ -1149,7 +1168,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLConstraint()
 	 * @generated
 	 */
-	int UML_CONSTRAINT = 20;
+	int UML_CONSTRAINT = 21;
 
 	/**
 	 * The number of structural features of the '<em>UML Constraint</em>' class.
@@ -1168,7 +1187,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLStateInvariant()
 	 * @generated
 	 */
-	int UML_STATE_INVARIANT = 21;
+	int UML_STATE_INVARIANT = 22;
 
 	/**
 	 * The number of structural features of the '<em>UML State Invariant</em>' class.
@@ -1187,7 +1206,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLInteraction()
 	 * @generated
 	 */
-	int UML_INTERACTION = 22;
+	int UML_INTERACTION = 23;
 
 	/**
 	 * The number of structural features of the '<em>UML Interaction</em>' class.
@@ -1206,7 +1225,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLPackage()
 	 * @generated
 	 */
-	int UML_PACKAGE = 23;
+	int UML_PACKAGE = 24;
 
 	/**
 	 * The number of structural features of the '<em>UML Package</em>' class.
@@ -1225,7 +1244,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLLifeline()
 	 * @generated
 	 */
-	int UML_LIFELINE = 24;
+	int UML_LIFELINE = 25;
 
 	/**
 	 * The number of structural features of the '<em>UML Lifeline</em>' class.
@@ -1244,7 +1263,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLOccurrenceSpecification()
 	 * @generated
 	 */
-	int UML_OCCURRENCE_SPECIFICATION = 25;
+	int UML_OCCURRENCE_SPECIFICATION = 26;
 
 	/**
 	 * The number of structural features of the '<em>UML Occurrence Specification</em>' class.
@@ -1263,7 +1282,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLMessage()
 	 * @generated
 	 */
-	int UML_MESSAGE = 26;
+	int UML_MESSAGE = 27;
 
 	/**
 	 * The number of structural features of the '<em>UML Message</em>' class.
@@ -1282,7 +1301,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLDurationConstraint()
 	 * @generated
 	 */
-	int UML_DURATION_CONSTRAINT = 27;
+	int UML_DURATION_CONSTRAINT = 28;
 
 	/**
 	 * The number of structural features of the '<em>UML Duration Constraint</em>' class.
@@ -1301,7 +1320,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLInteractionFragment()
 	 * @generated
 	 */
-	int UML_INTERACTION_FRAGMENT = 28;
+	int UML_INTERACTION_FRAGMENT = 29;
 
 	/**
 	 * The number of structural features of the '<em>UML Interaction Fragment</em>' class.
@@ -1320,7 +1339,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLExecutionSpecification()
 	 * @generated
 	 */
-	int UML_EXECUTION_SPECIFICATION = 29;
+	int UML_EXECUTION_SPECIFICATION = 30;
 
 	/**
 	 * The number of structural features of the '<em>UML Execution Specification</em>' class.
@@ -1339,7 +1358,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLGate()
 	 * @generated
 	 */
-	int UML_GATE = 30;
+	int UML_GATE = 31;
 
 	/**
 	 * The number of structural features of the '<em>UML Gate</em>' class.
@@ -1359,7 +1378,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLInteractionUse()
 	 * @generated
 	 */
-	int UML_INTERACTION_USE = 31;
+	int UML_INTERACTION_USE = 32;
 
 	/**
 	 * The number of structural features of the '<em>UML Interaction Use</em>' class.
@@ -1378,7 +1397,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLInteractionOperand()
 	 * @generated
 	 */
-	int UML_INTERACTION_OPERAND = 32;
+	int UML_INTERACTION_OPERAND = 33;
 
 	/**
 	 * The number of structural features of the '<em>UML Interaction Operand</em>' class.
@@ -1397,7 +1416,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getUMLCombinedFragment()
 	 * @generated
 	 */
-	int UML_COMBINED_FRAGMENT = 33;
+	int UML_COMBINED_FRAGMENT = 34;
 
 	/**
 	 * The number of structural features of the '<em>UML Combined Fragment</em>' class.
@@ -1416,7 +1435,7 @@ public interface SDPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDTrace()
 	 * @generated
 	 */
-	int SD_TRACE = 34;
+	int SD_TRACE = 35;
 
 	/**
 	 * The number of structural features of the '<em>Trace</em>' class.
@@ -1502,6 +1521,16 @@ public interface SDPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSDGate_UmlGate();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment <em>Backed By Fragment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Backed By Fragment</em>'.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment
+	 * @generated
+	 */
+	EClass getSDBackedByFragment();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement <em>Life Line Element</em>}'.
@@ -2014,15 +2043,15 @@ public interface SDPackage extends EPackage {
 	EClass getSDSimpleNode();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode#getUmlFragment <em>Uml Fragment</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode#getUmlSimpleFragment <em>Uml Simple Fragment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Uml Fragment</em>'.
-	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode#getUmlFragment()
+	 * @return the meta object for the reference '<em>Uml Simple Fragment</em>'.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDSimpleNode#getUmlSimpleFragment()
 	 * @see #getSDSimpleNode()
 	 * @generated
 	 */
-	EReference getSDSimpleNode_UmlFragment();
+	EReference getSDSimpleNode_UmlSimpleFragment();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.uml2.uml.Constraint <em>UML Constraint</em>}'.
@@ -2270,6 +2299,16 @@ public interface SDPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SD_GATE__UML_GATE = eINSTANCE.getSDGate_UmlGate();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment <em>Backed By Fragment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment
+		 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDPackageImpl#getSDBackedByFragment()
+		 * @generated
+		 */
+		EClass SD_BACKED_BY_FRAGMENT = eINSTANCE.getSDBackedByFragment();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.impl.SDLifeLineElementImpl <em>Life Line Element</em>}' class.
@@ -2692,12 +2731,12 @@ public interface SDPackage extends EPackage {
 		EClass SD_SIMPLE_NODE = eINSTANCE.getSDSimpleNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Uml Fragment</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Uml Simple Fragment</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SD_SIMPLE_NODE__UML_FRAGMENT = eINSTANCE.getSDSimpleNode_UmlFragment();
+		EReference SD_SIMPLE_NODE__UML_SIMPLE_FRAGMENT = eINSTANCE.getSDSimpleNode_UmlSimpleFragment();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.uml.Constraint <em>UML Constraint</em>}' class.

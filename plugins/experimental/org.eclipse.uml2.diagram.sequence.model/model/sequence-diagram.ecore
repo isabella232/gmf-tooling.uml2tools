@@ -17,6 +17,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="SDGate">
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlGate" eType="#//UMLGate"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDBackedByFragment" abstract="true"
+      interface="true">
+    <eOperations name="getUmlFragment" eType="#//UMLInteractionFragment"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDLifeLineElement" abstract="true">
     <eOperations name="getCoveredLifeLine" eType="#//SDLifeLine"/>
   </eClassifiers>
@@ -25,7 +29,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="brackets" upperBound="-1"
         eType="#//SDBracket" containment="true" eOpposite="#//SDBracket/bracketContainer"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDBracket" abstract="true" eSuperTypes="#//SDLifeLineElement">
+  <eClassifiers xsi:type="ecore:EClass" name="SDBracket" abstract="true" eSuperTypes="#//SDLifeLineElement #//SDBackedByFragment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bracketContainer" lowerBound="1"
         eType="#//SDBracketContainer" changeable="false" eOpposite="#//SDBracketContainer/brackets"/>
   </eClassifiers>
@@ -47,14 +51,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDFrame"
         eOpposite="#//SDFrame/regions"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDFrame" abstract="true" eSuperTypes="#//SDFrameContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="SDFrame" abstract="true" eSuperTypes="#//SDFrameContainer #//SDBackedByFragment">
     <eOperations name="findRegionForUmlLifeLine" eType="#//SDMountingRegion">
       <eParameters name="umlLifeline" eType="#//UMLLifeline"/>
     </eOperations>
     <eOperations name="findRegionForSDLifeLine" eType="#//SDMountingRegion">
       <eParameters name="sdLifeline" eType="#//SDLifeLine"/>
     </eOperations>
-    <eOperations name="getUmlFragment" eType="#//UMLInteractionFragment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="frameContainer" lowerBound="1"
         eType="#//SDFrameContainer" changeable="false" eOpposite="#//SDFrameContainer/frames"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
@@ -115,7 +118,7 @@
         defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDSimpleNode" eSuperTypes="#//SDBracket">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="umlFragment" eType="#//UMLInteractionFragment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlSimpleFragment" eType="#//UMLInteractionFragment"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UMLConstraint" instanceClassName="org.eclipse.uml2.uml.Constraint"
       abstract="true" interface="true"/>

@@ -17,6 +17,9 @@
     <genClasses ecoreClass="sequence-diagram.ecore#//SDGate">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDGate/umlGate"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDBackedByFragment">
+      <genOperations ecoreOperation="sequence-diagram.ecore#//SDBackedByFragment/getUmlFragment"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="sequence-diagram.ecore#//SDLifeLineElement">
       <genOperations ecoreOperation="sequence-diagram.ecore#//SDLifeLineElement/getCoveredLifeLine"/>
     </genClasses>
@@ -51,7 +54,6 @@
       <genOperations ecoreOperation="sequence-diagram.ecore#//SDFrame/findRegionForSDLifeLine">
         <genParameters ecoreParameter="sequence-diagram.ecore#//SDFrame/findRegionForSDLifeLine/sdLifeline"/>
       </genOperations>
-      <genOperations ecoreOperation="sequence-diagram.ecore#//SDFrame/getUmlFragment"/>
     </genClasses>
     <genClasses ecoreClass="sequence-diagram.ecore#//SDInteractionUse">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDInteractionUse/umlInteractionUse"/>
@@ -93,7 +95,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sequence-diagram.ecore#//SDGateMessageEnd/isStartNotFinish"/>
     </genClasses>
     <genClasses ecoreClass="sequence-diagram.ecore#//SDSimpleNode">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDSimpleNode/umlFragment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sequence-diagram.ecore#//SDSimpleNode/umlSimpleFragment"/>
     </genClasses>
     <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLConstraint"/>
     <genClasses image="false" ecoreClass="sequence-diagram.ecore#//UMLStateInvariant"/>

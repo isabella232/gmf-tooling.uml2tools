@@ -406,7 +406,7 @@ public class SDBuilder {
 		}
 		SDBracketContainer sdContainer = myCallStack.peek(umlLifeline);
 		SDSimpleNode sdInvariant = SDFactory.eINSTANCE.createSDSimpleNode();
-		sdInvariant.setUmlFragment(umlFragment);
+		sdInvariant.setUmlSimpleFragment(umlFragment);
 		sdContainer.getBrackets().add(sdInvariant);
 	}
 

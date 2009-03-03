@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFrameImpl.java,v 1.5 2009/03/02 16:14:30 mgolubev Exp $
+ * $Id: SDFrameImpl.java,v 1.6 2009/03/03 14:17:27 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -151,7 +151,7 @@ public abstract class SDFrameImpl extends SDFrameContainerImpl implements SDFram
 	 * @generated NOT
 	 */
 	public InteractionFragment getUmlFragment() {
-		throw new IllegalStateException("This method have to be overridden by subclasses, but is not for: " + this);
+		throw new IllegalStateException("This method should be overridden in subclass, but it is not for: " + this);
 	}
 
 	/**

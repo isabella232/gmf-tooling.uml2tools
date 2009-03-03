@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDBracketImpl.java,v 1.3 2009/02/28 23:44:29 mgolubev Exp $
+ * $Id: SDBracketImpl.java,v 1.4 2009/03/03 14:17:27 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -13,6 +13,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDPackage;
+import org.eclipse.uml2.uml.InteractionFragment;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,6 +56,15 @@ public abstract class SDBracketImpl extends SDLifeLineElementImpl implements SDB
 	public SDBracketContainer getBracketContainer() {
 		if (eContainerFeatureID != SDPackage.SD_BRACKET__BRACKET_CONTAINER) return null;
 		return (SDBracketContainer)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public InteractionFragment getUmlFragment() {
+		throw new IllegalStateException("This method should be overridden in subclass, but it is not for: " + this);
 	}
 
 	/**

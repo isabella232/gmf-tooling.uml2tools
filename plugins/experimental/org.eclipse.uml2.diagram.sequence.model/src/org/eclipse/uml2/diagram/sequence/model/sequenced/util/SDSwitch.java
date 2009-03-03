@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDSwitch.java,v 1.5 2009/02/28 21:17:05 mgolubev Exp $
+ * $Id: SDSwitch.java,v 1.6 2009/03/03 14:17:27 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.util;
 
@@ -114,6 +114,12 @@ public class SDSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SDPackage.SD_BACKED_BY_FRAGMENT: {
+				SDBackedByFragment sdBackedByFragment = (SDBackedByFragment)theEObject;
+				T result = caseSDBackedByFragment(sdBackedByFragment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case SDPackage.SD_LIFE_LINE_ELEMENT: {
 				SDLifeLineElement sdLifeLineElement = (SDLifeLineElement)theEObject;
 				T result = caseSDLifeLineElement(sdLifeLineElement);
@@ -131,6 +137,7 @@ public class SDSwitch<T> {
 				SDBracket sdBracket = (SDBracket)theEObject;
 				T result = caseSDBracket(sdBracket);
 				if (result == null) result = caseSDLifeLineElement(sdBracket);
+				if (result == null) result = caseSDBackedByFragment(sdBracket);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -148,6 +155,7 @@ public class SDSwitch<T> {
 				if (result == null) result = caseSDBracket(sdBehaviorSpec);
 				if (result == null) result = caseSDBracketContainer(sdBehaviorSpec);
 				if (result == null) result = caseSDLifeLineElement(sdBehaviorSpec);
+				if (result == null) result = caseSDBackedByFragment(sdBehaviorSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -157,6 +165,7 @@ public class SDSwitch<T> {
 				if (result == null) result = caseSDBracket(sdMountingRegion);
 				if (result == null) result = caseSDBracketContainer(sdMountingRegion);
 				if (result == null) result = caseSDLifeLineElement(sdMountingRegion);
+				if (result == null) result = caseSDBackedByFragment(sdMountingRegion);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -164,6 +173,7 @@ public class SDSwitch<T> {
 				SDFrame sdFrame = (SDFrame)theEObject;
 				T result = caseSDFrame(sdFrame);
 				if (result == null) result = caseSDFrameContainer(sdFrame);
+				if (result == null) result = caseSDBackedByFragment(sdFrame);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -172,6 +182,7 @@ public class SDSwitch<T> {
 				T result = caseSDInteractionUse(sdInteractionUse);
 				if (result == null) result = caseSDFrame(sdInteractionUse);
 				if (result == null) result = caseSDFrameContainer(sdInteractionUse);
+				if (result == null) result = caseSDBackedByFragment(sdInteractionUse);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -180,6 +191,7 @@ public class SDSwitch<T> {
 				T result = caseSDCombinedFragment(sdCombinedFragment);
 				if (result == null) result = caseSDFrame(sdCombinedFragment);
 				if (result == null) result = caseSDFrameContainer(sdCombinedFragment);
+				if (result == null) result = caseSDBackedByFragment(sdCombinedFragment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -188,6 +200,7 @@ public class SDSwitch<T> {
 				T result = caseSDInteractionOperand(sdInteractionOperand);
 				if (result == null) result = caseSDFrame(sdInteractionOperand);
 				if (result == null) result = caseSDFrameContainer(sdInteractionOperand);
+				if (result == null) result = caseSDBackedByFragment(sdInteractionOperand);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -204,6 +217,7 @@ public class SDSwitch<T> {
 				if (result == null) result = caseSDBracket(sdExecution);
 				if (result == null) result = caseSDBracketContainer(sdExecution);
 				if (result == null) result = caseSDLifeLineElement(sdExecution);
+				if (result == null) result = caseSDBackedByFragment(sdExecution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -214,6 +228,7 @@ public class SDSwitch<T> {
 				if (result == null) result = caseSDBracket(sdInvocation);
 				if (result == null) result = caseSDBracketContainer(sdInvocation);
 				if (result == null) result = caseSDLifeLineElement(sdInvocation);
+				if (result == null) result = caseSDBackedByFragment(sdInvocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -242,6 +257,7 @@ public class SDSwitch<T> {
 				T result = caseSDGateMessageEnd(sdGateMessageEnd);
 				if (result == null) result = caseSDBracket(sdGateMessageEnd);
 				if (result == null) result = caseSDLifeLineElement(sdGateMessageEnd);
+				if (result == null) result = caseSDBackedByFragment(sdGateMessageEnd);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -250,6 +266,7 @@ public class SDSwitch<T> {
 				T result = caseSDSimpleNode(sdSimpleNode);
 				if (result == null) result = caseSDBracket(sdSimpleNode);
 				if (result == null) result = caseSDLifeLineElement(sdSimpleNode);
+				if (result == null) result = caseSDBackedByFragment(sdSimpleNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -284,6 +301,21 @@ public class SDSwitch<T> {
 	 * @generated
 	 */
 	public T caseSDGate(SDGate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Backed By Fragment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Backed By Fragment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSDBackedByFragment(SDBackedByFragment object) {
 		return null;
 	}
 
