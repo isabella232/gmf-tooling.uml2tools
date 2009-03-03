@@ -4,15 +4,21 @@ import java.util.HashMap;
 
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFactory;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessage;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
+import org.eclipse.uml2.uml.CombinedFragment;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExecutionSpecification;
+import org.eclipse.uml2.uml.InteractionFragment;
+import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 
@@ -21,11 +27,13 @@ public class SDBuilderTrace implements SDTrace {
 	private final HashMap<ExecutionSpecification, SDBehaviorSpec> myExecutionSpecs;
 	private final HashMap<Message, SDAbstractMessage> myMessages;
 	private final HashMap<Lifeline, SDLifeLine> myLifelines;
+	private final HashMap<InteractionFragment, SDFrame> myFrames;
 	
 	public SDBuilderTrace(){
 		myExecutionSpecs = new HashMap<ExecutionSpecification, SDBehaviorSpec>();
 		myMessages = new HashMap<Message, SDAbstractMessage>();
 		myLifelines = new HashMap<Lifeline, SDLifeLine>();
+		myFrames = new HashMap<InteractionFragment, SDFrame>();
 	}
 	
 	void clear(){
@@ -34,7 +42,7 @@ public class SDBuilderTrace implements SDTrace {
 		myLifelines.clear();
 	}
 	
-	SDLifeLine bindNewLifeline(Lifeline umlLifeline){
+	public SDLifeLine bindNewLifeline(Lifeline umlLifeline){
 		assert umlLifeline != null;
 		SDLifeLine result = SDFactory.eINSTANCE.createSDLifeLine();
 		result.setUmlLifeline(umlLifeline);
@@ -46,29 +54,50 @@ public class SDBuilderTrace implements SDTrace {
 		return result;
 	}
 	
-	SDExecution bindNewExecution(ExecutionSpecification umlSpec){
+	public SDExecution bindNewExecution(ExecutionSpecification umlSpec){
 		SDExecution result = SDFactory.eINSTANCE.createSDExecution();
 		bind(umlSpec, result);
 		return result;
 	}
 	
-	SDInvocation bindNewInvocation(ExecutionSpecification umlSpec){
+	public SDInvocation bindNewInvocation(ExecutionSpecification umlSpec){
 		SDInvocation result = SDFactory.eINSTANCE.createSDInvocation();
 		bind(umlSpec, result);
 		return result;
 	}
 	
-	SDMessage bindNewMessage(Message umlMessage){
+	public SDMessage bindNewMessage(Message umlMessage){
 		SDMessage result = SDFactory.eINSTANCE.createSDMessage();
 		bind(umlMessage, result);
 		return result;
 	}
 	
-	SDGateMessage bindNewGateMessage(Message umlMessage){
+	public SDGateMessage bindNewGateMessage(Message umlMessage){
 		SDGateMessage result = SDFactory.eINSTANCE.createSDGateMessage();
 		bind(umlMessage, result);
 		return result;
-		
+	}
+	
+	public SDInteractionOperand bindNewInteractionOperand(InteractionOperand umlOperand){
+		SDInteractionOperand result = SDFactory.eINSTANCE.createSDInteractionOperand();
+		bindFrame(umlOperand, result);
+		result.setUmlInteractionOperand(umlOperand);
+		return result;
+	}
+	
+	public SDCombinedFragment bindNewCombinedFragment(CombinedFragment umlCombined){
+		SDCombinedFragment result = SDFactory.eINSTANCE.createSDCombinedFragment();
+		bindFrame(umlCombined, result);
+		result.setUmlCombinedFragment(umlCombined);
+		return result;
+	}
+
+	private void bindFrame(InteractionFragment umlFrame, SDFrame sdFrame){
+		checkBindToNull(umlFrame, sdFrame);
+		SDFrame oldOne = myFrames.put(umlFrame, sdFrame);
+		if (oldOne != null){
+			throw new SDBuilderInternalProblem("Only one SDFrame is expected for :" + umlFrame + ", old: " + oldOne + ", new: " + sdFrame);
+		}
 	}
 	
 	private void bind(Message umlMessage, SDAbstractMessage sdMessage){
@@ -108,6 +137,14 @@ public class SDBuilderTrace implements SDTrace {
 	
 	public SDLifeLine findLifeLine(Lifeline umlLifeline){
 		return myLifelines.get(umlLifeline);
+	}
+	
+	public SDCombinedFragment findCombinedFragment(CombinedFragment umlCombinedFragment) {
+		return (SDCombinedFragment) myFrames.get(umlCombinedFragment);
+	}
+	
+	public SDInteractionOperand findInteractionOperand(InteractionOperand umlOperand) {
+		return (SDInteractionOperand)myFrames.get(umlOperand);
 	}
 	
 	private static void checkBindToNull(Element umlElement, Object sdElement){

@@ -10,6 +10,8 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDTrace;
+import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.InteractionOperatorKind;
 
 public class SDCreateCombinedFragmentTest extends AbstractSDModelCreateTest {
@@ -186,7 +188,14 @@ public class SDCreateCombinedFragmentTest extends AbstractSDModelCreateTest {
 				assertTrue(nextOperand.findRegionForSDLifeLine(nextLifeLine).getBrackets().isEmpty());
 			}
 		}
+		
 		checkModelReparsableAndContainsCopyFor(combined);
+		
+		SDTrace tracing = expectedCovereds[0].getModel().getUMLTracing(); 
+		assertSame(combined, tracing.findCombinedFragment(combined.getUmlCombinedFragment()));
+		for (SDFrame nextOperand : combined.getFrames()){
+			assertSame(nextOperand, tracing.findInteractionOperand((InteractionOperand)nextOperand.getUmlFragment()));
+		}
 	}
 	
 
