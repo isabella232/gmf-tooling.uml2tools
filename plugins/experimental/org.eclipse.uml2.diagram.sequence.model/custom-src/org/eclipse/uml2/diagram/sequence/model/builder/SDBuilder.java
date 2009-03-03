@@ -209,7 +209,7 @@ public class SDBuilder {
 			if (sdInvocation != null && sdInvocation.getUmlExecutionSpec() == null) {
 				//this invocation was created manually in builder without uml-counterpart, 
 				//it means that we won't find finish for it and should remove it manually
-				SDLifeLine invocationLifeLine = SDModelHelper.findLifeline(sdInvocation);
+				SDLifeLine invocationLifeLine = sdInvocation.getCoveredLifeLine();
 				if (invocationLifeLine == null) {
 					throw new SDBuilderInternalProblem("Can't find lifeline for 'auxiliary' SDInvocation: " + sdInvocation);
 				}

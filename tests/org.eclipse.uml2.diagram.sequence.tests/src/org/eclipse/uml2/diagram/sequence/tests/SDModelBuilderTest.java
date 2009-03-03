@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.sequence.tests;
 import junit.framework.Assert;
 
 import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilder;
-import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
@@ -55,8 +54,8 @@ public class SDModelBuilderTest extends AbstractSDModelBuilderTest {
 		assertNull(redrawInvocation.getUmlExecutionSpec());
 		assertNotNull(redrawExecution.getUmlExecutionSpec());
 
-		assertNotNull(SDModelHelper.findLifeline(redrawExecution));
-		assertSame(SDModelHelper.findLifeline(redrawInvocation), SDModelHelper.findLifeline(redrawExecution));
+		assertNotNull(redrawExecution.getCoveredLifeLine());
+		assertSame(redrawInvocation.getCoveredLifeLine(), redrawExecution.getCoveredLifeLine());
 		assertTrue(redrawInvocation.getBrackets().contains(redrawExecution));
 	}
 
@@ -76,10 +75,9 @@ public class SDModelBuilderTest extends AbstractSDModelBuilderTest {
 		assertNull(redrawInvocation.getUmlExecutionSpec());
 		assertNotNull(redrawExecution.getUmlExecutionSpec());
 
-		assertNotNull(SDModelHelper.findLifeline(redrawExecution));
-		assertSame(SDModelHelper.findLifeline(redrawInvocation), SDModelHelper.findLifeline(redrawExecution));
+		assertNotNull(redrawExecution.getCoveredLifeLine());
+		assertSame(redrawInvocation.getCoveredLifeLine(), redrawExecution.getCoveredLifeLine());
 		assertTrue(redrawInvocation.getBrackets().contains(redrawExecution));
-
 	}
 
 	public void testSelfMessageDetails() {
@@ -98,8 +96,8 @@ public class SDModelBuilderTest extends AbstractSDModelBuilderTest {
 		assertNull(mouseClickedInvocation.getUmlExecutionSpec());
 		assertNotNull(mouseClickedExecution.getUmlExecutionSpec());
 
-		SDLifeLine sendingLifeline = SDModelHelper.findLifeline(mouseClickedInvocation);
-		SDLifeLine receivingLifeline = SDModelHelper.findLifeline(mouseClickedExecution);
+		SDLifeLine sendingLifeline = mouseClickedInvocation.getCoveredLifeLine();
+		SDLifeLine receivingLifeline = mouseClickedExecution.getCoveredLifeLine();
 
 		assertNotNull(sendingLifeline);
 		assertNotNull(receivingLifeline);
