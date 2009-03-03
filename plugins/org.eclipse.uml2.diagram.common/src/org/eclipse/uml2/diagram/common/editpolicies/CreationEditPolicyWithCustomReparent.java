@@ -14,9 +14,6 @@ package org.eclipse.uml2.diagram.common.editpolicies;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.XYLayout;
-import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
@@ -204,22 +201,6 @@ public class CreationEditPolicyWithCustomReparent extends CreationEditPolicy {
 	}
 	
 	protected U2TCreateParametersImpl computeCreateParameters(CreateRequest request){
-		U2TCreateParametersImpl parameters = new U2TCreateParametersImpl(); 
-		parameters.setParentView(getHostImpl().getNotationView());
-		
-		if (request.getLocation() != null){
-			IFigure hostContentPane = getHostImpl().getContentPane();
-			Point origin;
-			if (hostContentPane.getLayoutManager() instanceof XYLayout){
-				origin = ((XYLayout)hostContentPane.getLayoutManager()).getOrigin(hostContentPane);
-			} else {
-				origin = hostContentPane.getClientArea().getLocation();	
-			}
-			Point relativeLocation = new Point(request.getLocation());
-			hostContentPane.translateToRelative(relativeLocation);
-			relativeLocation.translate(origin.getNegated());
-			parameters.setRelativeLocation(relativeLocation);
-		}
-		return parameters;
+		return U2TCreateParametersImpl.createFor(getHostImpl(), request);
 	}
 }
