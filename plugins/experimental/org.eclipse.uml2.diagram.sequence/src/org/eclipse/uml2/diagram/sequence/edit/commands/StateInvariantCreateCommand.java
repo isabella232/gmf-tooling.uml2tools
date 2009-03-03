@@ -52,8 +52,8 @@ public class StateInvariantCreateCommand extends EditElementCommand {
 	 */
 	public boolean canExecute() {
 		return getLifeline() != null //
-			&& getInteraction() != null // 
-			&& getRequest().getParameter(SDCreationEditPolicy.KEY_U2T_EXTENDED_PARAMETERS) instanceof U2TCreateParameters;
+				&& getInteraction() != null // 
+				&& getRequest().getParameter(SDCreationEditPolicy.KEY_U2T_EXTENDED_PARAMETERS) instanceof U2TCreateParameters;
 	}
 
 	/**
@@ -61,10 +61,10 @@ public class StateInvariantCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		StateInvariant newElement = UMLFactory.eINSTANCE.createStateInvariant();
-		
+
 		Lifeline lifeline = getLifeline();
 		Interaction owner = getInteraction();
-		
+
 		U2TCreateParameters anchorData = (U2TCreateParameters) getRequest().getParameter(SDCreationEditPolicy.KEY_U2T_EXTENDED_PARAMETERS);
 		ThePastImpl thePast = new ThePastImpl(anchorData);
 		ListIterator<InteractionFragment> appendPosition = thePast.getAfterThePastPosition(owner);
@@ -103,26 +103,26 @@ public class StateInvariantCreateCommand extends EditElementCommand {
 			newElement.createInvariant("State");
 		}
 	}
-	
-	protected Lifeline getLifeline(){
+
+	protected Lifeline getLifeline() {
 		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
-		if (container instanceof Lifeline){
-			return (Lifeline)container;
+		if (container instanceof Lifeline) {
+			return (Lifeline) container;
 		}
-		
-		if (container instanceof InteractionFragment){
-			InteractionFragment fragment = (InteractionFragment)container;
-			if (fragment.getCovereds().size() == 1){
+
+		if (container instanceof InteractionFragment) {
+			InteractionFragment fragment = (InteractionFragment) container;
+			if (fragment.getCovereds().size() == 1) {
 				return fragment.getCovereds().get(0);
 			}
 		}
 		return null;
 	}
-	
-	protected Interaction getInteraction(){
+
+	protected Interaction getInteraction() {
 		return getLifeline().getInteraction();
 	}
 }
