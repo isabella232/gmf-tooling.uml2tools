@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -35,8 +34,11 @@ import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
 import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
 import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.ActionExecutionSpecification;
 import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
@@ -56,7 +58,6 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.StateInvariant;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -265,79 +266,7 @@ public class UMLDiagramUpdater {
 		return result;
 	}
 
-	public static List<BehaviorExecutionSpecification> getNestedSpecs(BehaviorExecutionSpecification parentSpec) {
-		Interaction interaction = parentSpec.getEnclosingInteraction();
-		OccurrenceSpecification parentStart = parentSpec.getStart();
-		OccurrenceSpecification parentEnd = parentSpec.getFinish();
-		if (parentStart == null || parentEnd == null || parentSpec.getCovereds().size() != 1) {
-			throw new IllegalStateException(//
-					"Invalid BehaviorExecutionSpecification: " + parentSpec + // 
-							", start: " + parentStart + //
-							", finish: " + parentEnd + //
-							", lifelines: " + parentSpec.getCovereds());
-		}
-		Lifeline lifeline = parentSpec.getCovereds().get(0);
-		List<BehaviorExecutionSpecification> result = new ArrayList<BehaviorExecutionSpecification>(interaction.getFragments().size() / 3 + 1);
-		BehaviorExecutionSpecification last = null;
-		boolean inside = false;
-		boolean inDeep = false;
-		for (InteractionFragment next : interaction.getFragments()) {
-			if (next == parentSpec.getStart()) {
-				inside = true;
-				continue;
-			}
-			if (next == parentSpec.getFinish()) {
-				inside = false;
-				break;
-			}
-			if (next == parentSpec) {
-				continue;
-			}
-			if (last != null && next == last.getStart()) {
-				inDeep = true;
-				continue;
-			}
-			if (last != null && next == last.getFinish()) {
-				inDeep = false;
-				continue;
-			}
-
-			if (next instanceof BehaviorExecutionSpecification) {
-				BehaviorExecutionSpecification nextSpec = (BehaviorExecutionSpecification) next;
-				if (!nextSpec.getCovereds().contains(lifeline)) {
-					continue;
-				}
-				if (inside && !inDeep) {
-					last = nextSpec;
-					result.add(nextSpec);
-					inDeep = true;
-				}
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List getCombinedFragment_3010SemanticChildrenGen(View view) {
-		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
-		}
-		CombinedFragment modelElement = (CombinedFragment) view.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOperands().iterator(); it.hasNext();) {
-			InteractionOperand childElement = (InteractionOperand) it.next();
-			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == InteractionOperandMountingRegionEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	private static Lifeline findContainingLifeLine(View view) {
+	private static Lifeline findEnclosedDiagramLifeLine(View view) {
 		if (view instanceof Diagram) {
 			return null;
 		}
@@ -351,48 +280,75 @@ public class UMLDiagramUpdater {
 		if (false == container instanceof View) {
 			return null;
 		}
-		return findContainingLifeLine((View) container);
+		return findEnclosedDiagramLifeLine((View) container);
 	}
 
 	/**
 	 * @generated NOT
 	 */
 	public static List getCombinedFragment_3010SemanticChildren(View view) {
+		//3010 - CombinedFragmentMountingRegionEditPart
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 
-		Lifeline lifeline = findContainingLifeLine(view);
+		Lifeline lifeline = findEnclosedDiagramLifeLine(view);
 		if (lifeline == null) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
-		List<UMLNodeDescriptor> result = getCombinedFragment_3010SemanticChildrenGen(view);
-		for (Iterator<UMLNodeDescriptor> it = result.iterator(); it.hasNext();) {
-			UMLNodeDescriptor next = it.next();
-			if (next.getModelElement() instanceof InteractionFragment) {
-				InteractionFragment nextFragment = (InteractionFragment) next.getModelElement();
-				if (!nextFragment.getCovereds().contains(lifeline)) {
-					it.remove();
-				}
+		
+		SDModel sdModel = SDModelAccess.findSDModel(view);
+		if (sdModel == null) {
+			return Collections.emptyList();
+		}
+		CombinedFragment umlCombined = (CombinedFragment) view.getElement();
+		SDCombinedFragment sdCombined = sdModel.getUMLTracing().findCombinedFragment(umlCombined);
+		
+		if (sdCombined == null){
+			return Collections.emptyList();
+		}
+		
+		SDMountingRegion region = sdCombined.findRegionForUmlLifeLine(lifeline);
+		assert region != null;
+		
+		List<UMLNodeDescriptor> result = new ArrayList<UMLNodeDescriptor>(region.getBrackets().size());
+		for (SDBracket next : region.getBrackets()){
+			InteractionFragment nextUMLChild = next.getUmlFragment();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, nextUMLChild);
+			if (visualID == InteractionOperandMountingRegionEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(nextUMLChild, visualID));
+				continue;
 			}
 		}
 		return result;
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getCombinedFragment_3008SemanticChildren(View view) {
+		//3008 - LayeredCombinedFragment
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
-		CombinedFragment modelElement = (CombinedFragment) view.getElement();
+		
+		SDModel sdModel = SDModelAccess.findSDModel(view);
+		if (sdModel == null) {
+			return Collections.emptyList();
+		}
+
+		CombinedFragment umlCombined = (CombinedFragment) view.getElement();
+		SDCombinedFragment sdCombined = sdModel.getUMLTracing().findCombinedFragment(umlCombined);
+		if (sdCombined == null){
+			return Collections.emptyList();
+		}
+		
 		List result = new LinkedList();
-		for (Iterator it = modelElement.getOperands().iterator(); it.hasNext();) {
-			InteractionOperand childElement = (InteractionOperand) it.next();
-			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+		for (SDFrame nextSubframe : sdCombined.getFrames()) {
+			InteractionFragment umLChild = nextSubframe.getUmlFragment();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, umLChild);
 			if (visualID == LayeredOperandEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new UMLNodeDescriptor(umLChild, visualID));
 				continue;
 			}
 		}
