@@ -176,7 +176,7 @@ public class UMLDiagramUpdater {
 		}
 
 		Lifeline umlLifeline = (Lifeline) view.getElement();
-		SDLifeLine sdLifeLine = SDModelHelper.findLifeline(sdModel, umlLifeline);
+		SDLifeLine sdLifeLine = sdModel.getUMLTracing().findLifeLine(umlLifeline);
 		if (sdLifeLine == null) {
 			return Collections.emptyList();
 		}
