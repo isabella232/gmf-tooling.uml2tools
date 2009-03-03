@@ -32,6 +32,7 @@ import org.eclipse.uml2.diagram.common.editparts.NeedsParentEditPart;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.BehaviorExecutionColorVisualEffect;
 import org.eclipse.uml2.diagram.sequence.edit.policies.BehaviorExecutionSpecificationCanonicalEditPolicy;

@@ -29,6 +29,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.NeedsParentEditPart;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.InteractionUseMountingRegionItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.MountingRegionPrimaryDragEditPolicy;

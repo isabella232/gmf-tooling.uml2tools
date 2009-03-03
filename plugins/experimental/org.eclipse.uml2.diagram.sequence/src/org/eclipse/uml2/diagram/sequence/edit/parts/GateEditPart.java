@@ -6,6 +6,7 @@ import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.TreeSearch;
@@ -17,6 +18,7 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
@@ -30,6 +32,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.NeedsParentEditPart;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.GateItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
@@ -149,6 +152,16 @@ public class GateEditPart extends AbstractBorderItemEditPart implements PrimaryS
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPolicy getPrimaryDragEditPolicy() {
+		// #265822 Improve appearance of selection feedback
+		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
+		result.setResizeDirections(PositionConstants.NSEW);
 		return result;
 	}
 

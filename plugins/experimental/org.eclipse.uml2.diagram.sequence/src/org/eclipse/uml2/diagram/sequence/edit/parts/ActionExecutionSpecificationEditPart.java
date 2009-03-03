@@ -34,6 +34,7 @@ import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.NeedsParentEditPart;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.ActionExecutionSpecificationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
@@ -202,11 +203,9 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 	 * @generated
 	 */
 	public EditPolicy getPrimaryDragEditPolicy() {
-		EditPolicy result = super.getPrimaryDragEditPolicy();
-		if (result instanceof ResizableEditPolicy) {
-			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-			ep.setResizeDirections(PositionConstants.NORTH | PositionConstants.SOUTH);
-		}
+		// #265822 Improve appearance of selection feedback
+		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
+		result.setResizeDirections(PositionConstants.NORTH | PositionConstants.SOUTH);
 		return result;
 	}
 
