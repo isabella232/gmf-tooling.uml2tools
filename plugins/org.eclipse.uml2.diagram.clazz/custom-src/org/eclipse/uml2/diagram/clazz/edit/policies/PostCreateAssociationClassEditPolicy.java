@@ -19,13 +19,13 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.editpolicies.AbstractPostCreateCommand;
+import org.eclipse.uml2.diagram.common.editpolicies.EObjectAndElementTypeAdapter;
 import org.eclipse.uml2.uml.AssociationClass;
 
 
@@ -86,7 +86,7 @@ public class PostCreateAssociationClassEditPolicy extends AbstractEditPolicy {
 				return CommandResult.newErrorCommandResult("Association class expected: " + createdEntity);
 			}
 			AssociationClass newClass = (AssociationClass) createdEntity;
-			EObjectAdapter rhombAdapter = new ElementTypeAwareAdapter(newClass, UMLElementTypes.AssociationClass_2015);
+			EObjectAdapter rhombAdapter = new EObjectAndElementTypeAdapter(newClass, UMLElementTypes.AssociationClass_2015);
 			View rhombView = ViewService.getInstance().createNode(rhombAdapter, (View)createdView.eContainer(), UMLElementTypes.AssociationClass_2015.getSemanticHint(), ViewUtil.APPEND, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 
 			Rectangle expectedRectangleBounds = new Rectangle();
@@ -118,25 +118,6 @@ public class PostCreateAssociationClassEditPolicy extends AbstractEditPolicy {
 			return CommandResult.newOKCommandResult();
 		}
 	}
-	
-	private static class ElementTypeAwareAdapter extends EObjectAdapter {
-		private final IElementType myElementType;
-
-		public ElementTypeAwareAdapter(EObject subject, IElementType elementType){
-			super(subject);
-			myElementType = elementType;
-		}
-		
-		@SuppressWarnings("unchecked")
-		@Override
-		public Object getAdapter(Class adapter) {
-			if (adapter.isInstance(myElementType)) {
-				return myElementType;
-			}
-			return super.getAdapter(adapter);
-		}
-	}
-
 	
 	
 }
