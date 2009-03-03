@@ -1,35 +1,18 @@
 package org.eclipse.uml2.diagram.sequence.tests;
 
-import java.util.LinkedList;
-
 import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilder;
 import org.eclipse.uml2.diagram.sequence.model.create.CreateCombinedFragment;
 import org.eclipse.uml2.diagram.sequence.model.create.SDAnchor;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
-import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionOperatorKind;
-import org.eclipse.uml2.uml.Lifeline;
-import org.eclipse.uml2.uml.UMLFactory;
 
-public class SDModelCreateTest extends AbstractSDModelBuilderTest {
-
-	public void testPreconditionsCreatetLifelineX2() {
-		SDModel sdModel = createSimpleLifeLineX2();
-		assertNotNull(sdModel);
-
-		SDLifeLine a = findLifeLineByName(sdModel, "a");
-		SDLifeLine b = findLifeLineByName(sdModel, "b");
-		assertNotNull(a);
-		assertNotNull(b);
-	}
+public class SDCreateCombinedFragmentTest extends AbstractSDModelCreateTest {
 
 	public void testFirstCreateCombinedFragmentOnLifeline() {
 		SDModel sdModel = createSimpleLifeLineX2();
@@ -180,7 +163,7 @@ public class SDModelCreateTest extends AbstractSDModelBuilderTest {
 		}
 	}
 
-	private void basicCheckCreatedCombinedFragment(SDCombinedFragment combined, InteractionOperatorKind expectedOperator, int expectedOperands, SDLifeLine... expectedCovereds) {
+	protected void basicCheckCreatedCombinedFragment(SDCombinedFragment combined, InteractionOperatorKind expectedOperator, int expectedOperands, SDLifeLine... expectedCovereds) {
 		assertNotNull(combined);
 		assertNotNull(combined.getUmlFragment());
 		assertNotNull(combined.getUmlCombinedFragment());
@@ -204,84 +187,6 @@ public class SDModelCreateTest extends AbstractSDModelBuilderTest {
 			}
 		}
 		checkModelReparsableAndContainsCopyFor(combined);
-	}
-	
-	protected void checkModelReparsableAndContainsCopyFor(SDFrame justCreated){
-		SDModel actualSDModel = rootSDModel(justCreated);
-		assertNotNull(actualSDModel);
-		SDModel reparsed = new SDBuilder(actualSDModel.getUmlInteraction()).getSDModel();
-		assertNotNull(reparsed);
-		
-		LinkedList<SDFrame> framesSearch = new LinkedList<SDFrame>(reparsed.getFrames());
-		SDFrame foundCopy = null;
-		while (foundCopy == null && !framesSearch.isEmpty()){
-			SDFrame next = framesSearch.removeFirst();
-			if (next.getUmlFragment() == justCreated.getUmlFragment()){
-				foundCopy = next;
-			} else {
-				framesSearch.addAll(next.getFrames());
-			}
-		}
-		assertNotNull(foundCopy);
-	}
-	
-	private static SDModel rootSDModel(SDFrame frame){
-		if (frame == null){
-			return null;
-		}
-		SDFrameContainer container = frame.getFrameContainer();
-		if (container instanceof SDModel){
-			return (SDModel)container;
-		}
-		return rootSDModel((SDFrame)container); 
-	}
-
-	protected void checkSiblingsInOrder(SDBracket... siblings) {
-		assertTrue(siblings.length >= 2);
-		for (int i = 0; i < siblings.length - 1; i++) {
-			checkIsSiblingBefore(siblings[i], siblings[i + 1]);
-		}
-	}
-
-	protected void checkIsSiblingBefore(SDBracket expectedBefore, SDBracket expectedAfter) {
-		assertFalse(expectedBefore == expectedAfter);
-		assertNotNull(expectedBefore.getBracketContainer());
-		assertSame(expectedBefore.getBracketContainer(), expectedAfter.getBracketContainer());
-
-		SDBracketContainer commonContainer = expectedAfter.getBracketContainer();
-		assertTrue(commonContainer.getBrackets().indexOf(expectedAfter) > -1);
-		assertTrue(commonContainer.getBrackets().indexOf(expectedBefore) > -1);
-		assertTrue(commonContainer.getBrackets().indexOf(expectedBefore) < commonContainer.getBrackets().indexOf(expectedAfter));
-	}
-
-	private SDModel createSimpleLifeLineX2() {
-		Interaction umlResult = UMLFactory.eINSTANCE.createInteraction();
-		umlResult.setName("Interaction");
-		Lifeline a = umlResult.createLifeline("a");
-		Lifeline b = umlResult.createLifeline("b");
-
-		SDModel sdModel = new SDBuilder(umlResult).getSDModel();
-
-		assertNotNull(sdModel);
-		assertEquals(2, sdModel.getLifelines().size());
-		assertTrue(sdModel.getFrames().isEmpty());
-		assertTrue(sdModel.getGates().isEmpty());
-		assertTrue(sdModel.getMessages().isEmpty());
-		assertSame(umlResult, sdModel.getUmlInteraction());
-		assertNotNull(sdModel.getUMLTracing());
-
-		SDLifeLine sdLifeLineA = findLifeLineByName(sdModel, "a");
-		SDLifeLine sdLifeLineB = findLifeLineByName(sdModel, "b");
-
-		assertNotNull(sdLifeLineA);
-		assertNotNull(sdLifeLineB);
-		assertSame(a, sdLifeLineA.getUmlLifeline());
-		assertSame(b, sdLifeLineB.getUmlLifeline());
-
-		assertSame(sdLifeLineA, sdLifeLineA.getCoveredLifeLine());
-		assertSame(sdLifeLineB, sdLifeLineB.getCoveredLifeLine());
-
-		return sdModel;
 	}
 	
 

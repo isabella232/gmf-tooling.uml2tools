@@ -22,7 +22,7 @@ public class SDBuilderTests {
 		//$JUnit-BEGIN$
 		suite.addTestSuite(SDModelBuilderTest.class);
 		suite.addTestSuite(SDFramesBuilderTest.class);
-		suite.addTestSuite(SDModelCreateTest.class);
+		suite.addTestSuite(SDCreateCombinedFragmentTest.class);
 		//$JUnit-END$
 		return suite;
 	}
