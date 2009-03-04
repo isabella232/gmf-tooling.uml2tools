@@ -766,13 +766,8 @@
           uniqueIdentifier="org.eclipse.uml2.diagram.sequence.InnerMountingLink_4003"
           displayName="Inner Mounting Link (should be always hidden)"/>
       <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="InnerMountingLinkFigure"
-          classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class InnerMountingLinkFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public InnerMountingLinkFigure() {&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASHDOT);&#xD;&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.red);&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"/>
-      </viewmap>
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.uml2.diagram.sequence.draw2d.InvisiblePolylineConnection"/>
     </links>
     <palette>
       <groups

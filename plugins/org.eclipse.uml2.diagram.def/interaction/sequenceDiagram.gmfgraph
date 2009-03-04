@@ -582,13 +582,9 @@
     <descriptors
         name="InnerMountingLinkFigure">
       <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
+          xsi:type="gmfgraph:CustomConnection"
           name="InnerMountingLinkConnection"
-          lineKind="LINE_DASHDOT">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="red"/>
-      </actualFigure>
+          qualifiedClassName="org.eclipse.uml2.diagram.sequence.draw2d.InvisiblePolylineConnection"/>
     </descriptors>
   </figures>
   <nodes
