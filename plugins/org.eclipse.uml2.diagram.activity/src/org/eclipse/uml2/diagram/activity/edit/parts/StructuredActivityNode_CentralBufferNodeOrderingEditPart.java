@@ -252,7 +252,7 @@ public class StructuredActivityNode_CentralBufferNodeOrderingEditPart extends La
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**

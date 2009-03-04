@@ -2972,7 +2972,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getContainedTypeModelFacetLinks_ExceptionHandler_4005(modelElement));
 		return result;
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -2983,7 +2983,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getContainedTypeModelFacetLinks_ObjectFlow_4002(modelElement));
 		return result;
 	}
-	
+
 	/**
 	 * @generated
 	 */

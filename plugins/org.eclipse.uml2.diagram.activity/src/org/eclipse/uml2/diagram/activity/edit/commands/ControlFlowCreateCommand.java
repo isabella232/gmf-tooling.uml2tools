@@ -38,7 +38,7 @@ public class ControlFlowCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	private final Activity container;
-	
+
 	/**
 	 * @generated
 	 */
@@ -156,14 +156,13 @@ public class ControlFlowCreateCommand extends EditElementCommand {
 	public Activity getContainer() {
 		return container;
 	}
-	
+
 	/**
 	 * @NOT-generated
 	 */
 	private StructuredActivityNode getStructuredActivityNode() {
 		EObject sourceSAN = source.eContainer();
-		if (sourceSAN instanceof StructuredActivityNode &&
-				sourceSAN == target.eContainer()) {
+		if (sourceSAN instanceof StructuredActivityNode && sourceSAN == target.eContainer()) {
 			return (StructuredActivityNode) sourceSAN;
 		}
 		return null;

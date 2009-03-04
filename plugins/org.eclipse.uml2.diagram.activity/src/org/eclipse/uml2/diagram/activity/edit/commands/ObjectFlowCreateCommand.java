@@ -162,13 +162,12 @@ public class ObjectFlowCreateCommand extends EditElementCommand {
 	 */
 	private StructuredActivityNode getStructuredActivityNode() {
 		EObject sourceSAN = deduceStructuredActivityNode(source);
-		if (sourceSAN instanceof StructuredActivityNode &&
-				sourceSAN == deduceStructuredActivityNode(target)) {
+		if (sourceSAN instanceof StructuredActivityNode && sourceSAN == deduceStructuredActivityNode(target)) {
 			return (StructuredActivityNode) sourceSAN;
 		}
 		return null;
 	}
-	
+
 	private StructuredActivityNode deduceStructuredActivityNode(EObject object) {
 		for (EObject element = object; element != null; element = element.eContainer()) {
 			if (element instanceof StructuredActivityNode) {

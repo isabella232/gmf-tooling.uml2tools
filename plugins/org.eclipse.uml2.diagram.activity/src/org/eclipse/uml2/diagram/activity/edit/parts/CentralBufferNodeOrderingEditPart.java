@@ -252,7 +252,7 @@ public class CentralBufferNodeOrderingEditPart extends LabelEditPart implements 
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**
