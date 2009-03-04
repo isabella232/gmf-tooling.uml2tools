@@ -80,7 +80,7 @@ public abstract class AbsElementGef implements AbsElement {
         StringBuffer result = new StringBuffer("<AbsElementGef:"); //$NON-NLS-1$
         View reference = getReference();
         if (reference == null) {
-            result.append("view = null; ").append(this); //$NON-NLS-1$
+            result.append("view = null; ").append(super.toString()); //$NON-NLS-1$
         } else {
             result.append("view = " + reference.getType()).append("; EP = ").append(getEditPart().getClass().getSimpleName()).append("; entity: ").append(getEditPart().resolveSemanticElement()); //$NON-NLS-1$
         }
