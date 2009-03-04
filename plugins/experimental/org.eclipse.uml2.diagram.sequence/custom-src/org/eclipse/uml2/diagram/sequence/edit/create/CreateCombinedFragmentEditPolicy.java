@@ -38,8 +38,8 @@ import org.eclipse.uml2.diagram.sequence.edit.policies.InteractionNestedLayoutRe
 import org.eclipse.uml2.diagram.sequence.edit.policies.OrderedLayoutEditPolicy;
 import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
 import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
-import org.eclipse.uml2.diagram.sequence.model.create.CreateCombinedFragment;
-import org.eclipse.uml2.diagram.sequence.model.create.SDAnchor;
+import org.eclipse.uml2.diagram.sequence.model.edit.CreateCombinedFragment;
+import org.eclipse.uml2.diagram.sequence.model.edit.SDAnchor;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;

@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.sequence.model.create;
+package org.eclipse.uml2.diagram.sequence.model.edit;
 
 import java.util.ArrayList;
 import java.util.HashSet;

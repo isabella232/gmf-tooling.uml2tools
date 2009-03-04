@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.sequence.model.create;
+package org.eclipse.uml2.diagram.sequence.model.edit;
 
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;

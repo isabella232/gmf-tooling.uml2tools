@@ -1,8 +1,8 @@
 package org.eclipse.uml2.diagram.sequence.tests;
 
 import org.eclipse.uml2.diagram.sequence.model.builder.SDBuilder;
-import org.eclipse.uml2.diagram.sequence.model.create.CreateCombinedFragment;
-import org.eclipse.uml2.diagram.sequence.model.create.SDAnchor;
+import org.eclipse.uml2.diagram.sequence.model.edit.CreateCombinedFragment;
+import org.eclipse.uml2.diagram.sequence.model.edit.SDAnchor;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
