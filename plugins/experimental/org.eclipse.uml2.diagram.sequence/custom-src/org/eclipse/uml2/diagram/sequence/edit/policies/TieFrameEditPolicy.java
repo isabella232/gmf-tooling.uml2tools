@@ -26,7 +26,6 @@ import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 
 public class TieFrameEditPolicy extends SDResizableShapeEditPolicy {
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	protected List<?> createSelectionHandles() {
 		setResizeDirections(PositionConstants.NSEW);
@@ -35,7 +34,7 @@ public class TieFrameEditPolicy extends SDResizableShapeEditPolicy {
 		return result;
 	}
 	
-    private void addResizeCornerHandles(GraphicalEditPart part, List output) {
+    private void addResizeCornerHandles(GraphicalEditPart part, List<Object> output) {
     	ResizableHandleKit.addMoveHandle((GraphicalEditPart)getHost(), output);
         output.add(createExpandFrameHandle(part, PositionConstants.EAST));
         ResizableHandleKit.addHandle(part, output, PositionConstants.EAST);
