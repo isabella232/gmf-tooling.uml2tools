@@ -132,7 +132,7 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 		case MountingLinkEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?TopLevelMountingLinkFigure", UMLElementTypes.Link_4002); //$NON-NLS-1$
 		case InnerMountingLinkEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?InnerMountingLinkFigure", UMLElementTypes.Link_4003); //$NON-NLS-1$
+			return getImage("Navigator?Link?org.eclipse.uml2.diagram.sequence.draw2d.InvisiblePolylineConnection", UMLElementTypes.Link_4003); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}

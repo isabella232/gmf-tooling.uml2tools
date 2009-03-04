@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ViewComponentEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.sequence.draw2d.InvisiblePolylineConnection;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 
 /**
@@ -50,31 +51,14 @@ public class InnerMountingLinkEditPart extends ConnectionNodeEditPart implements
 	 */
 
 	protected Connection createConnectionFigure() {
-		return new InnerMountingLinkFigure();
+		return new InvisiblePolylineConnection();
 	}
 
 	/**
 	 * @generated
 	 */
-	public InnerMountingLinkFigure getPrimaryShape() {
-		return (InnerMountingLinkFigure) getFigure();
-	}
-
-	/**
-	 * @generated
-	 */
-	public class InnerMountingLinkFigure extends PolylineConnectionEx {
-
-		/**
-		 * @generated
-		 */
-		public InnerMountingLinkFigure() {
-			this.setLineWidth(1);
-			this.setLineStyle(Graphics.LINE_DASHDOT);
-			this.setForegroundColor(ColorConstants.red);
-
-		}
-
+	public InvisiblePolylineConnection getPrimaryShape() {
+		return (InvisiblePolylineConnection) getFigure();
 	}
 
 }

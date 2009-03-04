@@ -406,13 +406,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated NOT
 	 */
 	private boolean isNotationOnlyEdge(Edge edge) {
-		switch (UMLVisualIDRegistry.getVisualID(edge.getType())){
-			case MountingLinkEditPart.VISUAL_ID:
-			case InnerMountingLinkEditPart.VISUAL_ID:
-				return true;
-			
-			default: 
-				break;
+		switch (UMLVisualIDRegistry.getVisualID(edge.getType())) {
+		case MountingLinkEditPart.VISUAL_ID:
+		case InnerMountingLinkEditPart.VISUAL_ID:
+			return true;
+
+		default:
+			break;
 		}
 		return false;
 	}
