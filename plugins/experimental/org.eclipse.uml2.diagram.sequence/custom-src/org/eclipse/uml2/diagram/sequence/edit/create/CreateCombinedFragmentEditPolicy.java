@@ -10,17 +10,19 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateParameters;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateParametersImpl;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
@@ -91,14 +93,14 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 		throw new IllegalStateException("EditPolicy " + this + " is not expected to be registered for host : " + umlHost);
 	}
 	
-	private Command createCombinedFragment(CreateCombinedFragmentRequest request){
+	private Command createCombinedFragment(final CreateCombinedFragmentRequest request){
 		LifelineEditPart lifeLineEP = findLifeLineEditPart(getHostImpl());
 		final Lifeline umlLifeline = (Lifeline) lifeLineEP.resolveSemanticElement();
 		final SDModel sdModel = SDModelAccess.findSDModel(getHostImpl().getNotationView());
 		final SDBracketContainer sdHost = findHostBracketContainer(sdModel); 
 		final IGraphicalEditPart frameContainerEP = findFrameContainerEditPart(sdHost);
-		
-		final OrderedLayoutEditPolicy.AnchoredSibling diagramAnchor = computeAnchoredSibling(request);
+		final U2TCreateParameters createParams = U2TCreateParametersImpl.createFor(getHostImpl(), request);
+		final OrderedLayoutEditPolicy.AnchoredSibling diagramAnchor = computeAnchoredSibling(createParams);
 		final SDAnchor sdAnchor;
 		if (diagramAnchor == null || diagramAnchor.isBeforeNotAfterAnchor()){
 			sdAnchor = SDAnchor.firstChildFor(sdHost);
@@ -131,6 +133,16 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 
 				if (combinedMounterView == null){
 					throw new IllegalStateException("Can't create combined mounter view for sd-mounter: " + combinedMounter);
+				}
+				
+				if (createParams.getRelativeLocation() != null){
+					Point relativeLocation = createParams.getRelativeLocation();
+					//ViewUtil.setStructuralFeatureValue(combinedMounterView, NotationPackage.eINSTANCE.getLocation_X(), Integer.valueOf(relativeLocation.x));
+					ViewUtil.setStructuralFeatureValue(combinedMounterView, NotationPackage.eINSTANCE.getLocation_Y(), Integer.valueOf(relativeLocation.y));
+				}
+				if (request.getSize() != null){
+					ViewUtil.setStructuralFeatureValue(combinedMounterView, NotationPackage.eINSTANCE.getSize_Height(), Integer.valueOf(request.getSize().height));
+					ViewUtil.setStructuralFeatureValue(combinedMounterView, NotationPackage.eINSTANCE.getSize_Width(), Integer.valueOf(request.getSize().width));
 				}
 				
 				//XXX: consider frames anchor!
@@ -226,9 +238,8 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 		}
 	}
 	
-	private OrderedLayoutEditPolicy.AnchoredSibling computeAnchoredSibling(CreateRequest request){
-		U2TCreateParametersImpl result = U2TCreateParametersImpl.createFor(getHostImpl(), request);
-		Point relativeLocation = result.getRelativeLocation();
+	private OrderedLayoutEditPolicy.AnchoredSibling computeAnchoredSibling(U2TCreateParameters createParams){
+		Point relativeLocation = createParams.getRelativeLocation();
 		if (relativeLocation != null && getHost().getEditPolicy(EditPolicy.LAYOUT_ROLE) instanceof OrderedLayoutEditPolicy){
 			OrderedLayoutEditPolicy layout = (OrderedLayoutEditPolicy)getHost().getEditPolicy(EditPolicy.LAYOUT_ROLE);
 			return layout.findAnchoredSibling(relativeLocation);
