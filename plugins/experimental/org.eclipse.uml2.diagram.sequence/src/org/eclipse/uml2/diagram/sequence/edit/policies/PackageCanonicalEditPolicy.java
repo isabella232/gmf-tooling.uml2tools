@@ -30,6 +30,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecification
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.GateEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.InnerMountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionOperandMountingRegionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionUseMountingRegionEditPart;
@@ -405,7 +406,15 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 * @generated NOT
 	 */
 	private boolean isNotationOnlyEdge(Edge edge) {
-		return UMLVisualIDRegistry.getType(MountingLinkEditPart.VISUAL_ID).equals(edge.getType());
+		switch (UMLVisualIDRegistry.getVisualID(edge.getType())){
+			case MountingLinkEditPart.VISUAL_ID:
+			case InnerMountingLinkEditPart.VISUAL_ID:
+				return true;
+			
+			default: 
+				break;
+		}
+		return false;
 	}
 
 	/**

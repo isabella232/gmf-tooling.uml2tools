@@ -42,6 +42,7 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.RelativeBendpoints;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.editpolicies.EObjectAndElementTypeAdapter;
+import org.eclipse.uml2.diagram.sequence.edit.parts.InnerMountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MountingLinkEditPart;
@@ -50,6 +51,7 @@ import org.eclipse.uml2.diagram.sequence.edit.policies.OrderedLayoutEditPolicy;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.InteractionOperand;
 
 
 public abstract class AbstractCreateSDElementEditPolicy extends AbstractEditPolicy {
@@ -265,10 +267,15 @@ public abstract class AbstractCreateSDElementEditPolicy extends AbstractEditPoli
 		}	
 		
 		public Edge createMountingLink(View fromMountingRegion, View toFrame){
+			boolean innerNotTopLevel = toFrame.getElement() instanceof InteractionOperand;
+			
+			IElementType linkType = innerNotTopLevel ? UMLElementTypes.Link_4003 : UMLElementTypes.Link_4002;
+			int visualId = innerNotTopLevel ? InnerMountingLinkEditPart.VISUAL_ID : MountingLinkEditPart.VISUAL_ID;
+			
 			Edge result = ViewService.getInstance().createEdge(//
-					UMLElementTypes.Link_4002, 
+					linkType, 
 					fromMountingRegion.getDiagram(), 
-					UMLVisualIDRegistry.getType(MountingLinkEditPart.VISUAL_ID),
+					UMLVisualIDRegistry.getType(visualId),
 					ViewUtil.APPEND, 
 					true, 
 					myPreferencesHint);
