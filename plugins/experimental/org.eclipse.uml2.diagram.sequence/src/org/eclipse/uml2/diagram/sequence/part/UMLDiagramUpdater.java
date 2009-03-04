@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -58,6 +59,7 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.StateInvariant;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -296,23 +298,23 @@ public class UMLDiagramUpdater {
 		if (lifeline == null) {
 			return Collections.emptyList();
 		}
-		
+
 		SDModel sdModel = SDModelAccess.findSDModel(view);
 		if (sdModel == null) {
 			return Collections.emptyList();
 		}
 		CombinedFragment umlCombined = (CombinedFragment) view.getElement();
 		SDCombinedFragment sdCombined = sdModel.getUMLTracing().findCombinedFragment(umlCombined);
-		
-		if (sdCombined == null){
+
+		if (sdCombined == null) {
 			return Collections.emptyList();
 		}
-		
+
 		SDMountingRegion region = sdCombined.findRegionForUmlLifeLine(lifeline);
 		assert region != null;
-		
+
 		List<UMLNodeDescriptor> result = new ArrayList<UMLNodeDescriptor>(region.getBrackets().size());
-		for (SDBracket next : region.getBrackets()){
+		for (SDBracket next : region.getBrackets()) {
 			InteractionFragment nextUMLChild = next.getUmlFragment();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, nextUMLChild);
 			if (visualID == InteractionOperandMountingRegionEditPart.VISUAL_ID) {
@@ -331,7 +333,7 @@ public class UMLDiagramUpdater {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		
+
 		SDModel sdModel = SDModelAccess.findSDModel(view);
 		if (sdModel == null) {
 			return Collections.emptyList();
@@ -339,10 +341,10 @@ public class UMLDiagramUpdater {
 
 		CombinedFragment umlCombined = (CombinedFragment) view.getElement();
 		SDCombinedFragment sdCombined = sdModel.getUMLTracing().findCombinedFragment(umlCombined);
-		if (sdCombined == null){
+		if (sdCombined == null) {
 			return Collections.emptyList();
 		}
-		
+
 		List result = new LinkedList();
 		for (SDFrame nextSubframe : sdCombined.getFrames()) {
 			InteractionFragment umLChild = nextSubframe.getUmlFragment();
