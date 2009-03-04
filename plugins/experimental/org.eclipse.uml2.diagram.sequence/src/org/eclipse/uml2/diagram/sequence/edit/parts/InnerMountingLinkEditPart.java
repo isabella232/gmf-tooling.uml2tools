@@ -3,8 +3,6 @@ package org.eclipse.uml2.diagram.sequence.edit.parts;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.RotatableDecoration;
-import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
@@ -12,25 +10,23 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ViewComponentEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.common.draw2d.decoration.EllipseDecoration;
-import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 
 /**
  * @generated
  */
 
-public class MountingLinkEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class InnerMountingLinkEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4002;
+	public static final int VISUAL_ID = 4003;
 
 	/**
 	 * @generated
 	 */
-	public MountingLinkEditPart(View view) {
+	public InnerMountingLinkEditPart(View view) {
 		super(view);
 	}
 
@@ -54,43 +50,29 @@ public class MountingLinkEditPart extends ConnectionNodeEditPart implements ITre
 	 */
 
 	protected Connection createConnectionFigure() {
-		return new TopLevelMountingLinkFigure();
+		return new InnerMountingLinkFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public TopLevelMountingLinkFigure getPrimaryShape() {
-		return (TopLevelMountingLinkFigure) getFigure();
+	public InnerMountingLinkFigure getPrimaryShape() {
+		return (InnerMountingLinkFigure) getFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public class TopLevelMountingLinkFigure extends PolylineConnectionEx {
+	public class InnerMountingLinkFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated
 		 */
-		public TopLevelMountingLinkFigure() {
+		public InnerMountingLinkFigure() {
 			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASHDOT);
-			this.setForegroundColor(ColorConstants.darkBlue);
+			this.setForegroundColor(ColorConstants.red);
 
-			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private RotatableDecoration createTargetDecoration() {
-			EllipseDecoration df = new EllipseDecoration();
-
-			df.setAlwaysFill(true);
-
-			df.setPreferredSize(new Dimension(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5)));
-
-			return df;
 		}
 
 	}

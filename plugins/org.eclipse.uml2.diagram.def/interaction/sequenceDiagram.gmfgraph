@@ -530,13 +530,26 @@
           figure="//@figures.0/@descriptors.13/@actualFigure/@customChildren.5/@typedFigure"/>
     </descriptors>
     <descriptors
-        name="MountingLinkFigure">
+        name="TopLevelMountingLinkFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
-          lineKind="LINE_DASHDOT">
+          name="TopLevelMountingLinkConnection"
+          lineKind="LINE_DASHDOT"
+          targetDecoration="//@figures.0/@descriptors.14/@actualFigure/@children.0">
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
-            value="green"/>
+            value="darkBlue"/>
+        <children
+            xsi:type="gmfgraph:CustomDecoration"
+            name="MountingDotDecoration"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.decoration.EllipseDecoration">
+          <preferredSize
+              dx="5"
+              dy="5"/>
+          <attributes
+              name="alwaysFill"
+              value="true"/>
+        </children>
       </actualFigure>
     </descriptors>
     <descriptors
@@ -565,6 +578,17 @@
           xsi:type="gmfgraph:Label"
           name="Message_label"
           text="Default"/>
+    </descriptors>
+    <descriptors
+        name="InnerMountingLinkFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="InnerMountingLinkConnection"
+          lineKind="LINE_DASHDOT">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="red"/>
+      </actualFigure>
     </descriptors>
   </figures>
   <nodes
@@ -667,8 +691,11 @@
       name="MessageLink"
       figure="MessageFigure"/>
   <connections
-      name="MountingLink"
-      figure="MountingLinkFigure"/>
+      name="TopLevelMountingLink"
+      figure="TopLevelMountingLinkFigure"/>
+  <connections
+      name="InnerMountingLink"
+      figure="InnerMountingLinkFigure"/>
   <compartments
       name="interaction contents"
       figure="CustomInteractionFigure"

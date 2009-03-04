@@ -305,7 +305,11 @@
         xsi:type="gmftool:CreationTool"
         href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.11"/>
     <diagramLink
-        href="sequenceDiagram.gmfgraph#MountingLink"/>
+        href="sequenceDiagram.gmfgraph#TopLevelMountingLink"/>
+  </links>
+  <links>
+    <diagramLink
+        href="sequenceDiagram.gmfgraph#InnerMountingLink"/>
   </links>
   <diagram>
     <diagramCanvas

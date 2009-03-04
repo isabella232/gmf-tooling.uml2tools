@@ -376,6 +376,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateLink_4003() {
+			return canExistLink_4003();
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistMessage_4001(Interaction container, Element source, Element target) {
 			try {
 				if (source == null) {
@@ -413,6 +420,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistLink_4002() {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistLink_4003() {
 			return true;
 		}
 

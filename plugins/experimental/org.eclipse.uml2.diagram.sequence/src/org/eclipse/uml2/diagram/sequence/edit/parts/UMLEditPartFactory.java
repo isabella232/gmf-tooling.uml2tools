@@ -97,6 +97,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case MountingLinkEditPart.VISUAL_ID:
 				return new MountingLinkEditPart(view);
+
+			case InnerMountingLinkEditPart.VISUAL_ID:
+				return new InnerMountingLinkEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

@@ -12,6 +12,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificati
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentInteractionOperatorEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.GateEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.InnerMountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionOperandMountingRegionEditPart;
@@ -36,6 +37,7 @@ import org.eclipse.uml2.diagram.sequence.view.factories.BehaviorExecutionSpecifi
 import org.eclipse.uml2.diagram.sequence.view.factories.CombinedFragmentInteractionOperatorViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.CombinedFragmentMountingRegionViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.GateViewFactory;
+import org.eclipse.uml2.diagram.sequence.view.factories.InnerMountingLinkViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.InteractionNameViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.InteractionOperandMountingRegionViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.InteractionUseMountingRegionViewFactory;
@@ -259,6 +261,8 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return MessageViewFactory.class;
 		case MountingLinkEditPart.VISUAL_ID:
 			return MountingLinkViewFactory.class;
+		case InnerMountingLinkEditPart.VISUAL_ID:
+			return InnerMountingLinkViewFactory.class;
 		}
 		return null;
 	}

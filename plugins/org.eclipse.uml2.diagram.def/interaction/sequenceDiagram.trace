@@ -75,4 +75,7 @@
   <linkTraces
       visualID="4002"
       queryText="modelFacet = null"/>
+  <linkTraces
+      visualID="4003"
+      queryText="modelFacet = null"/>
 </trace:TraceModel>

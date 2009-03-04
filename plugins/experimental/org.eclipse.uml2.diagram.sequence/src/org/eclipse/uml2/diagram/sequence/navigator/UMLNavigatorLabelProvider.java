@@ -21,6 +21,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificati
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentInteractionOperatorEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.GateEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.InnerMountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionOperandMountingRegionEditPart;
@@ -129,7 +130,9 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 		case MessageEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Message", UMLElementTypes.Message_4001); //$NON-NLS-1$
 		case MountingLinkEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?MountingLinkFigure", UMLElementTypes.Link_4002); //$NON-NLS-1$
+			return getImage("Navigator?Link?TopLevelMountingLinkFigure", UMLElementTypes.Link_4002); //$NON-NLS-1$
+		case InnerMountingLinkEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?InnerMountingLinkFigure", UMLElementTypes.Link_4003); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -210,6 +213,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getMessage_4001Text(view);
 		case MountingLinkEditPart.VISUAL_ID:
 			return getLink_4002Text(view);
+		case InnerMountingLinkEditPart.VISUAL_ID:
+			return getLink_4003Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -405,6 +410,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getLink_4002Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getLink_4003Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

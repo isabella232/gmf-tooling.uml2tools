@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecification
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.GateEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.InnerMountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionOperandMountingRegionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionUseMountingRegionEditPart;
@@ -134,7 +135,12 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Link_4002 = getElementType("org.eclipse.uml2.diagram.sequence.Link_4002"); //$NON-NLS-1$
+	public static final IElementType Link_4002 = getElementType("org.eclipse.uml2.diagram.sequence.TopLevelMountingLink_4002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType Link_4003 = getElementType("org.eclipse.uml2.diagram.sequence.InnerMountingLink_4003"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -301,6 +307,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(InteractionOperand_3011);
 			KNOWN_ELEMENT_TYPES.add(Message_4001);
 			KNOWN_ELEMENT_TYPES.add(Link_4002);
+			KNOWN_ELEMENT_TYPES.add(Link_4003);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -340,6 +347,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Message_4001;
 		case MountingLinkEditPart.VISUAL_ID:
 			return Link_4002;
+		case InnerMountingLinkEditPart.VISUAL_ID:
+			return Link_4003;
 		}
 		return null;
 	}
