@@ -11,6 +11,8 @@
  */
 package org.eclipse.uml2.diagram.common.sheet;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.ui.celleditor.ExtendedDialogCellEditor;
 import org.eclipse.emf.ecore.EObject;
@@ -71,7 +73,8 @@ public class ReferencePropertyDescriptor extends PropertyDescriptor {
 			}
 			if (useDialogNotComboCellEditor()) {
 				ReferencedElementChooserDialog dialog = new ReferencedElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object, feature);
-				return new ReferenceDialogCellEditor(composite, dialog, getLabelProvider());
+				Collection<?> choiceOfValues = myItemPropertyDescriptor.getChoiceOfValues(mySourceObject);
+				return new ReferenceDialogCellEditor(composite, dialog, choiceOfValues, getLabelProvider());
 			}
 		}
 		return super.createPropertyEditor(composite);

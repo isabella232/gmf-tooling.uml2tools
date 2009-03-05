@@ -161,7 +161,13 @@ public abstract class TextAndDialogCellEditor extends ExtendedDialogCellEditor {
 	 */
 	@Override
 	protected Object doGetValue() {
+		super.doGetValue();
 		return text.getText();
+	}
+	
+	protected Object getObjectValue() {
+		// here we return the value stored in DialogCellEditor
+		return super.doGetValue();
 	}
 
 	@Override
@@ -178,7 +184,7 @@ public abstract class TextAndDialogCellEditor extends ExtendedDialogCellEditor {
 	
 	@Override
 	protected void updateContents(Object value) {
-		if (text == null || (false == value instanceof String)) {
+		if (text == null) {
 			return;
 		}
 		text.removeModifyListener(getModifyListener());
