@@ -12,6 +12,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsElement;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsLink;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.uml.ExecutionSpecification;
 
 
@@ -51,6 +53,8 @@ public class MissedMethods {
 	public static interface _ExecutionSpecification {
 		public boolean isDestruction(View specView);
 		public boolean isCreation(View specView);
+		public boolean isDestruction(SDExecution execution);
+		public boolean isCreation(SDExecution execution);
 		public boolean isHideFoundMessage(View specView);
 	}
 	

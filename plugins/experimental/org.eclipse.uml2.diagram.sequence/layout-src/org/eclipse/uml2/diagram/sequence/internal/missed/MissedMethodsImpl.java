@@ -346,6 +346,16 @@ public class MissedMethodsImpl {
 			return isCreationDestruction(specView, false);
 		}
 		
+		public boolean isCreation(SDExecution execution) {
+			return isCreationDestruction(execution, true);
+		}
+		
+		public boolean isDestruction(SDExecution execution) {
+			return isCreationDestruction(execution, false);
+		}
+		
+		
+		
 		private boolean isCreationDestruction(View specView, boolean creationNotDectruction){
 			EObject entity = specView.getElement();
 			if (false == entity instanceof ExecutionSpecification){
@@ -362,7 +372,10 @@ public class MissedMethodsImpl {
 				return false;
 			}
 			
-			SDExecution sdExecution = (SDExecution)sdSpec;
+			return isCreationDestruction((SDExecution)sdSpec, creationNotDectruction);
+		}
+		
+		private boolean isCreationDestruction(SDExecution sdExecution, boolean creationNotDectruction){
 			if (false == sdExecution.getBracketContainer() instanceof SDLifeLine){
 				return false;
 			}
@@ -380,6 +393,7 @@ public class MissedMethodsImpl {
 			int desiredIndex = creationNotDectruction ? 0 : brackets.size() - 1;
 			boolean result = brackets.indexOf(sdExecution) == desiredIndex;
 			return result;
+
 		}
 		
 		public boolean isHideFoundMessage(View specView) {
