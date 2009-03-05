@@ -12,9 +12,10 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsElement;
 import org.eclipse.uml2.diagram.sequence.internal.layout.abstractgde.AbsLink;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.uml.ExecutionSpecification;
+import org.eclipse.uml2.uml.MessageSort;
 
 
 /*
@@ -56,6 +57,8 @@ public class MissedMethods {
 		public boolean isDestruction(SDExecution execution);
 		public boolean isCreation(SDExecution execution);
 		public boolean isHideFoundMessage(View specView);
+		
+		public boolean isAsynchronousInvocation(SDInvocation invocation);
 	}
 	
 	public static interface _ArcasMetamodelSpecific {
@@ -64,6 +67,8 @@ public class MissedMethods {
 		public boolean isFrame(EObject eObject);
 
 		public boolean isAsynchonousMessage(AbsLink absElement);
+		public boolean isAsynchonousMessageSort(MessageSort messageSort);
+		
 		public boolean isMountingLink(AbsElement absElement);
 		public boolean isMessageLink(AbsElement absElement);
 		public boolean isAlienLink(AbsLink link);

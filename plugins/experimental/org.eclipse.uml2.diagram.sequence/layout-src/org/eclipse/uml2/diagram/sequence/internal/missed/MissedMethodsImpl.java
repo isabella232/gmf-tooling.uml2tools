@@ -180,8 +180,14 @@ public class MissedMethodsImpl {
 			}
 			Message message = (Message) reference.getElement();
 			MessageSort messageSort = message.getMessageSort();
+			return isAsynchonousMessageSort(messageSort);
+		}
+		
+		public boolean isAsynchonousMessageSort(MessageSort messageSort) {
 			return messageSort == MessageSort.ASYNCH_CALL_LITERAL || messageSort == MessageSort.ASYNCH_SIGNAL_LITERAL;
 		}
+		
+		
 		
 		public boolean isFoundMessageInvocation(EObject object) {
 			// TODO Auto-generated method stub
@@ -354,7 +360,14 @@ public class MissedMethodsImpl {
 			return isCreationDestruction(execution, false);
 		}
 		
-		
+		public boolean isAsynchronousInvocation(SDInvocation invocation) {
+			SDMessage sdMessage = invocation.getOutgoingMessage();
+			if (sdMessage == null){
+				return false;
+			}
+			Message umlMessage = sdMessage.getUmlMessage();
+			return umlMessage != null && MissedMethods._arcasMetamodelSpecific().isAsynchonousMessageSort(umlMessage.getMessageSort());
+		}
 		
 		private boolean isCreationDestruction(View specView, boolean creationNotDectruction){
 			EObject entity = specView.getElement();
