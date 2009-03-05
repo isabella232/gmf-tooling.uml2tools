@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDFrame.java,v 1.5 2009/03/03 14:17:28 mgolubev Exp $
+ * $Id: SDFrame.java,v 1.6 2009/03/05 00:53:21 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -27,7 +27,7 @@ import org.eclipse.uml2.uml.Lifeline;
  * @model abstract="true"
  * @generated
  */
-public interface SDFrame extends SDFrameContainer, SDBackedByFragment {
+public interface SDFrame extends SDFrameContainer, SDBackedByFragment, SDEntity {
 	/**
 	 * Returns the value of the '<em><b>Frame Container</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrameContainer#getFrames <em>Frames</em>}'.

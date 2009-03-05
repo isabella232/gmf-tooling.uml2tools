@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDModel.java,v 1.4 2009/02/28 21:17:05 mgolubev Exp $
+ * $Id: SDModel.java,v 1.5 2009/03/05 00:53:21 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Interaction;
  * @model
  * @generated
  */
-public interface SDModel extends SDFrameContainer {
+public interface SDModel extends SDFrameContainer, SDEntity {
 	/**
 	 * Returns the value of the '<em><b>Uml Interaction</b></em>' reference.
 	 * <!-- begin-user-doc -->

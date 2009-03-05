@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAdapterFactory.java,v 1.6 2009/03/03 14:17:27 mgolubev Exp $
+ * $Id: SDAdapterFactory.java,v 1.7 2009/03/05 00:53:22 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.util;
 
@@ -85,6 +85,10 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected SDSwitch<Adapter> modelSwitch =
 		new SDSwitch<Adapter>() {
+			@Override
+			public Adapter caseSDEntity(SDEntity object) {
+				return createSDEntityAdapter();
+			}
 			@Override
 			public Adapter caseSDModel(SDModel object) {
 				return createSDModelAdapter();
@@ -248,6 +252,20 @@ public class SDAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity
+	 * @generated
+	 */
+	public Adapter createSDEntityAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel <em>Model</em>}'.

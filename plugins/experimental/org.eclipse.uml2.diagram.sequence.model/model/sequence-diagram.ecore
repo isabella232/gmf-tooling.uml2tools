@@ -3,7 +3,8 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sequenced"
     nsURI="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/1.0" nsPrefix="uml2t.seqd">
-  <eClassifiers xsi:type="ecore:EClass" name="SDModel" eSuperTypes="#//SDFrameContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="SDEntity" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SDModel" eSuperTypes="#//SDFrameContainer #//SDEntity">
     <eOperations name="getUMLTracing" eType="#//SDTrace"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlInteraction" lowerBound="1"
         eType="#//UMLInteraction"/>
@@ -14,14 +15,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="gates" upperBound="-1"
         eType="#//SDGate" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDGate">
+  <eClassifiers xsi:type="ecore:EClass" name="SDGate" eSuperTypes="#//SDEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlGate" eType="#//UMLGate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDBackedByFragment" abstract="true"
-      interface="true">
+      interface="true" eSuperTypes="#//SDEntity">
     <eOperations name="getUmlFragment" eType="#//UMLInteractionFragment"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDLifeLineElement" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="SDLifeLineElement" abstract="true" eSuperTypes="#//SDEntity">
     <eOperations name="getCoveredLifeLine" eType="#//SDLifeLine"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SDBracketContainer" abstract="true"
@@ -51,7 +52,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="frame" lowerBound="1" eType="#//SDFrame"
         eOpposite="#//SDFrame/regions"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDFrame" abstract="true" eSuperTypes="#//SDFrameContainer #//SDBackedByFragment">
+  <eClassifiers xsi:type="ecore:EClass" name="SDFrame" abstract="true" eSuperTypes="#//SDFrameContainer #//SDBackedByFragment #//SDEntity">
     <eOperations name="findRegionForUmlLifeLine" eType="#//SDMountingRegion">
       <eParameters name="umlLifeline" eType="#//UMLLifeline"/>
     </eOperations>
@@ -94,7 +95,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingMessage" lowerBound="1"
         eType="#//SDMessage" eOpposite="#//SDMessage/source"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDAbstractMessage" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="SDAbstractMessage" abstract="true" eSuperTypes="#//SDEntity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="umlMessage" eType="#//UMLMessage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//SDModel"
         changeable="false" eOpposite="#//SDModel/messages"/>

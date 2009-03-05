@@ -1,7 +1,11 @@
 @namespace(uri="http://www.eclipse.org/mdt/uml2tools/sequence-diagram/1.0", prefix="uml2t.seqd")
 package sequenced;
 
-class SDModel extends SDFrameContainer {
+abstract interface SDEntity {
+	//
+}
+
+class SDModel extends SDFrameContainer, SDEntity {
 	ref UMLInteraction[1] umlInteraction;
 	ordered val SDLifeLine[*]#model lifelines;
 	ordered val SDAbstractMessage[*]#model messages; 
@@ -10,15 +14,15 @@ class SDModel extends SDFrameContainer {
 	op SDTrace getUMLTracing();
 }
 
-class SDGate {
+class SDGate extends SDEntity {
 	ref UMLGate umlGate;
 }
 
-abstract interface SDBackedByFragment {
+abstract interface SDBackedByFragment extends SDEntity {
 	op UMLInteractionFragment getUmlFragment();
 }
 
-abstract class SDLifeLineElement {
+abstract class SDLifeLineElement extends SDEntity {
 	op SDLifeLine getCoveredLifeLine();
 }
 
@@ -47,7 +51,7 @@ class SDMountingRegion extends SDBracket, SDBracketContainer {
 	op SDMountingRegion findMountingRegionForSubFrame(SDFrame subFrame);
 }
 
-abstract class SDFrame extends SDFrameContainer, SDBackedByFragment {
+abstract class SDFrame extends SDFrameContainer, SDBackedByFragment, SDEntity {
 	readonly ref SDFrameContainer[1]#frames frameContainer;
 	ref SDMountingRegion[*]#frame regions;
 	ref SDLifeLine[*] coveredLifeLines;
@@ -83,7 +87,7 @@ class SDInvocation extends SDBehaviorSpec {
 	ref SDMessage[1]#source outgoingMessage;
 }
 
-abstract class SDAbstractMessage {
+abstract class SDAbstractMessage extends SDEntity {
 	ref UMLMessage umlMessage;
 	readonly ref SDModel[1]#messages model;
 	attr String messageNumber; 

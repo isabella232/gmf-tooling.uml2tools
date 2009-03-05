@@ -2,11 +2,9 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDBackedByFragment.java,v 1.1 2009/03/03 14:17:28 mgolubev Exp $
+ * $Id: SDBackedByFragment.java,v 1.2 2009/03/05 00:53:21 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
-
-import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.uml2.uml.InteractionFragment;
 
@@ -20,7 +18,7 @@ import org.eclipse.uml2.uml.InteractionFragment;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface SDBackedByFragment extends EObject {
+public interface SDBackedByFragment extends SDEntity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

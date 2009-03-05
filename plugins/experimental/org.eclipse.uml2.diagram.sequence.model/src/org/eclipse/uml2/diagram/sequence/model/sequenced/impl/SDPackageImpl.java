@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDPackageImpl.java,v 1.10 2009/03/03 14:17:27 mgolubev Exp $
+ * $Id: SDPackageImpl.java,v 1.11 2009/03/05 00:53:22 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced.impl;
 
@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFactory;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
@@ -60,6 +61,13 @@ import org.eclipse.uml2.uml.StateInvariant;
  * @generated
  */
 public class SDPackageImpl extends EPackageImpl implements SDPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sdEntityEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -378,6 +386,15 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		theSDPackage.freeze();
 
 		return theSDPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSDEntity() {
+		return sdEntityEClass;
 	}
 
 	/**
@@ -1056,6 +1073,8 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		sdEntityEClass = createEClass(SD_ENTITY);
+
 		sdModelEClass = createEClass(SD_MODEL);
 		createEReference(sdModelEClass, SD_MODEL__UML_INTERACTION);
 		createEReference(sdModelEClass, SD_MODEL__LIFELINES);
@@ -1194,6 +1213,10 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 
 		// Add supertypes to classes
 		sdModelEClass.getESuperTypes().add(this.getSDFrameContainer());
+		sdModelEClass.getESuperTypes().add(this.getSDEntity());
+		sdGateEClass.getESuperTypes().add(this.getSDEntity());
+		sdBackedByFragmentEClass.getESuperTypes().add(this.getSDEntity());
+		sdLifeLineElementEClass.getESuperTypes().add(this.getSDEntity());
 		sdBracketContainerEClass.getESuperTypes().add(this.getSDLifeLineElement());
 		sdBracketEClass.getESuperTypes().add(this.getSDLifeLineElement());
 		sdBracketEClass.getESuperTypes().add(this.getSDBackedByFragment());
@@ -1204,17 +1227,21 @@ public class SDPackageImpl extends EPackageImpl implements SDPackage {
 		sdMountingRegionEClass.getESuperTypes().add(this.getSDBracketContainer());
 		sdFrameEClass.getESuperTypes().add(this.getSDFrameContainer());
 		sdFrameEClass.getESuperTypes().add(this.getSDBackedByFragment());
+		sdFrameEClass.getESuperTypes().add(this.getSDEntity());
 		sdInteractionUseEClass.getESuperTypes().add(this.getSDFrame());
 		sdCombinedFragmentEClass.getESuperTypes().add(this.getSDFrame());
 		sdInteractionOperandEClass.getESuperTypes().add(this.getSDFrame());
 		sdExecutionEClass.getESuperTypes().add(this.getSDBehaviorSpec());
 		sdInvocationEClass.getESuperTypes().add(this.getSDBehaviorSpec());
+		sdAbstractMessageEClass.getESuperTypes().add(this.getSDEntity());
 		sdMessageEClass.getESuperTypes().add(this.getSDAbstractMessage());
 		sdGateMessageEClass.getESuperTypes().add(this.getSDAbstractMessage());
 		sdGateMessageEndEClass.getESuperTypes().add(this.getSDBracket());
 		sdSimpleNodeEClass.getESuperTypes().add(this.getSDBracket());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(sdEntityEClass, SDEntity.class, "SDEntity", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(sdModelEClass, SDModel.class, "SDModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSDModel_UmlInteraction(), this.getUMLInteraction(), null, "umlInteraction", null, 1, 1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSDModel_Lifelines(), this.getSDLifeLine(), this.getSDLifeLine_Model(), "lifelines", null, 0, -1, SDModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

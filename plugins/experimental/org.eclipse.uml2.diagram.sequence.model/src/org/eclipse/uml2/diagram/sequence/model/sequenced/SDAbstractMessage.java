@@ -2,11 +2,9 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDAbstractMessage.java,v 1.4 2009/02/28 15:23:02 mgolubev Exp $
+ * $Id: SDAbstractMessage.java,v 1.5 2009/03/05 00:53:22 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
-
-import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.uml2.uml.Message;
 
@@ -28,7 +26,7 @@ import org.eclipse.uml2.uml.Message;
  * @model abstract="true"
  * @generated
  */
-public interface SDAbstractMessage extends EObject {
+public interface SDAbstractMessage extends SDEntity {
 	/**
 	 * Returns the value of the '<em><b>Uml Message</b></em>' reference.
 	 * <!-- begin-user-doc -->

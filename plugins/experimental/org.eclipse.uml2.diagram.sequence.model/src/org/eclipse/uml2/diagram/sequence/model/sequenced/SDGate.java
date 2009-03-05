@@ -2,11 +2,9 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDGate.java,v 1.1 2009/01/28 05:27:46 mgolubev Exp $
+ * $Id: SDGate.java,v 1.2 2009/03/05 00:53:21 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
-
-import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.uml2.uml.Gate;
 
@@ -26,7 +24,7 @@ import org.eclipse.uml2.uml.Gate;
  * @model
  * @generated
  */
-public interface SDGate extends EObject {
+public interface SDGate extends SDEntity {
 	/**
 	 * Returns the value of the '<em><b>Uml Gate</b></em>' reference.
 	 * <!-- begin-user-doc -->

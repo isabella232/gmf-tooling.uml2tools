@@ -2,11 +2,10 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SDLifeLineElement.java,v 1.2 2009/02/28 23:44:29 mgolubev Exp $
+ * $Id: SDLifeLineElement.java,v 1.3 2009/03/05 00:53:21 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.sequence.model.sequenced;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface SDLifeLineElement extends EObject {
+public interface SDLifeLineElement extends SDEntity {
 
 	/**
 	 * <!-- begin-user-doc -->
