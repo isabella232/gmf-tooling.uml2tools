@@ -13,12 +13,14 @@ package org.eclipse.uml2.diagram.common.sheet.chooser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -123,13 +125,14 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 		return result.toArray(new EObject[result.size()]);
 	}
 
-	protected List<Object> getAllChildren(Object parentElement) {
-		List<Object> result = new LinkedList<Object>();
-		for (Object next : ModelElementsContentHelper.getChildren(parentElement, myAdapterFctoryContentProvier, myEditingDomain.getResourceSet())) {
-			result.add(next);
-			result.addAll(getAllChildren(next));
-		}
-		return result;
+	protected Collection<EObject> getAllChildren(Object parentElement) {
+		return ItemPropertyDescriptor.getReachableObjectsOfType(mySourceObject, myFeature.getEType());
+//		List<Object> result = new LinkedList<Object>();
+//		for (Object next : ModelElementsContentHelper.getChildren(parentElement, myAdapterFctoryContentProvier, myEditingDomain.getResourceSet())) {
+//			result.add(next);
+//			result.addAll(getAllChildren(next));
+//		}
+//		return result;
 	}
 
 	public void addDoubleClickListener(IDoubleClickListener l) {
