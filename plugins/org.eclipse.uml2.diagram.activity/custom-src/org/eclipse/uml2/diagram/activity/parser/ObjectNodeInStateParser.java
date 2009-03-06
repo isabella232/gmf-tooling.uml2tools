@@ -36,6 +36,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.diagram.common.parser.ElementProvider;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.State;
@@ -113,7 +114,7 @@ public class ObjectNodeInStateParser implements ISemanticParser {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
-	private NamedElementProvider getElementProvider() {
+	private ElementProvider getElementProvider() {
 		if (elementProvider == null) {
 			elementProvider = new NamedElementProvider(true);
 		}
@@ -126,95 +127,15 @@ public class ObjectNodeInStateParser implements ISemanticParser {
 
 	private static final String PLUGIN_ID = "org.eclipse.uml2.diagram.activity"; //$NON-NLS-1$
 
-	private NamedElementProvider elementProvider;
+	private ElementProvider elementProvider;
 	
-	/**
-	 * TODO: Modify org.eclipse.uml2.diagram.common.parser.ElementProvider 
-	 * 			to extend it instead of copy/paste
-	 */
-	private static class NamedElementProvider {
-		private final SortedMap<String, NamedElement> myNamesMap;
-		private final SortedSet<String> myCaseInsensitiveNames;
-		private final SortedSet<String> myCaseInsensitiveNamesRO;
-		private ResourceSet myResourceSet;
-		private EObject myContext;
-		private boolean myIsCaching;
-		
-		public NamedElementProvider(){
-			this(false);
+	private static class NamedElementProvider extends ElementProvider {
+		public NamedElementProvider(boolean isCaching) {
+			super(isCaching);
 		}
 
-		public NamedElementProvider(boolean isCaching){
-			myIsCaching = isCaching;
-			myNamesMap = new TreeMap<String, NamedElement>();
-			myCaseInsensitiveNames = new TreeSet<String>(String.CASE_INSENSITIVE_ORDER);
-			myCaseInsensitiveNamesRO = Collections.unmodifiableSortedSet(myCaseInsensitiveNames);
-		}
-		
-		public Iterable<NamedElement> getElements(EObject eObject){
-			setContext(eObject);
-			return myNamesMap.values();
-		}
-		
-		public SortedSet<String> getElementNames(EObject eObject){
-			setContext(eObject);
-			return myCaseInsensitiveNamesRO;
-		}
-		
-		public NamedElement findElement(EObject context, String name){
-			setContext(context);
-			return myNamesMap.get(name.trim());
-		}
-		
-		protected void setContext(EObject context){
-			myContext = context;
-			ResourceSet resourceSet = context.eResource().getResourceSet();
-			if (myIsCaching && myResourceSet != null && myResourceSet.equals(resourceSet) && !moreResourcesWereLoaded(resourceSet)){
-				return;
-			}
-			
-			myNamesMap.clear();
-			myCaseInsensitiveNames.clear();
-			myResourceSet = resourceSet;
-			
-			for (NamedElement element : loadAllElements(resourceSet)){
-				String displayName = getDisplayProposal(element);
-				if (displayName == null){
-					continue;
-				}
-				myCaseInsensitiveNames.add(displayName);
-				myNamesMap.put(displayName, element);
-			}
-		}
-		
-		protected String getDisplayProposal(NamedElement element){
-			return element.getName();
-		}
-
-		protected List<NamedElement> loadAllElements(ResourceSet resourceSet){
-			EList<Resource> resources = resourceSet.getResources();
-			List<NamedElement> allElements = new LinkedList<NamedElement>();
-			for (Resource metamodel: resources) {
-				for (Iterator<EObject> contents = metamodel.getAllContents(); contents.hasNext();) {
-					EObject next = contents.next();
-					if (isSuitable(next)) {
-						allElements.add((NamedElement)next);
-					}
-				}
-			}
-			return allElements;
-		}
-		
 		protected boolean isSuitable(Object object) {
 			return object instanceof State && ((State)object).getName() != null;
-		}
-		
-		protected EObject getContext() {
-			return myContext;
-		}
-		
-		private boolean moreResourcesWereLoaded(ResourceSet resourceSet) {
-			return !myResourceSet.getResources().equals(resourceSet.getResources());
 		}
 	}
 }

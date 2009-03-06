@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.uml2.diagram.common.parser.ElementProvider;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Relationship;
 import org.eclipse.uml2.uml.resource.UMLResource;
@@ -19,7 +20,7 @@ public class ElementImportProvider extends ElementProvider {
 	}
 	
 	@Override
-	protected List<PackageableElement> loadAllElements(ResourceSet resourceSet) {
+	protected List<NamedElement> loadAllElements(ResourceSet resourceSet) {
 		preloadLibraries(resourceSet);
 		return super.loadAllElements(resourceSet);
 	}
@@ -35,7 +36,7 @@ public class ElementImportProvider extends ElementProvider {
 	}
 	
 	@Override
-	protected String getDisplayProposal(PackageableElement element) {
+	protected String getDisplayProposal(NamedElement element) {
 		String result = element.getQualifiedName();
 		if (result == null || result.length() == 0){
 			result = element.getName();

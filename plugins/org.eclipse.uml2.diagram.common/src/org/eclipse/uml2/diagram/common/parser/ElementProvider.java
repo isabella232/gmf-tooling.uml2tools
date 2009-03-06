@@ -26,10 +26,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.PackageableElement;
 
 public class ElementProvider {
-	private final SortedMap<String, PackageableElement> myNamesMap;
+	private final SortedMap<String, NamedElement> myNamesMap;
 	private final SortedSet<String> myCaseInsensitiveNames;
 	private final SortedSet<String> myCaseInsensitiveNamesRO;
 	private ResourceSet myResourceSet;
@@ -42,12 +43,12 @@ public class ElementProvider {
 
 	public ElementProvider(boolean isCaching){
 		myIsCaching = isCaching;
-		myNamesMap = new TreeMap<String, PackageableElement>();
+		myNamesMap = new TreeMap<String, NamedElement>();
 		myCaseInsensitiveNames = new TreeSet<String>(String.CASE_INSENSITIVE_ORDER);
 		myCaseInsensitiveNamesRO = Collections.unmodifiableSortedSet(myCaseInsensitiveNames);
 	}
 	
-	public Iterable<PackageableElement> getElements(EObject eObject){
+	public Iterable<NamedElement> getElements(EObject eObject){
 		setContext(eObject);
 		return myNamesMap.values();
 	}
@@ -57,7 +58,7 @@ public class ElementProvider {
 		return myCaseInsensitiveNamesRO;
 	}
 	
-	public PackageableElement findElement(EObject context, String name){
+	public NamedElement findElement(EObject context, String name){
 		setContext(context);
 		return myNamesMap.get(name.trim());
 	}
@@ -73,7 +74,7 @@ public class ElementProvider {
 		myCaseInsensitiveNames.clear();
 		myResourceSet = resourceSet;
 		
-		for (PackageableElement element : loadAllElements(resourceSet)){
+		for (NamedElement element : loadAllElements(resourceSet)){
 			String displayName = getDisplayProposal(element);
 			if (displayName == null){
 				continue;
@@ -83,18 +84,18 @@ public class ElementProvider {
 		}
 	}
 	
-	protected String getDisplayProposal(PackageableElement element){
+	protected String getDisplayProposal(NamedElement element){
 		return element.getName();
 	}
 
-	protected List<PackageableElement> loadAllElements(ResourceSet resourceSet){
+	protected List<NamedElement> loadAllElements(ResourceSet resourceSet){
 		EList<Resource> resources = resourceSet.getResources();
-		List<PackageableElement> allElements = new LinkedList<PackageableElement>();
+		List<NamedElement> allElements = new LinkedList<NamedElement>();
 		for (Resource metamodel: resources) {
 			for (Iterator<EObject> contents = metamodel.getAllContents(); contents.hasNext();) {
 				EObject next = contents.next();
 				if (isSuitable(next)) {
-					allElements.add((PackageableElement)next);
+					allElements.add((NamedElement)next);
 				}
 			}
 		}

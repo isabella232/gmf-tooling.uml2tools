@@ -30,6 +30,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.diagram.common.parser.ElementProvider;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.ObjectNodeOrderingKind;
 import org.eclipse.uml2.uml.PackageableElement;
@@ -97,7 +98,7 @@ public class ObjectNodeAttributesParser implements ISemanticParser {
 				resultCommand.add(new SetValueCommand(new SetRequest(adaptToEObject(element), 
 						UMLPackage.eINSTANCE.getObjectNode_IsControlType(), Boolean.parseBoolean(value))));
 			} else if (UPPER_BOUND_ATTRIBUTE.equals(key)) {
-				PackageableElement foundElement = getElementProvider().findElement(adaptToEObject(element), value);
+				NamedElement foundElement = getElementProvider().findElement(adaptToEObject(element), value);
 				if (foundElement != null && foundElement instanceof ValueSpecification) {
 					resultCommand.add(new SetValueCommand(new SetRequest(adaptToEObject(element), 
 							UMLPackage.eINSTANCE.getObjectNode_UpperBound(), foundElement)));

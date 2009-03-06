@@ -19,6 +19,7 @@ import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.parser.ElementProvider;
 import org.eclipse.uml2.diagram.parser.assist.EObjectCompletionProcessor;
 import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -88,7 +89,7 @@ public class ElementImportParser implements ISemanticParser {
 	}
 
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
-		PackageableElement imported = findElement(element, newString);
+		NamedElement imported = findElement(element, newString);
 		if (imported == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
@@ -108,14 +109,14 @@ public class ElementImportParser implements ISemanticParser {
 	}
 	
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
-		PackageableElement imported = findElement(element, editString);
+		NamedElement imported = findElement(element, editString);
 		if (imported == null) {
 			return new ParserEditStatus(IStatus.ERROR, PLUGIN_ID, ParserEditStatus.UNEDITABLE, "Unknown metaclass: " + editString, null); //$NON-NLS-1$
 		}
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 	
-	private PackageableElement findElement(IAdaptable parserElement, String editString){
+	private NamedElement findElement(IAdaptable parserElement, String editString){
 		if (editString == null){
 			return null;
 		}
