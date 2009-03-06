@@ -1869,7 +1869,7 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 			centralBufferFigure_NameContainer0.setOutline(false);
 			centralBufferFigure_NameContainer0.setLineWidth(1);
 
-			centralBufferFigure_NameContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(9), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			centralBufferFigure_NameContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(6), getMapMode().DPtoLP(5), getMapMode().DPtoLP(3), getMapMode().DPtoLP(5)));
 
 			this.add(centralBufferFigure_NameContainer0);
 

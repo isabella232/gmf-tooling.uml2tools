@@ -25,8 +25,9 @@
               majorSpacing="0"
               minorSpacing="0"/>
           <insets
-              top="9"
+              top="6"
               left="5"
+              bottom="3"
               right="5"/>
           <children
               xsi:type="gmfgraph:Label"
