@@ -252,7 +252,7 @@ public class ActivityPartition_CentralBufferNodeOrderingEditPart extends LabelEd
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**

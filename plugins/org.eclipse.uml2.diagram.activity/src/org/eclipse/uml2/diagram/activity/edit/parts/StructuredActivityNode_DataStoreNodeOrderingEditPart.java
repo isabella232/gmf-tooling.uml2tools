@@ -252,7 +252,7 @@ public class StructuredActivityNode_DataStoreNodeOrderingEditPart extends LabelE
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**

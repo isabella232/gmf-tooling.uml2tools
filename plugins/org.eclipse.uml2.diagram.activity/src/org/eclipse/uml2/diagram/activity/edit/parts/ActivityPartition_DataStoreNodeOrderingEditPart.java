@@ -252,7 +252,7 @@ public class ActivityPartition_DataStoreNodeOrderingEditPart extends LabelEditPa
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**

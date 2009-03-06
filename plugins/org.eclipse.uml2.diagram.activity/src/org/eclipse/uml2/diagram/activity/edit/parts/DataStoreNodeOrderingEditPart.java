@@ -252,7 +252,7 @@ public class DataStoreNodeOrderingEditPart extends LabelEditPart implements ITex
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**

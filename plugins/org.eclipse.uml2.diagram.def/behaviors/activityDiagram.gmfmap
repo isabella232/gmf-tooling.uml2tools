@@ -240,8 +240,7 @@
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
           </labelMappings>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping"
-              readOnly="true">
+              xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
             <features
@@ -1255,8 +1254,7 @@
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
               </labelMappings>
               <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  readOnly="true">
+                  xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
                     href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
                 <features
@@ -1312,8 +1310,7 @@
                     href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
               </labelMappings>
               <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  readOnly="true">
+                  xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
                     href="activityDiagram_objects.gmfgraph#ObjectNodeAttributesLabel"/>
                 <features
