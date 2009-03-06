@@ -242,7 +242,7 @@ public class ActivityPartition_ExpansionRegionModeEditPart extends CompartmentEd
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**

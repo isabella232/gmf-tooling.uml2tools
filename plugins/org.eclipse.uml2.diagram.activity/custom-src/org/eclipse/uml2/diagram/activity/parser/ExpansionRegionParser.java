@@ -20,6 +20,8 @@ import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
+import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.uml2.uml.ExpansionKind;
 import org.eclipse.uml2.uml.ExpansionRegion;
@@ -32,24 +34,30 @@ public class ExpansionRegionParser  implements IParser {
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
-		return getPrintString(element, flags);
-	}
-
-	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
-		return UnexecutableCommand.INSTANCE;
-	}
-
-	public String getPrintString(IAdaptable element, int flags) {
 		EObject eObject = (EObject)element.getAdapter(EObject.class);
 		if (eObject instanceof ExpansionRegion) {
 			ExpansionKind mode = ((ExpansionRegion) eObject).getMode();
-			StringBuffer printStringBuffer = new StringBuffer(10);
-			printStringBuffer.append("\u00AB");
-			printStringBuffer.append(mode.getLiteral());
-			printStringBuffer.append("\u00BB");
-			return printStringBuffer.toString();
+			return mode.getLiteral();
 		}
 		return ""; //$NON-NLS-1$
+	}
+
+	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
+		ExpansionKind mode = ExpansionKind.get(newString);
+		if (mode == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		return new SetValueCommand(new SetRequest(adaptToEObject(element), 
+				UMLPackage.eINSTANCE.getExpansionRegion_Mode(), mode));
+	}
+
+	public String getPrintString(IAdaptable element, int flags) {
+		StringBuffer result = new StringBuffer(getEditString(element, flags));
+		if (result.length() > 0) {
+			result.insert(0, "\u00AB"); //$NON-NLS-1$
+			result.append("\u00BB"); //$NON-NLS-1$
+		}
+		return result.toString();
 	}
 
 	public boolean isAffectingEvent(Object event, int flags) {
@@ -61,6 +69,13 @@ public class ExpansionRegionParser  implements IParser {
 	}
 
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
-		return ParserEditStatus.UNEDITABLE_STATUS;
+		if (ExpansionKind.get(editString) == null) {
+			return ParserEditStatus.UNEDITABLE_STATUS;
+		}
+		return ParserEditStatus.EDITABLE_STATUS;
+	}
+
+	private EObject adaptToEObject(IAdaptable adaptable) {
+		return (EObject) adaptable.getAdapter(EObject.class);
 	}
 }

@@ -2308,8 +2308,7 @@
                 </initializers>
               </domainInitializer>
               <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping"
-                  readOnly="true">
+                  xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
                     href="activityDiagram_structured.gmfgraph#ExpansionRegionNode_keyword"/>
                 <features
@@ -2811,8 +2810,7 @@
             </initializers>
           </domainInitializer>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping"
-              readOnly="true">
+              xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="activityDiagram_structured.gmfgraph#ExpansionRegionNode_keyword"/>
             <features
