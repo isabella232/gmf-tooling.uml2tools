@@ -1869,7 +1869,7 @@ public class StructuredActivityNode_DataStoreNodeEditPart extends AbstractBorder
 			dataStoreFigure_NameContainer0.setOutline(false);
 			dataStoreFigure_NameContainer0.setLineWidth(1);
 
-			dataStoreFigure_NameContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(9), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			dataStoreFigure_NameContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(6), getMapMode().DPtoLP(5), getMapMode().DPtoLP(3), getMapMode().DPtoLP(5)));
 
 			this.add(dataStoreFigure_NameContainer0);
 

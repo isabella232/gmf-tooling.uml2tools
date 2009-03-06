@@ -242,7 +242,7 @@ public class StructuredActivityNode_DataStoreNodeInStateEditPart extends Compart
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**

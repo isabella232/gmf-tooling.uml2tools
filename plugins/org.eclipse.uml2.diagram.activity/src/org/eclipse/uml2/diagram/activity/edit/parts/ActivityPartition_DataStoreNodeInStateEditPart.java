@@ -242,7 +242,7 @@ public class ActivityPartition_DataStoreNodeInStateEditPart extends CompartmentE
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**
