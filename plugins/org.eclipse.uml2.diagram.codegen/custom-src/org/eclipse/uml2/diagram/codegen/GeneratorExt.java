@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class GeneratorExt extends Generator {
 
 	private final GenDiagram myDiagram;
+
 	private final CodegenEmittersExt myEmitters;
 
 	public GeneratorExt(GenEditorGenerator genModel, CodegenEmittersExt emitters) {
@@ -26,29 +27,31 @@ public class GeneratorExt extends Generator {
 		myDiagram = genModel.getDiagram();
 		myEmitters = emitters;
 	}
+
 	@Override
 	protected TextMerger createMergeService() {
-		//see #181484, temporary workaround
+		// see #181484, temporary workaround
 		final TextMerger defaultMerger = super.createMergeService();
-		return new TextMerger(){
+		return new TextMerger() {
+
 			@Override
 			public String process(String fileNameExt, String oldText, String newText) {
-				if ("properties".equals(fileNameExt) && newText != null && newText.contains("#seeBugzilla=181484")){
+				if ("properties".equals(fileNameExt) && newText != null && newText.contains("#seeBugzilla=181484")) {
 					return newText;
 				}
 				return defaultMerger.process(fileNameExt, oldText, newText);
 			}
-			
+
 			@Override
 			public String mergeJava(String oldText, String newText) {
 				return defaultMerger.mergeJava(oldText, newText);
 			}
-			
+
 			@Override
 			public String mergeProperties(String oldText, String newText) {
 				return defaultMerger.mergeProperties(oldText, newText);
 			}
-			
+
 			@Override
 			public String mergeXML(String oldText, String newText) {
 				return defaultMerger.mergeXML(oldText, newText);
@@ -67,43 +70,43 @@ public class GeneratorExt extends Generator {
 		generateSwitchBetweenCommentAndNodeActions();
 		generatePaletteProvider(myDiagram);
 	}
-	
+
 	private void generateSwitchBetweenCommentAndNodeActions() throws InterruptedException, UnexpectedBehaviourException {
 		GenTopLevelNode commentNode = null;
 		for (GenTopLevelNode nextNode : myDiagram.getTopLevelNodes()) {
 			TypeModelFacet modelFacet = nextNode.getModelFacet();
-			if (modelFacet == null || modelFacet.getMetaClass() == null){
+			if (modelFacet == null || modelFacet.getMetaClass() == null) {
 				continue;
 			}
 			EClass metaclass = modelFacet.getMetaClass().getEcoreClass();
-			if (isTheSameEClass(metaclass, UMLPackage.eINSTANCE.getComment())){
+			if (isTheSameEClass(metaclass, UMLPackage.eINSTANCE.getComment())) {
 				commentNode = nextNode;
 				break;
 			}
 		}
-		if (commentNode == null){
+		if (commentNode == null) {
 			return;
 		}
-		
+
 		GenLink commentLink = null;
-		for (GenLink nextLink : commentNode.getGenOutgoingLinks()){
-			if (false == nextLink.getModelFacet() instanceof FeatureLinkModelFacet){
+		for (GenLink nextLink : commentNode.getGenOutgoingLinks()) {
+			if (false == nextLink.getModelFacet() instanceof FeatureLinkModelFacet) {
 				continue;
 			}
-			FeatureLinkModelFacet facet = (FeatureLinkModelFacet)nextLink.getModelFacet();
-			if (facet.getMetaFeature() == null){
+			FeatureLinkModelFacet facet = (FeatureLinkModelFacet) nextLink.getModelFacet();
+			if (facet.getMetaFeature() == null) {
 				continue;
 			}
-			if (isTheSameEFeature(facet.getMetaFeature().getEcoreFeature(), UMLPackage.eINSTANCE.getComment_AnnotatedElement())){
+			if (isTheSameEFeature(facet.getMetaFeature().getEcoreFeature(), UMLPackage.eINSTANCE.getComment_AnnotatedElement())) {
 				commentLink = nextLink;
 				break;
 			}
 		}
-		
-		if (commentLink == null){
+
+		if (commentLink == null) {
 			return;
 		}
-		
+
 		doGenerateJavaClass(//
 				myEmitters.getTurnCommentIntoNoteEmitter(), // 
 				myEmitters.getTurnCommentIntoNoteActionFQN(myDiagram), // 
@@ -113,9 +116,9 @@ public class GeneratorExt extends Generator {
 				myEmitters.getTurnNoteIntoCommentEmitter(), // 
 				myEmitters.getTurnNoteIntoCommentActionFQN(myDiagram), // 
 				myDiagram, commentNode, commentLink);
-	
+
 	}
-	
+
 	private void generateChangeNotationAction(GenTopLevelNode node) throws InterruptedException, UnexpectedBehaviourException {
 		for (org.eclipse.gmf.codegen.gmfgen.Attributes attr : node.getViewmap().getAttributes()) {
 			if (false == attr instanceof SubstitutableByAttributes) {
@@ -133,7 +136,7 @@ public class GeneratorExt extends Generator {
 			return;
 		}
 	}
-	
+
 	private void generateIconStylePreferencesPage(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
 		doGenerateJavaClass(//
 				myEmitters.getIconStylePreferencePageEmitter(), //
@@ -146,34 +149,35 @@ public class GeneratorExt extends Generator {
 			generateViewFiltersPreferencesPage(page);
 		}
 	}
+
 	private void generateViewFiltersPreferencesPage(GenPreferencePage page) throws InterruptedException, UnexpectedBehaviourException {
 		if (page instanceof GenCustomPreferencePage && myEmitters.isViewFiltersPreferencePage(new Object[] { page })) {
-				doGenerateJavaClass(//
-						myEmitters.getViewFiltersPreferencePageEmitter(), //
-						myEmitters.getViewFiltersPreferencePageFQN(new Object[] { page }), //
-						page);
-		}			
+			doGenerateJavaClass(//
+					myEmitters.getViewFiltersPreferencePageEmitter(), //
+					myEmitters.getViewFiltersPreferencePageFQN(new Object[] { page }), //
+					page);
+		}
 		for (GenPreferencePage child : page.getChildren()) {
 			generateViewFiltersPreferencesPage(child);
 		}
 	}
 
-	private static boolean isTheSameEClass(EClass candidate, EClass pattern){
-		if (pattern.equals(candidate)){
+	private static boolean isTheSameEClass(EClass candidate, EClass pattern) {
+		if (pattern.equals(candidate)) {
 			return true;
 		}
-		if (candidate == null){
+		if (candidate == null) {
 			return false;
 		}
-		//its possible that they are loaded separately and not equals
+		// its possible that they are loaded separately and not equals
 		return pattern.getEPackage().getNsURI().equals(candidate.getEPackage().getNsURI()) && pattern.getName().equals(candidate.getName());
 	}
-	
-	private static boolean isTheSameEFeature(EStructuralFeature candidate, EStructuralFeature pattern){
-		if (candidate.equals(pattern)){
+
+	private static boolean isTheSameEFeature(EStructuralFeature candidate, EStructuralFeature pattern) {
+		if (candidate.equals(pattern)) {
 			return true;
 		}
-		if (candidate == null){
+		if (candidate == null) {
 			return false;
 		}
 		return isTheSameEClass(candidate.getEContainingClass(), pattern.getEContainingClass()) && pattern.getName().equals(candidate.getName());
