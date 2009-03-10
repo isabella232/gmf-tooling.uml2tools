@@ -2,9 +2,9 @@
  * <copyright>
  * </copyright>
  *
- * $Id: GMFGenExtEditPlugin.java,v 1.1 2009/03/10 13:47:17 tfesenko Exp $
+ * $Id: GMFExtEditPlugin.java,v 1.1 2009/03/10 15:48:55 tfesenko Exp $
  */
-package org.eclipse.uml2.diagram.codegen.u2tgen.provider;
+package org.eclipse.uml2.diagram.codegen.edit;
 
 import org.eclipse.emf.codegen.ecore.genmodel.provider.GenModelEditPlugin;
 
@@ -28,14 +28,14 @@ import org.eclipse.gmf.tooldef.provider.GMFToolEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public final class GMFGenExtEditPlugin extends EMFPlugin {
+public final class GMFExtEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final GMFGenExtEditPlugin INSTANCE = new GMFGenExtEditPlugin();
+	public static final GMFExtEditPlugin INSTANCE = new GMFExtEditPlugin();
 
 	/**
 	 * Keep track of the singleton.
@@ -51,7 +51,7 @@ public final class GMFGenExtEditPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GMFGenExtEditPlugin() {
+	public GMFExtEditPlugin() {
 		super
 		  (new ResourceLocator [] {
 		     EcoreEditPlugin.INSTANCE,

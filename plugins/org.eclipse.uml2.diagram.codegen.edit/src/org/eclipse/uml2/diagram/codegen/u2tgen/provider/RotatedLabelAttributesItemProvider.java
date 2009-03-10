@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: RotatedLabelAttributesItemProvider.java,v 1.1 2009/03/10 13:47:17 tfesenko Exp $
+ * $Id: RotatedLabelAttributesItemProvider.java,v 1.2 2009/03/10 15:48:55 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.provider;
 
@@ -12,9 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -22,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.uml2.diagram.codegen.edit.GMFExtEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.uml2.diagram.codegen.u2tgen.RotatedLabelAttributes} object.
@@ -117,7 +116,7 @@ public class RotatedLabelAttributesItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return GMFGenExtEditPlugin.INSTANCE;
+		return GMFExtEditPlugin.INSTANCE;
 	}
 
 }

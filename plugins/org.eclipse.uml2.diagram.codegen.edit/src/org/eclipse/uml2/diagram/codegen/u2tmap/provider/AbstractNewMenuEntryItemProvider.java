@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AbstractNewMenuEntryItemProvider.java,v 1.2 2009/03/10 13:47:17 tfesenko Exp $
+ * $Id: AbstractNewMenuEntryItemProvider.java,v 1.3 2009/03/10 15:48:55 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.provider;
 
@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.gmf.mappings.presentation.FilterUtil;
-import org.eclipse.uml2.diagram.codegen.u2tgen.provider.GMFGenExtEditPlugin;
+import org.eclipse.uml2.diagram.codegen.edit.GMFExtEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.uml2.diagram.codegen.u2tmap.AbstractNewMenuEntry} object.
@@ -110,7 +110,7 @@ public class AbstractNewMenuEntryItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return GMFGenExtEditPlugin.INSTANCE;
+		return GMFExtEditPlugin.INSTANCE;
 	}
 	
 	protected static List<EReference> filterByContainerMetaclass(Collection<EReference> eReferences, EClass containerMetaClass, boolean containmentOnly) {

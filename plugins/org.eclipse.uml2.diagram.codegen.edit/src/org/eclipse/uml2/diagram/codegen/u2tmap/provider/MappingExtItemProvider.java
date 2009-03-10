@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: MappingExtItemProvider.java,v 1.2 2009/03/10 13:47:17 tfesenko Exp $
+ * $Id: MappingExtItemProvider.java,v 1.3 2009/03/10 15:48:55 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.provider;
 
@@ -21,7 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.gmf.mappings.provider.MappingItemProvider;
-import org.eclipse.uml2.diagram.codegen.u2tgen.provider.GMFGenExtEditPlugin;
+import org.eclipse.uml2.diagram.codegen.edit.GMFExtEditPlugin;
 import org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage;
 
 /**
@@ -141,7 +141,7 @@ public class MappingExtItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return GMFGenExtEditPlugin.INSTANCE;
+		return GMFExtEditPlugin.INSTANCE;
 	}
 
 }
