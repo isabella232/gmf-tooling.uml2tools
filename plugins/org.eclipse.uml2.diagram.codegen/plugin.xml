@@ -10,6 +10,13 @@
        genModel = "model/gmfgenext.genmodel" /> 
   </extension>
 
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping" 
+       class = "org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage"
+       genModel = "model/gmfgenext.genmodel" /> 
+  </extension>
+
    <extension
          point="org.eclipse.ui.popupMenus">
       <objectContribution
