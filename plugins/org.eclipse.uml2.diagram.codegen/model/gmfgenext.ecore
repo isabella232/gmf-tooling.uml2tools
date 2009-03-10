@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gmfgenext"
-    nsURI="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0" nsPrefix="uml2.gmfgenext">
+    nsURI="http://www.eclipse.org/modeling/mdt/uml2tools/gmf" nsPrefix="u2t.gmfext">
   <eSubpackages name="u2tgen" nsURI="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel"
       nsPrefix="u2tgen">
     <eClassifiers xsi:type="ecore:EClass" name="AuxSecondaryDiagramNodeAttribute"

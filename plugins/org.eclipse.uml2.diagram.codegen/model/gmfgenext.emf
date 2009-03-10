@@ -1,4 +1,4 @@
-@namespace(uri="http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0", prefix="uml2.gmfgenext")
+@namespace(uri="http://www.eclipse.org/modeling/mdt/uml2tools/gmf", prefix="u2t.gmfext")
 package gmfgenext;
 
 import "platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore";
