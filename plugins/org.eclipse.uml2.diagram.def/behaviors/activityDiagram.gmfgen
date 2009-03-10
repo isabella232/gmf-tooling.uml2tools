@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2008/GenModel"
-    xmlns:uml2.gmfgenext="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.activity"
+    xmlns:u2tgen="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.activity"
     modelID="UMLActivity"
     diagramFileExtension="umlact,umlactivity_diagram"
     dynamicTemplates="true"
@@ -352,7 +352,7 @@
           className="DataStoreFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class DataStoreFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureDataStoreFigure_states; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public DataStoreFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure dataStoreFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;dataStoreFigure_NameContainer0.setFill(false);&#xD;&#xA;dataStoreFigure_NameContainer0.setOutline(false);&#xD;&#xA;dataStoreFigure_NameContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(6)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(3)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(dataStoreFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutDataStoreFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setStretchMinorAxis(false);&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;dataStoreFigure_NameContainer0.setLayoutManager(layoutDataStoreFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label dataStore_fixed_datastore1 = new org.eclipse.draw2d.Label();&#xD;&#xA;dataStore_fixed_datastore1.setText(&quot;\u00ABdatastore\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.add(dataStore_fixed_datastore1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.add(fNameAndStereotypeBlock);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureDataStoreFigure_states = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureDataStoreFigure_states.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.add(fFigureDataStoreFigure_states);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureDataStoreFigure_states() {&#xD;&#xA;&#x9;&#x9;return fFigureDataStoreFigure_states;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureDataStoreFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureDataStoreFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.11">
@@ -384,7 +384,7 @@
             getterName="getFigureDataStoreFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -442,7 +442,7 @@
             getterName="getFigureDataStoreFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -477,7 +477,7 @@
           className="CentralBufferFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class CentralBufferFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureCentralBufferFigure_states; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public CentralBufferFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure centralBufferFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;centralBufferFigure_NameContainer0.setFill(false);&#xD;&#xA;centralBufferFigure_NameContainer0.setOutline(false);&#xD;&#xA;centralBufferFigure_NameContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(6)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(3)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(centralBufferFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutCentralBufferFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setStretchMinorAxis(false);&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;centralBufferFigure_NameContainer0.setLayoutManager(layoutCentralBufferFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label centralBufferFigure_fixed_central1 = new org.eclipse.draw2d.Label();&#xD;&#xA;centralBufferFigure_fixed_central1.setText(&quot;\u00ABcentralBuffer\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.add(centralBufferFigure_fixed_central1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.add(fNameAndStereotypeBlock);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureCentralBufferFigure_states = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureCentralBufferFigure_states.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_states);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureCentralBufferFigure_states() {&#xD;&#xA;&#x9;&#x9;return fFigureCentralBufferFigure_states;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCentralBufferFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureCentralBufferFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.13">
@@ -509,7 +509,7 @@
             getterName="getFigureCentralBufferFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -567,7 +567,7 @@
             getterName="getFigureCentralBufferFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -607,7 +607,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.15">
@@ -639,7 +639,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -661,7 +661,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -1019,7 +1019,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
@@ -1051,7 +1051,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -1073,7 +1073,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -1197,7 +1197,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.25">
@@ -1229,7 +1229,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -1251,7 +1251,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -1542,7 +1542,7 @@
             width="80"
             height="50"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.28">
@@ -1574,7 +1574,7 @@
             getterName="getFigureActionCallBehaviorFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -1596,7 +1596,7 @@
             getterName="getFigureActionCallBehaviorFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -1804,7 +1804,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.30">
@@ -1836,7 +1836,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -1858,7 +1858,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -1978,7 +1978,7 @@
           className="StructuredActivityFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fNameAndStereotypeBlock, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureStructuredActivityFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.32">
@@ -2010,7 +2010,7 @@
             getterName="getFigureStructuredActivityFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -2032,7 +2032,7 @@
             getterName="getFigureStructuredActivityFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -2069,7 +2069,7 @@
           className="StructuredActivityFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fNameAndStereotypeBlock, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureStructuredActivityFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.32">
@@ -2101,7 +2101,7 @@
             getterName="getFigureStructuredActivityFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -2123,7 +2123,7 @@
             getterName="getFigureStructuredActivityFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -2164,7 +2164,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.15">
@@ -2196,7 +2196,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -2218,7 +2218,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -2645,7 +2645,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
@@ -2677,7 +2677,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -2699,7 +2699,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -2740,7 +2740,7 @@
             width="80"
             height="50"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.28">
@@ -2772,7 +2772,7 @@
             getterName="getFigureActionCallBehaviorFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -2794,7 +2794,7 @@
             getterName="getFigureActionCallBehaviorFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -2835,7 +2835,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.30">
@@ -2867,7 +2867,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -2889,7 +2889,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -3014,7 +3014,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.25">
@@ -3046,7 +3046,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -3068,7 +3068,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -3104,7 +3104,7 @@
           className="DataStoreFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class DataStoreFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureDataStoreFigure_states; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public DataStoreFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure dataStoreFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;dataStoreFigure_NameContainer0.setFill(false);&#xD;&#xA;dataStoreFigure_NameContainer0.setOutline(false);&#xD;&#xA;dataStoreFigure_NameContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(6)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(3)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(dataStoreFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutDataStoreFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setStretchMinorAxis(false);&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;dataStoreFigure_NameContainer0.setLayoutManager(layoutDataStoreFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label dataStore_fixed_datastore1 = new org.eclipse.draw2d.Label();&#xD;&#xA;dataStore_fixed_datastore1.setText(&quot;\u00ABdatastore\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.add(dataStore_fixed_datastore1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.add(fNameAndStereotypeBlock);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureDataStoreFigure_states = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureDataStoreFigure_states.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.add(fFigureDataStoreFigure_states);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureDataStoreFigure_states() {&#xD;&#xA;&#x9;&#x9;return fFigureDataStoreFigure_states;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureDataStoreFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureDataStoreFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.11">
@@ -3136,7 +3136,7 @@
             getterName="getFigureDataStoreFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -3194,7 +3194,7 @@
             getterName="getFigureDataStoreFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -3230,7 +3230,7 @@
           className="CentralBufferFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class CentralBufferFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureCentralBufferFigure_states; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public CentralBufferFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure centralBufferFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;centralBufferFigure_NameContainer0.setFill(false);&#xD;&#xA;centralBufferFigure_NameContainer0.setOutline(false);&#xD;&#xA;centralBufferFigure_NameContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(6)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(3)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(centralBufferFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutCentralBufferFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setStretchMinorAxis(false);&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;centralBufferFigure_NameContainer0.setLayoutManager(layoutCentralBufferFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label centralBufferFigure_fixed_central1 = new org.eclipse.draw2d.Label();&#xD;&#xA;centralBufferFigure_fixed_central1.setText(&quot;\u00ABcentralBuffer\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.add(centralBufferFigure_fixed_central1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.add(fNameAndStereotypeBlock);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureCentralBufferFigure_states = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureCentralBufferFigure_states.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_states);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureCentralBufferFigure_states() {&#xD;&#xA;&#x9;&#x9;return fFigureCentralBufferFigure_states;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCentralBufferFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureCentralBufferFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.13">
@@ -3262,7 +3262,7 @@
             getterName="getFigureCentralBufferFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -3320,7 +3320,7 @@
             getterName="getFigureCentralBufferFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -3501,7 +3501,7 @@
           className="StructuredActivityFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fNameAndStereotypeBlock, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureStructuredActivityFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.36">
@@ -3533,7 +3533,7 @@
             getterName="getFigureStructuredActivityFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -3555,7 +3555,7 @@
             getterName="getFigureStructuredActivityFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -3685,10 +3685,10 @@
             width="70"
             height="25"/>
         <attributes
-            xsi:type="uml2.gmfgenext:CustomLocatorAttributes"
+            xsi:type="u2tgen:CustomLocatorAttributes"
             customLocatorFQN="org.eclipse.uml2.diagram.common.draw2d.BisectionBorderItemLocator"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -3719,7 +3719,7 @@
             getterName="getFigureActivityParameterFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -3741,7 +3741,7 @@
             getterName="getFigureActivityParameterFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -3891,7 +3891,7 @@
             getterName="getFigureActivityPartitionFigure_name"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString">
           <attributes
-              xsi:type="uml2.gmfgenext:RotatedLabelAttributes"/>
+              xsi:type="u2tgen:RotatedLabelAttributes"/>
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -3953,7 +3953,7 @@
             getterName="getFigureActivityPartitionFigure_name"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString">
           <attributes
-              xsi:type="uml2.gmfgenext:RotatedLabelAttributes"/>
+              xsi:type="u2tgen:RotatedLabelAttributes"/>
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -4280,7 +4280,7 @@
           className="DataStoreFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class DataStoreFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureDataStoreFigure_states; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public DataStoreFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure dataStoreFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;dataStoreFigure_NameContainer0.setFill(false);&#xD;&#xA;dataStoreFigure_NameContainer0.setOutline(false);&#xD;&#xA;dataStoreFigure_NameContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(6)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(3)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(dataStoreFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutDataStoreFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setStretchMinorAxis(false);&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutDataStoreFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;dataStoreFigure_NameContainer0.setLayoutManager(layoutDataStoreFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label dataStore_fixed_datastore1 = new org.eclipse.draw2d.Label();&#xD;&#xA;dataStore_fixed_datastore1.setText(&quot;\u00ABdatastore\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.add(dataStore_fixed_datastore1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.add(fNameAndStereotypeBlock);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureDataStoreFigure_states = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureDataStoreFigure_states.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;dataStoreFigure_NameContainer0.add(fFigureDataStoreFigure_states);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureDataStoreFigure_states() {&#xD;&#xA;&#x9;&#x9;return fFigureDataStoreFigure_states;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureDataStoreFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureDataStoreFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.52">
@@ -4312,7 +4312,7 @@
             getterName="getFigureDataStoreFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -4370,7 +4370,7 @@
             getterName="getFigureDataStoreFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -4404,7 +4404,7 @@
           className="CentralBufferFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class CentralBufferFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureCentralBufferFigure_states; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public CentralBufferFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure centralBufferFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;centralBufferFigure_NameContainer0.setFill(false);&#xD;&#xA;centralBufferFigure_NameContainer0.setOutline(false);&#xD;&#xA;centralBufferFigure_NameContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(6)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(3)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(centralBufferFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutCentralBufferFigure_NameContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setStretchMinorAxis(false);&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutCentralBufferFigure_NameContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;centralBufferFigure_NameContainer0.setLayoutManager(layoutCentralBufferFigure_NameContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label centralBufferFigure_fixed_central1 = new org.eclipse.draw2d.Label();&#xD;&#xA;centralBufferFigure_fixed_central1.setText(&quot;\u00ABcentralBuffer\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.add(centralBufferFigure_fixed_central1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.add(fNameAndStereotypeBlock);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureCentralBufferFigure_states = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureCentralBufferFigure_states.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;centralBufferFigure_NameContainer0.add(fFigureCentralBufferFigure_states);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureCentralBufferFigure_states() {&#xD;&#xA;&#x9;&#x9;return fFigureCentralBufferFigure_states;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCentralBufferFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureCentralBufferFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.54">
@@ -4436,7 +4436,7 @@
             getterName="getFigureCentralBufferFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -4494,7 +4494,7 @@
             getterName="getFigureCentralBufferFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -4533,7 +4533,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.56">
@@ -4565,7 +4565,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -4587,7 +4587,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -4856,7 +4856,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.63">
@@ -4888,7 +4888,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -4910,7 +4910,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -4949,7 +4949,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.65">
@@ -4981,7 +4981,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -5003,7 +5003,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -5042,7 +5042,7 @@
             width="80"
             height="50"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.67">
@@ -5074,7 +5074,7 @@
             getterName="getFigureActionCallBehaviorFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -5096,7 +5096,7 @@
             getterName="getFigureActionCallBehaviorFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -5135,7 +5135,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.69">
@@ -5167,7 +5167,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -5189,7 +5189,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -5224,7 +5224,7 @@
           className="StructuredActivityFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fNameAndStereotypeBlock, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureStructuredActivityFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.71">
@@ -5256,7 +5256,7 @@
             getterName="getFigureStructuredActivityFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -5278,7 +5278,7 @@
             getterName="getFigureStructuredActivityFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -5313,7 +5313,7 @@
           className="StructuredActivityFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fNameAndStereotypeBlock, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureStructuredActivityFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.71">
@@ -5345,7 +5345,7 @@
             getterName="getFigureStructuredActivityFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <behaviour
@@ -5371,7 +5371,7 @@
             getterName="getFigureStructuredActivityFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -5630,7 +5630,7 @@
           className="StructuredActivityFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fNameAndStereotypeBlock, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureStructuredActivityFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.77">
@@ -5662,7 +5662,7 @@
             getterName="getFigureStructuredActivityFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -5684,7 +5684,7 @@
             getterName="getFigureStructuredActivityFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -5719,7 +5719,7 @@
           className="StructuredActivityFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fNameAndStereotypeBlock, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureStructuredActivityFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.79">
@@ -5751,7 +5751,7 @@
             getterName="getFigureStructuredActivityFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -5773,7 +5773,7 @@
             getterName="getFigureStructuredActivityFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -5868,7 +5868,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
@@ -5904,7 +5904,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -5926,7 +5926,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -6043,7 +6043,7 @@
           className="StructuredActivityFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fNameAndStereotypeBlock, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureStructuredActivityFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.85">
@@ -6075,7 +6075,7 @@
             getterName="getFigureStructuredActivityFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -6097,7 +6097,7 @@
             getterName="getFigureStructuredActivityFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -6132,7 +6132,7 @@
           className="StructuredActivityFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class StructuredActivityFigure extends org.eclipse.draw2d.RoundedRectangle {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureStructuredActivityFigure_ContentPane; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public StructuredActivityFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(8)&#xD;&#xA;));&#xD;&#xA;this.setLineWidth(1);&#xD;&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure aux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setFill(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setOutline(false);&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(0)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(aux_StructuredActivityFigure_LabelContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutAux_StructuredActivityFigure_LabelContainer0 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;aux_StructuredActivityFigure_LabelContainer0.setLayoutManager(layoutAux_StructuredActivityFigure_LabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure structuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setFill(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setOutline(false);&#xD;&#xA;structuredActivityFigure_KeywordContainer1.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(structuredActivityFigure_KeywordContainer1, org.eclipse.draw2d.BorderLayout.TOP);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutStructuredActivityFigure_KeywordContainer1 = new org.eclipse.draw2d.BorderLayout();&#xD;&#xA;&#x9;structuredActivityFigure_KeywordContainer1.setLayoutManager(layoutStructuredActivityFigure_KeywordContainer1);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.Label structuredActivityFigure_keyword2 = new org.eclipse.draw2d.Label();&#xD;&#xA;structuredActivityFigure_keyword2.setText(&quot;\u00ABstructured\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;structuredActivityFigure_KeywordContainer1.add(structuredActivityFigure_keyword2, org.eclipse.draw2d.BorderLayout.LEFT);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;aux_StructuredActivityFigure_LabelContainer0.add(fNameAndStereotypeBlock, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setFill(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setOutline(false);&#xD;&#xA;fFigureStructuredActivityFigure_ContentPane.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureStructuredActivityFigure_ContentPane, org.eclipse.draw2d.BorderLayout.CENTER);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureStructuredActivityFigure_ContentPane() {&#xD;&#xA;&#x9;&#x9;return fFigureStructuredActivityFigure_ContentPane;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureStructuredActivityFigure_name() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureStructuredActivityFigure_stereo() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.36">
@@ -6164,7 +6164,7 @@
             getterName="getFigureStructuredActivityFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -6186,7 +6186,7 @@
             getterName="getFigureStructuredActivityFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -6472,7 +6472,7 @@
             width="60"
             height="40"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
@@ -6508,7 +6508,7 @@
             getterName="getFigureActionBaseFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -6530,7 +6530,7 @@
             getterName="getFigureActionBaseFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -6657,7 +6657,7 @@
             width="450"
             height="300"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
@@ -6692,7 +6692,7 @@
             getterName="getFigureActivityFigure_name"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -6714,7 +6714,7 @@
             getterName="getFigureActivityFigure_stereo"
             figureQualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -6749,7 +6749,7 @@
           className="LocalPreconditionFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class LocalPreconditionFigure extends org.eclipse.uml2.diagram.common.draw2d.ConstraintFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureLocalPreconditionFigure_Body; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public LocalPreconditionFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setFixedLabelText(&#xD;&#xA;&quot;\u00ABlocalPrecondition\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureLocalPreconditionFigure_Body = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureLocalPreconditionFigure_Body.setOutline(false);&#xD;&#xA;fFigureLocalPreconditionFigure_Body.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureLocalPreconditionFigure_Body);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureLocalPreconditionFigure_Body() {&#xD;&#xA;&#x9;&#x9;return fFigureLocalPreconditionFigure_Body;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2028</substitutableByIDs>
         </attributes>
       </viewmap>
@@ -6780,7 +6780,7 @@
           className="LocalPostconditionFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class LocalPostconditionFigure extends org.eclipse.uml2.diagram.common.draw2d.ConstraintFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureLocalPostconditionFigure_Body; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public LocalPostconditionFigure() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;this.setFixedLabelText(&#xD;&#xA;&quot;\u00ABlocalPostcondition\u00BB&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureLocalPostconditionFigure_Body = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureLocalPostconditionFigure_Body.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureLocalPostconditionFigure_Body);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureLocalPostconditionFigure_Body() {&#xD;&#xA;&#x9;&#x9;return fFigureLocalPostconditionFigure_Body;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2027</substitutableByIDs>
         </attributes>
       </viewmap>

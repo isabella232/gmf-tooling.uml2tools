@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2008/GenModel"
-    xmlns:uml2.gmfgenext="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.sequence"
+    xmlns:u2tgen="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.sequence"
     modelID="UMLSequence"
     diagramFileExtension="umlseq,umlsequence_diagram"
     dynamicTemplates="true"
@@ -55,7 +55,7 @@
             width="8"
             height="8"/>
         <attributes
-            xsi:type="uml2.gmfgenext:CustomLocatorAttributes"
+            xsi:type="u2tgen:CustomLocatorAttributes"
             customLocatorFQN="org.eclipse.uml2.diagram.sequence.draw2d.GateLocator"/>
       </viewmap>
       <modelFacet>
@@ -151,7 +151,7 @@
             xsi:type="gmfgen:ResizeConstraints"
             resizeHandles="5"/>
         <attributes
-            xsi:type="uml2.gmfgenext:InteractionDiagramAttributes"/>
+            xsi:type="u2tgen:InteractionDiagramAttributes"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -202,7 +202,7 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="50"/>
         <attributes
-            xsi:type="uml2.gmfgenext:InteractionDiagramAttributes"/>
+            xsi:type="u2tgen:InteractionDiagramAttributes"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -237,7 +237,7 @@
             width="60"
             height="120"/>
         <attributes
-            xsi:type="uml2.gmfgenext:InteractionDiagramAttributes"/>
+            xsi:type="u2tgen:InteractionDiagramAttributes"/>
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
@@ -609,7 +609,7 @@
             width="300"
             height="200"/>
         <attributes
-            xsi:type="uml2.gmfgenext:InteractionDiagramAttributes"/>
+            xsi:type="u2tgen:InteractionDiagramAttributes"/>
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"

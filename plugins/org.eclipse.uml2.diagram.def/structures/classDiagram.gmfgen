@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2008/GenModel"
-    xmlns:uml2.gmfgenext="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.clazz"
+    xmlns:u2tgen="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.clazz"
     modelID="UMLClass"
     diagramFileExtension="umlclass,umlclass_diagram"
     dynamicTemplates="true"
@@ -53,7 +53,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -99,7 +99,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet
@@ -146,7 +146,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet
@@ -193,7 +193,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -239,7 +239,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -285,7 +285,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -331,7 +331,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -377,7 +377,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -423,7 +423,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet
@@ -477,7 +477,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -525,7 +525,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet
@@ -663,7 +663,7 @@
             width="80"
             height="20"/>
         <attributes
-            xsi:type="uml2.gmfgenext:CustomLocatorAttributes"
+            xsi:type="u2tgen:CustomLocatorAttributes"
             customLocatorFQN="org.eclipse.uml2.diagram.clazz.edit.parts.TemplateLocator"/>
       </viewmap>
       <modelFacet>
@@ -709,7 +709,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -763,7 +763,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -811,7 +811,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -865,7 +865,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -913,7 +913,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -967,7 +967,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -1014,7 +1014,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -1062,7 +1062,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -1116,7 +1116,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -1163,7 +1163,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet
@@ -1203,7 +1203,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet
@@ -1258,7 +1258,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -1306,7 +1306,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet
@@ -1353,7 +1353,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -1460,7 +1460,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.11">
@@ -1496,7 +1496,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -1522,7 +1522,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -1564,7 +1564,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -1599,7 +1599,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -1625,7 +1625,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -1662,7 +1662,7 @@
           className="InstanceNodeFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class InstanceNodeFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInstanceNode_SlotsCompartmentFigure; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public InstanceNodeFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutThis = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutThis.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutThis.setSpacing(0);&#xD;&#xA;&#x9;layoutThis.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;));&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(6)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fNameAndStereotypeBlock);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureInstanceNode_SlotsCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureInstanceNode_SlotsCompartmentFigure.setOutline(false);&#xD;&#xA;fFigureInstanceNode_SlotsCompartmentFigure.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureInstanceNode_SlotsCompartmentFigure);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInstanceNode_SlotsCompartmentFigure() {&#xD;&#xA;&#x9;&#x9;return fFigureInstanceNode_SlotsCompartmentFigure;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureInstanceFigure_StereoLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInstanceFigure_NameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -1697,7 +1697,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -1723,7 +1723,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -1765,7 +1765,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
@@ -1801,7 +1801,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -1827,7 +1827,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -1869,7 +1869,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -1904,7 +1904,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -1930,7 +1930,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -1966,7 +1966,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -2040,7 +2040,7 @@
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.Label">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+            xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
       </viewmap>
       <modelFacet>
@@ -2083,7 +2083,7 @@
             width="100"
             height="80"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2016</substitutableByIDs>
         </attributes>
       </viewmap>
@@ -2153,7 +2153,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.11">
@@ -2189,7 +2189,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <behaviour
@@ -2219,7 +2219,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -2261,12 +2261,12 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes"
+            xsi:type="u2tgen:SubstitutableByAttributes"
             requiresAll="true">
           <substitutableByIDs>2015</substitutableByIDs>
         </attributes>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -2301,7 +2301,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <behaviour
@@ -2331,7 +2331,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -2373,7 +2373,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.23">
@@ -2409,7 +2409,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <behaviour
@@ -2439,7 +2439,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -2481,7 +2481,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -2516,7 +2516,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <behaviour
@@ -2546,7 +2546,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -2588,7 +2588,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -2623,7 +2623,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <behaviour
@@ -2653,7 +2653,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -2693,7 +2693,7 @@
             width="15"
             height="15"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2013</substitutableByIDs>
         </attributes>
       </viewmap>
@@ -2843,9 +2843,9 @@
           className="InstanceNodeFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class InstanceNodeFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureInstanceNode_SlotsCompartmentFigure; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock fNameAndStereotypeBlock; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public InstanceNodeFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutThis = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutThis.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutThis.setSpacing(0);&#xD;&#xA;&#x9;layoutThis.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;));&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock = new org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fNameAndStereotypeBlock.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(8)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;, getMapMode().DPtoLP(6)&#xD;&#xA;, getMapMode().DPtoLP(5)&#xD;&#xA;));&#xD;&#xA;&#xD;&#xA;this.add(fNameAndStereotypeBlock);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureInstanceNode_SlotsCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;fFigureInstanceNode_SlotsCompartmentFigure.setOutline(false);&#xD;&#xA;fFigureInstanceNode_SlotsCompartmentFigure.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(fFigureInstanceNode_SlotsCompartmentFigure);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureInstanceNode_SlotsCompartmentFigure() {&#xD;&#xA;&#x9;&#x9;return fFigureInstanceNode_SlotsCompartmentFigure;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock getNameAndStereotypeBlock() {&#xD;&#xA;&#x9;&#x9;return fNameAndStereotypeBlock;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2 getFigureInstanceFigure_StereoLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getStereotypeLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureInstanceFigure_NameLabel() {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getNameAndStereotypeBlock().getNameLabel();&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2017</substitutableByIDs>
         </attributes>
       </viewmap>
@@ -2882,7 +2882,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -2908,7 +2908,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -3103,11 +3103,11 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2010</substitutableByIDs>
         </attributes>
         <attributes
-            xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"/>
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -3142,7 +3142,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="NAME_LABEL"/>
         </viewmap>
         <modelFacet
@@ -3168,7 +3168,7 @@
               xsi:type="gmfgen:StyleAttributes"
               fixedFont="true"/>
           <attributes
-              xsi:type="uml2.gmfgenext:StereotypeSupportAttribute"
+              xsi:type="u2tgen:StereotypeSupportAttribute"
               role="STEREOTYPE_LABEL"/>
         </viewmap>
         <behaviour
@@ -3209,7 +3209,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:AuxSecondaryDiagramNodeAttribute"
+            xsi:type="u2tgen:AuxSecondaryDiagramNodeAttribute"
             substituteWithCanvasElement="true"/>
       </viewmap>
       <behaviour
@@ -3290,7 +3290,7 @@
             width="10"
             height="10"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes"
+            xsi:type="u2tgen:SubstitutableByAttributes"
             requiresAll="true">
           <substitutableByIDs>2007</substitutableByIDs>
         </attributes>
@@ -3328,7 +3328,7 @@
             width="300"
             height="100"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2002</substitutableByIDs>
         </attributes>
       </viewmap>
@@ -3391,7 +3391,7 @@
           className="RectangleInstanceNodeFigure"
           classBody="&#xD;&#xA;/**&#xD;&#xA; * @generated&#xD;&#xA; */&#xD;&#xA;public class RectangleInstanceNodeFigure extends org.eclipse.draw2d.RectangleFigure {&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureRectangleInstanceNode_NameLabel; &#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private org.eclipse.draw2d.Label fFigureRectangleInstanceNode_ValueLabel; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public RectangleInstanceNodeFigure() {&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;org.eclipse.uml2.diagram.common.draw2d.CenterLayout layoutThis = new org.eclipse.uml2.diagram.common.draw2d.CenterLayout();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xD;&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;, getMapMode().DPtoLP(1)&#xD;&#xA;));&#xD;&#xA;&#x9;&#x9;createContents();&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private void createContents(){&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;org.eclipse.draw2d.RectangleFigure rectangleInstanceLabelContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xD;&#xA;rectangleInstanceLabelContainer0.setOutline(false);&#xD;&#xA;rectangleInstanceLabelContainer0.setLineWidth(1);&#xD;&#xA;&#xD;&#xA;this.add(rectangleInstanceLabelContainer0);&#xD;&#xA;&#xD;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutRectangleInstanceLabelContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xD;&#xA;&#x9;layoutRectangleInstanceLabelContainer0.setStretchMinorAxis(true);&#xD;&#xA;&#x9;layoutRectangleInstanceLabelContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;&#x9;layoutRectangleInstanceLabelContainer0.setSpacing(0);&#xD;&#xA;&#x9;layoutRectangleInstanceLabelContainer0.setVertical(true);&#xD;&#xA;&#xD;&#xA;&#x9;rectangleInstanceLabelContainer0.setLayoutManager(layoutRectangleInstanceLabelContainer0);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureRectangleInstanceNode_NameLabel = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureRectangleInstanceNode_NameLabel.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;rectangleInstanceLabelContainer0.add(fFigureRectangleInstanceNode_NameLabel);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;fFigureRectangleInstanceNode_ValueLabel = new org.eclipse.draw2d.Label();&#xD;&#xA;fFigureRectangleInstanceNode_ValueLabel.setText(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;rectangleInstanceLabelContainer0.add(fFigureRectangleInstanceNode_ValueLabel);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;private boolean myUseLocalCoordinates = false;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected boolean useLocalCoordinates() {&#xD;&#xA;&#x9;&#x9;return myUseLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;protected void setUseLocalCoordinates(boolean useLocalCoordinates) {&#xD;&#xA;&#x9;&#x9;myUseLocalCoordinates = useLocalCoordinates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureRectangleInstanceNode_NameLabel() {&#xD;&#xA;&#x9;&#x9;return fFigureRectangleInstanceNode_NameLabel;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;/**&#xD;&#xA;&#x9; * @generated&#xD;&#xA;&#x9; */&#xD;&#xA;&#x9;public org.eclipse.draw2d.Label getFigureRectangleInstanceNode_ValueLabel() {&#xD;&#xA;&#x9;&#x9;return fFigureRectangleInstanceNode_ValueLabel;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;">
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2008</substitutableByIDs>
         </attributes>
       </viewmap>

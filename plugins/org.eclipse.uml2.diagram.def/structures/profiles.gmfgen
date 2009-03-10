@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2008/GenModel"
-    xmlns:uml2.gmfgenext="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.profile"
+    xmlns:u2tgen="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.profile"
     modelID="UMLProfile"
     diagramFileExtension="umlprofile, umlprofile_diagram"
     domainFileExtension="profile.uml"
@@ -634,7 +634,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:AuxSecondaryDiagramNodeAttribute"
+            xsi:type="u2tgen:AuxSecondaryDiagramNodeAttribute"
             substituteWithCanvasElement="true"/>
       </viewmap>
       <behaviour

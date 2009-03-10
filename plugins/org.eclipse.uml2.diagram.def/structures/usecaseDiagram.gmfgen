@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2008/GenModel"
-    xmlns:uml2.gmfgenext="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.usecase"
+    xmlns:u2tgen="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.usecase"
     modelID="UMLUseCase"
     diagramFileExtension="umlusc,umlusecase_diagram"
     dynamicTemplates="true"
@@ -372,7 +372,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:AuxSecondaryDiagramNodeAttribute"
+            xsi:type="u2tgen:AuxSecondaryDiagramNodeAttribute"
             substituteWithCanvasElement="true"/>
       </viewmap>
       <behaviour
@@ -450,7 +450,7 @@
             width="30"
             height="50"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2005</substitutableByIDs>
         </attributes>
       </viewmap>
@@ -515,7 +515,7 @@
             width="80"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2002</substitutableByIDs>
         </attributes>
       </viewmap>
@@ -606,7 +606,7 @@
             width="140"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2004</substitutableByIDs>
         </attributes>
       </viewmap>
@@ -681,7 +681,7 @@
             width="100"
             height="60"/>
         <attributes
-            xsi:type="uml2.gmfgenext:SubstitutableByAttributes">
+            xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2003</substitutableByIDs>
         </attributes>
       </viewmap>
