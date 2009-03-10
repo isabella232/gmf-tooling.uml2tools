@@ -1,5 +1,5 @@
 modeltype genModel uses "http://www.eclipse.org/gmf/2008/GenModel";
-modeltype u2tAux uses "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0";
+modeltype u2tAux uses "http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel";
 
 library MultiLayeredSupport;
 

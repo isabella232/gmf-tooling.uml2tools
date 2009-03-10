@@ -13,7 +13,7 @@
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
+«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
 «EXTENSION xpt::actions::Utils»  
 
@@ -43,8 +43,8 @@
                    id="ChangeNotationGroup"
                    path="/ChangeNotationMenu/">
              </popupMenuGroup>
-		«LET (viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first() AS subChild-»
-«LET subChild.oclAsType(gmfgenext::SubstitutableByAttributes) AS subChildImpl-»
+		«LET (viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first() AS subChild-»
+«LET subChild.oclAsType(u2tgen::SubstitutableByAttributes) AS subChildImpl-»
 		«IF subChildImpl <> null and not subChildImpl.requiresAll-»
 			«FOREACH (subChildImpl.getSubstitutableByNodes())[gmfgen::GenNode]->asSequence() AS newNode»«EXPAND changeNotationPopupAction(newNode)»«ENDFOREACH-»
 		«ENDIF-»

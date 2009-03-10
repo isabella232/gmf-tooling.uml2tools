@@ -5,8 +5,8 @@
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
-       uri = "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0" 
-       class = "org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage"
+       uri = "http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" 
+       class = "org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage"
        genModel = "model/gmfgenext.genmodel" /> 
   </extension>
 

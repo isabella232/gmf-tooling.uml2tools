@@ -5,15 +5,15 @@
  <copyright>
  </copyright>
 
- $Id: plugin.xml,v 1.2 2008/03/04 13:03:28 tfesenko Exp $
+ $Id: plugin.xml,v 1.3 2009/03/10 13:47:17 tfesenko Exp $
 -->
 
 <plugin>
     
   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
     <factory 
-       uri = "http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0" 
-       class = "org.eclipse.uml2.diagram.codegen.gmfgenext.provider.GMFGenExtItemProviderAdapterFactory" 
+       uri = "http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" 
+       class = "org.eclipse.uml2.diagram.codegen.u2tgen.provider.U2TGenItemProviderAdapterFactory" 
        supportedTypes = 
          "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
           org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -24,8 +24,8 @@
 
   <extension point="org.eclipse.emf.edit.childCreationExtenders">
     <extender 
-       uri = "http://www.eclipse.org/gmf/2006/GenModel" 
-       class = "org.eclipse.uml2.diagram.codegen.gmfgenext.provider.GMFGenExtItemProviderAdapterFactory$GMFGenChildCreationExtender" />
+       uri = "http://www.eclipse.org/gmf/2008/GenModel" 
+       class = "org.eclipse.uml2.diagram.codegen.u2tgen.provider.U2TGenItemProviderAdapterFactory$GMFGenChildCreationExtender" />
   </extension>
 
 </plugin>

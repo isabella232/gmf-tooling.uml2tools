@@ -13,7 +13,7 @@ import org.eclipse.gmf.codegen.gmfgen.TypeModelFacet;
 import org.eclipse.gmf.codegen.util.Generator;
 import org.eclipse.gmf.common.UnexpectedBehaviourException;
 import org.eclipse.gmf.internal.common.codegen.TextMerger;
-import org.eclipse.uml2.diagram.codegen.gmfgenext.SubstitutableByAttributes;
+import org.eclipse.uml2.diagram.codegen.u2tgen.SubstitutableByAttributes;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class GeneratorExt extends Generator {

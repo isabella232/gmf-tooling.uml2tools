@@ -12,19 +12,19 @@
  
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
+«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
 «EXTENSION xpt::diagram::editpolicies::Utils»
 
 «AROUND xpt::diagram::editpolicies::NodeItemSemanticEditPolicy::additions FOR gmfgen::GenNode-»
-«LET (self.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first().oclAsType(gmfgenext::SubstitutableByAttributes) AS group-»
+«LET (self.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first().oclAsType(u2tgen::SubstitutableByAttributes) AS group-»
 «IF null <> group and (group.requiresAll and not group.getSubstitutableByNodes()->select(n | n <> self)->isEmpty())-»
 «EXPAND addDeleteViewCommandForGroup(group) FOR self»
 «ENDIF-»
 «ENDLET-»
 «ENDAROUND»
 
-«DEFINE addDeleteViewCommandForGroup(group : gmfgenext::SubstitutableByAttributes) FOR gmfgen::GenNode-»
+«DEFINE addDeleteViewCommandForGroup(group : u2tgen::SubstitutableByAttributes) FOR gmfgen::GenNode-»
 	«EXPAND xpt::Common::generatedMemberComment»	
 	@Override
 	protected org.eclipse.gef.commands.Command addDeleteViewCommand(org.eclipse.gef.commands.Command mainCommand, org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest completedRequest) {

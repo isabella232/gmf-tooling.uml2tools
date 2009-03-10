@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.eclipse.uml2.diagram.codegen,
- org.eclipse.uml2.diagram.codegen.gmfgenext,
- org.eclipse.uml2.diagram.codegen.gmfgenext.impl,
- org.eclipse.uml2.diagram.codegen.gmfgenext.util,
+ org.eclipse.uml2.diagram.codegen.u2tgen,
+ org.eclipse.uml2.diagram.codegen.u2tgen.impl,
+ org.eclipse.uml2.diagram.codegen.u2tgen.util,
  org.eclipse.uml2.diagram.codegen.qvt,
  org.eclipse.uml2.diagram.codegen.u2tmap,
  org.eclipse.uml2.diagram.codegen.u2tmap.util

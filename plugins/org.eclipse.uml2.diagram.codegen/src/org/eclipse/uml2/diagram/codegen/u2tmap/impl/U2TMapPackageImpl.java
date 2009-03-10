@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TMapPackageImpl.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: U2TMapPackageImpl.java,v 1.2 2009/03/10 13:47:22 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.impl;
 
@@ -10,21 +10,13 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
-
 import org.eclipse.gmf.gmfgraph.GMFGraphPackage;
-
 import org.eclipse.gmf.mappings.GMFMapPackage;
-
 import org.eclipse.gmf.tooldef.GMFToolPackage;
-
-import org.eclipse.uml2.diagram.codegen.gmfgenext.GMFGenExtPackage;
-
-import org.eclipse.uml2.diagram.codegen.gmfgenext.impl.GMFGenExtPackageImpl;
-
+import org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage;
+import org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl;
 import org.eclipse.uml2.diagram.codegen.u2tmap.AbstractNewMenuEntry;
 import org.eclipse.uml2.diagram.codegen.u2tmap.Fake;
 import org.eclipse.uml2.diagram.codegen.u2tmap.MappingExt;
@@ -160,15 +152,15 @@ public class U2TMapPackageImpl extends EPackageImpl implements U2TMapPackage {
 		GMFMapPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		GMFGenExtPackageImpl theGMFGenExtPackage = (GMFGenExtPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GMFGenExtPackage.eNS_URI) instanceof GMFGenExtPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GMFGenExtPackage.eNS_URI) : GMFGenExtPackage.eINSTANCE);
+		U2TGenPackageImpl theU2TGenPackage = (U2TGenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(U2TGenPackage.eNS_URI) instanceof U2TGenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(U2TGenPackage.eNS_URI) : U2TGenPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theU2TMapPackage.createPackageContents();
-		theGMFGenExtPackage.createPackageContents();
+		theU2TGenPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theU2TMapPackage.initializePackageContents();
-		theGMFGenExtPackage.initializePackageContents();
+		theU2TGenPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theU2TMapPackage.freeze();
@@ -523,6 +515,9 @@ public class U2TMapPackageImpl extends EPackageImpl implements U2TMapPackage {
 		initEClass(fakeEClass, Fake.class, "Fake", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFake_ExplicitGraphdefReference(), theGMFGraphPackage.getCanvas(), null, "explicitGraphdefReference", null, 0, 1, Fake.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFake_ExplicitTooldefReference(), theGMFToolPackage.getToolRegistry(), null, "explicitTooldefReference", null, 0, 1, Fake.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Create resource
+		createResource(eNS_URI);
 	}
 
 } //U2TMapPackageImpl

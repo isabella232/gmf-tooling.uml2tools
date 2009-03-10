@@ -7,41 +7,44 @@
     usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel#//genmodel platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.genmodel#//gmfgen platform:/plugin/org.eclipse.gmf.graphdef/models/gmfgraph.genmodel#//gmfgraph platform:/plugin/org.eclipse.gmf.map/models/gmfmap.genmodel#//mappings platform:/plugin/org.eclipse.gmf.tooldef/models/tooldef.genmodel#//tooldef">
   <foreignModel>gmfgenext.ecore</foreignModel>
   <genPackages prefix="GMFGenExt" basePackage="org.eclipse.uml2.diagram.codegen" disposableProviderFactory="true"
-      childCreationExtenders="true" ecorePackage="gmfgenext.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gmfgenext.ecore#//StereotypeSupportRole">
-      <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//StereotypeSupportRole/CONTAINER"/>
-      <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//StereotypeSupportRole/NAME_LABEL"/>
-      <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//StereotypeSupportRole/STEREOTYPE_LABEL"/>
-      <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//StereotypeSupportRole/COMBINED_LABEL"/>
-    </genEnums>
-    <genClasses ecoreClass="gmfgenext.ecore#//AuxSecondaryDiagramNodeAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//AuxSecondaryDiagramNodeAttribute/substituteWithCanvasElement"/>
-    </genClasses>
-    <genClasses ecoreClass="gmfgenext.ecore#//CustomLocatorAttributes">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//CustomLocatorAttributes/customLocatorFQN"/>
-    </genClasses>
-    <genClasses ecoreClass="gmfgenext.ecore#//DetailsLevelAttributes">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//DetailsLevelAttributes/filteringCompartment"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//DetailsLevelAttributes/detailsAwareParser"/>
-    </genClasses>
-    <genClasses ecoreClass="gmfgenext.ecore#//SubstitutableByAttributes">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//SubstitutableByAttributes/substitutableByIDs"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//SubstitutableByAttributes/requiresAll"/>
-      <genOperations ecoreOperation="gmfgenext.ecore#//SubstitutableByAttributes/getSubstitutableByNodes"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="gmfgenext.ecore#//AbstractDynamicCanonicalContainer">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//AbstractDynamicCanonicalContainer/alwaysCanonicalIDs"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//AbstractDynamicCanonicalContainer/initiallyCanonical"/>
-      <genOperations ecoreOperation="gmfgenext.ecore#//AbstractDynamicCanonicalContainer/getAlwaysCanonicalChildren"/>
-    </genClasses>
-    <genClasses ecoreClass="gmfgenext.ecore#//DynamicCanonicalCompartment"/>
-    <genClasses ecoreClass="gmfgenext.ecore#//InteractionDiagramAttributes">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//InteractionDiagramAttributes/multiLayered"/>
-    </genClasses>
-    <genClasses ecoreClass="gmfgenext.ecore#//RotatedLabelAttributes"/>
-    <genClasses ecoreClass="gmfgenext.ecore#//StereotypeSupportAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//StereotypeSupportAttribute/role"/>
-    </genClasses>
+      ecorePackage="gmfgenext.ecore#/">
+    <nestedGenPackages prefix="U2TGen" basePackage="org.eclipse.uml2.diagram.codegen"
+        disposableProviderFactory="true" childCreationExtenders="true" ecorePackage="gmfgenext.ecore#//u2tgen">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="gmfgenext.ecore#//u2tgen/StereotypeSupportRole">
+        <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//u2tgen/StereotypeSupportRole/CONTAINER"/>
+        <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//u2tgen/StereotypeSupportRole/NAME_LABEL"/>
+        <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//u2tgen/StereotypeSupportRole/STEREOTYPE_LABEL"/>
+        <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//u2tgen/StereotypeSupportRole/COMBINED_LABEL"/>
+      </genEnums>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/AuxSecondaryDiagramNodeAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/AuxSecondaryDiagramNodeAttribute/substituteWithCanvasElement"/>
+      </genClasses>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/CustomLocatorAttributes">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/CustomLocatorAttributes/customLocatorFQN"/>
+      </genClasses>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/DetailsLevelAttributes">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/DetailsLevelAttributes/filteringCompartment"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/DetailsLevelAttributes/detailsAwareParser"/>
+      </genClasses>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/SubstitutableByAttributes">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/SubstitutableByAttributes/substitutableByIDs"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/SubstitutableByAttributes/requiresAll"/>
+        <genOperations ecoreOperation="gmfgenext.ecore#//u2tgen/SubstitutableByAttributes/getSubstitutableByNodes"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gmfgenext.ecore#//u2tgen/AbstractDynamicCanonicalContainer">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/AbstractDynamicCanonicalContainer/alwaysCanonicalIDs"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/AbstractDynamicCanonicalContainer/initiallyCanonical"/>
+        <genOperations ecoreOperation="gmfgenext.ecore#//u2tgen/AbstractDynamicCanonicalContainer/getAlwaysCanonicalChildren"/>
+      </genClasses>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/DynamicCanonicalCompartment"/>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/InteractionDiagramAttributes">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/InteractionDiagramAttributes/multiLayered"/>
+      </genClasses>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/RotatedLabelAttributes"/>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/StereotypeSupportAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/StereotypeSupportAttribute/role"/>
+      </genClasses>
+    </nestedGenPackages>
     <nestedGenPackages prefix="U2TMap" basePackage="org.eclipse.uml2.diagram.codegen"
         disposableProviderFactory="true" ecorePackage="gmfgenext.ecore#//u2tmap">
       <genClasses ecoreClass="gmfgenext.ecore#//u2tmap/MappingExt">

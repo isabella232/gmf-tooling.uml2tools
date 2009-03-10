@@ -14,7 +14,7 @@
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
+«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
 «EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
 «EXTENSION xpt::editor::Utils»
@@ -40,7 +40,7 @@
 «ENDAROUND»
 
 «AROUND returnVisualID FOR gmfgen::GenCommonBase-»
-	«LET (viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first().oclAsType(gmfgenext::SubstitutableByAttributes) AS group -»
+	«LET (viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first().oclAsType(u2tgen::SubstitutableByAttributes) AS group -»
 	«IF isDiagramHeader(self) -»
 		// Diagram header is already processed above
 	«ELSEIF null <> group and group.requiresAll-»
@@ -73,7 +73,7 @@
 			«ENDREM» «-»
 			«FOREACH getContainedSemanticNodes(self) AS nextChild -»
 					«REM»It would be better to add one "escape" block per group, but its not clear how to do it «ENDREM»«-»
-					«LET (nextChild.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first().oclAsType(gmfgenext::SubstitutableByAttributes) AS nextGroup -»
+					«LET (nextChild.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first().oclAsType(u2tgen::SubstitutableByAttributes) AS nextGroup -»
 					«IF null <> nextGroup and nextGroup.requiresAll -»
 							// "escape" for multi-views part : «EXPAND xpt::editor::VisualIDRegistry::visualID» -- prevents from removing the whole group from diagram
 							if («EXPAND xpt::editor::VisualIDRegistry::checkSemanticElement FOR nextChild») {
@@ -127,7 +127,7 @@
 	«EXPAND xpt::Common::generatedMemberComment»
 public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» container, org.eclipse.emf.ecore.EObject domainElement) {
 	«REM»the line below is generated to workaround compilation error in class diagram, where hasViewChild() method is called «ENDREM»«-»
-	«IF (self.getAllNodes()->collect(n | n.viewmap.attributes)->flatten())[gmfgenext::SubstitutableByAttributes]->select(attr | attr.requiresAll)->size() > 0-»
+	«IF (self.getAllNodes()->collect(n | n.viewmap.attributes)->flatten())[u2tgen::SubstitutableByAttributes]->select(attr | attr.requiresAll)->size() > 0-»
 	final View containerView = null;
 	«ENDIF-»
 	if (domainElement == null) {
@@ -170,12 +170,12 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQN» 
 		if (visualId == substituteCandidate){
 			return true;
 		}
-		«LET self.getAllNodes()->select(n | not (n.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->isEmpty())->asSequence() AS allSubstitutable-»
+		«LET self.getAllNodes()->select(n | not (n.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->isEmpty())->asSequence() AS allSubstitutable-»
 		«IF not allSubstitutable->isEmpty()-»
 		switch(visualId) {
 			«FOREACH allSubstitutable AS next-»
-			«LET (next.viewmap.attributes)[gmfgenext::SubstitutableByAttributes]->first() AS nextGroup-»
-			«LET nextGroup.oclAsType(gmfgenext::SubstitutableByAttributes) AS nextGroupImpl-»
+			«LET (next.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first() AS nextGroup-»
+			«LET nextGroup.oclAsType(u2tgen::SubstitutableByAttributes) AS nextGroupImpl-»
 			«EXPAND xpt::Common::caseVisualID FOR next»
 				return 
 				«FOREACH nextGroupImpl.getSubstitutableByNodes()->asSequence() AS nextSubstitution SEPARATOR ' || '-»

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AbstractNewMenuEntryItemProvider.java,v 1.1 2009/01/14 20:47:07 mgolubev Exp $
+ * $Id: AbstractNewMenuEntryItemProvider.java,v 1.2 2009/03/10 13:47:17 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.provider;
 
@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.gmf.mappings.presentation.FilterUtil;
-import org.eclipse.uml2.diagram.codegen.gmfgenext.provider.GMFGenExtEditPlugin;
+import org.eclipse.uml2.diagram.codegen.u2tgen.provider.GMFGenExtEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.uml2.diagram.codegen.u2tmap.AbstractNewMenuEntry} object.

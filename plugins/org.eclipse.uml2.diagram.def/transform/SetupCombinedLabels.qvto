@@ -1,5 +1,5 @@
 modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2008/GenModel');
-modeltype U2TGEN uses gmfgenext('http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0');
+modeltype U2TGEN uses gmfgenext('http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel');
 	
 -- This is helper transformation, intended to be only once for given diagram kind. 
 -- It adds the StereotypeSupportAttribute with role COMBINED_LABEL for all of the GenChildLabels that 

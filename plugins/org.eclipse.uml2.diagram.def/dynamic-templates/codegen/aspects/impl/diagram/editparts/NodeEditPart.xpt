@@ -13,7 +13,7 @@
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/uml2/diagram/gmfgenext/DiagramFigure/1.0'»
+«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 «EXTENSION xpt::diagram::ViewmapAttributesUtils»
 «EXTENSION xpt::diagram::editparts::Utils»
 «EXTENSION xpt::interaction::MultiLayeredSupport»
@@ -79,9 +79,9 @@
 
 
 «DEFINE createSideAffixedNodeLocator FOR gmfgen::GenChildSideAffixedNode-»
-	«IF null <> (viewmap.attributes)[gmfgenext::CustomLocatorAttributes]->first()-»
+	«IF null <> (viewmap.attributes)[u2tgen::CustomLocatorAttributes]->first()-»
 		org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator locator = «-»
-			new «(viewmap.attributes)[gmfgenext::CustomLocatorAttributes]->first().oclAsType(gmfgenext::CustomLocatorAttributes).customLocatorFQN»(getMainFigure());
+			new «(viewmap.attributes)[u2tgen::CustomLocatorAttributes]->first().oclAsType(u2tgen::CustomLocatorAttributes).customLocatorFQN»(getMainFigure());
 	«ELSE-»
 		org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator locator = «-»
 		   new org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator(getMainFigure(), org.eclipse.draw2d.PositionConstants.«preferredSideName»);

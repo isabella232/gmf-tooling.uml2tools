@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: FakeItemProvider.java,v 1.1 2009/01/14 20:47:07 mgolubev Exp $
+ * $Id: FakeItemProvider.java,v 1.2 2009/03/10 13:47:17 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.provider;
 
@@ -12,9 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,9 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-
-import org.eclipse.uml2.diagram.codegen.gmfgenext.provider.GMFGenExtEditPlugin;
-
+import org.eclipse.uml2.diagram.codegen.u2tgen.provider.GMFGenExtEditPlugin;
 import org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage;
 
 /**
