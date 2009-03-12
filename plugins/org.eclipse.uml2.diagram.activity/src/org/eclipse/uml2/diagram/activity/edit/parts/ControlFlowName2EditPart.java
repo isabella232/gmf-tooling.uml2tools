@@ -245,7 +245,7 @@ public class ControlFlowName2EditPart extends LabelEditPart implements ITextAwar
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**

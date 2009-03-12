@@ -3176,8 +3176,7 @@
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping"
-        readOnly="true">
+        xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
           href="activityDiagram_links.gmfgraph#ActivityEdge_weight"/>
       <features
@@ -3223,8 +3222,7 @@
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping"
-        readOnly="true">
+        xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
           href="activityDiagram_links.gmfgraph#ActivityEdge_weight"/>
       <features
