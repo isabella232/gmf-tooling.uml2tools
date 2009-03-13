@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.uml2.diagram.common.parser.ElementProvider;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.Type;
@@ -38,6 +39,10 @@ public class ObjectNodeTypeParser implements IParser {
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {
+		return getEditString(element, flags);
+	}
+
+	public String getEditString(IAdaptable element, int flags) {
 		EObject eObject = (EObject)element.getAdapter(EObject.class);
 		if (eObject instanceof ObjectNode) {
 			StringBuffer printStringBuffer = new StringBuffer(20);
@@ -47,19 +52,11 @@ public class ObjectNodeTypeParser implements IParser {
 			if (type != null && type instanceof NamedElement) {
 				String typeName = ((NamedElement) type).getName();
 				if (typeName != null && typeName.length() > 0) {
-					printStringBuffer.append(':');
+					printStringBuffer.append(NAME_TYPE_SEPARATOR);
 					printStringBuffer.append(typeName);
 				}
 			}
 			return printStringBuffer.toString();
-		}
-		return ""; //$NON-NLS-1$
-	}
-
-	public String getEditString(IAdaptable element, int flags) {
-		EObject eObject = (EObject)element.getAdapter(EObject.class);
-		if (eObject instanceof NamedElement) {
-			return ((NamedElement) eObject).getName();
 		}
 		return ""; //$NON-NLS-1$
 	}
@@ -83,13 +80,53 @@ public class ObjectNodeTypeParser implements IParser {
 		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
+		int equalityPosition = newString.indexOf(NAME_TYPE_SEPARATOR);
+		if (equalityPosition == -1) {
+			return getSetNameCommand(element, newString);
+		}
+		String name = newString.substring(0, equalityPosition);
+		String type = newString.substring(equalityPosition + 1);
+
 		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Set Values"); //$NON-NLS-1$
-		command.compose(getSetNameCommand(element, newString));
+		command.compose(getSetNameCommand(element, name));
+		if (type != null) {
+			ICommand setTypeCommand = getSetTypeCommand(element, type);
+			if (setTypeCommand != null) {
+				command.compose(setTypeCommand);
+			}
+		}
 		return command;
 	}
 
 	private ICommand getSetNameCommand(EObject element, String name) {
 		SetRequest request = new SetRequest(element, UMLPackage.eINSTANCE.getNamedElement_Name(), name);
 		return new SetValueCommand(request);
+	}
+
+	private ICommand getSetTypeCommand(EObject element, String type) {
+		Type typedElement = (Type) getElementProvider().findElement(element, type);
+		if (typedElement == null) {
+			return null;
+		}
+		SetRequest request = new SetRequest(element, UMLPackage.eINSTANCE.getTypedElement_Type(), typedElement);
+		return new SetValueCommand(request);
+	}
+	
+	private ElementProvider getElementProvider() {
+		if (elementProvider == null) {
+			elementProvider = new TypeElementProvider();
+		}
+		return elementProvider;
+	}
+
+	private static final String NAME_TYPE_SEPARATOR = ":"; //$NON-NLS-1$
+	
+	private ElementProvider elementProvider; 
+	
+	private static class TypeElementProvider extends ElementProvider {
+		@Override
+		protected boolean isSuitable(Object object) {
+			return object instanceof Type;
+		}		
 	}
 }
