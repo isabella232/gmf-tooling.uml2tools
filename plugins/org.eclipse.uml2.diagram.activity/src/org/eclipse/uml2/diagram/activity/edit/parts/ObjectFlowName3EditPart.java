@@ -245,7 +245,7 @@ public class ObjectFlowName3EditPart extends LabelEditPart implements ITextAware
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**
