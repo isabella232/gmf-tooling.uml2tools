@@ -26,7 +26,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
-import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.diagram.common.parser.ElementProvider;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -37,14 +37,6 @@ public class SubmachineStateParser implements IParser {
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
-		EObject eObject = (EObject)element.getAdapter(EObject.class);
-		if (eObject instanceof NamedElement) {
-			return ((NamedElement) eObject).getName();
-		}
-		return ""; //$NON-NLS-1$
-	}
-
-	public String getPrintString(IAdaptable element, int flags) {
 		EObject eObject = (EObject)element.getAdapter(EObject.class);
 		if (eObject instanceof State) {
 			StringBuffer printStringBuffer = new StringBuffer(20);
@@ -61,6 +53,10 @@ public class SubmachineStateParser implements IParser {
 			return printStringBuffer.toString();
 		}
 		return ""; //$NON-NLS-1$
+	}
+
+	public String getPrintString(IAdaptable element, int flags) {
+		return getEditString(element, flags);
 	}
 
 	public boolean isAffectingEvent(Object event, int flags) {
@@ -82,13 +78,54 @@ public class SubmachineStateParser implements IParser {
 		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
+
+		int equalityPosition = newString.indexOf(NAME_SUBMACHINE_SEPARATOR);
+		if (equalityPosition == -1) {
+			return getSetNameCommand(element, newString);
+		}
+		String name = newString.substring(0, equalityPosition);
+		String submachine = newString.substring(equalityPosition + 1);
+		
 		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Set Values"); //$NON-NLS-1$
-		command.compose(getSetNameCommand(element, newString));
+		command.compose(getSetNameCommand(element, name));
+		if (submachine != null) {
+			ICommand setSubmachineCommand = getSetSubmachineCommand(element, submachine);
+			if (setSubmachineCommand != null) {
+				command.compose(setSubmachineCommand);
+			}
+		}
 		return command;
 	}
 
 	private ICommand getSetNameCommand(EObject element, String name) {
 		SetRequest request = new SetRequest(element, UMLPackage.eINSTANCE.getNamedElement_Name(), name);
 		return new SetValueCommand(request);
+	}
+
+	private ICommand getSetSubmachineCommand(EObject element, String submachine) {
+		StateMachine submachineElement = (StateMachine) getElementProvider().findElement(element, submachine);
+		if (submachineElement == null) {
+			return null;
+		}
+		SetRequest request = new SetRequest(element, UMLPackage.eINSTANCE.getState_Submachine(), submachineElement);
+		return new SetValueCommand(request);
+	}
+	
+	private ElementProvider getElementProvider() {
+		if (elementProvider == null) {
+			elementProvider = new StateMachineProvider();
+		}
+		return elementProvider;
+	}
+	
+	private static final String NAME_SUBMACHINE_SEPARATOR = ":"; //$NON-NLS-1$
+
+	private ElementProvider elementProvider;
+	
+	private static class StateMachineProvider extends ElementProvider {
+		@Override
+		protected boolean isSuitable(Object object) {
+			return object instanceof StateMachine;
+		}
 	}
 }
