@@ -13,8 +13,8 @@ public interface LifeLineElement {
 
 	HorizontalConstraint getHorizontalConstraint();
 
-	Enumeration beforeConstraints();
-	Enumeration afterConstraints();
+	Enumeration<OrderingConstraint> beforeConstraints();
+	Enumeration<OrderingConstraint> afterConstraints();
 
     LifeLine getLifeLine();
 
