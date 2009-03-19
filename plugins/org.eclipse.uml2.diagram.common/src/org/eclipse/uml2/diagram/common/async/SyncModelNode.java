@@ -36,8 +36,16 @@ public class SyncModelNode implements IAdaptable {
 
 	public SyncModelNode(View syncModelRoot, View diagramRoot, SyncModelContext context) {
 		this(syncModelRoot, (SyncModelNode) null, context);
-		if (diagramRoot != null && (diagramRoot.getElement() == null || !diagramRoot.getElement().equals(syncModelRoot.getElement()))) {
-			throw new IllegalArgumentException();
+		if (syncModelRoot == null){
+			throw new NullPointerException();
+		}
+		if (diagramRoot != null){
+			if (diagramRoot.getElement() == null){
+				throw new IllegalArgumentException("Diagram root should have an semantic element");
+			}
+			if (!diagramRoot.getElement().equals(syncModelRoot.getElement())){
+				throw new IllegalArgumentException("Diagram root element : " + diagramRoot.getElement() + ", while SyncModel root element: " + syncModelRoot.getElement());
+			}
 		}
 		initWithDiagramView(diagramRoot);
 	}
