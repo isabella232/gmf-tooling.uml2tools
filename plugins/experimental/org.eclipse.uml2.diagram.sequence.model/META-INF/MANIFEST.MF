@@ -7,14 +7,14 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: org.eclipse.uml2.diagram.sequence.model.builder,
- org.eclipse.uml2.diagram.sequence.model.edit,
- org.eclipse.uml2.diagram.sequence.model.sdnotation,
- org.eclipse.uml2.diagram.sequence.model.sdnotation.impl,
- org.eclipse.uml2.diagram.sequence.model.sdnotation.util,
- org.eclipse.uml2.diagram.sequence.model.sequenced,
- org.eclipse.uml2.diagram.sequence.model.sequenced.impl,
- org.eclipse.uml2.diagram.sequence.model.sequenced.util
+Export-Package: org.eclipse.uml2.diagram.sequence.model.builder;x-friends:="org.eclipse.uml2.diagram.sequence,org.eclipse.uml2.diagram.sequence.tests",
+ org.eclipse.uml2.diagram.sequence.model.edit;x-friends:="org.eclipse.uml2.diagram.sequence,org.eclipse.uml2.diagram.sequence.tests",
+ org.eclipse.uml2.diagram.sequence.model.sdnotation;x-friends:="org.eclipse.uml2.diagram.sequence,org.eclipse.uml2.diagram.sequence.tests",
+ org.eclipse.uml2.diagram.sequence.model.sdnotation.impl;x-friends:="org.eclipse.uml2.diagram.sequence,org.eclipse.uml2.diagram.sequence.tests",
+ org.eclipse.uml2.diagram.sequence.model.sdnotation.util;x-friends:="org.eclipse.uml2.diagram.sequence,org.eclipse.uml2.diagram.sequence.tests",
+ org.eclipse.uml2.diagram.sequence.model.sequenced;x-friends:="org.eclipse.uml2.diagram.sequence,org.eclipse.uml2.diagram.sequence.tests",
+ org.eclipse.uml2.diagram.sequence.model.sequenced.impl;x-friends:="org.eclipse.uml2.diagram.sequence,org.eclipse.uml2.diagram.sequence.tests",
+ org.eclipse.uml2.diagram.sequence.model.sequenced.util;x-friends:="org.eclipse.uml2.diagram.sequence,org.eclipse.uml2.diagram.sequence.tests"
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.uml2.uml;bundle-version="3.0.0",
