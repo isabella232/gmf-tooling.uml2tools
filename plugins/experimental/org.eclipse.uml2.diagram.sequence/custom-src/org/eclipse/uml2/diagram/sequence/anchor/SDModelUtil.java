@@ -12,9 +12,11 @@
 package org.eclipse.uml2.diagram.sequence.anchor;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 
 public class SDModelUtil {
 	public static class AlienElementException extends Exception {
@@ -48,6 +50,17 @@ public class SDModelUtil {
 		throw new AlienElementException("Element is not contained on lifeline " + entity);
 	}
 	
+	public static SDModel findEnclosingInteraction(final SDEntity entity) throws AlienElementException {
+        EObject current = entity;
+        while (current instanceof SDEntity) {
+            if (current instanceof SDModel){
+            	return (SDModel)current;
+            }
+        	current = current.eContainer();
+        }
+        throw new AlienElementException("Element is not contained in lifeline" + entity);
+	}
+	
 	public static SDEntity getParent(SDEntity entity){
 		EObject container = entity.eContainer();
 		if (container instanceof SDEntity){
@@ -73,5 +86,9 @@ public class SDModelUtil {
         }
         return false;
     }
+	
+	public static boolean canContainMountingRegions(SDEntity entity){
+		return entity instanceof SDBracketContainer; 
+	}
 
 }
