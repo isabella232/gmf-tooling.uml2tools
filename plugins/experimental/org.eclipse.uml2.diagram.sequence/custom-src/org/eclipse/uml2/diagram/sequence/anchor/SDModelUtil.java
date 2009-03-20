@@ -12,11 +12,14 @@
 package org.eclipse.uml2.diagram.sequence.anchor;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
 
 public class SDModelUtil {
 	public static class AlienElementException extends Exception {
@@ -43,22 +46,16 @@ public class SDModelUtil {
         NoInteractionException(Throwable cause) { super(cause); }
     }
 	
-	public static SDLifeLine findEnclosingLifeline(SDEntity entity) throws AlienElementException {
-		if (entity instanceof SDLifeLineElement){
-			((SDLifeLineElement)entity).getCoveredLifeLine();
+	public static SDLifeLine findEnclosingLifeline2(SDLifeLineElement lifelineElement) throws AlienElementException {
+		SDLifeLine lifeLine = lifelineElement.getCoveredLifeLine();
+		if (lifeLine == null){
+			throw new AlienElementException("Element is not contained on lifeline " + lifelineElement);	
 		}
-		throw new AlienElementException("Element is not contained on lifeline " + entity);
+		return lifeLine;
 	}
 	
-	public static SDModel findEnclosingInteraction(final SDEntity entity) throws AlienElementException {
-        EObject current = entity;
-        while (current instanceof SDEntity) {
-            if (current instanceof SDModel){
-            	return (SDModel)current;
-            }
-        	current = current.eContainer();
-        }
-        throw new AlienElementException("Element is not contained in lifeline" + entity);
+	public static SDModel findEnclosingInteraction2(final SDLifeLineElement lifeLineElement) throws AlienElementException {
+		return findEnclosingLifeline2(lifeLineElement).getModel();
 	}
 	
 	public static SDEntity getParent(SDEntity entity){
@@ -90,5 +87,30 @@ public class SDModelUtil {
 	public static boolean canContainMountingRegions(SDEntity entity){
 		return entity instanceof SDBracketContainer; 
 	}
-
+	
+	public static boolean isNoElementsMountingRegion(SDEntity entity){
+		if (entity instanceof SDMountingRegion){
+			SDMountingRegion region = (SDMountingRegion)entity;
+			return !(region.getFrame() instanceof SDInteractionOperand);
+		}
+		return false;
+	}	
+	
+    public static SDBracketContainer skipMountingRegions(final SDLifeLineElement element) throws AlienElementException {
+    	if (element == null){
+    		throw new AlienElementException("element is not attached");
+    	}
+    	if (element instanceof SDMountingRegion){
+    		SDLifeLineElement container = ((SDMountingRegion)element).getBracketContainer();
+    		return skipMountingRegions(container); 
+    	}
+    	if (element instanceof SDLifeLine){
+    		return (SDLifeLine)element;
+    	}
+    	if (element instanceof SDBehaviorSpec){
+    		return (SDBehaviorSpec)element;
+    	}
+    	throw new AlienElementException("Wrond enclosing element: " + element);
+    }
+	
 }
