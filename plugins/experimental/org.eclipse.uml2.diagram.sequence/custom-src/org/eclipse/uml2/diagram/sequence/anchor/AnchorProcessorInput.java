@@ -31,7 +31,6 @@ import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.Ordering
 import org.eclipse.uml2.diagram.sequence.internal.missed.EmptyEnumeration;
 import org.eclipse.uml2.diagram.sequence.internal.missed.MissedMethods;
 import org.eclipse.uml2.diagram.sequence.model.edit.SDAnchor;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.PasteDestination;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity;
@@ -182,7 +181,7 @@ public class AnchorProcessorInput {
 		return upperRangeElement.getNumber() < topEntityElement.getNumber() && lowerRangeElement.getNumber() > bottomEntityElement.getNumber();
 	}
 
-	public PasteDestination findTargetByContainer(PasteRange pasteRange, SDEntity container) {
+	public SDAnchor findTargetByContainer(PasteRange pasteRange, SDBracketContainer container) {
 		LifelineImpl.BoundaryElement upperBoundaryElement0 = (LifelineImpl.BoundaryElement) pasteRange.getRangeUpperElement();
 		LifelineImpl.BoundaryElement lowerBoundaryElement0 = (LifelineImpl.BoundaryElement) pasteRange.getRangeLowerElement();
 
@@ -190,14 +189,12 @@ public class AnchorProcessorInput {
 		while (boundaryElement != lowerBoundaryElement0) {
 			if (boundaryElement.isTopNotBottom()) {
 				if (boundaryElement.getEntity() == container) {
-
-					// why not new CreateTarget(container, null, true); ????
-					return new PasteDestination(container);
+					return SDAnchor.firstChildFor(container);
 				}
 			} else {
-				SDEntity parent = SDModelUtil.getParent(boundaryElement.getEntity());
-				if (parent == container) {
-					return new PasteDestination(container, boundaryElement.getEntity(), true);
+				SDLifeLineElement afterTheBottomMeansParent = boundaryElement.getEntityAfterElement();
+				if (afterTheBottomMeansParent == container) {
+					return new SDAnchor(container, (SDBracket)boundaryElement.getEntity(), true);
 				}
 			}
 			boundaryElement = boundaryElement.getNextBoundaryElement();
@@ -337,25 +334,34 @@ public class AnchorProcessorInput {
 		return new PasteRange(upperBoundaryElement, lowerBoundaryElement, this);
 	}
 
-	public PasteDestination getCreateTargetAfterPoint(LifeLineElement lineElementForAnchor) {
+	public SDAnchor getCreateTargetAfterPoint(LifeLineElement lineElementForAnchor) {
 		LifelineImpl.BoundaryElement boundaryElement = (LifelineImpl.BoundaryElement) lineElementForAnchor;
 
 		if (boundaryElement instanceof LifelineImpl.TopElement) {
-			SDEntity container = boundaryElement.getEntity();
+			SDLifeLineElement containerOrSimple = boundaryElement.getEntity();
 			LifelineImpl.BoundaryElement nextElement = boundaryElement.getNextBoundaryElement();
 
 			if (nextElement instanceof LifelineImpl.TopElement) {
-				SDEntity anchor = nextElement.getEntity();
-				return new PasteDestination(container, anchor, false);
+				//"next" element can't be a LifeLine
+				SDBracket anchor = (SDBracket) nextElement.getEntity();
+				return new SDAnchor(anchor.getBracketContainer(), anchor, true);
 			} else if (nextElement instanceof LifelineImpl.BottomElement) {
-				return new PasteDestination(container);
+				if (containerOrSimple instanceof SDBracketContainer){
+					return SDAnchor.firstChildFor((SDBracketContainer)containerOrSimple);
+				} else {
+					SDBracket simpleBracket = (SDBracket)containerOrSimple;
+					return SDAnchor.after(simpleBracket);
+				}
 			} else {
 				throw new RuntimeException(MessageFormat.format("Bad lifeline element {0}", new Object[] { nextElement }));
 			}
 
 		} else if (boundaryElement instanceof LifelineImpl.BottomElement) {
-			SDEntity anchor = boundaryElement.getEntity();
-			return new PasteDestination(SDModelUtil.getParent(anchor), anchor, true);
+			SDLifeLineElement anchor = boundaryElement.getEntity();
+			if (anchor instanceof SDLifeLine){
+				throw new RuntimeException("There is nothing after the end of lifeline");
+			}
+			return SDAnchor.after((SDBracket)anchor);
 		} else {
 			throw new RuntimeException(MessageFormat.format("Bad lifeline element {0}", new Object[] { boundaryElement }));
 		}

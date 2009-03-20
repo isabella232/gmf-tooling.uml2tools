@@ -7,10 +7,12 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 
 
 public class SDAnchor {
+	private final SDBracketContainer myContainer;
 	private final SDBracket myAnchor;
 	private final boolean myIsBeforeNotAfterAnchor;
 
-	public SDAnchor(SDBracket anchor, boolean isBeforeNotAfterAnchor){
+	public SDAnchor(SDBracketContainer container, SDBracket anchor, boolean isBeforeNotAfterAnchor){
+		myContainer = container;
 		myAnchor = anchor;
 		myIsBeforeNotAfterAnchor = isBeforeNotAfterAnchor;
 	}
@@ -19,16 +21,28 @@ public class SDAnchor {
 		return myIsBeforeNotAfterAnchor;
 	}
 	
+	public boolean isAfterAnchor(){
+		return !myIsBeforeNotAfterAnchor;
+	}
+	
+	public boolean isFirstElement(){
+		return myIsBeforeNotAfterAnchor && myAnchor == null; 
+	}
+	
 	public SDBracket getAnchor() {
 		return myAnchor;
 	}
 	
+	public SDBracketContainer getContainer(){
+		return myContainer;
+	}
+	
 	public static SDAnchor after(SDBracket bracket){
-		return new SDAnchor(bracket, false);
+		return new SDAnchor(bracket.getBracketContainer(), bracket, false);
 	}
 	
 	public static SDAnchor firstChildFor(SDBracketContainer container){
-		return container.getBrackets().isEmpty() ? theOnlyChildFor(container) : new SDAnchor(container.getBrackets().get(0), true);
+		return new SDAnchor(container, null, true);
 	}
 	
 	public static SDAnchor lastChildFor(SDBracketContainer container){
@@ -40,8 +54,7 @@ public class SDAnchor {
 		if (!container.getBrackets().isEmpty()){
 			throw new IllegalArgumentException("Container already has brackets " + container);
 		}
-		//kinda legitimate anchor, everything should work
-		return null;
+		return new SDAnchor(container, null, true);
 	}
 	
 }

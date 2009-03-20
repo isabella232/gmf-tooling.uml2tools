@@ -13,8 +13,7 @@ package org.eclipse.uml2.diagram.sequence.anchor;
 
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLineElement;
 import org.eclipse.uml2.diagram.sequence.model.edit.SDAnchor;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.PasteDestination;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement;
 
 public class PasteRange {
@@ -41,7 +40,7 @@ public class PasteRange {
 		return myAnchorProcessorInputImpl.doesInclude(this, entity);
 	}
 
-	public PasteDestination findTargetByContainer(SDEntity container) {
+	public SDAnchor findTargetByContainer(SDBracketContainer container) {
 		return myAnchorProcessorInputImpl.findTargetByContainer(this, container);
 	}
 

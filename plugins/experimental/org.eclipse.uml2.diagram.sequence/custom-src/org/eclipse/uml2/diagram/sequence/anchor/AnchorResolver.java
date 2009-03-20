@@ -18,7 +18,6 @@ import java.util.List;
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLine;
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLineElement;
 import org.eclipse.uml2.diagram.sequence.model.edit.SDAnchor;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.PasteDestination;
 
 public class AnchorResolver {
 
@@ -83,23 +82,23 @@ public class AnchorResolver {
 
 	public class GetCreateTargetsResult {
 
-		private GetCreateTargetsResult(AnchorProcessorInput anchorProcessorInputImpl, ConstraintsProcessor constraintsProcessor, ArrayList<PasteDestination> createTargetsList) {
+		private GetCreateTargetsResult(AnchorProcessorInput anchorProcessorInputImpl, ConstraintsProcessor constraintsProcessor, ArrayList<SDAnchor> createTargetsList) {
 			myAnchorProcessorInputImpl = anchorProcessorInputImpl;
 			myConstraintsProcessor = constraintsProcessor;
 			myCreateTargetsList = createTargetsList;
 		}
 
-		public ArrayList<PasteDestination> getCreateTargetsList() {
+		public ArrayList<SDAnchor> getCreateTargetsList() {
 			return myCreateTargetsList;
 		}
 
-		public ArrayList<PasteDestination> calculateAsynchTargets(LifelineSatisfyCondition[] satisfyingContainers) throws UnknownElementException, EvaluatingException {
+		public ArrayList<SDAnchor> calculateAsynchTargets(LifelineSatisfyCondition[] satisfyingContainers) throws UnknownElementException, EvaluatingException {
 			return getAsynchTargets(myAnchorProcessorInputImpl, myConstraintsProcessor, satisfyingContainers);
 		}
 
 		private final ConstraintsProcessor myConstraintsProcessor;
 
-		private final ArrayList<PasteDestination> myCreateTargetsList;
+		private final ArrayList<SDAnchor> myCreateTargetsList;
 
 		private final AnchorProcessorInput myAnchorProcessorInputImpl;
 	}
@@ -128,25 +127,22 @@ public class AnchorResolver {
 
 		multipleElementsProcessor.processTo(satisfyCondition);
 
-		ArrayList<PasteDestination> result = new ArrayList<PasteDestination>(lifeLinesArray.length);
+		ArrayList<SDAnchor> result = new ArrayList<SDAnchor>(lifeLinesArray.length);
 
 		//System.out.println("[AnchorResolver.getCreateTargets] upper elements : "+pasteRangeUpper);
 		//System.out.println("[AnchorResolver.getCreateTargets] lower elements : "+pasteRangeLower);
 
 		for (int i = 0; i < lifeLinesArray.length; i++) {
 			LifeLineElement lifeLineElement = (LifeLineElement) constraintsProcessor.getCurrentState().get(i);
-			PasteDestination createTarget = anchorProcessorInputImpl.getCreateTargetAfterPoint(lifeLineElement);
+			SDAnchor createTarget = anchorProcessorInputImpl.getCreateTargetAfterPoint(lifeLineElement);
 			result.add(createTarget);
 		}
 
 		return new GetCreateTargetsResult(anchorProcessorInputImpl, constraintsProcessor, result);
 	}
 
-	private ArrayList<PasteDestination> getAsynchTargets(AnchorProcessorInput anchorProcessorInputImpl, ConstraintsProcessor constraintsProcessor, LifelineSatisfyCondition[] lifelineSatisfyConditions)
+	private ArrayList<SDAnchor> getAsynchTargets(AnchorProcessorInput anchorProcessorInputImpl, ConstraintsProcessor constraintsProcessor, LifelineSatisfyCondition[] lifelineSatisfyConditions)
 			throws UnknownElementException, EvaluatingException {
-		//System.out.println("[AnchorResolver.getAsynchTargets] -----------------------------------------------");
-		//System.out.println("[AnchorResolver.getAsynchTargets] draftAsynchTargetsList: "+draftAsynchTargetsList);
-
 		ConstraintsProcessor.SatisfyCondition satisfyCondition = constraintsProcessor.new SatisfyCondition(lifelineSatisfyConditions);
 
 		ConstraintsProcessor.MultipleElementsProcessor multipleElementsProcessor = new ConstraintsProcessor.MultipleElementsProcessor(constraintsProcessor, Collections.<LifeLineElement> emptyList());
@@ -155,14 +151,11 @@ public class AnchorResolver {
 
 		int size = constraintsProcessor.getCurrentState().size();
 
-		ArrayList<PasteDestination> result = new ArrayList<PasteDestination>(size);
-
-		//System.out.println("[AnchorResolver.getCreateTargets] upper elements : "+pasteRangeUpper);
-		//System.out.println("[AnchorResolver.getCreateTargets] lower elements : "+pasteRangeLower);
+		ArrayList<SDAnchor> result = new ArrayList<SDAnchor>(size);
 
 		for (int i = 0; i < size; i++) {
 			LifeLineElement lifeLineElement = (LifeLineElement) constraintsProcessor.getCurrentState().get(i);
-			PasteDestination createTarget = anchorProcessorInputImpl.getCreateTargetAfterPoint(lifeLineElement);
+			SDAnchor createTarget = anchorProcessorInputImpl.getCreateTargetAfterPoint(lifeLineElement);
 			result.add(createTarget);
 		}
 
