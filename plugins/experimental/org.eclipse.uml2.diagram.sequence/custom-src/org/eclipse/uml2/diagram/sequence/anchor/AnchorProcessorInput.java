@@ -38,6 +38,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDExecution;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInvocation;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
 
@@ -706,7 +707,7 @@ public class AnchorProcessorInput {
 
 	private final LifelineElementTraceable[] myLifelineDestructionBottoms;
 
-	private final HashMap<SDEntity, LifelineImpl.BottomElement> myEntity2BottomElement = new HashMap<SDEntity, LifelineImpl.BottomElement>();
+	private final HashMap<SDLifeLineElement, LifelineImpl.BottomElement> myEntity2BottomElement = new HashMap<SDLifeLineElement, LifelineImpl.BottomElement>();
 
 	private final List<SDLifeLine> myLifelinesEntities;
 
@@ -797,7 +798,7 @@ public class AnchorProcessorInput {
 			};
 		}
 
-		TopElement addTopLifelineElement(SDEntity entity, LayoutPropertiesFactory layoutPropertiesFactory) {
+		TopElement addTopLifelineElement(SDLifeLineElement entity, LayoutPropertiesFactory layoutPropertiesFactory) {
 			TopElement result = new TopElement(entity, mySize, layoutPropertiesFactory.createLayoutProperties(entity, true));
 			addElementToList(result);
 			return result;
@@ -857,7 +858,7 @@ public class AnchorProcessorInput {
 
 			public abstract boolean isTopNotBottom();
 
-			abstract SDEntity getEntity();
+			abstract SDLifeLineElement getEntity();
 
 			public LifelineElementTraceable getPreviousElement() {
 				return this.prevElement;
@@ -902,7 +903,7 @@ public class AnchorProcessorInput {
 
 		private class TopElement extends BoundaryElement {
 
-			TopElement(SDEntity entity, int number, ElementLayoutProperties elementLayoutProperties) {
+			TopElement(SDLifeLineElement entity, int number, ElementLayoutProperties elementLayoutProperties) {
 				super(number, elementLayoutProperties);
 				myEntity = entity;
 			}
@@ -911,7 +912,7 @@ public class AnchorProcessorInput {
 				return true;
 			}
 
-			SDEntity getEntity() {
+			SDLifeLineElement getEntity() {
 				return myEntity;
 			}
 
@@ -919,11 +920,11 @@ public class AnchorProcessorInput {
 				return MessageFormat.format("[TopOf({0}){1}]", new Object[] { DebugFormat.debugFormatEntity(getEntity()), getNumber() });
 			}
 
-			public SDEntity getEntityAfterElement() {
+			public SDLifeLineElement getEntityAfterElement() {
 				return myEntity;
 			}
 
-			private final SDEntity myEntity;
+			private final SDLifeLineElement myEntity;
 		}
 
 		private class BottomElement extends BoundaryElement {
@@ -937,7 +938,7 @@ public class AnchorProcessorInput {
 				return false;
 			}
 
-			SDEntity getEntity() {
+			SDLifeLineElement getEntity() {
 				return myTopElement.getEntity();
 			}
 
@@ -945,8 +946,12 @@ public class AnchorProcessorInput {
 				return myTopElement;
 			}
 
-			public SDEntity getEntityAfterElement() {
-				return SDModelUtil.getParent(getEntity());
+			public SDLifeLineElement getEntityAfterElement() {
+				if (getEntity() instanceof SDLifeLine){
+					return null;
+				}
+				SDBracket bracket = (SDBracket) getEntity();
+				return bracket.getBracketContainer();
 			}
 
 			public String toString() {
