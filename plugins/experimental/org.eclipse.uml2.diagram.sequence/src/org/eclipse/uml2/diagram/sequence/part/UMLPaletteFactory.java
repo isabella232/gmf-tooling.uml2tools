@@ -43,13 +43,9 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createMessage3CreationTool());
 		paletteContainer.add(createStateInvariant4CreationTool());
 		paletteContainer.add(createActionExecution5CreationTool());
-		paletteContainer.add(createBehaviorExecution6CreationTool());
-		paletteContainer.add(createFoundExecution7CreationTool());
-		paletteContainer.add(createInteractionUse8CreationTool());
-		paletteContainer.add(createCombinedFragment9CreationTool());
-		paletteContainer.add(createGate10CreationTool());
-		paletteContainer.add(createTemporaryOperand11CreationTool());
-		paletteContainer.add(createTemporaryMountingLink12CreationTool());
+		paletteContainer.add(createInteractionUse6CreationTool());
+		paletteContainer.add(createCombinedFragment7CreationTool());
+		paletteContainer.add(createGate8CreationTool());
 		return paletteContainer;
 	}
 
@@ -133,31 +129,22 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createBehaviorExecution6CreationTool() {
+	private ToolEntry createGate8CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.BehaviorExecutionSpecification_3004);
-		NodeToolEntry entry = new NodeToolEntry(Messages.BehaviorExecution6CreationTool_title, Messages.BehaviorExecution6CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.BehaviorExecutionSpecification_3004));
+		types.add(UMLElementTypes.Gate_3005);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Gate8CreationTool_title, Messages.Gate8CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Gate_3005));
 		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createFoundExecution7CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.FoundExecution7CreationTool_title, Messages.FoundExecution7CreationTool_desc, null, null) {
-		};
 		return entry;
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	private ToolEntry createInteractionUse8CreationTool() {
+	private ToolEntry createInteractionUse6CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.InteractionUse_3007);
-		NodeToolEntry entry = new NodeToolEntry(Messages.InteractionUse8CreationTool_title, Messages.InteractionUse8CreationTool_desc, types) {
+		NodeToolEntry entry = new NodeToolEntry(Messages.InteractionUse6CreationTool_title, Messages.InteractionUse6CreationTool_desc, types) {
 
 			@Override
 			public Tool createTool() {
@@ -174,10 +161,10 @@ public class UMLPaletteFactory {
 	/**
 	 * @generated NOT
 	 */
-	private ToolEntry createCombinedFragment9CreationTool() {
+	private ToolEntry createCombinedFragment7CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.CombinedFragment_3008);
-		NodeToolEntry entry = new NodeToolEntry(Messages.CombinedFragment9CreationTool_title, Messages.CombinedFragment9CreationTool_desc, types) {
+		NodeToolEntry entry = new NodeToolEntry(Messages.CombinedFragment7CreationTool_title, Messages.CombinedFragment7CreationTool_desc, types) {
 
 			public Tool createTool() {
 				Tool result = new CreateCombinedFragmentTool();
@@ -186,42 +173,6 @@ public class UMLPaletteFactory {
 			}
 		};
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CombinedFragment_3008));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createGate10CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Gate_3005);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Gate10CreationTool_title, Messages.Gate10CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Gate_3005));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createTemporaryOperand11CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.InteractionOperand_3009);
-		NodeToolEntry entry = new NodeToolEntry(Messages.TemporaryOperand11CreationTool_title, Messages.TemporaryOperand11CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InteractionOperand_3009));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createTemporaryMountingLink12CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Link_4002);
-		LinkToolEntry entry = new LinkToolEntry(Messages.TemporaryMountingLink12CreationTool_title, Messages.TemporaryMountingLink12CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Link_4002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

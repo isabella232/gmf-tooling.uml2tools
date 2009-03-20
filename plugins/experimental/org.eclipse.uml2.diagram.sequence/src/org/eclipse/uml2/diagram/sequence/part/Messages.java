@@ -304,72 +304,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String BehaviorExecution6CreationTool_title;
+	public static String InteractionUse6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String BehaviorExecution6CreationTool_desc;
+	public static String InteractionUse6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String FoundExecution7CreationTool_title;
+	public static String CombinedFragment7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String FoundExecution7CreationTool_desc;
+	public static String CombinedFragment7CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String InteractionUse8CreationTool_title;
+	public static String Gate8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String InteractionUse8CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String CombinedFragment9CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String CombinedFragment9CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Gate10CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Gate10CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String TemporaryOperand11CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String TemporaryOperand11CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String TemporaryMountingLink12CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String TemporaryMountingLink12CreationTool_desc;
+	public static String Gate8CreationTool_desc;
 
 	/**
 	 * @generated
