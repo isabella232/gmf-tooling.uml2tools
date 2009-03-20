@@ -12,8 +12,10 @@
 package org.eclipse.uml2.diagram.sequence.anchor;
 
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLineElement;
+import org.eclipse.uml2.diagram.sequence.model.edit.SDAnchor;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.PasteDestination;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement;
 
 public class PasteRange {
 
@@ -31,11 +33,11 @@ public class PasteRange {
 		return myRangeUpperElement;
 	}
 
-	public boolean includes(PasteDestination createTarget) throws UnknownElementException {
+	public boolean includes(SDAnchor createTarget) throws UnknownElementException {
 		return myAnchorProcessorInputImpl.doesInclude(this, createTarget);
 	}
 
-	public boolean includes(SDEntity entity) throws UnknownElementException {
+	public boolean includes(SDLifeLineElement entity) throws UnknownElementException {
 		return myAnchorProcessorInputImpl.doesInclude(this, entity);
 	}
 

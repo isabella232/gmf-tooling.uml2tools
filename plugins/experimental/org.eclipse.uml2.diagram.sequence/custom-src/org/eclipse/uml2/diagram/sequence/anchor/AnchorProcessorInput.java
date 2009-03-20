@@ -30,6 +30,7 @@ import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLine
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.OrderingConstraint;
 import org.eclipse.uml2.diagram.sequence.internal.missed.EmptyEnumeration;
 import org.eclipse.uml2.diagram.sequence.internal.missed.MissedMethods;
+import org.eclipse.uml2.diagram.sequence.model.edit.SDAnchor;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.PasteDestination;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracketContainer;
@@ -122,7 +123,7 @@ public class AnchorProcessorInput {
 		return index.intValue();
 	}
 
-	public LifeLineElement getLifeLineElementBeforePoint(PasteDestination createTarget) throws UnknownElementException {
+	public LifeLineElement getLifeLineElementBeforePoint(SDAnchor createTarget) throws UnknownElementException {
 		if (createTarget.getAnchor() == null) {
 			LifelineImpl.BottomElement containerBottomElement = getBottomElementImpl(createTarget.getContainer());
 			if (createTarget.isAfterAnchor()) {
@@ -140,7 +141,7 @@ public class AnchorProcessorInput {
 		}
 	}
 
-	boolean doesInclude(PasteRange pasteRange, PasteDestination createTarget) throws UnknownElementException {
+	boolean doesInclude(PasteRange pasteRange, SDAnchor createTarget) throws UnknownElementException {
 		int beforeTargetPos;
 
 		LifelineImpl lifelineImpl = (LifelineImpl) pasteRange.getRangeLowerElement().getLifeLine();
@@ -171,7 +172,7 @@ public class AnchorProcessorInput {
 		return rangeUpperElement.getNumber() <= beforeTargetPos && beforeTargetPos < rangeLowerElement.getNumber();
 	}
 
-	boolean doesInclude(PasteRange pasteRange, SDEntity entity) throws UnknownElementException {
+	boolean doesInclude(PasteRange pasteRange, SDLifeLineElement entity) throws UnknownElementException {
 		LifelineImpl.BoundaryElement upperRangeElement = (LifelineImpl.BoundaryElement) pasteRange.getRangeUpperElement();
 		LifelineImpl.BoundaryElement lowerRangeElement = (LifelineImpl.BoundaryElement) pasteRange.getRangeLowerElement();
 
@@ -205,7 +206,7 @@ public class AnchorProcessorInput {
 		return null;
 	}
 
-	public LifeLineElement getLifeLineElement(SDEntity entity, boolean topNotBottom, int lifelineIndex) throws UnknownElementException {
+	public LifeLineElement getLifeLineElement(SDLifeLineElement entity, boolean topNotBottom, int lifelineIndex) throws UnknownElementException {
 		LifelineImpl.BottomElement bottomElement = getBottomElementImpl(entity);
 		if (myLifelines.get(lifelineIndex) != bottomElement.getLifeLine()) {
 			throw new RuntimeException("Element found, but on wrong lifeline");
@@ -219,7 +220,7 @@ public class AnchorProcessorInput {
 
 	public class InEntityCondition implements LifelineSatisfyCondition {
 
-		public InEntityCondition(SDEntity entity, boolean isBeforeOk, boolean isInsideOk, boolean isAfterOk) throws UnknownElementException {
+		public InEntityCondition(SDLifeLineElement entity, boolean isBeforeOk, boolean isInsideOk, boolean isAfterOk) throws UnknownElementException {
 			LifelineImpl.BottomElement bottomElement = getBottomElementImpl(entity);
 			myLifeLine = bottomElement.getLifeLine();
 			final int topPos = bottomElement.getTopElement().getNumber();
@@ -360,7 +361,7 @@ public class AnchorProcessorInput {
 		}
 	}
 
-	public LifelineSatisfyCondition getAfterEntitySatisfyCondition(SDEntity entity) throws UnknownElementException {
+	public LifelineSatisfyCondition getAfterEntitySatisfyCondition(SDLifeLineElement entity) throws UnknownElementException {
 		final LifelineImpl.BottomElement bottomElement = getBottomElementImpl(entity);
 
 		class AfterEntitySatisfyCondition implements LifelineSatisfyCondition {
@@ -380,7 +381,7 @@ public class AnchorProcessorInput {
 		return new AfterEntitySatisfyCondition();
 	}
 
-	public LifelineSatisfyCondition getNotEarlierThanTargetSatisfyCondition(PasteDestination createTarget) throws UnknownElementException {
+	public LifelineSatisfyCondition getNotEarlierThanTargetSatisfyCondition(SDAnchor createTarget) throws UnknownElementException {
 		final LifelineElementTraceable beforeTargetElement = (LifelineElementTraceable) getLifeLineElementBeforePoint(createTarget);
 
 		class NotEarlierThanTargetSatisfyCondition implements LifelineSatisfyCondition {
@@ -425,8 +426,8 @@ public class AnchorProcessorInput {
 		}
 	};
 
-	private LifelineImpl.BottomElement getBottomElementSecure(SDEntity entity, LifelineImpl lifeLineImpl) throws UnknownElementException {
-		LifelineImpl.BottomElement bottomEntityElement = getBottomElementImpl(entity);
+	private LifelineImpl.BottomElement getBottomElementSecure(SDLifeLineElement lifeLineElement, LifelineImpl lifeLineImpl) throws UnknownElementException {
+		LifelineImpl.BottomElement bottomEntityElement = getBottomElementImpl(lifeLineElement);
 
 		if (lifeLineImpl != bottomEntityElement.getLifelineImpl()) {
 			throw new RuntimeException("Entity and paste range are from different lifelines");
@@ -434,12 +435,12 @@ public class AnchorProcessorInput {
 		return bottomEntityElement;
 	}
 
-	private LifelineImpl.BottomElement getBottomElementImpl(SDEntity entity) throws UnknownElementException {
-		assert !myIgnoredElements.contains(entity);
+	private LifelineImpl.BottomElement getBottomElementImpl(SDLifeLineElement lifeLineElement) throws UnknownElementException {
+		assert !myIgnoredElements.contains(lifeLineElement);
 
-		LifelineImpl.BottomElement bottomEntityElement = (LifelineImpl.BottomElement) myEntity2BottomElement.get(entity);
+		LifelineImpl.BottomElement bottomEntityElement = (LifelineImpl.BottomElement) myLifeLineElement2Bottom.get(lifeLineElement);
 		if (bottomEntityElement == null) {
-			throw new UnknownElementException(MessageFormat.format("Cannot find lifeline element for entity {0}", new Object[] { DebugFormat.debugFormatEntity(entity) }));
+			throw new UnknownElementException(MessageFormat.format("Cannot find lifeline element for entity {0}", new Object[] { DebugFormat.debugFormatEntity(lifeLineElement) }));
 		}
 		return bottomEntityElement;
 	}
@@ -508,7 +509,7 @@ public class AnchorProcessorInput {
 			final LifelineImpl.BottomElement bottomElement = lifeLineImpl.addBottomLifelineElement(topElement, myLayoutPropertiesFactory);
 			myCreationDestructionCollector.finishLifeline(bottomElement);
 
-			myEntity2BottomElement.put(lifeLine, bottomElement);
+			myLifeLineElement2Bottom.put(lifeLine, bottomElement);
 
 			return bottomElement;
 		}
@@ -529,7 +530,7 @@ public class AnchorProcessorInput {
 			final LifelineImpl.BottomElement bottomElement = lifeLineImpl.addBottomLifelineElement(topElement, myLayoutPropertiesFactory);
 			myCreationDestructionCollector.finishElement(bottomElement);
 
-			myEntity2BottomElement.put(lifeLineElement, bottomElement);
+			myLifeLineElement2Bottom.put(lifeLineElement, bottomElement);
 
 			if (lifeLineElement instanceof SDInvocation) {
 				final SDExecution destination = ((SDInvocation) lifeLineElement).getReceiveExecution();
@@ -540,7 +541,7 @@ public class AnchorProcessorInput {
 						myResolveRunnables.add(new Runnable() {
 
 							public void run() {
-								LifelineImpl.BottomElement executionBottomElement = (LifelineImpl.BottomElement) myEntity2BottomElement.get(destination);
+								LifelineImpl.BottomElement executionBottomElement = (LifelineImpl.BottomElement) myLifeLineElement2Bottom.get(destination);
 								if (executionBottomElement == null) {
 									return;
 								}
@@ -560,7 +561,7 @@ public class AnchorProcessorInput {
 						myResolveRunnables.add(new Runnable() {
 
 							public void run() {
-								LifelineImpl.BottomElement executionBottomElement = (LifelineImpl.BottomElement) myEntity2BottomElement.get(destination);
+								LifelineImpl.BottomElement executionBottomElement = (LifelineImpl.BottomElement) myLifeLineElement2Bottom.get(destination);
 								if (executionBottomElement == null) {
 									return;
 								}
@@ -591,7 +592,7 @@ public class AnchorProcessorInput {
 								List<LifelineImpl.BoundaryElement> bottomLifeLineElements = new ArrayList<LifelineImpl.BoundaryElement>(createdList.size());
 								for (int i = 0; i < createdList.size(); i++) {
 									SDMountingRegion mountingRegion = (SDMountingRegion) createdList.get(i);
-									LifelineImpl.BottomElement mountingRegionBottomElement = (LifelineImpl.BottomElement) myEntity2BottomElement.get(mountingRegion);
+									LifelineImpl.BottomElement mountingRegionBottomElement = (LifelineImpl.BottomElement) myLifeLineElement2Bottom.get(mountingRegion);
 									if (mountingRegionBottomElement == null) {
 										continue;
 									}
@@ -707,7 +708,7 @@ public class AnchorProcessorInput {
 
 	private final LifelineElementTraceable[] myLifelineDestructionBottoms;
 
-	private final HashMap<SDLifeLineElement, LifelineImpl.BottomElement> myEntity2BottomElement = new HashMap<SDLifeLineElement, LifelineImpl.BottomElement>();
+	private final HashMap<SDLifeLineElement, LifelineImpl.BottomElement> myLifeLineElement2Bottom = new HashMap<SDLifeLineElement, LifelineImpl.BottomElement>();
 
 	private final List<SDLifeLine> myLifelinesEntities;
 

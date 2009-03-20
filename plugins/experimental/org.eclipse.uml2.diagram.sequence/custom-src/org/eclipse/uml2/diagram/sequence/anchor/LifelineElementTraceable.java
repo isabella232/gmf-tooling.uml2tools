@@ -12,11 +12,11 @@
 package org.eclipse.uml2.diagram.sequence.anchor;
 
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLineElement;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement;
 
 interface LifelineElementTraceable extends LifeLineElement {
 
-	SDEntity getEntityAfterElement();
+	SDLifeLineElement getEntityAfterElement();
 
 	int getNumber();
 

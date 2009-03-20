@@ -17,15 +17,16 @@ import java.util.List;
 
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLine;
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLineElement;
+import org.eclipse.uml2.diagram.sequence.model.edit.SDAnchor;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.PasteDestination;
 
 public class AnchorResolver {
 
-	public ArrayList<PasteRange> getPasteRanges(AnchorProcessorInput anchorProcessorInputImpl, PasteDestination initialCreateTarget) throws EvaluatingException, UnknownElementException {
+	public ArrayList<PasteRange> getPasteRanges(AnchorProcessorInput anchorProcessorInputImpl, SDAnchor initialCreateTarget) throws EvaluatingException, UnknownElementException {
 		return getPasteRanges(anchorProcessorInputImpl, Collections.singletonList(initialCreateTarget));
 	}
 
-	public ArrayList<PasteRange> getPasteRanges(AnchorProcessorInput anchorProcessorInputImpl, List<PasteDestination> controlCreateTargets) throws UnknownElementException, EvaluatingException {
+	public ArrayList<PasteRange> getPasteRanges(AnchorProcessorInput anchorProcessorInputImpl, List<SDAnchor> controlCreateTargets) throws UnknownElementException, EvaluatingException {
 		List<LifeLine> lifeLinesList = anchorProcessorInputImpl.lifeLinesList();
 
 		LifeLine[] lifeLinesArray = new LifeLine[lifeLinesList.size()];
@@ -34,7 +35,7 @@ public class AnchorResolver {
 		ConstraintsProcessor constraintsProcessor = new ConstraintsProcessor(lifeLinesArray);
 
 		ArrayList<LifeLineElement> controlElementList = new ArrayList<LifeLineElement>(controlCreateTargets.size());
-		for (PasteDestination createTarget : controlCreateTargets) {
+		for (SDAnchor createTarget : controlCreateTargets) {
 			controlElementList.add(anchorProcessorInputImpl.getLifeLineElementBeforePoint(createTarget));
 		}
 
@@ -107,7 +108,7 @@ public class AnchorResolver {
 	 * @param satisfyingContainers
 	 * 		contains Entities, in which result create targets should be
 	 */
-	public GetCreateTargetsResult getCreateTargets(AnchorProcessorInput anchorProcessorInputImpl, List<PasteDestination> controlCreateTargets,
+	public GetCreateTargetsResult getCreateTargets(AnchorProcessorInput anchorProcessorInputImpl, List<SDAnchor> controlCreateTargets,
 			final LifelineSatisfyCondition[] lifelineSatisfyConditions) throws UnknownElementException, EvaluatingException {
 		List<LifeLine> lifeLinesList = anchorProcessorInputImpl.lifeLinesList();
 
@@ -117,7 +118,7 @@ public class AnchorResolver {
 		ConstraintsProcessor constraintsProcessor = new ConstraintsProcessor(lifeLinesArray);
 
 		ArrayList<LifeLineElement> controlElementList = new ArrayList<LifeLineElement>(controlCreateTargets.size());
-		for (PasteDestination createTarget : controlCreateTargets) {
+		for (SDAnchor createTarget : controlCreateTargets) {
 			controlElementList.add(anchorProcessorInputImpl.getLifeLineElementBeforePoint(createTarget));
 		}
 
