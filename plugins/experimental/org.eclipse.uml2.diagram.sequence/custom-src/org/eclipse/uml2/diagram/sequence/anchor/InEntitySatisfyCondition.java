@@ -12,21 +12,21 @@
 package org.eclipse.uml2.diagram.sequence.anchor;
 
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLine;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement;
 
 
 public class InEntitySatisfyCondition implements LifelineSatisfyCondition {
 
-	public InEntitySatisfyCondition(SDEntity entity, AnchorProcessorInput anchorProcessorInput) throws SDModelUtil.AlienElementException {
+	public InEntitySatisfyCondition(SDLifeLineElement entity, AnchorProcessorInput anchorProcessorInput) throws SDModelUtil.AlienElementException {
 		myEntity = entity;
 
-		SDLifeLine lifelineEntity = SDModelUtil.findEnclosingLifeline(myEntity);
+		SDLifeLine lifelineEntity = SDModelUtil.findEnclosingLifeline2(myEntity);
 		int lifelinePos = anchorProcessorInput.getLifelineIndex(lifelineEntity);
 		myLifeLine = (LifeLine) anchorProcessorInput.lifeLinesList().get(lifelinePos);
 	}
 
-	public InEntitySatisfyCondition(SDEntity entity, LifeLine lifeLine) {
+	public InEntitySatisfyCondition(SDLifeLineElement entity, LifeLine lifeLine) {
 		myEntity = entity;
 		myLifeLine = lifeLine;
 	}
@@ -43,7 +43,7 @@ public class InEntitySatisfyCondition implements LifelineSatisfyCondition {
 		return "InEntitySatisfyCondition-" + myEntity;
 	}
 
-	private final SDEntity myEntity;
+	private final SDLifeLineElement myEntity;
 
 	private final LifeLine myLifeLine;
 }

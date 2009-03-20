@@ -12,16 +12,16 @@
 package org.eclipse.uml2.diagram.sequence.anchor;
 
 import org.eclipse.uml2.diagram.sequence.internal.layout.vertical.input.LifeLine;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLineElement;
 
 
 public class InEntityNeighbourhoodSatisfyCondition implements LifelineSatisfyCondition {
 
-	public InEntityNeighbourhoodSatisfyCondition(SDEntity entity, AnchorProcessorInput anchorProcessorInput, boolean isBeforeOk, boolean isInsideOk, boolean isAfterOk)
+	public InEntityNeighbourhoodSatisfyCondition(SDLifeLineElement entity, AnchorProcessorInput anchorProcessorInput, boolean isBeforeOk, boolean isInsideOk, boolean isAfterOk)
 			throws SDModelUtil.AlienElementException {
-		myEntity = entity;
-		SDLifeLine lifelineEntity = SDModelUtil.findEnclosingLifeline(myEntity);
+		myLifeLineElement = entity;
+		SDLifeLine lifelineEntity = SDModelUtil.findEnclosingLifeline2(myLifeLineElement);
 		int lifelinePos = anchorProcessorInput.getLifelineIndex(lifelineEntity);
 		myLifeLine = (LifeLine) anchorProcessorInput.lifeLinesList().get(lifelinePos);
 
@@ -31,14 +31,14 @@ public class InEntityNeighbourhoodSatisfyCondition implements LifelineSatisfyCon
 	}
 
 	public boolean isSatisfied(LifelineElementTraceable elementTraceable) {
-		if (myIsInsideOk && myEntity == elementTraceable.getEntityAfterElement()) {
+		if (myIsInsideOk && myLifeLineElement == elementTraceable.getEntityAfterElement()) {
 			return true;
 		}
-		if (myIsAfterOk && !elementTraceable.isTopNotBottom() && elementTraceable.getPreviousElement().getEntityAfterElement() == myEntity) {
+		if (myIsAfterOk && !elementTraceable.isTopNotBottom() && elementTraceable.getPreviousElement().getEntityAfterElement() == myLifeLineElement) {
 			return true;
 		}
 		LifelineElementTraceable nextTraceable = elementTraceable.getNextElement();
-		if (myIsBeforeOk && nextTraceable != null && nextTraceable.isTopNotBottom() && nextTraceable.getEntityAfterElement() == myEntity) {
+		if (myIsBeforeOk && nextTraceable != null && nextTraceable.isTopNotBottom() && nextTraceable.getEntityAfterElement() == myLifeLineElement) {
 			return true;
 		}
 		return false;
@@ -49,10 +49,10 @@ public class InEntityNeighbourhoodSatisfyCondition implements LifelineSatisfyCon
 	}
 
 	public String toString() {
-		return "InEntityNeighboudhoodSatisfyCondition for " + myEntity;
+		return "InEntityNeighboudhoodSatisfyCondition for " + myLifeLineElement;
 	}
 
-	private final SDEntity myEntity;
+	private final SDLifeLineElement myLifeLineElement;
 
 	private final LifeLine myLifeLine;
 
