@@ -245,7 +245,7 @@ public class TransitionNameEditPart extends LabelEditPart implements ITextAwareE
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**

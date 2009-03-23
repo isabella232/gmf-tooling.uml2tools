@@ -770,8 +770,7 @@
     <domainSpecialization
         body="not (self.kind = TransitionKind::internal)"/>
     <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping"
-        readOnly="true">
+        xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
           href="stateMachineDiagram.gmfgraph#TransitionLink_transition"/>
       <features
