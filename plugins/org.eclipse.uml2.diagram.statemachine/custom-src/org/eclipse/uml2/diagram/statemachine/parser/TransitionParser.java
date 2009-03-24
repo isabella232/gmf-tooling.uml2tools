@@ -273,7 +273,7 @@ public class TransitionParser implements IParser {
 					notation = notation.substring(0, guardLEPosition);
 				}
 			}
-			if (!notation.isEmpty()) {
+			if (notation.length() > 0) {
 				StringTokenizer tokenizer = new StringTokenizer(notation, ","); //$NON-NLS-1$
 				while (tokenizer.hasMoreElements()) {
 					triggers.add(tokenizer.nextToken());
