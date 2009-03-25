@@ -1,11 +1,7 @@
 package org.eclipse.uml2.diagram.sequence.model.builder;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDAbstractMessage;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBackedByFragment;
-import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGate;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDGateMessageEnd;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
@@ -23,20 +19,6 @@ public class SDModelHelper {
 			}
 		}
 		return null;
-	}
-	
-	/**
-	 * @return the list of container frames for given deep frame (topmost frame - first).
-	 */
-	public static List<SDFrame> computeNestingChain(SDFrame sdFrame){
-		LinkedList<SDFrame> result = new LinkedList<SDFrame>();
-		SDFrame current = sdFrame;
-		result.addFirst(current);
-		while (current.getFrameContainer() instanceof SDFrame){
-			current = (SDFrame)current.getFrameContainer();
-			result.addFirst(current);
-		}
-		return result;
 	}
 	
 	public static final SDSwitch<Element> UML_ELEMENT_EXTRACTOR = new SDSwitch<Element>(){

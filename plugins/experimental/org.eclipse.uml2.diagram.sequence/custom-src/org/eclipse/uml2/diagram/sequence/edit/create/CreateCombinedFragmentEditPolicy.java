@@ -1,6 +1,8 @@
 package org.eclipse.uml2.diagram.sequence.edit.create;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
@@ -24,6 +26,7 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateParameters;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TCreateParametersImpl;
+import org.eclipse.uml2.diagram.sequence.anchor.SDModelUtil;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
@@ -37,7 +40,6 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.policies.InteractionNestedLayoutRequest;
 import org.eclipse.uml2.diagram.sequence.edit.policies.OrderedLayoutEditPolicy;
 import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
-import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
 import org.eclipse.uml2.diagram.sequence.model.edit.CreateCombinedFragment;
 import org.eclipse.uml2.diagram.sequence.model.edit.SDAnchor;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
@@ -205,7 +207,14 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 			return interactionEP;
 		}
 		GraphicalEditPart nextEP = interactionEP;
-		for (SDFrame nextFrame : SDModelHelper.computeNestingChain(sdFrame)){
+		List<SDFrame> frames;
+		try {
+			frames = SDModelUtil.collectEnclosingFrames(sdFrame, new ArrayList<SDFrame>());
+			Collections.reverse(frames);
+		} catch (SDModelUtil.AlienElementException e){
+			throw new IllegalStateException(e);
+		}
+		for (SDFrame nextFrame : frames){
 			nextEP = (GraphicalEditPart) nextEP.findEditPart(null, nextFrame.getUmlFragment());
 			if (nextEP == null){
 				throw new IllegalStateException(//
@@ -213,6 +222,7 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 						", while searching for deep frame: " + sdFrame);
 			}
 		}
+
 		return nextEP;
 	}
 	
