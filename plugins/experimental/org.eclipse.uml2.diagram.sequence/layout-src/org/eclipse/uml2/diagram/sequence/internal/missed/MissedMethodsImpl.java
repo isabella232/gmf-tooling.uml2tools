@@ -28,6 +28,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.links.ConnectionRoutingHelper;
+import org.eclipse.uml2.diagram.sequence.anchor.SDModelUtil;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InnerMountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MountingLinkEditPart;
@@ -184,7 +185,7 @@ public class MissedMethodsImpl {
 		}
 		
 		public boolean isAsynchonousMessageSort(MessageSort messageSort) {
-			return messageSort == MessageSort.ASYNCH_CALL_LITERAL || messageSort == MessageSort.ASYNCH_SIGNAL_LITERAL;
+			return SDModelUtil.isAsynchonousMessageSort(messageSort);
 		}
 		
 		
