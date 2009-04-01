@@ -13,6 +13,8 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.eclipse.uml2.diagram.common.part.UMLModelWizardInitialObjectCreationPage;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -38,6 +40,11 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected UMLCreationWizardPage domainModelFilePage;
+
+	/**
+	 * @generated
+	 */
+	private UMLModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
 	 * @generated
@@ -108,6 +115,11 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 		domainModelFilePage.setTitle(Messages.UMLCreationWizard_DomainModelFilePageTitle);
 		domainModelFilePage.setDescription(Messages.UMLCreationWizard_DomainModelFilePageDescription);
 		addPage(domainModelFilePage);
+
+		initialObjectCreationPage = new UMLModelWizardInitialObjectCreationPage("Whatever2", UMLPackage.eINSTANCE.getPackage()); //$NON-NLS-1$
+		initialObjectCreationPage.setTitle("UML Model");
+		initialObjectCreationPage.setDescription("Select a model object to create");
+		addPage(initialObjectCreationPage);
 	}
 
 	/**
@@ -117,7 +129,8 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
 			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
-				diagram = UMLDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), domainModelFilePage.getURI(), monitor);
+				diagram = UMLDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), domainModelFilePage.getURI(), initialObjectCreationPage.getInitialObjectName(), initialObjectCreationPage
+						.getEncoding(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
 						UMLDiagramEditorUtil.openDiagram(diagram);

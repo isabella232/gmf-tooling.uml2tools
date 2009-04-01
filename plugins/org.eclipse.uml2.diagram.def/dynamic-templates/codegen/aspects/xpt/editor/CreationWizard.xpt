@@ -8,11 +8,14 @@
  *
  * Contributors:
  *    Dmitry Stadnik (Borland) - initial API and implementation
- *    Tatiana Fesenko (Borland) - fix for bugzilla #230873 'Make diagram file extension shorter' 
+ *    Tatiana Fesenko (Borland) - fix for bugzilla #230873 'Make diagram file extension shorter', 
+ 								                   #268252 'There should be a way to specify exact metaclass of the diagram canvas semantic element"
+ 
  */
  
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
 
+«EXTENSION MetaModel»
 «EXTENSION xpt::editor::Utils»
 «EXTENSION aspects::xpt::FileExtensionUtils»
 
@@ -36,6 +39,9 @@ public class «creationWizardClassName»
 
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected «getCreationWizardPageQualifiedClassName()» domainModelFilePage;
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private org.eclipse.uml2.diagram.common.part.UMLModelWizardInitialObjectCreationPage initialObjectCreationPage;
 	«ENDIF-»
 
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -85,7 +91,7 @@ public class «creationWizardClassName»
 		The only change is here. We take the first extension from the comma-separated list«ENDREM-»
 		diagramModelFilePage = new «getCreationWizardPageQualifiedClassName()»(
 				"DiagramModelFile", getSelection(), "«getDefaultDiagramExtension(editorGen)»"); //$NON-NLS-1$ //$NON-NLS-2$
-		«REM»End of the only change«ENDREM-»
+		«REM» END #230873 «ENDREM»«-»
 		diagramModelFilePage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizardDiagramPage(self))) FOR editorGen»);
 		diagramModelFilePage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForCreationWizardDiagramPage(self))) FOR editorGen»);
 		addPage(diagramModelFilePage);
@@ -96,6 +102,13 @@ public class «creationWizardClassName»
 		domainModelFilePage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGen»);
 		domainModelFilePage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGen»);
 		addPage(domainModelFilePage);
+
+		«REM» #268252 'There should be a way to specify exact metaclass of the diagram canvas semantic element"«ENDREM»«-»
+		initialObjectCreationPage = new org.eclipse.uml2.diagram.common.part.UMLModelWizardInitialObjectCreationPage("Whatever2", «getQualifiedPackageInterfaceName(domainDiagramElement.genPackage)».eINSTANCE.get«getClassifierAccessorName(domainDiagramElement)»()); //$NON-NLS-1$
+		initialObjectCreationPage.setTitle("UML Model");
+		initialObjectCreationPage.setDescription("Select a model object to create");
+		addPage(initialObjectCreationPage);
+		«REM» END #268252 «ENDREM»«-»
 	«ENDIF-»
 	}
 
@@ -115,7 +128,7 @@ public class «creationWizardClassName»
 	«ENDIF-»
 				diagram = «getDiagramEditorUtilQualifiedClassName()».createDiagram(diagramModelFilePage.getURI(),
 	«IF isStandaloneDomainModel(self)-»
-						domainModelFilePage.getURI(),
+						domainModelFilePage.getURI(), initialObjectCreationPage.getInitialObjectName(), initialObjectCreationPage.getEncoding(), 
 	«ENDIF-»
 						monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
