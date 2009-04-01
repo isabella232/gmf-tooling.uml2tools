@@ -22,6 +22,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -53,6 +54,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 /**
@@ -66,6 +68,16 @@ public class UMLDiagramEditorUtil {
 	public static Map getSaveOptions() {
 		Map saveOptions = new HashMap();
 		saveOptions.put(XMLResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
+		saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+		return saveOptions;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static Map getSaveOptions(String encoding) {
+		Map saveOptions = new HashMap();
+		saveOptions.put(XMLResource.OPTION_ENCODING, encoding == null ? "UTF-8" : encoding); //$NON-NLS-1$
 		saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 		return saveOptions;
 	}
@@ -143,7 +155,7 @@ public class UMLDiagramEditorUtil {
 	 * This method should be called within a workspace modify operation since it creates resources.
 	 * @generated
 	 */
-	public static Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
+	public static Resource createDiagram(URI diagramURI, URI modelURI, final String initialObjectName, final String encoding, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		progressMonitor.beginTask(Messages.UMLDiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
@@ -153,7 +165,7 @@ public class UMLDiagramEditorUtil {
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.UMLDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				Package model = createInitialModel(diagramNameWithoutExtension);
+				Package model = createInitialModel(initialObjectName, diagramNameWithoutExtension);
 				attachModelToResource(model, modelResource);
 
 				Diagram diagram = ViewService.createDiagram(model, PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
@@ -164,8 +176,8 @@ public class UMLDiagramEditorUtil {
 				}
 
 				try {
-					modelResource.save(org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorUtil.getSaveOptions());
-					diagramResource.save(org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorUtil.getSaveOptions());
+					modelResource.save(org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorUtil.getSaveOptions(encoding));
+					diagramResource.save(org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorUtil.getSaveOptions(encoding));
 				} catch (IOException e) {
 
 					UMLDiagramEditorPlugin.getInstance().logError("Unable to store model and diagram resources", e); //$NON-NLS-1$
@@ -189,8 +201,9 @@ public class UMLDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static Package createInitialModel(java.lang.String diagramName) {
-		Package diagram = UMLFactory.eINSTANCE.createPackage();
+	private static Package createInitialModel(String initialObjectName, String diagramName) {
+		EClass initialObject = (EClass) UMLPackage.eINSTANCE.getEClassifier(initialObjectName);
+		Package diagram = (Package) UMLFactory.eINSTANCE.create(initialObject);
 		diagram.setName(diagramName);
 		return diagram;
 	}
