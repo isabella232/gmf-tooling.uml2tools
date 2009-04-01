@@ -18,6 +18,7 @@
 «EXTENSION MetaModel»
 «EXTENSION xpt::editor::Utils»
 «EXTENSION aspects::xpt::FileExtensionUtils»
+«EXTENSION aspects::xpt::editor::i18n»
 
 «AROUND xpt::editor::CreationWizard::CreationWizard FOR gmfgen::GenDiagram-»
 «EXPAND xpt::Common::copyright FOR editorGen-»
@@ -104,9 +105,9 @@ public class «creationWizardClassName»
 		addPage(domainModelFilePage);
 
 		«REM» #268252 'There should be a way to specify exact metaclass of the diagram canvas semantic element"«ENDREM»«-»
-		initialObjectCreationPage = new org.eclipse.uml2.diagram.common.part.UMLModelWizardInitialObjectCreationPage("Whatever2", «getQualifiedPackageInterfaceName(domainDiagramElement.genPackage)».eINSTANCE.get«getClassifierAccessorName(domainDiagramElement)»()); //$NON-NLS-1$
-		initialObjectCreationPage.setTitle("UML Model");
-		initialObjectCreationPage.setDescription("Select a model object to create");
+		initialObjectCreationPage = new org.eclipse.uml2.diagram.common.part.UMLModelWizardInitialObjectCreationPage("InitialObject", «getQualifiedPackageInterfaceName(domainDiagramElement.genPackage)».eINSTANCE.get«getClassifierAccessorName(domainDiagramElement)»()); //$NON-NLS-1$
+		initialObjectCreationPage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForInitialObjectCreationPage(self))) FOR editorGen»);
+		initialObjectCreationPage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForInitialObjectCreationPage(self))) FOR editorGen»);
 		addPage(initialObjectCreationPage);
 		«REM» END #268252 «ENDREM»«-»
 	«ENDIF-»
@@ -161,3 +162,21 @@ public class «creationWizardClassName»
 	«EXPAND xpt::editor::CreationWizard::additions-»
 }
 «ENDAROUND»
+
+«AROUND i18nValues FOR gmfgen::GenDiagram-»
+«targetDef.proceed()-»
+«IF isStandaloneDomainModel(self)-»
+«EXPAND xpt::Externalizer::messageEntry(titleKey(i18nKeyForInitialObjectCreationPage(self)), editorGen.modelID + ' Model')-»
+«EXPAND xpt::Externalizer::messageEntry(descriptionKey(i18nKeyForInitialObjectCreationPage(self)), 'Select a model object to create.')-»
+«ENDIF-»
+«ENDAROUND»
+
+«AROUND i18nAccessors FOR gmfgen::GenDiagram-»
+«targetDef.proceed()-»
+	«IF isStandaloneDomainModel(self)-»
+	«EXPAND xpt::Externalizer::accessorField(titleKey(i18nKeyForInitialObjectCreationPage(self)))-»
+	«EXPAND xpt::Externalizer::accessorField(descriptionKey(i18nKeyForInitialObjectCreationPage(self)))-»
+	«ENDIF-»
+«ENDAROUND»
+
+

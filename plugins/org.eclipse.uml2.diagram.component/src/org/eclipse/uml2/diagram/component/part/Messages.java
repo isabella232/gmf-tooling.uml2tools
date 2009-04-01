@@ -58,6 +58,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String UMLCreationWizard_InitialObjectCreationPageTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String UMLCreationWizard_InitialObjectCreationPageDescription;
+
+	/**
+	 * @generated
+	 */
 	public static String UMLCreationWizardPageExtensionError;
 
 	/**

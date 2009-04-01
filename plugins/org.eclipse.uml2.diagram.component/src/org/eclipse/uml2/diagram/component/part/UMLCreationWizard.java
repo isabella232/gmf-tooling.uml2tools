@@ -116,9 +116,9 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 		domainModelFilePage.setDescription(Messages.UMLCreationWizard_DomainModelFilePageDescription);
 		addPage(domainModelFilePage);
 
-		initialObjectCreationPage = new UMLModelWizardInitialObjectCreationPage("Whatever2", UMLPackage.eINSTANCE.getPackage()); //$NON-NLS-1$
-		initialObjectCreationPage.setTitle("UML Model");
-		initialObjectCreationPage.setDescription("Select a model object to create");
+		initialObjectCreationPage = new UMLModelWizardInitialObjectCreationPage("InitialObject", UMLPackage.eINSTANCE.getPackage()); //$NON-NLS-1$
+		initialObjectCreationPage.setTitle(Messages.UMLCreationWizard_InitialObjectCreationPageTitle);
+		initialObjectCreationPage.setDescription(Messages.UMLCreationWizard_InitialObjectCreationPageDescription);
 		addPage(initialObjectCreationPage);
 	}
 
