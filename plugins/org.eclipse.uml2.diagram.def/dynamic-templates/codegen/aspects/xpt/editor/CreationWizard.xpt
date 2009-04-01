@@ -8,9 +8,9 @@
  *
  * Contributors:
  *    Dmitry Stadnik (Borland) - initial API and implementation
- *    Tatiana Fesenko (Borland) - fix for bugzilla #230873 'Make diagram file extension shorter', 
- 								                   #268252 'There should be a way to specify exact metaclass of the diagram canvas semantic element"
- 
+ *    Tatiana Fesenko (Borland) - bugzilla #230873 'Make diagram file extension shorter', 
+ *								           #268252 'There should be a way to specify exact metaclass of the diagram canvas semantic element"
+ *
  */
  
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
@@ -18,7 +18,7 @@
 «EXTENSION MetaModel»
 «EXTENSION xpt::editor::Utils»
 «EXTENSION aspects::xpt::FileExtensionUtils»
-«EXTENSION aspects::xpt::editor::i18n»
+«EXTENSION xpt::wizard::Utils»
 
 «AROUND xpt::editor::CreationWizard::CreationWizard FOR gmfgen::GenDiagram-»
 «EXPAND xpt::Common::copyright FOR editorGen-»
@@ -103,13 +103,8 @@ public class «creationWizardClassName»
 		domainModelFilePage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGen»);
 		domainModelFilePage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGen»);
 		addPage(domainModelFilePage);
-
-		«REM» #268252 'There should be a way to specify exact metaclass of the diagram canvas semantic element"«ENDREM»«-»
-		initialObjectCreationPage = new org.eclipse.uml2.diagram.common.part.UMLModelWizardInitialObjectCreationPage("InitialObject", «getQualifiedPackageInterfaceName(domainDiagramElement.genPackage)».eINSTANCE.get«getClassifierAccessorName(domainDiagramElement)»()); //$NON-NLS-1$
-		initialObjectCreationPage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForInitialObjectCreationPage(self))) FOR editorGen»);
-		initialObjectCreationPage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForInitialObjectCreationPage(self))) FOR editorGen»);
-		addPage(initialObjectCreationPage);
-		«REM» END #268252 «ENDREM»«-»
+		«IF needInitialObject(self)-» 
+		«EXPAND xpt::wizard::InitialObject::addInitialObjectPage»«ENDIF-»
 	«ENDIF-»
 	}
 
@@ -129,7 +124,10 @@ public class «creationWizardClassName»
 	«ENDIF-»
 				diagram = «getDiagramEditorUtilQualifiedClassName()».createDiagram(diagramModelFilePage.getURI(),
 	«IF isStandaloneDomainModel(self)-»
-						domainModelFilePage.getURI(), initialObjectCreationPage.getInitialObjectName(), initialObjectCreationPage.getEncoding(), 
+						domainModelFilePage.getURI(),
+	«IF needInitialObject(self)-» 
+	initialObjectCreationPage.getInitialObjectName(), initialObjectCreationPage.getEncoding(),
+	«ENDIF-» 
 	«ENDIF-»
 						monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
@@ -165,18 +163,16 @@ public class «creationWizardClassName»
 
 «AROUND i18nValues FOR gmfgen::GenDiagram-»
 «targetDef.proceed()-»
-«IF isStandaloneDomainModel(self)-»
-«EXPAND xpt::Externalizer::messageEntry(titleKey(i18nKeyForInitialObjectCreationPage(self)), editorGen.modelID + ' Model')-»
-«EXPAND xpt::Externalizer::messageEntry(descriptionKey(i18nKeyForInitialObjectCreationPage(self)), 'Select a model object to create.')-»
+«IF needInitialObject(self)-»
+«EXPAND xpt::wizard::InitialObject::i18nValues»
 «ENDIF-»
 «ENDAROUND»
 
 «AROUND i18nAccessors FOR gmfgen::GenDiagram-»
 «targetDef.proceed()-»
-	«IF isStandaloneDomainModel(self)-»
-	«EXPAND xpt::Externalizer::accessorField(titleKey(i18nKeyForInitialObjectCreationPage(self)))-»
-	«EXPAND xpt::Externalizer::accessorField(descriptionKey(i18nKeyForInitialObjectCreationPage(self)))-»
-	«ENDIF-»
+«IF needInitialObject(self)-»
+«EXPAND xpt::wizard::InitialObject::i18nAccessors»
+«ENDIF-»
 «ENDAROUND»
 
 
