@@ -5,6 +5,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorUtil;
 import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
+import org.eclipse.uml2.uml.UMLPackage;
 
 
 public class ClassDiagramFacade extends UMLDiagramFacade {
@@ -15,7 +16,7 @@ public class ClassDiagramFacade extends UMLDiagramFacade {
 
 	@Override
 	protected Resource createDiagram(URI diagramModelURI, URI domainModelURI) {
-		return UMLDiagramEditorUtil.createDiagram(diagramModelURI, domainModelURI, new NullProgressMonitor());
+		return UMLDiagramEditorUtil.createDiagram(diagramModelURI, domainModelURI, UMLPackage.eINSTANCE.getClass_().getName(), "UTF-8", new NullProgressMonitor());
 	}
 	
 	private static final String DIAGRAM_FILE_EXTENSION = "umlclass_diagram";
