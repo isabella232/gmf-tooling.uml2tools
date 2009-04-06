@@ -14,6 +14,7 @@ public class ComposablePolygonDecoration extends PolygonDecoration implements Co
 
 	public ComposablePolygonDecoration() {
 		setScaleEx(7, 3);
+		setLineWidth(1);
 	}
 
 	public Point getBoundPoint() {
