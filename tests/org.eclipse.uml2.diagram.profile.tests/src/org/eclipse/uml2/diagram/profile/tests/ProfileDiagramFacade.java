@@ -16,7 +16,7 @@ public class ProfileDiagramFacade extends UMLDiagramFacade {
 	@Override
 	protected Resource createDiagram(URI diagramModelURI, URI domainModelURI) {
 		return UMLDiagramEditorUtil.createDiagram(diagramModelURI, domainModelURI, //
-				UMLPackage.eINSTANCE.getProfile().getName(), // 
+				UMLPackage.eINSTANCE.getProfile(), // 
 				"UTF-8", new NullProgressMonitor());
 	}
 

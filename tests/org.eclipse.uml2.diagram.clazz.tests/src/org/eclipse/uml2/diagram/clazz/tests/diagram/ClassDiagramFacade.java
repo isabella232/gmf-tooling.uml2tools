@@ -18,7 +18,7 @@ public class ClassDiagramFacade extends UMLDiagramFacade {
 	protected Resource createDiagram(URI diagramModelURI, URI domainModelURI) {
 		return UMLDiagramEditorUtil.createDiagram(//
 				diagramModelURI, domainModelURI, 
-				UMLPackage.eINSTANCE.getPackage().getName(), 
+				UMLPackage.eINSTANCE.getPackage(), 
 				"UTF-8", new NullProgressMonitor());
 	}
 	
