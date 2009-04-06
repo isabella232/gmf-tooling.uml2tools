@@ -126,7 +126,7 @@ public class «creationWizardClassName»
 	«IF isStandaloneDomainModel(self)-»
 						domainModelFilePage.getURI(),
 	«IF needInitialObject(self)-» 
-	initialObjectCreationPage.getInitialObjectName(), initialObjectCreationPage.getEncoding(),
+	initialObjectCreationPage.getInitialObject(), initialObjectCreationPage.getEncoding(),
 	«ENDIF-» 
 	«ENDIF-»
 						monitor);

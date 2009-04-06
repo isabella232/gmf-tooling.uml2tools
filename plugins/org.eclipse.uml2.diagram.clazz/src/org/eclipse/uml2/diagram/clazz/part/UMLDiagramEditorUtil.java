@@ -54,7 +54,6 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 /**
@@ -155,7 +154,7 @@ public class UMLDiagramEditorUtil {
 	 * This method should be called within a workspace modify operation since it creates resources.
 	 * @generated
 	 */
-	public static Resource createDiagram(URI diagramURI, URI modelURI, final String initialObjectName, final String encoding, IProgressMonitor progressMonitor) {
+	public static Resource createDiagram(URI diagramURI, URI modelURI, final EClass initialObject, final String encoding, IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		progressMonitor.beginTask(Messages.UMLDiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
@@ -165,7 +164,7 @@ public class UMLDiagramEditorUtil {
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.UMLDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				Package model = createInitialModel(initialObjectName, diagramNameWithoutExtension);
+				Package model = createInitialModel(initialObject, diagramNameWithoutExtension);
 				attachModelToResource(model, modelResource);
 
 				Diagram diagram = ViewService.createDiagram(model, PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
@@ -201,8 +200,7 @@ public class UMLDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static Package createInitialModel(String initialObjectName, String diagramName) {
-		EClass initialObject = (EClass) UMLPackage.eINSTANCE.getEClassifier(initialObjectName);
+	private static Package createInitialModel(EClass initialObject, String diagramName) {
 		Package diagram = (Package) UMLFactory.eINSTANCE.create(initialObject);
 		diagram.setName(diagramName);
 		return diagram;
