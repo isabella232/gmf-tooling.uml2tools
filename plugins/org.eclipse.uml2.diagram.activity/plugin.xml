@@ -1442,7 +1442,7 @@
       </propertySections>
    </extension>
 
-   <extension point="org.eclipse.ui.popupMenus">
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
       <?gmfgen generated="true"?>
       <objectContribution
             id="org.eclipse.uml2.diagram.activity.InitDiagram"

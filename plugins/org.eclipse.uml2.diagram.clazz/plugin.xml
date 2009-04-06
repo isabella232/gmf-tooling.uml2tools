@@ -52,7 +52,7 @@
       </handler>
    </extension>
    
-   <extension point="org.eclipse.ui.popupMenus">
+   <extension point="org.eclipse.ui.popupMenus" id="org.eclipse.uml2.diagram.clazz.synchronize">
       <?gmfgen generated="false"?>
       <objectContribution
             id="org.eclipse.uml2.diagram.clazz.SynchronizeDiagram"
@@ -390,7 +390,7 @@
       </wizard>
    </extension>
 
-   <extension point="org.eclipse.ui.popupMenus">
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
       <?gmfgen generated="true"?>
       <objectContribution
             id="org.eclipse.uml2.diagram.clazz.InitDiagram"
