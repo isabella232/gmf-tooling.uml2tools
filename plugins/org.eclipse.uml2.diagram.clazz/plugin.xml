@@ -368,7 +368,7 @@
 
    </extension>
 
-	<extension point="org.eclipse.ui.contexts">
+	<extension point="org.eclipse.ui.contexts" id="ui-context">
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
@@ -378,7 +378,7 @@
       </context>
    </extension>
    
-   <extension point="org.eclipse.ui.newWizards">
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
       <?gmfgen generated="true"?>
   	  <wizard
   	     name="%newWizardName"
@@ -2836,9 +2836,30 @@
       </Priority>
          <editor id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"/>
    </paletteProvider>
-</extension> 
+</extension>
 
-
+	<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action-xmi">
+		<?gmfgen generated="true"?>
+		<objectContribution
+            id="org.eclipse.uml2.diagram.clazz.InitDiagram.xmi"
+            nameFilter="*.xmi"
+            objectClass="org.eclipse.core.resources.IFile">
+			<visibility>
+				<or>
+					<objectState name="contentTypeId" value="org.omg.uml_2_1"/>
+					<objectState name="contentTypeId" value="org.omg.uml_2_1_1"/>
+					<objectState name="contentTypeId" value="org.omg.uml_2_2"/>
+				</or>
+			</visibility>
+			<action
+				label="%initDiagramActionLabel"
+				class="org.eclipse.uml2.diagram.clazz.part.UMLInitDiagramFileAction"
+				menubarPath="additions"
+				enablesFor="1"
+				id="org.eclipse.uml2.diagram.clazz.InitDiagramAction.xmi">
+			</action>
+		</objectContribution>
+   </extension>
 
 
 </plugin>
