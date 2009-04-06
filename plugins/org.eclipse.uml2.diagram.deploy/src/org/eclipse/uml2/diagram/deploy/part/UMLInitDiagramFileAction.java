@@ -17,6 +17,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.uml2.diagram.common.pathmap.XMI2UMLSupport;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageEditPart;
 
 /**
@@ -68,6 +69,8 @@ public class UMLInitDiagramFileAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		ResourceSet resourceSet = editingDomain.getResourceSet();
+		//#271299 - support all UML2 content-types
+		XMI2UMLSupport.enableXMI2UMLSupport(resourceSet);
 		EObject diagramRoot = null;
 		try {
 			Resource resource = resourceSet.getResource(domainModelURI, true);

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007 Borland Software Corporation
+ * Copyright (c) 2007-2009 Borland Software Corporation
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -9,6 +9,7 @@
  * Contributors:
  *    Dmitry Stadnik (Borland) - initial API and implementation
  *    Tatiana Fesenko (Borland) - fix for bugzilla #230873 'Make diagram file extension shorter' 
+ *	  Michael Golubev (Borland) - #271299 - support diagrams for OMG XMIs
  */
 
 «IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
@@ -20,16 +21,16 @@
    <extension point="org.eclipse.ui.editors">
       «EXPAND xpt::Common::xmlGeneratedTag»
 «REM» #230873 'Make diagram file extension shorter'
-Change: We iterate over diagramFileExtension _list_ here«ENDREM-»
+Change: We iterate over diagramFileExtension _list_ here«ENDREM»«-»
 «FOREACH collectAllExtensions(self) AS dfe-»
 «REM» End of #230873«ENDREM»
       <editor
          id="«editor.iD»"
          name="%editorName"
          icon="«editor.iconPathX»"
-«REM» #230873: list item is taken here«ENDREM-»
+«REM» #230873: list item is taken here«ENDREM»«-»
          extensions="«dfe»"
-«REM» End of #230873«ENDREM-»
+«REM» End of #230873«ENDREM»«-»
          default="true"
          class="«editor.getQualifiedClassName()»"
          matchingStrategy="«diagram.getMatchingStrategyQualifiedClassName()»"
@@ -38,7 +39,7 @@ Change: We iterate over diagramFileExtension _list_ here«ENDREM-»
 «ENDFOREACH»
    </extension>
    
-   <extension point="org.eclipse.ui.contexts">
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
       «EXPAND xpt::Common::xmlGeneratedTag»
       <context
          description="%context.description"
@@ -48,7 +49,7 @@ Change: We iterate over diagramFileExtension _list_ here«ENDREM-»
       </context>
    </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
       «EXPAND xpt::Common::xmlGeneratedTag»
   	  <wizard
   	     name="%newWizardName"
@@ -61,7 +62,7 @@ Change: We iterate over diagramFileExtension _list_ here«ENDREM-»
    </extension>
 
 «IF diagram.generateInitDiagramAction()-»
-   «IF null = application»<extension point="org.eclipse.ui.popupMenus">
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
       «EXPAND xpt::Common::xmlGeneratedTag»
       <objectContribution
             id="«plugin.iD».InitDiagram"
@@ -76,21 +77,29 @@ Change: We iterate over diagramFileExtension _list_ here«ENDREM-»
          </action>
       </objectContribution>
    </extension>
-	«ELSE-»
-   <extension point="org.eclipse.ui.actionSets">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-      <actionSet
-            label="%initDiagramActionLabel"
-            visible="true"
-            id="«plugin.iD».InitDiagram">
-         <action
-               label="%initDiagramActionLabel"
-               class="«diagram.getInitDiagramFileActionQualifiedClassName()»"
-               menubarPath="file/additions"
-               id="«plugin.iD».InitDiagramAction">
-         </action>
-      </actionSet>
+  
+«REM» #271299 - Init diagrams for OMG XMI content typed supported by UML2«ENDREM»«-»
+	<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action-xmi">
+		«EXPAND xpt::Common::xmlGeneratedTag»
+		<objectContribution
+            id="«plugin.iD».InitDiagram.xmi"
+            nameFilter="*.xmi"
+            objectClass="org.eclipse.core.resources.IFile">
+			<visibility>
+				<or>
+					<objectState name="contentTypeId" value="org.omg.uml_2_1"/>
+					<objectState name="contentTypeId" value="org.omg.uml_2_1_1"/>
+					<objectState name="contentTypeId" value="org.omg.uml_2_2"/>
+				</or>
+			</visibility>
+			<action
+				label="%initDiagramActionLabel"
+				class="«diagram.getInitDiagramFileActionQualifiedClassName()»"
+				menubarPath="additions"
+				enablesFor="1"
+				id="«plugin.iD».InitDiagramAction.xmi">
+			</action>
+		</objectContribution>
    </extension>
-	«ENDIF-»
 «ENDIF-»
 «ENDAROUND»
