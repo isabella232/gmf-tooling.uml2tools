@@ -73,6 +73,7 @@ public class AssociationDecoration extends CompositeDecoration {
 
 	private void initAggregationDecorations() {
 		myCompositeAggrecationDecoration = new ComposablePolygonDecoration();
+		
 		myCompositeAggrecationDecoration.setTemplate(RHOMB.getCopy());
 		myCompositeAggrecationDecoration.setBoundPoint(new Point(-2, 0));
 		myCompositeAggrecationDecoration.setFill(true);
@@ -100,7 +101,7 @@ public class AssociationDecoration extends CompositeDecoration {
 
 	private void initOwnedEndDecorations() {
 		myOwnedEndDecoration = new DotDecoration();
-		myOwnedEndDecoration.setRadius(1);
+		myOwnedEndDecoration.setRadius(2);
 		myOwnedEndDecoration.setFill(true);
 	}
 
