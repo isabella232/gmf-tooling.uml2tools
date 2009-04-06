@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.component.edit.policies.AssemblyConnectorCircleItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater;
@@ -129,11 +130,9 @@ public class AssemblyConnectorCircleEditPart extends ShapeNodeEditPart implement
 	 * @generated
 	 */
 	public EditPolicy getPrimaryDragEditPolicy() {
-		EditPolicy result = super.getPrimaryDragEditPolicy();
-		if (result instanceof ResizableEditPolicy) {
-			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-			ep.setResizeDirections(PositionConstants.NONE);
-		}
+		// #265822 Improve appearance of selection feedback
+		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
+		result.setResizeDirections(PositionConstants.NONE);
 		return result;
 	}
 

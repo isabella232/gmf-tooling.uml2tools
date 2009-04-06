@@ -305,10 +305,12 @@
 		«ELSE-»
 	        // #265822 Improve appearance of selection feedback
 			org.eclipse.gef.editpolicies.ResizableEditPolicy result = new org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy();
+			«IF rc<>null-» 
 				result.setResizeDirections(
-				«IF rc<>null and rc.resizeHandleNames->size() > 0-»
+				«IF rc.resizeHandleNames->size() > 0-»
 				«FOREACH rc.resizeHandleNames->asSequence() AS name SEPARATOR ' | '»org.eclipse.draw2d.PositionConstants.«name»«ENDFOREACH-»
-				«ELSE»org.eclipse.draw2d.PositionConstants.NSEW«ENDIF»);
+				«ELSE»org.eclipse.draw2d.PositionConstants.NONE«ENDIF»);
+			«ENDIF-»
 				return result;
 		«ENDIF-»
 			}
