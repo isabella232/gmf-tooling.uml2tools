@@ -226,7 +226,6 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 	public EditPolicy getPrimaryDragEditPolicy() {
 		// #265822 Improve appearance of selection feedback
 		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
-		result.setResizeDirections(PositionConstants.NSEW);
 		return result;
 	}
 
