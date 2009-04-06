@@ -85,7 +85,7 @@ public class UMLModelWizardInitialObjectCreationPage extends WizardPage {
 			initialObjectField.add(getLabel(object));
 		}
 		// tfesenko always set default value for initial object
-		if (initialObjectField.getItemCount() > 1) {
+		if (initialObjectField.getItemCount() > 0) {
 			initialObjectField.select(0);
 		}
 		initialObjectField.addModifyListener(validator);
