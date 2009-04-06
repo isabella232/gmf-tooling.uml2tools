@@ -49,6 +49,7 @@ public class ArtifactArtifactFigure_contentsEditPart extends ShapeCompartmentEdi
 	public IFigure createFigure() {
 		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
+		result.setBorder(null);
 		return result;
 	}
 

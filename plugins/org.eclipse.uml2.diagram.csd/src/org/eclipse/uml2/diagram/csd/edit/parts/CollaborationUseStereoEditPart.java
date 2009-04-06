@@ -216,7 +216,8 @@ public class CollaborationUseStereoEditPart extends CompartmentEditPart implemen
 		if (false == parserElement instanceof Element) {
 			return null;
 		}
-		return StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
+		Image withStereo = StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
+		return withStereo;
 	}
 
 	/**
