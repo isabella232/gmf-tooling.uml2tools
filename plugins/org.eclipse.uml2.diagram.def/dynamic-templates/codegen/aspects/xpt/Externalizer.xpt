@@ -41,9 +41,11 @@ public class «getExternalizerClassName()» extends org.eclipse.osgi.util.NLS {
 «targetDef.proceed()»
 «EXPAND xpt::actions::ChangeNotationAction::i18nValues FOR diagram-»
 «EXPAND xpt::actions::ChangeNotationContributionItemProvider::i18nValues FOR diagram-»
+«EXPAND xpt::preferences::IconStylePreferencePage::i18nValues FOR diagram-»
 «ENDAROUND»
 
 «DEFINE additions FOR gmfgen::GenEditorGenerator-»
 	«EXPAND xpt::actions::ChangeNotationAction::i18nAccessors FOR diagram-»
 	«EXPAND xpt::actions::ChangeNotationContributionItemProvider::i18nAccessors FOR diagram-»
+	«EXPAND xpt::preferences::IconStylePreferencePage::i18nAccessors FOR diagram-»
 «ENDDEFINE»

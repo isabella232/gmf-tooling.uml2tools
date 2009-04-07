@@ -51,6 +51,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.clazz.edit.policies.ClassNameVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.clazz.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
@@ -207,6 +208,10 @@ public class EnumerationNameEditPart extends CompartmentEditPart implements ITex
 	protected Image getLabelIcon() {
 		EObject parserElement = getParserElement();
 		if (parserElement == null) {
+			return null;
+		}
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowIcon(VISUAL_ID, getDiagramPreferencesHint());
+		if (!shouldShow) {
 			return null;
 		}
 		return UMLElementTypes.getImage(parserElement.eClass());

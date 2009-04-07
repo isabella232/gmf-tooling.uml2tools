@@ -50,6 +50,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.clazz.edit.policies.EnumerationLiteralItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLTextNonResizableEditPolicy;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.clazz.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
@@ -210,6 +211,10 @@ public class EnumerationLiteralEditPart extends CompartmentEditPart implements I
 			return null;
 		}
 		Image withStereo = StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowIcon(VISUAL_ID, withStereo != null, getDiagramPreferencesHint());
+		if (!shouldShow) {
+			return null;
+		}
 		return withStereo != null ? withStereo : UMLElementTypes.getImage(parserElement.eClass());
 	}
 

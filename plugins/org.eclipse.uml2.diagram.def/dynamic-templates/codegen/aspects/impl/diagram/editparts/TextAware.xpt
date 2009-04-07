@@ -146,7 +146,24 @@
 «IF isIconExtendedByStereotype(self)-»
 «EXPAND xpt::stereo::TextAware::getLabelIcon(useElementIcon, diagram)»
 «ELSE-»
-«targetDef.proceed()-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected org.eclipse.swt.graphics.Image getLabelIcon() {
+		«IF useElementIcon-»
+		org.eclipse.emf.ecore.EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		«IF not self.oclIsKindOf(gmfgen::GenLinkLabel)-»
+		boolean shouldShow = «EXPAND xpt::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()».shouldShowIcon(VISUAL_ID, getDiagramPreferencesHint());
+		if (!shouldShow){
+			return null;
+		}			
+		«ENDIF-»
+		return «diagram.getElementTypesQualifiedClassName()».getImage(parserElement.eClass());
+		«ELSE-»
+		return null;
+		«ENDIF-»
+	}
 «ENDIF-»	
 «ENDAROUND»
 
