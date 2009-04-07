@@ -807,4 +807,29 @@ public class Messages extends NLS {
 	 */
 	public static String UseCaseAsClassContributionItemProvider_group;
 
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_Comment;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_ElementImport;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_ExtensionPoint;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_Package;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_UseCase;
+
 }

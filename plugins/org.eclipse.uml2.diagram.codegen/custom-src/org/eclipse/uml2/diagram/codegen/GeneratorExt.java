@@ -66,6 +66,7 @@ public class GeneratorExt extends Generator {
 			generateChangeNotationAction(node);
 		}
 		generateIconStylePreferencesPage(myDiagram);
+		generateIconStylePreferencesHelper(myDiagram);
 		generateViewFiltersPreferencesPage(myDiagram);
 		generateSwitchBetweenCommentAndNodeActions();
 		generatePaletteProvider(myDiagram);
@@ -141,6 +142,13 @@ public class GeneratorExt extends Generator {
 		doGenerateJavaClass(//
 				myEmitters.getIconStylePreferencePageEmitter(), //
 				myEmitters.getIconStylePreferencePageFQN(new Object[] { diagram }), //
+				diagram);
+	}
+
+	private void generateIconStylePreferencesHelper(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
+		doGenerateJavaClass(//
+				myEmitters.getIconStylePreferenceHelperEmitter(), //
+				myEmitters.getIconStylePreferenceHelperFQN(new Object[] { diagram }), //
 				diagram);
 	}
 

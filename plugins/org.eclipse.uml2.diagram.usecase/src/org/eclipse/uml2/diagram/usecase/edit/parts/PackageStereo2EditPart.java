@@ -51,6 +51,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPoli
 import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 import org.eclipse.uml2.diagram.usecase.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.usecase.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.usecase.providers.UMLParserProvider;
 
@@ -206,6 +207,10 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 	protected Image getLabelIcon() {
 		EObject parserElement = getParserElement();
 		if (parserElement == null) {
+			return null;
+		}
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowIcon(VISUAL_ID, getDiagramPreferencesHint());
+		if (!shouldShow) {
 			return null;
 		}
 		return UMLElementTypes.getImage(parserElement.eClass());

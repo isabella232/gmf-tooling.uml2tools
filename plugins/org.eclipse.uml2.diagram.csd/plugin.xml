@@ -1239,8 +1239,7 @@
       </Priority>
          <editor id="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"/>
    </paletteProvider>
-	</extension>
-
+</extension>
 	<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action-xmi">
 		<?gmfgen generated="true"?>
 		<objectContribution

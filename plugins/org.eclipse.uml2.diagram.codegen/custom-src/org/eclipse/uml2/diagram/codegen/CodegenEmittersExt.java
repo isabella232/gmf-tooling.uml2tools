@@ -64,6 +64,14 @@ public class CodegenEmittersExt extends CodegenEmitters {
 		return getQualifiedClassName("xpt::preferences::IconStylePreferencePage::qualifiedClassName", input); //$NON-NLS-1$
 	}
 
+	public TextEmitter getIconStylePreferenceHelperEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::preferences::IconStylePreferenceHelper::IconStylePreferenceHelper"); //$NON-NLS-1$
+	}
+
+	public String getIconStylePreferenceHelperFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::preferences::IconStylePreferenceHelper::qualifiedClassName", input); //$NON-NLS-1$
+	}
+
 	public TextEmitter getViewFiltersPreferencePageEmitter() throws UnexpectedBehaviourException {
 		return newXpandEmitter("xpt::preferences::ViewFiltersPreferencePage::ViewFiltersPreferencePage"); //$NON-NLS-1$
 	}
