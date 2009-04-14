@@ -173,7 +173,7 @@ public class CallAction_OutputPinEditPart extends BorderedBorderItemEditPart imp
 	public EditPolicy getPrimaryDragEditPolicy() {
 		// #265822 Improve appearance of selection feedback
 		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
-		result.setResizeDirections(PositionConstants.NSEW);
+		result.setResizeDirections(PositionConstants.NONE);
 		return result;
 	}
 

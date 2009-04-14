@@ -1728,4 +1728,9 @@ public class Messages extends NLS {
 	 */
 	public static String LocalPostconditionContributionItemProvider_group;
 
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_LiteralString;
+
 }

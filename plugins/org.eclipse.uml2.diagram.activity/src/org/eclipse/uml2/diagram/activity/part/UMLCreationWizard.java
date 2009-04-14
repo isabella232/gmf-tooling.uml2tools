@@ -13,6 +13,7 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.eclipse.uml2.diagram.common.part.UMLModelWizardInitialObjectCreationPage;
 
 /**
  * @generated
@@ -39,6 +40,11 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected UMLCreationWizardPage domainModelFilePage;
+
+	/**
+	 * @generated
+	 */
+	private UMLModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
 	 * @generated

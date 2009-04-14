@@ -48,6 +48,7 @@ import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.activity.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
@@ -215,6 +216,10 @@ public class StructuredActivityNode_OpaqueActionStereotypeEditPart extends Compa
 			return null;
 		}
 		Image withStereo = StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowIcon(VISUAL_ID, withStereo != null, getDiagramPreferencesHint());
+		if (!shouldShow) {
+			return null;
+		}
 		return withStereo;
 	}
 
