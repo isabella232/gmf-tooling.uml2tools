@@ -133,7 +133,7 @@ public class FinalStateEditPart extends ShapeNodeEditPart implements PrimaryShap
 	public EditPolicy getPrimaryDragEditPolicy() {
 		// #265822 Improve appearance of selection feedback
 		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
-		result.setResizeDirections(PositionConstants.NSEW);
+		result.setResizeDirections(PositionConstants.NONE);
 		return result;
 	}
 

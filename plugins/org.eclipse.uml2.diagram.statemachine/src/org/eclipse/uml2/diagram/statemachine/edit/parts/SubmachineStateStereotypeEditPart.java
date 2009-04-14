@@ -53,6 +53,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPoli
 import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.statemachine.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider;
 import org.eclipse.uml2.uml.Element;
@@ -215,6 +216,10 @@ public class SubmachineStateStereotypeEditPart extends CompartmentEditPart imple
 			return null;
 		}
 		Image withStereo = StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowIcon(VISUAL_ID, withStereo != null, getDiagramPreferencesHint());
+		if (!shouldShow) {
+			return null;
+		}
 		return withStereo;
 	}
 

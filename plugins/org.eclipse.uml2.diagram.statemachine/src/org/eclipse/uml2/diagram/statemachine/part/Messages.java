@@ -681,6 +681,16 @@ public class Messages extends NLS {
 	 */
 	public static String UMLModelingAssistantProviderMessage;
 
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_Behavior;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_Transition;
+
 	//TODO: put accessor fields manually
 
 }
