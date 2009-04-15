@@ -115,13 +115,6 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 
 		addField(result);
 		myByVisualIdEditors.add(result);
-		GridData resultGD = (GridData) result.getCheckbox().getLayoutData();
-		if (resultGD == null) {
-			resultGD = new GridData();
-			result.getCheckbox().setLayoutData(resultGD);
-		}
-		resultGD.horizontalIndent = 20;
-
 		return result;
 	}
 
@@ -182,7 +175,8 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 
 		addField(myModeEditor);
 
-		myCheckBoxesPanel = new Composite(myModeEditor.getRadioBoxControl(showHideIconsGroup), SWT.NULL);
+		Composite e = createExpansibleComposite(myModeEditor.getRadioBoxControl(showHideIconsGroup), "Elements");
+		myCheckBoxesPanel = new Composite(e, SWT.NULL);
 		myCheckBoxesPanel.setLayout(new GridLayout());
 		myCheckBoxesPanel.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 
