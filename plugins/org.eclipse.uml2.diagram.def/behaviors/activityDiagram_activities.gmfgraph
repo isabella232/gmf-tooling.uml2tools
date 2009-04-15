@@ -175,7 +175,6 @@
       xsi:type="gmfgraph:DiagramLabel"
       name="ActivityNode_name"
       figure="ActivityFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <nodes
       name="ActivityPartitionNode"

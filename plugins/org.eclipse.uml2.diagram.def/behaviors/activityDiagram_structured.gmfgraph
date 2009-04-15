@@ -175,7 +175,6 @@
   <labels
       name="StructuredActivityNode_name"
       figure="StructuredActivityFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="StructuredActivityNode_stereo"

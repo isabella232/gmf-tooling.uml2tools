@@ -336,7 +336,6 @@
   <labels
       name="StandalonePinNode_name"
       figure="StandalonePinFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="StandalonePinNode_states"
@@ -355,7 +354,6 @@
   <labels
       name="ActivityParameterNode_name"
       figure="ActivityParameterFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <labels
       name="CentralBufferNode_stereo"
@@ -365,7 +363,6 @@
   <labels
       name="CentralBufferNode_name"
       figure="CentralBufferFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="CentralBufferNode_states"
@@ -380,7 +377,6 @@
   <labels
       name="DataStoreNode_name"
       figure="DataStoreFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels
       name="DataStoreNode_states"

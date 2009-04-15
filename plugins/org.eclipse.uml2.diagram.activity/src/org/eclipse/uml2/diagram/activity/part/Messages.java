@@ -1731,6 +1731,86 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String DiagramIconStylePreferencePage_label_for_Activity;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_ActivityParameterNode;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_AddStructuralFeatureValueAction;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_CallBehaviorAction;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_CallOperationAction;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_CentralBufferNode;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_ConditionalNode;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_CreateObjectAction;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_DataStoreNode;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_InputPin;
+
+	/**
+	 * @generated
+	 */
 	public static String DiagramIconStylePreferencePage_label_for_LiteralString;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_LoopNode;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_OpaqueAction;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_OutputPin;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_Pin;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_StructuredActivityNode;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_ValueSpecificationAction;
 
 }

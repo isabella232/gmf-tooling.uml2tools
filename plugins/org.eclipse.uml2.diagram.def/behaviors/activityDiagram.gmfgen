@@ -376,7 +376,8 @@
           visualID="5034"
           editPartClassName="DataStoreNodeNameEditPart"
           itemSemanticEditPolicyClassName="DataStoreNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="DataStoreNodeNameViewFactory">
+          notationViewFactoryClassName="DataStoreNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -501,7 +502,8 @@
           visualID="5032"
           editPartClassName="CentralBufferNodeNameEditPart"
           itemSemanticEditPolicyClassName="CentralBufferNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="CentralBufferNodeNameViewFactory">
+          notationViewFactoryClassName="CentralBufferNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -631,7 +633,8 @@
           visualID="5023"
           editPartClassName="OpaqueActionNameEditPart"
           itemSemanticEditPolicyClassName="OpaqueActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="OpaqueActionNameViewFactory">
+          notationViewFactoryClassName="OpaqueActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -920,7 +923,8 @@
           visualID="5024"
           editPartClassName="PinNameEditPart"
           itemSemanticEditPolicyClassName="PinNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="PinNameViewFactory">
+          notationViewFactoryClassName="PinNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1043,7 +1047,8 @@
           visualID="5025"
           editPartClassName="CreateObjectActionNameEditPart"
           itemSemanticEditPolicyClassName="CreateObjectActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="CreateObjectActionNameViewFactory">
+          notationViewFactoryClassName="CreateObjectActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1221,7 +1226,8 @@
           visualID="5026"
           editPartClassName="AddStructuralFeatureValueActionNameEditPart"
           itemSemanticEditPolicyClassName="AddStructuralFeatureValueActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="AddStructuralFeatureValueActionNameViewFactory">
+          notationViewFactoryClassName="AddStructuralFeatureValueActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1566,7 +1572,8 @@
           visualID="5027"
           editPartClassName="CallBehaviorActionNameEditPart"
           itemSemanticEditPolicyClassName="CallBehaviorActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="CallBehaviorActionNameViewFactory">
+          notationViewFactoryClassName="CallBehaviorActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1828,7 +1835,8 @@
           visualID="5028"
           editPartClassName="CallOperationActionNameEditPart"
           itemSemanticEditPolicyClassName="CallOperationActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="CallOperationActionNameViewFactory">
+          notationViewFactoryClassName="CallOperationActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2002,7 +2010,8 @@
           visualID="5090"
           editPartClassName="StructuredActivityNodeNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNodeNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2093,7 +2102,8 @@
           visualID="5089"
           editPartClassName="StructuredActivityNode_StructuredActivityNodeNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_StructuredActivityNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_StructuredActivityNodeNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_StructuredActivityNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2188,7 +2198,8 @@
           visualID="5015"
           editPartClassName="StructuredActivityNode_OpaqueActionNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_OpaqueActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_OpaqueActionNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_OpaqueActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2545,7 +2556,8 @@
           visualID="5016"
           editPartClassName="StructuredActivityNode_PinNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_PinNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_PinNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_PinNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2669,7 +2681,8 @@
           visualID="5017"
           editPartClassName="StructuredActivityNode_CreateObjectActionNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_CreateObjectActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_CreateObjectActionNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_CreateObjectActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2764,7 +2777,8 @@
           visualID="5018"
           editPartClassName="StructuredActivityNode_CallBehaviorActionNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_CallBehaviorActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_CallBehaviorActionNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_CallBehaviorActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2859,7 +2873,8 @@
           visualID="5019"
           editPartClassName="StructuredActivityNode_CallOperationActionNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_CallOperationActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_CallOperationActionNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_CallOperationActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3038,7 +3053,8 @@
           visualID="5020"
           editPartClassName="StructuredActivityNode_AddStructuralFeatureValueActionNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_AddStructuralFeatureValueActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_AddStructuralFeatureValueActionNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_AddStructuralFeatureValueActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3128,7 +3144,8 @@
           visualID="5035"
           editPartClassName="StructuredActivityNode_DataStoreNodeNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_DataStoreNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_DataStoreNodeNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_DataStoreNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3254,7 +3271,8 @@
           visualID="5033"
           editPartClassName="StructuredActivityNode_CentralBufferNodeNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_CentralBufferNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_CentralBufferNodeNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_CentralBufferNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3374,7 +3392,8 @@
           visualID="5047"
           editPartClassName="StructuredActivityNode_InputPinNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_InputPinNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_InputPinNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_InputPinNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3447,7 +3466,8 @@
           visualID="5048"
           editPartClassName="StructuredActivityNode_OutputPinNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_OutputPinNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_OutputPinNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_OutputPinNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3525,7 +3545,8 @@
           visualID="5147"
           editPartClassName="StructuredActivityNode_ConditionalNodeNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_ConditionalNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_ConditionalNodeNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_ConditionalNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -3711,7 +3732,8 @@
           visualID="5031"
           editPartClassName="ActivityParameterNodeNameEditPart"
           itemSemanticEditPolicyClassName="ActivityParameterNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityParameterNodeNameViewFactory">
+          notationViewFactoryClassName="ActivityParameterNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4304,7 +4326,8 @@
           visualID="5067"
           editPartClassName="ActivityPartition_DataStoreNodeNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_DataStoreNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_DataStoreNodeNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_DataStoreNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4428,7 +4451,8 @@
           visualID="5070"
           editPartClassName="ActivityPartition_CentralBufferNodeNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_CentralBufferNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_CentralBufferNodeNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_CentralBufferNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4557,7 +4581,8 @@
           visualID="5073"
           editPartClassName="ActivityPartition_OpaqueActionNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_OpaqueActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_OpaqueActionNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_OpaqueActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4758,7 +4783,8 @@
           visualID="5074"
           editPartClassName="ActivityPartition_PinNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_PinNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_PinNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_PinNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4880,7 +4906,8 @@
           visualID="5076"
           editPartClassName="ActivityPartition_CreateObjectActionNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_CreateObjectActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_CreateObjectActionNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_CreateObjectActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -4973,7 +5000,8 @@
           visualID="5077"
           editPartClassName="ActivityPartition_AddStructuralFeatureValueActionNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_AddStructuralFeatureValueActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_AddStructuralFeatureValueActionNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_AddStructuralFeatureValueActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5066,7 +5094,8 @@
           visualID="5078"
           editPartClassName="ActivityPartition_CallBehaviorActionNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_CallBehaviorActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_CallBehaviorActionNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_CallBehaviorActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5159,7 +5188,8 @@
           visualID="5079"
           editPartClassName="ActivityPartition_CallOperationActionNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_CallOperationActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_CallOperationActionNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_CallOperationActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5248,7 +5278,8 @@
           visualID="5122"
           editPartClassName="ActivityPartition_StructuredActivityNodeNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_StructuredActivityNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_StructuredActivityNodeNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_StructuredActivityNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5337,7 +5368,8 @@
           visualID="5121"
           editPartClassName="ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeViewFactory">
+          notationViewFactoryClassName="ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5425,7 +5457,8 @@
           visualID="5081"
           editPartClassName="StructuredActivityNode_StructuredActivityNode_InputPinNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_StructuredActivityNode_InputPinNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_StructuredActivityNode_InputPinNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_StructuredActivityNode_InputPinNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5498,7 +5531,8 @@
           visualID="5083"
           editPartClassName="StructuredActivityNode_StructuredActivityNode_OutputPinNameEditPart"
           itemSemanticEditPolicyClassName="StructuredActivityNode_StructuredActivityNode_OutputPinNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StructuredActivityNode_StructuredActivityNode_OutputPinNameViewFactory">
+          notationViewFactoryClassName="StructuredActivityNode_StructuredActivityNode_OutputPinNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5654,7 +5688,8 @@
           visualID="5117"
           editPartClassName="ActivityPartition_LoopNodeNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_LoopNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_LoopNodeNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_LoopNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5743,7 +5778,8 @@
           visualID="5115"
           editPartClassName="ActivityPartition_ConditionalNodeNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_ConditionalNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_ConditionalNodeNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_ConditionalNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -5896,7 +5932,8 @@
           visualID="5133"
           editPartClassName="ActivityPartition_ValueSpecificationActionNameEditPart"
           itemSemanticEditPolicyClassName="ActivityPartition_ValueSpecificationActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityPartition_ValueSpecificationActionNameViewFactory">
+          notationViewFactoryClassName="ActivityPartition_ValueSpecificationActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -6067,7 +6104,8 @@
           visualID="5091"
           editPartClassName="LoopNodeNameEditPart"
           itemSemanticEditPolicyClassName="LoopNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="LoopNodeNameViewFactory">
+          notationViewFactoryClassName="LoopNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -6156,7 +6194,8 @@
           visualID="5092"
           editPartClassName="ConditionalNodeNameEditPart"
           itemSemanticEditPolicyClassName="ConditionalNodeNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ConditionalNodeNameViewFactory">
+          notationViewFactoryClassName="ConditionalNodeNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -6500,7 +6539,8 @@
           visualID="5135"
           editPartClassName="ValueSpecificationActionNameEditPart"
           itemSemanticEditPolicyClassName="ValueSpecificationActionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ValueSpecificationActionNameViewFactory">
+          notationViewFactoryClassName="ValueSpecificationActionNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -6684,7 +6724,8 @@
           visualID="5030"
           editPartClassName="ActivityNameEditPart"
           itemSemanticEditPolicyClassName="ActivityNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ActivityNameViewFactory">
+          notationViewFactoryClassName="ActivityNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -14825,23 +14866,23 @@
         uses="//@diagram/@links.5/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.16/@labels.1/@modelFacet //@diagram/@childNodes.26/@labels.1/@modelFacet //@diagram/@childNodes.74/@labels.1/@modelFacet //@diagram/@childNodes.39/@labels.1/@modelFacet //@diagram/@childNodes.34/@labels.1/@modelFacet //@diagram/@childNodes.48/@labels.1/@modelFacet //@diagram/@childNodes.79/@labels.1/@modelFacet //@diagram/@childNodes.20/@labels.1/@modelFacet //@diagram/@childNodes.63/@labels.3/@modelFacet //@diagram/@childNodes.6/@labels.3/@modelFacet //@diagram/@childNodes.13/@labels.3/@modelFacet //@diagram/@childNodes.64/@labels.1/@modelFacet //@diagram/@childNodes.25/@labels.1/@modelFacet //@diagram/@childNodes.47/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.57/@labels.3/@modelFacet //@diagram/@childNodes.72/@labels.1/@modelFacet //@diagram/@childNodes.78/@labels.1/@modelFacet //@diagram/@childNodes.66/@labels.1/@modelFacet //@diagram/@childNodes.36/@labels.1/@modelFacet //@diagram/@childNodes.81/@labels.3/@modelFacet //@diagram/@childNodes.41/@labels.3/@modelFacet //@diagram/@childNodes.65/@labels.1/@modelFacet //@diagram/@childNodes.59/@labels.1/@modelFacet //@diagram/@childNodes.28/@labels.1/@modelFacet //@diagram/@childNodes.69/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.27/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.3/@modelFacet //@diagram/@childNodes.68/@labels.1/@modelFacet //@diagram/@childNodes.58/@labels.3/@modelFacet //@diagram/@childNodes.23/@labels.1/@modelFacet //@diagram/@childNodes.67/@labels.1/@modelFacet //@diagram/@childNodes.14/@labels.1/@modelFacet //@diagram/@childNodes.35/@labels.1/@modelFacet //@diagram/@childNodes.51/@labels.1/@modelFacet //@diagram/@childNodes.73/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.3/@modelFacet //@diagram/@childNodes.33/@labels.3/@modelFacet"
+        uses="//@diagram/@childNodes.69/@labels.0/@modelFacet //@diagram/@childNodes.64/@labels.1/@modelFacet //@diagram/@childNodes.36/@labels.1/@modelFacet //@diagram/@childNodes.14/@labels.1/@modelFacet //@diagram/@childNodes.67/@labels.1/@modelFacet //@diagram/@childNodes.59/@labels.1/@modelFacet //@diagram/@childNodes.78/@labels.1/@modelFacet //@diagram/@childNodes.27/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.3/@modelFacet //@diagram/@childNodes.25/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.3/@modelFacet //@diagram/@childNodes.72/@labels.1/@modelFacet //@diagram/@childNodes.33/@labels.3/@modelFacet //@diagram/@childNodes.7/@labels.3/@modelFacet //@diagram/@childNodes.41/@labels.3/@modelFacet //@diagram/@childNodes.28/@labels.1/@modelFacet //@diagram/@childNodes.65/@labels.1/@modelFacet //@diagram/@childNodes.23/@labels.1/@modelFacet //@diagram/@childNodes.20/@labels.1/@modelFacet //@diagram/@childNodes.81/@labels.3/@modelFacet //@diagram/@childNodes.39/@labels.1/@modelFacet //@diagram/@childNodes.16/@labels.1/@modelFacet //@diagram/@childNodes.63/@labels.3/@modelFacet //@diagram/@childNodes.35/@labels.1/@modelFacet //@diagram/@childNodes.34/@labels.1/@modelFacet //@diagram/@childNodes.57/@labels.3/@modelFacet //@diagram/@childNodes.58/@labels.3/@modelFacet //@diagram/@childNodes.26/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.66/@labels.1/@modelFacet //@diagram/@childNodes.51/@labels.1/@modelFacet //@diagram/@childNodes.73/@labels.1/@modelFacet //@diagram/@childNodes.47/@labels.1/@modelFacet //@diagram/@childNodes.48/@labels.1/@modelFacet //@diagram/@childNodes.68/@labels.1/@modelFacet //@diagram/@childNodes.79/@labels.1/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.74/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.13/@labels.3/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.57/@labels.1/@modelFacet //@diagram/@childNodes.58/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.33/@labels.1/@modelFacet //@diagram/@childNodes.13/@labels.1/@modelFacet //@diagram/@childNodes.81/@labels.1/@modelFacet //@diagram/@childNodes.63/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.41/@labels.1/@modelFacet"
+        uses="//@diagram/@childNodes.33/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.41/@labels.1/@modelFacet //@diagram/@childNodes.13/@labels.1/@modelFacet //@diagram/@childNodes.81/@labels.1/@modelFacet //@diagram/@childNodes.57/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.1/@modelFacet //@diagram/@childNodes.63/@labels.1/@modelFacet //@diagram/@childNodes.58/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.activity.parser.ObjectNodeInStateParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.70/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.2/@modelFacet //@diagram/@childNodes.57/@labels.2/@modelFacet //@diagram/@childNodes.19/@labels.1/@modelFacet //@diagram/@childNodes.81/@labels.2/@modelFacet //@diagram/@childNodes.71/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.2/@modelFacet //@diagram/@childNodes.22/@labels.1/@modelFacet //@diagram/@childNodes.33/@labels.2/@modelFacet //@diagram/@childNodes.21/@labels.1/@modelFacet //@diagram/@childNodes.77/@labels.1/@modelFacet //@diagram/@childNodes.18/@labels.1/@modelFacet //@diagram/@childNodes.13/@labels.2/@modelFacet //@diagram/@childNodes.9/@labels.1/@modelFacet //@diagram/@childNodes.43/@labels.1/@modelFacet //@diagram/@childNodes.17/@labels.1/@modelFacet //@diagram/@childNodes.15/@labels.1/@modelFacet //@diagram/@childNodes.24/@labels.1/@modelFacet //@diagram/@childNodes.42/@labels.1/@modelFacet //@diagram/@childNodes.63/@labels.2/@modelFacet //@diagram/@childNodes.58/@labels.2/@modelFacet //@diagram/@childNodes.6/@labels.2/@modelFacet //@diagram/@childNodes.41/@labels.2/@modelFacet"
+        uses="//@diagram/@childNodes.21/@labels.1/@modelFacet //@diagram/@childNodes.19/@labels.1/@modelFacet //@diagram/@childNodes.18/@labels.1/@modelFacet //@diagram/@childNodes.43/@labels.1/@modelFacet //@diagram/@childNodes.81/@labels.2/@modelFacet //@diagram/@childNodes.15/@labels.1/@modelFacet //@diagram/@childNodes.40/@labels.2/@modelFacet //@diagram/@childNodes.6/@labels.2/@modelFacet //@diagram/@childNodes.33/@labels.2/@modelFacet //@diagram/@childNodes.77/@labels.1/@modelFacet //@diagram/@childNodes.41/@labels.2/@modelFacet //@diagram/@childNodes.63/@labels.2/@modelFacet //@diagram/@childNodes.9/@labels.1/@modelFacet //@diagram/@childNodes.58/@labels.2/@modelFacet //@diagram/@childNodes.42/@labels.1/@modelFacet //@diagram/@childNodes.24/@labels.1/@modelFacet //@diagram/@childNodes.57/@labels.2/@modelFacet //@diagram/@childNodes.22/@labels.1/@modelFacet //@diagram/@childNodes.71/@labels.1/@modelFacet //@diagram/@childNodes.13/@labels.2/@modelFacet //@diagram/@childNodes.17/@labels.1/@modelFacet //@diagram/@childNodes.70/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.2/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.activity.parser.ObjectNodeAttributesParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.40/@labels.0/@modelFacet //@diagram/@childNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.63/@labels.0/@modelFacet //@diagram/@childNodes.58/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.41/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet"
+        uses="//@diagram/@childNodes.58/@labels.0/@modelFacet //@diagram/@childNodes.40/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.33/@labels.0/@modelFacet //@diagram/@childNodes.57/@labels.0/@modelFacet //@diagram/@childNodes.63/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.41/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.71/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.77/@labels.0/@modelFacet //@diagram/@childNodes.70/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.22/@labels.0/@modelFacet //@diagram/@childNodes.43/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet"
+        uses="//@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.43/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.71/@labels.0/@modelFacet //@diagram/@childNodes.77/@labels.0/@modelFacet //@diagram/@childNodes.24/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.22/@labels.0/@modelFacet //@diagram/@childNodes.42/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@childNodes.70/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.activity.parser.ObjectNodeTypeAndInStateParser"/>
   </labelParsers>
   <contextMenus

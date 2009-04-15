@@ -331,38 +331,6 @@
     </facets>
   </nodes>
   <nodes
-      xsi:type="gmfgraph:DiagramLabel"
-      name="ActionAddStructuralFeatureValueNode_name"
-      figure="ActionBaseFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <nodes
-      name="ActionAddStructuralFeatureValueNode"
-      figure="ActionBaseFigure">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="60"
-          dy="40"/>
-    </facets>
-  </nodes>
-  <nodes
-      name="ActionCallOperationNode"
-      figure="ActionBaseFigure">
-    <facets
-        xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize
-          dx="60"
-          dy="40"/>
-    </facets>
-  </nodes>
-  <nodes
-      xsi:type="gmfgraph:DiagramLabel"
-      name="ActionCallOperationNode_name"
-      figure="ActionBaseFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <nodes
       name="ActionCallBehaviorNode"
       figure="ActionCallBehaviorFigure">
     <facets
@@ -385,7 +353,6 @@
   <labels
       name="Action_BaseNode_name"
       figure="ActionBaseFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="Action_BaseNode_stereo"
@@ -417,33 +384,12 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.5/@accessors.1"/>
   <labels
-      name="ActionAddStructuralFeatureValueNode_name"
-      figure="ActionBaseFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels
-      name="ActionAddStructuralFeatureValueNode_stereo"
-      figure="ActionBaseFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <labels
       name="ActionCallBehaviorNode_name"
       figure="ActionCallBehaviorFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <labels
       name="ActionCallBehaviorNode_stereo"
       figure="ActionCallBehaviorFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.3/@accessors.1"/>
-  <labels
-      name="ActionCallOperationNode_name"
-      figure="ActionBaseFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels
-      name="ActionCallOperationNode_stereo"
-      figure="ActionBaseFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
 </gmfgraph:Canvas>

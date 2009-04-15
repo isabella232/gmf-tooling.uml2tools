@@ -191,7 +191,23 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 	 * @generated
 	 */
 	private void addAllCheckBoxes(Composite parent) {
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Activity, 5030);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_ActivityParameterNode, 5031);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_AddStructuralFeatureValueAction, 5026, 5020, 5077);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_CallBehaviorAction, 5027, 5018, 5078);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_CallOperationAction, 5028, 5019, 5079);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_CentralBufferNode, 5032, 5033, 5070);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_ConditionalNode, 5147, 5115, 5092);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_CreateObjectAction, 5025, 5017, 5076);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_DataStoreNode, 5034, 5035, 5067);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_InputPin, 5047, 5081);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_LiteralString, 3049, 3051);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_LoopNode, 5117, 5091);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_OpaqueAction, 5023, 5015, 5073);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_OutputPin, 5048, 5083);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Pin, 5024, 5016, 5074);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_StructuredActivityNode, 5090, 5089, 5122, 5121);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_ValueSpecificationAction, 5133, 5135);
 
 	}
 
