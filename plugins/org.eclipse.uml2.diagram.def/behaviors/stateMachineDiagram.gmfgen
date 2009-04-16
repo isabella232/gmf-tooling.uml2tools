@@ -101,7 +101,8 @@
           visualID="5001"
           editPartClassName="SimpleStateNameEditPart"
           itemSemanticEditPolicyClassName="SimpleStateNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="SimpleStateNameViewFactory">
+          notationViewFactoryClassName="SimpleStateNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -320,7 +321,8 @@
           visualID="5004"
           editPartClassName="CompositeStateNameEditPart"
           itemSemanticEditPolicyClassName="CompositeStateNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="CompositeStateNameViewFactory">
+          notationViewFactoryClassName="CompositeStateNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -449,7 +451,8 @@
           visualID="5008"
           editPartClassName="SubmachineStateNameEditPart"
           itemSemanticEditPolicyClassName="SubmachineStateNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="SubmachineStateNameViewFactory">
+          notationViewFactoryClassName="SubmachineStateNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1285,7 +1288,8 @@
           visualID="5011"
           editPartClassName="StateMachineNameEditPart"
           itemSemanticEditPolicyClassName="StateMachineNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="StateMachineNameViewFactory">
+          notationViewFactoryClassName="StateMachineNameViewFactory"
+          elementIcon="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2294,11 +2298,11 @@
         uses="//@diagram/@childNodes.2/@labelModelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet"
+        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@links.0/@labels.0/@modelFacet //@diagram/@childNodes.10/@labelModelFacet"
+        uses="//@diagram/@childNodes.10/@labelModelFacet //@diagram/@links.0/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.statemachine.parser.TransitionParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"

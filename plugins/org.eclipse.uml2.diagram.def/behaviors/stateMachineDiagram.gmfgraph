@@ -602,7 +602,6 @@
   <labels
       name="CompositeStateNode_name"
       figure="CompositeStateFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="EntryExitPoint_ExternalLabel"
@@ -616,17 +615,14 @@
   <labels
       name="SimpleStateNode_name"
       figure="SimpleStateFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
   <labels
       name="StateMachineNode_name"
       figure="CompositeStateFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="SubmachineStateNode_name"
       figure="CompositeStateFigure"
-      elementIcon="false"
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="EntryExitPointConnectionPointReferenceNode_ExternalLabel"

@@ -689,6 +689,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String DiagramIconStylePreferencePage_label_for_State;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_StateMachine;
+
+	/**
+	 * @generated
+	 */
 	public static String DiagramIconStylePreferencePage_label_for_Transition;
 
 	//TODO: put accessor fields manually
