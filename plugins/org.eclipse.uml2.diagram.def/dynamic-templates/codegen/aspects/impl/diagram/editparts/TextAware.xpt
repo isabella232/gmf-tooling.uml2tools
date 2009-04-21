@@ -154,7 +154,7 @@
 			return null;
 		}
 		«IF not self.oclIsKindOf(gmfgen::GenLinkLabel)-»
-		boolean shouldShow = «EXPAND xpt::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()».shouldShowIcon(VISUAL_ID, getDiagramPreferencesHint());
+		boolean shouldShow = «EXPAND xpt::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()».shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
 		if (!shouldShow){
 			return null;
 		}			

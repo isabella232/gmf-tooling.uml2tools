@@ -208,7 +208,7 @@ public class ClassDiagramNotationClassNameEditPart extends CompartmentEditPart i
 		if (parserElement == null) {
 			return null;
 		}
-		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowIcon(VISUAL_ID, getDiagramPreferencesHint());
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
 		if (!shouldShow) {
 			return null;
 		}

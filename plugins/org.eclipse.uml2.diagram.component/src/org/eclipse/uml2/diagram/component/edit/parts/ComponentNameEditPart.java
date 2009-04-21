@@ -208,7 +208,7 @@ public class ComponentNameEditPart extends CompartmentEditPart implements ITextA
 		if (parserElement == null) {
 			return null;
 		}
-		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowIcon(VISUAL_ID, getDiagramPreferencesHint());
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
 		if (!shouldShow) {
 			return null;
 		}

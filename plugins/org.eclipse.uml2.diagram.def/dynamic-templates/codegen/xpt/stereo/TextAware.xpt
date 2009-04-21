@@ -31,7 +31,7 @@
 			return null;
 		}
 		org.eclipse.swt.graphics.Image withStereo = org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx.getAppliedStereotypeImage((org.eclipse.uml2.uml.Element) parserElement, «diagram.getElementTypesQualifiedClassName()».getImageDescriptor(parserElement.eClass()));
-		boolean shouldShow = «EXPAND xpt::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()».shouldShowIcon(VISUAL_ID, withStereo != null, getDiagramPreferencesHint());
+		boolean shouldShow = «EXPAND xpt::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()».shouldShowStereotypeIcon(getDiagramPreferencesHint());
 		if (!shouldShow){
 			return null;
 		}			

@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.common.preferences;
 
 import org.eclipse.gmf.runtime.common.ui.preferences.AbstractPreferencePage;
+import org.eclipse.gmf.runtime.common.ui.preferences.CheckBoxFieldEditor;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.swt.SWT;
@@ -10,6 +11,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.forms.events.ExpansionAdapter;
 import org.eclipse.ui.forms.events.ExpansionEvent;
@@ -18,12 +20,15 @@ import org.eclipse.uml2.diagram.common.Messages;
 
 public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 
+	private CheckBoxFieldEditor myShowStereotypeIconOnly;
+
 	@Override
 	protected void addFields(Composite parent) {
 		Composite main = new Composite(parent, SWT.NULL);
 		main.setLayout(new GridLayout());
 		main.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 		createIconStyleGroup(main);
+		createShowHideMetaclassIconGroup(main);
 	}
 
 	protected void createIconStyleGroup(Composite parent) {
@@ -35,11 +40,24 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 		addField(myIconStyleFieldEditor);
 	}
 
+	protected void createShowHideMetaclassIconGroup(Composite parent) {
+        Group group = new Group(parent, SWT.NONE);
+        group.setFont(parent.getFont());
+		group.setText(LABEL_SHOW_HIDE_STEREOTYPE_GROUP);
+        group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+
+		myShowStereotypeIconOnly = new CheckBoxFieldEditor(UMLPreferencesConstants.PREF_ICONS_SHOW_STEREOTYPE_ICON_MODE, LABEL_SHOW_HIDE_STEREOTYPE_MODE, group);
+		//set layout after CheckBoxFieldEditor creation, because FieldEditor#createControl() sets GridLayout with empty margins
+        group.setLayout(new GridLayout());
+		addField(myShowStereotypeIconOnly);
+	}
+
 	public static void initDefaults(IPreferenceStore store) {
 		store.setDefault(UMLPreferencesConstants.PREF_ICON_STYLE, UMLPreferencesConstants.PREF_ICON_STYLE_STANDARD);
 		store.setDefault(UMLPreferencesConstants.PREF_ICONS_SHOW_HIDE_MODE, UMLPreferencesConstants.VALUE_ICONS_SHOW_ALL);
+		store.setDefault(UMLPreferencesConstants.PREF_ICONS_SHOW_STEREOTYPE_ICON_MODE, true);
 	}
-	
+
 	@Override
 	protected Composite getFieldEditorParent() {
 		Composite parent = super.getFieldEditorParent();
@@ -114,7 +132,7 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 			composite.setRedraw(true);
 		}
 	}
-	
+
 	private ScrolledComposite createScrolledComposite(Composite parent) {
 		ScrolledComposite scomp = new ScrolledComposite(parent, SWT.H_SCROLL | SWT.V_SCROLL);
 		scomp.setExpandHorizontal(true);
@@ -122,6 +140,7 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 		scomp.setLayout(new GridLayout());
 		scomp.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		scomp.addListener(SWT.Resize, new Listener() {
+
 			public void handleEvent(Event event) {
 				handleExpand(getScrollingParent(event.widget));
 			}
@@ -129,14 +148,17 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 		return scomp;
 	}
 
-
 	private static final String ICONSTYLE_GROUPBOX_LABEL = Messages.IconStylePreferencePage_icon_style_group;
 
 	private static final String ALTERNATIVE_STYLE_ICON_LABEL = Messages.IconStylePreferencePage_cheerful_style;
 
 	private static final String ECLIPSE_STYLE_ICON_LABEL = Messages.IconStylePreferencePage_eclipse_style;
 
-	protected static final String LABEL_SHOW_HIDE_MODE = "Show/Hide Icons";
+	protected static final String LABEL_SHOW_HIDE_STEREOTYPE_GROUP = "Stereotype Images";
+
+	protected static final String LABEL_SHOW_HIDE_STEREOTYPE_MODE = "Show Image of Stereotype";
+
+	protected static final String LABEL_SHOW_HIDE_MODE = "Metaclass Images";
 
 	protected static final String LABEL_HIDE_ALL = "Hide All";
 

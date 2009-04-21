@@ -160,6 +160,7 @@
       name="ProfileLabels"
       figure="ProfilelabelsFigure"
       collapsible="true"
+      needsTitle="true"
       accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <labels
       name="ProfileNode_name"
