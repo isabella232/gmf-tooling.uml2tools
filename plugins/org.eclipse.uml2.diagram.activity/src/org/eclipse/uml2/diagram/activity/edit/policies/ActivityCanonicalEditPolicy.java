@@ -84,6 +84,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.LocalPrecondition_LiteralStr
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
@@ -155,6 +156,7 @@ public class ActivityCanonicalEditPolicy extends CanonicalEditPolicy {
 		case LocalPreconditionEditPart.VISUAL_ID:
 		case LocalPostconditionEditPart.VISUAL_ID:
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
 		case CreateObjectAction_OutputPinEditPart.VISUAL_ID:
 		case AddStructuralFeatureValueAction_insertAt_InputPinEditPart.VISUAL_ID:
 		case AddStructuralFeatureValueAction_value_InputPinEditPart.VISUAL_ID:

@@ -104,6 +104,7 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case CentralBufferNodeEditPart.VISUAL_ID:
 				case OpaqueActionEditPart.VISUAL_ID:
 				case OpaqueAction_OutputPinEditPart.VISUAL_ID:
+				case OpaqueAction_InputPinEditPart.VISUAL_ID:
 				case FlowFinalNodeEditPart.VISUAL_ID:
 				case ForkNodeEditPart.VISUAL_ID:
 				case JoinNodeEditPart.VISUAL_ID:
@@ -237,6 +238,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 				case OpaqueAction_OutputPinNameEditPart.VISUAL_ID:
 				case OpaqueAction_OutputPinOrderingEditPart.VISUAL_ID:
 					if (OpaqueAction_OutputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
+						return null; // wrong container
+					}
+					break;
+				case OpaqueAction_InputPinNameEditPart.VISUAL_ID:
+				case OpaqueAction_InputPinOrderingEditPart.VISUAL_ID:
+					if (OpaqueAction_InputPinEditPart.VISUAL_ID != UMLVisualIDRegistry.getVisualID(containerView) || containerView.getElement() != domainElement) {
 						return null; // wrong container
 					}
 					break;
@@ -698,6 +705,12 @@ public class UMLViewProvider extends AbstractViewProvider {
 			return OpaqueAction_OutputPinNameViewFactory.class;
 		case OpaqueAction_OutputPinOrderingEditPart.VISUAL_ID:
 			return OpaqueAction_OutputPinOrderingViewFactory.class;
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
+			return OpaqueAction_InputPinViewFactory.class;
+		case OpaqueAction_InputPinNameEditPart.VISUAL_ID:
+			return OpaqueAction_InputPinNameViewFactory.class;
+		case OpaqueAction_InputPinOrderingEditPart.VISUAL_ID:
+			return OpaqueAction_InputPinOrderingViewFactory.class;
 		case FlowFinalNodeEditPart.VISUAL_ID:
 			return FlowFinalNodeViewFactory.class;
 		case ForkNodeEditPart.VISUAL_ID:

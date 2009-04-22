@@ -889,6 +889,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_InputPin_3094_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InputPin_3094_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_FlowFinalNode_3038_incominglinks;
 
 	/**

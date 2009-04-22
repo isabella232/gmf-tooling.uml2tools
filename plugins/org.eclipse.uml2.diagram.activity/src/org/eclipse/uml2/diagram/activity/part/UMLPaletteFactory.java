@@ -471,7 +471,8 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createInputPin2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(7);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(8);
+		types.add(UMLElementTypes.InputPin_3094);
 		types.add(UMLElementTypes.InputPin_3003);
 		types.add(UMLElementTypes.InputPin_3004);
 		types.add(UMLElementTypes.InputPin_3005);
@@ -480,7 +481,7 @@ public class UMLPaletteFactory {
 		types.add(UMLElementTypes.InputPin_3054);
 		types.add(UMLElementTypes.InputPin_3080);
 		NodeToolEntry entry = new NodeToolEntry(Messages.InputPin2CreationTool_title, Messages.InputPin2CreationTool_desc, types);
-		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InputPin_3003));
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.InputPin_3094));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

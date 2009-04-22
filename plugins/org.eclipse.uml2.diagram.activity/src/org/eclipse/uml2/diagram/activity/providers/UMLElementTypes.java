@@ -81,6 +81,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
@@ -212,6 +213,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType OutputPin_3001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.OutputPin_3001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType InputPin_3094 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.InputPin_3094"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -762,6 +768,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(OutputPin_3001, UMLPackage.eINSTANCE.getOutputPin());
 
+			elements.put(InputPin_3094, UMLPackage.eINSTANCE.getInputPin());
+
 			elements.put(FlowFinalNode_3038, UMLPackage.eINSTANCE.getFlowFinalNode());
 
 			elements.put(ForkNode_3039, UMLPackage.eINSTANCE.getForkNode());
@@ -958,6 +966,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(CentralBufferNode_3037);
 			KNOWN_ELEMENT_TYPES.add(OpaqueAction_3029);
 			KNOWN_ELEMENT_TYPES.add(OutputPin_3001);
+			KNOWN_ELEMENT_TYPES.add(InputPin_3094);
 			KNOWN_ELEMENT_TYPES.add(FlowFinalNode_3038);
 			KNOWN_ELEMENT_TYPES.add(ForkNode_3039);
 			KNOWN_ELEMENT_TYPES.add(JoinNode_3040);
@@ -1078,6 +1087,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return OpaqueAction_3029;
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 			return OutputPin_3001;
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
+			return InputPin_3094;
 		case FlowFinalNodeEditPart.VISUAL_ID:
 			return FlowFinalNode_3038;
 		case ForkNodeEditPart.VISUAL_ID:

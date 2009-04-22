@@ -112,6 +112,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?OpaqueAction", UMLElementTypes.OpaqueAction_3029); //$NON-NLS-1$
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?OutputPin", UMLElementTypes.OutputPin_3001); //$NON-NLS-1$
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?InputPin", UMLElementTypes.InputPin_3094); //$NON-NLS-1$
 		case FlowFinalNodeEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?FlowFinalNode", UMLElementTypes.FlowFinalNode_3038); //$NON-NLS-1$
 		case ForkNodeEditPart.VISUAL_ID:
@@ -356,6 +358,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getOpaqueAction_3029Text(view);
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 			return getOutputPin_3001Text(view);
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
+			return getInputPin_3094Text(view);
 		case FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3038Text(view);
 		case ForkNodeEditPart.VISUAL_ID:
@@ -710,6 +714,20 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getInputPin_3094Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.InputPin_3094, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(OpaqueAction_InputPinNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5149); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

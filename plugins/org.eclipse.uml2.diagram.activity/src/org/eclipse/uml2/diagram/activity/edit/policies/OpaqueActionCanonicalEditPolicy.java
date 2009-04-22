@@ -71,6 +71,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.LocalPrecondition_LiteralStr
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
@@ -228,6 +229,7 @@ public class OpaqueActionCanonicalEditPolicy extends CanonicalEditPolicy {
 		case LocalPostcondition_LiteralStringEditPart.VISUAL_ID:
 			return true;
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
@@ -249,6 +251,7 @@ public class OpaqueActionCanonicalEditPolicy extends CanonicalEditPolicy {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
 			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getOpaqueAction_OutputValue());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getOpaqueAction_InputValue());
 		}
 		return myFeaturesToSynchronize;
 	}

@@ -216,7 +216,7 @@ public class ActivityStereotypeEditPart extends CompartmentEditPart implements I
 			return null;
 		}
 		Image withStereo = StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
-		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowIcon(VISUAL_ID, withStereo != null, getDiagramPreferencesHint());
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowStereotypeIcon(getDiagramPreferencesHint());
 		if (!shouldShow) {
 			return null;
 		}

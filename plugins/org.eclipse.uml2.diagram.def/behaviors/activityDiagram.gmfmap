@@ -357,6 +357,12 @@
             <referencedChild
                 href="actvityDiagram_SharedPins.gmfmap#//@nodes.0/@ownedChild"/>
           </children>
+          <children>
+            <containmentFeature
+                href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//OpaqueAction/inputValue"/>
+            <referencedChild
+                href="actvityDiagram_SharedPins.gmfmap#//@nodes.1/@ownedChild"/>
+          </children>
         </ownedChild>
       </children>
       <children>

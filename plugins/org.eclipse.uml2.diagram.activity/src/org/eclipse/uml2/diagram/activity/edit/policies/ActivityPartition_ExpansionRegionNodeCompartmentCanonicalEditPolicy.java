@@ -84,6 +84,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.LocalPrecondition_LiteralStr
 import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterEditPart;
@@ -164,6 +165,7 @@ public class ActivityPartition_ExpansionRegionNodeCompartmentCanonicalEditPolicy
 		case CentralBufferNodeEditPart.VISUAL_ID:
 		case OpaqueActionEditPart.VISUAL_ID:
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
 		case FlowFinalNodeEditPart.VISUAL_ID:
 		case ForkNodeEditPart.VISUAL_ID:
 		case JoinNodeEditPart.VISUAL_ID:

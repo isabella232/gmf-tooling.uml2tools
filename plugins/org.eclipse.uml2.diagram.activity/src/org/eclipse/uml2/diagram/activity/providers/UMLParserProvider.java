@@ -371,6 +371,45 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	 * @generated
+	 */
+	private IParser inputPinName_5149Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinName_5149Parser() {
+		if (inputPinName_5149Parser == null) {
+			inputPinName_5149Parser = createInputPinName_5149Parser();
+		}
+		return inputPinName_5149Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInputPinName_5149Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ObjectNodeAttributesParser inputPinOrdering_5150Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInputPinOrdering_5150Parser() {
+		if (inputPinOrdering_5150Parser == null) {
+			inputPinOrdering_5150Parser = new ObjectNodeAttributesParser();
+		}
+		return inputPinOrdering_5150Parser;
+	}
+
+	/**
 	 * @generated NOT
 	 */
 	protected IParser createOutputPinOrdering_5055Parser() {
@@ -3062,6 +3101,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOutputPinName_5003Parser();
 		case OpaqueAction_OutputPinOrderingEditPart.VISUAL_ID:
 			return getOutputPinOrdering_5055Parser();
+		case OpaqueAction_InputPinNameEditPart.VISUAL_ID:
+			return getInputPinName_5149Parser();
+		case OpaqueAction_InputPinOrderingEditPart.VISUAL_ID:
+			return getInputPinOrdering_5150Parser();
 		case PinNameEditPart.VISUAL_ID:
 			return getPinName_5024Parser();
 		case PinInStateEditPart.VISUAL_ID:

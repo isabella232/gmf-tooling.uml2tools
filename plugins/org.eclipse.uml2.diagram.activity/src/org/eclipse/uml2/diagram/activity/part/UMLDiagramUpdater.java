@@ -301,6 +301,14 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
+		for (Iterator it = modelElement.getInputValues().iterator(); it.hasNext();) {
+			InputPin childElement = (InputPin) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == OpaqueAction_InputPinEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		return result;
 	}
 
@@ -432,6 +440,14 @@ public class UMLDiagramUpdater {
 			OutputPin childElement = (OutputPin) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == OpaqueAction_OutputPinEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator it = modelElement.getInputValues().iterator(); it.hasNext();) {
+			InputPin childElement = (InputPin) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == OpaqueAction_InputPinEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -2132,6 +2148,8 @@ public class UMLDiagramUpdater {
 			return getOpaqueAction_3029ContainedLinks(view);
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 			return getOutputPin_3001ContainedLinks(view);
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
+			return getInputPin_3094ContainedLinks(view);
 		case FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3038ContainedLinks(view);
 		case ForkNodeEditPart.VISUAL_ID:
@@ -2327,6 +2345,8 @@ public class UMLDiagramUpdater {
 			return getOpaqueAction_3029IncomingLinks(view);
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 			return getOutputPin_3001IncomingLinks(view);
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
+			return getInputPin_3094IncomingLinks(view);
 		case FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3038IncomingLinks(view);
 		case ForkNodeEditPart.VISUAL_ID:
@@ -2522,6 +2542,8 @@ public class UMLDiagramUpdater {
 			return getOpaqueAction_3029OutgoingLinks(view);
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 			return getOutputPin_3001OutgoingLinks(view);
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
+			return getInputPin_3094OutgoingLinks(view);
 		case FlowFinalNodeEditPart.VISUAL_ID:
 			return getFlowFinalNode_3038OutgoingLinks(view);
 		case ForkNodeEditPart.VISUAL_ID:
@@ -2807,6 +2829,16 @@ public class UMLDiagramUpdater {
 	 */
 	public static List getOutputPin_3001ContainedLinks(View view) {
 		OutputPin modelElement = (OutputPin) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInputPin_3094ContainedLinks(View view) {
+		InputPin modelElement = (InputPin) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
 		return result;
@@ -3762,6 +3794,18 @@ public class UMLDiagramUpdater {
 	 */
 	public static List getOutputPin_3001IncomingLinks(View view) {
 		OutputPin modelElement = (OutputPin) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInputPin_3094IncomingLinks(View view) {
+		InputPin modelElement = (InputPin) view.getElement();
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		List result = new LinkedList();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
@@ -4852,6 +4896,18 @@ public class UMLDiagramUpdater {
 	 */
 	public static List getOutputPin_3001OutgoingLinks(View view) {
 		OutputPin modelElement = (OutputPin) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInputPin_3094OutgoingLinks(View view) {
+		InputPin modelElement = (InputPin) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingTypeModelFacetLinks_ControlFlow_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_ObjectFlow_4002(modelElement));

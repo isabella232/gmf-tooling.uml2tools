@@ -282,6 +282,9 @@ public class OpaqueBehaviorEditPart extends ShapeNodeEditPart implements Primary
 			types.add(UMLElementTypes.OutputPin_3001);
 		}
 		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
+			types.add(UMLElementTypes.InputPin_3094);
+		}
+		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.Pin_3041);
 		}
 		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {

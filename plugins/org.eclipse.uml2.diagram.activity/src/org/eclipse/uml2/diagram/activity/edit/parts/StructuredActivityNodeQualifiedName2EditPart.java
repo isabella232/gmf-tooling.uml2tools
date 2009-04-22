@@ -216,7 +216,7 @@ public class StructuredActivityNodeQualifiedName2EditPart extends CompartmentEdi
 			return null;
 		}
 		Image withStereo = StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
-		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowIcon(VISUAL_ID, withStereo != null, getDiagramPreferencesHint());
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowStereotypeIcon(getDiagramPreferencesHint());
 		if (!shouldShow) {
 			return null;
 		}

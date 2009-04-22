@@ -181,6 +181,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (editPart instanceof OpaqueActionEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3001);
+			types.add(UMLElementTypes.InputPin_3094);
 			return types;
 		}
 
@@ -216,6 +217,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (editPart instanceof StructuredActivityNode_OpaqueActionEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.OutputPin_3001);
+			types.add(UMLElementTypes.InputPin_3094);
 			return types;
 		}
 
@@ -662,6 +664,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof OpaqueAction_OutputPinEditPart) {
 			return ((OpaqueAction_OutputPinEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof OpaqueAction_InputPinEditPart) {
+			return ((OpaqueAction_InputPinEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof FlowFinalNodeEditPart) {
 			return ((FlowFinalNodeEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
@@ -919,6 +924,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof OpaqueAction_OutputPinEditPart) {
 			return ((OpaqueAction_OutputPinEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof OpaqueAction_InputPinEditPart) {
+			return ((OpaqueAction_InputPinEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof FlowFinalNodeEditPart) {
 			return ((FlowFinalNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
@@ -1170,6 +1178,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof OpaqueAction_OutputPinEditPart) {
 			return ((OpaqueAction_OutputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof OpaqueAction_InputPinEditPart) {
+			return ((OpaqueAction_InputPinEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof FlowFinalNodeEditPart) {
 			return ((FlowFinalNodeEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -1428,6 +1439,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof OpaqueAction_OutputPinEditPart) {
 			return ((OpaqueAction_OutputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof OpaqueAction_InputPinEditPart) {
+			return ((OpaqueAction_InputPinEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof FlowFinalNodeEditPart) {
 			return ((FlowFinalNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -1678,6 +1692,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof OpaqueAction_OutputPinEditPart) {
 			return ((OpaqueAction_OutputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof OpaqueAction_InputPinEditPart) {
+			return ((OpaqueAction_InputPinEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof FlowFinalNodeEditPart) {
 			return ((FlowFinalNodeEditPart) sourceEditPart).getMATypesForTarget(relationshipType);

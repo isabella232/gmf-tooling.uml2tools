@@ -89,6 +89,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.LoopNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.MergeNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueActionEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueAction_OutputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.OpaqueBehaviorEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart;
@@ -176,6 +177,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case CentralBufferNodeEditPart.VISUAL_ID:
 		case OpaqueActionEditPart.VISUAL_ID:
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
+		case OpaqueAction_InputPinEditPart.VISUAL_ID:
 		case FlowFinalNodeEditPart.VISUAL_ID:
 		case ForkNodeEditPart.VISUAL_ID:
 		case JoinNodeEditPart.VISUAL_ID:
@@ -512,6 +514,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getOutputPin_3001ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case OpaqueAction_InputPinEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getInputPin_3094ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;
