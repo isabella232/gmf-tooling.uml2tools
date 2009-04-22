@@ -2300,6 +2300,8 @@ public class StructuredActivityNode_CallBehaviorActionEditPart extends AbstractB
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			actionCallBehaviorFigure_AuxCenter0.add(fNameAndStereotypeBlock);
 
 		}

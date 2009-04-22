@@ -2225,6 +2225,8 @@ public class ActivityPartition_ValueSpecificationActionEditPart extends Abstract
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}

@@ -2243,6 +2243,8 @@ public class StructuredActivityNode_CallOperationActionEditPart extends Abstract
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}

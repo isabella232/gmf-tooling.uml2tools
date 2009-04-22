@@ -2223,6 +2223,8 @@ public class StructuredActivityNode_CreateObjectActionEditPart extends AbstractB
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}

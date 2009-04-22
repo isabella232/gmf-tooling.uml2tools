@@ -2243,6 +2243,8 @@ public class ActivityPartition_AddStructuralFeatureValueActionEditPart extends A
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}

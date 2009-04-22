@@ -46,6 +46,9 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 		return "Stereo:" + getStereotypeLabel().getText() + ", [" + stereoVisible + "], Name: " + getNameLabel().getText();  
 	}
 
+	public void setNameTextWrap(boolean nameTextWrap) {
+		myNameLabel.setTextWrap(nameTextWrap);
+	}
 	
 	/**
 	 * Basically it is BorderLayout with 

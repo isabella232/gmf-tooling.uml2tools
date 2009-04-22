@@ -2233,6 +2233,8 @@ public class StructuredActivityNode_OpaqueActionEditPart extends AbstractBordere
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}

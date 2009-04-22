@@ -2300,6 +2300,8 @@ public class ActivityPartition_CallBehaviorActionEditPart extends AbstractBorder
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			actionCallBehaviorFigure_AuxCenter0.add(fNameAndStereotypeBlock);
 
 		}

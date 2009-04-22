@@ -2225,6 +2225,8 @@ public class ValueSpecificationActionEditPart extends AbstractBorderedShapeEditP
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}

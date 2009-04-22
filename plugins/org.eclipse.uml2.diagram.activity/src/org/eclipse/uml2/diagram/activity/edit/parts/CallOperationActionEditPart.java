@@ -2243,6 +2243,8 @@ public class CallOperationActionEditPart extends AbstractBorderedShapeEditPart i
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}

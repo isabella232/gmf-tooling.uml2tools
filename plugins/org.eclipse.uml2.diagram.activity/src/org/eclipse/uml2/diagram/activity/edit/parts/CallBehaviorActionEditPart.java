@@ -2300,6 +2300,8 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			actionCallBehaviorFigure_AuxCenter0.add(fNameAndStereotypeBlock);
 
 		}

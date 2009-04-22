@@ -2223,6 +2223,8 @@ public class ActivityPartition_OpaqueActionEditPart extends AbstractBorderedShap
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}

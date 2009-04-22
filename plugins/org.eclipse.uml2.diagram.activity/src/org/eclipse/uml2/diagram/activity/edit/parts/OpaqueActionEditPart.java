@@ -2233,6 +2233,8 @@ public class OpaqueActionEditPart extends AbstractBorderedShapeEditPart implemen
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}

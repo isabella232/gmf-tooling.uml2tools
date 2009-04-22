@@ -2243,6 +2243,8 @@ public class AddStructuralFeatureValueActionEditPart extends AbstractBorderedSha
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}

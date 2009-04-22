@@ -2223,6 +2223,8 @@ public class ActivityPartition_CreateObjectActionEditPart extends AbstractBorder
 
 			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
+			fNameAndStereotypeBlock.setNameTextWrap(true);
+
 			this.add(fNameAndStereotypeBlock);
 
 		}
