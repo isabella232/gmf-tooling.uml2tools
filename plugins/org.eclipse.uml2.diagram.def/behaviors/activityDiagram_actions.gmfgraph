@@ -58,27 +58,30 @@
         <layout
             xsi:type="gmfgraph:CustomLayout"
             qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <insets
+            left="20"
+            right="2"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="AcceptEventActionFigure_NameContainer"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:FlowLayout"
-              vertical="true"
-              forceSingleLine="true"
-              minorAlignment="CENTER"
-              majorSpacing="0"
-              minorSpacing="0"/>
-          <insets
-              left="20"
-              right="2"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="AcceptEventActionFigure_stereo"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="AcceptEventActionFigure_name"/>
+            xsi:type="gmfgraph:CustomFigure"
+            name="AcceptEventActionFigure_NameAndStereo"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
+          <attributes
+              name="nameTextWrap"
+              value="true"/>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="AcceptEventActionFigure_NameAndStereo_stereo"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2"/>
+          </customChildren>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getNameLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="AcceptEventActionFigure_NameAndStereo_name"
+                qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+          </customChildren>
         </children>
         <template/>
         <template
@@ -93,9 +96,14 @@
             y="20"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1"/>
+          accessor="getFigureAcceptEventActionFigure_name"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@customChildren.1/@typedFigure"/>
       <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0"/>
+          accessor="getFigureAcceptEventActionFigure_stereo"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@customChildren.0/@typedFigure"/>
+      <accessors
+          accessor="getNameAndStereotypeBlock"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="AcceptTimeEventActionFigure">
@@ -266,27 +274,30 @@
         <layout
             xsi:type="gmfgraph:CustomLayout"
             qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+        <insets
+            left="5"
+            right="17"/>
         <children
-            xsi:type="gmfgraph:Rectangle"
-            name="SendSignalActionFigure_NameContainer"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:FlowLayout"
-              vertical="true"
-              forceSingleLine="true"
-              minorAlignment="CENTER"
-              majorSpacing="0"
-              minorSpacing="0"/>
-          <insets
-              left="5"
-              right="17"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="SendSignalActionFigure_stereo"/>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="SendSignalActionFigure_name"/>
+            xsi:type="gmfgraph:CustomFigure"
+            name="SendSignalActionFigure_NameAndStereo"
+            qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
+          <attributes
+              name="nameTextWrap"
+              value="true"/>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="SendSignalActionFigure_NameAndStereo_stereo"
+                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2"/>
+          </customChildren>
+          <customChildren
+              accessor="getNameAndStereotypeBlock().getNameLabel">
+            <typedFigure
+                xsi:type="gmfgraph:CustomFigure"
+                name="SendSignalActionFigure_NameAndStereo_name"
+                qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+          </customChildren>
         </children>
         <template/>
         <template
@@ -301,9 +312,14 @@
             y="40"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.1"/>
+          accessor="getFigureSendSignalActionFigure_name"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@customChildren.1/@typedFigure"/>
       <accessors
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0"/>
+          accessor="getFigureSendSignalActionFigure_stereo"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@customChildren.0/@typedFigure"/>
+      <accessors
+          accessor="getNameAndStereotypeBlock"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <nodes

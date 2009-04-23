@@ -22,6 +22,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -31,13 +32,16 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -50,6 +54,8 @@ import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -2170,12 +2176,7 @@ public class StructuredActivityNode_AcceptEventActionEditPart extends ShapeNodeE
 		/**
 		 * @generated
 		 */
-		private Label fFigureAcceptEventActionFigure_name;
-
-		/**
-		 * @generated
-		 */
-		private Label fFigureAcceptEventActionFigure_stereo;
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -2193,6 +2194,8 @@ public class StructuredActivityNode_AcceptEventActionEditPart extends ShapeNodeE
 			this.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(20)));
 			this.setFill(true);
 			this.setLineWidth(1);
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20), getMapMode().DPtoLP(0), getMapMode().DPtoLP(2)));
 			createContents();
 		}
 
@@ -2201,33 +2204,11 @@ public class StructuredActivityNode_AcceptEventActionEditPart extends ShapeNodeE
 		 */
 		private void createContents() {
 
-			RectangleFigure acceptEventActionFigure_NameContainer0 = new RectangleFigure();
-			acceptEventActionFigure_NameContainer0.setFill(false);
-			acceptEventActionFigure_NameContainer0.setOutline(false);
-			acceptEventActionFigure_NameContainer0.setLineWidth(1);
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			acceptEventActionFigure_NameContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20), getMapMode().DPtoLP(0), getMapMode().DPtoLP(2)));
+			fNameAndStereotypeBlock.setNameTextWrap(true);
 
-			this.add(acceptEventActionFigure_NameContainer0);
-
-			ToolbarLayout layoutAcceptEventActionFigure_NameContainer0 = new ToolbarLayout();
-			layoutAcceptEventActionFigure_NameContainer0.setStretchMinorAxis(false);
-			layoutAcceptEventActionFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
-
-			layoutAcceptEventActionFigure_NameContainer0.setSpacing(0);
-			layoutAcceptEventActionFigure_NameContainer0.setVertical(true);
-
-			acceptEventActionFigure_NameContainer0.setLayoutManager(layoutAcceptEventActionFigure_NameContainer0);
-
-			fFigureAcceptEventActionFigure_stereo = new Label();
-			fFigureAcceptEventActionFigure_stereo.setText("");
-
-			acceptEventActionFigure_NameContainer0.add(fFigureAcceptEventActionFigure_stereo);
-
-			fFigureAcceptEventActionFigure_name = new Label();
-			fFigureAcceptEventActionFigure_name.setText("");
-
-			acceptEventActionFigure_NameContainer0.add(fFigureAcceptEventActionFigure_name);
+			this.add(fNameAndStereotypeBlock);
 
 		}
 
@@ -2312,15 +2293,22 @@ public class StructuredActivityNode_AcceptEventActionEditPart extends ShapeNodeE
 		/**
 		 * @generated
 		 */
-		public Label getFigureAcceptEventActionFigure_name() {
-			return fFigureAcceptEventActionFigure_name;
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureAcceptEventActionFigure_stereo() {
-			return fFigureAcceptEventActionFigure_stereo;
+		public WrappingLabel getFigureAcceptEventActionFigure_name() {
+			return getNameAndStereotypeBlock().getNameLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getFigureAcceptEventActionFigure_stereo() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 	}
@@ -2566,6 +2554,55 @@ public class StructuredActivityNode_AcceptEventActionEditPart extends ShapeNodeE
 		if (!isCanonicalDisabled()) {
 			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void performDirectEditRequest(final Request request) {
+		EditPart editPart = this;
+		if (request instanceof DirectEditRequest) {
+			Point p = new Point(((DirectEditRequest) request).getLocation());
+			getFigure().translateToRelative(p);
+			IFigure fig = getFigure().findFigureAt(p);
+			editPart = (EditPart) getViewer().getVisualPartMap().get(fig);
+		}
+		if (editPart == this) {
+			try {
+				editPart = (EditPart) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+
+					public void run() {
+						setResult(chooseLabelEditPartForDirectEditRequest(request));
+					}
+				});
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			if (editPart != null && editPart != this) {
+				editPart.performRequest(request);
+			}
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected EditPart chooseLabelEditPartForDirectEditRequest(Request request) {
+		if (request.getExtendedData().containsKey(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR)) {
+			Character initialChar = (Character) request.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+			// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+			// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+			// notation, also we don't include '<' and '>' into actual inplace text).
+			// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+			if (initialChar.charValue() == '<') {
+				EditPart result = getChildBySemanticHint(UMLVisualIDRegistry.getType(StructuredActivityNode_AcceptEventActionStereotypeEditPart.VISUAL_ID));
+				if (result != null) {
+					return result;
+				}
+			}
+		}
+		return getPrimaryChildEditPart();
 	}
 
 }

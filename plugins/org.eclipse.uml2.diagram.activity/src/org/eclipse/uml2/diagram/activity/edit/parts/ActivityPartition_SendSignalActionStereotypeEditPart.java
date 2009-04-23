@@ -48,10 +48,15 @@ import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.activity.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.activity.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.activity.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabelDirectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
+import org.eclipse.uml2.uml.Element;
 
 /**
  * @generated
@@ -120,6 +125,7 @@ public class ActivityPartition_SendSignalActionStereotypeEditPart extends Compar
 				return false;
 			}
 		});
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new StereotypeLabelDirectEditPolicy());
 	}
 
 	/**
@@ -169,7 +175,7 @@ public class ActivityPartition_SendSignalActionStereotypeEditPart extends Compar
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(StereotypeLabel2 figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -202,7 +208,19 @@ public class ActivityPartition_SendSignalActionStereotypeEditPart extends Compar
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		return null;
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		if (false == parserElement instanceof Element) {
+			return null;
+		}
+		Image withStereo = StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowStereotypeIcon(getDiagramPreferencesHint());
+		if (!shouldShow) {
+			return null;
+		}
+		return withStereo;
 	}
 
 	/**
@@ -339,7 +357,12 @@ public class ActivityPartition_SendSignalActionStereotypeEditPart extends Compar
 	 * @generated
 	 */
 	private void performDirectEdit(char initialCharacter) {
-		if (getManager() instanceof TextDirectEditManager) {
+		// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+		// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+		// notation, also we don't include '<' and '>' into actual inplace text).
+		// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+		if (initialCharacter != '<' && getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
 		} else {
 			performDirectEdit();
