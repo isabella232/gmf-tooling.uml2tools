@@ -15,6 +15,8 @@ import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.uml2.diagram.common.wholediagram.TestWholeDiagram;
 import org.eclipse.uml2.diagram.common.wholediagram.UMLInitDiagramFacade;
+import org.eclipse.uml2.diagram.common.wholediagram.DiagramCompareSession.ViewFilter;
+import org.eclipse.uml2.diagram.deploy.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditorPlugin;
@@ -52,12 +54,19 @@ public class TestWholeDeployDiagram extends TestWholeDiagram {
 	}
 
 	@Override
-	protected boolean ignoreView(int visualId) {
-		return super.ignoreView(visualId);
+	protected ViewFilter createViewFilter() {
+		return IGNORE_NOTES_LABELS_AND_HEADER;
 	}
 
 	private final static Bundle UML_TEST_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.deploy.tests");
 
 	private final static String EXAMPLE_FOLDER = "examples/";
+
+	private static final ByViewTypeFilter IGNORE_NOTES_LABELS_AND_HEADER = new ByViewTypeFilter(){
+		@Override
+		protected boolean ignoreVisualId(int visualId) {
+			return super.ignoreVisualId(visualId) || Package2EditPart.VISUAL_ID == visualId;
+		}
+	};
 
 }

@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.uml2.diagram.common.wholediagram.TestWholeDiagram;
 import org.eclipse.uml2.diagram.common.wholediagram.UMLInitDiagramFacade;
+import org.eclipse.uml2.diagram.common.wholediagram.DiagramCompareSession.ViewFilter;
 import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditor;
@@ -39,7 +40,7 @@ public class TestWholeComponentDiagram extends TestWholeDiagram {
 			@Override
 			public Diagram getDiagramView() throws ExecutionException, IOException, CoreException {
 				Diagram result = super.getDiagramView();
-//				diagram should be refresh when link to link exists. 
+				// diagram should be refresh when link to link exists.
 				UMLInitDiagramFacade.refreshDiagram(result);
 				return result;
 			}
@@ -53,12 +54,20 @@ public class TestWholeComponentDiagram extends TestWholeDiagram {
 	}
 
 	@Override
-	protected boolean ignoreView(int visualId) {
-		return super.ignoreView(visualId) || Package2EditPart.VISUAL_ID == visualId;
+	protected ViewFilter createViewFilter() {
+		return IGNORE_NOTES_LABELS_AND_HEADER;
 	}
 
 	private final static Bundle UML_TEST_BUNDLE = Platform.getBundle("org.eclipse.uml2.diagram.component.tests");
 
 	private final static String EXAMPLE_FOLDER = "examples/";
+
+	private static final ByViewTypeFilter IGNORE_NOTES_LABELS_AND_HEADER = new ByViewTypeFilter() {
+
+		@Override
+		protected boolean ignoreVisualId(int visualId) {
+			return super.ignoreVisualId(visualId) || Package2EditPart.VISUAL_ID == visualId;
+		}
+	};
 
 }
