@@ -60,11 +60,18 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
+	 * #174315 Automatically set diagram file extension
+	 * temporary workaround for #257954 Automatically set diagram/domain file extension
 	 */
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		setFileName(UMLDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
+		String fileName = UMLDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension());
+		if (fileName.endsWith("." + getExtension())) {
+			fileName = fileName.substring(0, fileName.length() - getExtension().length() - 1);
+		}
+		setFileName(fileName);
+		setFileExtension(getExtension());
 		setPageComplete(validatePage());
 	}
 
