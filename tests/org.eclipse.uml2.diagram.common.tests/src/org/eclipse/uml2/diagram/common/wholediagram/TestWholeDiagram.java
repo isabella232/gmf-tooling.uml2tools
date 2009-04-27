@@ -164,9 +164,6 @@ public abstract class TestWholeDiagram extends TestCase {
 		return new ByViewTypeFilter();
 	}
 	
-	protected void ignoreView(int visualId) {
-	}
-	
 	protected static class ByViewTypeFilter implements DiagramCompareSession.ViewFilter {
 		private final Set<String> myTextTypesToIgnore = new HashSet<String>();
 		
