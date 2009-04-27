@@ -21,7 +21,11 @@ public class NodeToolEntry extends ToolEntry {
 
 	@Override
 	public Tool createTool() {
-		Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
+		Tool tool = super.createTool();
+		if (tool != null) {
+			return tool;
+		}
+		tool = new UnspecifiedTypeCreationTool(elementTypes);
 		tool.setProperties(getToolProperties());
 		return tool;
 	}
