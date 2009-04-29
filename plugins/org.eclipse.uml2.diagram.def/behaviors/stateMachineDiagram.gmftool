@@ -168,6 +168,16 @@
             path="icons\full\obj16\Pseudostate_exitPoint.gif"
             bundle="org.eclipse.uml2.uml.edit"/>
       </tools>
+      <tools
+          xsi:type="gmftool:GenericTool"
+          title="Entry Connection Point Reference"
+          description="Create Entry Connection Point Reference"
+          toolClass="org.eclipse.uml2.diagram.statemachine.part.CreateEntryConnectionPointReferenceTool"/>
+      <tools
+          xsi:type="gmftool:GenericTool"
+          title="Exit Connection Point Reference"
+          description="Create Exit Connection Point Reference"
+          toolClass="org.eclipse.uml2.diagram.statemachine.part.CreateExitConnectionPointReferenceTool"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"

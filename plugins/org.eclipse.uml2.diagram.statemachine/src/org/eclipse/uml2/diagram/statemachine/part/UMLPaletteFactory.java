@@ -46,6 +46,8 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createTerminate12CreationTool());
 		paletteContainer.add(createEntryPoint13CreationTool());
 		paletteContainer.add(createExitPoint14CreationTool());
+		paletteContainer.add(createEntryConnectionPointReference15CreationTool());
+		paletteContainer.add(createExitConnectionPointReference16CreationTool());
 		return paletteContainer;
 	}
 
@@ -209,8 +211,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createEntryPoint13CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
-		types.add(UMLElementTypes.ConnectionPointReference_3017);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Pseudostate_3014);
 		NodeToolEntry entry = new NodeToolEntry(Messages.EntryPoint13CreationTool_title, Messages.EntryPoint13CreationTool_desc, types);
 		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif")); //$NON-NLS-1$
@@ -222,12 +223,37 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createExitPoint14CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
-		types.add(UMLElementTypes.ConnectionPointReference_3018);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Pseudostate_3015);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ExitPoint14CreationTool_title, Messages.ExitPoint14CreationTool_desc, types);
 		entry.setSmallIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(UMLDiagramEditorPlugin.findImageDescriptor("/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif")); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createEntryConnectionPointReference15CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ConnectionPointReference_3017);
+		NodeToolEntry entry = new NodeToolEntry(Messages.EntryConnectionPointReference15CreationTool_title, Messages.EntryConnectionPointReference15CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ConnectionPointReference_3017));
+		entry.setLargeIcon(entry.getSmallIcon());
+		entry.setToolClass(CreateEntryConnectionPointReferenceTool.class);
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createExitConnectionPointReference16CreationTool() {
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		types.add(UMLElementTypes.ConnectionPointReference_3018);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ExitConnectionPointReference16CreationTool_title, Messages.ExitConnectionPointReference16CreationTool_desc, types);
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ConnectionPointReference_3018));
+		entry.setLargeIcon(entry.getSmallIcon());
+		entry.setToolClass(CreateExitConnectionPointReferenceTool.class);
 		return entry;
 	}
 

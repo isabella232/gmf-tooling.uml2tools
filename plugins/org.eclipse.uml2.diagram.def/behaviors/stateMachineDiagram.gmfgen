@@ -1586,14 +1586,26 @@
             description="Create Entry Point Pseudostate"
             largeIconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif"
             smallIconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_entryPoint.gif"
-            genNodes="//@diagram/@childNodes.8 //@diagram/@childNodes.20"/>
+            genNodes="//@diagram/@childNodes.20"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Exit Point"
             description="Create Exit Point Pseudostate"
             largeIconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif"
             smallIconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_exitPoint.gif"
-            genNodes="//@diagram/@childNodes.9 //@diagram/@childNodes.21"/>
+            genNodes="//@diagram/@childNodes.21"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Entry Connection Point Reference"
+            description="Create Entry Connection Point Reference"
+            qualifiedToolName="org.eclipse.uml2.diagram.statemachine.part.CreateEntryConnectionPointReferenceTool"
+            genNodes="//@diagram/@childNodes.8"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Exit Connection Point Reference"
+            description="Create Exit Connection Point Reference"
+            qualifiedToolName="org.eclipse.uml2.diagram.statemachine.part.CreateExitConnectionPointReferenceTool"
+            genNodes="//@diagram/@childNodes.9"/>
       </groups>
       <groups
           title="Links">
@@ -2298,11 +2310,11 @@
         uses="//@diagram/@childNodes.2/@labelModelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet"
+        uses="//@diagram/@childNodes.1/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.10/@labelModelFacet //@diagram/@links.0/@labels.0/@modelFacet"
+        uses="//@diagram/@links.0/@labels.0/@modelFacet //@diagram/@childNodes.10/@labelModelFacet"
         qualifiedName="org.eclipse.uml2.diagram.statemachine.parser.TransitionParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"

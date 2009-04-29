@@ -13,11 +13,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.uml2.diagram.statemachine.edit.helpers.StateEditHelper.StateMachineWrapper;
 import org.eclipse.uml2.diagram.statemachine.part.SelectConnectionPointsDialog;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.ConnectionPointReference;
 import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.PseudostateKind;
+import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -32,24 +34,19 @@ public class ConnectionPointReferenceEditHelper extends UMLBaseEditHelper {
 	 */
 	@Override
 	protected ICommand getConfigureCommand(ConfigureRequest req) {
-		ConnectionPointReference pointReference = (ConnectionPointReference) req.getElementToConfigure();
-		PseudostateKind kind = UMLElementTypes.ConnectionPointReference_3017.equals(req.getTypeToConfigure()) ? PseudostateKind.ENTRY_POINT_LITERAL : PseudostateKind.EXIT_POINT_LITERAL;
-		SelectConnectionPointsDialog selectDialog = new SelectConnectionPointsDialog(Display.getCurrent().getActiveShell(), pointReference.getState().getSubmachine(), kind);
-		if (selectDialog.open() == Window.OK) {
-			Collection<Pseudostate> selectedConnectionReferences = selectDialog.getSelectedConnectionPoints();
-			if (!selectedConnectionReferences.isEmpty()) {
-				List<Pseudostate> connectionPoints = selectDialog.getSelectedConnectionPoints();
-				if (!connectionPoints.isEmpty()) {
-					CompositeCommand composite = new CompositeCommand(req.getLabel());
-					boolean isEntry = connectionPoints.get(0).getKind() == PseudostateKind.ENTRY_POINT_LITERAL;
-					EStructuralFeature feature = isEntry ? UMLPackage.eINSTANCE.getConnectionPointReference_Entry() : UMLPackage.eINSTANCE.getConnectionPointReference_Exit();
-					for (Iterator<Pseudostate> iterator = connectionPoints.iterator(); iterator.hasNext();) {
-						Pseudostate connectionPoint = iterator.next();
-						SetRequest request = new SetRequest(pointReference, feature, connectionPoint);
-						composite.add(new SetValueCommand(request));
-					}
-					return composite;
+		if (req.getElementToConfigure() instanceof ConnectionPointReference && req.getParameter(PARAMETER_CONFIGURE_CONNECTION_POINT_REFERENCE) instanceof List) {
+			ConnectionPointReference pointReference = (ConnectionPointReference) req.getElementToConfigure();
+			List<Pseudostate> connectionPoints = (List<Pseudostate>) req.getParameter(PARAMETER_CONFIGURE_CONNECTION_POINT_REFERENCE);
+			if (!connectionPoints.isEmpty()) {
+				CompositeCommand composite = new CompositeCommand(req.getLabel());
+				boolean isEntry = connectionPoints.get(0).getKind() == PseudostateKind.ENTRY_POINT_LITERAL;
+				EStructuralFeature feature = isEntry ? UMLPackage.eINSTANCE.getConnectionPointReference_Entry() : UMLPackage.eINSTANCE.getConnectionPointReference_Exit();
+				for (Iterator<Pseudostate> iterator = connectionPoints.iterator(); iterator.hasNext();) {
+					Pseudostate connectionPoint = iterator.next();
+					SetRequest request = new SetRequest(pointReference, feature, connectionPoint);
+					composite.add(new SetValueCommand(request));
 				}
+				return composite;
 			}
 		}
 

@@ -368,8 +368,8 @@
                         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
-                      xsi:type="gmftool:CreationTool"
-                      href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.12"/>
+                      xsi:type="gmftool:GenericTool"
+                      href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.14"/>
                   <diagramNode
                       href="stateMachineDiagram.gmfgraph#EntryPointConnectionPointReferenceNode"/>
                 </ownedChild>
@@ -401,8 +401,8 @@
                         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <tool
-                      xsi:type="gmftool:CreationTool"
-                      href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.13"/>
+                      xsi:type="gmftool:GenericTool"
+                      href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.15"/>
                   <diagramNode
                       href="stateMachineDiagram.gmfgraph#ExitPointConnectionPointReferenceNode"/>
                 </ownedChild>

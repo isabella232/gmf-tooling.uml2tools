@@ -394,6 +394,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String EntryConnectionPointReference15CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String EntryConnectionPointReference15CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ExitConnectionPointReference16CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ExitConnectionPointReference16CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Transition1CreationTool_title;
 
 	/**
