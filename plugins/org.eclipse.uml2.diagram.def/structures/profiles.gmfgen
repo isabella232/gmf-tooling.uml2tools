@@ -1017,7 +1017,6 @@
         canonicalEditPolicyClassName="ProfileProfileLabelsCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.5"
         title="profile_imports"
-        needsTitle="false"
         node="//@diagram/@topLevelNodes.4">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
