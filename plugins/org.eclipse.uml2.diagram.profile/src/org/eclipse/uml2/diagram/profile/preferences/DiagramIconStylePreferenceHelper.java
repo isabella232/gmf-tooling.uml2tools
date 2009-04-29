@@ -24,8 +24,17 @@ public class DiagramIconStylePreferenceHelper {
 	/**
 	 * @generated
 	 */
-	public static boolean shouldShowIcon(int visualId, boolean hasStereotype, PreferencesHint hint) {
-		return shouldShowIcon(visualId, hint);
+	public static boolean shouldShowStereotypeIcon(PreferencesHint hint) {
+		IPreferenceStore store = (IPreferenceStore) hint.getPreferenceStore();
+		return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_STEREOTYPE_ICON_MODE);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean shouldShowMetaclassIcon(int visualId, PreferencesHint hint) {
+		boolean preferencesValue = getPreferencesValueFor(visualId, hint);
+		return preferencesValue;
 	}
 
 	public static boolean shouldShowIcon(int visualId, PreferencesHint hint) {
