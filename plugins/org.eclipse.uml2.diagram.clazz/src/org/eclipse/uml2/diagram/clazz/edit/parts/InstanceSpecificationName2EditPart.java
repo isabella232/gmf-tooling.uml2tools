@@ -211,7 +211,7 @@ public class InstanceSpecificationName2EditPart extends CompartmentEditPart impl
 		if (parserElement == null) {
 			return null;
 		}
-		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowIcon(VISUAL_ID, getDiagramPreferencesHint());
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
 		if (!shouldShow) {
 			return null;
 		}
