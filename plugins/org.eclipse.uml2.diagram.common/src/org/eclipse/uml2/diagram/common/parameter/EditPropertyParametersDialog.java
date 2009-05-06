@@ -16,7 +16,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TrayDialog;
 import org.eclipse.jface.viewers.CellEditor;
