@@ -1,5 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.part;
 
+import java.io.IOException;
+import java.util.Collection;
 import java.util.Collections;
 
 import org.eclipse.core.resources.IContainer;
@@ -7,17 +9,25 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IWrapperItemProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IMenuListener;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -26,6 +36,7 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
@@ -34,9 +45,13 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
 
@@ -66,16 +81,31 @@ public class SelectStateMachineDialog extends Dialog {
 	}
 
 	private void createViewer(Composite parent) {
-		TreeViewer viewer = new TreeViewer(parent, SWT.SINGLE | SWT.V_SCROLL | SWT.BORDER);
+		treeViewer = new TreeViewer(parent, SWT.SINGLE | SWT.V_SCROLL | SWT.BORDER);
 		GridData layoutData = new GridData(GridData.FILL_BOTH);
 		layoutData.heightHint = 300;
 		layoutData.widthHint = 300;
-		viewer.getTree().setLayoutData(layoutData);
-		viewer.setContentProvider(new ModelElementsTreeContentProvider());
-		viewer.setLabelProvider(new ModelElementsTreeLabelProvider());
-		viewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
-		viewer.addFilter(new ModelFilesFilter());
-		viewer.addSelectionChangedListener(new OkButtonEnabler());
+		treeViewer.getTree().setLayoutData(layoutData);
+		treeViewer.setContentProvider(new ModelElementsTreeContentProvider());
+		treeViewer.setLabelProvider(new ModelElementsTreeLabelProvider());
+		treeViewer.setInput(ResourcesPlugin.getWorkspace().getRoot());
+		treeViewer.addFilter(new ModelFilesFilter());
+		treeViewer.addSelectionChangedListener(new OkButtonEnabler());
+
+		Tree tree = treeViewer.getTree();
+		MenuManager menuManager = new MenuManager();
+        Menu menu = menuManager.createContextMenu(tree);
+        menuManager.addMenuListener(new IMenuListener(){
+			public void menuAboutToShow(IMenuManager manager) {
+                NewStateMachineAction newStateMachineAction = new NewStateMachineAction();
+                if (!(mySelectedModelElement instanceof Package)) {
+                	newStateMachineAction.setEnabled(false);
+                }
+				manager.add(newStateMachineAction);
+			}
+		});
+		menuManager.setRemoveAllWhenShown(true);
+        tree.setMenu(menu);
 	}
 
 	private void setOkButtonEnabled(boolean enabled) {
@@ -88,6 +118,35 @@ public class SelectStateMachineDialog extends Dialog {
 	}
 	
 	private EObject mySelectedModelElement;
+	private EditingDomain myEditingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
+	private TreeViewer treeViewer;
+	
+	private class NewStateMachineAction extends Action {
+		public NewStateMachineAction() {
+			super(CustomMessages.SelectStateMachineDialog_CreateStateMachineAction_Title);
+		}
+		
+		@Override
+		public void run() {
+			Command addCommand = AddCommand.create(myEditingDomain, mySelectedModelElement, UMLPackage.Literals.PACKAGE__PACKAGED_ELEMENT, UMLFactory.eINSTANCE.createStateMachine(), CommandParameter.NO_INDEX);
+			myEditingDomain.getCommandStack().execute(addCommand);
+			Collection<?> result = addCommand.getResult();
+			if (result.isEmpty()) {
+				return;
+			}
+			Object createdElement = result.iterator().next();
+			Command setCommand = SetCommand.create(myEditingDomain, createdElement, UMLPackage.Literals.NAMED_ELEMENT__NAME, CustomMessages.SelectStateMachineDialog_CreateStateMachineAction_DefaultName);
+			myEditingDomain.getCommandStack().execute(setCommand);
+			
+			treeViewer.setSelection(new StructuredSelection(createdElement), true);
+			try {
+				mySelectedModelElement.eResource().save(null);
+			} catch (IOException ioe) {
+				UMLDiagramEditorPlugin.getInstance().logError("Unable to save modified model: " + mySelectedModelElement.eResource().getURI().toString(), ioe); //$NON-NLS-1$
+				ioe.printStackTrace();
+			}
+		};
+	}
 
 	private class OkButtonEnabler implements ISelectionChangedListener {
 		public void selectionChanged(SelectionChangedEvent event) {
@@ -173,7 +232,6 @@ public class SelectStateMachineDialog extends Dialog {
 			myAdapterFctoryContentProvier.inputChanged(viewer, oldInput, newInput);
 		}
 
-		private EditingDomain myEditingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		private ITreeContentProvider myWorkbenchContentProvider = new WorkbenchContentProvider();
 		private AdapterFactoryContentProvider myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 	}

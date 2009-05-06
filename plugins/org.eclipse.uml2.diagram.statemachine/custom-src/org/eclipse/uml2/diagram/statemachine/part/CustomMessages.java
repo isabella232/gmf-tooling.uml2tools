@@ -5,6 +5,9 @@ import org.eclipse.osgi.util.NLS;
 
 public class CustomMessages extends NLS {
 	public static String SelectStateMachineDialog_Title;
+	public static String SelectStateMachineDialog_CreateStateMachineAction_Title;
+	public static String SelectStateMachineDialog_CreateStateMachineAction_DefaultName;
+
 	public static String SelectConnectionPointsDialog_Title;
 	public static String SelectConnectionPointsDialog_LabelProvider_EntryPointPrefix;
 	public static String SelectConnectionPointsDialog_LabelProvider_ExitPointPrefix;
