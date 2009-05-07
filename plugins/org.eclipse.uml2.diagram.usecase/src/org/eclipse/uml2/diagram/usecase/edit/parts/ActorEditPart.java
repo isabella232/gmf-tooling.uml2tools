@@ -170,7 +170,7 @@ public class ActorEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(30), getMapMode().DPtoLP(50));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(30, 50);
 		return result;
 	}
 
@@ -243,7 +243,7 @@ public class ActorEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 
