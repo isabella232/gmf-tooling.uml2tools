@@ -152,7 +152,7 @@ public class InterfaceEditPart extends AbstractBorderedShapeEditPart implements 
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(15, 15);
 		return result;
 	}
 
@@ -226,7 +226,7 @@ public class InterfaceEditPart extends AbstractBorderedShapeEditPart implements 
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

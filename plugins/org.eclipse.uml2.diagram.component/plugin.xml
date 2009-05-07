@@ -265,6 +265,7 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.component.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart" id="Package_1000"/>
          <object class="org.eclipse.uml2.diagram.component.edit.parts.ComponentEditPart" id="Component_2001"/>
          <object class="org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart" id="Artifact_2002"/>
          <object class="org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart" id="Interface_2003"/>
@@ -273,7 +274,7 @@
          <object class="org.eclipse.uml2.diagram.component.edit.parts.Package3EditPart" id="Package_2006"/>
          <object class="org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart" id="Class_2007"/>
          <object class="org.eclipse.uml2.diagram.component.edit.parts.CommentEditPart" id="Comment_2008"/>
-         <context elements="Component_2001,Artifact_2002,Interface_2003,Class_2004,Package_2005,Package_2006,Class_2007,Comment_2008"/>
+         <context elements="Package_1000,Component_2001,Artifact_2002,Interface_2003,Class_2004,Package_2005,Package_2006,Class_2007,Comment_2008"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -1276,8 +1277,7 @@
       </Priority>
          <editor id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"/>
    </paletteProvider>
-</extension>
-	<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action-xmi">
+</extension>	<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action-xmi">
 		<?gmfgen generated="true"?>
 		<objectContribution
             id="org.eclipse.uml2.diagram.component.InitDiagram.xmi"

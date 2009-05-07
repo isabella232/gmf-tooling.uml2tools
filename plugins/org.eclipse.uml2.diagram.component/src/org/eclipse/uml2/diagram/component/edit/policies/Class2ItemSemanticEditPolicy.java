@@ -5,12 +5,18 @@ import java.util.Iterator;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
+import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
+import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
+import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.component.edit.commands.AssociationCreateCommand;
@@ -22,11 +28,15 @@ import org.eclipse.uml2.diagram.component.edit.commands.DependencyReorientComman
 import org.eclipse.uml2.diagram.component.edit.commands.InterfaceRealizationCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.InterfaceRealizationReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.PortCreateCommand;
+import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -57,31 +67,130 @@ public class Class2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	 * @generated
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		CompoundCommand cc = getDestroyEdgesCommand();
-		addDestroyChildNodesCommand(cc);
-		addDestroyShortcutsCommand(cc);
 		View view = (View) getHost().getModel();
-		if (view.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
-			req.setElementToDestroy(view);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
+		cmd.setTransactionNestingEnabled(false);
+		for (Iterator it = view.getTargetEdges().iterator(); it.hasNext();) {
+			Edge incomingLink = (Edge) it.next();
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == DependencyEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == AssociationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 		}
-		cc.add(getGEFWrapper(new DestroyElementCommand(req)));
-		return cc.unwrap();
+		for (Iterator it = view.getSourceEdges().iterator(); it.hasNext();) {
+			Edge outgoingLink = (Edge) it.next();
+			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == InterfaceRealizationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == DependencyEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == AssociationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+		}
+		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
+		if (annotation == null) {
+			// there are indirectly referenced children, need extra commands: false
+			addDestroyChildNodesCommand(cmd);
+			addDestroyShortcutsCommand(cmd, view);
+			// delete host element
+			cmd.add(new DestroyElementCommand(req));
+		} else {
+			cmd.add(new DeleteCommand(getEditingDomain(), view));
+		}
+		return getGEFWrapper(cmd.reduce());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected void addDestroyChildNodesCommand(CompoundCommand cmd) {
+	private void addDestroyChildNodesCommand(ICompositeCommand cmd) {
 		View view = (View) getHost().getModel();
-		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
-		if (annotation != null) {
-			return;
-		}
-		for (Iterator it = view.getChildren().iterator(); it.hasNext();) {
-			Node node = (Node) it.next();
+		for (Iterator nit = view.getChildren().iterator(); nit.hasNext();) {
+			Node node = (Node) nit.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
 			case PortEditPart.VISUAL_ID:
-				cmd.add(getDestroyElementCommand(node));
+				for (Iterator it = node.getTargetEdges().iterator(); it.hasNext();) {
+					Edge incomingLink = (Edge) it.next();
+					if (UMLVisualIDRegistry.getVisualID(incomingLink) == ConnectorEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+						continue;
+					}
+					if (UMLVisualIDRegistry.getVisualID(incomingLink) == DependencyEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+						continue;
+					}
+					if (UMLVisualIDRegistry.getVisualID(incomingLink) == AssemblyConnectorEndRoleEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+						continue;
+					}
+					if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+						continue;
+					}
+				}
+				for (Iterator it = node.getSourceEdges().iterator(); it.hasNext();) {
+					Edge outgoingLink = (Edge) it.next();
+					if (UMLVisualIDRegistry.getVisualID(outgoingLink) == PortProvidedEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+						continue;
+					}
+					if (UMLVisualIDRegistry.getVisualID(outgoingLink) == PortRequiredEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null, outgoingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+						continue;
+					}
+					if (UMLVisualIDRegistry.getVisualID(outgoingLink) == ConnectorEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+						continue;
+					}
+					if (UMLVisualIDRegistry.getVisualID(outgoingLink) == DependencyEditPart.VISUAL_ID) {
+						DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+						continue;
+					}
+				}
+				cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), node.getElement(), false))); // directlyOwned: true
+				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
+				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
 				break;
 			}
 		}
