@@ -662,6 +662,7 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart" id="Package_1000"/>
          <object class="org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart" id="Package_2002"/>
          <object class="org.eclipse.uml2.diagram.clazz.edit.parts.Class2EditPart" id="Class_2001"/>
          <object class="org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart" id="AssociationClass_2007"/>
@@ -679,7 +680,7 @@
          <object class="org.eclipse.uml2.diagram.clazz.edit.parts.PackageAsFrameEditPart" id="Package_2016"/>
          <object class="org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification4EditPart" id="InstanceSpecification_2017"/>
          <object class="org.eclipse.uml2.diagram.clazz.edit.parts.CommentEditPart" id="Comment_2018"/>
-         <context elements="Package_2002,Class_2001,AssociationClass_2007,DataType_2004,PrimitiveType_2005,Enumeration_2003,Interface_2010,Constraint_2006,InstanceSpecification_2008,Dependency_2009,GeneralizationSet_2012,Interface_2013,Package_2014,AssociationClass_2015,Package_2016,InstanceSpecification_2017,Comment_2018"/>
+         <context elements="Package_1000,Package_2002,Class_2001,AssociationClass_2007,DataType_2004,PrimitiveType_2005,Enumeration_2003,Interface_2010,Constraint_2006,InstanceSpecification_2008,Dependency_2009,GeneralizationSet_2012,Interface_2013,Package_2014,AssociationClass_2015,Package_2016,InstanceSpecification_2017,Comment_2018"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -2810,7 +2811,6 @@
          <editor id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"/>
    </paletteProvider>
 </extension>
-
 	<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action-xmi">
 		<?gmfgen generated="true"?>
 		<objectContribution

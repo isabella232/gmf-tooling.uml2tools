@@ -149,7 +149,7 @@ public class AssociationClassRhombEditPart extends ShapeNodeEditPart implements 
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(10, 10);
 		return result;
 	}
 
@@ -223,7 +223,7 @@ public class AssociationClassRhombEditPart extends ShapeNodeEditPart implements 
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

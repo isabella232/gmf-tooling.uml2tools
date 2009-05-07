@@ -166,7 +166,7 @@ public class GeneralizationSetEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(50), getMapMode().DPtoLP(4));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(50, 4);
 		return result;
 	}
 
@@ -240,7 +240,7 @@ public class GeneralizationSetEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

@@ -282,7 +282,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(60));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(100, 60);
 		return result;
 	}
 
@@ -321,7 +321,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
-			layout.setSpacing(getMapMode().DPtoLP(5));
+			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
 		}
 		return nodeShape; // use nodeShape itself as contentPane
@@ -360,7 +360,7 @@ public class AssociationClass2EditPart extends AbstractBorderedShapeEditPart imp
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 
