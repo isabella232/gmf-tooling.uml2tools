@@ -10,7 +10,7 @@
  *    Michael Golubev - update description editpolicy for shortcuts 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «EXTENSION xpt::diagram::updater::Utils»
 
 «DEFINE installUpdateDescriptionEditPolicy FOR gmfgen::GenCommonBase-»

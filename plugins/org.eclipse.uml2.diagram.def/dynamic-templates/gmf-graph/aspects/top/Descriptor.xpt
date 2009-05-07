@@ -10,23 +10,22 @@
  *    Michael Golubev (Borland) - temporary fix for compilation errors in DeploymentD
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2006/GraphicalDefinition'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'templates'»
-«EXTENSION Util»
+Â«IMPORT 'http://www.eclipse.org/gmf/2006/GraphicalDefinition'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
+Â«EXTENSION UtilÂ»
 
-«REM»The only difference is added ()«ENDREM»
-«AROUND accessorToCustom(fa : Sequence(gmfgraph::FigureAccessor)) FOR gmfgraph::ChildAccess-»
+Â«REMÂ»The only difference is added ()Â«ENDREMÂ»
+Â«AROUND accessorToCustom(fa : Sequence(gmfgraph::FigureAccessor)) FOR gmfgraph::ChildAccess-Â»
 	/**
 	 * @generated
 	 */
-	public «EXPAND Runtime::fqn FOR figure» «accessor»() {
-		«LET fa.accessor->first() AS faAccessor-»
-		«IF faAccessor = accessor-»
-			return super.«faAccessor»();
-		«ELSE-»
-			return «faAccessor»();		
-		«ENDIF-»
-		«ENDLET-»
+	public Â«EXPAND Runtime::fqn FOR figureÂ» Â«accessorÂ»() {
+		Â«LET fa.accessor->first() AS faAccessor-Â»
+		Â«IF faAccessor = accessor-Â»
+			return super.Â«faAccessorÂ»();
+		Â«ELSE-Â»
+			return Â«faAccessorÂ»();		
+		Â«ENDIF-Â»
+		Â«ENDLET-Â»
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»

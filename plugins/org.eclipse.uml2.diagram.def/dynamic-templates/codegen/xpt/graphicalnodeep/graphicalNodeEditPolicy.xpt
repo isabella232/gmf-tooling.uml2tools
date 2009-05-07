@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - U2T specific graphical node editpolicy 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
 «EXTENSION xpt::graphicalnodeep::Guard»
 

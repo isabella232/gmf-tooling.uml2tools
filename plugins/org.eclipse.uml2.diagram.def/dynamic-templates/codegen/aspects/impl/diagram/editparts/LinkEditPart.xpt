@@ -10,7 +10,7 @@
  *    Michael Golubev - U2T specific graphical node edit policy 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
 «AROUND createDefaultEditPoliciesBody FOR gmfgen::GenLink-»
 	super.createDefaultEditPolicies();

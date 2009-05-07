@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2007 Borland Software Corporation
+﻿/*
+ * Copyright (c) 2007, 2009 Borland Software Corporation
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -7,189 +7,293 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Tatiana Fesenko (Borland) - initial API and implementation
- *    Michael Golubev (Borland) - GMF 2.0 migration
+ *    Artem Tikhomirov (Borland) - [257119] Create views directly, not through ViewFactories
+ *    Michael Golubev (Borland) - [210678] - Allow multi-view representation for single domain element	
+ *    Michael Golubev (Borland) - GMF 2.2 migration 	
  */
 
-�IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'�
-�IMPORT 'http://www.eclipse.org/emf/2002/Ecore'�
-�IMPORT 'http://www.eclipse.org/emf/2002/GenModel'�
-�IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'�
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
-�EXTENSION xpt::diagram::Utils�
-�EXTENSION xpt::GenModelUtils�
+«EXTENSION xpt::diagram::Utils»
+«EXTENSION xpt::diagram::ViewmapAttributesUtils»
+«EXTENSION xpt::diagram::editpolicies::LinkUtils»
 
-�DEFINE caseSubstitutableByVisualID(nextSubstitutableChild : gmfgen::GenCommonBase) FOR gmfgen::GenCommonBase-�
-�EXPAND xpt::Common::caseVisualID� {
-�EXPAND caseSubstitutableDomainElementIsNull�
-int suggestedID = �EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall FOR getDiagram()�(containerView, domainElement);
+«DEFINE caseSubstitutableByVisualID(nextSubstitutableChild : gmfgen::GenCommonBase) FOR gmfgen::GenCommonBase-»
+«EXPAND xpt::Common::caseVisualID» {
+«EXPAND caseSubstitutableDomainElementIsNull»
+int suggestedID = «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall FOR getDiagram()»(op.getContainerView(), domainElement);
 if (visualID != suggestedID &&
-	�LET (nextSubstitutableChild.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first().oclAsType(u2tgen::SubstitutableByAttributes) AS group-�
-		�FOREACH group.getSubstitutableByNodes()->asSequence() AS nextSubstitution-�
-		�EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextSubstitution� != suggestedID &&
-		�ENDFOREACH-�		
+	«LET (nextSubstitutableChild.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first().oclAsType(u2tgen::SubstitutableByAttributes) AS group-»
+		«FOREACH group.getSubstitutableByNodes()->asSequence() AS nextSubstitution-»
+		«EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextSubstitution» != suggestedID &&
+		«ENDFOREACH-»		
 	true) {
-			return null;
+			return false;
 		}
 	break;
 	}
-	�ENDLET-�
-�ENDDEFINE�
+	«ENDLET-»
+«ENDDEFINE»
 
-�DEFINE caseSubstitutableDomainElementIsNull FOR gmfgen::GenCommonBase-�
-�ENDDEFINE�
+«DEFINE caseSubstitutableDomainElementIsNull FOR gmfgen::GenCommonBase-»
+«ENDDEFINE»
 
-�DEFINE caseSubstitutableDomainElementIsNull FOR gmfgen::GenNode-�
+«DEFINE caseSubstitutableDomainElementIsNull FOR gmfgen::GenNode-»
 if (domainElement == null){
-	return null;
+	return false;
 }
-�ENDDEFINE�
+«ENDDEFINE»
 
-�AROUND getNodeViewClass FOR gmfgen::GenDiagram-�
-�LET (getElements(self))[gmfgen::GenNode]->select(n | null <> (n.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first()) AS substitutableChildren-�
-�EXPAND xpt::Common::generatedMemberComment�
-protected Class getNodeViewClass(org.eclipse.core.runtime.IAdaptable semanticAdapter,
-		org.eclipse.gmf.runtime.notation.View containerView, String semanticHint) {
-	if (containerView == null) {
-		return null;
-	}
-	org.eclipse.gmf.runtime.emf.type.core.IElementType elementType = getSemanticElementType(semanticAdapter);
-	org.eclipse.emf.ecore.EObject domainElement = getSemanticElement(semanticAdapter);
-	int visualID;
-	if (semanticHint == null) {
-		// Semantic hint is not specified. Can be a result of call from CanonicalEditPolicy.
-		// In this situation there should be NO elementType, visualID will be determined
-		// by VisualIDRegistry.getNodeVisualID() for domainElement.
-		if (elementType != null || domainElement == null) {
-			return null;
+«AROUND ViewProvider FOR gmfgen::GenDiagram-»
+«EXPAND xpt::Common::copyright FOR getDiagram().editorGen-»
+package «providersPackageName»;
+
+«EXPAND xpt::Common::generatedClassComment»
+public class «notationViewProviderClassName»«EXPAND xpt::providers::ViewProvider::extendsList»«EXPAND xpt::providers::ViewProvider::implementsList» {
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public final boolean provides(org.eclipse.gmf.runtime.common.core.service.IOperation operation) {
+		if (operation instanceof org.eclipse.gmf.runtime.diagram.core.services.view.CreateViewForKindOperation) {
+			return provides((org.eclipse.gmf.runtime.diagram.core.services.view.CreateViewForKindOperation) operation);
 		}
-		visualID = �EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall�(containerView, domainElement);
-	} else {
-		visualID = �EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall�(semanticHint);
-		if (elementType != null) {
-			// Semantic hint is specified together with element type.
-			// Both parameters should describe exactly the same diagram element.
-			// In addition we check that visualID returned by VisualIDRegistry.getNodeVisualID() for
-			// domainElement (if specified) is the same as in element type.
-			if (!�getElementTypesQualifiedClassName()�.isKnownElementType(elementType)
-					|| (!(elementType instanceof org.eclipse.gmf.runtime.emf.type.core.IHintedType))) {
-				return null; // foreign element type
+		«EXPAND xpt::Common::_assert('operation instanceof org.eclipse.gmf.runtime.diagram.core.services.view.CreateViewOperation')-»
+		if (operation instanceof org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation) {
+			return provides((org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation) operation);
+		} else if (operation instanceof org.eclipse.gmf.runtime.diagram.core.services.view.CreateEdgeViewOperation) {
+			return provides((org.eclipse.gmf.runtime.diagram.core.services.view.CreateEdgeViewOperation) operation);
+		} else if (operation instanceof org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation) {
+			return provides((org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation) operation);
+		}
+		return false;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected boolean provides(org.eclipse.gmf.runtime.diagram.core.services.view.CreateViewForKindOperation op) {
+/*
+		if (op.getViewKind() == Node.class)
+			return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		if (op.getViewKind() == Edge.class)
+			return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+*/
+		return true;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»«REM»When diagram domain element is null only diagram kind is checked«ENDREM»
+	protected boolean provides(org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation op) {
+		return «EXPAND xpt::editor::VisualIDRegistry::modelID».equals(op.getSemanticHint())«IF domainDiagramElement <> null» && «EXPAND xpt::editor::VisualIDRegistry::getDiagramVisualIDMethodCall»(getSemanticElement(op.getSemanticAdapter())) != -1«ENDIF»;
+	}
+
+	«LET getAllNodes()->asSequence()->select(n | null <> (n.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first()) AS substitutableChildren-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected boolean provides(org.eclipse.gmf.runtime.diagram.core.services.view.CreateNodeViewOperation op) {
+		if (op.getContainerView() == null) {
+			return false;
+		}
+		org.eclipse.gmf.runtime.emf.type.core.IElementType elementType = getSemanticElementType(op.getSemanticAdapter());
+		org.eclipse.emf.ecore.EObject domainElement = getSemanticElement(op.getSemanticAdapter());
+		int visualID;
+		if (op.getSemanticHint() == null) {
+			// Semantic hint is not specified. Can be a result of call from CanonicalEditPolicy.
+			// In this situation there should be NO elementType, visualID will be determined
+			// by VisualIDRegistry.getNodeVisualID() for domainElement.
+			if (elementType != null || domainElement == null) {«REM»XXX Perhaps, better to fix CanonicalEP instead of this hack?«ENDREM»
+				return false;
 			}
-			String elementTypeHint = ((org.eclipse.gmf.runtime.emf.type.core.IHintedType) elementType).getSemanticHint();
-			if (!semanticHint.equals(elementTypeHint)) {
-				return null; // if semantic hint is specified it should be the same as in element type
-			}
-			if (domainElement != null && !�EXPAND aspects::xpt::editor::VisualIDRegistry::checkNodeVisualIDMethodCall�(containerView, domainElement, visualID)) {
-				return null; // visual id for node EClass should match visual id from element type, or at least be substitutable for it
-			}
+			visualID = «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall»(op.getContainerView(), domainElement);
 		} else {
-			// Element type is not specified. Domain element should be present.
-			// This method is called with EObjectAdapter as parameter from:
-			//   - ViewService.createNode(View container, EObject eObject, String type, PreferencesHint preferencesHint) 
-			//   - generated ViewFactory.decorateView() for parent element
-	�IF getElements(self)->select(e | e.elementType <> null)->size() > 0-�
-			if (!�getEditPartQualifiedClassName()�.MODEL_ID.equals(�getVisualIDRegistryQualifiedClassName()�.getModelID(containerView))) {
-				return null; // foreign diagram
+			visualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(op.getSemanticHint());
+			if (elementType != null) {«REM»
+				Semantic hint is specified together with element type.
+				Both parameters should describe exactly the same diagram element.
+				In addition we check that visualID returned by VisualIDRegistry.getNodeVisualID() for
+				domainElement (if specified) is the same as in element type.«ENDREM»
+				if (!«getElementTypesQualifiedClassName()».isKnownElementType(elementType) || (!(elementType instanceof org.eclipse.gmf.runtime.emf.type.core.IHintedType))) {
+					return false; // foreign element type
+				}
+				String elementTypeHint = ((org.eclipse.gmf.runtime.emf.type.core.IHintedType) elementType).getSemanticHint();
+				if (!op.getSemanticHint().equals(elementTypeHint)) {
+					return false; // if semantic hint is specified it should be the same as in element type
+				}
+				if (domainElement != null && !«EXPAND aspects::xpt::editor::VisualIDRegistry::checkNodeVisualIDMethodCall»(op.getContainerView(), domainElement, visualID)) {
+					return false; // visual id for node EClass should match visual id from element type, or at least be substitutable for it
+				}
+			} else {«REM»
+				Element type is not specified. Domain element should be present (except pure design elements).
+				 This method is called with EObjectAdapter as parameter from:
+				   - ViewService.createNode(View container, EObject eObject, String type, PreferencesHint preferencesHint) 
+				   - generated ViewFactory.decorateView() for parent element«ENDREM»
+«IF getAllTypedElements()->select(e | e.elementType <> null)->size() > 0-»
+			if (!«getEditPartQualifiedClassName()».MODEL_ID.equals(«getVisualIDRegistryQualifiedClassName()».getModelID(op.getContainerView()))) {
+				return false; // foreign diagram
 			}
 			switch (visualID) {
-			�FOREACH substitutableChildren AS nextSubstitutableChild-�
-				�EXPAND caseSubstitutableByVisualID(nextSubstitutableChild) FOR nextSubstitutableChild-�
-			�ENDFOREACH-�
-			�EXPAND xpt::Common::caseVisualID FOREACH (getElements(self)->select(e | e.elementType <> null and not (substitutableChildren)[gmfgen::GenCommonBase]->includes(e)))[gmfgen::GenNode]-�
-				if (domainElement == null || visualID != �EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall�(containerView, domainElement)) {
-					return null; // visual id in semantic hint should match visual id for domain element
+		«IF (getAllNodes().elementType)[gmfgen::NotationType]->size() > 0-»
+			«EXPAND xpt::providers::ViewProvider::caseVisualID FOREACH getAllNodes().elementType[gmfgen::NotationType]-»
+				break; // pure design element
+		«ENDIF-»
+			«FOREACH substitutableChildren AS nextSubstitutableChild-»
+				«EXPAND caseSubstitutableByVisualID(nextSubstitutableChild) FOR nextSubstitutableChild-»
+			«ENDFOREACH-»
+		«IF (getAllNodes().elementType)[gmfgen::MetamodelType]->size() > 0 or (getAllNodes().elementType)[gmfgen::SpecializationType]->size() > 0-»
+			«EXPAND xpt::providers::ViewProvider::caseVisualID FOREACH (getAllNodes()->select(n | not substitutableChildren->includes(n)).elementType)[gmfgen::MetamodelType]-»
+			«EXPAND xpt::providers::ViewProvider::caseVisualID FOREACH (getAllNodes()->select(n | not substitutableChildren->includes(n)).elementType)[gmfgen::SpecializationType]-»
+				if (domainElement == null || visualID != «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall»(op.getContainerView(), domainElement)) {
+					return false; // visual id in semantic hint should match visual id for domain element
 				}
 				break;
-			�EXPAND xpt::providers::ViewProvider::checkChildrenVisualIDs FOREACH getElements(self)->select(e | e.elementType <> null)-�
-			default:
-				return null;
+		«ENDIF-»
+				default:
+					return false;
+				}
+«ELSE-»
+				return false;
+«ENDIF-»
 			}
-	�ELSE-�
-			return null;
-	�ENDIF-�
+		}
+		return «FOREACH getAllNodes() AS n SEPARATOR '||'»«EXPAND xpt::editor::VisualIDRegistry::visualID FOR n» == visualID«ENDFOREACH»;
+	}
+	«ENDLET-»
+
+	«EXPAND xpt::Common::generatedMemberComment»«REM»XXX: unlike createNode, we don't check op.containerView() for null here. On purpose?«ENDREM»
+	protected boolean provides(org.eclipse.gmf.runtime.diagram.core.services.view.CreateEdgeViewOperation op) {
+		org.eclipse.gmf.runtime.emf.type.core.IElementType elementType = getSemanticElementType(op.getSemanticAdapter());
+		if (!«getElementTypesQualifiedClassName()».isKnownElementType(elementType) || (!(elementType instanceof org.eclipse.gmf.runtime.emf.type.core.IHintedType))) {
+			return false; // foreign element type
+		}
+		String elementTypeHint = ((org.eclipse.gmf.runtime.emf.type.core.IHintedType) elementType).getSemanticHint();
+		if (elementTypeHint == null || (op.getSemanticHint() != null && !elementTypeHint.equals(op.getSemanticHint()))) {
+			return false; // our hint is visual id and must be specified, and it should be the same as in element type
+		}
+		int visualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(elementTypeHint);
+		org.eclipse.emf.ecore.EObject domainElement = getSemanticElement(op.getSemanticAdapter());
+		if (domainElement != null && visualID != «EXPAND xpt::editor::VisualIDRegistry::getLinkWithClassVisualIDMethodCall»(domainElement)) {
+			return false; // visual id for link EClass should match visual id from element type
+		}
+		return true; «REM»Does it make sense to check visualID here, like we did for nodes?«ENDREM»
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.gmf.runtime.notation.Diagram createDiagram(org.eclipse.core.runtime.IAdaptable semanticAdapter, String diagramKind, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint preferencesHint) {
+		org.eclipse.gmf.runtime.notation.Diagram diagram = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createDiagram();«REM»FIXME instantiate diagramRunTimeClass instead«ENDREM»
+		diagram.getStyles().add(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createDiagramStyle());
+		«EXPAND xpt::diagram::views::Utils::addCustomStyles('diagram.getStyles()')-»
+		diagram.setType(«EXPAND xpt::editor::VisualIDRegistry::modelID»);
+		diagram.setElement(«IF domainDiagramElement <> null»getSemanticElement(semanticAdapter)«ELSE»null«ENDIF»);
+«IF units <> null-»
+		diagram.setMeasurementUnit(org.eclipse.gmf.runtime.notation.MeasurementUnit.«units.toUpper()»_LITERAL);
+«ENDIF-»
+«IF styles->notEmpty()-»
+		// initializeFromPreferences
+		org.eclipse.jface.preferences.IPreferenceStore store = (org.eclipse.jface.preferences.IPreferenceStore) preferencesHint.getPreferenceStore();
+		«EXPAND xpt::providers::ViewProvider::initializeStyles('diagram', 'store', false, false, false)-»
+«ENDIF-»
+		return diagram;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.gmf.runtime.notation.Node createNode(org.eclipse.core.runtime.IAdaptable semanticAdapter, org.eclipse.gmf.runtime.notation.View containerView, String semanticHint, int index, boolean persisted, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint preferencesHint) {
+		final org.eclipse.emf.ecore.EObject domainElement = getSemanticElement(semanticAdapter);
+		final int visualID;
+		if (semanticHint == null) {
+			visualID = «EXPAND xpt::editor::VisualIDRegistry::getNodeVisualIDMethodCall»(containerView, domainElement);
+		} else {
+			visualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(semanticHint);
+		}
+		switch(visualID) {
+		«FOREACH getAllNodes() AS n-»
+		«EXPAND xpt::Common::caseVisualID FOR n» return create«n.getUniqueIdentifier()»(domainElement, containerView, index, persisted, preferencesHint);
+		«ENDFOREACH-»
+		}
+		// can't happen, provided #provides(CreateNodeViewOperation) is correct
+		return null;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public org.eclipse.gmf.runtime.notation.Edge createEdge(org.eclipse.core.runtime.IAdaptable semanticAdapter, org.eclipse.gmf.runtime.notation.View containerView, String semanticHint, int index, boolean persisted, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint preferencesHint) {
+		org.eclipse.gmf.runtime.emf.type.core.IElementType elementType = getSemanticElementType(semanticAdapter);
+		String elementTypeHint = ((org.eclipse.gmf.runtime.emf.type.core.IHintedType) elementType).getSemanticHint();
+		switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(elementTypeHint)) {
+		«FOREACH links AS link-»
+		«EXPAND xpt::Common::caseVisualID FOR link» return create«link.getUniqueIdentifier()»(«IF link.isTypeLink()» getSemanticElement(semanticAdapter), «ENDIF»containerView, index, persisted, preferencesHint);
+		«ENDFOREACH-»
+		}
+		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
+		return null;
+	}
+
+«EXPAND xpt::providers::ViewProvider::createNodeMethod FOREACH getAllNodes()»
+«EXPAND xpt::providers::ViewProvider::createEdgeMethod FOREACH links»
+
+«IF topLevelNodes->notEmpty()»
+	«EXPAND xpt::Common::generatedMemberComment»
+	private void stampShortcut(org.eclipse.gmf.runtime.notation.View containerView, org.eclipse.gmf.runtime.notation.Node target) {
+		if (!«EXPAND xpt::editor::VisualIDRegistry::modelID».equals(«EXPAND xpt::editor::VisualIDRegistry::getModelIDMethodCall»(containerView))) {
+			«EXPAND xpt::Common::addShortcutAnnotation('target')-»
 		}
 	}
-	return getNodeViewClass(containerView, visualID);
+«ENDIF-»
+
+«IF links.labels->notEmpty() or topLevelNodes.labels->notEmpty() or childNodes.labels->notEmpty()»
+	«EXPAND xpt::Common::generatedMemberComment»
+	private org.eclipse.gmf.runtime.notation.Node createLabel(org.eclipse.gmf.runtime.notation.View owner, String hint) {
+		org.eclipse.gmf.runtime.notation.DecorationNode rv = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createDecorationNode();
+		rv.setType(hint);
+		org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.insertChildView(owner, rv, org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, true);
+		return rv;
+	}
+«ENDIF-»
+
+«IF getAllNodes().compartments->notEmpty()»
+	«EXPAND xpt::Common::generatedMemberComment»
+	private org.eclipse.gmf.runtime.notation.Node createCompartment(org.eclipse.gmf.runtime.notation.View owner, String hint, boolean canCollapse, boolean hasTitle, boolean canSort, boolean canFilter) {
+		//SemanticListCompartment rv = NotationFactory.eINSTANCE.createSemanticListCompartment();
+		//rv.setShowTitle(showTitle);
+		//rv.setCollapsed(isCollapsed);
+		org.eclipse.gmf.runtime.notation.Node rv;
+		if (canCollapse) {
+			rv = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createBasicCompartment();
+		} else {
+			rv = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createDecorationNode();
+		}
+		if (hasTitle) {
+			org.eclipse.gmf.runtime.notation.TitleStyle ts = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createTitleStyle();
+			ts.setShowTitle(true);
+			rv.getStyles().add(ts);
+		}
+		if (canSort) {
+			rv.getStyles().add(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createSortingStyle());
+		}
+		if (canFilter) {
+			rv.getStyles().add(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createFilteringStyle());
+		}
+		rv.setType(hint);
+		org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.insertChildView(owner, rv, org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, true);
+		return rv;
+	}
+«ENDIF-»
+	«EXPAND xpt::providers::ViewProvider::getSemanticElementMethod»
+	«EXPAND xpt::providers::ViewProvider::getSemanticElementTypeMethod-»
+	«EXPAND xpt::providers::ViewProvider::additions-»
 }
+«ENDAROUND»
 
-�EXPAND xpt::Common::generatedMemberComment�
-protected Class getNodeViewClass(org.eclipse.gmf.runtime.notation.View containerView, int visualID) {
-	if (containerView == null || !�EXPAND xpt::editor::VisualIDRegistry::canCreateNodeMethodCall�(containerView, visualID)) {
-		return null;
-	}
-	switch (visualID) {
-	�EXPAND xpt::providers::ViewProvider::caseContainerVisualID FOREACH getAllChildContainers()-�
-	�EXPAND xpt::providers::ViewProvider::caseEntry FOREACH links.labels-�
-	}
-	return null;
-}
-�ENDLET�
-�ENDAROUND�
-
-�AROUND additions FOR gmfgen::GenDiagram�
-�REM�
-	ALL BELOW THIS LINE IS SAFE TO BE DELETED AFTER GMF RC4
-�ENDREM��-�
-�ENDAROUND�
-
-�AROUND getDiagramViewClass FOR gmfgen::GenDiagram-�
-�EXPAND xpt::Common::generatedMemberComment�
-protected Class getDiagramViewClass(org.eclipse.core.runtime.IAdaptable semanticAdapter, String diagramKind) {
-	org.eclipse.emf.ecore.EObject semanticElement = getSemanticElement(semanticAdapter);
-	if (�EXPAND xpt::editor::VisualIDRegistry::modelID�.equals(diagramKind)
-			&& �EXPAND xpt::editor::VisualIDRegistry::getDiagramVisualIDMethodCall�(semanticElement) != -1) {
-		return �getNotationViewFactoryQualifiedClassName()�.class;
-	}
-	return null;
-}
-�ENDAROUND�
-
-�AROUND caseEntry FOR gmfgen::GenCommonBase-�
-	�EXPAND xpt::Common::caseVisualID� return �getNotationViewFactoryQualifiedClassName()�.class;
-�ENDAROUND�
-
-�AROUND getEdgeViewClass FOR gmfgen::GenDiagram-�
-�EXPAND xpt::Common::generatedMemberComment�
-protected Class getEdgeViewClass(org.eclipse.core.runtime.IAdaptable semanticAdapter,
-		org.eclipse.gmf.runtime.notation.View containerView, String semanticHint) {
-	org.eclipse.gmf.runtime.emf.type.core.IElementType elementType = getSemanticElementType(semanticAdapter);
-	if (!�getElementTypesQualifiedClassName()�.isKnownElementType(elementType)
-			|| (!(elementType instanceof org.eclipse.gmf.runtime.emf.type.core.IHintedType))) {
-		return null; // foreign element type
-	}
-	String elementTypeHint = ((org.eclipse.gmf.runtime.emf.type.core.IHintedType) elementType).getSemanticHint();
-	if (elementTypeHint == null) {
-		return null; // our hint is visual id and must be specified
-	}
-	if (semanticHint != null && !semanticHint.equals(elementTypeHint)) {
-		return null; // if semantic hint is specified it should be the same as in element type
-	}
-	int visualID = �EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall�(elementTypeHint);
-	org.eclipse.emf.ecore.EObject domainElement = getSemanticElement(semanticAdapter);
-	if (domainElement != null && visualID != �EXPAND xpt::editor::VisualIDRegistry::getLinkWithClassVisualIDMethodCall�(domainElement)) {
-		return null; // visual id for link EClass should match visual id from element type
-	}
-	return getEdgeViewClass(visualID);
-}
-
-�EXPAND xpt::Common::generatedMemberComment�
-protected Class getEdgeViewClass(int visualID) {
-	switch (visualID) {
-	�EXPAND xpt::providers::ViewProvider::caseEntry FOREACH links-�
-	}
-	return null;
-}
-�ENDAROUND�
-
-�AROUND getSemanticElementType FOR gmfgen::GenDiagram-�
-�EXPAND xpt::Common::generatedMemberComment�
-private org.eclipse.gmf.runtime.emf.type.core.IElementType getSemanticElementType(
-		org.eclipse.core.runtime.IAdaptable semanticAdapter) {
-	if (semanticAdapter == null) {
-		return null;
-	}
-	return (org.eclipse.gmf.runtime.emf.type.core.IElementType) semanticAdapter.getAdapter(
-			org.eclipse.gmf.runtime.emf.type.core.IElementType.class);
-}
-�ENDAROUND�
-
+«AROUND initCompartment(String nodeVar, String prefStoreVar) FOR gmfgen::GenCompartment-»
+		«REM»see addCustomStyles aspect -- we are adding canonical style for some diagrams even if there are no customStyle's«ENDREM»
+		org.eclipse.gmf.runtime.notation.Node «getUniqueIdentifier()» = createCompartment(«nodeVar», «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall», «canCollapse», «needsTitle», «listLayout», «listLayout»);
+		«EXPAND xpt::diagram::views::Utils::addCustomStyles(getUniqueIdentifier() + '.getStyles()')-»
+«IF isStoringChildPositions(getLayoutType())-»
+	«IF viewmap.canUseShapeStyle()-»
+		«getUniqueIdentifier()».add(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createShapeStyle());
+	«ELSE-»
+«REM»Intentionally not adding Description style, as it deemed to be useless for compartments (can't avoid for ShapeStyle - benefits of a single style overwheight drawbacks of Description presence)«ENDREM»
+		«EXPAND xpt::diagram::views::Utils::addFontLineFillStylesConditionally(getUniqueIdentifier() + '.getStyles()') FOR viewmap-»
+	«ENDIF-»
+		«getUniqueIdentifier()».setLayoutConstraint(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createBounds());
+		«EXPAND xpt::providers::ViewProvider::initializeStyles(getUniqueIdentifier(), prefStoreVar, not viewmap.isFixedForeground(), not viewmap.isFixedBackground(), not viewmap.isFixedFont())-»
+«ELSE-»
+		«EXPAND xpt::providers::ViewProvider::initializeStyles(getUniqueIdentifier(), prefStoreVar, false, false, false)-»
+«ENDIF-»
+«ENDAROUND»

@@ -6,7 +6,7 @@
  *    Tatiana Fesenko (Borland) - #262592 - Contribute UMLPaletteFactory via gmf-runtime IPaletteProvider
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
 «EXTENSION xpt::extendedpalette::Utils»
 

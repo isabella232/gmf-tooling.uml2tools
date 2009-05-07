@@ -1,4 +1,4 @@
-modeltype genModel uses "http://www.eclipse.org/gmf/2008/GenModel";
+modeltype genModel uses "http://www.eclipse.org/gmf/2009/GenModel";
 modeltype u2tAux uses "http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel";
 
 library RotatedLabelsSupport;

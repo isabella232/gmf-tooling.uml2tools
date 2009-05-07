@@ -10,35 +10,35 @@
  *    Michael Golubev (Borland) - #199731, non-canonical mode
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'Â»
 
-«EXTENSION xpt::diagram::updater::Utils»
-«EXTENSION xpt::async::NonCanonicalDiagram»
+Â«EXTENSION xpt::diagram::updater::UtilsÂ»
+Â«EXTENSION xpt::async::NonCanonicalDiagramÂ»
 
-«AROUND addCustomStyles(stylesVar : String) FOR gmfgen::GenCommonBase-»
-	«targetDef.proceed()-»
-	«IF (Sequence { self })[gmfgen::GenContainerBase]->size() > 0-»
-	«IF supportsNonCanonicalMode(self.getDiagram()) and not getSemanticChildren(self.oclAsType(gmfgen::GenContainerBase))->isEmpty() -»
-		«EXPAND addCanonicalStyle(stylesVar) FOR self-»
-	«ENDIF-»
-	«ENDIF-»
-«ENDAROUND»
+Â«AROUND addCustomStyles(stylesVar : String) FOR gmfgen::GenCommonBase-Â»
+	Â«targetDef.proceed()-Â»
+	Â«IF self.oclIsKindOf(gmfgen::GenContainerBase)-Â»
+	Â«IF supportsNonCanonicalMode(self.getDiagram()) and not getSemanticChildren(self.oclAsType(gmfgen::GenContainerBase))->isEmpty() -Â»
+		Â«EXPAND addCanonicalStyle(stylesVar) FOR self-Â»
+	Â«ENDIF-Â»
+	Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«DEFINE addCanonicalStyle(stylesVar : String) FOR gmfgen::GenCommonBase-»
-		org.eclipse.gmf.runtime.notation.CanonicalStyle canonicalStyle = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createCanonicalStyle();
-		canonicalStyle.setCanonical(true);
-		«stylesVar».add(canonicalStyle);	
-«ENDDEFINE»
+Â«DEFINE addCanonicalStyle(stylesVar : String) FOR gmfgen::GenCommonBase-Â»
+		org.eclipse.gmf.runtime.notation.CanonicalStyle canonicalStyle_Â«getUniqueIdentifier()Â» = org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_Â«getUniqueIdentifier()Â».setCanonical(true);
+		Â«stylesVarÂ».add(canonicalStyle_Â«getUniqueIdentifier()Â»);	
+Â«ENDDEFINEÂ»
 
-«DEFINE addCanonicalStyle(stylesVar : String) FOR gmfgen::GenDiagram-»
-		org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TDiagramCanonicalStyle canonicalStyle = «-»
+Â«DEFINE addCanonicalStyle(stylesVar : String) FOR gmfgen::GenDiagram-Â»
+		org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TDiagramCanonicalStyle canonicalStyle_Â«getUniqueIdentifier()Â» = Â«-Â»
 			org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationFactory.eINSTANCE.createU2TDiagramCanonicalStyle();
-		canonicalStyle.setCanonical(true);
-		canonicalStyle.setSyncNodes(true);
-		canonicalStyle.setSyncLinks(true);
-		«stylesVar».add(canonicalStyle);	
-«ENDDEFINE»
+		canonicalStyle_Â«getUniqueIdentifier()Â».setCanonical(true);
+		canonicalStyle_Â«getUniqueIdentifier()Â».setSyncNodes(true);
+		canonicalStyle_Â«getUniqueIdentifier()Â».setSyncLinks(true);
+		Â«stylesVarÂ».add(canonicalStyle_Â«getUniqueIdentifier()Â»);	
+Â«ENDDEFINEÂ»
 
 

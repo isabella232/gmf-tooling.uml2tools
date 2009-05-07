@@ -10,7 +10,7 @@
  *    Michael Golubev - U2T specific creation edit policy 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «EXTENSION xpt::diagram::editparts::Utils»
 
 «DEFINE newInstance FOR gmfgen::GenCommonBase»«-»

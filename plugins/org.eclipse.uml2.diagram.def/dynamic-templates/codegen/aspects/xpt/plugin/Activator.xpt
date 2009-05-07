@@ -18,7 +18,7 @@
  * NOTE: despite the above, there is some <i>additional</i> code that is contributed via AROUND additions 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «EXTENSION xpt::GenModelUtils»
 
 «AROUND xpt::plugin::Activator::additions FOR gmfgen::GenPlugin-»

@@ -1,2 +1,2 @@
-dynamic-templates/codegen, /org.eclipse.gmf.codegen/templates.migrated
-dynamic-templates/gmf-graph, /org.eclipse.gmf.graphdef.codegen/templates.migrated
+dynamic-templates/codegen, /org.eclipse.gmf.codegen/templates
+dynamic-templates/gmf-graph, /org.eclipse.gmf.graphdef.codegen/templates

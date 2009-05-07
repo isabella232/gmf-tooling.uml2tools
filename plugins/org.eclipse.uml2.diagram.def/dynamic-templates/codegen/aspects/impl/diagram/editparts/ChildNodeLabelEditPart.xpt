@@ -11,7 +11,7 @@
  * 								  [255532] InsertAction support 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
 «EXTENSION xpt::async::NonCanonicalDiagram»  
 

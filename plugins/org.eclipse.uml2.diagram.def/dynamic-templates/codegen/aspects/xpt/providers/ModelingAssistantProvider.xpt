@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - #241066
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
 «EXTENSION xpt::diagram::Utils»
 «EXTENSION xpt::providers::i18n»

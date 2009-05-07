@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - force diagram update after shortcut creation (#240483 and related) 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «EXTENSION xpt::editor::Utils»
 
 «AROUND xpt::editor::CreateShortcutAction::run FOR gmfgen::GenDiagram-»

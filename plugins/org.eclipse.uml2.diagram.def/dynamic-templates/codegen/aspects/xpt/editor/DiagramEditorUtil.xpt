@@ -11,7 +11,7 @@
  *    Tatiana Fesenko (Borland) - bugzilla #230873 'Make diagram file extension shorter', 
  * 								           #268252 'There should be a way to specify exact metaclass of the diagram canvas semantic element"
  */
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION MetaModel»

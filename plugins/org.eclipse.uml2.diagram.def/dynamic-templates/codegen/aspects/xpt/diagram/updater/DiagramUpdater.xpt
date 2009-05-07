@@ -13,132 +13,132 @@
  *       3. [188420] - There are only limited number of links-to-links in UML2Tools
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
+Â«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'Â»
 
-«EXTENSION xpt::diagram::updater::Utils»
-«EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
-«EXTENSION xpt::GenModelUtils»
-«EXTENSION xpt::NativeGenModelUtils»
+Â«EXTENSION xpt::diagram::updater::UtilsÂ»
+Â«EXTENSION aspects::xpt::diagram::updater::DiagramHeaderÂ»
+Â«EXTENSION xpt::GenModelUtilsÂ»
+Â«EXTENSION gmf::GenModelUtilsÂ»
 
-«AROUND checkChildElementVisualID(inLoop : Boolean) FOR gmfgen::GenNode-»
-	«REM» Diagram header is already added, do not't duplicate it«ENDREM»«-»
-	«IF not isDiagramHeader(self) -»
-if (visualID == «EXPAND xpt::editor::VisualIDRegistry::visualID») {
-	result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(«-»
-		«IF null <> modelFacet.childMetaFeature»«EXPAND MetaModel::DowncastToEObject('childElement') FOR getTypeGenClassX(modelFacet.childMetaFeature)»«ELSE»childElement«ENDIF», visualID));
-		«REM» Addition here -- if node is multi-view, add node descriptors for each of the parts«ENDREM»«-»
-		«LET (viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first().oclAsType(u2tgen::SubstitutableByAttributes) AS group -»
-				«IF null <> group and group.requiresAll -»
-						«FOREACH group.getSubstitutableByNodes()->asSequence() AS nextPart-»
-	result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(«-»
-		«IF null <> modelFacet.childMetaFeature»«EXPAND MetaModel::DowncastToEObject('childElement') FOR getTypeGenClassX(modelFacet.childMetaFeature)»«ELSE»childElement«ENDIF», «EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextPart»));
-						«ENDFOREACH-»		
-				«ENDIF-»
-		«ENDLET-»
-		«REM» End of added code«ENDREM»«-»
-«IF inLoop-»
+Â«AROUND checkChildElementVisualID(inLoop : Boolean) FOR gmfgen::GenNode-Â»
+	Â«REMÂ» Diagram header is already added, do not't duplicate itÂ«ENDREMÂ»Â«-Â»
+	Â«IF not isDiagramHeader(self) -Â»
+if (visualID == Â«EXPAND xpt::editor::VisualIDRegistry::visualIDÂ») {
+	result.add(new Â«getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()Â»(Â«-Â»
+		Â«IF null <> modelFacet.childMetaFeatureÂ»Â«EXPAND MetaModel::DowncastToEObject('childElement') FOR getTypeGenClassX(modelFacet.childMetaFeature)Â»Â«ELSEÂ»childElementÂ«ENDIFÂ», visualID));
+		Â«REMÂ» Addition here -- if node is multi-view, add node descriptors for each of the partsÂ«ENDREMÂ»Â«-Â»
+		Â«LET (viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first().oclAsType(u2tgen::SubstitutableByAttributes) AS group -Â»
+				Â«IF null <> group and group.requiresAll -Â»
+						Â«FOREACH group.getSubstitutableByNodes()->asSequence() AS nextPart-Â»
+	result.add(new Â«getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()Â»(Â«-Â»
+		Â«IF null <> modelFacet.childMetaFeatureÂ»Â«EXPAND MetaModel::DowncastToEObject('childElement') FOR getTypeGenClassX(modelFacet.childMetaFeature)Â»Â«ELSEÂ»childElementÂ«ENDIFÂ», Â«EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextPartÂ»));
+						Â«ENDFOREACH-Â»		
+				Â«ENDIF-Â»
+		Â«ENDLET-Â»
+		Â«REMÂ» End of added codeÂ«ENDREMÂ»Â«-Â»
+Â«IF inLoop-Â»
 	continue;
-«ENDIF-»
+Â«ENDIF-Â»
 }
-	«ENDIF-»
-«ENDAROUND»
+	Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND getSemanticChildrenMethodCall FOR gmfgen::GenContainerBase-»
-«IF null <> selectDiagramHeader(getSemanticChildren(self))-»
-«getDiagram().editorGen.diagramUpdater.getDiagramUpdaterQualifiedClassName()».getSemanticChildren
-«ELSE-»
-«targetDef.proceed()-»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND getSemanticChildrenMethodCall FOR gmfgen::GenContainerBase-Â»
+Â«IF null <> selectDiagramHeader(getSemanticChildren(self))-Â»
+Â«getDiagram().editorGen.diagramUpdater.getDiagramUpdaterQualifiedClassName()Â».getSemanticChildren
+Â«ELSE-Â»
+Â«targetDef.proceed()-Â»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND getSemanticChildrenCase FOR gmfgen::GenContainerBase-»
-	«LET selectDiagramHeader(getSemanticChildren(self)) AS childHeader -»
-	«LET getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName() AS descriptorFQN -»
-	«IF null <> childHeader -»
-		«EXPAND xpt::Common::caseVisualID»
+Â«AROUND getSemanticChildrenCase FOR gmfgen::GenContainerBase-Â»
+	Â«LET selectDiagramHeader(getSemanticChildren(self)) AS childHeader -Â»
+	Â«LET getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName() AS descriptorFQN -Â»
+	Â«IF null <> childHeader -Â»
+		Â«EXPAND xpt::Common::caseVisualIDÂ»
 		{
-			//We have "dummy" TopLevelNode (with vid = «EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeader»). 
+			//We have "dummy" TopLevelNode (with vid = Â«EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeaderÂ»). 
 			//The only purpose for this node is to be a container for children (imports, etc)
 			//of the "main" diagram figure (that one shown as Canvas).
  			//Also we have modified the VisualIDRegistry#getNodeVisualID() to return
- 			//VID = «EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeader», 
+ 			//VID = Â«EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeaderÂ», 
  			//for the case when top-level view is created for the same semantic element as the canvas view.
  			 
  			java.util.List resultAndHeader = new java.util.LinkedList();
-			resultAndHeader.add(«-»
-				new «descriptorFQN»(view.getElement(), «EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeader»));
- 			resultAndHeader.addAll(«EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodName»(view));
+			resultAndHeader.add(Â«-Â»
+				new Â«descriptorFQNÂ»(view.getElement(), Â«EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeaderÂ»));
+ 			resultAndHeader.addAll(Â«EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodNameÂ»(view));
 			return resultAndHeader;
 		}
-	«ELSE-»
-		«targetDef.proceed()-»
-	«ENDIF-»
-	«ENDLET-»
-	«ENDLET-»
-«ENDAROUND»
+	Â«ELSE-Â»
+		Â«targetDef.proceed()-Â»
+	Â«ENDIF-Â»
+	Â«ENDLET-Â»
+	Â«ENDLET-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND getConnectedLinks(genLinks : Sequence(gmfgen::GenLink), methodNameSuffix : String, needCrossReferencer : Boolean) FOR gmfgen::GenCommonBase-»
-	«IF isDiagramHeader(self)-»
-	«EXPAND xpt::Common::generatedMemberComment»
-public static java.util.List «EXPAND xpt::diagram::updater::DiagramUpdater::linkGetterName(methodNameSuffix)»(org.eclipse.gmf.runtime.notation.View view) {
+Â«AROUND getConnectedLinks(genLinks : Sequence(gmfgen::GenLink), methodNameSuffix : String, needCrossReferencer : Boolean) FOR gmfgen::GenCommonBase-Â»
+	Â«IF isDiagramHeader(self)-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+public static java.util.List Â«EXPAND xpt::diagram::updater::DiagramUpdater::linkGetterName(methodNameSuffix)Â»(org.eclipse.gmf.runtime.notation.View view) {
 	//no links to, from and inside the diagram header
 	return java.util.Collections.EMPTY_LIST;
 }
-	«ELSE-»
-		«targetDef.proceed()-»
-	«ENDIF-»
-«ENDAROUND»
+	Â«ELSE-Â»
+		Â«targetDef.proceed()-Â»
+	Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND getContainedLinks FOR gmfgen::GenCommonBase-»
-	«REM»Workaround for #188420. Safe for now as we don't yet have links-to-links«ENDREM»«-»
-	«REM»Except the only one at the Deployment Diagram.«ENDREM»«-»
-	«REM»Below is not trivial way to call instanceof«ENDREM»«-»
-	«IF not (Sequence { self })[gmfgen::GenLink]->isEmpty()-»
-		«REM»Special case: Deployment diagram link from DeploymenSpecification to DeploymentLink«ENDREM»«-»
-		«LET self.getDiagram() AS diagram -»
-		«IF diagram.editorGen.plugin.iD = 'org.eclipse.uml2.diagram.deploy' and self.visualID = 4001-»
-			«targetDef.proceed()-»
-		«ELSE-»
-			«EXPAND xpt::diagram::updater::DiagramUpdater::getConnectedLinks(Sequence {  }, getContainedLinksMethodNameSuffix(), false)-»
-		«ENDIF-»
-		«ENDLET»
-	«ELSE-»
-		«targetDef.proceed()-»
-	«ENDIF-»
-«ENDAROUND»
+Â«AROUND getContainedLinks FOR gmfgen::GenCommonBase-Â»
+	Â«REMÂ»Workaround for #188420. Safe for now as we don't yet have links-to-linksÂ«ENDREMÂ»Â«-Â»
+	Â«REMÂ»Except the only one at the Deployment Diagram.Â«ENDREMÂ»Â«-Â»
+	Â«REMÂ»Below is not trivial way to call instanceofÂ«ENDREMÂ»Â«-Â»
+	Â«IF not (Sequence { self })[gmfgen::GenLink]->isEmpty()-Â»
+		Â«REMÂ»Special case: Deployment diagram link from DeploymenSpecification to DeploymentLinkÂ«ENDREMÂ»Â«-Â»
+		Â«LET self.getDiagram() AS diagram -Â»
+		Â«IF diagram.editorGen.plugin.iD = 'org.eclipse.uml2.diagram.deploy' and self.visualID = 4001-Â»
+			Â«targetDef.proceed()-Â»
+		Â«ELSE-Â»
+			Â«EXPAND xpt::diagram::updater::DiagramUpdater::getConnectedLinks(Sequence {  }, getContainedLinksMethodNameSuffix(), false)-Â»
+		Â«ENDIF-Â»
+		Â«ENDLETÂ»
+	Â«ELSE-Â»
+		Â«targetDef.proceed()-Â»
+	Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND xpt::diagram::updater::DiagramUpdater::additions FOR gmfgen::GenDiagramUpdater»
-	«EXPAND typedSharedInstance»	
-«ENDAROUND»
+Â«AROUND xpt::diagram::updater::DiagramUpdater::additions FOR gmfgen::GenDiagramUpdaterÂ»
+	Â«EXPAND typedSharedInstanceÂ»	
+Â«ENDAROUNDÂ»
 
-«DEFINE typedSharedInstanceName FOR gmfgen::GenDiagramUpdater»TYPED_ADAPTER«ENDDEFINE»
-«DEFINE typedSharedInstanceCall FOR gmfgen::GenDiagramUpdater»«self.getDiagramUpdaterQualifiedClassName()».«EXPAND typedSharedInstanceName»«ENDDEFINE»
+Â«DEFINE typedSharedInstanceName FOR gmfgen::GenDiagramUpdaterÂ»TYPED_ADAPTERÂ«ENDDEFINEÂ»
+Â«DEFINE typedSharedInstanceCall FOR gmfgen::GenDiagramUpdaterÂ»Â«self.getDiagramUpdaterQualifiedClassName()Â».Â«EXPAND typedSharedInstanceNameÂ»Â«ENDDEFINEÂ»
 
-«DEFINE typedSharedInstance FOR gmfgen::GenDiagramUpdater»
-	«EXPAND xpt::Common::generatedMemberComment»
-	public static final org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater «EXPAND typedSharedInstanceName» = new org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater() {
-		«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE typedSharedInstance FOR gmfgen::GenDiagramUpdaterÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public static final org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater Â«EXPAND typedSharedInstanceNameÂ» = new org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater() {
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor> getSemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
-			return «self.getDiagramUpdaterQualifiedClassName()».getSemanticChildren(view);
+			return Â«self.getDiagramUpdaterQualifiedClassName()Â».getSemanticChildren(view);
 		}
 		
-		«EXPAND xpt::Common::generatedMemberComment»
-		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> get«getContainedLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
-			return «self.getDiagramUpdaterQualifiedClassName()».get«getContainedLinksMethodNameSuffix()»Links(view);
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> getÂ«getContainedLinksMethodNameSuffix()Â»Links(org.eclipse.gmf.runtime.notation.View view) {
+			return Â«self.getDiagramUpdaterQualifiedClassName()Â».getÂ«getContainedLinksMethodNameSuffix()Â»Links(view);
 		}
 		
-		«EXPAND xpt::Common::generatedMemberComment»
-		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> get«getIncomingLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
-			return «self.getDiagramUpdaterQualifiedClassName()».get«getIncomingLinksMethodNameSuffix()»Links(view);
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> getÂ«getIncomingLinksMethodNameSuffix()Â»Links(org.eclipse.gmf.runtime.notation.View view) {
+			return Â«self.getDiagramUpdaterQualifiedClassName()Â».getÂ«getIncomingLinksMethodNameSuffix()Â»Links(view);
 		}
 
-		«EXPAND xpt::Common::generatedMemberComment»
-		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> get«getOutgoingLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
-			return «self.getDiagramUpdaterQualifiedClassName()».get«getOutgoingLinksMethodNameSuffix()»Links(view);
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> getÂ«getOutgoingLinksMethodNameSuffix()Â»Links(org.eclipse.gmf.runtime.notation.View view) {
+			return Â«self.getDiagramUpdaterQualifiedClassName()Â».getÂ«getOutgoingLinksMethodNameSuffix()Â»Links(view);
 		}
 	};
 
-«ENDDEFINE»
+Â«ENDDEFINEÂ»

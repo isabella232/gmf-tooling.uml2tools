@@ -11,31 +11,31 @@
  *    Michael Golubev (Borland) - #271299 - support diagrams for OMG XMIs
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«EXTENSION xpt::editor::Utils»
-«EXTENSION xpt::StringOperations»
+Â«EXTENSION xpt::editor::UtilsÂ»
+Â«EXTENSION xpt::StringOperationsÂ»
 
-«AROUND InitDiagramFileAction(editorGen : gmfgen::GenEditorGenerator) FOR gmfgen::InitDiagramAction-»
-«EXPAND xpt::Common::copyright FOR editorGen-»
-«EXPAND xpt::Common::packageStatement FOR qualifiedClassName»
+Â«AROUND InitDiagramFileAction(editorGen : gmfgen::GenEditorGenerator) FOR gmfgen::InitDiagramAction-Â»
+Â«EXPAND xpt::Common::copyright FOR editorGen-Â»
+Â«EXPAND xpt::Common::packageStatement FOR qualifiedClassNameÂ»
 
-«EXPAND xpt::Common::generatedClassComment»
-public class «qualifiedClassName.xpandSplit('\.')->last()» implements org.eclipse.ui.IObjectActionDelegate {
+Â«EXPAND xpt::Common::generatedClassCommentÂ»
+public class Â«qualifiedClassName.xpandSplit('\\.')->last()Â» implements org.eclipse.ui.IObjectActionDelegate {
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private org.eclipse.ui.IWorkbenchPart targetPart;
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private org.eclipse.emf.common.util.URI domainModelURI;
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void setActivePart(org.eclipse.jface.action.IAction action, org.eclipse.ui.IWorkbenchPart targetPart) {
 		this.targetPart = targetPart;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void selectionChanged(org.eclipse.jface.action.IAction action, org.eclipse.jface.viewers.ISelection selection) {
 		domainModelURI = null;
 		action.setEnabled(false);
@@ -48,20 +48,20 @@ public class «qualifiedClassName.xpandSplit('\.')->last()» implements org.eclips
 		action.setEnabled(true);
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private org.eclipse.swt.widgets.Shell getShell() {
 		return targetPart.getSite().getShell();
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void run(org.eclipse.jface.action.IAction action) {
 		org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain =
 			org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory.INSTANCE.createEditingDomain();
-		«IF editorGen.sameFileForDiagramAndModel-»
+		Â«IF editorGen.sameFileForDiagramAndModel-Â»
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
-		«ELSE-»
+		Â«ELSE-Â»
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = editingDomain.getResourceSet();
-		«ENDIF-»
+		Â«ENDIF-Â»
 		//#271299 - support all UML2 content-types
 		org.eclipse.uml2.diagram.common.pathmap.XMI2UMLSupport.enableXMI2UMLSupport(resourceSet);
 		org.eclipse.emf.ecore.EObject diagramRoot = null;
@@ -69,20 +69,20 @@ public class «qualifiedClassName.xpandSplit('\.')->last()» implements org.eclips
 			org.eclipse.emf.ecore.resource.Resource resource = resourceSet.getResource(domainModelURI, true);
 			diagramRoot = (org.eclipse.emf.ecore.EObject) resource.getContents().get(0);
 		} catch (org.eclipse.emf.common.util.WrappedException ex) {
-			«editorGen.plugin.getActivatorQualifiedClassName()».getInstance().logError(
-				"Unable to load resource: " + domainModelURI, ex);«EXPAND xpt::Common::nonNLS»
+			Â«editorGen.plugin.getActivatorQualifiedClassName()Â».getInstance().logError(
+				"Unable to load resource: " + domainModelURI, ex);Â«EXPAND xpt::Common::nonNLSÂ»
 		}
 		if (diagramRoot == null) {
 			org.eclipse.jface.dialogs.MessageDialog.openError(getShell(), 
-                «EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForInitDiagramFileResourceErrorDialog())) FOR editorGen»,
-                «EXPAND xpt::Externalizer::accessorCall(messageKey(i18nKeyForInitDiagramFileResourceErrorDialog())) FOR editorGen»);
+                Â«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForInitDiagramFileResourceErrorDialog())) FOR editorGenÂ»,
+                Â«EXPAND xpt::Externalizer::accessorCall(messageKey(i18nKeyForInitDiagramFileResourceErrorDialog())) FOR editorGenÂ»);
 			return;
 		}
-		org.eclipse.jface.wizard.Wizard wizard = new «editorGen.diagram.getNewDiagramFileWizardQualifiedClassName()»(domainModelURI, diagramRoot, editingDomain);
+		org.eclipse.jface.wizard.Wizard wizard = new Â«editorGen.diagram.getNewDiagramFileWizardQualifiedClassName()Â»(domainModelURI, diagramRoot, editingDomain);
 		wizard.setWindowTitle(org.eclipse.osgi.util.NLS.bind(
-				    «EXPAND xpt::Externalizer::accessorCall(i18nKeyForInitDiagramFileWizardTitle()) FOR editorGen»,
-				    «EXPAND xpt::editor::VisualIDRegistry::modelID FOR editorGen.diagram»));
-		«editorGen.diagram.getDiagramEditorUtilQualifiedClassName()».runWizard(getShell(), wizard, "InitDiagramFile");«EXPAND xpt::Common::nonNLS»
+				    Â«EXPAND xpt::Externalizer::accessorCall(i18nKeyForInitDiagramFileWizardTitle()) FOR editorGenÂ»,
+				    Â«EXPAND xpt::editor::VisualIDRegistry::modelID FOR editorGen.diagramÂ»));
+		Â«editorGen.diagram.getDiagramEditorUtilQualifiedClassName()Â».runWizard(getShell(), wizard, "InitDiagramFile");Â«EXPAND xpt::Common::nonNLSÂ»
 	}
 }
-«ENDAROUND»
+Â«ENDAROUNDÂ»

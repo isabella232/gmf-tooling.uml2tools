@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - [255532] - Insert action should work
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «EXTENSION xpt::async::NonCanonicalDiagram»
 
 «AROUND implementsList FOR gmfgen::GenCompartment»«-»

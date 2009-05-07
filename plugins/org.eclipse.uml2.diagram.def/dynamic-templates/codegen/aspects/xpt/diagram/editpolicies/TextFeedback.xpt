@@ -10,7 +10,7 @@
  *    Michael Golubev (Borland) - #238308
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «AROUND TextSelectionEditPolicy FOR gmfgen::GenDiagram-»

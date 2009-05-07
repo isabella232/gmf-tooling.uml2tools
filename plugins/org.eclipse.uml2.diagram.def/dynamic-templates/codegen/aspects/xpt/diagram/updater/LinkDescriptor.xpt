@@ -11,7 +11,7 @@
  *				#239267 - Provide typed API for common generated GMF statically accessible constructs 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
 «AROUND LinkDescriptor FOR gmfgen::GenDiagramUpdater-»
 	«EXPAND xpt::Common::copyright FOR editorGen-»

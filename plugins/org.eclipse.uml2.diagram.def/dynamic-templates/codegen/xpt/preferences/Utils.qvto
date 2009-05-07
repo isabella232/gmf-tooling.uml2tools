@@ -1,6 +1,6 @@
 import org.eclipse.uml2.diagram.codegen.qvt.NativeEMFUtils;
 
-modeltype genModel uses "http://www.eclipse.org/gmf/2008/GenModel";
+modeltype genModel uses "http://www.eclipse.org/gmf/2009/GenModel";
 modeltype ecore uses "http://www.eclipse.org/emf/2002/Ecore";
 
 library Utils;
@@ -24,7 +24,7 @@ helper getAllNodeGroupingKeys(diagram : genModel::GenDiagram) : Sequence(ecore::
 }
 
 helper getChildLabelNodesWithIconsFor(diagram : genModel::GenDiagram, key : ecore::EClass ) : Sequence(genModel::GenChildLabelNode) {
-	return diagram.childNodes[genModel::GenChildLabelNode]->select(nextLabelNode | getLabelGroupingKey(nextLabelNode) = key )
+	return diagram.childNodes[genModel::GenChildLabelNode]->select(nextLabelNode | getLabelGroupingKey(nextLabelNode) = key )->asSequence()
 }
 
 helper getNodeLabelsWithIconsFor(diagram : genModel::GenDiagram, key : ecore::EClass ) : Sequence(genModel::GenNodeLabel) {

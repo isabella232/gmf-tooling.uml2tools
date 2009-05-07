@@ -11,7 +11,7 @@
  *    [213008] - Layout element content after notation change
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «EXTENSION xpt::actions::Utils»
 
 «AROUND additions FOR gmfgen::GenChildContainer-»

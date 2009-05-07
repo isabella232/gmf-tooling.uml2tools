@@ -11,31 +11,31 @@
  *    Michael Golubev (Borland) - switch actions for comments/nodes
   */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
+Â«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'Â»
 
-«EXTENSION xpt::stereo::Utils»  
+Â«EXTENSION xpt::stereo::UtilsÂ»  
 
-«DEFINE stereotypeContributionItemProviders FOR gmfgen::GenDiagram»
-«IF supportsStereotypes(self)-»
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
-«EXPAND xpt::Common::xmlGeneratedTag»
-«EXPAND applyProfileContributionItemProvider-»
-«EXPAND applyStereotypeContributionItemProvider-»
+Â«DEFINE stereotypeContributionItemProviders FOR gmfgen::GenDiagramÂ»
+Â«IF supportsStereotypes(self)-Â»
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-stereotypes">
+Â«EXPAND xpt::Common::xmlGeneratedTagÂ»
+Â«EXPAND applyProfileContributionItemProvider-Â»
+Â«EXPAND applyStereotypeContributionItemProvider-Â»
 </extension>
-«EXPAND stereotypePropertyTabs-»
-«EXPAND stereotypePropertySection-»
-«ENDIF-»
-«ENDDEFINE»
+Â«EXPAND stereotypePropertyTabs-Â»
+Â«EXPAND stereotypePropertySection-Â»
+Â«ENDIF-Â»
+Â«ENDDEFINEÂ»
 
-«DEFINE applyProfileContributionItemProvider FOR gmfgen::GenDiagram-»
+Â«DEFINE applyProfileContributionItemProvider FOR gmfgen::GenDiagram-Â»
       <contributionItemProvider
             checkPluginLoaded="true"
             class="org.eclipse.uml2.diagram.common.stereo.ApplicableProfilesItemProvider">
          <Priority name="Medium"/>
 		 <popupContribution
-               class="«editorGen.editor.packageName».DiagramEditorContextMenuProvider">
+               class="Â«editorGen.editor.packageNameÂ».DiagramEditorContextMenuProvider">
              <popupMenuGroup
                   id="ApplyProfileGroup"
                   path="/propertiesGroup">
@@ -45,20 +45,20 @@
                   id="menu_apply_unapply_profile">
              </popupMenu>            
              <popupStructuredContributionCriteria
-                   objectClass="«self.getEditPartQualifiedClassName()»"
+                   objectClass="Â«self.getEditPartQualifiedClassName()Â»"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE applyStereotypeContributionItemProvider FOR gmfgen::GenDiagram»
+Â«DEFINE applyStereotypeContributionItemProvider FOR gmfgen::GenDiagramÂ»
       <contributionItemProvider
             checkPluginLoaded="true"
             class="org.eclipse.uml2.diagram.common.stereo.ApplicableStereotypesItemProvider">
          <Priority name="Medium"/>
 		 <popupContribution
-               class="«editorGen.editor.packageName».DiagramEditorContextMenuProvider">
+               class="Â«editorGen.editor.packageNameÂ».DiagramEditorContextMenuProvider">
 			 <popupMenuGroup
                   id="ApplyStereotypeGroup"
                   path="/propertiesGroup">
@@ -73,12 +73,12 @@
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE stereotypePropertySection FOR gmfgen::GenDiagram»
+Â«DEFINE stereotypePropertySection FOR gmfgen::GenDiagramÂ»
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections.tagvalues">
-«EXPAND xpt::Common::xmlGeneratedTag»
-      <propertySections contributorId="«editorGen.plugin.iD»">
+Â«EXPAND xpt::Common::xmlGeneratedTagÂ»
+      <propertySections contributorId="Â«editorGen.plugin.iDÂ»">
          <propertySection
             id="property.section.domain.taggedvalues" 
             tab="property.tab.domain.taggedvalues"
@@ -86,16 +86,16 @@
             filter="org.eclipse.uml2.diagram.common.sheet.AppliedStereotypePropertySectionFilter">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="«editorGen.navigator.packageName».«editorGen.navigator.abstractNavigatorItemClassName»"/>
+            <input type="Â«editorGen.navigator.packageNameÂ».Â«editorGen.navigator.abstractNavigatorItemClassNameÂ»"/>
          </propertySection>
       </propertySections>
    </extension>
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE stereotypePropertyTabs FOR gmfgen::GenDiagram»
+Â«DEFINE stereotypePropertyTabs FOR gmfgen::GenDiagramÂ»
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.tagvalues">
-«EXPAND xpt::Common::xmlGeneratedTag»
-      <propertyTabs contributorId="«editorGen.plugin.iD»">
+Â«EXPAND xpt::Common::xmlGeneratedTagÂ»
+      <propertyTabs contributorId="Â«editorGen.plugin.iDÂ»">
           <propertyTab
                 afterTab="property.tab.domain"
                 category="domain"
@@ -103,4 +103,4 @@
                 label="Tagged Values"/>
       </propertyTabs>
    </extension>
-«ENDDEFINE»
+Â«ENDDEFINEÂ»

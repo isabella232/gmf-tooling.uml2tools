@@ -11,23 +11,23 @@
  *    Michael Golubev (Borland) - switch actions for comments/nodes
   */
 
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
+Â«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'Â»
 
-«EXTENSION xpt::actions::Utils»  
+Â«EXTENSION xpt::actions::UtilsÂ»  
 
-«DEFINE changeNotationContributionItemProviders FOR gmfgen::GenDiagram»
-	«EXPAND changeNotationContributionItemProviders FOREACH topLevelNodes»
-«ENDDEFINE»
+Â«DEFINE changeNotationContributionItemProviders FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND changeNotationContributionItemProviders FOREACH topLevelNodesÂ»
+Â«ENDDEFINEÂ»
 
-«DEFINE changeNotationContributionItemProviders FOR gmfgen::GenTopLevelNode»
-«IF self.hasAlternativeNotation()-»
-	<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
-      «EXPAND xpt::Common::xmlGeneratedTag»
+Â«DEFINE changeNotationContributionItemProviders FOR gmfgen::GenTopLevelNodeÂ»
+Â«IF self.hasAlternativeNotation()-Â»
+	<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-Â«getNodeName(self)Â»">
+      Â«EXPAND xpt::Common::xmlGeneratedTagÂ»
       <contributionItemProvider
             checkPluginLoaded="true"
-            class="«EXPAND xpt::actions::ChangeNotationContributionItemProvider::qualifiedClassName»">
+            class="Â«EXPAND xpt::actions::ChangeNotationContributionItemProvider::qualifiedClassNameÂ»">
          <Priority name="Medium"/>
 		 <popupContribution
                class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
@@ -43,26 +43,26 @@
                    id="ChangeNotationGroup"
                    path="/ChangeNotationMenu/">
              </popupMenuGroup>
-		«LET (viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first() AS subChild-»
-«LET subChild.oclAsType(u2tgen::SubstitutableByAttributes) AS subChildImpl-»
-		«IF subChildImpl <> null and not subChildImpl.requiresAll-»
-			«FOREACH (subChildImpl.getSubstitutableByNodes())[gmfgen::GenNode]->asSequence() AS newNode»«EXPAND changeNotationPopupAction(newNode)»«ENDFOREACH-»
-		«ENDIF-»
-		«ENDLET-»
-«ENDLET-»
+		Â«LET (viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first() AS subChild-Â»
+Â«LET subChild.oclAsType(u2tgen::SubstitutableByAttributes) AS subChildImpl-Â»
+		Â«IF subChildImpl <> null and not subChildImpl.requiresAll-Â»
+			Â«FOREACH (subChildImpl.getSubstitutableByNodes())[gmfgen::GenNode]->asSequence() AS newNodeÂ»Â«EXPAND changeNotationPopupAction(newNode)Â»Â«ENDFOREACH-Â»
+		Â«ENDIF-Â»
+		Â«ENDLET-Â»
+Â«ENDLET-Â»
 <popupStructuredContributionCriteria
-                   objectClass="«getEditPartQualifiedClassName()»"
+                   objectClass="Â«getEditPartQualifiedClassName()Â»"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-«ENDIF-»
-«ENDDEFINE»
+Â«ENDIF-Â»
+Â«ENDDEFINEÂ»
 
-«DEFINE changeNotationPopupAction(node : gmfgen::GenNode) FOR gmfgen::GenTopLevelNode»
+Â«DEFINE changeNotationPopupAction(node : gmfgen::GenNode) FOR gmfgen::GenTopLevelNodeÂ»
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
-				id="«EXPAND xpt::actions::ChangeNotationAction::actionId(node)»">
+				id="Â«EXPAND xpt::actions::ChangeNotationAction::actionId(node)Â»">
 			</popupAction>            
-«ENDDEFINE»
+Â«ENDDEFINEÂ»

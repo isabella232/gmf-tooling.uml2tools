@@ -13,129 +13,130 @@
  *
  */
  
-«IMPORT 'http://www.eclipse.org/gmf/2008/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
 
-«EXTENSION MetaModel»
-«EXTENSION xpt::editor::Utils»
-«EXTENSION aspects::xpt::FileExtensionUtils»
-«EXTENSION xpt::wizard::Utils»
+Â«EXTENSION MetaModelÂ»
+Â«EXTENSION xpt::editor::UtilsÂ»
+Â«EXTENSION aspects::xpt::FileExtensionUtilsÂ»
+Â«EXTENSION xpt::wizard::UtilsÂ»
+Â«EXTENSION xpt::editor::GenDiagramÂ»
 
-«AROUND xpt::editor::CreationWizard::CreationWizard FOR gmfgen::GenDiagram-»
-«EXPAND xpt::Common::copyright FOR editorGen-»
-package «editorGen.editor.packageName»;
+Â«AROUND xpt::editor::CreationWizard::CreationWizard FOR gmfgen::GenDiagram-Â»
+Â«EXPAND xpt::Common::copyright FOR editorGen-Â»
+package Â«editorGen.editor.packageNameÂ»;
 
-«EXPAND xpt::Common::generatedClassComment»
-public class «creationWizardClassName»
+Â«EXPAND xpt::Common::generatedClassCommentÂ»
+public class Â«creationWizardClassNameÂ»
 		extends org.eclipse.jface.wizard.Wizard implements org.eclipse.ui.INewWizard {
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private org.eclipse.ui.IWorkbench workbench;
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
     protected org.eclipse.jface.viewers.IStructuredSelection selection;
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	protected «getCreationWizardPageQualifiedClassName()» diagramModelFilePage;
-	«IF isStandaloneDomainModel(self)-»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	protected Â«getCreationWizardPageQualifiedClassName()Â» diagramModelFilePage;
+	Â«IF standaloneDomainModel(self)-Â»
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	protected «getCreationWizardPageQualifiedClassName()» domainModelFilePage;
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	protected Â«getCreationWizardPageQualifiedClassName()Â» domainModelFilePage;
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private org.eclipse.uml2.diagram.common.part.UMLModelWizardInitialObjectCreationPage initialObjectCreationPage;
-	«ENDIF-»
+	Â«ENDIF-Â»
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected org.eclipse.emf.ecore.resource.Resource diagram;
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private boolean openNewlyCreatedDiagramEditor = true;
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
     public org.eclipse.ui.IWorkbench getWorkbench() {
         return workbench;
     }
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public org.eclipse.jface.viewers.IStructuredSelection getSelection() {
         return selection;
     }
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public final org.eclipse.emf.ecore.resource.Resource getDiagram() {
 		return diagram;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public final boolean isOpenNewlyCreatedDiagramEditor() {
 		return openNewlyCreatedDiagramEditor;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
 		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void init(org.eclipse.ui.IWorkbench workbench, org.eclipse.jface.viewers.IStructuredSelection selection) {
         this.workbench = workbench;
         this.selection = selection;
-		setWindowTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizard(self))) FOR editorGen»);
-		setDefaultPageImageDescriptor(«editorGen.plugin.getActivatorQualifiedClassName()».getBundledImageDescriptor(
-				"icons/wizban/New«IF domainDiagramElement <> null»«domainDiagramElement.genPackage.prefix»«ENDIF»Wizard.gif")); //$NON-NLS-1$
+		setWindowTitle(Â«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizard(self))) FOR editorGenÂ»);
+		setDefaultPageImageDescriptor(Â«editorGen.plugin.getActivatorQualifiedClassName()Â».getBundledImageDescriptor(
+				"icons/wizban/NewÂ«IF domainDiagramElement <> nullÂ»Â«domainDiagramElement.genPackage.prefixÂ»Â«ENDIFÂ»Wizard.gif")); //$NON-NLS-1$
 		setNeedsProgressMonitor(true);
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void addPages() {
-		«REM» #230873 'Make diagram file extension shorter'
-		The only change is here. We take the first extension from the comma-separated list«ENDREM-»
-		diagramModelFilePage = new «getCreationWizardPageQualifiedClassName()»(
-				"DiagramModelFile", getSelection(), "«getDefaultDiagramExtension(editorGen)»"); //$NON-NLS-1$ //$NON-NLS-2$
-		«REM» END #230873 «ENDREM»«-»
-		diagramModelFilePage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizardDiagramPage(self))) FOR editorGen»);
-		diagramModelFilePage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForCreationWizardDiagramPage(self))) FOR editorGen»);
+		Â«REMÂ» #230873 'Make diagram file extension shorter'
+		The only change is here. We take the first extension from the comma-separated listÂ«ENDREM-Â»
+		diagramModelFilePage = new Â«getCreationWizardPageQualifiedClassName()Â»(
+				"DiagramModelFile", getSelection(), "Â«getDefaultDiagramExtension(editorGen)Â»"); //$NON-NLS-1$ //$NON-NLS-2$
+		Â«REMÂ» END #230873 Â«ENDREMÂ»Â«-Â»
+		diagramModelFilePage.setTitle(Â«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizardDiagramPage(self))) FOR editorGenÂ»);
+		diagramModelFilePage.setDescription(Â«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForCreationWizardDiagramPage(self))) FOR editorGenÂ»);
 		addPage(diagramModelFilePage);
-	«IF isStandaloneDomainModel(self)-»
+	Â«IF standaloneDomainModel(self)-Â»
 
-		domainModelFilePage = new «getCreationWizardPageQualifiedClassName()»(
-				"DomainModelFile", getSelection(), "«editorGen.domainFileExtension»"); //$NON-NLS-1$ //$NON-NLS-2$
-		domainModelFilePage.setTitle(«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGen»);
-		domainModelFilePage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGen»);
+		domainModelFilePage = new Â«getCreationWizardPageQualifiedClassName()Â»(
+				"DomainModelFile", getSelection(), "Â«editorGen.domainFileExtensionÂ»"); //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage.setTitle(Â«EXPAND xpt::Externalizer::accessorCall(titleKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGenÂ»);
+		domainModelFilePage.setDescription(Â«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGenÂ»);
 		addPage(domainModelFilePage);
-		«IF needInitialObject(self)-» 
-		«EXPAND xpt::wizard::InitialObject::addInitialObjectPage»«ENDIF-»
-	«ENDIF-»
+		Â«IF needInitialObject(self)-Â» 
+		Â«EXPAND xpt::wizard::InitialObject::addInitialObjectPageÂ»Â«ENDIF-Â»
+	Â«ENDIF-Â»
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public boolean performFinish() {
 		org.eclipse.jface.operation.IRunnableWithProgress op =
-	«IF editorGen.application = null-»
+	Â«IF editorGen.application = null-Â»
 				new org.eclipse.ui.actions.WorkspaceModifyOperation(null) {
 
 			protected void execute(org.eclipse.core.runtime.IProgressMonitor monitor)
 					throws org.eclipse.core.runtime.CoreException, InterruptedException {
-	«ELSE-»
+	Â«ELSE-Â»
 				new org.eclipse.jface.operation.IRunnableWithProgress() {
 
 			public void run(org.eclipse.core.runtime.IProgressMonitor monitor)
 					throws InvocationTargetException, InterruptedException {
-	«ENDIF-»
-				diagram = «getDiagramEditorUtilQualifiedClassName()».createDiagram(diagramModelFilePage.getURI(),
-	«IF isStandaloneDomainModel(self)-»
+	Â«ENDIF-Â»
+				diagram = Â«getDiagramEditorUtilQualifiedClassName()Â».createDiagram(diagramModelFilePage.getURI(),
+	Â«IF standaloneDomainModel(self)-Â»
 						domainModelFilePage.getURI(),
-	«IF needInitialObject(self)-» 
+	Â«IF needInitialObject(self)-Â» 
 	initialObjectCreationPage.getInitialObject(), initialObjectCreationPage.getEncoding(),
-	«ENDIF-» 
-	«ENDIF-»
+	Â«ENDIF-Â» 
+	Â«ENDIF-Â»
 						monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
-						«getDiagramEditorUtilQualifiedClassName()».openDiagram(diagram);
+						Â«getDiagramEditorUtilQualifiedClassName()Â».openDiagram(diagram);
 					} catch (org.eclipse.ui.PartInitException e) {
 						org.eclipse.jface.dialogs.ErrorDialog.openError(getContainer().getShell(),
-								«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardOpenEditorError(self)) FOR editorGen», null, e.getStatus());
+								Â«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardOpenEditorError(self)) FOR editorGenÂ», null, e.getStatus());
 					}
 				}
 			}
@@ -147,32 +148,32 @@ public class «creationWizardClassName»
 		} catch (java.lang.reflect.InvocationTargetException e) {
 			if (e.getTargetException() instanceof org.eclipse.core.runtime.CoreException) {
 				org.eclipse.jface.dialogs.ErrorDialog.openError(getContainer().getShell(),
-						«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardCreationError(self)) FOR editorGen», null,
+						Â«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreationWizardCreationError(self)) FOR editorGenÂ», null,
 						((org.eclipse.core.runtime.CoreException) e.getTargetException()).getStatus());
 			} else {
-				«editorGen.plugin.getActivatorQualifiedClassName()».getInstance().logError(
+				Â«editorGen.plugin.getActivatorQualifiedClassName()Â».getInstance().logError(
 						"Error creating diagram", e.getTargetException()); //$NON-NLS-1$
 			}
 			return false;
 		}
 		return diagram != null;
 	}
-	«EXPAND xpt::editor::CreationWizard::additions-»
+	Â«EXPAND xpt::editor::CreationWizard::additions-Â»
 }
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND i18nValues FOR gmfgen::GenDiagram-»
-«targetDef.proceed()-»
-«IF needInitialObject(self)-»
-«EXPAND xpt::wizard::InitialObject::i18nValues»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND i18nValues FOR gmfgen::GenDiagram-Â»
+Â«targetDef.proceed()-Â»
+Â«IF needInitialObject(self)-Â»
+Â«EXPAND xpt::wizard::InitialObject::i18nValuesÂ»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND i18nAccessors FOR gmfgen::GenDiagram-»
-«targetDef.proceed()-»
-«IF needInitialObject(self)-»
-«EXPAND xpt::wizard::InitialObject::i18nAccessors»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND i18nAccessors FOR gmfgen::GenDiagram-Â»
+Â«targetDef.proceed()-Â»
+Â«IF needInitialObject(self)-Â»
+Â«EXPAND xpt::wizard::InitialObject::i18nAccessorsÂ»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
 
