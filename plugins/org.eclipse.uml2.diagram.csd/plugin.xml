@@ -198,7 +198,7 @@
       </GlobalActionHandlerProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-Class">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -430,6 +430,7 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.csd.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart" id="Package_1000"/>
          <object class="org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart" id="Collaboration_2005"/>
          <object class="org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart" id="Class_2006"/>
          <object class="org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart" id="Package_2003"/>
@@ -438,7 +439,7 @@
          <object class="org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart" id="InstanceSpecification_2011"/>
          <object class="org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart" id="Constraint_2012"/>
          <object class="org.eclipse.uml2.diagram.csd.edit.parts.CommentEditPart" id="Comment_2013"/>
-         <context elements="Collaboration_2005,Class_2006,Package_2003,Class_2007,Interface_2009,InstanceSpecification_2011,Constraint_2012,Comment_2013"/>
+         <context elements="Package_1000,Collaboration_2005,Class_2006,Package_2003,Class_2007,Interface_2009,InstanceSpecification_2011,Constraint_2012,Comment_2013"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -956,7 +957,7 @@
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-Class3">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1046,7 +1047,7 @@
          </command>
       </menuContribution>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-stereotypes">
 <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1240,6 +1241,7 @@
          <editor id="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"/>
    </paletteProvider>
 </extension>
+
 	<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action-xmi">
 		<?gmfgen generated="true"?>
 		<objectContribution
