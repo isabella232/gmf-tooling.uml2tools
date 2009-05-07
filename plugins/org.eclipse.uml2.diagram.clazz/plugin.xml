@@ -67,7 +67,7 @@
       </objectContribution>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-show-property-parameters">
       <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="false"
@@ -115,7 +115,7 @@
       </contributionItemProvider>
    </extension>
    
-    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-detail-level">
       <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -154,7 +154,7 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-association-type">
       <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -193,7 +193,7 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-dependency-type">
       <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -239,7 +239,7 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-interface">
       <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -266,7 +266,7 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-association-from-property">
       <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1994,7 +1994,7 @@
       <?gmfgen generated="true"?>
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-delete-from-diagram">
 	<?gmfgen generated="true"?>
 	
 	<contributionItemProvider
