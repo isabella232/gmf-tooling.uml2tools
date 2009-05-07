@@ -12,7 +12,7 @@
       </handler>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-show-property-parameters">
       <?gmfgen generated="false"?>
       <contributionItemProvider
             checkPluginLoaded="false"
@@ -144,7 +144,7 @@
    </extension>
    -->
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-Class2">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -992,7 +992,7 @@
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-ClassDiagramNotationClass">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1079,7 +1079,7 @@
       </menuContribution>
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-stereotypes">
 <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
