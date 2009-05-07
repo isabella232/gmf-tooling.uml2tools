@@ -122,7 +122,7 @@ public class ForkNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(4), getMapMode().DPtoLP(50));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(4, 50);
 		return result;
 	}
 
@@ -193,7 +193,7 @@ public class ForkNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

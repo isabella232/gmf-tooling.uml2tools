@@ -127,7 +127,7 @@ public class ActivityPartition_FlowFinalNodeEditPart extends ShapeNodeEditPart i
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(23), getMapMode().DPtoLP(23));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(23, 23);
 		return result;
 	}
 
@@ -201,7 +201,7 @@ public class ActivityPartition_FlowFinalNodeEditPart extends ShapeNodeEditPart i
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

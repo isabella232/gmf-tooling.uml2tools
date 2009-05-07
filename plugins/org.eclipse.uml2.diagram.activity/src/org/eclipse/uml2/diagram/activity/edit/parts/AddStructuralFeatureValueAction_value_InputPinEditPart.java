@@ -160,7 +160,7 @@ public class AddStructuralFeatureValueAction_value_InputPinEditPart extends Bord
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(15, 15);
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
@@ -237,7 +237,7 @@ public class AddStructuralFeatureValueAction_value_InputPinEditPart extends Bord
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

@@ -95,7 +95,7 @@
    </extension>
    -->
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-LocalPrecondition">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -214,10 +214,11 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.activity.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.uml2.diagram.activity.edit.parts.PackageEditPart" id="Package_1000"/>
          <object class="org.eclipse.uml2.diagram.activity.edit.parts.ActivityEditPart" id="Activity_2026"/>
          <object class="org.eclipse.uml2.diagram.activity.edit.parts.LocalPreconditionEditPart" id="Constraint_2027"/>
          <object class="org.eclipse.uml2.diagram.activity.edit.parts.LocalPostconditionEditPart" id="Constraint_2028"/>
-         <context elements="Activity_2026,Constraint_2027,Constraint_2028"/>
+         <context elements="Package_1000,Activity_2026,Constraint_2027,Constraint_2028"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -1517,7 +1518,7 @@
          sequence="F5"/>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-LocalPostcondition">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1643,7 +1644,7 @@
          </enabledWhen>
       </handler>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-stereotypes">
 <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"

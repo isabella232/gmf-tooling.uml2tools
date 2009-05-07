@@ -37,7 +37,6 @@ public class ActionLocalPreconditionItemSemanticEditPolicy extends UMLBaseItemSe
 				resource.getContents().add(referencedObject);
 				return result;
 			}
-
 		});
 	}
 

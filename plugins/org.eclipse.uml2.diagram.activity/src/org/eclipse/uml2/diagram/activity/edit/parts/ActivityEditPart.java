@@ -231,7 +231,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(450), getMapMode().DPtoLP(300));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(450, 300);
 		return result;
 	}
 
@@ -302,7 +302,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

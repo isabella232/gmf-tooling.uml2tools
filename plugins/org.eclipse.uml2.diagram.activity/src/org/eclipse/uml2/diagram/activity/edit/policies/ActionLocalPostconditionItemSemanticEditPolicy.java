@@ -37,7 +37,6 @@ public class ActionLocalPostconditionItemSemanticEditPolicy extends UMLBaseItemS
 				resource.getContents().add(referencedObject);
 				return result;
 			}
-
 		});
 	}
 
