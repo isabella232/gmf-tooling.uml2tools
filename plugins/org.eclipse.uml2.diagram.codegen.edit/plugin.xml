@@ -5,7 +5,7 @@
  <copyright>
  </copyright>
 
- $Id: plugin.xml,v 1.4 2009/03/10 15:24:10 tfesenko Exp $
+ $Id: plugin.xml,v 1.5 2009/05/07 09:32:57 mgolubev Exp $
 -->
 
 <plugin>
@@ -36,7 +36,7 @@
 
   <extension point="org.eclipse.emf.edit.childCreationExtenders">
     <extender 
-       uri = "http://www.eclipse.org/gmf/2008/GenModel" 
+       uri = "http://www.eclipse.org/gmf/2009/GenModel" 
        class = "org.eclipse.uml2.diagram.codegen.u2tgen.provider.U2TGenItemProviderAdapterFactory$GMFGenChildCreationExtender" />
   </extension>
 

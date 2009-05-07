@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TMapPackageImpl.java,v 1.2 2009/03/10 13:47:22 tfesenko Exp $
+ * $Id: U2TMapPackageImpl.java,v 1.3 2009/05/07 09:32:56 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.impl;
 
@@ -143,7 +143,7 @@ public class U2TMapPackageImpl extends EPackageImpl implements U2TMapPackage {
 		if (isInited) return (U2TMapPackage)EPackage.Registry.INSTANCE.getEPackage(U2TMapPackage.eNS_URI);
 
 		// Obtain or create and register package
-		U2TMapPackageImpl theU2TMapPackage = (U2TMapPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof U2TMapPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new U2TMapPackageImpl());
+		U2TMapPackageImpl theU2TMapPackage = (U2TMapPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof U2TMapPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new U2TMapPackageImpl());
 
 		isInited = true;
 
