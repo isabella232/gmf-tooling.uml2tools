@@ -167,7 +167,7 @@ public class EntryPointPseudostateEditPart extends BorderedBorderItemEditPart im
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(15), getMapMode().DPtoLP(15));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(15, 15);
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
@@ -243,7 +243,7 @@ public class EntryPointPseudostateEditPart extends BorderedBorderItemEditPart im
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

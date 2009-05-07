@@ -129,7 +129,7 @@ public class DeepHistoryPseudostateEditPart extends ShapeNodeEditPart implements
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(25), getMapMode().DPtoLP(25));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(25, 25);
 		return result;
 	}
 
@@ -202,7 +202,7 @@ public class DeepHistoryPseudostateEditPart extends ShapeNodeEditPart implements
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

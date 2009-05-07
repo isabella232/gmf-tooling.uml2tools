@@ -124,7 +124,7 @@ public class TerminatePseudostateEditPart extends ShapeNodeEditPart implements P
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(30), getMapMode().DPtoLP(25));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(30, 25);
 		return result;
 	}
 
@@ -197,7 +197,7 @@ public class TerminatePseudostateEditPart extends ShapeNodeEditPart implements P
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

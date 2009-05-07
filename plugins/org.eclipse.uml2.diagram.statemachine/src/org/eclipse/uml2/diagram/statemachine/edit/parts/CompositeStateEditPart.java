@@ -223,7 +223,7 @@ public class CompositeStateEditPart extends ShapeNodeEditPart implements Primary
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
 	}
 
@@ -293,7 +293,7 @@ public class CompositeStateEditPart extends ShapeNodeEditPart implements Primary
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 
