@@ -239,33 +239,6 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-interface">
-      <?gmfgen generated="false"?>
-      <contributionItemProvider
-            checkPluginLoaded="true"
-            class="org.eclipse.uml2.diagram.clazz.action.InterfaceContributionItemProvider">
-         <Priority name="Medium"/>
-		 <popupContribution
-               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-			 <popupMenuGroup
-                  id="InterfaceGroup"
-                  path="/propertiesGroup">
-             </popupMenuGroup>
-             <popupAction
-                  path="/InterfaceGroup"
-                  id="change_interface_notation">
-             </popupAction>            
-             <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart"
-                   objectCount="1">
-             </popupStructuredContributionCriteria>
-             <popupStructuredContributionCriteria
-                   objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart"
-                   objectCount="1">
-             </popupStructuredContributionCriteria>
-		 </popupContribution>
-      </contributionItemProvider>
-   </extension>
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-association-from-property">
       <?gmfgen generated="false"?>
       <contributionItemProvider
@@ -457,7 +430,7 @@
       </GlobalActionHandlerProvider>
    </extension>
 
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-Package2">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1696,7 +1669,7 @@
          sequence="F5"/>
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-Interface">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1729,7 +1702,7 @@
       </contributionItemProvider>
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-InstanceSpecification2">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1762,7 +1735,7 @@
       </contributionItemProvider>
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-Interface2">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1795,7 +1768,7 @@
       </contributionItemProvider>
    </extension>
 	
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-PackageAsFrame">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1827,7 +1800,7 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-InstanceSpecification4">
       <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
@@ -1878,7 +1851,7 @@
             id="org.eclipse.uml2.diagram.clazz.icons">
       </page>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-stereotypes">
 <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
