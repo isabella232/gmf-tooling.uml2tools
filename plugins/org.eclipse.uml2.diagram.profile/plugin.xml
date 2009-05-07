@@ -255,6 +255,7 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.profile.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.uml2.diagram.profile.edit.parts.ProfileEditPart" id="Profile_1000"/>
          <object class="org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart" id="Stereotype_2001"/>
          <object class="org.eclipse.uml2.diagram.profile.edit.parts.Profile2EditPart" id="Profile_2002"/>
          <object class="org.eclipse.uml2.diagram.profile.edit.parts.EnumerationEditPart" id="Enumeration_2003"/>
@@ -262,7 +263,7 @@
          <object class="org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart" id="Profile_2007"/>
          <object class="org.eclipse.uml2.diagram.profile.edit.parts.Constraint2EditPart" id="Constraint_2008"/>
          <object class="org.eclipse.uml2.diagram.profile.edit.parts.CommentEditPart" id="Comment_2009"/>
-         <context elements="Stereotype_2001,Profile_2002,Enumeration_2003,ElementImport_2006,Profile_2007,Constraint_2008,Comment_2009"/>
+         <context elements="Profile_1000,Stereotype_2001,Profile_2002,Enumeration_2003,ElementImport_2006,Profile_2007,Constraint_2008,Comment_2009"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -782,7 +783,7 @@
       <?gmfgen generated="true"?>
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-stereotypes">
 <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"
