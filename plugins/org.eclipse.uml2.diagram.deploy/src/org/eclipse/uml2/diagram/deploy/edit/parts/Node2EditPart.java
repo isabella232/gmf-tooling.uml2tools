@@ -194,7 +194,7 @@ public class Node2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 	 * @generated
 	 */
 	protected org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(100), getMapMode().DPtoLP(60));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(100, 60);
 		return result;
 	}
 
@@ -233,7 +233,7 @@ public class Node2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
-			layout.setSpacing(getMapMode().DPtoLP(5));
+			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
 		}
 		return nodeShape; // use nodeShape itself as contentPane
@@ -272,7 +272,7 @@ public class Node2EditPart extends ShapeNodeEditPart implements PrimaryShapeEdit
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

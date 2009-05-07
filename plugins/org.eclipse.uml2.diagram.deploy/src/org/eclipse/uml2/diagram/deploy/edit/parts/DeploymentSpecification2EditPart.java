@@ -214,7 +214,7 @@ public class DeploymentSpecification2EditPart extends ShapeNodeEditPart implemen
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(getMapMode().DPtoLP(160), getMapMode().DPtoLP(100));
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(160, 100);
 		return result;
 	}
 
@@ -253,7 +253,7 @@ public class DeploymentSpecification2EditPart extends ShapeNodeEditPart implemen
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
-			layout.setSpacing(getMapMode().DPtoLP(5));
+			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
 		}
 		return nodeShape; // use nodeShape itself as contentPane
@@ -292,7 +292,7 @@ public class DeploymentSpecification2EditPart extends ShapeNodeEditPart implemen
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

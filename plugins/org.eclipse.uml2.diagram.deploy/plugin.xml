@@ -315,6 +315,7 @@
       <?gmfgen generated="true"?>
       <modelingAssistantProvider class="org.eclipse.uml2.diagram.deploy.providers.UMLModelingAssistantProvider">
          <Priority name="Lowest"/>
+         <object class="org.eclipse.uml2.diagram.deploy.edit.parts.PackageEditPart" id="Package_1000"/>
          <object class="org.eclipse.uml2.diagram.deploy.edit.parts.Package2EditPart" id="Package_2001"/>
          <object class="org.eclipse.uml2.diagram.deploy.edit.parts.DeviceEditPart" id="Device_2003"/>
          <object class="org.eclipse.uml2.diagram.deploy.edit.parts.NodeEditPart" id="Node_2004"/>
@@ -322,7 +323,7 @@
          <object class="org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart" id="Artifact_2006"/>
          <object class="org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentSpecificationEditPart" id="DeploymentSpecification_2007"/>
          <object class="org.eclipse.uml2.diagram.deploy.edit.parts.CommentEditPart" id="Comment_2008"/>
-         <context elements="Package_2001,Device_2003,Node_2004,ExecutionEnvironment_2005,Artifact_2006,DeploymentSpecification_2007,Comment_2008"/>
+         <context elements="Package_1000,Package_2001,Device_2003,Node_2004,ExecutionEnvironment_2005,Artifact_2006,DeploymentSpecification_2007,Comment_2008"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -825,7 +826,7 @@
          </command>
       </menuContribution>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-stereotypes">
 <?gmfgen generated="true"?>
       <contributionItemProvider
             checkPluginLoaded="true"

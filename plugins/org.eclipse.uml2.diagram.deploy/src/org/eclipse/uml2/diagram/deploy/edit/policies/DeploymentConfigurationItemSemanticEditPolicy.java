@@ -36,7 +36,6 @@ public class DeploymentConfigurationItemSemanticEditPolicy extends UMLBaseItemSe
 				resource.getContents().add(referencedObject);
 				return result;
 			}
-
 		});
 	}
 
