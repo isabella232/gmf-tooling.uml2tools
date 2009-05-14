@@ -1,6 +1,8 @@
 package org.eclipse.uml2.diagram.clazz.providers;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -313,7 +315,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
+	public Diagram createDiagramGen(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
 		U2TDiagramCanonicalStyle canonicalStyle_Package_1000 = U2TNotationFactory.eINSTANCE.createU2TDiagramCanonicalStyle();
@@ -324,6 +326,15 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		diagram.setType(PackageEditPart.MODEL_ID);
 		diagram.setElement(getSemanticElement(semanticAdapter));
 		diagram.setMeasurementUnit(MeasurementUnit.PIXEL_LITERAL);
+		return diagram;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
+		Diagram diagram = createDiagram(semanticAdapter, diagramKind, preferencesHint);
+		diagram.getStyles().add(NotationFactory.eINSTANCE.createFilteringStyle()); //[171240]
 		return diagram;
 	}
 
