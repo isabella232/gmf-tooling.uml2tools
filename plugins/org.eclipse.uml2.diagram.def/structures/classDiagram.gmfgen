@@ -4563,7 +4563,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigurePackageFigure_PackagesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7011"
@@ -4579,7 +4583,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigurePackageFigure_ClassesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7012"
@@ -4595,7 +4603,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigurePackageFigure_OthersCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7001"
@@ -4611,7 +4623,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_PropertiesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7002"
@@ -4627,7 +4643,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_OperationsCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7003"
@@ -4643,7 +4663,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_ClassesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7024"
@@ -4659,7 +4683,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_PropertiesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7025"
@@ -4675,7 +4703,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_OperationsCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7026"
@@ -4691,7 +4723,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_ClassesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7017"
@@ -4707,7 +4743,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_PropertiesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7018"
@@ -4723,7 +4763,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_OperationsCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7020"
@@ -4739,7 +4783,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_PropertiesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7021"
@@ -4755,7 +4803,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_OperationsCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7013"
@@ -4771,7 +4823,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_LiteralsCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7014"
@@ -4787,7 +4843,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_PropertiesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7015"
@@ -4803,7 +4863,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_OperationsCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7028"
@@ -4840,7 +4904,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_PropertiesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7030"
@@ -4856,7 +4924,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_OperationsCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7031"
@@ -4872,7 +4944,11 @@
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureClassFigure_ClassesCompartment"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure">
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            filteringCompartment="true"/>
+      </viewmap>
     </compartments>
     <compartments
         visualID="7032"

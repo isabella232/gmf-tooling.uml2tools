@@ -42,6 +42,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
+import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
 import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.view.factories.*;
@@ -528,16 +529,19 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		CanonicalStyle canonicalStyle_PackagePackages_7010 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PackagePackages_7010.setCanonical(true);
 		PackagePackages_7010.getStyles().add(canonicalStyle_PackagePackages_7010);
+		UMLDetailLevelService.getLevel(PackagePackages_7010).init(PackagePackages_7010); // [171240]
 
 		Node PackageClassifiers_7011 = createCompartment(node, UMLVisualIDRegistry.getType(PackageClassifiersEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_PackageClassifiers_7011 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PackageClassifiers_7011.setCanonical(true);
 		PackageClassifiers_7011.getStyles().add(canonicalStyle_PackageClassifiers_7011);
+		UMLDetailLevelService.getLevel(PackageClassifiers_7011).init(PackageClassifiers_7011); // [171240]
 
 		Node PackageOther_7012 = createCompartment(node, UMLVisualIDRegistry.getType(PackageOtherEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_PackageOther_7012 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PackageOther_7012.setCanonical(true);
 		PackageOther_7012.getStyles().add(canonicalStyle_PackageOther_7012);
+		UMLDetailLevelService.getLevel(PackageOther_7012).init(PackageOther_7012); // [171240]
 		return node;
 	}
 
@@ -578,16 +582,19 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		CanonicalStyle canonicalStyle_ClassAttributes_7001 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ClassAttributes_7001.setCanonical(true);
 		ClassAttributes_7001.getStyles().add(canonicalStyle_ClassAttributes_7001);
+		UMLDetailLevelService.getLevel(ClassAttributes_7001).init(ClassAttributes_7001); // [171240]
 
 		Node ClassOperations_7002 = createCompartment(node, UMLVisualIDRegistry.getType(ClassOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_ClassOperations_7002 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ClassOperations_7002.setCanonical(true);
 		ClassOperations_7002.getStyles().add(canonicalStyle_ClassOperations_7002);
+		UMLDetailLevelService.getLevel(ClassOperations_7002).init(ClassOperations_7002); // [171240]
 
 		Node ClassClasses_7003 = createCompartment(node, UMLVisualIDRegistry.getType(ClassClassesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_ClassClasses_7003 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ClassClasses_7003.setCanonical(true);
 		ClassClasses_7003.getStyles().add(canonicalStyle_ClassClasses_7003);
+		UMLDetailLevelService.getLevel(ClassClasses_7003).init(ClassClasses_7003); // [171240]
 		return node;
 	}
 
@@ -628,16 +635,19 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		CanonicalStyle canonicalStyle_AssociationClassAttributes_7024 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_AssociationClassAttributes_7024.setCanonical(true);
 		AssociationClassAttributes_7024.getStyles().add(canonicalStyle_AssociationClassAttributes_7024);
+		UMLDetailLevelService.getLevel(AssociationClassAttributes_7024).init(AssociationClassAttributes_7024); // [171240]
 
 		Node AssociationClassOperations_7025 = createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_AssociationClassOperations_7025 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_AssociationClassOperations_7025.setCanonical(true);
 		AssociationClassOperations_7025.getStyles().add(canonicalStyle_AssociationClassOperations_7025);
+		UMLDetailLevelService.getLevel(AssociationClassOperations_7025).init(AssociationClassOperations_7025); // [171240]
 
 		Node AssociationClassClasses_7026 = createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassClassesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_AssociationClassClasses_7026 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_AssociationClassClasses_7026.setCanonical(true);
 		AssociationClassClasses_7026.getStyles().add(canonicalStyle_AssociationClassClasses_7026);
+		UMLDetailLevelService.getLevel(AssociationClassClasses_7026).init(AssociationClassClasses_7026); // [171240]
 		return node;
 	}
 
@@ -678,11 +688,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		CanonicalStyle canonicalStyle_DataTypeAttributes_7017 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_DataTypeAttributes_7017.setCanonical(true);
 		DataTypeAttributes_7017.getStyles().add(canonicalStyle_DataTypeAttributes_7017);
+		UMLDetailLevelService.getLevel(DataTypeAttributes_7017).init(DataTypeAttributes_7017); // [171240]
 
 		Node DataTypeOperations_7018 = createCompartment(node, UMLVisualIDRegistry.getType(DataTypeOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_DataTypeOperations_7018 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_DataTypeOperations_7018.setCanonical(true);
 		DataTypeOperations_7018.getStyles().add(canonicalStyle_DataTypeOperations_7018);
+		UMLDetailLevelService.getLevel(DataTypeOperations_7018).init(DataTypeOperations_7018); // [171240]
 		return node;
 	}
 
@@ -723,11 +735,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		CanonicalStyle canonicalStyle_PrimitiveTypeAttributes_7020 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PrimitiveTypeAttributes_7020.setCanonical(true);
 		PrimitiveTypeAttributes_7020.getStyles().add(canonicalStyle_PrimitiveTypeAttributes_7020);
+		UMLDetailLevelService.getLevel(PrimitiveTypeAttributes_7020).init(PrimitiveTypeAttributes_7020); // [171240]
 
 		Node PrimitiveTypeOperations_7021 = createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_PrimitiveTypeOperations_7021 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PrimitiveTypeOperations_7021.setCanonical(true);
 		PrimitiveTypeOperations_7021.getStyles().add(canonicalStyle_PrimitiveTypeOperations_7021);
+		UMLDetailLevelService.getLevel(PrimitiveTypeOperations_7021).init(PrimitiveTypeOperations_7021); // [171240]
 		return node;
 	}
 
@@ -768,16 +782,19 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		CanonicalStyle canonicalStyle_EnumerationLiterals_7013 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_EnumerationLiterals_7013.setCanonical(true);
 		EnumerationLiterals_7013.getStyles().add(canonicalStyle_EnumerationLiterals_7013);
+		UMLDetailLevelService.getLevel(EnumerationLiterals_7013).init(EnumerationLiterals_7013); // [171240]
 
 		Node EnumerationAttributes_7014 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationAttributesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_EnumerationAttributes_7014 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_EnumerationAttributes_7014.setCanonical(true);
 		EnumerationAttributes_7014.getStyles().add(canonicalStyle_EnumerationAttributes_7014);
+		UMLDetailLevelService.getLevel(EnumerationAttributes_7014).init(EnumerationAttributes_7014); // [171240]
 
 		Node EnumerationOperations_7015 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_EnumerationOperations_7015 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_EnumerationOperations_7015.setCanonical(true);
 		EnumerationOperations_7015.getStyles().add(canonicalStyle_EnumerationOperations_7015);
+		UMLDetailLevelService.getLevel(EnumerationOperations_7015).init(EnumerationOperations_7015); // [171240]
 		return node;
 	}
 
@@ -995,16 +1012,19 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		CanonicalStyle canonicalStyle_InterfaceAttributes_7029 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_InterfaceAttributes_7029.setCanonical(true);
 		InterfaceAttributes_7029.getStyles().add(canonicalStyle_InterfaceAttributes_7029);
+		UMLDetailLevelService.getLevel(InterfaceAttributes_7029).init(InterfaceAttributes_7029); // [171240]
 
 		Node InterfaceOperations_7030 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_InterfaceOperations_7030 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_InterfaceOperations_7030.setCanonical(true);
 		InterfaceOperations_7030.getStyles().add(canonicalStyle_InterfaceOperations_7030);
+		UMLDetailLevelService.getLevel(InterfaceOperations_7030).init(InterfaceOperations_7030); // [171240]
 
 		Node InterfaceClasses_7031 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceClassesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_InterfaceClasses_7031 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_InterfaceClasses_7031.setCanonical(true);
 		InterfaceClasses_7031.getStyles().add(canonicalStyle_InterfaceClasses_7031);
+		UMLDetailLevelService.getLevel(InterfaceClasses_7031).init(InterfaceClasses_7031); // [171240]
 		return node;
 	}
 
