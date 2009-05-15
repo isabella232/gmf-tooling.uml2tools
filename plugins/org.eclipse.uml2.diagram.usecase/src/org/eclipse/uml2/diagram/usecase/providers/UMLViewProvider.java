@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.usecase.providers;
 
 import java.util.ArrayList;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -9,7 +10,6 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.diagram.core.providers.IViewProvider;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateEdgeViewOperation;
@@ -25,6 +25,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.DrawerStyle;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.HintedDiagramLinkStyle;
@@ -42,6 +43,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
+import org.eclipse.uml2.diagram.common.view.ViewProviderUtils;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorInPackageEditPart;
@@ -95,58 +97,6 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.UseCasePointsEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseinPackageEditPart;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.usecase.view.factories.ActorAsRectangleViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ActorInPackageViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ActorName2ViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ActorName3ViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ActorNameViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ActorStereoViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ActorViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.AssociationSourceMultiplicityViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.AssociationTargetMultiplicityViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.AssociationViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.CommentAnnotatedElementViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.CommentBodyViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.CommentViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ComponentStereoViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintConstrainedElementViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintLanguageViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintNameViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ConstraintViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.DependencyNameViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.DependencyViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.DiagramHeaderViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ElementImportViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ExtendViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ExtendsLink_fixedViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ExtensionPoint2ViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.ExtensionPointViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.GeneralizationViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.IncludeLink_fixedViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.IncludeViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.InnerUseCaseExtensionPointsViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.InnerUseCaseViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.NestedPackageNameViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.NestedPackageViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.PackageFramecontentsViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.PackageImportsViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.PackageNameViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.PackageStereo2ViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.PackageViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.SubjectNameViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.SubjectUsecasesViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.SubjectViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseAsClassExtensionPointsViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseAsClassViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseExtensionPointsViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseName2ViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseName3ViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseName4ViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseNameViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCasePointsViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseStereoViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseViewFactory;
-import org.eclipse.uml2.diagram.usecase.view.factories.UseCaseinPackageViewFactory;
 
 /**
  * @generated
@@ -434,6 +384,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node PackageQualifiedName_5016 = createLabel(node, UMLVisualIDRegistry.getType(PackageStereo2EditPart.VISUAL_ID));
 
 		Node PackageImports_7001 = createCompartment(node, UMLVisualIDRegistry.getType(PackageImportsEditPart.VISUAL_ID), true, false, true, true);
+		DrawerStyle drawerStyle = (DrawerStyle) PackageImports_7001.getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
+		if (drawerStyle != null) {
+			//#216573 [SecondaryDiagramElement] Collapse imports compartment after creation
+			drawerStyle.setCollapsed(true);
+		}
 		return node;
 	}
 
@@ -679,7 +634,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	public Node createComment_2009(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+	public Node createComment_2009Gen(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(UMLVisualIDRegistry.getType(CommentEditPart.VISUAL_ID));
@@ -704,6 +659,15 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node CommentBody_5015 = createLabel(node, UMLVisualIDRegistry.getType(CommentBodyEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public Node createComment_2009(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Node node = createComment_2009Gen(domainElement, containerView, index, persisted, preferencesHint);
+		ViewProviderUtils.initializeCommentColor(node, preferencesHint);
 		return node;
 	}
 
