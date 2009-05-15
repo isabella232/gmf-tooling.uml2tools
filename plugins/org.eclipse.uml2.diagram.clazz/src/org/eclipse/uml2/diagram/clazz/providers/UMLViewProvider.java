@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.providers;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -11,7 +10,6 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.diagram.core.providers.IViewProvider;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateEdgeViewOperation;
@@ -29,9 +27,7 @@ import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
-import org.eclipse.gmf.runtime.notation.FillStyle;
 import org.eclipse.gmf.runtime.notation.FontStyle;
-import org.eclipse.gmf.runtime.notation.LineStyle;
 import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.Node;
@@ -46,11 +42,9 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
-import org.eclipse.swt.graphics.RGB;
 import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
 import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.clazz.view.factories.*;
 import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TDiagramCanonicalStyle;
 import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationFactory;
 
@@ -333,7 +327,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	 * @generated NOT
 	 */
 	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
-		Diagram diagram = createDiagram(semanticAdapter, diagramKind, preferencesHint);
+		Diagram diagram = createDiagramGen(semanticAdapter, diagramKind, preferencesHint);
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createFilteringStyle()); //[171240]
 		return diagram;
 	}
