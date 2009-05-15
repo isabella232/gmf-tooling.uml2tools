@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.notation.CanonicalStyle;
 import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.DrawerStyle;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.Location;
@@ -1070,6 +1071,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		CanonicalStyle canonicalStyle_PackageImports_7032 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PackageImports_7032.setCanonical(true);
 		PackageImports_7032.getStyles().add(canonicalStyle_PackageImports_7032);
+		DrawerStyle drawerStyle = (DrawerStyle) PackageImports_7032.getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
+		if (drawerStyle != null) {
+			//#216573 [SecondaryDiagramElement] Collapse imports compartment after creation
+			drawerStyle.setCollapsed(true);
+		}
 		return node;
 	}
 
@@ -1209,7 +1215,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node CommentBody_5030 = createLabel(node, UMLVisualIDRegistry.getType(CommentBodyEditPart.VISUAL_ID));
 		return node;
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
@@ -1218,6 +1224,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		initializeCommentColor(node, preferencesHint);
 		return node;
 	}
+
 	/**
 	 * @NOT-generated
 	 * #233241 Comment is not implemented

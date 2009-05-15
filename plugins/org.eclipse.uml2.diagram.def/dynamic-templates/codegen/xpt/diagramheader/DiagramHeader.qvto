@@ -10,3 +10,7 @@ helper selectDiagramHeader(nodes : Sequence(genModel::GenNode)) : genModel::GenN
 helper isDiagramHeader(genCommon : genModel::GenCommonBase) : Boolean {
 	return null <> (genCommon.viewmap.attributes)[u2tAux::AuxSecondaryDiagramNodeAttribute]->first()
 }
+
+helper isDiagramHeaderCompartment(genCommon : genModel::GenCompartment) : Boolean {
+	return isDiagramHeader(genCommon.node)
+}

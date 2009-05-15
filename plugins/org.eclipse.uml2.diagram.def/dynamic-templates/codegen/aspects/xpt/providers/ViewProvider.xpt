@@ -296,5 +296,6 @@ public class «notationViewProviderClassName»«EXPAND xpt::providers::ViewProvi
 «ELSE-»
 		«EXPAND xpt::providers::ViewProvider::initializeStyles(getUniqueIdentifier(), prefStoreVar, false, false, false)-»
 «ENDIF-»
-«EXPAND xpt::detaillevels::Utils::initCompartment(nodeVar, prefStoreVar)-»
+«EXPAND xpt::detaillevels::ViewProvider::initCompartment(nodeVar, prefStoreVar)-»
+«EXPAND xpt::diagramheader::ViewProvider::initCompartment(nodeVar, prefStoreVar)-»
 «ENDAROUND»
