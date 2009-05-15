@@ -48,6 +48,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TDiagramCanonicalStyle;
 import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationFactory;
+import org.eclipse.uml2.diagram.common.view.ViewProviderUtils;
 
 /**
  * @generated
@@ -1221,21 +1222,8 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Node createComment_2018(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = createComment_2018Gen(domainElement, containerView, index, persisted, preferencesHint);
-		initializeCommentColor(node, preferencesHint);
+		ViewProviderUtils.initializeCommentColor(node, preferencesHint);
 		return node;
-	}
-
-	/**
-	 * @NOT-generated
-	 * #233241 Comment is not implemented
-	 * Comment should have the same color as Note node
-	 */
-	private void initializeCommentColor(Node node, PreferencesHint preferencesHint) {
-		IPreferenceStore store = (IPreferenceStore) preferencesHint.getPreferenceStore();
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(store, IPreferenceConstants.PREF_NOTE_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(store, IPreferenceConstants.PREF_NOTE_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
 	}
 
 	/**
