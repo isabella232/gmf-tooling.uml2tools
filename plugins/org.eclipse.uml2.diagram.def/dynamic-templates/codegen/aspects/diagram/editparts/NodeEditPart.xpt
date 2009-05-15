@@ -19,7 +19,7 @@
 «EXTENSION xpt::GenModelUtils»
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION aspects::diagram::editparts::LinkUpdateUtil»
-«EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
+«EXTENSION xpt::diagramheader::DiagramHeader»
 «EXTENSION aspects::xpt::diagram::updater::DescriptorsGenApi»
 «EXTENSION gmf::GenModelUtils»
 

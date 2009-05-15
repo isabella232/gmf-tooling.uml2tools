@@ -10,31 +10,31 @@
  *    Michael Golubev (Borland) - #241066
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
 
-«EXTENSION xpt::diagram::Utils»
-«EXTENSION xpt::providers::i18n»
-«EXTENSION aspects::xpt::diagram::updater::DiagramHeader»
+Â«EXTENSION xpt::diagram::UtilsÂ»
+Â«EXTENSION xpt::providers::i18nÂ»
+Â«EXTENSION xpt::diagramheader::DiagramHeaderÂ»
 
-«AROUND getTypesForPopupBar FOR gmfgen::GenDiagram-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND getTypesForPopupBar FOR gmfgen::GenDiagram-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public java.util.List<?> getTypesForPopupBar(org.eclipse.core.runtime.IAdaptable host) {
 		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart editPart =
 				(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) host.getAdapter(
 						org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart.class);
-		«FOREACH getAllContainers()->asSequence() AS container-»
-			«LET container.getAssistantNodes()->reject(n | isDiagramHeader(n))->asSequence() AS filteredAssistantNodes»
-			«IF filteredAssistantNodes->size() > 0-»
-		if (editPart instanceof «container.getEditPartQualifiedClassName()») {
+		Â«FOREACH getAllContainers()->asSequence() AS container-Â»
+			Â«LET container.getAssistantNodes()->reject(n | isDiagramHeader(n))->asSequence() AS filteredAssistantNodesÂ»
+			Â«IF filteredAssistantNodes->size() > 0-Â»
+		if (editPart instanceof Â«container.getEditPartQualifiedClassName()Â») {
 			java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = new java.util.ArrayList<org.eclipse.gmf.runtime.emf.type.core.IElementType>();
-				«FOREACH filteredAssistantNodes AS node-»
-			types.add(«getElementTypesQualifiedClassName()».«node.getUniqueIdentifier()»);
-				«ENDFOREACH-»
+				Â«FOREACH filteredAssistantNodes AS node-Â»
+			types.add(Â«getElementTypesQualifiedClassName()Â».Â«node.getUniqueIdentifier()Â»);
+				Â«ENDFOREACH-Â»
 			return types;
 		}
-			«ENDIF-»
-			«ENDLET-»
-		«ENDFOREACH-»
+			Â«ENDIF-Â»
+			Â«ENDLET-Â»
+		Â«ENDFOREACH-Â»
 		return java.util.Collections.emptyList();
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
