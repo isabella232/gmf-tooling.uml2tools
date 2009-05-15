@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.profile.providers;
 
 import java.util.ArrayList;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -9,7 +10,6 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.diagram.core.providers.IViewProvider;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateEdgeViewOperation;
@@ -25,6 +25,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.DrawerStyle;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.Location;
@@ -41,6 +42,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
+import org.eclipse.uml2.diagram.common.view.ViewProviderUtils;
 import org.eclipse.uml2.diagram.profile.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.CommentEditPart;
@@ -78,42 +80,6 @@ import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeImagesEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeNameEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.StereotypeStereoEditPart;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.profile.view.factories.CommentAnnotatedElementViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.CommentBodyViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.CommentViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.Constraint2ViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ConstraintConstrainedElementViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ConstraintLanguageViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ConstraintNameViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ConstraintViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ElementImport2ViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ElementImportViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.EnumerationLiteralViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.EnumerationLiteralsViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.EnumerationNameViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.EnumerationQualifiedNameViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.EnumerationViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ExtensionLink_requiredViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ExtensionViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.GeneralizationViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ImageViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.Profile2ViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.Profile3ViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ProfileContentsViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ProfileName2ViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ProfileNameViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ProfileProfileLabelsViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ProfileStereoViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ProfileViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.PropertyViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.ReferencedMetaclassNode_classNameViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.Stereotype2ViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.StereotypeAttributesViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.StereotypeConstraintsViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.StereotypeImagesViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.StereotypeNameViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.StereotypeStereoViewFactory;
-import org.eclipse.uml2.diagram.profile.view.factories.StereotypeViewFactory;
 
 /**
  * @generated
@@ -485,6 +451,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node ProfileName_5009 = createLabel(node, UMLVisualIDRegistry.getType(ProfileName2EditPart.VISUAL_ID));
 
 		Node ProfileProfile_imports_7005 = createCompartment(node, UMLVisualIDRegistry.getType(ProfileProfileLabelsEditPart.VISUAL_ID), true, true, true, true);
+		DrawerStyle drawerStyle = (DrawerStyle) ProfileProfile_imports_7005.getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
+		if (drawerStyle != null) {
+			//#216573 [SecondaryDiagramElement] Collapse imports compartment after creation
+			drawerStyle.setCollapsed(true);
+		}
 		return node;
 	}
 
@@ -523,7 +494,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	public Node createComment_2009(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+	public Node createComment_2009Gen(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(UMLVisualIDRegistry.getType(CommentEditPart.VISUAL_ID));
@@ -548,6 +519,15 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node CommentBody_5014 = createLabel(node, UMLVisualIDRegistry.getType(CommentBodyEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public Node createComment_2009(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Node node = createComment_2009Gen(domainElement, containerView, index, persisted, preferencesHint);
+		ViewProviderUtils.initializeCommentColor(node, preferencesHint);
 		return node;
 	}
 
