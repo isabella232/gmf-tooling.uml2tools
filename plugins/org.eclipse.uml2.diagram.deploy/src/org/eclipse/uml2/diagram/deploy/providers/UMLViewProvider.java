@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.deploy.providers;
 
 import java.util.ArrayList;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -9,7 +10,6 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
-import org.eclipse.gmf.runtime.diagram.core.providers.AbstractViewProvider;
 import org.eclipse.gmf.runtime.diagram.core.providers.IViewProvider;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateEdgeViewOperation;
@@ -25,6 +25,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.DrawerStyle;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.Location;
@@ -41,6 +42,7 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
+import org.eclipse.uml2.diagram.common.view.ViewProviderUtils;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact4EditPart;
@@ -104,68 +106,6 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.deploy.view.factories.Artifact2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.Artifact3ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.Artifact4ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactArtifactFigure_contents2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactArtifactFigure_contents3ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactArtifactFigure_contentsViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactFileName2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactFileName3ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactFileNameViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactStereo2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactStereo3ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactStereoViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ArtifactViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.CommentAnnotatedElementViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.CommentBodyViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.CommentViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.CommunicationPathNameViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.CommunicationPathViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DependencyNameViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DependencyViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentConfigurationViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentNameViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecification2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationName2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationNameViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationProperties2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationPropertiesViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationStereo3ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationStereo4ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentSpecificationViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeploymentViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.Device2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeviceDevicecontents2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeviceDevicecontentsViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeviceName2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeviceNameViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeviceStereo2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeviceStereoViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.DeviceViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ElementImportViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironment2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentArtifacts2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentArtifactsViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentName2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentNameViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentStereo2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentStereoViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ExecutionEnvironmentViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ManifestationNameViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.ManifestationViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.Node2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.NodeName2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.NodeNameViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.NodeStereo2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.NodeStereoViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.NodeViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.Package2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.PackageImportsViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.PackageNameViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.PackageStereo2ViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.PackageViewFactory;
-import org.eclipse.uml2.diagram.deploy.view.factories.PropertyViewFactory;
 
 /**
  * @generated
@@ -414,6 +354,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node PackageQualifiedName_5025 = createLabel(node, UMLVisualIDRegistry.getType(PackageStereo2EditPart.VISUAL_ID));
 
 		Node PackageImports_7001 = createCompartment(node, UMLVisualIDRegistry.getType(PackageImportsEditPart.VISUAL_ID), true, false, true, true);
+		DrawerStyle drawerStyle = (DrawerStyle) PackageImports_7001.getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
+		if (drawerStyle != null) {
+			//#216573 [SecondaryDiagramElement] Collapse imports compartment after creation
+			drawerStyle.setCollapsed(true);
+		}
 		return node;
 	}
 
@@ -589,7 +534,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	 * @generated
 	 */
-	public Node createComment_2008(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+	public Node createComment_2008Gen(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(UMLVisualIDRegistry.getType(CommentEditPart.VISUAL_ID));
@@ -614,6 +559,15 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node CommentBody_5024 = createLabel(node, UMLVisualIDRegistry.getType(CommentBodyEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public Node createComment_2008(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Node node = createComment_2008Gen(domainElement, containerView, index, persisted, preferencesHint);
+		ViewProviderUtils.initializeCommentColor(node, preferencesHint);
 		return node;
 	}
 
