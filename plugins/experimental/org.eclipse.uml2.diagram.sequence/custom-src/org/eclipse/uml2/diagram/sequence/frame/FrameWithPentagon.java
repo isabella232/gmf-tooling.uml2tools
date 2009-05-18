@@ -9,6 +9,7 @@ public class FrameWithPentagon extends Frame {
 	
 	public FrameWithPentagon(){
         myPentagon = new Pentagon();
+        myPentagon.setEnablePentagonLayouter(false);
         add(myPentagon); //added while there are no layout set yet
 	}
 	

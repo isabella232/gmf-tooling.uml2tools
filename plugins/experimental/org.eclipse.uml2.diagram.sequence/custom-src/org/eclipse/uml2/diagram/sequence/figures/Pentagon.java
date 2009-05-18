@@ -16,12 +16,17 @@ import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 
 public class Pentagon extends Shape  implements LMVisibleFrameWithPentagon.PentagonLayouter  {
     public static final int BIT_SIZE = 5;
+    private boolean myEnablePentagonLayouter = true;
 
     public Pentagon () {
     	setLineWidth(1);
     	setFont(UMLDiagramEditorPlugin.getInstance().getDefaultFont());
         setLayoutManager(new FillingBorderLayout());
     }
+    
+	public void setEnablePentagonLayouter(boolean enablePentagonLayouter) {
+		myEnablePentagonLayouter = enablePentagonLayouter;
+	}
     
     protected void fillShape(Graphics graphics) {
         graphics.fillPolygon(getPoints(getOutlineBounds(this)));
@@ -73,15 +78,19 @@ public class Pentagon extends Shape  implements LMVisibleFrameWithPentagon.Penta
     }
 
     public void setX(int x) {
-        Rectangle bounds = getBounds().getCopy();
-        bounds.x = x;
-        setBounds(bounds);
+    	if (myEnablePentagonLayouter){
+	        Rectangle bounds = getBounds().getCopy();
+	        bounds.x = x;
+	        setBounds(bounds);
+    	}
     }
 
     public void setY(int y) {
-        Rectangle bounds = getBounds().getCopy();
-        bounds.y = y;
-        setBounds(bounds);
+    	if (myEnablePentagonLayouter){
+	        Rectangle bounds = getBounds().getCopy();
+	        bounds.y = y;
+	        setBounds(bounds);
+    	}
     }
     
     public Label createPentagonLabel(){
