@@ -330,7 +330,7 @@ public class LifelineEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

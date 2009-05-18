@@ -50,6 +50,7 @@ import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.sequence.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.sequence.providers.UMLParserProvider;
 
@@ -204,6 +205,10 @@ public class InteractionNameEditPart extends CompartmentEditPart implements ITex
 	protected Image getLabelIcon() {
 		EObject parserElement = getParserElement();
 		if (parserElement == null) {
+			return null;
+		}
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
+		if (!shouldShow) {
 			return null;
 		}
 		return UMLElementTypes.getImage(parserElement.eClass());

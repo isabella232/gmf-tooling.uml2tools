@@ -321,7 +321,6 @@ public class InteractionEditPart extends AbstractBorderedShapeEditPart implement
 	public EditPolicy getPrimaryDragEditPolicy() {
 		// #265822 Improve appearance of selection feedback
 		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
-		result.setResizeDirections(PositionConstants.NSEW);
 		return result;
 	}
 
@@ -393,7 +392,7 @@ public class InteractionEditPart extends AbstractBorderedShapeEditPart implement
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

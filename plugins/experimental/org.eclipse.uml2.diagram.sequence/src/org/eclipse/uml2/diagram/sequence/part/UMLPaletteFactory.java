@@ -37,6 +37,7 @@ public class UMLPaletteFactory {
 	 */
 	private PaletteContainer createElements1Group() {
 		PaletteGroup paletteContainer = new PaletteGroup(Messages.Elements1Group_title);
+		paletteContainer.setId("createElements1Group"); //$NON-NLS-1$
 		paletteContainer.setDescription(Messages.Elements1Group_desc);
 		paletteContainer.add(createInteraction1CreationTool());
 		paletteContainer.add(createLifeline2CreationTool());
@@ -56,6 +57,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Interaction_2001);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Interaction1CreationTool_title, Messages.Interaction1CreationTool_desc, types);
+		entry.setId("createInteraction1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Interaction_2001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -88,6 +90,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Message_4001);
 		LinkToolEntry entry = new LinkToolEntry(Messages.Message3CreationTool_title, Messages.Message3CreationTool_desc, types);
+		entry.setId("createMessage3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Message_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -121,6 +124,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.ActionExecutionSpecification_3002);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActionExecution5CreationTool_title, Messages.ActionExecution5CreationTool_desc, types);
+		entry.setId("createActionExecution5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActionExecutionSpecification_3002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
@@ -133,6 +137,7 @@ public class UMLPaletteFactory {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.Gate_3005);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Gate8CreationTool_title, Messages.Gate8CreationTool_desc, types);
+		entry.setId("createGate8CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Gate_3005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;

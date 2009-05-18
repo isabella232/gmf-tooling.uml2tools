@@ -217,7 +217,7 @@ public class InteractionUseMountingRegionEditPart extends ShapeNodeEditPart impl
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 

@@ -185,7 +185,7 @@ public class CombinedFragmentMountingRegionEditPart extends ShapeNodeEditPart im
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
-			layout.setSpacing(getMapMode().DPtoLP(5));
+			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
 		}
 		return nodeShape; // use nodeShape itself as contentPane
@@ -224,7 +224,7 @@ public class CombinedFragmentMountingRegionEditPart extends ShapeNodeEditPart im
 	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
-			((Shape) primaryShape).setLineWidth(getMapMode().DPtoLP(width));
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 
