@@ -2,7 +2,7 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2008/GenModel"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
     xmlns:u2tgen="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.sequence"
     modelID="UMLSequence"
     diagramFileExtension="umlseq,umlsequence_diagram"
@@ -611,6 +611,8 @@
         <attributes
             xsi:type="u2tgen:InteractionDiagramAttributes"/>
       </viewmap>
+      <styles
+          href="../../../plugin/org.eclipse.uml2.diagram.sequence.model/model/sequence-diagram-notation.genmodel#//sdnotation/SDModelStorageStyle"/>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="EditPolicy.CONTAINER_ROLE"
@@ -800,15 +802,6 @@
             genNodes="//@diagram/@childNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="Behavior Execution"
-            description="Create Behavior Execution"
-            genNodes="//@diagram/@childNodes.7"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Found Execution"
-            description="Create Found Execution"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
             title="Interaction Use"
             description="Create Interaction Use"
             genNodes="//@diagram/@childNodes.1"/>
@@ -822,16 +815,6 @@
             title="Gate"
             description="Create Gate"
             genNodes="//@diagram/@childNodes.0"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Temporary Operand"
-            description="Temporary Operand"
-            genNodes="//@diagram/@childNodes.3"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="Temporary Mounting Link"
-            description="Temporary Mounting Link"
-            genLinks="//@diagram/@links.1"/>
       </groups>
     </palette>
     <preferencePages
