@@ -44,7 +44,7 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Gate"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.9"/>
+              href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.7"/>
           <diagramNode
               href="sequenceDiagram.gmfgraph#GateNode"/>
         </ownedChild>
@@ -66,7 +66,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.7"/>
+              href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
           <diagramNode
               href="sequenceDiagram.gmfgraph#InteractionUseNode"/>
         </ownedChild>
@@ -88,7 +88,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.8"/>
+              href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.6"/>
           <diagramNode
               href="sequenceDiagram.gmfgraph#CombinedFragmentNode"/>
           <children>
@@ -99,9 +99,6 @@
             <ownedChild>
               <domainMetaElement
                   href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InteractionOperand"/>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.10"/>
               <diagramNode
                   href="sequenceDiagram.gmfgraph#InteractionOperandNode"/>
             </ownedChild>
@@ -204,9 +201,6 @@
             <ownedChild>
               <domainMetaElement
                   href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//BehaviorExecutionSpecification"/>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
               <diagramNode
                   href="sequenceDiagram.gmfgraph#BehaviorExecutionNode"/>
               <children
@@ -301,9 +295,6 @@
     </creationConstraints>
   </links>
   <links>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="sequenceDiagram.gmftool#//@palette/@tools.0/@tools.11"/>
     <diagramLink
         href="sequenceDiagram.gmfgraph#TopLevelMountingLink"/>
   </links>
