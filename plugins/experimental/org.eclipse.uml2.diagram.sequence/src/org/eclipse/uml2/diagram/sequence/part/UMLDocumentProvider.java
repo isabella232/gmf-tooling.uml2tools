@@ -53,6 +53,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.part.FileEditorInput;
+import org.eclipse.uml2.diagram.common.pathmap.XMI2UMLSupport;
 
 /**
  * @generated
@@ -130,6 +131,8 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 	 */
 	protected IDocument createEmptyDocument() {
 		DiagramDocument document = new DiagramDocument();
+		TransactionalEditingDomain domain = createEditingDomain();
+		XMI2UMLSupport.enableXMI2UMLSupport(domain.getResourceSet());
 		document.setEditingDomain(createEditingDomain());
 		return document;
 	}
