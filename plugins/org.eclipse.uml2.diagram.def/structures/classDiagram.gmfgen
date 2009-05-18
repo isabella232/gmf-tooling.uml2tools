@@ -711,6 +711,9 @@
         <attributes
             xsi:type="u2tgen:StereotypeSupportAttribute"
             role="COMBINED_LABEL"/>
+        <attributes
+            xsi:type="u2tgen:DetailsLevelAttributes"
+            detailsAwareParser="true"/>
       </viewmap>
       <modelFacet>
         <metaClass

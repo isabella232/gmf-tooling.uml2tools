@@ -8,7 +8,7 @@ helper isFilteredCompartment(genCommon : gmf::GenCompartment) : Boolean {
 	return null <> attribute and attribute.filteringCompartment
 }
 
-helper isDetailsAwareParser(genCommon : gmf::GenLabel) : Boolean {
+helper isDetailsAwareParser(genCommon : gmf::GenCommonBase) : Boolean {
 	let attribute = getDetailsLevelAttribute(genCommon) in 
 	return null <> attribute and attribute.detailsAwareParser
 }

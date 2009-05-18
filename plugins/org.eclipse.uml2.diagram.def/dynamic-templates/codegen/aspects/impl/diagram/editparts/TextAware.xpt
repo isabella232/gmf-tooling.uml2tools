@@ -11,174 +11,175 @@
  *   Tatiana Fesenko (Borland) - #246358 - Show image of stereotype on the extended element
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«EXTENSION xpt::rotatedlabel::RotatedLabelsSupport»
-«EXTENSION xpt::stereo::StereotypeIconSupport»
+Â«EXTENSION xpt::rotatedlabel::RotatedLabelsSupportÂ»
+Â«EXTENSION xpt::stereo::StereotypeIconSupportÂ»
+Â«EXTENSION xpt::detaillevels::DetailLevelsSupportÂ»
 
-«AROUND methods(needsRefreshBounds : Boolean, readOnly : Boolean, useElementIcon : Boolean, viewmap : gmfgen::Viewmap,
-		modelFacet : gmfgen::LabelModelFacet, host : gmfgen::GenCommonBase, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
+Â«AROUND methods(needsRefreshBounds : Boolean, readOnly : Boolean, useElementIcon : Boolean, viewmap : gmfgen::Viewmap,
+		modelFacet : gmfgen::LabelModelFacet, host : gmfgen::GenCommonBase, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-Â»
 		
-		«targetDef.proceed()»
+		Â«targetDef.proceed()Â»
 		
-		«EXPAND refreshFeedback -»
+		Â«EXPAND refreshFeedback -Â»
 		
-		«EXPAND getLabelDelegate -»
+		Â«EXPAND getLabelDelegate -Â»
 		
-		«EXPAND getAdapter -»
-«ENDAROUND»		
+		Â«EXPAND getAdapter -Â»
+Â«ENDAROUNDÂ»		
 
-«AROUND fields FOR gmfgen::GenCommonBase-»
-		«targetDef.proceed()»
+Â«AROUND fields FOR gmfgen::GenCommonBase-Â»
+		Â«targetDef.proceed()Â»
 		
-		«EXPAND xpt::Common::generatedMemberComment»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate labelDelegate;
 		
 	
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«DEFINE refreshFeedback FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE refreshFeedback FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private void refreshFeedback() {
 		Object pdEditPolicy = getEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE);
 		if (pdEditPolicy instanceof org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy) {
 			((org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy) pdEditPolicy).refreshFeedback();
 		}
 	}
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«AROUND setLabelText(diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND setLabelText(diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
 		refreshFeedback();
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 	
-«AROUND refreshLabel(diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND refreshLabel(diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
 		refreshFeedback();
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND getLabelTextHelper FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND getLabelTextHelper FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected String getLabelTextHelper(org.eclipse.draw2d.IFigure figure) {
 		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
 			return ((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).getText();
-		} «IF isRotatedLabel(self)-»
+		} Â«IF isRotatedLabel(self)-Â»
 		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
 			return ((org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) figure).getText();
-		} «ENDIF-»
+		} Â«ENDIF-Â»
 		else {
 			return ((org.eclipse.draw2d.Label) figure).getText();
 		}
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND setLabelTextHelper FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND setLabelTextHelper FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected void setLabelTextHelper(org.eclipse.draw2d.IFigure figure, String text) {
 		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
 			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).setText(text);
-		} «IF isRotatedLabel(self)-»
+		} Â«IF isRotatedLabel(self)-Â»
 		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
 			((org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) figure).setText(text);
-		} «ENDIF-»
+		} Â«ENDIF-Â»
 		else {
 			((org.eclipse.draw2d.Label) figure).setText(text);
 		}
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND getLabelIconHelper FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND getLabelIconHelper FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected org.eclipse.swt.graphics.Image getLabelIconHelper(org.eclipse.draw2d.IFigure figure) {
 		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
 			return ((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).getIcon();
-		} «IF isRotatedLabel(self)-»
+		} Â«IF isRotatedLabel(self)-Â»
 		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
 			//rotated label icons are not supported -- do nothing
 			return null; 
-		} «ENDIF-»
+		} Â«ENDIF-Â»
 		else {
 			return ((org.eclipse.draw2d.Label) figure).getIcon();
 		}
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND setLabelIconHelper FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND setLabelIconHelper FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected void setLabelIconHelper(org.eclipse.draw2d.IFigure figure, org.eclipse.swt.graphics.Image icon) {
 		if (figure instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
 			((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) figure).setIcon(icon);
-		} «IF isRotatedLabel(self)-»
+		} Â«IF isRotatedLabel(self)-Â»
 		else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
 			//rotated label icons are not supported -- do nothing
 			return; 
-		} «ENDIF-»
+		} Â«ENDIF-Â»
 		else {
 			((org.eclipse.draw2d.Label) figure).setIcon(icon);
 		}
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND getManager(diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND getManager(diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected org.eclipse.gef.tools.DirectEditManager getManager() {
 		if (manager == null) {
 			setManager(new org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager(this,
-				«REM»see #246881
+				Â«REMÂ»see #246881
 				org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager.getTextCellEditorClass(this),
-				«ENDREM»«-»
+				Â«ENDREMÂ»Â«-Â»
 				null, 
-				«diagram.getEditPartFactoryQualifiedClassName()».getTextCellEditorLocator(this)));
+				Â«diagram.getEditPartFactoryQualifiedClassName()Â».getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND getLabelIcon(useElementIcon : Boolean, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
-«IF isIconExtendedByStereotype(self)-»
-«EXPAND xpt::stereo::TextAware::getLabelIcon(useElementIcon, diagram)»
-«ELSE-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND getLabelIcon(useElementIcon : Boolean, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-Â»
+Â«IF isIconExtendedByStereotype(self)-Â»
+Â«EXPAND xpt::stereo::TextAware::getLabelIcon(useElementIcon, diagram)Â»
+Â«ELSE-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected org.eclipse.swt.graphics.Image getLabelIcon() {
-		«IF useElementIcon-»
+		Â«IF useElementIcon-Â»
 		org.eclipse.emf.ecore.EObject parserElement = getParserElement();
 		if (parserElement == null) {
 			return null;
 		}
-		«IF not self.oclIsKindOf(gmfgen::GenLinkLabel)-»
-		boolean shouldShow = «EXPAND xpt::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()».shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
+		Â«IF not self.oclIsKindOf(gmfgen::GenLinkLabel)-Â»
+		boolean shouldShow = Â«EXPAND xpt::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()Â».shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
 		if (!shouldShow){
 			return null;
 		}			
-		«ENDIF-»
-		return «diagram.getElementTypesQualifiedClassName()».getImage(parserElement.eClass());
-		«ELSE-»
+		Â«ENDIF-Â»
+		return Â«diagram.getElementTypesQualifiedClassName()Â».getImage(parserElement.eClass());
+		Â«ELSE-Â»
 		return null;
-		«ENDIF-»
+		Â«ENDIF-Â»
 	}
-«ENDIF-»	
-«ENDAROUND»
+Â«ENDIF-Â»	
+Â«ENDAROUNDÂ»
 
 
-«DEFINE getLabelDelegate FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE getLabelDelegate FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate getLabelDelegate(){
 		if (labelDelegate == null){
 			org.eclipse.draw2d.IFigure label = getFigure();
 			if (label instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel){
 				labelDelegate = new org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel)label);
-			} «IF isRotatedLabel(self)-»
+			} Â«IF isRotatedLabel(self)-Â»
 			else if (figure instanceof org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString) {
 				labelDelegate = new org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfStringLabelDelegate((org.eclipse.uml2.diagram.common.draw2d.RotatedImageOfString)figure); 
-			} «ENDIF-»
+			} Â«ENDIF-Â»
 			else {
 				labelDelegate = new org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate((org.eclipse.draw2d.Label)label);
 			}
@@ -186,10 +187,10 @@
 		return labelDelegate;
 	}
 
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE getAdapter FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE getAdapter FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	@Override
 	public Object getAdapter(Class key) {
 		if (org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate.class.equals(key)){
@@ -198,20 +199,29 @@
 		return super.getAdapter(key);
 	}
 
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«AROUND performDirectEditRequest FOR gmfgen::GenCommonBase-»
-«IF isStereotypeAndNameGroupName(self)-»
-«EXPAND xpt::stereo::TextAware::performDirectEditRequest_redirectToStereotypeLabel FOR self.oclAsType(gmfgen::GenNodeLabel)-»
-«ELSE-»
-«targetDef.proceed()-»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND performDirectEditRequest FOR gmfgen::GenCommonBase-Â»
+Â«IF isStereotypeAndNameGroupName(self)-Â»
+Â«EXPAND xpt::stereo::TextAware::performDirectEditRequest_redirectToStereotypeLabel FOR self.oclAsType(gmfgen::GenNodeLabel)-Â»
+Â«ELSE-Â»
+Â«targetDef.proceed()-Â»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND performDirectEditWithInitialChar FOR gmfgen::GenCommonBase-»
-«IF isStereotypeAndNameGroupStereotype(self)-»
-«EXPAND xpt::stereo::TextAware::performDirectEditWithInitialChar FOR self.oclAsType(gmfgen::GenNodeLabel)-»
-«ELSE-»
-«targetDef.proceed()-»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND performDirectEditWithInitialChar FOR gmfgen::GenCommonBase-Â»
+Â«IF isStereotypeAndNameGroupStereotype(self)-Â»
+Â«EXPAND xpt::stereo::TextAware::performDirectEditWithInitialChar FOR self.oclAsType(gmfgen::GenNodeLabel)-Â»
+Â«ELSE-Â»
+Â«targetDef.proceed()-Â»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
+
+Â«AROUND getParserOptions FOR gmfgen::GenCommonBase-Â»
+Â«IF isDetailsAwareParser(self)-Â»
+Â«EXPAND xpt::detaillevels::TextAware::getParserOptionsÂ»
+Â«ELSE-Â»
+Â«targetDef.proceed()-Â»
+Â«ENDIF-Â» 
+Â«ENDAROUNDÂ»
+

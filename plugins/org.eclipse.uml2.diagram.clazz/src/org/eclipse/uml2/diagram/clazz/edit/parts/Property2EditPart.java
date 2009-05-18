@@ -299,7 +299,7 @@ public class Property2EditPart extends CompartmentEditPart implements ITextAware
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	public ParserOptions getParserOptions() {
 		return UMLDetailLevelService.getLevel(getNotationView()).getParserOptions(); // XXX: [171240] regenerate with DetailLevelAttributes
