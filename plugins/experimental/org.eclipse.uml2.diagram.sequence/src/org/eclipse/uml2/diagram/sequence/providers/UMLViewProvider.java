@@ -64,6 +64,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.MountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantLabelEditPart;
+import org.eclipse.uml2.diagram.sequence.model.sdnotation.SDNotationFactory;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.view.factories.ActionExecutionLabelViewFactory;
 import org.eclipse.uml2.diagram.sequence.view.factories.ActionExecutionSpecificationViewFactory;
@@ -294,6 +295,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Node createInteraction_2001(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.getStyles().add(SDNotationFactory.eINSTANCE.createSDModelStorageStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(UMLVisualIDRegistry.getType(InteractionEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
