@@ -8,6 +8,7 @@ import org.eclipse.uml2.diagram.common.async.ByVisualIDViewerFilter;
  * @generated
  */
 public class UMLClassDiagramHeaderFilter extends ByVisualIDViewerFilter {
+
 	/**
 	 * @generated
 	 */

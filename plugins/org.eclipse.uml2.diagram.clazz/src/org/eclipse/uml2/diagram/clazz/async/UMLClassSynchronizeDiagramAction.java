@@ -30,5 +30,4 @@ public class UMLClassSynchronizeDiagramAction extends SynchronizeDiagramAction {
 		result.add(new UMLClassDiagramHeaderFilter());
 		return result;
 	}
-
 }

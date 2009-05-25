@@ -30,34 +30,58 @@ import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.uml.PackageableElement;
 
+/**
+ * @generated
+ */
 public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 
+	/**
+	 * @generated
+	 */
 	private final PackageableElement[] myToSelect;
 
+	/**
+	 * @generated
+	 */
 	private NewDiagramSyncHelperWithFixedElements mySyncHelper;
-	
+
+	/**
+	 * @generated
+	 */
 	public UMLClassFixedElementsWizard(URI domainModelURI, EObject diagramRoot, PackageableElement[] toSelect, TransactionalEditingDomain editingDomain) {
 		super(domainModelURI, diagramRoot, editingDomain);
 		myToSelect = toSelect;
 	}
 
+	/**
+	 * @generated
+	 */
 	@Override
 	public void addPages() {
 		addPage(getFileCreationPage());
 		addPage(getDiagramRootElementSelectionPage());
 	}
 
+	/**
+	 * @generated
+	 */
 	@Override
 	protected boolean needsLayoutAll() throws ExecutionException {
 		return true;
 	}
 
+	/**
+	 * @generated
+	 */
 	@Override
 	protected void layoutAll() throws ExecutionException {
 		createShortcutsIfNeeded();
 		super.layoutAll();
 	}
 
+	/**
+	 * @generated
+	 */
 	private void createShortcutsIfNeeded() {
 		IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 		DiagramEditPart diagramEditPart = ((IDiagramWorkbenchPart) editorPart).getDiagramEditPart();
@@ -69,6 +93,9 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 		}
 	}
 
+	/**
+	 * @generated
+	 */
 	private boolean canCreateView(EObject element) {
 		for (Object next : getDiagram().getChildren()) {
 			View view = (View) next;
@@ -79,6 +106,9 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 		return false;
 	}
 
+	/**
+	 * @generated
+	 */
 	@Override
 	protected AbstractTransactionalCommand getApplySynchronizationCommand() {
 		EObject semanticRoot = getDiagramRootElementSelectionPage().getModelElement();
@@ -87,7 +117,10 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 		mySyncHelper.setSemanticRoot(semanticRoot);
 		return new ApplySynchronizationCommand(mySyncHelper.getSyncRoot());
 	}
-	
+
+	/**
+	 * @generated
+	 */
 	protected SyncModelContextWithFixedElements createSyncContext(EObject semanticRoot) {
 		return new SyncModelContextWithFixedElements(//
 				UMLDiagramUpdater.TYPED_ADAPTER, // 
@@ -96,42 +129,74 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 				getEditingDomain(), myToSelect, true);
 	}
 
+	/**
+	 * @generated
+	 */
 	@Override
 	protected Diagram getDiagram() {
 		return mySyncHelper.getNewDiagram();
 	}
-	
+
+	/**
+	 * @generated
+	 */
 	private static class NewDiagramSyncHelperWithFixedElements extends NewDiagramSyncHelper {
-		public NewDiagramSyncHelperWithFixedElements(SyncModelContextWithFixedElements contextImpl, String diagramModelId){
+
+		/**
+		 * @generated
+		 */
+		public NewDiagramSyncHelperWithFixedElements(SyncModelContextWithFixedElements contextImpl, String diagramModelId) {
 			super(contextImpl, diagramModelId);
 		}
-		
+
+		/**
+		 * @generated
+		 */
 		protected SyncModelNode createRootNode(SyncModelContext context, Diagram syncDiagram, Diagram tempDiagram) {
 			SyncModelNode result = new SyncModelNodeForInitializedDiagram(syncDiagram, tempDiagram, context);
 			return result;
 		}
 	}
 
+	/**
+	 * @generated
+	 */
 	private static class SyncModelNodeForInitializedDiagram extends SyncModelNode {
+
+		/**
+		 * @generated
+		 */
 		public SyncModelNodeForInitializedDiagram(View syncModelRoot, View diagramRoot, SyncModelContext context) {
 			super(syncModelRoot, diagramRoot, context);
 		}
 
+		/**
+		 * @generated
+		 */
 		@Override
 		public boolean isAutoSynchronized() {
 			return false;
 		}
 
+		/**
+		 * @generated
+		 */
 		private SyncModelNodeForInitializedDiagram(View syncModelView, SyncModelNode parent) {
 			super(syncModelView, parent);
 		}
 
+		/**
+		 * @generated
+		 */
 		@Override
 		public void initWithDiagramView(View diagramView) {
 			super.initWithDiagramView(diagramView);
 			setChecked(isInToCreateList() || UMLClassDiagramHeaderFilter.SHARED_INSTANCE.isFilteredVisualId(this));
 		}
 
+		/**
+		 * @generated
+		 */
 		private boolean isInToCreateList() {
 			PackageableElement[] toSelect = ((SyncModelContextWithFixedElements) getContext()).getElementsToDisplay();
 			if (toSelect == null || toSelect.length == 0) {
@@ -140,6 +205,9 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 			return Arrays.asList(toSelect).contains(getSyncModelView().getElement());
 		}
 
+		/**
+		 * @generated
+		 */
 		@Override
 		protected SyncModelNode doCreateNodeView(View syncModelView, SyncModelNode parent) {
 			return new SyncModelNodeForInitializedDiagram(syncModelView, parent);
@@ -147,15 +215,29 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 
 	}
 
+	/**
+	 * @generated
+	 */
 	protected static class SyncModelContextWithFixedElements extends SyncModelContext {
+
+		/**
+		 * @generated
+		 */
 		private PackageableElement[] myElementsToDisplay;
 
+		/**
+		 * @generated
+		 */
 		public SyncModelContextWithFixedElements(IDiagramUpdater updater, IVisualIDRegistry registry, PreferencesHint preferencesHint, TransactionalEditingDomain domain,
 				PackageableElement[] toSelect, boolean isDiagramInit) {
+
 			super(updater, registry, preferencesHint, domain, isDiagramInit);
 			myElementsToDisplay = toSelect;
 		}
 
+		/**
+		 * @generated
+		 */
 		public PackageableElement[] getElementsToDisplay() {
 			return myElementsToDisplay;
 		}
