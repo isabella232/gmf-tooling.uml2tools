@@ -10,19 +10,19 @@
  *    Michael Golubev - U2T specific compartments 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
 
-«EXTENSION xpt::compartments::Guard»
+Â«EXTENSION xpt::compartments::GuardÂ»
 
-«DEFINE createU2TFigure FOR gmfgen::GenCompartment-»
-«IF not u2tSupportedCompartment(self)-»
-«ERROR 'This compartment is not supported in U2T custom templates: ' + self.repr()»
-«ENDIF-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE createU2TFigure FOR gmfgen::GenCompartment-Â»
+Â«IF not u2tSupportedCompartment(self)-Â»
+Â«ERROR 'This compartment is not supported in U2T custom templates: ' + self.repr()Â»
+Â«ENDIF-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	@Override
 	public org.eclipse.draw2d.IFigure createFigure() {
 		org.eclipse.uml2.diagram.common.compartments.U2TCompartmentFigure result = new org.eclipse.uml2.diagram.common.compartments.U2TCompartmentFigure(getCompartmentName(), getMapMode());
-		«REM»In contrast to default GMF compartments, U2T-ones uses text pane as a plceholder only, so it is always shown«ENDREM»«-»
+		Â«REMÂ»In contrast to default GMF compartments, U2T-ones uses text pane as a plceholder only, so it is always shownÂ«ENDREMÂ»Â«-Â»
 
 		org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout layout = new org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout();
 		layout.setStretchMajorAxis(false);
@@ -32,37 +32,37 @@
 		
 		return result;
 	}
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE installResizableCompartmentEditPolicy FOR gmfgen::GenCompartment-»
-	«IF canCollapse-»
-	«IF u2tSupportedCompartment(self)-»
-		installEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE, «-»
+Â«DEFINE installResizableCompartmentEditPolicy FOR gmfgen::GenCompartment-Â»
+	Â«IF canCollapse-Â»
+	Â«IF u2tSupportedCompartment(self)-Â»
+		installEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE, Â«-Â»
 			new org.eclipse.uml2.diagram.common.compartments.U2TResizableCompartmentEditPolicy());
-	«ELSE-»
-		installEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE, «-»
+	Â«ELSE-Â»
+		installEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE, Â«-Â»
 			new org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy());
-	«ENDIF-»
-	«ENDIF-»
-«ENDDEFINE»
+	Â«ENDIF-Â»
+	Â«ENDIF-Â»
+Â«ENDDEFINEÂ»
 
-«DEFINE hideIfEmptySupport FOR gmfgen::GenCompartment-»
-«IF u2tSupportedCompartment(self) and self.hideIfEmpty -»
-	«EXPAND xpt::Common::generatedMemberComment»	 
+Â«DEFINE hideIfEmptySupport FOR gmfgen::GenCompartment-Â»
+Â«IF u2tSupportedCompartment(self) and self.hideIfEmpty -Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»	 
 	@Override
 	protected void refreshVisibility() {
 		boolean visibility = getNotationView().isVisible() && !getChildren().isEmpty(); 
         setVisibility(visibility);
 	}
 	
-	«EXPAND xpt::Common::generatedMemberComment»	
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»	
 	@Override
 	protected void addChild(org.eclipse.gef.EditPart child, int index) {
 		super.addChild(child, index);
 		refreshVisibility();
 	}
 	
-	«EXPAND xpt::Common::generatedMemberComment»	
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»	
 	@Override
 	protected void removeChild(org.eclipse.gef.EditPart child) {
 		super.removeChild(child);
@@ -71,5 +71,5 @@
 		}
 	}
 
-«ENDIF-»
-«ENDDEFINE»
+Â«ENDIF-Â»
+Â«ENDDEFINEÂ»
