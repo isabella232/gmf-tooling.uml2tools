@@ -36,6 +36,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+import org.eclipse.uml2.diagram.clazz.async.UMLClassSynchronizationWizardPage;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.common.async.ApplySynchronizationCommand;
 
@@ -62,7 +63,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	/**
 	 * @NOT-generated
 	 */
-	private NewDiagramSynchronizationPage synchronizationPage;
+	private UMLClassSynchronizationWizardPage synchronizationPage;
 
 	/**
 	 * @generated NOT
@@ -104,7 +105,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	 * @NOT-generated
 	 */
 	private void createSynchronizationPage(TransactionalEditingDomain editingDomain) {
-		synchronizationPage = new NewDiagramSynchronizationPage("Select diagram synchronization scheme", editingDomain);
+		synchronizationPage = new UMLClassSynchronizationWizardPage("Select diagram synchronization scheme", editingDomain);
 		synchronizationPage.setTitle("Diagram synchronization");
 		synchronizationPage.setDescription("Select diagram contents and its synchronization mode");
 	}
