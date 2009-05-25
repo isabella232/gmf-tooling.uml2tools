@@ -51,8 +51,14 @@
 	«EXPAND xpt::Common::generatedMemberComment»	 
 	@Override
 	protected void refreshVisibility() {
-		boolean visibility = getNotationView().isVisible() && !getChildren().isEmpty(); 
-        setVisibility(visibility);
+		boolean visibility = getNotationView().isVisible();
+		if (visibility){
+			org.eclipse.gmf.runtime.notation.DrawerStyle style = (org.eclipse.gmf.runtime.notation.DrawerStyle) getNotationView().getStyle(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getDrawerStyle());
+			if (style != null && !style.isCollapsed()){
+				visibility &= !getChildren().isEmpty();
+			}
+		}
+		setVisibility(visibility);
 	}
 	
 	«EXPAND xpt::Common::generatedMemberComment»	
