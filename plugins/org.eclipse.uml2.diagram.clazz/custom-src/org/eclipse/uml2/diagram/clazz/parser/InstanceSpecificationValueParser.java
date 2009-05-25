@@ -12,6 +12,7 @@ import org.eclipse.uml2.uml.ValueSpecification;
 
 public class InstanceSpecificationValueParser extends ValueSpecificationParser {
 
+	@Override
 	public boolean isAffectingEvent(Object notification, int flags) {
 		if (notification instanceof Notification) {
 			Object feature = ((Notification) notification).getFeature();
@@ -20,6 +21,7 @@ public class InstanceSpecificationValueParser extends ValueSpecificationParser {
 		return false;
 	}
 
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		if (false == element instanceof InstanceSpecification) {
 			return Collections.emptyList();
@@ -28,6 +30,7 @@ public class InstanceSpecificationValueParser extends ValueSpecificationParser {
 		return spec == null ? Collections.emptyList() : Collections.singletonList(spec);
 	}
 
+	@Override
 	protected ValueSpecification getValueSpecification(IAdaptable adaptable) {
 		InstanceSpecification is = (InstanceSpecification) adaptable.getAdapter(EObject.class); 
 		return is.getSpecification();
