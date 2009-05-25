@@ -53,13 +53,13 @@
    </extension>
    
    <extension point="org.eclipse.ui.popupMenus" id="org.eclipse.uml2.diagram.clazz.synchronize">
-      <?gmfgen generated="false"?>
+      <?gmfgen generated="true"?>
       <objectContribution
             id="org.eclipse.uml2.diagram.clazz.SynchronizeDiagram"
             objectClass="org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart">
          <action
                label="%SynchronizeDialog_action"
-               class="org.eclipse.uml2.diagram.clazz.async.SynchronizeDiagramAction"
+               class="org.eclipse.uml2.diagram.clazz.async.UMLClassSynchronizeDiagramAction"
                menubarPath="additions"
                enablesFor="1"
                id="org.eclipse.uml2.diagram.clazz.ShowInitDialogAction2">
@@ -2810,8 +2810,7 @@
       </Priority>
          <editor id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID"/>
    </paletteProvider>
-</extension>
-	<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action-xmi">
+</extension>	<extension point="org.eclipse.ui.popupMenus" id="init-diagram-action-xmi">
 		<?gmfgen generated="true"?>
 		<objectContribution
             id="org.eclipse.uml2.diagram.clazz.InitDiagram.xmi"
