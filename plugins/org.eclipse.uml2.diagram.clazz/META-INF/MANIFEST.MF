@@ -13,7 +13,7 @@ Export-Package: org.eclipse.uml2.diagram.clazz.action,
  org.eclipse.uml2.diagram.clazz.edit.commands,
  org.eclipse.uml2.diagram.clazz.edit.parts,
  org.eclipse.uml2.diagram.clazz.navigator,
- org.eclipse.uml2.diagram.clazz.parser;x-friends:="org.eclipse.uml2.diagram.clazz.tests",
+ org.eclipse.uml2.diagram.clazz.parser;x-friends:=org.eclipse.uml2.diagram.clazz.tests,
  org.eclipse.uml2.diagram.clazz.part,
  org.eclipse.uml2.diagram.clazz.providers
 Require-Bundle: org.eclipse.core.runtime,
