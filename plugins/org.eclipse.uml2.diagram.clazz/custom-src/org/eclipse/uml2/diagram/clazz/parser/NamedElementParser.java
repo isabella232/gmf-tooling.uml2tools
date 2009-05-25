@@ -12,8 +12,11 @@
 
 package org.eclipse.uml2.diagram.clazz.parser;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.uml2.diagram.clazz.parsers.MessageFormatParser;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.VisibilityKind;
@@ -36,6 +39,12 @@ public class NamedElementParser extends MessageFormatParser {
 		// edit pattern contains space to separate name from visibility
 		setEditPattern("{0} {1}"); //$NON-NLS-1$
 	}
+	
+	@Override
+	public String getPrintString(IAdaptable adapter, int flags) {
+		//duplicated to be available in tests
+		return super.getPrintString(adapter, flags);
+	}
 
 	@Override
 	protected Object getValue(EObject element, EAttribute feature) {
@@ -54,6 +63,36 @@ public class NamedElementParser extends MessageFormatParser {
 		}
 		// name will be processed in the superclass method
 		return super.getValidNewValue(feature, value);
+	}
+	
+	@Override
+	public ICommand getParseCommand(IAdaptable adapter, String newString, int flags) {
+		newString = getParsableEditString(newString);
+		return super.getParseCommand(adapter, newString, flags);
+	}
+	
+	@Override
+	public IParserEditStatus isValidEditString(IAdaptable adapter, String editString) {
+		editString = getParsableEditString(editString);
+		return super.isValidEditString(adapter, editString);
+	}
+	
+	private String getParsableEditString(String editString){
+		if (editString == null || editString.length() == 0){
+			return editString;
+		}
+		if (editString.startsWith(PROTECTED) || editString.startsWith(PRIVATE) || editString.startsWith(PACKAGE)){
+			StringBuffer result = new StringBuffer();
+			result.append(editString.charAt(0));
+			if (editString.length() > 1){
+				result.append(" ");
+				result.append(editString.substring(1).trim());
+			}
+			return result.toString();
+		}
+		//"ClassName" can't be parsed by "{0} {1}", but " ClassName" is parsable
+		editString = " " + editString.trim();
+		return editString;
 	}
 
 	private static String getVisibilityLiteral(VisibilityKind visibility) {
