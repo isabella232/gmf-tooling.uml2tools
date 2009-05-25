@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -22,7 +20,6 @@ import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.stereo.ProfileRegistry.ProfileInfo;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.UMLPlugin;
-import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class ApplicableProfilesItemProvider extends AbstractContributionItemProvider implements IProvider {
 
