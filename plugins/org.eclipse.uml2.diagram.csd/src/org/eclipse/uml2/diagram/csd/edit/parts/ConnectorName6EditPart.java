@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.AccessibleEditPart;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
@@ -50,6 +51,7 @@ import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.csd.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.csd.providers.UMLParserProvider;
 import org.eclipse.uml2.uml.Connector;
@@ -581,6 +583,29 @@ public class ConnectorName6EditPart extends LabelEditPart implements ITextAwareE
 	 */
 	protected IFigure createFigurePrim() {
 		return new Label();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void refreshVisibility() {
+		Object model = null;
+		EditPart ep = this;
+		while (!(model instanceof View) && ep != null) {
+			model = ep.getModel();
+			ep = ep.getParent();
+		}
+		boolean realIsVisible = ((View) model).isVisible();
+		realIsVisible &= isVisibleByPreferences();
+		if (model instanceof View)
+			setVisibility(realIsVisible);
+	}
+
+	/**
+	 * @generated
+	 */
+	private boolean isVisibleByPreferences() {
+		return DiagramIconStylePreferenceHelper.shouldShowLabel(ConnectorName6EditPart.VISUAL_ID, getDiagramPreferencesHint());
 	}
 
 }
