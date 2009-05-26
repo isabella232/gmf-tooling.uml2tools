@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.CanonicalStyle;
 import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -43,6 +44,8 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
+import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TDiagramCanonicalStyle;
+import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationFactory;
 import org.eclipse.uml2.diagram.common.view.ViewProviderUtils;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorAsRectangleEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.ActorEditPart;
@@ -274,6 +277,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
+		U2TDiagramCanonicalStyle canonicalStyle_Package_1000 = U2TNotationFactory.eINSTANCE.createU2TDiagramCanonicalStyle();
+		canonicalStyle_Package_1000.setCanonical(true);
+		canonicalStyle_Package_1000.setSyncNodes(true);
+		canonicalStyle_Package_1000.setSyncLinks(true);
+		diagram.getStyles().add(canonicalStyle_Package_1000);
 		diagram.setType(PackageEditPart.MODEL_ID);
 		diagram.setElement(getSemanticElement(semanticAdapter));
 		diagram.setMeasurementUnit(MeasurementUnit.PIXEL_LITERAL);
@@ -384,6 +392,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node PackageQualifiedName_5016 = createLabel(node, UMLVisualIDRegistry.getType(PackageStereo2EditPart.VISUAL_ID));
 
 		Node PackageImports_7001 = createCompartment(node, UMLVisualIDRegistry.getType(PackageImportsEditPart.VISUAL_ID), true, false, true, true);
+		CanonicalStyle canonicalStyle_PackageImports_7001 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_PackageImports_7001.setCanonical(true);
+		PackageImports_7001.getStyles().add(canonicalStyle_PackageImports_7001);
 		DrawerStyle drawerStyle = (DrawerStyle) PackageImports_7001.getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
 		if (drawerStyle != null) {
 			//#216573 [SecondaryDiagramElement] Collapse imports compartment after creation
@@ -489,6 +500,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node UseCaseName_5003 = createLabel(node, UMLVisualIDRegistry.getType(UseCaseNameEditPart.VISUAL_ID));
 
 		Node UseCasePoints_7002 = createCompartment(node, UMLVisualIDRegistry.getType(UseCaseExtensionPointsEditPart.VISUAL_ID), false, false, true, true);
+		CanonicalStyle canonicalStyle_UseCasePoints_7002 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_UseCasePoints_7002.setCanonical(true);
+		UseCasePoints_7002.getStyles().add(canonicalStyle_UseCasePoints_7002);
 		return node;
 	}
 
@@ -523,6 +537,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node UseCaseQualifiedName_5013 = createLabel(node, UMLVisualIDRegistry.getType(UseCaseStereoEditPart.VISUAL_ID));
 
 		Node UseCaseExtensionpoints_7003 = createCompartment(node, UMLVisualIDRegistry.getType(UseCaseAsClassExtensionPointsEditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_UseCaseExtensionpoints_7003 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_UseCaseExtensionpoints_7003.setCanonical(true);
+		UseCaseExtensionpoints_7003.getStyles().add(canonicalStyle_UseCaseExtensionpoints_7003);
 		return node;
 	}
 
@@ -558,6 +575,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node ComponentQualifiedName_5014 = createLabel(node, UMLVisualIDRegistry.getType(ComponentStereoEditPart.VISUAL_ID));
 
 		Node ComponentUsecases_7004 = createCompartment(node, UMLVisualIDRegistry.getType(SubjectUsecasesEditPart.VISUAL_ID), false, false, false, false);
+		CanonicalStyle canonicalStyle_ComponentUsecases_7004 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_ComponentUsecases_7004.setCanonical(true);
+		ComponentUsecases_7004.getStyles().add(canonicalStyle_ComponentUsecases_7004);
 		return node;
 	}
 
@@ -596,6 +616,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node PackageName_5008 = createLabel(node, UMLVisualIDRegistry.getType(NestedPackageNameEditPart.VISUAL_ID));
 
 		Node PackageFramecontents_7006 = createCompartment(node, UMLVisualIDRegistry.getType(PackageFramecontentsEditPart.VISUAL_ID), true, false, false, false);
+		CanonicalStyle canonicalStyle_PackageFramecontents_7006 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_PackageFramecontents_7006.setCanonical(true);
+		PackageFramecontents_7006.getStyles().add(canonicalStyle_PackageFramecontents_7006);
 		return node;
 	}
 
@@ -736,6 +759,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node UseCaseName_5006 = createLabel(node, UMLVisualIDRegistry.getType(UseCaseName3EditPart.VISUAL_ID));
 
 		Node UseCasePoints_7005 = createCompartment(node, UMLVisualIDRegistry.getType(InnerUseCaseExtensionPointsEditPart.VISUAL_ID), false, false, true, true);
+		CanonicalStyle canonicalStyle_UseCasePoints_7005 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_UseCasePoints_7005.setCanonical(true);
+		UseCasePoints_7005.getStyles().add(canonicalStyle_UseCasePoints_7005);
 		return node;
 	}
 
@@ -802,6 +828,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node UseCaseName_5010 = createLabel(node, UMLVisualIDRegistry.getType(UseCaseName4EditPart.VISUAL_ID));
 
 		Node UseCasePoints_7007 = createCompartment(node, UMLVisualIDRegistry.getType(UseCasePointsEditPart.VISUAL_ID), false, false, true, true);
+		CanonicalStyle canonicalStyle_UseCasePoints_7007 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_UseCasePoints_7007.setCanonical(true);
+		UseCasePoints_7007.getStyles().add(canonicalStyle_UseCasePoints_7007);
 		return node;
 	}
 

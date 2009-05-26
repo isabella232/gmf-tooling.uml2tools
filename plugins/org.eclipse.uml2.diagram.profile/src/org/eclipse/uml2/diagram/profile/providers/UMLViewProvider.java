@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.CanonicalStyle;
 import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -42,6 +43,8 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
+import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TDiagramCanonicalStyle;
+import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationFactory;
 import org.eclipse.uml2.diagram.common.view.ViewProviderUtils;
 import org.eclipse.uml2.diagram.profile.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.profile.edit.parts.CommentBodyEditPart;
@@ -214,6 +217,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
+		U2TDiagramCanonicalStyle canonicalStyle_Profile_1000 = U2TNotationFactory.eINSTANCE.createU2TDiagramCanonicalStyle();
+		canonicalStyle_Profile_1000.setCanonical(true);
+		canonicalStyle_Profile_1000.setSyncNodes(true);
+		canonicalStyle_Profile_1000.setSyncLinks(true);
+		diagram.getStyles().add(canonicalStyle_Profile_1000);
 		diagram.setType(ProfileEditPart.MODEL_ID);
 		diagram.setElement(getSemanticElement(semanticAdapter));
 		diagram.setMeasurementUnit(MeasurementUnit.PIXEL_LITERAL);
@@ -314,10 +322,19 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node StereotypeQualifiedName_5012 = createLabel(node, UMLVisualIDRegistry.getType(StereotypeStereoEditPart.VISUAL_ID));
 
 		Node StereotypeAttributes_7001 = createCompartment(node, UMLVisualIDRegistry.getType(StereotypeAttributesEditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_StereotypeAttributes_7001 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_StereotypeAttributes_7001.setCanonical(true);
+		StereotypeAttributes_7001.getStyles().add(canonicalStyle_StereotypeAttributes_7001);
 
 		Node StereotypeConstraints_7002 = createCompartment(node, UMLVisualIDRegistry.getType(StereotypeConstraintsEditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_StereotypeConstraints_7002 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_StereotypeConstraints_7002.setCanonical(true);
+		StereotypeConstraints_7002.getStyles().add(canonicalStyle_StereotypeConstraints_7002);
 
 		Node StereotypeImages_7006 = createCompartment(node, UMLVisualIDRegistry.getType(StereotypeImagesEditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_StereotypeImages_7006 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_StereotypeImages_7006.setCanonical(true);
+		StereotypeImages_7006.getStyles().add(canonicalStyle_StereotypeImages_7006);
 		return node;
 	}
 
@@ -353,6 +370,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node ProfileQualifiedName_5013 = createLabel(node, UMLVisualIDRegistry.getType(ProfileStereoEditPart.VISUAL_ID));
 
 		Node ProfileContents_7003 = createCompartment(node, UMLVisualIDRegistry.getType(ProfileContentsEditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_ProfileContents_7003 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_ProfileContents_7003.setCanonical(true);
+		ProfileContents_7003.getStyles().add(canonicalStyle_ProfileContents_7003);
 		return node;
 	}
 
@@ -387,6 +407,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node EnumerationQualifiedName_5011 = createLabel(node, UMLVisualIDRegistry.getType(EnumerationQualifiedNameEditPart.VISUAL_ID));
 
 		Node EnumerationLiterals_7004 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationLiteralsEditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_EnumerationLiterals_7004 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_EnumerationLiterals_7004.setCanonical(true);
+		EnumerationLiterals_7004.getStyles().add(canonicalStyle_EnumerationLiterals_7004);
 		return node;
 	}
 
@@ -451,6 +474,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node ProfileName_5009 = createLabel(node, UMLVisualIDRegistry.getType(ProfileName2EditPart.VISUAL_ID));
 
 		Node ProfileProfile_imports_7005 = createCompartment(node, UMLVisualIDRegistry.getType(ProfileProfileLabelsEditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_ProfileProfile_imports_7005 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_ProfileProfile_imports_7005.setCanonical(true);
+		ProfileProfile_imports_7005.getStyles().add(canonicalStyle_ProfileProfile_imports_7005);
 		DrawerStyle drawerStyle = (DrawerStyle) ProfileProfile_imports_7005.getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
 		if (drawerStyle != null) {
 			//#216573 [SecondaryDiagramElement] Collapse imports compartment after creation

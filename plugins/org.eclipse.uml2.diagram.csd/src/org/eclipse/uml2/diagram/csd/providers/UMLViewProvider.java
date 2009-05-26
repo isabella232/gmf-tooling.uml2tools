@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
+import org.eclipse.gmf.runtime.notation.CanonicalStyle;
 import org.eclipse.gmf.runtime.notation.Connector;
 import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -42,6 +43,8 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
+import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TDiagramCanonicalStyle;
+import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationFactory;
 import org.eclipse.uml2.diagram.common.view.ViewProviderUtils;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
@@ -281,6 +284,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
+		U2TDiagramCanonicalStyle canonicalStyle_Package_1000 = U2TNotationFactory.eINSTANCE.createU2TDiagramCanonicalStyle();
+		canonicalStyle_Package_1000.setCanonical(true);
+		canonicalStyle_Package_1000.setSyncNodes(true);
+		canonicalStyle_Package_1000.setSyncLinks(true);
+		diagram.getStyles().add(canonicalStyle_Package_1000);
 		diagram.setType(PackageEditPart.MODEL_ID);
 		diagram.setElement(getSemanticElement(semanticAdapter));
 		diagram.setMeasurementUnit(MeasurementUnit.PIXEL_LITERAL);
@@ -406,6 +414,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node CollaborationQualifiedName_5030 = createLabel(node, UMLVisualIDRegistry.getType(CollaborationStereoEditPart.VISUAL_ID));
 
 		Node CollaborationContents_7003 = createCompartment(node, UMLVisualIDRegistry.getType(CollaborationContentsEditPart.VISUAL_ID), false, false, false, false);
+		CanonicalStyle canonicalStyle_CollaborationContents_7003 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_CollaborationContents_7003.setCanonical(true);
+		CollaborationContents_7003.getStyles().add(canonicalStyle_CollaborationContents_7003);
 		return node;
 	}
 
@@ -414,6 +425,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Node createClass_2006(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
+		CanonicalStyle canonicalStyle_Class_2006 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_Class_2006.setCanonical(true);
+		node.getStyles().add(canonicalStyle_Class_2006);
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(UMLVisualIDRegistry.getType(ClassEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -440,10 +454,19 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node ClassQualifiedName_5014 = createLabel(node, UMLVisualIDRegistry.getType(ClassStereoEditPart.VISUAL_ID));
 
 		Node ClassAttributes_7004 = createCompartment(node, UMLVisualIDRegistry.getType(ClassAttributesEditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_ClassAttributes_7004 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_ClassAttributes_7004.setCanonical(true);
+		ClassAttributes_7004.getStyles().add(canonicalStyle_ClassAttributes_7004);
 
 		Node ClassOperations_7005 = createCompartment(node, UMLVisualIDRegistry.getType(ClassOperationsEditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_ClassOperations_7005 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_ClassOperations_7005.setCanonical(true);
+		ClassOperations_7005.getStyles().add(canonicalStyle_ClassOperations_7005);
 
 		Node ClassClasses_7006 = createCompartment(node, UMLVisualIDRegistry.getType(ClassClassesEditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_ClassClasses_7006 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_ClassClasses_7006.setCanonical(true);
+		ClassClasses_7006.getStyles().add(canonicalStyle_ClassClasses_7006);
 		return node;
 	}
 
@@ -478,6 +501,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node PackageQualifiedName_5033 = createLabel(node, UMLVisualIDRegistry.getType(PackageStereo2EditPart.VISUAL_ID));
 
 		Node PackageImports_7002 = createCompartment(node, UMLVisualIDRegistry.getType(PackageImportsEditPart.VISUAL_ID), true, false, true, true);
+		CanonicalStyle canonicalStyle_PackageImports_7002 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_PackageImports_7002.setCanonical(true);
+		PackageImports_7002.getStyles().add(canonicalStyle_PackageImports_7002);
 		DrawerStyle drawerStyle = (DrawerStyle) PackageImports_7002.getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
 		if (drawerStyle != null) {
 			//#216573 [SecondaryDiagramElement] Collapse imports compartment after creation
@@ -491,6 +517,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Node createClass_2007(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
+		CanonicalStyle canonicalStyle_Class_2007 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_Class_2007.setCanonical(true);
+		node.getStyles().add(canonicalStyle_Class_2007);
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(UMLVisualIDRegistry.getType(Class3EditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -516,6 +545,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node ClassName_5018 = createLabel(node, UMLVisualIDRegistry.getType(ClassName2EditPart.VISUAL_ID));
 
 		Node ClassClass_contents_7007 = createCompartment(node, UMLVisualIDRegistry.getType(ClassClass_contentsEditPart.VISUAL_ID), false, false, false, false);
+		CanonicalStyle canonicalStyle_ClassClass_contents_7007 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_ClassClass_contents_7007.setCanonical(true);
+		ClassClass_contents_7007.getStyles().add(canonicalStyle_ClassClass_contents_7007);
 		return node;
 	}
 
@@ -585,6 +617,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node InstanceSpecificationQualifiedName_5031 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationStereoEditPart.VISUAL_ID));
 
 		Node InstanceSpecificationCompartment_7009 = createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationSlotsEditPart.VISUAL_ID), false, false, true, true);
+		CanonicalStyle canonicalStyle_InstanceSpecificationCompartment_7009 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_InstanceSpecificationCompartment_7009.setCanonical(true);
+		InstanceSpecificationCompartment_7009.getStyles().add(canonicalStyle_InstanceSpecificationCompartment_7009);
 		return node;
 	}
 
@@ -830,6 +865,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	public Node createProperty_3014(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
+		CanonicalStyle canonicalStyle_Property_3014 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_Property_3014.setCanonical(true);
+		node.getStyles().add(canonicalStyle_Property_3014);
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(UMLVisualIDRegistry.getType(Property3EditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
