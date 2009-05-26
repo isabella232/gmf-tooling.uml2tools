@@ -5,6 +5,7 @@ import java.util.List;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.diagram.common.part.NewDiagramHandlerBase;
+import org.eclipse.uml2.diagram.csd.async.UMLCompositeStructuresFixedElementsWizard;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorUtil;
 import org.eclipse.uml2.diagram.csd.part.UMLNewDiagramFileWizard;
 import org.eclipse.uml2.uml.Package;
@@ -20,7 +21,7 @@ public class NewDiagramHandler extends NewDiagramHandlerBase {
 
 	@Override
 	protected Wizard getNewSemiSyncDiagramWizard(Package diagramRoot, List<PackageableElement> selectedElements) {
-		return null;
+		return new UMLCompositeStructuresFixedElementsWizard(getDiagramFileURI(diagramRoot), diagramRoot, selectedElements.toArray(new PackageableElement[selectedElements.size()]), getEditingDomain());
 	}
 
 	@Override
