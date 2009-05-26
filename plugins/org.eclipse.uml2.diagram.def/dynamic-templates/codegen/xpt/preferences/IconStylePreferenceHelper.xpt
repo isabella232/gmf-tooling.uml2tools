@@ -10,45 +10,46 @@
  *    Michael Golubev (Borland) - initial API and implementation
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'Â»
 
-«EXTENSION xpt::preferences::Utils»
+Â«EXTENSION xpt::preferences::UtilsÂ»
 
-«DEFINE qualifiedClassName FOR gmfgen::GenDiagram»«EXPAND packageName».«EXPAND className»«ENDDEFINE»
-«DEFINE className FOR gmfgen::GenDiagram»DiagramIconStylePreferenceHelper«ENDDEFINE»
-«DEFINE packageName FOR gmfgen::GenDiagram»«self.preferencesPackageName»«ENDDEFINE»
+Â«DEFINE qualifiedClassName FOR gmfgen::GenDiagramÂ»Â«EXPAND packageNameÂ».Â«EXPAND classNameÂ»Â«ENDDEFINEÂ»
+Â«DEFINE className FOR gmfgen::GenDiagramÂ»DiagramIconStylePreferenceHelperÂ«ENDDEFINEÂ»
+Â«DEFINE packageName FOR gmfgen::GenDiagramÂ»Â«self.preferencesPackageNameÂ»Â«ENDDEFINEÂ»
 
-«DEFINE IconStylePreferenceHelper FOR gmfgen::GenDiagram»
-package «EXPAND packageName»;
+Â«DEFINE IconStylePreferenceHelper FOR gmfgen::GenDiagramÂ»
+package Â«EXPAND packageNameÂ»;
 
-«EXPAND xpt::Common::generatedClassComment»
-public class «EXPAND className» {
-	«EXPAND shouldShowIcon»
+Â«EXPAND xpt::Common::generatedClassCommentÂ»
+public class Â«EXPAND classNameÂ» {
+	Â«EXPAND shouldShowIconÂ»
 	
-	«EXPAND getPreferencesValueFor»
+	Â«EXPAND shouldShowLabelÂ»
+	
+	Â«EXPAND getPreferencesValueForÂ»
 }
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-
-«DEFINE shouldShowIcon FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE shouldShowIcon FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public static boolean shouldShowStereotypeIcon(org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint hint){
 		org.eclipse.jface.preference.IPreferenceStore store = (org.eclipse.jface.preference.IPreferenceStore)hint.getPreferenceStore();
 		return store.getBoolean(org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants.PREF_ICONS_SHOW_STEREOTYPE_ICON_MODE);
 	}
 	
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public static boolean shouldShowMetaclassIcon(int visualId, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint hint){
 		boolean preferencesValue = getPreferencesValueFor(visualId, hint);
 		return preferencesValue;
 	}
 	
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE getPreferencesValueFor FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE getPreferencesValueFor FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private static boolean getPreferencesValueFor(int visualId, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint hint){
 		org.eclipse.jface.preference.IPreferenceStore store = (org.eclipse.jface.preference.IPreferenceStore)hint.getPreferenceStore();
 		String mode = store.getString(org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants.PREF_ICONS_SHOW_HIDE_MODE);
@@ -60,23 +61,29 @@ public class «EXPAND className» {
 		}
 		if (org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants.VALUE_ICONS_SHOW_SELECTED_VISUAL_IDS.equals(mode)){
 			switch(visualId){
-				«FOREACH getAllNodeGroupingKeys(self) AS nextKey-»
-					«LET getAllLabeledForNodeKey(self, nextKey) AS allForKey-»
-					«IF not allForKey->isEmpty()-»
-						«FOREACH allForKey AS nextCommonBase-»
-							«EXPAND xpt::Common::caseVisualID FOR nextCommonBase»
-						«ENDFOREACH-»
-								return store.getBoolean(org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + «-»
-									".«FOREACH allForKey AS nextForKey SEPARATOR '.'»«nextForKey.visualID»«ENDFOREACH»"); 
-					«ENDIF-»
-					«ENDLET-»
-				«ENDFOREACH-»
+				Â«FOREACH getAllNodeGroupingKeys(self) AS nextKey-Â»
+					Â«LET getAllLabeledForNodeKey(self, nextKey) AS allForKey-Â»
+					Â«IF not allForKey->isEmpty()-Â»
+						Â«FOREACH allForKey AS nextCommonBase-Â»
+							Â«EXPAND xpt::Common::caseVisualID FOR nextCommonBaseÂ»
+						Â«ENDFOREACH-Â»
+								return store.getBoolean(org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + Â«-Â»
+									".Â«FOREACH allForKey AS nextForKey SEPARATOR '.'Â»Â«nextForKey.visualIDÂ»Â«ENDFOREACHÂ»"); 
+					Â«ENDIF-Â»
+					Â«ENDLET-Â»
+				Â«ENDFOREACH-Â»
 							default:
 								return false;
 			}
 		}
 		return false;
 	}
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
+Â«DEFINE shouldShowLabel FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public static boolean shouldShowLabel(int visualId, org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint hint) {
+		return ((org.eclipse.jface.preference.IPreferenceStore) hint.getPreferenceStore()).getBoolean(Â«EXPAND xpt::preferences::IconStylePreferencePage::qualifiedClassNameÂ».getConnectionLabelPreference(visualId));
+	}
+Â«ENDDEFINEÂ»
 

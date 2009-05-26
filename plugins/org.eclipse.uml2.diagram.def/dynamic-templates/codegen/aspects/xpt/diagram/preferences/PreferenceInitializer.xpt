@@ -10,40 +10,41 @@
  *    Michael Golubev (Borland) - custom icons for diagram elements
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«EXTENSION xpt::diagram::Utils»
+Â«EXTENSION xpt::diagram::UtilsÂ»
 
-«AROUND PreferenceInitializer FOR gmfgen::GenDiagram-»
-«EXPAND xpt::Common::copyright FOR editorGen-»
-package «preferencesPackageName»;
+Â«AROUND PreferenceInitializer FOR gmfgen::GenDiagram-Â»
+Â«EXPAND xpt::Common::copyright FOR editorGen-Â»
+package Â«preferencesPackageNameÂ»;
 
-«EXPAND xpt::Common::generatedClassComment»
-public class «EXPAND xpt::diagram::preferences::PreferenceInitializer::className» extends org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer {
+Â«EXPAND xpt::Common::generatedClassCommentÂ»
+public class Â«EXPAND xpt::diagram::preferences::PreferenceInitializer::classNameÂ» extends org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer {
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void initializeDefaultPreferences() {
 		org.eclipse.jface.preference.IPreferenceStore store = getPreferenceStore();
-«IF preferences = null-»
-		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults('store') FOREACH allPreferencePages(self)»
-«ELSE»«REM»default values for predefined pages will be set manually«ENDREM»«-»
-		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults('store') FOREACH (allPreferencePages(self))[gmfgen::GenCustomPreferencePage]»
-		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults('store') FOR preferences-»
-«ENDIF-»
+Â«IF preferences = null-Â»
+		Â«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults('store') FOREACH allPreferencePages(self)Â»
+Â«ELSEÂ»Â«REMÂ»default values for predefined pages will be set manuallyÂ«ENDREMÂ»Â«-Â»
+		Â«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults('store') FOREACH (allPreferencePages(self))[gmfgen::GenCustomPreferencePage]Â»
+		Â«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaults('store') FOR preferences-Â»
+Â«ENDIF-Â»
 
-		«REM»Additional preferences here«ENDREM»«-»
-		«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaultIconStyle('store')»
+		Â«REMÂ»Additional preferences hereÂ«ENDREMÂ»Â«-Â»
+		Â«EXPAND xpt::diagram::preferences::PreferenceInitializer::initDefaultIconStyle('store')Â»
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected org.eclipse.jface.preference.IPreferenceStore getPreferenceStore() {
-		return «editorGen.plugin.getActivatorQualifiedClassName()».getInstance().getPreferenceStore();
+		return Â«editorGen.plugin.getActivatorQualifiedClassName()Â».getInstance().getPreferenceStore();
 	}
 } 
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«DEFINE initDefaultIconStyle(storeVar : String) FOR gmfgen::GenDiagram»
-	«EXPAND xpt::preferences::IconStylePreferencePage::qualifiedClassName».initDefaults(«storeVar»);
-«ENDDEFINE»
+Â«DEFINE initDefaultIconStyle(storeVar : String) FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::preferences::IconStylePreferencePage::qualifiedClassNameÂ».initDefaults(Â«storeVarÂ»);
+	Â«EXPAND xpt::preferences::IconStylePreferencePage::qualifiedClassNameÂ».initConnectorLabelDefaults(Â«storeVarÂ»);
+Â«ENDDEFINEÂ»
 

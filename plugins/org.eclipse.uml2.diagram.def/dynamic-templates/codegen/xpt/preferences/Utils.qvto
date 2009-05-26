@@ -9,6 +9,10 @@ helper isViewFiltersPage(id : String) : Boolean {
 	return 'viewfilter' = getSimpleClassName(id)
 }
 
+helper getIconStylePreferencePageClassName(diagram : genModel::GenDiagram) : String {
+	return 'DiagramIconStylePreferencePage'
+}
+
 helper getLabelGroupingKey(labelNode: genModel::GenChildLabelNode) : ecore::EClass {
 	return labelNode.modelFacet.metaClass.ecoreClass
 }
@@ -42,3 +46,12 @@ helper getAllLabeledVisualIDsForNodeKey(diagram : genModel::GenDiagram, key : ec
 helper i18n_labelForKey(key : ecore::EClass) : String {
 	return "DiagramIconStylePreferencePage_label_for_" + key.name
 }
+
+helper i18nKeyForLinkLabelFilterPage(label : genModel::GenLabel) : String {
+	return getIconStylePreferencePageClassName(label.getDiagram()) + '.LinkLabelsFilter_' + label.getUniqueIdentifier()
+}
+
+helper needsLabelFilter(linkLabel : gmfgen::GenLinkLabel) : Boolean {
+	return true
+}
+

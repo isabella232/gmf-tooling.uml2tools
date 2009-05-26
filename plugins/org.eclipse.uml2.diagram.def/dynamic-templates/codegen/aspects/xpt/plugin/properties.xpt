@@ -10,10 +10,11 @@
  *    Michael Golubev (Borland) - custom icons for diagram elements
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«AROUND properties FOR gmfgen::GenPlugin-»
-«targetDef.proceed()»
+Â«AROUND properties FOR gmfgen::GenPlugin-Â»
+Â«targetDef.proceed()Â»
 preferences.icons=Icon Style
-«ENDAROUND»
+Â«EXPAND xpt::async::extensions::i18n_values FOR self.editorGen.diagram-Â»
+Â«ENDAROUNDÂ»

@@ -10,55 +10,79 @@
  *    Michael Golubev (Borland) - [252802] U2T specific delete from diagram action
    */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
+Â«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'Â»
 
-«EXTENSION xpt::async::NonCanonicalDiagram»  
+Â«EXTENSION xpt::async::NonCanonicalDiagramÂ»  
 
-«DEFINE asyncDiagramSupport FOR gmfgen::GenDiagram-»
-	«IF supportsNonCanonicalMode(self)-»
-		«EXPAND deleteFromDiagramActionSupport-»
-	«ENDIF-»
-«ENDDEFINE»
+Â«DEFINE asyncDiagramSupport FOR gmfgen::GenDiagram-Â»
+	Â«IF supportsNonCanonicalMode(self)-Â»
+		Â«EXPAND deleteFromDiagramActionSupport-Â»
+		Â«EXPAND synchronizeDiagramAction-Â»
+	Â«ENDIF-Â»
+Â«ENDDEFINEÂ»
 
-«DEFINE deleteFromDiagramActionSupport FOR gmfgen::GenDiagram»
+Â«DEFINE deleteFromDiagramActionSupport FOR gmfgen::GenDiagramÂ»
 	<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-delete-from-diagram">
-	«EXPAND xpt::Common::xmlGeneratedTag»
-	«EXPAND removeDefaultDeleteFromDiagramAction-»
-	«EXPAND installU2TDeleteFromDiagramAction-»
+	Â«EXPAND xpt::Common::xmlGeneratedTagÂ»
+	Â«EXPAND removeDefaultDeleteFromDiagramAction-Â»
+	Â«EXPAND installU2TDeleteFromDiagramAction-Â»
 	</extension>
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE removeDefaultDeleteFromDiagramAction FOR gmfgen::GenDiagram»
+Â«DEFINE removeDefaultDeleteFromDiagramAction FOR gmfgen::GenDiagramÂ»
 	<contributionItemProvider
 			class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
 			checkPluginLoaded="false">
 		<Priority name="Medium"/>
-«FOREACH self.getAllNodes()->asSequence() AS nextNode-»
+Â«FOREACH self.getAllNodes()->asSequence() AS nextNode-Â»
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-			<popupStructuredContributionCriteria objectClass="«nextNode.getEditPartQualifiedClassName()»"/>
+			<popupStructuredContributionCriteria objectClass="Â«nextNode.getEditPartQualifiedClassName()Â»"/>
 			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
 		</popupContribution>
-«ENDFOREACH-»
+Â«ENDFOREACH-Â»
 	</contributionItemProvider>
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE installU2TDeleteFromDiagramAction FOR gmfgen::GenDiagram»
+Â«DEFINE installU2TDeleteFromDiagramAction FOR gmfgen::GenDiagramÂ»
 	<contributionItemProvider
 			class="org.eclipse.uml2.diagram.common.async.DeleteFromDiagramPopupProvider"
 			checkPluginLoaded="false">
 		<Priority name="Low"/>
-«FOREACH self.getAllNodes()->asSequence() AS nextNode-»
+Â«FOREACH self.getAllNodes()->asSequence() AS nextNode-Â»
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-			<popupStructuredContributionCriteria objectClass="«nextNode.getEditPartQualifiedClassName()»"/>
+			<popupStructuredContributionCriteria objectClass="Â«nextNode.getEditPartQualifiedClassName()Â»"/>
 			<popupAction
 				path="/editGroup"
-				id="«EXPAND U2TDeleteFromDiagramAction_id FOR nextNode»">
+				id="Â«EXPAND U2TDeleteFromDiagramAction_id FOR nextNodeÂ»">
 			</popupAction>
 		</popupContribution>
-«ENDFOREACH-»
+Â«ENDFOREACH-Â»
 	</contributionItemProvider>
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE U2TDeleteFromDiagramAction_id FOR gmfgen::GenCommonBase»u2t_deleteFromDiagram«ENDDEFINE»
+Â«DEFINE U2TDeleteFromDiagramAction_id FOR gmfgen::GenCommonBaseÂ»u2t_deleteFromDiagramÂ«ENDDEFINEÂ»
+
+Â«DEFINE synchronizeDiagramAction FOR gmfgen::GenDiagramÂ»
+   <extension point="org.eclipse.ui.popupMenus" id="Â«self.editorGen.plugin.iDÂ».synchronize">
+      Â«EXPAND xpt::Common::xmlGeneratedTagÂ»
+      <objectContribution
+            id="Â«self.editorGen.plugin.iDÂ».SynchronizeDiagram"
+            objectClass="Â«getEditPartQualifiedClassName()Â»">
+         <action
+               label="%SynchronizeDialog_action"
+               class="Â«EXPAND xpt::async::SynchronizeDiagramAction::qualifiedClassNameÂ»"
+               menubarPath="additions"
+               enablesFor="1"
+               id="Â«self.editorGen.plugin.iDÂ».ShowInitDialogAction2">
+         </action>
+      </objectContribution>
+   </extension>
+Â«ENDDEFINEÂ»
+
+Â«DEFINE i18n_values FOR gmfgen::GenDiagram-Â»
+Â«IF supportsNonCanonicalMode(self)-Â»
+SynchronizeDialog_action=Synchronize...
+Â«ENDIF-Â»
+Â«ENDDEFINEÂ»
