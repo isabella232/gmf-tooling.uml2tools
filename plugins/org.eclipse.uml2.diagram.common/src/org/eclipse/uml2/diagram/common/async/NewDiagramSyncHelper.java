@@ -56,7 +56,7 @@ public class NewDiagramSyncHelper {
 		}
 	}	
 	
-	private SyncModelNode createRootNode(SyncModelContext context, Diagram syncDiagram, Diagram subjectDiagram) {
+	protected SyncModelNode createRootNode(SyncModelContext context, Diagram syncDiagram, Diagram subjectDiagram) {
 		return new SyncModelNode(syncDiagram, myTempDiagram, context);
 	}
 	
