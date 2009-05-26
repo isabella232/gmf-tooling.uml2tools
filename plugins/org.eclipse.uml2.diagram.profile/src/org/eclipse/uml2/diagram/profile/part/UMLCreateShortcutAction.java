@@ -36,6 +36,7 @@ import org.eclipse.uml2.diagram.profile.edit.commands.UMLCreateShortcutDecoratio
  */
 
 public class UMLCreateShortcutAction extends AbstractHandler {
+
 	/**
 	 * @generated NOT 
 	 * FIXME: custom template should make this method generated again [256496]
