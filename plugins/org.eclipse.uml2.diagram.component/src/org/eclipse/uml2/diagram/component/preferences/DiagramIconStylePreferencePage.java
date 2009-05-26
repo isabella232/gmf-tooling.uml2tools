@@ -1,9 +1,12 @@
 package org.eclipse.uml2.diagram.component.preferences;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.eclipse.gmf.runtime.common.ui.preferences.CheckBoxFieldEditor;
 import org.eclipse.jface.preference.FieldEditor;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.swt.SWT;
@@ -15,6 +18,14 @@ import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.uml2.diagram.common.preferences.IconStylePreferencePage;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName4EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName5EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName6EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationName7EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.AssociationNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.component.part.Messages;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
@@ -24,6 +35,34 @@ import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
  * @generated
  */
 public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
+
+	/**
+	 * @generated
+	 */
+	private static Map<String, Integer> ourConnectorLabels2Vids = new HashMap<String, Integer>();
+
+	/**
+	 * @generated
+	 */
+	static {
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6001, DependencyNameEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6002, AssociationNameEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6003, AssociationName2EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6004, AssociationName3EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6005, AssociationName4EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6006, AssociationName5EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6007, AssociationName6EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6008, AssociationName7EditPart.VISUAL_ID);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static void initConnectorLabelDefaults(IPreferenceStore store) {
+		for (Integer visualId : ourConnectorLabels2Vids.values()) {
+			store.setDefault(org.eclipse.uml2.diagram.component.preferences.DiagramIconStylePreferencePage.getConnectionLabelPreference(visualId), true);
+		}
+	}
 
 	/**
 	 * @generated
@@ -100,6 +139,7 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 	protected void addFields(Composite parent) {
 		super.addFields(parent);
 		createShowHideIconsGroup(parent);
+		createShowHideConnectorIconsGroup(parent);
 	}
 
 	/**
@@ -123,7 +163,8 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 	@Override
 	protected void initialize() {
 		super.initialize();
-		enableVisualIdChoices(UMLPreferencesConstants.VALUE_ICONS_SHOW_SELECTED_VISUAL_IDS.equals(getPreferenceStore().getString(UMLPreferencesConstants.PREF_ICONS_SHOW_HIDE_MODE)));
+		boolean stateShowSelected = UMLPreferencesConstants.VALUE_ICONS_SHOW_SELECTED_VISUAL_IDS.equals(getPreferenceStore().getString(UMLPreferencesConstants.PREF_ICONS_SHOW_HIDE_MODE));
+		enableVisualIdChoices(stateShowSelected);
 	}
 
 	/**
@@ -199,6 +240,14 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Package, 5023, 5012, 3008);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Property, 5010, 3011);
 
+	}
+
+	/**
+	 * @generated
+	 */
+	private Composite createShowHideConnectorIconsGroup(Composite parent) {
+		IconStylePreferencePage.ShowHideConnectorLabelGroup builder = new IconStylePreferencePage.ShowHideConnectorLabelGroup();
+		return builder.createShowHideConnectorLabelGroup(parent, ourConnectorLabels2Vids);
 	}
 
 }

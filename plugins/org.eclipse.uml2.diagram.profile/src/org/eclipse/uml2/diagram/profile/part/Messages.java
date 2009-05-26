@@ -655,5 +655,10 @@ public class Messages extends NLS {
 	 */
 	public static String DiagramIconStylePreferencePage_label_for_Stereotype;
 
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_ExtensionLabel_6001;
+
 	//TODO: put accessor fields manually	
 }

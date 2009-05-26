@@ -46,6 +46,13 @@ public class DiagramIconStylePreferenceHelper {
 	/**
 	 * @generated
 	 */
+	public static boolean shouldShowLabel(int visualId, PreferencesHint hint) {
+		return ((IPreferenceStore) hint.getPreferenceStore()).getBoolean(DiagramIconStylePreferencePage.getConnectionLabelPreference(visualId));
+	}
+
+	/**
+	 * @generated
+	 */
 	private static boolean getPreferencesValueFor(int visualId, PreferencesHint hint) {
 		IPreferenceStore store = (IPreferenceStore) hint.getPreferenceStore();
 		String mode = store.getString(UMLPreferencesConstants.PREF_ICONS_SHOW_HIDE_MODE);
