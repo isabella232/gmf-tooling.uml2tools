@@ -10,11 +10,11 @@
  *    Michael Golubev (Borland) - #271299 - support diagrams for OMG XMIs
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«EXTENSION xpt::editor::Utils»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«EXTENSION xpt::editor::UtilsÂ»
 
-«AROUND createEmptyDocument FOR gmfgen::GenDiagram-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND createEmptyDocument FOR gmfgen::GenDiagram-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 protected org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument createEmptyDocument() {
 	org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.DiagramDocument document = new org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.DiagramDocument();
 	org.eclipse.emf.transaction.TransactionalEditingDomain domain = createEditingDomain();
@@ -22,4 +22,4 @@ protected org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument
 	document.setEditingDomain(createEditingDomain());
 	return document;
 }
-«ENDAROUND»
+Â«ENDAROUNDÂ»
