@@ -44,6 +44,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
@@ -105,6 +106,7 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart implements PrimarySh
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InnerUseCaseItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new AsyncDiagramComponentEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
