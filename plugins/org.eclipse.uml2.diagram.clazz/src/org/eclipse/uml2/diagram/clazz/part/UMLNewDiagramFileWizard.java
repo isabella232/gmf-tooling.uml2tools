@@ -61,12 +61,12 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	private TransactionalEditingDomain myEditingDomain;
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	private UMLClassSynchronizationWizardPage synchronizationPage;
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	public UMLNewDiagramFileWizard(URI domainModelURI, EObject diagramRoot, TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
@@ -81,28 +81,28 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	protected WizardNewFileCreationPage getFileCreationPage() {
 		return myFileCreationPage;
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	protected ModelElementSelectionPage getDiagramRootElementSelectionPage() {
 		return diagramRootElementSelectionPage;
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
 		return myEditingDomain;
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	private void createSynchronizationPage(TransactionalEditingDomain editingDomain) {
 		synchronizationPage = new UMLClassSynchronizationWizardPage("Select diagram synchronization scheme", editingDomain);
@@ -111,7 +111,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	private void createDiagramRootSelectorPage(EObject diagramRoot) {
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(Messages.UMLNewDiagramFileWizard_RootSelectionPageName);
@@ -121,7 +121,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	private void createFileCreationPage(URI domainModelURI) {
 		myFileCreationPage = new WizardNewFileCreationPage(Messages.UMLNewDiagramFileWizard_CreationPageName, StructuredSelection.EMPTY);
@@ -142,7 +142,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	public void addPages() {
 		addPage(myFileCreationPage);
@@ -151,7 +151,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @generated NOT
+	 * @generated
 	 */
 	public boolean performFinish() {
 		List affectedFiles = new LinkedList();
@@ -187,14 +187,14 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	protected boolean needsLayoutAll() throws ExecutionException {
 		return (synchronizationPage.wasVisible() && synchronizationPage.getSyncRoot() != null);
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	protected void layoutAll() throws ExecutionException {
 		IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
@@ -214,7 +214,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	protected AbstractTransactionalCommand getApplySynchronizationCommand() {
 		if (synchronizationPage.wasVisible() && synchronizationPage.getSyncRoot() != null) {
@@ -224,7 +224,7 @@ public class UMLNewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	 * @NOT-generated
+	 * @generated
 	 */
 	private AbstractTransactionalCommand getCreateDiagramCommand(final Resource diagramResource, List affectedFiles) {
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
@@ -239,13 +239,15 @@ public class UMLNewDiagramFileWizard extends Wizard {
 					diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(), PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				}
 				diagramResource.getContents().add(diagram);
-
 				return CommandResult.newOKCommandResult();
 			}
 		};
 		return command;
 	}
 
+	/**
+	 * @generated
+	 */
 	protected Diagram getDiagram() {
 		return synchronizationPage.getDiagram();
 	}
