@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.async.ICanonicalHelper;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
@@ -166,10 +167,14 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	protected void refreshSemantic() {
 		List createdViews = new LinkedList();
-		createdViews.addAll(refreshSemanticChildren());
+		if (myCanonicalHelper.shouldSyncNodes(getNotationView())) {
+			createdViews.addAll(refreshSemanticChildren());
+		}
 		List createdConnectionViews = new LinkedList();
-		createdConnectionViews.addAll(refreshSemanticConnections());
-		createdConnectionViews.addAll(refreshConnections());
+		if (myCanonicalHelper.shouldSyncLinks(getNotationView())) {
+			createdConnectionViews.addAll(refreshSemanticConnections());
+			createdConnectionViews.addAll(refreshConnections());
+		}
 
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
@@ -588,6 +593,18 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		}
 
 	}
+
+	/**
+	 * @generated
+	 */
+	private View getNotationView() {
+		return (View) getHost().getModel();
+	}
+
+	/**
+	 * @generated
+	 */
+	private final ICanonicalHelper myCanonicalHelper = ICanonicalHelper.IMPLEMENTATION;
 
 	/**
 	 * @generated
