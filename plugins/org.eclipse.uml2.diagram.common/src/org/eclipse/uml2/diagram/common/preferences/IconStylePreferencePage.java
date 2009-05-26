@@ -1,14 +1,24 @@
 package org.eclipse.uml2.diagram.common.preferences;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
 import org.eclipse.gmf.runtime.common.ui.preferences.AbstractPreferencePage;
 import org.eclipse.gmf.runtime.common.ui.preferences.CheckBoxFieldEditor;
+import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Group;
@@ -19,6 +29,10 @@ import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.uml2.diagram.common.Messages;
 
 public abstract class IconStylePreferencePage extends AbstractPreferencePage {
+	
+	public static String getConnectionLabelPreference(int visualId) {
+		return UMLPreferencesConstants.PREF_LABELS_SHOW_VISUAL_ID_PREFIX + visualId;
+	}
 
 	private CheckBoxFieldEditor myShowStereotypeIconOnly;
 
@@ -146,6 +160,87 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 			}
 		});
 		return scomp;
+	}
+	
+	protected class ShowHideConnectorLabelGroup {
+
+		private final List<CheckBoxFieldEditor> myConnectorLabelsByVisualIdEditors = new ArrayList<CheckBoxFieldEditor>();
+
+		public ShowHideConnectorLabelGroup() {
+		}
+
+		public Composite createShowHideConnectorLabelGroup(Composite parent, Map<String, Integer> fields) {
+			Composite result = new Composite(parent, SWT.NULL);
+			result.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
+			result.setLayout(new GridLayout());
+
+			Group group = new Group(result, SWT.NONE);
+			group.setFont(result.getFont());
+			group.setText("Show/Hide Connector Labels");
+			group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+			group.setLayout(new GridLayout());
+
+			Composite checkBoxesPanel = createCheckboxesPanel(group);
+			addAllFields(checkBoxesPanel, fields);
+
+			createButtonsPanel(group);
+			return result;
+		}
+
+		private Composite createCheckboxesPanel(Composite parent) {
+			Composite e = createExpansibleComposite(parent, "Connector Labels");
+			Composite checkBoxesPanel = new Composite(e, SWT.NULL);
+			checkBoxesPanel.setLayout(new GridLayout());
+			checkBoxesPanel.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
+			return checkBoxesPanel;
+		}
+
+		private Composite createButtonsPanel(Composite parent) {
+			Composite buttonsPanel = new Composite(parent, SWT.NULL);
+			buttonsPanel.setLayout(new GridLayout(2, true));
+			buttonsPanel.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
+			Button selectAll = addSelectAllButton(buttonsPanel, true);
+			selectAll.setText("Select All");
+			Button deselectAll = addSelectAllButton(buttonsPanel, false);
+			deselectAll.setText("Deselect all");
+			return buttonsPanel;
+		}
+
+		private void addAllFields(Composite parent, Map<String, Integer> fields) {
+			List<String> sortedLabels = new ArrayList<String>(fields.keySet());
+			Collections.sort(sortedLabels);
+			for (String label : sortedLabels) {
+				addCheckBoxForLabelVisualIds(parent, label, fields.get(label));
+			}
+
+		}
+
+		private CheckBoxFieldEditor addCheckBoxForLabelVisualIds(Composite parent, String commonLabel, int visualId) {
+			CheckBoxFieldEditor result = new CheckBoxFieldEditor(IconStylePreferencePage.getConnectionLabelPreference(visualId), commonLabel, parent);
+			myConnectorLabelsByVisualIdEditors.add(result);
+			addField(result);
+			return result;
+		}
+
+		private Button addSelectAllButton(Composite parent, final boolean selectNotDeselect) {
+			Button selectButton = new Button(parent, SWT.PUSH);
+			selectButton.addSelectionListener(new SelectionAdapter() {
+
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					for (CheckBoxFieldEditor next : myConnectorLabelsByVisualIdEditors) {
+						next.getCheckbox().setSelection(selectNotDeselect);
+					}
+				}
+			});
+			int widthHint = convertHorizontalDLUsToPixels(IDialogConstants.BUTTON_WIDTH);
+			Dialog.applyDialogFont(selectButton);
+			GridData data = new GridData(GridData.HORIZONTAL_ALIGN_FILL);
+			Point minButtonSize = selectButton.computeSize(SWT.DEFAULT, SWT.DEFAULT, true);
+			data.widthHint = Math.max(widthHint, minButtonSize.x);
+			selectButton.setLayoutData(data);
+			return selectButton;
+		}
 	}
 
 	private static final String ICONSTYLE_GROUPBOX_LABEL = Messages.IconStylePreferencePage_icon_style_group;
