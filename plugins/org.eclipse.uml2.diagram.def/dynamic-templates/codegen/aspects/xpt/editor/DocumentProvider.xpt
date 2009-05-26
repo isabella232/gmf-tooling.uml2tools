@@ -19,7 +19,7 @@ protected org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDocument
 	org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.DiagramDocument document = new org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.DiagramDocument();
 	org.eclipse.emf.transaction.TransactionalEditingDomain domain = createEditingDomain();
 	org.eclipse.uml2.diagram.common.pathmap.XMI2UMLSupport.enableXMI2UMLSupport(domain.getResourceSet());
-	document.setEditingDomain(createEditingDomain());
+	document.setEditingDomain(domain);
 	return document;
 }
 «ENDAROUND»

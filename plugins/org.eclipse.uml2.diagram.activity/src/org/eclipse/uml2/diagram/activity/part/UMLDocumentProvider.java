@@ -133,7 +133,7 @@ public class UMLDocumentProvider extends AbstractDocumentProvider implements IDi
 		DiagramDocument document = new DiagramDocument();
 		TransactionalEditingDomain domain = createEditingDomain();
 		XMI2UMLSupport.enableXMI2UMLSupport(domain.getResourceSet());
-		document.setEditingDomain(createEditingDomain());
+		document.setEditingDomain(domain);
 		return document;
 	}
 
