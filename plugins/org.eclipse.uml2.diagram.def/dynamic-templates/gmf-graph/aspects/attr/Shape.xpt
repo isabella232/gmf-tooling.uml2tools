@@ -9,14 +9,14 @@
  * Contributors:
  *    Michael Golubev (Borland) - #259490 with GEF 3.5M4 default shape width is 0.0
  */
-«IMPORT 'http://www.eclipse.org/gmf/2006/GraphicalDefinition'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2006/GraphicalDefinition'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«AROUND shapeAttrs(figureVarName : String) FOR gmfgraph::Shape-»
-«EXPAND attr::Shape::fill(figureVarName)-»
-«IF xorFill»«EXPAND attr::Shape::xorFill(figureVarName)»«ENDIF-»
-«IF not outline»«EXPAND attr::Shape::outline(figureVarName)»«ENDIF-»
-«IF xorOutline»«EXPAND attr::Shape::xorOutline(figureVarName)»«ENDIF-»
-«IF lineWidth <> 0»«EXPAND attr::Shape::lineWidth(figureVarName)»«ENDIF-»
-«IF lineKind <> gmfgraph::LineKind::LINE_SOLID»«EXPAND attr::Shape::lineKind(figureVarName)»«ENDIF-»
-«ENDAROUND»
+Â«AROUND shapeAttrs(figureVarName : String) FOR gmfgraph::Shape-Â»
+Â«EXPAND attr::Shape::fill(figureVarName)-Â»
+Â«IF xorFillÂ»Â«EXPAND attr::Shape::xorFill(figureVarName)Â»Â«ENDIF-Â»
+Â«IF not outlineÂ»Â«EXPAND attr::Shape::outline(figureVarName)Â»Â«ENDIF-Â»
+Â«IF xorOutlineÂ»Â«EXPAND attr::Shape::xorOutline(figureVarName)Â»Â«ENDIF-Â»
+Â«IF lineWidth <> 0Â»Â«EXPAND attr::Shape::lineWidth(figureVarName)Â»Â«ENDIF-Â»
+Â«IF lineKind <> gmfgraph::LineKind::LINE_SOLIDÂ»Â«EXPAND attr::Shape::lineKind(figureVarName)Â»Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
