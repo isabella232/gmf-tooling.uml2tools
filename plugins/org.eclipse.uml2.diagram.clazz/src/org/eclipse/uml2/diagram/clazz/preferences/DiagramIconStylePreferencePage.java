@@ -1,9 +1,12 @@
 package org.eclipse.uml2.diagram.clazz.preferences;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.eclipse.gmf.runtime.common.ui.preferences.CheckBoxFieldEditor;
 import org.eclipse.jface.preference.FieldEditor;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.swt.SWT;
@@ -13,6 +16,30 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationInstanceSourceEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationInstanceTargetEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName5EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName6EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationName7EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationStereotypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.DependencyName3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationStereotype2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationStereotypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationStereotypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyName2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyName3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.PropertyNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationNameEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationStereotypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingStereotypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBinding_BindLabelEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateParameterSubstitutionEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.UsageStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.part.Messages;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditor;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
@@ -24,6 +51,50 @@ import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
  * @generated
  */
 public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
+
+	/**
+	 * @generated
+	 */
+	private static Map<String, Integer> ourConnectorLabels2Vids = new HashMap<String, Integer>();
+
+	/**
+	 * @generated
+	 */
+	static {
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_GeneralizationQualifiedName_6018, GeneralizationStereotypeEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6001, DependencyName2EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6010, DependencyName3EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_PropertyName_6002, PropertyNameEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_PropertyName_6012, PropertyName2EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_PropertyName_6017, PropertyName3EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6003, AssociationNameEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6004, AssociationName2EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6005, AssociationName3EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6006, AssociationName4EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6007, AssociationName5EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6008, AssociationName6EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6009, AssociationName7EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationQualifiedName_6019, AssociationStereotypeEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_InterfaceRealizationQualifiedName_6020, InterfaceRealizationStereotypeEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_RealizationName_6011, RealizationNameEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_RealizationQualifiedName_6021, RealizationStereotypeEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_GeneralizationQualifiedName_6022, GeneralizationStereotype2EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_UsageQualifiedName_6023, UsageStereotypeEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_SlotLabel_6015, AssociationInstanceSourceEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_SlotLabel_6016, AssociationInstanceTargetEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_TemplateBindingLabel_6013, TemplateBinding_BindLabelEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_TemplateBindingLabel_6014, TemplateParameterSubstitutionEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_TemplateBindingQualifiedName_6024, TemplateBindingStereotypeEditPart.VISUAL_ID);
+	}
+
+	/**
+	 * @generated
+	 */
+	public static void initConnectorLabelDefaults(IPreferenceStore store) {
+		for (Integer visualId : ourConnectorLabels2Vids.values()) {
+			store.setDefault(org.eclipse.uml2.diagram.clazz.preferences.DiagramIconStylePreferencePage.getConnectionLabelPreference(visualId), true);
+		}
+	}
 
 	/**
 	 * @generated
@@ -100,6 +171,7 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 	protected void addFields(Composite parent) {
 		super.addFields(parent);
 		createShowHideIconsGroup(parent);
+		createShowHideConnectorIconsGroup(parent);
 	}
 
 	/**
@@ -123,7 +195,8 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 	@Override
 	protected void initialize() {
 		super.initialize();
-		enableVisualIdChoices(UMLPreferencesConstants.VALUE_ICONS_SHOW_SELECTED_VISUAL_IDS.equals(getPreferenceStore().getString(UMLPreferencesConstants.PREF_ICONS_SHOW_HIDE_MODE)));
+		boolean stateShowSelected = UMLPreferencesConstants.VALUE_ICONS_SHOW_SELECTED_VISUAL_IDS.equals(getPreferenceStore().getString(UMLPreferencesConstants.PREF_ICONS_SHOW_HIDE_MODE));
+		enableVisualIdChoices(stateShowSelected);
 	}
 
 	/**
@@ -209,6 +282,14 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Property, 3001, 3019, 3014, 3021, 3023, 3028);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Slot, 3017);
 
+	}
+
+	/**
+	 * @generated
+	 */
+	private Composite createShowHideConnectorIconsGroup(Composite parent) {
+		IconStylePreferencePage.ShowHideConnectorLabelGroup builder = new IconStylePreferencePage.ShowHideConnectorLabelGroup();
+		return builder.createShowHideConnectorLabelGroup(parent, ourConnectorLabels2Vids);
 	}
 
 }

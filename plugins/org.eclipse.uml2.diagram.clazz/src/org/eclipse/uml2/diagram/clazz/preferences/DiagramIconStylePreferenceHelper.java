@@ -71,6 +71,16 @@ public class DiagramIconStylePreferenceHelper {
 		return preferencesValue;
 	}
 
+	/**
+	 * @generated
+	 */
+	public static boolean shouldShowLabel(int visualId, PreferencesHint hint) {
+		return ((IPreferenceStore) hint.getPreferenceStore()).getBoolean(DiagramIconStylePreferencePage.getConnectionLabelPreference(visualId));
+	}
+
+	/**
+	 * @generated
+	 */
 	public static boolean shouldShowIcon(int visualId, PreferencesHint hint) {
 		boolean preferencesValue = getPreferencesValueFor(visualId, hint);
 		return preferencesValue;

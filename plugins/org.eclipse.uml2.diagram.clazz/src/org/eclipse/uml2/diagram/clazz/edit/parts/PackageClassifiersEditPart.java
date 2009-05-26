@@ -12,6 +12,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.notation.DrawerStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService;
 import org.eclipse.uml2.diagram.clazz.edit.policies.PackageClassifiersCanonicalEditPolicy;
@@ -101,7 +103,13 @@ public class PackageClassifiersEditPart extends ListCompartmentEditPart {
 	 */
 	@Override
 	protected void refreshVisibility() {
-		boolean visibility = getNotationView().isVisible() && !getChildren().isEmpty();
+		boolean visibility = getNotationView().isVisible();
+		if (visibility) {
+			DrawerStyle style = (DrawerStyle) getNotationView().getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
+			if (style != null && !style.isCollapsed()) {
+				visibility &= !getChildren().isEmpty();
+			}
+		}
 		setVisibility(visibility);
 	}
 

@@ -1815,5 +1815,125 @@ public class Messages extends NLS {
 	 */
 	public static String DiagramIconStylePreferencePage_label_for_Slot;
 
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_GeneralizationQualifiedName_6018;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6001;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6010;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_PropertyName_6002;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_PropertyName_6012;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_PropertyName_6017;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6003;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6004;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6005;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6006;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6007;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6008;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6009;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationQualifiedName_6019;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_InterfaceRealizationQualifiedName_6020;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_RealizationName_6011;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_RealizationQualifiedName_6021;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_GeneralizationQualifiedName_6022;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_UsageQualifiedName_6023;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_SlotLabel_6015;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_SlotLabel_6016;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_TemplateBindingLabel_6013;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_TemplateBindingLabel_6014;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_TemplateBindingQualifiedName_6024;
+
 	//TODO: put accessor fields manually	
 }

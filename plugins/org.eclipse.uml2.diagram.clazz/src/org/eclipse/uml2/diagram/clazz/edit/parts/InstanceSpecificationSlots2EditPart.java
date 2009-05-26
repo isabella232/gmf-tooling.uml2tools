@@ -9,6 +9,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.notation.DrawerStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.policies.InstanceSpecificationSlots2CanonicalEditPolicy;
 import org.eclipse.uml2.diagram.clazz.edit.policies.InstanceSpecificationSlots2ItemSemanticEditPolicy;
@@ -102,7 +104,13 @@ public class InstanceSpecificationSlots2EditPart extends ListCompartmentEditPart
 	 */
 	@Override
 	protected void refreshVisibility() {
-		boolean visibility = getNotationView().isVisible() && !getChildren().isEmpty();
+		boolean visibility = getNotationView().isVisible();
+		if (visibility) {
+			DrawerStyle style = (DrawerStyle) getNotationView().getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
+			if (style != null && !style.isCollapsed()) {
+				visibility &= !getChildren().isEmpty();
+			}
+		}
 		setVisibility(visibility);
 	}
 
