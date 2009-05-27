@@ -37,6 +37,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutE
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -44,7 +45,9 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
@@ -148,11 +151,11 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof StereotypeNameEditPart) {
-			((StereotypeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStereotypeFigure_NameLabel());
+			((StereotypeNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_NameLabel());
 			return true;
 		}
 		if (childEditPart instanceof StereotypeStereoEditPart) {
-			((StereotypeStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureStereotypeFigure_StereotypeLabel());
+			((StereotypeStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureClassFigure_StereoLabel());
 			return true;
 		}
 		if (childEditPart instanceof StereotypeAttributesEditPart) {
@@ -681,11 +684,6 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		/**
 		 * @generated
 		 */
-		private Label fFigureStereotypeFigure_NameLabel;
-
-		/**
-		 * @generated
-		 */
 		private RectangleFigure fFigureStereotypeFigure_AttributesCompartment;
 
 		/**
@@ -696,12 +694,12 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		/**
 		 * @generated
 		 */
-		private StereotypeLabel fFigureStereotypeFigure_StereotypeLabel;
+		private RectangleFigure fFigureStereotypeFigure_ImagesCompartment;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureStereotypeFigure_ImagesCompartment;
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -718,7 +716,8 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 			this.setLayoutManager(layoutThis);
 
 			this.setLineWidth(1);
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(10), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -727,31 +726,11 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		 */
 		private void createContents() {
 
-			fFigureStereotypeFigure_StereotypeLabel = new StereotypeLabel();
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			fFigureStereotypeFigure_StereotypeLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			this.add(fFigureStereotypeFigure_StereotypeLabel);
-
-			CenterLayout layoutFFigureStereotypeFigure_StereotypeLabel = new CenterLayout();
-
-			fFigureStereotypeFigure_StereotypeLabel.setLayoutManager(layoutFFigureStereotypeFigure_StereotypeLabel);
-
-			RectangleFigure stereotypeFigure_NameContainer0 = new RectangleFigure();
-			stereotypeFigure_NameContainer0.setOutline(false);
-			stereotypeFigure_NameContainer0.setLineWidth(1);
-			stereotypeFigure_NameContainer0.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(25)));
-
-			this.add(stereotypeFigure_NameContainer0);
-
-			CenterLayout layoutStereotypeFigure_NameContainer0 = new CenterLayout();
-
-			stereotypeFigure_NameContainer0.setLayoutManager(layoutStereotypeFigure_NameContainer0);
-
-			fFigureStereotypeFigure_NameLabel = new Label();
-			fFigureStereotypeFigure_NameLabel.setText("");
-
-			stereotypeFigure_NameContainer0.add(fFigureStereotypeFigure_NameLabel);
+			this.add(fNameAndStereotypeBlock);
 
 			fFigureStereotypeFigure_AttributesCompartment = new RectangleFigure();
 			fFigureStereotypeFigure_AttributesCompartment.setOutline(false);
@@ -776,13 +755,6 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		/**
 		 * @generated
 		 */
-		public Label getFigureStereotypeFigure_NameLabel() {
-			return fFigureStereotypeFigure_NameLabel;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureStereotypeFigure_AttributesCompartment() {
 			return fFigureStereotypeFigure_AttributesCompartment;
 		}
@@ -797,15 +769,29 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 		/**
 		 * @generated
 		 */
-		public StereotypeLabel getFigureStereotypeFigure_StereotypeLabel() {
-			return fFigureStereotypeFigure_StereotypeLabel;
+		public RectangleFigure getFigureStereotypeFigure_ImagesCompartment() {
+			return fFigureStereotypeFigure_ImagesCompartment;
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureStereotypeFigure_ImagesCompartment() {
-			return fFigureStereotypeFigure_ImagesCompartment;
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureClassFigure_NameLabel() {
+			return getNameAndStereotypeBlock().getNameLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getFigureClassFigure_StereoLabel() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 		/**

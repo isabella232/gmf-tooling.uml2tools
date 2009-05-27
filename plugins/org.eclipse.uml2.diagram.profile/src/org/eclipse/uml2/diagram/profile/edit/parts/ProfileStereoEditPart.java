@@ -47,12 +47,16 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
 import org.eclipse.uml2.diagram.profile.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.profile.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.profile.providers.UMLParserProvider;
+import org.eclipse.uml2.uml.Element;
 
 /**
  * @generated
@@ -121,7 +125,6 @@ public class ProfileStereoEditPart extends CompartmentEditPart implements ITextA
 				return false;
 			}
 		});
-		installEditPolicy("VisualEffect.Class", new ClassifierNameVisualEffectEditPolicy()); //$NON-NLS-1$
 	}
 
 	/**
@@ -171,7 +174,7 @@ public class ProfileStereoEditPart extends CompartmentEditPart implements ITextA
 	/**
 	 * @generated
 	 */
-	public void setLabel(Label figure) {
+	public void setLabel(StereotypeLabel2 figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -204,7 +207,19 @@ public class ProfileStereoEditPart extends CompartmentEditPart implements ITextA
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		return null;
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		if (false == parserElement instanceof Element) {
+			return null;
+		}
+		Image withStereo = StereotypeOperationsEx.getAppliedStereotypeImage((Element) parserElement, UMLElementTypes.getImageDescriptor(parserElement.eClass()));
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowStereotypeIcon(getDiagramPreferencesHint());
+		if (!shouldShow) {
+			return null;
+		}
+		return withStereo;
 	}
 
 	/**
@@ -481,7 +496,7 @@ public class ProfileStereoEditPart extends CompartmentEditPart implements ITextA
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**

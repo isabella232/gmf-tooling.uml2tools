@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.profile.edit.parts;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -27,6 +28,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -34,6 +36,9 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
+import org.eclipse.uml2.diagram.common.draw2d.PartialRectangleFigure;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
@@ -133,7 +138,7 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			return true;
 		}
 		if (childEditPart instanceof ProfileStereoEditPart) {
-			((ProfileStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureProfileFigure_ProfileLabel());
+			((ProfileStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureProfileFigure_StereoLabel());
 			return true;
 		}
 		if (childEditPart instanceof ProfileContentsEditPart) {
@@ -347,29 +352,19 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		/**
 		 * @generated
 		 */
-		private Label fFigureProfileFigure_NameLabel;
-
-		/**
-		 * @generated
-		 */
 		private RectangleFigure fFigureProfileFigure_ContentsCompartment;
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureProfileFigure_ProfileLabel;
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
 		 */
 		public ProfileFigure() {
 
-			ConstrainedToolbarLayout layoutThis = new ConstrainedToolbarLayout();
-
-			layoutThis.setStretchMajorAxis(true);
-
-			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
-
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.setFill(false);
@@ -384,17 +379,43 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		 */
 		private void createContents() {
 
-			RectangleFigure profile_leftTab0 = new RectangleFigure();
-			profile_leftTab0.setLineWidth(1);
-			profile_leftTab0.setPreferredSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
-			profile_leftTab0.setMaximumSize(new Dimension(getMapMode().DPtoLP(40), getMapMode().DPtoLP(20)));
+			RectangleFigure profile_AuxTop0 = new RectangleFigure();
+			profile_AuxTop0.setFill(false);
+			profile_AuxTop0.setOutline(false);
+			profile_AuxTop0.setLineWidth(1);
 
-			this.add(profile_leftTab0);
+			this.add(profile_AuxTop0, BorderLayout.TOP);
+
+			ConstrainedToolbarLayout layoutProfile_AuxTop0 = new ConstrainedToolbarLayout();
+
+			layoutProfile_AuxTop0.setStretchMajorAxis(true);
+
+			layoutProfile_AuxTop0.setVertical(false);
+
+			profile_AuxTop0.setLayoutManager(layoutProfile_AuxTop0);
+
+			PartialRectangleFigure profileFigure_AuxLeftTab1 = new PartialRectangleFigure();
+
+			profileFigure_AuxLeftTab1.setBottomShown(false);
+
+			profileFigure_AuxLeftTab1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));
+
+			profile_AuxTop0.add(profileFigure_AuxLeftTab1);
+
+			RectangleFigure profileFigure_AuxRightPadding1 = new RectangleFigure();
+			profileFigure_AuxRightPadding1.setFill(false);
+			profileFigure_AuxRightPadding1.setOutline(false);
+			profileFigure_AuxRightPadding1.setLineWidth(1);
+			profileFigure_AuxRightPadding1.setPreferredSize(new Dimension(getMapMode().DPtoLP(1), getMapMode().DPtoLP(30)));
+
+			profile_AuxTop0.add(profileFigure_AuxRightPadding1);
 
 			RectangleFigure profile_body0 = new RectangleFigure();
 			profile_body0.setLineWidth(1);
 
-			this.add(profile_body0);
+			profile_body0.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(10), getMapMode().DPtoLP(1)));
+
+			this.add(profile_body0, BorderLayout.CENTER);
 
 			ToolbarLayout layoutProfile_body0 = new ToolbarLayout();
 			layoutProfile_body0.setStretchMinorAxis(true);
@@ -405,40 +426,38 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 
 			profile_body0.setLayoutManager(layoutProfile_body0);
 
-			fFigureProfileFigure_ProfileLabel = new Label();
-			fFigureProfileFigure_ProfileLabel.setText("\u00ABprofile\u00BB");
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			fFigureProfileFigure_ProfileLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			profile_body0.add(fFigureProfileFigure_ProfileLabel);
-
-			CenterLayout layoutFFigureProfileFigure_ProfileLabel = new CenterLayout();
-
-			fFigureProfileFigure_ProfileLabel.setLayoutManager(layoutFFigureProfileFigure_ProfileLabel);
-
-			fFigureProfileFigure_NameLabel = new Label();
-			fFigureProfileFigure_NameLabel.setText("");
-
-			fFigureProfileFigure_NameLabel.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(0), getMapMode().DPtoLP(5)));
-
-			profile_body0.add(fFigureProfileFigure_NameLabel);
-
-			CenterLayout layoutFFigureProfileFigure_NameLabel = new CenterLayout();
-
-			fFigureProfileFigure_NameLabel.setLayoutManager(layoutFFigureProfileFigure_NameLabel);
+			profile_body0.add(fNameAndStereotypeBlock);
 
 			fFigureProfileFigure_ContentsCompartment = new RectangleFigure();
+			fFigureProfileFigure_ContentsCompartment.setOutline(false);
 			fFigureProfileFigure_ContentsCompartment.setLineWidth(1);
 
 			profile_body0.add(fFigureProfileFigure_ContentsCompartment);
+
+			StackLayout layoutFFigureProfileFigure_ContentsCompartment = new StackLayout();
+
+			layoutFFigureProfileFigure_ContentsCompartment.setObserveVisibility(true);
+
+			fFigureProfileFigure_ContentsCompartment.setLayoutManager(layoutFFigureProfileFigure_ContentsCompartment);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureProfileFigure_NameLabel() {
-			return fFigureProfileFigure_NameLabel;
+		public WrappingLabel getFigureProfileFigure_NameLabel() {
+			return getNameAndStereotypeBlock().getNameLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getFigureProfileFigure_StereoLabel() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 		/**
@@ -451,8 +470,8 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		/**
 		 * @generated
 		 */
-		public Label getFigureProfileFigure_ProfileLabel() {
-			return fFigureProfileFigure_ProfileLabel;
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
 		}
 
 		/**

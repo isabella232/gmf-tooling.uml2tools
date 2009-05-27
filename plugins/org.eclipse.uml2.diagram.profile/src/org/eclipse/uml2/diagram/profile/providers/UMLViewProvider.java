@@ -473,7 +473,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node ProfileName_5009 = createLabel(node, UMLVisualIDRegistry.getType(ProfileName2EditPart.VISUAL_ID));
 
-		Node ProfileProfile_imports_7005 = createCompartment(node, UMLVisualIDRegistry.getType(ProfileProfileLabelsEditPart.VISUAL_ID), true, true, true, true);
+		Node ProfileProfile_imports_7005 = createCompartment(node, UMLVisualIDRegistry.getType(ProfileProfileLabelsEditPart.VISUAL_ID), true, false, true, true);
 		CanonicalStyle canonicalStyle_ProfileProfile_imports_7005 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ProfileProfile_imports_7005.setCanonical(true);
 		ProfileProfile_imports_7005.getStyles().add(canonicalStyle_ProfileProfile_imports_7005);

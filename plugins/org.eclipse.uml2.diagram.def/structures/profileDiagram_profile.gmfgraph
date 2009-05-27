@@ -13,31 +13,55 @@
           outline="false"
           fill="false">
         <layout
-            xsi:type="gmfgraph:CustomLayout"
-            qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout">
-          <attributes
-              name="StretchMajorAxis"
-              value="true"/>
-          <attributes
-              name="MinorAlignment"
-              value="org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT"/>
-        </layout>
+            xsi:type="gmfgraph:BorderLayout"/>
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="lightGray"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="Profile_leftTab">
-          <maximumSize
-              dx="40"
-              dy="20"/>
-          <preferredSize
-              dx="40"
-              dy="20"/>
+            name="Profile_AuxTop"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"
+              vertical="true"/>
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout">
+            <attributes
+                name="StretchMajorAxis"
+                value="true"/>
+            <attributes
+                name="vertical"
+                value="false"/>
+          </layout>
+          <children
+              xsi:type="gmfgraph:CustomFigure"
+              name="ProfileFigure_AuxLeftTab"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.PartialRectangleFigure">
+            <preferredSize
+                dx="1"
+                dy="30"/>
+            <attributes
+                name="bottomShown"
+                value="false"/>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="ProfileFigure_AuxRightPadding"
+              outline="false"
+              fill="false">
+            <preferredSize
+                dx="1"
+                dy="30"/>
+          </children>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="Profile_body">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"/>
           <layout
               xsi:type="gmfgraph:FlowLayout"
               vertical="true"
@@ -46,40 +70,65 @@
               minorAlignment="CENTER"
               majorSpacing="0"
               minorSpacing="0"/>
+          <insets
+              top="1"
+              left="1"
+              bottom="10"
+              right="1"/>
           <children
-              xsi:type="gmfgraph:Label"
-              name="ProfileFigure_ProfileLabel"
-              text="\u00ABprofile\u00BB">
-            <layout
-                xsi:type="gmfgraph:CustomLayout"
-                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
+              xsi:type="gmfgraph:CustomFigure"
+              name="ProfileFigure_nameAndStereotype"
+              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock">
             <insets
-                top="5"
+                top="8"
                 left="5"
+                bottom="6"
                 right="5"/>
-          </children>
-          <children
-              xsi:type="gmfgraph:Label"
-              name="ProfileFigure_NameLabel"
-              text="">
-            <layout
-                xsi:type="gmfgraph:CustomLayout"
-                qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.CenterLayout"/>
-            <insets
-                top="5"
-                left="5"
-                right="5"/>
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getStereotypeLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="ProfileFigure_stereo"
+                  qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2">
+                <font
+                    xsi:type="gmfgraph:BasicFont"/>
+              </typedFigure>
+            </customChildren>
+            <customChildren
+                accessor="getNameAndStereotypeBlock().getNameLabel">
+              <typedFigure
+                  xsi:type="gmfgraph:CustomFigure"
+                  name="ProfileFigure_name"
+                  qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+                <font
+                    xsi:type="gmfgraph:BasicFont"/>
+              </typedFigure>
+            </customChildren>
           </children>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="ProfileFigure_ContentsCompartment"/>
+              name="ProfileFigure_ContentsCompartment"
+              outline="false">
+            <layout
+                xsi:type="gmfgraph:CustomLayout"
+                qualifiedClassName="org.eclipse.draw2d.StackLayout">
+              <attributes
+                  name="observeVisibility"
+                  value="true"/>
+            </layout>
+          </children>
         </children>
       </actualFigure>
       <accessors
+          accessor="getFigureProfileFigure_NameLabel"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.0/@customChildren.1/@typedFigure"/>
+      <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.2"/>
+          accessor="getFigureProfileFigure_StereoLabel"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.0/@customChildren.0/@typedFigure"/>
       <accessors
+          accessor="getNameAndStereotypeBlock"
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.1/@children.0"/>
     </descriptors>
     <descriptors

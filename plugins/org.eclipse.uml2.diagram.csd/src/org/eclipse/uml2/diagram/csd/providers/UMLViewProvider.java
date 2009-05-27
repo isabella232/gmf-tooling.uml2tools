@@ -616,7 +616,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node InstanceSpecificationName_5022 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationNameEditPart.VISUAL_ID));
 		Node InstanceSpecificationQualifiedName_5031 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationStereoEditPart.VISUAL_ID));
 
-		Node InstanceSpecificationCompartment_7009 = createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationSlotsEditPart.VISUAL_ID), false, false, true, true);
+		Node InstanceSpecificationCompartment_7009 = createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationSlotsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_InstanceSpecificationCompartment_7009 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_InstanceSpecificationCompartment_7009.setCanonical(true);
 		InstanceSpecificationCompartment_7009.getStyles().add(canonicalStyle_InstanceSpecificationCompartment_7009);
