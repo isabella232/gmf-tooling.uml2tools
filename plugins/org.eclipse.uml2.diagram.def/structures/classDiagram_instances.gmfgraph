@@ -153,6 +153,7 @@
   <compartments
       name="slots"
       figure="InstanceNodeFigure"
+      collapsible="true"
       needsTitle="true"
       accessor="//@figures.0/@descriptors.0/@accessors.2"/>
   <compartments
