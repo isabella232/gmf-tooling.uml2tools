@@ -76,9 +76,6 @@
           <layoutData
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="FILL"/>
-          <border
-              xsi:type="gmfgraph:CustomBorder"
-              qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder"/>
         </children>
       </actualFigure>
       <accessors
@@ -113,17 +110,21 @@
             minorAlignment="CENTER"
             majorSpacing="0"
             minorSpacing="0"/>
+        <insets
+            top="1"
+            left="1"
+            bottom="10"
+            right="1"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="UseCaseAsClassFigure_Header">
+            name="UseCaseAsClassFigure_Header"
+            outline="false">
           <layout
               xsi:type="gmfgraph:FlowLayout"
               vertical="true"
               matchMinorSize="true"
               forceSingleLine="true"
               majorSpacing="0"/>
-          <border
-              xsi:type="gmfgraph:LineBorder"/>
           <children
               xsi:type="gmfgraph:Rectangle"
               name="UseCaseAsClassFigure_StereoContainer"
@@ -162,7 +163,8 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="UseCaseAsClass_PointsCompartment">
+            name="UseCaseAsClass_PointsCompartment"
+            outline="false">
           <layout
               xsi:type="gmfgraph:StackLayout"/>
         </children>
@@ -353,6 +355,8 @@
   <compartments
       name="points"
       figure="UseCaseFigure"
+      collapsible="true"
+      needsTitle="true"
       accessor="//@figures.0/@descriptors.4/@accessors.1"/>
   <compartments
       name="extension points"
