@@ -1101,6 +1101,8 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 			this.setLayoutManager(layoutThis);
 
 			this.setLineWidth(1);
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(10), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -1110,8 +1112,8 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 		private void createContents() {
 
 			RectangleFigure useCaseAsClassFigure_Header0 = new RectangleFigure();
+			useCaseAsClassFigure_Header0.setOutline(false);
 			useCaseAsClassFigure_Header0.setLineWidth(1);
-			useCaseAsClassFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
 
 			this.add(useCaseAsClassFigure_Header0);
 
@@ -1160,6 +1162,7 @@ public class UseCaseAsClassEditPart extends ShapeNodeEditPart implements Primary
 			useCaseAsClassFigure_NameContainer1.add(fUseCaseAsClassFigure_name);
 
 			fUseCaseAsClass_points = new RectangleFigure();
+			fUseCaseAsClass_points.setOutline(false);
 			fUseCaseAsClass_points.setLineWidth(1);
 
 			this.add(fUseCaseAsClass_points);

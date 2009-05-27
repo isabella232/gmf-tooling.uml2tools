@@ -499,7 +499,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node UseCaseName_5003 = createLabel(node, UMLVisualIDRegistry.getType(UseCaseNameEditPart.VISUAL_ID));
 
-		Node UseCasePoints_7002 = createCompartment(node, UMLVisualIDRegistry.getType(UseCaseExtensionPointsEditPart.VISUAL_ID), false, false, true, true);
+		Node UseCasePoints_7002 = createCompartment(node, UMLVisualIDRegistry.getType(UseCaseExtensionPointsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_UseCasePoints_7002 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_UseCasePoints_7002.setCanonical(true);
 		UseCasePoints_7002.getStyles().add(canonicalStyle_UseCasePoints_7002);
@@ -758,7 +758,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node UseCaseName_5006 = createLabel(node, UMLVisualIDRegistry.getType(UseCaseName3EditPart.VISUAL_ID));
 
-		Node UseCasePoints_7005 = createCompartment(node, UMLVisualIDRegistry.getType(InnerUseCaseExtensionPointsEditPart.VISUAL_ID), false, false, true, true);
+		Node UseCasePoints_7005 = createCompartment(node, UMLVisualIDRegistry.getType(InnerUseCaseExtensionPointsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_UseCasePoints_7005 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_UseCasePoints_7005.setCanonical(true);
 		UseCasePoints_7005.getStyles().add(canonicalStyle_UseCasePoints_7005);
@@ -827,7 +827,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node UseCaseName_5010 = createLabel(node, UMLVisualIDRegistry.getType(UseCaseName4EditPart.VISUAL_ID));
 
-		Node UseCasePoints_7007 = createCompartment(node, UMLVisualIDRegistry.getType(UseCasePointsEditPart.VISUAL_ID), false, false, true, true);
+		Node UseCasePoints_7007 = createCompartment(node, UMLVisualIDRegistry.getType(UseCasePointsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_UseCasePoints_7007 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_UseCasePoints_7007.setCanonical(true);
 		UseCasePoints_7007.getStyles().add(canonicalStyle_UseCasePoints_7007);

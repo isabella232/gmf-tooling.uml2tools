@@ -1106,19 +1106,9 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart implements Prima
 			fUseCaseFigure_contents.setFill(false);
 			fUseCaseFigure_contents.setOutline(false);
 			fUseCaseFigure_contents.setLineWidth(1);
-			fUseCaseFigure_contents.setBorder(createBorder0());
 
 			this.add(fUseCaseFigure_contents, BorderLayout.CENTER);
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private Border createBorder0() {
-			OneLineDashedBorder result = new OneLineDashedBorder();
-
-			return result;
 		}
 
 		/**
