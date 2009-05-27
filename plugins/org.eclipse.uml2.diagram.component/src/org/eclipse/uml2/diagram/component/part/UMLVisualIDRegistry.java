@@ -222,7 +222,7 @@ public class UMLVisualIDRegistry {
 			return -1;
 		}
 		String containerModelID = org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.getModelID(containerView);
-		if (!PackageEditPart.MODEL_ID.equals(containerModelID)) {
+		if (!PackageEditPart.MODEL_ID.equals(containerModelID) && !"UMLComponent".equals(containerModelID)) { //$NON-NLS-1$
 			return -1;
 		}
 		int containerVisualID;
@@ -390,7 +390,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry.getModelID(containerView);
-		if (!PackageEditPart.MODEL_ID.equals(containerModelID)) {
+		if (!PackageEditPart.MODEL_ID.equals(containerModelID) && !"UMLComponent".equals(containerModelID)) { //$NON-NLS-1$
 			return false;
 		}
 		int containerVisualID;
@@ -1057,14 +1057,9 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case Artifact2EditPart.VISUAL_ID:
 		case Interface2EditPart.VISUAL_ID:
-		case Package2EditPart.VISUAL_ID:
-		case Package3EditPart.VISUAL_ID:
 		case CommentEditPart.VISUAL_ID:
 		case PortEditPart.VISUAL_ID:
-		case ArtifactEditPart.VISUAL_ID:
-		case Artifact3EditPart.VISUAL_ID:
 		case InterfaceEditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
 		case AssemblyConnectorCircleEditPart.VISUAL_ID:

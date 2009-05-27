@@ -671,21 +671,14 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case DiagramHeaderEditPart.VISUAL_ID:
 		case ActorEditPart.VISUAL_ID:
 		case ActorAsRectangleEditPart.VISUAL_ID:
-		case UseCaseEditPart.VISUAL_ID:
-		case UseCaseAsClassEditPart.VISUAL_ID:
-		case SubjectEditPart.VISUAL_ID:
-		case NestedPackageEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
 		case CommentEditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
 		case ExtensionPointEditPart.VISUAL_ID:
 		case ExtensionPoint2EditPart.VISUAL_ID:
-		case InnerUseCaseEditPart.VISUAL_ID:
 		case ActorInPackageEditPart.VISUAL_ID:
-		case UseCaseinPackageEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

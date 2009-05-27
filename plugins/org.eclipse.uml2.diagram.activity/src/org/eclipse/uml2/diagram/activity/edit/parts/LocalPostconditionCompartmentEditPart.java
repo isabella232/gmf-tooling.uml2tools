@@ -10,6 +10,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.notation.DrawerStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.activity.edit.policies.LocalPostconditionCompartmentCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.LocalPostconditionCompartmentItemSemanticEditPolicy;
@@ -105,7 +107,13 @@ public class LocalPostconditionCompartmentEditPart extends ListCompartmentEditPa
 	 */
 	@Override
 	protected void refreshVisibility() {
-		boolean visibility = getNotationView().isVisible() && !getChildren().isEmpty();
+		boolean visibility = getNotationView().isVisible();
+		if (visibility) {
+			DrawerStyle style = (DrawerStyle) getNotationView().getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
+			if (style != null && !style.isCollapsed()) {
+				visibility &= !getChildren().isEmpty();
+			}
+		}
 		setVisibility(visibility);
 	}
 

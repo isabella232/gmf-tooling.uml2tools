@@ -8,6 +8,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.notation.DrawerStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.compartments.U2TCompartmentFigure;
 import org.eclipse.uml2.diagram.common.compartments.U2TResizableCompartmentEditPolicy;
@@ -97,7 +99,13 @@ public class CompositeState_InternalActivitiesEditPart extends ListCompartmentEd
 	 */
 	@Override
 	protected void refreshVisibility() {
-		boolean visibility = getNotationView().isVisible() && !getChildren().isEmpty();
+		boolean visibility = getNotationView().isVisible();
+		if (visibility) {
+			DrawerStyle style = (DrawerStyle) getNotationView().getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
+			if (style != null && !style.isCollapsed()) {
+				visibility &= !getChildren().isEmpty();
+			}
+		}
 		setVisibility(visibility);
 	}
 
