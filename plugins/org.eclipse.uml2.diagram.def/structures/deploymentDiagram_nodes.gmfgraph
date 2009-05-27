@@ -126,17 +126,21 @@
             minorAlignment="CENTER"
             majorSpacing="0"
             minorSpacing="0"/>
+        <insets
+            top="1"
+            left="1"
+            bottom="10"
+            right="1"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="DeploymentSpecificationFigure_Header">
+            name="DeploymentSpecificationFigure_Header"
+            outline="false">
           <layout
               xsi:type="gmfgraph:FlowLayout"
               vertical="true"
               matchMinorSize="true"
               forceSingleLine="true"
               majorSpacing="0"/>
-          <border
-              xsi:type="gmfgraph:LineBorder"/>
           <children
               xsi:type="gmfgraph:Rectangle"
               name="DeploymentSpecificationFigure_StereoContainer"
@@ -177,7 +181,8 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="DeploymentSpecificationFigure_PropertiesCompartment">
+            name="DeploymentSpecificationFigure_PropertiesCompartment"
+            outline="false">
           <layout
               xsi:type="gmfgraph:StackLayout"/>
         </children>
@@ -233,11 +238,14 @@
   <compartments
       name="artifacts"
       figure="EnvironmentFigure"
+      collapsible="true"
       needsTitle="true"
       accessor="//@figures.0/@descriptors.2/@accessors.2"/>
   <compartments
       name="properties"
       figure="DeploymentSpecificationFigure"
+      collapsible="true"
+      needsTitle="true"
       accessor="//@figures.0/@descriptors.3/@accessors.2"/>
   <compartments
       name="device contents"
