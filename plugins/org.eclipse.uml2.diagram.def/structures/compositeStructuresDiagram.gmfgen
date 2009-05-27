@@ -884,6 +884,7 @@
         notationViewFactoryClassName="Package2ViewFactory"
         canonicalEditPolicyClassName="Package2CanonicalEditPolicy"
         compartments="//@diagram/@compartments.4"
+        primaryDragEditPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.UnmovableUnselectableShapeEditPolicy"
         graphicalNodeEditPolicyClassName="PackageGraphicalNodeEditPolicy"
         createCommandClassName="PackageCreateCommand">
       <diagramRunTimeClass
@@ -904,6 +905,10 @@
             xsi:type="u2tgen:AuxSecondaryDiagramNodeAttribute"
             substituteWithCanvasElement="true"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="&quot;ConnectionHandlesPolicy&quot;"
+          editPolicyQualifiedClassName="org.eclipse.uml2.diagram.common.editpolicies.DoNothingEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package"/>
