@@ -472,7 +472,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node ExecutionEnvironmentName_5004 = createLabel(node, UMLVisualIDRegistry.getType(ExecutionEnvironmentNameEditPart.VISUAL_ID));
 		Node ExecutionEnvironmentQualifiedName_5021 = createLabel(node, UMLVisualIDRegistry.getType(ExecutionEnvironmentStereoEditPart.VISUAL_ID));
 
-		Node ExecutionEnvironmentArtifacts_7002 = createCompartment(node, UMLVisualIDRegistry.getType(ExecutionEnvironmentArtifactsEditPart.VISUAL_ID), false, true, true, true);
+		Node ExecutionEnvironmentArtifacts_7002 = createCompartment(node, UMLVisualIDRegistry.getType(ExecutionEnvironmentArtifactsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_ExecutionEnvironmentArtifacts_7002 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ExecutionEnvironmentArtifacts_7002.setCanonical(true);
 		ExecutionEnvironmentArtifacts_7002.getStyles().add(canonicalStyle_ExecutionEnvironmentArtifacts_7002);
@@ -547,7 +547,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node DeploymentSpecificationName_5006 = createLabel(node, UMLVisualIDRegistry.getType(DeploymentSpecificationNameEditPart.VISUAL_ID));
 		Node DeploymentSpecificationQualifiedName_5023 = createLabel(node, UMLVisualIDRegistry.getType(DeploymentSpecificationStereo3EditPart.VISUAL_ID));
 
-		Node DeploymentSpecificationProperties_7003 = createCompartment(node, UMLVisualIDRegistry.getType(DeploymentSpecificationPropertiesEditPart.VISUAL_ID), false, false, true, true);
+		Node DeploymentSpecificationProperties_7003 = createCompartment(node, UMLVisualIDRegistry.getType(DeploymentSpecificationPropertiesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_DeploymentSpecificationProperties_7003 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_DeploymentSpecificationProperties_7003.setCanonical(true);
 		DeploymentSpecificationProperties_7003.getStyles().add(canonicalStyle_DeploymentSpecificationProperties_7003);
@@ -791,7 +791,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node ExecutionEnvironmentName_5008 = createLabel(node, UMLVisualIDRegistry.getType(ExecutionEnvironmentName2EditPart.VISUAL_ID));
 		Node ExecutionEnvironmentQualifiedName_5016 = createLabel(node, UMLVisualIDRegistry.getType(ExecutionEnvironmentStereo2EditPart.VISUAL_ID));
 
-		Node ExecutionEnvironmentArtifacts_7006 = createCompartment(node, UMLVisualIDRegistry.getType(ExecutionEnvironmentArtifacts2EditPart.VISUAL_ID), false, true, true, true);
+		Node ExecutionEnvironmentArtifacts_7006 = createCompartment(node, UMLVisualIDRegistry.getType(ExecutionEnvironmentArtifacts2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_ExecutionEnvironmentArtifacts_7006 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ExecutionEnvironmentArtifacts_7006.setCanonical(true);
 		ExecutionEnvironmentArtifacts_7006.getStyles().add(canonicalStyle_ExecutionEnvironmentArtifacts_7006);

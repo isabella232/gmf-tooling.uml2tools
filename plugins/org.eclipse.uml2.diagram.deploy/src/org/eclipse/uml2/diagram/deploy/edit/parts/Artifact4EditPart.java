@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -34,13 +36,17 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -154,11 +160,11 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 			return true;
 		}
 		if (childEditPart instanceof ArtifactStereo3EditPart) {
-			((ArtifactStereo3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureArtifactFigure_fixed_artifact());
+			((ArtifactStereo3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureArtifactFigure_stereo());
 			return true;
 		}
 		if (childEditPart instanceof ArtifactArtifactFigure_contents2EditPart) {
-			IFigure pane = getPrimaryShape().getFigureArtifactFigure_Body();
+			IFigure pane = getPrimaryShape().getFigureArtifactFigure_body();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ArtifactArtifactFigure_contents2EditPart) childEditPart).getFigure());
 			return true;
@@ -172,7 +178,7 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof ArtifactArtifactFigure_contents2EditPart) {
-			IFigure pane = getPrimaryShape().getFigureArtifactFigure_Body();
+			IFigure pane = getPrimaryShape().getFigureArtifactFigure_body();
 			pane.remove(((ArtifactArtifactFigure_contents2EditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -204,7 +210,7 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof ArtifactArtifactFigure_contents2EditPart) {
-			return getPrimaryShape().getFigureArtifactFigure_Body();
+			return getPrimaryShape().getFigureArtifactFigure_body();
 		}
 		return getContentPane();
 	}
@@ -690,17 +696,12 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 		/**
 		 * @generated
 		 */
-		private Label fFigureArtifactFigure_name;
+		private RectangleFigure fFigureArtifactFigure_body;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureArtifactFigure_Body;
-
-		/**
-		 * @generated
-		 */
-		private StereotypeLabel fFigureArtifactFigure_fixed_artifact;
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
@@ -711,6 +712,8 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 			this.setLayoutManager(layoutThis);
 
 			this.setLineWidth(1);
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -719,37 +722,29 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 		 */
 		private void createContents() {
 
-			RectangleFigure artifactFigure_NameContainer0 = new RectangleFigure();
-			artifactFigure_NameContainer0.setFill(false);
-			artifactFigure_NameContainer0.setOutline(false);
-			artifactFigure_NameContainer0.setLineWidth(1);
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			this.add(artifactFigure_NameContainer0, BorderLayout.TOP);
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			ToolbarLayout layoutArtifactFigure_NameContainer0 = new ToolbarLayout();
-			layoutArtifactFigure_NameContainer0.setStretchMinorAxis(true);
-			layoutArtifactFigure_NameContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+			this.add(fNameAndStereotypeBlock, BorderLayout.TOP);
 
-			layoutArtifactFigure_NameContainer0.setSpacing(0);
-			layoutArtifactFigure_NameContainer0.setVertical(true);
+			fFigureArtifactFigure_body = new RectangleFigure();
+			fFigureArtifactFigure_body.setOutline(false);
+			fFigureArtifactFigure_body.setLineWidth(1);
+			fFigureArtifactFigure_body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
+			fFigureArtifactFigure_body.setBorder(createBorder0());
 
-			artifactFigure_NameContainer0.setLayoutManager(layoutArtifactFigure_NameContainer0);
+			this.add(fFigureArtifactFigure_body, BorderLayout.CENTER);
 
-			fFigureArtifactFigure_fixed_artifact = new StereotypeLabel();
+		}
 
-			artifactFigure_NameContainer0.add(fFigureArtifactFigure_fixed_artifact);
+		/**
+		 * @generated
+		 */
+		private Border createBorder0() {
+			OneLineBorder result = new OneLineBorder();
 
-			fFigureArtifactFigure_name = new Label();
-			fFigureArtifactFigure_name.setText("");
-
-			artifactFigure_NameContainer0.add(fFigureArtifactFigure_name);
-
-			fFigureArtifactFigure_Body = new RectangleFigure();
-			fFigureArtifactFigure_Body.setLineWidth(1);
-			fFigureArtifactFigure_Body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
-
-			this.add(fFigureArtifactFigure_Body, BorderLayout.CENTER);
-
+			return result;
 		}
 
 		/**
@@ -774,22 +769,29 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 		/**
 		 * @generated
 		 */
-		public Label getFigureArtifactFigure_name() {
-			return fFigureArtifactFigure_name;
+		public RectangleFigure getFigureArtifactFigure_body() {
+			return fFigureArtifactFigure_body;
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureArtifactFigure_Body() {
-			return fFigureArtifactFigure_Body;
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
 		}
 
 		/**
 		 * @generated
 		 */
-		public StereotypeLabel getFigureArtifactFigure_fixed_artifact() {
-			return fFigureArtifactFigure_fixed_artifact;
+		public WrappingLabel getFigureArtifactFigure_name() {
+			return getNameAndStereotypeBlock().getNameLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getFigureArtifactFigure_stereo() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 	}

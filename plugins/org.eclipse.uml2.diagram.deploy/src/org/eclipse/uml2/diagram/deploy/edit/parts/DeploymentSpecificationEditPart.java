@@ -967,6 +967,8 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 			this.setLayoutManager(layoutThis);
 
 			this.setLineWidth(1);
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(10), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -976,8 +978,8 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		private void createContents() {
 
 			RectangleFigure deploymentSpecificationFigure_Header0 = new RectangleFigure();
+			deploymentSpecificationFigure_Header0.setOutline(false);
 			deploymentSpecificationFigure_Header0.setLineWidth(1);
-			deploymentSpecificationFigure_Header0.setBorder(new LineBorder(null, getMapMode().DPtoLP(1)));
 
 			this.add(deploymentSpecificationFigure_Header0);
 
@@ -1028,6 +1030,7 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 			deploymentSpecificationFigure_NameContainer1.add(fFigureDeploymentSpecificationFigure_name);
 
 			fFigureDeploymentSpecificationFigure_PropertiesCompartment = new RectangleFigure();
+			fFigureDeploymentSpecificationFigure_PropertiesCompartment.setOutline(false);
 			fFigureDeploymentSpecificationFigure_PropertiesCompartment.setLineWidth(1);
 
 			this.add(fFigureDeploymentSpecificationFigure_PropertiesCompartment);
