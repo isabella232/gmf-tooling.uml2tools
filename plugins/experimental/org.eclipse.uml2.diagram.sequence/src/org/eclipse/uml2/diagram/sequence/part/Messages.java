@@ -536,6 +536,11 @@ public class Messages extends NLS {
 	 */
 	public static String DiagramIconStylePreferencePage_label_for_InteractionUse;
 
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_MessageName_6001;
+
 	//TODO: put accessor fields manually
 
 }

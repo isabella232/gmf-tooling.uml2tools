@@ -21,6 +21,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 import org.eclipse.gmf.runtime.diagram.core.services.view.CreateDiagramViewOperation;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -59,11 +60,52 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
+		createFileCreationPage(domainModelURI);
+		createDiagramRootSelectorPage(diagramRoot);
+
+		this.myEditingDomain = editingDomain;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected WizardNewFileCreationPage getFileCreationPage() {
+		return myFileCreationPage;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected ModelElementSelectionPage getDiagramRootElementSelectionPage() {
+		return diagramRootElementSelectionPage;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected TransactionalEditingDomain getEditingDomain() {
+		return myEditingDomain;
+	}
+
+	/**
+	 * @generated
+	 */
+	private void createDiagramRootSelectorPage(EObject diagramRoot) {
+		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(Messages.UMLNewDiagramFileWizard_RootSelectionPageName);
+		diagramRootElementSelectionPage.setTitle(Messages.UMLNewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage.setDescription(Messages.UMLNewDiagramFileWizard_RootSelectionPageDescription);
+		diagramRootElementSelectionPage.setModelElement(diagramRoot);
+	}
+
+	/**
+	 * @generated
+	 */
+	private void createFileCreationPage(URI domainModelURI) {
 		myFileCreationPage = new WizardNewFileCreationPage(Messages.UMLNewDiagramFileWizard_CreationPageName, StructuredSelection.EMPTY);
 		myFileCreationPage.setTitle(Messages.UMLNewDiagramFileWizard_CreationPageTitle);
 		myFileCreationPage.setDescription(NLS.bind(Messages.UMLNewDiagramFileWizard_CreationPageDescription, PackageEditPart.MODEL_ID));
 		IPath filePath;
-		String fileName = domainModelURI.trimFileExtension().lastSegment();
+		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
 		if (domainModelURI.isPlatformResource()) {
 			filePath = new Path(domainModelURI.trimSegments(1).toPlatformString(true));
 		} else if (domainModelURI.isFile()) {
@@ -74,12 +116,6 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage.setFileName(UMLDiagramEditorUtil.getUniqueFileName(filePath, fileName, "umlseq")); //$NON-NLS-1$
-		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(Messages.UMLNewDiagramFileWizard_RootSelectionPageName);
-		diagramRootElementSelectionPage.setTitle(Messages.UMLNewDiagramFileWizard_RootSelectionPageTitle);
-		diagramRootElementSelectionPage.setDescription(Messages.UMLNewDiagramFileWizard_RootSelectionPageDescription);
-		diagramRootElementSelectionPage.setModelElement(diagramRoot);
-
-		myEditingDomain = editingDomain;
 	}
 
 	/**
@@ -101,20 +137,12 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
 
-			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				int diagramVID = UMLVisualIDRegistry.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
-				if (diagramVID != PackageEditPart.VISUAL_ID) {
-					return CommandResult.newErrorCommandResult(Messages.UMLNewDiagramFileWizard_IncorrectRootError);
-				}
-				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(), PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
-				diagramResource.getContents().add(diagram);
-				return CommandResult.newOKCommandResult();
-			}
-		};
+		CompositeTransactionalCommand result = new CompositeTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand);
+		AbstractTransactionalCommand command = getCreateDiagramCommand(diagramResource, affectedFiles);
+		result.add(command);
 		try {
-			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
+			OperationHistoryFactory.getOperationHistory().execute(result.reduce(), new NullProgressMonitor(), null);
 			diagramResource.save(UMLDiagramEditorUtil.getSaveOptions());
 			UMLDiagramEditorUtil.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
@@ -125,6 +153,28 @@ public class UMLNewDiagramFileWizard extends Wizard {
 			UMLDiagramEditorPlugin.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
+	}
+
+	/**
+	 * @generated
+	 */
+	private AbstractTransactionalCommand getCreateDiagramCommand(final Resource diagramResource, List affectedFiles) {
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, Messages.UMLNewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
+
+			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+				int diagramVID = UMLVisualIDRegistry.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
+				if (diagramVID != PackageEditPart.VISUAL_ID) {
+					return CommandResult.newErrorCommandResult(Messages.UMLNewDiagramFileWizard_IncorrectRootError);
+				}
+				Diagram diagram = null;
+				if (diagram == null) {
+					diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(), PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				}
+				diagramResource.getContents().add(diagram);
+				return CommandResult.newOKCommandResult();
+			}
+		};
+		return command;
 	}
 
 	/**
