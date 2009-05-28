@@ -5063,8 +5063,6 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case LocalPreconditionEditPart.VISUAL_ID:
-		case LocalPostconditionEditPart.VISUAL_ID:
 		case AcceptEventActionEditPart.VISUAL_ID:
 		case AcceptTimeEventActionEditPart.VISUAL_ID:
 		case ActivityFinalNodeEditPart.VISUAL_ID:
@@ -5086,8 +5084,6 @@ public class UMLVisualIDRegistry {
 		case CallAction_OutputPinEditPart.VISUAL_ID:
 		case CallAction_InputPinEditPart.VISUAL_ID:
 		case CallOperationAction_InputPinEditPart.VISUAL_ID:
-		case StructuredActivityNodeEditPart.VISUAL_ID:
-		case StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 		case StructuredActivityNode_AcceptEventActionEditPart.VISUAL_ID:
 		case StructuredActivityNode_AcceptTimeEventActionEditPart.VISUAL_ID:
 		case StructuredActivityNode_ActivityFinalNodeEditPart.VISUAL_ID:
@@ -5100,7 +5096,6 @@ public class UMLVisualIDRegistry {
 		case StructuredActivityNode_CentralBufferNodeEditPart.VISUAL_ID:
 		case StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
-		case StructuredActivityNode_ConditionalNodeEditPart.VISUAL_ID:
 		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
 		case OpaqueBehaviorEditPart.VISUAL_ID:
 		case ActivityParameterNodeEditPart.VISUAL_ID:
@@ -5117,18 +5112,10 @@ public class UMLVisualIDRegistry {
 		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
 		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 		case ActivityPartition_PinEditPart.VISUAL_ID:
-		case ActivityPartition_StructuredActivityNodeEditPart.VISUAL_ID:
-		case ActivityPartition_StructuredActivityNode_StructuredActivityNodeEditPart.VISUAL_ID:
 		case StructuredActivityNode_StructuredActivityNode_InputPinEditPart.VISUAL_ID:
 		case StructuredActivityNode_StructuredActivityNode_OutputPinEditPart.VISUAL_ID:
 		case ActivityPartition_SendSignalActionEditPart.VISUAL_ID:
-		case ActivityPartition_LoopNodeEditPart.VISUAL_ID:
-		case ActivityPartition_ConditionalNodeEditPart.VISUAL_ID:
-		case ActivityPartition_ExpansionRegionEditPart.VISUAL_ID:
 		case ValueSpecificationAction_OutputPinEditPart.VISUAL_ID:
-		case LoopNodeEditPart.VISUAL_ID:
-		case ConditionalNodeEditPart.VISUAL_ID:
-		case ExpansionRegionEditPart.VISUAL_ID:
 		case ExpansionNodeEditPart.VISUAL_ID:
 		case ParameterEditPart.VISUAL_ID:
 		case LocalPrecondition_LiteralStringEditPart.VISUAL_ID:

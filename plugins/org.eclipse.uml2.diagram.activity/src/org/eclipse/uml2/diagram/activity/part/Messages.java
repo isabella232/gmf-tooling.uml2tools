@@ -1823,4 +1823,39 @@ public class Messages extends NLS {
 	 */
 	public static String DiagramIconStylePreferencePage_label_for_ValueSpecificationAction;
 
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_ControlFlowName_6003;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_ControlFlowName_6005;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_ControlFlowName_6007;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_ObjectFlowName_6004;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_ObjectFlowName_6006;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_ObjectFlowName_6008;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_ExceptionHandlerLabel_6002;
+
 }
