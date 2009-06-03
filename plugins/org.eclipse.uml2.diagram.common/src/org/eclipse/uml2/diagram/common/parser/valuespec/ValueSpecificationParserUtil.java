@@ -15,6 +15,7 @@ import java.util.Iterator;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmf.runtime.common.core.util.StringStatics;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Duration;
 import org.eclipse.uml2.uml.Expression;
 import org.eclipse.uml2.uml.InstanceSpecification;
@@ -99,7 +100,7 @@ public class ValueSpecificationParserUtil {
 			
 			@Override
 			public String caseLiteralNull(LiteralNull literalNull) {
-				return "null";
+				return Messages.ValueSpecificationParserUtil_literal_null;
 			}
 			
 			@Override

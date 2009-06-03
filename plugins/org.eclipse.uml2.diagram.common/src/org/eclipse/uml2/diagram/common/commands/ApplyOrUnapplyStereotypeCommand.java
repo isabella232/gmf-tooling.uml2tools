@@ -7,6 +7,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -14,7 +15,7 @@ import org.eclipse.uml2.uml.Stereotype;
 public class ApplyOrUnapplyStereotypeCommand extends EditElementCommand {
 
 	public ApplyOrUnapplyStereotypeCommand(ApplyOrUnapplyStereotypeRequest request) {
-		super(request.isApplyNotUnapply() ? "Apply stereotype" : "Un-apply stereotype", request.getElement(), request);
+		super(request.isApplyNotUnapply() ? Messages.ApplyOrUnapplyStereotypeCommand_command_apply_stereotype : Messages.ApplyOrUnapplyStereotypeCommand_command_unapply_stereotype, request.getElement(), request);
 	}
 
 	@Override

@@ -48,6 +48,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
+import org.eclipse.uml2.diagram.common.Messages;
 
 public class UMLElementChooserDialog extends Dialog {
 
@@ -79,7 +80,7 @@ public class UMLElementChooserDialog extends Dialog {
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		Composite composite = (Composite) super.createDialogArea(parent);
-		getShell().setText("Select model element");
+		getShell().setText(Messages.UMLElementChooserDialog_dialog_select_model_element);
 		createModelBrowser(composite);
 		setInput(myTreeViewer);
 		return composite;

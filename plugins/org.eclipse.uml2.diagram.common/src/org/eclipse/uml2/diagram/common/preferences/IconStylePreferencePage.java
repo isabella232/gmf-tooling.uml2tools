@@ -176,7 +176,7 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 
 			Group group = new Group(result, SWT.NONE);
 			group.setFont(result.getFont());
-			group.setText("Show/Hide Connector Labels");
+			group.setText(Messages.IconStylePreferencePage_group_show_hide_connector_labels);
 			group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 			group.setLayout(new GridLayout());
 
@@ -188,7 +188,7 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 		}
 
 		private Composite createCheckboxesPanel(Composite parent) {
-			Composite e = createExpansibleComposite(parent, "Connector Labels");
+			Composite e = createExpansibleComposite(parent, Messages.IconStylePreferencePage_composite_connector_labels);
 			Composite checkBoxesPanel = new Composite(e, SWT.NULL);
 			checkBoxesPanel.setLayout(new GridLayout());
 			checkBoxesPanel.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
@@ -200,9 +200,9 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 			buttonsPanel.setLayout(new GridLayout(2, true));
 			buttonsPanel.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 			Button selectAll = addSelectAllButton(buttonsPanel, true);
-			selectAll.setText("Select All");
+			selectAll.setText(Messages.IconStylePreferencePage_button_select_all);
 			Button deselectAll = addSelectAllButton(buttonsPanel, false);
-			deselectAll.setText("Deselect all");
+			deselectAll.setText(Messages.IconStylePreferencePage_button_deselect_all);
 			return buttonsPanel;
 		}
 
@@ -249,17 +249,17 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 
 	private static final String ECLIPSE_STYLE_ICON_LABEL = Messages.IconStylePreferencePage_eclipse_style;
 
-	protected static final String LABEL_SHOW_HIDE_STEREOTYPE_GROUP = "Stereotype Images";
+	protected static final String LABEL_SHOW_HIDE_STEREOTYPE_GROUP = Messages.IconStylePreferencePage_group_stereotype_images;
 
-	protected static final String LABEL_SHOW_HIDE_STEREOTYPE_MODE = "Show Image of Stereotype";
+	protected static final String LABEL_SHOW_HIDE_STEREOTYPE_MODE = Messages.IconStylePreferencePage_label_show_stereotype;
 
-	protected static final String LABEL_SHOW_HIDE_MODE = "Metaclass Images";
+	protected static final String LABEL_SHOW_HIDE_MODE = Messages.IconStylePreferencePage_group_metaclass_images;
 
-	protected static final String LABEL_HIDE_ALL = "Hide All";
+	protected static final String LABEL_HIDE_ALL = Messages.IconStylePreferencePage_label_hide_all;
 
-	protected static final String LABEL_SHOW_ALL = "Show All";
+	protected static final String LABEL_SHOW_ALL = Messages.IconStylePreferencePage_label_show_all;
 
-	protected static final String LABEL_SHOW_BY_VISUAL_ID = "Show For Selected Elements Only";
+	protected static final String LABEL_SHOW_BY_VISUAL_ID = Messages.IconStylePreferencePage_label_show_for_selected;
 
 	private RadioGroupFieldEditor myIconStyleFieldEditor;
 

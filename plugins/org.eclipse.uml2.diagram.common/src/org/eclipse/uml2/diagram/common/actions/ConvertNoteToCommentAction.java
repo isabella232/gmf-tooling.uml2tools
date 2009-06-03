@@ -34,6 +34,7 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.actions.ConvertCommentCommandBase.Config;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Element;
@@ -73,7 +74,7 @@ public class ConvertNoteToCommentAction extends UMLDiagramAction {
 		private List<Edge> myAnnotatedElements;
 
 		public ConvertNoteToCommentCommand(TransactionalEditingDomain domain, Node toConvert, View parent, PreferencesHint preferenceHint, Config config) {
-			super(domain, "Convert Note Into Comment", getWorkspaceFiles(toConvert));
+			super(domain, Messages.ConvertNoteToCommentAction_command_convert_note_into_comment, getWorkspaceFiles(toConvert));
 			myToConvert = toConvert;
 			myParent = parent;
 			myPreferenceHint = preferenceHint;

@@ -40,6 +40,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.parameter.celleditors.BooleanCellEditor;
 import org.eclipse.uml2.diagram.common.parameter.celleditors.DirectionCellEditor;
 import org.eclipse.uml2.diagram.common.parameter.celleditors.PositiveIntegerCellEditor;
@@ -105,7 +106,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		getShell().setText("Select Parameters for Operation");
+		getShell().setText(Messages.EditPropertyParametersDialog_dialog_select_parameters);
 		Composite parentComposite = (Composite) super.createDialogArea(parent);
 
 		createAddRemoveButtonBar(parentComposite);
@@ -173,7 +174,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	}
 
 	private void createRemoveButton(Composite composite) {
-		Button removeButton = createButton(composite, REMOVE_ID, "Remove", false);
+		Button removeButton = createButton(composite, REMOVE_ID, Messages.EditPropertyParametersDialog_button_remove, false);
 		removeButton.addSelectionListener(new SelectionAdapter() {
 
 			@Override
@@ -188,13 +189,13 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	}
 
 	private void createAddButton(Composite composite) {
-		Button addButton = createButton(composite, ADD_ID, "Add", false);
+		Button addButton = createButton(composite, ADD_ID, Messages.EditPropertyParametersDialog_button_add, false);
 		addButton.addSelectionListener(new SelectionAdapter() {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Parameter newParameter = UMLFactory.eINSTANCE.createParameter();
-				newParameter.setName("Parameter");
+				newParameter.setName(Messages.EditPropertyParametersDialog_button_parameter);
 				newParameter.createDefaultValue(null, null, UMLPackage.eINSTANCE.getLiteralString());
 				myOperation.getOwnedParameters().add(newParameter);
 				myTableViewer.refresh();
@@ -206,7 +207,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	}
 	
 	private void createUpButton(Composite composite) {
-		Button addButton = createButton(composite, UP_ID, "Up", false);
+		Button addButton = createButton(composite, UP_ID, Messages.EditPropertyParametersDialog_button_up, false);
 		addButton.addSelectionListener(new SelectionAdapter() {
 
 			@Override
@@ -230,7 +231,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	}
 
 	private void createDownButton(Composite composite) {
-		Button addButton = createButton(composite, DOWN_ID, "Down", false);
+		Button addButton = createButton(composite, DOWN_ID, Messages.EditPropertyParametersDialog_button_down, false);
 		addButton.addSelectionListener(new SelectionAdapter() {
 
 			@Override

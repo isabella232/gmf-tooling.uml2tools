@@ -54,7 +54,7 @@ public class ApplyProfileInfoAction extends ApplyProfileAction {
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			Profile profile = getProfile();
 			if (profile == null) {
-				return CommandResult.newErrorCommandResult("Could not load profile for uri " + myProfileInfo.uri);
+				return CommandResult.newErrorCommandResult(Messages.ApplyProfileInfoAction_command_result_could_note_load_profile + myProfileInfo.uri);
 			}
 			myPackage.applyProfile(profile);
 			return CommandResult.newOKCommandResult(profile);

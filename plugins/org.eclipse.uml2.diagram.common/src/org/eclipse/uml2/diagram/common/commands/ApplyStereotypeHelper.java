@@ -6,6 +6,7 @@ import java.util.List;
 import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -22,7 +23,7 @@ public class ApplyStereotypeHelper {
 			}
 		}
 
-		CompositeCommand command = new CompositeCommand("Manage stereotypes");
+		CompositeCommand command = new CompositeCommand(Messages.ApplyStereotypeHelper_command_manage_stereotypes);
 		for (Stereotype applied : subject.getAppliedStereotypes()) {
 			if (false == toApply.contains(applied.getName())) {
 				command.add(new ApplyOrUnapplyStereotypeCommand(new ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest(subject, applied, false)));

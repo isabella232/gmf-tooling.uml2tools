@@ -20,6 +20,7 @@ import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ReferencedElementChooserDialog;
 import org.eclipse.uml2.uml.NamedElement;
 
@@ -110,7 +111,7 @@ public class ReferenceDialogCellEditor extends TextAndDialogCellEditor {
 					return null;
 				}
 				if (!elementsExists((String) value)) {
-					return "Cannot find element with name {0}";
+					return Messages.ReferenceDialogCellEditor_message_cannot_find_element;
 				}
 			}
 			return null;

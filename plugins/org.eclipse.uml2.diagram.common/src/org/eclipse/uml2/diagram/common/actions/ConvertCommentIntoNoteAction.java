@@ -35,6 +35,7 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.actions.ConvertCommentCommandBase.Config;
 import org.eclipse.uml2.uml.Comment;
 
@@ -57,7 +58,7 @@ public class ConvertCommentIntoNoteAction extends UMLDiagramAction {
 		TransactionalEditingDomain domain = editPart.getEditingDomain();
 
 		Node commentNode = (Node) editPart.getNotationView();
-		CompositeTransactionalCommand result = new CompositeTransactionalCommand(editPart.getEditingDomain(), "Convert Comment Into Note");
+		CompositeTransactionalCommand result = new CompositeTransactionalCommand(editPart.getEditingDomain(), Messages.ConvertCommentIntoNoteAction_command_convert_comment_into_note);
 		CreateNoteCommand createNote = new CreateNoteCommand(domain, commentNode, parentEP.getNotationView(), preferencesHint, myConfig);
 		result.compose(createNote);
 		DeleteCommand deleteView = new DeleteCommand(commentNode);
@@ -78,7 +79,7 @@ public class ConvertCommentIntoNoteAction extends UMLDiagramAction {
 		private final Config myConfig;
 
 		public CreateNoteCommand(TransactionalEditingDomain domain, Node toConvert, View parent, PreferencesHint preferenceHint, Config config) {
-			super(domain, "Create Note", getWorkspaceFiles(toConvert));
+			super(domain, Messages.ConvertCommentIntoNoteAction_command_create_note, getWorkspaceFiles(toConvert));
 			myToConvert = toConvert;
 			myParent = parent;
 			myPreferenceHint = preferenceHint;

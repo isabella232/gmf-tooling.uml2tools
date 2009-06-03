@@ -14,6 +14,7 @@ package org.eclipse.uml2.diagram.common.parameter.celleditors;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.uml2.diagram.common.Messages;
 
 public class PositiveIntegerCellEditor extends TextCellEditor {
 
@@ -49,7 +50,7 @@ public class PositiveIntegerCellEditor extends TextCellEditor {
 			}
 
 			private String isValid(Integer intValue) {
-				return intValue >= 0 ? null : "Value must be a positive number";
+				return intValue >= 0 ? null : Messages.PositiveIntegerCellEditor_message_negative_number;
 			}
 		};
 	}

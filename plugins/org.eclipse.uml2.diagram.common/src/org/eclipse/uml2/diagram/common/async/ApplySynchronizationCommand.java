@@ -13,13 +13,14 @@ import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.Messages;
 
 public class ApplySynchronizationCommand extends AbstractTransactionalCommand {
 	private final SyncModelNode mySyncRoot;
 	private final ArrayList<View> myAddedTopLevelViews = new ArrayList<View>();
 
 	public ApplySynchronizationCommand(SyncModelNode syncRoot) {
-		super(syncRoot.getContext().getDomain(), "Applying synchronization changes", getWorkspaceFiles(syncRoot.getDiagramView()));
+		super(syncRoot.getContext().getDomain(), Messages.ApplySynchronizationCommand_command_apply_synchronization, getWorkspaceFiles(syncRoot.getDiagramView()));
 		assert (syncRoot.getDiagramView() != null);
 		mySyncRoot = syncRoot;
 	}

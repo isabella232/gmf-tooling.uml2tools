@@ -9,15 +9,16 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 
 public class ViewFiltersPreferencePage extends AbstractPreferencePage {
 
-	private static final String REQUIRED_INTERFACE_LINKS_GROUP_LABEL = "Manage Required Interface Links";
+	private static final String REQUIRED_INTERFACE_LINKS_GROUP_LABEL = Messages.ViewFiltersPreferencePage_group_manage_required_interface;
 
-	private static final String HIDE_DERIVED_LABEL = "Hide Derived Links";
+	private static final String HIDE_DERIVED_LABEL = Messages.ViewFiltersPreferencePage_label_hide_derived;
 	
-	private static final String HIDE_GENUINE_LABEL = "Hide Genuine Links";
+	private static final String HIDE_GENUINE_LABEL = Messages.ViewFiltersPreferencePage_label_hide_genuine;
 	
 	private CheckBoxFieldEditor myManageRequireds_hideDeriveds;
 

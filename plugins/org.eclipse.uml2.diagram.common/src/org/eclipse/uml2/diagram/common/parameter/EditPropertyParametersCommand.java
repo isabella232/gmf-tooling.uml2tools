@@ -19,6 +19,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Operation;
 
 public class EditPropertyParametersCommand extends EditElementCommand {
@@ -28,7 +29,7 @@ public class EditPropertyParametersCommand extends EditElementCommand {
 	private final Operation myNewOperation;
 
 	EditPropertyParametersCommand(Operation oldOperation, Operation newOperation) {
-		super("Edit Property Parameters", oldOperation, new EmptyRequest(oldOperation));
+		super(Messages.EditPropertyParametersCommand_command_edit_parameters, oldOperation, new EmptyRequest(oldOperation));
 		myOldOperation = oldOperation;
 		myNewOperation = newOperation;
 	}

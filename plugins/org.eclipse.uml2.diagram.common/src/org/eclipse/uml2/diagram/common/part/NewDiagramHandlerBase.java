@@ -18,6 +18,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 
@@ -44,7 +45,7 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 		if (wizard == null) {
 			return null;
 		}
-		wizard.setWindowTitle("Initialize new diagram file");
+		wizard.setWindowTitle(Messages.NewDiagramHandlerBase_wizard_initialize_new_diagram);
 		runWizard(wizard, part.getSite().getShell());
 		return null;
 	}

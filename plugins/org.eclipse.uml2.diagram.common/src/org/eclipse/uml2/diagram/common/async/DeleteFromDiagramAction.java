@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.uml2.diagram.common.Messages;
 
 /**
  * The U2T specific version of DeleteFromDiagramAction that respects the 
@@ -35,8 +36,8 @@ public class DeleteFromDiagramAction extends DiagramAction {
 	public void init() {
 		super.init();
 		setId(ActionIds.ACTION_DELETE_FROM_DIAGRAM);
-		setText("Delete from diagram");
-		setToolTipText("Delete from diagram");
+		setText(Messages.DeleteFromDiagramAction_action_delete_from_diagram);
+		setToolTipText(Messages.DeleteFromDiagramAction_action_tooltip_delete_from_diagram);
 		ISharedImages workbenchImages = PlatformUI.getWorkbench().getSharedImages();
 		setHoverImageDescriptor(workbenchImages.getImageDescriptor(ISharedImages.IMG_TOOL_DELETE));
 		setImageDescriptor(workbenchImages.getImageDescriptor(ISharedImages.IMG_TOOL_DELETE));

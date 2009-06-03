@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.parameter.EditPropertyParametersDialog;
 import org.eclipse.uml2.uml.Operation;
 
@@ -23,7 +24,7 @@ public abstract  class ShowPropertyParametersActionBase extends DiagramAction {
 
 	public ShowPropertyParametersActionBase(IWorkbenchPage workbenchPage) {
 		super(workbenchPage);
-		setText("Manage Parameters...");
+		setText(Messages.ShowPropertyParametersActionBase_action_manage_parameters);
 		myWorkbechPage = workbenchPage;
 	}
 
@@ -45,7 +46,7 @@ public abstract  class ShowPropertyParametersActionBase extends DiagramAction {
 	@Override
 	protected Command getCommand() {
 		// return nothing because all functionality is implemented in #doRun(IProgressMonitor) method
-		return new Command("Fake Manage Property Parameters"){};
+		return new Command(Messages.ShowPropertyParametersActionBase_command_empty){};
 	}
 
 	@Override
@@ -71,7 +72,7 @@ public abstract  class ShowPropertyParametersActionBase extends DiagramAction {
 		private GraphicalEditPart myEditPart;
 
 		public RefreshEditPartCommand(GraphicalEditPart editPart) {
-			super("Refresh Property Label");
+			super(Messages.ShowPropertyParametersActionBase_command_refresh_property_label);
 			myEditPart = editPart;
 		}
 

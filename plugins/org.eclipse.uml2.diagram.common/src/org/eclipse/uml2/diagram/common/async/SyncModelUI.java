@@ -22,6 +22,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.dialogs.FilteredTree;
 import org.eclipse.ui.dialogs.PatternFilter;
+import org.eclipse.uml2.diagram.common.Messages;
 
 public class SyncModelUI {
 
@@ -195,8 +196,8 @@ public class SyncModelUI {
 			mySelectAllChildrenAction = new BulkSelectAction(viewer, true);
 			myUnselectAllChildrenAction = new BulkSelectAction(viewer, false);
 
-			mySelectAllChildrenAction.setText("Select All Children");
-			myUnselectAllChildrenAction.setText("Unselect All Children");
+			mySelectAllChildrenAction.setText(Messages.SyncModelUI_action_select_all_children);
+			myUnselectAllChildrenAction.setText(Messages.SyncModelUI_action_unselect_all_children);
 		}
 
 		public void attachMenu() {
@@ -247,9 +248,9 @@ public class SyncModelUI {
 
 			mySelected = (SyncModelNode) selection.getFirstElement();
 			if (mySelected.isAutoSynchronized()) {
-				setText("Disable Synchronization");
+				setText(Messages.SyncModelUI_action_disable_sync);
 			} else {
-				setText("Enable Synchronization");
+				setText(Messages.SyncModelUI_action_enable_sync);
 			}
 		}
 

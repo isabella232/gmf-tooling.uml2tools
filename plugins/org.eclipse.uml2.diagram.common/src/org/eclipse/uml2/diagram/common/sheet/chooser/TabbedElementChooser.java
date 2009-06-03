@@ -28,6 +28,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ElementChooserPage.Validator;
 import org.eclipse.uml2.uml.ElementImport;
 
@@ -77,9 +78,9 @@ public class TabbedElementChooser {
 		
 		createTabFolder(plate);
 		myTreeChooserTab = new ElementTreeChooser(myItemProvidersAdapterFactory, mySourceObject, myFeature, myEditingDomain);
-		addTabPage("Choose from a Tree", myTabFolder, myTreeChooserTab);
+		addTabPage(Messages.TabbedElementChooser_tab_choose_from_a_tree, myTabFolder, myTreeChooserTab);
 		myListChooserPage = new ElementFilteredListChooser(myItemProvidersAdapterFactory, mySourceObject, myFeature, myValidator, myEditingDomain);
-		addTabPage("Choose from a List", myTabFolder, myListChooserPage);
+		addTabPage(Messages.TabbedElementChooser_tab_choose_from_a_list, myTabFolder, myListChooserPage);
 
 		myCurrentPage = (ElementChooserPage) myTabFolder.getSelection()[0].getData();
 		myTabFolder.addSelectionListener(new SelectionListener() {

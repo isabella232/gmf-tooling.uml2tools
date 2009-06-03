@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 
 public class MoveViewCommand extends AbstractTransactionalCommand {
@@ -39,7 +40,7 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 
 	public MoveViewCommand(TransactionalEditingDomain editingDomain, IAdaptable parent, IAdaptable child, int index, PreferencesHint preferences) {
 		super(editingDomain, // 
-				"Move view", null);
+				Messages.MoveViewCommand_command_move_view, null);
 		myParent = parent;
 		myChild = child;
 		myIndex = index;

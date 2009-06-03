@@ -19,12 +19,13 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ElementChooserPage.Validator;
 
 public class ReferencedElementChooserDialog extends TrayDialog {
 
 	//#263278 'Unset' doesn't work
-	public final static Object NULL_VALUE = new String("Null EObject"); 
+	public final static Object NULL_VALUE = new String(Messages.ReferencedElementChooserDialog_null_eobject); 
 	
 	private final static int UNSET_BUTTON_ID = IDialogConstants.NO_TO_ALL_ID + 1;	
 
@@ -67,14 +68,14 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 	protected void createButtonsForButtonBar(Composite parent) {
 		// create OK and Cancel buttons by default
 		createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL, true);
-		createButton(parent, UNSET_BUTTON_ID, "Unset", false);
+		createButton(parent, UNSET_BUTTON_ID, Messages.ReferencedElementChooserDialog_button_unset, false);
 		createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants.CANCEL_LABEL, false);
 	}
 
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		shell.setText(NLS.bind("Choose {0} for {1}", new Object[]{myFeature.getName(), labelProvider.getText(mySourceObject)}));
+		shell.setText(NLS.bind(Messages.ReferencedElementChooserDialog_dialog_choose_element, new Object[]{myFeature.getName(), labelProvider.getText(mySourceObject)}));
 		shell.setImage(labelProvider.getImage(mySourceObject));
 	}
 

@@ -11,21 +11,23 @@
  */
 package org.eclipse.uml2.diagram.common.parameter;
 
+import org.eclipse.uml2.diagram.common.Messages;
+
 class EditParametersTableConstants {
 	
-	public static final String NAME = "name";
+	public static final String NAME = Messages.EditParametersTableConstants_column_name;
 
-	public static final String TYPES = "types";
+	public static final String TYPES = Messages.EditParametersTableConstants_column_types;
 
-	public static final String DIRECTION = "direction";
+	public static final String DIRECTION = Messages.EditParametersTableConstants_column_direction;
 
-	public static final String MULTIPLICITY = "multiplicity";
+	public static final String MULTIPLICITY = Messages.EditParametersTableConstants_column_multiplicity;
 
-	public static final String DEFAULT_VALUE = "defaultValue";
+	public static final String DEFAULT_VALUE = Messages.EditParametersTableConstants_column_default_value;
 
-	public static final String IS_ORDERED = "isOrdered";
+	public static final String IS_ORDERED = Messages.EditParametersTableConstants_column_is_ordered;
 
-	public static final String IS_UNIQUE = "isUnique";
+	public static final String IS_UNIQUE = Messages.EditParametersTableConstants_column_is_unique;
 
 	public static final int NAME_POS = 0;
 

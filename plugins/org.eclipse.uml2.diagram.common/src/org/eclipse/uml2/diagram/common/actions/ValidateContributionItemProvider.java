@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.common.ui.util.IWorkbenchPartDescriptor;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
+import org.eclipse.uml2.diagram.common.Messages;
 
 public class ValidateContributionItemProvider extends AbstractContributionItemProvider implements IProvider {
 
@@ -31,5 +32,5 @@ public class ValidateContributionItemProvider extends AbstractContributionItemPr
 
 	public static final String ACTION_ID = "ValidateAction"; //$NON-NLS-1$
 
-	public static final String GROUP_LABEL = "Validate";
+	public static final String GROUP_LABEL = Messages.ValidateContributionItemProvider_action_validate;
 }

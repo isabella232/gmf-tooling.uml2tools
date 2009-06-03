@@ -62,6 +62,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.internal.UIPlugin;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.providers.ImageUtils;
 
 public class ElementTreeChooser implements ElementChooserPage {
@@ -351,7 +352,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 
 			public String getLabel() {
-				return "Current resource";
+				return Messages.ElementTreeChooser_label_current_resources;
 			}
 		}
 
@@ -368,7 +369,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 
 			public String getLabel() {
-				return "Loaded resources";
+				return Messages.ElementTreeChooser_label_loaded_resources;
 			}
 		}
 
@@ -385,7 +386,7 @@ public class ElementTreeChooser implements ElementChooserPage {
 			}
 
 			public String getLabel() {
-				return "Workspace";
+				return Messages.ElementTreeChooser_label_workspace;
 			}
 
 		}
@@ -456,10 +457,10 @@ public class ElementTreeChooser implements ElementChooserPage {
 			myViewer = viewer;
 			myCollapseAllChildrenAction = new CollapseAllAction(viewer);
 			myCollapseAllChildrenAction.setImageDescriptor(IMG_COLLAPSE_ALL);
-			myCollapseAllChildrenAction.setText("Collapse All");
+			myCollapseAllChildrenAction.setText(Messages.ElementTreeChooser_action_collapse_all);
 
 			myExpandNodeChildrenAction = new ExpandNodeAction(viewer);
-			myExpandNodeChildrenAction.setText("Expand Node");
+			myExpandNodeChildrenAction.setText(Messages.ElementTreeChooser_action_expand_node);
 		}
 
 		public void attachMenu() {

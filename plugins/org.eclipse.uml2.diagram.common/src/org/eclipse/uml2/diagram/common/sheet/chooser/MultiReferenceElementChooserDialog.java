@@ -38,6 +38,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.sheet.chooser.ElementChooserPage.Validator;
 
 public class MultiReferenceElementChooserDialog extends TrayDialog {
@@ -76,7 +77,7 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		shell.setText(NLS.bind("Choose {0} for {1}", new Object[]{myFeature.getName(), labelProvider.getText(mySourceObject)}));
+		shell.setText(NLS.bind(Messages.MultiReferenceElementChooserDialog_dialod_choose_element, new Object[]{myFeature.getName(), labelProvider.getText(mySourceObject)}));
 		shell.setImage(labelProvider.getImage(mySourceObject));
 	}
 
@@ -112,7 +113,7 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 		}
 
 		Label choiceLabel = new Label(choiceComposite, SWT.NONE);
-		choiceLabel.setText(NLS.bind("Choose {0}:", new Object[]{myFeature.getEType().getName()}));
+		choiceLabel.setText(NLS.bind(Messages.MultiReferenceElementChooserDialog_label_choose_element, new Object[]{myFeature.getEType().getName()}));
 		GridData choiceLabelGridData = new GridData();
 		choiceLabelGridData.verticalAlignment = SWT.FILL;
 		choiceLabelGridData.horizontalAlignment = SWT.FILL;
@@ -147,14 +148,14 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 		new Label(controlButtons, SWT.NONE);
 
 		final Button addButton = new Button(controlButtons, SWT.PUSH);
-		addButton.setText("Add");
+		addButton.setText(Messages.MultiReferenceElementChooserDialog_button_add);
 		GridData addButtonGridData = new GridData();
 		addButtonGridData.verticalAlignment = SWT.FILL;
 		addButtonGridData.horizontalAlignment = SWT.FILL;
 		addButton.setLayoutData(addButtonGridData);
 
 		final Button removeButton = new Button(controlButtons, SWT.PUSH);
-		removeButton.setText("Remove");
+		removeButton.setText(Messages.MultiReferenceElementChooserDialog_button_remove);
 		GridData removeButtonGridData = new GridData();
 		removeButtonGridData.verticalAlignment = SWT.FILL;
 		removeButtonGridData.horizontalAlignment = SWT.FILL;
@@ -166,14 +167,14 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 		spaceLabel.setLayoutData(spaceLabelGridData);
 
 		final Button upButton = new Button(controlButtons, SWT.PUSH);
-		upButton.setText("Up");
+		upButton.setText(Messages.MultiReferenceElementChooserDialog_button_up);
 		GridData upButtonGridData = new GridData();
 		upButtonGridData.verticalAlignment = SWT.FILL;
 		upButtonGridData.horizontalAlignment = SWT.FILL;
 		upButton.setLayoutData(upButtonGridData);
 
 		final Button downButton = new Button(controlButtons, SWT.PUSH);
-		downButton.setText("Down");
+		downButton.setText(Messages.MultiReferenceElementChooserDialog_button_down);
 		GridData downButtonGridData = new GridData();
 		downButtonGridData.verticalAlignment = SWT.FILL;
 		downButtonGridData.horizontalAlignment = SWT.FILL;
@@ -194,7 +195,7 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 		}
 
 		Label featureLabel = new Label(featureComposite, SWT.NONE);
-		featureLabel.setText("Selected elements:");
+		featureLabel.setText(Messages.MultiReferenceElementChooserDialog_label_selected_elements);
 		GridData featureLabelGridData = new GridData();
 		featureLabelGridData.horizontalSpan = 2;
 		featureLabelGridData.horizontalAlignment = SWT.FILL;

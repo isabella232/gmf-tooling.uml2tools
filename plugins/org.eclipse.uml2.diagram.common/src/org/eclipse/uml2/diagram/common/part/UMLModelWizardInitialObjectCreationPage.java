@@ -18,6 +18,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -66,7 +67,7 @@ public class UMLModelWizardInitialObjectCreationPage extends WizardPage {
 
 		Label containerLabel = new Label(composite, SWT.LEFT);
 		{
-			containerLabel.setText("Model Object");
+			containerLabel.setText(Messages.UMLModelWizardInitialObjectCreationPage_label_model_object);
 
 			GridData data = new GridData();
 			data.horizontalAlignment = GridData.FILL;
@@ -92,7 +93,7 @@ public class UMLModelWizardInitialObjectCreationPage extends WizardPage {
 
 		Label encodingLabel = new Label(composite, SWT.LEFT);
 		{
-			encodingLabel.setText("XML Encoding");
+			encodingLabel.setText(Messages.UMLModelWizardInitialObjectCreationPage_label_xml_encoding);
 
 			GridData data = new GridData();
 			data.horizontalAlignment = GridData.FILL;

@@ -10,6 +10,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.uml2.diagram.common.Messages;
 
 public abstract class NewDiagramSynchronizationWizardPage extends WizardPage {
 
@@ -99,7 +100,7 @@ public abstract class NewDiagramSynchronizationWizardPage extends WizardPage {
 	}
 
 	private String getSelectionTitle() {
-		return "Selected elements will be added to diagram, 'bold' elements will manage their children:";
+		return Messages.NewDiagramSynchronizationWizardPage_selection_title;
 	}
 
 }

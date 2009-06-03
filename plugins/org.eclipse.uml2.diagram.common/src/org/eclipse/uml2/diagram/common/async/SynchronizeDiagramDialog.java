@@ -11,6 +11,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.async.SyncModelLabelProvider;
 import org.eclipse.uml2.diagram.common.async.SyncModelNode;
 import org.eclipse.uml2.diagram.common.async.SyncModelUI;
@@ -32,7 +33,7 @@ public class SynchronizeDiagramDialog extends Dialog {
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		Composite composite = (Composite) super.createDialogArea(parent);
-		getShell().setText("Choose synchronization mode");
+		getShell().setText(Messages.SynchronizeDiagramDialog_dialog_choose_synchronization_mode);
 		mySyncUI = new SyncModelUI(composite, new SyncModelLabelProvider(myPluginSpecificLabelProvider));
 		mySyncUI.setRootNode(getRootSyncNode());
 		for (ViewerFilter nextFilter : myViewerFilters){
