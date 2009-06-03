@@ -60,11 +60,11 @@ public class ProvidedInterfaceLink {
 	public String toString() {
 		StringBuffer result = new StringBuffer();
 		result.append((myRealization != null) ? myRealization.getName() : null );
-		result.append("(");
+		result.append("("); //$NON-NLS-1$
 		result.append((mySource != null) ? mySource.getName() : null );
-		result.append(",");
+		result.append(","); //$NON-NLS-1$
 		result.append((myTarget != null) ? myTarget.getName() : null );
-		result.append(")");
+		result.append(")"); //$NON-NLS-1$
 		return result.toString();
 	}
 	
