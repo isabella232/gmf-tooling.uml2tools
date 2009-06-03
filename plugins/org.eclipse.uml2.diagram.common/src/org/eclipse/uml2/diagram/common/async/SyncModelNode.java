@@ -41,10 +41,10 @@ public class SyncModelNode implements IAdaptable {
 		}
 		if (diagramRoot != null){
 			if (diagramRoot.getElement() == null){
-				throw new IllegalArgumentException("Diagram root should have an semantic element");
+				throw new IllegalArgumentException("Diagram root should have an semantic element"); //$NON-NLS-1$
 			}
 			if (!diagramRoot.getElement().equals(syncModelRoot.getElement())){
-				throw new IllegalArgumentException("Diagram root element : " + diagramRoot.getElement() + ", while SyncModel root element: " + syncModelRoot.getElement());
+				throw new IllegalArgumentException("Diagram root element : " + diagramRoot.getElement() + ", while SyncModel root element: " + syncModelRoot.getElement()); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
 		initWithDiagramView(diagramRoot);
@@ -276,13 +276,13 @@ public class SyncModelNode implements IAdaptable {
 	
 	private void checkHasDiagramView(){
 		if (getDiagramView() == null){
-			throw new IllegalStateException("I am not associated with diagram view:" + getSyncModelView());
+			throw new IllegalStateException("I am not associated with diagram view:" + getSyncModelView()); //$NON-NLS-1$
 		}	
 	}
 
 	/*package*/ void associateWithDiagramView(View diagramView) {
 		if (myDiagramView != null){
-			throw new IllegalStateException("I have diagram view already: " + myDiagramView + ", cant be associated with: " + diagramView);
+			throw new IllegalStateException("I have diagram view already: " + myDiagramView + ", cant be associated with: " + diagramView); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		myDiagramView = diagramView;
 	}

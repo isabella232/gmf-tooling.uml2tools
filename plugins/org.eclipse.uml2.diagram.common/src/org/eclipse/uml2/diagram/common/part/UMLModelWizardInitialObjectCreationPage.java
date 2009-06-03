@@ -171,7 +171,7 @@ public class UMLModelWizardInitialObjectCreationPage extends WizardPage {
 	protected Collection<String> getEncodings() {
 		if (encodings == null) {
 			encodings = new ArrayList<String>();
-			for (StringTokenizer stringTokenizer = new StringTokenizer(" UTF-8 ASCII UTF-16 UTF-16BE UTF-16LE ISO-8859-1"); stringTokenizer.hasMoreTokens();) {
+			for (StringTokenizer stringTokenizer = new StringTokenizer(" UTF-8 ASCII UTF-16 UTF-16BE UTF-16LE ISO-8859-1"); stringTokenizer.hasMoreTokens();) { //$NON-NLS-1$
 				encodings.add(stringTokenizer.nextToken());
 			}
 		}

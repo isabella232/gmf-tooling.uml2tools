@@ -13,7 +13,7 @@ import org.eclipse.uml2.diagram.common.async.SyncModelNode;
  * changes into the new created diagram.
  */
 public class NewDiagramSyncHelper {
-	private static final String TEMP_DIAGRAM_RESOURCE_URI = "uri://" + NewDiagramSyncHelper.class.getName() + "/diagram.xml";
+	private static final String TEMP_DIAGRAM_RESOURCE_URI = "uri://" + NewDiagramSyncHelper.class.getName() + "/diagram.xml"; //$NON-NLS-1$ //$NON-NLS-2$
 
 	private final String myDiagramModelId;
 	

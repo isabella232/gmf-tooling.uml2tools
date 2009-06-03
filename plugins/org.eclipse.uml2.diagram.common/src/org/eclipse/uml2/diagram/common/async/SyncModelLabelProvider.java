@@ -12,7 +12,7 @@ import org.eclipse.swt.graphics.Image;
 public class SyncModelLabelProvider extends BaseLabelProvider implements ILabelProvider, IFontProvider {
 	private final ILabelProvider myDelegate;
 	private final FontRegistry myFontRegistry = new FontRegistry();
-	protected static final String TREE_FONT = "TreeFont";
+	protected static final String TREE_FONT = "TreeFont"; //$NON-NLS-1$
 	
 	public SyncModelLabelProvider(ILabelProvider pluginSpecificDelegate){
 		myDelegate = pluginSpecificDelegate;

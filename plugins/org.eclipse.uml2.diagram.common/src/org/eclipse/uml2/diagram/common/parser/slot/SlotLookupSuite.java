@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.uml2.diagram.parser.lookup.Lookup;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
@@ -26,7 +27,7 @@ public class SlotLookupSuite extends LookupSuiteImpl {
 		}
 
 		public StructuralFeature lookup(String name, EObject context) {
-			if (name == null || "".equals(name)) {
+			if (name == null || StringStatics.BLANK.equals(name)) {
 				return null;
 			}
 			InstanceSpecification is = ((Slot) context).getOwningInstance();

@@ -14,6 +14,7 @@ package org.eclipse.uml2.diagram.common.parameter.celleditors;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.jface.viewers.ComboBoxCellEditor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.uml2.diagram.common.parameter.EditPropertyParametersDialog;
@@ -33,7 +34,7 @@ public class TypeCellEditor extends ComboBoxCellEditor {
 		String[] stringValues = new String[values.length];
 		for (int i = 0 ; i < values.length; i++) {
 			String name = values[i].getName();
-			stringValues[i] = name != null ? name : "";
+			stringValues[i] = name != null ? name : StringStatics.BLANK;
 		}
 		return stringValues;
 	}

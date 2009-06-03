@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -42,7 +43,7 @@ public class TabbedElementChooser {
 
 	private ElementChooserPage myCurrentPage;
 
-	private final String mySettingsKeyLastFocus = "ReferencedElementDialog.KeyLastFocus";
+	private final String mySettingsKeyLastFocus = "ReferencedElementDialog.KeyLastFocus"; //$NON-NLS-1$
 
 	private TabFolder myTabFolder;
 	
@@ -129,7 +130,7 @@ public class TabbedElementChooser {
 					Object selected = selection.get(0);
 					String text = myDetailLabelProvider.getText(selected);
 					if (text == null) {
-						text = "";
+						text = StringStatics.BLANK;
 					}
 					myDetailLabel.setText(text);
 					Image image = myDetailLabelProvider.getImage(selected);

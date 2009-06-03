@@ -23,6 +23,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
@@ -92,7 +93,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		if (classifier != null) {
 			String result = classifier;
 			if (editString != null && editString.length() > 0) {
-				result+=STEREOTYPE_SEPARATOR + " " + editString;
+				result+=STEREOTYPE_SEPARATOR + StringStatics.SPACE + editString;
 			}
 			return NLS.bind(APPLIED_PROFILE, new Object[] { result });
 		}

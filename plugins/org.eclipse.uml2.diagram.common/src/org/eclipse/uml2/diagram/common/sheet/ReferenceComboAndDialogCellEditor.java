@@ -15,6 +15,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.ui.celleditor.ExtendedComboBoxCellEditor;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.osgi.util.NLS;
@@ -127,7 +128,7 @@ public class ReferenceComboAndDialogCellEditor extends ExtendedComboBoxCellEdito
 				} else {
 					// try to insert the current value into the error
 					// message.
-					setErrorMessage(NLS.bind(getErrorMessage(), new Object[] { newValue == null ? "" : newValue.toString() }));
+					setErrorMessage(NLS.bind(getErrorMessage(), new Object[] { newValue == null ? StringStatics.BLANK : newValue.toString() }));
 				}
 				fireApplyEditorValue();
 			}

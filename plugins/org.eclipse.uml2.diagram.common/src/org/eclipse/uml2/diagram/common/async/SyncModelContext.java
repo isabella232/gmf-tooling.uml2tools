@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
@@ -17,7 +18,7 @@ import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 
 
 public class SyncModelContext {
-	private static final String SYNC_RESOURCE_TEMP_URI = "uri://temp/" + SyncModelContext.class.getName() + "/temp";
+	private static final String SYNC_RESOURCE_TEMP_URI = "uri://temp/" + SyncModelContext.class.getName() + "/temp"; //$NON-NLS-1$ //$NON-NLS-2$
 	private final PreferencesHint myPreferencesHint;
 	private final IDiagramUpdater myUpdater;
 	private final IVisualIDRegistry myRegistry;
@@ -62,7 +63,7 @@ public class SyncModelContext {
 			URI syncModelURI = URI.createURI(SYNC_RESOURCE_TEMP_URI);
 			mySyncModelResource = getResourceSet().createResource(syncModelURI);
 			if (mySyncModelResource == null){
-				throw new IllegalStateException("Can't create sync model resource: " + syncModelURI);
+				throw new IllegalStateException("Can't create sync model resource: " + syncModelURI); //$NON-NLS-1$
 			}
 		}
 		return mySyncModelResource;
@@ -86,7 +87,7 @@ public class SyncModelContext {
 	}
 	
 	public void runCommand(final Runnable command){
-		runCommand(new AbstractTransactionalCommand(myDomain, "", null){
+		runCommand(new AbstractTransactionalCommand(myDomain, StringStatics.BLANK, null){
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				command.run();

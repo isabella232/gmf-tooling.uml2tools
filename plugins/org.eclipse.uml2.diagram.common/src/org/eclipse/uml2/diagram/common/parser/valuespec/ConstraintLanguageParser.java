@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
@@ -71,7 +72,7 @@ public class ConstraintLanguageParser implements ISemanticParser {
 	public String getEditString(IAdaptable element, int flags) {
 		ValueSpecification specification = getValueSpecification(element);
 		if (specification == null) {
-			return "";
+			return StringStatics.BLANK;
 		}
 		UMLSwitch<String> valueSwitch = new UMLSwitch<String>() {
 
@@ -81,12 +82,12 @@ public class ConstraintLanguageParser implements ISemanticParser {
 				if (!lans.isEmpty()) {
 					return lans.get(0);
 				}
-				return "";
+				return StringStatics.BLANK;
 			}
 
 			@Override
 			public String defaultCase(EObject object) {
-				return "";
+				return StringStatics.BLANK;
 			}
 
 		};

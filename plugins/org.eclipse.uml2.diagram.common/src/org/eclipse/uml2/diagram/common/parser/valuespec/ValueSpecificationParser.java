@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
@@ -40,7 +41,7 @@ import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class ValueSpecificationParser implements ISemanticParser {
 	private static final Set<EStructuralFeature> ourFeatures; 
-	private static final String BODIES_SEPARATOR = System.getProperty("line.separator") + System.getProperty("line.separator");
+	private static final String BODIES_SEPARATOR = System.getProperty("line.separator") + System.getProperty("line.separator"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return isAffectingEvent(notification, 0);
@@ -68,7 +69,7 @@ public class ValueSpecificationParser implements ISemanticParser {
 	public String getEditString(IAdaptable element, int flags) {
 		ValueSpecification specification = getValueSpecification(element);
 		if (specification == null) {
-			return "";
+			return StringStatics.BLANK;
 		}
 		UMLSwitch<String> valueSwitch = new UMLSwitch<String>() {
 
@@ -104,7 +105,7 @@ public class ValueSpecificationParser implements ISemanticParser {
 
 			@Override
 			public String defaultCase(EObject object) {
-				return "";
+				return StringStatics.BLANK;
 			}
 
 		};
@@ -146,7 +147,7 @@ public class ValueSpecificationParser implements ISemanticParser {
 			
 			@Override
 			public ICommand caseOpaqueExpression(OpaqueExpression object) {
-				String[] bodies = newString.split("(\\r|\\n|\\u0085|\\u2028|\\u2029){2,}");
+				String[] bodies = newString.split("(\\r|\\n|\\u0085|\\u2028|\\u2029){2,}"); //$NON-NLS-1$
 				List<String> bodiesList = new ArrayList<String>(bodies.length);
 				for (String next : bodies){
 					if (next != null && next.length() != 0){

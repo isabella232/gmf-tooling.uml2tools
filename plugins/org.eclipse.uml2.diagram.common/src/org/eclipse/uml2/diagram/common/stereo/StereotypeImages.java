@@ -67,7 +67,7 @@ public class StereotypeImages {
 			String location = icon.getLocation();
 			ImageDescriptor imgDescriptor = getProvidedImageDescriptor(location, uriConverter, normalizedURI);
 			if (imgDescriptor != null) {
-				if (metaclassImage != null && location.indexOf("ovr16") != -1) {
+				if (metaclassImage != null && location.indexOf("ovr16") != -1) { //$NON-NLS-1$
 					return ImageUtils.overlay(metaclassImage, imgDescriptor);
 				}
 				return imgDescriptor;

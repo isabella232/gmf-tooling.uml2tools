@@ -28,7 +28,7 @@ public class ModelElementsContentHelper {
 				Resource modelResource = resourceSet.getResource(URI.createPlatformResourceURI(resourcePath.toString(), true), true);
 				return contentProvier.getChildren(modelResource);
 			} catch (WrappedException e) {
-				System.err.println("Failed to get resource for filepath " + resourcePath.toString());
+				System.err.println("Failed to get resource for filepath " + resourcePath.toString()); //$NON-NLS-1$
 			}
 			return Collections.EMPTY_LIST.toArray();
 		}

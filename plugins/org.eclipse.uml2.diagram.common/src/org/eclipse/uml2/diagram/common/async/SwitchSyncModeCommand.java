@@ -8,6 +8,7 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
 
@@ -16,7 +17,7 @@ public class SwitchSyncModeCommand extends AbstractTransactionalCommand {
 	private final boolean myEnableNotDisable;
 
 	public SwitchSyncModeCommand(TransactionalEditingDomain domain, List<View> views, boolean enableNotDisable){
-		super(domain, "", getWorkspaceFiles(views));
+		super(domain, StringStatics.BLANK, getWorkspaceFiles(views));
 		myViews = views;
 		myEnableNotDisable = enableNotDisable;
 	}

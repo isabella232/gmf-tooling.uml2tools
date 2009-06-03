@@ -98,7 +98,7 @@ public class ProfileRegistry {
 			rootMemento.save(writer);
 			return writer.toString();
 		} catch (IOException e) {
-			logError("Couldn't save Profile to Registry ", e);
+			logError("Couldn't save Profile to Registry ", e); //$NON-NLS-1$
 			return null;
 		}
 	}
@@ -124,7 +124,7 @@ public class ProfileRegistry {
 			XMLMemento rootMemento = XMLMemento.createReadRoot(new StringReader(str));
 			return rootMemento;
 		} catch (WorkbenchException e) {
-			logError("Couldn't get ProfileRegistry ", e);
+			logError("Couldn't get ProfileRegistry ", e); //$NON-NLS-1$
 		}
 		return null;
 	}
@@ -206,7 +206,7 @@ public class ProfileRegistry {
 				return (Profile)resource.getResourceSet().getEObject(URI.createURI(uri), true);
 			} catch (Exception e) {
 				ProfileRegistry.getInstance().markAsBroken(this);
-				logWarning(NLS.bind("Couldn't load {1} for URI {0}", new Object[]{name, uri}), e);
+				logWarning(NLS.bind("Couldn't load {1} for URI {0}", new Object[]{name, uri}), e); //$NON-NLS-1$
 			}
 			return null; 
 		}

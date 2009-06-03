@@ -15,6 +15,7 @@ package org.eclipse.uml2.diagram.common.parser.association.end;
 import java.io.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.uml2.diagram.parser.*;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.uml.*;
@@ -24,7 +25,7 @@ public class AssociationEndParser extends ExternalParserBase implements Associat
 	private EClass mySubjectEClass;
 
     public AssociationEndParser(){
-    	this(new StringReader(""));
+    	this(new StringReader(StringStatics.BLANK));
     }
     
     public AssociationEndParser(LookupSuite lookup){

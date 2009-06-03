@@ -11,6 +11,7 @@
  */
 package org.eclipse.uml2.diagram.common.parameter;
 
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.uml2.diagram.common.parameter.EditPropertyParametersDialog.SetValueToSpecification;
@@ -44,7 +45,7 @@ class ParametersCellModifier implements ICellModifier {
 		if (EditParametersTableConstants.DEFAULT_VALUE.equals(property)) {
 			ValueSpecification defValue = parameter.getDefaultValue();
 			if (defValue == null) {
-				return "";
+				return StringStatics.BLANK;
 			}
 			return new ValueSpecificationToStringConverter().doSwitch(defValue); 
 		}

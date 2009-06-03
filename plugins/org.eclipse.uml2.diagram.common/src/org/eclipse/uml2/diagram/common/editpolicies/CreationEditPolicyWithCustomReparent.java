@@ -39,7 +39,7 @@ import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
  * @see #237059
  */
 public class CreationEditPolicyWithCustomReparent extends CreationEditPolicy {
-	public static final String KEY_U2T_EXTENDED_PARAMETERS = CreationEditPolicyWithCustomReparent.class.getSimpleName() + ":u2tParameters";
+	public static final String KEY_U2T_EXTENDED_PARAMETERS = CreationEditPolicyWithCustomReparent.class.getSimpleName() + ":u2tParameters"; //$NON-NLS-1$
 	private final IVisualIDRegistry myVisualIdRegistry;
 	private boolean myProvideU2TParameters;
 

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.ui.provider.PropertyDescriptor;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.CellEditor;
@@ -83,7 +84,7 @@ public class ReferencePropertyDescriptor extends PropertyDescriptor {
 	private boolean useDialogNotComboCellEditor() {
 		String value = myPreferenceStore.getString(UMLPreferencesConstants.PREF_PROP_SHEET_REFERENCE);
 		// XXX remove the check, when Preference Page will be added to UI
-		if (value == null || "".equals(value)) {
+		if (value == null || StringStatics.BLANK.equals(value)) {
 			return true;
 		}
 		return UMLPreferencesConstants.PREF_PROP_SHEET_REFERENCE_DIALOG.equals(value);

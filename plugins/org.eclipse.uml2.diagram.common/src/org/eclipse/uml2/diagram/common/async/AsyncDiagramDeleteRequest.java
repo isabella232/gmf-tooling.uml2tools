@@ -21,7 +21,7 @@ public class AsyncDiagramDeleteRequest extends GroupRequest {
 		LET_TARGET_DECIDE, 
 	}
 	
-	public static final String REQ_TYPE = AsyncDiagramDeleteRequest.class.getName() + ":delete";
+	public static final String REQ_TYPE = AsyncDiagramDeleteRequest.class.getName() + ":delete"; //$NON-NLS-1$
 	
 	private Kind myKind = Kind.LET_TARGET_DECIDE;
 	private boolean myFromKeyboard = false;

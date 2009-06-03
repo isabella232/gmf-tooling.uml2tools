@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.util.EcoreUtil.CrossReferencer;
 import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.IValidationContext;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.uml.OCL;
 import org.eclipse.ocl.uml.OCL.Helper;
@@ -35,7 +36,7 @@ public class OCLFromStereoConstraint extends AbstractModelConstraint {
 				try {
 					boolean success = runConstraintOn(oclHelper, selected, c);
 					if (!success) {
-						String name = (selected instanceof NamedElement)? ((NamedElement)selected).getName(): "";
+						String name = (selected instanceof NamedElement)? ((NamedElement)selected).getName(): StringStatics.BLANK;
 						return ctx.createFailureStatus(name, stereo.getName(), c.getName());
 					}
 				} catch (ParserException e) {

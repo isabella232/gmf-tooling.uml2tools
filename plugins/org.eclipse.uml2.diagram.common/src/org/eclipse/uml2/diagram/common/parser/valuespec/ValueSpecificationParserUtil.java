@@ -14,6 +14,7 @@ package org.eclipse.uml2.diagram.common.parser.valuespec;
 import java.util.Iterator;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.uml2.uml.Duration;
 import org.eclipse.uml2.uml.Expression;
 import org.eclipse.uml2.uml.InstanceSpecification;
@@ -63,7 +64,7 @@ public class ValueSpecificationParserUtil {
 			public String caseInstanceValue(InstanceValue instanceValue) {
 				InstanceSpecification instanceSpecification = instanceValue.getInstance();
 				if (instanceSpecification == null) {
-					return "";
+					return StringStatics.BLANK;
 				}
 				return instanceSpecification.getName();
 			}
@@ -73,13 +74,13 @@ public class ValueSpecificationParserUtil {
 				ValueSpecification min = interval.getMin();
 				ValueSpecification max = interval.getMax();
 				if (min == null && max == null) {
-					return "";
+					return StringStatics.BLANK;
 				}
 				StringBuffer intervalDenotation = new StringBuffer();
 				if (min != null) {
 					intervalDenotation.append(ValueSpecificationParserUtil.getEditString(min));
 				}
-				intervalDenotation.append("..");
+				intervalDenotation.append(".."); //$NON-NLS-1$
 				if (max != null) {
 					intervalDenotation.append(ValueSpecificationParserUtil.getEditString(max));
 				}
@@ -104,12 +105,12 @@ public class ValueSpecificationParserUtil {
 			@Override
 			public String caseLiteralString(LiteralString literalString) {
 				String value = literalString.getValue();
-				return value != null ? value : "";
+				return value != null ? value : StringStatics.BLANK;
 			}
 			
 			@Override
 			public String caseLiteralUnlimitedNatural(LiteralUnlimitedNatural literalUnlimitedNatural) {
-				return "*";
+				return "*"; //$NON-NLS-1$
 			}
 			
 			@Override

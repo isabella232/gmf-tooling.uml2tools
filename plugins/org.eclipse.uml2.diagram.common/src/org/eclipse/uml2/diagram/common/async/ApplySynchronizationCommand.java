@@ -74,9 +74,9 @@ public class ApplySynchronizationCommand extends AbstractTransactionalCommand {
 			View diagramCompartment = SyncModelNode.findCounterpart(syncCompartment, node.getParent().getDiagramView());
 			if (diagramCompartment == null) {
 				throw new IllegalStateException(//
-						"Can't find diagram compartment for sync-model compartment: " + syncCompartment + // 
-								", sync-model parent: " + node.getSyncModelView() + //
-								", diagram parent: " + node.getDiagramView());
+						"Can't find diagram compartment for sync-model compartment: " + syncCompartment + //  //$NON-NLS-1$
+								", sync-model parent: " + node.getSyncModelView() + // //$NON-NLS-1$
+								", diagram parent: " + node.getDiagramView()); //$NON-NLS-1$
 			}
 			diagramParent = diagramCompartment;
 		}

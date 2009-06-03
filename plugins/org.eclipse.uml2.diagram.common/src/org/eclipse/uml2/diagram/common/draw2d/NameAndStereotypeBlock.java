@@ -43,7 +43,7 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 	@Override
 	public String toString() {
 		boolean stereoVisible = getStereotypeLabel().isVisible();
-		return "Stereo:" + getStereotypeLabel().getText() + ", [" + stereoVisible + "], Name: " + getNameLabel().getText();  
+		return "Stereo:" + getStereotypeLabel().getText() + ", [" + stereoVisible + "], Name: " + getNameLabel().getText();   //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 	public void setNameTextWrap(boolean nameTextWrap) {

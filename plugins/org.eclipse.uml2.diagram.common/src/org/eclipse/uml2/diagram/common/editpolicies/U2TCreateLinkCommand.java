@@ -19,7 +19,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 @SuppressWarnings("restriction")
 public class U2TCreateLinkCommand extends CompositeCommand {
 
-	private static final String REQUEST_PARAMETER_KEY = U2TCreateLinkCommand.class.getCanonicalName() + ":request:parameter:key";
+	private static final String REQUEST_PARAMETER_KEY = U2TCreateLinkCommand.class.getCanonicalName() + ":request:parameter:key"; //$NON-NLS-1$
 
 	private ICommand mySemanticCreation;
 

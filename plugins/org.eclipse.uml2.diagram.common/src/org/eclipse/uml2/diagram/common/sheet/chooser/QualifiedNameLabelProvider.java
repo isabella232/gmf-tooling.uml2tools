@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.common.sheet.chooser;
 
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
@@ -28,7 +29,7 @@ public class QualifiedNameLabelProvider extends LabelProvider implements LabelPr
 			if (element instanceof NamedElement) {
 				return ((NamedElement)element).getQualifiedName();
 			}
-			return "";
+			return StringStatics.BLANK;
 		}
 		
 		@Override

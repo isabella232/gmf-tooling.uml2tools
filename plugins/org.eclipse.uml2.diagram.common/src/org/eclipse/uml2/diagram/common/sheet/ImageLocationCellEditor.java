@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Control;
 
 public class ImageLocationCellEditor extends TextAndDialogCellEditor {
 
-	private static final String[] myImageFileExtensions = new String[] { "svg", "gif", "png", "jpg", "wmf", "bmp", "emf" };
+	private static final String[] myImageFileExtensions = new String[] { "svg", "gif", "png", "jpg", "wmf", "bmp", "emf" }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$
 
 	private final ViewerFilter myViewFilter = new ImageFileFilter(myImageFileExtensions);
 

@@ -44,11 +44,11 @@ public abstract class AssociationEndToString extends PropertyToString {
 			return (Property)object;
 		}
 		if (false == object instanceof Association){
-			throw new IllegalStateException("I can not provide toString for:" + object);
+			throw new IllegalStateException("I can not provide toString for:" + object); //$NON-NLS-1$
 		}
 		Association association = (Association)object;
 		if (!association.isBinary()){
-			throw new IllegalStateException("I can not provide toString for not binary association:" + object);
+			throw new IllegalStateException("I can not provide toString for not binary association:" + object); //$NON-NLS-1$
 		}
 		return AssociationEndConvention.getMemberEnd(association, sourceNotTarget);
 	}

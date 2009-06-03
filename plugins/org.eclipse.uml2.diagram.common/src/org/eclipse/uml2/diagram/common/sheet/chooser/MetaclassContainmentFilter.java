@@ -56,7 +56,7 @@ public class MetaclassContainmentFilter {
 
 	public Set<EClass> getAncestorsOrSelf(EClass eClass){
 		if (eClass.getEPackage() != myMetamodel){
-			throw new IllegalArgumentException("Alien class: " + eClass + ", Expected metamodel: " + myMetamodel + ", Actual metamodel: " + eClass.getEPackage());
+			throw new IllegalArgumentException("Alien class: " + eClass + ", Expected metamodel: " + myMetamodel + ", Actual metamodel: " + eClass.getEPackage()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 		Set<EClass> result = myAncestorsOrSelfMap.get(eClass);
 		if (result == null){
@@ -117,11 +117,11 @@ public class MetaclassContainmentFilter {
 	
 	private void debugAdding(EClass owner, EReference containment){
 		if (DEBUG){
-			System.out.print("Adding: " + owner.getName());
+			System.out.print("Adding: " + owner.getName()); //$NON-NLS-1$
 			if (containment != null){
-				System.out.println(", due to: " + containment.getEContainingClass().getName() + "#" + containment.getName() + ":" + containment.getEType().getName());
+				System.out.println(", due to: " + containment.getEContainingClass().getName() + "#" + containment.getName() + ":" + containment.getEType().getName()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 			} else {
-				System.out.println(", as root");
+				System.out.println(", as root"); //$NON-NLS-1$
 			}
 		}
 	}
@@ -132,9 +132,9 @@ public class MetaclassContainmentFilter {
 		}
 		Set<EClass> ownerSubtypes = myRegistry.getSubTypes(owner);
 		if (!ownerSubtypes.isEmpty()){
-			System.out.println("\t processing subtypes: ");
+			System.out.println("\t processing subtypes: "); //$NON-NLS-1$
 			for (EClass subtype : ownerSubtypes){
-				System.out.println("\t Adding: subtype: " + subtype.getName());
+				System.out.println("\t Adding: subtype: " + subtype.getName()); //$NON-NLS-1$
 			}
 		}
 	}

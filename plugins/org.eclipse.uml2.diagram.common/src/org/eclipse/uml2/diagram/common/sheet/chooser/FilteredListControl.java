@@ -128,7 +128,7 @@ public class FilteredListControl extends Composite {
  */
 	private Table getTable(FilteredList list) {
 		try {
-			Field field = list.getClass().getDeclaredField("fList");
+			Field field = list.getClass().getDeclaredField("fList"); //$NON-NLS-1$
 			if (!field.isAccessible()) {
 				field.setAccessible(true);
 			}

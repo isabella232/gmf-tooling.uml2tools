@@ -77,7 +77,7 @@ public class AssociationInstanceParser extends SemanticParserAdapter {
 
 		@Override
 		public void parse(EObject target, String text) throws ExternalParserException {
-			throw new ExternalParserException("Parsing is not supported");
+			throw new ExternalParserException("Parsing is not supported"); //$NON-NLS-1$
 		}
 	};
 

@@ -16,6 +16,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TrayDialog;
 import org.eclipse.jface.viewers.CellEditor;
@@ -309,7 +310,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 			case EditParametersTableConstants.NAME_POS:
 				return p.getName();
 			case EditParametersTableConstants.TYPES_POS:
-				return p.getType() != null ? p.getType().getName() : "";
+				return p.getType() != null ? p.getType().getName() : StringStatics.BLANK;
 			case EditParametersTableConstants.MULTIPLICITY_POS:
 				return Integer.toString(p.getUpper());
 			case EditParametersTableConstants.DIRECTION_POS:
@@ -317,7 +318,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 			case EditParametersTableConstants.DEFAULT_VALUE_POS:
 				ValueSpecification defValue = p.getDefaultValue();
 				if (defValue == null) {
-					return "";
+					return StringStatics.BLANK;
 				}
 				return new ValueSpecificationToStringConverter().doSwitch(defValue);
 			case EditParametersTableConstants.IS_ORDERED_POS:
@@ -325,14 +326,14 @@ public class EditPropertyParametersDialog extends TrayDialog {
 			case EditParametersTableConstants.IS_UNIQUE_POS:
 				return Boolean.toString(p.isUnique());
 			default:
-				return "-";
+				return StringStatics.HYPHEN;
 			}
 		}
 	}
 
 	public static class ValueSpecificationToStringConverter extends org.eclipse.uml2.uml.util.UMLSwitch<String> {
 		
-		private static final String EMPTY_VALUE = "";
+		private static final String EMPTY_VALUE = StringStatics.BLANK;
 
 		@Override
 		public String caseLiteralString(LiteralString object) {

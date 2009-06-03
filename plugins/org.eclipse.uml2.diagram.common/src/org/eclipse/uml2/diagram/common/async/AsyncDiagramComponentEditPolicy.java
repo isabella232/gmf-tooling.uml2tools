@@ -41,7 +41,7 @@ public class AsyncDiagramComponentEditPolicy extends InsertingComponentEditPolic
 			case NOTATION_ONLY:
 				return createSwitchSyncAndDeleteViewCommand(reqImpl);
 			default:
-				throw new IllegalArgumentException("Unknown kind: " + reqImpl.getKind());
+				throw new IllegalArgumentException("Unknown kind: " + reqImpl.getKind()); //$NON-NLS-1$
 			}
 		}
 		return super.getCommand(request);
