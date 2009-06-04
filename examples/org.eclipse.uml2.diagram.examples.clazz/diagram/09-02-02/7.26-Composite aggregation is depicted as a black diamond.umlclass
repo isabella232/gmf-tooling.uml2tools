@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_95cnxFD9Ed613ZMokIPd5w" type="UMLClass" name="7.26-Composite aggregation is depicted as a black diamond.umlclass" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_-PWmUFD9Ed613ZMokIPd5w" type="2014">
+    <children xmi:type="notation:DecorationNode" xmi:id="_-PWmUlD9Ed613ZMokIPd5w" type="5020"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_-PWmU1D9Ed613ZMokIPd5w" type="5041"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_-PWmVFD9Ed613ZMokIPd5w" type="7032" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_-PWmVVD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_-PWmVlD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_-PWmV1D9Ed613ZMokIPd5w"/>
+    </children>
+    <element xmi:type="uml:Package" href="7.26-Composite aggregation is depicted as a black diamond.uml#_94Gj8FD9Ed613ZMokIPd5w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-PWmUVD9Ed613ZMokIPd5w"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="__bMuYFD9Ed613ZMokIPd5w" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="__bMuY1D9Ed613ZMokIPd5w" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="__bWfb1D9Ed613ZMokIPd5w" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="__bMuZFD9Ed613ZMokIPd5w" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="__bWfYFD9Ed613ZMokIPd5w" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="__bWfYVD9Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="__bWfYlD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__bWfY1D9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="__bWfZFD9Ed613ZMokIPd5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="__bWfZVD9Ed613ZMokIPd5w" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="__bWfZlD9Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="__bWfZ1D9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__bWfaFD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="__bWfaVD9Ed613ZMokIPd5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="__bWfalD9Ed613ZMokIPd5w" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="__bWfa1D9Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="__bWfbFD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__bWfbVD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="__bWfblD9Ed613ZMokIPd5w"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="__bMuYVD9Ed613ZMokIPd5w"/>
+    <element xmi:type="uml:Class" href="7.26-Composite aggregation is depicted as a black diamond.uml#__awpgFD9Ed613ZMokIPd5w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__bMuYlD9Ed613ZMokIPd5w" x="228" y="96" width="97" height="49"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="__zDNsFD9Ed613ZMokIPd5w" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="__zDNs1D9Ed613ZMokIPd5w" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="__zDNxFD9Ed613ZMokIPd5w" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="__zDNtFD9Ed613ZMokIPd5w" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="__zDNtVD9Ed613ZMokIPd5w" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="__zDNtlD9Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="__zDNt1D9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__zDNuFD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="__zDNuVD9Ed613ZMokIPd5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="__zDNulD9Ed613ZMokIPd5w" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="__zDNu1D9Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="__zDNvFD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__zDNvVD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="__zDNvlD9Ed613ZMokIPd5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="__zDNv1D9Ed613ZMokIPd5w" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="__zDNwFD9Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="__zDNwVD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__zDNwlD9Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="__zDNw1D9Ed613ZMokIPd5w"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="__zDNsVD9Ed613ZMokIPd5w"/>
+    <element xmi:type="uml:Class" href="7.26-Composite aggregation is depicted as a black diamond.uml#__y5csFD9Ed613ZMokIPd5w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__zDNslD9Ed613ZMokIPd5w" x="48" y="240" width="97" height="49"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_AG3hkFD-Ed613ZMokIPd5w" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_AG3hk1D-Ed613ZMokIPd5w" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_AG3hpFD-Ed613ZMokIPd5w" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_AG3hlFD-Ed613ZMokIPd5w" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_AG3hlVD-Ed613ZMokIPd5w" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_AG3hllD-Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AG3hl1D-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AG3hmFD-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_AG3hmVD-Ed613ZMokIPd5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_AG3hmlD-Ed613ZMokIPd5w" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_AG3hm1D-Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AG3hnFD-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AG3hnVD-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_AG3hnlD-Ed613ZMokIPd5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_AG3hn1D-Ed613ZMokIPd5w" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_AG3hoFD-Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AG3hoVD-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AG3holD-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_AG3ho1D-Ed613ZMokIPd5w"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_AG3hkVD-Ed613ZMokIPd5w"/>
+    <element xmi:type="uml:Class" href="7.26-Composite aggregation is depicted as a black diamond.uml#_AGkmoFD-Ed613ZMokIPd5w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AG3hklD-Ed613ZMokIPd5w" x="228" y="240" width="97" height="49"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_AaY6gFD-Ed613ZMokIPd5w" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_AaY6g1D-Ed613ZMokIPd5w" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_AaY6lFD-Ed613ZMokIPd5w" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_AaY6hFD-Ed613ZMokIPd5w" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_AaY6hVD-Ed613ZMokIPd5w" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_AaY6hlD-Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AaY6h1D-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AaY6iFD-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_AaY6iVD-Ed613ZMokIPd5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_AaY6ilD-Ed613ZMokIPd5w" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_AaY6i1D-Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AaY6jFD-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AaY6jVD-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_AaY6jlD-Ed613ZMokIPd5w"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_AaY6j1D-Ed613ZMokIPd5w" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_AaY6kFD-Ed613ZMokIPd5w" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AaY6kVD-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AaY6klD-Ed613ZMokIPd5w"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_AaY6k1D-Ed613ZMokIPd5w"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_AaY6gVD-Ed613ZMokIPd5w"/>
+    <element xmi:type="uml:Class" href="7.26-Composite aggregation is depicted as a black diamond.uml#_AaPJgFD-Ed613ZMokIPd5w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AaY6glD-Ed613ZMokIPd5w" x="408" y="240" width="97" height="49"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_95cnxVD9Ed613ZMokIPd5w"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_95cnxlD9Ed613ZMokIPd5w"/>
+  <styles xmi:type="notation:FilteringStyle" xmi:id="_95cnx1D9Ed613ZMokIPd5w"/>
+  <element xmi:type="uml:Package" href="7.26-Composite aggregation is depicted as a black diamond.uml#_94Gj8FD9Ed613ZMokIPd5w"/>
+  <edges xmi:type="notation:Edge" xmi:id="_I81csFD-Ed613ZMokIPd5w" type="4005" source="__bMuYFD9Ed613ZMokIPd5w" target="_AG3hkFD-Ed613ZMokIPd5w">
+    <children xmi:type="notation:DecorationNode" xmi:id="_I81ctFD-Ed613ZMokIPd5w" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_I81ctVD-Ed613ZMokIPd5w" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I81ctlD-Ed613ZMokIPd5w" visible="false" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_I81ct1D-Ed613ZMokIPd5w" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I81cuFD-Ed613ZMokIPd5w" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_I81cuVD-Ed613ZMokIPd5w" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I81culD-Ed613ZMokIPd5w" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_I81cu1D-Ed613ZMokIPd5w" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I81cvFD-Ed613ZMokIPd5w" type="6007">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_I81cvVD-Ed613ZMokIPd5w" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I81cvlD-Ed613ZMokIPd5w" type="6008">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_I81cv1D-Ed613ZMokIPd5w" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I81cwFD-Ed613ZMokIPd5w" type="6009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_I81cwVD-Ed613ZMokIPd5w" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_I81cwlD-Ed613ZMokIPd5w" type="6019">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_I81cw1D-Ed613ZMokIPd5w" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_I81csVD-Ed613ZMokIPd5w"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_I81cslD-Ed613ZMokIPd5w"/>
+    <element xmi:type="uml:Association" href="7.26-Composite aggregation is depicted as a black diamond.uml#_I8sSwFD-Ed613ZMokIPd5w"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I81cs1D-Ed613ZMokIPd5w" points="[-1, 10, -5, -119]$[-18, 105, -22, -24]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I8_NsFD-Ed613ZMokIPd5w" id="(0.4536082474226804,0.7959183673469388)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_K-oVUFD-Ed613ZMokIPd5w" id="(0.422680412371134,0.04081632653061224)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_JfHDU1D-Ed613ZMokIPd5w" type="4005" source="__bMuYFD9Ed613ZMokIPd5w" target="_AaY6gFD-Ed613ZMokIPd5w">
+    <children xmi:type="notation:DecorationNode" xmi:id="_JfHDV1D-Ed613ZMokIPd5w" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JfHDWFD-Ed613ZMokIPd5w" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JfHDWVD-Ed613ZMokIPd5w" visible="false" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JfHDWlD-Ed613ZMokIPd5w" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JfHDW1D-Ed613ZMokIPd5w" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JfHDXFD-Ed613ZMokIPd5w" x="15" y="-14"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JfHDXVD-Ed613ZMokIPd5w" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JfHDXlD-Ed613ZMokIPd5w" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JfHDX1D-Ed613ZMokIPd5w" type="6007">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JfHDYFD-Ed613ZMokIPd5w" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JfHDYVD-Ed613ZMokIPd5w" type="6008">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JfHDYlD-Ed613ZMokIPd5w" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JfHDY1D-Ed613ZMokIPd5w" type="6009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JfHDZFD-Ed613ZMokIPd5w" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JfHDZVD-Ed613ZMokIPd5w" type="6019">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JfHDZlD-Ed613ZMokIPd5w" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_JfHDVFD-Ed613ZMokIPd5w"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_JfHDVVD-Ed613ZMokIPd5w"/>
+    <element xmi:type="uml:Association" href="7.26-Composite aggregation is depicted as a black diamond.uml#_Je9SUFD-Ed613ZMokIPd5w"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JfHDVlD-Ed613ZMokIPd5w" points="[31, 25, -149, -119]$[158, 120, -22, -24]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_KAMXIFD-Ed613ZMokIPd5w" type="4005" source="__bMuYFD9Ed613ZMokIPd5w" target="__zDNsFD9Ed613ZMokIPd5w">
+    <children xmi:type="notation:DecorationNode" xmi:id="_KAMXJFD-Ed613ZMokIPd5w" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KAMXJVD-Ed613ZMokIPd5w" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_KAMXJlD-Ed613ZMokIPd5w" visible="false" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KAMXJ1D-Ed613ZMokIPd5w" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_KAMXKFD-Ed613ZMokIPd5w" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KAMXKVD-Ed613ZMokIPd5w" x="28" y="22"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_KAMXKlD-Ed613ZMokIPd5w" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KAMXK1D-Ed613ZMokIPd5w" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_KAMXLFD-Ed613ZMokIPd5w" type="6007">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KAMXLVD-Ed613ZMokIPd5w" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_KAMXLlD-Ed613ZMokIPd5w" type="6008">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KAMXL1D-Ed613ZMokIPd5w" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_KAMXMFD-Ed613ZMokIPd5w" type="6009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KAMXMVD-Ed613ZMokIPd5w" x="-27" y="-17"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_KAMXMlD-Ed613ZMokIPd5w" type="6019">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KAMXM1D-Ed613ZMokIPd5w" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_KAMXIVD-Ed613ZMokIPd5w"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_KAMXIlD-Ed613ZMokIPd5w"/>
+    <element xmi:type="uml:Association" href="7.26-Composite aggregation is depicted as a black diamond.uml#_KACmIFD-Ed613ZMokIPd5w"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KAMXI1D-Ed613ZMokIPd5w" points="[-20, 14, 146, -103]$[-172, 109, -6, -8]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KAWIIFD-Ed613ZMokIPd5w" id="(0.24742268041237114,0.7142857142857143)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KAWIIVD-Ed613ZMokIPd5w" id="(0.3917525773195876,0.16326530612244897)"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_ABE4EFD9Ed613ZMokIPd5w" name="7.25-Derived supersets (union)">
+  <ownedComment xmi:id="_A7Cl8FD9Ed613ZMokIPd5w">
+    <body>Figure 7.25 - Derived supersets (union)</body>
+  </ownedComment>
+  <elementImport xmi:id="_ACaU0FD9Ed613ZMokIPd5w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_ACaU0VD9Ed613ZMokIPd5w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_ACaU0lD9Ed613ZMokIPd5w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_ACaU01D9Ed613ZMokIPd5w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DN1H8FD9Ed613ZMokIPd5w" name="A">
+    <ownedAttribute xmi:id="_MTfE4lD9Ed613ZMokIPd5w" name="b" type="_Dl-iMFD9Ed613ZMokIPd5w" isDerived="true" isDerivedUnion="true" association="_MTVT4FD9Ed613ZMokIPd5w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tCZyIFD9Ed613ZMokIPd5w" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tCZyIVD9Ed613ZMokIPd5w" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Dl-iMFD9Ed613ZMokIPd5w" name="B"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DsrnIFD9Ed613ZMokIPd5w" name="A1">
+    <generalization xmi:id="_IkS2UFD9Ed613ZMokIPd5w" general="_DN1H8FD9Ed613ZMokIPd5w"/>
+    <ownedAttribute xmi:id="_NPFxhFD9Ed613ZMokIPd5w" name="b1" type="_DxcyYFD9Ed613ZMokIPd5w" subsettedProperty="_MTfE4lD9Ed613ZMokIPd5w" association="_NPFxgFD9Ed613ZMokIPd5w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V9Us8FD9Ed613ZMokIPd5w" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V9Us8VD9Ed613ZMokIPd5w"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DxcyYFD9Ed613ZMokIPd5w" name="B1">
+    <generalization xmi:id="_JG3X4FD9Ed613ZMokIPd5w" general="_Dl-iMFD9Ed613ZMokIPd5w"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_MTVT4FD9Ed613ZMokIPd5w" memberEnd="_MTVT4VD9Ed613ZMokIPd5w _MTfE4lD9Ed613ZMokIPd5w">
+    <ownedEnd xmi:id="_MTVT4VD9Ed613ZMokIPd5w" name="a" type="_DN1H8FD9Ed613ZMokIPd5w" association="_MTVT4FD9Ed613ZMokIPd5w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TdueAFD9Ed613ZMokIPd5w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TdueAVD9Ed613ZMokIPd5w"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NPFxgFD9Ed613ZMokIPd5w" memberEnd="_NPFxgVD9Ed613ZMokIPd5w _NPFxhFD9Ed613ZMokIPd5w">
+    <ownedEnd xmi:id="_NPFxgVD9Ed613ZMokIPd5w" name="a" type="_DsrnIFD9Ed613ZMokIPd5w" association="_NPFxgFD9Ed613ZMokIPd5w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UcnIIFD9Ed613ZMokIPd5w" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UcnIIVD9Ed613ZMokIPd5w"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Package>
