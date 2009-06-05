@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_2UhIkFG_Ed6X3bIVfKVnBg" name="7.28">
+  <ownedComment xmi:id="_5Z0FkFG_Ed6X3bIVfKVnBg">
+    <body>Figure 7.28 - Class notation: details suppressed, analysis-level&#xD;
+details, implementation-level details</body>
+  </ownedComment>
+  <ownedComment xmi:id="_hvNcAFHAEd6X3bIVfKVnBg">
+    <body>In order to change detail level use actions from 'Detail Level ' froup in the context menu of the diagram</body>
+  </ownedComment>
+  <elementImport xmi:id="_2WmzfFG_Ed6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_2WmzfVG_Ed6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_2WmzflG_Ed6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_2Wmzf1G_Ed6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6YsvsFG_Ed6X3bIVfKVnBg" name="Window">
+    <ownedAttribute xmi:id="_7gFOgFG_Ed6X3bIVfKVnBg" name="size" type="_KGZ-sFHAEd6X3bIVfKVnBg" aggregation="composite"/>
+    <ownedAttribute xmi:id="_8n5yMFG_Ed6X3bIVfKVnBg" name="visibility" visibility="protected" aggregation="composite">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_-QzpsFG_Ed6X3bIVfKVnBg" value="true"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ABdvAFHAEd6X3bIVfKVnBg" name="defaultSize" type="_HsUh4FHAEd6X3bIVfKVnBg" aggregation="composite"/>
+    <ownedAttribute xmi:id="_CDQnoFHAEd6X3bIVfKVnBg" name="xWin" visibility="private" type="_F4FkIFHAEd6X3bIVfKVnBg" aggregation="composite"/>
+    <ownedOperation xmi:id="_Ww5UUFHAEd6X3bIVfKVnBg" name="display">
+      <ownedParameter xmi:id="_XZlE8FHAEd6X3bIVfKVnBg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_XvVSgFHAEd6X3bIVfKVnBg" name="hide">
+      <ownedParameter xmi:id="_YrYrEFHAEd6X3bIVfKVnBg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_aD59MFHAEd6X3bIVfKVnBg" name="attachX" visibility="private">
+      <ownedParameter xmi:id="_cKnLAFHAEd6X3bIVfKVnBg" direction="return"/>
+      <ownedParameter xmi:id="_cKnLAVHAEd6X3bIVfKVnBg" name="xWin" type="_F4FkIFHAEd6X3bIVfKVnBg"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_F4FkIFHAEd6X3bIVfKVnBg" name="XWindow"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_HsUh4FHAEd6X3bIVfKVnBg" name="Rectangle"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_KGZ-sFHAEd6X3bIVfKVnBg" name="Area">
+    <ownedAttribute xmi:id="_LAhdkFHAEd6X3bIVfKVnBg" name="x" aggregation="composite">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Mi3aEFHAEd6X3bIVfKVnBg" name="y" aggregation="composite">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+</uml:Package>

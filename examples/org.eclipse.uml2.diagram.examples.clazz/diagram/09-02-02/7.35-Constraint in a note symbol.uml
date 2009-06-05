@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_n9Bi8FHdEd6X3bIVfKVnBg" name="7.35">
+  <ownedComment xmi:id="_pglAYFHdEd6X3bIVfKVnBg">
+    <body>Figure 7.35 - Constraint in a note symbol</body>
+  </ownedComment>
+  <elementImport xmi:id="_n-9coFHdEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_n-9coVHdEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_n-9colHdEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_n-9co1HdEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_r9Mz0FHdEd6X3bIVfKVnBg" name="Person">
+    <ownedAttribute xmi:id="_4Fv6BFHdEd6X3bIVfKVnBg" name="boss" type="_r9Mz0FHdEd6X3bIVfKVnBg" association="_4Fv6AFHdEd6X3bIVfKVnBg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6X7_EFHdEd6X3bIVfKVnBg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6X7_EVHdEd6X3bIVfKVnBg"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_sxqWoFHdEd6X3bIVfKVnBg" name="Company"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_u08dAFHdEd6X3bIVfKVnBg" memberEnd="_u08dAVHdEd6X3bIVfKVnBg _u08dBFHdEd6X3bIVfKVnBg">
+    <ownedEnd xmi:id="_u08dAVHdEd6X3bIVfKVnBg" name="employee" type="_r9Mz0FHdEd6X3bIVfKVnBg" association="_u08dAFHdEd6X3bIVfKVnBg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_u08dA1HdEd6X3bIVfKVnBg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_u08dAlHdEd6X3bIVfKVnBg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_u08dBFHdEd6X3bIVfKVnBg" name="employer" type="_sxqWoFHdEd6X3bIVfKVnBg" association="_u08dAFHdEd6X3bIVfKVnBg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0PkSoFHdEd6X3bIVfKVnBg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0PkSoVHdEd6X3bIVfKVnBg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_4Fv6AFHdEd6X3bIVfKVnBg" memberEnd="_4Fv6AVHdEd6X3bIVfKVnBg _4Fv6BFHdEd6X3bIVfKVnBg">
+    <ownedEnd xmi:id="_4Fv6AVHdEd6X3bIVfKVnBg" name="src" type="_r9Mz0FHdEd6X3bIVfKVnBg" association="_4Fv6AFHdEd6X3bIVfKVnBg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4Fv6A1HdEd6X3bIVfKVnBg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4Fv6AlHdEd6X3bIVfKVnBg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Constraint" xmi:id="_7_8esFHdEd6X3bIVfKVnBg" constrainedElement="_r9Mz0FHdEd6X3bIVfKVnBg">
+    <specification xmi:type="uml:OpaqueExpression" xmi:id="_7_8esVHdEd6X3bIVfKVnBg">
+      <language>OCL</language>
+      <body>self.boss->isEmpty() or self.employer = self.boss.employer</body>
+    </specification>
+  </packagedElement>
+</uml:Package>

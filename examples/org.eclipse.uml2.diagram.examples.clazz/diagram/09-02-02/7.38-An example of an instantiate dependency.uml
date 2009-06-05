@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_fxsmoFHlEd6X3bIVfKVnBg" name="7.38">
+  <ownedComment xmi:id="_hrmHgFHlEd6X3bIVfKVnBg">
+    <body>Figure 7.38 - An example of an instantiate dependency</body>
+  </ownedComment>
+  <elementImport xmi:id="_fzyRlFHlEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_fzyRlVHlEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_fzyRllHlEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_fzyRl1HlEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_j84NoFHlEd6X3bIVfKVnBg" name="CarFactory" clientDependency="_dczg8FHnEd6X3bIVfKVnBg"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_lXLocFHlEd6X3bIVfKVnBg" name="Car"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_dczg8FHnEd6X3bIVfKVnBg" supplier="_lXLocFHlEd6X3bIVfKVnBg" client="_j84NoFHlEd6X3bIVfKVnBg"/>
+</uml:Package>

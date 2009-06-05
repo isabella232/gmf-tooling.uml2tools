@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_xCbZUFG-Ed6X3bIVfKVnBg" type="UMLClass" name="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.umlclass" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_xqqeAFG-Ed6X3bIVfKVnBg" type="2014">
+    <children xmi:type="notation:DecorationNode" xmi:id="_xqqeAlG-Ed6X3bIVfKVnBg" type="5020"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_xqqeA1G-Ed6X3bIVfKVnBg" type="5041"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_xqqeBFG-Ed6X3bIVfKVnBg" type="7032" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_xqqeBVG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_xqqeBlG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_xqqeB1G-Ed6X3bIVfKVnBg"/>
+    </children>
+    <element xmi:type="uml:Package" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#_w_TM0FG-Ed6X3bIVfKVnBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xqqeAVG-Ed6X3bIVfKVnBg"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_0AbbgFG-Ed6X3bIVfKVnBg" type="2018" fillColor="13369343" lineColor="6737151">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0AbbglG-Ed6X3bIVfKVnBg" type="5030"/>
+    <element xmi:type="uml:Comment" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#_z_-vkFG-Ed6X3bIVfKVnBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0AbbgVG-Ed6X3bIVfKVnBg" x="84" y="300" width="385" height="109"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_3BZSIFG-Ed6X3bIVfKVnBg" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_3BZSI1G-Ed6X3bIVfKVnBg" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_3Clk-lG-Ed6X3bIVfKVnBg" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_3BZSJFG-Ed6X3bIVfKVnBg" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_3BZSJVG-Ed6X3bIVfKVnBg" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_3BZSJlG-Ed6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3BZSJ1G-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3BZSKFG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_3BZSKVG-Ed6X3bIVfKVnBg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_3Clk8FG-Ed6X3bIVfKVnBg" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_3Clk8VG-Ed6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3Clk8lG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3Clk81G-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_3Clk9FG-Ed6X3bIVfKVnBg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_3Clk9VG-Ed6X3bIVfKVnBg" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_3Clk9lG-Ed6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3Clk91G-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3Clk-FG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_3Clk-VG-Ed6X3bIVfKVnBg"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_3BZSIVG-Ed6X3bIVfKVnBg"/>
+    <element xmi:type="uml:Class" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#_2_UOgFG-Ed6X3bIVfKVnBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3BZSIlG-Ed6X3bIVfKVnBg" x="108" y="108" width="97" height="49"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_31tD8FG-Ed6X3bIVfKVnBg" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_31208FG-Ed6X3bIVfKVnBg" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_31_-4FG-Ed6X3bIVfKVnBg" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_31208VG-Ed6X3bIVfKVnBg" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_31208lG-Ed6X3bIVfKVnBg" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_312081G-Ed6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_31209FG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_31209VG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_31209lG-Ed6X3bIVfKVnBg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_312091G-Ed6X3bIVfKVnBg" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_3120-FG-Ed6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3120-VG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3120-lG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_3120-1G-Ed6X3bIVfKVnBg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_3120_FG-Ed6X3bIVfKVnBg" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_3120_VG-Ed6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3120_lG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3120_1G-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_3121AFG-Ed6X3bIVfKVnBg"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_31tD8VG-Ed6X3bIVfKVnBg"/>
+    <element xmi:type="uml:Class" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#_309dEFG-Ed6X3bIVfKVnBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_31tD8lG-Ed6X3bIVfKVnBg" x="373" y="107" width="96" height="50"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_5JwFwFG-Ed6X3bIVfKVnBg" type="2007">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5JwFw1G-Ed6X3bIVfKVnBg" type="5009">
+      <styles xmi:type="notation:FontStyle" xmi:id="_5PQ34FG-Ed6X3bIVfKVnBg" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_5JwFxFG-Ed6X3bIVfKVnBg" type="5031"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_5JwFxVG-Ed6X3bIVfKVnBg" type="7024">
+      <children xmi:type="notation:Node" xmi:id="__RzpIFG-Ed6X3bIVfKVnBg" type="3019">
+        <element xmi:type="uml:Property" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#__QwgQFG-Ed6X3bIVfKVnBg"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__RzpIVG-Ed6X3bIVfKVnBg"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_5JwFxlG-Ed6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5JwFx1G-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5JwFyFG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_5JwFyVG-Ed6X3bIVfKVnBg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_5JwFylG-Ed6X3bIVfKVnBg" type="7025">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_5JwFy1G-Ed6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5JwFzFG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5JwFzVG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_5JwFzlG-Ed6X3bIVfKVnBg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_5JwFz1G-Ed6X3bIVfKVnBg" type="7026">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_5JwF0FG-Ed6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5JwF0VG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5JwF0lG-Ed6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_5JwF01G-Ed6X3bIVfKVnBg"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_5JwFwVG-Ed6X3bIVfKVnBg"/>
+    <element xmi:type="uml:AssociationClass" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#_5IaB8FG-Ed6X3bIVfKVnBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5JwFwlG-Ed6X3bIVfKVnBg" x="240" y="204" width="109" height="73"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_5Ptj0FG-Ed6X3bIVfKVnBg" type="2015">
+    <element xmi:type="uml:AssociationClass" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#_5IaB8FG-Ed6X3bIVfKVnBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Ptj0VG-Ed6X3bIVfKVnBg" x="288" y="120"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_xCbZUVG-Ed6X3bIVfKVnBg"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_xCbZUlG-Ed6X3bIVfKVnBg"/>
+  <styles xmi:type="notation:FilteringStyle" xmi:id="_xCbZU1G-Ed6X3bIVfKVnBg"/>
+  <element xmi:type="uml:Package" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#_w_TM0FG-Ed6X3bIVfKVnBg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_5RyncFG-Ed6X3bIVfKVnBg" type="4014" source="_5JwFwFG-Ed6X3bIVfKVnBg" target="_5Ptj0FG-Ed6X3bIVfKVnBg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_5RyncVG-Ed6X3bIVfKVnBg"/>
+    <element xmi:type="uml:AssociationClass" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#_5IaB8FG-Ed6X3bIVfKVnBg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5RynclG-Ed6X3bIVfKVnBg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_FpztAFG_Ed6X3bIVfKVnBg" type="4003" source="_5Ptj0FG-Ed6X3bIVfKVnBg" target="_3BZSIFG-Ed6X3bIVfKVnBg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_FpztBFG_Ed6X3bIVfKVnBg" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_FpztBVG_Ed6X3bIVfKVnBg" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_FpztBlG_Ed6X3bIVfKVnBg" type="6012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_FpztB1G_Ed6X3bIVfKVnBg" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_FpztCFG_Ed6X3bIVfKVnBg" type="6017">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_FpztCVG_Ed6X3bIVfKVnBg" y="-30"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_FpztAVG_Ed6X3bIVfKVnBg"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_FpztAlG_Ed6X3bIVfKVnBg"/>
+    <element xmi:type="uml:Property" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#_Fpp8AFG_Ed6X3bIVfKVnBg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FpztA1G_Ed6X3bIVfKVnBg" points="[-5, -1, 93, 0]$[-88, -4, 10, -3]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FpztClG_Ed6X3bIVfKVnBg" id="(0.8969072164948454,0.32653061224489793)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Go1hEFG_Ed6X3bIVfKVnBg" type="4003" source="_5Ptj0FG-Ed6X3bIVfKVnBg" target="_31tD8FG-Ed6X3bIVfKVnBg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Go1hFFG_Ed6X3bIVfKVnBg" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Go1hFVG_Ed6X3bIVfKVnBg" x="-14" y="14"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Go1hFlG_Ed6X3bIVfKVnBg" type="6012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Go1hF1G_Ed6X3bIVfKVnBg" x="-8" y="-10"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Go1hGFG_Ed6X3bIVfKVnBg" type="6017">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Go1hGVG_Ed6X3bIVfKVnBg" y="-30"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_Go1hEVG_Ed6X3bIVfKVnBg"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Go1hElG_Ed6X3bIVfKVnBg"/>
+    <element xmi:type="uml:Property" href="7.27-An AssociationClass is depicted by an association symbol and a class symbol connected.uml#_GoimIFG_Ed6X3bIVfKVnBg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Go1hE1G_Ed6X3bIVfKVnBg" points="[7, -2, -98, 0]$[82, -14, -23, -12]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Go_SEFG_Ed6X3bIVfKVnBg" id="(0.8,0.6)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Go_SEVG_Ed6X3bIVfKVnBg" id="(0.0,0.36)"/>
+  </edges>
+</notation:Diagram>

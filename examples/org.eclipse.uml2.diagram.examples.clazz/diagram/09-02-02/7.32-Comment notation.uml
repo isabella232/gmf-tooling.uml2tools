@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_XA2yMFHcEd6X3bIVfKVnBg" name="7.32">
+  <ownedComment xmi:id="_YfM_gFHcEd6X3bIVfKVnBg">
+    <body>Figure 7.32 - Comment notation</body>
+  </ownedComment>
+  <ownedComment xmi:id="_bWYA8FHcEd6X3bIVfKVnBg" annotatedElement="_aXxqsFHcEd6X3bIVfKVnBg">
+    <body>This class was added by Alan Wright after meeting with the mission planning team.</body>
+  </ownedComment>
+  <elementImport xmi:id="_XCWANFHcEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_XCWANVHcEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_XCWANlHcEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_XCWAN1HcEd6X3bIVfKVnBg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aXxqsFHcEd6X3bIVfKVnBg" name="Account"/>
+</uml:Package>

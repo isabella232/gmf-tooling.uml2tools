@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_33C6eFHeEd6X3bIVfKVnBg" type="UMLClass" name="7.36-Notation of data type.umlclass" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_4PpAYFHeEd6X3bIVfKVnBg" type="2014">
+    <children xmi:type="notation:DecorationNode" xmi:id="_4PpAYlHeEd6X3bIVfKVnBg" type="5020"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_4PpAY1HeEd6X3bIVfKVnBg" type="5041"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_4PpAZFHeEd6X3bIVfKVnBg" type="7032" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_4PpAZVHeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_4PpAZlHeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_4PpAZ1HeEd6X3bIVfKVnBg"/>
+    </children>
+    <element xmi:type="uml:Package" href="7.36-Notation of data type.uml#_31aigFHeEd6X3bIVfKVnBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4PpAYVHeEd6X3bIVfKVnBg"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_6M9osFHeEd6X3bIVfKVnBg" type="2018" fillColor="13369343" lineColor="6737151">
+    <children xmi:type="notation:DecorationNode" xmi:id="_6M9oslHeEd6X3bIVfKVnBg" type="5030"/>
+    <element xmi:type="uml:Comment" href="7.36-Notation of data type.uml#_6Mz3sFHeEd6X3bIVfKVnBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6M9osVHeEd6X3bIVfKVnBg" x="108" y="276" width="373" height="61"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_7PuGMFHeEd6X3bIVfKVnBg" type="2004">
+    <children xmi:type="notation:DecorationNode" xmi:id="_7PuGM1HeEd6X3bIVfKVnBg" type="5006">
+      <styles xmi:type="notation:FontStyle" xmi:id="_7VhzQFHeEd6X3bIVfKVnBg" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_7PuGNFHeEd6X3bIVfKVnBg" type="5032"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_7PuGNVHeEd6X3bIVfKVnBg" type="7017">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_7PuGNlHeEd6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7PuGN1HeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7PuGOFHeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_7PuGOVHeEd6X3bIVfKVnBg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_7PuGOlHeEd6X3bIVfKVnBg" type="7018">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_7PuGO1HeEd6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7PuGPFHeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7PuGPVHeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_7PuGPlHeEd6X3bIVfKVnBg"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_7PuGMVHeEd6X3bIVfKVnBg"/>
+    <element xmi:type="uml:DataType" href="7.36-Notation of data type.uml#_7PHpQFHeEd6X3bIVfKVnBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7PuGMlHeEd6X3bIVfKVnBg" x="132" y="133"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_8it_IFHeEd6X3bIVfKVnBg" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_8it_I1HeEd6X3bIVfKVnBg" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_8i3wJlHeEd6X3bIVfKVnBg" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_8it_JFHeEd6X3bIVfKVnBg" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_8it_JVHeEd6X3bIVfKVnBg" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_9SjgoFHeEd6X3bIVfKVnBg" type="3001">
+        <element xmi:type="uml:Property" href="7.36-Notation of data type.uml#_9Rg-0FHeEd6X3bIVfKVnBg"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9SjgoVHeEd6X3bIVfKVnBg"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_8it_JlHeEd6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8it_J1HeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8it_KFHeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_8it_KVHeEd6X3bIVfKVnBg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_8it_KlHeEd6X3bIVfKVnBg" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_8it_K1HeEd6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8it_LFHeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8it_LVHeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_8i3wIFHeEd6X3bIVfKVnBg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_8i3wIVHeEd6X3bIVfKVnBg" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_8i3wIlHeEd6X3bIVfKVnBg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8i3wI1HeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8i3wJFHeEd6X3bIVfKVnBg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_8i3wJVHeEd6X3bIVfKVnBg"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_8it_IVHeEd6X3bIVfKVnBg"/>
+    <element xmi:type="uml:Class" href="7.36-Notation of data type.uml#_8h1OUFHeEd6X3bIVfKVnBg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8it_IlHeEd6X3bIVfKVnBg" x="292" y="133"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_33C6eVHeEd6X3bIVfKVnBg"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_33C6elHeEd6X3bIVfKVnBg"/>
+  <styles xmi:type="notation:FilteringStyle" xmi:id="_33C6e1HeEd6X3bIVfKVnBg"/>
+  <element xmi:type="uml:Package" href="7.36-Notation of data type.uml#_31aigFHeEd6X3bIVfKVnBg"/>
+</notation:Diagram>
