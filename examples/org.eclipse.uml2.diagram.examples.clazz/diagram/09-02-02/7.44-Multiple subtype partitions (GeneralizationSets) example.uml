@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_eFkRQFQwEd6_Wcl6sBLfgw" name="7.44">
+  <ownedComment xmi:id="_fNPD8FQwEd6_Wcl6sBLfgw">
+    <body>Figure 7.44 - Multiple subtype partitions (GeneralizationSets) example</body>
+  </ownedComment>
+  <elementImport xmi:id="_eGwkVFQwEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_eGwkVVQwEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_eGwkVlQwEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_eGwkV1QwEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_iuZdkFQwEd6_Wcl6sBLfgw" name="Person"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_i4ra8FQwEd6_Wcl6sBLfgw" name="Female Person">
+    <generalization xmi:id="_s1H18FQwEd6_Wcl6sBLfgw" general="_iuZdkFQwEd6_Wcl6sBLfgw" generalizationSet="_t-vJYFQwEd6_Wcl6sBLfgw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jAujsFQwEd6_Wcl6sBLfgw" name="Male Person">
+    <generalization xmi:id="_t_L1UFQwEd6_Wcl6sBLfgw" general="_iuZdkFQwEd6_Wcl6sBLfgw" generalizationSet="_t-vJYFQwEd6_Wcl6sBLfgw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jHItsFQwEd6_Wcl6sBLfgw" name="Employee">
+    <generalization xmi:id="_tY4qUFQwEd6_Wcl6sBLfgw" general="_iuZdkFQwEd6_Wcl6sBLfgw" generalizationSet="_2GDOwFQwEd6_Wcl6sBLfgw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:GeneralizationSet" xmi:id="_t-vJYFQwEd6_Wcl6sBLfgw" name="gender" generalization="_s1H18FQwEd6_Wcl6sBLfgw _t_L1UFQwEd6_Wcl6sBLfgw"/>
+  <packagedElement xmi:type="uml:GeneralizationSet" xmi:id="_2GDOwFQwEd6_Wcl6sBLfgw" name="employment status" generalization="_tY4qUFQwEd6_Wcl6sBLfgw"/>
+</uml:Package>

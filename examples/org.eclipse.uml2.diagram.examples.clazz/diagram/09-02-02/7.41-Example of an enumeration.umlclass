@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_1FHCWFQjEd6_Wcl6sBLfgw" type="UMLClass" name="7.41-Example of an enumeration.umlclass" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_1Zq80FQjEd6_Wcl6sBLfgw" type="2014">
+    <children xmi:type="notation:DecorationNode" xmi:id="_1Zq80lQjEd6_Wcl6sBLfgw" type="5020"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_1Zq801QjEd6_Wcl6sBLfgw" type="5041"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_1Zq81FQjEd6_Wcl6sBLfgw" type="7032" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_1Zq81VQjEd6_Wcl6sBLfgw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_1Zq81lQjEd6_Wcl6sBLfgw"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_1Zq811QjEd6_Wcl6sBLfgw"/>
+    </children>
+    <element xmi:type="uml:Package" href="7.41-Example of an enumeration.uml#_1D6vQFQjEd6_Wcl6sBLfgw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1Zq80VQjEd6_Wcl6sBLfgw"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_7GwbcFQjEd6_Wcl6sBLfgw" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_7Gwbc1QjEd6_Wcl6sBLfgw" type="5005">
+      <styles xmi:type="notation:FontStyle" xmi:id="_7OzkMFQjEd6_Wcl6sBLfgw" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_7GwbdFQjEd6_Wcl6sBLfgw" type="5034"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_7GwbdVQjEd6_Wcl6sBLfgw" type="7013">
+      <children xmi:type="notation:Node" xmi:id="__bCUEFQjEd6_Wcl6sBLfgw" type="3016">
+        <element xmi:type="uml:EnumerationLiteral" href="7.41-Example of an enumeration.uml#__avZIFQjEd6_Wcl6sBLfgw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__bCUEVQjEd6_Wcl6sBLfgw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_AZBmUFQkEd6_Wcl6sBLfgw" type="3016">
+        <element xmi:type="uml:EnumerationLiteral" href="7.41-Example of an enumeration.uml#_AYurYFQkEd6_Wcl6sBLfgw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_AZBmUVQkEd6_Wcl6sBLfgw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_A4LAcFQkEd6_Wcl6sBLfgw" type="3016">
+        <element xmi:type="uml:EnumerationLiteral" href="7.41-Example of an enumeration.uml#_A3lKkFQkEd6_Wcl6sBLfgw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_A4LAcVQkEd6_Wcl6sBLfgw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_Bo550FQkEd6_Wcl6sBLfgw" type="3016">
+        <element xmi:type="uml:EnumerationLiteral" href="7.41-Example of an enumeration.uml#_BomX0FQkEd6_Wcl6sBLfgw"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Bo550VQkEd6_Wcl6sBLfgw"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_7GwbdlQjEd6_Wcl6sBLfgw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7Gwbd1QjEd6_Wcl6sBLfgw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7GwbeFQjEd6_Wcl6sBLfgw"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_7GwbeVQjEd6_Wcl6sBLfgw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_7GwbelQjEd6_Wcl6sBLfgw" type="7014">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_7Gwbe1QjEd6_Wcl6sBLfgw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7GwbfFQjEd6_Wcl6sBLfgw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7GwbfVQjEd6_Wcl6sBLfgw"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_7GwbflQjEd6_Wcl6sBLfgw"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_7Gwbf1QjEd6_Wcl6sBLfgw" type="7015">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_7GwbgFQjEd6_Wcl6sBLfgw" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7GwbgVQjEd6_Wcl6sBLfgw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7GwbglQjEd6_Wcl6sBLfgw"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_7Gwbg1QjEd6_Wcl6sBLfgw"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_7GwbcVQjEd6_Wcl6sBLfgw"/>
+    <element xmi:type="uml:Enumeration" href="7.41-Example of an enumeration.uml#_7GUWkFQjEd6_Wcl6sBLfgw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7GwbclQjEd6_Wcl6sBLfgw" x="84" y="96" width="109" height="149"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_7ruJsVQjEd6_Wcl6sBLfgw" type="2018" fillColor="13369343" lineColor="6737151">
+    <children xmi:type="notation:DecorationNode" xmi:id="_7ruJs1QjEd6_Wcl6sBLfgw" type="5030"/>
+    <element xmi:type="uml:Comment" href="7.41-Example of an enumeration.uml#_7ruJsFQjEd6_Wcl6sBLfgw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7ruJslQjEd6_Wcl6sBLfgw" x="52" y="254" width="273" height="35"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_1FHCWVQjEd6_Wcl6sBLfgw"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_1FHCWlQjEd6_Wcl6sBLfgw"/>
+  <styles xmi:type="notation:FilteringStyle" xmi:id="_1FHCW1QjEd6_Wcl6sBLfgw"/>
+  <element xmi:type="uml:Package" href="7.41-Example of an enumeration.uml#_1D6vQFQjEd6_Wcl6sBLfgw"/>
+</notation:Diagram>

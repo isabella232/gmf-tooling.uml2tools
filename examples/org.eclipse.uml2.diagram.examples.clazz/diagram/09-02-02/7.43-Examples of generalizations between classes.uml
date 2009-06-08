@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_x7PQoFQvEd6_Wcl6sBLfgw" name="7.43">
+  <ownedComment xmi:id="_zhwigFQvEd6_Wcl6sBLfgw">
+    <body>Figure 7.43 - Examples of generalizations between classes</body>
+  </ownedComment>
+  <elementImport xmi:id="_x8lUkVQvEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_x8lUklQvEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_x8lUk1QvEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_x8lUlFQvEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1ci0MFQvEd6_Wcl6sBLfgw" name="Shape"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1hwrYFQvEd6_Wcl6sBLfgw" name="Polygon">
+    <generalization xmi:id="_6hsJEFQvEd6_Wcl6sBLfgw" general="_1ci0MFQvEd6_Wcl6sBLfgw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1onhUFQvEd6_Wcl6sBLfgw" name="Ellipse">
+    <generalization xmi:id="_6v_q0FQvEd6_Wcl6sBLfgw" general="_1ci0MFQvEd6_Wcl6sBLfgw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1t-icFQvEd6_Wcl6sBLfgw" name="Spline">
+    <generalization xmi:id="_7BbZEFQvEd6_Wcl6sBLfgw" general="_1ci0MFQvEd6_Wcl6sBLfgw"/>
+  </packagedElement>
+</uml:Package>

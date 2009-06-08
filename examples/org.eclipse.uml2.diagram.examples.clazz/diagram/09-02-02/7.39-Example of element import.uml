@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_CMSbEFQhEd6_Wcl6sBLfgw" name="7.39">
+  <ownedComment xmi:id="_EWIccFQhEd6_Wcl6sBLfgw">
+    <body>Figure 7.39 - Example of element import</body>
+  </ownedComment>
+  <elementImport xmi:id="_COFK0FQhEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_COFK0VQhEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_COFK0lQhEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_COFK01QhEd6_Wcl6sBLfgw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Nt2kUFQiEd6_Wcl6sBLfgw" name="Program">
+    <elementImport xmi:id="_jjPjQFQiEd6_Wcl6sBLfgw" importedElement="_Sqh5sFQiEd6_Wcl6sBLfgw"/>
+    <elementImport xmi:id="_nnIPcFQiEd6_Wcl6sBLfgw" visibility="private" importedElement="_Q66WMFQiEd6_Wcl6sBLfgw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_PLltoFQiEd6_Wcl6sBLfgw" name="Types">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Q66WMFQiEd6_Wcl6sBLfgw" name="String"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Rxv3kFQiEd6_Wcl6sBLfgw" name="Integer"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_Sqh5sFQiEd6_Wcl6sBLfgw" name="Time"/>
+  </packagedElement>
+</uml:Package>
