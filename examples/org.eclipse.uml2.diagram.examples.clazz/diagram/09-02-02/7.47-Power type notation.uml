@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_0icTsFRAEd6fFLZB0xJQ-A" name="7.47-Power type notation">
+  <ownedComment xmi:id="_2Hx50FRAEd6fFLZB0xJQ-A">
+    <body>Figure 7.47 - Power type notation</body>
+  </ownedComment>
+  <elementImport xmi:id="_0k-qUFRAEd6fFLZB0xJQ-A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_0lIbUFRAEd6fFLZB0xJQ-A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_0lIbUVRAEd6fFLZB0xJQ-A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_0lIbUlRAEd6fFLZB0xJQ-A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7-QlAFRAEd6fFLZB0xJQ-A" name="Specific Classifier-1">
+    <generalization xmi:id="_DaqsMFRBEd6fFLZB0xJQ-A" general="_8Z1GsFRAEd6fFLZB0xJQ-A" generalizationSet="_D4nzgFRBEd6fFLZB0xJQ-A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8M3BsFRAEd6fFLZB0xJQ-A" name="Specific Classifier-2">
+    <generalization xmi:id="_D50GUFRBEd6fFLZB0xJQ-A" general="_8Z1GsFRAEd6fFLZB0xJQ-A" generalizationSet="_D4nzgFRBEd6fFLZB0xJQ-A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8Z1GsFRAEd6fFLZB0xJQ-A" name="General Classifier"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8ixAQFRAEd6fFLZB0xJQ-A" name="Powertype-1" powertypeExtent="_D4nzgFRBEd6fFLZB0xJQ-A"/>
+  <packagedElement xmi:type="uml:GeneralizationSet" xmi:id="_D4nzgFRBEd6fFLZB0xJQ-A" powertype="_8ixAQFRAEd6fFLZB0xJQ-A" generalization="_DaqsMFRBEd6fFLZB0xJQ-A _D50GUFRBEd6fFLZB0xJQ-A"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_GSBn8FROEd6c8NZRm6vxnw" name="Powertype-2" powertypeExtent="_j2_hsFROEd6c8NZRm6vxnw"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_LYhnsFROEd6c8NZRm6vxnw" name="Specific Classifier-3">
+    <generalization xmi:id="_OOB1MFROEd6c8NZRm6vxnw" general="_8Z1GsFRAEd6fFLZB0xJQ-A" generalizationSet="_j2_hsFROEd6c8NZRm6vxnw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:GeneralizationSet" xmi:id="_j2_hsFROEd6c8NZRm6vxnw" name="" powertype="_GSBn8FROEd6c8NZRm6vxnw" generalization="_OOB1MFROEd6c8NZRm6vxnw"/>
+</uml:Package>
