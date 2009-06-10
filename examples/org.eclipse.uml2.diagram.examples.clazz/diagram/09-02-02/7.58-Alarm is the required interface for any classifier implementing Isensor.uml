@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_CLuKkFT2Ed6_boS3hQftJg" name="7.58">
+  <ownedComment xmi:id="_9wmNoFT2Ed6_boS3hQftJg">
+    <body>Figure 7.58 - Alarm is the required interface for any classifier implementing Isensor;&#xD;
+conversely, Isensor is the required interface for any classifier implementing IAlarm.</body>
+  </ownedComment>
+  <ownedComment xmi:id="_Y2TPoFT3Ed6_boS3hQftJg">
+    <body>Figure 7.59 - A set of collaborating interfaces</body>
+  </ownedComment>
+  <elementImport xmi:id="_CNDnUFT2Ed6_boS3hQftJg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_CNDnUVT2Ed6_boS3hQftJg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_CNDnUlT2Ed6_boS3hQftJg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_CNDnU1T2Ed6_boS3hQftJg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_D-dTgFT2Ed6_boS3hQftJg" name="IAlarm">
+    <ownedAttribute xmi:id="_JGB01FT3Ed6_boS3hQftJg" name="theBuzzer" type="_A7HB0FT3Ed6_boS3hQftJg" association="_JGB00FT3Ed6_boS3hQftJg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JGB01lT3Ed6_boS3hQftJg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JGB01VT3Ed6_boS3hQftJg" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_MFByAFT2Ed6_boS3hQftJg" name="notify">
+      <ownedParameter xmi:id="_MzrAsFT2Ed6_boS3hQftJg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_EjQpsFT2Ed6_boS3hQftJg" name="ISensor">
+    <ownedOperation xmi:id="_UZwBQFT2Ed6_boS3hQftJg" name="activate">
+      <ownedParameter xmi:id="_Uz_GMFT2Ed6_boS3hQftJg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_VHM9IFT2Ed6_boS3hQftJg" name="read">
+      <ownedParameter xmi:id="_VradcFT2Ed6_boS3hQftJg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JmU68FT2Ed6_boS3hQftJg" memberEnd="_Jmer8FT2Ed6_boS3hQftJg _Jmer81T2Ed6_boS3hQftJg">
+    <ownedEnd xmi:id="_Jmer8FT2Ed6_boS3hQftJg" name="theAlarm" type="_D-dTgFT2Ed6_boS3hQftJg" association="_JmU68FT2Ed6_boS3hQftJg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Jmer8lT2Ed6_boS3hQftJg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Jmer8VT2Ed6_boS3hQftJg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Jmer81T2Ed6_boS3hQftJg" name="the Sensor" type="_EjQpsFT2Ed6_boS3hQftJg" association="_JmU68FT2Ed6_boS3hQftJg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Jmer9VT2Ed6_boS3hQftJg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Jmer9FT2Ed6_boS3hQftJg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_A7HB0FT3Ed6_boS3hQftJg" name="IBuzzer">
+    <ownedAttribute xmi:id="_E7lNoFT3Ed6_boS3hQftJg" name="volume" aggregation="composite"/>
+    <ownedOperation xmi:id="_Frj5EFT3Ed6_boS3hQftJg" name="start">
+      <ownedParameter xmi:id="_F9AOYFT3Ed6_boS3hQftJg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_GcltYFT3Ed6_boS3hQftJg" name="reset">
+      <ownedParameter xmi:id="_G2rBUFT3Ed6_boS3hQftJg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_JGB00FT3Ed6_boS3hQftJg" memberEnd="_JGB00VT3Ed6_boS3hQftJg _JGB01FT3Ed6_boS3hQftJg">
+    <ownedEnd xmi:id="_JGB00VT3Ed6_boS3hQftJg" name="src" type="_D-dTgFT2Ed6_boS3hQftJg" association="_JGB00FT3Ed6_boS3hQftJg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JGB001T3Ed6_boS3hQftJg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JGB00lT3Ed6_boS3hQftJg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Package>

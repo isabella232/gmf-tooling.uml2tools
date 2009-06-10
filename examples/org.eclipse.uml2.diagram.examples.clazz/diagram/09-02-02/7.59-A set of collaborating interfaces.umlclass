@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_mX1-gFT2Ed6_boS3hQftJg" type="UMLClass" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_msQvUFT2Ed6_boS3hQftJg" type="2014">
+    <children xmi:type="notation:DecorationNode" xmi:id="_msQvUlT2Ed6_boS3hQftJg" type="5020"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_msQvU1T2Ed6_boS3hQftJg" type="5041"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_msQvVFT2Ed6_boS3hQftJg" type="7032" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_msQvVVT2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_msQvVlT2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_msQvV1T2Ed6_boS3hQftJg"/>
+    </children>
+    <element xmi:type="uml:Package" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_CLuKkFT2Ed6_boS3hQftJg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_msQvUVT2Ed6_boS3hQftJg"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_yNv1gFT2Ed6_boS3hQftJg" type="2013">
+    <children xmi:type="notation:DecorationNode" xmi:id="_yNv1glT2Ed6_boS3hQftJg" type="5018"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yNv1g1T2Ed6_boS3hQftJg" type="5035"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_yNv1hFT2Ed6_boS3hQftJg" type="7029">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_yNv1hVT2Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_yNv1hlT2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_yNv1h1T2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_yNv1iFT2Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_yNv1iVT2Ed6_boS3hQftJg" type="7030">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_yNv1ilT2Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_yNv1i1T2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_yNv1jFT2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_yNv1jVT2Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_yNv1jlT2Ed6_boS3hQftJg" type="7031">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_yNv1j1T2Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_yNv1kFT2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_yNv1kVT2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_yNv1klT2Ed6_boS3hQftJg"/>
+    </children>
+    <element xmi:type="uml:Interface" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_EjQpsFT2Ed6_boS3hQftJg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yNv1gVT2Ed6_boS3hQftJg" x="564" y="144" width="97" height="109"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_yvR1QFT2Ed6_boS3hQftJg" type="2013">
+    <children xmi:type="notation:DecorationNode" xmi:id="_yvR1QlT2Ed6_boS3hQftJg" type="5018"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yvR1Q1T2Ed6_boS3hQftJg" type="5035"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_yvR1RFT2Ed6_boS3hQftJg" type="7029">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_yvR1RVT2Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_yvR1RlT2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_yvR1R1T2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_yvR1SFT2Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_yvR1SVT2Ed6_boS3hQftJg" type="7030">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_yvR1SlT2Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_yvR1S1T2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_yvR1TFT2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_yvR1TVT2Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_yvR1TlT2Ed6_boS3hQftJg" type="7031">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_yvR1T1T2Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_yvR1UFT2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_yvR1UVT2Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_yvR1UlT2Ed6_boS3hQftJg"/>
+    </children>
+    <element xmi:type="uml:Interface" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_D-dTgFT2Ed6_boS3hQftJg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yvR1QVT2Ed6_boS3hQftJg" x="336" y="144" width="97" height="145"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_A7jtwFT3Ed6_boS3hQftJg" type="2013">
+    <children xmi:type="notation:DecorationNode" xmi:id="_A7jtwlT3Ed6_boS3hQftJg" type="5018"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_A7jtw1T3Ed6_boS3hQftJg" type="5035"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_A7jtxFT3Ed6_boS3hQftJg" type="7029">
+      <children xmi:type="notation:Node" xmi:id="_E74IkFT3Ed6_boS3hQftJg" type="3028">
+        <element xmi:type="uml:Property" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_E7lNoFT3Ed6_boS3hQftJg"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_E74IkVT3Ed6_boS3hQftJg"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_A7jtxVT3Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_A7jtxlT3Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_A7jtx1T3Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_A7jtyFT3Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_A7jtyVT3Ed6_boS3hQftJg" type="7030">
+      <children xmi:type="notation:Node" xmi:id="_Fr3bEFT3Ed6_boS3hQftJg" type="3029">
+        <element xmi:type="uml:Operation" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_Frj5EFT3Ed6_boS3hQftJg"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Fr3bEVT3Ed6_boS3hQftJg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_Gc5PYFT3Ed6_boS3hQftJg" type="3029">
+        <element xmi:type="uml:Operation" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_GcltYFT3Ed6_boS3hQftJg"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Gc5PYVT3Ed6_boS3hQftJg"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_A7jtylT3Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_A7jty1T3Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_A7jtzFT3Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_A7jtzVT3Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_A7jtzlT3Ed6_boS3hQftJg" type="7031">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_A7jtz1T3Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_A7jt0FT3Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_A7jt0VT3Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_A7jt0lT3Ed6_boS3hQftJg"/>
+    </children>
+    <element xmi:type="uml:Interface" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_A7HB0FT3Ed6_boS3hQftJg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A7jtwVT3Ed6_boS3hQftJg" x="115" y="143" width="102" height="146"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Y2TPoVT3Ed6_boS3hQftJg" type="2018" fillColor="13369343" lineColor="6737151">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Y2TPo1T3Ed6_boS3hQftJg" type="5030"/>
+    <element xmi:type="uml:Comment" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_Y2TPoFT3Ed6_boS3hQftJg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y2TPolT3Ed6_boS3hQftJg" x="108" y="336" width="433" height="37"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_mX1-gVT2Ed6_boS3hQftJg"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_mX1-glT2Ed6_boS3hQftJg" syncNodes="false"/>
+  <styles xmi:type="notation:FilteringStyle" xmi:id="_mX1-g1T2Ed6_boS3hQftJg"/>
+  <element xmi:type="uml:Package" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_CLuKkFT2Ed6_boS3hQftJg"/>
+  <edges xmi:type="notation:Edge" xmi:id="_yvkwMFT2Ed6_boS3hQftJg" type="4005" source="_yvR1QFT2Ed6_boS3hQftJg" target="_yNv1gFT2Ed6_boS3hQftJg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_yvkwNFT2Ed6_boS3hQftJg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yvuhMFT2Ed6_boS3hQftJg" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yvuhMVT2Ed6_boS3hQftJg" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yvuhMlT2Ed6_boS3hQftJg" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yvuhM1T2Ed6_boS3hQftJg" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yvuhNFT2Ed6_boS3hQftJg" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yvuhNVT2Ed6_boS3hQftJg" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yvuhNlT2Ed6_boS3hQftJg" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yvuhN1T2Ed6_boS3hQftJg" type="6007">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yvuhOFT2Ed6_boS3hQftJg" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yvuhOVT2Ed6_boS3hQftJg" type="6008">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yvuhOlT2Ed6_boS3hQftJg" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yvuhO1T2Ed6_boS3hQftJg" type="6009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yvuhPFT2Ed6_boS3hQftJg" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yvuhPVT2Ed6_boS3hQftJg" type="6019">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yvuhPlT2Ed6_boS3hQftJg" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_yvkwMVT2Ed6_boS3hQftJg"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_yvkwMlT2Ed6_boS3hQftJg"/>
+    <element xmi:type="uml:Association" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_JmU68FT2Ed6_boS3hQftJg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yvkwM1T2Ed6_boS3hQftJg" points="[0, 0, -210, -173]$[160, 132, -50, -41]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SRLVwFT3Ed6_boS3hQftJg" id="(0.9896907216494846,0.4068965517241379)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RnvXMFT3Ed6_boS3hQftJg" id="(0.0,0.5321100917431193)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_JGxbslT3Ed6_boS3hQftJg" type="4005" source="_yvR1QFT2Ed6_boS3hQftJg" target="_A7jtwFT3Ed6_boS3hQftJg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_JGxbtlT3Ed6_boS3hQftJg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JGxbt1T3Ed6_boS3hQftJg" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JGxbuFT3Ed6_boS3hQftJg" visible="false" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JGxbuVT3Ed6_boS3hQftJg" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JGxbulT3Ed6_boS3hQftJg" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JGxbu1T3Ed6_boS3hQftJg" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JG7MsFT3Ed6_boS3hQftJg" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JG7MsVT3Ed6_boS3hQftJg" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JG7MslT3Ed6_boS3hQftJg" type="6007">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JG7Ms1T3Ed6_boS3hQftJg" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JG7MtFT3Ed6_boS3hQftJg" type="6008">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JG7MtVT3Ed6_boS3hQftJg" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JG7MtlT3Ed6_boS3hQftJg" type="6009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JG7Mt1T3Ed6_boS3hQftJg" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_JG7MuFT3Ed6_boS3hQftJg" type="6019">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_JG7MuVT3Ed6_boS3hQftJg" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_JGxbs1T3Ed6_boS3hQftJg"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_JGxbtFT3Ed6_boS3hQftJg"/>
+    <element xmi:type="uml:Association" href="7.58-Alarm%20is%20the%20required%20interface%20for%20any%20classifier%20implementing%20Isensor.uml#_JGB00FT3Ed6_boS3hQftJg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JGxbtVT3Ed6_boS3hQftJg" points="[-11, 2, 141, 0]$[-130, -10, 22, -12]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JHEWoFT3Ed6_boS3hQftJg" id="(0.030927835051546393,0.4068965517241379)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JHEWoVT3Ed6_boS3hQftJg" id="(0.7843137254901961,0.3972602739726027)"/>
+  </edges>
+</notation:Diagram>

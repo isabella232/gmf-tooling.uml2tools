@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_qfovwFT1Ed6_boS3hQftJg" type="UMLClass" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_qfovwVT1Ed6_boS3hQftJg" type="2014">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qfovwlT1Ed6_boS3hQftJg" type="5020"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_qfovw1T1Ed6_boS3hQftJg" type="5041"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qfovxFT1Ed6_boS3hQftJg" type="7032" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qfovxVT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qfovxlT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_qfovx1T1Ed6_boS3hQftJg"/>
+    </children>
+    <element xmi:type="uml:Package" href="7.55-Isensor%20is%20the%20provided%20interface%20of%20ProximitySensor.uml#_BLl1MFT0Ed6_boS3hQftJg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qfovyFT1Ed6_boS3hQftJg"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_qfovyVT1Ed6_boS3hQftJg" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qfovylT1Ed6_boS3hQftJg" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_qfovy1T1Ed6_boS3hQftJg" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_qfovzFT1Ed6_boS3hQftJg" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qfovzVT1Ed6_boS3hQftJg" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qfovzlT1Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qfovz1T1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qfov0FT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_qfov0VT1Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qfov0lT1Ed6_boS3hQftJg" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qfov01T1Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qfov1FT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qfov1VT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_qfov1lT1Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qfov11T1Ed6_boS3hQftJg" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qfov2FT1Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qfov2VT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qfov2lT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_qfov21T1Ed6_boS3hQftJg"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_qfov3FT1Ed6_boS3hQftJg"/>
+    <element xmi:type="uml:Class" href="7.55-Isensor%20is%20the%20provided%20interface%20of%20ProximitySensor.uml#_F5fHsFT0Ed6_boS3hQftJg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qfov3VT1Ed6_boS3hQftJg" x="468" y="120"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_qfov3lT1Ed6_boS3hQftJg" type="2013">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qfov31T1Ed6_boS3hQftJg" type="5018"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_qfov4FT1Ed6_boS3hQftJg" type="5035"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qfov4VT1Ed6_boS3hQftJg" type="7029">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qfov4lT1Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qfov41T1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qfov5FT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_qfov5VT1Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qfov5lT1Ed6_boS3hQftJg" type="7030">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qfov51T1Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qfov6FT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qfov6VT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_qfov6lT1Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_qfov61T1Ed6_boS3hQftJg" type="7031">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_qfov7FT1Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_qfov7VT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_qfov7lT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_qfov71T1Ed6_boS3hQftJg"/>
+    </children>
+    <element xmi:type="uml:Interface" href="7.55-Isensor%20is%20the%20provided%20interface%20of%20ProximitySensor.uml#_EgO1wFT0Ed6_boS3hQftJg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qfov8FT1Ed6_boS3hQftJg" x="288" y="120"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_qfov8VT1Ed6_boS3hQftJg" type="2018" fillColor="13369343" lineColor="6737151">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qfov8lT1Ed6_boS3hQftJg" type="5030"/>
+    <element xmi:type="uml:Comment" href="7.55-Isensor%20is%20the%20provided%20interface%20of%20ProximitySensor.uml#_MnTOEFT1Ed6_boS3hQftJg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qfov81T1Ed6_boS3hQftJg" x="120" y="240" width="512" height="45"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_s5IWsFT1Ed6_boS3hQftJg" type="2001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_s5Rgo1T1Ed6_boS3hQftJg" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_s5RgpFT1Ed6_boS3hQftJg" key="modelID" value="UMLClass"/>
+    </eAnnotations>
+    <children xmi:type="notation:DecorationNode" xmi:id="_s5IWs1T1Ed6_boS3hQftJg" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_s5RgpVT1Ed6_boS3hQftJg" bold="true"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_s5IWtFT1Ed6_boS3hQftJg" type="5019"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_s5IWtVT1Ed6_boS3hQftJg" type="7001">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_s5IWtlT1Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_s5IWt1T1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_s5IWuFT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_s5IWuVT1Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_s5IWulT1Ed6_boS3hQftJg" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_s5IWu1T1Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_s5IWvFT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_s5IWvVT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_s5IWvlT1Ed6_boS3hQftJg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_s5IWv1T1Ed6_boS3hQftJg" type="7003">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_s5IWwFT1Ed6_boS3hQftJg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_s5RgoFT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_s5RgoVT1Ed6_boS3hQftJg"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_s5RgolT1Ed6_boS3hQftJg"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_s5IWsVT1Ed6_boS3hQftJg"/>
+    <element xmi:type="uml:Class" href="7.56-Isensor%20is%20the%20required%20interface%20of%20TheftAlarm.uml#_k77sEFT0Ed6_boS3hQftJg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s5IWslT1Ed6_boS3hQftJg" x="120" y="120"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_qfov9FT1Ed6_boS3hQftJg"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_qfov9VT1Ed6_boS3hQftJg" syncNodes="false"/>
+  <styles xmi:type="notation:FilteringStyle" xmi:id="_qfov9lT1Ed6_boS3hQftJg"/>
+  <element xmi:type="uml:Package" href="7.55-Isensor%20is%20the%20provided%20interface%20of%20ProximitySensor.uml#_BLl1MFT0Ed6_boS3hQftJg"/>
+  <edges xmi:type="notation:Connector" xmi:id="_qfov91T1Ed6_boS3hQftJg" type="4008" source="_qfovyVT1Ed6_boS3hQftJg" target="_qfov3lT1Ed6_boS3hQftJg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_qfov-FT1Ed6_boS3hQftJg" type="6020">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qfov-VT1Ed6_boS3hQftJg" y="40"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_qfov-lT1Ed6_boS3hQftJg"/>
+    <element xmi:type="uml:InterfaceRealization" href="7.55-Isensor%20is%20the%20provided%20interface%20of%20ProximitySensor.uml#_UcYJYFT0Ed6_boS3hQftJg"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qfov-1T1Ed6_boS3hQftJg" points="[-56, -20, 480, 166]$[-536, -186, 0, 0]"/>
+  </edges>
+</notation:Diagram>

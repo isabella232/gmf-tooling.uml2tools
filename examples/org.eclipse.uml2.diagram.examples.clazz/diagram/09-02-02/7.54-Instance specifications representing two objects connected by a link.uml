@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_stAGkFTyEd6_boS3hQftJg" name="7.54">
+  <ownedComment xmi:id="_txPx0FTyEd6_boS3hQftJg">
+    <body>Figure 7.54 - Instance specifications representing two objects connected by a link</body>
+  </ownedComment>
+  <elementImport xmi:id="_sufUUFTyEd6_boS3hQftJg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_sufUUVTyEd6_boS3hQftJg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_sufUUlTyEd6_boS3hQftJg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_sufUU1TyEd6_boS3hQftJg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_veCDwFTyEd6_boS3hQftJg" name="Person"/>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_2vQ1sFTyEd6_boS3hQftJg" name="Don" classifier="_veCDwFTyEd6_boS3hQftJg">
+    <slot xmi:id="_-6w3gFTyEd6_boS3hQftJg">
+      <value xmi:type="uml:InstanceValue" xmi:id="_-6w3gVTyEd6_boS3hQftJg" name="" instance="_25ZpIFTyEd6_boS3hQftJg"/>
+    </slot>
+  </packagedElement>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_25ZpIFTyEd6_boS3hQftJg" name="Josh" classifier="_veCDwFTyEd6_boS3hQftJg"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_cCNu0FTzEd6_boS3hQftJg" memberEnd="_cCW4wFTzEd6_boS3hQftJg _cCW4w1TzEd6_boS3hQftJg">
+    <ownedEnd xmi:id="_cCW4wFTzEd6_boS3hQftJg" name="father" type="_veCDwFTyEd6_boS3hQftJg" association="_cCNu0FTzEd6_boS3hQftJg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cCW4wlTzEd6_boS3hQftJg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cCW4wVTzEd6_boS3hQftJg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_cCW4w1TzEd6_boS3hQftJg" name="son" type="_veCDwFTyEd6_boS3hQftJg" association="_cCNu0FTzEd6_boS3hQftJg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cCW4xVTzEd6_boS3hQftJg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cCW4xFTzEd6_boS3hQftJg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Package>
