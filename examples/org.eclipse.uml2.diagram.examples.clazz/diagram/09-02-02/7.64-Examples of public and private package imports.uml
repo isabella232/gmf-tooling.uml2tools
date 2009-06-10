@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_u-ED0FWuEd67zdnPfc5P6w" name="7.64">
+  <ownedComment xmi:id="_v-SxwFWuEd67zdnPfc5P6w">
+    <body>Figure 7.64 - Examples of public and private package imports</body>
+  </ownedComment>
+  <elementImport xmi:id="_u_QW5FWuEd67zdnPfc5P6w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_u_QW5VWuEd67zdnPfc5P6w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_u_QW5lWuEd67zdnPfc5P6w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_u_QW51WuEd67zdnPfc5P6w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <elementImport xmi:id="_wTJncFWuEd67zdnPfc5P6w"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0JeYwFWuEd67zdnPfc5P6w" name="Auxiliary"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0eC6kFWuEd67zdnPfc5P6w" name="Types"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_05A_UFWuEd67zdnPfc5P6w" name="ShoppingCart">
+    <packageImport xmi:id="_DB_FIFWvEd67zdnPfc5P6w" visibility="private" importedPackage="_0JeYwFWuEd67zdnPfc5P6w"/>
+    <packageImport xmi:id="_FPQN8FWvEd67zdnPfc5P6w" importedPackage="_0eC6kFWuEd67zdnPfc5P6w"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_1M1TMFWuEd67zdnPfc5P6w" name="WebShop">
+    <packageImport xmi:id="_Du2LIFWvEd67zdnPfc5P6w" importedPackage="_05A_UFWuEd67zdnPfc5P6w"/>
+  </packagedElement>
+</uml:Package>

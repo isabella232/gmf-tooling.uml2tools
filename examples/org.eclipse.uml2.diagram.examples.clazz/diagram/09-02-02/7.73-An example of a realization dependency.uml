@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_47Vd4FWxEd67zdnPfc5P6w" name="7.73">
+  <ownedComment xmi:id="_5yw1IFWxEd67zdnPfc5P6w">
+    <body>Figure 7.73 - An example of a realization dependency</body>
+  </ownedComment>
+  <elementImport xmi:id="_48rhsFWxEd67zdnPfc5P6w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_48rhsVWxEd67zdnPfc5P6w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_48rhslWxEd67zdnPfc5P6w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_48rhs1WxEd67zdnPfc5P6w">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9II1gFWxEd67zdnPfc5P6w" name="Business" clientDependency="_G8MwkFWyEd67zdnPfc5P6w _HduJQFWyEd67zdnPfc5P6w"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9NzYoFWxEd67zdnPfc5P6w" name="Owner"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9lMk8FWxEd67zdnPfc5P6w" name="Employee"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_G8MwkFWyEd67zdnPfc5P6w" supplier="_9lMk8FWxEd67zdnPfc5P6w" client="_9II1gFWxEd67zdnPfc5P6w"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_HduJQFWyEd67zdnPfc5P6w" supplier="_9NzYoFWxEd67zdnPfc5P6w" client="_9II1gFWxEd67zdnPfc5P6w"/>
+</uml:Package>
