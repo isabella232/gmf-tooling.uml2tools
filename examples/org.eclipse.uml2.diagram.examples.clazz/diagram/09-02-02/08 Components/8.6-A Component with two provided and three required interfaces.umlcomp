@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_zppslFXXEd6twtlceDDy2A" type="UMLComponent" name="8.6-A Component with two provided and three required interfaces.umlcomp" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_0EnxUFXXEd6twtlceDDy2A" type="2005">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0EnxUlXXEd6twtlceDDy2A" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_0EnxU1XXEd6twtlceDDy2A" type="5023"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_0EnxVFXXEd6twtlceDDy2A" type="7003" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_0EnxVVXXEd6twtlceDDy2A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_0EnxVlXXEd6twtlceDDy2A"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_0EnxV1XXEd6twtlceDDy2A"/>
+    </children>
+    <element xmi:type="uml:Package" href="8.6-A Component with two provided and three required interfaces.uml#_znaQ4FXXEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0EnxUVXXEd6twtlceDDy2A"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_1HrJwFXXEd6twtlceDDy2A" type="2008" fillColor="13369343" lineColor="6737151">
+    <children xmi:type="notation:DecorationNode" xmi:id="_1HrJwlXXEd6twtlceDDy2A" type="5022"/>
+    <element xmi:type="uml:Comment" href="8.6-A Component with two provided and three required interfaces.uml#_1Hh_0FXXEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1HrJwVXXEd6twtlceDDy2A" x="48" y="324" width="454" height="33"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_CRBloFXYEd6twtlceDDy2A" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CRBlo1XYEd6twtlceDDy2A" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_CRBlpFXYEd6twtlceDDy2A" type="5020"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_CRBlpVXYEd6twtlceDDy2A" type="7001">
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_CRBlplXYEd6twtlceDDy2A"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_CRBloVXYEd6twtlceDDy2A"/>
+    <element xmi:type="uml:Component" href="8.6-A Component with two provided and three required interfaces.uml#_CPiX4FXYEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CRBlolXYEd6twtlceDDy2A" x="199" y="108"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_C9lJoFXYEd6twtlceDDy2A" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_C9lJolXYEd6twtlceDDy2A" type="5005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_C9lJo1XYEd6twtlceDDy2A" x="-20" y="35"/>
+    </children>
+    <element xmi:type="uml:Interface" href="8.6-A Component with two provided and three required interfaces.uml#_C8in0FXYEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C9lJoVXYEd6twtlceDDy2A" x="99" y="110"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_ECuMwFXYEd6twtlceDDy2A" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_EC39wVXYEd6twtlceDDy2A" type="5005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EC39wlXYEd6twtlceDDy2A" y="5"/>
+    </children>
+    <element xmi:type="uml:Interface" href="8.6-A Component with two provided and three required interfaces.uml#_ECIW4FXYEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EC39wFXYEd6twtlceDDy2A" x="99" y="187"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Ig_H0FXYEd6twtlceDDy2A" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Ig_H0lXYEd6twtlceDDy2A" type="5005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Ig_H01XYEd6twtlceDDy2A" y="5"/>
+    </children>
+    <element xmi:type="uml:Interface" href="8.6-A Component with two provided and three required interfaces.uml#_IgPg8FXYEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ig_H0VXYEd6twtlceDDy2A" x="241" y="264"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_IobzoFXYEd6twtlceDDy2A" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_IobzolXYEd6twtlceDDy2A" type="5005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Iobzo1XYEd6twtlceDDy2A" y="5"/>
+    </children>
+    <element xmi:type="uml:Interface" href="8.6-A Component with two provided and three required interfaces.uml#_In1WsFXYEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IobzoVXYEd6twtlceDDy2A" x="385" y="110"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_IujCsFXYEd6twtlceDDy2A" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_IujCslXYEd6twtlceDDy2A" type="5005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_IujCs1XYEd6twtlceDDy2A" y="5"/>
+    </children>
+    <element xmi:type="uml:Interface" href="8.6-A Component with two provided and three required interfaces.uml#_IuPgsFXYEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IujCsVXYEd6twtlceDDy2A" x="383" y="187"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_zppslVXXEd6twtlceDDy2A"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_zppsllXXEd6twtlceDDy2A"/>
+  <element xmi:type="uml:Package" href="8.6-A Component with two provided and three required interfaces.uml#_znaQ4FXXEd6twtlceDDy2A"/>
+  <edges xmi:type="notation:Connector" xmi:id="_XCjT0FXYEd6twtlceDDy2A" type="4001" source="_CRBloFXYEd6twtlceDDy2A" target="_C9lJoFXYEd6twtlceDDy2A">
+    <styles xmi:type="notation:FontStyle" xmi:id="_XCjT0VXYEd6twtlceDDy2A"/>
+    <element xmi:type="uml:InterfaceRealization" href="8.6-A Component with two provided and three required interfaces.uml#_XCZi0FXYEd6twtlceDDy2A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_XCjT0lXYEd6twtlceDDy2A" points="[-34, 1, 93, -5]$[-119, 6, 8, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XCsdwFXYEd6twtlceDDy2A" id="(0.34,0.14423076923076922)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ZPN_sVXYEd6twtlceDDy2A" type="4001" source="_CRBloFXYEd6twtlceDDy2A" target="_ECuMwFXYEd6twtlceDDy2A">
+    <styles xmi:type="notation:FontStyle" xmi:id="_ZPN_slXYEd6twtlceDDy2A"/>
+    <element xmi:type="uml:InterfaceRealization" href="8.6-A Component with two provided and three required interfaces.uml#_ZPN_sFXYEd6twtlceDDy2A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZPN_s1XYEd6twtlceDDy2A" points="[-50, 12, 93, -22]$[-135, 32, 8, -2]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_acQakFXYEd6twtlceDDy2A" type="4007" source="_CRBloFXYEd6twtlceDDy2A" target="_IobzoFXYEd6twtlceDDy2A">
+    <styles xmi:type="notation:FontStyle" xmi:id="_acQakVXYEd6twtlceDDy2A"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_acQaklXYEd6twtlceDDy2A" points="[50, -15, -93, 28]$[136, -41, -7, 2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iQgaAFXYEd6twtlceDDy2A" id="(0.99,0.1346153846153846)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_b6lZwFXYEd6twtlceDDy2A" type="4007" source="_CRBloFXYEd6twtlceDDy2A" target="_IujCsFXYEd6twtlceDDy2A">
+    <styles xmi:type="notation:FontStyle" xmi:id="_b6lZwVXYEd6twtlceDDy2A"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_b6lZwlXYEd6twtlceDDy2A" points="[50, 12, -91, -22]$[134, 32, -7, -2]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_f8-4MFXYEd6twtlceDDy2A" type="4007" source="_CRBloFXYEd6twtlceDDy2A" target="_Ig_H0FXYEd6twtlceDDy2A">
+    <styles xmi:type="notation:FontStyle" xmi:id="_f8-4MVXYEd6twtlceDDy2A"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f8-4MlXYEd6twtlceDDy2A" points="[-1, 52, 0, -59]$[0, 104, 1, -7]"/>
+  </edges>
+</notation:Diagram>

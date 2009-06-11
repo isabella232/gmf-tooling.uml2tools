@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_vQGONFXeEd6twtlceDDy2A" type="UMLComponent" name="8.11-An alternative nested representation of a complex component.umlcomp" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_vq7JAFXeEd6twtlceDDy2A" type="2005">
+    <children xmi:type="notation:DecorationNode" xmi:id="_vq7JAlXeEd6twtlceDDy2A" type="5011"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_vq7JA1XeEd6twtlceDDy2A" type="5023"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_vq7JBFXeEd6twtlceDDy2A" type="7003" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_vq7JBVXeEd6twtlceDDy2A"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_vq7JBlXeEd6twtlceDDy2A"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_vq7JB1XeEd6twtlceDDy2A"/>
+    </children>
+    <element xmi:type="uml:Package" href="8.11-An alternative nested representation of a complex component.uml#_vOKUgFXeEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vq7JAVXeEd6twtlceDDy2A"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_wZ3SoFXeEd6twtlceDDy2A" type="2008" fillColor="13369343" lineColor="6737151">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wZ3SolXeEd6twtlceDDy2A" type="5022"/>
+    <element xmi:type="uml:Comment" href="8.11-An alternative nested representation of a complex component.uml#_wZthoFXeEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wZ3SoVXeEd6twtlceDDy2A" x="48" y="420" width="445" height="37"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_0Ib2IFXeEd6twtlceDDy2A" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_0Ib2I1XeEd6twtlceDDy2A" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_0Ib2JFXeEd6twtlceDDy2A" type="5020"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_0Ib2JVXeEd6twtlceDDy2A" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_6qbjgFXeEd6twtlceDDy2A" type="3004">
+        <children xmi:type="notation:DecorationNode" xmi:id="_6qbjg1XeEd6twtlceDDy2A" type="5007"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_6qbjgVXeEd6twtlceDDy2A"/>
+        <element xmi:type="uml:Class" href="8.11-An alternative nested representation of a complex component.uml#_6p-3kFXeEd6twtlceDDy2A"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6qbjglXeEd6twtlceDDy2A" x="54" y="12" width="85" height="49"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_-afUwFXeEd6twtlceDDy2A" type="3004">
+        <children xmi:type="notation:DecorationNode" xmi:id="_-afUw1XeEd6twtlceDDy2A" type="5007"/>
+        <styles xmi:type="notation:CanonicalStyle" xmi:id="_-afUwVXeEd6twtlceDDy2A"/>
+        <element xmi:type="uml:Class" href="8.11-An alternative nested representation of a complex component.uml#_-Z5e4FXeEd6twtlceDDy2A"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-afUwlXeEd6twtlceDDy2A" x="56" y="120" width="82" height="51"/>
+      </children>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_0Ib2JlXeEd6twtlceDDy2A"/>
+    </children>
+    <styles xmi:type="notation:CanonicalStyle" xmi:id="_0Ib2IVXeEd6twtlceDDy2A"/>
+    <element xmi:type="uml:Component" href="8.11-An alternative nested representation of a complex component.uml#_0ISsMFXeEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Ib2IlXeEd6twtlceDDy2A" x="132" y="84" width="205" height="235"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_1wc80FXeEd6twtlceDDy2A" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_1wc80lXeEd6twtlceDDy2A" type="5005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1wc801XeEd6twtlceDDy2A" y="5"/>
+    </children>
+    <element xmi:type="uml:Interface" href="8.11-An alternative nested representation of a complex component.uml#_1wAQ4FXeEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1wc80VXeEd6twtlceDDy2A" x="60" y="165"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_29pIsFXeEd6twtlceDDy2A" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_29pIslXeEd6twtlceDDy2A" type="5005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_29pIs1XeEd6twtlceDDy2A" y="5"/>
+    </children>
+    <element xmi:type="uml:Interface" href="8.11-An alternative nested representation of a complex component.uml#_29CrwFXeEd6twtlceDDy2A"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_29pIsVXeEd6twtlceDDy2A" x="384" y="165"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_vQGONVXeEd6twtlceDDy2A"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_vQGONlXeEd6twtlceDDy2A"/>
+  <element xmi:type="uml:Package" href="8.11-An alternative nested representation of a complex component.uml#_vOKUgFXeEd6twtlceDDy2A"/>
+  <edges xmi:type="notation:Edge" xmi:id="_CX928FXfEd6twtlceDDy2A" type="4011" source="_6qbjgFXeEd6twtlceDDy2A" target="_-afUwFXeEd6twtlceDDy2A">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CX929FXfEd6twtlceDDy2A" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CX929VXfEd6twtlceDDy2A" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_CX929lXfEd6twtlceDDy2A" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CX9291XfEd6twtlceDDy2A" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_CX92-FXfEd6twtlceDDy2A" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CX92-VXfEd6twtlceDDy2A" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_CX92-lXfEd6twtlceDDy2A" type="6005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CX92-1XfEd6twtlceDDy2A" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_CX92_FXfEd6twtlceDDy2A" type="6006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CX92_VXfEd6twtlceDDy2A" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_CX92_lXfEd6twtlceDDy2A" type="6007">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CX92_1XfEd6twtlceDDy2A" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_CX93AFXfEd6twtlceDDy2A" type="6008">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CX93AVXfEd6twtlceDDy2A" y="15"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_CX928VXfEd6twtlceDDy2A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_CX928lXfEd6twtlceDDy2A"/>
+    <element xmi:type="uml:Association" href="8.11-An alternative nested representation of a complex component.uml#_CXYBEFXfEd6twtlceDDy2A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CX9281XfEd6twtlceDDy2A" points="[1, 25, 0, -84]$[0, 84, -1, -25]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_QBVPoVXfEd6twtlceDDy2A" type="4007" source="_0Ib2IFXeEd6twtlceDDy2A" target="_29pIsFXeEd6twtlceDDy2A">
+    <styles xmi:type="notation:FontStyle" xmi:id="_QBVPolXfEd6twtlceDDy2A"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_QBVPo1XfEd6twtlceDDy2A" points="[103, -19, -54, 10]$[150, -28, -7, 1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_THg9cFXfEd6twtlceDDy2A" id="(0.9951219512195122,0.3702127659574468)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ReKaAFXfEd6twtlceDDy2A" type="4001" source="_0Ib2IFXeEd6twtlceDDy2A" target="_1wc80FXeEd6twtlceDDy2A">
+    <styles xmi:type="notation:FontStyle" xmi:id="_ReKaAVXfEd6twtlceDDy2A"/>
+    <element xmi:type="uml:InterfaceRealization" href="8.11-An alternative nested representation of a complex component.uml#_ReApAFXfEd6twtlceDDy2A"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ReKaAlXfEd6twtlceDDy2A" points="[-63, 40, 54, -34]$[-109, 69, 8, -5]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ReTj8FXfEd6twtlceDDy2A" id="(0.0,0.35319148936170214)"/>
+  </edges>
+</notation:Diagram>

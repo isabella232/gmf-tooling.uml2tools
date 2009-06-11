@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_XP8zYFaYEd65ZMG05QyyXQ" type="UMLUseCase" name="16.4-Example of the Include relationship.umlusc" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_ZWqoQFaYEd65ZMG05QyyXQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZXQeIFaYEd65ZMG05QyyXQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ZXQeIVaYEd65ZMG05QyyXQ" type="5016"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_ZYcw8FaYEd65ZMG05QyyXQ" type="7001" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ZYcw8VaYEd65ZMG05QyyXQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ZYcw8laYEd65ZMG05QyyXQ"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_ZYcw81aYEd65ZMG05QyyXQ"/>
+    </children>
+    <element xmi:type="uml:Package" href="16.4-Example of the Include relationship.uml#_W6pRwFaYEd65ZMG05QyyXQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZWqoQVaYEd65ZMG05QyyXQ"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_lgN0AFaYEd65ZMG05QyyXQ" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_lgN0AlaYEd65ZMG05QyyXQ" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_lpmZgFaYEd65ZMG05QyyXQ" bold="true"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_lggu8FaYEd65ZMG05QyyXQ" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_lggu8VaYEd65ZMG05QyyXQ" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_lggu8laYEd65ZMG05QyyXQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_lggu81aYEd65ZMG05QyyXQ"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_lggu9FaYEd65ZMG05QyyXQ"/>
+    </children>
+    <element xmi:type="uml:UseCase" href="16.4-Example of the Include relationship.uml#_lSp5IFaYEd65ZMG05QyyXQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lgN0AVaYEd65ZMG05QyyXQ" x="84" y="156"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_nYngEFaYEd65ZMG05QyyXQ" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_nYngElaYEd65ZMG05QyyXQ" type="5003">
+      <styles xmi:type="notation:FontStyle" xmi:id="_nYxRFVaYEd65ZMG05QyyXQ" bold="true"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_nYxREFaYEd65ZMG05QyyXQ" type="7002">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_nYxREVaYEd65ZMG05QyyXQ" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_nYxRElaYEd65ZMG05QyyXQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_nYxRE1aYEd65ZMG05QyyXQ"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_nYxRFFaYEd65ZMG05QyyXQ"/>
+    </children>
+    <element xmi:type="uml:UseCase" href="16.4-Example of the Include relationship.uml#_nYBDIFaYEd65ZMG05QyyXQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nYngEVaYEd65ZMG05QyyXQ" x="360" y="156"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_vF2RgFaYEd65ZMG05QyyXQ" type="2009" fillColor="13369343" lineColor="6737151">
+    <children xmi:type="notation:DecorationNode" xmi:id="_vF2RglaYEd65ZMG05QyyXQ" type="5015"/>
+    <element xmi:type="uml:Comment" href="16.4-Example of the Include relationship.uml#_vFZlkFaYEd65ZMG05QyyXQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vF2RgVaYEd65ZMG05QyyXQ" x="84" y="288" width="397" height="37"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_XP8zYVaYEd65ZMG05QyyXQ"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_XP8zYlaYEd65ZMG05QyyXQ"/>
+  <element xmi:type="uml:Package" href="16.4-Example of the Include relationship.uml#_W6pRwFaYEd65ZMG05QyyXQ"/>
+  <edges xmi:type="notation:Edge" xmi:id="_pQ3bIFaYEd65ZMG05QyyXQ" type="4001" source="_lgN0AFaYEd65ZMG05QyyXQ" target="_nYngEFaYEd65ZMG05QyyXQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_pQ3bJFaYEd65ZMG05QyyXQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_pQ3bJVaYEd65ZMG05QyyXQ" y="20"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_pQ3bIVaYEd65ZMG05QyyXQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_pQ3bIlaYEd65ZMG05QyyXQ"/>
+    <element xmi:type="uml:Include" href="16.4-Example of the Include relationship.uml#_pOe1gFaYEd65ZMG05QyyXQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pQ3bI1aYEd65ZMG05QyyXQ" points="[70, 0, -220, 0]$[258, 4, -32, 4]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pUmEkFaYEd65ZMG05QyyXQ" id="(0.005319148936170213,0.45)"/>
+  </edges>
+</notation:Diagram>

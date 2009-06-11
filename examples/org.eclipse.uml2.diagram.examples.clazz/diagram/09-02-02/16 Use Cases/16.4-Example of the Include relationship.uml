@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_W6pRwFaYEd65ZMG05QyyXQ" name="16.4">
+  <ownedComment xmi:id="_vFZlkFaYEd65ZMG05QyyXQ">
+    <body>Figure 16.4 - Example of the Include relationship</body>
+  </ownedComment>
+  <elementImport xmi:id="_W9xeQFaYEd65ZMG05QyyXQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_W-X7MFaYEd65ZMG05QyyXQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_W-X7MVaYEd65ZMG05QyyXQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_W-X7MlaYEd65ZMG05QyyXQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_lSp5IFaYEd65ZMG05QyyXQ" name="Withdraw">
+    <include xmi:id="_pOe1gFaYEd65ZMG05QyyXQ" addition="_nYBDIFaYEd65ZMG05QyyXQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_nYBDIFaYEd65ZMG05QyyXQ" name="Card Identification"/>
+</uml:Package>

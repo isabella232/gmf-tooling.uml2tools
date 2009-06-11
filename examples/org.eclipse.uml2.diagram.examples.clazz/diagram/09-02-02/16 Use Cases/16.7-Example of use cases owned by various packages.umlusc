@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_U3l_cFaZEd65ZMG05QyyXQ" type="UMLUseCase" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_VO2B0FaZEd65ZMG05QyyXQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_VO2B0laZEd65ZMG05QyyXQ" type="5001"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_VO2B01aZEd65ZMG05QyyXQ" type="5016"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_VO2B1FaZEd65ZMG05QyyXQ" type="7001" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_VO2B1VaZEd65ZMG05QyyXQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_VO2B1laZEd65ZMG05QyyXQ"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_VO2B11aZEd65ZMG05QyyXQ"/>
+    </children>
+    <element xmi:type="uml:Package" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_z1ZJ0FaYEd65ZMG05QyyXQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VO2B0VaZEd65ZMG05QyyXQ"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_jf_zQVaZEd65ZMG05QyyXQ" type="2009" fillColor="13369343" lineColor="6737151">
+    <children xmi:type="notation:DecorationNode" xmi:id="_jf_zQ1aZEd65ZMG05QyyXQ" type="5015"/>
+    <element xmi:type="uml:Comment" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_jf_zQFaZEd65ZMG05QyyXQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jf_zQlaZEd65ZMG05QyyXQ" x="50" y="648" width="436" height="36"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_k7Vv4FaZEd65ZMG05QyyXQ" type="2007">
+    <children xmi:type="notation:DecorationNode" xmi:id="_k7Vv41aZEd65ZMG05QyyXQ" type="5008"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_k7Vv5FaZEd65ZMG05QyyXQ" type="7006">
+      <children xmi:type="notation:Shape" xmi:id="_wmV-cFaZEd65ZMG05QyyXQ" type="3006">
+        <children xmi:type="notation:DecorationNode" xmi:id="_wmV-claZEd65ZMG05QyyXQ" type="5010">
+          <styles xmi:type="notation:FontStyle" xmi:id="_woukEFaZEd65ZMG05QyyXQ" bold="true"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_wmV-c1aZEd65ZMG05QyyXQ" type="7007">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_wmV-dFaZEd65ZMG05QyyXQ" showTitle="true"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_wmV-dVaZEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_wmV-dlaZEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_wmV-d1aZEd65ZMG05QyyXQ"/>
+        </children>
+        <element xmi:type="uml:UseCase" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_wlmXkFaZEd65ZMG05QyyXQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wmV-cVaZEd65ZMG05QyyXQ" x="44" y="87"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_7-388FaZEd65ZMG05QyyXQ" type="3006">
+        <children xmi:type="notation:DecorationNode" xmi:id="_7-388laZEd65ZMG05QyyXQ" type="5010">
+          <styles xmi:type="notation:FontStyle" xmi:id="_7_Bt8FaZEd65ZMG05QyyXQ" bold="true"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_7-3881aZEd65ZMG05QyyXQ" type="7007">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_7-389FaZEd65ZMG05QyyXQ" showTitle="true"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_7-389VaZEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_7-389laZEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_7-3891aZEd65ZMG05QyyXQ"/>
+        </children>
+        <element xmi:type="uml:UseCase" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_7-RgAFaZEd65ZMG05QyyXQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7-388VaZEd65ZMG05QyyXQ" x="268" y="87"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_9-Ie8FaZEd65ZMG05QyyXQ" type="3006">
+        <children xmi:type="notation:DecorationNode" xmi:id="_9-Ie8laZEd65ZMG05QyyXQ" type="5010">
+          <styles xmi:type="notation:FontStyle" xmi:id="_9-Ie-FaZEd65ZMG05QyyXQ" bold="true"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_9-Ie81aZEd65ZMG05QyyXQ" type="7007">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_9-Ie9FaZEd65ZMG05QyyXQ" showTitle="true"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_9-Ie9VaZEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_9-Ie9laZEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_9-Ie91aZEd65ZMG05QyyXQ"/>
+        </children>
+        <element xmi:type="uml:UseCase" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_99rzAFaZEd65ZMG05QyyXQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9-Ie8VaZEd65ZMG05QyyXQ" x="667" y="87"/>
+      </children>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_k7Vv5VaZEd65ZMG05QyyXQ"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_k7Vv4VaZEd65ZMG05QyyXQ" hint="FIXME put GenEditorGenerator.modelID value here"/>
+    <element xmi:type="uml:Package" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_k6cYAFaZEd65ZMG05QyyXQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k7Vv4laZEd65ZMG05QyyXQ" x="48" y="96" width="841" height="193"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_nSJPMFaZEd65ZMG05QyyXQ" type="2007">
+    <children xmi:type="notation:DecorationNode" xmi:id="_nSJPM1aZEd65ZMG05QyyXQ" type="5008"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_nSJPNFaZEd65ZMG05QyyXQ" type="7006">
+      <children xmi:type="notation:Shape" xmi:id="_OpzyEFaaEd65ZMG05QyyXQ" type="3006">
+        <children xmi:type="notation:DecorationNode" xmi:id="_OpzyElaaEd65ZMG05QyyXQ" type="5010">
+          <styles xmi:type="notation:FontStyle" xmi:id="_Op9jEFaaEd65ZMG05QyyXQ" bold="true"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_OpzyE1aaEd65ZMG05QyyXQ" type="7007">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_OpzyFFaaEd65ZMG05QyyXQ" showTitle="true"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_OpzyFVaaEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_OpzyFlaaEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_OpzyF1aaEd65ZMG05QyyXQ"/>
+        </children>
+        <element xmi:type="uml:UseCase" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_Opg3IFaaEd65ZMG05QyyXQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OpzyEVaaEd65ZMG05QyyXQ" x="53" y="27"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_S-hvkFaaEd65ZMG05QyyXQ" type="3006">
+        <children xmi:type="notation:DecorationNode" xmi:id="_S-hvklaaEd65ZMG05QyyXQ" type="5010">
+          <styles xmi:type="notation:FontStyle" xmi:id="_S-hvmFaaEd65ZMG05QyyXQ" bold="true"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_S-hvk1aaEd65ZMG05QyyXQ" type="7007">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_S-hvlFaaEd65ZMG05QyyXQ" showTitle="true"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_S-hvlVaaEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_S-hvllaaEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_S-hvl1aaEd65ZMG05QyyXQ"/>
+        </children>
+        <element xmi:type="uml:UseCase" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_S-FqsFaaEd65ZMG05QyyXQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S-hvkVaaEd65ZMG05QyyXQ" x="314" y="27"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_UHjNIFaaEd65ZMG05QyyXQ" type="3006">
+        <children xmi:type="notation:DecorationNode" xmi:id="_UHjNIlaaEd65ZMG05QyyXQ" type="5010">
+          <styles xmi:type="notation:FontStyle" xmi:id="_UHjNKFaaEd65ZMG05QyyXQ" bold="true"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_UHjNI1aaEd65ZMG05QyyXQ" type="7007">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_UHjNJFaaEd65ZMG05QyyXQ" showTitle="true"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_UHjNJVaaEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_UHjNJlaaEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_UHjNJ1aaEd65ZMG05QyyXQ"/>
+        </children>
+        <element xmi:type="uml:UseCase" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_UHQSMFaaEd65ZMG05QyyXQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UHjNIVaaEd65ZMG05QyyXQ" x="661" y="26"/>
+      </children>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_nSJPNVaZEd65ZMG05QyyXQ"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_nSJPMVaZEd65ZMG05QyyXQ" hint="FIXME put GenEditorGenerator.modelID value here"/>
+    <element xmi:type="uml:Package" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_nRsjQFaZEd65ZMG05QyyXQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nSJPMlaZEd65ZMG05QyyXQ" x="50" y="324" width="839" height="136"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_ujgkAFaZEd65ZMG05QyyXQ" type="2007">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ujgkA1aZEd65ZMG05QyyXQ" type="5008"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_ujgkBFaZEd65ZMG05QyyXQ" type="7006">
+      <children xmi:type="notation:Shape" xmi:id="_dwnZIFaaEd65ZMG05QyyXQ" type="3006">
+        <children xmi:type="notation:DecorationNode" xmi:id="_dwnZIlaaEd65ZMG05QyyXQ" type="5010">
+          <styles xmi:type="notation:FontStyle" xmi:id="_dwnZKFaaEd65ZMG05QyyXQ" bold="true"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_dwnZI1aaEd65ZMG05QyyXQ" type="7007">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_dwnZJFaaEd65ZMG05QyyXQ" showTitle="true"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_dwnZJVaaEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_dwnZJlaaEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_dwnZJ1aaEd65ZMG05QyyXQ"/>
+        </children>
+        <element xmi:type="uml:UseCase" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_dwT3IFaaEd65ZMG05QyyXQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dwnZIVaaEd65ZMG05QyyXQ" x="65" y="15"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_fjpdAFaaEd65ZMG05QyyXQ" type="3006">
+        <children xmi:type="notation:DecorationNode" xmi:id="_fjpdAlaaEd65ZMG05QyyXQ" type="5010">
+          <styles xmi:type="notation:FontStyle" xmi:id="_fjpdCFaaEd65ZMG05QyyXQ" bold="true"/>
+        </children>
+        <children xmi:type="notation:BasicCompartment" xmi:id="_fjpdA1aaEd65ZMG05QyyXQ" type="7007">
+          <styles xmi:type="notation:TitleStyle" xmi:id="_fjpdBFaaEd65ZMG05QyyXQ" showTitle="true"/>
+          <styles xmi:type="notation:SortingStyle" xmi:id="_fjpdBVaaEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:FilteringStyle" xmi:id="_fjpdBlaaEd65ZMG05QyyXQ"/>
+          <styles xmi:type="notation:CanonicalStyle" xmi:id="_fjpdB1aaEd65ZMG05QyyXQ"/>
+        </children>
+        <element xmi:type="uml:UseCase" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_fjWiEFaaEd65ZMG05QyyXQ"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fjpdAVaaEd65ZMG05QyyXQ" x="329" y="15"/>
+      </children>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_ujgkBVaZEd65ZMG05QyyXQ"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_ujgkAVaZEd65ZMG05QyyXQ" hint="FIXME put GenEditorGenerator.modelID value here"/>
+    <element xmi:type="uml:Package" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_ui6uIFaZEd65ZMG05QyyXQ"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ujgkAlaZEd65ZMG05QyyXQ" x="50" y="504" width="839" height="109"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_U3l_cVaZEd65ZMG05QyyXQ"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_U3l_claZEd65ZMG05QyyXQ" syncNodes="false"/>
+  <element xmi:type="uml:Package" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_z1ZJ0FaYEd65ZMG05QyyXQ"/>
+  <edges xmi:type="notation:Edge" xmi:id="_CVPCEFaaEd65ZMG05QyyXQ" type="4002" source="_9-Ie8FaZEd65ZMG05QyyXQ" target="_7-388FaZEd65ZMG05QyyXQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CVPCFFaaEd65ZMG05QyyXQ" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CVPCFVaaEd65ZMG05QyyXQ" x="-5" y="-15"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_CVPCEVaaEd65ZMG05QyyXQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_CVPCElaaEd65ZMG05QyyXQ"/>
+    <element xmi:type="uml:Extend" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_CUyWIFaaEd65ZMG05QyyXQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CVPCE1aaEd65ZMG05QyyXQ" points="[-70, -1, 181, 2]$[-225, -4, 26, -1]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CXUswFaaEd65ZMG05QyyXQ" id="(0.8934426229508197,0.45)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Xb5SwVaaEd65ZMG05QyyXQ" type="4001" source="_OpzyEFaaEd65ZMG05QyyXQ" target="_wmV-cFaZEd65ZMG05QyyXQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Xb5SxVaaEd65ZMG05QyyXQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Xb5SxlaaEd65ZMG05QyyXQ" y="20"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_Xb5SwlaaEd65ZMG05QyyXQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Xb5Sw1aaEd65ZMG05QyyXQ"/>
+    <element xmi:type="uml:Include" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_Xb5SwFaaEd65ZMG05QyyXQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Xb5SxFaaEd65ZMG05QyyXQ" points="[-1, -11, -5, 138]$[-90, -148, -94, 1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Xb5Sx1aaEd65ZMG05QyyXQ" id="(0.5642857142857143,0.18333333333333332)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_YLbSQVaaEd65ZMG05QyyXQ" type="4001" source="_S-hvkFaaEd65ZMG05QyyXQ" target="_wmV-cFaZEd65ZMG05QyyXQ">
+    <children xmi:type="notation:DecorationNode" xmi:id="_YLbSRVaaEd65ZMG05QyyXQ" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_YLbSRlaaEd65ZMG05QyyXQ" y="20"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_YLbSQlaaEd65ZMG05QyyXQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_YLbSQ1aaEd65ZMG05QyyXQ"/>
+    <element xmi:type="uml:Include" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_YLbSQFaaEd65ZMG05QyyXQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YLbSRFaaEd65ZMG05QyyXQ" points="[-46, -30, 207, 138]$[-233, -138, 20, 30]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ZXuGQFaaEd65ZMG05QyyXQ" type="4003" source="_OpzyEFaaEd65ZMG05QyyXQ" target="_7-388FaZEd65ZMG05QyyXQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_ZXuGQVaaEd65ZMG05QyyXQ"/>
+    <element xmi:type="uml:Generalization" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_ZXRaUFaaEd65ZMG05QyyXQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZXuGQlaaEd65ZMG05QyyXQ" points="[40, -30, -225, 138]$[143, -153, -122, 15]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aIv6kVaaEd65ZMG05QyyXQ" type="4003" source="_S-hvkFaaEd65ZMG05QyyXQ" target="_7-388FaZEd65ZMG05QyyXQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aIv6klaaEd65ZMG05QyyXQ"/>
+    <element xmi:type="uml:Generalization" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_aIv6kFaaEd65ZMG05QyyXQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aIv6k1aaEd65ZMG05QyyXQ" points="[-1, -30, 0, 138]$[-21, -138, -20, 30]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_akUcQVaaEd65ZMG05QyyXQ" type="4003" source="_UHjNIFaaEd65ZMG05QyyXQ" target="_7-388FaZEd65ZMG05QyyXQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_akUcQlaaEd65ZMG05QyyXQ"/>
+    <element xmi:type="uml:Generalization" href="16.5-Example%20of%20the%20use%20cases%20and%20actors%20for%20an%20ATM%20system.uml#_akUcQFaaEd65ZMG05QyyXQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_akUcQ1aaEd65ZMG05QyyXQ" points="[-56, -30, 295, 137]$[-254, -197, 97, -30]"/>
+  </edges>
+</notation:Diagram>
