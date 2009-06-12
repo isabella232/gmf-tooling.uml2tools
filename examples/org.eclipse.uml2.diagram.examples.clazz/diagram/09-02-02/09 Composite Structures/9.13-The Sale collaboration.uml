@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_vkiYkFdcEd6gf-NxV4azfw" name="9.13">
+  <ownedComment xmi:id="_wfjPUFdcEd6gf-NxV4azfw">
+    <body>Figure 9.13 - The Sale collaboration</body>
+  </ownedComment>
+  <elementImport xmi:id="_vmCNYFdcEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_vmCNYVdcEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_vmCNYldcEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_vmCNY1dcEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Collaboration" xmi:id="_yhMW8FdcEd6gf-NxV4azfw" name="Sale" collaborationRole="_9Ag1gFdcEd6gf-NxV4azfw _9J5bAFdcEd6gf-NxV4azfw">
+    <ownedAttribute xmi:id="_9Ag1gFdcEd6gf-NxV4azfw" name="buyer"/>
+    <ownedAttribute xmi:id="_9J5bAFdcEd6gf-NxV4azfw" name="seller"/>
+    <ownedConnector xmi:id="_BRWYkFddEd6gf-NxV4azfw" kind="delegation">
+      <end xmi:id="_BRWYkVddEd6gf-NxV4azfw" role="_9Ag1gFdcEd6gf-NxV4azfw"/>
+      <end xmi:id="_BRWYklddEd6gf-NxV4azfw" role="_9J5bAFdcEd6gf-NxV4azfw"/>
+    </ownedConnector>
+  </packagedElement>
+</uml:Package>

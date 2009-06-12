@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:uml2tools.notation="http://www.eclipse.org/mdt/uml2tools/gmf/notation/ext/2008" xmi:id="_vmCNZFdcEd6gf-NxV4azfw" type="UMLCompositeStructures" name="9.13-The Sale collaboration.umlcsd" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_v65DEFdcEd6gf-NxV4azfw" type="2003">
+    <children xmi:type="notation:DecorationNode" xmi:id="_v65DEldcEd6gf-NxV4azfw" type="5006"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_v65DE1dcEd6gf-NxV4azfw" type="5033"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_v65DFFdcEd6gf-NxV4azfw" type="7002" collapsed="true">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_v65DFVdcEd6gf-NxV4azfw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_v65DFldcEd6gf-NxV4azfw"/>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_v65DF1dcEd6gf-NxV4azfw"/>
+    </children>
+    <element xmi:type="uml:Package" href="9.13-The Sale collaboration.uml#_vkiYkFdcEd6gf-NxV4azfw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v65DEVdcEd6gf-NxV4azfw"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_wftAUFdcEd6gf-NxV4azfw" type="2013" fillColor="13369343" lineColor="6737151">
+    <children xmi:type="notation:DecorationNode" xmi:id="_wftAUldcEd6gf-NxV4azfw" type="5032"/>
+    <element xmi:type="uml:Comment" href="9.13-The Sale collaboration.uml#_wfjPUFdcEd6gf-NxV4azfw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wftAUVdcEd6gf-NxV4azfw" x="36" y="300" width="349" height="38"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_yh790FdcEd6gf-NxV4azfw" type="2005">
+    <children xmi:type="notation:DecorationNode" xmi:id="_yh7901dcEd6gf-NxV4azfw" type="5009"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yh791FdcEd6gf-NxV4azfw" type="5030"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yh791VdcEd6gf-NxV4azfw" type="7003">
+      <children xmi:type="notation:Shape" xmi:id="_9Ag1gVdcEd6gf-NxV4azfw" type="3007">
+        <children xmi:type="notation:DecorationNode" xmi:id="_9Ag1g1dcEd6gf-NxV4azfw" type="5011"/>
+        <element xmi:type="uml:Property" href="9.13-The Sale collaboration.uml#_9Ag1gFdcEd6gf-NxV4azfw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Ag1gldcEd6gf-NxV4azfw" x="7" y="27" width="69"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_9J5bAVdcEd6gf-NxV4azfw" type="3007">
+        <children xmi:type="notation:DecorationNode" xmi:id="_9J5bA1dcEd6gf-NxV4azfw" type="5011"/>
+        <element xmi:type="uml:Property" href="9.13-The Sale collaboration.uml#_9J5bAFdcEd6gf-NxV4azfw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9J5bAldcEd6gf-NxV4azfw" x="147" y="27" width="65"/>
+      </children>
+      <styles xmi:type="notation:CanonicalStyle" xmi:id="_yh791ldcEd6gf-NxV4azfw"/>
+    </children>
+    <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_yh790VdcEd6gf-NxV4azfw"/>
+    <element xmi:type="uml:Collaboration" href="9.13-The Sale collaboration.uml#_yhMW8FdcEd6gf-NxV4azfw"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yh790ldcEd6gf-NxV4azfw" x="38" y="84" width="347" height="193"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_vmCNZVdcEd6gf-NxV4azfw"/>
+  <styles xmi:type="uml2tools.notation:U2TDiagramCanonicalStyle" xmi:id="_vmCNZldcEd6gf-NxV4azfw"/>
+  <element xmi:type="uml:Package" href="9.13-The Sale collaboration.uml#_vkiYkFdcEd6gf-NxV4azfw"/>
+  <edges xmi:type="notation:Connector" xmi:id="_BRWYk1ddEd6gf-NxV4azfw" type="4005" source="_9Ag1gVdcEd6gf-NxV4azfw" target="_9J5bAVdcEd6gf-NxV4azfw">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BRWYllddEd6gf-NxV4azfw" type="6009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BRWYl1ddEd6gf-NxV4azfw" y="20"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BRWYmFddEd6gf-NxV4azfw" type="6010">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BRWYmVddEd6gf-NxV4azfw" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BRWYmlddEd6gf-NxV4azfw" type="6011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BRWYm1ddEd6gf-NxV4azfw" y="-15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BRWYnFddEd6gf-NxV4azfw" type="6012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BRWYnVddEd6gf-NxV4azfw" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BRWYnlddEd6gf-NxV4azfw" type="6013">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BRWYn1ddEd6gf-NxV4azfw" y="-30"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BRWYoFddEd6gf-NxV4azfw" type="6014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BRWYoVddEd6gf-NxV4azfw" y="15"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_BRWYolddEd6gf-NxV4azfw" type="6015">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BRWYo1ddEd6gf-NxV4azfw" y="15"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_BRWYlFddEd6gf-NxV4azfw"/>
+    <element xmi:type="uml:Connector" href="9.13-The Sale collaboration.uml#_BRWYkFddEd6gf-NxV4azfw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BRWYlVddEd6gf-NxV4azfw" points="[35, -2, -87, 2]$[106, -8, -16, -4]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BRgJkFddEd6gf-NxV4azfw" id="(0.24615384615384617,0.4)"/>
+  </edges>
+</notation:Diagram>

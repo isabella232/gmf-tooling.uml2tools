@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_7mJGEFdYEd6gf-NxV4azfw" name="9.10">
+  <ownedComment xmi:id="_aORF8FdZEd6gf-NxV4azfw">
+    <body>Figure 9.10 - Instance specification describes the return value of an operation</body>
+  </ownedComment>
+  <elementImport xmi:id="_7nfKJFdYEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_7nfKJVdYEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_7nfKJldYEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_7nfKJ1dYEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_elEuIFdZEd6gf-NxV4azfw" name="Window" clientDependency="_cnWyUFdbEd6gf-NxV4azfw"/>
+  <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_gS5h4FdZEd6gf-NxV4azfw" name="theW" classifier="_elEuIFdZEd6gf-NxV4azfw"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_cnWyUFdbEd6gf-NxV4azfw" supplier="_gS5h4FdZEd6gf-NxV4azfw" client="_elEuIFdZEd6gf-NxV4azfw"/>
+</uml:Package>

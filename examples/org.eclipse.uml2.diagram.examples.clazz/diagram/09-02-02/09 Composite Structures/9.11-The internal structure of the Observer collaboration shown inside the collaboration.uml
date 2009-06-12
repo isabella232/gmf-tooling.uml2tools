@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_vTF4sFdbEd6gf-NxV4azfw" name="9.11">
+  <ownedComment xmi:id="_wMwroFdbEd6gf-NxV4azfw">
+    <body>Figure 9.11 - The internal structure of the Observer collaboration shown inside the collaboration&#xD;
+icon (a connection is shown between the Subject and the Observer role).</body>
+  </ownedComment>
+  <elementImport xmi:id="_vUb8xFdbEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_vUb8xVdbEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_vUb8xldbEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_vUb8x1dbEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Collaboration" xmi:id="_x0LVYFdbEd6gf-NxV4azfw" name="Observer" collaborationRole="_bU_9IFdcEd6gf-NxV4azfw _dePhkFdcEd6gf-NxV4azfw">
+    <ownedAttribute xmi:id="_bU_9IFdcEd6gf-NxV4azfw" name="Subject" type="_TCD2kFdcEd6gf-NxV4azfw"/>
+    <ownedAttribute xmi:id="_dePhkFdcEd6gf-NxV4azfw" name="Observer" type="_TyCiAFdcEd6gf-NxV4azfw"/>
+    <ownedConnector xmi:id="_li4GYFdcEd6gf-NxV4azfw" kind="delegation">
+      <end xmi:id="_ljB3YFdcEd6gf-NxV4azfw" role="_bU_9IFdcEd6gf-NxV4azfw"/>
+      <end xmi:id="_ljB3YVdcEd6gf-NxV4azfw" role="_dePhkFdcEd6gf-NxV4azfw"/>
+    </ownedConnector>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_TCD2kFdcEd6gf-NxV4azfw" name="CallQueue"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_TyCiAFdcEd6gf-NxV4azfw" name="SlidingBarIcon"/>
+</uml:Package>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_I8ee8FdiEd6gf-NxV4azfw" name="9.14">
+  <ownedComment xmi:id="_JwLz0FdiEd6gf-NxV4azfw">
+    <body>Figure 9.14 - The BrokeredSale collaboration</body>
+  </ownedComment>
+  <elementImport xmi:id="_I9EVFFdiEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_I9EVFVdiEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_I9EVFldiEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_I9EVF1diEd6gf-NxV4azfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Collaboration" xmi:id="_M_dMMFdiEd6gf-NxV4azfw" name="BrokeredSale" collaborationRole="_29kz8FdiEd6gf-NxV4azfw _3eqHwFdiEd6gf-NxV4azfw _5AtJUFdiEd6gf-NxV4azfw">
+    <collaborationUse xmi:id="_RMks4FdiEd6gf-NxV4azfw" name="WholeSale" clientDependency="_E1PuYFdjEd6gf-NxV4azfw _VuC3gFdjEd6gf-NxV4azfw">
+      <roleBinding xmi:id="_E1PuYFdjEd6gf-NxV4azfw" name="seller" supplier="_5AtJUFdiEd6gf-NxV4azfw" client="_RMks4FdiEd6gf-NxV4azfw"/>
+      <roleBinding xmi:id="_VuC3gFdjEd6gf-NxV4azfw" name="buyer" supplier="_29kz8FdiEd6gf-NxV4azfw" client="_RMks4FdiEd6gf-NxV4azfw"/>
+    </collaborationUse>
+    <collaborationUse xmi:id="_RYfpAFdiEd6gf-NxV4azfw" name="retail" clientDependency="_ZLU2sFdjEd6gf-NxV4azfw _atraQFdjEd6gf-NxV4azfw" type="_yzlfwFdiEd6gf-NxV4azfw">
+      <roleBinding xmi:id="_ZLU2sFdjEd6gf-NxV4azfw" name="seller" supplier="_29kz8FdiEd6gf-NxV4azfw" client="_RYfpAFdiEd6gf-NxV4azfw"/>
+      <roleBinding xmi:id="_atraQFdjEd6gf-NxV4azfw" name="buyer" supplier="_3eqHwFdiEd6gf-NxV4azfw" client="_RYfpAFdiEd6gf-NxV4azfw"/>
+    </collaborationUse>
+    <ownedAttribute xmi:id="_29kz8FdiEd6gf-NxV4azfw" name="broker"/>
+    <ownedAttribute xmi:id="_3eqHwFdiEd6gf-NxV4azfw" name="consumer"/>
+    <ownedAttribute xmi:id="_5AtJUFdiEd6gf-NxV4azfw" name="producer"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Collaboration" xmi:id="_yzlfwFdiEd6gf-NxV4azfw" name="Sale" collaborationRole="_NnBtEFdjEd6gf-NxV4azfw _PNjmAFdjEd6gf-NxV4azfw">
+    <ownedAttribute xmi:id="_NnBtEFdjEd6gf-NxV4azfw" name="buyer"/>
+    <ownedAttribute xmi:id="_PNjmAFdjEd6gf-NxV4azfw" name="seller"/>
+    <ownedConnector xmi:id="_TTNz0FdjEd6gf-NxV4azfw" kind="delegation">
+      <end xmi:id="_TTNz0VdjEd6gf-NxV4azfw" role="_NnBtEFdjEd6gf-NxV4azfw"/>
+      <end xmi:id="_TTNz0ldjEd6gf-NxV4azfw" role="_PNjmAFdjEd6gf-NxV4azfw"/>
+    </ownedConnector>
+  </packagedElement>
+</uml:Package>
