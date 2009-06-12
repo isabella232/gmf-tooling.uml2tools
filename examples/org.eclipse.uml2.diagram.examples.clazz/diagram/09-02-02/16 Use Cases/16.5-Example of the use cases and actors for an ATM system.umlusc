@@ -93,11 +93,6 @@
     <element xmi:type="uml:Component" href="16.5-Example of the use cases and actors for an ATM system.uml#_4Myn4FaYEd65ZMG05QyyXQ"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4OIrtFaYEd65ZMG05QyyXQ" x="192" y="60" width="277" height="469"/>
   </children>
-  <children xmi:type="notation:Shape" xmi:id="_7gaC5FaaEd65ZMG05QyyXQ" type="2009" fillColor="13369343" lineColor="6737151">
-    <children xmi:type="notation:DecorationNode" xmi:id="_7gaC5laaEd65ZMG05QyyXQ" type="5015"/>
-    <element xmi:type="uml:Comment" href="16.5-Example of the use cases and actors for an ATM system.uml#_jf_zQFaZEd65ZMG05QyyXQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7gaC5VaaEd65ZMG05QyyXQ" x="1080"/>
-  </children>
   <children xmi:type="notation:Shape" xmi:id="_IlH2UFabEd65ZMG05QyyXQ" type="2002">
     <children xmi:type="notation:DecorationNode" xmi:id="_IlH2UlabEd65ZMG05QyyXQ" type="5002">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_IlH2U1abEd65ZMG05QyyXQ" y="5"/>
