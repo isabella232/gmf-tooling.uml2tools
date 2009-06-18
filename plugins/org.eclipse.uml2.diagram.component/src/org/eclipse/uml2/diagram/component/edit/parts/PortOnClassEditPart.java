@@ -289,10 +289,16 @@ public class PortOnClassEditPart extends BorderedBorderItemEditPart implements P
 		if (targetEditPart instanceof Interface2EditPart) {
 			types.add(UMLElementTypes.PortProvided_4006);
 		}
+		if (targetEditPart instanceof Interface3EditPart) {
+			types.add(UMLElementTypes.PortProvided_4006);
+		}
 		if (targetEditPart instanceof InterfaceEditPart) {
 			types.add(UMLElementTypes.PortProvided_4006);
 		}
 		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.PortRequired_4004);
+		}
+		if (targetEditPart instanceof Interface3EditPart) {
 			types.add(UMLElementTypes.PortRequired_4004);
 		}
 		if (targetEditPart instanceof InterfaceEditPart) {
@@ -326,6 +332,9 @@ public class PortOnClassEditPart extends BorderedBorderItemEditPart implements P
 			types.add(UMLElementTypes.Dependency_4009);
 		}
 		if (targetEditPart instanceof ClassDiagramNotationClassEditPart) {
+			types.add(UMLElementTypes.Dependency_4009);
+		}
+		if (targetEditPart instanceof Interface3EditPart) {
 			types.add(UMLElementTypes.Dependency_4009);
 		}
 		if (targetEditPart instanceof Component2EditPart) {
@@ -394,6 +403,9 @@ public class PortOnClassEditPart extends BorderedBorderItemEditPart implements P
 			types.add(UMLElementTypes.Class_2007);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Interface_2009);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Component_3001);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
@@ -435,10 +447,16 @@ public class PortOnClassEditPart extends BorderedBorderItemEditPart implements P
 			types.add(UMLElementTypes.Interface_2003);
 		}
 		if (relationshipType == UMLElementTypes.PortProvided_4006) {
+			types.add(UMLElementTypes.Interface_2009);
+		}
+		if (relationshipType == UMLElementTypes.PortProvided_4006) {
 			types.add(UMLElementTypes.Interface_3005);
 		}
 		if (relationshipType == UMLElementTypes.PortRequired_4004) {
 			types.add(UMLElementTypes.Interface_2003);
+		}
+		if (relationshipType == UMLElementTypes.PortRequired_4004) {
+			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.PortRequired_4004) {
 			types.add(UMLElementTypes.Interface_3005);
@@ -472,6 +490,9 @@ public class PortOnClassEditPart extends BorderedBorderItemEditPart implements P
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_2007);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Component_3001);

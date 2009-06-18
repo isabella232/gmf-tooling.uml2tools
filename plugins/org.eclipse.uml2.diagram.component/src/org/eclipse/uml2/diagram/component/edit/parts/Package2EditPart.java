@@ -335,6 +335,9 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof ClassDiagramNotationClassEditPart) {
 			types.add(UMLElementTypes.Dependency_4009);
 		}
+		if (targetEditPart instanceof Interface3EditPart) {
+			types.add(UMLElementTypes.Dependency_4009);
+		}
 		if (targetEditPart instanceof Component2EditPart) {
 			types.add(UMLElementTypes.Dependency_4009);
 		}
@@ -390,6 +393,9 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_2007);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Component_3001);
@@ -463,6 +469,9 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_2007);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Component_3001);

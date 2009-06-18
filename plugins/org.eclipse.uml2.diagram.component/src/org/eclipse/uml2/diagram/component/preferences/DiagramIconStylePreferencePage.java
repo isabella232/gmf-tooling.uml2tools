@@ -232,13 +232,14 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 	 */
 	private void addAllCheckBoxes(Composite parent) {
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Artifact, 5004, 5006, 5016);
-		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Class, 5014, 3009, 3013);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Class, 5014, 3009, 3013, 3020);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Comment, 5022);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Component, 5001, 5002, 3010);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_ElementImport, 3007);
-		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Operation, 3012);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Interface, 5026);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Operation, 3012, 3018);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Package, 5023, 5012, 3008);
-		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Property, 5010, 3011);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Property, 5010, 3011, 3017);
 
 	}
 

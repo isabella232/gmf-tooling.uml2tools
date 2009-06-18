@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEdi
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationInnerClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperationEditPart;
@@ -39,8 +40,10 @@ import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Interface3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package4EditPart;
@@ -49,6 +52,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortOnClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -123,6 +127,11 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Comment_2008 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Comment_2008"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Interface_2009 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Interface_2009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -203,6 +212,21 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Port_3014 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Port_3014"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Property_3017 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Property_3017"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Operation_3018 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Operation_3018"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Class_3020 = (IHintedType) getElementType("org.eclipse.uml2.diagram.component.Class_3020"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -373,6 +397,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Comment_2008, UMLPackage.eINSTANCE.getComment());
 
+			elements.put(Interface_2009, UMLPackage.eINSTANCE.getInterface());
+
 			elements.put(Component_3001, UMLPackage.eINSTANCE.getComponent());
 
 			elements.put(Port_3002, UMLPackage.eINSTANCE.getPort());
@@ -404,6 +430,12 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Class_3013, UMLPackage.eINSTANCE.getClass_());
 
 			elements.put(Port_3014, UMLPackage.eINSTANCE.getPort());
+
+			elements.put(Property_3017, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(Operation_3018, UMLPackage.eINSTANCE.getOperation());
+
+			elements.put(Class_3020, UMLPackage.eINSTANCE.getClass_());
 
 			elements.put(InterfaceRealization_4001, UMLPackage.eINSTANCE.getInterfaceRealization());
 
@@ -448,6 +480,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Package_2006);
 			KNOWN_ELEMENT_TYPES.add(Class_2007);
 			KNOWN_ELEMENT_TYPES.add(Comment_2008);
+			KNOWN_ELEMENT_TYPES.add(Interface_2009);
 			KNOWN_ELEMENT_TYPES.add(Component_3001);
 			KNOWN_ELEMENT_TYPES.add(Port_3002);
 			KNOWN_ELEMENT_TYPES.add(Artifact_3003);
@@ -464,6 +497,9 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Operation_3012);
 			KNOWN_ELEMENT_TYPES.add(Class_3013);
 			KNOWN_ELEMENT_TYPES.add(Port_3014);
+			KNOWN_ELEMENT_TYPES.add(Property_3017);
+			KNOWN_ELEMENT_TYPES.add(Operation_3018);
+			KNOWN_ELEMENT_TYPES.add(Class_3020);
 			KNOWN_ELEMENT_TYPES.add(InterfaceRealization_4001);
 			KNOWN_ELEMENT_TYPES.add(PortProvided_4006);
 			KNOWN_ELEMENT_TYPES.add(PortRequired_4004);
@@ -500,6 +536,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Class_2007;
 		case CommentEditPart.VISUAL_ID:
 			return Comment_2008;
+		case Interface3EditPart.VISUAL_ID:
+			return Interface_2009;
 		case Component2EditPart.VISUAL_ID:
 			return Component_3001;
 		case PortEditPart.VISUAL_ID:
@@ -532,6 +570,12 @@ public class UMLElementTypes extends ElementInitializers {
 			return Class_3013;
 		case PortOnClassEditPart.VISUAL_ID:
 			return Port_3014;
+		case Property2EditPart.VISUAL_ID:
+			return Property_3017;
+		case OperationEditPart.VISUAL_ID:
+			return Operation_3018;
+		case Class4EditPart.VISUAL_ID:
+			return Class_3020;
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return InterfaceRealization_4001;
 		case PortProvidedEditPart.VISUAL_ID:

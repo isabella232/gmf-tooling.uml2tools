@@ -46,6 +46,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorCircleEdit
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationInnerClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationOperationEditPart;
@@ -59,14 +60,17 @@ import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Interface3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package4EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortOnClassEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.links.UMLInterfaceLinkManager;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
@@ -130,10 +134,12 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case ClassDiagramNotationOperationEditPart.VISUAL_ID:
 		case ClassDiagramNotationInnerClassEditPart.VISUAL_ID:
 		case PortOnClassEditPart.VISUAL_ID:
+		case Property2EditPart.VISUAL_ID:
+		case OperationEditPart.VISUAL_ID:
+		case Class4EditPart.VISUAL_ID:
 			return true;
 		case ComponentEditPart.VISUAL_ID:
 		case Artifact2EditPart.VISUAL_ID:
-		case Interface2EditPart.VISUAL_ID:
 		case Package2EditPart.VISUAL_ID:
 		case Package3EditPart.VISUAL_ID:
 		case CommentEditPart.VISUAL_ID:
@@ -161,6 +167,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				deleteViews(Collections.singletonList(view).iterator());
 			}
 			break;
+		case Interface2EditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (visualID != suggestedID) && (suggestedID != Interface3EditPart.VISUAL_ID);
 		case Class2EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
@@ -171,6 +182,11 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				return true;
 			}
 			return (visualID != suggestedID) && (suggestedID != Class2EditPart.VISUAL_ID);
+		case Interface3EditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (visualID != suggestedID) && (suggestedID != Interface2EditPart.VISUAL_ID);
 		}
 		return false;
 	}
@@ -398,6 +414,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
+		case Interface3EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getInterface_2009ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
 		case Component2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getComponent_3001ContainedLinks(view));
@@ -506,6 +529,27 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case PortOnClassEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPort_3014ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Property2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getProperty_3017ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case OperationEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getOperation_3018ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Class4EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getClass_3020ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

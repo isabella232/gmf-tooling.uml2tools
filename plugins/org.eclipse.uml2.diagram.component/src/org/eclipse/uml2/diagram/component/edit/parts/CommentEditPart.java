@@ -312,6 +312,9 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.component.edit.parts.CommentEditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4012);
 		}
+		if (targetEditPart instanceof Interface3EditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4012);
+		}
 		if (targetEditPart instanceof Component2EditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4012);
 		}
@@ -370,6 +373,9 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		}
 		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4012) {
 			types.add(UMLElementTypes.Comment_2008);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4012) {
+			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4012) {
 			types.add(UMLElementTypes.Component_3001);
