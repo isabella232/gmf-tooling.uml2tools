@@ -375,13 +375,13 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
 		if (targetEditPart instanceof CollaborationUse2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Dependency_4006);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof PortEditPart) {
@@ -417,13 +417,13 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.Usage_4008);
+		}
 		if (targetEditPart instanceof CollaborationUse2EditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Usage_4008);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PortEditPart) {
@@ -483,13 +483,13 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Port_3011);
@@ -525,13 +525,13 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Port_3011);
@@ -596,13 +596,13 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Port_3011);
@@ -638,13 +638,13 @@ public class Property3EditPart extends AbstractBorderedShapeEditPart implements 
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Port_3011);

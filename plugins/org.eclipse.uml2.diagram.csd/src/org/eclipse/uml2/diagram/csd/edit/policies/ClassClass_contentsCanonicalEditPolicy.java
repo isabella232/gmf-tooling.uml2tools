@@ -17,6 +17,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
@@ -24,7 +25,9 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Port2EditPart;
@@ -32,6 +35,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
@@ -75,6 +79,7 @@ public class ClassClass_contentsCanonicalEditPolicy extends CanonicalEditPolicy 
 		case InstanceSpecificationEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
 		case CommentEditPart.VISUAL_ID:
+		case Interface2EditPart.VISUAL_ID:
 		case CollaborationUse2EditPart.VISUAL_ID:
 		case PropertyEditPart.VISUAL_ID:
 		case Property2EditPart.VISUAL_ID:
@@ -85,6 +90,9 @@ public class ClassClass_contentsCanonicalEditPolicy extends CanonicalEditPolicy 
 		case Port2EditPart.VISUAL_ID:
 		case Port3EditPart.VISUAL_ID:
 		case SlotEditPart.VISUAL_ID:
+		case Property4EditPart.VISUAL_ID:
+		case Operation2EditPart.VISUAL_ID:
+		case Class4EditPart.VISUAL_ID:
 			return true;
 		case Property3EditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {

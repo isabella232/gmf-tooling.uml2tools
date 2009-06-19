@@ -249,16 +249,17 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 	 * @generated
 	 */
 	private void addAllCheckBoxes(Composite parent) {
-		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Class, 5013, 5018);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Class, 5013, 5018, 3010, 3020);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Collaboration, 5009);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_CollaborationUse, 5002);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Comment, 5032);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_ElementImport, 3004);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_InstanceSpecification, 5022);
-		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Operation, 3009);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Interface, 5035);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Operation, 3009, 3019);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Package, 5033);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Port, 5026, 5028);
-		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Property, 5011, 5017, 3008);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Property, 5011, 5017, 3008, 3018);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Slot, 3015);
 
 	}

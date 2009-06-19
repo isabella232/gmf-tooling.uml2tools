@@ -20,6 +20,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
@@ -31,8 +32,10 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
@@ -43,6 +46,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
@@ -123,6 +127,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Interface_2014 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Interface_2014"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IHintedType CollaborationUse_3002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.CollaborationUse_3002"); //$NON-NLS-1$
 
 	/**
@@ -174,6 +183,21 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType Slot_3015 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Slot_3015"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Property_3018 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Property_3018"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Operation_3019 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Operation_3019"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Class_3020 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Class_3020"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -349,6 +373,8 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(Comment_2013, UMLPackage.eINSTANCE.getComment());
 
+			elements.put(Interface_2014, UMLPackage.eINSTANCE.getInterface());
+
 			elements.put(CollaborationUse_3002, UMLPackage.eINSTANCE.getCollaborationUse());
 
 			elements.put(Property_3007, UMLPackage.eINSTANCE.getProperty());
@@ -370,6 +396,12 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Port_3017, UMLPackage.eINSTANCE.getPort());
 
 			elements.put(Slot_3015, UMLPackage.eINSTANCE.getSlot());
+
+			elements.put(Property_3018, UMLPackage.eINSTANCE.getProperty());
+
+			elements.put(Operation_3019, UMLPackage.eINSTANCE.getOperation());
+
+			elements.put(Class_3020, UMLPackage.eINSTANCE.getClass_());
 
 			elements.put(Connector_4005, UMLPackage.eINSTANCE.getConnector());
 
@@ -416,6 +448,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_2011);
 			KNOWN_ELEMENT_TYPES.add(Constraint_2012);
 			KNOWN_ELEMENT_TYPES.add(Comment_2013);
+			KNOWN_ELEMENT_TYPES.add(Interface_2014);
 			KNOWN_ELEMENT_TYPES.add(CollaborationUse_3002);
 			KNOWN_ELEMENT_TYPES.add(Property_3007);
 			KNOWN_ELEMENT_TYPES.add(Property_3008);
@@ -427,6 +460,9 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(Port_3016);
 			KNOWN_ELEMENT_TYPES.add(Port_3017);
 			KNOWN_ELEMENT_TYPES.add(Slot_3015);
+			KNOWN_ELEMENT_TYPES.add(Property_3018);
+			KNOWN_ELEMENT_TYPES.add(Operation_3019);
+			KNOWN_ELEMENT_TYPES.add(Class_3020);
 			KNOWN_ELEMENT_TYPES.add(Connector_4005);
 			KNOWN_ELEMENT_TYPES.add(Dependency_4006);
 			KNOWN_ELEMENT_TYPES.add(InterfaceRealization_4007);
@@ -464,6 +500,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Constraint_2012;
 		case CommentEditPart.VISUAL_ID:
 			return Comment_2013;
+		case Interface2EditPart.VISUAL_ID:
+			return Interface_2014;
 		case CollaborationUse2EditPart.VISUAL_ID:
 			return CollaborationUse_3002;
 		case PropertyEditPart.VISUAL_ID:
@@ -486,6 +524,12 @@ public class UMLElementTypes extends ElementInitializers {
 			return Port_3017;
 		case SlotEditPart.VISUAL_ID:
 			return Slot_3015;
+		case Property4EditPart.VISUAL_ID:
+			return Property_3018;
+		case Operation2EditPart.VISUAL_ID:
+			return Operation_3019;
+		case Class4EditPart.VISUAL_ID:
+			return Class_3020;
 		case ConnectorEditPart.VISUAL_ID:
 			return Connector_4005;
 		case DependencyEditPart.VISUAL_ID:

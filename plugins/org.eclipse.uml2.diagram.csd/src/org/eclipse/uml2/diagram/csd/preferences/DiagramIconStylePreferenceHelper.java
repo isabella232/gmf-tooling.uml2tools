@@ -3,6 +3,8 @@ package org.eclipse.uml2.diagram.csd.preferences;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationNameEditPart;
@@ -10,11 +12,14 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUseName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageStereo2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehavior2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortIsBehaviorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
@@ -69,7 +74,9 @@ public class DiagramIconStylePreferenceHelper {
 			switch (visualId) {
 			case ClassNameEditPart.VISUAL_ID:
 			case ClassName2EditPart.VISUAL_ID:
-				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5013.5018");
+			case Class2EditPart.VISUAL_ID:
+			case Class4EditPart.VISUAL_ID:
+				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5013.5018.3010.3020");
 			case CollaborationNameEditPart.VISUAL_ID:
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5009");
 			case CollaborationUseName2EditPart.VISUAL_ID:
@@ -80,8 +87,11 @@ public class DiagramIconStylePreferenceHelper {
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".3004");
 			case InstanceSpecificationNameEditPart.VISUAL_ID:
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5022");
+			case InterfaceName2EditPart.VISUAL_ID:
+				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5035");
 			case OperationEditPart.VISUAL_ID:
-				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".3009");
+			case Operation2EditPart.VISUAL_ID:
+				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".3009.3019");
 			case PackageStereo2EditPart.VISUAL_ID:
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5033");
 			case PortIsBehaviorEditPart.VISUAL_ID:
@@ -90,7 +100,8 @@ public class DiagramIconStylePreferenceHelper {
 			case PropertyNameEditPart.VISUAL_ID:
 			case PropertyName2EditPart.VISUAL_ID:
 			case Property2EditPart.VISUAL_ID:
-				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5011.5017.3008");
+			case Property4EditPart.VISUAL_ID:
+				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5011.5017.3008.3018");
 			case SlotEditPart.VISUAL_ID:
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".3015");
 			default:

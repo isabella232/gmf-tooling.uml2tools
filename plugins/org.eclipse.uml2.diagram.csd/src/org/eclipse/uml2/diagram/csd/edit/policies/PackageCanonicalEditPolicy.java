@@ -38,6 +38,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart;
@@ -47,8 +48,10 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
@@ -57,6 +60,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.Port3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
@@ -126,10 +130,12 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case Port2EditPart.VISUAL_ID:
 		case Port3EditPart.VISUAL_ID:
 		case SlotEditPart.VISUAL_ID:
+		case Property4EditPart.VISUAL_ID:
+		case Operation2EditPart.VISUAL_ID:
+		case Class4EditPart.VISUAL_ID:
 			return true;
 		case CollaborationEditPart.VISUAL_ID:
 		case Package2EditPart.VISUAL_ID:
-		case InterfaceEditPart.VISUAL_ID:
 		case InstanceSpecificationEditPart.VISUAL_ID:
 		case ConstraintEditPart.VISUAL_ID:
 		case CommentEditPart.VISUAL_ID:
@@ -147,6 +153,16 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 				return true;
 			}
 			return (visualID != suggestedID) && (suggestedID != ClassEditPart.VISUAL_ID);
+		case InterfaceEditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (visualID != suggestedID) && (suggestedID != Interface2EditPart.VISUAL_ID);
+		case Interface2EditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (visualID != suggestedID) && (suggestedID != InterfaceEditPart.VISUAL_ID);
 		}
 		return false;
 	}
@@ -414,6 +430,13 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 			domain2NotationMap.put(view.getElement(), view);
 			break;
 		}
+		case Interface2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getInterface_2014ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
 		case CollaborationUse2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getCollaborationUse_3002ContainedLinks(view));
@@ -487,6 +510,27 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case SlotEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getSlot_3015ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Property4EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getProperty_3018ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Operation2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getOperation_3019ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Class4EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getClass_3020ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

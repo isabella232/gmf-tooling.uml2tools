@@ -113,10 +113,11 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAttribute2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(4);
 		types.add(UMLElementTypes.Property_3007);
 		types.add(UMLElementTypes.Property_3008);
 		types.add(UMLElementTypes.Property_3014);
+		types.add(UMLElementTypes.Property_3018);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Attribute2CreationTool_title, Messages.Attribute2CreationTool_desc, types);
 		entry.setId("createAttribute2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Property_3007));
@@ -128,8 +129,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createOperation3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Operation_3009);
+		types.add(UMLElementTypes.Operation_3019);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Operation3CreationTool_title, Messages.Operation3CreationTool_desc, types);
 		entry.setId("createOperation3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Operation_3009));
@@ -194,9 +196,10 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createClass2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
 		types.add(UMLElementTypes.Class_2006);
 		types.add(UMLElementTypes.Class_3010);
+		types.add(UMLElementTypes.Class_3020);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Class2CreationTool_title, Messages.Class2CreationTool_desc, types);
 		entry.setId("createClass2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Class_2006));
@@ -208,8 +211,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createInterface3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.Interface_2009);
+		types.add(UMLElementTypes.Interface_2014);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Interface3CreationTool_title, Messages.Interface3CreationTool_desc, types);
 		entry.setId("createInterface3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Interface_2009));
