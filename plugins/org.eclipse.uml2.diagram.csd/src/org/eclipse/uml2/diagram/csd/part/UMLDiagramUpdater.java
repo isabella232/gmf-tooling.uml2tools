@@ -130,7 +130,7 @@ public class UMLDiagramUpdater {
 		case ClassClass_contentsEditPart.VISUAL_ID:
 			return getClassClass_contents_7007SemanticChildren(view);
 		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
-			return getInstanceSpecificationCompartment_7009SemanticChildren(view);
+			return getInstanceSpecificationSlots_7009SemanticChildren(view);
 		case InterfaceAttributesEditPart.VISUAL_ID:
 			return getInterfaceAttributes_7010SemanticChildren(view);
 		case InterfaceOperationsEditPart.VISUAL_ID:
@@ -383,7 +383,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecificationCompartment_7009SemanticChildren(View view) {
+	public static List getInstanceSpecificationSlots_7009SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.EMPTY_LIST;
 		}

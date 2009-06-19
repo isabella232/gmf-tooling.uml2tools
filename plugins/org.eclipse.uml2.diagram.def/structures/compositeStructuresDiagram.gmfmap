@@ -608,7 +608,7 @@
       <compartments
           children="//@nodes.5/@ownedChild/@children.0">
         <compartment
-            href="classDiagram_instances.gmfgraph#Slots"/>
+            href="classDiagram_instances.gmfgraph#slots"/>
       </compartments>
     </ownedChild>
   </nodes>
