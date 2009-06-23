@@ -99,19 +99,19 @@ public class MessageCreateCommand extends EditElementCommand {
 		if (null == getContainer()) {
 			return false;
 		}
-		
-		if (source instanceof InteractionOperand && target instanceof InteractionOperand){
-			if (source != target){
+
+		if (source instanceof InteractionOperand && target instanceof InteractionOperand) {
+			if (source != target) {
 				return false;
 			}
 			U2TCreateLinkCommand linkCreationPack = U2TCreateLinkCommand.getFromRequest(getRequest());
 			if (linkCreationPack == null || linkCreationPack.getSourceParameters() == null || linkCreationPack.getTargetParameters() == null) {
 				return false;
 			}
-			
+
 			Lifeline sourceLL = findEnclosedDiagramLifeLine(linkCreationPack.getSourceParameters().getParentView());
 			Lifeline targetLL = findEnclosedDiagramLifeLine(linkCreationPack.getTargetParameters().getParentView());
-			if (sourceLL == targetLL){
+			if (sourceLL == targetLL) {
 				return false;
 			}
 		}
