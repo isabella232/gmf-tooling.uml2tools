@@ -343,8 +343,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				if (Message_4001_SourceExpression == null) {
 					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getElement());
-					Message_4001_SourceExpression = UMLOCLFactory.getExpression(
-							"self.oclIsKindOf(uml::InteractionOperand) or self.oclIsKindOf(uml::Gate) or self.oclIsKindOf(uml::BehaviorExecutionSpecification) or self.oclIsKindOf(uml::Lifeline)", UMLPackage.eINSTANCE.getElement(), env); //$NON-NLS-1$
+					Message_4001_SourceExpression = UMLOCLFactory
+							.getExpression(
+									"self.oclIsKindOf(uml::InteractionOperand) or self.oclIsKindOf(uml::Gate) or self.oclIsKindOf(uml::BehaviorExecutionSpecification) or self.oclIsKindOf(uml::Lifeline)", UMLPackage.eINSTANCE.getElement(), env); //$NON-NLS-1$
 				}
 				Object sourceVal = Message_4001_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
 				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
@@ -355,8 +356,9 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				if (Message_4001_TargetExpression == null) {
 					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getElement());
-					Message_4001_TargetExpression = UMLOCLFactory.getExpression(
-							"self.oclIsKindOf(uml::InteractionOperand) or self.oclIsKindOf(uml::Gate) or self.oclIsKindOf(uml::BehaviorExecutionSpecification) or self.oclIsKindOf(uml::Lifeline)", UMLPackage.eINSTANCE.getElement(), env); //$NON-NLS-1$
+					Message_4001_TargetExpression = UMLOCLFactory
+							.getExpression(
+									"self.oclIsKindOf(uml::InteractionOperand) or self.oclIsKindOf(uml::Gate) or self.oclIsKindOf(uml::BehaviorExecutionSpecification) or self.oclIsKindOf(uml::Lifeline)", UMLPackage.eINSTANCE.getElement(), env); //$NON-NLS-1$
 				}
 				Object targetVal = Message_4001_TargetExpression.evaluate(target, Collections.singletonMap(OPPOSITE_END_VAR, source));
 				if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
