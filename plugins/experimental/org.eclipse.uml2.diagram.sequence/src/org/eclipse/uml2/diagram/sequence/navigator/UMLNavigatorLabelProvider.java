@@ -15,8 +15,11 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
+import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionLabel2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionLabelEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentInteractionOperatorEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
@@ -36,7 +39,9 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariant2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantLabel2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantLabelEditPart;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
@@ -127,6 +132,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?CombinedFragment", UMLElementTypes.CombinedFragment_3010); //$NON-NLS-1$
 		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?InteractionOperand", UMLElementTypes.InteractionOperand_3011); //$NON-NLS-1$
+		case ActionExecutionSpecification2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ActionExecutionSpecification", UMLElementTypes.ActionExecutionSpecification_3012); //$NON-NLS-1$
+		case StateInvariant2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?StateInvariant", UMLElementTypes.StateInvariant_3013); //$NON-NLS-1$
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?BehaviorExecutionSpecification", UMLElementTypes.BehaviorExecutionSpecification_3014); //$NON-NLS-1$
 		case MessageEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Message", UMLElementTypes.Message_4001); //$NON-NLS-1$
 		case MountingLinkEditPart.VISUAL_ID:
@@ -209,6 +220,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getCombinedFragment_3010Text(view);
 		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
 			return getInteractionOperand_3011Text(view);
+		case ActionExecutionSpecification2EditPart.VISUAL_ID:
+			return getActionExecutionSpecification_3012Text(view);
+		case StateInvariant2EditPart.VISUAL_ID:
+			return getStateInvariant_3013Text(view);
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+			return getBehaviorExecutionSpecification_3014Text(view);
 		case MessageEditPart.VISUAL_ID:
 			return getMessage_4001Text(view);
 		case MountingLinkEditPart.VISUAL_ID:
@@ -389,6 +406,47 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return String.valueOf(domainModelElement.getName());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3011); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getActionExecutionSpecification_3012Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ActionExecutionSpecification_3012, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(ActionExecutionLabel2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5011); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getStateInvariant_3013Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.StateInvariant_3013, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(StateInvariantLabel2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5012); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getBehaviorExecutionSpecification_3014Text(View view) {
+		BehaviorExecutionSpecification domainModelElement = (BehaviorExecutionSpecification) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getName());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3014); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

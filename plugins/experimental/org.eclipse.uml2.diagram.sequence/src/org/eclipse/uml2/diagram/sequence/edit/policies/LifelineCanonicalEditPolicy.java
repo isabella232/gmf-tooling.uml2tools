@@ -13,7 +13,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
+import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.GateEditPart;
@@ -24,6 +26,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.LayeredCombinedFragmentEditP
 import org.eclipse.uml2.diagram.sequence.edit.parts.LayeredInteractionUseEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LayeredOperandEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariant2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
@@ -66,6 +69,9 @@ public class LifelineCanonicalEditPolicy extends CanonicalEditPolicy {
 		case LayeredOperandEditPart.VISUAL_ID:
 		case LifelineEditPart.VISUAL_ID:
 		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
+		case ActionExecutionSpecification2EditPart.VISUAL_ID:
+		case StateInvariant2EditPart.VISUAL_ID:
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
 			return true;
 		case ActionExecutionSpecificationEditPart.VISUAL_ID:
 		case StateInvariantEditPart.VISUAL_ID:

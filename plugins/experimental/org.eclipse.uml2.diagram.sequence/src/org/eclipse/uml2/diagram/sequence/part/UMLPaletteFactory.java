@@ -102,6 +102,7 @@ public class UMLPaletteFactory {
 	private ToolEntry createStateInvariant4CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types.add(UMLElementTypes.StateInvariant_3003);
+		types.add(UMLElementTypes.StateInvariant_3013);
 		NodeToolEntry entry = new NodeToolEntry(Messages.StateInvariant4CreationTool_title, Messages.StateInvariant4CreationTool_desc, types) {
 
 			@Override
@@ -121,8 +122,9 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createActionExecution5CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
 		types.add(UMLElementTypes.ActionExecutionSpecification_3002);
+		types.add(UMLElementTypes.ActionExecutionSpecification_3012);
 		NodeToolEntry entry = new NodeToolEntry(Messages.ActionExecution5CreationTool_title, Messages.ActionExecution5CreationTool_desc, types);
 		entry.setId("createActionExecution5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ActionExecutionSpecification_3002));

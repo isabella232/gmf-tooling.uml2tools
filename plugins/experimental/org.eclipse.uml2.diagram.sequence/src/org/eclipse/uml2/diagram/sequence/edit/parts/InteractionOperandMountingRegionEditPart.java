@@ -16,11 +16,14 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
+import org.eclipse.gef.requests.CreateConnectionRequest;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -31,8 +34,10 @@ import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.InteractionOperandMountingRegionCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.InteractionOperandMountingRegionItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.MountingRegionPrimaryDragEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.SDCreationEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.figures.LifelineBracketContainerShape;
 import org.eclipse.uml2.diagram.sequence.frame.Frame;
@@ -75,10 +80,19 @@ public class InteractionOperandMountingRegionEditPart extends ShapeNodeEditPart 
 		if (UMLVisualIDRegistry.isShortcutDescendant(getNotationView())) {
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new SDCreationEditPolicy(UMLVisualIDRegistry.TYPED_ADAPTER));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InteractionOperandMountingRegionItemSemanticEditPolicy());
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy(){
+			@Override
+			protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
+				return super.getConnectionCreateCommand(request);
+			}
+		});
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new InteractionOperandMountingRegionCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -177,6 +191,11 @@ public class InteractionOperandMountingRegionEditPart extends ShapeNodeEditPart 
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
+		if (nodeShape.getLayoutManager() == null) {
+			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+			layout.setSpacing(5);
+			nodeShape.setLayoutManager(layout);
+		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -276,6 +295,15 @@ public class InteractionOperandMountingRegionEditPart extends ShapeNodeEditPart 
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.sequence.edit.parts.InteractionOperandMountingRegionEditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
+		if (targetEditPart instanceof ActionExecutionSpecification2EditPart) {
+			types.add(UMLElementTypes.Message_4001);
+		}
+		if (targetEditPart instanceof StateInvariant2EditPart) {
+			types.add(UMLElementTypes.Message_4001);
+		}
+		if (targetEditPart instanceof BehaviorExecutionSpecification2EditPart) {
+			types.add(UMLElementTypes.Message_4001);
+		}
 		return types;
 	}
 
@@ -319,6 +347,15 @@ public class InteractionOperandMountingRegionEditPart extends ShapeNodeEditPart 
 		}
 		if (relationshipType == UMLElementTypes.Message_4001) {
 			types.add(UMLElementTypes.InteractionOperand_3011);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.ActionExecutionSpecification_3012);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.StateInvariant_3013);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.BehaviorExecutionSpecification_3014);
 		}
 		return types;
 	}
@@ -372,6 +409,15 @@ public class InteractionOperandMountingRegionEditPart extends ShapeNodeEditPart 
 		}
 		if (relationshipType == UMLElementTypes.Message_4001) {
 			types.add(UMLElementTypes.InteractionOperand_3011);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.ActionExecutionSpecification_3012);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.StateInvariant_3013);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.BehaviorExecutionSpecification_3014);
 		}
 		return types;
 	}

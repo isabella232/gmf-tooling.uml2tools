@@ -18,6 +18,7 @@ import org.eclipse.uml2.diagram.sequence.edit.policies.SDCreationEditPolicy;
 import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
+import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.StateInvariant;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -25,12 +26,12 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * @generated
  */
-public class StateInvariantCreateCommand extends EditElementCommand {
+public class StateInvariant2CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public StateInvariantCreateCommand(CreateElementRequest req) {
+	public StateInvariant2CreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -71,7 +72,7 @@ public class StateInvariantCreateCommand extends EditElementCommand {
 
 		lifeline.getCoveredBys().add(newElement);
 
-		UMLElementTypes.init_StateInvariant_3003(newElement);
+		UMLElementTypes.init_StateInvariant_3013(newElement);
 
 		doConfigure(newElement, monitor, info);
 

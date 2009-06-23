@@ -5,9 +5,7 @@ import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
-import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.TreeSearch;
@@ -30,14 +28,15 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.editparts.NeedsParentEditPart;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
-import org.eclipse.uml2.diagram.sequence.edit.policies.ActionExecutionSpecificationItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.SDResizableShapeEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.StateInvariant2ItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.sequence.figures.StateInvariantShape;
 import org.eclipse.uml2.diagram.sequence.frame.Frame;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
@@ -46,13 +45,12 @@ import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 /**
  * @generated
  */
-
-public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class StateInvariant2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3002;
+	public static final int VISUAL_ID = 3013;
 
 	/**
 	 * @generated
@@ -67,7 +65,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 	/**
 	 * @generated
 	 */
-	public ActionExecutionSpecificationEditPart(View view) {
+	public StateInvariant2EditPart(View view) {
 		super(view);
 	}
 
@@ -79,7 +77,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActionExecutionSpecificationItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new StateInvariant2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
@@ -116,7 +114,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ActionExecutionFigure figure = new ActionExecutionFigure();
+		CustomStateInvariantFigure figure = new CustomStateInvariantFigure();
 		if (figure instanceof NeedsParentEditPart) {
 			((NeedsParentEditPart) figure).hookParentEditPart((GraphicalEditPart) getParent());
 		}
@@ -126,16 +124,16 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 	/**
 	 * @generated
 	 */
-	public ActionExecutionFigure getPrimaryShape() {
-		return (ActionExecutionFigure) primaryShape;
+	public CustomStateInvariantFigure getPrimaryShape() {
+		return (CustomStateInvariantFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ActionExecutionLabelEditPart) {
-			((ActionExecutionLabelEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActionExecutionFigure_action());
+		if (childEditPart instanceof StateInvariantLabel2EditPart) {
+			((StateInvariantLabel2EditPart) childEditPart).setLabel(getPrimaryShape().getStateInvariantInplaceLabel());
 			return true;
 		}
 		return false;
@@ -200,17 +198,18 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public EditPolicy getPrimaryDragEditPolicy() {
-		// #265822 Improve appearance of selection feedback
-		ResizableEditPolicy result = new U2TResizableShapeEditPolicy();
-		result.setResizeDirections(PositionConstants.NORTH | PositionConstants.SOUTH);
-		return result;
+		return new SDResizableShapeEditPolicy();
 	}
 
 	/**
-	 * Make sure that createNodeShape() is called before createNodePlate()
+	 * Creates figure for this edit part.
+	 * 
+	 * Body of this method does not depend on settings in generation model
+	 * so you may safely remove <i>generated</i> tag and modify it.
+	 * 
 	 * @generated
 	 */
 	protected NodeFigure createNodeFigure() {
@@ -287,7 +286,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActionExecutionLabelEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateInvariantLabel2EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -322,7 +321,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 		if (targetEditPart instanceof LifelineEditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof ActionExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
 		if (targetEditPart instanceof StateInvariantEditPart) {
@@ -343,7 +342,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 		if (targetEditPart instanceof ActionExecutionSpecification2EditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
-		if (targetEditPart instanceof StateInvariant2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariant2EditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
 		if (targetEditPart instanceof BehaviorExecutionSpecification2EditPart) {
@@ -477,37 +476,14 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 	/**
 	 * @generated
 	 */
-	public class ActionExecutionFigure extends RectangleFigure {
+	public class CustomStateInvariantFigure extends StateInvariantShape {
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureActionExecutionFigure_action;
+		public CustomStateInvariantFigure() {
 
-		/**
-		 * @generated
-		 */
-		public ActionExecutionFigure() {
-
-			CenterLayout layoutThis = new CenterLayout();
-
-			this.setLayoutManager(layoutThis);
-
-			this.setLineWidth(1);
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			fFigureActionExecutionFigure_action = new Label();
-			fFigureActionExecutionFigure_action.setText("");
-
-			fFigureActionExecutionFigure_action.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode().DPtoLP(8), getMapMode().DPtoLP(0), getMapMode().DPtoLP(8)));
-
-			this.add(fFigureActionExecutionFigure_action);
+			this.corner.width = DEFAULT_RADIUS;
 
 		}
 
@@ -533,8 +509,8 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 		/**
 		 * @generated
 		 */
-		public Label getFigureActionExecutionFigure_action() {
-			return fFigureActionExecutionFigure_action;
+		public Label getStateInvariantInplaceLabel() {
+			return super.getStateInvariantInplaceLabel();
 		}
 
 	}

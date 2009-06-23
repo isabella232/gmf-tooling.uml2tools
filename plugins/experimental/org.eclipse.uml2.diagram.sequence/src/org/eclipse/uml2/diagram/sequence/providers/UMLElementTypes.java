@@ -16,7 +16,9 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.GateEditPart;
@@ -31,6 +33,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MountingLinkEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariant2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -126,6 +129,21 @@ public class UMLElementTypes extends ElementInitializers {
 	 * @generated
 	 */
 	public static final IHintedType InteractionOperand_3011 = (IHintedType) getElementType("org.eclipse.uml2.diagram.sequence.InteractionOperand_3011"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType ActionExecutionSpecification_3012 = (IHintedType) getElementType("org.eclipse.uml2.diagram.sequence.ActionExecutionSpecification_3012"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType StateInvariant_3013 = (IHintedType) getElementType("org.eclipse.uml2.diagram.sequence.StateInvariant_3013"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType BehaviorExecutionSpecification_3014 = (IHintedType) getElementType("org.eclipse.uml2.diagram.sequence.BehaviorExecutionSpecification_3014"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -274,6 +292,12 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(InteractionOperand_3011, UMLPackage.eINSTANCE.getInteractionOperand());
 
+			elements.put(ActionExecutionSpecification_3012, UMLPackage.eINSTANCE.getActionExecutionSpecification());
+
+			elements.put(StateInvariant_3013, UMLPackage.eINSTANCE.getStateInvariant());
+
+			elements.put(BehaviorExecutionSpecification_3014, UMLPackage.eINSTANCE.getBehaviorExecutionSpecification());
+
 			elements.put(Message_4001, UMLPackage.eINSTANCE.getMessage());
 		}
 		return (ENamedElement) elements.get(type);
@@ -305,6 +329,9 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(InteractionUse_3006);
 			KNOWN_ELEMENT_TYPES.add(CombinedFragment_3010);
 			KNOWN_ELEMENT_TYPES.add(InteractionOperand_3011);
+			KNOWN_ELEMENT_TYPES.add(ActionExecutionSpecification_3012);
+			KNOWN_ELEMENT_TYPES.add(StateInvariant_3013);
+			KNOWN_ELEMENT_TYPES.add(BehaviorExecutionSpecification_3014);
 			KNOWN_ELEMENT_TYPES.add(Message_4001);
 			KNOWN_ELEMENT_TYPES.add(Link_4002);
 			KNOWN_ELEMENT_TYPES.add(Link_4003);
@@ -343,6 +370,12 @@ public class UMLElementTypes extends ElementInitializers {
 			return CombinedFragment_3010;
 		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
 			return InteractionOperand_3011;
+		case ActionExecutionSpecification2EditPart.VISUAL_ID:
+			return ActionExecutionSpecification_3012;
+		case StateInvariant2EditPart.VISUAL_ID:
+			return StateInvariant_3013;
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+			return BehaviorExecutionSpecification_3014;
 		case MessageEditPart.VISUAL_ID:
 			return Message_4001;
 		case MountingLinkEditPart.VISUAL_ID:

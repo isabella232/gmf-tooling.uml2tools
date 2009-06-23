@@ -8,6 +8,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -67,6 +68,9 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 		if (req instanceof CreateInteractionUseRequest){
 			return true;
 		}	
+		if (req instanceof CreateCombinedFragmentRequest){
+			return true;
+		}
 		return super.understandsRequest(req);
 	}
 	
@@ -112,17 +116,24 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 		
 		final Helper2 helper2 = new Helper2(request.getPreferencesHint());
 		
-		final ShowDialogCommand dialog = new ShowDialogCommand(getEditingDomain());
+		final ShowDialogCommand dialog_ = request.isTieRequest() ? null : new ShowDialogCommand(getEditingDomain());
 		AbstractTransactionalCommand doTheJob = new AbstractTransactionalCommand(getEditingDomain(), "", Collections.emptyList()){
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				ChooseOperatorDialog.OperatorProperties config = dialog.getOperatorProperties();
-				if (config == null){
-					return CommandResult.newCancelledCommandResult();
+				SDCombinedFragment result;
+				if (request.isTieRequest()){
+					CreateCombinedFragment creator = new CreateCombinedFragment(sdModel);
+					creator.tieCombinedFragment(request.getFragmentToTie(), sdHost, sdAnchor);
+					result = request.getFragmentToTie();
+				} else {
+					ChooseOperatorDialog.OperatorProperties config = dialog_.getOperatorProperties();
+					if (config == null){
+						return CommandResult.newCancelledCommandResult();
+					}
+					
+					CreateCombinedFragment creator = new CreateCombinedFragment(sdModel);
+					result = creator.createCombinedFragment(sdHost, sdAnchor, config.getOperatorKind(), config.getNumberOfOperands());
 				}
-				
-				CreateCombinedFragment creator = new CreateCombinedFragment(sdModel);
-				SDCombinedFragment result = creator.createCombinedFragment(sdHost, sdAnchor, config.getOperatorKind(), config.getNumberOfOperands());
 				
 				if (result == null){
 					return CommandResult.newErrorCommandResult("Failed to created combined fragment in SDModel");
@@ -150,10 +161,16 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 				//XXX: consider frames anchor!
 				View framesAnchor; 
 
-				Node combinedFrameView = helper2.createNode(//
-						frameContainerEP.getNotationView(), umlResult, LayeredCombinedFragmentEditPart.VISUAL_ID, null);
+				Node combinedFrameView_;
+				if (request.isTieRequest()){
+					combinedFrameView_ = request.getFragmentToTieView();
+				} else {
+					combinedFrameView_ = helper2.createNode(//
+							frameContainerEP.getNotationView(), umlResult, LayeredCombinedFragmentEditPart.VISUAL_ID, null);
+				}
+				
 
-				Edge combinedMountingLink = helper2.createMountingLink(combinedMounterView, combinedFrameView);
+				Edge combinedMountingLink = helper2.createMountingLink(combinedMounterView, combinedFrameView_);
 				
 				for (SDBracket nextOperandMounter : combinedMounter.getBrackets()){
 					if (nextOperandMounter instanceof SDMountingRegion){
@@ -164,8 +181,13 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 							throw new IllegalStateException("Can't create operand mounter view for sd-mounter: " + nextOperandMounter);
 						}
 						
-						Node nextOperandFrameView = helper2.createNode(//
-								combinedFrameView, nextOperandMounter.getUmlFragment(), LayeredOperandEditPart.VISUAL_ID, null);
+						Node nextOperandFrameView;
+						if (request.isTieRequest()){
+							nextOperandFrameView = findChildNodeByVisualIdAndSemanticElement(combinedFrameView_, LayeredOperandEditPart.VISUAL_ID, nextOperandMounter.getUmlFragment());
+						} else {
+							nextOperandFrameView = helper2.createNode(//
+								combinedFrameView_, nextOperandMounter.getUmlFragment(), LayeredOperandEditPart.VISUAL_ID, null);
+						}
 
 						if (nextOperandFrameView == null){
 							throw new IllegalStateException("Can't create operand frame view for sd-mounter: " + nextOperandMounter);
@@ -177,13 +199,27 @@ public class CreateCombinedFragmentEditPolicy extends AbstractCreateSDElementEdi
 				
 				return CommandResult.newOKCommandResult();
 			}
+			
+			private Node findChildNodeByVisualIdAndSemanticElement(Node node, int visualId, EObject semantic){
+				for (Object next : node.getChildren()){
+					if (next instanceof Node){
+						Node nextNode = (Node)next;
+						if (UMLVisualIDRegistry.getVisualID(nextNode) == visualId && semantic == nextNode.getElement()){
+							return nextNode;
+						}
+					}
+				}
+				return null;
+			}
 		};
 		
 		InteractionNestedLayoutRequest layoutRequest = new InteractionNestedLayoutRequest();
 		layoutRequest.requestTotalLayout();
 		Command layoutCommand = getLayoutCommand(layoutRequest);
 		GEFAwareCompositeCommand result = new GEFAwareCompositeCommand(getHostImpl().getEditingDomain(), "Creating Combined Fragment");
-		result.add(dialog);
+		if (dialog_ != null){
+			result.add(dialog_);
+		}
 		result.add(doTheJob);
 		Command main = new ICommandProxy(result);
 		return postScheduleLayout(main, layoutCommand);

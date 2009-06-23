@@ -36,7 +36,7 @@ import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
-import org.eclipse.uml2.diagram.sequence.edit.policies.ActionExecutionSpecificationItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.policies.ActionExecutionSpecification2ItemSemanticEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.SDGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.sequence.frame.Frame;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramUpdater;
@@ -46,13 +46,12 @@ import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
 /**
  * @generated
  */
-
-public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class ActionExecutionSpecification2EditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3002;
+	public static final int VISUAL_ID = 3012;
 
 	/**
 	 * @generated
@@ -67,7 +66,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 	/**
 	 * @generated
 	 */
-	public ActionExecutionSpecificationEditPart(View view) {
+	public ActionExecutionSpecification2EditPart(View view) {
 		super(view);
 	}
 
@@ -79,7 +78,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 			installEditPolicy(UpdateDescriptionEditPolicy.ROLE, new UpdateDescriptionEditPolicy(UMLDiagramUpdater.TYPED_ADAPTER, true));
 		}
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActionExecutionSpecificationItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActionExecutionSpecification2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SDGraphicalNodeEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
@@ -134,8 +133,8 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ActionExecutionLabelEditPart) {
-			((ActionExecutionLabelEditPart) childEditPart).setLabel(getPrimaryShape().getFigureActionExecutionFigure_action());
+		if (childEditPart instanceof ActionExecutionLabel2EditPart) {
+			((ActionExecutionLabel2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureActionExecutionFigure_action());
 			return true;
 		}
 		return false;
@@ -287,7 +286,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActionExecutionLabelEditPart.VISUAL_ID));
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActionExecutionLabel2EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -322,7 +321,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 		if (targetEditPart instanceof LifelineEditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
-		if (targetEditPart instanceof org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart) {
+		if (targetEditPart instanceof ActionExecutionSpecificationEditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
 		if (targetEditPart instanceof StateInvariantEditPart) {
@@ -340,7 +339,7 @@ public class ActionExecutionSpecificationEditPart extends ShapeNodeEditPart impl
 		if (targetEditPart instanceof InteractionOperandMountingRegionEditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
-		if (targetEditPart instanceof ActionExecutionSpecification2EditPart) {
+		if (targetEditPart instanceof org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecification2EditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
 		if (targetEditPart instanceof StateInvariant2EditPart) {

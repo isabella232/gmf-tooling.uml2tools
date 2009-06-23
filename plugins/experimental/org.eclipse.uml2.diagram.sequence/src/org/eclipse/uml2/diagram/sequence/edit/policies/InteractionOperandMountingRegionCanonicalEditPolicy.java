@@ -35,8 +35,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-
-public class LayeredCombinedFragmentCanonicalEditPolicy extends CanonicalEditPolicy {
+public class InteractionOperandMountingRegionCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -49,7 +48,7 @@ public class LayeredCombinedFragmentCanonicalEditPolicy extends CanonicalEditPol
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		List result = new LinkedList();
-		for (Iterator it = UMLDiagramUpdater.getCombinedFragment_3008SemanticChildren(viewObject).iterator(); it.hasNext();) {
+		for (Iterator it = UMLDiagramUpdater.getInteractionOperand_3011SemanticChildren(viewObject).iterator(); it.hasNext();) {
 			result.add(((IUpdaterNodeDescriptor) it.next()).getModelElement());
 		}
 		return result;
@@ -66,6 +65,7 @@ public class LayeredCombinedFragmentCanonicalEditPolicy extends CanonicalEditPol
 		case GateEditPart.VISUAL_ID:
 		case LayeredInteractionUseEditPart.VISUAL_ID:
 		case LayeredCombinedFragmentEditPart.VISUAL_ID:
+		case LayeredOperandEditPart.VISUAL_ID:
 		case LifelineEditPart.VISUAL_ID:
 		case ActionExecutionSpecificationEditPart.VISUAL_ID:
 		case StateInvariantEditPart.VISUAL_ID:
@@ -73,11 +73,10 @@ public class LayeredCombinedFragmentCanonicalEditPolicy extends CanonicalEditPol
 		case InteractionUseMountingRegionEditPart.VISUAL_ID:
 		case CombinedFragmentMountingRegionEditPart.VISUAL_ID:
 		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
+			return true;
 		case ActionExecutionSpecification2EditPart.VISUAL_ID:
 		case StateInvariant2EditPart.VISUAL_ID:
 		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
-			return true;
-		case LayeredOperandEditPart.VISUAL_ID:
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
@@ -98,7 +97,7 @@ public class LayeredCombinedFragmentCanonicalEditPolicy extends CanonicalEditPol
 	protected Set getFeaturesToSynchronize() {
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet();
-			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getCombinedFragment_Operand());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getInteractionOperand_Fragment());
 		}
 		return myFeaturesToSynchronize;
 	}
