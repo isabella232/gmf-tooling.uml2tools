@@ -310,9 +310,9 @@
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Constraint/constrainedElement"/>
     <creationConstraints>
       <sourceEnd
-          body="self.oclIsKindOf(uml::Gate) or self.oclIsKindOf(uml::BehaviorExecutionSpecification) or self.oclIsKindOf(uml::Lifeline)"/>
+          body="self.oclIsKindOf(uml::InteractionOperand) or self.oclIsKindOf(uml::Gate) or self.oclIsKindOf(uml::BehaviorExecutionSpecification) or self.oclIsKindOf(uml::Lifeline)"/>
       <targetEnd
-          body="self.oclIsKindOf(uml::Gate) or self.oclIsKindOf(uml::BehaviorExecutionSpecification) or self.oclIsKindOf(uml::Lifeline)"/>
+          body="self.oclIsKindOf(uml::InteractionOperand) or self.oclIsKindOf(uml::Gate) or self.oclIsKindOf(uml::BehaviorExecutionSpecification) or self.oclIsKindOf(uml::Lifeline)"/>
     </creationConstraints>
   </links>
   <links>
