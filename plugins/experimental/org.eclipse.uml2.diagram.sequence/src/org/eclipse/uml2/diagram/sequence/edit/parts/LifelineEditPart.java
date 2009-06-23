@@ -102,7 +102,6 @@ public class LifelineEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		installEditPolicy(TieFrameTargetEditPolicy.ROLE, new TieFrameTargetEditPolicy());
 		installEditPolicy(TieFrameTargetEditPolicy.ROLE + "-InteractionUse", new TieInteractionUseToLifeLineEditPolicy());
 		installEditPolicy(TieFrameTargetEditPolicy.ROLE + "-CombinedFragment", new TieCombinedFragmentToLifeLineEditPolicy());
-		
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
