@@ -127,7 +127,7 @@ class UpdateEventAccumulator {
 //    }
     
     private final AbsDiagramGef.AbsElementFactory myAbsElementFactory;  
-    private final ArrayList myEvents = new ArrayList();
+    private final ArrayList<UpdateEvent> myEvents = new ArrayList<UpdateEvent>();
     private AsserterRunner myAsserterRunner = AsserterRunner.STUB; 
     
     private static abstract class AsserterRunner {
