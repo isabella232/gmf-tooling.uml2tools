@@ -1,12 +1,17 @@
 package org.eclipse.uml2.diagram.sequence.edit.policies;
 
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
+import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramGraphicalViewer;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
+import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
@@ -20,8 +25,14 @@ import org.eclipse.uml2.diagram.sequence.edit.commands.MessageCreateCommand;
 import org.eclipse.uml2.diagram.sequence.edit.commands.MessageReorientCommand;
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart;
+import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
+import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDEntity;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.BehaviorExecutionSpecification;
+import org.eclipse.uml2.uml.Element;
 
 /**
  * @generated
@@ -48,7 +59,7 @@ public class BehaviorExecutionSpecification2ItemSemanticEditPolicy extends UMLBa
 	/**
 	 * @generated
 	 */
-	protected Command getDestroyElementCommand(DestroyElementRequest req) {
+	protected Command getDestroyElementCommandGen(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
@@ -82,7 +93,71 @@ public class BehaviorExecutionSpecification2ItemSemanticEditPolicy extends UMLBa
 		}
 		return getGEFWrapper(cmd.reduce());
 	}
+	
+	/**
+	 * @generated NOT
+	 */
+	protected Command getDestroyElementCommand(DestroyElementRequest req) {
+		View view = ((IGraphicalEditPart) getHost()).getNotationView();
+		IDiagramGraphicalViewer viewer = (IDiagramGraphicalViewer) getHost().getViewer();
+		ICompositeCommand withAllChained = getDestroyWithAllChainedElementsCommand(view, viewer, req);
+		if (withAllChained != null) {
+			return getGEFWrapper(withAllChained);
+		}
+		return getDestroyElementCommandGen(req);
+	}
 
+	protected ICompositeCommand getDestroyWithAllChainedElementsCommand(View view, IDiagramGraphicalViewer viewer, DestroyElementRequest req) {
+		if (view == null || view.getElement() == null) {
+			return null;
+		}
+		SDModel sdModel = SDModelAccess.findSDModel(view);
+
+		if (sdModel == null) {
+			return null;
+		}
+		SDEntity sdMessage = sdModel.getUMLTracing().findBehaviorSpec((BehaviorExecutionSpecification) view.getElement());
+		SDModelHelper.ChainedElementsCollector collector = new SDModelHelper.ChainedElementsCollector();
+		collector.doSwitch(sdMessage);
+		List<Element> allChained = collector.getCollectedElements();
+		if (allChained.isEmpty()) {
+			return null;
+		}
+		CompositeTransactionalCommand result = new CompositeTransactionalCommand(req.getEditingDomain(), req.getLabel());
+		result.add(new DestroyElementCommand(req));
+		for (Element next : allChained) {
+			if (next == req.getElementToDestroy()) {
+				continue;
+			}
+			DestroyElementRequest chainedRequest = new DestroyElementRequest(req.getEditingDomain(), next, false);
+			DestroyElementCommand nextDestroy = new DestroyElementCommand(chainedRequest);
+			result.add(nextDestroy);
+			String nextGuid = EMFCoreUtil.getProxyID(next);
+			if (nextGuid != null && nextGuid.length() != 0) {
+				@SuppressWarnings("unchecked")
+				List<IGraphicalEditPart> editPartsFor = viewer.findEditPartsForElement(nextGuid, IGraphicalEditPart.class);
+				for (IGraphicalEditPart nextEditPart : editPartsFor) {
+					View nextView = nextEditPart.getNotationView();
+					if (nextView != null) {
+						DeleteCommand nextDeleteViewCommand = new DeleteCommand(getEditingDomain(), nextView);
+						result.add(nextDeleteViewCommand);
+					}
+				}
+			}
+		}
+		IGraphicalEditPart interactionEP = findInteractionEditPart(getHost());
+		if (interactionEP != null) {
+			result.add(SDModelAccess.getInvalidateSDModelCommand(interactionEP.getNotationView()));
+			InteractionNestedLayoutRequest postLayoutRequest = new InteractionNestedLayoutRequest();
+			postLayoutRequest.requestTotalLayout();
+			Command postLayout = interactionEP.getCommand(postLayoutRequest);
+			if (postLayout != null && postLayout.canExecute()) {
+				result.add(new CommandProxy(postLayout));
+			}
+		}
+		return result;
+	}
+	
 	/**
 	 * @generated
 	 */
