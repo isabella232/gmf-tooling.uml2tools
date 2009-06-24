@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
@@ -63,7 +62,6 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.StateInvariant;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -1119,7 +1117,11 @@ public class UMLDiagramUpdater {
 		private HashMap<OccurrenceSpecification, BehaviorExecutionSpecification> myOccurr2finish = new HashMap<OccurrenceSpecification, BehaviorExecutionSpecification>();
 
 		public MessageDiagramEndReplace(Interaction container) {
-			for (InteractionFragment nextFragment : container.getFragments()) {
+			processFragmentsList(container.getFragments());
+		}
+
+		private void processFragmentsList(List<InteractionFragment> fragments) {
+			for (InteractionFragment nextFragment : fragments) {
 				if (nextFragment instanceof BehaviorExecutionSpecification) {
 					BehaviorExecutionSpecification execution = (BehaviorExecutionSpecification) nextFragment;
 					if (execution.getStart() != null) {
@@ -1127,6 +1129,12 @@ public class UMLDiagramUpdater {
 					}
 					if (execution.getFinish() != null) {
 						myOccurr2finish.put(execution.getStart(), execution);
+					}
+				}
+				if (nextFragment instanceof CombinedFragment) {
+					CombinedFragment combined = (CombinedFragment) nextFragment;
+					for (InteractionOperand nextOperand : combined.getOperands()) {
+						processFragmentsList(nextOperand.getFragments());
 					}
 				}
 			}
