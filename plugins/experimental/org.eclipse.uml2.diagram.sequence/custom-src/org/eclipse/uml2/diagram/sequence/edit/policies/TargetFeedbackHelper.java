@@ -18,10 +18,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramRootEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.create.arcas.AnchoredDiagramTarget;
 
-/**
- * @autor: prepkin 
- * TODO: horizontal layout support
- */
 public class TargetFeedbackHelper {
 
     public TargetFeedbackHelper(GraphicalEditPolicy policy) {
@@ -192,15 +188,6 @@ public class TargetFeedbackHelper {
             }
         }
 
-//        private OrderedLayoutEditPolicy.AnchorFeedbackDetails getAnchorFeedbackDetails(GraphicalEditPart part) {
-//            Object ob = part.getEditPolicy(EditPolicy.LAYOUT_ROLE);
-//            if (ob instanceof OrderedLayoutEditPolicy) {
-//                return ((OrderedLayoutEditPolicy)ob).getAnchorFeedbackDetails();
-//            }
-//            return null; 
-//        }
-
-
         public AnchoredDiagramTarget getTarget() {
             return myTarget;
         }
@@ -210,12 +197,12 @@ public class TargetFeedbackHelper {
         public EditPart getHost() {
             return myPolicy.getHost();            
         }
+        
         public void addFeedback(IFigure figure) {
             super.addFeedback(figure);
-            System.err.println("Feedback added:" + figure + ": (" + (figure.getParent() != null ? " OK " : " BROKEN "));
         }
+        
         public void removeFeedback(IFigure figure) {
-        	System.err.println("Feedback removed:" + figure + ": (" + (figure.getParent() != null ? " OK " : " BROKEN "));
         	if (figure.getParent() != null){
         		super.removeFeedback(figure);	
         	}
