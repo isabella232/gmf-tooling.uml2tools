@@ -4,23 +4,21 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.ConnectionEditPart;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
+import org.eclipse.gef.RootEditPart;
 import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ReconnectRequest;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
-import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
@@ -36,11 +34,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
-import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.sequence.edit.helpers.UMLBaseEditHelper;
+import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionEditPart;
 import org.eclipse.uml2.diagram.sequence.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.sequence.expressions.UMLOCLFactory;
+import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.sequence.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.sequence.providers.UMLElementTypes;
@@ -73,11 +73,11 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
-	 * Extended request data key to hold editpart visual id.
-	 * Add visual id of edited editpart to extended data of the request
-	 * so command switch can decide what kind of diagram element is being edited.
-	 * It is done in those cases when it's not possible to deduce diagram
-	 * element kind from domain element.
+	 * Extended request data key to hold editpart visual id. Add visual id of
+	 * edited editpart to extended data of the request so command switch can
+	 * decide what kind of diagram element is being edited. It is done in those
+	 * cases when it's not possible to deduce diagram element kind from domain
+	 * element.
 	 * 
 	 * @generated
 	 */
@@ -279,6 +279,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 	/**
 	 * Clean all shortcuts to the host element from the same diagram
+	 * 
 	 * @generated
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
@@ -385,6 +386,29 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 			return true;
 		}
 
+	}
+
+	protected final IGraphicalEditPart getHostImpl() {
+		return (IGraphicalEditPart) getHost();
+	}
+
+	protected final SDModel getSDModel() {
+		return SDModelAccess.findSDModel(getHostImpl().getNotationView());
+	}
+
+	protected final InteractionEditPart findInteractionEditPart(EditPart ep) {
+		RootEditPart root = ep.getRoot();
+
+		if (ep instanceof ConnectionEditPart) {
+			ep = ((ConnectionEditPart) ep).getSource();
+		}
+		while (ep != root && ep != null) {
+			if (ep instanceof InteractionEditPart) {
+				return (InteractionEditPart) ep;
+			}
+			ep = ep.getParent();
+		}
+		return null;
 	}
 
 }
