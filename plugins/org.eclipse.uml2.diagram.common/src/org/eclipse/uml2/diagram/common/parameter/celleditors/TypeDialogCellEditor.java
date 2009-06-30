@@ -33,17 +33,20 @@ public class TypeDialogCellEditor extends ExtendedDialogCellEditor {
 
 	private final AdapterFactory myAf;
 
-	public TypeDialogCellEditor(Composite composite, AdapterFactory af, Object object, EStructuralFeature feature) {
+	private final EObject mySource;
+
+	public TypeDialogCellEditor(Composite composite, AdapterFactory af, EObject sourceObject, EStructuralFeature feature) {
 		super(composite, new AdapterFactoryLabelProvider(af));
 		myAf = af;
 		myFeature = feature;
+		mySource = sourceObject;
 	}
 
 	@Override
 	protected Object openDialogBox(Control cellEditorWindow) {
-		ReferencedElementChooserDialog myElementChooserDialog = new ReferencedElementChooserDialogEx(getControl().getShell(), UMLCommonPlugin.getInstance().getDialogSettings(), myAf,
-				(EObject) doGetValue(), myFeature, (EObject) doGetValue()){
-			
+		ReferencedElementChooserDialog myElementChooserDialog = new ReferencedElementChooserDialogEx(getControl().getShell(), UMLCommonPlugin.getInstance().getDialogSettings(), myAf, mySource,
+				myFeature, (EObject) doGetValue()) {
+
 		};
 		myElementChooserDialog.open();
 		return myElementChooserDialog.getResult();
@@ -62,21 +65,21 @@ public class TypeDialogCellEditor extends ExtendedDialogCellEditor {
 	protected Object doGetValue() {
 		return super.doGetValue();
 	}
-	
+
 	private class ReferencedElementChooserDialogEx extends ReferencedElementChooserDialog {
 
-		public ReferencedElementChooserDialogEx(Shell shell, IDialogSettings settings, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature, final Object initialSelection) {
+		public ReferencedElementChooserDialogEx(Shell shell, IDialogSettings settings, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature,
+				final Object initialSelection) {
 			super(shell, settings, itemProvidersAdapterFactory, sourceObject, feature);
 			myChooser = new TabbedElementChooser(settings, itemProvidersAdapterFactory, sourceObject, feature, myEditingDomain) {
+
 				@Override
 				protected List<?> getInitialSelection() {
 					return Collections.singletonList(initialSelection);
 				}
 			};
 		}
-		
-	}
-	
 
+	}
 
 }
