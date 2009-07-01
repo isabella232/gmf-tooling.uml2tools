@@ -125,7 +125,7 @@ public class NewDiagramPropertyTester extends PropertyTester {
 			element = ((IGraphicalEditPart) object).getNotationView().getElement();
 		}
 		if (object instanceof EObject) {
-			element = (EObject) element;
+			element = (EObject) object;
 		}
 		return element;
 	}
