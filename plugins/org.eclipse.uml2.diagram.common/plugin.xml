@@ -140,40 +140,13 @@
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.NewDeployDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate
-                         ifEmpty="false"
-                         operator="or"> 
-               			<test property="org.eclipse.uml2.diagram.isDeploymentDiagramElement"/>
-                  </iterate></with>
-                  <count value="+"/>
-            	</and>            	
-            </visibleWhen>
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.NewProfileDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate
-                         ifEmpty="false"
-                         operator="or"> 
-               			<test property="org.eclipse.uml2.diagram.isProfileDiagramElement"/>
-                  </iterate></with>
-                  <count value="+"/>
-            	</and>            	
-            </visibleWhen>
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate
-                         ifEmpty="false"
-                         operator="or"> 
-               			<test property="org.eclipse.uml2.diagram.isUseCaseDiagramElement"/>
-                  </iterate></with>
-                  <count value="+"/>
-            	</and>            	
-            </visibleWhen>
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
        </menu>         
        </menuContribution>
@@ -193,34 +166,13 @@
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.NewDeployDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.eclipse.uml2.uml.Package"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.NewProfileDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.eclipse.uml2.uml.Package"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.eclipse.uml2.uml.Package"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
        </menu>
        </menuContribution>

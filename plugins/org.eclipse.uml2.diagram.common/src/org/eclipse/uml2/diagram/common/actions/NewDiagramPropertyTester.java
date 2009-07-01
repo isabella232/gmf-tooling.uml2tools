@@ -3,6 +3,8 @@ package org.eclipse.uml2.diagram.common.actions;
 import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Profile;
 
 public class NewDiagramPropertyTester extends PropertyTester {
 
@@ -99,7 +101,10 @@ public class NewDiagramPropertyTester extends PropertyTester {
 	}
 
 	private static boolean canCreateProfileDiagram(Object object) {
-		EObject element = resolve(object);
+		Element element = resolve(object);
+		if (false == element.getOwner() instanceof Profile) {
+			return false;
+		}
 		return (element instanceof org.eclipse.uml2.uml.Stereotype) //
 				|| (element instanceof org.eclipse.uml2.uml.Profile) //
 				|| (element instanceof org.eclipse.uml2.uml.Enumeration) //
@@ -119,15 +124,14 @@ public class NewDiagramPropertyTester extends PropertyTester {
 		;
 	}
 
-	private static EObject resolve(Object object) {
-		EObject element = null;
+	private static Element resolve(Object object) {
 		if (object instanceof IGraphicalEditPart) {
-			element = ((IGraphicalEditPart) object).getNotationView().getElement();
+			object = ((IGraphicalEditPart) object).resolveSemanticElement();
 		}
-		if (object instanceof EObject) {
-			element = (EObject) object;
+		if (object instanceof Element) {
+			return (Element) object;
 		}
-		return element;
+		return null;
 	}
 
 }

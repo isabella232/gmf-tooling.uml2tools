@@ -8,6 +8,16 @@
       <handler
             class="org.eclipse.uml2.diagram.usecase.part.NewDiagramHandler"
             commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isUseCaseDiagramElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
       </handler>
       <handler
             class="org.eclipse.uml2.diagram.usecase.action.TurnNoteIntoCommentAction"

@@ -7,6 +7,16 @@
       <handler
             class="org.eclipse.uml2.diagram.deploy.part.NewDiagramHandler"
             commandId="org.eclipse.uml2.diagram.NewDeployDiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isDeployDiagramElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
       </handler>
       <handler
             class="org.eclipse.uml2.diagram.deploy.action.TurnNoteIntoCommentAction"
