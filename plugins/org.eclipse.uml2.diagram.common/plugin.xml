@@ -24,6 +24,48 @@
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
         </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isClassDiagramElementTester"
+              properties="isClassDiagramElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isComponentDiagramElement"
+              properties="isComponentDiagramElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isCompositeStructureDiagramElement"
+              properties="isCompositeStructureDiagramElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isDeploymentDiagramElement"
+              properties="isDeploymentDiagramElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isProfileDiagramElement"
+              properties="isProfileDiagramElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUseCaseDiagramElement"
+              properties="isUseCaseDiagramElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
      </extension>
 
 	<extension point="org.eclipse.ui.menus" id="context-menus">
@@ -43,54 +85,75 @@
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
                </or>
          </visibleWhen>
-         <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction"/>
+         <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction">
+            <visibleWhen checkEnabled="false">
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isClassDiagramElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+            </visibleWhen>
+         </command>
          <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction">
             <visibleWhen checkEnabled="false">
             	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-               			<test property="org.eclipse.uml2.diagram.isPackage"/>
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isComponentDiagramElement"/>
                   </iterate></with>
-                  <count value="1"/>
+                  <count value="+"/>
             	</and>            	
             </visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
             <visibleWhen checkEnabled="false">
             	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-               			<test property="org.eclipse.uml2.diagram.isPackage"/>
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isCompositeStructureDiagramElement"/>
                   </iterate></with>
-                  <count value="1"/>
+                  <count value="+"/>
             	</and>            	
             </visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.NewDeployDiagramAction">
             <visibleWhen checkEnabled="false">
             	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-               			<test property="org.eclipse.uml2.diagram.isPackage"/>
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isDeploymentDiagramElement"/>
                   </iterate></with>
-                  <count value="1"/>
+                  <count value="+"/>
             	</and>            	
             </visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.NewProfileDiagramAction">
             <visibleWhen checkEnabled="false">
             	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-               			<test property="org.eclipse.uml2.diagram.isPackage"/>
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isProfileDiagramElement"/>
                   </iterate></with>
-                  <count value="1"/>
+                  <count value="+"/>
             	</and>            	
             </visibleWhen>
          </command>
          <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
             <visibleWhen checkEnabled="false">
             	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-               			<test property="org.eclipse.uml2.diagram.isPackage"/>
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isUseCaseDiagramElement"/>
                   </iterate></with>
-                  <count value="1"/>
+                  <count value="+"/>
             	</and>            	
             </visibleWhen>
          </command>
