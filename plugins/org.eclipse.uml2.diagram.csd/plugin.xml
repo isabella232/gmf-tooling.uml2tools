@@ -31,6 +31,16 @@
       <handler
             class="org.eclipse.uml2.diagram.csd.part.NewDiagramHandler"
             commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isCompositeStructureDiagramElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
       </handler>
       <handler
             class="org.eclipse.uml2.diagram.csd.action.TurnNoteIntoCommentAction"

@@ -4,14 +4,6 @@
 <plugin>
 
 <!-- gmf generator persistent region begin -->
-   <extension point="org.eclipse.ui.handlers">
-      <?gmfgen generated="false"?>
-      <handler
-            class="org.eclipse.uml2.diagram.component.part.NewDiagramHandler"
-            commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction">
-      </handler>
-   </extension>
-
    <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-show-property-parameters">
       <?gmfgen generated="false"?>
       <contributionItemProvider
@@ -37,6 +29,20 @@
    </extension>
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
+      <handler
+            class="org.eclipse.uml2.diagram.component.part.NewDiagramHandler"
+            commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isComponentDiagramElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
+      </handler>
       <handler
             class="org.eclipse.uml2.diagram.component.action.TurnNoteIntoCommentAction"
             commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">

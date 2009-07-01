@@ -25,6 +25,16 @@
       <handler
             class="org.eclipse.uml2.diagram.clazz.action.NewDiagramHandler"
             commandId="org.eclipse.uml2.diagram.NewClassDiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isClassDiagramElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
       </handler>
       <handler
             class="org.eclipse.uml2.diagram.clazz.action.TurnNoteIntoCommentAction"
