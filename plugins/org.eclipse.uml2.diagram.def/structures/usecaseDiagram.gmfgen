@@ -374,6 +374,8 @@
         <attributes
             xsi:type="u2tgen:AuxSecondaryDiagramNodeAttribute"
             substituteWithCanvasElement="true"/>
+        <attributes
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
@@ -397,7 +399,11 @@
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
             getterName="getFigureSecondaryPackage_NameLabel"
-            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="u2tgen:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
+        </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
@@ -416,7 +422,11 @@
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
             getterName="getFigureSecondaryPackage_PackageLabel"
-            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="u2tgen:StereotypeSupportAttribute"
+              role="DIAGRAM_LABEL"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
