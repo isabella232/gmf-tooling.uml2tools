@@ -15,6 +15,7 @@
         <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//u2tgen/StereotypeSupportRole/NAME_LABEL"/>
         <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//u2tgen/StereotypeSupportRole/STEREOTYPE_LABEL"/>
         <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//u2tgen/StereotypeSupportRole/COMBINED_LABEL"/>
+        <genEnumLiterals ecoreEnumLiteral="gmfgenext.ecore#//u2tgen/StereotypeSupportRole/DIAGRAM_LABEL"/>
       </genEnums>
       <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/AuxSecondaryDiagramNodeAttribute">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/AuxSecondaryDiagramNodeAttribute/substituteWithCanvasElement"/>

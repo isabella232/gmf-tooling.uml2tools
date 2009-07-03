@@ -17,6 +17,7 @@
 «EXTENSION xpt::rotatedlabel::RotatedLabelsSupport»
 «EXTENSION xpt::stereo::StereotypeIconSupport»
 «EXTENSION xpt::detaillevels::DetailLevelsSupport»
+«EXTENSION xpt::async::NonCanonicalDiagram»
 
 «AROUND methods(needsRefreshBounds : Boolean, readOnly : Boolean, useElementIcon : Boolean, viewmap : gmfgen::Viewmap,
 		modelFacet : gmfgen::LabelModelFacet, host : gmfgen::GenCommonBase, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
@@ -144,7 +145,9 @@
 «ENDAROUND»
 
 «AROUND getLabelIcon(useElementIcon : Boolean, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
-«IF isIconExtendedByStereotype(self)-»
+«IF isDiagramIconLabel(self)-»
+«EXPAND xpt::async::DiagramLabelEditPart::getLabelIcon»
+«ELSEIF isIconExtendedByStereotype(self)-»
 «EXPAND xpt::stereo::TextAware::getLabelIcon(useElementIcon, diagram)»
 «ELSE-»
 	«EXPAND xpt::Common::generatedMemberComment»

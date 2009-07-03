@@ -39,6 +39,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.swt.SWT;
@@ -46,14 +47,19 @@ import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.common.async.ICanonicalHelper;
 import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
+import org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationPackage;
+import org.eclipse.uml2.diagram.common.providers.ImageUtils;
+import org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.component.providers.UMLParserProvider;
 import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
+import org.eclipse.uml2.uml.Element;
 
 /**
  * @generated
@@ -205,15 +211,21 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		EObject parserElement = getParserElement();
-		if (parserElement == null) {
+		//#265174 Visual distinction between Synchronized and Non-Sync diagrams
+		View node = getNotationView().getDiagram();
+		EObject parserElement = resolveSemanticElement();
+		if (node == null || parserElement == null) {
 			return null;
 		}
-		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
-		if (!shouldShow) {
-			return null;
+		ImageDescriptor packageImage = UMLElementTypes.getImageDescriptor(parserElement.eClass());
+		ImageDescriptor isSyncImage = ImageUtils.getPackageImage(packageImage, ICanonicalHelper.IMPLEMENTATION.isAutoSynchronized(node));
+
+		boolean shouldShowStereotype = DiagramIconStylePreferenceHelper.shouldShowStereotypeIcon(getDiagramPreferencesHint());
+		if (!shouldShowStereotype) {
+			return isSyncImage.createImage();
 		}
-		return UMLElementTypes.getImage(parserElement.eClass());
+		ImageDescriptor[] stereotypeImages = StereotypeOperationsEx.getListOfAppliedStereotypeImages((Element) parserElement, packageImage);
+		return StereotypeOperationsEx.composeImages(isSyncImage, stereotypeImages);
 	}
 
 	/**
@@ -350,7 +362,12 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	private void performDirectEdit(char initialCharacter) {
-		if (getManager() instanceof TextDirectEditManager) {
+		// '<' has special meaning, because we have both name- and stereo- inplaces for single node edit part
+		// we want to activate stereotype inplace if user presses '<' (for "<< stereotype >>" 
+		// notation, also we don't include '<' and '>' into actual inplace text).
+		// If user presses any other alfanum key, we will activate name-inplace, as for all other figures
+
+		if (initialCharacter != '<' && getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
 		} else {
 			performDirectEdit();
@@ -535,6 +552,8 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 	protected void addNotationalListeners() {
 		super.addNotationalListeners();
 		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
+		addListenerFilter(
+				"CanonicalStyle", this, getPrimaryView().getDiagram().getStyle(NotationPackage.eINSTANCE.getCanonicalStyle()), U2TNotationPackage.eINSTANCE.getU2TDiagramCanonicalStyle_SyncNodes()); //$NON-NLS-1$
 	}
 
 	/**
@@ -543,6 +562,7 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 	protected void removeNotationalListeners() {
 		super.removeNotationalListeners();
 		removeListenerFilter("PrimaryView"); //$NON-NLS-1$
+		removeListenerFilter("CanonicalStyle"); //$NON-NLS-1$
 	}
 
 	/**

@@ -1,3 +1,5 @@
+import xpt.stereo.StereotypeIconSupport;
+
 modeltype genModel uses "http://www.eclipse.org/gmf/2009/GenModel";
 
 library NonCanonicalDiagram;
@@ -10,4 +12,9 @@ helper supportsNonCanonicalMode(diagram : genModel::GenDiagram) : Boolean {
 		or 'org.eclipse.uml2.diagram.csd' = diagram.editorGen.plugin.iD 
 		or 'org.eclipse.uml2.diagram.usecase' = diagram.editorGen.plugin.iD
 		or 'org.eclipse.uml2.diagram.profile' = diagram.editorGen.plugin.iD 
+}
+
+helper isDiagramIconLabel(label : gmfgen::GenCommonBase) : Boolean {
+	return isDiagramStereotypeLabel(label) and supportsNonCanonicalMode(label.getDiagram())
+		  
 }

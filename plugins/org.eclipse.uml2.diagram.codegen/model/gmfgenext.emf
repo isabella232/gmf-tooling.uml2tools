@@ -60,6 +60,7 @@ package u2tgen {
 		NAME_LABEL; 
 		STEREOTYPE_LABEL;
 		COMBINED_LABEL;
+		DIAGRAM_LABEL;
 	}
 } 
 

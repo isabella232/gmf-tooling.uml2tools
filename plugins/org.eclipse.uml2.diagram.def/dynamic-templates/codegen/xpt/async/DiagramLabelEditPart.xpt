@@ -1,0 +1,52 @@
+/*
+ * Copyright (c) 2009 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Tatiana Fesenko (Borland) - #265174 Visual distinction between Synchronized and Non-Sync diagrams
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+
+«DEFINE getLabelIcon FOR gmfgen::GenCommonBase-»
+«EXPAND xpt::Common::generatedMemberComment»
+protected Image getLabelIcon() {
+	//#265174 Visual distinction between Synchronized and Non-Sync diagrams
+	org.eclipse.gmf.runtime.notation.View node = getNotationView().getDiagram();
+	org.eclipse.emf.ecore.EObject parserElement = resolveSemanticElement();
+	if (node == null || parserElement == null) {
+		return null;
+	}
+		org.eclipse.jface.resource.ImageDescriptor packageImage = «getDiagram().getElementTypesQualifiedClassName()».getImageDescriptor(parserElement.eClass());
+		org.eclipse.jface.resource.ImageDescriptor isSyncImage = org.eclipse.uml2.diagram.common.providers.ImageUtils.getPackageImage(packageImage, org.eclipse.uml2.diagram.common.async.ICanonicalHelper.IMPLEMENTATION.isAutoSynchronized(node));
+
+		boolean shouldShowStereotype = «EXPAND xpt::preferences::IconStylePreferenceHelper::qualifiedClassName FOR self.getDiagram()».shouldShowStereotypeIcon(getDiagramPreferencesHint());
+		if (!shouldShowStereotype) {
+			return isSyncImage.createImage();
+		}
+		org.eclipse.jface.resource.ImageDescriptor[] stereotypeImages = org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx.getListOfAppliedStereotypeImages((org.eclipse.uml2.uml.Element) parserElement, packageImage);
+		return org.eclipse.uml2.diagram.common.stereo.StereotypeOperationsEx.composeImages(isSyncImage, stereotypeImages);
+}
+«ENDDEFINE»
+
+«DEFINE notationalListeners FOR gmfgen::GenCommonBase-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected void addNotationalListeners() {
+		super.addNotationalListeners();
+		addListenerFilter("PrimaryView", this, getPrimaryView()); «EXPAND xpt::Common::nonNLS»
+    	//#265174 Visual distinction between Synchronized and Non-Sync diagrams
+		addListenerFilter("CanonicalStyle", this, getPrimaryView().getDiagram().getStyle(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getCanonicalStyle()), org.eclipse.uml2.diagram.common.notation.u2tnotation.U2TNotationPackage.eINSTANCE.getU2TDiagramCanonicalStyle_SyncNodes()); «EXPAND xpt::Common::nonNLS»
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected void removeNotationalListeners() {
+		super.removeNotationalListeners();
+		removeListenerFilter("PrimaryView"); «EXPAND xpt::Common::nonNLS»
+		removeListenerFilter("CanonicalStyle"); «EXPAND xpt::Common::nonNLS»
+	}
+«ENDDEFINE»

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: StereotypeSupportRole.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: StereotypeSupportRole.java,v 1.1.2.1 2009/07/03 18:34:23 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen;
 
@@ -60,7 +60,15 @@ public enum StereotypeSupportRole implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COMBINED_LABEL(3, "COMBINED_LABEL", "COMBINED_LABEL");
+	COMBINED_LABEL(3, "COMBINED_LABEL", "COMBINED_LABEL"), /**
+	 * The '<em><b>DIAGRAM LABEL</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DIAGRAM_LABEL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DIAGRAM_LABEL(4, "DIAGRAM_LABEL", "DIAGRAM_LABEL");
 
 	/**
 	 * The '<em><b>CONTAINER</b></em>' literal value.
@@ -123,6 +131,21 @@ public enum StereotypeSupportRole implements Enumerator {
 	public static final int COMBINED_LABEL_VALUE = 3;
 
 	/**
+	 * The '<em><b>DIAGRAM LABEL</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>DIAGRAM LABEL</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DIAGRAM_LABEL
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DIAGRAM_LABEL_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Stereotype Support Role</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -134,6 +157,7 @@ public enum StereotypeSupportRole implements Enumerator {
 			NAME_LABEL,
 			STEREOTYPE_LABEL,
 			COMBINED_LABEL,
+			DIAGRAM_LABEL,
 		};
 
 	/**
@@ -188,6 +212,7 @@ public enum StereotypeSupportRole implements Enumerator {
 			case NAME_LABEL_VALUE: return NAME_LABEL;
 			case STEREOTYPE_LABEL_VALUE: return STEREOTYPE_LABEL;
 			case COMBINED_LABEL_VALUE: return COMBINED_LABEL;
+			case DIAGRAM_LABEL_VALUE: return DIAGRAM_LABEL;
 		}
 		return null;
 	}

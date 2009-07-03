@@ -70,6 +70,7 @@
       <eLiterals name="NAME_LABEL" value="1"/>
       <eLiterals name="STEREOTYPE_LABEL" value="2"/>
       <eLiterals name="COMBINED_LABEL" value="3"/>
+      <eLiterals name="DIAGRAM_LABEL" value="4"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="u2tmap" nsURI="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping"
