@@ -10,39 +10,39 @@ public class NewDiagramPropertyTester extends PropertyTester {
 
 	private static final String PROPERTY_IS_PACKAGE = "isPackage"; //$NON-NLS-1$
 
-	private static final String PROPERTY_IS_CLASS_DIAGRAM_ELEMENT = "isClassDiagramElement"; //$NON-NLS-1$
+	private static final String PROPERTY_IS_CLASS_DIAGRAM_ELEMENT = "isUMLClassElement"; //$NON-NLS-1$
 
-	private static final String PROPERTY_IS_COMPONENT_DIAGRAM_ELEMENT = "isComponentDiagramElement"; //$NON-NLS-1$
+	private static final String PROPERTY_IS_COMPONENT_DIAGRAM_ELEMENT = "isUMLComponentElement"; //$NON-NLS-1$
 
-	private static final String PROPERTY_IS_COMPOSITE_STRUCTURE_DIAGRAM_ELEMENT = "isCompositeStructureDiagramElement"; //$NON-NLS-1$
+	private static final String PROPERTY_IS_COMPOSITE_STRUCTURE_DIAGRAM_ELEMENT = "isUMLCompositeStructuresElement"; //$NON-NLS-1$
 
-	private static final String PROPERTY_IS_DEPLOYMENT_DIAGRAM_ELEMENT = "isDeploymentDiagramElement"; //$NON-NLS-1$
+	private static final String PROPERTY_IS_DEPLOYMENT_DIAGRAM_ELEMENT = "isUMLDeploymentElement"; //$NON-NLS-1$
 
-	private static final String PROPERTY_IS_PROFILE_DIAGRAM_ELEMENT = "isProfileDiagramElement"; //$NON-NLS-1$
+	private static final String PROPERTY_IS_PROFILE_DIAGRAM_ELEMENT = "isUMLProfileElement"; //$NON-NLS-1$
 
-	private static final String PROPERTY_IS_USE_CASE_DIAGRAM_ELEMENT = "isUseCaseDiagramElement"; //$NON-NLS-1$
+	private static final String PROPERTY_IS_USE_CASE_DIAGRAM_ELEMENT = "isUMLUseCaseElement"; //$NON-NLS-1$
 
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
 		if (PROPERTY_IS_PACKAGE.equals(property)) {
 			return isPackage(receiver);
 		}
 		if (PROPERTY_IS_CLASS_DIAGRAM_ELEMENT.equals(property)) {
-			return canCreateClassDiagram(receiver);
+			return isUMLClassElement(receiver);
 		}
 		if (PROPERTY_IS_COMPONENT_DIAGRAM_ELEMENT.equals(property)) {
-			return canCreateComponentDiagram(receiver);
+			return isUMLComponentElement(receiver);
 		}
 		if (PROPERTY_IS_COMPOSITE_STRUCTURE_DIAGRAM_ELEMENT.equals(property)) {
-			return canCreateCompositeStructureDiagram(receiver);
+			return isUMLCompositeStructuresElement(receiver);
 		}
 		if (PROPERTY_IS_DEPLOYMENT_DIAGRAM_ELEMENT.equals(property)) {
-			return canCreateDeploymentDiagram(receiver);
+			return isUMLDeploymentElement(receiver);
 		}
 		if (PROPERTY_IS_PROFILE_DIAGRAM_ELEMENT.equals(property)) {
-			return canCreateProfileDiagram(receiver);
+			return isUMLProfileElement(receiver);
 		}
 		if (PROPERTY_IS_USE_CASE_DIAGRAM_ELEMENT.equals(property)) {
-			return canCreateUseCaseDiagram(receiver);
+			return isUMLUseCaseElement(receiver);
 		}
 		return false;
 	}
@@ -52,7 +52,7 @@ public class NewDiagramPropertyTester extends PropertyTester {
 		return (element != null) && (element instanceof org.eclipse.uml2.uml.Package);
 	}
 
-	private static boolean canCreateClassDiagram(Object object) {
+	public static boolean isUMLClassElement(Object object) {
 		EObject element = resolve(object);
 		return (element instanceof org.eclipse.uml2.uml.Package) //
 				|| (element instanceof org.eclipse.uml2.uml.Class) // 
@@ -61,22 +61,22 @@ public class NewDiagramPropertyTester extends PropertyTester {
 				|| (element instanceof org.eclipse.uml2.uml.PrimitiveType) // 
 				|| (element instanceof org.eclipse.uml2.uml.Enumeration) //
 				|| (element instanceof org.eclipse.uml2.uml.Interface) //
-//				|| (element instanceof org.eclipse.uml2.uml.Comment) //
+				|| (element instanceof org.eclipse.uml2.uml.Comment) //
 				|| (element instanceof org.eclipse.uml2.uml.InstanceSpecification);
 	}
 
-	private static boolean canCreateComponentDiagram(Object object) {
+	public static boolean isUMLComponentElement(Object object) {
 		EObject element = resolve(object);
 		return (element instanceof org.eclipse.uml2.uml.Component) //
 				|| (element instanceof org.eclipse.uml2.uml.Artifact) //
 				|| (element instanceof org.eclipse.uml2.uml.Interface) //
 				|| (element instanceof org.eclipse.uml2.uml.Class) //
 				|| (element instanceof org.eclipse.uml2.uml.Package) //
-//				|| (element instanceof org.eclipse.uml2.uml.Comment)
+				|| (element instanceof org.eclipse.uml2.uml.Comment) 
 				;
 	}
 
-	private static boolean canCreateCompositeStructureDiagram(Object object) {
+	public static boolean isUMLCompositeStructuresElement(Object object) {
 		EObject element = resolve(object);
 		return (element instanceof org.eclipse.uml2.uml.Collaboration) //
 				|| (element instanceof org.eclipse.uml2.uml.Class) //
@@ -84,11 +84,11 @@ public class NewDiagramPropertyTester extends PropertyTester {
 				|| (element instanceof org.eclipse.uml2.uml.Interface) //
 				|| (element instanceof org.eclipse.uml2.uml.InstanceSpecification) // 
 				|| (element instanceof org.eclipse.uml2.uml.Constraint) //
-//				|| (element instanceof org.eclipse.uml2.uml.Comment)
+				|| (element instanceof org.eclipse.uml2.uml.Comment)
 				;
 	}
 
-	private static boolean canCreateDeploymentDiagram(Object object) {
+	public static boolean isUMLDeploymentElement(Object object) {
 		EObject element = resolve(object);
 		return (element instanceof org.eclipse.uml2.uml.Package) //
 				|| (element instanceof org.eclipse.uml2.uml.Device) //
@@ -96,12 +96,15 @@ public class NewDiagramPropertyTester extends PropertyTester {
 				|| (element instanceof org.eclipse.uml2.uml.ExecutionEnvironment) //
 				|| (element instanceof org.eclipse.uml2.uml.Artifact) //
 				|| (element instanceof org.eclipse.uml2.uml.Deployment) //
-//				|| (element instanceof org.eclipse.uml2.uml.Comment)
+				|| (element instanceof org.eclipse.uml2.uml.Comment)
 				;
 	}
 
-	private static boolean canCreateProfileDiagram(Object object) {
+	public static boolean isUMLProfileElement(Object object) {
 		Element element = resolve(object);
+		if (element == null) {
+			return false;
+		}
 		if (false == element.getOwner() instanceof Profile) {
 			return false;
 		}
@@ -110,21 +113,21 @@ public class NewDiagramPropertyTester extends PropertyTester {
 				|| (element instanceof org.eclipse.uml2.uml.Enumeration) //
 				|| (element instanceof org.eclipse.uml2.uml.ElementImport) //
 				|| (element instanceof org.eclipse.uml2.uml.Constraint) //
-//				|| (element instanceof org.eclipse.uml2.uml.Comment);
+				|| (element instanceof org.eclipse.uml2.uml.Comment)
 				;
 	}
 
-	private static boolean canCreateUseCaseDiagram(Object object) {
+	public static boolean isUMLUseCaseElement(Object object) {
 		EObject element = resolve(object);
 		return (element instanceof org.eclipse.uml2.uml.Package) //
 				|| (element instanceof org.eclipse.uml2.uml.Actor) //
 				|| (element instanceof org.eclipse.uml2.uml.UseCase) //
 				|| (element instanceof org.eclipse.uml2.uml.Component) //
-//				|| (element instanceof org.eclipse.uml2.uml.Comment)
+				|| (element instanceof org.eclipse.uml2.uml.Comment)
 		;
 	}
 
-	private static Element resolve(Object object) {
+	public static Element resolve(Object object) {
 		if (object instanceof IGraphicalEditPart) {
 			object = ((IGraphicalEditPart) object).resolveSemanticElement();
 		}

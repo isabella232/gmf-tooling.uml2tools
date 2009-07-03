@@ -27,86 +27,86 @@
         
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isClassDiagramElementTester"
-              properties="isClassDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLClassElement"
+              properties="isUMLClassElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
         </propertyTester>
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isComponentDiagramElement"
-              properties="isComponentDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLComponentElement"
+              properties="isUMLComponentElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
         </propertyTester>
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isCompositeStructureDiagramElement"
-              properties="isCompositeStructureDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLCompositeStructuresElement"
+              properties="isUMLCompositeStructuresElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
         </propertyTester>
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isDeploymentDiagramElement"
-              properties="isDeploymentDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLDeploymentElement"
+              properties="isUMLDeploymentElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
         </propertyTester>
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isProfileDiagramElement"
-              properties="isProfileDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLProfileElement"
+              properties="isUMLProfileElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
         </propertyTester>
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isUseCaseDiagramElement"
-              properties="isUseCaseDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLUseCaseElement"
+              properties="isUMLUseCaseElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
         </propertyTester>
         
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isClassDiagramElementTester"
-              properties="isClassDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLClassElement"
+              properties="isUMLClassElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.uml2.uml.Element">
         </propertyTester>
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isComponentDiagramElement"
-              properties="isComponentDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLComponentElement"
+              properties="isUMLComponentElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.uml2.uml.Element">
         </propertyTester>
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isCompositeStructureDiagramElement"
-              properties="isCompositeStructureDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLCompositeStructuresElement"
+              properties="isUMLCompositeStructuresElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.uml2.uml.Element">
         </propertyTester>
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isDeploymentDiagramElement"
-              properties="isDeploymentDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLDeploymentElement"
+              properties="isUMLDeploymentElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.uml2.uml.Element">
         </propertyTester>
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isProfileDiagramElement"
-              properties="isProfileDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLProfileElement"
+              properties="isUMLProfileElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.uml2.uml.Element">
         </propertyTester>
         <propertyTester
               class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isUseCaseDiagramElement"
-              properties="isUseCaseDiagramElement"
+              id="org.eclipse.uml2.diagram.isUMLUseCaseElement"
+              properties="isUMLUseCaseElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.uml2.uml.Element">
         </propertyTester>
@@ -130,22 +130,22 @@
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
                </or>
          </visibleWhen>
-         <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLClassDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLComponentDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLCompositeStructuresDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewDeployDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLDeploymentDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewProfileDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLProfileDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLUseCaseDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
        </menu>         
@@ -156,22 +156,22 @@
               id="org.eclipse.uml2.uml2editor.new" 
          	  label="%UMLEditor_NewDiagramMenu_label">
          <separator name="newDiagram" visible="true"/>
-         <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLClassDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLComponentDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLCompositeStructuresDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewDeployDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLDeploymentDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewProfileDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLProfileDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
+         <command commandId="org.eclipse.uml2.diagram.NewUMLUseCaseDiagramAction">
             <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
        </menu>
@@ -181,22 +181,22 @@
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="false"?>
       <category id="org.eclipse.uml2.diagram.NewUMLDiagrams" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="org.eclipse.uml2.diagram.NewClassDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLClassDiagramAction"
          name="%UMLEditor_NewDiagramMenu_Class_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
-      <command id="org.eclipse.uml2.diagram.NewComponentDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLComponentDiagramAction"
          name="%UMLEditor_NewDiagramMenu_Component_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
-      <command id="org.eclipse.uml2.diagram.NewUseCaseDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLUseCaseDiagramAction"
          name="%UMLEditor_NewDiagramMenu_UseCase_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
-      <command id="org.eclipse.uml2.diagram.NewDeployDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLDeploymentDiagramAction"
          name="%UMLEditor_NewDiagramMenu_Deploy_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
-      <command id="org.eclipse.uml2.diagram.NewProfileDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLProfileDiagramAction"
          name="%UMLEditor_NewDiagramMenu_Profile_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
-      <command id="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLCompositeStructuresDiagramAction"
          name="%UMLEditor_NewDiagramMenu_CompositeStructure_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
    </extension>

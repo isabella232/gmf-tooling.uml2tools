@@ -29,20 +29,6 @@
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
       <handler
-            class="org.eclipse.uml2.diagram.csd.part.NewDiagramHandler"
-            commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
-         <enabledWhen>
-            	<and>            	
-                  <with variable="selection"><iterate
-                         ifEmpty="false"
-                         operator="or"> 
-               			<test property="org.eclipse.uml2.diagram.isCompositeStructureDiagramElement"/>
-                  </iterate></with>
-                  <count value="+"/>
-            	</and>            	
-         </enabledWhen>
-      </handler>
-      <handler
             class="org.eclipse.uml2.diagram.csd.action.TurnNoteIntoCommentAction"
             commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
             <activeWhen>
@@ -1681,6 +1667,24 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
+<extension point="org.eclipse.ui.handlers" id="new-diagram=handler">
+      <?gmfgen generated="true"?>
+      <handler
+            class="org.eclipse.uml2.diagram.csd.async.UMLCompositeStructuresNewDiagramHandler"
+            commandId="org.eclipse.uml2.diagram.NewUMLCompositeStructuresDiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isUMLCompositeStructuresElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
+      </handler>
+   </extension>
+
 
 
 

@@ -8,7 +8,6 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.jface.viewers.ISelection;
@@ -18,8 +17,9 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.PackageableElement;
 
 public abstract class NewDiagramHandlerBase extends AbstractHandler {
 
@@ -27,13 +27,13 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 
 	protected abstract Wizard getNewDiagramWizard(Package diagramRoot);
 
-	protected abstract Wizard getNewSemiSyncDiagramWizard(Package diagramRoot, List<PackageableElement> selectedElements);
+	protected abstract Wizard getNewSemiSyncDiagramWizard(Package diagramRoot, List<Element> selectedElements);
 	
 	protected abstract void runWizard(Wizard w, Shell s);
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IWorkbenchPart part = HandlerUtil.getActivePartChecked(event);
-		List<PackageableElement> selectedElements = getSelectedElements(getStructuredSelection(event));
+		List<Element> selectedElements = getSelectedElements(getStructuredSelection(event));
 		Package diagramRoot = getDiagramRoot(selectedElements);
 		Wizard wizard = null;
 		if (selectedElements.size() == 1 && diagramRoot.equals(selectedElements.get(0)) ) {
@@ -63,10 +63,10 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 		return null;
 	}
 
-	private List<PackageableElement> getSelectedElements(IStructuredSelection ss) throws ExecutionException {
-		List<PackageableElement> selectedElements = new ArrayList<PackageableElement>();
+	private List<Element> getSelectedElements(IStructuredSelection ss) throws ExecutionException {
+		List<Element> selectedElements = new ArrayList<Element>();
 		for (Object next : ss.toArray()) {
-			PackageableElement pe = getValidElement(next);
+			Element pe = getValidElement(next);
 			if (pe != null) {
 				selectedElements.add(pe);
 			}
@@ -74,21 +74,15 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 		return selectedElements;
 	}
 
-	private PackageableElement getValidElement(Object element) {
-		if (element instanceof IGraphicalEditPart) {
-			element = ((IGraphicalEditPart) element).getNotationView().getElement();
-		}
-		if (element instanceof PackageableElement) {
-			return (PackageableElement) element;
-		}
-		return null;
+	protected Element getValidElement(Object object) {
+		return NewDiagramPropertyTester.resolve(object);
 	}
 
-	private Package getDiagramRoot(List<PackageableElement> selected) {
+	private Package getDiagramRoot(List<Element> selected) {
 		if (selected == null || selected.size() == 0) {
 			return null;
 		}
-		for (PackageableElement next : selected) {
+		for (Element next : selected) {
 			Package pakkage = next.getNearestPackage();
 			if (pakkage != null) {
 				return pakkage;

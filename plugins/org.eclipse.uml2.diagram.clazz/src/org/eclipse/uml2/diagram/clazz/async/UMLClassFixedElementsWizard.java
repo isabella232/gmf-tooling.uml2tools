@@ -28,7 +28,7 @@ import org.eclipse.uml2.diagram.common.async.SyncModelContext;
 import org.eclipse.uml2.diagram.common.async.SyncModelNode;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
-import org.eclipse.uml2.uml.PackageableElement;
+import org.eclipse.uml2.uml.Element;
 
 /**
  * @generated
@@ -38,7 +38,7 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 	/**
 	 * @generated
 	 */
-	private final PackageableElement[] myToSelect;
+	private final Element[] myToSelect;
 
 	/**
 	 * @generated
@@ -48,7 +48,7 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 	/**
 	 * @generated
 	 */
-	public UMLClassFixedElementsWizard(URI domainModelURI, EObject diagramRoot, PackageableElement[] toSelect, TransactionalEditingDomain editingDomain) {
+	public UMLClassFixedElementsWizard(URI domainModelURI, EObject diagramRoot, Element[] toSelect, TransactionalEditingDomain editingDomain) {
 		super(domainModelURI, diagramRoot, editingDomain);
 		myToSelect = toSelect;
 	}
@@ -86,7 +86,7 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 		IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 		DiagramEditPart diagramEditPart = ((IDiagramWorkbenchPart) editorPart).getDiagramEditPart();
 		IOperationHistory history = OperationHistoryFactory.getOperationHistory();
-		for (PackageableElement next : myToSelect) {
+		for (Element next : myToSelect) {
 			if (!canCreateView(next)) {
 				UMLCreateShortcutAction.createShortcut(diagramEditPart.getEditingDomain(), history, next, diagramEditPart, editorPart);
 			}
@@ -198,7 +198,7 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 		 * @generated
 		 */
 		private boolean isInToCreateList() {
-			PackageableElement[] toSelect = ((SyncModelContextWithFixedElements) getContext()).getElementsToDisplay();
+			Element[] toSelect = ((SyncModelContextWithFixedElements) getContext()).getElementsToDisplay();
 			if (toSelect == null || toSelect.length == 0) {
 				return true; //diagram is selected, all diagram contents considered as implicit to-create list  
 			}
@@ -223,13 +223,13 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 		/**
 		 * @generated
 		 */
-		private PackageableElement[] myElementsToDisplay;
+		private Element[] myElementsToDisplay;
 
 		/**
 		 * @generated
 		 */
-		public SyncModelContextWithFixedElements(IDiagramUpdater updater, IVisualIDRegistry registry, PreferencesHint preferencesHint, TransactionalEditingDomain domain,
-				PackageableElement[] toSelect, boolean isDiagramInit) {
+		public SyncModelContextWithFixedElements(IDiagramUpdater updater, IVisualIDRegistry registry, PreferencesHint preferencesHint, TransactionalEditingDomain domain, Element[] toSelect,
+				boolean isDiagramInit) {
 
 			super(updater, registry, preferencesHint, domain, isDiagramInit);
 			myElementsToDisplay = toSelect;
@@ -238,7 +238,7 @@ public class UMLClassFixedElementsWizard extends UMLNewDiagramFileWizard {
 		/**
 		 * @generated
 		 */
-		public PackageableElement[] getElementsToDisplay() {
+		public Element[] getElementsToDisplay() {
 			return myElementsToDisplay;
 		}
 	}

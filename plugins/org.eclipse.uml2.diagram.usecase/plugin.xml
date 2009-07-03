@@ -6,20 +6,6 @@
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
       <handler
-            class="org.eclipse.uml2.diagram.usecase.part.NewDiagramHandler"
-            commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
-         <enabledWhen>
-            	<and>            	
-                  <with variable="selection"><iterate
-                         ifEmpty="false"
-                         operator="or"> 
-               			<test property="org.eclipse.uml2.diagram.isUseCaseDiagramElement"/>
-                  </iterate></with>
-                  <count value="+"/>
-            	</and>            	
-         </enabledWhen>
-      </handler>
-      <handler
             class="org.eclipse.uml2.diagram.usecase.action.TurnNoteIntoCommentAction"
             commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
             <activeWhen>
@@ -1413,6 +1399,24 @@
          </action>
       </objectContribution>
    </extension>
+<extension point="org.eclipse.ui.handlers" id="new-diagram=handler">
+      <?gmfgen generated="true"?>
+      <handler
+            class="org.eclipse.uml2.diagram.usecase.async.UMLUseCaseNewDiagramHandler"
+            commandId="org.eclipse.uml2.diagram.NewUMLUseCaseDiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isUMLUseCaseElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
+      </handler>
+   </extension>
+
 
 
 </plugin>

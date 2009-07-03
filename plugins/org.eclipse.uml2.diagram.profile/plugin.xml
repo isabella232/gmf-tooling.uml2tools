@@ -50,20 +50,6 @@
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
       <handler
-            class="org.eclipse.uml2.diagram.profile.part.NewDiagramHandler"
-            commandId="org.eclipse.uml2.diagram.NewProfileDiagramAction">
-         <enabledWhen>
-            	<and>            	
-                  <with variable="selection"><iterate
-                         ifEmpty="false"
-                         operator="or"> 
-               			<test property="org.eclipse.uml2.diagram.isProfileDiagramElement"/>
-                  </iterate></with>
-                  <count value="+"/>
-            	</and>            	
-         </enabledWhen>
-      </handler>
-      <handler
             class="org.eclipse.uml2.diagram.profile.action.TurnNoteIntoCommentAction"
             commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
             <activeWhen>
@@ -1232,6 +1218,24 @@
          </action>
       </objectContribution>
    </extension>
+<extension point="org.eclipse.ui.handlers" id="new-diagram=handler">
+      <?gmfgen generated="true"?>
+      <handler
+            class="org.eclipse.uml2.diagram.profile.async.UMLProfileNewDiagramHandler"
+            commandId="org.eclipse.uml2.diagram.NewUMLProfileDiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isUMLProfileElementElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
+      </handler>
+   </extension>
+
 
 
 </plugin>
