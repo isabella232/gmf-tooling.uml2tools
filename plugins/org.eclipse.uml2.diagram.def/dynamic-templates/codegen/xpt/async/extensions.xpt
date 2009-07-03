@@ -20,6 +20,7 @@
 	«IF supportsNonCanonicalMode(self)-»
 		«EXPAND deleteFromDiagramActionSupport-»
 		«EXPAND synchronizeDiagramAction-»
+		«EXPAND newDiagramHandler-»		
 	«ENDIF-»
 «ENDDEFINE»
 
@@ -78,6 +79,26 @@
                id="«self.editorGen.plugin.iD».ShowInitDialogAction2">
          </action>
       </objectContribution>
+   </extension>
+«ENDDEFINE»
+
+«DEFINE newDiagramHandler FOR gmfgen::GenDiagram»
+   <extension point="org.eclipse.ui.handlers" id="new-diagram=handler">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <handler
+            class="«EXPAND xpt::async::NewDiagramHandler::qualifiedClassName»"
+            commandId="org.eclipse.uml2.diagram.New«self.editorGen.modelID»DiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.is«self.editorGen.modelID»Element"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
+      </handler>
    </extension>
 «ENDDEFINE»
 
