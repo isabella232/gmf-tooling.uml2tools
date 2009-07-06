@@ -81,14 +81,6 @@ public class DiagramIconStylePreferenceHelper {
 	/**
 	 * @generated
 	 */
-	public static boolean shouldShowIcon(int visualId, PreferencesHint hint) {
-		boolean preferencesValue = getPreferencesValueFor(visualId, hint);
-		return preferencesValue;
-	}
-
-	/**
-	 * @generated
-	 */
 	private static boolean getPreferencesValueFor(int visualId, PreferencesHint hint) {
 		IPreferenceStore store = (IPreferenceStore) hint.getPreferenceStore();
 		String mode = store.getString(UMLPreferencesConstants.PREF_ICONS_SHOW_HIDE_MODE);

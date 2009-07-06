@@ -552,6 +552,7 @@ public class PackageStereo2EditPart extends CompartmentEditPart implements IText
 	protected void addNotationalListeners() {
 		super.addNotationalListeners();
 		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
+		//#265174 Visual distinction between Synchronized and Non-Sync diagrams
 		addListenerFilter(
 				"CanonicalStyle", this, getPrimaryView().getDiagram().getStyle(NotationPackage.eINSTANCE.getCanonicalStyle()), U2TNotationPackage.eINSTANCE.getU2TDiagramCanonicalStyle_SyncNodes()); //$NON-NLS-1$
 	}

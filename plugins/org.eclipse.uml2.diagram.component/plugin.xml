@@ -1195,7 +1195,7 @@
          </propertySection>
       </propertySections>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="validate-action">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="validate-action">
 	<?gmfgen generated="true"?>
 	<contributionItemProvider
 			class="org.eclipse.uml2.diagram.common.actions.ValidateContributionItemProvider"

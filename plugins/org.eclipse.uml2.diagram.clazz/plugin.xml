@@ -625,6 +625,10 @@
       <?gmfgen generated="true"?>
       <viewProvider class="org.eclipse.uml2.diagram.clazz.providers.UMLViewProvider">
          <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="UMLClass"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLClass"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,2001,2007,2004,2005,2003,2010,2006,2008,2009,2012,2013,2014,2015,2016,2017,2018,3006,3007,3008,3009,3011,3012,3041,3013,3001,3002,3003,3025,3027,3019,3020,3014,3015,3021,3022,3016,3023,3024,3017,3028,3029,3030,3031,3032,3033,3034,3035,3036,3037,3038,3039,3040"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007,4008,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019"/>
@@ -1946,7 +1950,7 @@
          </propertySection>
       </propertySections>
    </extension>
-   
+   
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>

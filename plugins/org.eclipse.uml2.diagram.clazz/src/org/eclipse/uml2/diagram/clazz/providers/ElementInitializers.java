@@ -140,9 +140,7 @@ public class ElementInitializers {
 	public static void init_Constraint_2006(Constraint instance) {
 		try {
 			OpaqueExpression newInstance_0_0 = UMLFactory.eINSTANCE.createOpaqueExpression();
-
 			instance.setSpecification(newInstance_0_0);
-			;
 			Object value_0_0_0 = UMLOCLFactory.getExpression("\'OCL\'", UMLPackage.eINSTANCE.getOpaqueExpression()).evaluate(newInstance_0_0);
 			if (value_0_0_0 instanceof Collection) {
 				newInstance_0_0.getLanguages().clear();

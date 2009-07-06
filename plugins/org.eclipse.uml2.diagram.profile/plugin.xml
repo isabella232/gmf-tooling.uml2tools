@@ -216,6 +216,10 @@
       <?gmfgen generated="true"?>
       <viewProvider class="org.eclipse.uml2.diagram.profile.providers.UMLViewProvider">
          <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="UMLProfile"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLProfile"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2006,2007,2008,2009,3001,3008,3010,3003,3005,3009"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004"/>
@@ -939,7 +943,7 @@
          </propertySection>
       </propertySections>
    </extension>
-<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="validate-action">
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="validate-action">
 	<?gmfgen generated="true"?>
 	<contributionItemProvider
 			class="org.eclipse.uml2.diagram.common.actions.ValidateContributionItemProvider"
@@ -1228,7 +1232,7 @@
                   <with variable="selection"><iterate
                          ifEmpty="false"
                          operator="or"> 
-               			<test property="org.eclipse.uml2.diagram.isUMLProfileElementElement"/>
+               			<test property="org.eclipse.uml2.diagram.isUMLProfileElement"/>
                   </iterate></with>
                   <count value="+"/>
             	</and>            	

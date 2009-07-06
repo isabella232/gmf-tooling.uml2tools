@@ -1156,7 +1156,7 @@
          </propertySection>
       </propertySections>
    </extension>
-   
+   
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
