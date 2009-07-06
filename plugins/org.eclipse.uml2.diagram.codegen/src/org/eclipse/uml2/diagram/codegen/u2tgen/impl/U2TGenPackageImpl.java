@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenPackageImpl.java,v 1.2 2009/05/07 09:32:56 mgolubev Exp $
+ * $Id: U2TGenPackageImpl.java,v 1.2.2.1 2009/07/06 11:23:59 tfesenko Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -163,7 +163,7 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 		if (isInited) return (U2TGenPackage)EPackage.Registry.INSTANCE.getEPackage(U2TGenPackage.eNS_URI);
 
 		// Obtain or create and register package
-		U2TGenPackageImpl theU2TGenPackage = (U2TGenPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof U2TGenPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new U2TGenPackageImpl());
+		U2TGenPackageImpl theU2TGenPackage = (U2TGenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof U2TGenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new U2TGenPackageImpl());
 
 		isInited = true;
 
@@ -508,6 +508,7 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.NAME_LABEL);
 		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.STEREOTYPE_LABEL);
 		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.COMBINED_LABEL);
+		addEEnumLiteral(stereotypeSupportRoleEEnum, StereotypeSupportRole.DIAGRAM_LABEL);
 
 		// Create resource
 		createResource(eNS_URI);
