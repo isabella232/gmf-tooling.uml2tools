@@ -8,8 +8,6 @@ import org.eclipse.uml2.uml.Profile;
 
 public class NewDiagramPropertyTester extends PropertyTester {
 
-	private static final String PROPERTY_IS_PACKAGE = "isPackage"; //$NON-NLS-1$
-
 	private static final String PROPERTY_IS_CLASS_DIAGRAM_ELEMENT = "isUMLClassElement"; //$NON-NLS-1$
 
 	private static final String PROPERTY_IS_COMPONENT_DIAGRAM_ELEMENT = "isUMLComponentElement"; //$NON-NLS-1$
@@ -23,9 +21,6 @@ public class NewDiagramPropertyTester extends PropertyTester {
 	private static final String PROPERTY_IS_USE_CASE_DIAGRAM_ELEMENT = "isUMLUseCaseElement"; //$NON-NLS-1$
 
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if (PROPERTY_IS_PACKAGE.equals(property)) {
-			return isPackage(receiver);
-		}
 		if (PROPERTY_IS_CLASS_DIAGRAM_ELEMENT.equals(property)) {
 			return isUMLClassElement(receiver);
 		}
@@ -45,11 +40,6 @@ public class NewDiagramPropertyTester extends PropertyTester {
 			return isUMLUseCaseElement(receiver);
 		}
 		return false;
-	}
-
-	private static boolean isPackage(Object object) {
-		EObject element = resolve(object);
-		return (element != null) && (element instanceof org.eclipse.uml2.uml.Package);
 	}
 
 	public static boolean isUMLClassElement(Object object) {
