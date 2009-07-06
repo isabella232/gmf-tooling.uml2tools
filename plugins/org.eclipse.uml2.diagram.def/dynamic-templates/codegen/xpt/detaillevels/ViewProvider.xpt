@@ -4,9 +4,9 @@
 
 «EXTENSION xpt::detaillevels::DetailLevelsSupport»
 
-«DEFINE initCompartment(String nodeVar, String prefStoreVar) FOR gmfgen::GenCompartment-»
+«DEFINE initCompartment(String nodeVar, String prefStoreVar, String compartmentVar) FOR gmfgen::GenCompartment-»
 «IF isFilteredCompartment(self)-»
-	org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService.getLevel(«getUniqueIdentifier()»).init(«getUniqueIdentifier()»); // [171240]
+	org.eclipse.uml2.diagram.clazz.details.UMLDetailLevelService.getLevel(«compartmentVar»).init(«compartmentVar»); // [171240]
 «ENDIF-» 
 «ENDDEFINE»
 

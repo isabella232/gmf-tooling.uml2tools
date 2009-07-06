@@ -282,20 +282,22 @@ public class «notationViewProviderClassName»«EXPAND xpt::providers::ViewProvi
 
 «AROUND initCompartment(String nodeVar, String prefStoreVar) FOR gmfgen::GenCompartment-»
 		«REM»see addCustomStyles aspect -- we are adding canonical style for some diagrams even if there are no customStyle's«ENDREM»
-		org.eclipse.gmf.runtime.notation.Node «getUniqueIdentifier()» = createCompartment(«nodeVar», «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall», «canCollapse», «needsTitle», «listLayout», «listLayout»);
-		«EXPAND xpt::diagram::views::Utils::addCustomStyles(getUniqueIdentifier() + '.getStyles()')-»
+«LET 'compartment' + self.visualID.repr() AS compartmentVar-»
+		org.eclipse.gmf.runtime.notation.Node «compartmentVar» = createCompartment(«nodeVar», «EXPAND xpt::editor::VisualIDRegistry::typeMethodCall», «canCollapse», «needsTitle», «listLayout», «listLayout»);
+		«EXPAND xpt::diagram::views::Utils::addCustomStyles(compartmentVar + '.getStyles()')-»
 «IF isStoringChildPositions(getLayoutType())-»
 	«IF viewmap.canUseShapeStyle()-»
-		«getUniqueIdentifier()».add(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createShapeStyle());
+		«compartmentVar».add(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createShapeStyle());
 	«ELSE-»
 «REM»Intentionally not adding Description style, as it deemed to be useless for compartments (can't avoid for ShapeStyle - benefits of a single style overwheight drawbacks of Description presence)«ENDREM»
-		«EXPAND xpt::diagram::views::Utils::addFontLineFillStylesConditionally(getUniqueIdentifier() + '.getStyles()') FOR viewmap-»
+		«EXPAND xpt::diagram::views::Utils::addFontLineFillStylesConditionally(compartmentVar + '.getStyles()') FOR viewmap-»
 	«ENDIF-»
-		«getUniqueIdentifier()».setLayoutConstraint(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createBounds());
-		«EXPAND xpt::providers::ViewProvider::initializeStyles(getUniqueIdentifier(), prefStoreVar, not viewmap.isFixedForeground(), not viewmap.isFixedBackground(), not viewmap.isFixedFont())-»
+		«compartmentVar».setLayoutConstraint(org.eclipse.gmf.runtime.notation.NotationFactory.eINSTANCE.createBounds());
+		«EXPAND xpt::providers::ViewProvider::initializeStyles(compartmentVar, prefStoreVar, not viewmap.isFixedForeground(), not viewmap.isFixedBackground(), not viewmap.isFixedFont())-»
 «ELSE-»
-		«EXPAND xpt::providers::ViewProvider::initializeStyles(getUniqueIdentifier(), prefStoreVar, false, false, false)-»
+		«EXPAND xpt::providers::ViewProvider::initializeStyles(compartmentVar, prefStoreVar, false, false, false)-»
 «ENDIF-»
-«EXPAND xpt::detaillevels::ViewProvider::initCompartment(nodeVar, prefStoreVar)-»
-«EXPAND xpt::diagramheader::ViewProvider::initCompartment(nodeVar, prefStoreVar)-»
+«EXPAND xpt::detaillevels::ViewProvider::initCompartment(nodeVar, prefStoreVar, compartmentVar)-»
+«EXPAND xpt::diagramheader::ViewProvider::initCompartment(nodeVar, prefStoreVar, compartmentVar)-»
+«ENDLET-»
 «ENDAROUND»

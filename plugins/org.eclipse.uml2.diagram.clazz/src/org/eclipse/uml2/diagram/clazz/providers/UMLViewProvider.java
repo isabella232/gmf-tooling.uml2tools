@@ -536,23 +536,23 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node label5004 = createLabel(node, UMLVisualIDRegistry.getType(PackageNameEditPart.VISUAL_ID));
 
-		Node PackagePackages_7010 = createCompartment(node, UMLVisualIDRegistry.getType(PackagePackagesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7010 = createCompartment(node, UMLVisualIDRegistry.getType(PackagePackagesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_PackagePackages_7010 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PackagePackages_7010.setCanonical(true);
-		PackagePackages_7010.getStyles().add(canonicalStyle_PackagePackages_7010);
-		UMLDetailLevelService.getLevel(PackagePackages_7010).init(PackagePackages_7010); // [171240]
+		compartment7010.getStyles().add(canonicalStyle_PackagePackages_7010);
+		UMLDetailLevelService.getLevel(compartment7010).init(compartment7010); // [171240]
 
-		Node PackageClassifiers_7011 = createCompartment(node, UMLVisualIDRegistry.getType(PackageClassifiersEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7011 = createCompartment(node, UMLVisualIDRegistry.getType(PackageClassifiersEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_PackageClassifiers_7011 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PackageClassifiers_7011.setCanonical(true);
-		PackageClassifiers_7011.getStyles().add(canonicalStyle_PackageClassifiers_7011);
-		UMLDetailLevelService.getLevel(PackageClassifiers_7011).init(PackageClassifiers_7011); // [171240]
+		compartment7011.getStyles().add(canonicalStyle_PackageClassifiers_7011);
+		UMLDetailLevelService.getLevel(compartment7011).init(compartment7011); // [171240]
 
-		Node PackageOther_7012 = createCompartment(node, UMLVisualIDRegistry.getType(PackageOtherEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7012 = createCompartment(node, UMLVisualIDRegistry.getType(PackageOtherEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_PackageOther_7012 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PackageOther_7012.setCanonical(true);
-		PackageOther_7012.getStyles().add(canonicalStyle_PackageOther_7012);
-		UMLDetailLevelService.getLevel(PackageOther_7012).init(PackageOther_7012); // [171240]
+		compartment7012.getStyles().add(canonicalStyle_PackageOther_7012);
+		UMLDetailLevelService.getLevel(compartment7012).init(compartment7012); // [171240]
 		return node;
 	}
 
@@ -589,23 +589,23 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5003 = createLabel(node, UMLVisualIDRegistry.getType(ClassNameEditPart.VISUAL_ID));
 		Node label5019 = createLabel(node, UMLVisualIDRegistry.getType(ClassStereotypeEditPart.VISUAL_ID));
 
-		Node ClassAttributes_7001 = createCompartment(node, UMLVisualIDRegistry.getType(ClassAttributesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7001 = createCompartment(node, UMLVisualIDRegistry.getType(ClassAttributesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_ClassAttributes_7001 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ClassAttributes_7001.setCanonical(true);
-		ClassAttributes_7001.getStyles().add(canonicalStyle_ClassAttributes_7001);
-		UMLDetailLevelService.getLevel(ClassAttributes_7001).init(ClassAttributes_7001); // [171240]
+		compartment7001.getStyles().add(canonicalStyle_ClassAttributes_7001);
+		UMLDetailLevelService.getLevel(compartment7001).init(compartment7001); // [171240]
 
-		Node ClassOperations_7002 = createCompartment(node, UMLVisualIDRegistry.getType(ClassOperationsEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7002 = createCompartment(node, UMLVisualIDRegistry.getType(ClassOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_ClassOperations_7002 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ClassOperations_7002.setCanonical(true);
-		ClassOperations_7002.getStyles().add(canonicalStyle_ClassOperations_7002);
-		UMLDetailLevelService.getLevel(ClassOperations_7002).init(ClassOperations_7002); // [171240]
+		compartment7002.getStyles().add(canonicalStyle_ClassOperations_7002);
+		UMLDetailLevelService.getLevel(compartment7002).init(compartment7002); // [171240]
 
-		Node ClassClasses_7003 = createCompartment(node, UMLVisualIDRegistry.getType(ClassClassesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7003 = createCompartment(node, UMLVisualIDRegistry.getType(ClassClassesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_ClassClasses_7003 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ClassClasses_7003.setCanonical(true);
-		ClassClasses_7003.getStyles().add(canonicalStyle_ClassClasses_7003);
-		UMLDetailLevelService.getLevel(ClassClasses_7003).init(ClassClasses_7003); // [171240]
+		compartment7003.getStyles().add(canonicalStyle_ClassClasses_7003);
+		UMLDetailLevelService.getLevel(compartment7003).init(compartment7003); // [171240]
 		return node;
 	}
 
@@ -642,23 +642,23 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5009 = createLabel(node, UMLVisualIDRegistry.getType(AssociationClassNameEditPart.VISUAL_ID));
 		Node label5031 = createLabel(node, UMLVisualIDRegistry.getType(AssociationClassStereotypeEditPart.VISUAL_ID));
 
-		Node AssociationClassAttributes_7024 = createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassAttributesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7024 = createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassAttributesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_AssociationClassAttributes_7024 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_AssociationClassAttributes_7024.setCanonical(true);
-		AssociationClassAttributes_7024.getStyles().add(canonicalStyle_AssociationClassAttributes_7024);
-		UMLDetailLevelService.getLevel(AssociationClassAttributes_7024).init(AssociationClassAttributes_7024); // [171240]
+		compartment7024.getStyles().add(canonicalStyle_AssociationClassAttributes_7024);
+		UMLDetailLevelService.getLevel(compartment7024).init(compartment7024); // [171240]
 
-		Node AssociationClassOperations_7025 = createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassOperationsEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7025 = createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_AssociationClassOperations_7025 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_AssociationClassOperations_7025.setCanonical(true);
-		AssociationClassOperations_7025.getStyles().add(canonicalStyle_AssociationClassOperations_7025);
-		UMLDetailLevelService.getLevel(AssociationClassOperations_7025).init(AssociationClassOperations_7025); // [171240]
+		compartment7025.getStyles().add(canonicalStyle_AssociationClassOperations_7025);
+		UMLDetailLevelService.getLevel(compartment7025).init(compartment7025); // [171240]
 
-		Node AssociationClassClasses_7026 = createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassClassesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7026 = createCompartment(node, UMLVisualIDRegistry.getType(AssociationClassClassesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_AssociationClassClasses_7026 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_AssociationClassClasses_7026.setCanonical(true);
-		AssociationClassClasses_7026.getStyles().add(canonicalStyle_AssociationClassClasses_7026);
-		UMLDetailLevelService.getLevel(AssociationClassClasses_7026).init(AssociationClassClasses_7026); // [171240]
+		compartment7026.getStyles().add(canonicalStyle_AssociationClassClasses_7026);
+		UMLDetailLevelService.getLevel(compartment7026).init(compartment7026); // [171240]
 		return node;
 	}
 
@@ -695,17 +695,17 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5006 = createLabel(node, UMLVisualIDRegistry.getType(DataTypeNameEditPart.VISUAL_ID));
 		Node label5032 = createLabel(node, UMLVisualIDRegistry.getType(DataTypeStereotypeEditPart.VISUAL_ID));
 
-		Node DataTypeAttributes_7017 = createCompartment(node, UMLVisualIDRegistry.getType(DataTypeAttributesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7017 = createCompartment(node, UMLVisualIDRegistry.getType(DataTypeAttributesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_DataTypeAttributes_7017 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_DataTypeAttributes_7017.setCanonical(true);
-		DataTypeAttributes_7017.getStyles().add(canonicalStyle_DataTypeAttributes_7017);
-		UMLDetailLevelService.getLevel(DataTypeAttributes_7017).init(DataTypeAttributes_7017); // [171240]
+		compartment7017.getStyles().add(canonicalStyle_DataTypeAttributes_7017);
+		UMLDetailLevelService.getLevel(compartment7017).init(compartment7017); // [171240]
 
-		Node DataTypeOperations_7018 = createCompartment(node, UMLVisualIDRegistry.getType(DataTypeOperationsEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7018 = createCompartment(node, UMLVisualIDRegistry.getType(DataTypeOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_DataTypeOperations_7018 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_DataTypeOperations_7018.setCanonical(true);
-		DataTypeOperations_7018.getStyles().add(canonicalStyle_DataTypeOperations_7018);
-		UMLDetailLevelService.getLevel(DataTypeOperations_7018).init(DataTypeOperations_7018); // [171240]
+		compartment7018.getStyles().add(canonicalStyle_DataTypeOperations_7018);
+		UMLDetailLevelService.getLevel(compartment7018).init(compartment7018); // [171240]
 		return node;
 	}
 
@@ -742,17 +742,17 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5007 = createLabel(node, UMLVisualIDRegistry.getType(PrimitiveTypeNameEditPart.VISUAL_ID));
 		Node label5033 = createLabel(node, UMLVisualIDRegistry.getType(PrimitiveTypeStereotypeEditPart.VISUAL_ID));
 
-		Node PrimitiveTypeAttributes_7020 = createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeAttributesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7020 = createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeAttributesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_PrimitiveTypeAttributes_7020 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PrimitiveTypeAttributes_7020.setCanonical(true);
-		PrimitiveTypeAttributes_7020.getStyles().add(canonicalStyle_PrimitiveTypeAttributes_7020);
-		UMLDetailLevelService.getLevel(PrimitiveTypeAttributes_7020).init(PrimitiveTypeAttributes_7020); // [171240]
+		compartment7020.getStyles().add(canonicalStyle_PrimitiveTypeAttributes_7020);
+		UMLDetailLevelService.getLevel(compartment7020).init(compartment7020); // [171240]
 
-		Node PrimitiveTypeOperations_7021 = createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeOperationsEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7021 = createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_PrimitiveTypeOperations_7021 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PrimitiveTypeOperations_7021.setCanonical(true);
-		PrimitiveTypeOperations_7021.getStyles().add(canonicalStyle_PrimitiveTypeOperations_7021);
-		UMLDetailLevelService.getLevel(PrimitiveTypeOperations_7021).init(PrimitiveTypeOperations_7021); // [171240]
+		compartment7021.getStyles().add(canonicalStyle_PrimitiveTypeOperations_7021);
+		UMLDetailLevelService.getLevel(compartment7021).init(compartment7021); // [171240]
 		return node;
 	}
 
@@ -789,23 +789,23 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5005 = createLabel(node, UMLVisualIDRegistry.getType(EnumerationNameEditPart.VISUAL_ID));
 		Node label5034 = createLabel(node, UMLVisualIDRegistry.getType(EnumerationStereotypeEditPart.VISUAL_ID));
 
-		Node EnumerationLiterals_7013 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationLiteralsEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7013 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationLiteralsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_EnumerationLiterals_7013 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_EnumerationLiterals_7013.setCanonical(true);
-		EnumerationLiterals_7013.getStyles().add(canonicalStyle_EnumerationLiterals_7013);
-		UMLDetailLevelService.getLevel(EnumerationLiterals_7013).init(EnumerationLiterals_7013); // [171240]
+		compartment7013.getStyles().add(canonicalStyle_EnumerationLiterals_7013);
+		UMLDetailLevelService.getLevel(compartment7013).init(compartment7013); // [171240]
 
-		Node EnumerationAttributes_7014 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationAttributesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7014 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationAttributesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_EnumerationAttributes_7014 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_EnumerationAttributes_7014.setCanonical(true);
-		EnumerationAttributes_7014.getStyles().add(canonicalStyle_EnumerationAttributes_7014);
-		UMLDetailLevelService.getLevel(EnumerationAttributes_7014).init(EnumerationAttributes_7014); // [171240]
+		compartment7014.getStyles().add(canonicalStyle_EnumerationAttributes_7014);
+		UMLDetailLevelService.getLevel(compartment7014).init(compartment7014); // [171240]
 
-		Node EnumerationOperations_7015 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationOperationsEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7015 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_EnumerationOperations_7015 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_EnumerationOperations_7015.setCanonical(true);
-		EnumerationOperations_7015.getStyles().add(canonicalStyle_EnumerationOperations_7015);
-		UMLDetailLevelService.getLevel(EnumerationOperations_7015).init(EnumerationOperations_7015); // [171240]
+		compartment7015.getStyles().add(canonicalStyle_EnumerationOperations_7015);
+		UMLDetailLevelService.getLevel(compartment7015).init(compartment7015); // [171240]
 		return node;
 	}
 
@@ -906,10 +906,10 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5010 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationNameEditPart.VISUAL_ID));
 		Node label5039 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationStereoEditPart.VISUAL_ID));
 
-		Node InstanceSpecificationSlots_7028 = createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationSlotsEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7028 = createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationSlotsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_InstanceSpecificationSlots_7028 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_InstanceSpecificationSlots_7028.setCanonical(true);
-		InstanceSpecificationSlots_7028.getStyles().add(canonicalStyle_InstanceSpecificationSlots_7028);
+		compartment7028.getStyles().add(canonicalStyle_InstanceSpecificationSlots_7028);
 		return node;
 	}
 
@@ -1019,23 +1019,23 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5018 = createLabel(node, UMLVisualIDRegistry.getType(InterfaceName2EditPart.VISUAL_ID));
 		Node label5035 = createLabel(node, UMLVisualIDRegistry.getType(InterfaceStereotypeEditPart.VISUAL_ID));
 
-		Node InterfaceAttributes_7029 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceAttributesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7029 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceAttributesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_InterfaceAttributes_7029 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_InterfaceAttributes_7029.setCanonical(true);
-		InterfaceAttributes_7029.getStyles().add(canonicalStyle_InterfaceAttributes_7029);
-		UMLDetailLevelService.getLevel(InterfaceAttributes_7029).init(InterfaceAttributes_7029); // [171240]
+		compartment7029.getStyles().add(canonicalStyle_InterfaceAttributes_7029);
+		UMLDetailLevelService.getLevel(compartment7029).init(compartment7029); // [171240]
 
-		Node InterfaceOperations_7030 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceOperationsEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7030 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceOperationsEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_InterfaceOperations_7030 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_InterfaceOperations_7030.setCanonical(true);
-		InterfaceOperations_7030.getStyles().add(canonicalStyle_InterfaceOperations_7030);
-		UMLDetailLevelService.getLevel(InterfaceOperations_7030).init(InterfaceOperations_7030); // [171240]
+		compartment7030.getStyles().add(canonicalStyle_InterfaceOperations_7030);
+		UMLDetailLevelService.getLevel(compartment7030).init(compartment7030); // [171240]
 
-		Node InterfaceClasses_7031 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceClassesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7031 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceClassesEditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_InterfaceClasses_7031 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_InterfaceClasses_7031.setCanonical(true);
-		InterfaceClasses_7031.getStyles().add(canonicalStyle_InterfaceClasses_7031);
-		UMLDetailLevelService.getLevel(InterfaceClasses_7031).init(InterfaceClasses_7031); // [171240]
+		compartment7031.getStyles().add(canonicalStyle_InterfaceClasses_7031);
+		UMLDetailLevelService.getLevel(compartment7031).init(compartment7031); // [171240]
 		return node;
 	}
 
@@ -1069,11 +1069,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5020 = createLabel(node, UMLVisualIDRegistry.getType(PackageName2EditPart.VISUAL_ID));
 		Node label5041 = createLabel(node, UMLVisualIDRegistry.getType(PackageStereo2EditPart.VISUAL_ID));
 
-		Node PackageImports_7032 = createCompartment(node, UMLVisualIDRegistry.getType(PackageImportsEditPart.VISUAL_ID), true, false, true, true);
+		Node compartment7032 = createCompartment(node, UMLVisualIDRegistry.getType(PackageImportsEditPart.VISUAL_ID), true, false, true, true);
 		CanonicalStyle canonicalStyle_PackageImports_7032 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PackageImports_7032.setCanonical(true);
-		PackageImports_7032.getStyles().add(canonicalStyle_PackageImports_7032);
-		DrawerStyle drawerStyle = (DrawerStyle) PackageImports_7032.getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
+		compartment7032.getStyles().add(canonicalStyle_PackageImports_7032);
+		DrawerStyle drawerStyle = (DrawerStyle) compartment7032.getStyle(NotationPackage.eINSTANCE.getDrawerStyle());
 		if (drawerStyle != null) {
 			//#216573 [SecondaryDiagramElement] Collapse imports compartment after creation
 			drawerStyle.setCollapsed(true);
@@ -1141,10 +1141,10 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node label5026 = createLabel(node, UMLVisualIDRegistry.getType(PackageName3EditPart.VISUAL_ID));
 
-		Node PackageFramecontents_7033 = createCompartment(node, UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID), true, false, false, false);
+		Node compartment7033 = createCompartment(node, UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID), true, false, false, false);
 		CanonicalStyle canonicalStyle_PackageFramecontents_7033 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PackageFramecontents_7033.setCanonical(true);
-		PackageFramecontents_7033.getStyles().add(canonicalStyle_PackageFramecontents_7033);
+		compartment7033.getStyles().add(canonicalStyle_PackageFramecontents_7033);
 		return node;
 	}
 
@@ -1180,10 +1180,10 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node label5029 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationName3EditPart.VISUAL_ID));
 
-		Node InstanceSpecificationValue_7046 = createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID), false, false, true, true);
+		Node compartment7046 = createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationValueEditPart.VISUAL_ID), false, false, true, true);
 		CanonicalStyle canonicalStyle_InstanceSpecificationValue_7046 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_InstanceSpecificationValue_7046.setCanonical(true);
-		InstanceSpecificationValue_7046.getStyles().add(canonicalStyle_InstanceSpecificationValue_7046);
+		compartment7046.getStyles().add(canonicalStyle_InstanceSpecificationValue_7046);
 		return node;
 	}
 
@@ -1620,10 +1620,10 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node label5025 = createLabel(node, UMLVisualIDRegistry.getType(PackageName4EditPart.VISUAL_ID));
 
-		Node PackageFramecontents_7034 = createCompartment(node, UMLVisualIDRegistry.getType(PackageAsFrameContents2EditPart.VISUAL_ID), true, false, false, false);
+		Node compartment7034 = createCompartment(node, UMLVisualIDRegistry.getType(PackageAsFrameContents2EditPart.VISUAL_ID), true, false, false, false);
 		CanonicalStyle canonicalStyle_PackageFramecontents_7034 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PackageFramecontents_7034.setCanonical(true);
-		PackageFramecontents_7034.getStyles().add(canonicalStyle_PackageFramecontents_7034);
+		compartment7034.getStyles().add(canonicalStyle_PackageFramecontents_7034);
 		return node;
 	}
 
@@ -1659,20 +1659,20 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5021 = createLabel(node, UMLVisualIDRegistry.getType(ClassName2EditPart.VISUAL_ID));
 		Node label5022 = createLabel(node, UMLVisualIDRegistry.getType(ClassStereotype2EditPart.VISUAL_ID));
 
-		Node ClassAttributes_7035 = createCompartment(node, UMLVisualIDRegistry.getType(ClassAttributes2EditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7035 = createCompartment(node, UMLVisualIDRegistry.getType(ClassAttributes2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_ClassAttributes_7035 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ClassAttributes_7035.setCanonical(true);
-		ClassAttributes_7035.getStyles().add(canonicalStyle_ClassAttributes_7035);
+		compartment7035.getStyles().add(canonicalStyle_ClassAttributes_7035);
 
-		Node ClassOperations_7036 = createCompartment(node, UMLVisualIDRegistry.getType(ClassOperations2EditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7036 = createCompartment(node, UMLVisualIDRegistry.getType(ClassOperations2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_ClassOperations_7036 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ClassOperations_7036.setCanonical(true);
-		ClassOperations_7036.getStyles().add(canonicalStyle_ClassOperations_7036);
+		compartment7036.getStyles().add(canonicalStyle_ClassOperations_7036);
 
-		Node ClassClasses_7037 = createCompartment(node, UMLVisualIDRegistry.getType(ClassClasses2EditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7037 = createCompartment(node, UMLVisualIDRegistry.getType(ClassClasses2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_ClassClasses_7037 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_ClassClasses_7037.setCanonical(true);
-		ClassClasses_7037.getStyles().add(canonicalStyle_ClassClasses_7037);
+		compartment7037.getStyles().add(canonicalStyle_ClassClasses_7037);
 		return node;
 	}
 
@@ -1708,20 +1708,20 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5023 = createLabel(node, UMLVisualIDRegistry.getType(EnumerationName2EditPart.VISUAL_ID));
 		Node label5036 = createLabel(node, UMLVisualIDRegistry.getType(EnumerationStereotype2EditPart.VISUAL_ID));
 
-		Node EnumerationLiterals_7038 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationLiterals2EditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7038 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationLiterals2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_EnumerationLiterals_7038 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_EnumerationLiterals_7038.setCanonical(true);
-		EnumerationLiterals_7038.getStyles().add(canonicalStyle_EnumerationLiterals_7038);
+		compartment7038.getStyles().add(canonicalStyle_EnumerationLiterals_7038);
 
-		Node EnumerationAttributes_7039 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationAttributes2EditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7039 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationAttributes2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_EnumerationAttributes_7039 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_EnumerationAttributes_7039.setCanonical(true);
-		EnumerationAttributes_7039.getStyles().add(canonicalStyle_EnumerationAttributes_7039);
+		compartment7039.getStyles().add(canonicalStyle_EnumerationAttributes_7039);
 
-		Node EnumerationOperations_7040 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationOperations2EditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7040 = createCompartment(node, UMLVisualIDRegistry.getType(EnumerationOperations2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_EnumerationOperations_7040 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_EnumerationOperations_7040.setCanonical(true);
-		EnumerationOperations_7040.getStyles().add(canonicalStyle_EnumerationOperations_7040);
+		compartment7040.getStyles().add(canonicalStyle_EnumerationOperations_7040);
 		return node;
 	}
 
@@ -1754,10 +1754,10 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5024 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationName2EditPart.VISUAL_ID));
 		Node label5040 = createLabel(node, UMLVisualIDRegistry.getType(InstanceSpecificationStereo2EditPart.VISUAL_ID));
 
-		Node InstanceSpecificationSlots_7041 = createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationSlots2EditPart.VISUAL_ID), false, true, true, true);
+		Node compartment7041 = createCompartment(node, UMLVisualIDRegistry.getType(InstanceSpecificationSlots2EditPart.VISUAL_ID), false, true, true, true);
 		CanonicalStyle canonicalStyle_InstanceSpecificationSlots_7041 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_InstanceSpecificationSlots_7041.setCanonical(true);
-		InstanceSpecificationSlots_7041.getStyles().add(canonicalStyle_InstanceSpecificationSlots_7041);
+		compartment7041.getStyles().add(canonicalStyle_InstanceSpecificationSlots_7041);
 		return node;
 	}
 
@@ -1793,15 +1793,15 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5027 = createLabel(node, UMLVisualIDRegistry.getType(DataTypeName2EditPart.VISUAL_ID));
 		Node label5037 = createLabel(node, UMLVisualIDRegistry.getType(DataTypeStereotype2EditPart.VISUAL_ID));
 
-		Node DataTypeAttributes_7042 = createCompartment(node, UMLVisualIDRegistry.getType(DataTypeAttributes2EditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7042 = createCompartment(node, UMLVisualIDRegistry.getType(DataTypeAttributes2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_DataTypeAttributes_7042 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_DataTypeAttributes_7042.setCanonical(true);
-		DataTypeAttributes_7042.getStyles().add(canonicalStyle_DataTypeAttributes_7042);
+		compartment7042.getStyles().add(canonicalStyle_DataTypeAttributes_7042);
 
-		Node DataTypeOperations_7043 = createCompartment(node, UMLVisualIDRegistry.getType(DataTypeOperations2EditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7043 = createCompartment(node, UMLVisualIDRegistry.getType(DataTypeOperations2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_DataTypeOperations_7043 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_DataTypeOperations_7043.setCanonical(true);
-		DataTypeOperations_7043.getStyles().add(canonicalStyle_DataTypeOperations_7043);
+		compartment7043.getStyles().add(canonicalStyle_DataTypeOperations_7043);
 		return node;
 	}
 
@@ -1837,15 +1837,15 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5028 = createLabel(node, UMLVisualIDRegistry.getType(PrimitiveTypeName2EditPart.VISUAL_ID));
 		Node label5038 = createLabel(node, UMLVisualIDRegistry.getType(PrimitiveTypeStereotype2EditPart.VISUAL_ID));
 
-		Node PrimitiveTypeAttributes_7044 = createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeAttributes2EditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7044 = createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeAttributes2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_PrimitiveTypeAttributes_7044 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PrimitiveTypeAttributes_7044.setCanonical(true);
-		PrimitiveTypeAttributes_7044.getStyles().add(canonicalStyle_PrimitiveTypeAttributes_7044);
+		compartment7044.getStyles().add(canonicalStyle_PrimitiveTypeAttributes_7044);
 
-		Node PrimitiveTypeOperations_7045 = createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeOperations2EditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7045 = createCompartment(node, UMLVisualIDRegistry.getType(PrimitiveTypeOperations2EditPart.VISUAL_ID), true, true, true, true);
 		CanonicalStyle canonicalStyle_PrimitiveTypeOperations_7045 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PrimitiveTypeOperations_7045.setCanonical(true);
-		PrimitiveTypeOperations_7045.getStyles().add(canonicalStyle_PrimitiveTypeOperations_7045);
+		compartment7045.getStyles().add(canonicalStyle_PrimitiveTypeOperations_7045);
 		return node;
 	}
 
