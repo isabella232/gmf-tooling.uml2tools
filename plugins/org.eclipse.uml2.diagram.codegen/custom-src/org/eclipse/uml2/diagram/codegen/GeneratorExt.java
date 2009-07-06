@@ -181,6 +181,8 @@ public class GeneratorExt extends Generator {
 		if (myEmitters.needsFixedElementsWizard(new Object[] { diagram })) {
 			doGenerateJavaClass(myEmitters.getFixedElementsWizardEmitter(), myEmitters.getFixedElementsWizardFQN(new Object[] { diagram }), diagram);
 			doGenerateJavaClass(myEmitters.getNewDiagramHandlerEmitter(), myEmitters.getNewDiagramHandlerFQN(new Object[] { diagram }), diagram);
+			doGenerateJavaClass(myEmitters.getNewDiagramPropertyTesterEmitter(), myEmitters.getNewDiagramPropertyTesterFQN(new Object[] { diagram }), diagram);
+			
 		}
 	}
 

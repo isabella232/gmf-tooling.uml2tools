@@ -122,6 +122,14 @@ public class CodegenEmittersExt extends CodegenEmitters {
 		return getQualifiedClassName("xpt::async::NewDiagramHandler::qualifiedClassName", input); //$NON-NLS-1$
 	}
 	
+	public TextEmitter getNewDiagramPropertyTesterEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::async::NewDiagramPropertyTester::NewDiagramPropertyTester"); //$NON-NLS-1$
+	}
+
+	public String getNewDiagramPropertyTesterFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::async::NewDiagramPropertyTester::qualifiedClassName", input); //$NON-NLS-1$
+	}	
+	
 	/**
 	 * Returns qualified class name defined in template.
 	 */

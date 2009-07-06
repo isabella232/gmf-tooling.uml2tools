@@ -2852,14 +2852,14 @@
 <extension point="org.eclipse.core.expressions.propertyTesters" id="new-diagram-property-testers">
       <?gmfgen generated="true"?>
         <propertyTester
-              class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
+              class="org.eclipse.uml2.diagram.clazz.async.NewDiagramPropertyTester"
               id="org.eclipse.uml2.diagram.isUMLClassElement"
               properties="isUMLClassElement"
               namespace="org.eclipse.uml2.diagram"
               type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
         </propertyTester>
         <propertyTester
-              class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
+              class="org.eclipse.uml2.diagram.clazz.async.NewDiagramPropertyTester"
               id="org.eclipse.uml2.diagram.isUMLClassElement"
               properties="isUMLClassElement"
               namespace="org.eclipse.uml2.diagram"

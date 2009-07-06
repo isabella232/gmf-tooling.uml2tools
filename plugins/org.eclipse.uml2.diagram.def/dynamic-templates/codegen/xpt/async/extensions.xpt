@@ -11,8 +11,6 @@
    */
 
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
 «EXTENSION xpt::async::NonCanonicalDiagram»  
 
@@ -83,7 +81,25 @@
 «ENDDEFINE»
 
 «DEFINE newDiagramHandler FOR gmfgen::GenDiagram»
-   <extension point="org.eclipse.ui.handlers" id="new-diagram=handler">
+   <extension point="org.eclipse.core.expressions.propertyTesters" id="new-diagram-property-testers">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+        <propertyTester
+              class="«EXPAND xpt::async::NewDiagramPropertyTester::qualifiedClassName»"
+              id="org.eclipse.uml2.diagram.is«self.editorGen.modelID»Element"
+              properties="is«self.editorGen.modelID»Element"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="«EXPAND xpt::async::NewDiagramPropertyTester::qualifiedClassName»"
+              id="org.eclipse.uml2.diagram.is«self.editorGen.modelID»Element"
+              properties="is«self.editorGen.modelID»Element"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.uml2.uml.Element">
+        </propertyTester>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="new-diagram-handler">
       «EXPAND xpt::Common::xmlGeneratedTag»
       <handler
             class="«EXPAND xpt::async::NewDiagramHandler::qualifiedClassName»"

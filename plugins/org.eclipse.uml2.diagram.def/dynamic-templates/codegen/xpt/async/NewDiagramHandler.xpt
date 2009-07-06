@@ -1,9 +1,4 @@
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
-
-«EXTENSION xpt::diagramheader::DiagramHeader»
-«EXTENSION xpt::editor::Utils»
-«EXTENSION xpt::async::NonCanonicalDiagram»  
 
 «DEFINE className FOR gmfgen::GenDiagram»«self.editorGen.modelID»NewDiagramHandler«ENDDEFINE»
 «DEFINE packageName FOR gmfgen::GenDiagram»«self.editorGen.packageNamePrefix».async«ENDDEFINE»
@@ -30,7 +25,7 @@ public class «EXPAND className» extends org.eclipse.uml2.diagram.common.part.N
 	«EXPAND xpt::Common::generatedMemberComment»
 	@Override
 	protected void runWizard(org.eclipse.jface.wizard.Wizard wizard, org.eclipse.swt.widgets.Shell sh) {
-		«self.getDiagramEditorUtilQualifiedClassName()».runWizard(sh, wizard, "InitDiagramFile"); //$NON-NLS-1$
+		«self.getDiagramEditorUtilQualifiedClassName()».runWizard(sh, wizard, "InitDiagramFile"); «EXPAND xpt::Common::nonNLS»
 	}
 	
 	«EXPAND xpt::Common::generatedMemberComment»
