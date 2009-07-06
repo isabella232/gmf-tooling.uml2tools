@@ -1667,7 +1667,7 @@
 		 </popupContribution>
       </contributionItemProvider>
    </extension>
-<extension point="org.eclipse.ui.handlers" id="new-diagram=handler">
+<extension point="org.eclipse.ui.handlers" id="new-diagram-handler">
       <?gmfgen generated="true"?>
       <handler
             class="org.eclipse.uml2.diagram.csd.async.UMLCompositeStructuresNewDiagramHandler"
@@ -1684,6 +1684,24 @@
          </enabledWhen>
       </handler>
    </extension>
+<extension point="org.eclipse.core.expressions.propertyTesters" id="new-diagram-property-testers">
+      <?gmfgen generated="true"?>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.csd.async.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUMLCompositeStructuresElement"
+              properties="isUMLCompositeStructuresElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.csd.async.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUMLCompositeStructuresElement"
+              properties="isUMLCompositeStructuresElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.uml2.uml.Element">
+        </propertyTester>
+   </extension>
+
 
 
 

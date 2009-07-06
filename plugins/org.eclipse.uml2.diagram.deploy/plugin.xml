@@ -1235,7 +1235,7 @@
          </action>
       </objectContribution>
    </extension>
-<extension point="org.eclipse.ui.handlers" id="new-diagram=handler">
+<extension point="org.eclipse.ui.handlers" id="new-diagram-handler">
       <?gmfgen generated="true"?>
       <handler
             class="org.eclipse.uml2.diagram.deploy.async.UMLDeploymentNewDiagramHandler"
@@ -1252,6 +1252,24 @@
          </enabledWhen>
       </handler>
    </extension>
+<extension point="org.eclipse.core.expressions.propertyTesters" id="new-diagram-property-testers">
+      <?gmfgen generated="true"?>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.deploy.async.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUMLDeploymentElement"
+              properties="isUMLDeploymentElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.deploy.async.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUMLDeploymentElement"
+              properties="isUMLDeploymentElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.uml2.uml.Element">
+        </propertyTester>
+   </extension>
+
 
 
 

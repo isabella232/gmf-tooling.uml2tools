@@ -8,6 +8,7 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.jface.viewers.ISelection;
@@ -17,7 +18,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
 
@@ -75,7 +75,13 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 	}
 
 	protected Element getValidElement(Object object) {
-		return NewDiagramPropertyTester.resolve(object);
+		if (object instanceof IGraphicalEditPart) {
+			object = ((IGraphicalEditPart) object).resolveSemanticElement();
+		}
+		if (object instanceof Element) {
+			return (Element) object;
+		}
+		return null;
 	}
 
 	private Package getDiagramRoot(List<Element> selected) {

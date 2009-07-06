@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.clazz.async;
+package org.eclipse.uml2.diagram.deploy.async;
 
 import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.emf.ecore.EObject;
@@ -13,14 +13,14 @@ public class NewDiagramPropertyTester extends PropertyTester {
 	/**
 	 * @generated
 	 */
-	private static final String PROPERTY_IS_UMLCLASS_DIAGRAM_ELEMENT = "isUMLClassElement"; //$NON-NLS-1$
+	private static final String PROPERTY_IS_UMLDEPLOYMENT_DIAGRAM_ELEMENT = "isUMLDeploymentElement"; //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if (PROPERTY_IS_UMLCLASS_DIAGRAM_ELEMENT.equals(property)) {
-			return isUMLClassElement(receiver);
+		if (PROPERTY_IS_UMLDEPLOYMENT_DIAGRAM_ELEMENT.equals(property)) {
+			return isUMLDeploymentElement(receiver);
 		}
 		return false;
 	}
@@ -28,17 +28,16 @@ public class NewDiagramPropertyTester extends PropertyTester {
 	/**
 	 * @generated NOT
 	 */
-	public static boolean isUMLClassElement(Object object) {
+	public static boolean isUMLDeploymentElement(Object object) {
 		EObject element = resolve(object);
 		return (element instanceof org.eclipse.uml2.uml.Package) //
-		|| (element instanceof org.eclipse.uml2.uml.Class) // 
-		|| (element instanceof org.eclipse.uml2.uml.AssociationClass) //
-		|| (element instanceof org.eclipse.uml2.uml.DataType) //
-		|| (element instanceof org.eclipse.uml2.uml.PrimitiveType) // 
-		|| (element instanceof org.eclipse.uml2.uml.Enumeration) //
-		|| (element instanceof org.eclipse.uml2.uml.Interface) //
-		|| (element instanceof org.eclipse.uml2.uml.Comment) //
-		|| (element instanceof org.eclipse.uml2.uml.InstanceSpecification);
+		|| (element instanceof org.eclipse.uml2.uml.Device) //
+		|| (element instanceof org.eclipse.uml2.uml.Node) //
+		|| (element instanceof org.eclipse.uml2.uml.ExecutionEnvironment) //
+		|| (element instanceof org.eclipse.uml2.uml.Artifact) //
+		|| (element instanceof org.eclipse.uml2.uml.Deployment) //
+		|| (element instanceof org.eclipse.uml2.uml.Comment)
+		;
 	}
 
 	/**

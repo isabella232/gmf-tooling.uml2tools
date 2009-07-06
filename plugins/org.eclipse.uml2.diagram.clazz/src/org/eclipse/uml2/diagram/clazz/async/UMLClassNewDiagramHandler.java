@@ -6,7 +6,6 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorUtil;
 import org.eclipse.uml2.diagram.clazz.part.UMLNewDiagramFileWizard;
-import org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester;
 import org.eclipse.uml2.diagram.common.part.NewDiagramHandlerBase;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Package;
