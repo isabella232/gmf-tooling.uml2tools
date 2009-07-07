@@ -59,8 +59,8 @@ public class UMLUseCaseFixedElementsWizard extends UMLNewDiagramFileWizard {
 	 */
 	@Override
 	public void addPages() {
-		addPage(getFileCreationPage());
 		addPage(getDiagramRootElementSelectionPage());
+		addPage(getFileCreationPage());
 	}
 
 	/**

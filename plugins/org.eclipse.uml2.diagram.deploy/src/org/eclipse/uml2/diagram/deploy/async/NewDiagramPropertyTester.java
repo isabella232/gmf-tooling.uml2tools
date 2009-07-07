@@ -31,13 +31,12 @@ public class NewDiagramPropertyTester extends PropertyTester {
 	public static boolean isUMLDeploymentElement(Object object) {
 		EObject element = resolve(object);
 		return (element instanceof org.eclipse.uml2.uml.Package) //
-		|| (element instanceof org.eclipse.uml2.uml.Device) //
-		|| (element instanceof org.eclipse.uml2.uml.Node) //
-		|| (element instanceof org.eclipse.uml2.uml.ExecutionEnvironment) //
-		|| (element instanceof org.eclipse.uml2.uml.Artifact) //
-		|| (element instanceof org.eclipse.uml2.uml.Deployment) //
-		|| (element instanceof org.eclipse.uml2.uml.Comment)
-		;
+				|| (element instanceof org.eclipse.uml2.uml.Device) //
+				|| (element instanceof org.eclipse.uml2.uml.Node) //
+				|| (element instanceof org.eclipse.uml2.uml.ExecutionEnvironment) //
+				|| (element instanceof org.eclipse.uml2.uml.Artifact) //
+				|| (element instanceof org.eclipse.uml2.uml.Deployment) //
+				|| (element instanceof org.eclipse.uml2.uml.Comment);
 	}
 
 	/**

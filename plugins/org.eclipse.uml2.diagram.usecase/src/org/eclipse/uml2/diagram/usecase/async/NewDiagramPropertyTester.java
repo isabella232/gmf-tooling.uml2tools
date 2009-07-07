@@ -31,11 +31,10 @@ public class NewDiagramPropertyTester extends PropertyTester {
 	public static boolean isUMLUseCaseElement(Object object) {
 		EObject element = resolve(object);
 		return (element instanceof org.eclipse.uml2.uml.Package) //
-		|| (element instanceof org.eclipse.uml2.uml.Actor) //
-		|| (element instanceof org.eclipse.uml2.uml.UseCase) //
-		|| (element instanceof org.eclipse.uml2.uml.Component) //
-		|| (element instanceof org.eclipse.uml2.uml.Comment)
-;
+				|| (element instanceof org.eclipse.uml2.uml.Actor) //
+				|| (element instanceof org.eclipse.uml2.uml.UseCase) //
+				|| (element instanceof org.eclipse.uml2.uml.Component) //
+				|| (element instanceof org.eclipse.uml2.uml.Comment);
 	}
 
 	/**
