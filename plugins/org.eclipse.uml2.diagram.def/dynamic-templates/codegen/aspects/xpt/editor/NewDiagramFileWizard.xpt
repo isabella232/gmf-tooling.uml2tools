@@ -48,8 +48,8 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org
 	    assert diagramRoot != null : "Doagram root element must be specified"; «EXPAND xpt::Common::nonNLS»
 	    assert editingDomain != null : "Editing domain must be specified"; «EXPAND xpt::Common::nonNLS»
 
-		createFileCreationPage(domainModelURI);
 		createDiagramRootSelectorPage(diagramRoot);
+		createFileCreationPage(domainModelURI);
 «IF supportsNonCanonicalMode(self)-»
 		createSynchronizationPage(editingDomain);
 «ENDIF-»
@@ -113,12 +113,13 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org
 		«ENDREM-»
 		myFileCreationPage.setFileName(«getDiagramEditorUtilQualifiedClassName()».getUniqueFileName(
 				filePath, fileName, "«getDefaultDiagramExtension(editorGen)»")); «EXPAND xpt::Common::nonNLS»
+		myFileCreationPage.setFileExtension("«getDefaultDiagramExtension(editorGen)»"); «EXPAND xpt::Common::nonNLS»
 	}
 
 	«EXPAND xpt::Common::generatedMemberComment»
 	public void addPages() {
-		addPage(myFileCreationPage);
 		addPage(diagramRootElementSelectionPage);
+		addPage(myFileCreationPage);
 		«IF supportsNonCanonicalMode(self)-»
 		addPage(synchronizationPage);
 		«ENDIF-»
@@ -269,6 +270,19 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org
 			setErrorMessage(result ? null : «EXPAND xpt::Externalizer::accessorCall(i18nKeyForNewDiagramFileWizardRootSelectionPageInvalidSelectionMessage(self)) FOR editorGen»);
 			return result;
 		}
+		
+		«EXPAND xpt::Common::generatedMemberComment»
+		@Override
+		public org.eclipse.jface.wizard.IWizardPage getNextPage() {
+			org.eclipse.jface.wizard.IWizardPage nextPage = super.getNextPage();
+			if (nextPage instanceof org.eclipse.ui.dialogs.WizardNewFileCreationPage) {
+				String fileName = ((org.eclipse.uml2.uml.NamedElement)getModelElement()).getName();
+				org.eclipse.ui.dialogs.WizardNewFileCreationPage fileCreationPage = ((org.eclipse.ui.dialogs.WizardNewFileCreationPage)nextPage);
+				fileCreationPage.setFileName(«getDiagramEditorUtilQualifiedClassName()».getUniqueFileName(fileCreationPage.getContainerFullPath(), fileName, "«getDefaultDiagramExtension(editorGen)»")); «EXPAND xpt::Common::nonNLS»
+			}
+			return nextPage;
+		}
+
 	}
 }
 «ENDAROUND»

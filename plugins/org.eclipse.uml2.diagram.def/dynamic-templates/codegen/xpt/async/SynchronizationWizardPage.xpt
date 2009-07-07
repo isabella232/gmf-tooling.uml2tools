@@ -1,12 +1,12 @@
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
-«EXTENSION xpt::diagramheader::DiagramHeader»
 «EXTENSION xpt::editor::Utils»
+«EXTENSION xpt::async::NonCanonicalDiagram»  
 
 «DEFINE className FOR gmfgen::GenDiagram»«self.editorGen.modelID»SynchronizationWizardPage«ENDDEFINE»
 «DEFINE packageName FOR gmfgen::GenDiagram»«self.editorGen.packageNamePrefix».async«ENDDEFINE»
 «DEFINE qualifiedClassName FOR gmfgen::GenDiagram»«EXPAND packageName».«EXPAND className»«ENDDEFINE»
+«DEFINE needsSynchronizationWizardPage FOR gmfgen::GenDiagram»«supportsNonCanonicalMode(self)»«ENDDEFINE»
 
 «DEFINE SynchronizationWizardPage FOR gmfgen::GenDiagram»
 package «EXPAND packageName»;
@@ -33,8 +33,14 @@ public class «EXPAND className» extends org.eclipse.uml2.diagram.common.async.
 	«EXPAND xpt::Common::generatedMemberComment»
 	@Override
 	protected org.eclipse.emf.ecore.EObject getWizardSemanticRoot() {
-		«editorGen.editor.packageName».«defaultModelElementSelectionPageClassName(self)» prevPageImpl = («editorGen.editor.packageName».«defaultModelElementSelectionPageClassName(self)») getPreviousPage();
-		return prevPageImpl.getModelElement();
+		org.eclipse.jface.wizard.IWizardPage previos = getPreviousPage();
+		while (previos != null) {
+			if (previos instanceof «editorGen.editor.packageName».«defaultModelElementSelectionPageClassName(self)») {
+				return ((«editorGen.editor.packageName».«defaultModelElementSelectionPageClassName(self)») previos).getModelElement();
+			}
+			previos = previos.getPreviousPage();
+		}
+		return null;
 	}
 
 	«EXPAND xpt::Common::generatedMemberComment»

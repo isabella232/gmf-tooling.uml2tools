@@ -31,8 +31,8 @@ public class «EXPAND className» extends org.eclipse.uml2.diagram.common.part.N
 	«EXPAND xpt::Common::generatedMemberComment»
 	@Override
 	protected org.eclipse.uml2.uml.Element getValidElement(Object object) {	
-		org.eclipse.uml2.uml.Element element = org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester.resolve(object);
-		if (org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester.is«self.editorGen.modelID»Element(element)) {
+		org.eclipse.uml2.uml.Element element = «EXPAND xpt::async::NewDiagramPropertyTester::qualifiedClassName».resolve(object);
+		if («EXPAND xpt::async::NewDiagramPropertyTester::qualifiedClassName».is«self.editorGen.modelID»Element(element)) {
 			return element;
 		}
 		return null;

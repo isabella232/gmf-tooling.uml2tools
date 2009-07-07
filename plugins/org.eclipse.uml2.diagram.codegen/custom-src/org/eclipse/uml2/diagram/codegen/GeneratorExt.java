@@ -70,6 +70,7 @@ public class GeneratorExt extends Generator {
 		generateViewFiltersPreferencesPage(myDiagram);
 		generateSwitchBetweenCommentAndNodeActions();
 		generatePaletteProvider(myDiagram);
+		generateSynchronizationWizardPage(myDiagram);
 		generateNewDiagramHadler(myDiagram);
 	}
 
@@ -177,12 +178,17 @@ public class GeneratorExt extends Generator {
 		}
 	}
 
+	private void generateSynchronizationWizardPage(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
+		if (myEmitters.needsSynchronizationWizardPage(new Object[] { diagram })) {
+			doGenerateJavaClass(myEmitters.getSynchronizationWizardPageEmitter(), myEmitters.getSynchronizationWizardPagedFQN(new Object[] { diagram }), diagram);
+		}
+	}
+
 	private void generateNewDiagramHadler(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
 		if (myEmitters.needsFixedElementsWizard(new Object[] { diagram })) {
 			doGenerateJavaClass(myEmitters.getFixedElementsWizardEmitter(), myEmitters.getFixedElementsWizardFQN(new Object[] { diagram }), diagram);
 			doGenerateJavaClass(myEmitters.getNewDiagramHandlerEmitter(), myEmitters.getNewDiagramHandlerFQN(new Object[] { diagram }), diagram);
 			doGenerateJavaClass(myEmitters.getNewDiagramPropertyTesterEmitter(), myEmitters.getNewDiagramPropertyTesterFQN(new Object[] { diagram }), diagram);
-			
 		}
 	}
 

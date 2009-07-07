@@ -1,8 +1,6 @@
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
-«EXTENSION xpt::diagramheader::DiagramHeader»
-«EXTENSION xpt::editor::Utils»
 «EXTENSION xpt::async::NonCanonicalDiagram»  
 
 «DEFINE className FOR gmfgen::GenDiagram»«self.editorGen.modelID»FixedElementsWizard«ENDDEFINE»
