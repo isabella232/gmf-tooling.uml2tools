@@ -29,8 +29,8 @@ public class «EXPAND className» extends «EXPAND xpt::editor::NewDiagramFileWi
 	«EXPAND xpt::Common::generatedMemberComment»
 	@Override
 	public void addPages() {
-		addPage(getFileCreationPage());
 		addPage(getDiagramRootElementSelectionPage());
+		addPage(getFileCreationPage());
 	}
 
 	«EXPAND xpt::Common::generatedMemberComment»
