@@ -31,13 +31,12 @@ public class NewDiagramPropertyTester extends PropertyTester {
 	public static boolean isUMLCompositeStructuresElement(Object object) {
 		EObject element = resolve(object);
 		return (element instanceof org.eclipse.uml2.uml.Collaboration) //
-		|| (element instanceof org.eclipse.uml2.uml.Class) //
-		|| (element instanceof org.eclipse.uml2.uml.Package) //
-		|| (element instanceof org.eclipse.uml2.uml.Interface) //
-		|| (element instanceof org.eclipse.uml2.uml.InstanceSpecification) // 
-		|| (element instanceof org.eclipse.uml2.uml.Constraint) //
-		|| (element instanceof org.eclipse.uml2.uml.Comment)
-		;
+				|| (element instanceof org.eclipse.uml2.uml.Class) //
+				|| (element instanceof org.eclipse.uml2.uml.Package) //
+				|| (element instanceof org.eclipse.uml2.uml.Interface) //
+				|| (element instanceof org.eclipse.uml2.uml.InstanceSpecification) // 
+				|| (element instanceof org.eclipse.uml2.uml.Constraint) //
+				|| (element instanceof org.eclipse.uml2.uml.Comment);
 	}
 
 	/**

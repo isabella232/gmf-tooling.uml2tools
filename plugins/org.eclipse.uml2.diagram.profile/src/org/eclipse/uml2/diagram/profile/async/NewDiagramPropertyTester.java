@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.profile.async;
 
 import org.eclipse.core.expressions.PropertyTester;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Profile;
@@ -41,8 +42,7 @@ public class NewDiagramPropertyTester extends PropertyTester {
 				|| (element instanceof org.eclipse.uml2.uml.Enumeration) //
 				|| (element instanceof org.eclipse.uml2.uml.ElementImport) //
 				|| (element instanceof org.eclipse.uml2.uml.Constraint) //
-				|| (element instanceof org.eclipse.uml2.uml.Comment)
-				;
+				|| (element instanceof org.eclipse.uml2.uml.Comment);
 	}
 
 	/**

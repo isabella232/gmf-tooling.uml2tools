@@ -59,8 +59,8 @@ public class UMLCompositeStructuresFixedElementsWizard extends UMLNewDiagramFile
 	 */
 	@Override
 	public void addPages() {
-		addPage(getFileCreationPage());
 		addPage(getDiagramRootElementSelectionPage());
+		addPage(getFileCreationPage());
 	}
 
 	/**
