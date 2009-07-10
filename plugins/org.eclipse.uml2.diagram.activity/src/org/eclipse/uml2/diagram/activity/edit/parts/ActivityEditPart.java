@@ -51,6 +51,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.activity.draw2d.PartitionLayout;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.activity.edit.policies.ActivityItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.activity.edit.policies.XYLayoutBorderItemsEditPolicy;
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -103,7 +104,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ActivityCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutEditPolicy());
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new XYLayoutBorderItemsEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

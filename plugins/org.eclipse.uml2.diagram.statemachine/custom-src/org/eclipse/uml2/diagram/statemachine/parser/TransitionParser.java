@@ -87,9 +87,12 @@ public class TransitionParser implements IParser {
 			EList<Trigger> triggers = transition.getTriggers();
 			for (Iterator<Trigger> triggersIterator = triggers.iterator(); triggersIterator.hasNext();) {
 				Trigger trigger = triggersIterator.next();
-				printStringBuffer.append(EventParserUtil.getEditString(trigger.getEvent()));
-				if (triggersIterator.hasNext()) {
-					printStringBuffer.append(',');
+				Event event = trigger.getEvent();
+				if (event != null) {
+					printStringBuffer.append(EventParserUtil.getEditString(event));
+					if (triggersIterator.hasNext()) {
+						printStringBuffer.append(',');
+					}
 				}
 			}
 			

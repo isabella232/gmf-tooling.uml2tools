@@ -34,6 +34,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.RelativeBendpoints;
+import org.eclipse.gmf.runtime.notation.Routing;
 import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.TitleStyle;
 import org.eclipse.gmf.runtime.notation.View;
@@ -392,8 +393,8 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		Node StateMachineName_5011 = createLabel(node, UMLVisualIDRegistry.getType(StateMachineNameEditPart.VISUAL_ID));
-		Node StateMachineQualifiedName_5012 = createLabel(node, UMLVisualIDRegistry.getType(StateMachineStereotypeEditPart.VISUAL_ID));
+		Node label5011 = createLabel(node, UMLVisualIDRegistry.getType(StateMachineNameEditPart.VISUAL_ID));
+		Node label5012 = createLabel(node, UMLVisualIDRegistry.getType(StateMachineStereotypeEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -454,8 +455,8 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		Node StateName_5001 = createLabel(node, UMLVisualIDRegistry.getType(SimpleStateNameEditPart.VISUAL_ID));
-		Node StateQualifiedName_5015 = createLabel(node, UMLVisualIDRegistry.getType(SimpleStateStereotypeEditPart.VISUAL_ID));
+		Node label5001 = createLabel(node, UMLVisualIDRegistry.getType(SimpleStateNameEditPart.VISUAL_ID));
+		Node label5015 = createLabel(node, UMLVisualIDRegistry.getType(SimpleStateStereotypeEditPart.VISUAL_ID));
 
 		Node StateSimpleState_InternalActivities_7005 = createCompartment(node, UMLVisualIDRegistry.getType(SimpleState_InternalActivitiesEditPart.VISUAL_ID), true, true, true, true);
 		return node;
@@ -523,8 +524,8 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		Node StateName_5004 = createLabel(node, UMLVisualIDRegistry.getType(CompositeStateNameEditPart.VISUAL_ID));
-		Node StateQualifiedName_5013 = createLabel(node, UMLVisualIDRegistry.getType(CompositeStateStereotypeEditPart.VISUAL_ID));
+		Node label5004 = createLabel(node, UMLVisualIDRegistry.getType(CompositeStateNameEditPart.VISUAL_ID));
+		Node label5013 = createLabel(node, UMLVisualIDRegistry.getType(CompositeStateStereotypeEditPart.VISUAL_ID));
 
 		Node StateCompositeState_InternalActivities_7006 = createCompartment(node, UMLVisualIDRegistry.getType(CompositeState_InternalActivitiesEditPart.VISUAL_ID), true, true, true, true);
 
@@ -594,8 +595,8 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		Node StateName_5008 = createLabel(node, UMLVisualIDRegistry.getType(SubmachineStateNameEditPart.VISUAL_ID));
-		Node StateQualifiedName_5014 = createLabel(node, UMLVisualIDRegistry.getType(SubmachineStateStereotypeEditPart.VISUAL_ID));
+		Node label5008 = createLabel(node, UMLVisualIDRegistry.getType(SubmachineStateNameEditPart.VISUAL_ID));
+		Node label5014 = createLabel(node, UMLVisualIDRegistry.getType(SubmachineStateStereotypeEditPart.VISUAL_ID));
 
 		Node StateCompositeState_InternalActivities_7007 = createCompartment(node, UMLVisualIDRegistry.getType(SubmachineState_InternalActivitiesEditPart.VISUAL_ID), false, false, true, true);
 
@@ -629,9 +630,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		Node ConnectionPointReferenceName_5009 = createLabel(node, UMLVisualIDRegistry.getType(EntryConnectionPointReferenceNameEditPart.VISUAL_ID));
-		ConnectionPointReferenceName_5009.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location5009 = (Location) ConnectionPointReferenceName_5009.getLayoutConstraint();
+		Node label5009 = createLabel(node, UMLVisualIDRegistry.getType(EntryConnectionPointReferenceNameEditPart.VISUAL_ID));
+		label5009.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5009 = (Location) label5009.getLayoutConstraint();
 		location5009.setX(0);
 		location5009.setY(5);
 		return node;
@@ -663,9 +664,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		Node ConnectionPointReferenceName_5010 = createLabel(node, UMLVisualIDRegistry.getType(ExitConnectionPointReferenceNameEditPart.VISUAL_ID));
-		ConnectionPointReferenceName_5010.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location5010 = (Location) ConnectionPointReferenceName_5010.getLayoutConstraint();
+		Node label5010 = createLabel(node, UMLVisualIDRegistry.getType(ExitConnectionPointReferenceNameEditPart.VISUAL_ID));
+		label5010.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5010 = (Location) label5010.getLayoutConstraint();
 		location5010.setX(0);
 		location5010.setY(5);
 		return node;
@@ -974,9 +975,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		Node PseudostateName_5006 = createLabel(node, UMLVisualIDRegistry.getType(EntryPointPseudostateNameEditPart.VISUAL_ID));
-		PseudostateName_5006.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location5006 = (Location) PseudostateName_5006.getLayoutConstraint();
+		Node label5006 = createLabel(node, UMLVisualIDRegistry.getType(EntryPointPseudostateNameEditPart.VISUAL_ID));
+		label5006.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5006 = (Location) label5006.getLayoutConstraint();
 		location5006.setX(0);
 		location5006.setY(5);
 		return node;
@@ -1008,9 +1009,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		Node PseudostateName_5007 = createLabel(node, UMLVisualIDRegistry.getType(ExitPointPseudostateNameEditPart.VISUAL_ID));
-		PseudostateName_5007.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location5007 = (Location) PseudostateName_5007.getLayoutConstraint();
+		Node label5007 = createLabel(node, UMLVisualIDRegistry.getType(ExitPointPseudostateNameEditPart.VISUAL_ID));
+		label5007.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5007 = (Location) label5007.getLayoutConstraint();
 		location5007.setX(0);
 		location5007.setY(5);
 		return node;
@@ -1046,9 +1047,13 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
 			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
 		}
-		Node TransitionName_6001 = createLabel(edge, UMLVisualIDRegistry.getType(TransitionNameEditPart.VISUAL_ID));
-		TransitionName_6001.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location6001 = (Location) TransitionName_6001.getLayoutConstraint();
+		Routing routing = Routing.get(prefStore.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
+		}
+		Node label6001 = createLabel(edge, UMLVisualIDRegistry.getType(TransitionNameEditPart.VISUAL_ID));
+		label6001.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6001 = (Location) label6001.getLayoutConstraint();
 		location6001.setX(0);
 		location6001.setY(40);
 		return edge;
