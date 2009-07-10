@@ -6836,7 +6836,7 @@
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
           key="EditPolicy.LAYOUT_ROLE"
-          editPolicyQualifiedClassName="org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy"/>
+          editPolicyQualifiedClassName="org.eclipse.uml2.diagram.activity.edit.policies.XYLayoutBorderItemsEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Activity"/>
