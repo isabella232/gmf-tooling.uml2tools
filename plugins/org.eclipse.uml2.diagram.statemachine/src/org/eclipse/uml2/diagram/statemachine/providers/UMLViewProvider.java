@@ -425,7 +425,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 
-		Node RegionSubvertices_7004 = createCompartment(node, UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID), false, false, false, false);
+		Node compartment7004 = createCompartment(node, UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -458,7 +458,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5001 = createLabel(node, UMLVisualIDRegistry.getType(SimpleStateNameEditPart.VISUAL_ID));
 		Node label5015 = createLabel(node, UMLVisualIDRegistry.getType(SimpleStateStereotypeEditPart.VISUAL_ID));
 
-		Node StateSimpleState_InternalActivities_7005 = createCompartment(node, UMLVisualIDRegistry.getType(SimpleState_InternalActivitiesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7005 = createCompartment(node, UMLVisualIDRegistry.getType(SimpleState_InternalActivitiesEditPart.VISUAL_ID), true, true, true, true);
 		return node;
 	}
 
@@ -527,9 +527,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5004 = createLabel(node, UMLVisualIDRegistry.getType(CompositeStateNameEditPart.VISUAL_ID));
 		Node label5013 = createLabel(node, UMLVisualIDRegistry.getType(CompositeStateStereotypeEditPart.VISUAL_ID));
 
-		Node StateCompositeState_InternalActivities_7006 = createCompartment(node, UMLVisualIDRegistry.getType(CompositeState_InternalActivitiesEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7006 = createCompartment(node, UMLVisualIDRegistry.getType(CompositeState_InternalActivitiesEditPart.VISUAL_ID), true, true, true, true);
 
-		Node StateCompositeState_InternalTransitions_7008 = createCompartment(node, UMLVisualIDRegistry.getType(CompositeState_InternalTransitionsEditPart.VISUAL_ID), true, true, true, true);
+		Node compartment7008 = createCompartment(node, UMLVisualIDRegistry.getType(CompositeState_InternalTransitionsEditPart.VISUAL_ID), true, true, true, true);
 		return node;
 	}
 
@@ -560,7 +560,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 
-		Node RegionSubvertices_7003 = createCompartment(node, UMLVisualIDRegistry.getType(State_RegionSubverticesEditPart.VISUAL_ID), false, false, false, false);
+		Node compartment7003 = createCompartment(node, UMLVisualIDRegistry.getType(State_RegionSubverticesEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -598,9 +598,9 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5008 = createLabel(node, UMLVisualIDRegistry.getType(SubmachineStateNameEditPart.VISUAL_ID));
 		Node label5014 = createLabel(node, UMLVisualIDRegistry.getType(SubmachineStateStereotypeEditPart.VISUAL_ID));
 
-		Node StateCompositeState_InternalActivities_7007 = createCompartment(node, UMLVisualIDRegistry.getType(SubmachineState_InternalActivitiesEditPart.VISUAL_ID), false, false, true, true);
+		Node compartment7007 = createCompartment(node, UMLVisualIDRegistry.getType(SubmachineState_InternalActivitiesEditPart.VISUAL_ID), false, false, true, true);
 
-		Node StateCompositeState_InternalTransitions_7009 = createCompartment(node, UMLVisualIDRegistry.getType(SubmachineState_InternalTransitionsEditPart.VISUAL_ID), false, false, true, true);
+		Node compartment7009 = createCompartment(node, UMLVisualIDRegistry.getType(SubmachineState_InternalTransitionsEditPart.VISUAL_ID), false, false, true, true);
 		return node;
 	}
 
