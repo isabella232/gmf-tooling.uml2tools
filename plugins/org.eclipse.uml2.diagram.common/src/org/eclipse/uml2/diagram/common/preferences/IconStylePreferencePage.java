@@ -202,7 +202,7 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 			Button selectAll = addSelectAllButton(buttonsPanel, true);
 			selectAll.setText("Select All");
 			Button deselectAll = addSelectAllButton(buttonsPanel, false);
-			deselectAll.setText("Deselect all");
+			deselectAll.setText("Deselect All");
 			return buttonsPanel;
 		}
 
