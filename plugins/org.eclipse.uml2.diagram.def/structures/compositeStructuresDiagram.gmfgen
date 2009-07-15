@@ -2570,7 +2570,7 @@
       iD="org.eclipse.uml2.diagram.csd"
       name="UML2 Composite Structures Diagram Plugin (Incubation)"
       provider="Eclipse Modeling Project"
-      version="0.9.0.qualifier"
+      version="0.9.1.qualifier"
       printingEnabled="true">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.uml2.diagram.common</requiredPlugins>
