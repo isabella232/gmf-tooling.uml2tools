@@ -299,6 +299,10 @@ public class EditPropertyParametersDialog extends TrayDialog {
 
 	private static class ParameterLabelProvider extends LabelProvider implements ITableLabelProvider {
 
+		private static final String EMPTY_VALUE = ""; //$NON-NLS-1$
+	
+		private static final String UNDEFINED_VALUE = "-"; //$NON-NLS-1$
+
 		public Image getColumnImage(Object element, int columnIndex) {
 			return null;
 		}
@@ -307,9 +311,9 @@ public class EditPropertyParametersDialog extends TrayDialog {
 			Parameter p = (Parameter) element;
 			switch (columnIndex) {
 			case EditParametersTableConstants.NAME_POS:
-				return p.getName();
+				return p.getName() != null ? p.getName() : EMPTY_VALUE; 
 			case EditParametersTableConstants.TYPES_POS:
-				return p.getType() != null ? p.getType().getName() : "";
+				return p.getType() != null ? p.getType().getName() : EMPTY_VALUE;
 			case EditParametersTableConstants.MULTIPLICITY_POS:
 				return Integer.toString(p.getUpper());
 			case EditParametersTableConstants.DIRECTION_POS:
@@ -317,7 +321,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 			case EditParametersTableConstants.DEFAULT_VALUE_POS:
 				ValueSpecification defValue = p.getDefaultValue();
 				if (defValue == null) {
-					return "";
+					return EMPTY_VALUE;
 				}
 				return new ValueSpecificationToStringConverter().doSwitch(defValue);
 			case EditParametersTableConstants.IS_ORDERED_POS:
@@ -325,14 +329,14 @@ public class EditPropertyParametersDialog extends TrayDialog {
 			case EditParametersTableConstants.IS_UNIQUE_POS:
 				return Boolean.toString(p.isUnique());
 			default:
-				return "-";
+				return UNDEFINED_VALUE; 
 			}
 		}
 	}
 
 	public static class ValueSpecificationToStringConverter extends org.eclipse.uml2.uml.util.UMLSwitch<String> {
 		
-		private static final String EMPTY_VALUE = "";
+		private static final String EMPTY_VALUE = ""; //$NON-NLS-1$
 
 		@Override
 		public String caseLiteralString(LiteralString object) {

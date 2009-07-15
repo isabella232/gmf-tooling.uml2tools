@@ -23,6 +23,8 @@ import org.eclipse.uml2.uml.ValueSpecification;
 
 class ParametersCellModifier implements ICellModifier {
 
+	private static final String EMPTY_VALUE = ""; //$NON-NLS-1$
+
 	public boolean canModify(Object element, String property) {
 		return true;
 	}
@@ -30,7 +32,7 @@ class ParametersCellModifier implements ICellModifier {
 	public Object getValue(Object element, String property) {
 		Parameter parameter = (Parameter) element;
 		if (EditParametersTableConstants.NAME.equals(property)) {
-			return parameter.getName();
+			return parameter.getName() != null ? parameter.getName() : EMPTY_VALUE;
 		}
 		if (EditParametersTableConstants.TYPES.equals(property)) {
 			return parameter.getType();
@@ -44,7 +46,7 @@ class ParametersCellModifier implements ICellModifier {
 		if (EditParametersTableConstants.DEFAULT_VALUE.equals(property)) {
 			ValueSpecification defValue = parameter.getDefaultValue();
 			if (defValue == null) {
-				return "";
+				return EMPTY_VALUE;
 			}
 			return new ValueSpecificationToStringConverter().doSwitch(defValue); 
 		}
