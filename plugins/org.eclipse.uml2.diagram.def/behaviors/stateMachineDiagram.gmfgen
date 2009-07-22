@@ -2334,4 +2334,17 @@
         qualifiedClassName="org.eclipse.uml2.diagram.common.actions.RotateActionHandler"
         name="Rotate"/>
   </contextMenus>
+  <contextMenus
+      iD="org.eclipse.uml2.diagram.state.rotate.composite_state"
+      context="//@diagram/@childNodes.5 //@diagram/@childNodes.7">
+    <items
+        xsi:type="gmfgen:GenMenuManager"
+        iD="org.eclipse.uml2.diagram.state.rotate.composite_state.new"
+        name="New">
+      <items
+          xsi:type="gmfgen:GenCustomAction"
+          qualifiedClassName="org.eclipse.uml2.diagram.statemachine.actions.NewInternalTransitionActionHandler"
+          name="Internal Transition"/>
+    </items>
+  </contextMenus>
 </gmfgen:GenEditorGenerator>

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
@@ -38,6 +39,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.Region;
+import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -50,6 +53,22 @@ public class SubmachineState_InternalTransitionsCanonicalEditPolicy extends Cano
 	 * @generated
 	 */
 	Set myFeaturesToSynchronize;
+
+	/**
+	 * @NOT generated
+	 */
+	@Override
+	public void activate() {
+		super.activate();
+		removeListenerFilter("SemanticFilterID"); //$NON-NLS-1$
+		EObject semanticHost = getSemanticHost();
+		if ( semanticHost instanceof State && !isActive() ) {
+			EList<Region> regions = ((State) semanticHost).getRegions();
+			for (Iterator<Region> regionsIterator = regions.iterator(); regionsIterator.hasNext();) {
+				addListenerFilter("SemanticFilterID", this, regionsIterator.next()); //$NON-NLS-1$
+			}
+		}
+	}
 
 	/**
 	 * @generated
