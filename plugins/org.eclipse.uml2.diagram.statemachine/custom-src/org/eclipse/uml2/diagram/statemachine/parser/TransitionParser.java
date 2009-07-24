@@ -179,7 +179,7 @@ public class TransitionParser implements IParser {
 	}
 	
 	private ICommand getSetNameCommand(EObject element, String name) {
-		if (name == null || name.isEmpty()) {
+		if (name == null || name.length() == 0) {
 			return null;
 		}
 		return new SetValueCommand(new SetRequest(element, UMLPackage.eINSTANCE.getNamedElement_Name(), name));
