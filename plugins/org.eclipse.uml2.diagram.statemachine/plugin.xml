@@ -782,7 +782,7 @@
       </menuContribution>
       <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
 
-         <menu id="org.eclipse.uml2.diagram.state.rotate.composite_state.new" label="New">
+         <menu id="org.eclipse.uml2.diagram.state.composite_state.new" label="New">
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
@@ -794,12 +794,41 @@
             </visibleWhen>
          </menu>
       </menuContribution>
-      <menuContribution locationURI="popup:org.eclipse.uml2.diagram.state.rotate.composite_state.new">
+      <menuContribution locationURI="popup:org.eclipse.uml2.diagram.state.composite_state.new">
          <command commandId="org.eclipse.uml2.diagram.statemachine.NewInternalTransitionActionHandler">
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"><or> 
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart"/>
+                  </or></iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+
+         <menu id="org.eclipse.uml2.diagram.state.state.new" label="New">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"><or> 
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart"/>
+                  </or></iterate></with>
+               </and>
+            </visibleWhen>
+         </menu>
+      </menuContribution>
+      <menuContribution locationURI="popup:org.eclipse.uml2.diagram.state.state.new">
+         <command commandId="org.eclipse.uml2.diagram.statemachine.NewDoActivityActionHandler">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"><or> 
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart"/>
                      <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart"/>
                      <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart"/>
                   </or></iterate></with>
@@ -822,6 +851,9 @@
       <command id="org.eclipse.uml2.diagram.statemachine.NewInternalTransitionActionHandler"
          name="Internal Transition"
          categoryId="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/>
+      <command id="org.eclipse.uml2.diagram.statemachine.NewDoActivityActionHandler"
+         name="Do Activity"
+         categoryId="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/>
    </extension>
 
 <extension point="org.eclipse.ui.handlers" id="menu-handlers">
@@ -836,6 +868,13 @@
       <handler
          commandId="org.eclipse.uml2.diagram.statemachine.NewInternalTransitionActionHandler"
          class="org.eclipse.uml2.diagram.statemachine.actions.NewInternalTransitionActionHandler">
+         <enabledWhen>
+           <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
+         </enabledWhen>
+      </handler>
+      <handler
+         commandId="org.eclipse.uml2.diagram.statemachine.NewDoActivityActionHandler"
+         class="org.eclipse.uml2.diagram.statemachine.actions.NewDoActivityActionHandler">
          <enabledWhen>
            <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
          </enabledWhen>

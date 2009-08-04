@@ -53,7 +53,7 @@ public class CompositeState_InternalTransitionsCanonicalEditPolicy extends Canon
 	 * @generated
 	 */
 	Set myFeaturesToSynchronize;
-	
+
 	/**
 	 * @NOT generated
 	 */
@@ -62,7 +62,7 @@ public class CompositeState_InternalTransitionsCanonicalEditPolicy extends Canon
 		super.activate();
 		removeListenerFilter("SemanticFilterID"); //$NON-NLS-1$
 		EObject semanticHost = getSemanticHost();
-		if ( semanticHost instanceof State && !isActive() ) {
+		if (semanticHost instanceof State && !isActive()) {
 			EList<Region> regions = ((State) semanticHost).getRegions();
 			for (Iterator<Region> regionsIterator = regions.iterator(); regionsIterator.hasNext();) {
 				addListenerFilter("SemanticFilterID", this, regionsIterator.next()); //$NON-NLS-1$
