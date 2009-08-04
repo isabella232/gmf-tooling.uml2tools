@@ -835,6 +835,30 @@
                </and>
             </visibleWhen>
          </command>
+         <command commandId="org.eclipse.uml2.diagram.statemachine.NewEntryActivityActionHandler">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"><or> 
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart"/>
+                  </or></iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+         <command commandId="org.eclipse.uml2.diagram.statemachine.NewExitActivityActionHandler">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"><or> 
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart"/>
+                     <instanceof value="org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart"/>
+                  </or></iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
       </menuContribution>
    </extension>
 
@@ -853,6 +877,12 @@
          categoryId="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/>
       <command id="org.eclipse.uml2.diagram.statemachine.NewDoActivityActionHandler"
          name="Do Activity"
+         categoryId="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/>
+      <command id="org.eclipse.uml2.diagram.statemachine.NewEntryActivityActionHandler"
+         name="Entry Activity"
+         categoryId="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/>
+      <command id="org.eclipse.uml2.diagram.statemachine.NewExitActivityActionHandler"
+         name="Exit Activity"
          categoryId="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/>
    </extension>
 
@@ -875,6 +905,20 @@
       <handler
          commandId="org.eclipse.uml2.diagram.statemachine.NewDoActivityActionHandler"
          class="org.eclipse.uml2.diagram.statemachine.actions.NewDoActivityActionHandler">
+         <enabledWhen>
+           <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
+         </enabledWhen>
+      </handler>
+      <handler
+         commandId="org.eclipse.uml2.diagram.statemachine.NewEntryActivityActionHandler"
+         class="org.eclipse.uml2.diagram.statemachine.actions.NewEntryActivityActionHandler">
+         <enabledWhen>
+           <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
+         </enabledWhen>
+      </handler>
+      <handler
+         commandId="org.eclipse.uml2.diagram.statemachine.NewExitActivityActionHandler"
+         class="org.eclipse.uml2.diagram.statemachine.actions.NewExitActivityActionHandler">
          <enabledWhen>
            <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorID"/></with>
          </enabledWhen>

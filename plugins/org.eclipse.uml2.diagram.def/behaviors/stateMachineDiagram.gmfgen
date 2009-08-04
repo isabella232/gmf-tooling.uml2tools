@@ -2358,6 +2358,14 @@
           xsi:type="gmfgen:GenCustomAction"
           qualifiedClassName="org.eclipse.uml2.diagram.statemachine.actions.NewDoActivityActionHandler"
           name="Do Activity"/>
+      <items
+          xsi:type="gmfgen:GenCustomAction"
+          qualifiedClassName="org.eclipse.uml2.diagram.statemachine.actions.NewEntryActivityActionHandler"
+          name="Entry Activity"/>
+      <items
+          xsi:type="gmfgen:GenCustomAction"
+          qualifiedClassName="org.eclipse.uml2.diagram.statemachine.actions.NewExitActivityActionHandler"
+          name="Exit Activity"/>
     </items>
   </contextMenus>
 </gmfgen:GenEditorGenerator>

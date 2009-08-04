@@ -17,6 +17,8 @@ public class CustomMessages extends NLS {
 	public static String NewInternalTransitionActionHandler_command_label;
 	public static String NewInternalTransitionActionHandler_name_prefix;
 	public static String NewDoActivityActionHandler_name_prefix;
+	public static String NewEntryActivityActionHandler_name_prefix;
+	public static String NewExitActivityActionHandler_name_prefix;
 
 	private static final String BUNDLE_NAME = "org.eclipse.uml2.diagram.statemachine.actions.customMessages"; //$NON-NLS-1$
 
