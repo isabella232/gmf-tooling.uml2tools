@@ -60,6 +60,7 @@ Export-Package: org.eclipse.uml2.diagram.common,
  org.eclipse.uml2.diagram.common.sheet,
  org.eclipse.uml2.diagram.common.sheet.chooser,
  org.eclipse.uml2.diagram.common.stereo,
+ org.eclipse.uml2.diagram.common.validation,
  org.eclipse.uml2.diagram.common.view
 Bundle-Vendor: %providerName
 Bundle-ClassPath: .
