@@ -28,7 +28,7 @@ public class AssociationEditHelper extends UMLBaseEditHelper {
 		if (req.getElementToConfigure() instanceof Association && req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND) instanceof AggregationKind) {
 			return new ChangeAssociationKindCommand((Association) req.getElementToConfigure(), (AggregationKind) req.getParameter(PARAMETER_CONFIGURE_AGGREGATION_KIND));
 		}
-		return super.getConfigureCommand(req);
+		return super.getAfterConfigureCommand(req);
 	}
 
 }
