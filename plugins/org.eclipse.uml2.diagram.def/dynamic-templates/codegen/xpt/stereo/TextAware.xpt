@@ -23,7 +23,7 @@
 «ENDIF-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected org.eclipse.swt.graphics.Image getLabelIcon() {
-		EObject parserElement = getParserElement();
+		org.eclipse.emf.ecore.EObject parserElement = getParserElement();
 		if (parserElement == null) {
 			return null;
 		}

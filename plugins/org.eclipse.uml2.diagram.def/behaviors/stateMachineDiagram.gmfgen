@@ -1645,7 +1645,7 @@
       iD="org.eclipse.uml2.diagram.statemachine"
       name="UML2 State Machine Diagram Plugin (Incubation)"
       provider="Eclipse Modeling Project"
-      version="0.9.0.qualifier"
+      version="0.9.1.qualifier"
       printingEnabled="true">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
@@ -2232,12 +2232,12 @@
           body=" let base : String = 'SubmachineState' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="entry->notEmpty() implies entry->forAll(e | e.kind =  PseudostateKind::entryPoint)"/>
+          body="entry->notEmpty() and entry->forAll(e | e.kind =  PseudostateKind::entryPoint)"/>
       <expressions
           body=" let base : String = 'EntryPointConnectionPointReference' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="exit->notEmpty() implies exit->forAll(e | e.kind =  PseudostateKind::exitPoint)"/>
+          body="exit->notEmpty() and exit->forAll(e | e.kind =  PseudostateKind::exitPoint)"/>
       <expressions
           body=" let base : String = 'ExitPointConnectionPointReference' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
       <expressions
@@ -2309,7 +2309,7 @@
         uses="//@diagram/@childNodes.2/@labelModelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet"
+        uses="//@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
@@ -2333,5 +2333,39 @@
         xsi:type="gmfgen:GenCustomAction"
         qualifiedClassName="org.eclipse.uml2.diagram.common.actions.RotateActionHandler"
         name="Rotate"/>
+  </contextMenus>
+  <contextMenus
+      iD="org.eclipse.uml2.diagram.state.composite_state"
+      context="//@diagram/@childNodes.5 //@diagram/@childNodes.7">
+    <items
+        xsi:type="gmfgen:GenMenuManager"
+        iD="org.eclipse.uml2.diagram.state.composite_state.new"
+        name="New">
+      <items
+          xsi:type="gmfgen:GenCustomAction"
+          qualifiedClassName="org.eclipse.uml2.diagram.statemachine.actions.NewInternalTransitionActionHandler"
+          name="Internal Transition"/>
+    </items>
+  </contextMenus>
+  <contextMenus
+      iD="org.eclipse.uml2.diagram.state.state"
+      context="//@diagram/@childNodes.1 //@diagram/@childNodes.5 //@diagram/@childNodes.7">
+    <items
+        xsi:type="gmfgen:GenMenuManager"
+        iD="org.eclipse.uml2.diagram.state.state.new"
+        name="New">
+      <items
+          xsi:type="gmfgen:GenCustomAction"
+          qualifiedClassName="org.eclipse.uml2.diagram.statemachine.actions.NewDoActivityActionHandler"
+          name="Do Activity"/>
+      <items
+          xsi:type="gmfgen:GenCustomAction"
+          qualifiedClassName="org.eclipse.uml2.diagram.statemachine.actions.NewEntryActivityActionHandler"
+          name="Entry Activity"/>
+      <items
+          xsi:type="gmfgen:GenCustomAction"
+          qualifiedClassName="org.eclipse.uml2.diagram.statemachine.actions.NewExitActivityActionHandler"
+          name="Exit Activity"/>
+    </items>
   </contextMenus>
 </gmfgen:GenEditorGenerator>

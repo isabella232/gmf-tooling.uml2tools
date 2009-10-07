@@ -348,7 +348,7 @@
                   <domainMetaElement
                       href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ConnectionPointReference"/>
                   <domainSpecialization
-                      body="entry->notEmpty() implies entry->forAll(e | e.kind =  PseudostateKind::entryPoint)"/>
+                      body="entry->notEmpty() and entry->forAll(e | e.kind =  PseudostateKind::entryPoint)"/>
                   <domainInitializer
                       xsi:type="gmfmap:FeatureSeqInitializer">
                     <initializers
@@ -381,7 +381,7 @@
                   <domainMetaElement
                       href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//ConnectionPointReference"/>
                   <domainSpecialization
-                      body="exit->notEmpty() implies exit->forAll(e | e.kind =  PseudostateKind::exitPoint)"/>
+                      body="exit->notEmpty() and exit->forAll(e | e.kind =  PseudostateKind::exitPoint)"/>
                   <domainInitializer
                       xsi:type="gmfmap:FeatureSeqInitializer">
                     <initializers

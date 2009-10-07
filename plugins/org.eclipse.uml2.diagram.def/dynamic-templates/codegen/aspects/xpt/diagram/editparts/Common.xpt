@@ -10,12 +10,22 @@
  *    Michael Golubev (Borland) - support for SharedBehaviour's
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«DEFINE behaviour FOR gmfgen::SharedBehaviour-»
-	«REM»don't allow delegate to be SharedBehaviour to avoid endless xPand sequence«ENDREM»«-»
-	«IF null <> self.delegate and (Sequence { self.delegate })[gmfgen::SharedBehaviour]->isEmpty() -»
-	«EXPAND xpt::diagram::editparts::Common::behaviour FOR self.delegate»
-	«ENDIF-»
-«ENDDEFINE»
+Â«EXTENSION xpt::async::NonCanonicalDiagramÂ»
+
+Â«DEFINE behaviour FOR gmfgen::SharedBehaviour-Â»
+	Â«REMÂ»don't allow delegate to be SharedBehaviour to avoid endless xPand sequenceÂ«ENDREMÂ»Â«-Â»
+	Â«IF null <> self.delegate and (Sequence { self.delegate })[gmfgen::SharedBehaviour]->isEmpty() -Â»
+	Â«EXPAND xpt::diagram::editparts::Common::behaviour FOR self.delegateÂ»
+	Â«ENDIF-Â»
+Â«ENDDEFINEÂ»
+
+Â«AROUND notationalListeners FOR gmfgen::GenCommonBase-Â»
+Â«IF isDiagramIconLabel(self)-Â»
+Â«EXPAND xpt::async::DiagramLabelEditPart::notationalListeners-Â»
+Â«ELSE-Â»
+Â«targetDef.proceed()-Â»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»

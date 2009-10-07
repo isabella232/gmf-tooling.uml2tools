@@ -698,6 +698,8 @@
         <attributes
             xsi:type="u2tgen:AuxSecondaryDiagramNodeAttribute"
             substituteWithCanvasElement="true"/>
+        <attributes
+            xsi:type="u2tgen:StereotypeSupportAttribute"/>
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
@@ -721,7 +723,11 @@
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
             getterName="getFigureSecondaryPackage_NameLabel"
-            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="u2tgen:StereotypeSupportAttribute"
+              role="NAME_LABEL"/>
+        </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">
@@ -740,7 +746,11 @@
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
             getterName="getFigureSecondaryPackage_PackageLabel"
-            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="u2tgen:StereotypeSupportAttribute"
+              role="DIAGRAM_LABEL"/>
+        </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gef.EditPolicy.DIRECT_EDIT_ROLE"
@@ -1792,7 +1802,7 @@
       iD="org.eclipse.uml2.diagram.deploy"
       name="UML2 Deployment Diagram Plugin (Incubation)"
       provider="Eclipse Modeling Project"
-      version="0.9.0.qualifier"
+      version="0.9.1.qualifier"
       printingEnabled="true">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.uml2.diagram.common</requiredPlugins>

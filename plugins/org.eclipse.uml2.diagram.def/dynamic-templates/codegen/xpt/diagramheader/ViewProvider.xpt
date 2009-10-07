@@ -4,9 +4,9 @@
 
 «EXTENSION xpt::diagramheader::DiagramHeader»
 
-«DEFINE initCompartment(String nodeVar, String prefStoreVar) FOR gmfgen::GenCompartment-»
+«DEFINE initCompartment(String nodeVar, String prefStoreVar, String compartmentVar) FOR gmfgen::GenCompartment-»
 «IF isDiagramHeaderCompartment(self)-»
-org.eclipse.gmf.runtime.notation.DrawerStyle drawerStyle = (org.eclipse.gmf.runtime.notation.DrawerStyle) «getUniqueIdentifier()».getStyle(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getDrawerStyle());
+org.eclipse.gmf.runtime.notation.DrawerStyle drawerStyle = (org.eclipse.gmf.runtime.notation.DrawerStyle) «compartmentVar».getStyle(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getDrawerStyle());
 if (drawerStyle != null) {
 	//#216573 [SecondaryDiagramElement] Collapse imports compartment after creation
 	drawerStyle.setCollapsed(true);

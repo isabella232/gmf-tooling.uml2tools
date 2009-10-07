@@ -696,6 +696,79 @@
           href="classDiagram_comments.gmfgraph#CommentNode"/>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+    <childrenFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Interface"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+          <value
+              body=" let base : String = 'Interface' in  let suffixes : Sequence(String) = Sequence {'', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> &#x9;select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  &#x9;if noMisses &#x9;&#x9;then &#x9;&#x9;space.member->collect(e : NamedElement | &#x9;&#x9;&#x9;if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) &lt;> base &#x9;&#x9;&#x9;then '' else e.name &#x9;&#x9;&#x9;endif &#x9;&#x9;)->asSet()->excluding('') &#x9;&#x9;else Set{'not in use'} &#x9;&#x9;endif in  let longestName : String = &#x9;&#x9;if noMisses &#x9;&#x9;then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()&#x9;&#x9;else 'not in use' &#x9;&#x9;endif &#x9;in  if noMisses then &#x9;&#x9;if longestName.oclIsUndefined() &#x9;&#x9;then base &#x9;&#x9;else longestName.concat('1') &#x9;&#x9;endif  else base.concat(firstMissed)  endif "/>
+        </initializers>
+      </domainInitializer>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="classDiagram_classifiers.gmfgraph#ClassNode_name"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="classDiagram_classifiers.gmfgraph#ClassNode_stereo"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/qualifiedName"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="componentDiagram.gmftool#//@palette/@tools.0/@tools.2"/>
+      <diagramNode
+          href="classDiagram_classifiers.gmfgraph#ClassNode"/>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.6/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Interface/ownedAttribute"/>
+      </children>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.1"
+          referencedChild="//@nodes.6/@ownedChild/@children.1/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Interface/ownedOperation"/>
+      </children>
+      <children
+          compartment="//@nodes.8/@ownedChild/@compartments.2"
+          referencedChild="//@nodes.5/@ownedChild/@children.1/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Interface/nestedClassifier"/>
+      </children>
+      <compartments
+          children="//@nodes.8/@ownedChild/@children.0">
+        <compartment
+            href="classDiagram_classifiers.gmfgraph#attributes"/>
+      </compartments>
+      <compartments
+          children="//@nodes.8/@ownedChild/@children.1">
+        <compartment
+            href="classDiagram_classifiers.gmfgraph#operations"/>
+      </compartments>
+      <compartments
+          children="//@nodes.8/@ownedChild/@children.2">
+        <compartment
+            href="classDiagram_classifiers.gmfgraph#classes"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//InterfaceRealization"/>
