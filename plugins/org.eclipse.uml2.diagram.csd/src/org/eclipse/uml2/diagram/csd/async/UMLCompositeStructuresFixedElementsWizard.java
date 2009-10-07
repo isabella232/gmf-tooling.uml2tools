@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.csd.part.UMLNewDiagramFileWizard;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.PackageableElement;
 
 /**
@@ -38,7 +39,7 @@ public class UMLCompositeStructuresFixedElementsWizard extends UMLNewDiagramFile
 	/**
 	 * @generated
 	 */
-	private final PackageableElement[] myToSelect;
+	private final Element[] myToSelect;
 
 	/**
 	 * @generated
@@ -48,7 +49,7 @@ public class UMLCompositeStructuresFixedElementsWizard extends UMLNewDiagramFile
 	/**
 	 * @generated
 	 */
-	public UMLCompositeStructuresFixedElementsWizard(URI domainModelURI, EObject diagramRoot, PackageableElement[] toSelect, TransactionalEditingDomain editingDomain) {
+	public UMLCompositeStructuresFixedElementsWizard(URI domainModelURI, EObject diagramRoot, Element[] toSelect, TransactionalEditingDomain editingDomain) {
 		super(domainModelURI, diagramRoot, editingDomain);
 		myToSelect = toSelect;
 	}
@@ -58,8 +59,8 @@ public class UMLCompositeStructuresFixedElementsWizard extends UMLNewDiagramFile
 	 */
 	@Override
 	public void addPages() {
-		addPage(getFileCreationPage());
 		addPage(getDiagramRootElementSelectionPage());
+		addPage(getFileCreationPage());
 	}
 
 	/**
@@ -86,7 +87,7 @@ public class UMLCompositeStructuresFixedElementsWizard extends UMLNewDiagramFile
 		IEditorPart editorPart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 		DiagramEditPart diagramEditPart = ((IDiagramWorkbenchPart) editorPart).getDiagramEditPart();
 		IOperationHistory history = OperationHistoryFactory.getOperationHistory();
-		for (PackageableElement next : myToSelect) {
+		for (Element next : myToSelect) {
 			if (!canCreateView(next)) {
 				UMLCreateShortcutAction.createShortcut(diagramEditPart.getEditingDomain(), history, next, diagramEditPart, editorPart);
 			}
@@ -198,7 +199,7 @@ public class UMLCompositeStructuresFixedElementsWizard extends UMLNewDiagramFile
 		 * @generated
 		 */
 		private boolean isInToCreateList() {
-			PackageableElement[] toSelect = ((SyncModelContextWithFixedElements) getContext()).getElementsToDisplay();
+			Element[] toSelect = ((SyncModelContextWithFixedElements) getContext()).getElementsToDisplay();
 			if (toSelect == null || toSelect.length == 0) {
 				return true; //diagram is selected, all diagram contents considered as implicit to-create list  
 			}
@@ -223,13 +224,13 @@ public class UMLCompositeStructuresFixedElementsWizard extends UMLNewDiagramFile
 		/**
 		 * @generated
 		 */
-		private PackageableElement[] myElementsToDisplay;
+		private Element[] myElementsToDisplay;
 
 		/**
 		 * @generated
 		 */
-		public SyncModelContextWithFixedElements(IDiagramUpdater updater, IVisualIDRegistry registry, PreferencesHint preferencesHint, TransactionalEditingDomain domain,
-				PackageableElement[] toSelect, boolean isDiagramInit) {
+		public SyncModelContextWithFixedElements(IDiagramUpdater updater, IVisualIDRegistry registry, PreferencesHint preferencesHint, TransactionalEditingDomain domain, Element[] toSelect,
+				boolean isDiagramInit) {
 
 			super(updater, registry, preferencesHint, domain, isDiagramInit);
 			myElementsToDisplay = toSelect;
@@ -238,7 +239,7 @@ public class UMLCompositeStructuresFixedElementsWizard extends UMLNewDiagramFile
 		/**
 		 * @generated
 		 */
-		public PackageableElement[] getElementsToDisplay() {
+		public Element[] getElementsToDisplay() {
 			return myElementsToDisplay;
 		}
 	}

@@ -10,14 +10,15 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
+import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.GateEditPart;
@@ -30,6 +31,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.LayeredOperandEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariant2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
 import org.eclipse.uml2.diagram.sequence.model.SDModelAccess;
 import org.eclipse.uml2.diagram.sequence.model.builder.SDModelHelper;
@@ -37,6 +39,7 @@ import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBehaviorSpec;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDBracket;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDCombinedFragment;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDFrame;
+import org.eclipse.uml2.diagram.sequence.model.sequenced.SDInteractionOperand;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDLifeLine;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDModel;
 import org.eclipse.uml2.diagram.sequence.model.sequenced.SDMountingRegion;
@@ -59,7 +62,6 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.StateInvariant;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -82,6 +84,10 @@ public class UMLDiagramUpdater {
 			return getBehaviorExecutionSpecification_3004SemanticChildren(view);
 		case CombinedFragmentMountingRegionEditPart.VISUAL_ID:
 			return getCombinedFragment_3010SemanticChildren(view);
+		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
+			return getInteractionOperand_3011SemanticChildren(view);
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+			return getBehaviorExecutionSpecification_3014SemanticChildren(view);
 		case PackageEditPart.VISUAL_ID:
 			return getPackage_1000SemanticChildren(view);
 		}
@@ -220,10 +226,16 @@ public class UMLDiagramUpdater {
 	 * @generated NOT
 	 */
 	public static List getBehaviorExecutionSpecification_3004SemanticChildren(View view) {
-		if (!view.isSetElement()) {
-			return Collections.emptyList();
-		}
+		return getBehaviorExecutionSemanticChildren(view);
+	}
 
+	/**
+	 * @generated NOT
+	 */
+	public static List getBehaviorExecutionSemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
 		SDModel sdModel = SDModelAccess.findSDModel(view);
 		if (sdModel == null) {
 			return Collections.emptyList();
@@ -266,6 +278,13 @@ public class UMLDiagramUpdater {
 			}
 		}
 		return result;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public static List getBehaviorExecutionSpecification_3014SemanticChildren(View view) {
+		return getBehaviorExecutionSemanticChildren(view);
 	}
 
 	private static Lifeline findEnclosedDiagramLifeLine(View view) {
@@ -319,6 +338,65 @@ public class UMLDiagramUpdater {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, nextUMLChild);
 			if (visualID == InteractionOperandMountingRegionEditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(nextUMLChild, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	public static List getInteractionOperand_3011SemanticChildren(View view) {
+		return getInteractionOperandMountingRegionSemanticChildren(view);
+	}
+
+	/**
+	 * @NOT-generated
+	 */
+	public static List getInteractionOperandMountingRegionSemanticChildren(View view) {
+		if (!view.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+
+		SDModel sdModel = SDModelAccess.findSDModel(view);
+		if (sdModel == null) {
+			return Collections.emptyList();
+		}
+
+		Lifeline lifeline = findEnclosedDiagramLifeLine(view);
+		if (lifeline == null) {
+			return Collections.emptyList();
+		}
+
+		InteractionOperand umlOperand = (InteractionOperand) view.getElement();
+		SDInteractionOperand sdOperand = sdModel.getUMLTracing().findInteractionOperand(umlOperand);
+
+		if (sdOperand == null) {
+			return Collections.emptyList();
+		}
+
+		SDMountingRegion region = sdOperand.findRegionForUmlLifeLine(lifeline);
+		assert region != null;
+
+		List<UMLNodeDescriptor> result = new ArrayList<UMLNodeDescriptor>(region.getBrackets().size());
+		for (SDBracket nextBracket : region.getBrackets()) {
+			Element childElement = SDModelHelper.UML_ELEMENT_EXTRACTOR.doSwitch(nextBracket);
+			if (false == childElement instanceof InteractionFragment) {
+				continue;
+			}
+
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == ActionExecutionSpecification2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == StateInvariant2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == BehaviorExecutionSpecification2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -408,6 +486,12 @@ public class UMLDiagramUpdater {
 			return getCombinedFragment_3010ContainedLinks(view);
 		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
 			return getInteractionOperand_3011ContainedLinks(view);
+		case ActionExecutionSpecification2EditPart.VISUAL_ID:
+			return getActionExecutionSpecification_3012ContainedLinks(view);
+		case StateInvariant2EditPart.VISUAL_ID:
+			return getStateInvariant_3013ContainedLinks(view);
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+			return getBehaviorExecutionSpecification_3014ContainedLinks(view);
 		case MessageEditPart.VISUAL_ID:
 			return getMessage_4001ContainedLinks(view);
 		}
@@ -443,6 +527,12 @@ public class UMLDiagramUpdater {
 			return getCombinedFragment_3010IncomingLinks(view);
 		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
 			return getInteractionOperand_3011IncomingLinks(view);
+		case ActionExecutionSpecification2EditPart.VISUAL_ID:
+			return getActionExecutionSpecification_3012IncomingLinks(view);
+		case StateInvariant2EditPart.VISUAL_ID:
+			return getStateInvariant_3013IncomingLinks(view);
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+			return getBehaviorExecutionSpecification_3014IncomingLinks(view);
 		case MessageEditPart.VISUAL_ID:
 			return getMessage_4001IncomingLinks(view);
 		}
@@ -478,6 +568,12 @@ public class UMLDiagramUpdater {
 			return getCombinedFragment_3010OutgoingLinks(view);
 		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
 			return getInteractionOperand_3011OutgoingLinks(view);
+		case ActionExecutionSpecification2EditPart.VISUAL_ID:
+			return getActionExecutionSpecification_3012OutgoingLinks(view);
+		case StateInvariant2EditPart.VISUAL_ID:
+			return getStateInvariant_3013OutgoingLinks(view);
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+			return getBehaviorExecutionSpecification_3014OutgoingLinks(view);
 		case MessageEditPart.VISUAL_ID:
 			return getMessage_4001OutgoingLinks(view);
 		}
@@ -547,6 +643,27 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List getInteractionOperand_3011ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getActionExecutionSpecification_3012ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getStateInvariant_3013ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehaviorExecutionSpecification_3014ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -667,6 +784,39 @@ public class UMLDiagramUpdater {
 	 */
 	public static List getInteractionOperand_3011IncomingLinks(View view) {
 		InteractionOperand modelElement = (InteractionOperand) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_Message_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getActionExecutionSpecification_3012IncomingLinks(View view) {
+		ActionExecutionSpecification modelElement = (ActionExecutionSpecification) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_Message_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getStateInvariant_3013IncomingLinks(View view) {
+		StateInvariant modelElement = (StateInvariant) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_Message_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehaviorExecutionSpecification_3014IncomingLinks(View view) {
+		BehaviorExecutionSpecification modelElement = (BehaviorExecutionSpecification) view.getElement();
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		List result = new LinkedList();
 		result.addAll(getIncomingTypeModelFacetLinks_Message_4001(modelElement, crossReferences));
@@ -811,6 +961,36 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getActionExecutionSpecification_3012OutgoingLinks(View view) {
+		ActionExecutionSpecification modelElement = (ActionExecutionSpecification) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_Message_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getStateInvariant_3013OutgoingLinks(View view) {
+		StateInvariant modelElement = (StateInvariant) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_Message_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getBehaviorExecutionSpecification_3014OutgoingLinks(View view) {
+		BehaviorExecutionSpecification modelElement = (BehaviorExecutionSpecification) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_Message_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getGate_3005OutgoingLinks(View view) {
 		Gate modelElement = (Gate) view.getElement();
 		List result = new LinkedList();
@@ -937,7 +1117,11 @@ public class UMLDiagramUpdater {
 		private HashMap<OccurrenceSpecification, BehaviorExecutionSpecification> myOccurr2finish = new HashMap<OccurrenceSpecification, BehaviorExecutionSpecification>();
 
 		public MessageDiagramEndReplace(Interaction container) {
-			for (InteractionFragment nextFragment : container.getFragments()) {
+			processFragmentsList(container.getFragments());
+		}
+
+		private void processFragmentsList(List<InteractionFragment> fragments) {
+			for (InteractionFragment nextFragment : fragments) {
 				if (nextFragment instanceof BehaviorExecutionSpecification) {
 					BehaviorExecutionSpecification execution = (BehaviorExecutionSpecification) nextFragment;
 					if (execution.getStart() != null) {
@@ -945,6 +1129,12 @@ public class UMLDiagramUpdater {
 					}
 					if (execution.getFinish() != null) {
 						myOccurr2finish.put(execution.getStart(), execution);
+					}
+				}
+				if (nextFragment instanceof CombinedFragment) {
+					CombinedFragment combined = (CombinedFragment) nextFragment;
+					for (InteractionOperand nextOperand : combined.getOperands()) {
+						processFragmentsList(nextOperand.getFragments());
 					}
 				}
 			}

@@ -29,10 +29,6 @@
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
       <handler
-            class="org.eclipse.uml2.diagram.csd.part.NewDiagramHandler"
-            commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
-      </handler>
-      <handler
             class="org.eclipse.uml2.diagram.csd.action.TurnNoteIntoCommentAction"
             commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
             <activeWhen>
@@ -397,8 +393,12 @@
       <?gmfgen generated="true"?>
       <viewProvider class="org.eclipse.uml2.diagram.csd.providers.UMLViewProvider">
          <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="uml"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLCompositeStructures"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,2006,2003,2007,2009,2011,2012,2013,3002,3007,3008,3009,3010,3011,3004,3014,3016,3017,3015"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,2006,2003,2007,2009,2011,2012,2013,2014,3002,3007,3008,3009,3010,3011,3004,3014,3016,3017,3015,3018,3019,3020"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006,4007,4008,4010,4011,4012,4014,4015,4016"/>
       </viewProvider>
    </extension>
@@ -411,16 +411,16 @@
             <method name="getType()" value="UMLCompositeStructures"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2005,2006,2003,2007,2009,2011,2012,2013,3002,3007,3008,3009,3010,3011,3004,3014,3016,3017,3015"/>
+            <method name="getType()" value="2005,2006,2003,2007,2009,2011,2012,2013,2014,3002,3007,3008,3009,3010,3011,3004,3014,3016,3017,3015,3018,3019,3020"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4005,4006,4007,4008,4010,4011,4012,4014,4015,4016"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5009,5030,5013,5014,5006,5033,5018,5020,5022,5031,5024,5034,5032,5002,5029,5011,5012,5026,5017,5025,5027,5028"/>
+            <method name="getType()" value="5009,5030,5013,5014,5006,5033,5018,5020,5022,5031,5024,5034,5032,5035,5036,5002,5029,5011,5012,5026,5017,5025,5027,5028"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7003,7004,7005,7006,7002,7007,7009"/>
+            <method name="getType()" value="7003,7004,7005,7006,7002,7007,7009,7010,7011,7012"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -439,7 +439,8 @@
          <object class="org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart" id="InstanceSpecification_2011"/>
          <object class="org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart" id="Constraint_2012"/>
          <object class="org.eclipse.uml2.diagram.csd.edit.parts.CommentEditPart" id="Comment_2013"/>
-         <context elements="Package_1000,Collaboration_2005,Class_2006,Package_2003,Class_2007,Interface_2009,InstanceSpecification_2011,Constraint_2012,Comment_2013"/>
+         <object class="org.eclipse.uml2.diagram.csd.edit.parts.Interface2EditPart" id="Interface_2014"/>
+         <context elements="Package_1000,Collaboration_2005,Class_2006,Package_2003,Class_2007,Interface_2009,InstanceSpecification_2011,Constraint_2012,Comment_2013,Interface_2014"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -548,6 +549,15 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.csd.Interface_2014"
+               name="%metatype.name.Interface_2014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.csd.Interface_2009"/>
+            <param name="semanticHint" value="2014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.csd.CollaborationUse_3002"
                name="%metatype.name.CollaborationUse_3002"
@@ -651,6 +661,33 @@
                edithelper="org.eclipse.uml2.diagram.csd.edit.helpers.SlotEditHelper">
             <param name="semanticHint" value="3015"/>
          </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.csd.Property_3018"
+               name="%metatype.name.Property_3018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.csd.Property_3007"/>
+            <param name="semanticHint" value="3018"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.csd.Operation_3019"
+               name="%metatype.name.Operation_3019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.csd.Operation_3009"/>
+            <param name="semanticHint" value="3019"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.csd.Class_3020"
+               name="%metatype.name.Class_3020"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.csd.Class_2006"/>
+            <param name="semanticHint" value="3020"/>
+         </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
@@ -768,6 +805,7 @@
          <elementType ref="org.eclipse.uml2.diagram.csd.InstanceSpecification_2011"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Constraint_2012"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Comment_2013"/>
+         <elementType ref="org.eclipse.uml2.diagram.csd.Interface_2014"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.CollaborationUse_3002"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Property_3007"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Property_3008"/>
@@ -779,6 +817,9 @@
          <elementType ref="org.eclipse.uml2.diagram.csd.Port_3016"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Port_3017"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Slot_3015"/>
+         <elementType ref="org.eclipse.uml2.diagram.csd.Property_3018"/>
+         <elementType ref="org.eclipse.uml2.diagram.csd.Operation_3019"/>
+         <elementType ref="org.eclipse.uml2.diagram.csd.Class_3020"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Connector_4005"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.Dependency_4006"/>
          <elementType ref="org.eclipse.uml2.diagram.csd.InterfaceRealization_4007"/>
@@ -1003,7 +1044,7 @@
       <decoratorProvider class="org.eclipse.uml2.diagram.csd.providers.UMLShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2005,2006,2003,2007,2009,2011,2012,2013"/>
+            <method name="getType()" value="2005,2006,2003,2007,2009,2011,2012,2013,2014"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -1115,7 +1156,7 @@
          </propertySection>
       </propertySections>
    </extension>
-   
+   
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
@@ -1185,6 +1226,10 @@
                    objectCount="1">
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Interface2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
@@ -1226,6 +1271,18 @@
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Property4EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Operation2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Class4EditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>
@@ -1302,6 +1359,10 @@
 			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
 		</popupContribution>
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Interface2EditPart"/>
+			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
 			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart"/>
 			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
 		</popupContribution>
@@ -1343,6 +1404,18 @@
 		</popupContribution>
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
 			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart"/>
+			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Property4EditPart"/>
+			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Operation2EditPart"/>
+			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Class4EditPart"/>
 			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
 		</popupContribution>
 	</contributionItemProvider>
@@ -1408,6 +1481,13 @@
 			</popupAction>
 		</popupContribution>
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Interface2EditPart"/>
+			<popupAction
+				path="/editGroup"
+				id="u2t_deleteFromDiagram">
+			</popupAction>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
 			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.CollaborationUse2EditPart"/>
 			<popupAction
 				path="/editGroup"
@@ -1484,6 +1564,27 @@
 				id="u2t_deleteFromDiagram">
 			</popupAction>
 		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Property4EditPart"/>
+			<popupAction
+				path="/editGroup"
+				id="u2t_deleteFromDiagram">
+			</popupAction>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Operation2EditPart"/>
+			<popupAction
+				path="/editGroup"
+				id="u2t_deleteFromDiagram">
+			</popupAction>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Class4EditPart"/>
+			<popupAction
+				path="/editGroup"
+				id="u2t_deleteFromDiagram">
+			</popupAction>
+		</popupContribution>
 	</contributionItemProvider>
 	</extension>
 
@@ -1501,6 +1602,108 @@
          </action>
       </objectContribution>
    </extension>
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-Interface">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.csd.action.InterfaceContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ChangeNotation"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ChangeNotationMenu"
+                   path="/ChangeNotation">
+             </popupMenu>                        
+             <popupMenuGroup
+                   id="ChangeNotationGroup"
+                   path="/ChangeNotationMenu/">
+             </popupMenuGroup>
+							
+			<popupAction
+				path="/ChangeNotationMenu/ChangeNotationGroup"
+				id="set_Interface2_notation">
+			</popupAction>            
+				<popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+
+<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-Interface2">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+            checkPluginLoaded="true"
+            class="org.eclipse.uml2.diagram.csd.action.Interface2ContributionItemProvider">
+         <Priority name="Medium"/>
+		 <popupContribution
+               class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			 <popupMenuGroup
+                  id="ChangeNotation"
+                  path="/propertiesGroup">
+             </popupMenuGroup>
+             <popupMenu
+                   id="ChangeNotationMenu"
+                   path="/ChangeNotation">
+             </popupMenu>                        
+             <popupMenuGroup
+                   id="ChangeNotationGroup"
+                   path="/ChangeNotationMenu/">
+             </popupMenuGroup>
+							
+			<popupAction
+				path="/ChangeNotationMenu/ChangeNotationGroup"
+				id="set_Interface_notation">
+			</popupAction>            
+				<popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.csd.edit.parts.Interface2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+		 </popupContribution>
+      </contributionItemProvider>
+   </extension>
+<extension point="org.eclipse.ui.handlers" id="new-diagram-handler">
+      <?gmfgen generated="true"?>
+      <handler
+            class="org.eclipse.uml2.diagram.csd.async.UMLCompositeStructuresNewDiagramHandler"
+            commandId="org.eclipse.uml2.diagram.NewUMLCompositeStructuresDiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isUMLCompositeStructuresElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
+      </handler>
+   </extension>
+<extension point="org.eclipse.core.expressions.propertyTesters" id="new-diagram-property-testers">
+      <?gmfgen generated="true"?>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.csd.async.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUMLCompositeStructuresElement"
+              properties="isUMLCompositeStructuresElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.csd.async.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUMLCompositeStructuresElement"
+              properties="isUMLCompositeStructuresElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.uml2.uml.Element">
+        </propertyTester>
+   </extension>
+
+
+
 
 
 </plugin>

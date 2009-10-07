@@ -6,8 +6,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
+import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionLabel2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionLabelEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentInteractionOperatorEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
@@ -26,7 +29,9 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineRefLabelEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariant2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantLabel2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantLabelEditPart;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -176,6 +181,22 @@ public class UMLVisualIDRegistry {
 				return InteractionOperandMountingRegionEditPart.VISUAL_ID;
 			}
 			break;
+		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActionExecutionSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return ActionExecutionSpecification2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStateInvariant().isSuperTypeOf(domainElement.eClass())) {
+				return StateInvariant2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehaviorExecutionSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return BehaviorExecutionSpecification2EditPart.VISUAL_ID;
+			}
+			break;
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getBehaviorExecutionSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return BehaviorExecutionSpecificationEditPart.VISUAL_ID;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInteraction().isSuperTypeOf(domainElement.eClass())) {
 				return InteractionEditPart.VISUAL_ID;
@@ -274,6 +295,32 @@ public class UMLVisualIDRegistry {
 			break;
 		case CombinedFragmentMountingRegionEditPart.VISUAL_ID:
 			if (InteractionOperandMountingRegionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
+			if (ActionExecutionSpecification2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (StateInvariant2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (BehaviorExecutionSpecification2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActionExecutionSpecification2EditPart.VISUAL_ID:
+			if (ActionExecutionLabel2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StateInvariant2EditPart.VISUAL_ID:
+			if (StateInvariantLabel2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+			if (BehaviorExecutionSpecificationEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -387,6 +434,22 @@ public class UMLVisualIDRegistry {
 				return InteractionOperandMountingRegionEditPart.VISUAL_ID;
 			}
 			break;
+		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActionExecutionSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return ActionExecutionSpecification2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStateInvariant().isSuperTypeOf(domainElement.eClass())) {
+				return StateInvariant2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getBehaviorExecutionSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return BehaviorExecutionSpecification2EditPart.VISUAL_ID;
+			}
+			break;
+		case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getBehaviorExecutionSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return BehaviorExecutionSpecificationEditPart.VISUAL_ID;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getInteraction().isSuperTypeOf(domainElement.eClass())) {
 				return InteractionEditPart.VISUAL_ID;
@@ -436,7 +499,8 @@ public class UMLVisualIDRegistry {
 		case ActionExecutionSpecificationEditPart.VISUAL_ID:
 		case StateInvariantEditPart.VISUAL_ID:
 		case InteractionUseMountingRegionEditPart.VISUAL_ID:
-		case InteractionOperandMountingRegionEditPart.VISUAL_ID:
+		case ActionExecutionSpecification2EditPart.VISUAL_ID:
+		case StateInvariant2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

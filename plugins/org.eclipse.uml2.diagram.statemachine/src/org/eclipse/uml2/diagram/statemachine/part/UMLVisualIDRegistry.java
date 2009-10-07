@@ -760,7 +760,7 @@ public class UMLVisualIDRegistry {
 	private static boolean isConnectionPointReference_3017(ConnectionPointReference domainElement) {
 		if (ConnectionPointReference_3017_Constraint == null) { // lazy initialization
 			ConnectionPointReference_3017_Constraint = UMLOCLFactory.getExpression(
-					"entry->notEmpty() implies entry->forAll(e | e.kind =  PseudostateKind::entryPoint)", UMLPackage.eINSTANCE.getConnectionPointReference()); //$NON-NLS-1$
+					"entry->notEmpty() and entry->forAll(e | e.kind =  PseudostateKind::entryPoint)", UMLPackage.eINSTANCE.getConnectionPointReference()); //$NON-NLS-1$
 		}
 		Object result = ConnectionPointReference_3017_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
@@ -772,7 +772,7 @@ public class UMLVisualIDRegistry {
 	private static boolean isConnectionPointReference_3018(ConnectionPointReference domainElement) {
 		if (ConnectionPointReference_3018_Constraint == null) { // lazy initialization
 			ConnectionPointReference_3018_Constraint = UMLOCLFactory.getExpression(
-					"exit->notEmpty() implies exit->forAll(e | e.kind =  PseudostateKind::exitPoint)", UMLPackage.eINSTANCE.getConnectionPointReference()); //$NON-NLS-1$
+					"exit->notEmpty() and exit->forAll(e | e.kind =  PseudostateKind::exitPoint)", UMLPackage.eINSTANCE.getConnectionPointReference()); //$NON-NLS-1$
 		}
 		Object result = ConnectionPointReference_3018_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();

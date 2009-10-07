@@ -548,6 +548,21 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String InterfaceAttributesEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String InterfaceOperationsEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String InterfaceClassesEditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -634,6 +649,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Comment_2013_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Interface_2014_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Interface_2014_outgoinglinks;
 
 	/**
 	 * @generated
@@ -729,6 +754,36 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Slot_3015_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Property_3018_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Property_3018_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Operation_3019_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Operation_3019_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Class_3020_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Class_3020_outgoinglinks;
 
 	/**
 	 * @generated
@@ -893,6 +948,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String TurnIntoInterface2Action_text;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoInterface2Action_tooltiptext;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoInterfaceAction_text;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoInterfaceAction_tooltiptext;
+
+	/**
+	 * @generated
+	 */
 	public static String ClassContributionItemProvider_menu;
 
 	/**
@@ -909,6 +984,26 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String Class3ContributionItemProvider_group;
+
+	/**
+	 * @generated
+	 */
+	public static String InterfaceContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String InterfaceContributionItemProvider_group;
+
+	/**
+	 * @generated
+	 */
+	public static String Interface2ContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String Interface2ContributionItemProvider_group;
 
 	/**
 	 * @generated
@@ -939,6 +1034,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String DiagramIconStylePreferencePage_label_for_InstanceSpecification;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_label_for_Interface;
 
 	/**
 	 * @generated

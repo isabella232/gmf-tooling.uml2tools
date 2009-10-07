@@ -9,7 +9,6 @@ import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.internal.missed.MissedMethodsImpl.MissedGraphicalEditPartImpl;
 
 
@@ -56,13 +55,6 @@ public class MissedGraphicalEditPart2 extends MissedGraphicalEditPartImpl {
 //		}
 
 		Rectangle absoluteResult = notationModelResult.getTranslated(origin);
-		if (nodeEP instanceof BehaviorExecutionSpecificationEditPart){
-			logGetBounds("<<<MissedGraphicalEditPartImpl.getBounds(): for : nodeEP: " + nodeEP);
-			logGetBounds("---- notation : = " + notationModelResult);
-			logGetBounds("---- Origin: " + origin);
-			logGetBounds("---- Result: " + absoluteResult);
-		} 
-
 		return absoluteResult;
 	}
 	
@@ -83,9 +75,6 @@ public class MissedGraphicalEditPart2 extends MissedGraphicalEditPartImpl {
 	}
 	
 	public void setBounds(IGraphicalEditPart nodeEP, Rectangle bounds) {
-		if (nodeEP instanceof BehaviorExecutionSpecificationEditPart){
-			logSetBounds(">>>SetBounds(): for : " + nodeEP + ",\n\t bounds: " + bounds);	
-		}
 		if (nodeEP.getParent() == null) {
 			return;
 		}
@@ -95,11 +84,6 @@ public class MissedGraphicalEditPart2 extends MissedGraphicalEditPartImpl {
 		
 		Point origin = collectParentOrigin(nodeEP.getNotationView(), new Point(0, 0));
 		Rectangle local = bounds.getTranslated(origin.getNegated());
-		if (nodeEP instanceof BehaviorExecutionSpecificationEditPart){
-			logSetBounds(">>>     origin: " + origin);
-			logSetBounds(">>>     local result: " + local);
-		}
-		
 		Node view = (Node) nodeEP.getNotationView();
 		LayoutConstraint constraint = view.getLayoutConstraint();
 		if (constraint instanceof Location){

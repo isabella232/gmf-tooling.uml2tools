@@ -262,7 +262,7 @@
       <viewProvider class="org.eclipse.uml2.diagram.sequence.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLSequence"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3005,3007,3008,3009,3001,3002,3003,3004,3006,3010,3011"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3005,3007,3008,3009,3001,3002,3003,3004,3006,3010,3011,3012,3013,3014"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003"/>
       </viewProvider>
    </extension>
@@ -275,13 +275,13 @@
             <method name="getType()" value="UMLSequence"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3005,3007,3008,3009,3001,3002,3003,3004,3006,3010,3011"/>
+            <method name="getType()" value="2001,3005,3007,3008,3009,3001,3002,3003,3004,3006,3010,3011,3012,3013,3014"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002,4003"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5002,5007,5010,5001,5005,5003,5004"/>
+            <method name="getType()" value="5002,5007,5010,5001,5005,5003,5004,5011,5012"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -444,6 +444,33 @@
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.sequence.ActionExecutionSpecification_3012"
+               name="%metatype.name.ActionExecutionSpecification_3012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.sequence.ActionExecutionSpecification_3002"/>
+            <param name="semanticHint" value="3012"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.sequence.StateInvariant_3013"
+               name="%metatype.name.StateInvariant_3013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.sequence.StateInvariant_3003"/>
+            <param name="semanticHint" value="3013"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
+         <specializationType
+               id="org.eclipse.uml2.diagram.sequence.BehaviorExecutionSpecification_3014"
+               name="%metatype.name.BehaviorExecutionSpecification_3014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.uml2.diagram.sequence.BehaviorExecutionSpecification_3004"/>
+            <param name="semanticHint" value="3014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.eclipse.org/uml2/3.0.0/UML">
          <metamodelType
                id="org.eclipse.uml2.diagram.sequence.Message_4001"
                name="%metatype.name.Message_4001"
@@ -492,6 +519,9 @@
          <elementType ref="org.eclipse.uml2.diagram.sequence.InteractionUse_3006"/>
          <elementType ref="org.eclipse.uml2.diagram.sequence.CombinedFragment_3010"/>
          <elementType ref="org.eclipse.uml2.diagram.sequence.InteractionOperand_3011"/>
+         <elementType ref="org.eclipse.uml2.diagram.sequence.ActionExecutionSpecification_3012"/>
+         <elementType ref="org.eclipse.uml2.diagram.sequence.StateInvariant_3013"/>
+         <elementType ref="org.eclipse.uml2.diagram.sequence.BehaviorExecutionSpecification_3014"/>
          <elementType ref="org.eclipse.uml2.diagram.sequence.Message_4001"/>
          <elementType ref="org.eclipse.uml2.diagram.sequence.TopLevelMountingLink_4002"/>
          <elementType ref="org.eclipse.uml2.diagram.sequence.InnerMountingLink_4003"/>
@@ -762,6 +792,18 @@
              </popupStructuredContributionCriteria>
              <popupStructuredContributionCriteria
                    objectClass="org.eclipse.uml2.diagram.sequence.edit.parts.InteractionOperandMountingRegionEditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecification2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariant2EditPart"
+                   objectCount="1">
+             </popupStructuredContributionCriteria>
+             <popupStructuredContributionCriteria
+                   objectClass="org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecification2EditPart"
                    objectCount="1">
              </popupStructuredContributionCriteria>
 		 </popupContribution>

@@ -25,11 +25,13 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalC
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
+import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * @generated
@@ -60,8 +62,8 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		createFileCreationPage(domainModelURI);
 		createDiagramRootSelectorPage(diagramRoot);
+		createFileCreationPage(domainModelURI);
 
 		this.myEditingDomain = editingDomain;
 	}
@@ -116,14 +118,15 @@ public class UMLNewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage.setFileName(UMLDiagramEditorUtil.getUniqueFileName(filePath, fileName, "umlstm")); //$NON-NLS-1$
+		myFileCreationPage.setFileExtension("umlstm"); //$NON-NLS-1$
 	}
 
 	/**
 	 * @generated
 	 */
 	public void addPages() {
-		addPage(myFileCreationPage);
 		addPage(diagramRootElementSelectionPage);
+		addPage(myFileCreationPage);
 	}
 
 	/**
@@ -209,6 +212,20 @@ public class UMLNewDiagramFileWizard extends Wizard {
 					new CreateDiagramViewOperation(new EObjectAdapter(selectedModelElement), PackageEditPart.MODEL_ID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null : Messages.UMLNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public IWizardPage getNextPage() {
+			IWizardPage nextPage = super.getNextPage();
+			if (nextPage instanceof WizardNewFileCreationPage) {
+				String fileName = ((NamedElement) getModelElement()).getName();
+				WizardNewFileCreationPage fileCreationPage = ((WizardNewFileCreationPage) nextPage);
+				fileCreationPage.setFileName(UMLDiagramEditorUtil.getUniqueFileName(fileCreationPage.getContainerFullPath(), fileName, "umlstm")); //$NON-NLS-1$
+			}
+			return nextPage;
 		}
 	}
 }

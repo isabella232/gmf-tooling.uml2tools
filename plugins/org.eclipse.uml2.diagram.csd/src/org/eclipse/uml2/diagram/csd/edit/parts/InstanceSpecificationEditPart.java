@@ -164,6 +164,12 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 			((InstanceSpecificationStereoEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceFigure_StereoLabel());
 			return true;
 		}
+		if (childEditPart instanceof InstanceSpecificationSlotsEditPart) {
+			IFigure pane = getPrimaryShape().getFigureInstanceNode_SlotsCompartmentFigure();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((InstanceSpecificationSlotsEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -172,6 +178,11 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
+		if (childEditPart instanceof InstanceSpecificationSlotsEditPart) {
+			IFigure pane = getPrimaryShape().getFigureInstanceNode_SlotsCompartmentFigure();
+			pane.remove(((InstanceSpecificationSlotsEditPart) childEditPart).getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -199,6 +210,9 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof InstanceSpecificationSlotsEditPart) {
+			return getPrimaryShape().getFigureInstanceNode_SlotsCompartmentFigure();
+		}
 		return getContentPane();
 	}
 
@@ -354,13 +368,13 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
 		if (targetEditPart instanceof CollaborationUse2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Dependency_4006);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof PortEditPart) {
@@ -396,13 +410,13 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.Usage_4008);
+		}
 		if (targetEditPart instanceof CollaborationUse2EditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Usage_4008);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PortEditPart) {
@@ -450,13 +464,13 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Port_3011);
@@ -492,13 +506,13 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Port_3011);
@@ -565,13 +579,13 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Port_3011);
@@ -607,13 +621,13 @@ public class InstanceSpecificationEditPart extends ShapeNodeEditPart implements 
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Port_3011);

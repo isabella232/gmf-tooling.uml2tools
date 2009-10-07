@@ -75,6 +75,10 @@ public class TransitionParser implements IParser {
 			command.compose(setEffectCommand);
 		}
 		
+		if (!command.canExecute()) {
+			return getSetNameCommand(adaptedElement, newString);
+		}
+		
 		return command;
 	}
 
@@ -112,7 +116,7 @@ public class TransitionParser implements IParser {
 				printStringBuffer.append(effect.getLabel());
 			}
 			
-			return printStringBuffer.toString();
+			return printStringBuffer.length() >0 ? printStringBuffer.toString() : transition.getName();
 		}
 		return ""; //$NON-NLS-1$
 	}
@@ -172,6 +176,13 @@ public class TransitionParser implements IParser {
 			return null;
 		}
 		return new SetValueCommand(new SetRequest(element, UMLPackage.eINSTANCE.getTransition_Effect(), effect));
+	}
+	
+	private ICommand getSetNameCommand(EObject element, String name) {
+		if (name == null || name.length() == 0) {
+			return null;
+		}
+		return new SetValueCommand(new SetRequest(element, UMLPackage.eINSTANCE.getNamedElement_Name(), name));
 	}
 	
 	private ElementProvider getTriggerProvider() {

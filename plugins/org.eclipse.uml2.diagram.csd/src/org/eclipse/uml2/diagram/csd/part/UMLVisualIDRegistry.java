@@ -19,6 +19,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName7EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassAttributesEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassClass_contentsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassClassesEditPart;
@@ -54,9 +55,16 @@ import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationSlotsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationStereoEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Interface2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceAttributesEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceClassesEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceOperationsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceStereotypeEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageEditPart;
@@ -73,6 +81,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PortName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property3EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
@@ -128,6 +137,11 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static UMLAbstractExpression Property_3014_Constraint;
+
+	/**
+	 * @generated
+	 */
+	private static UMLAbstractExpression Property_3018_Constraint;
 
 	/**
 	 * @generated
@@ -292,6 +306,21 @@ public class UMLVisualIDRegistry {
 				return SlotEditPart.VISUAL_ID;
 			}
 			break;
+		case InterfaceAttributesEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3018((Property) domainElement)) {
+				return Property4EditPart.VISUAL_ID;
+			}
+			break;
+		case InterfaceOperationsEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation2EditPart.VISUAL_ID;
+			}
+			break;
+		case InterfaceClassesEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass())) {
+				return Class4EditPart.VISUAL_ID;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			// We want to additionally show the Canvas Semantical Element in the auxiliary 
 			// org.eclipse.uml2.diagram.csd.edit.parts.Package2EditPart (that serves as a pure visual container for children). 
@@ -322,6 +351,9 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
 				return CommentEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface2EditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -429,6 +461,23 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case Interface2EditPart.VISUAL_ID:
+			if (InterfaceName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceStereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceAttributesEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceOperationsEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceClassesEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case CollaborationUse2EditPart.VISUAL_ID:
 			if (CollaborationUseName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -509,6 +558,21 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case InterfaceAttributesEditPart.VISUAL_ID:
+			if (Property4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InterfaceOperationsEditPart.VISUAL_ID:
+			if (Operation2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InterfaceClassesEditPart.VISUAL_ID:
+			if (Class4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case PackageEditPart.VISUAL_ID:
 			if (CollaborationEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -532,6 +596,9 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (CommentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Interface2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -694,6 +761,17 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
+	private static boolean isProperty_3018(Property domainElement) {
+		if (Property_3018_Constraint == null) { // lazy initialization
+			Property_3018_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
+		}
+		Object result = Property_3018_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
 	private static boolean isConnector_4005(Connector domainElement) {
 		if (Connector_4005_Constraint == null) { // lazy initialization
 			Connector_4005_Constraint = UMLOCLFactory.getExpression("kind =ConnectorKind::delegation", UMLPackage.eINSTANCE.getConnector()); //$NON-NLS-1$
@@ -815,6 +893,17 @@ public class UMLVisualIDRegistry {
 				return SlotEditPart.VISUAL_ID;
 			}
 			break;
+		case Interface2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3018((Property) domainElement)) {
+				return Property4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass())) {
+				return Class4EditPart.VISUAL_ID;
+			}
+			break;
 		case Property3EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
 				return Port2EditPart.VISUAL_ID;
@@ -842,6 +931,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
 				return CommentEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface2EditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -859,6 +951,10 @@ public class UMLVisualIDRegistry {
 			return (substituteCandidate == Class3EditPart.VISUAL_ID);
 		case Class3EditPart.VISUAL_ID:
 			return (substituteCandidate == ClassEditPart.VISUAL_ID);
+		case InterfaceEditPart.VISUAL_ID:
+			return (substituteCandidate == Interface2EditPart.VISUAL_ID);
+		case Interface2EditPart.VISUAL_ID:
+			return (substituteCandidate == InterfaceEditPart.VISUAL_ID);
 
 		default:
 			break;
@@ -890,6 +986,9 @@ public class UMLVisualIDRegistry {
 		case PackageImportsEditPart.VISUAL_ID:
 		case ClassClass_contentsEditPart.VISUAL_ID:
 		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
+		case InterfaceAttributesEditPart.VISUAL_ID:
+		case InterfaceOperationsEditPart.VISUAL_ID:
+		case InterfaceClassesEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -915,6 +1014,9 @@ public class UMLVisualIDRegistry {
 		case Port2EditPart.VISUAL_ID:
 		case Port3EditPart.VISUAL_ID:
 		case SlotEditPart.VISUAL_ID:
+		case Property4EditPart.VISUAL_ID:
+		case Operation2EditPart.VISUAL_ID:
+		case Class4EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

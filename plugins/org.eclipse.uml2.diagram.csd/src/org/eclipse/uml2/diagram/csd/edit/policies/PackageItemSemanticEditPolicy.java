@@ -12,6 +12,7 @@ import org.eclipse.uml2.diagram.csd.edit.commands.CollaborationCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.CommentCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.InstanceSpecificationCreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.Interface2CreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.InterfaceCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.PackageCreateCommand;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
@@ -56,6 +57,9 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		}
 		if (UMLElementTypes.Comment_2013 == req.getElementType()) {
 			return getGEFWrapper(new CommentCreateCommand(req));
+		}
+		if (UMLElementTypes.Interface_2014 == req.getElementType()) {
+			return getGEFWrapper(new Interface2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

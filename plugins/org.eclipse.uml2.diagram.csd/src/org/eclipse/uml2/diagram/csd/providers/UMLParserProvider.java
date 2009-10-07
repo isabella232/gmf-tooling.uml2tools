@@ -41,6 +41,8 @@ import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName5EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName6EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationName7EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ClassStereoEditPart;
@@ -62,7 +64,10 @@ import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationStereoEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.InterfaceStereotypeEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Operation2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PackageStereo2EditPart;
@@ -72,6 +77,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.PortName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PortNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Property2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
@@ -372,6 +378,45 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser interfaceName_5035Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceName_5035Parser() {
+		if (interfaceName_5035Parser == null) {
+			interfaceName_5035Parser = createInterfaceName_5035Parser();
+		}
+		return interfaceName_5035Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInterfaceName_5035Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ClassifierAppliedStereotypeParser interfaceQualifiedName_5036Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceQualifiedName_5036Parser() {
+		if (interfaceQualifiedName_5036Parser == null) {
+			interfaceQualifiedName_5036Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return interfaceQualifiedName_5036Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser collaborationUseName_5002Parser;
 
 	/**
@@ -478,6 +523,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser createOperation_3009Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser class_3010Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClass_3010Parser() {
+		if (class_3010Parser == null) {
+			class_3010Parser = createClass_3010Parser();
+		}
+		return class_3010Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createClass_3010Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
@@ -687,6 +756,78 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 				return result;
 			}
 		};
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser property_3018Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getProperty_3018Parser() {
+		if (property_3018Parser == null) {
+			property_3018Parser = createProperty_3018Parser();
+		}
+		return property_3018Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createProperty_3018Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser operation_3019Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getOperation_3019Parser() {
+		if (operation_3019Parser == null) {
+			operation_3019Parser = createOperation_3019Parser();
+		}
+		return operation_3019Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createOperation_3019Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser class_3020Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getClass_3020Parser() {
+		if (class_3020Parser == null) {
+			class_3020Parser = createClass_3020Parser();
+		}
+		return class_3020Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createClass_3020Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -1160,6 +1301,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConstraintLanguage_5034Parser();
 		case CommentBodyEditPart.VISUAL_ID:
 			return getCommentBody_5032Parser();
+		case InterfaceName2EditPart.VISUAL_ID:
+			return getInterfaceName_5035Parser();
+		case InterfaceStereotypeEditPart.VISUAL_ID:
+			return getInterfaceQualifiedName_5036Parser();
 		case CollaborationUseName2EditPart.VISUAL_ID:
 			return getCollaborationUseName_5002Parser();
 		case CollaborationUseStereoEditPart.VISUAL_ID:
@@ -1170,6 +1315,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getProperty_3008Parser();
 		case OperationEditPart.VISUAL_ID:
 			return getOperation_3009Parser();
+		case Class2EditPart.VISUAL_ID:
+			return getClass_3010Parser();
 		case PortNameEditPart.VISUAL_ID:
 			return getPortName_5012Parser();
 		case PortIsBehaviorEditPart.VISUAL_ID:
@@ -1186,6 +1333,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPortIsBehavior_5028Parser();
 		case SlotEditPart.VISUAL_ID:
 			return getSlot_3015Parser();
+		case Property4EditPart.VISUAL_ID:
+			return getProperty_3018Parser();
+		case Operation2EditPart.VISUAL_ID:
+			return getOperation_3019Parser();
+		case Class4EditPart.VISUAL_ID:
+			return getClass_3020Parser();
 		case ConnectorNameEditPart.VISUAL_ID:
 			return getConnectorName_6009Parser();
 		case ConnectorName2EditPart.VISUAL_ID:

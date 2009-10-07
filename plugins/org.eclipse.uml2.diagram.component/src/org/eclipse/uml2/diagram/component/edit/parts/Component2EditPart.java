@@ -382,10 +382,16 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		if (targetEditPart instanceof Interface2EditPart) {
 			types.add(UMLElementTypes.InterfaceRealization_4001);
 		}
+		if (targetEditPart instanceof Interface3EditPart) {
+			types.add(UMLElementTypes.InterfaceRealization_4001);
+		}
 		if (targetEditPart instanceof InterfaceEditPart) {
 			types.add(UMLElementTypes.InterfaceRealization_4001);
 		}
 		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.ComponentRequired_4007);
+		}
+		if (targetEditPart instanceof Interface3EditPart) {
 			types.add(UMLElementTypes.ComponentRequired_4007);
 		}
 		if (targetEditPart instanceof InterfaceEditPart) {
@@ -410,6 +416,9 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 			types.add(UMLElementTypes.Dependency_4009);
 		}
 		if (targetEditPart instanceof ClassDiagramNotationClassEditPart) {
+			types.add(UMLElementTypes.Dependency_4009);
+		}
+		if (targetEditPart instanceof Interface3EditPart) {
 			types.add(UMLElementTypes.Dependency_4009);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart) {
@@ -452,6 +461,9 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 			types.add(UMLElementTypes.Association_4011);
 		}
 		if (targetEditPart instanceof ClassDiagramNotationClassEditPart) {
+			types.add(UMLElementTypes.Association_4011);
+		}
+		if (targetEditPart instanceof Interface3EditPart) {
 			types.add(UMLElementTypes.Association_4011);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.component.edit.parts.Component2EditPart) {
@@ -499,6 +511,9 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 			types.add(UMLElementTypes.Class_2007);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Interface_2009);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Component_3001);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
@@ -539,6 +554,9 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Class_2007);
+		}
+		if (relationshipType == UMLElementTypes.Association_4011) {
+			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Component_3001);
@@ -570,10 +588,16 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 			types.add(UMLElementTypes.Interface_2003);
 		}
 		if (relationshipType == UMLElementTypes.InterfaceRealization_4001) {
+			types.add(UMLElementTypes.Interface_2009);
+		}
+		if (relationshipType == UMLElementTypes.InterfaceRealization_4001) {
 			types.add(UMLElementTypes.Interface_3005);
 		}
 		if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
 			types.add(UMLElementTypes.Interface_2003);
+		}
+		if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
+			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.ComponentRequired_4007) {
 			types.add(UMLElementTypes.Interface_3005);
@@ -598,6 +622,9 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_2007);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4009) {
+			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Component_3001);
@@ -640,6 +667,9 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Class_2007);
+		}
+		if (relationshipType == UMLElementTypes.Association_4011) {
+			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
 			types.add(UMLElementTypes.Component_3001);

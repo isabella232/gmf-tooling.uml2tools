@@ -276,6 +276,15 @@ public class LayeredOperandEditPart extends ShapeNodeEditPart implements Primary
 		if (targetEditPart instanceof InteractionOperandMountingRegionEditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
+		if (targetEditPart instanceof ActionExecutionSpecification2EditPart) {
+			types.add(UMLElementTypes.Message_4001);
+		}
+		if (targetEditPart instanceof StateInvariant2EditPart) {
+			types.add(UMLElementTypes.Message_4001);
+		}
+		if (targetEditPart instanceof BehaviorExecutionSpecification2EditPart) {
+			types.add(UMLElementTypes.Message_4001);
+		}
 		return types;
 	}
 
@@ -319,6 +328,15 @@ public class LayeredOperandEditPart extends ShapeNodeEditPart implements Primary
 		}
 		if (relationshipType == UMLElementTypes.Message_4001) {
 			types.add(UMLElementTypes.InteractionOperand_3011);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.ActionExecutionSpecification_3012);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.StateInvariant_3013);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.BehaviorExecutionSpecification_3014);
 		}
 		return types;
 	}
@@ -372,6 +390,15 @@ public class LayeredOperandEditPart extends ShapeNodeEditPart implements Primary
 		}
 		if (relationshipType == UMLElementTypes.Message_4001) {
 			types.add(UMLElementTypes.InteractionOperand_3011);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.ActionExecutionSpecification_3012);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.StateInvariant_3013);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.BehaviorExecutionSpecification_3014);
 		}
 		return types;
 	}

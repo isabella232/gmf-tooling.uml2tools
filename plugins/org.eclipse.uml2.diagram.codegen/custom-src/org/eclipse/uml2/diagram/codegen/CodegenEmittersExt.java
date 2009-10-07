@@ -98,6 +98,51 @@ public class CodegenEmittersExt extends CodegenEmitters {
 		TextEmitter emitter = newXpandEmitter("xpt::extendedpalette::PaletteProvider::needsExtendedPalette");//$NON-NLS-1$
 		String result = getText(emitter, input);
 		return Boolean.valueOf(result); 
+	}
+	
+
+	public TextEmitter getSynchronizationWizardPageEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::async::SynchronizationWizardPage::SynchronizationWizardPage"); //$NON-NLS-1$
+	}
+
+	public String getSynchronizationWizardPagedFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::async::SynchronizationWizardPage::qualifiedClassName", input); //$NON-NLS-1$
+	}
+	
+	public boolean needsSynchronizationWizardPage(Object... input) throws UnexpectedBehaviourException {
+		TextEmitter emitter = newXpandEmitter("xpt::async::SynchronizationWizardPage::needsSynchronizationWizardPage");//$NON-NLS-1$
+		String result = getText(emitter, input);
+		return Boolean.valueOf(result); 
+	}
+
+	public TextEmitter getFixedElementsWizardEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::async::FixedElementsWizard::FixedElementsWizard"); //$NON-NLS-1$
+	}
+
+	public String getFixedElementsWizardFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::async::FixedElementsWizard::qualifiedClassName", input); //$NON-NLS-1$
+	}
+	
+	public boolean needsFixedElementsWizard(Object... input) throws UnexpectedBehaviourException {
+		TextEmitter emitter = newXpandEmitter("xpt::async::FixedElementsWizard::needsFixedElementsWizard");//$NON-NLS-1$
+		String result = getText(emitter, input);
+		return Boolean.valueOf(result); 
+	}
+
+	public TextEmitter getNewDiagramHandlerEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::async::NewDiagramHandler::NewDiagramHandler"); //$NON-NLS-1$
+	}
+
+	public String getNewDiagramHandlerFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::async::NewDiagramHandler::qualifiedClassName", input); //$NON-NLS-1$
+	}
+	
+	public TextEmitter getNewDiagramPropertyTesterEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::async::NewDiagramPropertyTester::NewDiagramPropertyTester"); //$NON-NLS-1$
+	}
+
+	public String getNewDiagramPropertyTesterFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::async::NewDiagramPropertyTester::qualifiedClassName", input); //$NON-NLS-1$
 	}	
 	
 	/**

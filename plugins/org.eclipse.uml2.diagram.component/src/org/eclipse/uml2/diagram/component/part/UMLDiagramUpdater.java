@@ -30,6 +30,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEdi
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Class3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Class4EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassAttributesEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassClassesEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ClassDiagramNotationClassEditPart;
@@ -50,8 +51,13 @@ import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Interface3EditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.InterfaceAttributesEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.InterfaceClassesEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.InterfaceOperationsEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.OperationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Package4EditPart;
@@ -63,6 +69,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortOnClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Artifact;
@@ -140,6 +147,12 @@ public class UMLDiagramUpdater {
 			return getClassOperations_7007SemanticChildren(view);
 		case ClassClassesEditPart.VISUAL_ID:
 			return getClassClasses_7008SemanticChildren(view);
+		case InterfaceAttributesEditPart.VISUAL_ID:
+			return getInterfaceAttributes_7012SemanticChildren(view);
+		case InterfaceOperationsEditPart.VISUAL_ID:
+			return getInterfaceOperations_7013SemanticChildren(view);
+		case InterfaceClassesEditPart.VISUAL_ID:
+			return getInterfaceClasses_7014SemanticChildren(view);
 		case PackageEditPart.VISUAL_ID: {
 			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.component.edit.parts.Package2EditPart.VISUAL_ID). 
 			//The only purpose for this node is to be a container for children (imports, etc)
@@ -584,6 +597,78 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getInterfaceAttributes_7012SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Interface modelElement = (Interface) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+			Property childElement = (Property) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Property2EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterfaceOperations_7013SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Interface modelElement = (Interface) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+			Operation childElement = (Operation) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == OperationEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterfaceClasses_7014SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.EMPTY_LIST;
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.EMPTY_LIST;
+		}
+		Interface modelElement = (Interface) containerView.getElement();
+		List result = new LinkedList();
+		for (Iterator it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
+			Classifier childElement = (Classifier) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Class4EditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getPackage_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.EMPTY_LIST;
@@ -610,6 +695,10 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 			if (visualID == ClassDiagramNotationClassEditPart.VISUAL_ID) {
+				result.add(new UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == Interface3EditPart.VISUAL_ID) {
 				result.add(new UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -660,6 +749,8 @@ public class UMLDiagramUpdater {
 			return getClass_2007ContainedLinks(view);
 		case CommentEditPart.VISUAL_ID:
 			return getComment_2008ContainedLinks(view);
+		case Interface3EditPart.VISUAL_ID:
+			return getInterface_2009ContainedLinks(view);
 		case Component2EditPart.VISUAL_ID:
 			return getComponent_3001ContainedLinks(view);
 		case PortEditPart.VISUAL_ID:
@@ -692,6 +783,12 @@ public class UMLDiagramUpdater {
 			return getClass_3013ContainedLinks(view);
 		case PortOnClassEditPart.VISUAL_ID:
 			return getPort_3014ContainedLinks(view);
+		case Property2EditPart.VISUAL_ID:
+			return getProperty_3017ContainedLinks(view);
+		case OperationEditPart.VISUAL_ID:
+			return getOperation_3018ContainedLinks(view);
+		case Class4EditPart.VISUAL_ID:
+			return getClass_3020ContainedLinks(view);
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return getInterfaceRealization_4001ContainedLinks(view);
 		case ConnectorEditPart.VISUAL_ID:
@@ -725,6 +822,8 @@ public class UMLDiagramUpdater {
 			return getClass_2007IncomingLinks(view);
 		case CommentEditPart.VISUAL_ID:
 			return getComment_2008IncomingLinks(view);
+		case Interface3EditPart.VISUAL_ID:
+			return getInterface_2009IncomingLinks(view);
 		case Component2EditPart.VISUAL_ID:
 			return getComponent_3001IncomingLinks(view);
 		case PortEditPart.VISUAL_ID:
@@ -757,6 +856,12 @@ public class UMLDiagramUpdater {
 			return getClass_3013IncomingLinks(view);
 		case PortOnClassEditPart.VISUAL_ID:
 			return getPort_3014IncomingLinks(view);
+		case Property2EditPart.VISUAL_ID:
+			return getProperty_3017IncomingLinks(view);
+		case OperationEditPart.VISUAL_ID:
+			return getOperation_3018IncomingLinks(view);
+		case Class4EditPart.VISUAL_ID:
+			return getClass_3020IncomingLinks(view);
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return getInterfaceRealization_4001IncomingLinks(view);
 		case ConnectorEditPart.VISUAL_ID:
@@ -790,6 +895,8 @@ public class UMLDiagramUpdater {
 			return getClass_2007OutgoingLinks(view);
 		case CommentEditPart.VISUAL_ID:
 			return getComment_2008OutgoingLinks(view);
+		case Interface3EditPart.VISUAL_ID:
+			return getInterface_2009OutgoingLinks(view);
 		case Component2EditPart.VISUAL_ID:
 			return getComponent_3001OutgoingLinks(view);
 		case PortEditPart.VISUAL_ID:
@@ -822,6 +929,12 @@ public class UMLDiagramUpdater {
 			return getClass_3013OutgoingLinks(view);
 		case PortOnClassEditPart.VISUAL_ID:
 			return getPort_3014OutgoingLinks(view);
+		case Property2EditPart.VISUAL_ID:
+			return getProperty_3017OutgoingLinks(view);
+		case OperationEditPart.VISUAL_ID:
+			return getOperation_3018OutgoingLinks(view);
+		case Class4EditPart.VISUAL_ID:
+			return getClass_3020OutgoingLinks(view);
 		case InterfaceRealizationEditPart.VISUAL_ID:
 			return getInterfaceRealization_4001OutgoingLinks(view);
 		case ConnectorEditPart.VISUAL_ID:
@@ -920,6 +1033,13 @@ public class UMLDiagramUpdater {
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4012(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterface_2009ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**
@@ -1086,6 +1206,31 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getProperty_3017ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getOperation_3018ContainedLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getClass_3020ContainedLinks(View view) {
+		Class modelElement = (Class) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_Connector_4008(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getInterfaceRealization_4001ContainedLinks(View view) {
 		return Collections.EMPTY_LIST;
 	}
@@ -1207,6 +1352,23 @@ public class UMLDiagramUpdater {
 		Comment modelElement = (Comment) view.getElement();
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		List result = new LinkedList();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4012(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterface_2009IncomingLinks(View view) {
+		Interface modelElement = (Interface) view.getElement();
+		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		List result = new LinkedList();
+		result.addAll(getIncomingTypeModelFacetLinks_InterfaceRealization_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Port_Provided_4006(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Port_Required_4004(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Component_Required_4007(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4009(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Association_4011(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4012(modelElement, crossReferences));
 		return result;
 	}
@@ -1386,6 +1548,27 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List getProperty_3017IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getOperation_3018IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getClass_3020IncomingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List getInterfaceRealization_4001IncomingLinks(View view) {
 		InterfaceRealization modelElement = (InterfaceRealization) view.getElement();
 		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
@@ -1516,6 +1699,17 @@ public class UMLDiagramUpdater {
 		Comment modelElement = (Comment) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4012(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterface_2009OutgoingLinks(View view) {
+		Interface modelElement = (Interface) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Association_4011(modelElement));
 		return result;
 	}
 
@@ -1671,6 +1865,27 @@ public class UMLDiagramUpdater {
 		result.addAll(getOutgoingTypeModelFacetLinks_Connector_4008(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4009(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getProperty_3017OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getOperation_3018OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getClass_3020OutgoingLinks(View view) {
+		return Collections.EMPTY_LIST;
 	}
 
 	/**

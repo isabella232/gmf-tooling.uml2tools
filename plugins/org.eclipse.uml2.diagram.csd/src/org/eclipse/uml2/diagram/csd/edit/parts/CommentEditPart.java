@@ -310,13 +310,13 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.csd.edit.parts.CommentEditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4016);
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.CommentAnnotatedElement_4016);
+		}
 		if (targetEditPart instanceof CollaborationUse2EditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4016);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.CommentAnnotatedElement_4016);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4016);
 		}
 		if (targetEditPart instanceof PortEditPart) {
@@ -364,13 +364,13 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 			types.add(UMLElementTypes.Comment_2013);
 		}
 		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4016) {
 			types.add(UMLElementTypes.Port_3011);

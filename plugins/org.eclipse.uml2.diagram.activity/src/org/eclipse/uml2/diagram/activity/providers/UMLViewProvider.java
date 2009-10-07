@@ -603,7 +603,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 
-		Node ConstraintPrecondition_7013 = createCompartment(node, UMLVisualIDRegistry.getType(LocalPreconditionCompartmentEditPart.VISUAL_ID), false, false, true, true);
+		Node compartment7013 = createCompartment(node, UMLVisualIDRegistry.getType(LocalPreconditionCompartmentEditPart.VISUAL_ID), false, false, true, true);
 		return node;
 	}
 
@@ -635,7 +635,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 
-		Node ConstraintPostcondition_7014 = createCompartment(node, UMLVisualIDRegistry.getType(LocalPostconditionCompartmentEditPart.VISUAL_ID), false, false, true, true);
+		Node compartment7014 = createCompartment(node, UMLVisualIDRegistry.getType(LocalPostconditionCompartmentEditPart.VISUAL_ID), false, false, true, true);
 		return node;
 	}
 
@@ -1556,8 +1556,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5090 = createLabel(node, UMLVisualIDRegistry.getType(StructuredActivityNodeNameEditPart.VISUAL_ID));
 		Node label5120 = createLabel(node, UMLVisualIDRegistry.getType(StructuredActivityNodeStereotypeEditPart.VISUAL_ID));
 
-		Node StructuredActivityNodeStructuredActivityContentPaneCompartment_7008 = createCompartment(node, UMLVisualIDRegistry.getType(StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID),
-				false, false, false, false);
+		Node compartment7008 = createCompartment(node, UMLVisualIDRegistry.getType(StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -1590,8 +1589,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5089 = createLabel(node, UMLVisualIDRegistry.getType(StructuredActivityNode_StructuredActivityNodeNameEditPart.VISUAL_ID));
 		Node label5119 = createLabel(node, UMLVisualIDRegistry.getType(StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID));
 
-		Node StructuredActivityNodeStructuredActivityContentPaneCompartment_7002 = createCompartment(node, UMLVisualIDRegistry
-				.getType(StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID), false, false, false, false);
+		Node compartment7002 = createCompartment(node, UMLVisualIDRegistry.getType(StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -2172,8 +2170,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5147 = createLabel(node, UMLVisualIDRegistry.getType(StructuredActivityNode_ConditionalNodeNameEditPart.VISUAL_ID));
 		Node label5148 = createLabel(node, UMLVisualIDRegistry.getType(StructuredActivityNode_ConditionalNodeStereotypeEditPart.VISUAL_ID));
 
-		Node ConditionalNodeConditionalNodeCompartment_7023 = createCompartment(node, UMLVisualIDRegistry.getType(ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID), false, false, false,
-				false);
+		Node compartment7023 = createCompartment(node, UMLVisualIDRegistry.getType(ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -2925,8 +2922,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5122 = createLabel(node, UMLVisualIDRegistry.getType(ActivityPartition_StructuredActivityNodeNameEditPart.VISUAL_ID));
 		Node label5140 = createLabel(node, UMLVisualIDRegistry.getType(ActivityPartition_StructuredActivityNodeStereotypeEditPart.VISUAL_ID));
 
-		Node StructuredActivityNodeStructuredActivityContentPaneCompartment_7016 = createCompartment(node, UMLVisualIDRegistry
-				.getType(ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID), false, false, false, false);
+		Node compartment7016 = createCompartment(node, UMLVisualIDRegistry.getType(ActivityPartition_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -2959,8 +2955,8 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5121 = createLabel(node, UMLVisualIDRegistry.getType(ActivityPartition_StructuredActivityNode_StructuredActivityNodeStereotypeEditPart.VISUAL_ID));
 		Node label5139 = createLabel(node, UMLVisualIDRegistry.getType(StructuredActivityNodeQualifiedName2EditPart.VISUAL_ID));
 
-		Node StructuredActivityNodeStructuredActivityContentPaneCompartment_7018 = createCompartment(node, UMLVisualIDRegistry
-				.getType(ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID), false, false, false, false);
+		Node compartment7018 = createCompartment(node, UMLVisualIDRegistry.getType(ActivityPartition_StructuredActivityNode_StructuredActivityNodeContentPaneCompartmentEditPart.VISUAL_ID), false,
+				false, false, false);
 		return node;
 	}
 
@@ -3094,8 +3090,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5117 = createLabel(node, UMLVisualIDRegistry.getType(ActivityPartition_LoopNodeNameEditPart.VISUAL_ID));
 		Node label5141 = createLabel(node, UMLVisualIDRegistry.getType(ActivityPartition_LoopNodeStereotypeEditPart.VISUAL_ID));
 
-		Node LoopNodeLoopNodeContentPaneCompartment_7017 = createCompartment(node, UMLVisualIDRegistry.getType(ActivityPartition_LoopNodeContentPaneCompartmentEditPart.VISUAL_ID), false, false,
-				false, false);
+		Node compartment7017 = createCompartment(node, UMLVisualIDRegistry.getType(ActivityPartition_LoopNodeContentPaneCompartmentEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -3128,8 +3123,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5115 = createLabel(node, UMLVisualIDRegistry.getType(ActivityPartition_ConditionalNodeNameEditPart.VISUAL_ID));
 		Node label5142 = createLabel(node, UMLVisualIDRegistry.getType(ActivityPartition_ConditionalNodeStereotypeEditPart.VISUAL_ID));
 
-		Node ConditionalNodeConditionalNodeCompartment_7020 = createCompartment(node, UMLVisualIDRegistry.getType(ActivityPartition_ConditionalNodeCompartmentEditPart.VISUAL_ID), false, false, false,
-				false);
+		Node compartment7020 = createCompartment(node, UMLVisualIDRegistry.getType(ActivityPartition_ConditionalNodeCompartmentEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -3161,8 +3155,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node label5088 = createLabel(node, UMLVisualIDRegistry.getType(ActivityPartition_ExpansionRegionModeEditPart.VISUAL_ID));
 
-		Node ExpansionRegionExpansionRegionNodeCompartment_7022 = createCompartment(node, UMLVisualIDRegistry.getType(ActivityPartition_ExpansionRegionNodeCompartmentEditPart.VISUAL_ID), false,
-				false, false, false);
+		Node compartment7022 = createCompartment(node, UMLVisualIDRegistry.getType(ActivityPartition_ExpansionRegionNodeCompartmentEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -3265,7 +3258,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5091 = createLabel(node, UMLVisualIDRegistry.getType(LoopNodeNameEditPart.VISUAL_ID));
 		Node label5118 = createLabel(node, UMLVisualIDRegistry.getType(LoopNodeStereotypeEditPart.VISUAL_ID));
 
-		Node LoopNodeLoopNodeContentPaneCompartment_7015 = createCompartment(node, UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID), false, false, false, false);
+		Node compartment7015 = createCompartment(node, UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -3298,7 +3291,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Node label5092 = createLabel(node, UMLVisualIDRegistry.getType(ConditionalNodeNameEditPart.VISUAL_ID));
 		Node label5116 = createLabel(node, UMLVisualIDRegistry.getType(ConditionalNodeStereotypeEditPart.VISUAL_ID));
 
-		Node ConditionalNodeConditionalNodeCompartment_7019 = createCompartment(node, UMLVisualIDRegistry.getType(ConditionalNodeCompartmentEditPart.VISUAL_ID), false, false, false, false);
+		Node compartment7019 = createCompartment(node, UMLVisualIDRegistry.getType(ConditionalNodeCompartmentEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 
@@ -3330,7 +3323,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
 		Node label5087 = createLabel(node, UMLVisualIDRegistry.getType(ExpansionRegionModeEditPart.VISUAL_ID));
 
-		Node ExpansionRegionExpansionRegionNodeCompartment_7021 = createCompartment(node, UMLVisualIDRegistry.getType(ExpansionRegionNodeCompartmentEditPart.VISUAL_ID), false, false, false, false);
+		Node compartment7021 = createCompartment(node, UMLVisualIDRegistry.getType(ExpansionRegionNodeCompartmentEditPart.VISUAL_ID), false, false, false, false);
 		return node;
 	}
 

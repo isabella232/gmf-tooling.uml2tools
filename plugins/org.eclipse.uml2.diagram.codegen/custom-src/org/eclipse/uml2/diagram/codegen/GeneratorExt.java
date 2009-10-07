@@ -70,6 +70,8 @@ public class GeneratorExt extends Generator {
 		generateViewFiltersPreferencesPage(myDiagram);
 		generateSwitchBetweenCommentAndNodeActions();
 		generatePaletteProvider(myDiagram);
+		generateSynchronizationWizardPage(myDiagram);
+		generateNewDiagramHadler(myDiagram);
 	}
 
 	private void generateSwitchBetweenCommentAndNodeActions() throws InterruptedException, UnexpectedBehaviourException {
@@ -170,6 +172,26 @@ public class GeneratorExt extends Generator {
 		}
 	}
 
+	private void generatePaletteProvider(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
+		if (myEmitters.isPaletteProviderNeeded(new Object[] { diagram })) {
+			doGenerateJavaClass(myEmitters.getPaletteProviderEmitter(), myEmitters.getPaletteProviderFQN(new Object[] { diagram }), diagram);
+		}
+	}
+
+	private void generateSynchronizationWizardPage(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
+		if (myEmitters.needsSynchronizationWizardPage(new Object[] { diagram })) {
+			doGenerateJavaClass(myEmitters.getSynchronizationWizardPageEmitter(), myEmitters.getSynchronizationWizardPagedFQN(new Object[] { diagram }), diagram);
+		}
+	}
+
+	private void generateNewDiagramHadler(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
+		if (myEmitters.needsFixedElementsWizard(new Object[] { diagram })) {
+			doGenerateJavaClass(myEmitters.getFixedElementsWizardEmitter(), myEmitters.getFixedElementsWizardFQN(new Object[] { diagram }), diagram);
+			doGenerateJavaClass(myEmitters.getNewDiagramHandlerEmitter(), myEmitters.getNewDiagramHandlerFQN(new Object[] { diagram }), diagram);
+			doGenerateJavaClass(myEmitters.getNewDiagramPropertyTesterEmitter(), myEmitters.getNewDiagramPropertyTesterFQN(new Object[] { diagram }), diagram);
+		}
+	}
+
 	private static boolean isTheSameEClass(EClass candidate, EClass pattern) {
 		if (pattern.equals(candidate)) {
 			return true;
@@ -191,9 +213,4 @@ public class GeneratorExt extends Generator {
 		return isTheSameEClass(candidate.getEContainingClass(), pattern.getEContainingClass()) && pattern.getName().equals(candidate.getName());
 	}
 
-	private void generatePaletteProvider(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
-		if (myEmitters.isPaletteProviderNeeded(new Object[] { diagram })) {
-			doGenerateJavaClass(myEmitters.getPaletteProviderEmitter(), myEmitters.getPaletteProviderFQN(new Object[] { diagram }), diagram);
-		}
-	}
 }

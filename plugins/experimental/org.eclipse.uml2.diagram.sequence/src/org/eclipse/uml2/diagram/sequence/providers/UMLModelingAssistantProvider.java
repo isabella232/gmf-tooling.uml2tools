@@ -20,7 +20,9 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionSpecificationEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecification2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentMountingRegionEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.GateEditPart;
@@ -32,6 +34,7 @@ import org.eclipse.uml2.diagram.sequence.edit.parts.LayeredInteractionUseEditPar
 import org.eclipse.uml2.diagram.sequence.edit.parts.LayeredOperandEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariant2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantEditPart;
 import org.eclipse.uml2.diagram.sequence.part.Messages;
 import org.eclipse.uml2.diagram.sequence.part.UMLDiagramEditorPlugin;
@@ -85,6 +88,20 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
+		if (editPart instanceof InteractionOperandMountingRegionEditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.ActionExecutionSpecification_3012);
+			types.add(UMLElementTypes.StateInvariant_3013);
+			types.add(UMLElementTypes.BehaviorExecutionSpecification_3014);
+			return types;
+		}
+
+		if (editPart instanceof BehaviorExecutionSpecification2EditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.BehaviorExecutionSpecification_3004);
+			return types;
+		}
+
 		if (editPart instanceof PackageEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Interaction_2001);
@@ -134,6 +151,15 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof InteractionOperandMountingRegionEditPart) {
 			return ((InteractionOperandMountingRegionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof ActionExecutionSpecification2EditPart) {
+			return ((ActionExecutionSpecification2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof StateInvariant2EditPart) {
+			return ((StateInvariant2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof BehaviorExecutionSpecification2EditPart) {
+			return ((BehaviorExecutionSpecification2EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -177,6 +203,15 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (targetEditPart instanceof InteractionOperandMountingRegionEditPart) {
 			return ((InteractionOperandMountingRegionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ActionExecutionSpecification2EditPart) {
+			return ((ActionExecutionSpecification2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof StateInvariant2EditPart) {
+			return ((StateInvariant2EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof BehaviorExecutionSpecification2EditPart) {
+			return ((BehaviorExecutionSpecification2EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -223,6 +258,15 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof InteractionOperandMountingRegionEditPart) {
 			return ((InteractionOperandMountingRegionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof ActionExecutionSpecification2EditPart) {
+			return ((ActionExecutionSpecification2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof StateInvariant2EditPart) {
+			return ((StateInvariant2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof BehaviorExecutionSpecification2EditPart) {
+			return ((BehaviorExecutionSpecification2EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -267,6 +311,15 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof InteractionOperandMountingRegionEditPart) {
 			return ((InteractionOperandMountingRegionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof ActionExecutionSpecification2EditPart) {
+			return ((ActionExecutionSpecification2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof StateInvariant2EditPart) {
+			return ((StateInvariant2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof BehaviorExecutionSpecification2EditPart) {
+			return ((BehaviorExecutionSpecification2EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -310,6 +363,15 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof InteractionOperandMountingRegionEditPart) {
 			return ((InteractionOperandMountingRegionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ActionExecutionSpecification2EditPart) {
+			return ((ActionExecutionSpecification2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof StateInvariant2EditPart) {
+			return ((StateInvariant2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof BehaviorExecutionSpecification2EditPart) {
+			return ((BehaviorExecutionSpecification2EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}

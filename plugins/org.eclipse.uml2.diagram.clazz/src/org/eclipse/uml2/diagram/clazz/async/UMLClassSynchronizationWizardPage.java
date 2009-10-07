@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.clazz.async;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.clazz.navigator.UMLNavigatorLabelProvider;
 import org.eclipse.uml2.diagram.clazz.part.ModelElementSelectionPage;
@@ -43,8 +44,14 @@ public class UMLClassSynchronizationWizardPage extends NewDiagramSynchronization
 	 */
 	@Override
 	protected EObject getWizardSemanticRoot() {
-		ModelElementSelectionPage prevPageImpl = (ModelElementSelectionPage) getPreviousPage();
-		return prevPageImpl.getModelElement();
+		IWizardPage previos = getPreviousPage();
+		while (previos != null) {
+			if (previos instanceof ModelElementSelectionPage) {
+				return ((ModelElementSelectionPage) previos).getModelElement();
+			}
+			previos = previos.getPreviousPage();
+		}
+		return null;
 	}
 
 	/**

@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
@@ -41,6 +42,7 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Gate;
 import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.InteractionFragment;
+import org.eclipse.uml2.uml.InteractionOperand;
 import org.eclipse.uml2.uml.Lifeline;
 import org.eclipse.uml2.uml.Message;
 import org.eclipse.uml2.uml.MessageEnd;
@@ -98,8 +100,23 @@ public class MessageCreateCommand extends EditElementCommand {
 			return false;
 		}
 
+		if (source instanceof InteractionOperand && target instanceof InteractionOperand) {
+			if (source != target) {
+				return false;
+			}
+			U2TCreateLinkCommand linkCreationPack = U2TCreateLinkCommand.getFromRequest(getRequest());
+			if (linkCreationPack == null || linkCreationPack.getSourceParameters() == null || linkCreationPack.getTargetParameters() == null) {
+				return false;
+			}
+
+			Lifeline sourceLL = findEnclosedDiagramLifeLine(linkCreationPack.getSourceParameters().getParentView());
+			Lifeline targetLL = findEnclosedDiagramLifeLine(linkCreationPack.getTargetParameters().getParentView());
+			if (sourceLL == targetLL) {
+				return false;
+			}
+		}
 		if (source == target) {
-			return false; //self links don't supported for now
+			return source instanceof InteractionOperand; //self links don't supported for now
 		}
 
 		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateMessage_4001(getContainer(), getSource(), getTarget());
@@ -245,6 +262,26 @@ public class MessageCreateCommand extends EditElementCommand {
 			targetExecution = pair[1];
 			domainSource = (MessageOccurrenceSpecification) sourceInvocation.getStart();
 			domainTarget = (MessageOccurrenceSpecification) targetExecution.getStart();
+		} else if (diagramSource instanceof InteractionOperand && diagramTarget == diagramSource) {
+			InteractionOperand operand = (InteractionOperand) diagramSource;
+
+			U2TCreateLinkCommand linkCreationPack = U2TCreateLinkCommand.getFromRequest(getRequest());
+			if (linkCreationPack == null || linkCreationPack.getSourceParameters() == null || linkCreationPack.getTargetParameters() == null) {
+				throw new UnsupportedOperationException("I need extended creation parameters");
+			}
+
+			Lifeline sourceLL = findEnclosedDiagramLifeLine(linkCreationPack.getSourceParameters().getParentView());
+			Lifeline targetLL = findEnclosedDiagramLifeLine(linkCreationPack.getTargetParameters().getParentView());
+
+			ThePastImpl thePast = createThePast();
+			ListIterator<InteractionFragment> position = thePast.getAfterThePastPosition(operand.getFragments());
+
+			BehaviorExecutionSpecification[] pair = createBehaviorExecutionSpecificationsPair(interaction, sourceLL, targetLL, count, position);
+			sourceInvocation = pair[0];
+			targetExecution = pair[1];
+
+			domainSource = (MessageOccurrenceSpecification) sourceInvocation.getStart();
+			domainTarget = (MessageOccurrenceSpecification) targetExecution.getStart();
 		} else {
 			throw new UnsupportedOperationException("Message between this elements can't be created: from: " + getSource() + " to: " + getTarget());
 		}
@@ -267,6 +304,23 @@ public class MessageCreateCommand extends EditElementCommand {
 		createAdditionalViews(sourceInvocation, targetExecution, newElement);
 
 		return CommandResult.newOKCommandResult(newElement);
+	}
+
+	private static Lifeline findEnclosedDiagramLifeLine(View view) {
+		if (view instanceof Diagram) {
+			return null;
+		}
+		if (!view.isSetElement()) {
+			return null;
+		}
+		if (view.getElement() instanceof Lifeline) {
+			return (Lifeline) view.getElement();
+		}
+		EObject container = view.eContainer();
+		if (false == container instanceof View) {
+			return null;
+		}
+		return findEnclosedDiagramLifeLine((View) container);
 	}
 
 	private View createBehaviorExecutionView(View sourceView, EObject behaviorExecution, int position, Point relativeLocation) {
@@ -411,6 +465,9 @@ public class MessageCreateCommand extends EditElementCommand {
 		}
 		if (diagramEnd instanceof BehaviorExecutionSpecification) {
 			return ((BehaviorExecutionSpecification) diagramEnd).getCovereds().size() == 1;
+		}
+		if (diagramEnd instanceof InteractionOperand) {
+			return true;
 		}
 		return false;
 	}

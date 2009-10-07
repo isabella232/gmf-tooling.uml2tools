@@ -89,6 +89,21 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case InteractionOperandMountingRegionEditPart.VISUAL_ID:
 				return new InteractionOperandMountingRegionEditPart(view);
 
+			case ActionExecutionSpecification2EditPart.VISUAL_ID:
+				return new ActionExecutionSpecification2EditPart(view);
+
+			case ActionExecutionLabel2EditPart.VISUAL_ID:
+				return new ActionExecutionLabel2EditPart(view);
+
+			case StateInvariant2EditPart.VISUAL_ID:
+				return new StateInvariant2EditPart(view);
+
+			case StateInvariantLabel2EditPart.VISUAL_ID:
+				return new StateInvariantLabel2EditPart(view);
+
+			case BehaviorExecutionSpecification2EditPart.VISUAL_ID:
+				return new BehaviorExecutionSpecification2EditPart(view);
+
 			case MessageEditPart.VISUAL_ID:
 				return new MessageEditPart(view);
 

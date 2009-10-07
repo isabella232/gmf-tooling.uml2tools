@@ -91,6 +91,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case CommentBodyEditPart.VISUAL_ID:
 				return new CommentBodyEditPart(view);
 
+			case Interface3EditPart.VISUAL_ID:
+				return new Interface3EditPart(view);
+
+			case InterfaceName3EditPart.VISUAL_ID:
+				return new InterfaceName3EditPart(view);
+
+			case InterfaceStereotypeEditPart.VISUAL_ID:
+				return new InterfaceStereotypeEditPart(view);
+
 			case Component2EditPart.VISUAL_ID:
 				return new Component2EditPart(view);
 
@@ -172,6 +181,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PortName2EditPart.VISUAL_ID:
 				return new PortName2EditPart(view);
 
+			case Property2EditPart.VISUAL_ID:
+				return new Property2EditPart(view);
+
+			case OperationEditPart.VISUAL_ID:
+				return new OperationEditPart(view);
+
+			case Class4EditPart.VISUAL_ID:
+				return new Class4EditPart(view);
+
 			case ComponentContentsEditPart.VISUAL_ID:
 				return new ComponentContentsEditPart(view);
 
@@ -204,6 +222,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case ClassClassesEditPart.VISUAL_ID:
 				return new ClassClassesEditPart(view);
+
+			case InterfaceAttributesEditPart.VISUAL_ID:
+				return new InterfaceAttributesEditPart(view);
+
+			case InterfaceOperationsEditPart.VISUAL_ID:
+				return new InterfaceOperationsEditPart(view);
+
+			case InterfaceClassesEditPart.VISUAL_ID:
+				return new InterfaceClassesEditPart(view);
 
 			case InterfaceRealizationEditPart.VISUAL_ID:
 				return new InterfaceRealizationEditPart(view);

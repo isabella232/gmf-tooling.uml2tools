@@ -323,13 +323,13 @@ public class Port2EditPart extends BorderedBorderItemEditPart implements Primary
 		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
 		if (targetEditPart instanceof CollaborationUse2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Dependency_4006);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof PortEditPart) {
@@ -365,13 +365,13 @@ public class Port2EditPart extends BorderedBorderItemEditPart implements Primary
 		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.Usage_4008);
+		}
 		if (targetEditPart instanceof CollaborationUse2EditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Usage_4008);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PortEditPart) {
@@ -389,7 +389,13 @@ public class Port2EditPart extends BorderedBorderItemEditPart implements Primary
 		if (targetEditPart instanceof InterfaceEditPart) {
 			types.add(UMLElementTypes.PortProvided_4010);
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.PortProvided_4010);
+		}
 		if (targetEditPart instanceof InterfaceEditPart) {
+			types.add(UMLElementTypes.PortRequired_4014);
+		}
+		if (targetEditPart instanceof Interface2EditPart) {
 			types.add(UMLElementTypes.PortRequired_4014);
 		}
 		return types;
@@ -437,13 +443,13 @@ public class Port2EditPart extends BorderedBorderItemEditPart implements Primary
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Port_3011);
@@ -479,13 +485,13 @@ public class Port2EditPart extends BorderedBorderItemEditPart implements Primary
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Port_3011);
@@ -550,13 +556,13 @@ public class Port2EditPart extends BorderedBorderItemEditPart implements Primary
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Port_3011);
@@ -592,13 +598,13 @@ public class Port2EditPart extends BorderedBorderItemEditPart implements Primary
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Port_3011);
@@ -615,8 +621,14 @@ public class Port2EditPart extends BorderedBorderItemEditPart implements Primary
 		if (relationshipType == UMLElementTypes.PortProvided_4010) {
 			types.add(UMLElementTypes.Interface_2009);
 		}
+		if (relationshipType == UMLElementTypes.PortProvided_4010) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
 		if (relationshipType == UMLElementTypes.PortRequired_4014) {
 			types.add(UMLElementTypes.Interface_2009);
+		}
+		if (relationshipType == UMLElementTypes.PortRequired_4014) {
+			types.add(UMLElementTypes.Interface_2014);
 		}
 		return types;
 	}

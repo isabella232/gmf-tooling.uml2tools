@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.deploy.async;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.uml2.diagram.common.async.NewDiagramSyncHelper;
 import org.eclipse.uml2.diagram.common.async.NewDiagramSynchronizationWizardPage;
 import org.eclipse.uml2.diagram.common.async.SyncModelContext;
@@ -43,8 +44,14 @@ public class UMLDeploymentSynchronizationWizardPage extends NewDiagramSynchroniz
 	 */
 	@Override
 	protected EObject getWizardSemanticRoot() {
-		ModelElementSelectionPage prevPageImpl = (ModelElementSelectionPage) getPreviousPage();
-		return prevPageImpl.getModelElement();
+		IWizardPage previos = getPreviousPage();
+		while (previos != null) {
+			if (previos instanceof ModelElementSelectionPage) {
+				return ((ModelElementSelectionPage) previos).getModelElement();
+			}
+			previos = previos.getPreviousPage();
+		}
+		return null;
 	}
 
 	/**

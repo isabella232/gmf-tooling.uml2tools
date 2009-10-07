@@ -6,10 +6,6 @@
    <extension point="org.eclipse.ui.handlers">
       <?gmfgen generated="false"?>
       <handler
-            class="org.eclipse.uml2.diagram.usecase.part.NewDiagramHandler"
-            commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
-      </handler>
-      <handler
             class="org.eclipse.uml2.diagram.usecase.action.TurnNoteIntoCommentAction"
             commandId="org.eclipse.uml2.diagram.TurnNoteIntoCommentAction">
             <activeWhen>
@@ -369,6 +365,10 @@
       <?gmfgen generated="true"?>
       <viewProvider class="org.eclipse.uml2.diagram.usecase.providers.UMLViewProvider">
          <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="uml"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLUseCase"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2005,2003,2004,2006,2007,2008,2009,3001,3002,3003,3004,3005,3006"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007"/>
@@ -1077,7 +1077,7 @@
          </propertySection>
       </propertySections>
    </extension>
-   
+   
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="org.eclipse.uml2.diagram.usecase.part.UMLDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
@@ -1403,6 +1403,42 @@
          </action>
       </objectContribution>
    </extension>
+<extension point="org.eclipse.ui.handlers" id="new-diagram-handler">
+      <?gmfgen generated="true"?>
+      <handler
+            class="org.eclipse.uml2.diagram.usecase.async.UMLUseCaseNewDiagramHandler"
+            commandId="org.eclipse.uml2.diagram.NewUMLUseCaseDiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.isUMLUseCaseElement"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
+      </handler>
+   </extension>
+<extension point="org.eclipse.core.expressions.propertyTesters" id="new-diagram-property-testers">
+      <?gmfgen generated="true"?>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.usecase.async.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUMLUseCaseElement"
+              properties="isUMLUseCaseElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.usecase.async.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUMLUseCaseElement"
+              properties="isUMLUseCaseElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.uml2.uml.Element">
+        </propertyTester>
+   </extension>
+
+
 
 
 </plugin>

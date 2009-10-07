@@ -373,13 +373,13 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.Dependency_4006);
+		}
 		if (targetEditPart instanceof CollaborationUse2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Dependency_4006);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof PortEditPart) {
@@ -395,6 +395,9 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			types.add(UMLElementTypes.Dependency_4006);
 		}
 		if (targetEditPart instanceof InterfaceEditPart) {
+			types.add(UMLElementTypes.InterfaceRealization_4007);
+		}
+		if (targetEditPart instanceof Interface2EditPart) {
 			types.add(UMLElementTypes.InterfaceRealization_4007);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.csd.edit.parts.CollaborationEditPart) {
@@ -418,13 +421,13 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		if (targetEditPart instanceof ConstraintEditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
+		if (targetEditPart instanceof Interface2EditPart) {
+			types.add(UMLElementTypes.Usage_4008);
+		}
 		if (targetEditPart instanceof CollaborationUse2EditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PropertyEditPart) {
-			types.add(UMLElementTypes.Usage_4008);
-		}
-		if (targetEditPart instanceof Class2EditPart) {
 			types.add(UMLElementTypes.Usage_4008);
 		}
 		if (targetEditPart instanceof PortEditPart) {
@@ -451,7 +454,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		if (targetEditPart instanceof InterfaceEditPart) {
 			types.add(UMLElementTypes.Association_4011);
 		}
-		if (targetEditPart instanceof Class2EditPart) {
+		if (targetEditPart instanceof Interface2EditPart) {
 			types.add(UMLElementTypes.Association_4011);
 		}
 		return types;
@@ -484,13 +487,13 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Port_3011);
@@ -526,13 +529,13 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Port_3011);
@@ -559,7 +562,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
-			types.add(UMLElementTypes.Class_3010);
+			types.add(UMLElementTypes.Interface_2014);
 		}
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4012) {
 			types.add(UMLElementTypes.Constraint_2012);
@@ -597,13 +600,13 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4006) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Dependency_4006) {
 			types.add(UMLElementTypes.Port_3011);
@@ -619,6 +622,9 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 		}
 		if (relationshipType == UMLElementTypes.InterfaceRealization_4007) {
 			types.add(UMLElementTypes.Interface_2009);
+		}
+		if (relationshipType == UMLElementTypes.InterfaceRealization_4007) {
+			types.add(UMLElementTypes.Interface_2014);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Collaboration_2005);
@@ -642,13 +648,13 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			types.add(UMLElementTypes.Constraint_2012);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
+			types.add(UMLElementTypes.Interface_2014);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.CollaborationUse_3002);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Property_3007);
-		}
-		if (relationshipType == UMLElementTypes.Usage_4008) {
-			types.add(UMLElementTypes.Class_3010);
 		}
 		if (relationshipType == UMLElementTypes.Usage_4008) {
 			types.add(UMLElementTypes.Port_3011);
@@ -675,7 +681,7 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			types.add(UMLElementTypes.Interface_2009);
 		}
 		if (relationshipType == UMLElementTypes.Association_4011) {
-			types.add(UMLElementTypes.Class_3010);
+			types.add(UMLElementTypes.Interface_2014);
 		}
 		return types;
 	}

@@ -41,8 +41,8 @@ public class TieInteractionUseToLifeLineEditPolicy extends AbstractCreateSDEleme
 		InteractionFragment frame = (InteractionFragment) frameEP.resolveSemanticElement();
 		
 		if (false == frame instanceof InteractionUse){
-			//CombinedFragments???
-			return UnexecutableCommand.INSTANCE;
+			//allow TieCombinedFragments to run
+			return null;
 		}
 		
 		GraphicalEditPart bracketEP = getHostImpl();

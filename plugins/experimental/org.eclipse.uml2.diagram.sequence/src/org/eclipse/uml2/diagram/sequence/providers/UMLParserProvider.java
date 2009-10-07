@@ -12,12 +12,14 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionLabel2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.ActionExecutionLabelEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.CombinedFragmentInteractionOperatorEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.InteractionUseSignatureEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.LifelineNameEditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.MessageNameEditPart;
+import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantLabel2EditPart;
 import org.eclipse.uml2.diagram.sequence.edit.parts.StateInvariantLabelEditPart;
 import org.eclipse.uml2.diagram.sequence.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.sequence.parsers.MessageNumberParser;
@@ -177,6 +179,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser actionExecutionSpecificationName_5011Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getActionExecutionSpecificationName_5011Parser() {
+		if (actionExecutionSpecificationName_5011Parser == null) {
+			actionExecutionSpecificationName_5011Parser = createActionExecutionSpecificationName_5011Parser();
+		}
+		return actionExecutionSpecificationName_5011Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createActionExecutionSpecificationName_5011Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser stateInvariantName_5012Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getStateInvariantName_5012Parser() {
+		if (stateInvariantName_5012Parser == null) {
+			stateInvariantName_5012Parser = createStateInvariantName_5012Parser();
+		}
+		return stateInvariantName_5012Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createStateInvariantName_5012Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser messageName_6001Parser;
 
 	/**
@@ -213,6 +263,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getActionExecutionSpecificationName_5003Parser();
 		case StateInvariantLabelEditPart.VISUAL_ID:
 			return getStateInvariantName_5004Parser();
+		case ActionExecutionLabel2EditPart.VISUAL_ID:
+			return getActionExecutionSpecificationName_5011Parser();
+		case StateInvariantLabel2EditPart.VISUAL_ID:
+			return getStateInvariantName_5012Parser();
 		case MessageNameEditPart.VISUAL_ID:
 			return getMessageName_6001Parser();
 		}

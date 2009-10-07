@@ -26,6 +26,43 @@ public class CreateCombinedFragment {
 		myModel = model;
 	}
 	
+	public SDCombinedFragment tieCombinedFragment(SDCombinedFragment sdCombined, SDBracketContainer container, SDAnchor anchor){
+		SDLifeLine sdLifeLine = container.getCoveredLifeLine();
+		if (sdLifeLine.getModel() != myModel){
+			throw new IllegalArgumentException(//
+					"Alien lifeline: " + sdLifeLine + //
+					", for sdModel: " + myModel);
+		}
+		if (anchor != null && !anchor.isFirstElement() && anchor.getAnchor().getBracketContainer() != container){
+			throw new IllegalArgumentException(//
+					"Anchor: " + anchor.getAnchor() + //
+					", is not applicable to container: " + container + //
+					", actual container is: " + anchor.getAnchor().getBracketContainer());
+		}
+		CreateContainer createContainer = findCreateContainer(container, anchor);
+		CombinedFragment umlCombined = sdCombined.getUmlCombinedFragment();
+		umlCombined.getCovereds().add(sdLifeLine.getUmlLifeline());
+		sdCombined.getCoveredLifeLines().add(sdLifeLine);
+		
+		SDMountingRegion sdCombinedMounter = getTraceImpl().bindNewMountingRegion(sdCombined);
+		
+		for (int i = 0; i < umlCombined.getOperands().size(); i++){
+			InteractionOperand nextUMLOperand = umlCombined.getOperands().get(i);
+			nextUMLOperand.getCovereds().add(sdLifeLine.getUmlLifeline());
+			
+			SDInteractionOperand nextSDOperand = getTraceImpl().findInteractionOperand(nextUMLOperand);
+			nextSDOperand.getCoveredLifeLines().add(sdLifeLine);
+			
+			SDMountingRegion nextOperandMounter = getTraceImpl().bindNewMountingRegion(nextSDOperand);
+			sdCombinedMounter.getBrackets().add(nextOperandMounter);
+		}
+		
+		createContainer.getSDBracketInsertPosition().add(sdCombinedMounter);
+		
+		return sdCombined;
+		
+	}
+	
 	public SDCombinedFragment createCombinedFragment(SDBracketContainer container, SDAnchor anchor, InteractionOperatorKind kind, int operandsCount){
 		SDLifeLine sdLifeLine = container.getCoveredLifeLine();
 		if (sdLifeLine.getModel() != myModel){
@@ -33,7 +70,7 @@ public class CreateCombinedFragment {
 					"Alien lifeline: " + sdLifeLine + //
 					", for sdModel: " + myModel);
 		}
-		if (anchor != null && anchor.getAnchor().getBracketContainer() != container){
+		if (anchor != null && !anchor.isFirstElement() && anchor.getAnchor().getBracketContainer() != container){
 			throw new IllegalArgumentException(//
 					"Anchor: " + anchor.getAnchor() + //
 					", is not applicable to container: " + container + //
@@ -98,13 +135,13 @@ public class CreateCombinedFragment {
 		private final SDAnchor myAnchor;
 
 		public AbstractCreateContainer(SDBracketContainer bracketContainer, SDAnchor anchor){
-			assert bracketContainer == anchor.getAnchor().getBracketContainer();
+			assert anchor.isFirstElement() || bracketContainer == anchor.getAnchor().getBracketContainer();
 			myBracketContainer = bracketContainer;
 			myAnchor = anchor;
 		}
 		
 		protected boolean isAfterAnchor(){
-			return myAnchor != null && !myAnchor.isBeforeNotAfterAnchor();
+			return myAnchor != null && !myAnchor.isFirstElement() && !myAnchor.isBeforeNotAfterAnchor();
 		}
 		
 		public ListIterator<SDFrame> getSDFrameInsertPosition() {

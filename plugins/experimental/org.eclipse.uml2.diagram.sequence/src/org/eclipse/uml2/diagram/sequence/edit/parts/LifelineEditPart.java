@@ -38,6 +38,7 @@ import org.eclipse.uml2.diagram.common.layered.MultilayeredFigure;
 import org.eclipse.uml2.diagram.sequence.edit.create.CreateCombinedFragmentEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.create.CreateInteractionUseEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.create.CreateStateInvariantEditPolicy;
+import org.eclipse.uml2.diagram.sequence.edit.create.TieCombinedFragmentToLifeLineEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.create.TieInteractionUseToLifeLineEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.LifelineCanonicalEditPolicy;
 import org.eclipse.uml2.diagram.sequence.edit.policies.LifelineItemSemanticEditPolicy;
@@ -100,6 +101,7 @@ public class LifelineEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		installEditPolicy("SD-Create-StateInvariant", new CreateStateInvariantEditPolicy()); //$NON-NLS-1$
 		installEditPolicy(TieFrameTargetEditPolicy.ROLE, new TieFrameTargetEditPolicy());
 		installEditPolicy(TieFrameTargetEditPolicy.ROLE + "-InteractionUse", new TieInteractionUseToLifeLineEditPolicy());
+		installEditPolicy(TieFrameTargetEditPolicy.ROLE + "-CombinedFragment", new TieCombinedFragmentToLifeLineEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -400,6 +402,15 @@ public class LifelineEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof InteractionOperandMountingRegionEditPart) {
 			types.add(UMLElementTypes.Message_4001);
 		}
+		if (targetEditPart instanceof ActionExecutionSpecification2EditPart) {
+			types.add(UMLElementTypes.Message_4001);
+		}
+		if (targetEditPart instanceof StateInvariant2EditPart) {
+			types.add(UMLElementTypes.Message_4001);
+		}
+		if (targetEditPart instanceof BehaviorExecutionSpecification2EditPart) {
+			types.add(UMLElementTypes.Message_4001);
+		}
 		return types;
 	}
 
@@ -443,6 +454,15 @@ public class LifelineEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.Message_4001) {
 			types.add(UMLElementTypes.InteractionOperand_3011);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.ActionExecutionSpecification_3012);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.StateInvariant_3013);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.BehaviorExecutionSpecification_3014);
 		}
 		return types;
 	}
@@ -496,6 +516,15 @@ public class LifelineEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.Message_4001) {
 			types.add(UMLElementTypes.InteractionOperand_3011);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.ActionExecutionSpecification_3012);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.StateInvariant_3013);
+		}
+		if (relationshipType == UMLElementTypes.Message_4001) {
+			types.add(UMLElementTypes.BehaviorExecutionSpecification_3014);
 		}
 		return types;
 	}

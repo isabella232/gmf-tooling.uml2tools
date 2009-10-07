@@ -25,7 +25,6 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * @generated
  */
-
 public class StateInvariantCreateCommand extends EditElementCommand {
 
 	/**
