@@ -31,7 +31,7 @@ class ParametersCellModifier implements ICellModifier {
 	public Object getValue(Object element, String property) {
 		Parameter parameter = (Parameter) element;
 		if (EditParametersTableConstants.NAME.equals(property)) {
-			return parameter.getName();
+			return parameter.getName() != null ? parameter.getName() : StringStatics.BLANK;
 		}
 		if (EditParametersTableConstants.TYPES.equals(property)) {
 			return parameter.getType();

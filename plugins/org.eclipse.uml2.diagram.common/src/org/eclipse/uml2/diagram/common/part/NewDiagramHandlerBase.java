@@ -20,7 +20,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.PackageableElement;
+import org.eclipse.uml2.uml.Element;
 
 public abstract class NewDiagramHandlerBase extends AbstractHandler {
 
@@ -28,13 +28,13 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 
 	protected abstract Wizard getNewDiagramWizard(Package diagramRoot);
 
-	protected abstract Wizard getNewSemiSyncDiagramWizard(Package diagramRoot, List<PackageableElement> selectedElements);
+	protected abstract Wizard getNewSemiSyncDiagramWizard(Package diagramRoot, List<Element> selectedElements);
 	
 	protected abstract void runWizard(Wizard w, Shell s);
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IWorkbenchPart part = HandlerUtil.getActivePartChecked(event);
-		List<PackageableElement> selectedElements = getSelectedElements(getStructuredSelection(event));
+		List<Element> selectedElements = getSelectedElements(getStructuredSelection(event));
 		Package diagramRoot = getDiagramRoot(selectedElements);
 		Wizard wizard = null;
 		if (selectedElements.size() == 1 && diagramRoot.equals(selectedElements.get(0)) ) {
@@ -64,10 +64,10 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 		return null;
 	}
 
-	private List<PackageableElement> getSelectedElements(IStructuredSelection ss) throws ExecutionException {
-		List<PackageableElement> selectedElements = new ArrayList<PackageableElement>();
+	private List<Element> getSelectedElements(IStructuredSelection ss) throws ExecutionException {
+		List<Element> selectedElements = new ArrayList<Element>();
 		for (Object next : ss.toArray()) {
-			PackageableElement pe = getValidElement(next);
+			Element pe = getValidElement(next);
 			if (pe != null) {
 				selectedElements.add(pe);
 			}
@@ -75,21 +75,21 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 		return selectedElements;
 	}
 
-	private PackageableElement getValidElement(Object element) {
-		if (element instanceof IGraphicalEditPart) {
-			element = ((IGraphicalEditPart) element).getNotationView().getElement();
+	protected Element getValidElement(Object object) {
+		if (object instanceof IGraphicalEditPart) {
+			object = ((IGraphicalEditPart) object).resolveSemanticElement();
 		}
-		if (element instanceof PackageableElement) {
-			return (PackageableElement) element;
+		if (object instanceof Element) {
+			return (Element) object;
 		}
 		return null;
 	}
 
-	private Package getDiagramRoot(List<PackageableElement> selected) {
+	private Package getDiagramRoot(List<Element> selected) {
 		if (selected == null || selected.size() == 0) {
 			return null;
 		}
-		for (PackageableElement next : selected) {
+		for (Element next : selected) {
 			Package pakkage = next.getNearestPackage();
 			if (pakkage != null) {
 				return pakkage;

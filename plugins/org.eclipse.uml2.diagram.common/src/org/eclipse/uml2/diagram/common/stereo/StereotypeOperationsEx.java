@@ -46,12 +46,22 @@ public class StereotypeOperationsEx extends UMLUtil {
 		if (element.getStereotypeApplications().isEmpty()) {
 			return null;
 		}
-		List<ImageDescriptor> result = getListOfAppliedStereotypeImages(element, metaclassImage);
-		if (result.isEmpty()) {
+		ImageDescriptor[] result = getListOfAppliedStereotypeImages(element, metaclassImage);
+		if (result.length == 0) {
 			return null;
 		}
-		StereotypeImageDescriptor im = new StereotypeImageDescriptor(result.toArray(new ImageDescriptor[result.size()]));
-		return im.createImage();
+		return new StereotypeImageDescriptor(result).createImage();
+	}
+
+	public static org.eclipse.swt.graphics.Image composeImages(ImageDescriptor... images) {
+		return new StereotypeImageDescriptor(images).createImage();
+	}
+	
+	public static org.eclipse.swt.graphics.Image composeImages(ImageDescriptor last, ImageDescriptor... images) {
+		ImageDescriptor[] allImages = new ImageDescriptor[images.length + 1];
+		System.arraycopy(images, 0, allImages, 0, images.length);
+		allImages[allImages.length - 1] = last;
+		return composeImages(allImages);
 	}
 
 	public static ImageDescriptor getImage(Stereotype stereo) {
@@ -62,7 +72,7 @@ public class StereotypeOperationsEx extends UMLUtil {
 		return StereotypeImages.getImageDescriptor(stereo, metaclassImage);
 	}
 
-	private static List<ImageDescriptor> getListOfAppliedStereotypeImages(Element element, ImageDescriptor metaclassImage) {
+	public static ImageDescriptor[] getListOfAppliedStereotypeImages(Element element, ImageDescriptor metaclassImage) {
 		EList<EObject> stereoApplications = element.getStereotypeApplications();
 		List<ImageDescriptor> result = new ArrayList<ImageDescriptor>(stereoApplications.size());
 		for (EObject stereoApplication: stereoApplications) {
@@ -72,7 +82,7 @@ public class StereotypeOperationsEx extends UMLUtil {
 			}
 			result.add(imageDescriptor);
 		}
-		return result;
+		return result.toArray(new ImageDescriptor[result.size()]);
 	}
 	
 // Almost copy of ElementOperations#getApplicableStereotypes()

@@ -28,13 +28,13 @@ public class ImageUtils {
 		return ExtendedImageRegistry.INSTANCE.getImageDescriptor(ci);
 	}
 
-	public static Image getPackageImage(Image original, boolean isSync) {
+	public static ImageDescriptor getPackageImage(ImageDescriptor original, boolean isSync) {
 		if (!isSync) {
 			return original;
 		}
-		return getOverlayedImage(original, getSyncPackageImage());
+		return overlay(original, getSyncPackageImage());
 	}
-
+	
 	public static ImageDescriptor getImageDescriptor(String location) {
 		ImageRegistry ir = UMLCommonPlugin.getInstance().getImageRegistry();
 		ImageDescriptor imageDescriptor = ir.getDescriptor(location);
@@ -48,16 +48,8 @@ public class ImageUtils {
 		return imageDescriptor;
 	}
 
-	public static ImageDescriptor getSyncPackageImage() {
+	private static ImageDescriptor getSyncPackageImage() {
 		return getImageDescriptor(IMG_SYNC_DIAGRAM);
-	}
-
-	private static Image getOverlayedImage(Object original, Object overlay) {
-		List<Object> images = new ArrayList<Object>(2);
-		images.add(original);
-		images.add(overlay);
-		ComposedImage ci = new ComposedImage(images);
-		return ExtendedImageRegistry.INSTANCE.getImage(ci);
 	}
 
 }

@@ -309,7 +309,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 			Parameter p = (Parameter) element;
 			switch (columnIndex) {
 			case EditParametersTableConstants.NAME_POS:
-				return p.getName();
+				return p.getName() != null ? p.getName() : StringStatics.BLANK; 
 			case EditParametersTableConstants.TYPES_POS:
 				return p.getType() != null ? p.getType().getName() : StringStatics.BLANK;
 			case EditParametersTableConstants.MULTIPLICITY_POS:

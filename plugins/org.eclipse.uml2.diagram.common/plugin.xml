@@ -15,17 +15,6 @@
 
 <plugin>
 
-   <extension
-           point="org.eclipse.core.expressions.propertyTesters">
-        <propertyTester
-              class="org.eclipse.uml2.diagram.common.actions.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.packagePropertyTester"
-              properties="isPackage"
-              namespace="org.eclipse.uml2.diagram"
-              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-        </propertyTester>
-     </extension>
-
 	<extension point="org.eclipse.ui.menus" id="context-menus">
       <?gmfgen generated="false"?>
       <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
@@ -43,56 +32,23 @@
                   <with variable="activePartId"><equals value="org.eclipse.uml2.diagram.profile.part.UMLDiagramEditorID"/></with>
                </or>
          </visibleWhen>
-         <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction"/>
-         <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-               			<test property="org.eclipse.uml2.diagram.isPackage"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLClassDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-               			<test property="org.eclipse.uml2.diagram.isPackage"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLComponentDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewDeployDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-               			<test property="org.eclipse.uml2.diagram.isPackage"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLCompositeStructuresDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewProfileDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-               			<test property="org.eclipse.uml2.diagram.isPackage"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLDeploymentDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-               			<test property="org.eclipse.uml2.diagram.isPackage"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLProfileDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
+         </command>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLUseCaseDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
        </menu>         
        </menuContribution>
@@ -102,56 +58,23 @@
               id="org.eclipse.uml2.uml2editor.new" 
          	  label="%UMLEditor_NewDiagramMenu_label">
          <separator name="newDiagram" visible="true"/>
-         <command commandId="org.eclipse.uml2.diagram.NewClassDiagramAction"/>
-         <command commandId="org.eclipse.uml2.diagram.NewComponentDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.eclipse.uml2.uml.Package"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLClassDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.eclipse.uml2.uml.Package"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLComponentDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewDeployDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.eclipse.uml2.uml.Package"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLCompositeStructuresDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewProfileDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.eclipse.uml2.uml.Package"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLDeploymentDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command commandId="org.eclipse.uml2.diagram.NewUseCaseDiagramAction">
-            <visibleWhen checkEnabled="false">
-            	<and>            	
-                  <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="org.eclipse.uml2.uml.Package"/>
-                  </iterate></with>
-                  <count value="1"/>
-            	</and>            	
-            </visibleWhen>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLProfileDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
+         </command>
+         <command commandId="org.eclipse.uml2.diagram.NewUMLUseCaseDiagramAction">
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
        </menu>
        </menuContribution>
@@ -160,22 +83,22 @@
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="false"?>
       <category id="org.eclipse.uml2.diagram.NewUMLDiagrams" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="org.eclipse.uml2.diagram.NewClassDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLClassDiagramAction"
          name="%UMLEditor_NewDiagramMenu_Class_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
-      <command id="org.eclipse.uml2.diagram.NewComponentDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLComponentDiagramAction"
          name="%UMLEditor_NewDiagramMenu_Component_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
-      <command id="org.eclipse.uml2.diagram.NewUseCaseDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLUseCaseDiagramAction"
          name="%UMLEditor_NewDiagramMenu_UseCase_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
-      <command id="org.eclipse.uml2.diagram.NewDeployDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLDeploymentDiagramAction"
          name="%UMLEditor_NewDiagramMenu_Deploy_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
-      <command id="org.eclipse.uml2.diagram.NewProfileDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLProfileDiagramAction"
          name="%UMLEditor_NewDiagramMenu_Profile_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
-      <command id="org.eclipse.uml2.diagram.NewCompositeStructureDiagramAction"
+      <command id="org.eclipse.uml2.diagram.NewUMLCompositeStructuresDiagramAction"
          name="%UMLEditor_NewDiagramMenu_CompositeStructure_label"
          categoryId="org.eclipse.uml2.diagram.NewUMLDiagrams"/>
    </extension>
