@@ -15,6 +15,7 @@ public class ValidateContributionItemProvider extends AbstractContributionItemPr
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		if (ACTION_ID.equals(actionId)) {
 			ValidateAction validateAction = new GMFValidateAction(partDescriptor.getPartPage());
+			validateAction.setId(actionId);
 			validateAction.updateSelection(getStructuredSelection(partDescriptor));
 			return validateAction;
 		}
