@@ -41,6 +41,7 @@ package u2tgen {
 	}
 	
 	class DynamicCanonicalCompartment extends AbstractDynamicCanonicalContainer {
+		//deprecated (?)
 	}
 	
 	class InteractionDiagramAttributes extends gmfgen.Attributes {
