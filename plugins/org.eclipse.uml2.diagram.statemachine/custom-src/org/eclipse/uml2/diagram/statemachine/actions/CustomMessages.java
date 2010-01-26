@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Sergey Gribovsky (Borland) - initial API and implementation
+ *    Sergey Gribovsky (Borland) - initial API and implementation.
  */
 package org.eclipse.uml2.diagram.statemachine.actions;
 
