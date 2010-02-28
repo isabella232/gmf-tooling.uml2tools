@@ -17,6 +17,6 @@ Export-Package: org.eclipse.uml2.diagram.sequence.model.builder;x-friends:="org.
  org.eclipse.uml2.diagram.sequence.model.sequenced.util;x-friends:="org.eclipse.uml2.diagram.sequence,org.eclipse.uml2.diagram.sequence.tests"
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.uml2.uml;bundle-version="3.0.0",
+ org.eclipse.uml2.uml,
  org.eclipse.gmf.runtime.notation
 Bundle-ActivationPolicy: lazy
