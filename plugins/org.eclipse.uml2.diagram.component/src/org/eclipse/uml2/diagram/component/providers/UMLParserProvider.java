@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.component.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
@@ -13,8 +12,9 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.common.parser.ImageProvider;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndApplyStrategy;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndParser;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndToString;
@@ -90,6 +90,19 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class UMLParserProvider extends AbstractProvider implements IParserProvider {
+
+	private static final ILabelProvider myLabelProvider = new LabelProvider() {
+
+		@Override
+		public Image getImage(Object element) {
+			if (element instanceof EObject) { 
+				return UMLElementTypes.getImage(((EObject) element).eClass());
+			} else { 
+				return null;
+			}
+		}
+
+	};
 
 	/**
 	 * @generated
@@ -383,7 +396,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * XXX: Misleading name of the method. The only way to fix it is custom template 
+	 * XXX: Misleading name of the method. The only way to fix it is custom
+	 * template
+	 * 
 	 * @generated NOT
 	 */
 	protected IParser createClassQualifiedName_5015Parser() {
@@ -714,16 +729,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createProperty_3011Parser() {
-		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
-		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
-		ImageProvider imageProvider = new ImageProvider() {
-
-			@Override
-			public Image getImage(ENamedElement element) {
-				return UMLElementTypes.getImage(element);
-			}
-		};
-		return new PropertySemanticParser(lookupSuite, imageProvider);
+		return createDefaultPropertyParser();
 	}
 
 	/**
@@ -748,15 +754,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
-		ImageProvider imageProvider = new ImageProvider() {
-
-			@Override
-			public Image getImage(ENamedElement element) {
-				return UMLElementTypes.getImage(element);
-			}
-		};
-
-		return new OperationSemanticParser(lookupSuite, imageProvider, new OperationInplaceApplier(), new OperationToString.VIEW(), new OperationToString.EDIT());
+		return new OperationSemanticParser(lookupSuite, myLabelProvider, new OperationInplaceApplier(), new OperationToString.VIEW(), new OperationToString.EDIT());
 	}
 
 	/**
@@ -821,12 +819,20 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createProperty_3017Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		return createDefaultPropertyParser();
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected IParser createDefaultPropertyParser() {
+		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
+		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
+
+		return new PropertySemanticParser(lookupSuite, myLabelProvider);
 	}
 
 	/**
@@ -845,12 +851,13 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IParser createOperation_3018Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
+		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
+		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
+
+		return new OperationSemanticParser(lookupSuite, myLabelProvider, new OperationInplaceApplier(), new OperationToString.VIEW(), new OperationToString.EDIT());
 	}
 
 	/**
@@ -889,8 +896,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	private IParser dependencyName_6001Parser;
 
 	/**
-	 * @NOT-GENERATED
-	 * Different view's but shared common edit.
+	 * @NOT-GENERATED Different view's but shared common edit.
 	 */
 	private IParser createAssocationRoleParser(boolean sourceNotTarget) {
 		LookupSuite lookupSuite = getAssociationLookupSuite();
@@ -1202,6 +1208,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 	/**
 	 * Utility method that consults ParserService
+	 * 
 	 * @generated
 	 */
 	public static IParser getParser(IElementType type, EObject object, String parserHint) {
