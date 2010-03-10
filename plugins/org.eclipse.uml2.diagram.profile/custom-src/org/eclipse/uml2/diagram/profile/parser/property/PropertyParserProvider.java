@@ -13,15 +13,17 @@
 package org.eclipse.uml2.diagram.profile.parser.property;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.common.parser.ImageProvider;
+import org.eclipse.uml2.diagram.common.parser.property.PropertySemanticParser;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
-import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
@@ -31,45 +33,51 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
-
 public class PropertyParserProvider extends AbstractProvider implements IParserProvider {
+
 	private IParser myParser;
 
 	public IParser getParser(IAdaptable hint) {
-		if (myParser == null){
+		if (myParser == null) {
 			myParser = createParser();
 		}
 		return myParser;
 	}
-	
-	private IParser createParser(){
+
+	private IParser createParser() {
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
-		lookupSuite.addLookup(Type.class, new OCLLookup<Type>(UMLOCLFactory.getOCLLookupExpression(DefaultOclLookups.DEFAULT_TYPE_LOOKUP, UMLPackage.eINSTANCE.getNamedElement())));
-		return new SemanticParserAdapter(
-				new PropertyParser(lookupSuite), 
-				new BasicApplyStrategy(), 
-				new StereotypePropertyToString()
-		);
+		lookupSuite.addLookup(Type.class, new OCLLookup<Type>(UMLOCLFactory.getOCLLookupExpression(//
+				DefaultOclLookups.DEFAULT_TYPE_LOOKUP, UMLPackage.eINSTANCE.getNamedElement())));
+
+		ImageProvider imageProvider = new ImageProvider() {
+
+			@Override
+			public Image getImage(ENamedElement element) {
+				return UMLElementTypes.getImage(element);
+			}
+		};
+		return new PropertySemanticParser(lookupSuite, imageProvider, new BasicApplyStrategy(), new StereotypePropertyToString());
 	}
 
 	public boolean provides(IOperation operation) {
 		boolean result = false;
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			result = (hint != null) && (hint.getAdapter(IElementType.class) == UMLElementTypes.Property_3001); 
+			result = (hint != null) && (hint.getAdapter(IElementType.class) == UMLElementTypes.Property_3001);
 		}
 		return result;
 	}
-	
+
 	private static class StereotypePropertyToString extends org.eclipse.uml2.diagram.common.parser.property.PropertyToString.VIEW {
+
 		@Override
 		protected void appendIsDerived(StringBuffer result, Property property) {
-			//derived properties do not make sense for stereotypes
+			// derived properties do not make sense for stereotypes
 		}
-		
+
 		@Override
 		protected void appendPropertyModifiers(StringBuffer result, Property property) {
-			//properties modifiers do not make sense for stereotypes
+			// properties modifiers do not make sense for stereotypes
 		}
 	}
 }

@@ -1,15 +1,4 @@
-/*
- * Copyright (c) 2008 Borland Software Corporation
- * 
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *    Tatiana Fesenko (Borland) - initial API and implementation
- */
-package org.eclipse.uml2.diagram.common.parser.operation;
+package org.eclipse.uml2.diagram.common.parser.instance;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -26,23 +15,23 @@ import org.eclipse.uml2.diagram.parser.lookup.Lookup;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.uml.Type;
 
-public class OperationSemanticParser extends SemanticParserAdapter {
+public class InstanceSpecificationSemanticParser extends SemanticParserAdapter {
 
 	private final ImageProvider myImageProvider;
 
 	private final CompletionProcessor myCompletionProcessor;
 
-	public OperationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider) {
-		this(lookupSuite, imageProvider, new BasicApplyStrategy(), new OperationToString.VIEW(), new OperationToString.EDIT());
+	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider) {
+		this(lookupSuite, imageProvider, new BasicApplyStrategy(), new InstanceSpecificationToString.VIEW(), new InstanceSpecificationToString.EDIT());
 	}
 
-	public OperationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
-		super(new OperationParser(lookupSuite), applier, view, edit);
-		myImageProvider = imageProvider;
+	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
+		super(new InstanceSpecificationParser(lookupSuite), applier, view, edit);
 		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(Type.class));
+		myImageProvider = imageProvider;
 	}
 
-	public OperationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
+	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
 		this(lookupSuite, imageProvider, applier, viewAndEdit, viewAndEdit);
 	}
 
@@ -58,23 +47,26 @@ public class OperationSemanticParser extends SemanticParserAdapter {
 
 	private class CompletionProcessor extends LookupCompletionProcessor<Type> {
 
-		public CompletionProcessor(Lookup<Type> typeLookup) {
-			super(typeLookup);
+		public CompletionProcessor(Lookup<Type> lookup) {
+			super(lookup);
 		}
 
 		@Override
 		protected String getProposalPrefix(String controlPrefix) {
 			int colonIndex = controlPrefix.lastIndexOf(':');
-			if (colonIndex == -1) {
+			int commaIndex = controlPrefix.lastIndexOf(',');
+			int startIndex = Math.max(colonIndex, commaIndex);
+			if (startIndex == -1) {
 				return null;
 			}
-			String proposalPrefix = controlPrefix.substring(colonIndex + ":".length());
+
+			String proposalPrefix = controlPrefix.substring(startIndex + 1);
 			return trimLeft(proposalPrefix);
 		}
 
 		@Override
-		protected Image getProposalImage(Type proposedEObject) {
-			return myImageProvider.getImage(proposedEObject.eClass());
+		protected Image getProposalImage(Type proposedType) {
+			return myImageProvider.getImage(proposedType.eClass());
 		}
 	}
 }

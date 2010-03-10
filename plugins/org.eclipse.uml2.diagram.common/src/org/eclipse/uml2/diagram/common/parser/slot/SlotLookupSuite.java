@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.common.parser.slot;
 
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
@@ -39,6 +40,18 @@ public class SlotLookupSuite extends LookupSuiteImpl {
 				}
 			}
 			return null;
+		}
+
+		@Override
+		public List<StructuralFeature> computeScope(EObject context) {
+			List<StructuralFeature> result = new LinkedList<StructuralFeature>();
+			InstanceSpecification is = ((Slot) context).getOwningInstance();
+			for (Classifier c : is.getClassifiers()) {
+				for (Property attr : c.getAllAttributes()) {
+					result.add(attr);
+				}
+			}
+			return result;
 		}
 	}
 }

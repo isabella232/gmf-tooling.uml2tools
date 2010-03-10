@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.clazz.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
@@ -12,6 +13,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassStereotypeEditPart;
@@ -107,6 +109,7 @@ import org.eclipse.uml2.diagram.clazz.parser.NamedElementParser;
 import org.eclipse.uml2.diagram.clazz.parser.dependency.DependencyTypeParser;
 import org.eclipse.uml2.diagram.clazz.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.parser.ImageProvider;
 import org.eclipse.uml2.diagram.common.parser.association.AssociationInstanceParser;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndApplyStrategy;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndParser;
@@ -114,15 +117,13 @@ import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndToSt
 import org.eclipse.uml2.diagram.common.parser.association.name.AssociationNameParser;
 import org.eclipse.uml2.diagram.common.parser.association.name.AssociationNameToString;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
-import org.eclipse.uml2.diagram.common.parser.instance.InstanceSpecificationParser;
-import org.eclipse.uml2.diagram.common.parser.instance.InstanceSpecificationToString;
+import org.eclipse.uml2.diagram.common.parser.instance.InstanceSpecificationSemanticParser;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationSemanticParser;
 import org.eclipse.uml2.diagram.common.parser.port.PortParser;
 import org.eclipse.uml2.diagram.common.parser.port.PortToString;
 import org.eclipse.uml2.diagram.common.parser.property.PropertySemanticParser;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
-import org.eclipse.uml2.diagram.common.parser.slot.SlotParser;
-import org.eclipse.uml2.diagram.common.parser.slot.SlotToString;
+import org.eclipse.uml2.diagram.common.parser.slot.SlotSemanticParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.DependencyAppliedStereotypeParser;
@@ -1796,10 +1797,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			UMLOCLFactory.getOCLLookupExpression(DefaultOclLookups.DEFAULT_TYPE_LOOKUP, UMLPackage.eINSTANCE.getNamedElement()), // 
 			new IElementType[] { //
 			/*
-			 UMLElementTypes.Class_2001, // 
-			 UMLElementTypes.DataType_2004, // 
-			 UMLElementTypes.Enumeration_2003, // 
-			 UMLElementTypes.PrimitiveType_2005, //
+			 * UMLElementTypes.Class_2001, // UMLElementTypes.DataType_2004, //
+			 * UMLElementTypes.Enumeration_2003, //
+			 * UMLElementTypes.PrimitiveType_2005, //
 			 */
 			});
 
@@ -1851,7 +1851,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	protected IParser createPropertyParser() {
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
-		return new PropertySemanticParser(lookupSuite);
+
+		ImageProvider imageProvider = new ImageProvider() {
+
+			@Override
+			public Image getImage(ENamedElement element) {
+				return UMLElementTypes.getImage(element);
+			}
+		};
+
+		return new PropertySemanticParser(lookupSuite, imageProvider);
 	}
 
 	/**
@@ -1903,7 +1912,15 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
-		return new OperationSemanticParser(lookupSuite);
+		ImageProvider imageProvider = new ImageProvider() {
+
+			@Override
+			public Image getImage(ENamedElement element) {
+				return UMLElementTypes.getImage(element);
+			}
+		};
+
+		return new OperationSemanticParser(lookupSuite, imageProvider);
 	}
 
 	/**
@@ -1951,24 +1968,28 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	private IParser createInstanceSpecificationParser() {
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
-		return new SemanticParserAdapter(new InstanceSpecificationParser(lookupSuite), new BasicApplyStrategy(), new InstanceSpecificationToString.VIEW(), new InstanceSpecificationToString.EDIT());
+		ImageProvider imageProvider = new ImageProvider() {
+
+			@Override
+			public Image getImage(ENamedElement element) {
+				return UMLElementTypes.getImage(element);
+			}
+		};
+		return new InstanceSpecificationSemanticParser(lookupSuite, imageProvider);
 	}
 
 	/**
 	 * @generated NOT
 	 */
 	protected IParser createSlot_3017Parser() {
-		return new SemanticParserAdapter(new SlotParser(new SlotLookupSuite()), new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT()) {
+		ImageProvider imageProvider = new ImageProvider() {
 
 			@Override
-			public String getPrintString(IAdaptable element, int flags) {
-				String result = super.getPrintString(element, flags);
-				if ("".equals(result)) {
-					result = "<enter>";
-				}
-				return result;
+			public Image getImage(ENamedElement element) {
+				return UMLElementTypes.getImage(element);
 			}
 		};
+		return new SlotSemanticParser(new SlotLookupSuite(), imageProvider);
 	}
 
 	/**
@@ -1993,8 +2014,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
-	 * @NOT-GENERATED
-	 * Different view's but shared common edit.
+	 * @NOT-GENERATED Different view's but shared common edit.
 	 */
 	private IParser createAssocationRoleParser(boolean sourceNotTarget) {
 		LookupSuite lookupSuite = getAssociationLookupSuite();
@@ -2294,6 +2314,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 	/**
 	 * Utility method that consults ParserService
+	 * 
 	 * @generated
 	 */
 	public static IParser getParser(IElementType type, EObject object, String parserHint) {

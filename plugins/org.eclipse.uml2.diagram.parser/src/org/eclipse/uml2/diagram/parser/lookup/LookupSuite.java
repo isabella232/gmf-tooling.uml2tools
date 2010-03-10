@@ -28,6 +28,11 @@ public interface LookupSuite {
 		public List getResolutionElementTypes() {
 			return Collections.emptyList();
 		}
+
+		@Override
+		public List computeScope(EObject context) { 
+			return Collections.emptyList();
+		}
 	};
 	
 	public static final LookupSuite NULL_SUITE = new LookupSuite(){

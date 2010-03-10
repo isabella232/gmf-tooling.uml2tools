@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.deploy.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
@@ -12,9 +13,10 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.common.parser.ImageProvider;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
-import org.eclipse.uml2.diagram.common.parser.property.PropertyParser;
-import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
+import org.eclipse.uml2.diagram.common.parser.property.PropertySemanticParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.DeploymentAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.PackageAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.deploy.edit.parts.Artifact3EditPart;
@@ -52,8 +54,6 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.deploy.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.deploy.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.deploy.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
-import org.eclipse.uml2.diagram.parser.SemanticParserAdapter;
 import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
 import org.eclipse.uml2.diagram.parser.lookup.LookupSuiteImpl;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
@@ -640,7 +640,15 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	private IParser createPropertyParser() {
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
-		return new SemanticParserAdapter(new PropertyParser(lookupSuite), new BasicApplyStrategy(), new PropertyToString.VIEW(), new PropertyToString.EDIT());
+
+		ImageProvider imageProvider = new ImageProvider() {
+
+			@Override
+			public Image getImage(ENamedElement element) {
+				return UMLElementTypes.getImage(element);
+			}
+		};
+		return new PropertySemanticParser(lookupSuite, imageProvider);
 	}
 
 	/**
