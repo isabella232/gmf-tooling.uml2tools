@@ -33,7 +33,7 @@ public class SyncModelContentProvider implements ITreeContentProvider {
 		if (inputElement instanceof SyncModelNode[]){
 			return (SyncModelNode[])inputElement;
 		}
-		if (inputElement instanceof Collection){
+		if (inputElement instanceof Collection<?>){
 			List<SyncModelNode> input = new ArrayList<SyncModelNode>(((Collection<?>)inputElement).size());
 			for (Object next : (Collection<?>)inputElement){
 				if (next instanceof SyncModelNode){
