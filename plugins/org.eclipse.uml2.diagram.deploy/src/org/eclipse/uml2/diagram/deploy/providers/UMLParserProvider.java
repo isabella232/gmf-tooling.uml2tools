@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.deploy.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
@@ -13,8 +12,9 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.common.parser.ImageProvider;
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.property.PropertySemanticParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.DeploymentAppliedStereotypeParser;
@@ -637,18 +637,23 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @NOT-GENERATED
 	 */
-	private IParser createPropertyParser() {
+	private IParser createPropertyParser() { 
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
-		ImageProvider imageProvider = new ImageProvider() {
+		ILabelProvider labelProvider = new LabelProvider() {
 
 			@Override
-			public Image getImage(ENamedElement element) {
-				return UMLElementTypes.getImage(element);
+			public Image getImage(Object element) {
+				if (element instanceof EObject) { 
+					return UMLElementTypes.getImage(((EObject) element).eClass());
+				} else { 
+					return null;
+				}
 			}
+
 		};
-		return new PropertySemanticParser(lookupSuite, imageProvider);
+		return new PropertySemanticParser(lookupSuite, labelProvider);
 	}
 
 	/**
@@ -828,6 +833,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 	/**
 	 * Utility method that consults ParserService
+	 * 
 	 * @generated
 	 */
 	public static IParser getParser(IElementType type, EObject object, String parserHint) {

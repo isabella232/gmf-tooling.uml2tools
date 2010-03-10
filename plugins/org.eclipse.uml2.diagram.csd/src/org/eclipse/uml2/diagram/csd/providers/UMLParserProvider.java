@@ -2,7 +2,6 @@ package org.eclipse.uml2.diagram.csd.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
@@ -13,8 +12,9 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.common.parser.ImageProvider;
 import org.eclipse.uml2.diagram.common.parser.association.AssociationInstanceParser;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndApplyStrategy;
 import org.eclipse.uml2.diagram.common.parser.association.end.AssociationEndParser;
@@ -101,6 +101,19 @@ import org.eclipse.uml2.uml.UMLPackage;
  * @generated
  */
 public class UMLParserProvider extends AbstractProvider implements IParserProvider {
+
+	private static final ILabelProvider myLabelProvider = new LabelProvider() {
+
+		@Override
+		public Image getImage(Object element) {
+			if (element instanceof EObject) {
+				return UMLElementTypes.getImage(((EObject) element).eClass());
+			} else {
+				return null;
+			}
+		}
+
+	};
 
 	/**
 	 * @NOT-generated
@@ -296,14 +309,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	protected IParser createInstanceSpecificationName_5022Parser() {
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
-		ImageProvider imageProvider = new ImageProvider() {
 
-			@Override
-			public Image getImage(ENamedElement element) {
-				return UMLElementTypes.getImage(element);
-			}
-		};
-		return new InstanceSpecificationSemanticParser(lookupSuite, imageProvider);
+		return new InstanceSpecificationSemanticParser(lookupSuite, myLabelProvider);
 	}
 
 	/**
@@ -487,14 +494,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
-		ImageProvider imageProvider = new ImageProvider() {
-
-			@Override
-			public Image getImage(ENamedElement element) {
-				return UMLElementTypes.getImage(element);
-			}
-		};
-		return new PropertySemanticParser(lookupSuite, imageProvider);
+		return new PropertySemanticParser(lookupSuite, myLabelProvider);
 	}
 
 	/**
@@ -760,14 +760,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated NOT
 	 */
 	protected IParser createSlot_3015Parser() {
-		ImageProvider imageProvider = new ImageProvider() {
-
-			@Override
-			public Image getImage(ENamedElement element) {
-				return UMLElementTypes.getImage(element);
-			}
-		};
-		return new SlotSemanticParser(new SlotLookupSuite(), imageProvider);
+		return new SlotSemanticParser(new SlotLookupSuite(), myLabelProvider);
 	}
 
 	/**

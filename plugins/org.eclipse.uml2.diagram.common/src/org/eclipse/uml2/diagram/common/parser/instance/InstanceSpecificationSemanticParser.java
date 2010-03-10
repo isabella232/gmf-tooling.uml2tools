@@ -3,8 +3,8 @@ package org.eclipse.uml2.diagram.common.parser.instance;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.common.parser.ImageProvider;
 import org.eclipse.uml2.diagram.parser.ApplyStrategy;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
@@ -17,22 +17,22 @@ import org.eclipse.uml2.uml.Type;
 
 public class InstanceSpecificationSemanticParser extends SemanticParserAdapter {
 
-	private final ImageProvider myImageProvider;
+	private final ILabelProvider myLabelProvider;
 
 	private final CompletionProcessor myCompletionProcessor;
 
-	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider) {
-		this(lookupSuite, imageProvider, new BasicApplyStrategy(), new InstanceSpecificationToString.VIEW(), new InstanceSpecificationToString.EDIT());
+	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider) {
+		this(lookupSuite, labelProvider, new BasicApplyStrategy(), new InstanceSpecificationToString.VIEW(), new InstanceSpecificationToString.EDIT());
 	}
 
-	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
+	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
 		super(new InstanceSpecificationParser(lookupSuite), applier, view, edit);
 		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(Type.class));
-		myImageProvider = imageProvider;
+		myLabelProvider = labelProvider;
 	}
 
-	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
-		this(lookupSuite, imageProvider, applier, viewAndEdit, viewAndEdit);
+	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
+		this(lookupSuite, labelProvider, applier, viewAndEdit, viewAndEdit);
 	}
 
 	protected final EObject doAdapt(IAdaptable adaptable) {
@@ -66,7 +66,7 @@ public class InstanceSpecificationSemanticParser extends SemanticParserAdapter {
 
 		@Override
 		protected Image getProposalImage(Type proposedType) {
-			return myImageProvider.getImage(proposedType.eClass());
+			return myLabelProvider.getImage(proposedType);
 		}
 	}
 }

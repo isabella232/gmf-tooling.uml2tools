@@ -14,8 +14,8 @@ package org.eclipse.uml2.diagram.common.parser.operation;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.common.parser.ImageProvider;
 import org.eclipse.uml2.diagram.parser.ApplyStrategy;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
@@ -28,22 +28,22 @@ import org.eclipse.uml2.uml.Type;
 
 public class OperationSemanticParser extends SemanticParserAdapter {
 
-	private final ImageProvider myImageProvider;
+	private final ILabelProvider myLabelProvider;
 
 	private final CompletionProcessor myCompletionProcessor;
 
-	public OperationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider) {
-		this(lookupSuite, imageProvider, new BasicApplyStrategy(), new OperationToString.VIEW(), new OperationToString.EDIT());
+	public OperationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider) {
+		this(lookupSuite, labelProvider, new BasicApplyStrategy(), new OperationToString.VIEW(), new OperationToString.EDIT());
 	}
 
-	public OperationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
+	public OperationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
 		super(new OperationParser(lookupSuite), applier, view, edit);
-		myImageProvider = imageProvider;
+		myLabelProvider = labelProvider;
 		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(Type.class));
 	}
 
-	public OperationSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
-		this(lookupSuite, imageProvider, applier, viewAndEdit, viewAndEdit);
+	public OperationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
+		this(lookupSuite, labelProvider, applier, viewAndEdit, viewAndEdit);
 	}
 
 	protected final EObject doAdapt(IAdaptable adaptable) {
@@ -74,7 +74,7 @@ public class OperationSemanticParser extends SemanticParserAdapter {
 
 		@Override
 		protected Image getProposalImage(Type proposedEObject) {
-			return myImageProvider.getImage(proposedEObject.eClass());
+			return myLabelProvider.getImage(proposedEObject);
 		}
 	}
 }

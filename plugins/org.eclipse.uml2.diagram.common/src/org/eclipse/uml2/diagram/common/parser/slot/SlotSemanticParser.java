@@ -3,8 +3,8 @@ package org.eclipse.uml2.diagram.common.parser.slot;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.common.parser.ImageProvider;
 import org.eclipse.uml2.diagram.parser.ApplyStrategy;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
@@ -17,22 +17,22 @@ import org.eclipse.uml2.uml.StructuralFeature;
 
 public class SlotSemanticParser extends SemanticParserAdapter {
 
-	private final ImageProvider myImageProvider;
+	private final ILabelProvider myLabelProvider;
 
 	private final CompletionProcessor myCompletionProcessor;
 
-	public SlotSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider) {
-		this(lookupSuite, imageProvider, new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT());
+	public SlotSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider) {
+		this(lookupSuite, labelProvider, new BasicApplyStrategy(), new SlotToString.VIEW(), new SlotToString.EDIT());
 	}
 
-	public SlotSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
+	public SlotSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
 		super(new SlotParser(lookupSuite), applier, view, edit);
 		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(StructuralFeature.class));
-		myImageProvider = imageProvider;
+		myLabelProvider = labelProvider;
 	}
 
-	public SlotSemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
-		this(lookupSuite, imageProvider, applier, viewAndEdit, viewAndEdit);
+	public SlotSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
+		this(lookupSuite, labelProvider, applier, viewAndEdit, viewAndEdit);
 	}
 
 	protected final EObject doAdapt(IAdaptable adaptable) {
@@ -67,7 +67,7 @@ public class SlotSemanticParser extends SemanticParserAdapter {
 
 		@Override
 		protected Image getProposalImage(StructuralFeature proposedFeature) {
-			return myImageProvider.getImage(proposedFeature.eClass());
+			return myLabelProvider.getImage(proposedFeature);
 		}
 	}
 }

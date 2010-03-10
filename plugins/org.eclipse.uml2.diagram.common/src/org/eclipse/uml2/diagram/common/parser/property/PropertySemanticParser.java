@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.contentassist.IContentAssistSubjectControl;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.common.parser.ImageProvider;
 import org.eclipse.uml2.diagram.parser.ApplyStrategy;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
@@ -33,21 +33,21 @@ import org.eclipse.uml2.uml.Type;
 
 public class PropertySemanticParser extends SemanticParserAdapter {
 
-	private final ImageProvider myImageProvider;
+	private final ILabelProvider myLabelProvider;
 
 	private final CompletionProcessor myCompletionProcessor;
 
-	public PropertySemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider) {
-		this(lookupSuite, imageProvider, new BasicApplyStrategy(), new PropertyToString.VIEW(), new PropertyToString.EDIT());
+	public PropertySemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider) {
+		this(lookupSuite, labelProvider, new BasicApplyStrategy(), new PropertyToString.VIEW(), new PropertyToString.EDIT());
 	}
 
-	public PropertySemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, ExternalToString.WithReferences viewAndEdit) {
-		this(lookupSuite, imageProvider, applier, viewAndEdit, viewAndEdit);
+	public PropertySemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, ExternalToString.WithReferences viewAndEdit) {
+		this(lookupSuite, labelProvider, applier, viewAndEdit, viewAndEdit);
 	}
 
-	public PropertySemanticParser(LookupSuite lookupSuite, ImageProvider imageProvider, ApplyStrategy applier, ExternalToString.WithReferences view, ExternalToString edit) {
+	public PropertySemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, ExternalToString.WithReferences view, ExternalToString edit) {
 		super(new PropertyParser(lookupSuite), applier, view, edit);
-		myImageProvider = imageProvider;
+		myLabelProvider = labelProvider;
 		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(Type.class));
 	}
 
@@ -107,7 +107,7 @@ public class PropertySemanticParser extends SemanticParserAdapter {
 
 		@Override
 		protected Image getProposalImage(Type proposedEObject) {
-			return myImageProvider.getImage(proposedEObject.eClass());
+			return myLabelProvider.getImage(proposedEObject);
 		}
 
 	}

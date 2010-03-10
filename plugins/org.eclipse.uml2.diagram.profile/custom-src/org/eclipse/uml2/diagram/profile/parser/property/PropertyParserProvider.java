@@ -13,15 +13,16 @@
 package org.eclipse.uml2.diagram.profile.parser.property;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.GetParserOperation;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.uml2.diagram.common.parser.ImageProvider;
 import org.eclipse.uml2.diagram.common.parser.property.PropertySemanticParser;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.lookup.DefaultOclLookups;
@@ -49,14 +50,19 @@ public class PropertyParserProvider extends AbstractProvider implements IParserP
 		lookupSuite.addLookup(Type.class, new OCLLookup<Type>(UMLOCLFactory.getOCLLookupExpression(//
 				DefaultOclLookups.DEFAULT_TYPE_LOOKUP, UMLPackage.eINSTANCE.getNamedElement())));
 
-		ImageProvider imageProvider = new ImageProvider() {
+		ILabelProvider labelProvider = new LabelProvider() {
 
 			@Override
-			public Image getImage(ENamedElement element) {
-				return UMLElementTypes.getImage(element);
+			public Image getImage(Object element) {
+				if (element instanceof EObject) {
+					return UMLElementTypes.getImage(((EObject) element).eClass());
+				} else {
+					return null;
+				}
 			}
+
 		};
-		return new PropertySemanticParser(lookupSuite, imageProvider, new BasicApplyStrategy(), new StereotypePropertyToString());
+		return new PropertySemanticParser(lookupSuite, labelProvider, new BasicApplyStrategy(), new StereotypePropertyToString());
 	}
 
 	public boolean provides(IOperation operation) {
