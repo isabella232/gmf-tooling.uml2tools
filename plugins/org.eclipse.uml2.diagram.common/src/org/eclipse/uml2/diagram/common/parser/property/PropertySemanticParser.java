@@ -21,7 +21,6 @@ import org.eclipse.jface.contentassist.IContentAssistSubjectControl;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ILabelProvider;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.parser.ApplyStrategy;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
@@ -32,8 +31,6 @@ import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.uml.Type;
 
 public class PropertySemanticParser extends SemanticParserAdapter {
-
-	private final ILabelProvider myLabelProvider;
 
 	private final CompletionProcessor myCompletionProcessor;
 
@@ -47,8 +44,7 @@ public class PropertySemanticParser extends SemanticParserAdapter {
 
 	public PropertySemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, ExternalToString.WithReferences view, ExternalToString edit) {
 		super(new PropertyParser(lookupSuite), applier, view, edit);
-		myLabelProvider = labelProvider;
-		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(Type.class));
+		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(Type.class), labelProvider);
 	}
 
 	protected EObject doAdapt(IAdaptable adaptable) {
@@ -73,10 +69,10 @@ public class PropertySemanticParser extends SemanticParserAdapter {
 		return myCompletionProcessor;
 	}
 
-	private class CompletionProcessor extends LookupCompletionProcessor<Type> {
+	private static class CompletionProcessor extends LookupCompletionProcessor<Type> {
 
-		public CompletionProcessor(Lookup<Type> lookup) {
-			super(lookup);
+		public CompletionProcessor(Lookup<Type> lookup, ILabelProvider labelProvider) {
+			super(lookup, labelProvider);
 		}
 
 		public ICompletionProposal[] computeCompletionProposals(IContentAssistSubjectControl subjectControl, int offset) {
@@ -103,11 +99,6 @@ public class PropertySemanticParser extends SemanticParserAdapter {
 			}
 			String proposalPrefix = controlPrefix.substring(colonIndex + ":".length());
 			return trimLeft(proposalPrefix);
-		}
-
-		@Override
-		protected Image getProposalImage(Type proposedEObject) {
-			return myLabelProvider.getImage(proposedEObject);
 		}
 
 	}

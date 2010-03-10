@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.contentassist.IContentAssistSubjectControl;
 import org.eclipse.jface.text.contentassist.CompletionProposal;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.uml2.diagram.parser.lookup.Lookup;
@@ -25,6 +26,8 @@ public abstract class LookupCompletionProcessor<T extends NamedElement> extends 
 	};
 
 	private final Lookup<T> myLookup;
+
+	private final ILabelProvider myProposalsLabelProvider;
 
 	/**
 	 * Extracts the part of the control text related to the proposal.
@@ -44,8 +47,9 @@ public abstract class LookupCompletionProcessor<T extends NamedElement> extends 
 	 */
 	protected abstract String getProposalPrefix(String controlPrefix);
 
-	public LookupCompletionProcessor(Lookup<T> lookup) {
+	public LookupCompletionProcessor(Lookup<T> lookup, ILabelProvider proposalsLabelProvider) {
 		myLookup = lookup;
+		myProposalsLabelProvider = proposalsLabelProvider;
 	}
 
 	public ICompletionProposal[] computeCompletionProposals(IContentAssistSubjectControl subjectControl, int offset) {
@@ -93,7 +97,7 @@ public abstract class LookupCompletionProcessor<T extends NamedElement> extends 
 	}
 
 	protected Image getProposalImage(T proposedEObject) {
-		return null;
+		return myProposalsLabelProvider == null ? null : myProposalsLabelProvider.getImage(proposedEObject);
 	}
 
 	protected static final String trimLeft(String text) {

@@ -4,7 +4,6 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ILabelProvider;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.parser.ApplyStrategy;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
@@ -17,8 +16,6 @@ import org.eclipse.uml2.uml.Type;
 
 public class InstanceSpecificationSemanticParser extends SemanticParserAdapter {
 
-	private final ILabelProvider myLabelProvider;
-
 	private final CompletionProcessor myCompletionProcessor;
 
 	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider) {
@@ -27,8 +24,7 @@ public class InstanceSpecificationSemanticParser extends SemanticParserAdapter {
 
 	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
 		super(new InstanceSpecificationParser(lookupSuite), applier, view, edit);
-		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(Type.class));
-		myLabelProvider = labelProvider;
+		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(Type.class), labelProvider);
 	}
 
 	public InstanceSpecificationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
@@ -45,10 +41,10 @@ public class InstanceSpecificationSemanticParser extends SemanticParserAdapter {
 		return myCompletionProcessor;
 	}
 
-	private class CompletionProcessor extends LookupCompletionProcessor<Type> {
+	private static class CompletionProcessor extends LookupCompletionProcessor<Type> {
 
-		public CompletionProcessor(Lookup<Type> lookup) {
-			super(lookup);
+		public CompletionProcessor(Lookup<Type> lookup, ILabelProvider labelProvider) {
+			super(lookup, labelProvider);
 		}
 
 		@Override
@@ -64,9 +60,5 @@ public class InstanceSpecificationSemanticParser extends SemanticParserAdapter {
 			return trimLeft(proposalPrefix);
 		}
 
-		@Override
-		protected Image getProposalImage(Type proposedType) {
-			return myLabelProvider.getImage(proposedType);
-		}
 	}
 }

@@ -4,7 +4,6 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ILabelProvider;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.parser.ApplyStrategy;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
@@ -17,8 +16,6 @@ import org.eclipse.uml2.uml.StructuralFeature;
 
 public class SlotSemanticParser extends SemanticParserAdapter {
 
-	private final ILabelProvider myLabelProvider;
-
 	private final CompletionProcessor myCompletionProcessor;
 
 	public SlotSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider) {
@@ -27,8 +24,7 @@ public class SlotSemanticParser extends SemanticParserAdapter {
 
 	public SlotSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
 		super(new SlotParser(lookupSuite), applier, view, edit);
-		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(StructuralFeature.class));
-		myLabelProvider = labelProvider;
+		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(StructuralFeature.class), labelProvider);
 	}
 
 	public SlotSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
@@ -54,20 +50,15 @@ public class SlotSemanticParser extends SemanticParserAdapter {
 		return myCompletionProcessor;
 	}
 
-	private class CompletionProcessor extends LookupCompletionProcessor<StructuralFeature> {
+	private static class CompletionProcessor extends LookupCompletionProcessor<StructuralFeature> {
 
-		public CompletionProcessor(Lookup<StructuralFeature> featureLookup) {
-			super(featureLookup);
+		public CompletionProcessor(Lookup<StructuralFeature> featureLookup, ILabelProvider labelProvider) {
+			super(featureLookup, labelProvider);
 		}
 
 		@Override
 		protected String getProposalPrefix(String controlPrefix) {
 			return controlPrefix.contains("=") ? null : trimLeft(controlPrefix);
-		}
-
-		@Override
-		protected Image getProposalImage(StructuralFeature proposedFeature) {
-			return myLabelProvider.getImage(proposedFeature);
 		}
 	}
 }

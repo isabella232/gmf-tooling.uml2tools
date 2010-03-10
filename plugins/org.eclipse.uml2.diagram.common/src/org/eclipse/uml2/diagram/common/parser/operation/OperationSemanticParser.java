@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008 Borland Software Corporation
+ * Copyright (c) 2008, 2010 Borland Software Corporation and others
  * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -8,6 +8,7 @@
  *
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
+ *    Elena Shaverdova (SwiftTeams) - #305302, completion assistants
  */
 package org.eclipse.uml2.diagram.common.parser.operation;
 
@@ -15,7 +16,6 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ILabelProvider;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.diagram.parser.ApplyStrategy;
 import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
@@ -28,8 +28,6 @@ import org.eclipse.uml2.uml.Type;
 
 public class OperationSemanticParser extends SemanticParserAdapter {
 
-	private final ILabelProvider myLabelProvider;
-
 	private final CompletionProcessor myCompletionProcessor;
 
 	public OperationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider) {
@@ -38,8 +36,7 @@ public class OperationSemanticParser extends SemanticParserAdapter {
 
 	public OperationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences view, ExternalToString edit) {
 		super(new OperationParser(lookupSuite), applier, view, edit);
-		myLabelProvider = labelProvider;
-		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(Type.class));
+		myCompletionProcessor = new CompletionProcessor(lookupSuite.getLookup(Type.class), labelProvider);
 	}
 
 	public OperationSemanticParser(LookupSuite lookupSuite, ILabelProvider labelProvider, ApplyStrategy applier, WithReferences viewAndEdit) {
@@ -56,10 +53,10 @@ public class OperationSemanticParser extends SemanticParserAdapter {
 		return myCompletionProcessor;
 	}
 
-	private class CompletionProcessor extends LookupCompletionProcessor<Type> {
+	private static class CompletionProcessor extends LookupCompletionProcessor<Type> {
 
-		public CompletionProcessor(Lookup<Type> typeLookup) {
-			super(typeLookup);
+		public CompletionProcessor(Lookup<Type> typeLookup, ILabelProvider labelProvider) {
+			super(typeLookup, labelProvider);
 		}
 
 		@Override
@@ -72,9 +69,5 @@ public class OperationSemanticParser extends SemanticParserAdapter {
 			return trimLeft(proposalPrefix);
 		}
 
-		@Override
-		protected Image getProposalImage(Type proposedEObject) {
-			return myLabelProvider.getImage(proposedEObject);
-		}
 	}
 }
