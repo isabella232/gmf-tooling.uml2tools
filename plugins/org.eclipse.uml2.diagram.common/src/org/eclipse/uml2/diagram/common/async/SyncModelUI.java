@@ -1,9 +1,13 @@
 package org.eclipse.uml2.diagram.common.async;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IContributionItem;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
@@ -20,9 +24,16 @@ import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.ui.dialogs.FilteredTree;
 import org.eclipse.ui.dialogs.PatternFilter;
 import org.eclipse.uml2.diagram.common.Messages;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistryExt;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistryExt.MenuTypeHint;
 
 public class SyncModelUI {
 
@@ -58,8 +69,6 @@ public class SyncModelUI {
 		myTreeViewer.addTreeListener(myCheckStateInitializer);
 		myCheckListener = new CheckListener(myTreeViewer);
 		myTreeViewer.addCheckStateListener(myCheckListener);
-
-		new MenuBuilder(myTreeViewer).attachMenu();
 	}
 
 	public void setRootNode(SyncModelNode rootNode) {
@@ -69,6 +78,8 @@ public class SyncModelUI {
 			myCheckListener.setAlwaysChecked(rootNode);
 		}
 		myTreeViewer.setGrayChecked(rootNode, true);
+
+		new MenuBuilder(myTreeViewer).attachMenu(myRootNode);
 	}
 
 	public void revealRootChildren() {
@@ -150,6 +161,8 @@ public class SyncModelUI {
 
 			boolean refreshNeeded = false;
 			if (event.getChecked()) {
+				createTypeHintMenu(node);
+
 				for (SyncModelNode next = node.getParent(); next != null; next = next.getParent()) {
 					refreshNeeded |= !next.isChecked();
 					next.setChecked(true);
@@ -178,6 +191,50 @@ public class SyncModelUI {
 				myViewer.refresh(true);
 			}
 		}
+
+		private void createTypeHintMenu(SyncModelNode node) {
+			IVisualIDRegistry registry = node.getContext().getRegistry();
+			if (node.getDiagramView() == null && registry instanceof IVisualIDRegistryExt) {
+				IVisualIDRegistryExt extendedRegistry = (IVisualIDRegistryExt) registry;
+				String nodeType = node.getSyncModelView().getType();
+				List<IVisualIDRegistryExt.MenuTypeHint> menuTypeHints = extendedRegistry.getMenuTypeHints(nodeType);
+
+				if (menuTypeHints.size() > 1) {
+					Menu menu = new Menu(myViewer.getControl());
+
+					for (final IVisualIDRegistryExt.MenuTypeHint menuTypeHint : menuTypeHints) {
+						MenuItem item = new MenuItem(menu, SWT.DROP_DOWN);
+
+						item.setText(menuTypeHint.getMessage());
+						item.addListener(SWT.Selection, new ChooseTypeMenuListener(myViewer, node, menuTypeHint.getType()));
+					}
+					menu.setVisible(true);
+				}
+			}
+		}
+	}
+
+	private static class ChooseTypeMenuListener implements Listener {
+
+		private final CheckboxTreeViewer myTreeViewer;
+
+		private final SyncModelNode myNode;
+
+		private final String myType;
+
+		private ChooseTypeMenuListener(CheckboxTreeViewer treeViewer, SyncModelNode node, String type) {
+			super();
+			this.myTreeViewer = treeViewer;
+			this.myNode = node;
+			this.myType = type;
+		}
+
+		@Override
+		public void handleEvent(Event event) {
+			myNode.setChosenSyncModelViewType(myType);
+			myTreeViewer.refresh();
+		}
+
 	}
 
 	private static class MenuBuilder implements IMenuListener {
@@ -190,6 +247,14 @@ public class SyncModelUI {
 
 		private final SyncModelUIAction myUnselectAllChildrenAction;
 
+		private final Map<String, IContributionItem> mySetTypeSubmenus;
+
+		private final Map<String, List<SyncModelUIAction>> mySetTypeActions;
+
+		private boolean myIsSetTypeSubmenuEnabled;
+
+		private IContributionItem myCurrentSetTypeSubmenu;
+
 		public MenuBuilder(CheckboxTreeViewer viewer) {
 			myViewer = viewer;
 			mySwitchSyncAction = new SwitchSynchronizationAction(viewer);
@@ -198,28 +263,85 @@ public class SyncModelUI {
 
 			mySelectAllChildrenAction.setText(Messages.SyncModelUI_action_select_all_children);
 			myUnselectAllChildrenAction.setText(Messages.SyncModelUI_action_unselect_all_children);
+
+			mySetTypeSubmenus = new HashMap<String, IContributionItem>();
+			mySetTypeActions = new HashMap<String, List<SyncModelUIAction>>();
 		}
 
-		public void attachMenu() {
+		public void attachMenu(SyncModelNode rootNode) {
 			MenuManager menuManager = new MenuManager();
 			menuManager.addMenuListener(this);
 			menuManager.add(mySwitchSyncAction);
 			menuManager.add(mySelectAllChildrenAction);
 			menuManager.add(myUnselectAllChildrenAction);
 
+			IVisualIDRegistry registry = rootNode.getContext().getRegistry();
+			if (registry instanceof IVisualIDRegistryExt) {
+				myIsSetTypeSubmenuEnabled = true;
+				createSetTypeSubmenus((IVisualIDRegistryExt) registry);
+			} else {
+				myIsSetTypeSubmenuEnabled = false;
+			}
+
 			myViewer.getTree().setMenu(menuManager.createContextMenu(myViewer.getTree()));
 		}
 
-		public void removeMenu() {
-			myViewer.getTree().setMenu(null);
+		private void createSetTypeSubmenus(IVisualIDRegistryExt registry) {
+			for (String type : registry.getAllHintedTypes()) {
+				MenuManager hintMenuManager = new MenuManager(Messages.SyncModelUI_action_show_as);
+				List<MenuTypeHint> hints = registry.getMenuTypeHints(type);
+				List<SyncModelUIAction> actions = new LinkedList<SyncModelUIAction>();
+				for (MenuTypeHint hint : hints) {
+					if (!type.equals(hint.getType())) {
+						SetTypeAction action = new SetTypeAction(myViewer, hint);
+						hintMenuManager.add(action);
+						actions.add(action);
+					}
+				}
+				mySetTypeActions.put(type, actions);
+				mySetTypeSubmenus.put(type, hintMenuManager);
+			}
 		}
 
 		public void menuAboutToShow(IMenuManager manager) {
 			mySwitchSyncAction.update(myViewer);
 			mySelectAllChildrenAction.update(myViewer);
 			myUnselectAllChildrenAction.update(myViewer);
+
+			if (myIsSetTypeSubmenuEnabled) {
+				updateSetTypeSubmenu(manager);
+			}
 		}
 
+		private void updateSetTypeSubmenu(IMenuManager manager) {
+			IStructuredSelection selection = (IStructuredSelection) myViewer.getSelection();
+			if (selection.size() != 1 && myCurrentSetTypeSubmenu != null) {
+				manager.remove(myCurrentSetTypeSubmenu);
+				return;
+			}
+
+			SyncModelNode selected = (SyncModelNode) selection.getFirstElement();
+
+			String selectedType = selected.getSyncModelView().getType();
+			IContributionItem newSubmenu = mySetTypeSubmenus.get(selectedType);
+
+			if (newSubmenu != myCurrentSetTypeSubmenu) {
+				if (myCurrentSetTypeSubmenu != null) {
+					manager.remove(myCurrentSetTypeSubmenu);
+				}
+				if (newSubmenu != null) {
+					manager.add(newSubmenu);
+				}
+				myCurrentSetTypeSubmenu = newSubmenu;
+			}
+
+			List<SyncModelUIAction> actions = mySetTypeActions.get(selectedType);
+			if (actions != null) {
+				for (SyncModelUIAction action : actions) {
+					action.update(myViewer);
+				}
+			}
+		}
 	}
 
 	private static abstract class SyncModelUIAction extends Action {
@@ -314,6 +436,45 @@ public class SyncModelUI {
 				}
 			}
 			return false;
+		}
+	}
+
+	private static class SetTypeAction extends SyncModelUIAction {
+
+		private final CheckboxTreeViewer mySyncModelUI;
+
+		private SyncModelNode mySelected;
+
+		private final String myType;
+
+		public SetTypeAction(CheckboxTreeViewer syncModelUI, MenuTypeHint menuTypeHint) {
+			setText(menuTypeHint.getMessage());
+			mySyncModelUI = syncModelUI;
+			myType = menuTypeHint.getType();
+		}
+
+		@Override
+		public void update(CheckboxTreeViewer viewer) {
+			mySelected = null;
+			IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
+			setEnabled(selection.size() == 1);
+			if (selection.size() != 1) {
+				return;
+			}
+			mySelected = (SyncModelNode) selection.getFirstElement();
+		}
+
+		@Override
+		public void run() {
+			mySelected.setChosenSyncModelViewType(myType);
+			mySyncModelUI.refresh(mySelected.getParent());
+			List<SyncModelNode> childNodes = new ArrayList<SyncModelNode>();
+			childNodes.add(mySelected);
+			for (int i = 0; i < childNodes.size(); i++) {
+				SyncModelNode node = childNodes.get(i);
+				mySyncModelUI.setChecked(node, node.isChecked());
+				childNodes.addAll(node.getChildren());
+			}
 		}
 	}
 

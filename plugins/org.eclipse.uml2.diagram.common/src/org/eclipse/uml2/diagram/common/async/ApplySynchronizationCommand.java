@@ -16,7 +16,9 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.Messages;
 
 public class ApplySynchronizationCommand extends AbstractTransactionalCommand {
+
 	private final SyncModelNode mySyncRoot;
+
 	private final ArrayList<View> myAddedTopLevelViews = new ArrayList<View>();
 
 	public ApplySynchronizationCommand(SyncModelNode syncRoot) {
@@ -24,7 +26,7 @@ public class ApplySynchronizationCommand extends AbstractTransactionalCommand {
 		assert (syncRoot.getDiagramView() != null);
 		mySyncRoot = syncRoot;
 	}
-	
+
 	public ArrayList<View> getAddedTopLevelViews() {
 		return myAddedTopLevelViews;
 	}
@@ -33,7 +35,7 @@ public class ApplySynchronizationCommand extends AbstractTransactionalCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		LinkedList<SyncModelNode> queue = new LinkedList<SyncModelNode>();
 		queue.add(mySyncRoot);
-		while (!queue.isEmpty()){
+		while (!queue.isEmpty()) {
 			SyncModelNode next = queue.removeFirst();
 			syncNode(next, queue);
 		}
@@ -64,8 +66,12 @@ public class ApplySynchronizationCommand extends AbstractTransactionalCommand {
 	}
 
 	private void forceHasDiagramView(SyncModelNode node) {
-		if (node.getDiagramView() != null) {
+		if (node.getDiagramView() != null && node.getDiagramView().getType().equals(node.getSyncModelView().getType())) {
 			return;
+		}
+
+		if (node.getDiagramView() != null && !node.getDiagramView().getType().equals(node.getSyncModelView().getType())) {
+			removeView(node.getDiagramView());
 		}
 
 		SyncModelNode parent = node.getParent();
@@ -81,18 +87,18 @@ public class ApplySynchronizationCommand extends AbstractTransactionalCommand {
 			}
 			diagramParent = diagramCompartment;
 		}
-		
+
 		View copy = ViewService.createNode(diagramParent, node.getSyncModelView().getElement(), node.getSyncModelView().getType(), mySyncRoot.getContext().getPreferencesHint());
 		assert copy != null;
-		
-		if (diagramParent instanceof Diagram){
+
+		if (diagramParent instanceof Diagram) {
 			myAddedTopLevelViews.add(copy);
 		}
-		
+
 		node.associateWithDiagramView(copy);
 		node.applyCanonicalStyle();
 	}
-	
+
 	private void removeView(View view) {
 		ViewUtil.destroy(view);
 	}

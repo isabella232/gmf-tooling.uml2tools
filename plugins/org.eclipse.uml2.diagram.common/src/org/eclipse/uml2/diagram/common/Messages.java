@@ -77,7 +77,7 @@ public class Messages extends NLS {
 	public static String ApplyOrUnapplyStereotypeCommand_command_apply_stereotype;
 
 	public static String ApplyOrUnapplyStereotypeCommand_command_unapply_stereotype;
-	
+
 	public static String ApplyProfileAction_apply_profile_command;
 
 	public static String ApplyProfileAction_empty_name;
@@ -109,11 +109,11 @@ public class Messages extends NLS {
 	public static String DeleteFromDiagramAction_action_delete_from_diagram;
 
 	public static String DeleteFromDiagramAction_action_tooltip_delete_from_diagram;
-	
+
 	public static String EventParser_any_receive_event_denotation;
-	
+
 	public static String EventParser_time_event_absolute_denotation_prefix;
-	
+
 	public static String EventParser_time_event_relative_denotation_prefix;
 
 	public static String EventParser_change_event_denotation_prefix;
@@ -167,6 +167,8 @@ public class Messages extends NLS {
 	public static String SyncModelUI_action_enable_sync;
 
 	public static String SyncModelUI_action_select_all_children;
+
+	public static String SyncModelUI_action_show_as;
 
 	public static String SyncModelUI_action_unselect_all_children;
 

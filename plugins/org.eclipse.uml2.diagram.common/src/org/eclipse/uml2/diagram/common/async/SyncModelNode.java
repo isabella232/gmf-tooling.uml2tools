@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.common.async;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class SyncModelNode implements IAdaptable {
 
 	private final SyncModelContext myContext;
 
-	private final View mySyncModelView;
+	private View mySyncModelView;
 
 	private List<SyncModelNode> myChildren;
 
@@ -36,14 +37,14 @@ public class SyncModelNode implements IAdaptable {
 
 	public SyncModelNode(View syncModelRoot, View diagramRoot, SyncModelContext context) {
 		this(syncModelRoot, (SyncModelNode) null, context);
-		if (syncModelRoot == null){
+		if (syncModelRoot == null) {
 			throw new NullPointerException();
 		}
-		if (diagramRoot != null){
-			if (diagramRoot.getElement() == null){
+		if (diagramRoot != null) {
+			if (diagramRoot.getElement() == null) {
 				throw new IllegalArgumentException("Diagram root should have an semantic element"); //$NON-NLS-1$
 			}
-			if (!diagramRoot.getElement().equals(syncModelRoot.getElement())){
+			if (!diagramRoot.getElement().equals(syncModelRoot.getElement())) {
 				throw new IllegalArgumentException("Diagram root element : " + diagramRoot.getElement() + ", while SyncModel root element: " + syncModelRoot.getElement()); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
@@ -99,7 +100,7 @@ public class SyncModelNode implements IAdaptable {
 	public boolean isAutoSynchronized() {
 		return myIsAutoSynchronized;
 	}
-	
+
 	public void setAutoSynchronized(boolean isAutoSynchronized) {
 		myIsAutoSynchronized = isAutoSynchronized;
 	}
@@ -149,7 +150,7 @@ public class SyncModelNode implements IAdaptable {
 	}
 
 	private void doCreateSyncModelChildren() {
-		List<View> directChildren = createChildViews(mySyncModelView);
+		List<View> directChildren = createChildViews(mySyncModelView, myDiagramView);
 		for (View nextDirect : directChildren) {
 			SyncModelNode child = doCreateNodeView(nextDirect, this);
 			View diagramCounterpart = findCounterpart(nextDirect, myDiagramView);
@@ -160,7 +161,7 @@ public class SyncModelNode implements IAdaptable {
 			View nextSyncCompartment = (View) next;
 			if (isCompartment(nextSyncCompartment)) {
 				View diagramCompartment = findCounterpart(nextSyncCompartment, myDiagramView);
-				List<View> syncCompartmentChildren = createChildViews(nextSyncCompartment);
+				List<View> syncCompartmentChildren = createChildViews(nextSyncCompartment, diagramCompartment);
 				for (View nextCompartmentChild : syncCompartmentChildren) {
 					SyncModelNode nextResult = doCreateNodeView(nextCompartmentChild, this);
 					nextResult.setCompartment(nextSyncCompartment);
@@ -170,7 +171,7 @@ public class SyncModelNode implements IAdaptable {
 			}
 		}
 	}
-	
+
 	protected SyncModelNode doCreateNodeView(View syncModelView, SyncModelNode parent) {
 		return new SyncModelNode(syncModelView, parent);
 	}
@@ -181,15 +182,34 @@ public class SyncModelNode implements IAdaptable {
 		return registry.isCompartmentVisualID(visualId);
 	}
 
-	private List<View> createChildViews(View syncModelParent) {
+	private List<View> createChildViews(View syncModelParent, View diagramViewParent) {
 		List<?> descriptors = getUpdater().getSemanticChildren(syncModelParent);
 		List<View> result = new LinkedList<View>();
 		for (Object next : descriptors) {
 			IUpdaterNodeDescriptor nextDescriptor = (IUpdaterNodeDescriptor) next;
 			EObject nextSemanticChild = nextDescriptor.getModelElement();
-			View nextView = ViewService.getInstance().createView(Node.class, //
-					new EObjectAdapter(nextSemanticChild), syncModelParent, null, //
-					ViewUtil.APPEND, true, getPreferencesHint());
+
+			View nextView = null;
+
+			if (diagramViewParent != null) {
+				List<?> children = diagramViewParent.getChildren();
+				boolean found = false;
+				for (Iterator<?> iter = children.iterator(); !found && iter.hasNext();) {
+					View nextDiagramChild = (View) iter.next();
+					if (nextDiagramChild.getElement() != null && //
+							nextDiagramChild.getElement().equals(nextSemanticChild)) {
+						nextView = ViewService.createNode(syncModelParent,//
+								nextSemanticChild, nextDiagramChild.getType(), getPreferencesHint());
+						found = true;
+					}
+				}
+			}
+
+			if (nextView == null) {
+				nextView = ViewService.getInstance().createView(Node.class, // 
+						new EObjectAdapter(nextSemanticChild), syncModelParent, null, //
+						ViewUtil.APPEND, true, getPreferencesHint());
+			}
 
 			if (nextView != null) {
 				result.add(nextView);
@@ -235,21 +255,21 @@ public class SyncModelNode implements IAdaptable {
 		}
 		return syncView.getElement().equals(diagramView.getElement());
 	}
-	
-	public void applyCanonicalStyle(){
+
+	public void applyCanonicalStyle() {
 		checkHasDiagramView();
 		applyCanonicalStyle(getDiagramView());
 	}
-	
-	private void applyCanonicalStyle(View view){
-		if (isKnownLeaf()){
+
+	private void applyCanonicalStyle(View view) {
+		if (isKnownLeaf()) {
 			return;
 		}
 		doApplyCanonicalStyle(view);
-		
-		for (Object nextChild : view.getChildren()){
-			View nextChildView = (View)nextChild;
-			if (isCompartment(nextChildView)){
+
+		for (Object nextChild : view.getChildren()) {
+			View nextChildView = (View) nextChild;
+			if (isCompartment(nextChildView)) {
 				doApplyCanonicalStyle(nextChildView);
 			}
 		}
@@ -258,10 +278,10 @@ public class SyncModelNode implements IAdaptable {
 	private void doApplyCanonicalStyle(View target) {
 		ICanonicalHelper.IMPLEMENTATION.setAutoSynchronized(target, isAutoSynchronized());
 	}
-	
+
 	protected void initWithDiagramView(View diagramView) {
 		myDiagramView = diagramView;
-		if (myDiagramView != null){
+		if (myDiagramView != null) {
 			setChecked(true);
 			myIsAutoSynchronized = ICanonicalHelper.IMPLEMENTATION.isAutoSynchronized(myDiagramView);
 		} else {
@@ -269,22 +289,113 @@ public class SyncModelNode implements IAdaptable {
 			setChecked(getContext().isDiagramInitialization());
 		}
 
-		if (isKnownLeaf()){
+		if (isKnownLeaf()) {
 			myIsAutoSynchronized = false;
 		}
 	}
-	
-	private void checkHasDiagramView(){
-		if (getDiagramView() == null){
+
+	private void checkHasDiagramView() {
+		if (getDiagramView() == null) {
 			throw new IllegalStateException("I am not associated with diagram view:" + getSyncModelView()); //$NON-NLS-1$
-		}	
+		}
 	}
 
-	/*package*/ void associateWithDiagramView(View diagramView) {
-		if (myDiagramView != null){
-			throw new IllegalStateException("I have diagram view already: " + myDiagramView + ", cant be associated with: " + diagramView); //$NON-NLS-1$ //$NON-NLS-2$
-		}
+	/*package*/void associateWithDiagramView(View diagramView) {
 		myDiagramView = diagramView;
 	}
 
+	/*package*/void setChosenSyncModelViewType(String type) {
+		if (type == null || mySyncModelView.getType().equals(type)) {
+			return;
+		}
+
+		myParent.setChildTypeHint(this, type);
+	}
+
+	private void forseChildrenRecreation() {
+		myChildren = null;
+		getChildren();
+	}
+
+	private void correctChildrenStatus(NodeInfo nodeInfo) {
+		List<SyncModelNode> newChildren = getChildren();
+		for (SyncModelNode newChild : newChildren) {
+			boolean found = false;
+			for (NodeInfo oldChild : nodeInfo.getChildren()) {
+				if (newChild.getSyncModelView().getElement().equals(oldChild.getSemanticElement())) {
+					newChild.setAutoSynchronized(oldChild.isAutoSynchronized());
+					newChild.setChecked(oldChild.isChecked());
+					newChild.correctChildrenStatus(oldChild);
+					found = true;
+				}
+			}
+			if (!found) {
+				newChild.setAutoSynchronized(false);
+				newChild.setChecked(false);
+			}
+		}
+	}
+
+	private void setChildTypeHint(final SyncModelNode childNode, final String type) {
+		final NodeInfo nodeInfo = collectNodeInfo(childNode);
+		final EObject semanticElement = childNode.getSyncModelView().getElement();
+		ViewUtil.destroy(childNode.getSyncModelView());
+
+		myContext.runCommand(new Runnable() {
+
+			public void run() {
+				try {
+					childNode.mySyncModelView = ViewService.createNode(mySyncModelView, semanticElement, type, getPreferencesHint());
+					childNode.forseChildrenRecreation();
+					childNode.correctChildrenStatus(nodeInfo);
+				} catch (Throwable e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	private NodeInfo collectNodeInfo(SyncModelNode node) {
+		NodeInfo result = new NodeInfo(node.mySyncModelView.getElement(), node.isChecked(), node.isAutoSynchronized(), new LinkedList<NodeInfo>());
+		for (SyncModelNode child : node.getChildren()) {
+			NodeInfo childNodeInfo = collectNodeInfo(child);
+			result.getChildren().add(childNodeInfo);
+		}
+		return result;
+	}
+
+	private static class NodeInfo {
+
+		private final EObject mySemanticElement;
+
+		private final boolean myIsChecked;
+
+		private final boolean myIsAutoSynchronized;
+
+		private final List<NodeInfo> myChildren;
+
+		public NodeInfo(EObject mySemanticElement, boolean isChecked, boolean isAutoSynchronized, List<NodeInfo> myChildren) {
+			super();
+			this.mySemanticElement = mySemanticElement;
+			this.myIsChecked = isChecked;
+			this.myIsAutoSynchronized = isAutoSynchronized;
+			this.myChildren = myChildren;
+		}
+
+		public EObject getSemanticElement() {
+			return mySemanticElement;
+		}
+
+		public boolean isChecked() {
+			return myIsChecked;
+		}
+
+		public boolean isAutoSynchronized() {
+			return myIsAutoSynchronized;
+		}
+
+		public List<NodeInfo> getChildren() {
+			return myChildren;
+		}
+	}
 }
