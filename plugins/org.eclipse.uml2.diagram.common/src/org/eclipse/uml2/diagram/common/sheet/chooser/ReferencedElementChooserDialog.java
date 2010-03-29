@@ -3,10 +3,8 @@ package org.eclipse.uml2.diagram.common.sheet.chooser;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -25,9 +23,9 @@ import org.eclipse.uml2.diagram.common.sheet.chooser.ElementChooserPage.Validato
 public class ReferencedElementChooserDialog extends TrayDialog {
 
 	//#263278 'Unset' doesn't work
-	public final static Object NULL_VALUE = new String(Messages.ReferencedElementChooserDialog_null_eobject); 
-	
-	private final static int UNSET_BUTTON_ID = IDialogConstants.NO_TO_ALL_ID + 1;	
+	public final static Object NULL_VALUE = new String(Messages.ReferencedElementChooserDialog_null_eobject);
+
+	private final static int UNSET_BUTTON_ID = IDialogConstants.NO_TO_ALL_ID + 1;
 
 	public Object myResult;
 
@@ -36,9 +34,9 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 	private AdapterFactoryLabelProvider labelProvider;
 
 	private final EObject mySourceObject;
-	
+
 	protected TabbedElementChooser myChooser;
-	
+
 	protected final TransactionalEditingDomain myEditingDomain;
 
 	public ReferencedElementChooserDialog(Shell shell, IDialogSettings settings, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature) {
@@ -75,7 +73,7 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		shell.setText(NLS.bind(Messages.ReferencedElementChooserDialog_dialog_choose_element, new Object[]{myFeature.getName(), labelProvider.getText(mySourceObject)}));
+		shell.setText(NLS.bind(Messages.ReferencedElementChooserDialog_dialog_choose_element, new Object[] { myFeature.getName(), labelProvider.getText(mySourceObject) }));
 		shell.setImage(labelProvider.getImage(mySourceObject));
 	}
 
@@ -96,9 +94,9 @@ public class ReferencedElementChooserDialog extends TrayDialog {
 	@Override
 	protected void okPressed() {
 		List<?> selection = myChooser.getSelection();
-		if (!selection.isEmpty()) {
-			URI uri = EcoreUtil.getURI((EObject) selection.get(0));
-			myResult = myEditingDomain.getResourceSet().getEObject(uri, true);
+		if (selection.size() == 1) {
+			Object firstSelected = selection.get(0);
+			myResult = myChooser.getValidator().validate(firstSelected);
 		}
 		super.okPressed();
 	}

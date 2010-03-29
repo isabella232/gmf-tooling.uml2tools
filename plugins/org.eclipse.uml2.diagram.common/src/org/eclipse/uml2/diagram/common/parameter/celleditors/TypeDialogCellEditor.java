@@ -31,23 +31,25 @@ public class TypeDialogCellEditor extends ExtendedDialogCellEditor {
 
 	private final EStructuralFeature myFeature;
 
-	private final AdapterFactory myAf;
+	private final AdapterFactory myAdapterFactory;
 
 	private final EObject mySource;
 
 	public TypeDialogCellEditor(Composite composite, AdapterFactory af, EObject sourceObject, EStructuralFeature feature) {
 		super(composite, new AdapterFactoryLabelProvider(af));
-		myAf = af;
+		myAdapterFactory = af;
 		myFeature = feature;
 		mySource = sourceObject;
 	}
 
 	@Override
 	protected Object openDialogBox(Control cellEditorWindow) {
-		ReferencedElementChooserDialog myElementChooserDialog = new ReferencedElementChooserDialogEx(getControl().getShell(), UMLCommonPlugin.getInstance().getDialogSettings(), myAf, mySource,
-				myFeature, (EObject) doGetValue()) {
-
-		};
+		ReferencedElementChooserDialog myElementChooserDialog = //
+		new ReferencedElementChooserDialogEx(//
+				getControl().getShell(), // 
+				UMLCommonPlugin.getInstance().getDialogSettings(), //
+				myAdapterFactory, //
+				mySource, myFeature, (EObject) doGetValue());
 		myElementChooserDialog.open();
 		return myElementChooserDialog.getResult();
 	}
