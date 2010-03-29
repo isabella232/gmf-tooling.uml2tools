@@ -132,7 +132,12 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		}
 		createElementRequest.setTarget(target);
 
-		unwrapStartCommand(request).setTargetParameters(computeParameters(request));
+		U2TCreateParametersImpl computeParameters = computeParameters(request);
+		U2TCreateLinkCommand unwrapStartCommand = unwrapStartCommand(request);
+		 
+		if (null != unwrapStartCommand && computeParameters != null) {
+			unwrapStartCommand.setTargetParameters(computeParameters);
+		}
 
 		Command createElementCommand = targetEP.getCommand(//
 				new EditCommandRequestWrapper(//
