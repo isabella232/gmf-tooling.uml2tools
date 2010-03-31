@@ -35,9 +35,9 @@ import org.eclipse.uml2.uml.Usage;
 
 /**
  * The class repeats the functionality of
- * org.eclipse.uml2.uml.internal.operations.ComponentOperations class
- * for Provided and Required interfaces, providing additional info that required
- * to manage (create/delete/reorient) Provided/Required interface links.
+ * org.eclipse.uml2.uml.internal.operations.ComponentOperations class for
+ * Provided and Required interfaces, providing additional info that required to
+ * manage (create/delete/reorient) Provided/Required interface links.
  **/
 
 public class ComponentOperationsExt {
@@ -48,6 +48,11 @@ public class ComponentOperationsExt {
 
 	protected static List<ProvidedInterfaceLink> realizedInterfaces(Component component, Classifier classifier, boolean resolve) {
 		List<ProvidedInterfaceLink> realizedInterfaces = new LinkedList<ProvidedInterfaceLink>();
+
+		if (classifier instanceof Interface) {
+			realizedInterfaces.add(new ProvidedInterfaceLink(null, classifier, (Interface) classifier));
+		}
+
 		for (Dependency clientDependency : classifier.getClientDependencies()) {
 
 			if (clientDependency instanceof Realization) {
@@ -111,18 +116,12 @@ public class ComponentOperationsExt {
 		return requireds;
 	}
 
-
-	protected static EList<Interface> realizedInterfaces(Component component,
-			Classifier classifier, boolean resolve,
-			EList<Interface> realizedInterfaces) {
+	protected static EList<Interface> realizedInterfaces(Component component, Classifier classifier, boolean resolve, EList<Interface> realizedInterfaces) {
 
 		for (Dependency clientDependency : classifier.getClientDependencies()) {
 
 			if (clientDependency instanceof Realization) {
-				Iterator<NamedElement> suppliers = resolve
-					? clientDependency.getSuppliers().iterator()
-					: ((InternalEList<NamedElement>) clientDependency
-						.getSuppliers()).basicIterator();
+				Iterator<NamedElement> suppliers = resolve ? clientDependency.getSuppliers().iterator() : ((InternalEList<NamedElement>) clientDependency.getSuppliers()).basicIterator();
 
 				while (suppliers.hasNext()) {
 					NamedElement supplier = suppliers.next();
