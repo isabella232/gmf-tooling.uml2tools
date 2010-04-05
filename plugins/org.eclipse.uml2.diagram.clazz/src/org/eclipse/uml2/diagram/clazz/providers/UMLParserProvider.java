@@ -119,7 +119,6 @@ import org.eclipse.uml2.diagram.common.parser.association.name.AssociationNameTo
 import org.eclipse.uml2.diagram.common.parser.imports.ElementImportParser;
 import org.eclipse.uml2.diagram.common.parser.instance.InstanceSpecificationSemanticParser;
 import org.eclipse.uml2.diagram.common.parser.operation.OperationSemanticParser;
-import org.eclipse.uml2.diagram.common.parser.port.PortParser;
 import org.eclipse.uml2.diagram.common.parser.port.PortToString;
 import org.eclipse.uml2.diagram.common.parser.property.PropertySemanticParser;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
@@ -145,7 +144,10 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 public class UMLParserProvider extends AbstractProvider implements IParserProvider {
 
-	private static final ILabelProvider myLabelProvider = new LabelProvider() {
+	/**
+	 * @NOT-GENERATED
+	 */
+	private static final ILabelProvider ourLabelProvider = new LabelProvider() {
 
 		@Override
 		public Image getImage(Object element) {
@@ -1865,7 +1867,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
-		return new PropertySemanticParser(lookupSuite, myLabelProvider);
+		return new PropertySemanticParser(lookupSuite, ourLabelProvider);
 	}
 
 	/**
@@ -1917,7 +1919,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
-		return new OperationSemanticParser(lookupSuite, myLabelProvider);
+		return new OperationSemanticParser(lookupSuite, ourLabelProvider);
 	}
 
 	/**
@@ -1927,7 +1929,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
-		return new SemanticParserAdapter(new PortParser(lookupSuite), new BasicApplyStrategy(), new PortToString());
+		return new PropertySemanticParser(lookupSuite, ourLabelProvider, new BasicApplyStrategy(), new PortToString());
 	}
 
 	/**
@@ -1966,14 +1968,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
-		return new InstanceSpecificationSemanticParser(lookupSuite, myLabelProvider);
+		return new InstanceSpecificationSemanticParser(lookupSuite, ourLabelProvider);
 	}
 
 	/**
 	 * @generated NOT
 	 */
 	protected IParser createSlot_3017Parser() {
-		return new SlotSemanticParser(new SlotLookupSuite(), myLabelProvider);
+		return new SlotSemanticParser(new SlotLookupSuite(), ourLabelProvider);
 	}
 
 	/**
