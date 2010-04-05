@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.component.edit.parts;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -20,9 +19,9 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
@@ -53,9 +52,9 @@ import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.component.providers.UMLParserProvider;
 
 /**
- * @generated
+ * @generated NOT
  */
-public class PortName2EditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class PortName2EditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart, IPrimaryEditPart {
 
 	/**
 	 * @generated

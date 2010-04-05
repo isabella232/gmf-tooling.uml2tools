@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserService;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
@@ -53,9 +54,9 @@ import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.csd.providers.UMLParserProvider;
 
 /**
- * @generated
+ * @generated NOT
  */
-public class PortName3EditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
+public class PortName3EditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart, IPrimaryEditPart {
 
 	/**
 	 * @generated
