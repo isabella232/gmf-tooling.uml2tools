@@ -23,9 +23,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * The class repeats the functionality of
- * org.eclipse.uml2.uml.internal.operations.PortOperations class for
- * Provided and Required interfaces, providing additional info that required to
- * manage (create/delete/reorient) Provided/Required Interface links.
+ * org.eclipse.uml2.uml.internal.operations.PortOperations class for Provided
+ * and Required interfaces, providing additional info that required to manage
+ * (create/delete/reorient) Provided/Required Interface links.
  * */
 
 public class PortOperationsExt {
@@ -43,9 +43,6 @@ public class PortOperationsExt {
 		Set<ProvidedInterfaceLink> provideds = new HashSet<ProvidedInterfaceLink>();
 		Type type = (Type) port.eGet(UMLPackage.Literals.TYPED_ELEMENT__TYPE, false);
 
-		// if (type instanceof Interface) {
-		// provideds.add((Interface) type);
-		// } else
 		if (type instanceof Classifier) {
 			Classifier classifier = (Classifier) port.getType();
 			provideds.addAll(ComponentOperationsExt.realizedInterfaces(null, classifier, false));

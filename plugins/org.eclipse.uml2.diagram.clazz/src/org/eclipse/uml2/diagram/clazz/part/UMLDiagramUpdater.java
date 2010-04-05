@@ -18,12 +18,13 @@ import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
+import org.eclipse.uml2.diagram.common.links.PortOperationsExt;
+import org.eclipse.uml2.diagram.common.links.ProvidedInterfaceLink;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.AssociationClass;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DataType;
@@ -32,15 +33,12 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
-import org.eclipse.uml2.uml.Expression;
 import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.GeneralizationSet;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.InstanceValue;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
-import org.eclipse.uml2.uml.LiteralInteger;
-import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Package;
@@ -4096,8 +4094,9 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * We wants to create links for any member ends, not only owned ends. 
-	 * Unfortunately, its not possible to set not containment feature in the GMF map
+	 * We wants to create links for any member ends, not only owned ends.
+	 * Unfortunately, its not possible to set not containment feature in the GMF
+	 * map
 	 * 
 	 * @generated NOT
 	 */
@@ -4302,18 +4301,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * This link is connector between association class' rhomb and rectangle parts
-	 * CollaborationUse's were selected in the gmfmap instead of not allowed "null" features, 
-	 * because they are completely unrelated and can not interfere with link-related editpolicies. 
+	 * This link is connector between association class' rhomb and rectangle
+	 * parts CollaborationUse's were selected in the gmfmap instead of not
+	 * allowed "null" features, because they are completely unrelated and can
+	 * not interfere with link-related editpolicies.
 	 * 
-	 * In the ideal world we would prefere to specify either custom relationship between 
-	 * AssociationClass and source/target for this link or don't specify these features at all.
+	 * In the ideal world we would prefere to specify either custom relationship
+	 * between AssociationClass and source/target for this link or don't specify
+	 * these features at all.
 	 * 
-	 * In this method we are going to create link descriptor with identical semantic 
-	 * elements (association class itself for source, target and link itself). 
-	 * The selection of the node's for source/target is made in the custom code of the 
-	 * PackageCanonicalEditPolicy#getSourceEditPart(...)/PackageCanonicalEditPolicy#getTargetEditPart(...) 
-	 * methods.
+	 * In this method we are going to create link descriptor with identical
+	 * semantic elements (association class itself for source, target and link
+	 * itself). The selection of the node's for source/target is made in the
+	 * custom code of the PackageCanonicalEditPolicy#getSourceEditPart(...)/
+	 * PackageCanonicalEditPolicy#getTargetEditPart(...) methods.
 	 * 
 	 * @generated NOT
 	 */
@@ -4990,9 +4991,33 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static Collection getOutgoingFeatureModelFacetLinks_Port_Provided_4017(Port source) {
+		Collection result = new LinkedList();
+		Collection<UMLLinkDescriptor> generatedLinks = getOutgoingFeatureModelFacetLinks_Port_Provided_4017Gen(source);
+		result.addAll(generatedLinks);
+
+		Collection<ProvidedInterfaceLink> provideds = PortOperationsExt.getProvideds(source);
+		for (ProvidedInterfaceLink provided : provideds) {
+			boolean alreadyAdded = false;
+			for (UMLLinkDescriptor linkDescriptor : generatedLinks) {
+				if (linkDescriptor.getSource() == provided.getSource() && linkDescriptor.getDestination() == provided.getTarget()) {
+					alreadyAdded = true;
+					break;
+				}
+			}
+			if (!alreadyAdded) {
+				result.add(new UMLLinkDescriptor(provided.getSource(), provided.getTarget(), UMLElementTypes.PortProvided_4017, PortProvidedEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection getOutgoingFeatureModelFacetLinks_Port_Provided_4017Gen(Port source) {
 		Collection result = new LinkedList();
 		for (Iterator destinations = source.getProvideds().iterator(); destinations.hasNext();) {
 			Interface destination = (Interface) destinations.next();

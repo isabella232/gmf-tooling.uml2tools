@@ -17,6 +17,8 @@ import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
+import org.eclipse.uml2.diagram.common.links.PortOperationsExt;
+import org.eclipse.uml2.diagram.common.links.ProvidedInterfaceLink;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
@@ -1677,7 +1679,7 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated NOT 
+	 * @generated NOT
 	 */
 	private static Collection getContainedTypeModelFacetLinks_Connector_4005(StructuredClassifier container) {
 		Collection result = new LinkedList();
@@ -2163,9 +2165,33 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static Collection getOutgoingFeatureModelFacetLinks_Port_Provided_4010(Port source) {
+		Collection result = new LinkedList();
+		Collection<UMLLinkDescriptor> generatedLinks = getOutgoingFeatureModelFacetLinks_Port_Provided_4010Gen(source);
+		result.addAll(generatedLinks);
+
+		Collection<ProvidedInterfaceLink> provideds = PortOperationsExt.getProvideds(source);
+		for (ProvidedInterfaceLink provided : provideds) {
+			boolean alreadyAdded = false;
+			for (UMLLinkDescriptor linkDescriptor : generatedLinks) {
+				if (linkDescriptor.getSource() == provided.getSource() && linkDescriptor.getDestination() == provided.getTarget()) {
+					alreadyAdded = true;
+					break;
+				}
+			}
+			if (!alreadyAdded) {
+				result.add(new UMLLinkDescriptor(provided.getSource(), provided.getTarget(), UMLElementTypes.PortProvided_4010, PortProvidedEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection getOutgoingFeatureModelFacetLinks_Port_Provided_4010Gen(Port source) {
 		Collection result = new LinkedList();
 		for (Iterator destinations = source.getProvideds().iterator(); destinations.hasNext();) {
 			Interface destination = (Interface) destinations.next();

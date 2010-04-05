@@ -1,6 +1,5 @@
 package org.eclipse.uml2.diagram.component.part;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -19,6 +18,8 @@ import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
+import org.eclipse.uml2.diagram.common.links.PortOperationsExt;
+import org.eclipse.uml2.diagram.common.links.ProvidedInterfaceLink;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactContents2EditPart;
@@ -2209,9 +2210,33 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static Collection getOutgoingFeatureModelFacetLinks_Port_Provided_4006(Port source) {
+		Collection result = new LinkedList();
+		Collection<UMLLinkDescriptor> generatedLinks = getOutgoingFeatureModelFacetLinks_Port_Provided_4006Gen(source);
+		result.addAll(generatedLinks);
+
+		Collection<ProvidedInterfaceLink> provideds = PortOperationsExt.getProvideds(source);
+		for (ProvidedInterfaceLink provided : provideds) {
+			boolean alreadyAdded = false;
+			for (UMLLinkDescriptor linkDescriptor : generatedLinks) {
+				if (linkDescriptor.getSource() == provided.getSource() && linkDescriptor.getDestination() == provided.getTarget()) {
+					alreadyAdded = true;
+					break;
+				}
+			}
+			if (!alreadyAdded) {
+				result.add(new UMLLinkDescriptor(provided.getSource(), provided.getTarget(), UMLElementTypes.PortProvided_4006, PortProvidedEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection getOutgoingFeatureModelFacetLinks_Port_Provided_4006Gen(Port source) {
 		Collection result = new LinkedList();
 		for (Iterator destinations = source.getProvideds().iterator(); destinations.hasNext();) {
 			Interface destination = (Interface) destinations.next();
