@@ -2182,7 +2182,7 @@ public class UMLDiagramUpdater {
 				}
 			}
 			if (!alreadyAdded) {
-				result.add(new UMLLinkDescriptor(provided.getSource(), provided.getTarget(), UMLElementTypes.PortProvided_4010, PortProvidedEditPart.VISUAL_ID));
+				result.add(new UMLLinkDescriptor(source, provided.getTarget(), UMLElementTypes.PortProvided_4010, PortProvidedEditPart.VISUAL_ID));
 			}
 		}
 		return result;
