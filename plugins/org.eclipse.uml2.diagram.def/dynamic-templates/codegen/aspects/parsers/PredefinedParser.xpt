@@ -10,36 +10,36 @@
  *    Michael Golubev (Borland) - [254190] Localization - ICU4J
  */
 
-«IMPORT "http://www.eclipse.org/gmf/2009/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/GenModel"»
-«IMPORT "http://www.eclipse.org/emf/2002/Ecore"»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«EXTENSION impl::parsers::i18n»
+Â«EXTENSION impl::parsers::i18nÂ»
 
-«AROUND parsers::PredefinedParser::fields FOR gmfgen::PredefinedParser-»
-«IF viewMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT or viewMethod = gmfgen::LabelTextAccessMethod::PRINTF-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND parsers::PredefinedParser::fields FOR gmfgen::PredefinedParser-Â»
+Â«IF viewMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT or viewMethod = gmfgen::LabelTextAccessMethod::PRINTF-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private String defaultPattern;
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private String defaultEditablePattern;
-«ENDIF-»
-«IF viewMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«ENDIF-Â»
+Â«IF viewMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMATÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private com.ibm.icu.text.MessageFormat viewProcessor;
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private com.ibm.icu.text.MessageFormat editorProcessor;
-«ENDIF-»
-«IF editMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«ENDIF-Â»
+Â«IF editMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMATÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private com.ibm.icu.text.MessageFormat editProcessor;
-«ENDIF-»
-«ENDAROUND»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND parsers::PredefinedParser::aux_methods FOR gmfgen::PredefinedParser-»
-«IF viewMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND parsers::PredefinedParser::aux_methods FOR gmfgen::PredefinedParser-Â»
+Â«IF viewMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected String getDefaultPattern() {
 		if (defaultPattern == null) {
 			StringBuffer sb = new StringBuffer();
@@ -56,19 +56,19 @@
 		return defaultPattern;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void setViewPattern(String viewPattern) {
 		super.setViewPattern(viewPattern);
 		viewProcessor = null;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void setEditorPattern(String editorPattern) {
 		super.setEditorPattern(editorPattern);
 		editorProcessor = null;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected com.ibm.icu.text.MessageFormat getViewProcessor() {
 		if (viewProcessor == null) {
 			viewProcessor = new com.ibm.icu.text.MessageFormat(getViewPattern() == null ? getDefaultPattern() : getViewPattern());
@@ -76,15 +76,15 @@
 		return viewProcessor;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected com.ibm.icu.text.MessageFormat getEditorProcessor() {
 		if (editorProcessor == null) {
 			editorProcessor = new com.ibm.icu.text.MessageFormat(getEditorPattern() == null ? getDefaultEditablePattern() : getEditorPattern());
 		}
 		return editorProcessor;
 	}
-«ELSEIF viewMethod = gmfgen::LabelTextAccessMethod::PRINTF-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«ELSEIF viewMethod = gmfgen::LabelTextAccessMethod::PRINTF-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected String getDefaultPattern() {
 		if (defaultPattern == null) {
 			StringBuffer sb = new StringBuffer();
@@ -101,9 +101,9 @@
 		}
 		return defaultPattern;
 	}
-«ENDIF-»
-«IF viewMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT or editMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«ENDIF-Â»
+Â«IF viewMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT or editMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected String getDefaultEditablePattern() {
 		if (defaultEditablePattern == null) {
 			StringBuffer sb = new StringBuffer();
@@ -119,9 +119,9 @@
 		}
 		return defaultEditablePattern;
 	}
-«ENDIF-»
-«IF viewMethod = gmfgen::LabelTextAccessMethod::PRINTF or editMethod = gmfgen::LabelTextAccessMethod::PRINTF-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«ENDIF-Â»
+Â«IF viewMethod = gmfgen::LabelTextAccessMethod::PRINTF or editMethod = gmfgen::LabelTextAccessMethod::PRINTF-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected String getDefaultEditablePattern() {
 		if (defaultEditablePattern == null) {
 			StringBuffer sb = new StringBuffer();
@@ -138,26 +138,26 @@
 		}
 		return defaultEditablePattern;
 	}
-«ENDIF-»
-«IF editMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«ENDIF-Â»
+Â«IF editMethod = gmfgen::LabelTextAccessMethod::MESSAGE_FORMAT-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void setEditPattern(String editPattern) {
 		super.setEditPattern(editPattern);
 		editProcessor = null;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected com.ibm.icu.text.MessageFormat getEditProcessor() {
 		if (editProcessor == null) {
 			editProcessor = new com.ibm.icu.text.MessageFormat(getEditPattern() == null ? getDefaultEditablePattern() : getEditPattern());
 		}
 		return editProcessor;
 	}
-«ELSEIF editMethod = gmfgen::LabelTextAccessMethod::REGEXP-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«ELSEIF editMethod = gmfgen::LabelTextAccessMethod::REGEXP-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public String getEditPattern() {
 		String pattern = super.getEditPattern();
-		return pattern != null ? pattern : " ";«EXPAND xpt::Common::nonNLS»
+		return pattern != null ? pattern : " ";Â«EXPAND xpt::Common::nonNLSÂ»
 	}
-«ENDIF-»
-«ENDAROUND»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
