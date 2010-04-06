@@ -37,28 +37,34 @@ helper isStereotypeLabel2(genCommon : gmf::GenCommonBase) : Boolean {
 }
 
 helper isStereotypeAndNameGroupStereotype(genCommon : gmf::GenCommonBase) : Boolean {
-	let attribute = getStereotypeSupportAttribute(genCommon) in 
-	return null <> attribute and (attribute.role = u2t::StereotypeSupportRole::STEREOTYPE_LABEL or attribute.role = u2t::StereotypeSupportRole::DIAGRAM_LABEL)
+	return 
+		let attribute = getStereotypeSupportAttribute(genCommon) in 
+		null <> attribute and 
+		(attribute.role = u2t::StereotypeSupportRole::STEREOTYPE_LABEL or attribute.role = u2t::StereotypeSupportRole::DIAGRAM_LABEL)
 }
 	
 helper isStereotypeAndNameGroupName(genCommon : gmf::GenCommonBase) : Boolean {
-	let attribute = getStereotypeSupportAttribute(genCommon) in 
-	return null <> attribute and attribute.role = u2t::StereotypeSupportRole::NAME_LABEL
+	return 
+		let attribute = getStereotypeSupportAttribute(genCommon) in 
+		null <> attribute and attribute.role = u2t::StereotypeSupportRole::NAME_LABEL
 }
 
 helper isStereotypeAndNameGroupContainer(genCommon : gmf::GenCommonBase) : Boolean {
-	let attribute = getStereotypeSupportAttribute(genCommon) in 
-	return null <> attribute and attribute.role = u2t::StereotypeSupportRole::CONTAINER
+	return 
+		let attribute = getStereotypeSupportAttribute(genCommon) in 
+		null <> attribute and attribute.role = u2t::StereotypeSupportRole::CONTAINER
 }
 
 helper isCombinedNameAndStereotypeLabel(genCommon : gmf::GenCommonBase) : Boolean {
-	let attribute = getStereotypeSupportAttribute(genCommon) in 
-	return null <> attribute and attribute.role = u2t::StereotypeSupportRole::COMBINED_LABEL
+	return 
+		let attribute = getStereotypeSupportAttribute(genCommon) in 
+		null <> attribute and attribute.role = u2t::StereotypeSupportRole::COMBINED_LABEL
 }
 
 helper isDiagramStereotypeLabel(genCommon : gmf::GenCommonBase) : Boolean {
-	let attribute = getStereotypeSupportAttribute(genCommon) in 
-	return null <> attribute and attribute.role = u2t::StereotypeSupportRole::DIAGRAM_LABEL
+	return 
+		let attribute = getStereotypeSupportAttribute(genCommon) in 
+		null <> attribute and attribute.role = u2t::StereotypeSupportRole::DIAGRAM_LABEL
 }
 
 helper getStereotypeSupportAttribute(genCommon : gmf::GenCommonBase) : u2t::StereotypeSupportAttribute {
@@ -66,18 +72,19 @@ helper getStereotypeSupportAttribute(genCommon : gmf::GenCommonBase) : u2t::Ster
 }
 
 helper findStereotypeAndNameGroupContainer(genCommon : gmf::GenCommonBase) : gmf::GenNode {
-	let attribute = getStereotypeSupportAttribute(genCommon) in
-	if attribute = null then null 
-	else let role = attribute.role in  
-		if genCommon.oclIsKindOf(gmf::GenNode) and role = u2t::StereotypeSupportRole::CONTAINER 
-			then genCommon.oclAsType(gmf::GenNode)
-			else 
-				if genCommon.oclIsKindOf(gmf::GenNodeLabel) and (role = u2t::StereotypeSupportRole::NAME_LABEL or role = u2t::StereotypeSupportRole::STEREOTYPE_LABEL) 
-					then genCommon.oclAsType(gmf::GenNodeLabel).node
-					else null 
-				endif 
-		endif 	
-	endif
+	return 
+		let attribute = getStereotypeSupportAttribute(genCommon) in
+		if attribute = null then null 
+		else let role = attribute.role in  
+			if genCommon.oclIsKindOf(gmf::GenNode) and role = u2t::StereotypeSupportRole::CONTAINER 
+				then genCommon.oclAsType(gmf::GenNode)
+				else 
+					if genCommon.oclIsKindOf(gmf::GenNodeLabel) and (role = u2t::StereotypeSupportRole::NAME_LABEL or role = u2t::StereotypeSupportRole::STEREOTYPE_LABEL) 
+						then genCommon.oclAsType(gmf::GenNodeLabel).node
+						else null 
+					endif 
+			endif 	
+		endif
 }
 
 -- helper debug_findStereotypeAndNameGroupContainer(genCommon : gmf::GenCommonBase) : String {
@@ -96,17 +103,19 @@ helper findStereotypeAndNameGroupContainer(genCommon : gmf::GenCommonBase) : gmf
 -- }
 
 helper findStereotypeAndNameGroupName(genCommon : gmf::GenCommonBase) : gmf::GenNodeLabel {
-	let container = findStereotypeAndNameGroupContainer(genCommon) in 
-	if container <> null 
-		then container.labels->select(next | isStereotypeAndNameGroupName(next))->first()
-		else null
-	endif
+	return 
+		let container = findStereotypeAndNameGroupContainer(genCommon) in 
+		if container <> null 
+			then container.labels->select(next | isStereotypeAndNameGroupName(next))->first()
+			else null
+		endif
 }
 
 helper findStereotypeAndNameGroupStereotype(genCommon : gmf::GenCommonBase) : gmf::GenNodeLabel {
-	let container = findStereotypeAndNameGroupContainer(genCommon) in 
-	if container <> null 
-		then container.labels->select(next | isStereotypeAndNameGroupStereotype(next))->first()
-		else null
-	endif
+	return 
+		let container = findStereotypeAndNameGroupContainer(genCommon) in 
+		if container <> null 
+			then container.labels->select(next | isStereotypeAndNameGroupStereotype(next))->first()
+			else null
+		endif
 }
