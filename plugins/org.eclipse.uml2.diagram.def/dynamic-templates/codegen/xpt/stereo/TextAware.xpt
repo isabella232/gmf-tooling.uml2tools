@@ -13,6 +13,7 @@
 
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
 «EXTENSION xpt::rotatedlabel::RotatedLabelsSupport»
 «EXTENSION xpt::stereo::StereotypeIconSupport»
@@ -45,7 +46,7 @@
 
 «DEFINE performDirectEditRequest_chooseLabelForNode FOR gmfgen::GenNode-»
 «LET findStereotypeAndNameGroupStereotype(self) AS stereoLabel-»
-«IF null != stereoLabel-»
+«IF null <> stereoLabel-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected void performDirectEditRequest(final org.eclipse.gef.Request request) {
 		org.eclipse.gef.EditPart editPart = this;
