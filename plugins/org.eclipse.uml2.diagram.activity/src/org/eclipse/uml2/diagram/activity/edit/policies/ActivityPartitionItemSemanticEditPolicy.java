@@ -248,7 +248,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -263,7 +265,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -325,7 +329,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -340,7 +346,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -624,7 +632,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -639,7 +649,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -847,7 +859,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -862,7 +876,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -924,7 +940,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -939,7 +957,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1001,7 +1021,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1016,7 +1038,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1078,7 +1102,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1093,7 +1119,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1155,7 +1183,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1170,7 +1200,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1232,7 +1264,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1247,7 +1281,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1309,7 +1345,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1324,7 +1362,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1386,7 +1426,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1401,7 +1443,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1463,7 +1507,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1478,7 +1524,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1540,7 +1588,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});
@@ -1555,7 +1605,9 @@ public class ActivityPartitionItemSemanticEditPolicy extends UMLBaseItemSemantic
 								EObject referencedObject = getReferencedObject();
 								Resource resource = referencedObject.eResource();
 								CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-								resource.getContents().add(referencedObject);
+								if (resource != null) {
+									resource.getContents().add(referencedObject);
+								}
 								return result;
 							}
 						});

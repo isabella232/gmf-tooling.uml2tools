@@ -119,7 +119,9 @@ public class CreateObjectActionItemSemanticEditPolicy extends UMLBaseItemSemanti
 						EObject referencedObject = getReferencedObject();
 						Resource resource = referencedObject.eResource();
 						CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-						resource.getContents().add(referencedObject);
+						if (resource != null) {
+							resource.getContents().add(referencedObject);
+						}
 						return result;
 					}
 				});
@@ -134,7 +136,9 @@ public class CreateObjectActionItemSemanticEditPolicy extends UMLBaseItemSemanti
 						EObject referencedObject = getReferencedObject();
 						Resource resource = referencedObject.eResource();
 						CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-						resource.getContents().add(referencedObject);
+						if (resource != null) {
+							resource.getContents().add(referencedObject);
+						}
 						return result;
 					}
 				});
