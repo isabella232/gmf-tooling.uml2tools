@@ -225,7 +225,9 @@ public class ArtifactItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolic
 										EObject referencedObject = getReferencedObject();
 										Resource resource = referencedObject.eResource();
 										CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-										resource.getContents().add(referencedObject);
+										if (resource != null) {
+											resource.getContents().add(referencedObject);
+										}
 										return result;
 									}
 								});

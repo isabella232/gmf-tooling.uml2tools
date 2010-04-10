@@ -637,7 +637,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @NOT-GENERATED
 	 */
-	private IParser createPropertyParser() { 
+	private IParser createPropertyParser() {
 		LookupSuiteImpl lookupSuite = new LookupSuiteImpl();
 		lookupSuite.addLookup(Type.class, TYPE_LOOKUP);
 
@@ -645,9 +645,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 			@Override
 			public Image getImage(Object element) {
-				if (element instanceof EObject) { 
+				if (element instanceof EObject) {
 					return UMLElementTypes.getImage(((EObject) element).eClass());
-				} else { 
+				} else {
 					return null;
 				}
 			}

@@ -89,7 +89,9 @@ public class DeploymentSpecification2ItemSemanticEditPolicy extends UMLBaseItemS
 						EObject referencedObject = getReferencedObject();
 						Resource resource = referencedObject.eResource();
 						CommandResult result = super.doExecuteWithResult(progressMonitor, info);
-						resource.getContents().add(referencedObject);
+						if (resource != null) {
+							resource.getContents().add(referencedObject);
+						}
 						return result;
 					}
 				});

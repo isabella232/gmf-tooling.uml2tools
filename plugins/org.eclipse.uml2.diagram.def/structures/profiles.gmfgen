@@ -13,7 +13,6 @@
       visualID="1000"
       editPartClassName="ProfileEditPart"
       itemSemanticEditPolicyClassName="ProfileItemSemanticEditPolicy"
-      notationViewFactoryClassName="ProfileViewFactory"
       canonicalEditPolicyClassName="ProfileCanonicalEditPolicy"
       iconProviderPriority="Low"
       creationWizardCategoryID="org.eclipse.uml2.diagram.New"
@@ -1759,11 +1758,11 @@
         uses="//@diagram/@childNodes.2/@labelModelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.5/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.1/@labelModelFacet"
+        uses="//@diagram/@childNodes.1/@labelModelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser.ConstraintParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet"
+        uses="//@diagram/@topLevelNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ProfileAppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
