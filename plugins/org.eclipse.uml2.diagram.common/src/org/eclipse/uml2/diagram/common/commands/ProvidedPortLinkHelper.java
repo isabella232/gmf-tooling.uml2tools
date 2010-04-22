@@ -2,8 +2,10 @@ package org.eclipse.uml2.diagram.common.commands;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.common.links.PortOperationsExt;
 import org.eclipse.uml2.diagram.common.links.ProvidedInterfaceLink;
+import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
@@ -18,10 +20,13 @@ public class ProvidedPortLinkHelper {
 	private final EObject mySource;
 
 	private final EObject myTarget;
-
-	public ProvidedPortLinkHelper(AdapterFactoryEditingDomain editingDomain, EObject source, EObject target) {
+	
+	private final IPreferenceStore myStore;
+ 
+	public ProvidedPortLinkHelper(AdapterFactoryEditingDomain editingDomain, EObject source, EObject target, IPreferenceStore store) {
 		mySource = source;
 		myTarget = target;
+		myStore = store;
 	}
 
 	public void create() {
@@ -45,6 +50,9 @@ public class ProvidedPortLinkHelper {
 	}
 	
 	public boolean canCreate() {
+		if(myStore.getBoolean(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_PROVIDED_INTERFACE_LINKS)){
+			return false;
+		}
 		return true;
 	}
 
@@ -115,10 +123,11 @@ public class ProvidedPortLinkHelper {
 		if (realizationContainer == null) {
 			return null;
 		}
-		Realization realization = UMLFactory.eINSTANCE.createInterfaceRealization();
+		InterfaceRealization realization = UMLFactory.eINSTANCE.createInterfaceRealization();
 		realizationContainer.getPackagedElements().add(realization);
 		realization.getClients().add(portType);
 		realization.getSuppliers().add(targetInterface);
+		realization.setContract(targetInterface);
 		return realization;
 	}
 

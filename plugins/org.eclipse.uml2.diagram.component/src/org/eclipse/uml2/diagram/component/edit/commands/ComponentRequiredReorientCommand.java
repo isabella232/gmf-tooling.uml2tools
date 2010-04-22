@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Interface;
@@ -51,10 +52,10 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof Component) {
+		if (false == referenceOwner instanceof Classifier) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -80,16 +81,10 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 	 * @generated NOT
 	 */
 	protected boolean canReorientSource() {
-		boolean result = canReorientSourceGen();
-		if (result) {
-			// in addition to the basic checks, we can not handle the deep
-			// usages derived from realizing classifiers, but we handle the
-			// usages of the component itself.
-			// Other required's links will be shown on diagram (say, after
-			// initialization) but won't be reroutable
-			result = findUsage(getOldSource(), getOldTarget()) != null;
+		if (!(oldEnd instanceof Interface && newEnd instanceof Classifier)) {
+			return false;
 		}
-		return result;
+		return true;
 	}
 
 	/**
@@ -106,16 +101,10 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 	 * @generated NOT
 	 */
 	protected boolean canReorientTarget() {
-		boolean result = canReorientTargetGen();
-		if (result) {
-			// in addition to the basic checks, we can not handle the deep
-			// usages derived from realizing classifiers, but we handle the
-			// usages of the component itself.
-			// Other required's links will be shown on diagram (say, after
-			// initialization) but won't be reroutable
-			result = findUsage(getOldSource(), getOldTarget()) != null;
+		if (!(oldEnd instanceof Interface && newEnd instanceof Interface)) {
+			return false;
 		}
-		return result;
+		return true;
 	}
 
 	/**
@@ -138,10 +127,10 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 	 * @generated NOT
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		Usage usage = findUsage(getOldSource(), getOldTarget());
+		Usage usage = findUsage(getGeneralizedOldSource(), getOldTarget());
 		if (usage != null) {
-			usage.getClients().remove(getOldSource());
-			usage.getClients().add(getNewSource());
+			usage.getClients().remove(getGeneralizedOldSource());
+			usage.getClients().add(getGeneralizedNewSource());
 		}
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
@@ -150,7 +139,7 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 	 * @generated NOT
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		Component component = getOldSource();
+		Classifier component = getGeneralizedOldSource();
 		Usage usage = findUsage(component, getOldTarget());
 		if (usage != null) {
 			usage.getSuppliers().remove(getOldTarget());
@@ -167,10 +156,30 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 	}
 
 	/**
+	 * @NOT generated
+	 */
+	protected Classifier getGeneralizedOldSource() {
+		// this method should be used when trying to get old source.
+		// Generated method causes ClassCastException(in reality source is any classifier)
+		//and is left only so preserve generated code compilable
+		return (Classifier) referenceOwner;
+	}
+
+	/**
 	 * @generated
 	 */
 	protected Component getNewSource() {
 		return (Component) newEnd;
+	}
+
+	/**
+	 * @NOT generated
+	 */
+	protected Classifier getGeneralizedNewSource() {
+		// this method should be used when trying to get new source.
+		// Generated method causes ClassCastException(in reality source is any classifier)
+		//and is left only so preserve generated code compilable
+		return (Classifier) newEnd;
 	}
 
 	/**
@@ -187,7 +196,7 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 		return (Interface) newEnd;
 	}
 
-	private Usage findUsage(Component component, Interface required) {
+	private Usage findUsage(Classifier component, Interface required) {
 		for (Dependency next : component.getClientDependencies()) {
 			if (next instanceof Usage && next.getSuppliers().contains(required)) {
 				return (Usage) next;

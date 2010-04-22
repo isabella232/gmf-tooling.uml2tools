@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.common.commands.RequiredPortLinkHelper;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
 
@@ -53,7 +54,7 @@ public class PortRequiredReorientCommand extends EditElementCommand {
 		referenceOwner = request.getReferenceOwner();
 		oldEnd = request.getOldRelationshipEnd();
 		newEnd = request.getNewRelationshipEnd();
-		myLinkHelper = new RequiredPortLinkHelper((AdapterFactoryEditingDomain) getEditingDomain(), referenceOwner, oldEnd);
+		myLinkHelper = new RequiredPortLinkHelper((AdapterFactoryEditingDomain) getEditingDomain(), referenceOwner, oldEnd, UMLDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 
 	/**

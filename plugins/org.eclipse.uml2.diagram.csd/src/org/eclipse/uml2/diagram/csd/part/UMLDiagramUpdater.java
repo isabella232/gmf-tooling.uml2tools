@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -813,9 +814,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getInterface_2009ContainedLinks(View view) {
+		Interface modelElement = (Interface) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getInterface_2009ContainedLinksGen(view));
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4007_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterface_2009ContainedLinksGen(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -850,9 +862,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getInterface_2014ContainedLinks(View view) {
+		Interface modelElement = (Interface) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4007_ForAllClassifiers(modelElement));
+		result.addAll(getInterface_2014ContainedLinksGen(view));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterface_2014ContainedLinksGen(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -1731,11 +1754,19 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4007(BehavioredClassifier container) {
+		return getContainedTypeModelFacetLinks_InterfaceRealization_4007_ForAllClassifiers(container);
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4007_ForAllClassifiers(Classifier container) {
 		Collection result = new LinkedList();
-		for (Iterator links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
+
+		for (Iterator links = container.getRelationships(UMLPackage.eINSTANCE.getInterfaceRealization()).iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof InterfaceRealization) {
 				continue;
@@ -1744,9 +1775,13 @@ public class UMLDiagramUpdater {
 			if (InterfaceRealizationEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			Interface dst = link.getContract();
-			BehavioredClassifier src = link.getImplementingClassifier();
-			result.add(new UMLLinkDescriptor(src, dst, link, UMLElementTypes.InterfaceRealization_4007, InterfaceRealizationEditPart.VISUAL_ID));
+			EList<NamedElement> targets = link.getSuppliers();
+			if (targets.size() != 1) {
+				continue;
+			}
+			if (link.getClients().contains(container)) {
+				result.add(new UMLLinkDescriptor(container, targets.get(0), link, UMLElementTypes.InterfaceRealization_4007, InterfaceRealizationEditPart.VISUAL_ID));
+			}
 		}
 		return result;
 	}
@@ -2176,7 +2211,7 @@ public class UMLDiagramUpdater {
 		for (ProvidedInterfaceLink provided : provideds) {
 			boolean alreadyAdded = false;
 			for (UMLLinkDescriptor linkDescriptor : generatedLinks) {
-				if (linkDescriptor.getSource() == provided.getSource() && linkDescriptor.getDestination() == provided.getTarget()) {
+				if (linkDescriptor.getDestination() == provided.getTarget()) {
 					alreadyAdded = true;
 					break;
 				}

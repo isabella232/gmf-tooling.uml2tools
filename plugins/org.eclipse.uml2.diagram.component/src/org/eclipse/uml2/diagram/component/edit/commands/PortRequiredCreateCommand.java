@@ -10,6 +10,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.common.commands.RequiredPortLinkHelper;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
 
@@ -40,7 +41,7 @@ public class PortRequiredCreateCommand extends EditElementCommand {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
-		myCreateLinkHelper = new RequiredPortLinkHelper((AdapterFactoryEditingDomain) getEditingDomain(), source, target);
+		myCreateLinkHelper = new RequiredPortLinkHelper((AdapterFactoryEditingDomain) getEditingDomain(), source, target, UMLDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 
 	/**

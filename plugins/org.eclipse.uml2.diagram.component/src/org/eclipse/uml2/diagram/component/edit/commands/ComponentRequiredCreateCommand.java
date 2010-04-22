@@ -7,7 +7,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.Interface;
 
@@ -27,6 +30,11 @@ public class ComponentRequiredCreateCommand extends EditElementCommand {
 	private final EObject target;
 
 	/**
+	 * @generated NOT
+	 */
+	private final IPreferenceStore myStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
+
+	/**
 	 * @generated
 	 */
 	public ComponentRequiredCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
@@ -36,9 +44,19 @@ public class ComponentRequiredCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean canExecute() {
+		if (myStore.getBoolean(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_USAGE_LINKS)) {
+			return false;
+		}
+		return canExecuteGen();
+	}
+
+	/**
+	 * @generated
+	 */
+	public boolean canExecuteGen() {
 		if (source == null && target == null) {
 			return false;
 		}

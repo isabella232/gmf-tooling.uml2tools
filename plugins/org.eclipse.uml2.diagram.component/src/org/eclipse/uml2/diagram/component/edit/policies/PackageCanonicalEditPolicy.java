@@ -39,6 +39,7 @@ import org.eclipse.uml2.diagram.common.async.ICanonicalHelper;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
+import org.eclipse.uml2.diagram.common.links.InterfaceLinkManager;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact3EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactEditPart;
@@ -72,7 +73,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.PortEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortOnClassEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Property2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PropertyEditPart;
-import org.eclipse.uml2.diagram.component.links.UMLInterfaceLinkManager;
+import org.eclipse.uml2.diagram.component.links.LinkDetector;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
@@ -337,7 +338,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	private Collection collectAllLinks(View view, Domain2Notation domain2NotationMap) {
 		if (view instanceof Diagram) {
-			return new UMLInterfaceLinkManager(collectAllLinksGen(view, domain2NotationMap)).getFilteredLinkDescriptors();
+			return new InterfaceLinkManager(collectAllLinksGen(view, domain2NotationMap), UMLDiagramEditorPlugin.getInstance().getPreferenceStore(), new LinkDetector()).getFilteredLinkDescriptors();
 		}
 		return collectAllLinksGen(view, domain2NotationMap);
 	}

@@ -2,13 +2,12 @@ package org.eclipse.uml2.diagram.component.part;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -97,6 +96,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.Usage;
 
 /**
  * @generated
@@ -979,16 +979,39 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getInterface_2003ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+		Interface modelElement = (Interface) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getInterface_2003ContainedLinksGen(view));
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001_ForAllClassifiers(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(modelElement));
+		return result;
 	}
 
 	/**
 	 * @generated
 	 */
+	public static List getInterface_2003ContainedLinksGen(View view) {
+		return Collections.EMPTY_LIST;
+	}
+
+	/**
+	 * @generated NOT
+	 */
 	public static List getClass_2004ContainedLinks(View view) {
+		Class modelElement = (Class) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getClass_2004ContainedLinksGen(view));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getClass_2004ContainedLinksGen(View view) {
 		Class modelElement = (Class) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
@@ -1016,9 +1039,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getClass_2007ContainedLinks(View view) {
+		Class modelElement = (Class) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getClass_2007ContainedLinksGen(view));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getClass_2007ContainedLinksGen(View view) {
 		Class modelElement = (Class) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
@@ -1037,9 +1071,21 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getInterface_2009ContainedLinks(View view) {
+		Interface modelElement = (Interface) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getInterface_2009ContainedLinksGen(view));
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001_ForAllClassifiers(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterface_2009ContainedLinksGen(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -1081,9 +1127,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getClass_3004ContainedLinks(View view) {
+		Class modelElement = (Class) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getClass_3004ContainedLinksGen(view));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getClass_3004ContainedLinksGen(View view) {
 		Class modelElement = (Class) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
@@ -1092,9 +1149,21 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getInterface_3005ContainedLinks(View view) {
+		Interface modelElement = (Interface) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getInterface_3005ContainedLinksGen(view));
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001_ForAllClassifiers(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterface_3005ContainedLinksGen(View view) {
 		return Collections.EMPTY_LIST;
 	}
 
@@ -1146,9 +1215,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getClass_3009ContainedLinks(View view) {
+		Class modelElement = (Class) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getClass_3009ContainedLinksGen(view));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getClass_3009ContainedLinksGen(View view) {
 		Class modelElement = (Class) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
@@ -1183,9 +1263,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getClass_3013ContainedLinks(View view) {
+		Class modelElement = (Class) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getClass_3013ContainedLinksGen(view));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getClass_3013ContainedLinksGen(View view) {
 		Class modelElement = (Class) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
@@ -1219,9 +1310,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getClass_3020ContainedLinks(View view) {
+		Class modelElement = (Class) view.getElement();
+		List result = new LinkedList();
+		result.addAll(getClass_3020ContainedLinksGen(view));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getClass_3020ContainedLinksGen(View view) {
 		Class modelElement = (Class) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4001(modelElement));
@@ -1931,11 +2033,19 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4001(BehavioredClassifier container) {
+		return getContainedTypeModelFacetLinks_InterfaceRealization_4001_ForAllClassifiers(container);
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4001_ForAllClassifiers(Classifier container) {
 		Collection result = new LinkedList();
-		for (Iterator links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
+
+		for (Iterator links = container.getRelationships(UMLPackage.eINSTANCE.getInterfaceRealization()).iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof InterfaceRealization) {
 				continue;
@@ -1944,9 +2054,14 @@ public class UMLDiagramUpdater {
 			if (InterfaceRealizationEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			Interface dst = link.getContract();
-			BehavioredClassifier src = link.getImplementingClassifier();
-			result.add(new UMLLinkDescriptor(src, dst, link, UMLElementTypes.InterfaceRealization_4001, InterfaceRealizationEditPart.VISUAL_ID));
+
+			EList<NamedElement> targets = link.getSuppliers();
+			if (targets.size() != 1) {
+				continue;
+			}
+			if (link.getClients().contains(container)) {
+				result.add(new UMLLinkDescriptor(container, targets.get(0), link, UMLElementTypes.InterfaceRealization_4001, InterfaceRealizationEditPart.VISUAL_ID));
+			}
 		}
 		return result;
 	}
@@ -2221,7 +2336,7 @@ public class UMLDiagramUpdater {
 		for (ProvidedInterfaceLink provided : provideds) {
 			boolean alreadyAdded = false;
 			for (UMLLinkDescriptor linkDescriptor : generatedLinks) {
-				if (linkDescriptor.getSource() == provided.getSource() && linkDescriptor.getDestination() == provided.getTarget()) {
+				if (linkDescriptor.getDestination() == provided.getTarget()) {
 					alreadyAdded = true;
 					break;
 				}
@@ -2261,27 +2376,29 @@ public class UMLDiagramUpdater {
 	 * @generated NOT
 	 */
 	private static Collection getOutgoingFeatureModelFacetLinks_Component_Required_4007(Component source) {
+		return getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(source);
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static Collection getOutgoingFeatureModelFacetLinks_Usage_4007_ForAllClassifiers(Classifier classifier) {
 		Collection result = new LinkedList();
-		//      Collect links that can be duplicated  
-		final Set<Interface> requiredInterfacesForOwnedPorts = new HashSet<Interface>();
-		for (Port p : source.getOwnedPorts()) {
-			requiredInterfacesForOwnedPorts.addAll(p.getRequireds());
-		}
-		for (Iterator destinations = source.getRequireds().iterator(); destinations.hasNext();) {
-			Interface destination = (Interface) destinations.next();
-			//          'Duplicated' links from port on the boundary of a component. 
-			//			When required interface link is created from a port on the bounday of a component it displayed twice - 
-			//			as a link from port to interface and a link from a component to interface			
-			//			Both of the links are legal required interface links, because both
-			//			Component#getRequireds() and Port#getRequireds() methods return the same
-			//			interface as a target. At the same time, displaying the link twice makes no
-			//			sense. For this case I propose the following solution - do not show required
-			//			interface links for the port if its port has the same interface as a required
-			//			interface. 
-			if (requiredInterfacesForOwnedPorts.contains(destination)) {
+
+		List l = classifier.getRelationships(UMLPackage.eINSTANCE.getUsage());
+
+		for (Iterator links = classifier.getRelationships(UMLPackage.eINSTANCE.getUsage()).iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof Usage) {
 				continue;
 			}
-			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ComponentRequired_4007, ComponentRequiredEditPart.VISUAL_ID));
+			Usage link = (Usage) linkObject;
+
+			if (link.getClients().contains(classifier)) {
+				for (NamedElement supplier : link.getSuppliers()) {
+					result.add(new UMLLinkDescriptor(classifier, supplier, UMLElementTypes.ComponentRequired_4007, ComponentRequiredEditPart.VISUAL_ID));
+				}
+			}
 		}
 		return result;
 	}

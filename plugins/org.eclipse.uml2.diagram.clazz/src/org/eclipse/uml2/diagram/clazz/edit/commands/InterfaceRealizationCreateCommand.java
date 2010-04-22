@@ -11,7 +11,10 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
+import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
@@ -38,6 +41,11 @@ public class InterfaceRealizationCreateCommand extends EditElementCommand {
 	private final BehavioredClassifier container;
 
 	/**
+	 * @generated NOT
+	 */
+	private final IPreferenceStore myStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
+
+	/**
 	 * @generated
 	 */
 	public InterfaceRealizationCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
@@ -46,11 +54,22 @@ public class InterfaceRealizationCreateCommand extends EditElementCommand {
 		this.target = target;
 		container = deduceContainer(source, target);
 	}
+	
+	/**
+	 * @generated NOT
+	 */
+	public boolean canExecute() {
+		if ( myStore.getBoolean(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_INTERFACE_REALIZATION_LINKS)){
+			return false;
+		}
+		return canExecuteGen();
+	}
+
 
 	/**
 	 * @generated
 	 */
-	public boolean canExecute() {
+	public boolean canExecuteGen() {
 		if (source == null && target == null) {
 			return false;
 		}
@@ -133,8 +152,9 @@ public class InterfaceRealizationCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	 * Default approach is to traverse ancestors of the source to find instance of container.
-	 * Modify with appropriate logic.
+	 * Default approach is to traverse ancestors of the source to find instance
+	 * of container. Modify with appropriate logic.
+	 * 
 	 * @generated
 	 */
 	private static BehavioredClassifier deduceContainer(EObject source, EObject target) {

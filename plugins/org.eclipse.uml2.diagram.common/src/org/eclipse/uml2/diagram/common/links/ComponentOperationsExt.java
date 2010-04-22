@@ -55,7 +55,7 @@ public class ComponentOperationsExt {
 
 		for (Dependency clientDependency : classifier.getClientDependencies()) {
 
-			if (clientDependency instanceof Realization) {
+			if (clientDependency instanceof InterfaceRealization) {
 				Iterator<NamedElement> suppliers = resolve ? clientDependency.getSuppliers().iterator() : ((InternalEList<NamedElement>) clientDependency.getSuppliers()).basicIterator();
 
 				while (suppliers.hasNext()) {
@@ -120,7 +120,7 @@ public class ComponentOperationsExt {
 
 		for (Dependency clientDependency : classifier.getClientDependencies()) {
 
-			if (clientDependency instanceof Realization) {
+			if (clientDependency instanceof InterfaceRealization) {
 				Iterator<NamedElement> suppliers = resolve ? clientDependency.getSuppliers().iterator() : ((InternalEList<NamedElement>) clientDependency.getSuppliers()).basicIterator();
 
 				while (suppliers.hasNext()) {

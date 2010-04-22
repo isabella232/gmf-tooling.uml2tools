@@ -34,6 +34,7 @@ import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
+import org.eclipse.uml2.diagram.common.links.InterfaceLinkManager;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.Class2EditPart;
@@ -64,7 +65,8 @@ import org.eclipse.uml2.diagram.csd.edit.parts.Property4EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.PropertyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
-import org.eclipse.uml2.diagram.csd.links.UMLInterfaceLinkManager;
+import org.eclipse.uml2.diagram.csd.links.LinkDetector;
+import org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.uml.Connector;
@@ -268,8 +270,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	}
 
 	/**
-	 * @generated NOT
-	 * [215245]Refresh connector when PartWithPort changes
+	 * @generated NOT [215245]Refresh connector when PartWithPort changes
 	 */
 	private Collection refreshConnections() {
 		return refreshConnectionsGen();
@@ -353,7 +354,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	 */
 	private Collection collectAllLinks(View view, Domain2Notation domain2NotationMap) {
 		if (view instanceof Diagram) {
-			return new UMLInterfaceLinkManager(collectAllLinksGen(view, domain2NotationMap)).getFilteredLinkDescriptors();
+			return new InterfaceLinkManager(collectAllLinksGen(view, domain2NotationMap), UMLDiagramEditorPlugin.getInstance().getPreferenceStore(), new LinkDetector()).getFilteredLinkDescriptors();
 		}
 		return collectAllLinksGen(view, domain2NotationMap);
 	}

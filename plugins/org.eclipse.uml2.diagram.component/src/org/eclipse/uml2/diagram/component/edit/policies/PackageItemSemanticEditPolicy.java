@@ -6,6 +6,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.uml2.diagram.component.edit.commands.Artifact2CreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.Class2CreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.ClassDiagramNotationClassCreateCommand;
@@ -15,8 +16,9 @@ import org.eclipse.uml2.diagram.component.edit.commands.Interface2CreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.Interface3CreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.Package2CreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.PackageCreateCommand;
+import org.eclipse.uml2.diagram.component.edit.commands.PortProvidedReorientCommand;
+import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -86,4 +88,14 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 
 	}
 
+	/**
+	 * @NOT generated
+	 */
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case PortProvidedEditPart.VISUAL_ID:
+			return getGEFWrapper(new PortProvidedReorientCommand(req));
+		}
+		return super.getReorientReferenceRelationshipCommand(req);
+	}
 }

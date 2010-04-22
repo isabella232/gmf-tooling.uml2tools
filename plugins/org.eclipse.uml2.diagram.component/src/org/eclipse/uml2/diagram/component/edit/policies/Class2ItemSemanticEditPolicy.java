@@ -4,7 +4,6 @@ import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
@@ -23,6 +22,7 @@ import org.eclipse.uml2.diagram.component.edit.commands.AssociationCreateCommand
 import org.eclipse.uml2.diagram.component.edit.commands.AssociationReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.CommentAnnotatedElementCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.CommentAnnotatedElementReorientCommand;
+import org.eclipse.uml2.diagram.component.edit.commands.ComponentRequiredReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.component.edit.commands.InterfaceRealizationCreateCommand;
@@ -31,6 +31,7 @@ import org.eclipse.uml2.diagram.component.edit.commands.PortCreateCommand;
 import org.eclipse.uml2.diagram.component.edit.parts.AssemblyConnectorEndRoleEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.ComponentRequiredEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceRealizationEditPart;
@@ -39,7 +40,6 @@ import org.eclipse.uml2.diagram.component.edit.parts.PortProvidedEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.PortRequiredEditPart;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
-import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @generated
@@ -261,8 +261,8 @@ public class Class2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 	}
 
 	/**
-	 * Returns command to reorient EReference based link. New link target or source
-	 * should be the domain model element associated with this node.
+	 * Returns command to reorient EReference based link. New link target or
+	 * source should be the domain model element associated with this node.
 	 * 
 	 * @generated
 	 */
@@ -270,6 +270,8 @@ public class Class2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy 
 		switch (getVisualID(req)) {
 		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
+		case ComponentRequiredEditPart.VISUAL_ID:
+			return getGEFWrapper(new ComponentRequiredReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

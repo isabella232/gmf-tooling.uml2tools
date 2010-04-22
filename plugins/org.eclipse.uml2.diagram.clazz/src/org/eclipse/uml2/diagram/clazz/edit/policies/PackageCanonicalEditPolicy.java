@@ -94,13 +94,15 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.RedefinableTemplateSignatureEdi
 import org.eclipse.uml2.diagram.clazz.edit.parts.SlotEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
-import org.eclipse.uml2.diagram.clazz.links.UMLInterfaceLinkManager;
+import org.eclipse.uml2.diagram.clazz.links.LinkDetector;
+import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.async.ICanonicalHelper;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
+import org.eclipse.uml2.diagram.common.links.InterfaceLinkManager;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -396,7 +398,7 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 	private Collection collectAllLinks(View view, Domain2Notation domain2NotationMap) {
 		Collection result = collectAllLinksGen(view, domain2NotationMap);
 		if (view instanceof Diagram) {
-			result = new UMLInterfaceLinkManager(result).getFilteredLinkDescriptors();
+			result = new InterfaceLinkManager(result, UMLDiagramEditorPlugin.getInstance().getPreferenceStore(), new LinkDetector()).getFilteredLinkDescriptors();
 		}
 		return result;
 	}

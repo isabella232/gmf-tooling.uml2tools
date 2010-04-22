@@ -3,14 +3,18 @@ package org.eclipse.uml2.diagram.component.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.BehavioredClassifier;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.InterfaceRealization;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Package;
 
 /**
  * @generated
@@ -61,7 +65,7 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected boolean canReorientSource() {
+	protected boolean canReorientSourceGen() {
 		if (!(oldEnd instanceof BehavioredClassifier && newEnd instanceof BehavioredClassifier)) {
 			return false;
 		}
@@ -74,18 +78,23 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
+	 */
+	protected boolean canReorientSource() {
+		if (!(oldEnd instanceof Classifier && newEnd instanceof Classifier)) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * @generated NOT
 	 */
 	protected boolean canReorientTarget() {
 		if (!(oldEnd instanceof Interface && newEnd instanceof Interface)) {
 			return false;
 		}
-		BehavioredClassifier source = getLink().getImplementingClassifier();
-		if (!(getLink().eContainer() instanceof BehavioredClassifier)) {
-			return false;
-		}
-		BehavioredClassifier container = (BehavioredClassifier) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistInterfaceRealization_4001(container, source, getNewTarget());
+		return true;
 	}
 
 	/**
@@ -105,19 +114,45 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setImplementingClassifier(getNewSource());
-		return CommandResult.newOKCommandResult(getLink());
+		InterfaceRealization link = getLink();
+		EList<NamedElement> clients = link.getClients();
+		clients.remove(getGeneralizedOldSource());
+		clients.add(getGeneralizedNewSource());
+
+		Package container = deduceContainer(getGeneralizedNewSource());
+		container.getPackagedElements().add(link);
+		return CommandResult.newOKCommandResult(link);
 	}
 
 	/**
-	 * @generated
+	 * @NOT generated
+	 */
+	private static Package deduceContainer(EObject source) {
+		// Find container element for the new link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (EObject element = source; element != null; element = element.eContainer()) {
+			if (element instanceof Package) {
+				return (Package) element;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * @generated NOT
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setContract(getNewTarget());
-		return CommandResult.newOKCommandResult(getLink());
+		InterfaceRealization link = getLink();
+		Interface target = getNewTarget();
+		link.setContract(target);
+		EList<NamedElement> suppliers = link.getSuppliers();
+		suppliers.clear();
+		suppliers.add(target);
+		return CommandResult.newOKCommandResult(link);
 	}
 
 	/**
@@ -135,10 +170,28 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 	}
 
 	/**
+	 * @generated NOT
+	 */
+	protected Classifier getGeneralizedOldSource() {
+		//this method should be used when trying to get old source
+		// getOldSource() was left to preserve generated code compilable
+		return (Classifier) oldEnd;
+	}
+
+	/**
 	 * @generated
 	 */
 	protected BehavioredClassifier getNewSource() {
 		return (BehavioredClassifier) newEnd;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected Classifier getGeneralizedNewSource() {
+		//this method should be used when trying to get old source
+		// getNewSource() was left to preserve generated code compilable
+		return (Classifier) newEnd;
 	}
 
 	/**

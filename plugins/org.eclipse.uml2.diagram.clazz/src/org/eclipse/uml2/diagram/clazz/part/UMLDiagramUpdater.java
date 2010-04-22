@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -1919,9 +1920,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getInterface_2010ContainedLinks(View view) {
+		List result = new LinkedList();
+		result.addAll(getInterface_2010ContainedLinksGen(view));
+		Interface modelElement = (Interface) view.getElement();
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterface_2010ContainedLinksGen(View view) {
 		Interface modelElement = (Interface) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
@@ -1972,9 +1984,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getInterface_2013ContainedLinks(View view) {
+		List result = new LinkedList();
+		result.addAll(getInterface_2013ContainedLinksGen(view));
+		Interface modelElement = (Interface) view.getElement();
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterface_2013ContainedLinksGen(View view) {
 		Interface modelElement = (Interface) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
@@ -2119,9 +2142,20 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	public static List getInterface_3041ContainedLinks(View view) {
+		List result = new LinkedList();
+		result.addAll(getInterface_3041ContainedLinksGen(view));
+		Interface modelElement = (Interface) view.getElement();
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List getInterface_3041ContainedLinksGen(View view) {
 		Interface modelElement = (Interface) view.getElement();
 		List result = new LinkedList();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
@@ -4193,9 +4227,45 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4008(BehavioredClassifier container) {
+		Collection result = new LinkedList();
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008Gen(container));
+		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(container));
+		return result;
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(Classifier container) {
+		Collection result = new LinkedList();
+
+		for (Iterator links = container.getRelationships(UMLPackage.eINSTANCE.getInterfaceRealization()).iterator(); links.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof InterfaceRealization) {
+				continue;
+			}
+			InterfaceRealization link = (InterfaceRealization) linkObject;
+			if (InterfaceRealizationEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			EList<NamedElement> targets = link.getSuppliers();
+			if (targets.size() != 1) {
+				continue;
+			}
+			if (link.getClients().contains(container)) {
+				result.add(new UMLLinkDescriptor(container, targets.get(0), link, UMLElementTypes.InterfaceRealization_4008, InterfaceRealizationEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4008Gen(BehavioredClassifier container) {
 		Collection result = new LinkedList();
 		for (Iterator links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
@@ -5002,7 +5072,7 @@ public class UMLDiagramUpdater {
 		for (ProvidedInterfaceLink provided : provideds) {
 			boolean alreadyAdded = false;
 			for (UMLLinkDescriptor linkDescriptor : generatedLinks) {
-				if (linkDescriptor.getSource() == provided.getSource() && linkDescriptor.getDestination() == provided.getTarget()) {
+				if (linkDescriptor.getDestination() == provided.getTarget()) {
 					alreadyAdded = true;
 					break;
 				}

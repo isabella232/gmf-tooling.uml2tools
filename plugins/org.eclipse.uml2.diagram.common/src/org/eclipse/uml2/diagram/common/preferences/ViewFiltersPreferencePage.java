@@ -8,77 +8,57 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Group;
 import org.eclipse.uml2.diagram.common.Messages;
-import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 
 public class ViewFiltersPreferencePage extends AbstractPreferencePage {
 
-	private static final String REQUIRED_INTERFACE_LINKS_GROUP_LABEL = Messages.ViewFiltersPreferencePage_group_manage_required_interface;
+	private static final String HIDE_PROVIDED_INTERFACE_LINKS_LABEL = Messages.ViewFiltersPreferencePage_label_hide_provided_interface_links;
 
-	private static final String HIDE_DERIVED_LABEL = Messages.ViewFiltersPreferencePage_label_hide_derived;
-	
-	private static final String HIDE_GENUINE_LABEL = Messages.ViewFiltersPreferencePage_label_hide_genuine;
-	
-	private CheckBoxFieldEditor myManageRequireds_hideDeriveds;
+	private static final String HIDE_REQUIRED_INTERFACE_LINKS_LABEL = Messages.ViewFiltersPreferencePage_label_hide_required_interface_links;
 
-	private CheckBoxFieldEditor myManageRequireds_hideGenuine;
+	private static final String HIDE_INTERFACE_REALIZATION_LINKS_LABEL = Messages.ViewFiltersPreferencePage_label_hide_interface_realization_links;
+
+	private static final String HIDE_USAGE_LINKS_LABEL = Messages.ViewFiltersPreferencePage_label_hide_usage_links;
 
 	@Override
 	protected void addFields(Composite parent) {
 		Composite composite = createPageLayout(parent);
-		createManageRequiredLinksGroup(composite);
+
+		createCheckBox(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_PROVIDED_INTERFACE_LINKS,//
+				HIDE_PROVIDED_INTERFACE_LINKS_LABEL, composite);
+
+		createCheckBox(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_REQUIRED_INTERFACE_LINKS,//
+				HIDE_REQUIRED_INTERFACE_LINKS_LABEL, composite);
+
+		createCheckBox(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_INTERFACE_REALIZATION_LINKS,//
+				HIDE_INTERFACE_REALIZATION_LINKS_LABEL, composite);
+
+		createCheckBox(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_USAGE_LINKS,//
+				HIDE_USAGE_LINKS_LABEL, composite);
+	}
+
+	private void createCheckBox(String constant, String label, Composite composite) {
+		CheckBoxFieldEditor hideLinksCheckBoxFieldEditor = new CheckBoxFieldEditor(constant, label, composite);
+		addField(hideLinksCheckBoxFieldEditor);
 	}
 
 	@Override
 	protected void initHelp() {
 	}
-	
-	protected Composite createPageLayout(Composite parent) {
+
+	private Composite createPageLayout(Composite parent) {
 		Composite main = new Composite(parent, SWT.NULL);
 		main.setLayout(new GridLayout());
-		main.setLayoutData(
-			new GridData(
-				GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
+		main.setLayoutData(new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 		return main;
-	}
-
-	private Composite createManageRequiredLinksGroup(Composite parent) {    	
-    	Group group = new Group(parent, SWT.NONE);
-    	group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-    	group.setLayout(new GridLayout(3, false));
-    	Composite composite = new Composite(group, SWT.NONE);
-    	GridLayout gridLayout = new GridLayout(3, false);
-    	composite.setLayout(gridLayout);
-		GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
-		gridData.grabExcessHorizontalSpace = true;
-		gridData.horizontalSpan = 3;
-		composite.setLayoutData(gridData);
-		group.setText(REQUIRED_INTERFACE_LINKS_GROUP_LABEL);
-    	
- 		addManageRequiredLinksFields(composite);
-		
-		GridLayout layout = new GridLayout();
-		layout.numColumns = 3;
-		layout.marginWidth = 0;
-		layout.marginHeight = 0;
-		layout.horizontalSpacing = 8;
-		composite.setLayout(layout);               
-    	
-		return group;
-	}
-
-	protected void addManageRequiredLinksFields(Composite composite) {
-		myManageRequireds_hideDeriveds = new CheckBoxFieldEditor(UMLPreferencesConstants.PREF_MANAGE_REQUIRED_LINKS_HIDE_DERIVED, HIDE_DERIVED_LABEL, composite);
-		addField(myManageRequireds_hideDeriveds);
-		myManageRequireds_hideGenuine = new CheckBoxFieldEditor(UMLPreferencesConstants.PREF_MANAGE_REQUIRED_LINKS_HIDE_GENUINE, HIDE_GENUINE_LABEL, composite);
-		addField(myManageRequireds_hideGenuine);
 	}
 
 	public static void initDefaults(IPreferenceStore store) {
 		ConnectionsPreferencePage.initDefaults(store);
-		store.setDefault(UMLPreferencesConstants.PREF_MANAGE_REQUIRED_LINKS_HIDE_DERIVED, false);
-		store.setDefault(UMLPreferencesConstants.PREF_MANAGE_REQUIRED_LINKS_HIDE_GENUINE, false);
+		store.setDefault(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_PROVIDED_INTERFACE_LINKS, false);
+		store.setDefault(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_REQUIRED_INTERFACE_LINKS, false);
+		store.setDefault(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_INTERFACE_REALIZATION_LINKS, false);
+		store.setDefault(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_USAGE_LINKS, false);
 	}
 
 }

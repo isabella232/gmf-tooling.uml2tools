@@ -186,11 +186,13 @@ public class Messages extends NLS {
 
 	public static String ValueSpecificationParserUtil_literal_null;
 
-	public static String ViewFiltersPreferencePage_group_manage_required_interface;
+	public static String ViewFiltersPreferencePage_label_hide_provided_interface_links;
 
-	public static String ViewFiltersPreferencePage_label_hide_derived;
+	public static String ViewFiltersPreferencePage_label_hide_required_interface_links;
 
-	public static String ViewFiltersPreferencePage_label_hide_genuine;
+	public static String ViewFiltersPreferencePage_label_hide_interface_realization_links;
+
+	public static String ViewFiltersPreferencePage_label_hide_usage_links;
 
 	static {
 		// initialize resource bundle

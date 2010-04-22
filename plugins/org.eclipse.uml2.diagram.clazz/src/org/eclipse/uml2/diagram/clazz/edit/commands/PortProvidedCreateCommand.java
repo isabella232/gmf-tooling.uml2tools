@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.common.commands.ProvidedPortLinkHelper;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Port;
@@ -40,7 +41,7 @@ public class PortProvidedCreateCommand extends EditElementCommand {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
-		myCreateLinkHelper = new ProvidedPortLinkHelper((AdapterFactoryEditingDomain) getEditingDomain(), source, target);
+		myCreateLinkHelper = new ProvidedPortLinkHelper((AdapterFactoryEditingDomain) getEditingDomain(), source, target, UMLDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 
 	/**
