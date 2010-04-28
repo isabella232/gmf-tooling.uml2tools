@@ -29,7 +29,6 @@ public interface LookupSuite {
 			return Collections.emptyList();
 		}
 
-		@Override
 		public List computeScope(EObject context) { 
 			return Collections.emptyList();
 		}

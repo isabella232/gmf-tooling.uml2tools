@@ -19,7 +19,6 @@ public abstract class LookupCompletionProcessor<T extends NamedElement> extends 
 
 	protected static final Comparator<NamedElement> BY_NAME_COMPARATOR = new Comparator<NamedElement>() {
 
-		@Override
 		public int compare(NamedElement first, NamedElement second) {
 			return first.getName().compareTo(second.getName());
 		}
