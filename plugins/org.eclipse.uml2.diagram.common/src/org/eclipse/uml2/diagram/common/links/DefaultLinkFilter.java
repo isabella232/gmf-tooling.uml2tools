@@ -17,7 +17,6 @@ public class DefaultLinkFilter implements ILinkFilter {
 		myLinks = new LinkedList<IUpdaterLinkDescriptor>();
 	}
 
-	@Override
 	public void visit(IUpdaterLinkDescriptor link) {
 		if (!myLinkDetector.isProvidedInterfaceLink(link) && //
 				!myLinkDetector.isRequiredInterfaceLink(link) && //
@@ -27,7 +26,6 @@ public class DefaultLinkFilter implements ILinkFilter {
 		}
 	}
 
-	@Override
 	public Collection<IUpdaterLinkDescriptor> getFilteredLinks() {
 		return Collections.unmodifiableCollection(myLinks);
 	}

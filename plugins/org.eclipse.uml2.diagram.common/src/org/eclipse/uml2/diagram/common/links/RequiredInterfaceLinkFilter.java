@@ -17,14 +17,12 @@ public class RequiredInterfaceLinkFilter implements ILinkFilter {
 		myLinks = new LinkedList<IUpdaterLinkDescriptor>();
 	}
 
-	@Override
 	public void visit(IUpdaterLinkDescriptor link) {
 		if (myLinkDetector.isRequiredInterfaceLink(link)) {
 			myLinks.add(link);
 		}
 	}
 
-	@Override
 	public Collection<IUpdaterLinkDescriptor> getFilteredLinks() {
 		return Collections.unmodifiableCollection(myLinks);
 	}

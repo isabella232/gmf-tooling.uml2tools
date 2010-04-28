@@ -18,14 +18,12 @@ public class UsageLinkFilter implements ILinkFilter {
 		myLinks = new LinkedList<IUpdaterLinkDescriptor>();
 	}
 
-	@Override
 	public void visit(IUpdaterLinkDescriptor link) {
 		if (myLinkDetector.isUsageLink(link)) {
 			myLinks.add(link);
 		}
 	}
 
-	@Override
 	public Collection<IUpdaterLinkDescriptor> getFilteredLinks() {
 		return Collections.unmodifiableCollection(myLinks);
 	}

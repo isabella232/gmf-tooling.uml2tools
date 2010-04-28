@@ -229,7 +229,6 @@ public class SyncModelUI {
 			this.myType = type;
 		}
 
-		@Override
 		public void handleEvent(Event event) {
 			myNode.setChosenSyncModelViewType(myType);
 			myTreeViewer.refresh();

@@ -42,7 +42,6 @@ public class SlotLookupSuite extends LookupSuiteImpl {
 			return null;
 		}
 
-		@Override
 		public List<StructuralFeature> computeScope(EObject context) {
 			List<StructuralFeature> result = new LinkedList<StructuralFeature>();
 			InstanceSpecification is = ((Slot) context).getOwningInstance();
