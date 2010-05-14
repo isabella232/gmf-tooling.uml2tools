@@ -118,6 +118,21 @@
           xsi:type="gmftool:CreationTool"
           title="Annotated Element"
           description="Create Annotated Element"/>
+      <tools
+          xsi:type="gmftool:ToolGroup"
+          title="Dependency"
+          description="Create Dependency link">
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Dependency"
+            description="Create Dependency link"
+            toolClass="org.eclipse.uml2.diagram.csd.part.CreateDependencyLinkTool.DEPENDENCY"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Usage"
+            description="Create Usage link"
+            toolClass="org.eclipse.uml2.diagram.csd.part.CreateDependencyLinkTool.USAGE"/>
+      </tools>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

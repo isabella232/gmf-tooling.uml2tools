@@ -1751,7 +1751,7 @@
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency"/>
     <domainSpecialization
-        body="(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))"/>
+        body="(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or (self.oclIsTypeOf(uml::Usage) and (self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface)) or (self.client->forAll(e|not (e.oclIsKindOf(uml::Classifier) or  e.oclIsKindOf(uml::Port))))))) and self.supplier->size() = 1 and self.client->size() = 1"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
@@ -1779,10 +1779,6 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency/supplier"/>
-    <creationConstraints>
-      <targetEnd
-          body="not self.oclIsKindOf(uml::Interface)&#xD;&#xA;"/>
-    </creationConstraints>
   </links>
   <links>
     <domainMetaElement
@@ -2026,7 +2022,7 @@
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Usage"/>
     <domainSpecialization
-        body="self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))"/>
+        body="self.supplier->forAll(e|e.oclIsKindOf(uml::Interface)) and self.client->forAll(e|e.oclIsKindOf(uml::Classifier))"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
         editPattern="">

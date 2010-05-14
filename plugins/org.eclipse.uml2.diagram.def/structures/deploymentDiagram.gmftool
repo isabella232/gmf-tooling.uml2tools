@@ -56,9 +56,26 @@
           title="Communication Path"
           description="Create Communication Path"/>
       <tools
-          xsi:type="gmftool:CreationTool"
+          xsi:type="gmftool:ToolGroup"
           title="Dependency"
-          description="Create Dependency Link"/>
+          description="Create Dependency link"
+          stack="true">
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Dependency"
+            description="Create Dependency link"
+            toolClass="org.eclipse.uml2.diagram.deploy.part.CreateDependencyLinkTool.DEPENDENCY"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Usage"
+            description="Create Usage link"
+            toolClass="org.eclipse.uml2.diagram.deploy.part.CreateDependencyLinkTool.USAGE"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Substitution"
+            description="Create Substitution link"
+            toolClass="org.eclipse.uml2.diagram.deploy.part.CreateDependencyLinkTool.SUBSTITUTION"/>
+      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Annotated Element"

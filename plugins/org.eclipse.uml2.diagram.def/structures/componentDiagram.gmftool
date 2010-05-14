@@ -56,9 +56,20 @@
           title="Delegation Connector"
           description="Create Delegation Connector"/>
       <tools
-          xsi:type="gmftool:CreationTool"
+          xsi:type="gmftool:ToolGroup"
           title="Dependency"
-          description="Create Dependency link"/>
+          description="Create Dependency link">
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Dependency"
+            description="Create Dependency link"
+            toolClass="org.eclipse.uml2.diagram.component.part.CreateDependencyLinkTool.DEPENDENCY"/>
+        <tools
+            xsi:type="gmftool:GenericTool"
+            title="Usage"
+            description="Create Usage link"
+            toolClass="org.eclipse.uml2.diagram.component.part.CreateDependencyLinkTool.USAGE"/>
+      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Assembly Connector"

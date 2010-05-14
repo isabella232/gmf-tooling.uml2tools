@@ -864,7 +864,7 @@
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency"/>
     <domainSpecialization
-        body="(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))"/>
+        body="(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or (self.oclIsTypeOf(uml::Usage) and (self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface)) or (self.client->forAll(e|not (e.oclIsKindOf(uml::Classifier) or  e.oclIsKindOf(uml::Port))))))) and self.supplier->size() = 1 and self.client->size() = 1"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
@@ -872,11 +872,18 @@
       <features
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
     </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="common_dependencies.gmfgraph#Dependency_type"/>
+      <features
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+    </labelMappings>
     <containmentFeature
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
     <tool
-        xsi:type="gmftool:CreationTool"
-        href="componentDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
+        xsi:type="gmftool:GenericTool"
+        href="componentDiagram.gmftool#//@palette/@tools.1/@tools.3/@tools.0"/>
     <diagramLink
         href="common_dependencies.gmfgraph#BinaryDependencyLink"/>
     <sourceMetaFeature
@@ -885,10 +892,6 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Dependency/supplier"/>
-    <creationConstraints>
-      <targetEnd
-          body="not self.oclIsKindOf(uml::Interface)&#xD;&#xA;"/>
-    </creationConstraints>
   </links>
   <links>
     <tool

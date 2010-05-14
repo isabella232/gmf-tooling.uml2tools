@@ -23,7 +23,12 @@
         editHelperClassName="PackageEditHelper"/>
     <viewmap
         xsi:type="gmfgen:FigureViewmap"
-        figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
+        figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer">
+      <attributes
+          xsi:type="u2tgen:LinkToolStackInfoAttribute"
+          toolgroupTitle="Dependency"
+          elementUniqueIdentifier="Dependency_4009"/>
+    </viewmap>
     <containsShortcutsTo>uml</containsShortcutsTo>
     <shortcutsProvidedFor>UMLComponent</shortcutsProvidedFor>
     <domainDiagramElement
@@ -196,7 +201,7 @@
             figureQualifiedClassName="org.eclipse.draw2d.Label"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0"
+            parser="//@labelParsers/@implementations.3"
             editPattern="">
           <metaFeatures
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
@@ -2016,6 +2021,13 @@
         <attributes
             xsi:type="gmfgen:StyleAttributes"
             fixedForeground="true"/>
+        <attributes
+            xsi:type="u2tgen:GeneralizedLinkConstraintAttribute"
+            linkConstraint="if (UMLPackage.eINSTANCE.getUsage().isSuperTypeOf(linkClass)) {     if ((source instanceof Classifier || source instanceof org.eclipse.uml2.uml.Port) &amp;&amp; target instanceof Interface) {      return false;     }    }    return true;"/>
+        <attributes
+            xsi:type="u2tgen:LinkToolStackSupportAttribute"
+            toolClassProviderName="CreateDependencyLinkTool"
+            baseSemanticClassName="Dependency"/>
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
@@ -2053,8 +2065,27 @@
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
         </modelFacet>
       </labels>
-      <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.31"/>
+      <labels
+          visualID="6009"
+          editPartClassName="DependencyName2EditPart"
+          itemSemanticEditPolicyClassName="DependencyName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="DependencyNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.draw2d.Label">
+          <attributes
+              xsi:type="gmfgen:LabelOffsetAttributes"
+              y="20"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.3">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </links>
     <links
         visualID="4010"
@@ -2082,7 +2113,7 @@
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/ConnectorEnd/role"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.32"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.31"/>
     </links>
     <links
         visualID="4011"
@@ -2591,10 +2622,21 @@
             description="Create Delegation Connector"
             genLinks="//@diagram/@links.4"/>
         <entries
-            xsi:type="gmfgen:ToolEntry"
+            xsi:type="gmfgen:ToolGroup"
             title="Dependency"
-            description="Create Dependency link"
-            genLinks="//@diagram/@links.5"/>
+            description="Create Dependency link">
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Dependency"
+              description="Create Dependency link"
+              qualifiedToolName="org.eclipse.uml2.diagram.component.part.CreateDependencyLinkTool.DEPENDENCY"
+              genLinks="//@diagram/@links.5"/>
+          <entries
+              xsi:type="gmfgen:ToolEntry"
+              title="Usage"
+              description="Create Usage link"
+              qualifiedToolName="org.eclipse.uml2.diagram.component.part.CreateDependencyLinkTool.USAGE"/>
+        </entries>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Assembly Connector"
@@ -4813,10 +4855,7 @@
           body="ConnectorKind::delegation"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))"/>
-      <expressions
-          xsi:type="gmfgen:GenConstraint"
-          body="not self.oclIsKindOf(uml::Interface)&#xD;&#xA;"/>
+          body="(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or (self.oclIsTypeOf(uml::Usage) and (self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface)) or (self.client->forAll(e|not (e.oclIsKindOf(uml::Classifier) or  e.oclIsKindOf(uml::Port))))))) and self.supplier->size() = 1 and self.client->size() = 1"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.oclIsKindOf(uml::Connector) and (self.oclAsType(uml::Connector).kind = ConnectorKind::assembly)"/>
@@ -4826,15 +4865,19 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.8/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.9/@labelModelFacet //@diagram/@childNodes.10/@labelModelFacet //@diagram/@childNodes.11/@labelModelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.12/@labelModelFacet //@diagram/@childNodes.13/@labelModelFacet //@diagram/@childNodes.14/@labelModelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.16/@labelModelFacet //@diagram/@childNodes.17/@labelModelFacet //@diagram/@childNodes.18/@labelModelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@links.5/@labels.0/@modelFacet //@diagram/@links.7/@labels.0/@modelFacet //@diagram/@links.7/@labels.1/@modelFacet //@diagram/@links.7/@labels.2/@modelFacet //@diagram/@links.7/@labels.3/@modelFacet //@diagram/@links.7/@labels.4/@modelFacet //@diagram/@links.7/@labels.5/@modelFacet //@diagram/@links.7/@labels.6/@modelFacet"/>
+        uses="//@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.8/@labelModelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.9/@labelModelFacet //@diagram/@childNodes.10/@labelModelFacet //@diagram/@childNodes.11/@labelModelFacet //@diagram/@topLevelNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.12/@labelModelFacet //@diagram/@childNodes.13/@labelModelFacet //@diagram/@childNodes.14/@labelModelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.16/@labelModelFacet //@diagram/@childNodes.17/@labelModelFacet //@diagram/@childNodes.18/@labelModelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@links.5/@labels.0/@modelFacet //@diagram/@links.7/@labels.0/@modelFacet //@diagram/@links.7/@labels.1/@modelFacet //@diagram/@links.7/@labels.2/@modelFacet //@diagram/@links.7/@labels.3/@modelFacet //@diagram/@links.7/@labels.4/@modelFacet //@diagram/@links.7/@labels.5/@modelFacet //@diagram/@links.7/@labels.6/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@topLevelNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.1/@modelFacet"
+        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.2/@labels.1/@modelFacet //@diagram/@topLevelNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.1/@modelFacet //@diagram/@topLevelNodes.8/@labels.1/@modelFacet //@diagram/@topLevelNodes.6/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
         uses="//@diagram/@topLevelNodes.4/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.PackageAppliedStereotypeParser"/>
+    <implementations
+        xsi:type="gmfgen:CustomParser"
+        uses="//@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@links.5/@labels.1/@modelFacet"
+        qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.DependencyAppliedStereotypeParser"/>
   </labelParsers>
   <contextMenus
       iD="org.eclipse.uml2.diagram.component.menu"
