@@ -19,6 +19,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.uml2.diagram.common.preferences.IconStylePreferencePage;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.ManifestationNameEditPart;
@@ -45,6 +46,7 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_ManifestationName_6002, ManifestationNameEditPart.VISUAL_ID);
 		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_CommunicationPathName_6003, CommunicationPathNameEditPart.VISUAL_ID);
 		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6004, DependencyNameEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6005, DependencyName2EditPart.VISUAL_ID);
 	}
 
 	/**

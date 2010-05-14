@@ -24,6 +24,7 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentNameEditPart;
@@ -582,6 +583,9 @@ public class UMLVisualIDRegistry {
 			if (DependencyNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (DependencyName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		}
 		return false;
@@ -681,7 +685,7 @@ public class UMLVisualIDRegistry {
 		if (Dependency_4005_Constraint == null) { // lazy initialization
 			Dependency_4005_Constraint = UMLOCLFactory
 					.getExpression(
-							"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or self.oclIsTypeOf(uml::Usage)) and self.supplier->size() = 1 and self.client->size() = 1 and self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface))", UMLPackage.eINSTANCE.getDependency()); //$NON-NLS-1$
+							"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or (self.oclIsTypeOf(uml::Usage) and (self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface)) or (self.client->forAll(e|not (e.oclIsKindOf(uml::Classifier) or  e.oclIsKindOf(uml::Port))))))) and self.supplier->size() = 1 and self.client->size() = 1", UMLPackage.eINSTANCE.getDependency()); //$NON-NLS-1$
 		}
 		Object result = Dependency_4005_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();

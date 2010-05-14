@@ -66,6 +66,7 @@ import org.eclipse.uml2.diagram.deploy.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.CommunicationPathNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentConfigurationEditPart;
 import org.eclipse.uml2.diagram.deploy.edit.parts.DeploymentEditPart;
@@ -1034,6 +1035,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location6004 = (Location) label6004.getLayoutConstraint();
 		location6004.setX(0);
 		location6004.setY(40);
+		Node label6005 = createLabel(edge, UMLVisualIDRegistry.getType(DependencyName2EditPart.VISUAL_ID));
+		label6005.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6005 = (Location) label6005.getLayoutConstraint();
+		location6005.setX(0);
+		location6005.setY(20);
 		return edge;
 	}
 

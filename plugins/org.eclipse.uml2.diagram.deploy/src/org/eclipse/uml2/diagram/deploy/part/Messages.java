@@ -283,6 +283,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Dependency5Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Dependency5Group_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String Artifact1CreationTool_title;
 
 	/**
@@ -383,16 +393,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Dependency5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Dependency5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
 	public static String AnnotatedElement6CreationTool_title;
 
 	/**
@@ -419,6 +419,36 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String Property2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Dependency1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Dependency1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Usage2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Usage2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Substitution3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Substitution3CreationTool_desc;
 
 	/**
 	 * @generated
@@ -789,6 +819,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6004;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6005;
 
 	//TODO: put accessor fields manually	
 }

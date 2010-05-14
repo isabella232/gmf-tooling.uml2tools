@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.deploy.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -11,11 +12,11 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.uml2.diagram.deploy.edit.helpers.DependencyEditHelper;
 import org.eclipse.uml2.diagram.deploy.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * @generated
@@ -40,11 +41,17 @@ public class DependencyCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	private final EClass linkEClass;
+
+	/**
+	 * @generated
+	 */
 	public DependencyCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
+		this.linkEClass = (EClass) request.getParameter(DependencyEditHelper.PARAMETER_DEPENDENCY_TYPE);
 	}
 
 	/**
@@ -67,7 +74,8 @@ public class DependencyCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateDependency_4005(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateDependency_4005(getContainer(), getSource(), getTarget())//
+				&& UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4005(getSource(), getTarget(), linkEClass);
 	}
 
 	/**
@@ -78,7 +86,9 @@ public class DependencyCreateCommand extends EditElementCommand {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		Dependency newElement = UMLFactory.eINSTANCE.createDependency();
+		EClass linkTypeHint = (EClass) getRequest().getParameter(DependencyEditHelper.PARAMETER_DEPENDENCY_TYPE);
+
+		Dependency newElement = (Dependency) getContainer().createPackagedElement(null, linkTypeHint);
 		getContainer().getPackagedElements().add(newElement);
 		newElement.getClients().add(getSource());
 		newElement.getSuppliers().add(getTarget());
