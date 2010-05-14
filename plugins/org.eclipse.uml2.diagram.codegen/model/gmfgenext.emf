@@ -63,6 +63,28 @@ package u2tgen {
 		COMBINED_LABEL;
 		DIAGRAM_LABEL;
 	}
+	
+	class LinkToolStackSupportAttribute extends gmfgen.Attributes {
+		@GenModel(documentation="Passed to the link, contains name of the class that provides ConnectionCreationTool classes to the stack tools.")
+    	attr ecore.EString toolClassProviderName;
+	
+		@GenModel(documentation="Passed to the link, contains name of the class that is parent to all links created by tools of the stack.")
+		attr ecore.EString baseSemanticClassName;
+	}
+
+	class LinkToolStackInfoAttribute extends gmfgen.Attributes {
+		@GenModel(documentation="Passed to the diagram, contains title of dependency tool stack toolgroup.")
+    	attr String toolgroupTitle;
+
+		@GenModel(documentation="Passed the diagram, used in a tool to create correct icons. Contains unique identifier of the type corresponding to the icon.")
+    	attr String elementUniqueIdentifier;
+	}
+
+	class GeneralizedLinkConstraintAttribute extends gmfgen.Attributes {
+		@GenModel(documentation="Passed to the link, contains java code for canExist(NamedElement source, NamedElement target, EClass linkClass) generalized method of BaseItemSemanticEditPolicy.LinkConstraints.")
+    	attr ecore.EString linkConstraint;
+	}
+	
 } 
 
 @namespace(uri="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping", prefix="u2tmap")

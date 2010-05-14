@@ -72,6 +72,41 @@
       <eLiterals name="COMBINED_LABEL" value="3"/>
       <eLiterals name="DIAGRAM_LABEL" value="4"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkToolStackSupportAttribute" eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="toolClassProviderName"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Passed to the link, contains name of the class that provides ConnectionCreationTool classes to the stack tools."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseSemanticClassName"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Passed to the link, contains name of the class that is parent to all links created by tools of the stack."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkToolStackInfoAttribute" eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="toolgroupTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Passed to the diagram, contains title of dependency tool stack toolgroup."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementUniqueIdentifier"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Passed the diagram, used in a tool to create correct icons. Contains unique identifier of the type corresponding to the icon."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GeneralizedLinkConstraintAttribute"
+        eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkConstraint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Passed to the link, contains java code for canExist(NamedElement source, NamedElement target, EClass linkClass) generalized method of BaseItemSemanticEditPolicy.LinkConstraints."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="u2tmap" nsURI="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping"
       nsPrefix="u2tmap">
