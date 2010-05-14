@@ -54,7 +54,7 @@ import org.eclipse.uml2.diagram.component.providers.UMLParserProvider;
 /**
  * @generated NOT
  */
-public class PortNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart, IPrimaryEditPart{
+public class PortNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart, IPrimaryEditPart {
 
 	/**
 	 * @generated

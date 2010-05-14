@@ -39,11 +39,11 @@ public class InterfaceRealizationCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	private final BehavioredClassifier container;
-	
+
 	/**
 	 * @generated NOT
 	 */
-	private final IPreferenceStore myStore =  UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
+	private final IPreferenceStore myStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 
 	/**
 	 * @generated
@@ -59,12 +59,12 @@ public class InterfaceRealizationCreateCommand extends EditElementCommand {
 	 * @generated NOT
 	 */
 	public boolean canExecute() {
-		if ( myStore.getBoolean(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_INTERFACE_REALIZATION_LINKS)){
+		if (myStore.getBoolean(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_INTERFACE_REALIZATION_LINKS)) {
 			return false;
 		}
 		return canExecuteGen();
 	}
-	
+
 	/**
 	 * @generated
 	 */

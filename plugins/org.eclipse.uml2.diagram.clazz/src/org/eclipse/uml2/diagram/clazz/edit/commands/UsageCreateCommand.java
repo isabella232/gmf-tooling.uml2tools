@@ -64,7 +64,7 @@ public class UsageCreateCommand extends EditElementCommand {
 		}
 		return canExecuteGen();
 	}
-	
+
 	/**
 	 * @generated
 	 */
