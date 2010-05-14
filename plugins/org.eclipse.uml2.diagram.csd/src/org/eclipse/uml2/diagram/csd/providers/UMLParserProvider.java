@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.common.parser.property.PropertySemanticParser;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotLookupSuite;
 import org.eclipse.uml2.diagram.common.parser.slot.SlotSemanticParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.stereotype.DependencyAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.PackageAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ConstraintLanguageParser;
 import org.eclipse.uml2.diagram.common.parser.valuespec.ValueSpecificationParser;
@@ -59,6 +60,8 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName7EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.DependencyName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.DependencyName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationNameEditPart;
@@ -548,25 +551,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser class_3010Parser;
+	private DependencyAppliedStereotypeParser class_3010Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getClass_3010Parser() {
 		if (class_3010Parser == null) {
-			class_3010Parser = createClass_3010Parser();
+			class_3010Parser = new DependencyAppliedStereotypeParser();
 		}
 		return class_3010Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IParser createClass_3010Parser() {
-		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
-		MessageFormatParser parser = new MessageFormatParser(features);
-		return parser;
 	}
 
 	/**
@@ -1179,6 +1173,45 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser dependencyName_6018Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDependencyName_6018Parser() {
+		if (dependencyName_6018Parser == null) {
+			dependencyName_6018Parser = createDependencyName_6018Parser();
+		}
+		return dependencyName_6018Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createDependencyName_6018Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private DependencyAppliedStereotypeParser dependencyName_6019Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDependencyName_6019Parser() {
+		if (dependencyName_6019Parser == null) {
+			dependencyName_6019Parser = new DependencyAppliedStereotypeParser();
+		}
+		return dependencyName_6019Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser getAssociationName_6002Parser() {
 		if (associationName_6002Parser == null) {
 			associationName_6002Parser = createAssociationName_6002Parser();
@@ -1379,6 +1412,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getSlotLabel_6016Parser();
 		case AssociationInstanceTargetEditPart.VISUAL_ID:
 			return getSlotLabel_6017Parser();
+		case DependencyName2EditPart.VISUAL_ID:
+			return getDependencyName_6018Parser();
+		case DependencyName3EditPart.VISUAL_ID:
+			return getDependencyName_6019Parser();
 		}
 		return null;
 	}

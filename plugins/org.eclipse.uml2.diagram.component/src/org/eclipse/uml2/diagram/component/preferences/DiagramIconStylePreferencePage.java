@@ -25,6 +25,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.AssociationName5EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationName6EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationName7EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.AssociationNameEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.component.part.Messages;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditor;
@@ -46,6 +47,7 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 	 */
 	static {
 		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6001, DependencyNameEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6009, DependencyName2EditPart.VISUAL_ID);
 		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6002, AssociationNameEditPart.VISUAL_ID);
 		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6003, AssociationName2EditPart.VISUAL_ID);
 		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6004, AssociationName3EditPart.VISUAL_ID);

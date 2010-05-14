@@ -34,6 +34,8 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName5EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName6EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorName7EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.DependencyName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.DependencyName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.part.Messages;
 import org.eclipse.uml2.diagram.csd.part.UMLDiagramEditor;
@@ -71,6 +73,8 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_AssociationName_6008, AssociationName7EditPart.VISUAL_ID);
 		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_SlotLabel_6016, AssociationInstanceSourceEditPart.VISUAL_ID);
 		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_SlotLabel_6017, AssociationInstanceTargetEditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6018, DependencyName2EditPart.VISUAL_ID);
+		ourConnectorLabels2Vids.put(Messages.DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6019, DependencyName3EditPart.VISUAL_ID);
 	}
 
 	/**

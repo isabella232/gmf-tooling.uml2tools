@@ -282,6 +282,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case CommentAnnotatedElementEditPart.VISUAL_ID:
 				return new CommentAnnotatedElementEditPart(view);
+
+			case Dependency2EditPart.VISUAL_ID:
+				return new Dependency2EditPart(view);
+
+			case DependencyName2EditPart.VISUAL_ID:
+				return new DependencyName2EditPart(view);
+
+			case DependencyName3EditPart.VISUAL_ID:
+				return new DependencyName3EditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

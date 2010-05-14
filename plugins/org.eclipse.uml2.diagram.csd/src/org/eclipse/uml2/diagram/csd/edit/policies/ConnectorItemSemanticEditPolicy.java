@@ -10,12 +10,15 @@ import org.eclipse.uml2.diagram.csd.edit.commands.CommentAnnotatedElementCreateC
 import org.eclipse.uml2.diagram.csd.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementReorientCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.Dependency2CreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.Dependency2ReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
@@ -63,6 +66,9 @@ public class ConnectorItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.CommentAnnotatedElement_4016 == req.getElementType()) {
 			return null;
 		}
+		if (UMLElementTypes.Dependency_4017 == req.getElementType()) {
+			return getGEFWrapper(new Dependency2CreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -82,6 +88,9 @@ public class ConnectorItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 		if (UMLElementTypes.CommentAnnotatedElement_4016 == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.Dependency_4017 == req.getElementType()) {
+			return getGEFWrapper(new Dependency2CreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -97,6 +106,8 @@ public class ConnectorItemSemanticEditPolicy extends UMLBaseItemSemanticEditPoli
 			return getGEFWrapper(new DependencyReorientCommand(req));
 		case UsageEditPart.VISUAL_ID:
 			return getGEFWrapper(new UsageReorientCommand(req));
+		case Dependency2EditPart.VISUAL_ID:
+			return getGEFWrapper(new Dependency2ReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

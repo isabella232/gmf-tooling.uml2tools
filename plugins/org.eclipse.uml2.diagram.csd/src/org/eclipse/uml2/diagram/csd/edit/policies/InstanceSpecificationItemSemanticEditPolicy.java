@@ -24,6 +24,8 @@ import org.eclipse.uml2.diagram.csd.edit.commands.CommentAnnotatedElementCreateC
 import org.eclipse.uml2.diagram.csd.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.ConstraintConstrainedElementReorientCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.Dependency2CreateCommand;
+import org.eclipse.uml2.diagram.csd.edit.commands.Dependency2ReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyCreateCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.DependencyReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.commands.UsageCreateCommand;
@@ -31,6 +33,7 @@ import org.eclipse.uml2.diagram.csd.edit.commands.UsageReorientCommand;
 import org.eclipse.uml2.diagram.csd.edit.parts.AssociationInstanceEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationSlotsEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.SlotEditPart;
@@ -89,6 +92,12 @@ public class InstanceSpecificationItemSemanticEditPolicy extends UMLBaseItemSema
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == Dependency2EditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 		}
 		for (Iterator it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
@@ -105,6 +114,12 @@ public class InstanceSpecificationItemSemanticEditPolicy extends UMLBaseItemSema
 				continue;
 			}
 			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == AssociationInstanceEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == Dependency2EditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -175,6 +190,9 @@ public class InstanceSpecificationItemSemanticEditPolicy extends UMLBaseItemSema
 		if (UMLElementTypes.CommentAnnotatedElement_4016 == req.getElementType()) {
 			return null;
 		}
+		if (UMLElementTypes.Dependency_4017 == req.getElementType()) {
+			return getGEFWrapper(new Dependency2CreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -197,6 +215,9 @@ public class InstanceSpecificationItemSemanticEditPolicy extends UMLBaseItemSema
 		if (UMLElementTypes.CommentAnnotatedElement_4016 == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.Dependency_4017 == req.getElementType()) {
+			return getGEFWrapper(new Dependency2CreateCommand(req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -214,6 +235,8 @@ public class InstanceSpecificationItemSemanticEditPolicy extends UMLBaseItemSema
 			return getGEFWrapper(new UsageReorientCommand(req));
 		case AssociationInstanceEditPart.VISUAL_ID:
 			return getGEFWrapper(new AssociationInstanceReorientCommand(req));
+		case Dependency2EditPart.VISUAL_ID:
+			return getGEFWrapper(new Dependency2ReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

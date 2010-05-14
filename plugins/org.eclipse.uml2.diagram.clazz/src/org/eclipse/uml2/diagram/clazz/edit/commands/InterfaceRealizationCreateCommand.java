@@ -54,17 +54,16 @@ public class InterfaceRealizationCreateCommand extends EditElementCommand {
 		this.target = target;
 		container = deduceContainer(source, target);
 	}
-	
+
 	/**
 	 * @generated NOT
 	 */
 	public boolean canExecute() {
-		if ( myStore.getBoolean(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_INTERFACE_REALIZATION_LINKS)){
+		if (myStore.getBoolean(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_INTERFACE_REALIZATION_LINKS)) {
 			return false;
 		}
 		return canExecuteGen();
 	}
-
 
 	/**
 	 * @generated

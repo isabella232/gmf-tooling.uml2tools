@@ -99,6 +99,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentStereo2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentStereoEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.Interface2EditPart;
@@ -162,11 +163,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 	 */
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-		 if (op.getViewKind() == Node.class)
-		 return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-		 if (op.getViewKind() == Edge.class)
-		 return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-		 */
+		    if (op.getViewKind() == Node.class)
+		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		    if (op.getViewKind() == Edge.class)
+		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		*/
 		return true;
 	}
 
@@ -1452,6 +1453,11 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		Location location6001 = (Location) label6001.getLayoutConstraint();
 		location6001.setX(0);
 		location6001.setY(40);
+		Node label6009 = createLabel(edge, UMLVisualIDRegistry.getType(DependencyName2EditPart.VISUAL_ID));
+		label6009.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6009 = (Location) label6009.getLayoutConstraint();
+		location6009.setX(0);
+		location6009.setY(20);
 		return edge;
 	}
 

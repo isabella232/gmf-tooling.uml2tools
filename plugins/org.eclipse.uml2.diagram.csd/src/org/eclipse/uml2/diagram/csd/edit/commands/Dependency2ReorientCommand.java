@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.component.edit.commands;
+package org.eclipse.uml2.diagram.csd.edit.commands;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
-import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.csd.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
@@ -16,7 +16,7 @@ import org.eclipse.uml2.uml.Package;
 /**
  * @generated
  */
-public class DependencyReorientCommand extends EditElementCommand {
+public class Dependency2ReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -41,7 +41,7 @@ public class DependencyReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public DependencyReorientCommand(ReorientRelationshipRequest request) {
+	public Dependency2ReorientCommand(ReorientRelationshipRequest request) {
 		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
 		oldEnd = request.getOldRelationshipEnd();
@@ -80,8 +80,8 @@ public class DependencyReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Package container = (Package) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4009(container, getNewSource(), target) && //
-				UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4009(getNewSource(), target, linkEClass);
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4017(container, getNewSource(), target) && //
+				UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4017(getNewSource(), target, linkEClass);
 
 	}
 
@@ -100,8 +100,8 @@ public class DependencyReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Package container = (Package) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4009(container, source, getNewTarget()) && //
-				UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4009(source, getNewTarget(), linkEClass);
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4017(container, source, getNewTarget()) && //
+				UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4017(source, getNewTarget(), linkEClass);
 
 	}
 

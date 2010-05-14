@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.clazz.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
@@ -35,11 +36,17 @@ public class DependencyLinkReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	private final EClass linkEClass;
+
+	/**
+	 * @generated
+	 */
 	public DependencyLinkReorientCommand(ReorientRelationshipRequest request) {
 		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
 		oldEnd = request.getOldRelationshipEnd();
 		newEnd = request.getNewRelationshipEnd();
+		this.linkEClass = (EClass) request.getRelationship().eClass();
 	}
 
 	/**
@@ -73,7 +80,9 @@ public class DependencyLinkReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Package container = (Package) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4002(container, getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4002(container, getNewSource(), target) && //
+				UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4002(getNewSource(), target, linkEClass);
+
 	}
 
 	/**
@@ -91,7 +100,9 @@ public class DependencyLinkReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Package container = (Package) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4002(container, source, getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4002(container, source, getNewTarget()) && //
+				UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4002(source, getNewTarget(), linkEClass);
+
 	}
 
 	/**

@@ -48,7 +48,10 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintLanguageEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.DependencyName2EditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.DependencyName3EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
@@ -90,6 +93,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.csd.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.csd.expressions.UMLOCLFactory;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.InterfaceRealization;
@@ -101,8 +105,8 @@ import org.eclipse.uml2.uml.Usage;
 
 /**
  * This registry is used to determine which type of visual object should be
- * created for the corresponding Diagram, Node, ChildNode or Link represented
- * by a domain model object.
+ * created for the corresponding Diagram, Node, ChildNode or Link represented by
+ * a domain model object.
  * 
  * @generated
  */
@@ -167,6 +171,11 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static UMLAbstractExpression Slot_4015_Constraint;
+
+	/**
+	 * @generated
+	 */
+	private static UMLAbstractExpression Dependency_4017_Constraint;
 
 	/**
 	 * @generated
@@ -661,6 +670,14 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case Dependency2EditPart.VISUAL_ID:
+			if (DependencyName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DependencyName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		}
 		return false;
 	}
@@ -689,6 +706,9 @@ public class UMLVisualIDRegistry {
 		}
 		if (UMLPackage.eINSTANCE.getSlot().isSuperTypeOf(domainElement.eClass()) && isSlot_4015((Slot) domainElement)) {
 			return AssociationInstanceEditPart.VISUAL_ID;
+		}
+		if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && isDependency_4017((Dependency) domainElement)) {
+			return Dependency2EditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -781,9 +801,19 @@ public class UMLVisualIDRegistry {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	private static boolean isDependency_4006(Dependency domainElement) {
+		if (!isDependency_4006Gen(domainElement)) {
+			return false;
+		}
+		return domainElement.eContainer() instanceof CollaborationUse;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isDependency_4006Gen(Dependency domainElement) {
 		if (Dependency_4006_Constraint == null) { // lazy initialization
 			Dependency_4006_Constraint = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Usage) and not self.oclIsKindOf(uml::InterfaceRealization)", UMLPackage.eINSTANCE.getDependency()); //$NON-NLS-1$
 		}
@@ -807,8 +837,9 @@ public class UMLVisualIDRegistry {
 	 */
 	private static boolean isUsage_4008(Usage domainElement) {
 		if (Usage_4008_Constraint == null) { // lazy initialization
-			Usage_4008_Constraint = UMLOCLFactory.getExpression(
-					"self.supplier->forAll(e|e.oclIsKindOf(uml::Interface)) and self.client->forAll(e|not e.oclIsKindOf(uml::Port))", UMLPackage.eINSTANCE.getUsage()); //$NON-NLS-1$
+			Usage_4008_Constraint = UMLOCLFactory
+					.getExpression(
+							"self.supplier->forAll(e|e.oclIsKindOf(uml::Interface)) and self.client->forAll(e|(not e.oclIsKindOf(uml::Port)) and e.oclIsKindOf(uml::Classifier))", UMLPackage.eINSTANCE.getUsage()); //$NON-NLS-1$
 		}
 		Object result = Usage_4008_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
@@ -823,6 +854,29 @@ public class UMLVisualIDRegistry {
 					"self.value->exists(v : ValueSpecification | v.oclIsKindOf(InstanceValue) and not v.oclAsType(InstanceValue).oclIsUndefined())", UMLPackage.eINSTANCE.getSlot()); //$NON-NLS-1$
 		}
 		Object result = Slot_4015_Constraint.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	private static boolean isDependency_4017(Dependency domainElement) {
+		if (!isDependency_4017Gen(domainElement)) {
+			return false;
+		}
+		return domainElement.eContainer() instanceof Package;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isDependency_4017Gen(Dependency domainElement) {
+		if (Dependency_4017_Constraint == null) { // lazy initialization
+			Dependency_4017_Constraint = UMLOCLFactory
+					.getExpression(
+							"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or (self.oclIsTypeOf(uml::Usage) and (self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface)) or (self.client->forAll(e|not (e.oclIsKindOf(uml::Classifier) or  e.oclIsKindOf(uml::Port))))))) and self.supplier->size() = 1 and self.client->size() = 1", UMLPackage.eINSTANCE.getDependency()); //$NON-NLS-1$
+		}
+		Object result = Dependency_4017_Constraint.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 

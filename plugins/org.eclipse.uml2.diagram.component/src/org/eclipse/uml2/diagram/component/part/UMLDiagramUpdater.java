@@ -2396,7 +2396,9 @@ public class UMLDiagramUpdater {
 
 			if (link.getClients().contains(classifier)) {
 				for (NamedElement supplier : link.getSuppliers()) {
-					result.add(new UMLLinkDescriptor(classifier, supplier, UMLElementTypes.ComponentRequired_4007, ComponentRequiredEditPart.VISUAL_ID));
+					if (supplier instanceof Interface) {
+						result.add(new UMLLinkDescriptor(classifier, supplier, UMLElementTypes.ComponentRequired_4007, ComponentRequiredEditPart.VISUAL_ID));
+					}
 				}
 			}
 		}

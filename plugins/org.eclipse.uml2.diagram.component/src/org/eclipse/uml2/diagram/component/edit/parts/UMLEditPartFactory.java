@@ -253,6 +253,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case DependencyNameEditPart.VISUAL_ID:
 				return new DependencyNameEditPart(view);
 
+			case DependencyName2EditPart.VISUAL_ID:
+				return new DependencyName2EditPart(view);
+
 			case AssemblyConnectorEndRoleEditPart.VISUAL_ID:
 				return new AssemblyConnectorEndRoleEditPart(view);
 

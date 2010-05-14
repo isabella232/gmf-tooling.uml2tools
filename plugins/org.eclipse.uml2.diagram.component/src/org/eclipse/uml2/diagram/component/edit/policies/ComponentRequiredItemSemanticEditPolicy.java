@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.component.edit.policies;
 
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
@@ -27,22 +28,6 @@ public class ComponentRequiredItemSemanticEditPolicy extends UMLBaseItemSemantic
 	 * @generated
 	 */
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
-		Classifier component = (Classifier) req.getContainer();//It is really any classifier, not always component
-		Interface requiredInterface = (Interface) req.getReferencedObject();
-
-		Usage link = null;
-
-		for (Relationship riLink : component.getRelationships(UMLPackage.eINSTANCE.getUsage())) {
-			Usage usage = (Usage) riLink;
-			if (usage.getClients().contains(component) && usage.getSuppliers().contains(requiredInterface)) {
-				link = usage;
-			}
-		}
-
-		if (link != null) {
-			return getGEFWrapper(new DestroyElementCommand(new DestroyElementRequest(link, req.isConfirmationRequired())));
-		} else {
-			return null;
-		}
+		return getGEFWrapper(new DestroyReferenceCommand(req));
 	}
 }

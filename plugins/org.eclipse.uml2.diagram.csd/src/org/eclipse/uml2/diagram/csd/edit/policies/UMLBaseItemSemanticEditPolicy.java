@@ -4,26 +4,20 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
 import org.eclipse.gef.requests.ReconnectRequest;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
-import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.requests.EditCommandRequestWrapper;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
-import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
-import org.eclipse.gmf.runtime.emf.type.core.IEditHelperContext;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
@@ -38,7 +32,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
-import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.csd.edit.helpers.UMLBaseEditHelper;
 import org.eclipse.uml2.diagram.csd.expressions.UMLAbstractExpression;
@@ -47,6 +40,7 @@ import org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.csd.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.BehavioredClassifier;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.ConnectableElement;
@@ -437,6 +431,20 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public static boolean canCreateDependency_4017(Package container, NamedElement source, NamedElement target) {
+			return canExistDependency_4017(container, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canReallyCreateDependency_4017(NamedElement source, NamedElement target, EClass linkClass) {
+			return canReallyExistDependency_4017(source, target, linkClass);
+		}
+
+		/**
+		 * @generated
+		 */
 		public static boolean canExistConnector_4005(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
 			return true;
 		}
@@ -481,7 +489,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				if (Usage_4008_SourceExpression == null) {
 					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getNamedElement());
-					Usage_4008_SourceExpression = UMLOCLFactory.getExpression("not self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
+					Usage_4008_SourceExpression = UMLOCLFactory.getExpression("(not self.oclIsKindOf(uml::Port)) and self.oclIsKindOf(uml::Classifier)", UMLPackage.eINSTANCE.getNamedElement(), env); //$NON-NLS-1$
 				}
 				Object sourceVal = Usage_4008_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
 				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
@@ -576,6 +584,25 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canExistCommentAnnotatedElement_4016(Comment source, Element target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canExistDependency_4017(Package container, NamedElement source, NamedElement target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public static boolean canReallyExistDependency_4017(NamedElement source, NamedElement target, EClass linkClass) {
+			if (UMLPackage.eINSTANCE.getUsage().isSuperTypeOf(linkClass)) {
+				if ((source instanceof Classifier || source instanceof Port) && target instanceof Interface) {
+					return false;
+				}
+			}
 			return true;
 		}
 

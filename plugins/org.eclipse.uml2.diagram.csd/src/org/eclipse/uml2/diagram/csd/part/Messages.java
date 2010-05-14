@@ -293,6 +293,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Dependency8Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Dependency8Group_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ElementImport1CreationTool_title;
 
 	/**
@@ -509,6 +519,26 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigableAssociation4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Dependency1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Dependency1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Usage2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Usage2CreationTool_desc;
 
 	/**
 	 * @generated
@@ -893,6 +923,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Dependency_4017_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Dependency_4017_source;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**
@@ -1149,6 +1189,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_SlotLabel_6017;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6018;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6019;
 
 	//TODO: put accessor fields manually	
 }

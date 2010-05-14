@@ -29,6 +29,7 @@ import org.eclipse.uml2.diagram.csd.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
@@ -252,6 +253,11 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Dependency_4017 = (IHintedType) getElementType("org.eclipse.uml2.diagram.csd.Dependency_4017"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -422,6 +428,8 @@ public class UMLElementTypes extends ElementInitializers {
 			elements.put(Slot_4015, UMLPackage.eINSTANCE.getSlot());
 
 			elements.put(CommentAnnotatedElement_4016, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
+
+			elements.put(Dependency_4017, UMLPackage.eINSTANCE.getDependency());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -473,6 +481,7 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(PortRequired_4014);
 			KNOWN_ELEMENT_TYPES.add(Slot_4015);
 			KNOWN_ELEMENT_TYPES.add(CommentAnnotatedElement_4016);
+			KNOWN_ELEMENT_TYPES.add(Dependency_4017);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -550,6 +559,8 @@ public class UMLElementTypes extends ElementInitializers {
 			return Slot_4015;
 		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return CommentAnnotatedElement_4016;
+		case Dependency2EditPart.VISUAL_ID:
+			return Dependency_4017;
 		}
 		return null;
 	}

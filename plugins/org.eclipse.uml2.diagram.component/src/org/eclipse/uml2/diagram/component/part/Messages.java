@@ -283,6 +283,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Dependency4Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Dependency4Group_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String CreateAssociationLink6Group_title;
 
 	/**
@@ -393,16 +403,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Dependency4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Dependency4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
 	public static String AssemblyConnector5CreationTool_title;
 
 	/**
@@ -459,6 +459,26 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String Port4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Dependency1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Dependency1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Usage2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Usage2CreationTool_desc;
 
 	/**
 	 * @generated
@@ -1104,6 +1124,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6001;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramIconStylePreferencePage_LinkLabelsFilter_DependencyName_6009;
 
 	/**
 	 * @generated

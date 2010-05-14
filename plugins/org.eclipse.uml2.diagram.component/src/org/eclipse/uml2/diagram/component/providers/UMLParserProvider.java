@@ -28,6 +28,7 @@ import org.eclipse.uml2.diagram.common.parser.port.PortToString;
 import org.eclipse.uml2.diagram.common.parser.property.PropertySemanticParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.ClassifierAppliedStereotypeParser;
+import org.eclipse.uml2.diagram.common.parser.stereotype.DependencyAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.common.parser.stereotype.PackageAppliedStereotypeParser;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ArtifactName3EditPart;
@@ -57,6 +58,7 @@ import org.eclipse.uml2.diagram.component.edit.parts.ComponentName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentStereo2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ComponentStereoEditPart;
+import org.eclipse.uml2.diagram.component.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.component.edit.parts.InterfaceName2EditPart;
@@ -90,7 +92,6 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 public class UMLParserProvider extends AbstractProvider implements IParserProvider {
 
-	
 	/**
 	 * @NOT-GENERATED
 	 */
@@ -450,14 +451,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private IParser portName_5003Parser;
+	private DependencyAppliedStereotypeParser portName_5003Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getPortName_5003Parser() {
 		if (portName_5003Parser == null) {
-			portName_5003Parser = createPortName_5003Parser();
+			portName_5003Parser = new DependencyAppliedStereotypeParser();
 		}
 		return portName_5003Parser;
 	}
@@ -954,6 +955,21 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private DependencyAppliedStereotypeParser dependencyName_6009Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getDependencyName_6009Parser() {
+		if (dependencyName_6009Parser == null) {
+			dependencyName_6009Parser = new DependencyAppliedStereotypeParser();
+		}
+		return dependencyName_6009Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser associationName_6002Parser;
 
 	/**
@@ -1191,6 +1207,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getClass_3020Parser();
 		case DependencyNameEditPart.VISUAL_ID:
 			return getDependencyName_6001Parser();
+		case DependencyName2EditPart.VISUAL_ID:
+			return getDependencyName_6009Parser();
 		case AssociationNameEditPart.VISUAL_ID:
 			return getAssociationName_6002Parser();
 		case AssociationName2EditPart.VISUAL_ID:

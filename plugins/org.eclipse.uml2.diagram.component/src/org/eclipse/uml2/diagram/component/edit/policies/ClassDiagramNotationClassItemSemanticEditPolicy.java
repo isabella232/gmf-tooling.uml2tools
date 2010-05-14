@@ -312,8 +312,6 @@ public class ClassDiagramNotationClassItemSemanticEditPolicy extends UMLBaseItem
 		switch (getVisualID(req)) {
 		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
-		case ComponentRequiredEditPart.VISUAL_ID:
-			return getGEFWrapper(new ComponentRequiredReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

@@ -38,7 +38,9 @@ import org.eclipse.uml2.diagram.csd.edit.parts.ConnectorNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintConstrainedElementEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ConstraintNameEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyEditPart;
+import org.eclipse.uml2.diagram.csd.edit.parts.DependencyName2EditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.DependencyNameEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.ElementImportEditPart;
 import org.eclipse.uml2.diagram.csd.edit.parts.InstanceSpecificationEditPart;
@@ -204,6 +206,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Slot", UMLElementTypes.Slot_4015); //$NON-NLS-1$
 		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4016); //$NON-NLS-1$
+		case Dependency2EditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Dependency", UMLElementTypes.Dependency_4017); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -330,6 +334,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getSlot_4015Text(view);
 		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return getCommentAnnotatedElement_4016Text(view);
+		case Dependency2EditPart.VISUAL_ID:
+			return getDependency_4017Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -761,6 +767,20 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	private String getCommentAnnotatedElement_4016Text(View view) {
 		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getDependency_4017Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Dependency_4017, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
+				.getType(DependencyName2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6018); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**

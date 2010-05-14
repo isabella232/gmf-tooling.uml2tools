@@ -26,13 +26,13 @@ import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 /**
  * @generated
  */
-public class UsageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
+public class Dependency2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public UsageItemSemanticEditPolicy() {
-		super(UMLElementTypes.Usage_4008);
+	public Dependency2ItemSemanticEditPolicy() {
+		super(UMLElementTypes.Dependency_4017);
 	}
 
 	/**
