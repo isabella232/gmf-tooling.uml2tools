@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenFactoryImpl.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: U2TGenFactoryImpl.java,v 1.2 2010/05/14 17:15:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -69,6 +69,9 @@ public class U2TGenFactoryImpl extends EFactoryImpl implements U2TGenFactory {
 			case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES: return createInteractionDiagramAttributes();
 			case U2TGenPackage.ROTATED_LABEL_ATTRIBUTES: return createRotatedLabelAttributes();
 			case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE: return createStereotypeSupportAttribute();
+			case U2TGenPackage.LINK_TOOL_STACK_SUPPORT_ATTRIBUTE: return createLinkToolStackSupportAttribute();
+			case U2TGenPackage.LINK_TOOL_STACK_INFO_ATTRIBUTE: return createLinkToolStackInfoAttribute();
+			case U2TGenPackage.GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE: return createGeneralizedLinkConstraintAttribute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -182,6 +185,36 @@ public class U2TGenFactoryImpl extends EFactoryImpl implements U2TGenFactory {
 	public StereotypeSupportAttribute createStereotypeSupportAttribute() {
 		StereotypeSupportAttributeImpl stereotypeSupportAttribute = new StereotypeSupportAttributeImpl();
 		return stereotypeSupportAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LinkToolStackSupportAttribute createLinkToolStackSupportAttribute() {
+		LinkToolStackSupportAttributeImpl linkToolStackSupportAttribute = new LinkToolStackSupportAttributeImpl();
+		return linkToolStackSupportAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LinkToolStackInfoAttribute createLinkToolStackInfoAttribute() {
+		LinkToolStackInfoAttributeImpl linkToolStackInfoAttribute = new LinkToolStackInfoAttributeImpl();
+		return linkToolStackInfoAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeneralizedLinkConstraintAttribute createGeneralizedLinkConstraintAttribute() {
+		GeneralizedLinkConstraintAttributeImpl generalizedLinkConstraintAttribute = new GeneralizedLinkConstraintAttributeImpl();
+		return generalizedLinkConstraintAttribute;
 	}
 
 	/**

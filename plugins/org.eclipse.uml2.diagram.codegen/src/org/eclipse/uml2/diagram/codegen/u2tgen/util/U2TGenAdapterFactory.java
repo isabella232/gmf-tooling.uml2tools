@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenAdapterFactory.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: U2TGenAdapterFactory.java,v 1.2 2010/05/14 17:15:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.util;
 
@@ -108,6 +108,18 @@ public class U2TGenAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseStereotypeSupportAttribute(StereotypeSupportAttribute object) {
 				return createStereotypeSupportAttributeAdapter();
+			}
+			@Override
+			public Adapter caseLinkToolStackSupportAttribute(LinkToolStackSupportAttribute object) {
+				return createLinkToolStackSupportAttributeAdapter();
+			}
+			@Override
+			public Adapter caseLinkToolStackInfoAttribute(LinkToolStackInfoAttribute object) {
+				return createLinkToolStackInfoAttributeAdapter();
+			}
+			@Override
+			public Adapter caseGeneralizedLinkConstraintAttribute(GeneralizedLinkConstraintAttribute object) {
+				return createGeneralizedLinkConstraintAttributeAdapter();
 			}
 			@Override
 			public Adapter caseAttributes(Attributes object) {
@@ -256,6 +268,48 @@ public class U2TGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStereotypeSupportAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute <em>Link Tool Stack Support Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute
+	 * @generated
+	 */
+	public Adapter createLinkToolStackSupportAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute <em>Link Tool Stack Info Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute
+	 * @generated
+	 */
+	public Adapter createLinkToolStackInfoAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.codegen.u2tgen.GeneralizedLinkConstraintAttribute <em>Generalized Link Constraint Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.GeneralizedLinkConstraintAttribute
+	 * @generated
+	 */
+	public Adapter createGeneralizedLinkConstraintAttributeAdapter() {
 		return null;
 	}
 

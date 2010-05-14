@@ -1,0 +1,26 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»  
+
+«EXTENSION xpt::diagram::Utils»
+«EXTENSION xpt::linkstack::LinkStackUtils» 
+
+«AROUND canCreateElement(link : gmfgen::GenLink) FOR gmfgen::TypeLinkModelFacet-»
+«IF getLinkGeneralizedConstraint(link) <> null-»  
+	«EXPAND specialCanCreateElement(link)-»
+«ELSE-»
+	«targetDef.proceed()-»
+«ENDIF-»
+«ENDAROUND»
+
+«REM»
+New command`s canExecute checks new canCreate method in UMLBaseItemSemanticEditPolicy.LinkConstraints 
+that allows usage of link`s eClass in link constraint
+«ENDREM»
+«DEFINE specialCanCreateElement(link : gmfgen::GenLink) FOR gmfgen::TypeLinkModelFacet-»
+«IF hasContainerOtherThanSource(self)-»
+	if (getContainer() == null) {
+		return false;
+	}
+«ENDIF-»
+	return «EXPAND xpt::diagram::commands::CreateLinkUtils::validatorInvocation FOR link»(getContainer(), getSource(), getTarget())//
+		&& UMLBaseItemSemanticEditPolicy.LinkConstraints.«getGeneralizedCanExistMethodName()»«link.getUniqueIdentifier()»(getSource(), getTarget(), linkEClass);
+«ENDDEFINE»

@@ -1,0 +1,45 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'» 
+ 
+«EXTENSION xpt::linkstack::LinkStackUtils» 
+
+«AROUND canCreate FOR gmfgen::GenLink» 
+«targetDef.proceed()»	
+«IF getLinkGeneralizedConstraint(self) <> null-»  
+	«EXPAND specialCanCreate -» 
+«ENDIF-»
+«ENDAROUND»
+
+«AROUND canExist FOR gmfgen::GenLink»
+«targetDef.proceed()» 
+«IF getLinkGeneralizedConstraint(self) <> null-»  
+	«EXPAND specialCanExist -» 
+«ENDIF-»
+«ENDAROUND»
+
+«DEFINE parameters FOR  gmfgen::GenLink»
+(NamedElement source, NamedElement target, org.eclipse.emf.ecore.EClass linkClass)
+«ENDDEFINE»
+
+«DEFINE passedParameters FOR  gmfgen::GenLink»
+(source, target, linkClass)
+«ENDDEFINE»
+
+«REM»
+Genetares special canCreate method in UMLBaseItemSemanticEditPolicy.LinkConstraints that provides link`s eClass
+«ENDREM»
+«DEFINE specialCanCreate FOR gmfgen::GenLink» 
+«EXPAND xpt::Common::generatedMemberComment»
+	public static boolean «getGeneralizedCanCreateMethodName()»«getUniqueIdentifier()»«EXPAND parameters»{
+		return «getGeneralizedCanExistMethodName()»«getUniqueIdentifier()»«EXPAND passedParameters»;
+	} 
+«ENDDEFINE»
+
+«REM»
+Genetares special canExist method in UMLBaseItemSemanticEditPolicy.LinkConstraints that provides link`s eClass
+«ENDREM» 
+«DEFINE specialCanExist FOR gmfgen::GenLink»
+«EXPAND xpt::Common::generatedMemberComment»	
+	public static boolean «getGeneralizedCanExistMethodName()»«getUniqueIdentifier()»«EXPAND parameters»{
+	«getLinkGeneralizedConstraint(self)»
+	}
+«ENDDEFINE»

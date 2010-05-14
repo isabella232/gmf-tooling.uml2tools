@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenFactory.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: U2TGenFactory.java,v 1.2 2010/05/14 17:15:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen;
 
@@ -96,6 +96,33 @@ public interface U2TGenFactory extends EFactory {
 	 * @generated
 	 */
 	StereotypeSupportAttribute createStereotypeSupportAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Link Tool Stack Support Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Link Tool Stack Support Attribute</em>'.
+	 * @generated
+	 */
+	LinkToolStackSupportAttribute createLinkToolStackSupportAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Link Tool Stack Info Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Link Tool Stack Info Attribute</em>'.
+	 * @generated
+	 */
+	LinkToolStackInfoAttribute createLinkToolStackInfoAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Generalized Link Constraint Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Generalized Link Constraint Attribute</em>'.
+	 * @generated
+	 */
+	GeneralizedLinkConstraintAttribute createGeneralizedLinkConstraintAttribute();
 
 	/**
 	 * Returns the package supported by this factory.

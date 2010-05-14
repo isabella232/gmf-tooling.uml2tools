@@ -1,7 +1,10 @@
 package org.eclipse.uml2.diagram.codegen;
 
+import java.util.List;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.gmf.codegen.gmfgen.Attributes;
 import org.eclipse.gmf.codegen.gmfgen.FeatureLinkModelFacet;
 import org.eclipse.gmf.codegen.gmfgen.GenCustomPreferencePage;
 import org.eclipse.gmf.codegen.gmfgen.GenDiagram;
@@ -13,6 +16,7 @@ import org.eclipse.gmf.codegen.gmfgen.TypeModelFacet;
 import org.eclipse.gmf.codegen.util.Generator;
 import org.eclipse.gmf.common.UnexpectedBehaviourException;
 import org.eclipse.gmf.internal.common.codegen.TextMerger;
+import org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute;
 import org.eclipse.uml2.diagram.codegen.u2tgen.SubstitutableByAttributes;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -72,6 +76,7 @@ public class GeneratorExt extends Generator {
 		generatePaletteProvider(myDiagram);
 		generateSynchronizationWizardPage(myDiagram);
 		generateNewDiagramHadler(myDiagram);
+		generateCreateDependencyLinkTool(myDiagram);
 	}
 
 	private void generateSwitchBetweenCommentAndNodeActions() throws InterruptedException, UnexpectedBehaviourException {
@@ -190,6 +195,21 @@ public class GeneratorExt extends Generator {
 			doGenerateJavaClass(myEmitters.getNewDiagramHandlerEmitter(), myEmitters.getNewDiagramHandlerFQN(new Object[] { diagram }), diagram);
 			doGenerateJavaClass(myEmitters.getNewDiagramPropertyTesterEmitter(), myEmitters.getNewDiagramPropertyTesterFQN(new Object[] { diagram }), diagram);
 		}
+	}
+
+	private void generateCreateDependencyLinkTool(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
+		for (GenLink next : myDiagram.getLinks()) {
+			List<Attributes> attributes = next.getViewmap().getAttributes(); 
+			for (Attributes attribute : attributes) {
+				if (attribute instanceof LinkToolStackSupportAttribute) {
+					generateCreateLinkToolStackLink(next); 
+				}
+			} 
+		}
+	}
+
+	private void generateCreateLinkToolStackLink(GenLink link) throws InterruptedException, UnexpectedBehaviourException {
+		doGenerateJavaClass(myEmitters.getCreateLinkToolStackLinkEmitter(), myEmitters.getCreateLinkToolStackLinkFQN(new Object[] { link }), link);
 	}
 
 	private static boolean isTheSameEClass(EClass candidate, EClass pattern) {

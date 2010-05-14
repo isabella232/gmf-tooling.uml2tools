@@ -1,0 +1,36 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'» 
+
+«EXTENSION xpt::linkstack::LinkStackUtils» 
+
+«AROUND xpt::diagram::edithelpers::EditHelper::additions FOR gmfgen::MetamodelType»
+«IF diagramElement.oclIsKindOf(gmfgen::GenLink) and isLinkStackLink(diagramElement.oclAsType(gmfgen::GenLink))-»
+		«EXPAND specialAdditions»
+	«ELSE-»
+	    «targetDef.proceed()-» 
+	«ENDIF-»   
+«ENDAROUND»
+
+«REM»
+Generates special editHelper for link stack link. Adds useful constants and handling of request`s parameters
+«ENDREM»
+«DEFINE specialAdditions FOR gmfgen::MetamodelType»
+	«EXPAND xpt::Common::generatedMemberComment»
+	public static final String «getTypeConstantName()» = «editHelperClassName».class.getName() + ":ConfigureDependencyKind"; //$NON-NLS-1$
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public static final String «getNameConstantName()» = «editHelperClassName».class.getName() + ":SetDependencyName"; //$NON-NLS-1$
+
+	«EXPAND xpt::Common::generatedMemberComment» 
+	«LET getSemanticClassName(diagramElement.oclAsType(gmfgen::GenLink)) AS className-»
+	protected org.eclipse.gmf.runtime.common.core.command.ICommand getAfterConfigureCommand(ConfigureRequest req) {
+		if (req.getElementToConfigure() instanceof «className» && req.getParameter(«getTypeConstantName()») instanceof String) {
+			«className» link = («className») req.getElementToConfigure();
+			String name = (String) req.getParameter(«getTypeConstantName()»);
+			SetRequest request = new SetRequest(link, UMLPackage.eINSTANCE.getNamedElement_Name(), name);
+			SetValueCommand setType = new SetValueCommand(request);
+			return setType;
+		}
+		return null;
+	}
+	«ENDLET»
+«ENDDEFINE»

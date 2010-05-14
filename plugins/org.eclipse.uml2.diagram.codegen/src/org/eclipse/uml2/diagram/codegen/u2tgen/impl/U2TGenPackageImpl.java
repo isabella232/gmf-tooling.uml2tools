@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenPackageImpl.java,v 1.3 2009/10/07 00:57:39 mgolubev Exp $
+ * $Id: U2TGenPackageImpl.java,v 1.4 2010/05/14 17:15:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
@@ -20,9 +21,14 @@ import org.eclipse.gmf.mappings.GMFMapPackage;
 import org.eclipse.uml2.diagram.codegen.u2tgen.AbstractDynamicCanonicalContainer;
 import org.eclipse.uml2.diagram.codegen.u2tgen.AuxSecondaryDiagramNodeAttribute;
 import org.eclipse.uml2.diagram.codegen.u2tgen.CustomLocatorAttributes;
+import org.eclipse.uml2.diagram.codegen.u2tgen.DependencyToolStackInfoAttribute;
+import org.eclipse.uml2.diagram.codegen.u2tgen.DependencyToolStackSupportAttribute;
 import org.eclipse.uml2.diagram.codegen.u2tgen.DetailsLevelAttributes;
 import org.eclipse.uml2.diagram.codegen.u2tgen.DynamicCanonicalCompartment;
+import org.eclipse.uml2.diagram.codegen.u2tgen.GeneralizedLinkConstraintAttribute;
 import org.eclipse.uml2.diagram.codegen.u2tgen.InteractionDiagramAttributes;
+import org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute;
+import org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute;
 import org.eclipse.uml2.diagram.codegen.u2tgen.RotatedLabelAttributes;
 import org.eclipse.uml2.diagram.codegen.u2tgen.StereotypeSupportAttribute;
 import org.eclipse.uml2.diagram.codegen.u2tgen.StereotypeSupportRole;
@@ -109,6 +115,27 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass linkToolStackSupportAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass linkToolStackInfoAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass generalizedLinkConstraintAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum stereotypeSupportRoleEEnum = null;
 
 	/**
@@ -138,20 +165,10 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 	private static boolean isInited = false;
 
 	/**
-	 * Creates, registers, and initializes the <b>Package</b> for this
-	 * model, and for any others upon which it depends.  Simple
-	 * dependencies are satisfied by calling this method on all
-	 * dependent packages before doing anything else.  This method drives
-	 * initialization for interdependent packages directly, in parallel
-	 * with this package, itself.
-	 * <p>Of this package and its interdependencies, all packages which
-	 * have not yet been registered by their URI values are first created
-	 * and registered.  The packages are then initialized in two steps:
-	 * meta-model objects for all of the packages are created before any
-	 * are initialized, since one package's meta-model objects may refer to
-	 * those of another.
-	 * <p>Invocation of this method will not affect any packages that have
-	 * already been initialized.
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * 
+	 * <p>This method is used to initialize {@link U2TGenPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
@@ -163,7 +180,7 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 		if (isInited) return (U2TGenPackage)EPackage.Registry.INSTANCE.getEPackage(U2TGenPackage.eNS_URI);
 
 		// Obtain or create and register package
-		U2TGenPackageImpl theU2TGenPackage = (U2TGenPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(eNS_URI) instanceof U2TGenPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(eNS_URI) : new U2TGenPackageImpl());
+		U2TGenPackageImpl theU2TGenPackage = (U2TGenPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof U2TGenPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new U2TGenPackageImpl());
 
 		isInited = true;
 
@@ -185,6 +202,9 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 		// Mark meta-data to indicate it can't be changed
 		theU2TGenPackage.freeze();
 
+  
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(U2TGenPackage.eNS_URI, theU2TGenPackage);
 		return theU2TGenPackage;
 	}
 
@@ -364,6 +384,78 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLinkToolStackSupportAttribute() {
+		return linkToolStackSupportAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkToolStackSupportAttribute_ToolClassProviderName() {
+		return (EAttribute)linkToolStackSupportAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkToolStackSupportAttribute_BaseSemanticClassName() {
+		return (EAttribute)linkToolStackSupportAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLinkToolStackInfoAttribute() {
+		return linkToolStackInfoAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkToolStackInfoAttribute_ToolgroupTitle() {
+		return (EAttribute)linkToolStackInfoAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLinkToolStackInfoAttribute_ElementUniqueIdentifier() {
+		return (EAttribute)linkToolStackInfoAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGeneralizedLinkConstraintAttribute() {
+		return generalizedLinkConstraintAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGeneralizedLinkConstraintAttribute_LinkConstraint() {
+		return (EAttribute)generalizedLinkConstraintAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getStereotypeSupportRole() {
 		return stereotypeSupportRoleEEnum;
 	}
@@ -424,6 +516,17 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 		stereotypeSupportAttributeEClass = createEClass(STEREOTYPE_SUPPORT_ATTRIBUTE);
 		createEAttribute(stereotypeSupportAttributeEClass, STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE);
 
+		linkToolStackSupportAttributeEClass = createEClass(LINK_TOOL_STACK_SUPPORT_ATTRIBUTE);
+		createEAttribute(linkToolStackSupportAttributeEClass, LINK_TOOL_STACK_SUPPORT_ATTRIBUTE__TOOL_CLASS_PROVIDER_NAME);
+		createEAttribute(linkToolStackSupportAttributeEClass, LINK_TOOL_STACK_SUPPORT_ATTRIBUTE__BASE_SEMANTIC_CLASS_NAME);
+
+		linkToolStackInfoAttributeEClass = createEClass(LINK_TOOL_STACK_INFO_ATTRIBUTE);
+		createEAttribute(linkToolStackInfoAttributeEClass, LINK_TOOL_STACK_INFO_ATTRIBUTE__TOOLGROUP_TITLE);
+		createEAttribute(linkToolStackInfoAttributeEClass, LINK_TOOL_STACK_INFO_ATTRIBUTE__ELEMENT_UNIQUE_IDENTIFIER);
+
+		generalizedLinkConstraintAttributeEClass = createEClass(GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE);
+		createEAttribute(generalizedLinkConstraintAttributeEClass, GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE__LINK_CONSTRAINT);
+
 		// Create enums
 		stereotypeSupportRoleEEnum = createEEnum(STEREOTYPE_SUPPORT_ROLE);
 	}
@@ -453,6 +556,7 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 
 		// Obtain other dependent packages
 		GMFGenPackage theGMFGenPackage = (GMFGenPackage)EPackage.Registry.INSTANCE.getEPackage(GMFGenPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -468,6 +572,9 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 		interactionDiagramAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 		rotatedLabelAttributesEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 		stereotypeSupportAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
+		linkToolStackSupportAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
+		linkToolStackInfoAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
+		generalizedLinkConstraintAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(auxSecondaryDiagramNodeAttributeEClass, AuxSecondaryDiagramNodeAttribute.class, "AuxSecondaryDiagramNodeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -501,6 +608,17 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 
 		initEClass(stereotypeSupportAttributeEClass, StereotypeSupportAttribute.class, "StereotypeSupportAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStereotypeSupportAttribute_Role(), this.getStereotypeSupportRole(), "role", null, 0, 1, StereotypeSupportAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(linkToolStackSupportAttributeEClass, LinkToolStackSupportAttribute.class, "LinkToolStackSupportAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLinkToolStackSupportAttribute_ToolClassProviderName(), theEcorePackage.getEString(), "toolClassProviderName", null, 0, 1, LinkToolStackSupportAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLinkToolStackSupportAttribute_BaseSemanticClassName(), theEcorePackage.getEString(), "baseSemanticClassName", null, 0, 1, LinkToolStackSupportAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(linkToolStackInfoAttributeEClass, LinkToolStackInfoAttribute.class, "LinkToolStackInfoAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLinkToolStackInfoAttribute_ToolgroupTitle(), ecorePackage.getEString(), "toolgroupTitle", null, 0, 1, LinkToolStackInfoAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLinkToolStackInfoAttribute_ElementUniqueIdentifier(), ecorePackage.getEString(), "elementUniqueIdentifier", null, 0, 1, LinkToolStackInfoAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(generalizedLinkConstraintAttributeEClass, GeneralizedLinkConstraintAttribute.class, "GeneralizedLinkConstraintAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGeneralizedLinkConstraintAttribute_LinkConstraint(), theEcorePackage.getEString(), "linkConstraint", null, 0, 1, GeneralizedLinkConstraintAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(stereotypeSupportRoleEEnum, StereotypeSupportRole.class, "StereotypeSupportRole");

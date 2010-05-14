@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenItemProviderAdapterFactory.java,v 1.2 2009/03/10 15:48:55 tfesenko Exp $
+ * $Id: U2TGenItemProviderAdapterFactory.java,v 1.3 2010/05/14 17:15:05 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.provider;
 
@@ -269,6 +269,75 @@ public class U2TGenItemProviderAdapterFactory extends U2TGenAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkToolStackSupportAttributeItemProvider linkToolStackSupportAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkToolStackSupportAttributeAdapter() {
+		if (linkToolStackSupportAttributeItemProvider == null) {
+			linkToolStackSupportAttributeItemProvider = new LinkToolStackSupportAttributeItemProvider(this);
+		}
+
+		return linkToolStackSupportAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LinkToolStackInfoAttributeItemProvider linkToolStackInfoAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLinkToolStackInfoAttributeAdapter() {
+		if (linkToolStackInfoAttributeItemProvider == null) {
+			linkToolStackInfoAttributeItemProvider = new LinkToolStackInfoAttributeItemProvider(this);
+		}
+
+		return linkToolStackInfoAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.codegen.u2tgen.GeneralizedLinkConstraintAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GeneralizedLinkConstraintAttributeItemProvider generalizedLinkConstraintAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.codegen.u2tgen.GeneralizedLinkConstraintAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGeneralizedLinkConstraintAttributeAdapter() {
+		if (generalizedLinkConstraintAttributeItemProvider == null) {
+			generalizedLinkConstraintAttributeItemProvider = new GeneralizedLinkConstraintAttributeItemProvider(this);
+		}
+
+		return generalizedLinkConstraintAttributeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -375,6 +444,9 @@ public class U2TGenItemProviderAdapterFactory extends U2TGenAdapterFactory imple
 		if (interactionDiagramAttributesItemProvider != null) interactionDiagramAttributesItemProvider.dispose();
 		if (rotatedLabelAttributesItemProvider != null) rotatedLabelAttributesItemProvider.dispose();
 		if (stereotypeSupportAttributeItemProvider != null) stereotypeSupportAttributeItemProvider.dispose();
+		if (linkToolStackSupportAttributeItemProvider != null) linkToolStackSupportAttributeItemProvider.dispose();
+		if (linkToolStackInfoAttributeItemProvider != null) linkToolStackInfoAttributeItemProvider.dispose();
+		if (generalizedLinkConstraintAttributeItemProvider != null) generalizedLinkConstraintAttributeItemProvider.dispose();
 	}
 
 	/**
@@ -463,6 +535,21 @@ public class U2TGenItemProviderAdapterFactory extends U2TGenAdapterFactory imple
 					(createChildParameter
 						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
 						 U2TGenFactory.eINSTANCE.createStereotypeSupportAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 U2TGenFactory.eINSTANCE.createLinkToolStackSupportAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 U2TGenFactory.eINSTANCE.createLinkToolStackInfoAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 U2TGenFactory.eINSTANCE.createGeneralizedLinkConstraintAttribute()));
 
 				return null;
 			}

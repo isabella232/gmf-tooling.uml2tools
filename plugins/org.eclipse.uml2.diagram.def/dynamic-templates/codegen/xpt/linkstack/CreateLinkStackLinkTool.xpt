@@ -1,0 +1,69 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»  
+
+«EXTENSION xpt::linkstack::LinkStackUtils» 
+
+«DEFINE className FOR gmfgen::GenLink»«getToolClassProviderName(self)»«ENDDEFINE»
+«DEFINE packageName FOR gmfgen::GenLink»«self.diagram.editorGen.packageNamePrefix».part«ENDDEFINE»
+«DEFINE qualifiedClassName FOR gmfgen::GenLink»«EXPAND packageName».«EXPAND className»«ENDDEFINE»
+
+
+«DEFINE createLinkStackLinkTool FOR gmfgen::GenLink»
+«EXPAND xpt::Common::generatedClassComment»
+package «EXPAND packageName»;
+
+import java.util.Collections;
+import java.util.Map;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.uml2.diagram.common.part.CreateLinkToolBase;
+import org.eclipse.uml2.uml.UMLPackage;
+
+«EXPAND xpt::Common::generatedClassComment»
+public class «EXPAND className» extends CreateLinkToolBase {
+	«EXPAND xpt::Common::generatedMemberComment»
+	private final EClass myLinkEClass;
+	«EXPAND xpt::Common::generatedMemberComment»
+	public «EXPAND className»(EClass linkEClass) {
+	super(Collections.singletonList(UMLElementTypes.«self.getUniqueIdentifier()»)); 
+		myLinkEClass = linkEClass;
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment» 
+	protected Map<String, ?> createAdditionalExtendedData() {
+		return Collections.singletonMap(DependencyEditHelper.«getTypeConstantName()», myLinkEClass);
+	}
+	
+	«EXPAND xpt::Common::generatedClassComment»
+	public static class DEPENDENCY extends «EXPAND className» {	
+	«EXPAND xpt::Common::generatedMemberComment»
+		public DEPENDENCY(){
+			super(UMLPackage.eINSTANCE.getDependency());
+		}
+	}
+	
+	«EXPAND xpt::Common::generatedClassComment»
+	public static class ABSTRACTION extends «EXPAND className» {	
+	«EXPAND xpt::Common::generatedMemberComment»
+		public ABSTRACTION(){
+			super(UMLPackage.eINSTANCE.getAbstraction());
+		}
+	}
+	
+	«EXPAND xpt::Common::generatedClassComment»
+	public static class USAGE extends «EXPAND className» {	
+	«EXPAND xpt::Common::generatedMemberComment»
+		public USAGE(){
+			super(UMLPackage.eINSTANCE.getUsage());
+		}
+	}
+
+	«EXPAND xpt::Common::generatedClassComment»
+	public static class SUBSTITUTION extends «EXPAND className»{	
+	«EXPAND xpt::Common::generatedMemberComment»
+		public SUBSTITUTION(){
+			super(UMLPackage.eINSTANCE.getSubstitution());
+		}
+	}
+}
+«ENDDEFINE»
+

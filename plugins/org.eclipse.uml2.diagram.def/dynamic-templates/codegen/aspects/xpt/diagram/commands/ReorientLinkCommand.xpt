@@ -1,0 +1,47 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»  
+
+«EXTENSION xpt::linkstack::LinkStackUtils» 
+
+«AROUND ReorientLinkCommand FOR gmfgen::GenLink-»
+«IF isLinkStackLink(self)» 
+	«EXPAND specialReorientLinkCommand-»
+«ELSE-»
+	«targetDef.proceed()-»
+«ENDIF»
+«ENDAROUND»
+
+«REM»
+Saves link`s eClass to special field.
+«ENDREM»
+«DEFINE specialReorientLinkCommand FOR gmfgen::GenLink-»
+«EXPAND xpt::Common::copyright FOR diagram.editorGen-»
+package «diagram.editCommandsPackageName»;
+
+«EXPAND xpt::Common::generatedClassComment»
+public class «reorientCommandClassName» extends org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand {
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private final int reorientDirection;
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	private final org.eclipse.emf.ecore.EObject oldEnd;
+ 
+	«EXPAND xpt::Common::generatedMemberComment»
+	private final org.eclipse.emf.ecore.EObject newEnd;
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	private final EClass linkEClass;
+ 
+	«EXPAND xpt::Common::generatedMemberComment»
+	public «reorientCommandClassName»(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest request) {
+		super(request.getLabel(), request.getRelationship(), request);
+		reorientDirection = request.getDirection();
+		oldEnd = request.getOldRelationshipEnd();
+		newEnd = request.getNewRelationshipEnd();
+		this.linkEClass = (EClass)request.getRelationship().eClass();
+	}
+	«EXPAND xpt::diagram::commands::ReorientLinkUtils::canReorient(self) FOR modelFacet-»
+	«EXPAND xpt::diagram::commands::ReorientLinkUtils::reorient FOR modelFacet-»
+	«EXPAND xpt::diagram::commands::ReorientLinkUtils::accessors-»
+}
+«ENDDEFINE»

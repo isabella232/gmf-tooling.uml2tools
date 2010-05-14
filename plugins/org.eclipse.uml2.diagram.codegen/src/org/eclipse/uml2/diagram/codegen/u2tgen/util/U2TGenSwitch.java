@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenSwitch.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: U2TGenSwitch.java,v 1.2 2010/05/14 17:15:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.util;
 
@@ -153,6 +153,27 @@ public class U2TGenSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case U2TGenPackage.LINK_TOOL_STACK_SUPPORT_ATTRIBUTE: {
+				LinkToolStackSupportAttribute linkToolStackSupportAttribute = (LinkToolStackSupportAttribute)theEObject;
+				T result = caseLinkToolStackSupportAttribute(linkToolStackSupportAttribute);
+				if (result == null) result = caseAttributes(linkToolStackSupportAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case U2TGenPackage.LINK_TOOL_STACK_INFO_ATTRIBUTE: {
+				LinkToolStackInfoAttribute linkToolStackInfoAttribute = (LinkToolStackInfoAttribute)theEObject;
+				T result = caseLinkToolStackInfoAttribute(linkToolStackInfoAttribute);
+				if (result == null) result = caseAttributes(linkToolStackInfoAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case U2TGenPackage.GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE: {
+				GeneralizedLinkConstraintAttribute generalizedLinkConstraintAttribute = (GeneralizedLinkConstraintAttribute)theEObject;
+				T result = caseGeneralizedLinkConstraintAttribute(generalizedLinkConstraintAttribute);
+				if (result == null) result = caseAttributes(generalizedLinkConstraintAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -289,6 +310,51 @@ public class U2TGenSwitch<T> {
 	 * @generated
 	 */
 	public T caseStereotypeSupportAttribute(StereotypeSupportAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Tool Stack Support Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Tool Stack Support Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkToolStackSupportAttribute(LinkToolStackSupportAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link Tool Stack Info Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link Tool Stack Info Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLinkToolStackInfoAttribute(LinkToolStackInfoAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Generalized Link Constraint Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Generalized Link Constraint Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGeneralizedLinkConstraintAttribute(GeneralizedLinkConstraintAttribute object) {
 		return null;
 	}
 

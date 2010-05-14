@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenPackage.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: U2TGenPackage.java,v 1.2 2010/05/14 17:15:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen;
 
@@ -341,6 +341,108 @@ public interface U2TGenPackage extends EPackage {
 	int STEREOTYPE_SUPPORT_ATTRIBUTE_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.impl.LinkToolStackSupportAttributeImpl <em>Link Tool Stack Support Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.LinkToolStackSupportAttributeImpl
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl#getLinkToolStackSupportAttribute()
+	 * @generated
+	 */
+	int LINK_TOOL_STACK_SUPPORT_ATTRIBUTE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Tool Class Provider Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TOOL_STACK_SUPPORT_ATTRIBUTE__TOOL_CLASS_PROVIDER_NAME = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Base Semantic Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TOOL_STACK_SUPPORT_ATTRIBUTE__BASE_SEMANTIC_CLASS_NAME = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Link Tool Stack Support Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TOOL_STACK_SUPPORT_ATTRIBUTE_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.impl.LinkToolStackInfoAttributeImpl <em>Link Tool Stack Info Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.LinkToolStackInfoAttributeImpl
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl#getLinkToolStackInfoAttribute()
+	 * @generated
+	 */
+	int LINK_TOOL_STACK_INFO_ATTRIBUTE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Toolgroup Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TOOL_STACK_INFO_ATTRIBUTE__TOOLGROUP_TITLE = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Element Unique Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TOOL_STACK_INFO_ATTRIBUTE__ELEMENT_UNIQUE_IDENTIFIER = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Link Tool Stack Info Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_TOOL_STACK_INFO_ATTRIBUTE_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.impl.GeneralizedLinkConstraintAttributeImpl <em>Generalized Link Constraint Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.GeneralizedLinkConstraintAttributeImpl
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl#getGeneralizedLinkConstraintAttribute()
+	 * @generated
+	 */
+	int GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Link Constraint</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE__LINK_CONSTRAINT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Generalized Link Constraint Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.StereotypeSupportRole <em>Stereotype Support Role</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -348,7 +450,7 @@ public interface U2TGenPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl#getStereotypeSupportRole()
 	 * @generated
 	 */
-	int STEREOTYPE_SUPPORT_ROLE = 9;
+	int STEREOTYPE_SUPPORT_ROLE = 12;
 
 
 	/**
@@ -552,6 +654,91 @@ public interface U2TGenPackage extends EPackage {
 	EAttribute getStereotypeSupportAttribute_Role();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute <em>Link Tool Stack Support Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Link Tool Stack Support Attribute</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute
+	 * @generated
+	 */
+	EClass getLinkToolStackSupportAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute#getToolClassProviderName <em>Tool Class Provider Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tool Class Provider Name</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute#getToolClassProviderName()
+	 * @see #getLinkToolStackSupportAttribute()
+	 * @generated
+	 */
+	EAttribute getLinkToolStackSupportAttribute_ToolClassProviderName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute#getBaseSemanticClassName <em>Base Semantic Class Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Base Semantic Class Name</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackSupportAttribute#getBaseSemanticClassName()
+	 * @see #getLinkToolStackSupportAttribute()
+	 * @generated
+	 */
+	EAttribute getLinkToolStackSupportAttribute_BaseSemanticClassName();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute <em>Link Tool Stack Info Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Link Tool Stack Info Attribute</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute
+	 * @generated
+	 */
+	EClass getLinkToolStackInfoAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute#getToolgroupTitle <em>Toolgroup Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Toolgroup Title</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute#getToolgroupTitle()
+	 * @see #getLinkToolStackInfoAttribute()
+	 * @generated
+	 */
+	EAttribute getLinkToolStackInfoAttribute_ToolgroupTitle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute#getElementUniqueIdentifier <em>Element Unique Identifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Element Unique Identifier</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.LinkToolStackInfoAttribute#getElementUniqueIdentifier()
+	 * @see #getLinkToolStackInfoAttribute()
+	 * @generated
+	 */
+	EAttribute getLinkToolStackInfoAttribute_ElementUniqueIdentifier();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.u2tgen.GeneralizedLinkConstraintAttribute <em>Generalized Link Constraint Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Generalized Link Constraint Attribute</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.GeneralizedLinkConstraintAttribute
+	 * @generated
+	 */
+	EClass getGeneralizedLinkConstraintAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.u2tgen.GeneralizedLinkConstraintAttribute#getLinkConstraint <em>Link Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Link Constraint</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.GeneralizedLinkConstraintAttribute#getLinkConstraint()
+	 * @see #getGeneralizedLinkConstraintAttribute()
+	 * @generated
+	 */
+	EAttribute getGeneralizedLinkConstraintAttribute_LinkConstraint();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.uml2.diagram.codegen.u2tgen.StereotypeSupportRole <em>Stereotype Support Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -752,6 +939,76 @@ public interface U2TGenPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE = eINSTANCE.getStereotypeSupportAttribute_Role();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.impl.LinkToolStackSupportAttributeImpl <em>Link Tool Stack Support Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.LinkToolStackSupportAttributeImpl
+		 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl#getLinkToolStackSupportAttribute()
+		 * @generated
+		 */
+		EClass LINK_TOOL_STACK_SUPPORT_ATTRIBUTE = eINSTANCE.getLinkToolStackSupportAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Tool Class Provider Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_TOOL_STACK_SUPPORT_ATTRIBUTE__TOOL_CLASS_PROVIDER_NAME = eINSTANCE.getLinkToolStackSupportAttribute_ToolClassProviderName();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Semantic Class Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_TOOL_STACK_SUPPORT_ATTRIBUTE__BASE_SEMANTIC_CLASS_NAME = eINSTANCE.getLinkToolStackSupportAttribute_BaseSemanticClassName();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.impl.LinkToolStackInfoAttributeImpl <em>Link Tool Stack Info Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.LinkToolStackInfoAttributeImpl
+		 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl#getLinkToolStackInfoAttribute()
+		 * @generated
+		 */
+		EClass LINK_TOOL_STACK_INFO_ATTRIBUTE = eINSTANCE.getLinkToolStackInfoAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Toolgroup Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_TOOL_STACK_INFO_ATTRIBUTE__TOOLGROUP_TITLE = eINSTANCE.getLinkToolStackInfoAttribute_ToolgroupTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Element Unique Identifier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK_TOOL_STACK_INFO_ATTRIBUTE__ELEMENT_UNIQUE_IDENTIFIER = eINSTANCE.getLinkToolStackInfoAttribute_ElementUniqueIdentifier();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.impl.GeneralizedLinkConstraintAttributeImpl <em>Generalized Link Constraint Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.GeneralizedLinkConstraintAttributeImpl
+		 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl#getGeneralizedLinkConstraintAttribute()
+		 * @generated
+		 */
+		EClass GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE = eINSTANCE.getGeneralizedLinkConstraintAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Link Constraint</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE__LINK_CONSTRAINT = eINSTANCE.getGeneralizedLinkConstraintAttribute_LinkConstraint();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.StereotypeSupportRole <em>Stereotype Support Role</em>}' enum.

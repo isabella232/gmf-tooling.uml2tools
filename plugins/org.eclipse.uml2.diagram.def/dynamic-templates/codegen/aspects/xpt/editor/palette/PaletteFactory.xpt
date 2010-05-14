@@ -9,11 +9,9 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-
-«EXTENSION xpt::editor::palette::Utils»
-«EXTENSION xpt::extendedpalette::Utils»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'» 
+ 
+«EXTENSION xpt::linkstack::LinkStackUtils» 
 
 «AROUND nodeToolEntry FOR OclAny»
 «IF self.oclIsKindOf(gmfgen::Palette)-»
@@ -35,3 +33,36 @@
 «EXPAND xpt::extendedpalette::PaletteFactory::newEntry(toolVarName)-»
 «ENDAROUND»
 
+«AROUND setSmallImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-»
+«IF (self.oclIsKindOf(gmfgen::ToolEntry) and isLinkStackTool(self.oclAsType(gmfgen::ToolEntry)))-»  	 
+ 	«EXPAND specialSetSmallImage(toolVarName, palette)» 
+«ELSE»    
+	«targetDef.proceed()» 
+«ENDIF»
+«ENDAROUND»
+
+«AROUND setLargeImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-» 
+«IF (self.oclIsKindOf(gmfgen::ToolEntry) and isLinkStackTool(self.oclAsType(gmfgen::ToolEntry)))-»  	 
+ 	«EXPAND specialSetLargeImage(toolVarName, palette)» 
+«ELSE-»    
+	«targetDef.proceed()» 
+«ENDIF-»
+«ENDAROUND»
+
+«REM»
+Gets image by the type given in diagram`s viewmap attribute
+«ENDREM»
+«DEFINE specialSetSmallImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-»  
+«IF null <> getImageDescriptor(self)-»
+	«toolVarName».setSmallIcon(«palette.diagram.getElementTypesQualifiedClassName()».getImageDescriptor(«getImageDescriptor(self)»));
+«ENDIF-»
+«ENDDEFINE»
+
+«REM»
+Gets image by the type given in diagram`s viewmap attribute
+«ENDREM»
+«DEFINE specialSetLargeImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-» 
+«IF  null <> getImageDescriptor(self)-»
+	«toolVarName».setLargeIcon(«toolVarName».getSmallIcon()); 	 
+«ENDIF-»
+«ENDDEFINE»

@@ -9,10 +9,9 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-
-«EXTENSION xpt::editor::palette::Utils»
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'» 
+ 
+«EXTENSION xpt::linkstack::LinkStackUtils» 
 
 «DEFINE nodeToolEntry FOR gmfgen::Palette»
 «ENDDEFINE»
@@ -21,6 +20,14 @@
 «ENDDEFINE»
 
 «DEFINE newEntry(toolVarName : String) FOR gmfgen::ToolEntry-»
+«IF isLinkStackTool(self)-»  
+ 	 ToolEntry «toolVarName» = new ToolEntry(«EXPAND xpt::editor::palette::PaletteFactory::i18nTitle», «EXPAND xpt::editor::palette::PaletteFactory::i18nDesc», null, null){};
+«ELSE-» 
+	«EXPAND commonNewEntry (toolVarName)» 
+«ENDIF-» 
+«ENDDEFINE»
+
+«DEFINE commonNewEntry (toolVarName : String) FOR gmfgen::ToolEntry-»
 «IF elements->isEmpty()-»
 org.eclipse.gef.palette.ToolEntry «toolVarName» = new org.eclipse.gef.palette.ToolEntry(«EXPAND xpt::editor::palette::PaletteFactory::i18nTitle», «EXPAND xpt::editor::palette::PaletteFactory::i18nDesc», null, null) {};
 «ELSE-»

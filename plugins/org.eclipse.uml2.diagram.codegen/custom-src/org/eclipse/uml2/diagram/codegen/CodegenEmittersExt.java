@@ -145,6 +145,14 @@ public class CodegenEmittersExt extends CodegenEmitters {
 		return getQualifiedClassName("xpt::async::NewDiagramPropertyTester::qualifiedClassName", input); //$NON-NLS-1$
 	}	
 	
+	public TextEmitter getCreateLinkToolStackLinkEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("xpt::linkstack::CreateLinkStackLinkTool::createLinkStackLinkTool"); //$NON-NLS-1$
+	}
+	
+	public String getCreateLinkToolStackLinkFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("xpt::linkstack::CreateLinkStackLinkTool::qualifiedClassName", input); //$NON-NLS-1$
+	}
+	
 	/**
 	 * Returns qualified class name defined in template.
 	 */

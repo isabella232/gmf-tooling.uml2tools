@@ -1,0 +1,71 @@
+modeltype genModel uses "http://www.eclipse.org/gmf/2009/GenModel";
+modeltype u2tgen uses "http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel";
+
+library LinkStackUtils;
+
+helper isLinkStackTool(tool : genModel::EntryBase) : Boolean { 
+	return tool.oclIsKindOf(genModel::ToolEntry) and getAttribute(tool.oclAsType(genModel::ToolEntry))<>null
+}
+
+helper getImageDescriptor(tool : genModel::EntryBase) : String { 
+	if tool.oclIsKindOf(genModel::ToolEntry) and getAttribute(tool.oclAsType(genModel::ToolEntry))<>null
+	then return "UMLElementTypes."+getAttribute(tool.oclAsType(genModel::ToolEntry)).elementUniqueIdentifier
+	else return null endif; 
+}
+
+helper getAttribute(tool : genModel::ToolEntry) : u2tgen::LinkToolStackInfoAttribute { 
+	if tool.group.palette.diagram.viewmap.attributes[u2tgen::LinkToolStackInfoAttribute]->notEmpty()
+	then 
+		(if tool.group.palette.diagram.viewmap.attributes[u2tgen::LinkToolStackInfoAttribute]->
+	select(at : u2tgen::LinkToolStackInfoAttribute | tool.group.title = at.toolgroupTitle)->isEmpty() 
+	then return null
+	else return tool.group.palette.diagram.viewmap.attributes[u2tgen::LinkToolStackInfoAttribute]->
+	select(at : u2tgen::LinkToolStackInfoAttribute | tool.group.title = at.toolgroupTitle)
+	->first() endif )
+	else  return null endif; 
+}
+
+helper isLinkStackLink(link : genModel::GenLink) : Boolean { 
+	return  link.viewmap.attributes[u2tgen::LinkToolStackSupportAttribute]->first()<>null
+}
+
+helper getLinkGeneralizedConstraint(link : genModel::GenLink) : String { 
+	return if link.viewmap.attributes[u2tgen::GeneralizedLinkConstraintAttribute]->first()<>null 
+	then link.viewmap.attributes[u2tgen::GeneralizedLinkConstraintAttribute]->first().linkConstraint
+	else null endif
+}
+
+helper getGeneralizedCanCreateMethodName() : String {
+	return "canReallyCreate"
+}
+
+helper getGeneralizedCanExistMethodName() : String {
+	return "canReallyExist"
+}
+
+helper getTypeConstantName() : String {
+	return "PARAMETER_DEPENDENCY_TYPE"
+}
+
+helper getNameConstantName() : String {
+	return "PARAMETER_DEPENDENCY_NAME"
+}
+ 
+helper getToolClassProviderName(link : genModel::GenLink) : String { 
+	return if (link.viewmap.attributes[u2tgen::LinkToolStackSupportAttribute]->first()<>null)
+	then link.viewmap.attributes[u2tgen::LinkToolStackSupportAttribute]->first().toolClassProviderName
+	else null endif
+}
+
+helper getSemanticClassName(link : genModel::GenLink) : String { 
+	return if (link.viewmap.attributes[u2tgen::LinkToolStackSupportAttribute]->first()<>null)
+	then link.viewmap.attributes[u2tgen::LinkToolStackSupportAttribute]->first().baseSemanticClassName
+	else null endif
+} 
+
+helper getEditHelperName(link : genModel::GenLink) : String { 
+	if link.elementType.oclIsKindOf(gmfgen::MetamodelType) 
+	then return link.elementType.oclAsType(gmfgen::MetamodelType).editHelperClassName
+	else return link.elementType.oclAsType(gmfgen::SpecializationType).metamodelType.editHelperClassName
+	endif;
+}
