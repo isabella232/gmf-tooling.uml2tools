@@ -147,9 +147,10 @@ public class Interface2EditPart extends AbstractBorderedShapeEditPart implements
 		if (borderItemEditPart instanceof InterfaceName2EditPart) {
 			IBorderItemLocator locator = new UnrestrictedOutsideBorderItemLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-		} else {
-			super.addBorderItem(borderItemContainer, borderItemEditPart);
+			return;
 		}
+
+		super.addBorderItem(borderItemContainer, borderItemEditPart);
 	}
 
 	/**

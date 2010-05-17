@@ -2703,9 +2703,6 @@
             xsi:type="u2tgen:SubstitutableByAttributes">
           <substitutableByIDs>2013</substitutableByIDs>
         </attributes>
-        <attributes
-            xsi:type="u2tgen:CustomLocatorAttributes"
-            customLocatorFQN="org.eclipse.uml2.diagram.common.draw2d.UnrestrictedOutsideBorderItemLocator"/>
       </viewmap>
       <modelFacet>
         <metaClass
@@ -2734,7 +2731,11 @@
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
-            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+            figureQualifiedClassName="org.eclipse.draw2d.Label"> 
+        <attributes
+            xsi:type="u2tgen:CustomLocatorAttributes"
+            customLocatorFQN="org.eclipse.uml2.diagram.common.draw2d.UnrestrictedOutsideBorderItemLocator"/>
+        </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
