@@ -1,34 +1,34 @@
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»  
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»  
 
-«EXTENSION xpt::diagram::Utils»
-«EXTENSION xpt::linkstack::LinkStackUtils» 
+Â«EXTENSION xpt::diagram::UtilsÂ»
+Â«EXTENSION u2t::linkstack::LinkStackUtilsÂ» 
 
-«AROUND checkLinkConstraint(link : gmfgen::GenLink, sourceVar : String, targetVar : String) FOR gmfgen::TypeLinkModelFacet-»
-«IF getLinkGeneralizedConstraint(link) <> null-»  
-	«EXPAND specialCheckLinkConstraint(link, sourceVar, targetVar)-»
-«ELSE-»
-	«targetDef.proceed()-»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND checkLinkConstraint(link : gmfgen::GenLink, sourceVar : String, targetVar : String) FOR gmfgen::TypeLinkModelFacet-Â»
+Â«IF getLinkGeneralizedConstraint(link) <> null-Â»  
+	Â«EXPAND specialCheckLinkConstraint(link, sourceVar, targetVar)-Â»
+Â«ELSE-Â»
+	Â«targetDef.proceed()-Â»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«REM»
+Â«REMÂ»
 New command`s canExecute checks new canExist method in UMLBaseItemSemanticEditPolicy.LinkConstraints 
 that allows usage of link`s eClass in link constraint
-«ENDREM»
-«DEFINE specialCheckLinkConstraint(link : gmfgen::GenLink, sourceVar : String, targetVar : String) FOR gmfgen::TypeLinkModelFacet-»
-	«IF hasContainerOtherThanSource(self)-»
-		if (!(«EXPAND MetaModel::IsContainerInstance('getLink()', metaClass) FOR containmentMetaFeature.genClass»)) {
+Â«ENDREMÂ»
+Â«DEFINE specialCheckLinkConstraint(link : gmfgen::GenLink, sourceVar : String, targetVar : String) FOR gmfgen::TypeLinkModelFacet-Â»
+	Â«IF hasContainerOtherThanSource(self)-Â»
+		if (!(Â«EXPAND MetaModel::IsContainerInstance('getLink()', metaClass) FOR containmentMetaFeature.genClassÂ»)) {
 			return false;
 		}
-		«EXPAND MetaModel::DeclareAndAssignContainer('container', 'getLink()', metaClass) FOR containmentMetaFeature.genClass»
-		return «EXPAND xpt::diagram::commands::ReorientLinkUtils::checkLinkConstraintInvocation FOR link»(container, «sourceVar», «targetVar») &&//
-			«EXPAND getAdditionCheck(link, sourceVar, targetVar)»
-	«ELSE-»
-		return «EXPAND xpt::diagram::commands::ReorientLinkUtils::checkLinkConstraintInvocation FOR link»(«sourceVar», «targetVar»)&&//
-			«EXPAND getAdditionCheck(link, sourceVar, targetVar)»
-	«ENDIF-»
-«ENDDEFINE»
+		Â«EXPAND MetaModel::DeclareAndAssignContainer('container', 'getLink()', metaClass) FOR containmentMetaFeature.genClassÂ»
+		return Â«EXPAND xpt::diagram::commands::ReorientLinkUtils::checkLinkConstraintInvocation FOR linkÂ»(container, Â«sourceVarÂ», Â«targetVarÂ») &&//
+			Â«EXPAND getAdditionCheck(link, sourceVar, targetVar)Â»
+	Â«ELSE-Â»
+		return Â«EXPAND xpt::diagram::commands::ReorientLinkUtils::checkLinkConstraintInvocation FOR linkÂ»(Â«sourceVarÂ», Â«targetVarÂ»)&&//
+			Â«EXPAND getAdditionCheck(link, sourceVar, targetVar)Â»
+	Â«ENDIF-Â»
+Â«ENDDEFINEÂ»
 
-«DEFINE getAdditionCheck(link : gmfgen::GenLink, sourceVar : String, targetVar : String) FOR gmfgen::TypeLinkModelFacet-»
-«link.diagram.getBaseItemSemanticEditPolicyQualifiedClassName()».«link.diagram.getLinkCreationConstraintsClassName()».«getGeneralizedCanExistMethodName()»«link.getUniqueIdentifier()»(«sourceVar», «targetVar», linkEClass);
-«ENDDEFINE»
+Â«DEFINE getAdditionCheck(link : gmfgen::GenLink, sourceVar : String, targetVar : String) FOR gmfgen::TypeLinkModelFacet-Â»
+Â«link.diagram.getBaseItemSemanticEditPolicyQualifiedClassName()Â».Â«link.diagram.getLinkCreationConstraintsClassName()Â».Â«getGeneralizedCanExistMethodName()Â»Â«link.getUniqueIdentifier()Â»(Â«sourceVarÂ», Â«targetVarÂ», linkEClass);
+Â«ENDDEFINEÂ»

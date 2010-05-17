@@ -11,63 +11,63 @@
  * 	  Michael Golubev (Borland) - custom icons for diagram elements
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
-«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'Â»
 
-«EXTENSION aspects::xpt::FileExtensionUtils»
-«EXTENSION org::eclipse::uml2::diagram::codegen::qvt::NativeEMFUtils»
+Â«EXTENSION aspects::xpt::FileExtensionUtilsÂ»
+Â«EXTENSION org::eclipse::uml2::diagram::codegen::qvt::NativeEMFUtilsÂ»
 
-«AROUND xpt::plugin::plugin::fileTypes FOR gmfgen::GenPlugin-»
+Â«AROUND xpt::plugin::plugin::fileTypes FOR gmfgen::GenPlugin-Â»
    <extension point="org.eclipse.team.core.fileTypes">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-«REM» #230873 'Make diagram file extension shorter'«ENDREM»«-»
-«FOREACH collectAllExtensions(editorGen) AS dfe-»
+      Â«EXPAND xpt::Common::xmlGeneratedTagÂ»
+Â«REMÂ» #230873 'Make diagram file extension shorter'Â«ENDREMÂ»Â«-Â»
+Â«FOREACH collectAllExtensions(editorGen) AS dfe-Â»
       <fileTypes
          type="text"
-         extension="«dfe»">
+         extension="Â«dfeÂ»">
       </fileTypes>
-«ENDFOREACH-»
-«REM» End of #230873«ENDREM»«-»
+Â«ENDFOREACH-Â»
+Â«REMÂ» End of #230873Â«ENDREMÂ»Â«-Â»
    </extension>
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND xpt::plugin::plugin::extension_parser FOR gmfgen::GenPlugin-»
+Â«AROUND xpt::plugin::plugin::extension_parser FOR gmfgen::GenPlugin-Â»
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-«REM» #230873 'Make diagram file extension shorter'«ENDREM»«-»
-«FOREACH collectAllExtensions(editorGen) AS dfe-»
+      Â«EXPAND xpt::Common::xmlGeneratedTagÂ»
+Â«REMÂ» #230873 'Make diagram file extension shorter'Â«ENDREMÂ»Â«-Â»
+Â«FOREACH collectAllExtensions(editorGen) AS dfe-Â»
       <parser
-         type="«dfe»"
+         type="Â«dfeÂ»"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
-«ENDFOREACH-»
-«REM» End of #230873«ENDREM»«-»
+Â«ENDFOREACH-Â»
+Â«REMÂ» End of #230873Â«ENDREMÂ»Â«-Â»
    </extension>
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND xpt::plugin::plugin::additions FOR gmfgen::GenPlugin»
-«EXPAND xpt::actions::extensions::changeNotationContributionItemProviders FOR editorGen.diagram»
-«EXPAND xpt::stereo::extensions::stereotypeContributionItemProviders FOR editorGen.diagram»
-«EXPAND iconStylePreferencesPage FOR editorGen.diagram»
-«EXPAND xpt::async::extensions::asyncDiagramSupport FOR editorGen.diagram»
-«EXPAND xpt::validation::extensions::validateActionSupport FOR editorGen.diagram»
-«EXPAND xpt::extendedpalette::extensions::paletteProvider FOR editorGen.diagram»
-«ENDAROUND»
+Â«AROUND xpt::plugin::plugin::additions FOR gmfgen::GenPluginÂ»
+Â«EXPAND u2t::actions::extensions::changeNotationContributionItemProviders FOR editorGen.diagramÂ»
+Â«EXPAND u2t::stereo::extensions::stereotypeContributionItemProviders FOR editorGen.diagramÂ»
+Â«EXPAND iconStylePreferencesPage FOR editorGen.diagramÂ»
+Â«EXPAND u2t::async::extensions::asyncDiagramSupport FOR editorGen.diagramÂ»
+Â«EXPAND u2t::validation::extensions::validateActionSupport FOR editorGen.diagramÂ»
+Â«EXPAND u2t::extendedpalette::extensions::paletteProvider FOR editorGen.diagramÂ»
+Â«ENDAROUNDÂ»
 
-«DEFINE iconStylePreferencesPage FOR gmfgen::GenDiagram»
+Â«DEFINE iconStylePreferencesPage FOR gmfgen::GenDiagramÂ»
    <extension point="org.eclipse.ui.preferencePages" id="prefpages.iconstyle">
-      «EXPAND xpt::Common::xmlGeneratedTag»
+      Â«EXPAND xpt::Common::xmlGeneratedTagÂ»
       <page
             name="%preferences.icons"
-            class="«EXPAND xpt::preferences::IconStylePreferencePage::qualifiedClassName»"
-            category="«EXPAND preferencePageId FOR self»"
-            id="«editorGen.plugin.iD».icons">
+            class="Â«EXPAND u2t::preferences::IconStylePreferencePage::qualifiedClassNameÂ»"
+            category="Â«EXPAND preferencePageId FOR selfÂ»"
+            id="Â«editorGen.plugin.iDÂ».icons">
       </page>
    </extension>
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE preferencesPrefix FOR gmfgen::GenDiagram»org.eclipse.uml2.uml.diagram.«getSimpleClassName(editorGen.plugin.iD)»«ENDDEFINE»
-«DEFINE preferencePageId FOR gmfgen::GenPreferencePage»«EXPAND preferencesPrefix FOR self.getDiagram()».«getSimpleClassName(self.iD)»«ENDDEFINE»
-«DEFINE preferencePageId FOR gmfgen::GenDiagram»«EXPAND preferencePageId FOR self.preferencePages->first().oclAsType(gmfgen::GenPreferencePage)»«ENDDEFINE»
+Â«DEFINE preferencesPrefix FOR gmfgen::GenDiagramÂ»org.eclipse.uml2.uml.diagram.Â«getSimpleClassName(editorGen.plugin.iD)Â»Â«ENDDEFINEÂ»
+Â«DEFINE preferencePageId FOR gmfgen::GenPreferencePageÂ»Â«EXPAND preferencesPrefix FOR self.getDiagram()Â».Â«getSimpleClassName(self.iD)Â»Â«ENDDEFINEÂ»
+Â«DEFINE preferencePageId FOR gmfgen::GenDiagramÂ»Â«EXPAND preferencePageId FOR self.preferencePages->first().oclAsType(gmfgen::GenPreferencePage)Â»Â«ENDDEFINEÂ»

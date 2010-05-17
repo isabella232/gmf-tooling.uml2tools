@@ -15,7 +15,7 @@
 «IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
 
 «EXTENSION xpt::diagram::updater::Utils»
-«EXTENSION xpt::async::NonCanonicalDiagram»
+«EXTENSION u2t::async::NonCanonicalDiagram»
 
 «AROUND addCustomStyles(stylesVar : String) FOR gmfgen::GenCommonBase-»
 	«targetDef.proceed()-»

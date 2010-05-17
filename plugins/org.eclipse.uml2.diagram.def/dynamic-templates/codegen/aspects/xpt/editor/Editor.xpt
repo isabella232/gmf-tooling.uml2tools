@@ -11,46 +11,46 @@
  *    Tatiana Fesenko (Borland) - #262592 'Contribute UMLPaletteFactory via gmf-runtime IPaletteProvider'
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«EXTENSION xpt::extendedpalette::Utils»
+Â«EXTENSION u2t::extendedpalette::UtilsÂ»
 
-«AROUND createPaletteRoot FOR gmfgen::Palette-»
-«IF not supportsExtendedPalette(diagram)-»
-«targetDef.proceed()-»
-«ELSE-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND createPaletteRoot FOR gmfgen::Palette-Â»
+Â«IF not supportsExtendedPalette(diagram)-Â»
+Â«targetDef.proceed()-Â»
+Â«ELSE-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 protected org.eclipse.gef.palette.PaletteRoot createPaletteRoot(org.eclipse.gef.palette.PaletteRoot existingPaletteRoot) {
 	org.eclipse.gef.palette.PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
-«REM» #262592 'Contribute UMLPaletteFactory via gmf-runtime IPaletteProvider'«ENDREM»«-»
-//	new «getFactoryQualifiedClassName()»().fillPalette(root);
+Â«REMÂ» #262592 'Contribute UMLPaletteFactory via gmf-runtime IPaletteProvider'Â«ENDREMÂ»Â«-Â»
+//	new Â«getFactoryQualifiedClassName()Â»().fillPalette(root);
 	return root;
 }
-«ENDIF-»
-«ENDAROUND»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND xpt::editor::Editor::additions FOR gmfgen::GenEditorView-»
-	«EXPAND xpt::Common::generatedMemberComment»	
+Â«AROUND xpt::editor::Editor::additions FOR gmfgen::GenEditorView-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»	
 	public void refresh() {
 		refreshPalette();
 		refreshDiagram();
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private void refreshDiagram() {
 		getDiagramGraphicalViewer().setContents(getDiagram());
 	}
 
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void refreshPalette() {
 		org.eclipse.gef.palette.PaletteRoot paletteRoot = getEditDomain().getPaletteViewer().getPaletteRoot();
 		cleanPaletteRoot(paletteRoot);
 		createPaletteRoot(paletteRoot);
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private void cleanPaletteRoot(org.eclipse.gef.palette.PaletteRoot paletteRoot) {
 		java.util.List<Object> entries = new java.util.ArrayList<Object>();
 		entries.addAll(paletteRoot.getChildren());
@@ -64,5 +64,5 @@ protected org.eclipse.gef.palette.PaletteRoot createPaletteRoot(org.eclipse.gef.
 		}
 	}
 
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 

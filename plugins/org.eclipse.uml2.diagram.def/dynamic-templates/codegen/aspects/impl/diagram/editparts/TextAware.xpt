@@ -14,10 +14,10 @@
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
-«EXTENSION xpt::rotatedlabel::RotatedLabelsSupport»
-«EXTENSION xpt::stereo::StereotypeIconSupport»
-«EXTENSION xpt::detaillevels::DetailLevelsSupport»
-«EXTENSION xpt::async::NonCanonicalDiagram»
+«EXTENSION u2t::rotatedlabel::RotatedLabelsSupport»
+«EXTENSION u2t::stereo::StereotypeIconSupport»
+«EXTENSION u2t::detaillevels::DetailLevelsSupport»
+«EXTENSION u2t::async::NonCanonicalDiagram»
 
 «AROUND methods(needsRefreshBounds : Boolean, readOnly : Boolean, useElementIcon : Boolean, viewmap : gmfgen::Viewmap,
 		modelFacet : gmfgen::LabelModelFacet, host : gmfgen::GenCommonBase, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
@@ -146,9 +146,9 @@
 
 «AROUND getLabelIcon(useElementIcon : Boolean, diagram : gmfgen::GenDiagram) FOR gmfgen::GenCommonBase-»
 «IF isDiagramIconLabel(self)-»
-«EXPAND xpt::async::DiagramLabelEditPart::getLabelIcon»
+«EXPAND u2t::async::DiagramLabelEditPart::getLabelIcon»
 «ELSEIF isIconExtendedByStereotype(self)-»
-«EXPAND xpt::stereo::TextAware::getLabelIcon(useElementIcon, diagram)»
+«EXPAND u2t::stereo::TextAware::getLabelIcon(useElementIcon, diagram)»
 «ELSE-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected org.eclipse.swt.graphics.Image getLabelIcon() {
@@ -158,7 +158,7 @@
 			return null;
 		}
 		«IF not self.oclIsKindOf(gmfgen::GenLinkLabel)-»
-		boolean shouldShow = «EXPAND xpt::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()».shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
+		boolean shouldShow = «EXPAND u2t::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()».shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
 		if (!shouldShow){
 			return null;
 		}			
@@ -206,7 +206,7 @@
 
 «AROUND performDirectEditRequest FOR gmfgen::GenCommonBase-»
 «IF isStereotypeAndNameGroupName(self)-»
-«EXPAND xpt::stereo::TextAware::performDirectEditRequest_redirectToStereotypeLabel FOR self.oclAsType(gmfgen::GenNodeLabel)-»
+«EXPAND u2t::stereo::TextAware::performDirectEditRequest_redirectToStereotypeLabel FOR self.oclAsType(gmfgen::GenNodeLabel)-»
 «ELSE-»
 «targetDef.proceed()-»
 «ENDIF-»
@@ -214,7 +214,7 @@
 
 «AROUND performDirectEditWithInitialChar FOR gmfgen::GenCommonBase-»
 «IF isStereotypeAndNameGroupStereotype(self)-»
-«EXPAND xpt::stereo::TextAware::performDirectEditWithInitialChar FOR self.oclAsType(gmfgen::GenNodeLabel)-»
+«EXPAND u2t::stereo::TextAware::performDirectEditWithInitialChar FOR self.oclAsType(gmfgen::GenNodeLabel)-»
 «ELSE-»
 «targetDef.proceed()-»
 «ENDIF-»
@@ -222,7 +222,7 @@
 
 «AROUND getParserOptions FOR gmfgen::GenCommonBase-»
 «IF isDetailsAwareParser(self)-»
-«EXPAND xpt::detaillevels::TextAware::getParserOptions»
+«EXPAND u2t::detaillevels::TextAware::getParserOptions»
 «ELSE-»
 «targetDef.proceed()-»
 «ENDIF-» 

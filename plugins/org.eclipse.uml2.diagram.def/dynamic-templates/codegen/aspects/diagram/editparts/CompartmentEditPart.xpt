@@ -10,26 +10,26 @@
  *    Michael Golubev (Borland) - [255532] - Insert action should work
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«EXTENSION xpt::async::NonCanonicalDiagram»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«EXTENSION u2t::async::NonCanonicalDiagramÂ»
 
-«AROUND implementsList FOR gmfgen::GenCompartment»«-»
-«IF self.listLayout and self.childNodes->size() = 1-»
-implements org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPart«-»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND implementsList FOR gmfgen::GenCompartmentÂ»Â«-Â»
+Â«IF self.listLayout and self.childNodes->size() = 1-Â»
+implements org.eclipse.gmf.runtime.diagram.ui.editparts.IInsertableEditPartÂ«-Â»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND diagram::editparts::CompartmentEditPart::additions FOR gmfgen::GenCompartment»
-«EXPAND insertableEditPart_getElementType FOR self-»
-«EXPAND xpt::compartments::CompartmentEditPart::hideIfEmptySupport FOR self-»
-«ENDAROUND»
+Â«AROUND diagram::editparts::CompartmentEditPart::additions FOR gmfgen::GenCompartmentÂ»
+Â«EXPAND insertableEditPart_getElementType FOR self-Â»
+Â«EXPAND u2t::compartments::CompartmentEditPart::hideIfEmptySupport FOR self-Â»
+Â«ENDAROUNDÂ»
 
-«DEFINE insertableEditPart_getElementType FOR gmfgen::GenCompartment-»
-«IF self.listLayout and self.childNodes->size() = 1-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE insertableEditPart_getElementType FOR gmfgen::GenCompartment-Â»
+Â«IF self.listLayout and self.childNodes->size() = 1-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public org.eclipse.gmf.runtime.emf.type.core.IElementType getElementType() {
-		return «getDiagram().getElementTypesQualifiedClassName()».«childNodes->at(0 + 1).oclAsType(gmfgen::GenCommonBase).getUniqueIdentifier()»;
+		return Â«getDiagram().getElementTypesQualifiedClassName()Â».Â«childNodes->at(0 + 1).oclAsType(gmfgen::GenCommonBase).getUniqueIdentifier()Â»;
 	}
 	
-«ENDIF-»
-«ENDDEFINE»
+Â«ENDIF-Â»
+Â«ENDDEFINEÂ»

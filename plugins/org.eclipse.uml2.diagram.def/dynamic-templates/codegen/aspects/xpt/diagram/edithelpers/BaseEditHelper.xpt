@@ -10,20 +10,20 @@
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
 
-«EXTENSION xpt::extendedpalette::Utils»
+Â«EXTENSION u2t::extendedpalette::UtilsÂ»
 
-«AROUND additions FOR gmfgen::GenDiagram-»
-«IF supportsExtendedPalette(self)-»
-«EXPAND configureCommand»
-«EXPAND configureStereotypeCommand»
-«EXPAND afterConfigureCommand»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND additions FOR gmfgen::GenDiagram-Â»
+Â«IF supportsExtendedPalette(self)-Â»
+Â«EXPAND configureCommandÂ»
+Â«EXPAND configureStereotypeCommandÂ»
+Â«EXPAND afterConfigureCommandÂ»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«DEFINE configureCommand FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE configureCommand FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	final protected org.eclipse.gmf.runtime.common.core.command.ICommand getConfigureCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest req) {
 		org.eclipse.gmf.runtime.common.core.command.ICommand configureStereotype = getConfigureStereotypeCommand(req);
 		org.eclipse.gmf.runtime.common.core.command.ICommand afterConfugure = getAfterConfigureCommand(req);
@@ -41,10 +41,10 @@
 		}
 		return super.getConfigureCommand(req);
 	}
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE configureStereotypeCommand FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE configureStereotypeCommand FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected org.eclipse.gmf.runtime.common.core.command.ICommand getConfigureStereotypeCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest req) {
 		if (req.getElementToConfigure() instanceof org.eclipse.uml2.uml.Element && req.getParameter(org.eclipse.uml2.diagram.common.part.CreationToolConstants.PARAMETER_CONFUGURE_STEREOTYPE) instanceof org.eclipse.uml2.uml.Stereotype) {
 			org.eclipse.uml2.uml.Element element = (org.eclipse.uml2.uml.Element)req.getElementToConfigure();
@@ -54,11 +54,11 @@
 		}
 		return null;
 	}
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE afterConfigureCommand FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE afterConfigureCommand FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected org.eclipse.gmf.runtime.common.core.command.ICommand getAfterConfigureCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest req) {
 		return null;
 	}
-«ENDDEFINE»
+Â«ENDDEFINEÂ»

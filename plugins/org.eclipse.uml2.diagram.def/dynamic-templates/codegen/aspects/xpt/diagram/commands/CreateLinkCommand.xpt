@@ -1,85 +1,85 @@
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»  
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»  
 
-«EXTENSION xpt::diagram::Utils»
-«EXTENSION xpt::linkstack::LinkStackUtils»   
+Â«EXTENSION xpt::diagram::UtilsÂ»
+Â«EXTENSION u2t::linkstack::LinkStackUtilsÂ»   
 
-«AROUND execute(link : gmfgen::GenLink) FOR gmfgen::TypeLinkModelFacet»
-«IF isLinkStackLink(link)-»  
-	«EXPAND specialExecute(link)-»
-«ELSE-»
-	«targetDef.proceed()-»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND execute(link : gmfgen::GenLink) FOR gmfgen::TypeLinkModelFacetÂ»
+Â«IF isLinkStackLink(link)-Â»  
+	Â«EXPAND specialExecute(link)-Â»
+Â«ELSE-Â»
+	Â«targetDef.proceed()-Â»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND Main FOR gmfgen::GenLink»
-«IF getLinkGeneralizedConstraint(self) <> null-»  
-	«EXPAND specialMain-»
-«ELSE-»
-	«targetDef.proceed()-»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND Main FOR gmfgen::GenLinkÂ»
+Â«IF getLinkGeneralizedConstraint(self) <> null-Â»  
+	Â«EXPAND specialMain-Â»
+Â«ELSE-Â»
+	Â«targetDef.proceed()-Â»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«REM»
+Â«REMÂ»
 Chooses new link`s class by DependencyEditHelper.PARAMETER_DEPENDENCY_TYPE parameter of request
-«ENDREM»
-«DEFINE specialExecute(link : gmfgen::GenLink) FOR gmfgen::TypeLinkModelFacet»
-«IF (if sourceMetaFeature = null then containmentMetaFeature.ecoreFeature.changeable else sourceMetaFeature.ecoreFeature.changeable endif) and targetMetaFeature.ecoreFeature.changeable-» 
-		org.eclipse.emf.ecore.EClass linkTypeHint = (org.eclipse.emf.ecore.EClass) getRequest().getParameter(«getEditHelperName(link)».«getTypeConstantName()»);
+Â«ENDREMÂ»
+Â«DEFINE specialExecute(link : gmfgen::GenLink) FOR gmfgen::TypeLinkModelFacetÂ»
+Â«IF (if sourceMetaFeature = null then containmentMetaFeature.ecoreFeature.changeable else sourceMetaFeature.ecoreFeature.changeable endif) and targetMetaFeature.ecoreFeature.changeable-Â» 
+		org.eclipse.emf.ecore.EClass linkTypeHint = (org.eclipse.emf.ecore.EClass) getRequest().getParameter(Â«getEditHelperName(link)Â».Â«getTypeConstantName()Â»);
 		 
-		«getSemanticClassName(link)» newElement = («getSemanticClassName(link)») getContainer().createPackagedElement(null, linkTypeHint);
-	«EXPAND MetaModel::modifyFeature((if hasContainerOtherThanSource(self) then 'getContainer()' else 'getSource()' endif), containmentMetaFeature.genClass, 'newElement') FOR containmentMetaFeature-»
-		«IF sourceMetaFeature <> null-»
-			«EXPAND MetaModel::modifyFeature('newElement', metaClass, 'getSource()') FOR sourceMetaFeature-»
-		«ENDIF-»
-		«EXPAND MetaModel::modifyFeature('newElement', metaClass, 'getTarget()') FOR targetMetaFeature-»
-		«IF hasExplicitChildFeature(self)-»
-			«IF sourceMetaFeature <> null-»
-				«EXPAND MetaModel::modifyFeature('getContainer()', containmentMetaFeature.genClass, 'newElement') FOR childMetaFeature-»
-			«ELSE-»
-				«EXPAND MetaModel::modifyFeature('getSource()', getSourceType(), 'newElement') FOR childMetaFeature-»
-			«ENDIF-»
-		«ENDIF-»
-		«EXPAND xpt::diagram::commands::CreateLinkCommand::initialize(link, 'newElement')-»
+		Â«getSemanticClassName(link)Â» newElement = (Â«getSemanticClassName(link)Â») getContainer().createPackagedElement(null, linkTypeHint);
+	Â«EXPAND MetaModel::modifyFeature((if hasContainerOtherThanSource(self) then 'getContainer()' else 'getSource()' endif), containmentMetaFeature.genClass, 'newElement') FOR containmentMetaFeature-Â»
+		Â«IF sourceMetaFeature <> null-Â»
+			Â«EXPAND MetaModel::modifyFeature('newElement', metaClass, 'getSource()') FOR sourceMetaFeature-Â»
+		Â«ENDIF-Â»
+		Â«EXPAND MetaModel::modifyFeature('newElement', metaClass, 'getTarget()') FOR targetMetaFeature-Â»
+		Â«IF hasExplicitChildFeature(self)-Â»
+			Â«IF sourceMetaFeature <> null-Â»
+				Â«EXPAND MetaModel::modifyFeature('getContainer()', containmentMetaFeature.genClass, 'newElement') FOR childMetaFeature-Â»
+			Â«ELSE-Â»
+				Â«EXPAND MetaModel::modifyFeature('getSource()', getSourceType(), 'newElement') FOR childMetaFeature-Â»
+			Â«ENDIF-Â»
+		Â«ENDIF-Â»
+		Â«EXPAND xpt::diagram::commands::CreateLinkCommand::initialize(link, 'newElement')-Â»
 		doConfigure(newElement, monitor, info);
-		((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).setNewElement(«EXPAND MetaModel::DowncastToEObject('newElement') FOR metaClass»);
+		((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).setNewElement(Â«EXPAND MetaModel::DowncastToEObject('newElement') FOR metaClassÂ»);
 		return org.eclipse.gmf.runtime.common.core.command.CommandResult.newOKCommandResult(newElement);
-«ELSE-»
+Â«ELSE-Â»
 		throw new UnsupportedOperationException(); 
-«ENDIF-»	 
-«ENDDEFINE»
+Â«ENDIF-Â»	 
+Â«ENDDEFINEÂ»
 
-«REM»
+Â«REMÂ»
 Saves created link`s eClass to the special field to use it in checking generalized constraint in link.
-«ENDREM»
-«DEFINE specialMain FOR gmfgen::GenLink-»
-«EXPAND xpt::Common::copyright FOR diagram.editorGen-»
-package «diagram.editCommandsPackageName»;
+Â«ENDREMÂ»
+Â«DEFINE specialMain FOR gmfgen::GenLink-Â»
+Â«EXPAND xpt::Common::copyright FOR diagram.editorGen-Â»
+package Â«diagram.editCommandsPackageNameÂ»;
 
-«EXPAND xpt::Common::generatedClassComment»
-public class «createCommandClassName» extends org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand {
-	«EXPAND xpt::diagram::commands::CreateLinkUtils::fields FOR modelFacet-»
+Â«EXPAND xpt::Common::generatedClassCommentÂ»
+public class Â«createCommandClassNameÂ» extends org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand {
+	Â«EXPAND xpt::diagram::commands::CreateLinkUtils::fields FOR modelFacet-Â»
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private final org.eclipse.emf.ecore.EClass linkEClass;
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	public «createCommandClassName»(org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest request, org.eclipse.emf.ecore.EObject source, org.eclipse.emf.ecore.EObject target) {
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public Â«createCommandClassNameÂ»(org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest request, org.eclipse.emf.ecore.EObject source, org.eclipse.emf.ecore.EObject target) {
 		super(request.getLabel(), null, request);
-		«EXPAND xpt::diagram::commands::CreateLinkUtils::_init FOR modelFacet-»
-		this.linkEClass = (EClass)request.getParameter(«self.diagram.editorGen.packageNamePrefix».edit.helpers.«getSemanticClassName(self)»EditHelper.«getTypeConstantName()»);
+		Â«EXPAND xpt::diagram::commands::CreateLinkUtils::_init FOR modelFacet-Â»
+		this.linkEClass = (EClass)request.getParameter(Â«self.diagram.editorGen.packageNamePrefixÂ».edit.helpers.Â«getSemanticClassName(self)Â»EditHelper.Â«getTypeConstantName()Â»);
 	}
 	
-	«EXPAND xpt::diagram::commands::CreateLinkUtils::canCreate(self) FOR modelFacet-» 
+	Â«EXPAND xpt::diagram::commands::CreateLinkUtils::canCreate(self) FOR modelFacet-Â» 
 
-	«EXPAND xpt::diagram::commands::CreateLinkCommand::doExecuteWithResultMethod»
+	Â«EXPAND xpt::diagram::commands::CreateLinkCommand::doExecuteWithResultMethodÂ»
 
-	«EXPAND xpt::diagram::commands::CreateLinkCommand::doConfigure(self) FOR modelFacet-»
+	Â«EXPAND xpt::diagram::commands::CreateLinkCommand::doConfigure(self) FOR modelFacet-Â»
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected void setElementToEdit(org.eclipse.emf.ecore.EObject element) {
 		throw new UnsupportedOperationException();
 	}
-	«EXPAND xpt::diagram::commands::CreateLinkUtils::accessors FOR modelFacet-»
-«EXPAND xpt::diagram::commands::CreateLinkCommand::additions-»
+	Â«EXPAND xpt::diagram::commands::CreateLinkUtils::accessors FOR modelFacet-Â»
+Â«EXPAND xpt::diagram::commands::CreateLinkCommand::additions-Â»
 }
-«ENDDEFINE»
+Â«ENDDEFINEÂ»

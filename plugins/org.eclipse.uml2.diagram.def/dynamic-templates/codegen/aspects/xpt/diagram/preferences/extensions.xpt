@@ -10,21 +10,21 @@
  *    Tatiana Fesenko (Borland) - custom icons for diagram elements
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«EXTENSION xpt::actions::Utils»  
-«EXTENSION xpt::diagram::Utils»
+Â«EXTENSION u2t::actions::UtilsÂ»  
+Â«EXTENSION xpt::diagram::UtilsÂ»
 
-«AROUND preferencePage FOR gmfgen::GenPreferencePage-»
+Â«AROUND preferencePage FOR gmfgen::GenPreferencePage-Â»
       <page
-            id="«iD»"
-            name="%prefpage.«iD»"
-«IF null <> parent-»
-            category="«parent.iD»"
-«ELSE-»
+            id="Â«iDÂ»"
+            name="%prefpage.Â«iDÂ»"
+Â«IF null <> parent-Â»
+            category="Â«parent.iDÂ»"
+Â«ELSE-Â»
             category="org.eclipse.uml2.uml.diagram"
-«ENDIF-»
-            class="«getQualifiedClassName()»">
+Â«ENDIF-Â»
+            class="Â«getQualifiedClassName()Â»">
       </page>
-«ENDAROUND»
+Â«ENDAROUNDÂ»

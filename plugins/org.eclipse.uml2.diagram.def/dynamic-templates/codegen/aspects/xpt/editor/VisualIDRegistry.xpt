@@ -16,7 +16,7 @@
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 «IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
-«EXTENSION xpt::diagramheader::DiagramHeader»
+«EXTENSION u2t::diagramheader::DiagramHeader»
 «EXTENSION xpt::editor::Utils»
 «EXTENSION xpt::diagram::updater::Utils»
 

@@ -16,5 +16,5 @@
 «AROUND properties FOR gmfgen::GenPlugin-»
 «targetDef.proceed()»
 preferences.icons=Icon Style
-«EXPAND xpt::async::extensions::i18n_values FOR self.editorGen.diagram-»
+«EXPAND u2t::async::extensions::i18n_values FOR self.editorGen.diagram-»
 «ENDAROUND»

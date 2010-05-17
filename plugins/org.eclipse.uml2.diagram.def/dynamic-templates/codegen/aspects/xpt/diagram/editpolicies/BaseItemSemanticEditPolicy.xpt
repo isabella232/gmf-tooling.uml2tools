@@ -1,45 +1,45 @@
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'» 
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â» 
  
-«EXTENSION xpt::linkstack::LinkStackUtils» 
+Â«EXTENSION u2t::linkstack::LinkStackUtilsÂ» 
 
-«AROUND canCreate FOR gmfgen::GenLink» 
-«targetDef.proceed()»	
-«IF getLinkGeneralizedConstraint(self) <> null-»  
-	«EXPAND specialCanCreate -» 
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND canCreate FOR gmfgen::GenLinkÂ» 
+Â«targetDef.proceed()Â»	
+Â«IF getLinkGeneralizedConstraint(self) <> null-Â»  
+	Â«EXPAND specialCanCreate -Â» 
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND canExist FOR gmfgen::GenLink»
-«targetDef.proceed()» 
-«IF getLinkGeneralizedConstraint(self) <> null-»  
-	«EXPAND specialCanExist -» 
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND canExist FOR gmfgen::GenLinkÂ»
+Â«targetDef.proceed()Â» 
+Â«IF getLinkGeneralizedConstraint(self) <> null-Â»  
+	Â«EXPAND specialCanExist -Â» 
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«DEFINE parameters FOR  gmfgen::GenLink»
+Â«DEFINE parameters FOR  gmfgen::GenLinkÂ»
 (NamedElement source, NamedElement target, org.eclipse.emf.ecore.EClass linkClass)
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE passedParameters FOR  gmfgen::GenLink»
+Â«DEFINE passedParameters FOR  gmfgen::GenLinkÂ»
 (source, target, linkClass)
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«REM»
+Â«REMÂ»
 Genetares special canCreate method in UMLBaseItemSemanticEditPolicy.LinkConstraints that provides link`s eClass
-«ENDREM»
-«DEFINE specialCanCreate FOR gmfgen::GenLink» 
-«EXPAND xpt::Common::generatedMemberComment»
-	public static boolean «getGeneralizedCanCreateMethodName()»«getUniqueIdentifier()»«EXPAND parameters»{
-		return «getGeneralizedCanExistMethodName()»«getUniqueIdentifier()»«EXPAND passedParameters»;
+Â«ENDREMÂ»
+Â«DEFINE specialCanCreate FOR gmfgen::GenLinkÂ» 
+Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public static boolean Â«getGeneralizedCanCreateMethodName()Â»Â«getUniqueIdentifier()Â»Â«EXPAND parametersÂ»{
+		return Â«getGeneralizedCanExistMethodName()Â»Â«getUniqueIdentifier()Â»Â«EXPAND passedParametersÂ»;
 	} 
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«REM»
+Â«REMÂ»
 Genetares special canExist method in UMLBaseItemSemanticEditPolicy.LinkConstraints that provides link`s eClass
-«ENDREM» 
-«DEFINE specialCanExist FOR gmfgen::GenLink»
-«EXPAND xpt::Common::generatedMemberComment»	
-	public static boolean «getGeneralizedCanExistMethodName()»«getUniqueIdentifier()»«EXPAND parameters»{
-	«getLinkGeneralizedConstraint(self)»
+Â«ENDREMÂ» 
+Â«DEFINE specialCanExist FOR gmfgen::GenLinkÂ»
+Â«EXPAND xpt::Common::generatedMemberCommentÂ»	
+	public static boolean Â«getGeneralizedCanExistMethodName()Â»Â«getUniqueIdentifier()Â»Â«EXPAND parametersÂ»{
+	Â«getLinkGeneralizedConstraint(self)Â»
 	}
-«ENDDEFINE»
+Â«ENDDEFINEÂ»

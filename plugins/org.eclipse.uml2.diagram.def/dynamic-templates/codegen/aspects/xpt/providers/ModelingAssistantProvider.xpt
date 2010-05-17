@@ -14,7 +14,7 @@
 
 «EXTENSION xpt::diagram::Utils»
 «EXTENSION xpt::providers::i18n»
-«EXTENSION xpt::diagramheader::DiagramHeader»
+«EXTENSION u2t::diagramheader::DiagramHeader»
 
 «AROUND getTypesForPopupBar FOR gmfgen::GenDiagram-»
 	«EXPAND xpt::Common::generatedMemberComment»

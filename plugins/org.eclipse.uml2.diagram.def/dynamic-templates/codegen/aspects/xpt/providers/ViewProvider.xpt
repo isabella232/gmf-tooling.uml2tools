@@ -297,7 +297,7 @@ public class «notationViewProviderClassName»«EXPAND xpt::providers::ViewProvi
 «ELSE-»
 		«EXPAND xpt::providers::ViewProvider::initializeStyles(compartmentVar, prefStoreVar, false, false, false)-»
 «ENDIF-»
-«EXPAND xpt::detaillevels::ViewProvider::initCompartment(nodeVar, prefStoreVar, compartmentVar)-»
-«EXPAND xpt::diagramheader::ViewProvider::initCompartment(nodeVar, prefStoreVar, compartmentVar)-»
+«EXPAND u2t::detaillevels::ViewProvider::initCompartment(nodeVar, prefStoreVar, compartmentVar)-»
+«EXPAND u2t::diagramheader::ViewProvider::initCompartment(nodeVar, prefStoreVar, compartmentVar)-»
 «ENDLET-»
 «ENDAROUND»

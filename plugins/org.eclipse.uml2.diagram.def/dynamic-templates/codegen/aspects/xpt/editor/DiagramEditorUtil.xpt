@@ -11,17 +11,17 @@
  *    Tatiana Fesenko (Borland) - bugzilla #230873 'Make diagram file extension shorter', 
  * 								           #268252 'There should be a way to specify exact metaclass of the diagram canvas semantic element"
  */
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«EXTENSION MetaModel»
-«EXTENSION xpt::GenModelUtils»
-«EXTENSION xpt::editor::GenDiagram»
-«EXTENSION xpt::editor::Utils»
-«EXTENSION xpt::wizard::Utils»
+Â«EXTENSION MetaModelÂ»
+Â«EXTENSION xpt::GenModelUtilsÂ»
+Â«EXTENSION xpt::editor::GenDiagramÂ»
+Â«EXTENSION xpt::editor::UtilsÂ»
+Â«EXTENSION u2t::wizard::UtilsÂ»
 
-«AROUND getUniqueFileNameMethod FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND getUniqueFileNameMethod FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public static String getUniqueFileName(org.eclipse.core.runtime.IPath containerFullPath, String fileName, String extension) {
 		if (containerFullPath == null) {
 			containerFullPath = new org.eclipse.core.runtime.Path(""); //$NON-NLS-1$
@@ -37,34 +37,34 @@
 		int i = 1;
 		org.eclipse.core.runtime.IPath filePath = containerFullPath.append(fileName + extension);
 		while (
-		«IF editorGen.application = null-»
+		Â«IF editorGen.application = null-Â»
 			org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot().exists(filePath)
-		«ELSE-»
+		Â«ELSE-Â»
 			filePath.toFile().exists()
-		«ENDIF-»
+		Â«ENDIF-Â»
 		) {
 			i++;
 			filePath = containerFullPath.append(fileName + i + extension);
 		}
 		return filePath.lastSegment();
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND attachModelMethod FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment('Store model element in the resource.
+Â«AROUND attachModelMethod FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberComment('Store model element in the resource.
 <!-- begin-user-doc -->
-<!-- end-user-doc -->')»
-	private static void attachModelToResource(«EXPAND MetaModel::QualifiedClassName FOR domainDiagramElement» model, org.eclipse.emf.ecore.resource.Resource resource) {
-		resource.getContents().add(«IF hasDocumentRoot(self)»createDocumentRoot(model)«ELSE»«IF isExternalInterface(domainDiagramElement)»(org.eclipse.emf.ecore.EObject) «ENDIF»model«ENDIF»);
-		«EXPAND loadDefaultImportsCall»
+<!-- end-user-doc -->')Â»
+	private static void attachModelToResource(Â«EXPAND MetaModel::QualifiedClassName FOR domainDiagramElementÂ» model, org.eclipse.emf.ecore.resource.Resource resource) {
+		resource.getContents().add(Â«IF hasDocumentRoot(self)Â»createDocumentRoot(model)Â«ELSEÂ»Â«IF isExternalInterface(domainDiagramElement)Â»(org.eclipse.emf.ecore.EObject) Â«ENDIFÂ»modelÂ«ENDIFÂ»);
+		Â«EXPAND loadDefaultImportsCallÂ»
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND additions FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND additions FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public static org.eclipse.core.resources.IFile getFile(org.eclipse.emf.common.util.URI uri) {
-		if (uri.toString().startsWith("platform:/resource")) { «EXPAND xpt::Common::nonNLS»
-			String path = uri.toString().substring("platform:/resource".length()); «EXPAND xpt::Common::nonNLS»
+		if (uri.toString().startsWith("platform:/resource")) { Â«EXPAND xpt::Common::nonNLSÂ»
+			String path = uri.toString().substring("platform:/resource".length()); Â«EXPAND xpt::Common::nonNLSÂ»
 			org.eclipse.core.resources.IResource workspaceResource = org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot().findMember(new org.eclipse.core.runtime.Path(path));
 			if (workspaceResource instanceof org.eclipse.core.resources.IFile) {
 				return (org.eclipse.core.resources.IFile) workspaceResource;
@@ -73,48 +73,48 @@
 		return null;
 	}
 	
-	«EXPAND loadDefaultImports»
-«ENDAROUND»
+	Â«EXPAND loadDefaultImportsÂ»
+Â«ENDAROUNDÂ»
 
-«AROUND createDiagramMethod FOR gmfgen::GenDiagram-»
-«IF ((not needDefaultName(self)) and (not needInitialObject(self)))-»
-«targetDef.proceed()-»
-«ELSE-»
-«EXPAND xpt::wizard::InitialObject::createDiagramMethod»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND createDiagramMethod FOR gmfgen::GenDiagram-Â»
+Â«IF ((not needDefaultName(self)) and (not needInitialObject(self)))-Â»
+Â«targetDef.proceed()-Â»
+Â«ELSE-Â»
+Â«EXPAND u2t::wizard::InitialObject::createDiagramMethodÂ»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND createInitialModelMethod FOR gmfgen::GenDiagram»
-«IF ((not needDefaultName(self)) and (not needInitialObject(self)))-»
-«targetDef.proceed()-»
-«ELSE-»
-«EXPAND xpt::wizard::InitialObject::createInitialModelMethod»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND createInitialModelMethod FOR gmfgen::GenDiagramÂ»
+Â«IF ((not needDefaultName(self)) and (not needInitialObject(self)))-Â»
+Â«targetDef.proceed()-Â»
+Â«ELSE-Â»
+Â«EXPAND u2t::wizard::InitialObject::createInitialModelMethodÂ»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND saveOptions FOR gmfgen::GenDiagram-»
-«targetDef.proceed()-»
-«IF needInitialObject(self)-»
-«EXPAND xpt::wizard::InitialObject::saveOptions»«ENDIF-»
-«ENDAROUND»
+Â«AROUND saveOptions FOR gmfgen::GenDiagram-Â»
+Â«targetDef.proceed()-Â»
+Â«IF needInitialObject(self)-Â»
+Â«EXPAND u2t::wizard::InitialObject::saveOptionsÂ»Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«DEFINE loadDefaultImportsCall FOR gmfgen::GenDiagram-» 
-	«IF needDefaultImports(self)-»
+Â«DEFINE loadDefaultImportsCall FOR gmfgen::GenDiagram-Â» 
+	Â«IF needDefaultImports(self)-Â»
 		loadDefaultImports(model);
-	«ENDIF-»	
-«ENDDEFINE»
+	Â«ENDIF-Â»	
+Â«ENDDEFINEÂ»
 
-«DEFINE loadDefaultImports FOR gmfgen::GenDiagram» 
-	«IF needDefaultImports(self)-»
-	«EXPAND xpt::Common::generatedMemberComment»
-	private static void loadDefaultImports(«EXPAND MetaModel::QualifiedClassName FOR domainDiagramElement» model) {
+Â«DEFINE loadDefaultImports FOR gmfgen::GenDiagramÂ» 
+	Â«IF needDefaultImports(self)-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	private static void loadDefaultImports(Â«EXPAND MetaModel::QualifiedClassName FOR domainDiagramElementÂ» model) {
 		org.eclipse.emf.ecore.resource.ResourceSet resourceSet = model.eResource().getResourceSet();
-		org.eclipse.uml2.uml.Model umlLibrary = (org.eclipse.uml2.uml.Model) resourceSet.getResource(«-»
+		org.eclipse.uml2.uml.Model umlLibrary = (org.eclipse.uml2.uml.Model) resourceSet.getResource(Â«-Â»
 			org.eclipse.emf.common.util.URI.createURI(org.eclipse.uml2.uml.resource.UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI), true).getContents().get(0);
 		model.createElementImport(umlLibrary.getOwnedType("Boolean"));
 		model.createElementImport(umlLibrary.getOwnedType("String"));
 		model.createElementImport(umlLibrary.getOwnedType("UnlimitedNatural"));
 		model.createElementImport(umlLibrary.getOwnedType("Integer"));
 	}
-	«ENDIF-»	
-«ENDDEFINE»
+	Â«ENDIF-Â»	
+Â«ENDDEFINEÂ»

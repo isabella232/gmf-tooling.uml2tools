@@ -10,42 +10,42 @@
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«EXTENSION xpt::ExternalizerUtils»
+Â«EXTENSION xpt::ExternalizerUtilsÂ»
 
-«AROUND Access FOR gmfgen::GenEditorGenerator-»
-«EXPAND xpt::Common::copyright-»
-package «getExternalizerPackageName(self)»;
+Â«AROUND Access FOR gmfgen::GenEditorGenerator-Â»
+Â«EXPAND xpt::Common::copyright-Â»
+package Â«getExternalizerPackageName(self)Â»;
 
-«EXPAND xpt::Common::generatedClassComment»
-public class «getExternalizerClassName()» extends org.eclipse.osgi.util.NLS {
+Â«EXPAND xpt::Common::generatedClassCommentÂ»
+public class Â«getExternalizerClassName()Â» extends org.eclipse.osgi.util.NLS {
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	static {
-		org.eclipse.osgi.util.NLS.initializeMessages("«getExternalizerClassName().toLower()»", «getExternalizerClassName()».class); «EXPAND xpt::Common::nonNLS»
+		org.eclipse.osgi.util.NLS.initializeMessages("Â«getExternalizerClassName().toLower()Â»", Â«getExternalizerClassName()Â».class); Â«EXPAND xpt::Common::nonNLSÂ»
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	private «getExternalizerClassName()»() {
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	private Â«getExternalizerClassName()Â»() {
 	}
 
-	«EXPAND xpt::Externalizer::Fields»
+	Â«EXPAND xpt::Externalizer::FieldsÂ»
     //TODO: put accessor fields manually
-    «EXPAND additions»
+    Â«EXPAND additionsÂ»
 }
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND Values FOR gmfgen::GenEditorGenerator»
-«targetDef.proceed()»
-«EXPAND xpt::actions::ChangeNotationAction::i18nValues FOR diagram-»
-«EXPAND xpt::actions::ChangeNotationContributionItemProvider::i18nValues FOR diagram-»
-«EXPAND xpt::preferences::IconStylePreferencePage::i18nValues FOR diagram-»
-«ENDAROUND»
+Â«AROUND Values FOR gmfgen::GenEditorGeneratorÂ»
+Â«targetDef.proceed()Â»
+Â«EXPAND u2t::actions::ChangeNotationAction::i18nValues FOR diagram-Â»
+Â«EXPAND u2t::actions::ChangeNotationContributionItemProvider::i18nValues FOR diagram-Â»
+Â«EXPAND u2t::preferences::IconStylePreferencePage::i18nValues FOR diagram-Â»
+Â«ENDAROUNDÂ»
 
-«DEFINE additions FOR gmfgen::GenEditorGenerator-»
-	«EXPAND xpt::actions::ChangeNotationAction::i18nAccessors FOR diagram-»
-	«EXPAND xpt::actions::ChangeNotationContributionItemProvider::i18nAccessors FOR diagram-»
-	«EXPAND xpt::preferences::IconStylePreferencePage::i18nAccessors FOR diagram-»
-«ENDDEFINE»
+Â«DEFINE additions FOR gmfgen::GenEditorGenerator-Â»
+	Â«EXPAND u2t::actions::ChangeNotationAction::i18nAccessors FOR diagram-Â»
+	Â«EXPAND u2t::actions::ChangeNotationContributionItemProvider::i18nAccessors FOR diagram-Â»
+	Â«EXPAND u2t::preferences::IconStylePreferencePage::i18nAccessors FOR diagram-Â»
+Â«ENDDEFINEÂ»

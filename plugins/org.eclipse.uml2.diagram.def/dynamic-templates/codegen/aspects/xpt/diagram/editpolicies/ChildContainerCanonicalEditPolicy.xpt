@@ -11,20 +11,20 @@
  *    [213008] - Layout element content after notation change
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«EXTENSION xpt::actions::Utils»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«EXTENSION u2t::actions::UtilsÂ»
 
-«AROUND additions FOR gmfgen::GenChildContainer-»
-«EXPAND deferredLayoutContent»
-«EXPAND aspects::xpt::diagram::updater::containerBaseCanonicalMethods::getFactoryHint»
-«ENDAROUND»
+Â«AROUND additions FOR gmfgen::GenChildContainer-Â»
+Â«EXPAND deferredLayoutContentÂ»
+Â«EXPAND aspects::xpt::diagram::updater::containerBaseCanonicalMethods::getFactoryHintÂ»
+Â«ENDAROUNDÂ»
 
-«DEFINE deferredLayoutContent FOR gmfgen::GenChildContainer-»
-«ENDDEFINE»
+Â«DEFINE deferredLayoutContent FOR gmfgen::GenChildContainer-Â»
+Â«ENDDEFINEÂ»
 
-«DEFINE deferredLayoutContent FOR gmfgen::GenCompartment-»
-«IF node.hasAlternativeNotation() and not listLayout-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE deferredLayoutContent FOR gmfgen::GenCompartment-Â»
+Â«IF node.hasAlternativeNotation() and not listLayout-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected void refreshSemantic() {
 		java.util.List createdViews = new java.util.LinkedList();
 		createdViews.addAll(refreshSemanticChildren());		
@@ -35,5 +35,5 @@
 		}
 		makeViewsImmutable(createdViews);
 	}
-«ENDIF»	
-«ENDDEFINE»
+Â«ENDIFÂ»	
+Â«ENDDEFINEÂ»

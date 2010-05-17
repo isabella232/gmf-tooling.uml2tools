@@ -19,7 +19,7 @@
 «IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
 «EXTENSION xpt::diagram::updater::Utils»
-«EXTENSION xpt::diagramheader::DiagramHeader»
+«EXTENSION u2t::diagramheader::DiagramHeader»
 «EXTENSION xpt::GenModelUtils»
 «EXTENSION gmf::GenModelUtils»
 

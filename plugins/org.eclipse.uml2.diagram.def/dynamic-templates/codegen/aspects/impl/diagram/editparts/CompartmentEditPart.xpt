@@ -11,47 +11,47 @@
  *    Michael Golubev - U2T specific graphical node edit policy 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«EXTENSION xpt::diagram::editparts::Utils»
-«EXTENSION xpt::compartments::Guard»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«EXTENSION xpt::diagram::editparts::UtilsÂ»
+Â«EXTENSION u2t::compartments::GuardÂ»
 
-«AROUND createDefaultEditPoliciesBody FOR gmfgen::GenCompartment-»
+Â«AROUND createDefaultEditPoliciesBody FOR gmfgen::GenCompartment-Â»
 	super.createDefaultEditPolicies();
-	«EXPAND xpt::compartments::CompartmentEditPart::installResizableCompartmentEditPolicy-»
-	«EXPAND xpt::diagram::editparts::Common::installSemanticEditPolicy-»
-	«IF childNodes->size() > 0-»
-		«REM»The change is here -- we are using U2T specific CreationEditPolicy«ENDREM»«-»
-		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE, «EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»);
+	Â«EXPAND u2t::compartments::CompartmentEditPart::installResizableCompartmentEditPolicy-Â»
+	Â«EXPAND xpt::diagram::editparts::Common::installSemanticEditPolicy-Â»
+	Â«IF childNodes->size() > 0-Â»
+		Â«REMÂ»The change is here -- we are using U2T specific CreationEditPolicyÂ«ENDREMÂ»Â«-Â»
+		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE, Â«EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstanceÂ»);
 		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy());
-	«ENDIF-»
-	«IF not listLayout-»
-	«REM»
+	Â«ENDIF-Â»
+	Â«IF not listLayout-Â»
+	Â«REMÂ»
 	listLayout is used to determine superclass. see CompartmentEditPart.xpt::extendsList. 
 	For ShapeCompartmentEditPart's (and only for them) we are going to replace XYLayoutEditPolicy with U2T custom version
-	«ENDREM»«-»
-	installEditPolicy(«-»
-		org.eclipse.gef.EditPolicy.LAYOUT_ROLE, «-»
+	Â«ENDREMÂ»Â«-Â»
+	installEditPolicy(Â«-Â»
+		org.eclipse.gef.EditPolicy.LAYOUT_ROLE, Â«-Â»
 		new org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels()); //replace with U2T specific version
-	«ENDIF-»
-	«EXPAND xpt::diagram::editparts::Common::installCanonicalEditPolicy-»
-	«EXPAND aspects::impl::diagram::editparts::updateDescriptionEditPolicy::installUpdateDescriptionEditPolicy-»
-	«EXPAND xpt::diagram::editparts::Common::behaviour-»
+	Â«ENDIF-Â»
+	Â«EXPAND xpt::diagram::editparts::Common::installCanonicalEditPolicy-Â»
+	Â«EXPAND aspects::impl::diagram::editparts::updateDescriptionEditPolicy::installUpdateDescriptionEditPolicy-Â»
+	Â«EXPAND xpt::diagram::editparts::Common::behaviour-Â»
 	
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND createFigure FOR gmfgen::GenCompartment-»
-«IF u2tSupportedCompartment(self)-»
-«EXPAND xpt::compartments::CompartmentEditPart::createU2TFigure-»
-«ELSE-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND createFigure FOR gmfgen::GenCompartment-Â»
+Â«IF u2tSupportedCompartment(self)-Â»
+Â«EXPAND u2t::compartments::CompartmentEditPart::createU2TFigure-Â»
+Â«ELSE-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public org.eclipse.draw2d.IFigure createFigure() {
 		org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure result = (org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure) super.createFigure();
-		«IF not needsTitle-»
-		«REM»By default titles are shown even if there are no TitleStyle, we need to switch it off«ENDREM»«-»	
+		Â«IF not needsTitle-Â»
+		Â«REMÂ»By default titles are shown even if there are no TitleStyle, we need to switch it offÂ«ENDREMÂ»Â«-Â»	
 		result.setTitleVisibility(false);
-		«ENDIF-»
+		Â«ENDIF-Â»
 		result.setBorder(null);
 		return result;
 	}
-«ENDIF-»
-«ENDAROUND»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»

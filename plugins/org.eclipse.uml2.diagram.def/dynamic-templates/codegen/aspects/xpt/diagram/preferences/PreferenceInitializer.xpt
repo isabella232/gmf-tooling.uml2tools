@@ -44,7 +44,7 @@ public class «EXPAND xpt::diagram::preferences::PreferenceInitializer::classNam
 «ENDAROUND»
 
 «DEFINE initDefaultIconStyle(storeVar : String) FOR gmfgen::GenDiagram»
-	«EXPAND xpt::preferences::IconStylePreferencePage::qualifiedClassName».initDefaults(«storeVar»);
-	«EXPAND xpt::preferences::IconStylePreferencePage::qualifiedClassName».initConnectorLabelDefaults(«storeVar»);
+	«EXPAND u2t::preferences::IconStylePreferencePage::qualifiedClassName».initDefaults(«storeVar»);
+	«EXPAND u2t::preferences::IconStylePreferencePage::qualifiedClassName».initConnectorLabelDefaults(«storeVar»);
 «ENDDEFINE»
 

@@ -17,7 +17,7 @@
 
 «EXTENSION xpt::editor::Utils»
 «EXTENSION aspects::xpt::FileExtensionUtils»
-«EXTENSION xpt::async::NonCanonicalDiagram»
+«EXTENSION u2t::async::NonCanonicalDiagram»
 
 «AROUND NewDiagramFileWizard FOR gmfgen::GenDiagram-»
 «EXPAND xpt::Common::copyright FOR editorGen-»
@@ -37,7 +37,7 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org
 «IF supportsNonCanonicalMode(self)-»
 
 	«EXPAND xpt::Common::generatedMemberComment»
-	private «EXPAND xpt::async::SynchronizationWizardPage::qualifiedClassName» synchronizationPage;
+	private «EXPAND u2t::async::SynchronizationWizardPage::qualifiedClassName» synchronizationPage;
 «ENDIF-»
 
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -75,7 +75,7 @@ public class «EXPAND xpt::editor::NewDiagramFileWizard::className» extends org
 
 	«EXPAND xpt::Common::generatedMemberComment»
 	private void createSynchronizationPage(org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain) {
-		synchronizationPage = new «EXPAND xpt::async::SynchronizationWizardPage::qualifiedClassName»("Select diagram synchronization scheme", editingDomain);
+		synchronizationPage = new «EXPAND u2t::async::SynchronizationWizardPage::qualifiedClassName»("Select diagram synchronization scheme", editingDomain);
 		synchronizationPage.setTitle("Diagram synchronization");
 		synchronizationPage.setDescription("Select diagram contents and its synchronization mode");
 	}

@@ -6,22 +6,22 @@
  *    Tatiana Fesenko (Borland) - #262592 - Contribute UMLPaletteFactory via gmf-runtime IPaletteProvider
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
 
-«EXTENSION xpt::extendedpalette::Utils»
+Â«EXTENSION u2t::extendedpalette::UtilsÂ»
 
-«AROUND diagram::editparts::DiagramEditPart::additions FOR gmfgen::GenDiagram-»
-	«IF not childNodes->isEmpty()-»
-		«EXPAND refreshDiagram-»
-	«ENDIF-»
-	«IF supportsExtendedPalette(self)-»
-		«EXPAND xpt::extendedpalette::DiagramEditPart::refreshPalette-»
-	«ENDIF-»
-«ENDAROUND»
+Â«AROUND diagram::editparts::DiagramEditPart::additions FOR gmfgen::GenDiagram-Â»
+	Â«IF not childNodes->isEmpty()-Â»
+		Â«EXPAND refreshDiagram-Â»
+	Â«ENDIF-Â»
+	Â«IF supportsExtendedPalette(self)-Â»
+		Â«EXPAND u2t::extendedpalette::DiagramEditPart::refreshPalette-Â»
+	Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«DEFINE refreshDiagram FOR gmfgen::GenCommonBase-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE refreshDiagram FOR gmfgen::GenCommonBase-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void refreshDiagram() {
-		«EXPAND aspects::xpt::diagram::updater::UpdateCommand::performCanonicalUpdateMethodCall»(getDiagramView().getElement());
+		Â«EXPAND aspects::xpt::diagram::updater::UpdateCommand::performCanonicalUpdateMethodCallÂ»(getDiagramView().getElement());
 	}
-«ENDDEFINE»
+Â«ENDDEFINEÂ»

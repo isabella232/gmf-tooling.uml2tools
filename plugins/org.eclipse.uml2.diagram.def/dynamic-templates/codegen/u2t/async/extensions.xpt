@@ -1,0 +1,125 @@
+/*
+ * Copyright (c) 2008 Borland Software Corporation
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Michael Golubev (Borland) - [252802] U2T specific delete from diagram action
+   */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«EXTENSION u2t::async::NonCanonicalDiagram»  
+
+«DEFINE asyncDiagramSupport FOR gmfgen::GenDiagram-»
+	«IF supportsNonCanonicalMode(self)-»
+		«EXPAND deleteFromDiagramActionSupport-»
+		«EXPAND synchronizeDiagramAction-»
+		«EXPAND newDiagramHandler-»		
+	«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE deleteFromDiagramActionSupport FOR gmfgen::GenDiagram»
+	<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-delete-from-diagram">
+	«EXPAND xpt::Common::xmlGeneratedTag»
+	«EXPAND removeDefaultDeleteFromDiagramAction-»
+	«EXPAND installU2TDeleteFromDiagramAction-»
+	</extension>
+«ENDDEFINE»
+
+«DEFINE removeDefaultDeleteFromDiagramAction FOR gmfgen::GenDiagram»
+	<contributionItemProvider
+			class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
+			checkPluginLoaded="false">
+		<Priority name="Medium"/>
+«FOREACH self.getAllNodes()->asSequence() AS nextNode-»
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="«nextNode.getEditPartQualifiedClassName()»"/>
+			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+		</popupContribution>
+«ENDFOREACH-»
+	</contributionItemProvider>
+«ENDDEFINE»
+
+«DEFINE installU2TDeleteFromDiagramAction FOR gmfgen::GenDiagram»
+	<contributionItemProvider
+			class="org.eclipse.uml2.diagram.common.async.DeleteFromDiagramPopupProvider"
+			checkPluginLoaded="false">
+		<Priority name="Low"/>
+«FOREACH self.getAllNodes()->asSequence() AS nextNode-»
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="«nextNode.getEditPartQualifiedClassName()»"/>
+			<popupAction
+				path="/editGroup"
+				id="«EXPAND U2TDeleteFromDiagramAction_id FOR nextNode»">
+			</popupAction>
+		</popupContribution>
+«ENDFOREACH-»
+	</contributionItemProvider>
+«ENDDEFINE»
+
+«DEFINE U2TDeleteFromDiagramAction_id FOR gmfgen::GenCommonBase»u2t_deleteFromDiagram«ENDDEFINE»
+
+«DEFINE synchronizeDiagramAction FOR gmfgen::GenDiagram»
+   <extension point="org.eclipse.ui.popupMenus" id="«self.editorGen.plugin.iD».synchronize">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <objectContribution
+            id="«self.editorGen.plugin.iD».SynchronizeDiagram"
+            objectClass="«getEditPartQualifiedClassName()»">
+         <action
+               label="%SynchronizeDialog_action"
+               class="«EXPAND u2t::async::SynchronizeDiagramAction::qualifiedClassName»"
+               menubarPath="additions"
+               enablesFor="1"
+               id="«self.editorGen.plugin.iD».ShowInitDialogAction2">
+         </action>
+      </objectContribution>
+   </extension>
+«ENDDEFINE»
+
+«DEFINE newDiagramHandler FOR gmfgen::GenDiagram»
+   <extension point="org.eclipse.core.expressions.propertyTesters" id="new-diagram-property-testers">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+        <propertyTester
+              class="«EXPAND u2t::async::NewDiagramPropertyTester::qualifiedClassName»"
+              id="org.eclipse.uml2.diagram.is«self.editorGen.modelID»Element"
+              properties="is«self.editorGen.modelID»Element"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="«EXPAND u2t::async::NewDiagramPropertyTester::qualifiedClassName»"
+              id="org.eclipse.uml2.diagram.is«self.editorGen.modelID»Element"
+              properties="is«self.editorGen.modelID»Element"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.uml2.uml.Element">
+        </propertyTester>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="new-diagram-handler">
+      «EXPAND xpt::Common::xmlGeneratedTag»
+      <handler
+            class="«EXPAND u2t::async::NewDiagramHandler::qualifiedClassName»"
+            commandId="org.eclipse.uml2.diagram.New«self.editorGen.modelID»DiagramAction">
+         <enabledWhen>
+            	<and>            	
+                  <with variable="selection"><iterate
+                         ifEmpty="false"
+                         operator="or"> 
+               			<test property="org.eclipse.uml2.diagram.is«self.editorGen.modelID»Element"/>
+                  </iterate></with>
+                  <count value="+"/>
+            	</and>            	
+         </enabledWhen>
+      </handler>
+   </extension>
+«ENDDEFINE»
+
+«DEFINE i18n_values FOR gmfgen::GenDiagram-»
+«IF supportsNonCanonicalMode(self)-»
+SynchronizeDialog_action=Synchronize...
+«ENDIF-»
+«ENDDEFINE»

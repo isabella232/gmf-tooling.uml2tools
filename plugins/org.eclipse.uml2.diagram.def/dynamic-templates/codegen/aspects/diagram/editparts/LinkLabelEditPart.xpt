@@ -12,7 +12,7 @@
 
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
-«EXTENSION xpt::preferences::Utils»
+«EXTENSION u2t::preferences::Utils»
 
 «AROUND diagram::editparts::LinkLabelEditPart::additions FOR gmfgen::GenLinkLabel»
 «IF needsLabelFilter(self)-»
@@ -40,6 +40,6 @@
 «DEFINE isVisibleByPreferences FOR gmfgen::GenLinkLabel-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	private boolean isVisibleByPreferences() {
-		return «EXPAND xpt::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()».shouldShowLabel(«editPartClassName».VISUAL_ID, getDiagramPreferencesHint());
+		return «EXPAND u2t::preferences::IconStylePreferenceHelper::qualifiedClassName FOR getDiagram()».shouldShowLabel(«editPartClassName».VISUAL_ID, getDiagramPreferencesHint());
 	}
 «ENDDEFINE»

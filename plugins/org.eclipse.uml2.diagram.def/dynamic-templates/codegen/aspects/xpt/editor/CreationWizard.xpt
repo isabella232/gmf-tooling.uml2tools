@@ -18,7 +18,7 @@
 «EXTENSION MetaModel»
 «EXTENSION xpt::editor::Utils»
 «EXTENSION aspects::xpt::FileExtensionUtils»
-«EXTENSION xpt::wizard::Utils»
+«EXTENSION u2t::wizard::Utils»
 «EXTENSION xpt::editor::GenDiagram»
 
 «AROUND xpt::editor::CreationWizard::CreationWizard FOR gmfgen::GenDiagram-»
@@ -105,7 +105,7 @@ public class «creationWizardClassName»
 		domainModelFilePage.setDescription(«EXPAND xpt::Externalizer::accessorCall(descriptionKey(i18nKeyForCreationWizardDomainPage(self))) FOR editorGen»);
 		addPage(domainModelFilePage);
 		«IF needInitialObject(self)-» 
-		«EXPAND xpt::wizard::InitialObject::addInitialObjectPage»«ENDIF-»
+		«EXPAND u2t::wizard::InitialObject::addInitialObjectPage»«ENDIF-»
 	«ENDIF-»
 	}
 
@@ -165,14 +165,14 @@ public class «creationWizardClassName»
 «AROUND i18nValues FOR gmfgen::GenDiagram-»
 «targetDef.proceed()-»
 «IF needInitialObject(self)-»
-«EXPAND xpt::wizard::InitialObject::i18nValues»
+«EXPAND u2t::wizard::InitialObject::i18nValues»
 «ENDIF-»
 «ENDAROUND»
 
 «AROUND i18nAccessors FOR gmfgen::GenDiagram-»
 «targetDef.proceed()-»
 «IF needInitialObject(self)-»
-«EXPAND xpt::wizard::InitialObject::i18nAccessors»
+«EXPAND u2t::wizard::InitialObject::i18nAccessors»
 «ENDIF-»
 «ENDAROUND»
 

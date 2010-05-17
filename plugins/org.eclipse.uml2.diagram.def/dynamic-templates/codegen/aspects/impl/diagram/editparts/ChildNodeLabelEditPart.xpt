@@ -11,20 +11,20 @@
  * 								  [255532] InsertAction support 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
 
-«EXTENSION xpt::async::NonCanonicalDiagram»  
+Â«EXTENSION u2t::async::NonCanonicalDiagramÂ»  
 
-«AROUND createDefaultEditPoliciesBody FOR gmfgen::GenChildLabelNode-»
-	«targetDef.proceed()-»
-	«EXPAND installComponentEditPolicy-»
-«ENDAROUND»
+Â«AROUND createDefaultEditPoliciesBody FOR gmfgen::GenChildLabelNode-Â»
+	Â«targetDef.proceed()-Â»
+	Â«EXPAND installComponentEditPolicy-Â»
+Â«ENDAROUNDÂ»
 
-«DEFINE installComponentEditPolicy FOR gmfgen::GenChildLabelNode-»
-«IF supportsNonCanonicalMode(self.getDiagram())-»	
-	«EXPAND xpt::async::editPolicies::nodeComponentEditPolicy FOR self-»
-«ELSE-»
-	installEditPolicy(org.eclipse.gef.EditPolicy.COMPONENT_ROLE, «-»
+Â«DEFINE installComponentEditPolicy FOR gmfgen::GenChildLabelNode-Â»
+Â«IF supportsNonCanonicalMode(self.getDiagram())-Â»	
+	Â«EXPAND u2t::async::editPolicies::nodeComponentEditPolicy FOR self-Â»
+Â«ELSE-Â»
+	installEditPolicy(org.eclipse.gef.EditPolicy.COMPONENT_ROLE, Â«-Â»
 			new org.eclipse.uml2.diagram.common.editpolicies.InsertingComponentEditPolicy(true));
-«ENDIF-»	
-«ENDDEFINE»
+Â«ENDIF-Â»	
+Â«ENDDEFINEÂ»

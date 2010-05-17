@@ -1,36 +1,36 @@
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'» 
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â» 
 
-«EXTENSION xpt::linkstack::LinkStackUtils» 
+Â«EXTENSION u2t::linkstack::LinkStackUtilsÂ» 
 
-«AROUND xpt::diagram::edithelpers::EditHelper::additions FOR gmfgen::MetamodelType»
-«IF diagramElement.oclIsKindOf(gmfgen::GenLink) and isLinkStackLink(diagramElement.oclAsType(gmfgen::GenLink))-»
-		«EXPAND specialAdditions»
-	«ELSE-»
-	    «targetDef.proceed()-» 
-	«ENDIF-»   
-«ENDAROUND»
+Â«AROUND xpt::diagram::edithelpers::EditHelper::additions FOR gmfgen::MetamodelTypeÂ»
+Â«IF diagramElement.oclIsKindOf(gmfgen::GenLink) and isLinkStackLink(diagramElement.oclAsType(gmfgen::GenLink))-Â»
+		Â«EXPAND specialAdditionsÂ»
+	Â«ELSE-Â»
+	    Â«targetDef.proceed()-Â» 
+	Â«ENDIF-Â»   
+Â«ENDAROUNDÂ»
 
-«REM»
+Â«REMÂ»
 Generates special editHelper for link stack link. Adds useful constants and handling of request`s parameters
-«ENDREM»
-«DEFINE specialAdditions FOR gmfgen::MetamodelType»
-	«EXPAND xpt::Common::generatedMemberComment»
-	public static final String «getTypeConstantName()» = «editHelperClassName».class.getName() + ":ConfigureDependencyKind"; //$NON-NLS-1$
+Â«ENDREMÂ»
+Â«DEFINE specialAdditions FOR gmfgen::MetamodelTypeÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public static final String Â«getTypeConstantName()Â» = Â«editHelperClassNameÂ».class.getName() + ":ConfigureDependencyKind"; //$NON-NLS-1$
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	public static final String «getNameConstantName()» = «editHelperClassName».class.getName() + ":SetDependencyName"; //$NON-NLS-1$
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public static final String Â«getNameConstantName()Â» = Â«editHelperClassNameÂ».class.getName() + ":SetDependencyName"; //$NON-NLS-1$
 
-	«EXPAND xpt::Common::generatedMemberComment» 
-	«LET getSemanticClassName(diagramElement.oclAsType(gmfgen::GenLink)) AS className-»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ» 
+	Â«LET getSemanticClassName(diagramElement.oclAsType(gmfgen::GenLink)) AS className-Â»
 	protected org.eclipse.gmf.runtime.common.core.command.ICommand getAfterConfigureCommand(ConfigureRequest req) {
-		if (req.getElementToConfigure() instanceof «className» && req.getParameter(«getTypeConstantName()») instanceof String) {
-			«className» link = («className») req.getElementToConfigure();
-			String name = (String) req.getParameter(«getTypeConstantName()»);
+		if (req.getElementToConfigure() instanceof Â«classNameÂ» && req.getParameter(Â«getTypeConstantName()Â») instanceof String) {
+			Â«classNameÂ» link = (Â«classNameÂ») req.getElementToConfigure();
+			String name = (String) req.getParameter(Â«getTypeConstantName()Â»);
 			SetRequest request = new SetRequest(link, UMLPackage.eINSTANCE.getNamedElement_Name(), name);
 			SetValueCommand setType = new SetValueCommand(request);
 			return setType;
 		}
 		return null;
 	}
-	«ENDLET»
-«ENDDEFINE»
+	Â«ENDLETÂ»
+Â«ENDDEFINEÂ»

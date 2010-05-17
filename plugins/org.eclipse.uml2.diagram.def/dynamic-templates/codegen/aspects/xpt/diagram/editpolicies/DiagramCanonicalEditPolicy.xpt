@@ -10,22 +10,22 @@
  *    Michael Golubev (Borland) - initial API and implementation
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«EXTENSION xpt::diagram::editpolicies::Utils»
-«EXTENSION xpt::diagram::updater::Utils»
-«EXTENSION xpt::GenModelUtils»
-«EXTENSION aspects::xpt::diagram::updater::DescriptorsGenApi»
-«EXTENSION xpt::async::NonCanonicalDiagram»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«EXTENSION xpt::diagram::editpolicies::UtilsÂ»
+Â«EXTENSION xpt::diagram::updater::UtilsÂ»
+Â«EXTENSION xpt::GenModelUtilsÂ»
+Â«EXTENSION aspects::xpt::diagram::updater::DescriptorsGenApiÂ»
+Â«EXTENSION u2t::async::NonCanonicalDiagramÂ»
 
-«AROUND collectAllLinks FOR gmfgen::GenDiagram-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND collectAllLinks FOR gmfgen::GenDiagram-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 private java.util.Collection collectAllLinks(org.eclipse.gmf.runtime.notation.View view, Domain2Notation domain2NotationMap) { 
-	if («EXPAND aspects::xpt::editor::VisualIDRegistry::isShortcutDescendantMethodCall»(view)) {
-		return collectLinksOutgoingFromShortcut(view, domain2NotationMap); «REM» the diff is here (in addition to Map -> Domain2Notation) «ENDREM»
+	if (Â«EXPAND aspects::xpt::editor::VisualIDRegistry::isShortcutDescendantMethodCallÂ»(view)) {
+		return collectLinksOutgoingFromShortcut(view, domain2NotationMap); Â«REMÂ» the diff is here (in addition to Map -> Domain2Notation) Â«ENDREMÂ»
 	}
 	java.util.Collection result = new java.util.LinkedList();
-	switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(view)) {
-		«EXPAND xpt::diagram::editpolicies::DiagramCanonicalEditPolicy::caseSemanticElement FOREACH getAllSemanticElements(self)-»
+	switch (Â«EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCallÂ»(view)) {
+		Â«EXPAND xpt::diagram::editpolicies::DiagramCanonicalEditPolicy::caseSemanticElement FOREACH getAllSemanticElements(self)-Â»
 	}
 	for (java.util.Iterator children = view.getChildren().iterator(); children.hasNext();) {
 		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) children.next(), domain2NotationMap));
@@ -35,46 +35,46 @@ private java.util.Collection collectAllLinks(org.eclipse.gmf.runtime.notation.Vi
 	}
 	return result;
 }
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND caseSemanticElement FOR gmfgen::GenCommonBase-»
-«EXPAND xpt::Common::caseVisualID» {
+Â«AROUND caseSemanticElement FOR gmfgen::GenCommonBase-Â»
+Â«EXPAND xpt::Common::caseVisualIDÂ» {
 	if (!domain2NotationMap.containsKey(view.getElement())) {
-«REM»
+Â«REMÂ»
 	Processing each domain element only once. Prevents us from 
 	having duplicated links if a shortcut to one of the "main"
 	diagram elements present on diagram.
-«ENDREM»«-»
-		result.addAll(«EXPAND xpt::diagram::updater::DiagramUpdater::getContainedLinksMethodCall»(view));
+Â«ENDREMÂ»Â«-Â»
+		result.addAll(Â«EXPAND xpt::diagram::updater::DiagramUpdater::getContainedLinksMethodCallÂ»(view));
 	}
-«REM»
+Â«REMÂ»
 	The difference for this around is here - Domain2Notation is to collect ALL views for given semantic element
-«ENDREM»«-»
+Â«ENDREMÂ»Â«-Â»
 	domain2NotationMap.put(view.getElement(), view);
 	break;	
 }
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND createConnections FOR gmfgen::GenDiagram-»
-	«REM» There are 2 difference here : 
+Â«AROUND createConnections FOR gmfgen::GenDiagram-Â»
+	Â«REMÂ» There are 2 difference here : 
 	       1. Map -> Domain2Notation
 	       2. getEditPart(EObject, ...) -> getSourceEditPart(LinkDescriptor, ...) / getTargetEditPart(LinkDescriptor, ...)
-	«ENDREM»«-»
-	«EXPAND xpt::Common::generatedMemberComment»
-private java.util.Collection createConnections(java.util.Collection linkDescriptors, Domain2Notation domain2NotationMap) { «REM» The difference is here : Map -> Domain2Notation «ENDREM»
+	Â«ENDREMÂ»Â«-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+private java.util.Collection createConnections(java.util.Collection linkDescriptors, Domain2Notation domain2NotationMap) { Â«REMÂ» The difference is here : Map -> Domain2Notation Â«ENDREMÂ»
 	java.util.List adapters = new java.util.LinkedList();
 	for (java.util.Iterator linkDescriptorsIterator = linkDescriptors.iterator(); linkDescriptorsIterator.hasNext();) {
-		final «getGenApiLinkDescriptorQualifiedClassName()» nextLinkDescriptor = («getGenApiLinkDescriptorQualifiedClassName()») linkDescriptorsIterator.next();
-		org.eclipse.gef.EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap); «REM» sic! «ENDREM»
-		org.eclipse.gef.EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap); «REM» sic! «ENDREM»
+		final Â«getGenApiLinkDescriptorQualifiedClassName()Â» nextLinkDescriptor = (Â«getGenApiLinkDescriptorQualifiedClassName()Â») linkDescriptorsIterator.next();
+		org.eclipse.gef.EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap); Â«REMÂ» sic! Â«ENDREMÂ»
+		org.eclipse.gef.EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap); Â«REMÂ» sic! Â«ENDREMÂ»
 		if (sourceEditPart == null || targetEditPart == null) {
 			continue;
 		}
-		org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor(«-»
-			nextLinkDescriptor.getSemanticAdapter(), «-» 
-			«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('nextLinkDescriptor.getVisualID()')», «-»
-			org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, «-» 
-			false, «-»
+		org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest.ConnectionViewDescriptor(Â«-Â»
+			nextLinkDescriptor.getSemanticAdapter(), Â«-Â» 
+			Â«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('nextLinkDescriptor.getVisualID()')Â», Â«-Â»
+			org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, Â«-Â» 
+			false, Â«-Â»
 			((org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
 		org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest ccr = new org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest(descriptor);
 		ccr.setType(org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants.REQ_CONNECTION_START);
@@ -93,11 +93,11 @@ private java.util.Collection createConnections(java.util.Collection linkDescript
 	}
 	return adapters;
 }
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND getEditPart FOR gmfgen::GenDiagram-»
-	«EXPAND xpt::Common::generatedMemberComment»
-private org.eclipse.gef.EditPart getEditPart(org.eclipse.emf.ecore.EObject domainModelElement, Domain2Notation domain2NotationMap) { «REM» Map -> Domain2Notation «ENDREM»
+Â«AROUND getEditPart FOR gmfgen::GenDiagram-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+private org.eclipse.gef.EditPart getEditPart(org.eclipse.emf.ecore.EObject domainModelElement, Domain2Notation domain2NotationMap) { Â«REMÂ» Map -> Domain2Notation Â«ENDREMÂ»
 	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) domain2NotationMap.get(domainModelElement);
 	if (view != null) {
 		return (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
@@ -105,48 +105,48 @@ private org.eclipse.gef.EditPart getEditPart(org.eclipse.emf.ecore.EObject domai
 	return null;
 }
 
-«REM» sic! «ENDREM»«-»
-«EXPAND getSourceEditPart»
-«EXPAND getTargetEditPart»
-«EXPAND getHintedEditPart»
+Â«REMÂ» sic! Â«ENDREMÂ»Â«-Â»
+Â«EXPAND getSourceEditPartÂ»
+Â«EXPAND getTargetEditPartÂ»
+Â«EXPAND getHintedEditPartÂ»
 
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«DEFINE getHintedEditPart FOR gmfgen::GenDiagram-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE getHintedEditPart FOR gmfgen::GenDiagram-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 protected final org.eclipse.gef.EditPart getHintedEditPart(org.eclipse.emf.ecore.EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) { 
-	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) domain2NotationMap.getHinted(domainModelElement, «-»
-											«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('hintVisualId')»);
+	org.eclipse.gmf.runtime.notation.View view = (org.eclipse.gmf.runtime.notation.View) domain2NotationMap.getHinted(domainModelElement, Â«-Â»
+											Â«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall('hintVisualId')Â»);
 	if (view != null) {
 		return (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 	}
 	return null;
 }
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE getSourceEditPart FOR gmfgen::GenDiagram-»
-	«EXPAND xpt::Common::generatedMemberComment»
-private org.eclipse.gef.EditPart getSourceEditPart(«getGenApiLinkDescriptorQualifiedClassName()» descriptor, Domain2Notation domain2NotationMap) { 
+Â«DEFINE getSourceEditPart FOR gmfgen::GenDiagram-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+private org.eclipse.gef.EditPart getSourceEditPart(Â«getGenApiLinkDescriptorQualifiedClassName()Â» descriptor, Domain2Notation domain2NotationMap) { 
 	return getEditPart(descriptor.getSource(), domain2NotationMap);
 }
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE getTargetEditPart FOR gmfgen::GenDiagram-»
-	«EXPAND xpt::Common::generatedMemberComment»
-private org.eclipse.gef.EditPart getTargetEditPart(«getGenApiLinkDescriptorQualifiedClassName()» descriptor, Domain2Notation domain2NotationMap) { 
+Â«DEFINE getTargetEditPart FOR gmfgen::GenDiagram-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+private org.eclipse.gef.EditPart getTargetEditPart(Â«getGenApiLinkDescriptorQualifiedClassName()Â» descriptor, Domain2Notation domain2NotationMap) { 
 	return getEditPart(descriptor.getDestination(), domain2NotationMap);
 }
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«AROUND refreshConnections FOR gmfgen::GenDiagram-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND refreshConnections FOR gmfgen::GenDiagram-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 private java.util.Collection refreshConnections() {
-	Domain2Notation  domain2NotationMap = new Domain2Notation(); «REM» The only change in this around : Map -> Domain2Notation «ENDREM»
+	Domain2Notation  domain2NotationMap = new Domain2Notation(); Â«REMÂ» The only change in this around : Map -> Domain2Notation Â«ENDREMÂ»
 	java.util.Collection linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
 	java.util.Collection existingLinks = new java.util.LinkedList(getDiagram().getEdges());
 	for (java.util.Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
 		org.eclipse.gmf.runtime.notation.Edge nextDiagramLink = (org.eclipse.gmf.runtime.notation.Edge) linksIterator.next();
-		int diagramLinkVisualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(nextDiagramLink);
+		int diagramLinkVisualID = Â«EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCallÂ»(nextDiagramLink);
 		if (diagramLinkVisualID == -1) {
 			if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
 				linksIterator.remove();
@@ -163,7 +163,7 @@ private java.util.Collection refreshConnections() {
 		org.eclipse.emf.ecore.EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
 		boolean existingLinkRemoved = false;
 		for (java.util.Iterator LinkDescriptorsIterator = linkDescriptors.iterator(); LinkDescriptorsIterator.hasNext();) {
-			«getGenApiLinkDescriptorQualifiedClassName()» nextLinkDescriptor = («getGenApiLinkDescriptorQualifiedClassName()») LinkDescriptorsIterator.next();
+			Â«getGenApiLinkDescriptorQualifiedClassName()Â» nextLinkDescriptor = (Â«getGenApiLinkDescriptorQualifiedClassName()Â») LinkDescriptorsIterator.next();
 			if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination() && diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
 				if (!existingLinkRemoved){
 					linksIterator.remove();
@@ -176,13 +176,13 @@ private java.util.Collection refreshConnections() {
 	deleteViews(existingLinks.iterator());
 	return createConnections(linkDescriptors, domain2NotationMap);
 }
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND refreshSemantic FOR gmfgen::GenDiagram-»
-«IF not supportsNonCanonicalMode(self)-»
-	«targetDef.proceed()-»
-«ELSE-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND refreshSemantic FOR gmfgen::GenDiagram-Â»
+Â«IF not supportsNonCanonicalMode(self)-Â»
+	Â«targetDef.proceed()-Â»
+Â«ELSE-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected void refreshSemantic() {
 		java.util.List createdViews = new java.util.LinkedList();
 		if (myCanonicalHelper.shouldSyncNodes(getNotationView())){		
@@ -191,9 +191,9 @@ private java.util.Collection refreshConnections() {
 		java.util.List createdConnectionViews = new java.util.LinkedList();
 		if (myCanonicalHelper.shouldSyncLinks(getNotationView())){
 			createdConnectionViews.addAll(refreshSemanticConnections());
-			«IF not links->isEmpty()-»
+			Â«IF not links->isEmpty()-Â»
 			createdConnectionViews.addAll(refreshConnections());
-			«ENDIF-»
+			Â«ENDIF-Â»
 		}
 		
 		if (createdViews.size() > 1) {
@@ -205,50 +205,50 @@ private java.util.Collection refreshConnections() {
 		createdViews.addAll(createdConnectionViews);
 		makeViewsImmutable(createdViews);
 	}
-«ENDIF-»
-«ENDAROUND»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND xpt::diagram::editpolicies::DiagramCanonicalEditPolicy::additions FOR gmfgen::GenDiagram»
-	«EXPAND isNotationOnlyEdge»
+Â«AROUND xpt::diagram::editpolicies::DiagramCanonicalEditPolicy::additions FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND isNotationOnlyEdgeÂ»
 	
-	«EXPAND collectLinksOutgoingFromShortcut»
+	Â«EXPAND collectLinksOutgoingFromShortcutÂ»
 	
-	«EXPAND DomainToNotationClass»
+	Â«EXPAND DomainToNotationClassÂ»
 	
-	«IF supportsNonCanonicalMode(self)-»
-	«EXPAND getNotationView»
+	Â«IF supportsNonCanonicalMode(self)-Â»
+	Â«EXPAND getNotationViewÂ»
 	
-	«EXPAND myCanonicalHelper»
-	«ENDIF-»
+	Â«EXPAND myCanonicalHelperÂ»
+	Â«ENDIF-Â»
 	
-	«EXPAND aspects::xpt::diagram::updater::containerBaseCanonicalMethods::getFactoryHint»
+	Â«EXPAND aspects::xpt::diagram::updater::containerBaseCanonicalMethods::getFactoryHintÂ»
 
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«DEFINE isNotationOnlyEdge FOR gmfgen::GenDiagram»
-    «EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE isNotationOnlyEdge FOR gmfgen::GenDiagramÂ»
+    Â«EXPAND xpt::Common::generatedMemberCommentÂ»
     private boolean isNotationOnlyEdge(org.eclipse.gmf.runtime.notation.Edge edge){
     	return false;
     }
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE DomainToNotationClass FOR gmfgen::GenDiagram»
-    «EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE DomainToNotationClass FOR gmfgen::GenDiagramÂ»
+    Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private static class Domain2Notation {
-	    «EXPAND xpt::Common::generatedMemberComment»
+	    Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		private final java.util.HashMap myMap = new java.util.HashMap();
 		
-	    «EXPAND xpt::Common::generatedMemberComment»
+	    Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		public boolean containsDomainElement(org.eclipse.emf.ecore.EObject domainElement){
 			return myMap.containsKey(domainElement);
 		}
 
-	    «EXPAND xpt::Common::generatedMemberComment»
+	    Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		public boolean containsKey(org.eclipse.emf.ecore.EObject domainElement){
 			return containsDomainElement(domainElement);
 		}
 		
-	    «EXPAND xpt::Common::generatedMemberComment»
+	    Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		public void put(org.eclipse.emf.ecore.EObject domainElement, org.eclipse.gmf.runtime.notation.View view){
 			Object viewOrList = myMap.get(domainElement);
 			if (viewOrList instanceof org.eclipse.gmf.runtime.notation.View){
@@ -264,7 +264,7 @@ private java.util.Collection refreshConnections() {
 			}
 		}
 		
-	    «EXPAND xpt::Common::generatedMemberComment»
+	    Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		public org.eclipse.gmf.runtime.notation.View get(org.eclipse.emf.ecore.EObject domainEObject){
 			Object viewOrList = myMap.get(domainEObject);
 			if (viewOrList instanceof org.eclipse.gmf.runtime.notation.View){
@@ -275,7 +275,7 @@ private java.util.Collection refreshConnections() {
 				// the element that is additionally shortcutted to the same diagram
 				for (Object next : (java.util.List)viewOrList){
 					org.eclipse.gmf.runtime.notation.View nextView = (org.eclipse.gmf.runtime.notation.View)next;
-					if (nextView.getEAnnotation("Shortcut") == null) { «EXPAND xpt::Common::nonNLS»
+					if (nextView.getEAnnotation("Shortcut") == null) { Â«EXPAND xpt::Common::nonNLSÂ»
 						return nextView;
 					}
 				}
@@ -284,7 +284,7 @@ private java.util.Collection refreshConnections() {
 			return null;
 		}
 		
-	    «EXPAND xpt::Common::generatedMemberComment»
+	    Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		public org.eclipse.gmf.runtime.notation.View getHinted(org.eclipse.emf.ecore.EObject domainEObject, String hint){
 			if (hint == null){
 				return get(domainEObject);
@@ -309,11 +309,11 @@ private java.util.Collection refreshConnections() {
 	
 	}
 
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE collectLinksOutgoingFromShortcut FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment» 
-	private java.util.Collection<«getGenApiLinkDescriptorQualifiedClassName()»> collectLinksOutgoingFromShortcut(org.eclipse.gmf.runtime.notation.View view, Domain2Notation domain2NotationMap) {
+Â«DEFINE collectLinksOutgoingFromShortcut FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ» 
+	private java.util.Collection<Â«getGenApiLinkDescriptorQualifiedClassName()Â»> collectLinksOutgoingFromShortcut(org.eclipse.gmf.runtime.notation.View view, Domain2Notation domain2NotationMap) {
 		org.eclipse.gef.EditPart ep = (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
 		if (false == ep instanceof org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart){
 			return Collections.emptyList();
@@ -324,7 +324,7 @@ private java.util.Collection refreshConnections() {
 		//is required to push data into the request
 		editPart.getCommand(request);
 		
-		java.util.Set<«getGenApiLinkDescriptorQualifiedClassName()»> linksToFromShortcuts = new java.util.HashSet<«getGenApiLinkDescriptorQualifiedClassName()»>();
+		java.util.Set<Â«getGenApiLinkDescriptorQualifiedClassName()Â»> linksToFromShortcuts = new java.util.HashSet<Â«getGenApiLinkDescriptorQualifiedClassName()Â»>();
 		for (org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest.Descriptor next : request.getDescriptions()){
 			linksToFromShortcuts.addAll(next.getContainedLinks());
 			linksToFromShortcuts.addAll(next.getOutgoingLinks());
@@ -338,16 +338,16 @@ private java.util.Collection refreshConnections() {
 		return linksToFromShortcuts;
 	}
 
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE getNotationView FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE getNotationView FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private org.eclipse.gmf.runtime.notation.View getNotationView() {
 		return (org.eclipse.gmf.runtime.notation.View) getHost().getModel();
 	}
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE myCanonicalHelper FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE myCanonicalHelper FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private final org.eclipse.uml2.diagram.common.async.ICanonicalHelper myCanonicalHelper = org.eclipse.uml2.diagram.common.async.ICanonicalHelper.IMPLEMENTATION;
-«ENDDEFINE»	
+Â«ENDDEFINEÂ»	

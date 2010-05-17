@@ -10,15 +10,15 @@
  *    Michael Golubev - U2T specific graphical node edit policy 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
 
-«AROUND createDefaultEditPoliciesBody FOR gmfgen::GenLink-»
+Â«AROUND createDefaultEditPoliciesBody FOR gmfgen::GenLink-Â»
 	super.createDefaultEditPolicies();
-	«IF null = modelFacet-»
+	Â«IF null = modelFacet-Â»
 		installEditPolicy(org.eclipse.gef.EditPolicy.COMPONENT_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.ViewComponentEditPolicy());
-	«ENDIF-»
-	«EXPAND xpt::diagram::editparts::Common::installSemanticEditPolicy-»
-	«EXPAND xpt::graphicalnodeep::graphicalNodeEditPolicy::install(true)-»
-	«EXPAND xpt::diagram::editparts::Common::behaviour FOR self-»
-«ENDAROUND»
+	Â«ENDIF-Â»
+	Â«EXPAND xpt::diagram::editparts::Common::installSemanticEditPolicy-Â»
+	Â«EXPAND u2t::graphicalnodeep::graphicalNodeEditPolicy::install(true)-Â»
+	Â«EXPAND xpt::diagram::editparts::Common::behaviour FOR self-Â»
+Â«ENDAROUNDÂ»
 

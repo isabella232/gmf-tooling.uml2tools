@@ -13,7 +13,7 @@
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
-«EXTENSION xpt::async::NonCanonicalDiagram»
+«EXTENSION u2t::async::NonCanonicalDiagram»
 
 «DEFINE behaviour FOR gmfgen::SharedBehaviour-»
 	«REM»don't allow delegate to be SharedBehaviour to avoid endless xPand sequence«ENDREM»«-»
@@ -24,7 +24,7 @@
 
 «AROUND notationalListeners FOR gmfgen::GenCommonBase-»
 «IF isDiagramIconLabel(self)-»
-«EXPAND xpt::async::DiagramLabelEditPart::notationalListeners-»
+«EXPAND u2t::async::DiagramLabelEditPart::notationalListeners-»
 «ELSE-»
 «targetDef.proceed()-»
 «ENDIF-»

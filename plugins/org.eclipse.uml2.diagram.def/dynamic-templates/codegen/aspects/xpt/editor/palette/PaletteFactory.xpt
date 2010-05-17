@@ -9,60 +9,60 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'» 
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â» 
  
-«EXTENSION xpt::linkstack::LinkStackUtils» 
+Â«EXTENSION u2t::linkstack::LinkStackUtilsÂ» 
 
-«AROUND nodeToolEntry FOR OclAny»
-«IF self.oclIsKindOf(gmfgen::Palette)-»
-«EXPAND xpt::extendedpalette::PaletteFactory::nodeToolEntry FOR self.oclAsType(gmfgen::Palette)»
-«ELSE-»
-«targetDef.proceed()-»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND nodeToolEntry FOR OclAnyÂ»
+Â«IF self.oclIsKindOf(gmfgen::Palette)-Â»
+Â«EXPAND u2t::extendedpalette::PaletteFactory::nodeToolEntry FOR self.oclAsType(gmfgen::Palette)Â»
+Â«ELSE-Â»
+Â«targetDef.proceed()-Â»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND linkToolEntry FOR OclAny»
-«IF self.oclIsKindOf(gmfgen::Palette)-»
-«EXPAND xpt::extendedpalette::PaletteFactory::linkToolEntry FOR self.oclAsType(gmfgen::Palette)»
-«ELSE-»
-«targetDef.proceed()-»
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND linkToolEntry FOR OclAnyÂ»
+Â«IF self.oclIsKindOf(gmfgen::Palette)-Â»
+Â«EXPAND u2t::extendedpalette::PaletteFactory::linkToolEntry FOR self.oclAsType(gmfgen::Palette)Â»
+Â«ELSE-Â»
+Â«targetDef.proceed()-Â»
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND newEntry(toolVarName : String) FOR gmfgen::ToolEntry-»
-«EXPAND xpt::extendedpalette::PaletteFactory::newEntry(toolVarName)-»
-«ENDAROUND»
+Â«AROUND newEntry(toolVarName : String) FOR gmfgen::ToolEntry-Â»
+Â«EXPAND u2t::extendedpalette::PaletteFactory::newEntry(toolVarName)-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND setSmallImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-»
-«IF (self.oclIsKindOf(gmfgen::ToolEntry) and isLinkStackTool(self.oclAsType(gmfgen::ToolEntry)))-»  	 
- 	«EXPAND specialSetSmallImage(toolVarName, palette)» 
-«ELSE»    
-	«targetDef.proceed()» 
-«ENDIF»
-«ENDAROUND»
+Â«AROUND setSmallImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-Â»
+Â«IF (self.oclIsKindOf(gmfgen::ToolEntry) and isLinkStackTool(self.oclAsType(gmfgen::ToolEntry)))-Â»  	 
+ 	Â«EXPAND specialSetSmallImage(toolVarName, palette)Â» 
+Â«ELSEÂ»    
+	Â«targetDef.proceed()Â» 
+Â«ENDIFÂ»
+Â«ENDAROUNDÂ»
 
-«AROUND setLargeImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-» 
-«IF (self.oclIsKindOf(gmfgen::ToolEntry) and isLinkStackTool(self.oclAsType(gmfgen::ToolEntry)))-»  	 
- 	«EXPAND specialSetLargeImage(toolVarName, palette)» 
-«ELSE-»    
-	«targetDef.proceed()» 
-«ENDIF-»
-«ENDAROUND»
+Â«AROUND setLargeImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-Â» 
+Â«IF (self.oclIsKindOf(gmfgen::ToolEntry) and isLinkStackTool(self.oclAsType(gmfgen::ToolEntry)))-Â»  	 
+ 	Â«EXPAND specialSetLargeImage(toolVarName, palette)Â» 
+Â«ELSE-Â»    
+	Â«targetDef.proceed()Â» 
+Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«REM»
+Â«REMÂ»
 Gets image by the type given in diagram`s viewmap attribute
-«ENDREM»
-«DEFINE specialSetSmallImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-»  
-«IF null <> getImageDescriptor(self)-»
-	«toolVarName».setSmallIcon(«palette.diagram.getElementTypesQualifiedClassName()».getImageDescriptor(«getImageDescriptor(self)»));
-«ENDIF-»
-«ENDDEFINE»
+Â«ENDREMÂ»
+Â«DEFINE specialSetSmallImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-Â»  
+Â«IF null <> getImageDescriptor(self)-Â»
+	Â«toolVarNameÂ».setSmallIcon(Â«palette.diagram.getElementTypesQualifiedClassName()Â».getImageDescriptor(Â«getImageDescriptor(self)Â»));
+Â«ENDIF-Â»
+Â«ENDDEFINEÂ»
 
-«REM»
+Â«REMÂ»
 Gets image by the type given in diagram`s viewmap attribute
-«ENDREM»
-«DEFINE specialSetLargeImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-» 
-«IF  null <> getImageDescriptor(self)-»
-	«toolVarName».setLargeIcon(«toolVarName».getSmallIcon()); 	 
-«ENDIF-»
-«ENDDEFINE»
+Â«ENDREMÂ»
+Â«DEFINE specialSetLargeImage(toolVarName : String, palette : gmfgen::Palette) FOR gmfgen::EntryBase-Â» 
+Â«IF  null <> getImageDescriptor(self)-Â»
+	Â«toolVarNameÂ».setLargeIcon(Â«toolVarNameÂ».getSmallIcon()); 	 
+Â«ENDIF-Â»
+Â«ENDDEFINEÂ»

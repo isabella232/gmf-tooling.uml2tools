@@ -16,7 +16,7 @@
 «IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 «EXTENSION xpt::diagram::ViewmapAttributesUtils»
 «EXTENSION xpt::diagram::editparts::Utils»
-«EXTENSION xpt::interaction::MultiLayeredSupport»
+«EXTENSION u2t::interaction::MultiLayeredSupport»
 
 «AROUND addFixedChild FOR gmfgen::GenNode-»
 	«IF hasFixedChildren(self)-»
@@ -280,14 +280,14 @@
 	«IF needsGraphicalNodeEditPolicy(self)-»
 		installEditPolicy(org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE, new «getGraphicalNodeEditPolicyQualifiedClassName()»());
 	«ELSE-»
-		«EXPAND xpt::graphicalnodeep::graphicalNodeEditPolicy::install(true)-»	
+		«EXPAND u2t::graphicalnodeep::graphicalNodeEditPolicy::install(true)-»	
 	«ENDIF-»
 	«IF not childNodes->isEmpty()-»
 		installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.DRAG_DROP_ROLE, new org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy());
 	«ENDIF-»
 	«EXPAND xpt::diagram::editparts::Common::installCanonicalEditPolicy-»
 	installEditPolicy(org.eclipse.gef.EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-	«EXPAND xpt::async::editPolicies::nodeComponentEditPolicy-»
+	«EXPAND u2t::async::editPolicies::nodeComponentEditPolicy-»
 	«EXPAND xpt::diagram::editparts::Common::behaviour FOR self-»
 	// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 	// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
