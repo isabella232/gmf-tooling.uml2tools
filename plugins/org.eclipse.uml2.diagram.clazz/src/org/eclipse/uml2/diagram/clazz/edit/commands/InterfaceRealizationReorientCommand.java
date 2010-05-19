@@ -8,7 +8,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.common.links.RefreshComplementaryLinksHelper;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Interface;
@@ -124,6 +126,10 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 
 		Package container = deduceContainer(getGeneralizedNewSource());
 		container.getPackagedElements().add(link);
+
+		RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(link, NotationPackage.eINSTANCE.getEdge_Source(),
+				RefreshComplementaryLinksHelper.PORT_AFTER_INTERFACE_REALIZATION_SOURCE_CHANGED);
+
 		return CommandResult.newOKCommandResult(link);
 	}
 
@@ -149,6 +155,10 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 		EList<NamedElement> suppliers = link.getSuppliers();
 		suppliers.clear();
 		suppliers.add(target);
+
+		RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(link, NotationPackage.eINSTANCE.getEdge_Target(),
+				RefreshComplementaryLinksHelper.PORT_AFTER_INTERFACE_REALIZATION_TARGET_CHANGED);
+
 		return CommandResult.newOKCommandResult(link);
 	}
 

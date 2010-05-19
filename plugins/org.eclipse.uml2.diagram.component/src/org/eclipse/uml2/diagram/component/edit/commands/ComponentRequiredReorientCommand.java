@@ -8,6 +8,8 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.uml2.diagram.common.links.RefreshComplementaryLinksHelper;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Component;
@@ -145,6 +147,10 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 			usage.getSuppliers().remove(getOldTarget());
 			usage.getSuppliers().add(getNewTarget());
 		}
+
+		RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(getOldTarget(), NotationPackage.eINSTANCE.getView_TargetEdges(), //
+				RefreshComplementaryLinksHelper.PORT_AFTER_USAGE_TARGET_CHANGED);
+
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
 

@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.clazz.edit.parts;
 
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.RotatableDecoration;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
@@ -10,7 +11,9 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.conventions.InterfaceNotationConvention;
 import org.eclipse.uml2.diagram.clazz.edit.policies.UsageItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.clazz.links.DiagramLinkInfoProvider;
 import org.eclipse.uml2.diagram.common.draw2d.RequiredInterfaceDecoration;
+import org.eclipse.uml2.diagram.common.links.RefreshComplementaryLinksHelper;
 
 /**
  * @generated
@@ -120,4 +123,14 @@ public class UsageEditPart extends ConnectionNodeEditPart implements ITreeBranch
 
 	}
 
+	
+	/**
+	 * NOT generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification notification) {
+		RefreshComplementaryLinksHelper.getInstance().handleNotification(this, notification, DiagramLinkInfoProvider.getInstance());
+
+		super.handleNotificationEvent(notification);
+	}
 }

@@ -1,12 +1,15 @@
 package org.eclipse.uml2.diagram.csd.edit.parts;
 
 import org.eclipse.draw2d.Connection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.common.links.RefreshComplementaryLinksHelper;
 import org.eclipse.uml2.diagram.csd.edit.policies.InterfaceRealizationItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.csd.links.DiagramLinkInfoProvider;
 
 /**
  * @generated
@@ -53,4 +56,13 @@ public class InterfaceRealizationEditPart extends ConnectionNodeEditPart impleme
 		return (PolylineConnectionEx) getFigure();
 	}
 
+	/**
+	 * NOT generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification notification) {
+		RefreshComplementaryLinksHelper.getInstance().handleNotification(this, notification, DiagramLinkInfoProvider.getInstance());
+
+		super.handleNotificationEvent(notification);
+	}
 }

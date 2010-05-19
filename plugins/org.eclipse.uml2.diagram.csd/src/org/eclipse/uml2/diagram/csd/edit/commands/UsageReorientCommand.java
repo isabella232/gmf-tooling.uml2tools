@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.uml2.diagram.common.links.RefreshComplementaryLinksHelper;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
@@ -111,18 +113,38 @@ public class UsageReorientCommand extends EditElementCommand {
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
+		RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(getLink(), NotationPackage.eINSTANCE.getEdge_Source(),//
+				RefreshComplementaryLinksHelper.PORT_AFTER_USAGE_SOURCE_CHANGED);
+
+		return reorientSourceGen();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected CommandResult reorientSourceGen() throws ExecutionException {
 		getLink().getClients().remove(getOldSource());
 		getLink().getClients().add(getNewSource());
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
+		RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(getOldTarget(), NotationPackage.eINSTANCE.getView_TargetEdges(), //
+			 	RefreshComplementaryLinksHelper.PORT_AFTER_USAGE_TARGET_CHANGED);
+
+		return reorientTargetGen();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected CommandResult reorientTargetGen() throws ExecutionException {
 		getLink().getSuppliers().remove(getOldTarget());
 		getLink().getSuppliers().add(getNewTarget());
 		return CommandResult.newOKCommandResult(getLink());

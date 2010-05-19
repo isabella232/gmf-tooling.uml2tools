@@ -2,12 +2,15 @@ package org.eclipse.uml2.diagram.common.commands;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.common.links.PortOperationsExt;
+import org.eclipse.uml2.diagram.common.links.RefreshComplementaryLinksHelper;
 import org.eclipse.uml2.diagram.common.links.RequiredInterfaceLink;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Type;
 
@@ -40,10 +43,10 @@ public class RequiredPortLinkHelper {
 	}
 
 	public boolean canCreate() {
-		if(myStore.getBoolean(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_REQUIRED_INTERFACE_LINKS)){
+		if (myStore.getBoolean(UMLPreferencesConstants.PREF_MANAGE_LINKS_HIDE_REQUIRED_INTERFACE_LINKS)) {
 			return false;
 		}
-		
+
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
@@ -62,6 +65,9 @@ public class RequiredPortLinkHelper {
 		RequiredInterfaceLink link = PortOperationsExt.getRequireds(getSource(), getTarget());
 		link.getLink().getClients().remove(link.getSource());
 		link.getLink().getClients().add(newSource.getType());
+
+		RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(newSource,//
+				NotationPackage.eINSTANCE.getView_SourceEdges(), RefreshComplementaryLinksHelper.PORT_REQUIRED_INTERFACE_TARGET_USAGES_AFTER_REQUIRED_INTERFACE_SOURCE_CHANGED);
 	}
 
 	public boolean canReorientSource(Port newSource) {
@@ -71,8 +77,15 @@ public class RequiredPortLinkHelper {
 
 	public void reorientTarget(Interface newTarget) {
 		RequiredInterfaceLink link = PortOperationsExt.getRequireds(getSource(), getTarget());
-		link.getLink().getSuppliers().remove(link.getTarget());
+
+		NamedElement oldTarget = link.getTarget();
+		link.getLink().getSuppliers().remove(oldTarget);
 		link.getLink().getSuppliers().add(newTarget);
+
+		RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(newTarget,//
+				NotationPackage.eINSTANCE.getView_TargetEdges(), RefreshComplementaryLinksHelper.INTERFACE_AFTER_PORT_REQUIRED_REORIENTED);
+		RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(oldTarget,//
+				NotationPackage.eINSTANCE.getView_TargetEdges(), RefreshComplementaryLinksHelper.INTERFACE_AFTER_PORT_REQUIRED_REORIENTED);
 	}
 
 	public boolean canReorientTarget(Interface newTarget) {
