@@ -319,21 +319,24 @@
 
 
 «AROUND addBorderItem FOR gmfgen::GenNode-» 
-«IF getExternalLabels(self)->size() > 0 and null <> (getExternalLabels(self).viewmap.attributes)[u2tgen::CustomLocatorAttributes]->first()-»
-	 	«EXPAND xpt::Common::generatedMemberComment»
+«IF getExternalLabels(self)->size() > 0-»
+		«EXPAND xpt::Common::generatedMemberComment»
 	 	protected void addBorderItem(org.eclipse.draw2d.IFigure borderItemContainer, org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart borderItemEditPart) {
-		«FOREACH getExternalLabels(self) AS label-»	
-		if (borderItemEditPart instanceof «label.getEditPartQualifiedClassName()») {
-		org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator locator = «-»
-			new «(label.viewmap.attributes)[u2tgen::CustomLocatorAttributes]->first().oclAsType(u2tgen::CustomLocatorAttributes).customLocatorFQN»(getMainFigure());
-				borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-				return;
+	 	«FOREACH getExternalLabels(self) AS label-»	
+			if (borderItemEditPart instanceof «label.getEditPartQualifiedClassName()») {
+			org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator locator = «-»
+			«IF null <> (label.viewmap.attributes)[u2tgen::CustomLocatorAttributes]->first()-»
+				new «(label.viewmap.attributes)[u2tgen::CustomLocatorAttributes]->first().oclAsType(u2tgen::CustomLocatorAttributes).customLocatorFQN»(getMainFigure());
+			«ELSE-»
+				new org.eclipse.uml2.diagram.common.draw2d.UnrestrictedOutsideBorderItemLocator(getMainFigure());
+			«ENDIF-»
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+			return;
 			} 
-		«ENDFOREACH»	
-			
+		«ENDFOREACH»
 		super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
-«ELSE-» 
+«ELSE-»
 «targetDef.proceed()-»
 «ENDIF-»
 «ENDAROUND»

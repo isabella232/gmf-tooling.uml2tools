@@ -1373,9 +1373,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.draw2d.Label">
-            <attributes
-            xsi:type="u2tgen:CustomLocatorAttributes"
-            customLocatorFQN="org.eclipse.uml2.diagram.common.draw2d.UnrestrictedOutsideBorderItemLocator"/>
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"

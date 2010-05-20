@@ -36,6 +36,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPo
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -47,6 +48,7 @@ import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
+import org.eclipse.uml2.diagram.common.draw2d.UnrestrictedOutsideBorderItemLocator;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
@@ -153,13 +155,18 @@ public class GeneralizationSetEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof GeneralizationSetIsCoveringIsDisjointEditPart || borderItemEditPart instanceof GeneralizationSetNameEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
-			locator.setBorderItemOffset(new Dimension(-20, -20));
+		if (borderItemEditPart instanceof GeneralizationSetIsCoveringIsDisjointEditPart) {
+			IBorderItemLocator locator = new UnrestrictedOutsideBorderItemLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
-		} else {
-			super.addBorderItem(borderItemContainer, borderItemEditPart);
+			return;
 		}
+		if (borderItemEditPart instanceof GeneralizationSetNameEditPart) {
+			IBorderItemLocator locator = new UnrestrictedOutsideBorderItemLocator(getMainFigure());
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+			return;
+		}
+
+		super.addBorderItem(borderItemContainer, borderItemEditPart);
 	}
 
 	/**

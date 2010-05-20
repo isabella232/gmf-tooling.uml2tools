@@ -14,14 +14,14 @@ public class UnrestrictedOutsideBorderItemLocator implements IBorderItemLocator 
 
 	private Rectangle constraint = new Rectangle(0, 0, 0, 0);
 
-	private int currentSide = PositionConstants.SOUTH;
+	private static final int VERTICAL_OFFSET = 6;
 
 	public UnrestrictedOutsideBorderItemLocator(IFigure parentFigure) {
 		this.parentFigure = parentFigure;
 	}
 
 	public int getCurrentSideOfParent() {
-		return currentSide;
+		return PositionConstants.SOUTH;
 	}
 
 	public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
@@ -73,17 +73,12 @@ public class UnrestrictedOutsideBorderItemLocator implements IBorderItemLocator 
 	private Point locateOutsideBorder(Rectangle proposedRectangle) {
 		Rectangle parentRectangle = getParentBorder();
 		if (parentRectangle.intersects(proposedRectangle)) {
-			int y1 = parentRectangle.y;
-			int y2 = parentRectangle.y + parentRectangle.height;
 
-			int y;
-			if (2 * proposedRectangle.y + proposedRectangle.height < y1 + y2) {
-				y = y1 - proposedRectangle.height;
-			} else {
-				y = y2;
-			}
+			int y = parentRectangle.y + parentRectangle.height + VERTICAL_OFFSET;
 
-			return new Point(proposedRectangle.x, y);
+			int x = parentRectangle.x + (parentRectangle.width - proposedRectangle.width) / 2;
+
+			return new Point(x, y);
 		}
 		return proposedRectangle.getLocation();
 	}
