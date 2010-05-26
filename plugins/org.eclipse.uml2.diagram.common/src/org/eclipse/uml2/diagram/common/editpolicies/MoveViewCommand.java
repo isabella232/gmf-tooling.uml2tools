@@ -118,10 +118,17 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 		removeViewFromContainer(newView);
 		justMoveActualView(parentView, oldChildView);
 		
+		List<View> edgesToAndFromHierarchy = collectChildrenLinks(oldChildView, new ArrayList<View>());
+	
 		oldChildView.getPersistedChildren().clear();
 		oldChildView.getTransientChildren().clear();
 		oldChildView.getSourceEdges().clear();
 		oldChildView.getTargetEdges().clear();
+		
+		for(View childView : edgesToAndFromHierarchy){
+			ViewUtil.destroy(childView);
+		}
+		
 		oldChildView.getStyles().clear();
 		
 		oldChildView.getStyles().addAll(newView.getStyles());
@@ -133,6 +140,18 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 		oldChildView.setType(newView.getType());
 		
 		return oldChildView;
+	}
+	
+	@SuppressWarnings("unchecked")
+	private List<View> collectChildrenLinks(View view, List<View> output){
+		output.addAll(view.getTargetEdges());
+		output.addAll(view.getSourceEdges());
+		for(Object child : view.getChildren()){
+			if(child instanceof View){
+				collectChildrenLinks((View)child, output);
+			}
+		}
+		return output;
 	}
 
 	private void justMoveActualView(View parentView, View childView) {
