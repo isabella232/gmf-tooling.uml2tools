@@ -66,8 +66,11 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationStereo2Edi
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationStereoEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationStereotypeEditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceStereotype2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceStereotypeEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart;
@@ -1371,6 +1374,69 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	private IParser interfaceName_5043Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceName_5043Parser() {
+		if (interfaceName_5043Parser == null) {
+			interfaceName_5043Parser = createInterfaceName_5043Parser();
+		}
+		return interfaceName_5043Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInterfaceName_5043Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ClassifierAppliedStereotypeParser interfaceQualifiedName_5044Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceQualifiedName_5044Parser() {
+		if (interfaceQualifiedName_5044Parser == null) {
+			interfaceQualifiedName_5044Parser = new ClassifierAppliedStereotypeParser();
+		}
+		return interfaceQualifiedName_5044Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser interfaceName_5045Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInterfaceName_5045Parser() {
+		if (interfaceName_5045Parser == null) {
+			interfaceName_5045Parser = createInterfaceName_5045Parser();
+		}
+		return interfaceName_5045Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser createInterfaceName_5045Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser literalString_3038Parser;
 
 	/**
@@ -2244,6 +2310,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getPrimitiveTypeName_5028Parser();
 		case PrimitiveTypeStereotype2EditPart.VISUAL_ID:
 			return getPrimitiveTypeQualifiedName_5038Parser();
+		case InterfaceName3EditPart.VISUAL_ID:
+			return getInterfaceName_5043Parser();
+		case InterfaceStereotype2EditPart.VISUAL_ID:
+			return getInterfaceQualifiedName_5044Parser();
+		case InterfaceName4EditPart.VISUAL_ID:
+			return getInterfaceName_5045Parser();
 		case LiteralStringEditPart.VISUAL_ID:
 			return getLiteralString_3038Parser();
 		case LiteralIntegerEditPart.VISUAL_ID:

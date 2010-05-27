@@ -14,8 +14,6 @@ import org.eclipse.uml2.diagram.clazz.edit.policies.PackageAsFrameContentsItemSe
 import org.eclipse.uml2.diagram.clazz.part.Messages;
 import org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.diagram.common.compartments.U2TCompartmentFigure;
-import org.eclipse.uml2.diagram.common.compartments.U2TResizableCompartmentEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels;

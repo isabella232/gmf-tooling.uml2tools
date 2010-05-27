@@ -136,7 +136,7 @@ public class UsageReorientCommand extends EditElementCommand {
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 		RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(getOldTarget(), NotationPackage.eINSTANCE.getView_TargetEdges(), //
-			 	RefreshComplementaryLinksHelper.PORT_AFTER_USAGE_TARGET_CHANGED);
+				RefreshComplementaryLinksHelper.PORT_AFTER_USAGE_TARGET_CHANGED);
 
 		return reorientTargetGen();
 	}

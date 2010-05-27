@@ -13,6 +13,10 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.DeferredLayoutCommand;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.gmf.runtime.notation.Location;
+import org.eclipse.gmf.runtime.notation.Node;
+import org.eclipse.gmf.runtime.notation.Ratio;
+import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassEditPart;
@@ -41,6 +45,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart;
@@ -100,6 +106,7 @@ public class PackageAsFrameContentsCanonicalEditPolicy extends CanonicalEditPoli
 	@SuppressWarnings("unchecked")
 	protected boolean isOrphaned(Collection semanticChildren, final View view) {
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
+		int suggestedID = UMLVisualIDRegistry.getNodeVisualID((View) getHost().getModel(), view.getElement());
 		switch (visualID) {
 		case Package2EditPart.VISUAL_ID:
 		case Class2EditPart.VISUAL_ID:
@@ -158,8 +165,41 @@ public class PackageAsFrameContentsCanonicalEditPolicy extends CanonicalEditPoli
 			if (!semanticChildren.contains(view.getElement())) {
 				return true;
 			}
+			break;
+		case Interface4EditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (visualID != suggestedID) && (suggestedID != Interface5EditPart.VISUAL_ID);
+		case Interface5EditPart.VISUAL_ID:
+			if (!semanticChildren.contains(view.getElement())) {
+				return true;
+			}
+			return (visualID != suggestedID) && (suggestedID != Interface4EditPart.VISUAL_ID);
 		}
 		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	private void populateViewProperties(View oldView, View newView) {
+		if (oldView instanceof Node && newView instanceof Node) {
+			Node oldNode = (Node) oldView;
+			Node newNode = (Node) newView;
+			if (oldNode.getLayoutConstraint() instanceof Location && newNode.getLayoutConstraint() instanceof Location) {
+				((Location) newNode.getLayoutConstraint()).setX(((Location) oldNode.getLayoutConstraint()).getX());
+				((Location) newNode.getLayoutConstraint()).setY(((Location) oldNode.getLayoutConstraint()).getY());
+			}
+			if (oldNode.getLayoutConstraint() instanceof Size && newNode.getLayoutConstraint() instanceof Size) {
+				((Size) newNode.getLayoutConstraint()).setWidth(((Size) oldNode.getLayoutConstraint()).getWidth());
+				((Size) newNode.getLayoutConstraint()).setHeight(((Size) oldNode.getLayoutConstraint()).getHeight());
+			}
+			if (oldNode.getLayoutConstraint() instanceof Ratio && newNode.getLayoutConstraint() instanceof Ratio) {
+				((Ratio) newNode.getLayoutConstraint()).setValue(((Ratio) oldNode.getLayoutConstraint()).getValue());
+			}
+			newNode.persist();
+		}
 	}
 
 	/**

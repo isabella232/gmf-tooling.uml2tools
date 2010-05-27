@@ -26,6 +26,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationName3EditP
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName2EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName3EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Operation2EditPart;
@@ -125,8 +126,9 @@ public class DiagramIconStylePreferenceHelper {
 			case InstanceSpecificationEditPart.VISUAL_ID:
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5010.5029.5024.3013");
 			case InterfaceName2EditPart.VISUAL_ID:
+			case InterfaceName3EditPart.VISUAL_ID:
 			case Interface3EditPart.VISUAL_ID:
-				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5018.3041");
+				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5018.5043.3041");
 			case LiteralIntegerEditPart.VISUAL_ID:
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".3039");
 			case LiteralStringEditPart.VISUAL_ID:

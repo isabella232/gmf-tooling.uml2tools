@@ -396,6 +396,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
 			types.add(UMLElementTypes.Dependency_4002);
 		}
+		if (targetEditPart instanceof Interface4EditPart) {
+			types.add(UMLElementTypes.Dependency_4002);
+		}
+		if (targetEditPart instanceof Interface5EditPart) {
+			types.add(UMLElementTypes.Dependency_4002);
+		}
 		if (targetEditPart instanceof Package2EditPart) {
 			types.add(UMLElementTypes.Realization_4010);
 		}
@@ -468,6 +474,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
 			types.add(UMLElementTypes.Realization_4010);
 		}
+		if (targetEditPart instanceof Interface4EditPart) {
+			types.add(UMLElementTypes.Realization_4010);
+		}
+		if (targetEditPart instanceof Interface5EditPart) {
+			types.add(UMLElementTypes.Realization_4010);
+		}
 		if (targetEditPart instanceof Package2EditPart) {
 			types.add(UMLElementTypes.Usage_4013);
 		}
@@ -540,6 +552,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
 			types.add(UMLElementTypes.Usage_4013);
 		}
+		if (targetEditPart instanceof Interface4EditPart) {
+			types.add(UMLElementTypes.Usage_4013);
+		}
+		if (targetEditPart instanceof Interface5EditPart) {
+			types.add(UMLElementTypes.Usage_4013);
+		}
 		if (targetEditPart instanceof Package2EditPart) {
 			types.add(UMLElementTypes.TemplateBinding_4016);
 		}
@@ -586,6 +604,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			types.add(UMLElementTypes.TemplateBinding_4016);
 		}
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
+			types.add(UMLElementTypes.TemplateBinding_4016);
+		}
+		if (targetEditPart instanceof Interface4EditPart) {
+			types.add(UMLElementTypes.TemplateBinding_4016);
+		}
+		if (targetEditPart instanceof Interface5EditPart) {
 			types.add(UMLElementTypes.TemplateBinding_4016);
 		}
 		return types;
@@ -668,6 +692,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (relationshipType == UMLElementTypes.Dependency_4002) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
+		if (relationshipType == UMLElementTypes.Dependency_4002) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4002) {
+			types.add(UMLElementTypes.Interface_3043);
+		}
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4004) {
 			types.add(UMLElementTypes.Constraint_2006);
 		}
@@ -749,6 +779,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (relationshipType == UMLElementTypes.Realization_4010) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
+		if (relationshipType == UMLElementTypes.Realization_4010) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Realization_4010) {
+			types.add(UMLElementTypes.Interface_3043);
+		}
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.Package_2002);
 		}
@@ -821,6 +857,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
+		if (relationshipType == UMLElementTypes.Usage_4013) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4013) {
+			types.add(UMLElementTypes.Interface_3043);
+		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.Package_2002);
 		}
@@ -868,6 +910,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
+		}
+		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
+			types.add(UMLElementTypes.Interface_3043);
 		}
 		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4019) {
 			types.add(UMLElementTypes.Comment_2018);
@@ -966,6 +1014,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (relationshipType == UMLElementTypes.Dependency_4002) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
+		if (relationshipType == UMLElementTypes.Dependency_4002) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4002) {
+			types.add(UMLElementTypes.Interface_3043);
+		}
 		if (relationshipType == UMLElementTypes.Realization_4010) {
 			types.add(UMLElementTypes.Package_2002);
 		}
@@ -1038,6 +1092,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (relationshipType == UMLElementTypes.Realization_4010) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
+		if (relationshipType == UMLElementTypes.Realization_4010) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Realization_4010) {
+			types.add(UMLElementTypes.Interface_3043);
+		}
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.Package_2002);
 		}
@@ -1110,6 +1170,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
+		if (relationshipType == UMLElementTypes.Usage_4013) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4013) {
+			types.add(UMLElementTypes.Interface_3043);
+		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.Package_2002);
 		}
@@ -1157,6 +1223,12 @@ public class Package4EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		}
 		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
+		}
+		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.TemplateBinding_4016) {
+			types.add(UMLElementTypes.Interface_3043);
 		}
 		return types;
 	}

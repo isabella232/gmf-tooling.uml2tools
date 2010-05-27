@@ -54,6 +54,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart;
@@ -375,6 +377,16 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public static final IHintedType Interface_3042 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Interface_3042"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IHintedType Interface_3043 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.Interface_3043"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IHintedType LiteralString_3038 = (IHintedType) getElementType("org.eclipse.uml2.diagram.clazz.LiteralString_3038"); //$NON-NLS-1$
 
 	/**
@@ -685,6 +697,10 @@ public class UMLElementTypes extends ElementInitializers {
 
 			elements.put(PrimitiveType_3037, UMLPackage.eINSTANCE.getPrimitiveType());
 
+			elements.put(Interface_3042, UMLPackage.eINSTANCE.getInterface());
+
+			elements.put(Interface_3043, UMLPackage.eINSTANCE.getInterface());
+
 			elements.put(LiteralString_3038, UMLPackage.eINSTANCE.getLiteralString());
 
 			elements.put(LiteralInteger_3039, UMLPackage.eINSTANCE.getLiteralInteger());
@@ -794,6 +810,8 @@ public class UMLElementTypes extends ElementInitializers {
 			KNOWN_ELEMENT_TYPES.add(InstanceSpecification_3035);
 			KNOWN_ELEMENT_TYPES.add(DataType_3036);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveType_3037);
+			KNOWN_ELEMENT_TYPES.add(Interface_3042);
+			KNOWN_ELEMENT_TYPES.add(Interface_3043);
 			KNOWN_ELEMENT_TYPES.add(LiteralString_3038);
 			KNOWN_ELEMENT_TYPES.add(LiteralInteger_3039);
 			KNOWN_ELEMENT_TYPES.add(Expression_3040);
@@ -926,6 +944,10 @@ public class UMLElementTypes extends ElementInitializers {
 			return DataType_3036;
 		case PrimitiveType3EditPart.VISUAL_ID:
 			return PrimitiveType_3037;
+		case Interface4EditPart.VISUAL_ID:
+			return Interface_3042;
+		case Interface5EditPart.VISUAL_ID:
+			return Interface_3043;
 		case LiteralStringEditPart.VISUAL_ID:
 			return LiteralString_3038;
 		case LiteralIntegerEditPart.VISUAL_ID:

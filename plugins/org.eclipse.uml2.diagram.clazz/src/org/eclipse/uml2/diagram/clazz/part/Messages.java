@@ -873,6 +873,21 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String InterfaceAttributes2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String InterfaceOperations2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String InterfaceClasses2EditPart_title;
+
+	/**
+	 * @generated
+	 */
 	public static String InstanceSpecificationValueEditPart_title;
 
 	/**
@@ -1378,6 +1393,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Interface_3042_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Interface_3042_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Interface_3043_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Interface_3043_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_LiteralString_3038_incominglinks;
 
 	/**
@@ -1668,6 +1703,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String TurnIntoInterface5Action_text;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoInterface5Action_tooltiptext;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoInterface4Action_text;
+
+	/**
+	 * @generated
+	 */
+	public static String TurnIntoInterface4Action_tooltiptext;
+
+	/**
+	 * @generated
+	 */
 	public static String Package2ContributionItemProvider_menu;
 
 	/**
@@ -1724,6 +1779,26 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String InstanceSpecification4ContributionItemProvider_group;
+
+	/**
+	 * @generated
+	 */
+	public static String Interface4ContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String Interface4ContributionItemProvider_group;
+
+	/**
+	 * @generated
+	 */
+	public static String Interface5ContributionItemProvider_menu;
+
+	/**
+	 * @generated
+	 */
+	public static String Interface5ContributionItemProvider_group;
 
 	/**
 	 * @generated

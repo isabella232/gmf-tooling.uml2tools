@@ -298,6 +298,21 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case PrimitiveTypeStereotype2EditPart.VISUAL_ID:
 				return new PrimitiveTypeStereotype2EditPart(view);
 
+			case Interface4EditPart.VISUAL_ID:
+				return new Interface4EditPart(view);
+
+			case InterfaceName3EditPart.VISUAL_ID:
+				return new InterfaceName3EditPart(view);
+
+			case InterfaceStereotype2EditPart.VISUAL_ID:
+				return new InterfaceStereotype2EditPart(view);
+
+			case Interface5EditPart.VISUAL_ID:
+				return new Interface5EditPart(view);
+
+			case InterfaceName4EditPart.VISUAL_ID:
+				return new InterfaceName4EditPart(view);
+
 			case LiteralStringEditPart.VISUAL_ID:
 				return new LiteralStringEditPart(view);
 
@@ -408,6 +423,15 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case PrimitiveTypeOperations2EditPart.VISUAL_ID:
 				return new PrimitiveTypeOperations2EditPart(view);
+
+			case InterfaceAttributes2EditPart.VISUAL_ID:
+				return new InterfaceAttributes2EditPart(view);
+
+			case InterfaceOperations2EditPart.VISUAL_ID:
+				return new InterfaceOperations2EditPart(view);
+
+			case InterfaceClasses2EditPart.VISUAL_ID:
+				return new InterfaceClasses2EditPart(view);
 
 			case InstanceSpecificationValueEditPart.VISUAL_ID:
 				return new InstanceSpecificationValueEditPart(view);

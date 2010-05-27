@@ -123,7 +123,6 @@ public class UsageEditPart extends ConnectionNodeEditPart implements ITreeBranch
 
 	}
 
-	
 	/**
 	 * NOT generated
 	 */

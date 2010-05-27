@@ -38,6 +38,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart;
@@ -190,6 +192,14 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
+		if (editPart instanceof Interface4EditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.Property_3028);
+			types.add(UMLElementTypes.Operation_3029);
+			types.add(UMLElementTypes.Class_3030);
+			return types;
+		}
+
 		if (editPart instanceof PackageAsFrameContentsEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Package_3032);
@@ -198,6 +208,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InstanceSpecification_3035);
 			types.add(UMLElementTypes.DataType_3036);
 			types.add(UMLElementTypes.PrimitiveType_3037);
+			types.add(UMLElementTypes.Interface_3042);
+			types.add(UMLElementTypes.Interface_3043);
 			return types;
 		}
 
@@ -209,6 +221,8 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.InstanceSpecification_3035);
 			types.add(UMLElementTypes.DataType_3036);
 			types.add(UMLElementTypes.PrimitiveType_3037);
+			types.add(UMLElementTypes.Interface_3042);
+			types.add(UMLElementTypes.Interface_3043);
 			return types;
 		}
 
@@ -315,6 +329,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof PrimitiveType3EditPart) {
 			return ((PrimitiveType3EditPart) sourceEditPart).getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof Interface4EditPart) {
+			return ((Interface4EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof Interface5EditPart) {
+			return ((Interface5EditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -397,6 +417,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
 			return ((PrimitiveType3EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Interface4EditPart) {
+			return ((Interface4EditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof Interface5EditPart) {
+			return ((Interface5EditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -482,6 +508,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (sourceEditPart instanceof PrimitiveType3EditPart) {
 			return ((PrimitiveType3EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof Interface4EditPart) {
+			return ((Interface4EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof Interface5EditPart) {
+			return ((Interface5EditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -565,6 +597,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
 			return ((PrimitiveType3EditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof Interface4EditPart) {
+			return ((Interface4EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof Interface5EditPart) {
+			return ((Interface5EditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -647,6 +685,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (sourceEditPart instanceof PrimitiveType3EditPart) {
 			return ((PrimitiveType3EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Interface4EditPart) {
+			return ((Interface4EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof Interface5EditPart) {
+			return ((Interface5EditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}

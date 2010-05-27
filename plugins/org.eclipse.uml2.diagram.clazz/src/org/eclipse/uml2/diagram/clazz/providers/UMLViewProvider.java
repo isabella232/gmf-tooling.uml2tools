@@ -218,6 +218,28 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 					}
 					break;
 				}
+				case Interface4EditPart.VISUAL_ID: {
+					if (domainElement == null) {
+						return false;
+					}
+
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement);
+					if (visualID != suggestedID && Interface5EditPart.VISUAL_ID != suggestedID && true) {
+						return false;
+					}
+					break;
+				}
+				case Interface5EditPart.VISUAL_ID: {
+					if (domainElement == null) {
+						return false;
+					}
+
+					int suggestedID = UMLVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement);
+					if (visualID != suggestedID && Interface4EditPart.VISUAL_ID != suggestedID && true) {
+						return false;
+					}
+					break;
+				}
 				case ConstraintEditPart.VISUAL_ID:
 				case DependencyEditPart.VISUAL_ID:
 				case GeneralizationSetEditPart.VISUAL_ID:
@@ -286,7 +308,8 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 				|| SlotEditPart.VISUAL_ID == visualID || Property6EditPart.VISUAL_ID == visualID || Operation6EditPart.VISUAL_ID == visualID || Class4EditPart.VISUAL_ID == visualID
 				|| ElementImportEditPart.VISUAL_ID == visualID || Package6EditPart.VISUAL_ID == visualID || Class5EditPart.VISUAL_ID == visualID || Enumeration3EditPart.VISUAL_ID == visualID
 				|| InstanceSpecification3EditPart.VISUAL_ID == visualID || DataType3EditPart.VISUAL_ID == visualID || PrimitiveType3EditPart.VISUAL_ID == visualID
-				|| LiteralStringEditPart.VISUAL_ID == visualID || LiteralIntegerEditPart.VISUAL_ID == visualID || ExpressionEditPart.VISUAL_ID == visualID;
+				|| Interface4EditPart.VISUAL_ID == visualID || Interface5EditPart.VISUAL_ID == visualID || LiteralStringEditPart.VISUAL_ID == visualID || LiteralIntegerEditPart.VISUAL_ID == visualID
+				|| ExpressionEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -447,6 +470,10 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 			return createDataType_3036(domainElement, containerView, index, persisted, preferencesHint);
 		case PrimitiveType3EditPart.VISUAL_ID:
 			return createPrimitiveType_3037(domainElement, containerView, index, persisted, preferencesHint);
+		case Interface4EditPart.VISUAL_ID:
+			return createInterface_3042(domainElement, containerView, index, persisted, preferencesHint);
+		case Interface5EditPart.VISUAL_ID:
+			return createInterface_3043(domainElement, containerView, index, persisted, preferencesHint);
 		case LiteralStringEditPart.VISUAL_ID:
 			return createLiteralString_3038(domainElement, containerView, index, persisted, preferencesHint);
 		case LiteralIntegerEditPart.VISUAL_ID:
@@ -1846,6 +1873,86 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		CanonicalStyle canonicalStyle_PrimitiveTypeOperations_7045 = NotationFactory.eINSTANCE.createCanonicalStyle();
 		canonicalStyle_PrimitiveTypeOperations_7045.setCanonical(true);
 		compartment7045.getStyles().add(canonicalStyle_PrimitiveTypeOperations_7045);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createInterface_3042(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(UMLVisualIDRegistry.getType(Interface4EditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
+		Node label5043 = createLabel(node, UMLVisualIDRegistry.getType(InterfaceName3EditPart.VISUAL_ID));
+		Node label5044 = createLabel(node, UMLVisualIDRegistry.getType(InterfaceStereotype2EditPart.VISUAL_ID));
+
+		Node compartment7047 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceAttributes2EditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_InterfaceAttributes_7047 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_InterfaceAttributes_7047.setCanonical(true);
+		compartment7047.getStyles().add(canonicalStyle_InterfaceAttributes_7047);
+
+		Node compartment7048 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceOperations2EditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_InterfaceOperations_7048 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_InterfaceOperations_7048.setCanonical(true);
+		compartment7048.getStyles().add(canonicalStyle_InterfaceOperations_7048);
+
+		Node compartment7049 = createCompartment(node, UMLVisualIDRegistry.getType(InterfaceClasses2EditPart.VISUAL_ID), true, true, true, true);
+		CanonicalStyle canonicalStyle_InterfaceClasses_7049 = NotationFactory.eINSTANCE.createCanonicalStyle();
+		canonicalStyle_InterfaceClasses_7049.setCanonical(true);
+		compartment7049.getStyles().add(canonicalStyle_InterfaceClasses_7049);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createInterface_3043(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(UMLVisualIDRegistry.getType(Interface5EditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getLineStyle_LineColor(), FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
+		Node label5045 = createLabel(node, UMLVisualIDRegistry.getType(InterfaceName4EditPart.VISUAL_ID));
+		label5045.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location5045 = (Location) label5045.getLayoutConstraint();
+		location5045.setX(0);
+		location5045.setY(5);
 		return node;
 	}
 

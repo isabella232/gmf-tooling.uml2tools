@@ -62,6 +62,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart;
@@ -196,6 +198,8 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case InstanceSpecification3EditPart.VISUAL_ID:
 		case DataType3EditPart.VISUAL_ID:
 		case PrimitiveType3EditPart.VISUAL_ID:
+		case Interface4EditPart.VISUAL_ID:
+		case Interface5EditPart.VISUAL_ID:
 		case LiteralStringEditPart.VISUAL_ID:
 		case LiteralIntegerEditPart.VISUAL_ID:
 		case ExpressionEditPart.VISUAL_ID:
@@ -765,6 +769,20 @@ public class PackageCanonicalEditPolicy extends CanonicalConnectionEditPolicy {
 		case PrimitiveType3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(UMLDiagramUpdater.getPrimitiveType_3037ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Interface4EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getInterface_3042ContainedLinks(view));
+			}
+			domain2NotationMap.put(view.getElement(), view);
+			break;
+		}
+		case Interface5EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(UMLDiagramUpdater.getInterface_3043ContainedLinks(view));
 			}
 			domain2NotationMap.put(view.getElement(), view);
 			break;

@@ -292,10 +292,12 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createInterface8CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
+		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(5);
 		types.add(UMLElementTypes.Interface_3041);
 		types.add(UMLElementTypes.Interface_2010);
 		types.add(UMLElementTypes.Interface_2013);
+		types.add(UMLElementTypes.Interface_3042);
+		types.add(UMLElementTypes.Interface_3043);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Interface8CreationTool_title, Messages.Interface8CreationTool_desc, types);
 
 		entry.setId("createInterface8CreationTool"); //$NON-NLS-1$

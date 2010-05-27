@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.part;
 
+import java.util.List;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
@@ -9,6 +10,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLAbstractExpression;
 import org.eclipse.uml2.diagram.clazz.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistryExt;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistryExt.MenuTypeHint;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.DataType;
@@ -24,8 +27,8 @@ import org.eclipse.uml2.uml.Usage;
 
 /**
  * This registry is used to determine which type of visual object should be
- * created for the corresponding Diagram, Node, ChildNode or Link represented
- * by a domain model object.
+ * created for the corresponding Diagram, Node, ChildNode or Link represented by
+ * a domain model object.
  * 
  * @generated
  */
@@ -416,6 +419,12 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
 				return PrimitiveType3EditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface5EditPart.VISUAL_ID;
+			}
 			break;
 		case PackageAsFrameContents2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
@@ -435,6 +444,12 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
 				return PrimitiveType3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface5EditPart.VISUAL_ID;
 			}
 			break;
 		case ClassAttributes2EditPart.VISUAL_ID:
@@ -490,6 +505,21 @@ public class UMLVisualIDRegistry {
 		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
 				return Operation4EditPart.VISUAL_ID;
+			}
+			break;
+		case InterfaceAttributes2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3028((Property) domainElement)) {
+				return Property6EditPart.VISUAL_ID;
+			}
+			break;
+		case InterfaceOperations2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation6EditPart.VISUAL_ID;
+			}
+			break;
+		case InterfaceClasses2EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3030((Class) domainElement)) {
+				return Class4EditPart.VISUAL_ID;
 			}
 			break;
 		case InstanceSpecificationValueEditPart.VISUAL_ID:
@@ -908,6 +938,28 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case Interface4EditPart.VISUAL_ID:
+			if (InterfaceName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceStereotype2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceAttributes2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceOperations2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceClasses2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case Interface5EditPart.VISUAL_ID:
+			if (InterfaceName4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case PackagePackagesEditPart.VISUAL_ID:
 			if (Package3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -1047,6 +1099,12 @@ public class UMLVisualIDRegistry {
 			if (PrimitiveType3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (Interface4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Interface5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case PackageAsFrameContents2EditPart.VISUAL_ID:
 			if (Package6EditPart.VISUAL_ID == nodeVisualID) {
@@ -1065,6 +1123,12 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (PrimitiveType3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Interface4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Interface5EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1120,6 +1184,21 @@ public class UMLVisualIDRegistry {
 			break;
 		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
 			if (Operation4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InterfaceAttributes2EditPart.VISUAL_ID:
+			if (Property6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InterfaceOperations2EditPart.VISUAL_ID:
+			if (Operation6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InterfaceClasses2EditPart.VISUAL_ID:
+			if (Class4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1720,6 +1799,12 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
 				return PrimitiveType3EditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface5EditPart.VISUAL_ID;
+			}
 			break;
 		case InstanceSpecification4EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getLiteralInteger().isSuperTypeOf(domainElement.eClass())) {
@@ -1750,6 +1835,12 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
 				return PrimitiveType3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface5EditPart.VISUAL_ID;
 			}
 			break;
 		case Class5EditPart.VISUAL_ID:
@@ -1808,6 +1899,17 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
 				return Operation4EditPart.VISUAL_ID;
+			}
+			break;
+		case Interface4EditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3028((Property) domainElement)) {
+				return Property6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getOperation().isSuperTypeOf(domainElement.eClass())) {
+				return Operation6EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3030((Class) domainElement)) {
+				return Class4EditPart.VISUAL_ID;
 			}
 			break;
 		case PackageEditPart.VISUAL_ID:
@@ -1900,6 +2002,10 @@ public class UMLVisualIDRegistry {
 			return (substituteCandidate == Package2EditPart.VISUAL_ID);
 		case InstanceSpecification4EditPart.VISUAL_ID:
 			return (substituteCandidate == InstanceSpecification2EditPart.VISUAL_ID);
+		case Interface4EditPart.VISUAL_ID:
+			return (substituteCandidate == Interface5EditPart.VISUAL_ID);
+		case Interface5EditPart.VISUAL_ID:
+			return (substituteCandidate == Interface4EditPart.VISUAL_ID);
 
 		default:
 			break;
@@ -1958,6 +2064,9 @@ public class UMLVisualIDRegistry {
 		case DataTypeOperations2EditPart.VISUAL_ID:
 		case PrimitiveTypeAttributes2EditPart.VISUAL_ID:
 		case PrimitiveTypeOperations2EditPart.VISUAL_ID:
+		case InterfaceAttributes2EditPart.VISUAL_ID:
+		case InterfaceOperations2EditPart.VISUAL_ID:
+		case InterfaceClasses2EditPart.VISUAL_ID:
 		case InstanceSpecificationValueEditPart.VISUAL_ID:
 			return true;
 		default:
@@ -2004,6 +2113,7 @@ public class UMLVisualIDRegistry {
 		case Operation6EditPart.VISUAL_ID:
 		case Class4EditPart.VISUAL_ID:
 		case ElementImportEditPart.VISUAL_ID:
+		case Interface5EditPart.VISUAL_ID:
 		case LiteralStringEditPart.VISUAL_ID:
 		case LiteralIntegerEditPart.VISUAL_ID:
 		case ExpressionEditPart.VISUAL_ID:
@@ -2017,7 +2127,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
+	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistryExt() {
 
 		/**
 		 * @generated
@@ -2066,6 +2176,32 @@ public class UMLVisualIDRegistry {
 		 */
 		public boolean isShortcutDescendant(View view) {
 			return org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry.isShortcutDescendant(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		private VisualIDRegistryExtension myExtension = new VisualIDRegistryExtension();
+
+		/**
+		 * @generated
+		 */
+		public List<String> getAllHintedTypes() {
+			return myExtension.getAllHintedTypes();
+		}
+
+		/**
+		 * @generated
+		 */
+		public List<IVisualIDRegistryExt.MenuTypeHint> getMenuTypeHints(String type) {
+			return myExtension.getMenuTypeHints(type);
+		}
+
+		/**
+		 * @generated
+		 */
+		public String getSemanticHint(View childView, View newParentView) {
+			return myExtension.getSemanticHint(childView, newParentView);
 		}
 
 	};

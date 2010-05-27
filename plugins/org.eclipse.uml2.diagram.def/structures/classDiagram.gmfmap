@@ -1596,8 +1596,24 @@
         <childrenFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
       </children>
+      <children
+          compartment="//@nodes.14/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.11/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+        <childrenFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
+      </children>
+      <children
+          compartment="//@nodes.14/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.6/@ownedChild">
+        <containmentFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+        <childrenFeature
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
+      </children>
       <compartments
-          children="//@nodes.14/@ownedChild/@children.3 //@nodes.14/@ownedChild/@children.0 //@nodes.14/@ownedChild/@children.1 //@nodes.14/@ownedChild/@children.2 //@nodes.14/@ownedChild/@children.4 //@nodes.14/@ownedChild/@children.5">
+          children="//@nodes.14/@ownedChild/@children.3 //@nodes.14/@ownedChild/@children.0 //@nodes.14/@ownedChild/@children.1 //@nodes.14/@ownedChild/@children.2 //@nodes.14/@ownedChild/@children.4 //@nodes.14/@ownedChild/@children.5 //@nodes.14/@ownedChild/@children.6 //@nodes.14/@ownedChild/@children.7">
         <compartment
             href="classDiagram_auxiliary.gmfgraph#frame contents"/>
       </compartments>

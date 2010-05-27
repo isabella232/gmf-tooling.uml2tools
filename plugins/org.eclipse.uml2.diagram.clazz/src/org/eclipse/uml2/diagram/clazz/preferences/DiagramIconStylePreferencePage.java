@@ -273,7 +273,7 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_EnumerationLiteral, 3016);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Expression, 3040);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_InstanceSpecification, 5010, 5029, 5024, 3013);
-		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Interface, 5018, 3041);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Interface, 5018, 5043, 3041);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_LiteralInteger, 3039);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_LiteralString, 3038);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Operation, 3002, 3020, 3015, 3022, 3024, 3029);

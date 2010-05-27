@@ -34,8 +34,8 @@ public class PortProvidedItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 	 * @generated NOT
 	 */
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
-		final Port port = (Port) req.getContainer(); 
-		
+		final Port port = (Port) req.getContainer();
+
 		if (port.getType() != null && port.getType().equals(req.getReferencedObject())) {
 			return getGEFWrapper(new DestroyReferenceCommand(new DestroyReferenceRequest(port, UMLPackage.eINSTANCE.getTypedElement_Type(), req.getReferencedObject(), req.isConfirmationRequired())) {
 

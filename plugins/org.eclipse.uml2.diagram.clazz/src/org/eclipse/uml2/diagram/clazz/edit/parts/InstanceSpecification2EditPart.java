@@ -402,6 +402,12 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
 			types.add(UMLElementTypes.Dependency_4002);
 		}
+		if (targetEditPart instanceof Interface4EditPart) {
+			types.add(UMLElementTypes.Dependency_4002);
+		}
+		if (targetEditPart instanceof Interface5EditPart) {
+			types.add(UMLElementTypes.Dependency_4002);
+		}
 		if (targetEditPart instanceof Package2EditPart) {
 			types.add(UMLElementTypes.Realization_4010);
 		}
@@ -474,6 +480,12 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
 			types.add(UMLElementTypes.Realization_4010);
 		}
+		if (targetEditPart instanceof Interface4EditPart) {
+			types.add(UMLElementTypes.Realization_4010);
+		}
+		if (targetEditPart instanceof Interface5EditPart) {
+			types.add(UMLElementTypes.Realization_4010);
+		}
 		if (targetEditPart instanceof Package2EditPart) {
 			types.add(UMLElementTypes.Usage_4013);
 		}
@@ -544,6 +556,12 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 			types.add(UMLElementTypes.Usage_4013);
 		}
 		if (targetEditPart instanceof PrimitiveType3EditPart) {
+			types.add(UMLElementTypes.Usage_4013);
+		}
+		if (targetEditPart instanceof Interface4EditPart) {
+			types.add(UMLElementTypes.Usage_4013);
+		}
+		if (targetEditPart instanceof Interface5EditPart) {
 			types.add(UMLElementTypes.Usage_4013);
 		}
 		if (targetEditPart instanceof org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification2EditPart) {
@@ -635,6 +653,12 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		if (relationshipType == UMLElementTypes.Dependency_4002) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
+		if (relationshipType == UMLElementTypes.Dependency_4002) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4002) {
+			types.add(UMLElementTypes.Interface_3043);
+		}
 		if (relationshipType == UMLElementTypes.Realization_4010) {
 			types.add(UMLElementTypes.Package_2002);
 		}
@@ -707,6 +731,12 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		if (relationshipType == UMLElementTypes.Realization_4010) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
+		if (relationshipType == UMLElementTypes.Realization_4010) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Realization_4010) {
+			types.add(UMLElementTypes.Interface_3043);
+		}
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.Package_2002);
 		}
@@ -778,6 +808,12 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4013) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4013) {
+			types.add(UMLElementTypes.Interface_3043);
 		}
 		if (relationshipType == UMLElementTypes.Slot_4015) {
 			types.add(UMLElementTypes.InstanceSpecification_2008);
@@ -884,6 +920,12 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		if (relationshipType == UMLElementTypes.Dependency_4002) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
+		if (relationshipType == UMLElementTypes.Dependency_4002) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Dependency_4002) {
+			types.add(UMLElementTypes.Interface_3043);
+		}
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4004) {
 			types.add(UMLElementTypes.Constraint_2006);
 		}
@@ -965,6 +1007,12 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		if (relationshipType == UMLElementTypes.Realization_4010) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
 		}
+		if (relationshipType == UMLElementTypes.Realization_4010) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Realization_4010) {
+			types.add(UMLElementTypes.Interface_3043);
+		}
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.Package_2002);
 		}
@@ -1036,6 +1084,12 @@ public class InstanceSpecification2EditPart extends ShapeNodeEditPart implements
 		}
 		if (relationshipType == UMLElementTypes.Usage_4013) {
 			types.add(UMLElementTypes.PrimitiveType_3037);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4013) {
+			types.add(UMLElementTypes.Interface_3042);
+		}
+		if (relationshipType == UMLElementTypes.Usage_4013) {
+			types.add(UMLElementTypes.Interface_3043);
 		}
 		if (relationshipType == UMLElementTypes.Slot_4015) {
 			types.add(UMLElementTypes.InstanceSpecification_2008);

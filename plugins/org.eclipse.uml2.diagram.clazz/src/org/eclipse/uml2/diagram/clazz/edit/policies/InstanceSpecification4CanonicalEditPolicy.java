@@ -39,6 +39,8 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecification4EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.Interface3EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface4EditPart;
+import org.eclipse.uml2.diagram.clazz.edit.parts.Interface5EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.LiteralStringEditPart;
@@ -150,6 +152,8 @@ public class InstanceSpecification4CanonicalEditPolicy extends CanonicalEditPoli
 		case InstanceSpecification3EditPart.VISUAL_ID:
 		case DataType3EditPart.VISUAL_ID:
 		case PrimitiveType3EditPart.VISUAL_ID:
+		case Interface4EditPart.VISUAL_ID:
+		case Interface5EditPart.VISUAL_ID:
 		case LiteralStringEditPart.VISUAL_ID:
 		case ExpressionEditPart.VISUAL_ID:
 			return true;
