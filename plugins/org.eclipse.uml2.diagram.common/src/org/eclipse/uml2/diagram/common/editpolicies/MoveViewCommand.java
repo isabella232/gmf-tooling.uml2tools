@@ -21,6 +21,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistryExt;
 
 public class MoveViewCommand extends AbstractTransactionalCommand {
 
@@ -99,10 +100,14 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 		//
 	}
 
-	protected View basicCreateNewView(View parentView, EObject child) {
+	protected View basicCreateNewView(View parentView, View childView, EObject child) {
 		IAdaptable semanticAdapter = new EObjectAdapter(child);
+		String semanticHint = null;
+		if (myVisualIDRegistry instanceof IVisualIDRegistryExt) {
+			semanticHint = ((IVisualIDRegistryExt) myVisualIDRegistry).getSemanticHint(childView, parentView);
+		}
 		View result = ViewService.getInstance().createView(//
-				Node.class, semanticAdapter, parentView, null, myIndex, true, myPreferences);
+				Node.class, semanticAdapter, parentView, semanticHint, myIndex, true, myPreferences);
 		return result;
 	}
 	
@@ -111,7 +116,7 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 		//unfortunately, we have to reuse childView instance in order to allow command from layout edit policy to set correct bounds
 		//in order to do this, we will create the new view using service and then copy all its meaningfull contents 
 		//into the original view instance
-		View newView = basicCreateNewView(parentView, child);
+		View newView = basicCreateNewView(parentView, oldChildView, child);
 		if (newView == null){
 			return null;
 		}

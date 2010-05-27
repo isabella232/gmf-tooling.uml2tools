@@ -50,6 +50,8 @@ public class ProvidedPortLinkHelper {
 		if (portType instanceof Classifier) {
 			//then it is new Realization for this classifier
 			createRealization(port, targetInterface, (Classifier) portType);
+			RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(targetInterface, NotationPackage.eINSTANCE.getView_TargetEdges(),
+					RefreshComplementaryLinksHelper.INTERFACE_TARGET_INTERFACE_REALIZATIONS_AFTER_PORT_PROVIDED_TARGET_CHANGED);
 		}
 		return;
 	}
