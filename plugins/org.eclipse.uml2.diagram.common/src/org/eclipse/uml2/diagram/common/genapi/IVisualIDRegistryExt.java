@@ -2,6 +2,9 @@ package org.eclipse.uml2.diagram.common.genapi;
 
 import java.util.List;
 
+import org.eclipse.gmf.runtime.notation.View;
+ 
+
 public interface IVisualIDRegistryExt extends IVisualIDRegistry {
 
 	/**
@@ -15,6 +18,8 @@ public interface IVisualIDRegistryExt extends IVisualIDRegistry {
 	 * themselves
 	 */
 	public List<String> getAllHintedTypes();
+	
+	public String getSemanticHint(View childView, View newParentView );
 
 	public static class MenuTypeHint {
 

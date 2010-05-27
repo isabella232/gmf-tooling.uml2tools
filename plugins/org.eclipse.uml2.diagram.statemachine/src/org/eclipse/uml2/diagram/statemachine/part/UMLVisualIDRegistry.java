@@ -1,11 +1,13 @@
 package org.eclipse.uml2.diagram.statemachine.part;
 
+import java.util.List;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
+import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistryExt;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
@@ -1157,7 +1159,7 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistry() {
+	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistryExt() {
 
 		/**
 		 * @generated
@@ -1206,6 +1208,32 @@ public class UMLVisualIDRegistry {
 		 */
 		public boolean isShortcutDescendant(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.isShortcutDescendant(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		private VisualIDRegistryExtension myExtension = new VisualIDRegistryExtension();
+
+		/**
+		 * @generated
+		 */
+		public List<String> getAllHintedTypes() {
+			return myExtension.getAllHintedTypes();
+		}
+
+		/**
+		 * @generated
+		 */
+		public List<IVisualIDRegistryExt.MenuTypeHint> getMenuTypeHints(String type) {
+			return myExtension.getMenuTypeHints(type);
+		}
+
+		/**
+		 * @generated
+		 */
+		public String getSemanticHint(View childView, View newParentView) {
+			return myExtension.getSemanticHint(childView, newParentView);
 		}
 
 	};
