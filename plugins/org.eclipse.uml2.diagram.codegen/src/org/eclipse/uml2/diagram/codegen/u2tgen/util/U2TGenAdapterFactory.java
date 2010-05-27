@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenAdapterFactory.java,v 1.2 2010/05/14 17:15:02 mgolubev Exp $
+ * $Id: U2TGenAdapterFactory.java,v 1.3 2010/05/27 11:50:59 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.util;
 
@@ -120,6 +120,10 @@ public class U2TGenAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseGeneralizedLinkConstraintAttribute(GeneralizedLinkConstraintAttribute object) {
 				return createGeneralizedLinkConstraintAttributeAdapter();
+			}
+			@Override
+			public Adapter caseCounterpartSemanticHintAttribute(CounterpartSemanticHintAttribute object) {
+				return createCounterpartSemanticHintAttributeAdapter();
 			}
 			@Override
 			public Adapter caseAttributes(Attributes object) {
@@ -310,6 +314,20 @@ public class U2TGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGeneralizedLinkConstraintAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute <em>Counterpart Semantic Hint Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute
+	 * @generated
+	 */
+	public Adapter createCounterpartSemanticHintAttributeAdapter() {
 		return null;
 	}
 

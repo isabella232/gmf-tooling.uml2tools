@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenPackage.java,v 1.2 2010/05/14 17:15:02 mgolubev Exp $
+ * $Id: U2TGenPackage.java,v 1.3 2010/05/27 11:50:59 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen;
 
@@ -443,6 +443,43 @@ public interface U2TGenPackage extends EPackage {
 	int GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.impl.CounterpartSemanticHintAttributeImpl <em>Counterpart Semantic Hint Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.CounterpartSemanticHintAttributeImpl
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl#getCounterpartSemanticHintAttribute()
+	 * @generated
+	 */
+	int COUNTERPART_SEMANTIC_HINT_ATTRIBUTE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Parent Visual Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Child Visual Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Counterpart Semantic Hint Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COUNTERPART_SEMANTIC_HINT_ATTRIBUTE_FEATURE_COUNT = GMFGenPackage.ATTRIBUTES_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.StereotypeSupportRole <em>Stereotype Support Role</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -450,7 +487,7 @@ public interface U2TGenPackage extends EPackage {
 	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl#getStereotypeSupportRole()
 	 * @generated
 	 */
-	int STEREOTYPE_SUPPORT_ROLE = 12;
+	int STEREOTYPE_SUPPORT_ROLE = 13;
 
 
 	/**
@@ -739,6 +776,38 @@ public interface U2TGenPackage extends EPackage {
 	EAttribute getGeneralizedLinkConstraintAttribute_LinkConstraint();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute <em>Counterpart Semantic Hint Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Counterpart Semantic Hint Attribute</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute
+	 * @generated
+	 */
+	EClass getCounterpartSemanticHintAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute#getParentVisualId <em>Parent Visual Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Parent Visual Id</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute#getParentVisualId()
+	 * @see #getCounterpartSemanticHintAttribute()
+	 * @generated
+	 */
+	EAttribute getCounterpartSemanticHintAttribute_ParentVisualId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute#getChildVisualId <em>Child Visual Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Child Visual Id</em>'.
+	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute#getChildVisualId()
+	 * @see #getCounterpartSemanticHintAttribute()
+	 * @generated
+	 */
+	EAttribute getCounterpartSemanticHintAttribute_ChildVisualId();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.uml2.diagram.codegen.u2tgen.StereotypeSupportRole <em>Stereotype Support Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1009,6 +1078,32 @@ public interface U2TGenPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE__LINK_CONSTRAINT = eINSTANCE.getGeneralizedLinkConstraintAttribute_LinkConstraint();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.impl.CounterpartSemanticHintAttributeImpl <em>Counterpart Semantic Hint Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.CounterpartSemanticHintAttributeImpl
+		 * @see org.eclipse.uml2.diagram.codegen.u2tgen.impl.U2TGenPackageImpl#getCounterpartSemanticHintAttribute()
+		 * @generated
+		 */
+		EClass COUNTERPART_SEMANTIC_HINT_ATTRIBUTE = eINSTANCE.getCounterpartSemanticHintAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent Visual Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID = eINSTANCE.getCounterpartSemanticHintAttribute_ParentVisualId();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Visual Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID = eINSTANCE.getCounterpartSemanticHintAttribute_ChildVisualId();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.StereotypeSupportRole <em>Stereotype Support Role</em>}' enum.

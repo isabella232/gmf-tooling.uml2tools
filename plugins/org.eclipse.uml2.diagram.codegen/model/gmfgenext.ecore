@@ -107,6 +107,19 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CounterpartSemanticHintAttribute"
+        eSuperTypes="platform:/plugin/org.eclipse.gmf.codegen/models/gmfgen.ecore#//Attributes">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="parentVisualId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Passed to view, provides visualId of a view it may be assigned as a child."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="childVisualId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Passed to view, provides visualId it has to have in new parent view."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="u2tmap" nsURI="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping"
       nsPrefix="u2tmap">

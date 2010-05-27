@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenFactory.java,v 1.2 2010/05/14 17:15:02 mgolubev Exp $
+ * $Id: U2TGenFactory.java,v 1.3 2010/05/27 11:50:59 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen;
 
@@ -123,6 +123,15 @@ public interface U2TGenFactory extends EFactory {
 	 * @generated
 	 */
 	GeneralizedLinkConstraintAttribute createGeneralizedLinkConstraintAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Counterpart Semantic Hint Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Counterpart Semantic Hint Attribute</em>'.
+	 * @generated
+	 */
+	CounterpartSemanticHintAttribute createCounterpartSemanticHintAttribute();
 
 	/**
 	 * Returns the package supported by this factory.

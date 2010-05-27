@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenSwitch.java,v 1.2 2010/05/14 17:15:02 mgolubev Exp $
+ * $Id: U2TGenSwitch.java,v 1.3 2010/05/27 11:50:59 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.util;
 
@@ -171,6 +171,13 @@ public class U2TGenSwitch<T> {
 				GeneralizedLinkConstraintAttribute generalizedLinkConstraintAttribute = (GeneralizedLinkConstraintAttribute)theEObject;
 				T result = caseGeneralizedLinkConstraintAttribute(generalizedLinkConstraintAttribute);
 				if (result == null) result = caseAttributes(generalizedLinkConstraintAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE: {
+				CounterpartSemanticHintAttribute counterpartSemanticHintAttribute = (CounterpartSemanticHintAttribute)theEObject;
+				T result = caseCounterpartSemanticHintAttribute(counterpartSemanticHintAttribute);
+				if (result == null) result = caseAttributes(counterpartSemanticHintAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -355,6 +362,21 @@ public class U2TGenSwitch<T> {
 	 * @generated
 	 */
 	public T caseGeneralizedLinkConstraintAttribute(GeneralizedLinkConstraintAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Counterpart Semantic Hint Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Counterpart Semantic Hint Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCounterpartSemanticHintAttribute(CounterpartSemanticHintAttribute object) {
 		return null;
 	}
 

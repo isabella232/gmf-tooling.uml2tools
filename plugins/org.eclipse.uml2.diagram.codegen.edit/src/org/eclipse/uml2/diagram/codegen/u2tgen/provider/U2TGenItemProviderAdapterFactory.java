@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenItemProviderAdapterFactory.java,v 1.3 2010/05/14 17:15:05 mgolubev Exp $
+ * $Id: U2TGenItemProviderAdapterFactory.java,v 1.4 2010/05/27 11:51:02 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.provider;
 
@@ -338,6 +338,29 @@ public class U2TGenItemProviderAdapterFactory extends U2TGenAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CounterpartSemanticHintAttributeItemProvider counterpartSemanticHintAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCounterpartSemanticHintAttributeAdapter() {
+		if (counterpartSemanticHintAttributeItemProvider == null) {
+			counterpartSemanticHintAttributeItemProvider = new CounterpartSemanticHintAttributeItemProvider(this);
+		}
+
+		return counterpartSemanticHintAttributeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -447,6 +470,7 @@ public class U2TGenItemProviderAdapterFactory extends U2TGenAdapterFactory imple
 		if (linkToolStackSupportAttributeItemProvider != null) linkToolStackSupportAttributeItemProvider.dispose();
 		if (linkToolStackInfoAttributeItemProvider != null) linkToolStackInfoAttributeItemProvider.dispose();
 		if (generalizedLinkConstraintAttributeItemProvider != null) generalizedLinkConstraintAttributeItemProvider.dispose();
+		if (counterpartSemanticHintAttributeItemProvider != null) counterpartSemanticHintAttributeItemProvider.dispose();
 	}
 
 	/**
@@ -550,6 +574,11 @@ public class U2TGenItemProviderAdapterFactory extends U2TGenAdapterFactory imple
 					(createChildParameter
 						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
 						 U2TGenFactory.eINSTANCE.createGeneralizedLinkConstraintAttribute()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GMFGenPackage.eINSTANCE.getViewmap_Attributes(),
+						 U2TGenFactory.eINSTANCE.createCounterpartSemanticHintAttribute()));
 
 				return null;
 			}

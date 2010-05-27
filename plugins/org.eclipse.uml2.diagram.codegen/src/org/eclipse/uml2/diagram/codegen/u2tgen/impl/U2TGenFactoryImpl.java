@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenFactoryImpl.java,v 1.2 2010/05/14 17:15:02 mgolubev Exp $
+ * $Id: U2TGenFactoryImpl.java,v 1.3 2010/05/27 11:50:59 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -72,6 +72,7 @@ public class U2TGenFactoryImpl extends EFactoryImpl implements U2TGenFactory {
 			case U2TGenPackage.LINK_TOOL_STACK_SUPPORT_ATTRIBUTE: return createLinkToolStackSupportAttribute();
 			case U2TGenPackage.LINK_TOOL_STACK_INFO_ATTRIBUTE: return createLinkToolStackInfoAttribute();
 			case U2TGenPackage.GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE: return createGeneralizedLinkConstraintAttribute();
+			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE: return createCounterpartSemanticHintAttribute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -215,6 +216,16 @@ public class U2TGenFactoryImpl extends EFactoryImpl implements U2TGenFactory {
 	public GeneralizedLinkConstraintAttribute createGeneralizedLinkConstraintAttribute() {
 		GeneralizedLinkConstraintAttributeImpl generalizedLinkConstraintAttribute = new GeneralizedLinkConstraintAttributeImpl();
 		return generalizedLinkConstraintAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CounterpartSemanticHintAttribute createCounterpartSemanticHintAttribute() {
+		CounterpartSemanticHintAttributeImpl counterpartSemanticHintAttribute = new CounterpartSemanticHintAttributeImpl();
+		return counterpartSemanticHintAttribute;
 	}
 
 	/**

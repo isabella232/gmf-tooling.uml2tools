@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenPackageImpl.java,v 1.4 2010/05/14 17:15:02 mgolubev Exp $
+ * $Id: U2TGenPackageImpl.java,v 1.5 2010/05/27 11:50:59 mgolubev Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -20,6 +20,7 @@ import org.eclipse.gmf.mappings.GMFMapPackage;
 
 import org.eclipse.uml2.diagram.codegen.u2tgen.AbstractDynamicCanonicalContainer;
 import org.eclipse.uml2.diagram.codegen.u2tgen.AuxSecondaryDiagramNodeAttribute;
+import org.eclipse.uml2.diagram.codegen.u2tgen.CounterpartSemanticHintAttribute;
 import org.eclipse.uml2.diagram.codegen.u2tgen.CustomLocatorAttributes;
 import org.eclipse.uml2.diagram.codegen.u2tgen.DependencyToolStackInfoAttribute;
 import org.eclipse.uml2.diagram.codegen.u2tgen.DependencyToolStackSupportAttribute;
@@ -130,6 +131,13 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 	 * @generated
 	 */
 	private EClass generalizedLinkConstraintAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass counterpartSemanticHintAttributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -456,6 +464,33 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCounterpartSemanticHintAttribute() {
+		return counterpartSemanticHintAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCounterpartSemanticHintAttribute_ParentVisualId() {
+		return (EAttribute)counterpartSemanticHintAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCounterpartSemanticHintAttribute_ChildVisualId() {
+		return (EAttribute)counterpartSemanticHintAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getStereotypeSupportRole() {
 		return stereotypeSupportRoleEEnum;
 	}
@@ -527,6 +562,10 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 		generalizedLinkConstraintAttributeEClass = createEClass(GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE);
 		createEAttribute(generalizedLinkConstraintAttributeEClass, GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE__LINK_CONSTRAINT);
 
+		counterpartSemanticHintAttributeEClass = createEClass(COUNTERPART_SEMANTIC_HINT_ATTRIBUTE);
+		createEAttribute(counterpartSemanticHintAttributeEClass, COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID);
+		createEAttribute(counterpartSemanticHintAttributeEClass, COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID);
+
 		// Create enums
 		stereotypeSupportRoleEEnum = createEEnum(STEREOTYPE_SUPPORT_ROLE);
 	}
@@ -556,7 +595,6 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 
 		// Obtain other dependent packages
 		GMFGenPackage theGMFGenPackage = (GMFGenPackage)EPackage.Registry.INSTANCE.getEPackage(GMFGenPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -575,6 +613,7 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 		linkToolStackSupportAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 		linkToolStackInfoAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 		generalizedLinkConstraintAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
+		counterpartSemanticHintAttributeEClass.getESuperTypes().add(theGMFGenPackage.getAttributes());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(auxSecondaryDiagramNodeAttributeEClass, AuxSecondaryDiagramNodeAttribute.class, "AuxSecondaryDiagramNodeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -610,15 +649,19 @@ public class U2TGenPackageImpl extends EPackageImpl implements U2TGenPackage {
 		initEAttribute(getStereotypeSupportAttribute_Role(), this.getStereotypeSupportRole(), "role", null, 0, 1, StereotypeSupportAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkToolStackSupportAttributeEClass, LinkToolStackSupportAttribute.class, "LinkToolStackSupportAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLinkToolStackSupportAttribute_ToolClassProviderName(), theEcorePackage.getEString(), "toolClassProviderName", null, 0, 1, LinkToolStackSupportAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLinkToolStackSupportAttribute_BaseSemanticClassName(), theEcorePackage.getEString(), "baseSemanticClassName", null, 0, 1, LinkToolStackSupportAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLinkToolStackSupportAttribute_ToolClassProviderName(), ecorePackage.getEString(), "toolClassProviderName", null, 0, 1, LinkToolStackSupportAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLinkToolStackSupportAttribute_BaseSemanticClassName(), ecorePackage.getEString(), "baseSemanticClassName", null, 0, 1, LinkToolStackSupportAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkToolStackInfoAttributeEClass, LinkToolStackInfoAttribute.class, "LinkToolStackInfoAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLinkToolStackInfoAttribute_ToolgroupTitle(), ecorePackage.getEString(), "toolgroupTitle", null, 0, 1, LinkToolStackInfoAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLinkToolStackInfoAttribute_ElementUniqueIdentifier(), ecorePackage.getEString(), "elementUniqueIdentifier", null, 0, 1, LinkToolStackInfoAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(generalizedLinkConstraintAttributeEClass, GeneralizedLinkConstraintAttribute.class, "GeneralizedLinkConstraintAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGeneralizedLinkConstraintAttribute_LinkConstraint(), theEcorePackage.getEString(), "linkConstraint", null, 0, 1, GeneralizedLinkConstraintAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGeneralizedLinkConstraintAttribute_LinkConstraint(), ecorePackage.getEString(), "linkConstraint", null, 0, 1, GeneralizedLinkConstraintAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(counterpartSemanticHintAttributeEClass, CounterpartSemanticHintAttribute.class, "CounterpartSemanticHintAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCounterpartSemanticHintAttribute_ParentVisualId(), ecorePackage.getEString(), "parentVisualId", null, 0, 1, CounterpartSemanticHintAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCounterpartSemanticHintAttribute_ChildVisualId(), ecorePackage.getEString(), "childVisualId", null, 0, 1, CounterpartSemanticHintAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(stereotypeSupportRoleEEnum, StereotypeSupportRole.class, "StereotypeSupportRole");
