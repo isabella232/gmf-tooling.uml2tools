@@ -1,0 +1,139 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»  
+«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
+ 
+«EXTENSION u2t::actions::i18n»
+«EXTENSION u2t::actions::Utils» 
+
+«DEFINE className FOR gmfgen::GenDiagram»VisualIDRegistryExtension«ENDDEFINE»
+«DEFINE packageName FOR gmfgen::GenDiagram»«self.editorGen.packageNamePrefix».part«ENDDEFINE»
+«DEFINE qualifiedClassName FOR gmfgen::GenDiagram»«EXPAND packageName».«EXPAND className»«ENDDEFINE»
+
+«DEFINE VisualIDRegistryExtension FOR gmfgen::GenDiagram» 
+	package  «EXPAND packageName»; 
+	
+	import java.util.ArrayList;
+	import java.util.Collections;
+	import java.util.LinkedList;
+	import java.util.List;
+	import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistryExt.MenuTypeHint;
+	 
+	«EXPAND xpt::Common::generatedMemberComment» 
+	public class «EXPAND className» { 
+	
+	«EXPAND getMenuTypeHints»
+	 
+	«EXPAND getAllHintedTypes» 
+	
+	«EXPAND getSemanticHint»
+	} 
+«ENDDEFINE»
+
+
+
+«DEFINE getMenuTypeHints FOR gmfgen::GenDiagram»
+	«LET self.getAllNodes()->select(n | not (n.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->isEmpty())->asSequence() AS allSubstitutable-»
+	 	 
+	«IF not allSubstitutable->isEmpty()-»
+		«FOREACH allSubstitutable AS next-»  
+		«IF next.hasAlternativeNotation() -»
+			«LET (next.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->first() AS nextGroup-»
+			«LET nextGroup.oclAsType(u2tgen::SubstitutableByAttributes) AS nextGroupImpl-» 
+			«LET getNodeName(next) AS typeName-» 
+			    «EXPAND xpt::Common::generatedMemberComment» 
+				private final List<MenuTypeHint> my«typeName»Hints;
+				
+					«EXPAND xpt::Common::generatedMemberComment» 
+					{
+					List<MenuTypeHint> «typeName»Hints = new ArrayList<MenuTypeHint>();
+					«typeName»Hints.add(new MenuTypeHint(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForChangeNotationActionText(changeNotationActionClassName(next, next))) FOR next.getDiagram().editorGen» ,// 
+							String.valueOf(«EXPAND xpt::editor::VisualIDRegistry::visualID FOR next-»
+							)));
+			«FOREACH  (nextGroupImpl.getSubstitutableByNodes())[gmfgen::GenNode]->asSequence() AS nextSubstitution SEPARATOR '\n'-»
+			«IF  nextSubstitution.hasAlternativeNotation() -»
+					«typeName»Hints.add(new MenuTypeHint( «EXPAND xpt::Externalizer::accessorCall(i18nKeyForChangeNotationActionText(changeNotationActionClassName(next, nextSubstitution))) FOR next.getDiagram().editorGen» ,//
+							String.valueOf(«EXPAND xpt::editor::VisualIDRegistry::visualID FOR nextSubstitution-»
+							)));
+			«ENDIF-»
+			«ENDFOREACH -»
+			
+					my«typeName»Hints = Collections.unmodifiableList(«typeName»Hints);		
+				}	
+			«ENDLET-»
+			«ENDLET-» 	
+			«ENDLET-»
+		«ENDIF-»
+		«ENDFOREACH-»
+	«ENDIF-»
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+ 	public List<MenuTypeHint> getMenuTypeHints(String type) {
+		int visualId = 0;
+		try {
+			visualId = Integer.parseInt(type);
+		} catch (NumberFormatException e) {
+			return Collections.emptyList();
+		}
+
+		switch (visualId) {
+		
+		«IF not allSubstitutable->isEmpty()-»
+		«FOREACH allSubstitutable AS next-»
+		«IF next.hasAlternativeNotation() -»
+			«EXPAND xpt::Common::caseVisualID FOR next»
+			return  my«getNodeName(next)»Hints;
+		«ENDIF-»
+		«ENDFOREACH-»
+	«ENDIF»   
+			default:
+				List<MenuTypeHint> hints = new LinkedList<MenuTypeHint>();
+				hints.add(new MenuTypeHint("", type));
+				return hints;
+			}
+		}	
+	«ENDLET»	
+«ENDDEFINE»
+
+
+«DEFINE getAllHintedTypes FOR gmfgen::GenDiagram»
+	«EXPAND xpt::Common::generatedMemberComment»
+	private final List<String> myHintedTypes;
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	{
+		List<String> hintedTypes = new LinkedList<String>();	 
+	«LET self.getAllNodes()->select(n | not (n.viewmap.attributes)[u2tgen::SubstitutableByAttributes]->isEmpty())->asSequence() AS allSubstitutable-»
+	
+	«IF not allSubstitutable->isEmpty()-»
+		«FOREACH allSubstitutable AS next-»  
+				hintedTypes.add(String.valueOf(
+			«LET (next.viewmap.attributes)->first() AS nextGroup-» 
+				«EXPAND xpt::editor::VisualIDRegistry::visualID FOR next-» 
+			«ENDLET-»
+			));
+		«ENDFOREACH-»
+	«ENDIF»
+		myHintedTypes = Collections.unmodifiableList(hintedTypes);
+	}
+ 
+	«EXPAND xpt::Common::generatedMemberComment»
+ 	public List<String> getAllHintedTypes() {
+		return myHintedTypes;
+	}
+	«ENDLET»	
+«ENDDEFINE»
+
+«DEFINE getSemanticHint FOR gmfgen::GenDiagram»
+	«EXPAND xpt::Common::generatedMemberComment»
+ 	public String getSemanticHint(org.eclipse.gmf.runtime.notation.View childView, org.eclipse.gmf.runtime.notation.View newParentView) {
+ 	«FOREACH getAllNodes()->select(n | not (n.viewmap.attributes)[u2tgen::CounterpartSemanticHintAttribute]->isEmpty())->asSequence() AS havingHint-»
+ 		«FOREACH havingHint.viewmap.attributes[u2tgen::CounterpartSemanticHintAttribute]->asSequence() AS hint-»	
+ 		if("«hint.parentVisualId»".equals(newParentView.getType()) && String.valueOf( «EXPAND xpt::editor::VisualIDRegistry::visualID FOR havingHint» ).equals(childView.getType())){
+ 			return "«hint.childVisualId»" ;
+ 		}
+ 		
+		«ENDFOREACH-»
+	«ENDFOREACH-»
+		return null;
+	}
+«ENDDEFINE»

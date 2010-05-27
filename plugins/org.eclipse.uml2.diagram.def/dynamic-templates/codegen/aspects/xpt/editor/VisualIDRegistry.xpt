@@ -274,7 +274,7 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQ
 
 «DEFINE typedSharedInstance FOR gmfgen::GenDiagram»
 	«EXPAND xpt::Common::generatedMemberComment»
-	public static final org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry «EXPAND typedSharedInstanceName» = new org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry() {
+	public static final org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry «EXPAND typedSharedInstanceName» = new org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistryExt() {
 		«EXPAND xpt::Common::generatedMemberComment»
 		public String «EXPAND xpt::editor::VisualIDRegistry::getModelIDMethodName»(org.eclipse.gmf.runtime.notation.View view) {
 			return «EXPAND xpt::editor::VisualIDRegistry::getModelIDMethodCall»(view);
@@ -309,7 +309,26 @@ public static int «EXPAND getChildDescriptorVisualIDMethodName»(«descriptorFQ
 		public boolean «EXPAND isShortcutDescendantMethodName»(org.eclipse.gmf.runtime.notation.View view) {
 			return «EXPAND isShortcutDescendantMethodCall»(view);
 		}
-
+		
+		«EXPAND extendVisualIDRegistry» 
 	};
 	
+«ENDDEFINE»
+
+«DEFINE extendVisualIDRegistry FOR gmfgen::GenDiagram»
+   «EXPAND xpt::Common::generatedMemberComment-»
+	    private VisualIDRegistryExtension myExtension = new VisualIDRegistryExtension();
+		
+	«EXPAND xpt::Common::generatedMemberComment-»		 
+		public java.util.List<String> getAllHintedTypes() {
+			return myExtension.getAllHintedTypes();
+		}
+	«EXPAND xpt::Common::generatedMemberComment-»
+		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistryExt.MenuTypeHint> getMenuTypeHints(String type) {
+			return myExtension.getMenuTypeHints(type);
+		} 
+	«EXPAND xpt::Common::generatedMemberComment-»
+		public String getSemanticHint(View childView, View newParentView) { 
+			return myExtension.getSemanticHint(childView, newParentView);
+		} 
 «ENDDEFINE»

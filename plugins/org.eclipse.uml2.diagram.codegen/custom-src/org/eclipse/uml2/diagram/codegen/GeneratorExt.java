@@ -10,6 +10,7 @@ import org.eclipse.gmf.codegen.gmfgen.GenCustomPreferencePage;
 import org.eclipse.gmf.codegen.gmfgen.GenDiagram;
 import org.eclipse.gmf.codegen.gmfgen.GenEditorGenerator;
 import org.eclipse.gmf.codegen.gmfgen.GenLink;
+import org.eclipse.gmf.codegen.gmfgen.GenNode;
 import org.eclipse.gmf.codegen.gmfgen.GenPreferencePage;
 import org.eclipse.gmf.codegen.gmfgen.GenTopLevelNode;
 import org.eclipse.gmf.codegen.gmfgen.TypeModelFacet;
@@ -66,7 +67,7 @@ public class GeneratorExt extends Generator {
 	@Override
 	protected void customRun() throws InterruptedException, UnexpectedBehaviourException {
 		super.customRun();
-		for (GenTopLevelNode node : myDiagram.getTopLevelNodes()) {
+		for (GenNode node : myDiagram.getAllNodes()) {
 			generateChangeNotationAction(node);
 		}
 		generateIconStylePreferencesPage(myDiagram);
@@ -77,7 +78,8 @@ public class GeneratorExt extends Generator {
 		generateSynchronizationWizardPage(myDiagram);
 		generateNewDiagramHadler(myDiagram);
 		generateCreateDependencyLinkTool(myDiagram);
-	}
+		generateVisualIDRegistyExt(myDiagram);
+	 }
 
 	private void generateSwitchBetweenCommentAndNodeActions() throws InterruptedException, UnexpectedBehaviourException {
 		GenTopLevelNode commentNode = null;
@@ -127,7 +129,7 @@ public class GeneratorExt extends Generator {
 
 	}
 
-	private void generateChangeNotationAction(GenTopLevelNode node) throws InterruptedException, UnexpectedBehaviourException {
+	private void generateChangeNotationAction(GenNode node) throws InterruptedException, UnexpectedBehaviourException {
 		for (org.eclipse.gmf.codegen.gmfgen.Attributes attr : node.getViewmap().getAttributes()) {
 			if (false == attr instanceof SubstitutableByAttributes) {
 				continue;
@@ -233,4 +235,7 @@ public class GeneratorExt extends Generator {
 		return isTheSameEClass(candidate.getEContainingClass(), pattern.getEContainingClass()) && pattern.getName().equals(candidate.getName());
 	}
 
+	private void generateVisualIDRegistyExt(GenDiagram diagram) throws InterruptedException, UnexpectedBehaviourException {
+		doGenerateJavaClass(myEmitters.getVisualIdRegistryExtEmitter(), myEmitters.getVisualIdRegistryExtFQN(new Object[] { diagram }), diagram);
+	}
 }

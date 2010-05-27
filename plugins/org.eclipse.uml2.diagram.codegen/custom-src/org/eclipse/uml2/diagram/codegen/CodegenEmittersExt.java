@@ -152,7 +152,15 @@ public class CodegenEmittersExt extends CodegenEmitters {
 	public String getCreateLinkToolStackLinkFQN(Object... input) throws UnexpectedBehaviourException {
 		return getQualifiedClassName("u2t::linkstack::CreateLinkStackLinkTool::qualifiedClassName", input); //$NON-NLS-1$
 	}
-	
+
+	public TextEmitter getVisualIdRegistryExtEmitter() throws UnexpectedBehaviourException {
+		return newXpandEmitter("u2t::visualidext::VisualIDRegistryExt::VisualIDRegistryExtension"); //$NON-NLS-1$
+	}
+
+	public String getVisualIdRegistryExtFQN(Object... input) throws UnexpectedBehaviourException {
+		return getQualifiedClassName("u2t::visualidext::VisualIDRegistryExt::qualifiedClassName", input); //$NON-NLS-1$
+	}
+
 	/**
 	 * Returns qualified class name defined in template.
 	 */
