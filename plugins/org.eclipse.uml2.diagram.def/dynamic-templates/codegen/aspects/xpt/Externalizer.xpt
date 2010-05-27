@@ -38,14 +38,14 @@ public class «getExternalizerClassName()» extends org.eclipse.osgi.util.NLS {
 «ENDAROUND»
 
 «AROUND Values FOR gmfgen::GenEditorGenerator»
-«targetDef.proceed()»
-«EXPAND u2t::actions::ChangeNotationAction::i18nValues FOR diagram-»
-«EXPAND u2t::actions::ChangeNotationContributionItemProvider::i18nValues FOR diagram-»
-«EXPAND u2t::preferences::IconStylePreferencePage::i18nValues FOR diagram-»
+«targetDef.proceed()» 
+«EXPAND u2t::actions::ChangeNotationAction::i18nValues FOR diagram-» 
+«EXPAND u2t::actions::ChangeNotationContributionItemProvider::i18nValues FOR diagram-» 
+«EXPAND u2t::preferences::IconStylePreferencePage::i18nValues FOR diagram-» 
 «ENDAROUND»
 
-«DEFINE additions FOR gmfgen::GenEditorGenerator-»
-	«EXPAND u2t::actions::ChangeNotationAction::i18nAccessors FOR diagram-»
-	«EXPAND u2t::actions::ChangeNotationContributionItemProvider::i18nAccessors FOR diagram-»
+«DEFINE additions FOR gmfgen::GenEditorGenerator-»  
+	«EXPAND u2t::actions::ChangeNotationAction::i18nAccessors FOR diagram-» 
+	«EXPAND u2t::actions::ChangeNotationContributionItemProvider::i18nAccessors FOR diagram-» 
 	«EXPAND u2t::preferences::IconStylePreferencePage::i18nAccessors FOR diagram-»
 «ENDDEFINE»
