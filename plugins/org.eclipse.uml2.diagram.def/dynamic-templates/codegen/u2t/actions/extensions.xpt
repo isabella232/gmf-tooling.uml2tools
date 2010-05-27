@@ -18,10 +18,11 @@
 «EXTENSION u2t::actions::Utils»  
 
 «DEFINE changeNotationContributionItemProviders FOR gmfgen::GenDiagram»
-	«EXPAND changeNotationContributionItemProviders FOREACH topLevelNodes»
+	«EXPAND changeNotationContributionItemProviders FOREACH topLevelNodes» 
+	«EXPAND changeNotationContributionItemProviders FOREACH childNodes» 
 «ENDDEFINE»
 
-«DEFINE changeNotationContributionItemProviders FOR gmfgen::GenTopLevelNode»
+«DEFINE changeNotationContributionItemProviders FOR gmfgen::GenNode»
 «IF self.hasAlternativeNotation()-»
 	<extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-«getNodeName(self)»">
       «EXPAND xpt::Common::xmlGeneratedTag»
@@ -60,7 +61,7 @@
 «ENDIF-»
 «ENDDEFINE»
 
-«DEFINE changeNotationPopupAction(node : gmfgen::GenNode) FOR gmfgen::GenTopLevelNode»
+«DEFINE changeNotationPopupAction(node : gmfgen::GenNode) FOR gmfgen::GenNode»
 			<popupAction
 				path="/ChangeNotationMenu/ChangeNotationGroup"
 				id="«EXPAND u2t::actions::ChangeNotationAction::actionId(node)»">

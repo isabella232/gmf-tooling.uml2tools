@@ -18,7 +18,7 @@
 «EXTENSION u2t::actions::i18n»
 «EXTENSION u2t::actions::Utils»
 
-«DEFINE ChangeNotationContributionItemProvider FOR gmfgen::GenTopLevelNode»
+«DEFINE ChangeNotationContributionItemProvider FOR gmfgen::GenNode»
 package «EXPAND packageName»;
 
 «EXPAND xpt::Common::generatedClassComment»
@@ -58,36 +58,36 @@ public class «EXPAND className» extends org.eclipse.gmf.runtime.common.ui.serv
 }
 «ENDDEFINE»
 
-«DEFINE addActions(subChild : u2tgen::SubstitutableByAttributes) FOR gmfgen::GenTopLevelNode-»
+«DEFINE addActions(subChild : u2tgen::SubstitutableByAttributes) FOR gmfgen::GenNode-»
 «IF subChild <> null and not subChild.requiresAll-»
 «FOREACH (subChild.getSubstitutableByNodes())[gmfgen::GenNode]->asSequence() AS newNode»«EXPAND addAction(newNode)»«ENDFOREACH-»
 «ENDIF»
 «ENDDEFINE»
 
-«DEFINE addAction(newNode : gmfgen::GenNode) FOR gmfgen::GenTopLevelNode»
+«DEFINE addAction(newNode : gmfgen::GenNode) FOR gmfgen::GenNode»
 	if («EXPAND u2t::actions::ChangeNotationAction::qualifiedClassName(newNode)».ACTION_ID.equals(actionId)) {
 		return new «EXPAND u2t::actions::ChangeNotationAction::qualifiedClassName(newNode)»(workbenchPage, actionId);
 	}
 «ENDDEFINE»
 
-«DEFINE className FOR gmfgen::GenTopLevelNode»«changeNotationContributionItemProviderClassName(self)»«ENDDEFINE»
+«DEFINE className FOR gmfgen::GenNode»«changeNotationContributionItemProviderClassName(self)»«ENDDEFINE»
 
-«DEFINE packageName FOR gmfgen::GenTopLevelNode»«self.actionsPackage()»«ENDDEFINE»
+«DEFINE packageName FOR gmfgen::GenNode»«self.actionsPackage()»«ENDDEFINE»
 
-«DEFINE qualifiedClassName FOR gmfgen::GenTopLevelNode»«EXPAND packageName».«EXPAND className»«ENDDEFINE»
+«DEFINE qualifiedClassName FOR gmfgen::GenNode»«EXPAND packageName».«EXPAND className»«ENDDEFINE»
 
-«DEFINE i18nAccessors FOR gmfgen::GenDiagram-»
-«FOREACH editorGen.diagram.topLevelNodes->asSequence() AS node-»
-«IF node.hasAlternativeNotation()-»
+«DEFINE i18nAccessors FOR gmfgen::GenDiagram-» 
+«FOREACH editorGen.diagram.getAllNodes()->asSequence() AS node-» 
+«IF node.hasAlternativeNotation()-» 
 «EXPAND xpt::Externalizer::accessorField(i18nKeyForChangeNotationMenu(changeNotationContributionItemProviderClassName(node)))-»
 «EXPAND xpt::Externalizer::accessorField(i18nKeyForChangeNotationGroup(changeNotationContributionItemProviderClassName(node)))-»
 «ENDIF-»
 «ENDFOREACH-»
 «ENDDEFINE»
 
-«DEFINE i18nValues FOR gmfgen::GenDiagram-»
-«FOREACH editorGen.diagram.topLevelNodes->asSequence() AS node-»
-«IF node.hasAlternativeNotation()-»
+«DEFINE i18nValues FOR gmfgen::GenDiagram-» 
+«FOREACH editorGen.diagram.getAllNodes()->asSequence() AS node-» 
+«IF node.hasAlternativeNotation()-» 
 «EXPAND xpt::Externalizer::messageEntry(i18nKeyForChangeNotationMenu(changeNotationContributionItemProviderClassName(node)), 'Show as')-»
 «EXPAND xpt::Externalizer::messageEntry(i18nKeyForChangeNotationGroup(changeNotationContributionItemProviderClassName(node)), 'Show as')-»
 «ENDIF-»

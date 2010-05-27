@@ -5,11 +5,11 @@ modeltype u2tAux uses "http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenMode
 
 library Utils;
 
-helper changeNotationActionClassName(node : genModel::GenTopLevelNode, substitutableByNode : genModel::GenNode) : String {
+helper changeNotationActionClassName(node : genModel::GenNode, substitutableByNode : genModel::GenNode) : String {
 	return 'TurnInto' + getNodeName(substitutableByNode) + 'Action'
 }
 
-helper changeNotationContributionItemProviderClassName(node : genModel::GenTopLevelNode) : String {
+helper changeNotationContributionItemProviderClassName(node : genModel::GenNode) : String {
 	return getNodeName(node) + 'ContributionItemProvider'
 }
 
@@ -20,13 +20,9 @@ helper genModel::GenDiagram::actionsPackage() : String {
 helper genModel::GenCommonBase::actionsPackage() : String {
 	return self.getDiagram().actionsPackage()
 }
-
-helper genModel::GenTopLevelNode::hasAlternativeNotation() : Boolean {
-	return hasAlternationNotation((self.viewmap.attributes)[u2tAux::SubstitutableByAttributes]->first().oclAsType(u2tAux::SubstitutableByAttributes))
-}
-
+ 
 helper genModel::GenNode::hasAlternativeNotation() : Boolean {
-	return false
+	return hasAlternationNotation((self.viewmap.attributes)[u2tAux::SubstitutableByAttributes]->first().oclAsType(u2tAux::SubstitutableByAttributes))
 }
 
 helper getNodeName(node : genModel::GenNode) : String {
