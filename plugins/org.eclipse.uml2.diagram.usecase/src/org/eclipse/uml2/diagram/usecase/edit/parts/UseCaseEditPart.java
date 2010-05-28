@@ -37,6 +37,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -1075,7 +1076,7 @@ public class UseCaseEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		/**
 		 * @generated
 		 */
-		private Label fUseCaseFigure_name;
+		private WrappingLabel fUseCaseFigure_name;
 
 		/**
 		 * @generated
@@ -1100,8 +1101,9 @@ public class UseCaseEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		 */
 		private void createContents() {
 
-			fUseCaseFigure_name = new Label();
-			fUseCaseFigure_name.setText("");
+			fUseCaseFigure_name = new WrappingLabel();
+
+			fUseCaseFigure_name.setTextWrap(true);
 
 			fUseCaseFigure_name.setFont(FUSECASEFIGURE_NAME_FONT);
 
@@ -1138,7 +1140,7 @@ public class UseCaseEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 		/**
 		 * @generated
 		 */
-		public Label getUseCaseFigure_name() {
+		public WrappingLabel getUseCaseFigure_name() {
 			return fUseCaseFigure_name;
 		}
 

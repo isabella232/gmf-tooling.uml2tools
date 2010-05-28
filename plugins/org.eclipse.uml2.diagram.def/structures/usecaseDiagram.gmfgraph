@@ -59,14 +59,18 @@
             xsi:type="gmfgraph:CustomLayout"
             qualifiedClassName="org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout"/>
         <children
-            xsi:type="gmfgraph:Label"
-            name="UseCaseFigure_name">
+            xsi:type="gmfgraph:CustomFigure"
+            name="UseCaseFigure_name"
+            qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
           <layoutData
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="BEGINNING"
               vertical="true"/>
           <font
               xsi:type="gmfgraph:BasicFont"/>
+          <attributes
+              name="textWrap"
+              value="true"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
