@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.csd.part;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.gef.Tool;
@@ -11,6 +12,7 @@ import org.eclipse.gef.palette.PaletteStack;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.uml2.diagram.common.part.LinkToolEntry;
 import org.eclipse.uml2.diagram.common.part.NodeToolEntry;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
@@ -119,9 +121,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createElementImport1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.ElementImport_3004);
-		NodeToolEntry entry = new NodeToolEntry(Messages.ElementImport1CreationTool_title, Messages.ElementImport1CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.ElementImport1CreationTool_title, Messages.ElementImport1CreationTool_desc, Collections.singletonList(UMLElementTypes.ElementImport_3004));
 
 		entry.setId("createElementImport1CreationTool"); //$NON-NLS-1$
 
@@ -136,7 +136,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAttribute2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(4);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(UMLElementTypes.Property_3007);
 		types.add(UMLElementTypes.Property_3008);
 		types.add(UMLElementTypes.Property_3014);
@@ -156,7 +156,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createOperation3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.Operation_3009);
 		types.add(UMLElementTypes.Operation_3019);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Operation3CreationTool_title, Messages.Operation3CreationTool_desc, types);
@@ -174,7 +174,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createPort4CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.Port_3011);
 		types.add(UMLElementTypes.Port_3017);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Port4CreationTool_title, Messages.Port4CreationTool_desc, types);
@@ -192,9 +192,8 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCollaborationUse5CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.CollaborationUse_3002);
-		NodeToolEntry entry = new NodeToolEntry(Messages.CollaborationUse5CreationTool_title, Messages.CollaborationUse5CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.CollaborationUse5CreationTool_title, Messages.CollaborationUse5CreationTool_desc,
+				Collections.singletonList(UMLElementTypes.CollaborationUse_3002));
 
 		entry.setId("createCollaborationUse5CreationTool"); //$NON-NLS-1$
 
@@ -209,9 +208,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createSlot6CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Slot_3015);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Slot6CreationTool_title, Messages.Slot6CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Slot6CreationTool_title, Messages.Slot6CreationTool_desc, Collections.singletonList(UMLElementTypes.Slot_3015));
 
 		entry.setId("createSlot6CreationTool"); //$NON-NLS-1$
 
@@ -226,9 +223,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createCollaboration1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Collaboration_2005);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Collaboration1CreationTool_title, Messages.Collaboration1CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Collaboration1CreationTool_title, Messages.Collaboration1CreationTool_desc, Collections.singletonList(UMLElementTypes.Collaboration_2005));
 
 		entry.setId("createCollaboration1CreationTool"); //$NON-NLS-1$
 
@@ -243,7 +238,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createClass2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(3);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(UMLElementTypes.Class_2006);
 		types.add(UMLElementTypes.Class_3010);
 		types.add(UMLElementTypes.Class_3020);
@@ -262,7 +257,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createInterface3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.Interface_2009);
 		types.add(UMLElementTypes.Interface_2014);
 		NodeToolEntry entry = new NodeToolEntry(Messages.Interface3CreationTool_title, Messages.Interface3CreationTool_desc, types);
@@ -280,9 +275,8 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createInstanceSpecification4CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.InstanceSpecification_2011);
-		NodeToolEntry entry = new NodeToolEntry(Messages.InstanceSpecification4CreationTool_title, Messages.InstanceSpecification4CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.InstanceSpecification4CreationTool_title, Messages.InstanceSpecification4CreationTool_desc,
+				Collections.singletonList(UMLElementTypes.InstanceSpecification_2011));
 
 		entry.setId("createInstanceSpecification4CreationTool"); //$NON-NLS-1$
 
@@ -297,9 +291,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createConstraint5CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Constraint_2012);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint5CreationTool_title, Messages.Constraint5CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Constraint5CreationTool_title, Messages.Constraint5CreationTool_desc, Collections.singletonList(UMLElementTypes.Constraint_2012));
 
 		entry.setId("createConstraint5CreationTool"); //$NON-NLS-1$
 
@@ -314,9 +306,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createComment6CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Comment_2013);
-		NodeToolEntry entry = new NodeToolEntry(Messages.Comment6CreationTool_title, Messages.Comment6CreationTool_desc, types);
+		NodeToolEntry entry = new NodeToolEntry(Messages.Comment6CreationTool_title, Messages.Comment6CreationTool_desc, Collections.singletonList(UMLElementTypes.Comment_2013));
 
 		entry.setId("createComment6CreationTool"); //$NON-NLS-1$
 
@@ -331,9 +321,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createConnector1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Connector_4005);
-		LinkToolEntry entry = new LinkToolEntry(Messages.Connector1CreationTool_title, Messages.Connector1CreationTool_desc, types);
+		LinkToolEntry entry = new LinkToolEntry(Messages.Connector1CreationTool_title, Messages.Connector1CreationTool_desc, Collections.singletonList(UMLElementTypes.Connector_4005));
 
 		entry.setId("createConnector1CreationTool"); //$NON-NLS-1$
 
@@ -348,9 +336,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRoleBinding2CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.Dependency_4006);
-		LinkToolEntry entry = new LinkToolEntry(Messages.RoleBinding2CreationTool_title, Messages.RoleBinding2CreationTool_desc, types);
+		LinkToolEntry entry = new LinkToolEntry(Messages.RoleBinding2CreationTool_title, Messages.RoleBinding2CreationTool_desc, Collections.singletonList(UMLElementTypes.Dependency_4006));
 
 		entry.setId("createRoleBinding2CreationTool"); //$NON-NLS-1$
 
@@ -365,7 +351,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createProvidedInterface3CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.InterfaceRealization_4007);
 		types.add(UMLElementTypes.PortProvided_4010);
 		LinkToolEntry entry = new LinkToolEntry(Messages.ProvidedInterface3CreationTool_title, Messages.ProvidedInterface3CreationTool_desc, types);
@@ -383,7 +369,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createRequiredInterface4CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.Usage_4008);
 		types.add(UMLElementTypes.PortRequired_4014);
 		LinkToolEntry entry = new LinkToolEntry(Messages.RequiredInterface4CreationTool_title, Messages.RequiredInterface4CreationTool_desc, types);
@@ -401,9 +387,8 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createConstrainedElement6CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.ConstraintConstrainedElement_4012);
-		LinkToolEntry entry = new LinkToolEntry(Messages.ConstrainedElement6CreationTool_title, Messages.ConstrainedElement6CreationTool_desc, types);
+		LinkToolEntry entry = new LinkToolEntry(Messages.ConstrainedElement6CreationTool_title, Messages.ConstrainedElement6CreationTool_desc,
+				Collections.singletonList(UMLElementTypes.ConstraintConstrainedElement_4012));
 
 		entry.setId("createConstrainedElement6CreationTool"); //$NON-NLS-1$
 
@@ -418,9 +403,8 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAnnotatedElement7CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
-		types.add(UMLElementTypes.CommentAnnotatedElement_4016);
-		LinkToolEntry entry = new LinkToolEntry(Messages.AnnotatedElement7CreationTool_title, Messages.AnnotatedElement7CreationTool_desc, types);
+		LinkToolEntry entry = new LinkToolEntry(Messages.AnnotatedElement7CreationTool_title, Messages.AnnotatedElement7CreationTool_desc,
+				Collections.singletonList(UMLElementTypes.CommentAnnotatedElement_4016));
 
 		entry.setId("createAnnotatedElement7CreationTool"); //$NON-NLS-1$
 
@@ -435,7 +419,7 @@ public class UMLPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAssociation1CreationTool() {
-		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.Association_4011);
 		types.add(UMLElementTypes.Slot_4015);
 		LinkToolEntry entry = new LinkToolEntry(Messages.Association1CreationTool_title, Messages.Association1CreationTool_desc, types);

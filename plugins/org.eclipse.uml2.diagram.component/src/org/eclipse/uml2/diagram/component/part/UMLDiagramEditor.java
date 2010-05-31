@@ -20,6 +20,7 @@ import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.ui.dnd.LocalTransfer;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
@@ -117,6 +118,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class type) {
 		if (type == IShowInTargetList.class) {
 			return new IShowInTargetList() {
@@ -322,12 +324,12 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 		 */
 		protected List getObjectsBeingDropped() {
 			TransferData data = getCurrentEvent().currentDataType;
-			Collection uris = new HashSet();
+			HashSet<URI> uris = new HashSet<URI>();
 
 			Object transferedObject = getJavaObject(data);
 			if (transferedObject instanceof IStructuredSelection) {
 				IStructuredSelection selection = (IStructuredSelection) transferedObject;
-				for (Iterator it = selection.iterator(); it.hasNext();) {
+				for (Iterator<?> it = selection.iterator(); it.hasNext();) {
 					Object nextSelectedObject = it.next();
 					if (nextSelectedObject instanceof UMLNavigatorItem) {
 						View view = ((UMLNavigatorItem) nextSelectedObject).getView();
@@ -339,15 +341,13 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 
 					if (nextSelectedObject instanceof EObject) {
 						EObject modelElement = (EObject) nextSelectedObject;
-						Resource modelElementResource = modelElement.eResource();
-						uris.add(modelElementResource.getURI().appendFragment(modelElementResource.getURIFragment(modelElement)));
+						uris.add(EcoreUtil.getURI(modelElement));
 					}
 				}
 			}
 
-			List result = new ArrayList();
-			for (Iterator it = uris.iterator(); it.hasNext();) {
-				URI nextURI = (URI) it.next();
+			ArrayList<EObject> result = new ArrayList<EObject>(uris.size());
+			for (URI nextURI : uris) {
 				EObject modelObject = getEditingDomain().getResourceSet().getEObject(nextURI, true);
 				result.add(modelObject);
 			}
