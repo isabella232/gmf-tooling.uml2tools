@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -110,8 +111,7 @@ public class PropertyEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		PartFigure figure = new PartFigure();
-		return primaryShape = figure;
+		return primaryShape = new PartFigure();
 	}
 
 	/**
@@ -272,8 +272,8 @@ public class PropertyEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnSource() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.Connector_4008);
 		types.add(UMLElementTypes.Dependency_4009);
 		return types;
@@ -282,8 +282,8 @@ public class PropertyEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnTarget() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(UMLElementTypes.Connector_4008);
 		types.add(UMLElementTypes.Dependency_4009);
 		types.add(UMLElementTypes.CommentAnnotatedElement_4012);
@@ -293,8 +293,8 @@ public class PropertyEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof PortEditPart) {
 			types.add(UMLElementTypes.Connector_4008);
 		}
@@ -361,69 +361,31 @@ public class PropertyEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.Connector_4008) {
 			types.add(UMLElementTypes.Port_3002);
-		}
-		if (relationshipType == UMLElementTypes.Connector_4008) {
 			types.add(UMLElementTypes.Property_3006);
-		}
-		if (relationshipType == UMLElementTypes.Connector_4008) {
 			types.add(UMLElementTypes.Port_3014);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
+		} else if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Component_2001);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Artifact_2002);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Interface_2003);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_2004);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Package_2005);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Package_2006);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_2007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Interface_2009);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Component_3001);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Port_3002);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Artifact_3003);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Artifact_3016);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_3004);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Interface_3005);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Property_3006);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Connector_3015);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Port_3014);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4012) {
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4012) {
 			types.add(UMLElementTypes.Comment_2008);
 		}
 		return types;
@@ -432,66 +394,29 @@ public class PropertyEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.Connector_4008) {
 			types.add(UMLElementTypes.Port_3002);
-		}
-		if (relationshipType == UMLElementTypes.Connector_4008) {
 			types.add(UMLElementTypes.Property_3006);
-		}
-		if (relationshipType == UMLElementTypes.Connector_4008) {
 			types.add(UMLElementTypes.Port_3014);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
+		} else if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Component_2001);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Artifact_2002);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Interface_2003);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_2004);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Package_2005);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Package_2006);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_2007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Interface_2009);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Component_3001);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Port_3002);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Artifact_3003);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Artifact_3016);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Class_3004);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Interface_3005);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Property_3006);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Connector_3015);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4009) {
 			types.add(UMLElementTypes.Port_3014);
 		}
 		return types;

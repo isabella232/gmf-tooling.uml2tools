@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.deploy.edit.parts;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -140,8 +141,7 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ArtifactFigure figure = new ArtifactFigure();
-		return primaryShape = figure;
+		return primaryShape = new ArtifactFigure();
 	}
 
 	/**
@@ -320,8 +320,8 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnSource() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(UMLElementTypes.Manifestation_4002);
 		types.add(UMLElementTypes.CommunicationPath_4004);
 		types.add(UMLElementTypes.Dependency_4005);
@@ -331,8 +331,8 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnTarget() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(5);
 		types.add(UMLElementTypes.Deployment_4001);
 		types.add(UMLElementTypes.Manifestation_4002);
 		types.add(UMLElementTypes.CommunicationPath_4004);
@@ -344,8 +344,8 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof Package2EditPart) {
 			types.add(UMLElementTypes.Manifestation_4002);
 		}
@@ -457,111 +457,47 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.Deployment_4001) {
 			types.add(UMLElementTypes.Device_2003);
-		}
-		if (relationshipType == UMLElementTypes.Deployment_4001) {
 			types.add(UMLElementTypes.Node_2004);
-		}
-		if (relationshipType == UMLElementTypes.Deployment_4001) {
 			types.add(UMLElementTypes.ExecutionEnvironment_2005);
-		}
-		if (relationshipType == UMLElementTypes.Deployment_4001) {
 			types.add(UMLElementTypes.Device_3004);
-		}
-		if (relationshipType == UMLElementTypes.Deployment_4001) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
-		}
-		if (relationshipType == UMLElementTypes.Deployment_4001) {
 			types.add(UMLElementTypes.Node_3007);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
+		} else if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Artifact_2006);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.DeploymentSpecification_2007);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Artifact_3002);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Artifact_3008);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.DeploymentSpecification_3009);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+		} else if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Device_2003);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Node_2004);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.ExecutionEnvironment_2005);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_2006);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.DeploymentSpecification_2007);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Device_3004);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_3002);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_3008);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.DeploymentSpecification_3009);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Node_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
+		} else if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Package_2001);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Device_2003);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Node_2004);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.ExecutionEnvironment_2005);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_2006);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.DeploymentSpecification_2007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Device_3004);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_3002);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_3008);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.DeploymentSpecification_3009);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Node_3007);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
 			types.add(UMLElementTypes.Comment_2008);
 		}
 		return types;
@@ -570,111 +506,45 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Package_2001);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Device_2003);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Node_2004);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.ExecutionEnvironment_2005);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Artifact_2006);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.DeploymentSpecification_2007);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Device_3004);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Artifact_3002);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Artifact_3008);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.DeploymentSpecification_3009);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
-		}
-		if (relationshipType == UMLElementTypes.Manifestation_4002) {
 			types.add(UMLElementTypes.Node_3007);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
+		} else if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Device_2003);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Node_2004);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.ExecutionEnvironment_2005);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_2006);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.DeploymentSpecification_2007);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Device_3004);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_3002);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Artifact_3008);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.DeploymentSpecification_3009);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
-		}
-		if (relationshipType == UMLElementTypes.CommunicationPath_4004) {
 			types.add(UMLElementTypes.Node_3007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
+		} else if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Package_2001);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Device_2003);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Node_2004);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.ExecutionEnvironment_2005);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_2006);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.DeploymentSpecification_2007);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Device_3004);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_3002);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Artifact_3008);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.DeploymentSpecification_3009);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.ExecutionEnvironment_3005);
-		}
-		if (relationshipType == UMLElementTypes.Dependency_4005) {
 			types.add(UMLElementTypes.Node_3007);
 		}
 		return types;
@@ -911,7 +781,7 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getArtifact_3008ContainedLinks() {
+	private List<? extends IUpdaterLinkDescriptor> getArtifact_3008ContainedLinks() {
 		return UMLDiagramUpdater.getArtifact_3008ContainedLinks(getNotationView());
 	}
 
