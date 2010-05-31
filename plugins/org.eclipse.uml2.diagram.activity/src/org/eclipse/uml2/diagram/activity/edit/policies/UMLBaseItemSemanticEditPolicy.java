@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
@@ -49,7 +50,10 @@ import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Constraint;
+import org.eclipse.uml2.uml.ControlFlow;
+import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
+import org.eclipse.uml2.uml.ObjectFlow;
 import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -301,42 +305,45 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
+	public static LinkConstraints getLinkConstraints() {
+		LinkConstraints cached = UMLDiagramEditorPlugin.getInstance().getLinkConstraints();
+		if (cached == null) {
+			UMLDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+	/**
+	 * @generated
+	 */
 
 	public static class LinkConstraints {
 
 		/**
 		 * @generated
 		 */
-		private static final String OPPOSITE_END_VAR = "oppositeEnd"; //$NON-NLS-1$
-
-		/**
-		 * @generated
-		 */
-		private static UMLAbstractExpression ControlFlow_4001_SourceExpression;
-
-		/**
-		 * @generated
-		 */
-		private static UMLAbstractExpression ControlFlow_4001_TargetExpression;
-
-		/**
-		 * @generated
-		 */
-		public static boolean canCreateControlFlow_4001(Activity container, ActivityNode source, ActivityNode target) {
-			return canExistControlFlow_4001(container, source, target);
+		LinkConstraints() {
+			// use static method #getLinkConstraints() to access instance
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateObjectFlow_4002(Activity container, ActivityNode source, ActivityNode target) {
-			return canExistObjectFlow_4002(container, source, target);
+		public boolean canCreateControlFlow_4001(Activity container, ActivityNode source, ActivityNode target) {
+			return canExistControlFlow_4001(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateActionLocalPrecondition_4003(Action source, Constraint target) {
+		public boolean canCreateObjectFlow_4002(Activity container, ActivityNode source, ActivityNode target) {
+			return canExistObjectFlow_4002(container, null, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateActionLocalPrecondition_4003(Action source, Constraint target) {
 			if (source != null) {
 				if (source.getLocalPreconditions().contains(target)) {
 					return false;
@@ -352,7 +359,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateActionLocalPostcondition_4006(Action source, Constraint target) {
+		public boolean canCreateActionLocalPostcondition_4006(Action source, Constraint target) {
 			if (source != null) {
 				if (source.getLocalPostconditions().contains(target)) {
 					return false;
@@ -368,7 +375,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateObjectNodeSelection_4004(ObjectNode source, Behavior target) {
+		public boolean canCreateObjectNodeSelection_4004(ObjectNode source, Behavior target) {
 			if (source != null) {
 				if (source.getSelection() != null) {
 					return false;
@@ -381,39 +388,33 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateExceptionHandler_4005(ExecutableNode container, ExecutableNode source, ExecutableNode target) {
-			return canExistExceptionHandler_4005(container, source, target);
+		public boolean canCreateExceptionHandler_4005(ExecutableNode container, ExecutableNode source, ExecutableNode target) {
+			return canExistExceptionHandler_4005(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistControlFlow_4001(Activity container, ActivityNode source, ActivityNode target) {
+		public boolean canExistControlFlow_4001(Activity container, ControlFlow linkInstance, ActivityNode source, ActivityNode target) {
 			try {
 				if (source == null) {
 					return true;
+				} else {
+					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
+					Object sourceVal = UMLOCLFactory.getExpression(95, UMLPackage.eINSTANCE.getActivityNode(), env).evaluate(source, Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
 				}
-				if (ControlFlow_4001_SourceExpression == null) {
-					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getActivityNode());
-					ControlFlow_4001_SourceExpression = UMLOCLFactory.getExpression(
-							"self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", UMLPackage.eINSTANCE.getActivityNode(), env); //$NON-NLS-1$
-				}
-				Object sourceVal = ControlFlow_4001_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
-				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
-					return false;
-				} // else fall-through
 				if (target == null) {
 					return true;
+				} else {
+					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getActivityNode()); //$NON-NLS-1$
+					Object targetVal = UMLOCLFactory.getExpression(96, UMLPackage.eINSTANCE.getActivityNode(), env).evaluate(target, Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+						return false;
+					} // else fall-through
 				}
-				if (ControlFlow_4001_TargetExpression == null) {
-					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getActivityNode());
-					ControlFlow_4001_TargetExpression = UMLOCLFactory.getExpression(
-							"self.oclIsKindOf(uml::ObjectNode) implies self.oclAsType(uml::ObjectNode).isControlType", UMLPackage.eINSTANCE.getActivityNode(), env); //$NON-NLS-1$
-				}
-				Object targetVal = ControlFlow_4001_TargetExpression.evaluate(target, Collections.singletonMap(OPPOSITE_END_VAR, source));
-				if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
-					return false;
-				} // else fall-through
 				return true;
 			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
@@ -424,35 +425,35 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistObjectFlow_4002(Activity container, ActivityNode source, ActivityNode target) {
+		public boolean canExistObjectFlow_4002(Activity container, ObjectFlow linkInstance, ActivityNode source, ActivityNode target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistActionLocalPrecondition_4003(Action source, Constraint target) {
+		public boolean canExistActionLocalPrecondition_4003(Action source, Constraint target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistActionLocalPostcondition_4006(Action source, Constraint target) {
+		public boolean canExistActionLocalPostcondition_4006(Action source, Constraint target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistObjectNodeSelection_4004(ObjectNode source, Behavior target) {
+		public boolean canExistObjectNodeSelection_4004(ObjectNode source, Behavior target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistExceptionHandler_4005(ExecutableNode container, ExecutableNode source, ExecutableNode target) {
+		public boolean canExistExceptionHandler_4005(ExecutableNode container, ExceptionHandler linkInstance, ExecutableNode source, ExecutableNode target) {
 			return true;
 		}
 	}
