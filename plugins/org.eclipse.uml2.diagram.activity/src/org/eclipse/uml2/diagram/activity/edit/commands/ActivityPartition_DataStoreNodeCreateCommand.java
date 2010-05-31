@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityPartition;
@@ -68,7 +69,7 @@ public class ActivityPartition_DataStoreNodeCreateCommand extends EditElementCom
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
 
-		UMLElementTypes.init_DataStoreNode_3065(newElement);
+		ElementInitializers.getInstance().init_DataStoreNode_3065(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -88,7 +89,7 @@ public class ActivityPartition_DataStoreNodeCreateCommand extends EditElementCom
 		ActivityPartition partition = (ActivityPartition) getElementToEditGen();
 		newElement.getInPartitions().add(partition);
 
-		UMLElementTypes.init_DataStoreNode_3065(newElement);
+		ElementInitializers.getInstance().init_DataStoreNode_3065(newElement);
 
 		doConfigure(newElement, monitor, info);
 

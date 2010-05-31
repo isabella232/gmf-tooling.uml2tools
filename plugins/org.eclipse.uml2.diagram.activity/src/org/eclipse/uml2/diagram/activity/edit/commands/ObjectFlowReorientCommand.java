@@ -71,7 +71,7 @@ public class ObjectFlowReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Activity container = (Activity) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistObjectFlow_4002(container, getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistObjectFlow_4002(container, getLink(), getNewSource(), target);
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class ObjectFlowReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Activity container = (Activity) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistObjectFlow_4002(container, source, getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistObjectFlow_4002(container, getLink(), source, getNewTarget());
 	}
 
 	/**

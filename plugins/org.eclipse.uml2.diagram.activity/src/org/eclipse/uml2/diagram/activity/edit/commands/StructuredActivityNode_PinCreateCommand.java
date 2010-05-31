@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Pin;
 import org.eclipse.uml2.uml.StructuredActivityNode;
@@ -58,7 +59,7 @@ public class StructuredActivityNode_PinCreateCommand extends EditElementCommand 
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
 
-		UMLElementTypes.init_Pin_3017(newElement);
+		ElementInitializers.getInstance().init_Pin_3017(newElement);
 
 		doConfigure(newElement, monitor, info);
 

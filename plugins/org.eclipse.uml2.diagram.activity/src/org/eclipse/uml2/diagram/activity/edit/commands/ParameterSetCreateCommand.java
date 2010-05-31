@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.ParameterSet;
@@ -58,7 +59,7 @@ public class ParameterSetCreateCommand extends EditElementCommand {
 		Behavior owner = (Behavior) getElementToEdit();
 		owner.getOwnedParameterSets().add(newElement);
 
-		UMLElementTypes.init_ParameterSet_3086(newElement);
+		ElementInitializers.getInstance().init_ParameterSet_3086(newElement);
 
 		doConfigure(newElement, monitor, info);
 

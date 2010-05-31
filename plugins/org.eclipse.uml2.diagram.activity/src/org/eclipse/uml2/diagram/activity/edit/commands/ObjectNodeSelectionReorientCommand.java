@@ -72,7 +72,7 @@ public class ObjectNodeSelectionReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Behavior && newEnd instanceof ObjectNode)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistObjectNodeSelection_4004(getNewSource(), getOldTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistObjectNodeSelection_4004(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class ObjectNodeSelectionReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Behavior && newEnd instanceof Behavior)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistObjectNodeSelection_4004(getOldSource(), getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistObjectNodeSelection_4004(getOldSource(), getNewTarget());
 	}
 
 	/**

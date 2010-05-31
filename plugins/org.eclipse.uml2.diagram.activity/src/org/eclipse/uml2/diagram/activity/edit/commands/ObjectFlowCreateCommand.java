@@ -69,7 +69,7 @@ public class ObjectFlowCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateObjectFlow_4002(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateObjectFlow_4002(getContainer(), getSource(), getTarget());
 	}
 
 	/**

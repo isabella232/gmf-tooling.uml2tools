@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.ActivityPartition;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -57,7 +58,7 @@ public class ActivityPartition_ActivityPartitionCreateCommand extends EditElemen
 		ActivityPartition owner = (ActivityPartition) getElementToEdit();
 		owner.getSubpartitions().add(newElement);
 
-		UMLElementTypes.init_ActivityPartition_3057(newElement);
+		ElementInitializers.getInstance().init_ActivityPartition_3057(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -197,7 +197,7 @@ public class LocalPostconditionItemSemanticEditPolicy extends UMLBaseItemSemanti
 		}
 		Action source = (Action) sourceEObject;
 		Constraint target = (Constraint) targetEObject;
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateActionLocalPrecondition_4003(source, target)) {
+		if (!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateActionLocalPrecondition_4003(source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		SetRequest setReq = new SetRequest(sourceEObject, UMLPackage.eINSTANCE.getAction_LocalPrecondition(), target);

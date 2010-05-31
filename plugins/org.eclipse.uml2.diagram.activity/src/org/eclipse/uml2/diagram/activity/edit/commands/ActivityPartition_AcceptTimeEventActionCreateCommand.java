@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityPartition;
@@ -68,7 +68,7 @@ public class ActivityPartition_AcceptTimeEventActionCreateCommand extends EditEl
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
 
-		UMLElementTypes.init_AcceptEventAction_3060(newElement);
+		ElementInitializers.getInstance().init_AcceptEventAction_3060(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -88,7 +88,7 @@ public class ActivityPartition_AcceptTimeEventActionCreateCommand extends EditEl
 		ActivityPartition partition = (ActivityPartition) getElementToEditGen();
 		newElement.getInPartitions().add(partition);
 
-		UMLElementTypes.init_AcceptEventAction_3060(newElement);
+		ElementInitializers.getInstance().init_AcceptEventAction_3060(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.InputPin;
@@ -62,7 +63,7 @@ public class AddStructuralFeatureValueAction_insertAt_InputPinCreateCommand exte
 		AddStructuralFeatureValueAction owner = (AddStructuralFeatureValueAction) getElementToEdit();
 		owner.setInsertAt(newElement);
 
-		UMLElementTypes.init_InputPin_3003(newElement);
+		ElementInitializers.getInstance().init_InputPin_3003(newElement);
 
 		doConfigure(newElement, monitor, info);
 

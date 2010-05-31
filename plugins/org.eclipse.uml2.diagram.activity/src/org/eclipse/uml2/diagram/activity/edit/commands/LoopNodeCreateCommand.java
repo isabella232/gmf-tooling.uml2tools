@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.LoopNode;
@@ -58,7 +59,7 @@ public class LoopNodeCreateCommand extends EditElementCommand {
 		Activity owner = (Activity) getElementToEdit();
 		owner.getGroups().add(newElement);
 
-		UMLElementTypes.init_LoopNode_3058(newElement);
+		ElementInitializers.getInstance().init_LoopNode_3058(newElement);
 
 		doConfigure(newElement, monitor, info);
 

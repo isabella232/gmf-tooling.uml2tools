@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -62,7 +63,7 @@ public class ValueSpecificationAction_OutputPinCreateCommand extends EditElement
 		ValueSpecificationAction owner = (ValueSpecificationAction) getElementToEdit();
 		owner.setResult(newElement);
 
-		UMLElementTypes.init_OutputPin_3090(newElement);
+		ElementInitializers.getInstance().init_OutputPin_3090(newElement);
 
 		doConfigure(newElement, monitor, info);
 

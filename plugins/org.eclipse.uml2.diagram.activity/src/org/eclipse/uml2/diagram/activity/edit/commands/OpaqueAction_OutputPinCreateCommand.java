@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.OpaqueAction;
 import org.eclipse.uml2.uml.OutputPin;
@@ -58,7 +59,7 @@ public class OpaqueAction_OutputPinCreateCommand extends EditElementCommand {
 		OpaqueAction owner = (OpaqueAction) getElementToEdit();
 		owner.getOutputValues().add(newElement);
 
-		UMLElementTypes.init_OutputPin_3001(newElement);
+		ElementInitializers.getInstance().init_OutputPin_3001(newElement);
 
 		doConfigure(newElement, monitor, info);
 

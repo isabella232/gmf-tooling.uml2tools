@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.StructuredActivityNode;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -57,7 +58,7 @@ public class StructuredActivityNode_StructuredActivityNodeCreateCommand extends 
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
 
-		UMLElementTypes.init_StructuredActivityNode_3009(newElement);
+		ElementInitializers.getInstance().init_StructuredActivityNode_3009(newElement);
 
 		doConfigure(newElement, monitor, info);
 

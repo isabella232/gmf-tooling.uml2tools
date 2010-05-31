@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.CallAction;
 import org.eclipse.uml2.uml.OutputPin;
@@ -58,7 +59,7 @@ public class CallAction_OutputPinCreateCommand extends EditElementCommand {
 		CallAction owner = (CallAction) getElementToEdit();
 		owner.getResults().add(newElement);
 
-		UMLElementTypes.init_OutputPin_3006(newElement);
+		ElementInitializers.getInstance().init_OutputPin_3006(newElement);
 
 		doConfigure(newElement, monitor, info);
 
