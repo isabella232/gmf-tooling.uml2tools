@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.profile.edit.parts;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
@@ -113,8 +114,7 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		CommentFigure figure = new CommentFigure();
-		return primaryShape = figure;
+		return primaryShape = new CommentFigure();
 	}
 
 	/**
@@ -275,8 +275,8 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnSource() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.CommentAnnotatedElement_4004);
 		return types;
 	}
@@ -284,8 +284,8 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof StereotypeEditPart) {
 			types.add(UMLElementTypes.CommentAnnotatedElement_4004);
 		}
@@ -313,27 +313,15 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
 			types.add(UMLElementTypes.Stereotype_2001);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
 			types.add(UMLElementTypes.Profile_2002);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
 			types.add(UMLElementTypes.Enumeration_2003);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
 			types.add(UMLElementTypes.ElementImport_2006);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
 			types.add(UMLElementTypes.Profile_2007);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
 			types.add(UMLElementTypes.Constraint_2008);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
 			types.add(UMLElementTypes.Comment_2009);
 		}
 		return types;
@@ -342,8 +330,8 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnTarget() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
 		types.add(UMLElementTypes.CommentAnnotatedElement_4004);
 		return types;
@@ -352,12 +340,11 @@ public class CommentEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
 			types.add(UMLElementTypes.Constraint_2008);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
 			types.add(UMLElementTypes.Comment_2009);
 		}
 		return types;

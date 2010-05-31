@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.profile.edit.parts;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.IFigure;
@@ -102,8 +103,7 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated
 	 */
 	protected IFigure createNodeShapeGen() {
-		ReferencedMetaclassFigure figure = new ReferencedMetaclassFigure();
-		return primaryShape = figure;
+		return primaryShape = new ReferencedMetaclassFigure();
 	}
 
 	/**
@@ -273,8 +273,8 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnTarget() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(UMLElementTypes.Extension_4002);
 		types.add(UMLElementTypes.ConstraintConstrainedElement_4003);
 		types.add(UMLElementTypes.CommentAnnotatedElement_4004);
@@ -284,15 +284,13 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.Extension_4002) {
 			types.add(UMLElementTypes.Stereotype_2001);
-		}
-		if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
+		} else if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4003) {
 			types.add(UMLElementTypes.Constraint_2008);
-		}
-		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4004) {
 			types.add(UMLElementTypes.Comment_2009);
 		}
 		return types;
