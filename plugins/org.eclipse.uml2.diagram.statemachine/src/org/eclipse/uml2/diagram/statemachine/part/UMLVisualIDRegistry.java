@@ -80,106 +80,6 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static UMLAbstractExpression State_3001_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Behavior_3019_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Behavior_3020_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Behavior_3021_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression State_3012_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression State_3016_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ConnectionPointReference_3017_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ConnectionPointReference_3018_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Transition_3022_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pseudostate_3004_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pseudostate_3005_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pseudostate_3006_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pseudostate_3007_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pseudostate_3008_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pseudostate_3009_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pseudostate_3010_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pseudostate_3011_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pseudostate_3014_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pseudostate_3015_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Transition_4001_Constraint;
-
-	/**
-	 * @generated
-	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
 			if (PackageEditPart.MODEL_ID.equals(view.getType())) {
@@ -224,7 +124,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static String getType(int visualID) {
-		return String.valueOf(visualID);
+		return Integer.toString(visualID);
 	}
 
 	/**
@@ -262,6 +162,11 @@ public class UMLVisualIDRegistry {
 			}
 		}
 		switch (containerVisualID) {
+		case PackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
+				return StateMachineEditPart.VISUAL_ID;
+			}
+			break;
 		case StateMachineEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
 				return StateMachine_RegionEditPart.VISUAL_ID;
@@ -408,11 +313,6 @@ public class UMLVisualIDRegistry {
 				return InternalTransitionEditPart.VISUAL_ID;
 			}
 			break;
-		case PackageEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
-				return StateMachineEditPart.VISUAL_ID;
-			}
-			break;
 		}
 		return -1;
 	}
@@ -436,6 +336,11 @@ public class UMLVisualIDRegistry {
 			}
 		}
 		switch (containerVisualID) {
+		case PackageEditPart.VISUAL_ID:
+			if (StateMachineEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case StateMachineEditPart.VISUAL_ID:
 			if (StateMachineNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -653,11 +558,6 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case PackageEditPart.VISUAL_ID:
-			if (StateMachineEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case TransitionEditPart.VISUAL_ID:
 			if (TransitionNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -694,10 +594,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isState_3001(State domainElement) {
-		if (State_3001_Constraint == null) { // lazy initialization
-			State_3001_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSimple and (not self.isSubmachineState)", UMLPackage.eINSTANCE.getState()); //$NON-NLS-1$
-		}
-		Object result = State_3001_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(2, UMLPackage.eINSTANCE.getState(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -705,10 +602,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isBehavior_3019(Behavior domainElement) {
-		if (Behavior_3019_Constraint == null) { // lazy initialization
-			Behavior_3019_Constraint = UMLOCLFactory.getExpression("self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).entry = self", UMLPackage.eINSTANCE.getBehavior()); //$NON-NLS-1$
-		}
-		Object result = Behavior_3019_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(4, UMLPackage.eINSTANCE.getBehavior(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -716,10 +610,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isBehavior_3020(Behavior domainElement) {
-		if (Behavior_3020_Constraint == null) { // lazy initialization
-			Behavior_3020_Constraint = UMLOCLFactory.getExpression("self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).exit = self", UMLPackage.eINSTANCE.getBehavior()); //$NON-NLS-1$
-		}
-		Object result = Behavior_3020_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(5, UMLPackage.eINSTANCE.getBehavior(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -727,10 +618,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isBehavior_3021(Behavior domainElement) {
-		if (Behavior_3021_Constraint == null) { // lazy initialization
-			Behavior_3021_Constraint = UMLOCLFactory.getExpression("self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).doActivity = self", UMLPackage.eINSTANCE.getBehavior()); //$NON-NLS-1$
-		}
-		Object result = Behavior_3021_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(6, UMLPackage.eINSTANCE.getBehavior(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -738,10 +626,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isState_3012(State domainElement) {
-		if (State_3012_Constraint == null) { // lazy initialization
-			State_3012_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isComposite and (not self.isSubmachineState)", UMLPackage.eINSTANCE.getState()); //$NON-NLS-1$
-		}
-		Object result = State_3012_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(7, UMLPackage.eINSTANCE.getState(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -749,10 +634,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isState_3016(State domainElement) {
-		if (State_3016_Constraint == null) { // lazy initialization
-			State_3016_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::State) and self.isSubmachineState", UMLPackage.eINSTANCE.getState()); //$NON-NLS-1$
-		}
-		Object result = State_3016_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(10, UMLPackage.eINSTANCE.getState(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -760,11 +642,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isConnectionPointReference_3017(ConnectionPointReference domainElement) {
-		if (ConnectionPointReference_3017_Constraint == null) { // lazy initialization
-			ConnectionPointReference_3017_Constraint = UMLOCLFactory.getExpression(
-					"entry->notEmpty() and entry->forAll(e | e.kind =  PseudostateKind::entryPoint)", UMLPackage.eINSTANCE.getConnectionPointReference()); //$NON-NLS-1$
-		}
-		Object result = ConnectionPointReference_3017_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(12, UMLPackage.eINSTANCE.getConnectionPointReference(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -772,11 +650,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isConnectionPointReference_3018(ConnectionPointReference domainElement) {
-		if (ConnectionPointReference_3018_Constraint == null) { // lazy initialization
-			ConnectionPointReference_3018_Constraint = UMLOCLFactory.getExpression(
-					"exit->notEmpty() and exit->forAll(e | e.kind =  PseudostateKind::exitPoint)", UMLPackage.eINSTANCE.getConnectionPointReference()); //$NON-NLS-1$
-		}
-		Object result = ConnectionPointReference_3018_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(14, UMLPackage.eINSTANCE.getConnectionPointReference(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -784,10 +658,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isTransition_3022(Transition domainElement) {
-		if (Transition_3022_Constraint == null) { // lazy initialization
-			Transition_3022_Constraint = UMLOCLFactory.getExpression("self.kind = TransitionKind::internal", UMLPackage.eINSTANCE.getTransition()); //$NON-NLS-1$
-		}
-		Object result = Transition_3022_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(16, UMLPackage.eINSTANCE.getTransition(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -795,10 +666,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPseudostate_3004(Pseudostate domainElement) {
-		if (Pseudostate_3004_Constraint == null) { // lazy initialization
-			Pseudostate_3004_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::initial", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
-		}
-		Object result = Pseudostate_3004_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(17, UMLPackage.eINSTANCE.getPseudostate(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -806,10 +674,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPseudostate_3005(Pseudostate domainElement) {
-		if (Pseudostate_3005_Constraint == null) { // lazy initialization
-			Pseudostate_3005_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::shallowHistory", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
-		}
-		Object result = Pseudostate_3005_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(19, UMLPackage.eINSTANCE.getPseudostate(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -817,10 +682,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPseudostate_3006(Pseudostate domainElement) {
-		if (Pseudostate_3006_Constraint == null) { // lazy initialization
-			Pseudostate_3006_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::deepHistory", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
-		}
-		Object result = Pseudostate_3006_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(21, UMLPackage.eINSTANCE.getPseudostate(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -828,10 +690,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPseudostate_3007(Pseudostate domainElement) {
-		if (Pseudostate_3007_Constraint == null) { // lazy initialization
-			Pseudostate_3007_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::fork", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
-		}
-		Object result = Pseudostate_3007_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(23, UMLPackage.eINSTANCE.getPseudostate(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -839,10 +698,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPseudostate_3008(Pseudostate domainElement) {
-		if (Pseudostate_3008_Constraint == null) { // lazy initialization
-			Pseudostate_3008_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::join", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
-		}
-		Object result = Pseudostate_3008_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(25, UMLPackage.eINSTANCE.getPseudostate(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -850,10 +706,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPseudostate_3009(Pseudostate domainElement) {
-		if (Pseudostate_3009_Constraint == null) { // lazy initialization
-			Pseudostate_3009_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::junction", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
-		}
-		Object result = Pseudostate_3009_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(27, UMLPackage.eINSTANCE.getPseudostate(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -861,10 +714,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPseudostate_3010(Pseudostate domainElement) {
-		if (Pseudostate_3010_Constraint == null) { // lazy initialization
-			Pseudostate_3010_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::choice", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
-		}
-		Object result = Pseudostate_3010_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(29, UMLPackage.eINSTANCE.getPseudostate(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -872,10 +722,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPseudostate_3011(Pseudostate domainElement) {
-		if (Pseudostate_3011_Constraint == null) { // lazy initialization
-			Pseudostate_3011_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::terminate", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
-		}
-		Object result = Pseudostate_3011_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(31, UMLPackage.eINSTANCE.getPseudostate(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -883,10 +730,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPseudostate_3014(Pseudostate domainElement) {
-		if (Pseudostate_3014_Constraint == null) { // lazy initialization
-			Pseudostate_3014_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::entryPoint", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
-		}
-		Object result = Pseudostate_3014_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(33, UMLPackage.eINSTANCE.getPseudostate(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -894,10 +738,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPseudostate_3015(Pseudostate domainElement) {
-		if (Pseudostate_3015_Constraint == null) { // lazy initialization
-			Pseudostate_3015_Constraint = UMLOCLFactory.getExpression("self.kind = PseudostateKind::exitPoint", UMLPackage.eINSTANCE.getPseudostate()); //$NON-NLS-1$
-		}
-		Object result = Pseudostate_3015_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(36, UMLPackage.eINSTANCE.getPseudostate(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -905,10 +746,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isTransition_4001(Transition domainElement) {
-		if (Transition_4001_Constraint == null) { // lazy initialization
-			Transition_4001_Constraint = UMLOCLFactory.getExpression("not (self.kind = TransitionKind::internal)", UMLPackage.eINSTANCE.getTransition()); //$NON-NLS-1$
-		}
-		Object result = Transition_4001_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(39, UMLPackage.eINSTANCE.getTransition(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -939,6 +777,11 @@ public class UMLVisualIDRegistry {
 			return -1;
 		}
 		switch (container.getVisualID()) {
+		case PackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
+				return StateMachineEditPart.VISUAL_ID;
+			}
+			break;
 		case StateMachineEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
 				return StateMachine_RegionEditPart.VISUAL_ID;
@@ -1075,11 +918,6 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getTransition().isSuperTypeOf(domainElement.eClass()) && isTransition_3022((Transition) domainElement)) {
 				return InternalTransitionEditPart.VISUAL_ID;
-			}
-			break;
-		case PackageEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
-				return StateMachineEditPart.VISUAL_ID;
 			}
 			break;
 		}

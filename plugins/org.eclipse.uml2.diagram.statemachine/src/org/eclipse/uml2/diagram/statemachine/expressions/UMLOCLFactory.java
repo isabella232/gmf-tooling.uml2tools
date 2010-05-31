@@ -7,18 +7,23 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.ocl.Environment;
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.Query;
 import org.eclipse.ocl.ecore.EcoreFactory;
+import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.expressions.OCLExpression;
 import org.eclipse.ocl.expressions.OperationCallExp;
 import org.eclipse.ocl.expressions.Variable;
 import org.eclipse.ocl.helper.OCLHelper;
+import org.eclipse.ocl.options.ParsingOptions;
 import org.eclipse.ocl.utilities.AbstractVisitor;
 import org.eclipse.ocl.utilities.PredefinedType;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
+import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 
 /**
  * @generated
@@ -29,13 +34,78 @@ public class UMLOCLFactory {
 	/**
 	 * @generated
 	 */
-	private UMLOCLFactory() {
+	private final UMLAbstractExpression[] expressions;
+
+	/**
+	 * @generated
+	 */
+	protected UMLOCLFactory() {
+		this.expressions = new UMLAbstractExpression[40];
 	}
 
 	/**
 	 * @generated
 	 */
-	public static UMLAbstractExpression getExpression(String body, EClassifier context, Map environment) {
+	public static UMLAbstractExpression getExpression(int index, EClassifier context, Map<String, EClassifier> environment) {
+		UMLOCLFactory cached = UMLDiagramEditorPlugin.getInstance().getUMLOCLFactory();
+		if (cached == null) {
+			UMLDiagramEditorPlugin.getInstance().setUMLOCLFactory(cached = new UMLOCLFactory());
+		}
+		if (index < 0 || index >= cached.expressions.length) {
+			throw new IllegalArgumentException();
+		}
+		if (cached.expressions[index] == null) {
+			final String[] exprBodies = new String[] {
+					" let base : String = \'StateMachine\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+					" let base : String = \'Region\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+					"self.oclIsTypeOf(uml::State) and self.isSimple and (not self.isSubmachineState)", //$NON-NLS-1$
+					" let base : String = \'State\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+					"self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).entry = self", //$NON-NLS-1$
+					"self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).exit = self", //$NON-NLS-1$
+					"self.owner.oclIsTypeOf(uml::State) and self.owner.oclAsType(uml::State).doActivity = self", //$NON-NLS-1$
+					"self.oclIsTypeOf(uml::State) and self.isComposite and (not self.isSubmachineState)", //$NON-NLS-1$
+					" let base : String = \'State\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+					" let base : String = \'Region\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+					"self.oclIsTypeOf(uml::State) and self.isSubmachineState", //$NON-NLS-1$
+					" let base : String = \'SubmachineState\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+					"entry->notEmpty() and entry->forAll(e | e.kind =  PseudostateKind::entryPoint)", //$NON-NLS-1$
+					" let base : String = \'EntryPointConnectionPointReference\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+					"exit->notEmpty() and exit->forAll(e | e.kind =  PseudostateKind::exitPoint)", //$NON-NLS-1$
+					" let base : String = \'ExitPointConnectionPointReference\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+					"self.kind = TransitionKind::internal", //$NON-NLS-1$
+					"self.kind = PseudostateKind::initial", //$NON-NLS-1$
+					"PseudostateKind::initial", //$NON-NLS-1$
+					"self.kind = PseudostateKind::shallowHistory", //$NON-NLS-1$
+					"PseudostateKind::shallowHistory", //$NON-NLS-1$
+					"self.kind = PseudostateKind::deepHistory", //$NON-NLS-1$
+					"PseudostateKind::deepHistory", //$NON-NLS-1$
+					"self.kind = PseudostateKind::fork", //$NON-NLS-1$
+					"PseudostateKind::fork", //$NON-NLS-1$
+					"self.kind = PseudostateKind::join", //$NON-NLS-1$
+					"PseudostateKind::join", //$NON-NLS-1$
+					"self.kind = PseudostateKind::junction", //$NON-NLS-1$
+					"PseudostateKind::junction", //$NON-NLS-1$
+					"self.kind = PseudostateKind::choice", //$NON-NLS-1$
+					"PseudostateKind::choice", //$NON-NLS-1$
+					"self.kind = PseudostateKind::terminate", //$NON-NLS-1$
+					"PseudostateKind::terminate", //$NON-NLS-1$
+					"self.kind = PseudostateKind::entryPoint", //$NON-NLS-1$
+					"PseudostateKind::entryPoint", //$NON-NLS-1$
+					" let base : String = \'Entry Point\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+					"self.kind = PseudostateKind::exitPoint", //$NON-NLS-1$
+					"PseudostateKind::exitPoint", //$NON-NLS-1$
+					" let base : String = \'Exit Point\' in  let suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in  let space : Namespace = self.namespace in  let allMissed : Sequence(String) = suffixes-> \tselect(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s)) ) in  let firstMissed : String = allMissed->first() in  let noMisses : Boolean = firstMissed.oclIsUndefined() in  let allNames : Set(String) =  \tif noMisses \t\tthen \t\tspace.member->collect(e : NamedElement | \t\t\tif e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base \t\t\tthen \'\' else e.name \t\t\tendif \t\t)->asSet()->excluding(\'\') \t\telse Set{\'not in use\'} \t\tendif in  let longestName : String = \t\tif noMisses \t\tthen allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first()\t\telse \'not in use\' \t\tendif \tin  if noMisses then \t\tif longestName.oclIsUndefined() \t\tthen base \t\telse longestName.concat(\'1\') \t\tendif  else base.concat(firstMissed)  endif ", //$NON-NLS-1$
+					"not (self.kind = TransitionKind::internal)", //$NON-NLS-1$
+			};
+			cached.expressions[index] = getExpression(exprBodies[index], context, environment == null ? Collections.<String, EClassifier> emptyMap() : environment);
+		}
+		return cached.expressions[index];
+	}
+
+	/**
+	 * @generated
+	 */
+	public static UMLAbstractExpression getExpression(String body, EClassifier context, Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
 
@@ -43,7 +113,7 @@ public class UMLOCLFactory {
 	 * @generated
 	 */
 	public static UMLAbstractExpression getExpression(String body, EClassifier context) {
-		return getExpression(body, context, Collections.EMPTY_MAP);
+		return getExpression(body, context, Collections.<String, EClassifier> emptyMap());
 	}
 
 	/**
@@ -54,105 +124,61 @@ public class UMLOCLFactory {
 		/**
 		 * @generated
 		 */
-		private WeakReference queryRef;
-
-		/**
-		 * @generated
-		 */
 		private final org.eclipse.ocl.ecore.OCL oclInstance;
 
 		/**
 		 * @generated
 		 */
-		public Expression(String body, EClassifier context, Map environment) {
+		private org.eclipse.ocl.ecore.OCLExpression oclExpression;
+
+		/**
+		 * @generated
+		 */
+		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
 			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
 			initCustomEnv(oclInstance.getEnvironment(), environment);
+			Helper oclHelper = oclInstance.createOCLHelper();
+			oclHelper.setContext(context());
+			try {
+				oclExpression = oclHelper.createQuery(body());
+				setStatus(IStatus.OK, null, null);
+			} catch (ParserException e) {
+				setStatus(IStatus.ERROR, e.getMessage(), e);
+			}
 		}
 
 		/**
 		 * @generated
 		 */
-		protected Query getQuery() {
-			Query oclQuery = null;
-			if (this.queryRef != null) {
-				oclQuery = (Query) this.queryRef.get();
-			}
-			if (oclQuery == null) {
-				OCLHelper oclHelper = oclInstance.createOCLHelper();
-				oclHelper.setContext(context());
-				try {
-					OCLExpression oclExpression = oclHelper.createQuery(body());
-					oclQuery = oclInstance.createQuery(oclExpression);
-					this.queryRef = new WeakReference(oclQuery);
-					setStatus(IStatus.OK, null, null);
-				} catch (ParserException e) {
-					setStatus(IStatus.ERROR, e.getMessage(), e);
-				}
-			}
-			return oclQuery;
-		}
-
-		/**
-		 * @generated
-		 */
+		@SuppressWarnings("rawtypes")
 		protected Object doEvaluate(Object context, Map env) {
-			Query oclQuery = getQuery();
-			if (oclQuery == null) {
+			if (oclExpression == null) {
 				return null;
 			}
-			EvaluationEnvironment evalEnv = oclQuery.getEvaluationEnvironment();
-			// init environment
-			for (Iterator it = env.entrySet().iterator(); it.hasNext();) {
-				Map.Entry nextEntry = (Map.Entry) it.next();
-				evalEnv.replace((String) nextEntry.getKey(), nextEntry.getValue());
+			// on the first call, both evalEnvironment and extentMap are clear, for later we have finally, below.
+			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance.getEvaluationEnvironment();
+			// initialize environment
+			for (Object nextKey : env.keySet()) {
+				evalEnv.replace((String) nextKey, env.get(nextKey));
 			}
 			try {
-				initExtentMap(context);
-				Object result = oclQuery.evaluate(context);
-				return (result != oclInstance.getEnvironment().getOCLStandardLibrary().getOclInvalid()) ? result : null;
+				Object result = oclInstance.evaluate(context, oclExpression);
+				return oclInstance.isInvalid(result) ? null : result;
 			} finally {
 				evalEnv.clear();
-				oclQuery.getExtentMap().clear();
+				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
 			}
 		}
 
 		/**
 		 * @generated
 		 */
-		private void initExtentMap(Object context) {
-			if (!getStatus().isOK() || context == null) {
-				return;
-			}
-			final Query queryToInit = getQuery();
-			final Object extentContext = context;
-			queryToInit.getExtentMap().clear();
-			if (queryToInit.queryText() != null && queryToInit.queryText().indexOf(PredefinedType.ALL_INSTANCES_NAME) >= 0) {
-				AbstractVisitor visitior = new AbstractVisitor() {
-
-					private boolean usesAllInstances = false;
-
-					public Object visitOperationCallExp(OperationCallExp oc) {
-						if (!usesAllInstances) {
-							usesAllInstances = PredefinedType.ALL_INSTANCES == oc.getOperationCode();
-							if (usesAllInstances) {
-								queryToInit.getExtentMap().putAll(oclInstance.getEvaluationEnvironment().createExtentMap(extentContext));
-							}
-						}
-						return super.visitOperationCallExp(oc);
-					}
-				};
-				queryToInit.getExpression().accept(visitior);
-			}
-		}
-
-		/**
-		 * @generated
-		 */
-		private static void initCustomEnv(Environment ecoreEnv, Map environment) {
-			for (Iterator it = environment.keySet().iterator(); it.hasNext();) {
-				String varName = (String) it.next();
-				EClassifier varType = (EClassifier) environment.get(varName);
+		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv, Map<String, EClassifier> environment) {
+			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
+			ParsingOptions.setOption(ecoreEnv, ParsingOptions.implicitRootClass(ecoreEnv), EcorePackage.eINSTANCE.getEObject());
+			for (String varName : environment.keySet()) {
+				EClassifier varType = environment.get(varName);
 				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
 			}
 		}
@@ -160,8 +186,8 @@ public class UMLOCLFactory {
 		/**
 		 * @generated
 		 */
-		private static Variable createVar(Environment ecoreEnv, String name, EClassifier type) {
-			Variable var = EcoreFactory.eINSTANCE.createVariable();
+		private static org.eclipse.ocl.ecore.Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv, String name, EClassifier type) {
+			org.eclipse.ocl.ecore.Variable var = EcoreFactory.eINSTANCE.createVariable();
 			var.setName(name);
 			var.setType(ecoreEnv.getUMLReflection().getOCLType(type));
 			return var;
