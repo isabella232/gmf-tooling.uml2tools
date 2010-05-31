@@ -79,7 +79,7 @@ public class ActivityPartition_ActivityPartitionNameEditPart extends Compartment
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -105,23 +105,7 @@ public class ActivityPartition_ActivityPartitionNameEditPart extends Compartment
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new NonResizableEditPolicy() {
-
-			protected List createSelectionHandles() {
-				List handles = new ArrayList();
-				NonResizableHandleKit.addMoveHandle((GraphicalEditPart) getHost(), handles);
-				((MoveHandle) handles.get(0)).setBorder(null);
-				return handles;
-			}
-
-			public Command getCommand(Request request) {
-				return null;
-			}
-
-			public boolean understandsRequest(Request request) {
-				return false;
-			}
-		});
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new PackageEditPart.NodeLabelDragPolicy());
 	}
 
 	/**
@@ -192,6 +176,7 @@ public class ActivityPartition_ActivityPartitionNameEditPart extends Compartment
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -268,7 +253,7 @@ public class ActivityPartition_ActivityPartitionNameEditPart extends Compartment
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -308,8 +293,8 @@ public class ActivityPartition_ActivityPartitionNameEditPart extends Compartment
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.ActivityPartition_3057, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityPartitionNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.ActivityPartition_3057, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityPartitionNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

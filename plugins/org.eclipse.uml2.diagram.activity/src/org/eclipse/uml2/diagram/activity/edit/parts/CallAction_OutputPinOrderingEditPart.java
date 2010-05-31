@@ -74,7 +74,7 @@ public class CallAction_OutputPinOrderingEditPart extends LabelEditPart implemen
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -190,6 +190,7 @@ public class CallAction_OutputPinOrderingEditPart extends LabelEditPart implemen
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -266,7 +267,7 @@ public class CallAction_OutputPinOrderingEditPart extends LabelEditPart implemen
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -306,8 +307,8 @@ public class CallAction_OutputPinOrderingEditPart extends LabelEditPart implemen
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.OutputPin_3006, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.CallAction_OutputPinOrderingEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.OutputPin_3006, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.activity.edit.parts.CallAction_OutputPinOrderingEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

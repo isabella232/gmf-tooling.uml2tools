@@ -74,7 +74,7 @@ public class StructuredActivityNode_CentralBufferNodeOrderingEditPart extends La
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -190,6 +190,7 @@ public class StructuredActivityNode_CentralBufferNodeOrderingEditPart extends La
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -266,7 +267,7 @@ public class StructuredActivityNode_CentralBufferNodeOrderingEditPart extends La
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -306,8 +307,8 @@ public class StructuredActivityNode_CentralBufferNodeOrderingEditPart extends La
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.CentralBufferNode_3025, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CentralBufferNodeOrderingEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.CentralBufferNode_3025, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.activity.edit.parts.StructuredActivityNode_CentralBufferNodeOrderingEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

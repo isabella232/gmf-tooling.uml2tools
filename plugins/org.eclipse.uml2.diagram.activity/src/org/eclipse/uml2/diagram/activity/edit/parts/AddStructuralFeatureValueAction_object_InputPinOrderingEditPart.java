@@ -74,7 +74,7 @@ public class AddStructuralFeatureValueAction_object_InputPinOrderingEditPart ext
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -190,6 +190,7 @@ public class AddStructuralFeatureValueAction_object_InputPinOrderingEditPart ext
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -266,7 +267,7 @@ public class AddStructuralFeatureValueAction_object_InputPinOrderingEditPart ext
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -306,8 +307,8 @@ public class AddStructuralFeatureValueAction_object_InputPinOrderingEditPart ext
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.InputPin_3005, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_object_InputPinOrderingEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.InputPin_3005, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_object_InputPinOrderingEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
