@@ -80,7 +80,7 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -179,6 +179,7 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -255,7 +256,7 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -295,8 +296,8 @@ public class ElementImportEditPart extends CompartmentEditPart implements ITextA
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.ElementImport_3001, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.ElementImport_3001, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.usecase.edit.parts.ElementImportEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
