@@ -14,13 +14,10 @@
  */
 
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 «IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION u2t::diagramheader::DiagramHeader»
-«EXTENSION xpt::GenModelUtils»
 «EXTENSION gmf::GenModelUtils»
 
 «AROUND checkChildElementVisualID(inLoop : Boolean) FOR gmfgen::GenNode-»
@@ -83,9 +80,9 @@ if (visualID == «EXPAND xpt::editor::VisualIDRegistry::visualID») {
 «AROUND getConnectedLinks(genLinks : Sequence(gmfgen::GenLink), methodNameSuffix : String, needCrossReferencer : Boolean) FOR gmfgen::GenCommonBase-»
 	«IF isDiagramHeader(self)-»
 	«EXPAND xpt::Common::generatedMemberComment»
-public static java.util.List «EXPAND xpt::diagram::updater::DiagramUpdater::linkGetterName(methodNameSuffix)»(org.eclipse.gmf.runtime.notation.View view) {
+public static «EXPAND CodeStyle::G('java.util.List', getDiagram().editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName())» «EXPAND xpt::diagram::updater::DiagramUpdater::linkGetterName(methodNameSuffix)»(org.eclipse.gmf.runtime.notation.View view) {
 	//no links to, from and inside the diagram header
-	return java.util.Collections.EMPTY_LIST;
+	return «EXPAND CodeStyle::emptyList»;
 }
 	«ELSE-»
 		«targetDef.proceed()-»
