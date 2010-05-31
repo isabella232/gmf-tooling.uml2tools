@@ -78,7 +78,7 @@ public class ExtensionLink_requiredEditPart extends LabelEditPart implements ITe
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -111,14 +111,7 @@ public class ExtensionLink_requiredEditPart extends LabelEditPart implements ITe
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new NonResizableLabelEditPolicy() {
-
-			protected List createSelectionHandles() {
-				MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
-				mh.setBorder(null);
-				return Collections.singletonList(mh);
-			}
-		});
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ProfileEditPart.LinkLabelDragPolicy());
 	}
 
 	/**
@@ -186,6 +179,7 @@ public class ExtensionLink_requiredEditPart extends LabelEditPart implements ITe
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -262,7 +256,7 @@ public class ExtensionLink_requiredEditPart extends LabelEditPart implements ITe
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -302,8 +296,8 @@ public class ExtensionLink_requiredEditPart extends LabelEditPart implements ITe
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Extension_4002, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Extension_4002, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.profile.edit.parts.ExtensionLink_requiredEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
