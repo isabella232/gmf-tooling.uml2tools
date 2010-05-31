@@ -59,331 +59,6 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static UMLAbstractExpression AcceptEventAction_3030_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression AcceptEventAction_3031_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ActivityFinalNode_3032_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression DecisionNode_3033_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression MergeNode_3034_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression InitialNode_3035_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression DataStoreNode_3036_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CentralBufferNode_3037_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression OpaqueAction_3029_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression FlowFinalNode_3038_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ForkNode_3039_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression JoinNode_3040_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pin_3041_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CreateObjectAction_3042_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression AddStructuralFeatureValueAction_3043_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CallBehaviorAction_3044_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CallOperationAction_3045_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression StructuredActivityNode_3046_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression StructuredActivityNode_3009_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression OpaqueAction_3011_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression AcceptEventAction_3012_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression AcceptEventAction_3013_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ActivityFinalNode_3014_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression DecisionNode_3015_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression FlowFinalNode_3016_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pin_3017_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CreateObjectAction_3018_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CallBehaviorAction_3019_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CallOperationAction_3020_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ForkNode_3021_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression JoinNode_3022_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression AddStructuralFeatureValueAction_3023_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression DataStoreNode_3024_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CentralBufferNode_3025_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ConditionalNode_3092_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression InitialNode_3093_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression SendSignalAction_3053_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression AcceptEventAction_3059_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression AcceptEventAction_3060_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ActivityFinalNode_3061_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression DecisionNode_3062_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression MergeNode_3063_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression InitialNode_3064_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression DataStoreNode_3065_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CentralBufferNode_3066_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression OpaqueAction_3067_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression FlowFinalNode_3068_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ForkNode_3069_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression JoinNode_3070_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Pin_3071_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CreateObjectAction_3072_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression AddStructuralFeatureValueAction_3073_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CallBehaviorAction_3074_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression CallOperationAction_3075_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression StructuredActivityNode_3076_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression StructuredActivityNode_3079_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression SendSignalAction_3077_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression LoopNode_3078_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ConditionalNode_3083_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ExpansionRegion_3085_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ValueSpecificationAction_3088_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression LoopNode_3058_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ConditionalNode_3082_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ExpansionRegion_3084_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ValueSpecificationAction_3089_Constraint;
-
-	/**
-	 * @generated
-	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
 			if (PackageEditPart.MODEL_ID.equals(view.getType())) {
@@ -428,7 +103,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static String getType(int visualID) {
-		return String.valueOf(visualID);
+		return Integer.toString(visualID);
 	}
 
 	/**
@@ -466,6 +141,17 @@ public class UMLVisualIDRegistry {
 			}
 		}
 		switch (containerVisualID) {
+		case PackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActivity().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2027((Constraint) domainElement)) {
+				return LocalPreconditionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2028((Constraint) domainElement)) {
+				return LocalPostconditionEditPart.VISUAL_ID;
+			}
+			break;
 		case ActivityEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3030((AcceptEventAction) domainElement)) {
 				return AcceptEventActionEditPart.VISUAL_ID;
@@ -1493,17 +1179,6 @@ public class UMLVisualIDRegistry {
 				return LocalPostcondition_LiteralStringEditPart.VISUAL_ID;
 			}
 			break;
-		case PackageEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getActivity().isSuperTypeOf(domainElement.eClass())) {
-				return ActivityEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2027((Constraint) domainElement)) {
-				return LocalPreconditionEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2028((Constraint) domainElement)) {
-				return LocalPostconditionEditPart.VISUAL_ID;
-			}
-			break;
 		}
 		return -1;
 	}
@@ -1527,6 +1202,17 @@ public class UMLVisualIDRegistry {
 			}
 		}
 		switch (containerVisualID) {
+		case PackageEditPart.VISUAL_ID:
+			if (ActivityEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (LocalPreconditionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (LocalPostconditionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ActivityEditPart.VISUAL_ID:
 			if (ActivityNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -3099,17 +2785,6 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case PackageEditPart.VISUAL_ID:
-			if (ActivityEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (LocalPreconditionEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (LocalPostconditionEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case ControlFlowEditPart.VISUAL_ID:
 			if (ControlFlowNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -3206,11 +2881,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAcceptEventAction_3030(AcceptEventAction domainElement) {
-		if (AcceptEventAction_3030_Constraint == null) { // lazy initialization
-			AcceptEventAction_3030_Constraint = UMLOCLFactory.getExpression(
-					"(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction()); //$NON-NLS-1$
-		}
-		Object result = AcceptEventAction_3030_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(1, UMLPackage.eINSTANCE.getAcceptEventAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3218,11 +2889,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAcceptEventAction_3031(AcceptEventAction domainElement) {
-		if (AcceptEventAction_3031_Constraint == null) { // lazy initialization
-			AcceptEventAction_3031_Constraint = UMLOCLFactory.getExpression(
-					"(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction()); //$NON-NLS-1$
-		}
-		Object result = AcceptEventAction_3031_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(3, UMLPackage.eINSTANCE.getAcceptEventAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3230,10 +2897,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isActivityFinalNode_3032(ActivityFinalNode domainElement) {
-		if (ActivityFinalNode_3032_Constraint == null) { // lazy initialization
-			ActivityFinalNode_3032_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getActivityFinalNode()); //$NON-NLS-1$
-		}
-		Object result = ActivityFinalNode_3032_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(5, UMLPackage.eINSTANCE.getActivityFinalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3241,10 +2905,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDecisionNode_3033(DecisionNode domainElement) {
-		if (DecisionNode_3033_Constraint == null) { // lazy initialization
-			DecisionNode_3033_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getDecisionNode()); //$NON-NLS-1$
-		}
-		Object result = DecisionNode_3033_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(6, UMLPackage.eINSTANCE.getDecisionNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3252,10 +2913,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isMergeNode_3034(MergeNode domainElement) {
-		if (MergeNode_3034_Constraint == null) { // lazy initialization
-			MergeNode_3034_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getMergeNode()); //$NON-NLS-1$
-		}
-		Object result = MergeNode_3034_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(8, UMLPackage.eINSTANCE.getMergeNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3263,10 +2921,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInitialNode_3035(InitialNode domainElement) {
-		if (InitialNode_3035_Constraint == null) { // lazy initialization
-			InitialNode_3035_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getInitialNode()); //$NON-NLS-1$
-		}
-		Object result = InitialNode_3035_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(10, UMLPackage.eINSTANCE.getInitialNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3274,10 +2929,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDataStoreNode_3036(DataStoreNode domainElement) {
-		if (DataStoreNode_3036_Constraint == null) { // lazy initialization
-			DataStoreNode_3036_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getDataStoreNode()); //$NON-NLS-1$
-		}
-		Object result = DataStoreNode_3036_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getDataStoreNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3285,10 +2937,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCentralBufferNode_3037(CentralBufferNode domainElement) {
-		if (CentralBufferNode_3037_Constraint == null) { // lazy initialization
-			CentralBufferNode_3037_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCentralBufferNode()); //$NON-NLS-1$
-		}
-		Object result = CentralBufferNode_3037_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(13, UMLPackage.eINSTANCE.getCentralBufferNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3296,10 +2945,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isOpaqueAction_3029(OpaqueAction domainElement) {
-		if (OpaqueAction_3029_Constraint == null) { // lazy initialization
-			OpaqueAction_3029_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getOpaqueAction()); //$NON-NLS-1$
-		}
-		Object result = OpaqueAction_3029_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(15, UMLPackage.eINSTANCE.getOpaqueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3307,10 +2953,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isFlowFinalNode_3038(FlowFinalNode domainElement) {
-		if (FlowFinalNode_3038_Constraint == null) { // lazy initialization
-			FlowFinalNode_3038_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getFlowFinalNode()); //$NON-NLS-1$
-		}
-		Object result = FlowFinalNode_3038_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(19, UMLPackage.eINSTANCE.getFlowFinalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3318,10 +2961,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isForkNode_3039(ForkNode domainElement) {
-		if (ForkNode_3039_Constraint == null) { // lazy initialization
-			ForkNode_3039_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getForkNode()); //$NON-NLS-1$
-		}
-		Object result = ForkNode_3039_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(20, UMLPackage.eINSTANCE.getForkNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3329,10 +2969,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isJoinNode_3040(JoinNode domainElement) {
-		if (JoinNode_3040_Constraint == null) { // lazy initialization
-			JoinNode_3040_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getJoinNode()); //$NON-NLS-1$
-		}
-		Object result = JoinNode_3040_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(21, UMLPackage.eINSTANCE.getJoinNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3340,11 +2977,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPin_3041(Pin domainElement) {
-		if (Pin_3041_Constraint == null) { // lazy initialization
-			Pin_3041_Constraint = UMLOCLFactory.getExpression(
-					"(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getPin()); //$NON-NLS-1$
-		}
-		Object result = Pin_3041_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(22, UMLPackage.eINSTANCE.getPin(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3352,10 +2985,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCreateObjectAction_3042(CreateObjectAction domainElement) {
-		if (CreateObjectAction_3042_Constraint == null) { // lazy initialization
-			CreateObjectAction_3042_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCreateObjectAction()); //$NON-NLS-1$
-		}
-		Object result = CreateObjectAction_3042_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(24, UMLPackage.eINSTANCE.getCreateObjectAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3363,10 +2993,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAddStructuralFeatureValueAction_3043(AddStructuralFeatureValueAction domainElement) {
-		if (AddStructuralFeatureValueAction_3043_Constraint == null) { // lazy initialization
-			AddStructuralFeatureValueAction_3043_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction()); //$NON-NLS-1$
-		}
-		Object result = AddStructuralFeatureValueAction_3043_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(26, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3374,10 +3001,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallBehaviorAction_3044(CallBehaviorAction domainElement) {
-		if (CallBehaviorAction_3044_Constraint == null) { // lazy initialization
-			CallBehaviorAction_3044_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCallBehaviorAction()); //$NON-NLS-1$
-		}
-		Object result = CallBehaviorAction_3044_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(28, UMLPackage.eINSTANCE.getCallBehaviorAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3385,10 +3009,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallOperationAction_3045(CallOperationAction domainElement) {
-		if (CallOperationAction_3045_Constraint == null) { // lazy initialization
-			CallOperationAction_3045_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCallOperationAction()); //$NON-NLS-1$
-		}
-		Object result = CallOperationAction_3045_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(30, UMLPackage.eINSTANCE.getCallOperationAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3396,12 +3017,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isStructuredActivityNode_3046(StructuredActivityNode domainElement) {
-		if (StructuredActivityNode_3046_Constraint == null) { // lazy initialization
-			StructuredActivityNode_3046_Constraint = UMLOCLFactory
-					.getExpression(
-							"not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and not self.oclIsTypeOf(uml::ExpansionRegion) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getStructuredActivityNode()); //$NON-NLS-1$
-		}
-		Object result = StructuredActivityNode_3046_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(32, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3409,12 +3025,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isStructuredActivityNode_3009(StructuredActivityNode domainElement) {
-		if (StructuredActivityNode_3009_Constraint == null) { // lazy initialization
-			StructuredActivityNode_3009_Constraint = UMLOCLFactory
-					.getExpression(
-							"not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and not self.oclIsTypeOf(uml::ExpansionRegion) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getStructuredActivityNode()); //$NON-NLS-1$
-		}
-		Object result = StructuredActivityNode_3009_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(32, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3422,10 +3033,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isOpaqueAction_3011(OpaqueAction domainElement) {
-		if (OpaqueAction_3011_Constraint == null) { // lazy initialization
-			OpaqueAction_3011_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getOpaqueAction()); //$NON-NLS-1$
-		}
-		Object result = OpaqueAction_3011_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(15, UMLPackage.eINSTANCE.getOpaqueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3433,11 +3041,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAcceptEventAction_3012(AcceptEventAction domainElement) {
-		if (AcceptEventAction_3012_Constraint == null) { // lazy initialization
-			AcceptEventAction_3012_Constraint = UMLOCLFactory.getExpression(
-					"(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction()); //$NON-NLS-1$
-		}
-		Object result = AcceptEventAction_3012_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(1, UMLPackage.eINSTANCE.getAcceptEventAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3445,11 +3049,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAcceptEventAction_3013(AcceptEventAction domainElement) {
-		if (AcceptEventAction_3013_Constraint == null) { // lazy initialization
-			AcceptEventAction_3013_Constraint = UMLOCLFactory.getExpression(
-					"(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction()); //$NON-NLS-1$
-		}
-		Object result = AcceptEventAction_3013_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(3, UMLPackage.eINSTANCE.getAcceptEventAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3457,10 +3057,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isActivityFinalNode_3014(ActivityFinalNode domainElement) {
-		if (ActivityFinalNode_3014_Constraint == null) { // lazy initialization
-			ActivityFinalNode_3014_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getActivityFinalNode()); //$NON-NLS-1$
-		}
-		Object result = ActivityFinalNode_3014_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(5, UMLPackage.eINSTANCE.getActivityFinalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3468,10 +3065,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDecisionNode_3015(DecisionNode domainElement) {
-		if (DecisionNode_3015_Constraint == null) { // lazy initialization
-			DecisionNode_3015_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getDecisionNode()); //$NON-NLS-1$
-		}
-		Object result = DecisionNode_3015_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(6, UMLPackage.eINSTANCE.getDecisionNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3479,10 +3073,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isFlowFinalNode_3016(FlowFinalNode domainElement) {
-		if (FlowFinalNode_3016_Constraint == null) { // lazy initialization
-			FlowFinalNode_3016_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getFlowFinalNode()); //$NON-NLS-1$
-		}
-		Object result = FlowFinalNode_3016_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(19, UMLPackage.eINSTANCE.getFlowFinalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3490,11 +3081,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPin_3017(Pin domainElement) {
-		if (Pin_3017_Constraint == null) { // lazy initialization
-			Pin_3017_Constraint = UMLOCLFactory.getExpression(
-					"(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getPin()); //$NON-NLS-1$
-		}
-		Object result = Pin_3017_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(22, UMLPackage.eINSTANCE.getPin(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3502,10 +3089,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCreateObjectAction_3018(CreateObjectAction domainElement) {
-		if (CreateObjectAction_3018_Constraint == null) { // lazy initialization
-			CreateObjectAction_3018_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCreateObjectAction()); //$NON-NLS-1$
-		}
-		Object result = CreateObjectAction_3018_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(24, UMLPackage.eINSTANCE.getCreateObjectAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3513,10 +3097,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallBehaviorAction_3019(CallBehaviorAction domainElement) {
-		if (CallBehaviorAction_3019_Constraint == null) { // lazy initialization
-			CallBehaviorAction_3019_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCallBehaviorAction()); //$NON-NLS-1$
-		}
-		Object result = CallBehaviorAction_3019_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(28, UMLPackage.eINSTANCE.getCallBehaviorAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3524,10 +3105,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallOperationAction_3020(CallOperationAction domainElement) {
-		if (CallOperationAction_3020_Constraint == null) { // lazy initialization
-			CallOperationAction_3020_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCallOperationAction()); //$NON-NLS-1$
-		}
-		Object result = CallOperationAction_3020_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(30, UMLPackage.eINSTANCE.getCallOperationAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3535,10 +3113,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isForkNode_3021(ForkNode domainElement) {
-		if (ForkNode_3021_Constraint == null) { // lazy initialization
-			ForkNode_3021_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getForkNode()); //$NON-NLS-1$
-		}
-		Object result = ForkNode_3021_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(20, UMLPackage.eINSTANCE.getForkNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3546,10 +3121,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isJoinNode_3022(JoinNode domainElement) {
-		if (JoinNode_3022_Constraint == null) { // lazy initialization
-			JoinNode_3022_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getJoinNode()); //$NON-NLS-1$
-		}
-		Object result = JoinNode_3022_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(21, UMLPackage.eINSTANCE.getJoinNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3557,10 +3129,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAddStructuralFeatureValueAction_3023(AddStructuralFeatureValueAction domainElement) {
-		if (AddStructuralFeatureValueAction_3023_Constraint == null) { // lazy initialization
-			AddStructuralFeatureValueAction_3023_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction()); //$NON-NLS-1$
-		}
-		Object result = AddStructuralFeatureValueAction_3023_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(26, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3568,10 +3137,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDataStoreNode_3024(DataStoreNode domainElement) {
-		if (DataStoreNode_3024_Constraint == null) { // lazy initialization
-			DataStoreNode_3024_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getDataStoreNode()); //$NON-NLS-1$
-		}
-		Object result = DataStoreNode_3024_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getDataStoreNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3579,10 +3145,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCentralBufferNode_3025(CentralBufferNode domainElement) {
-		if (CentralBufferNode_3025_Constraint == null) { // lazy initialization
-			CentralBufferNode_3025_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getCentralBufferNode()); //$NON-NLS-1$
-		}
-		Object result = CentralBufferNode_3025_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(13, UMLPackage.eINSTANCE.getCentralBufferNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3590,10 +3153,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isConditionalNode_3092(ConditionalNode domainElement) {
-		if (ConditionalNode_3092_Constraint == null) { // lazy initialization
-			ConditionalNode_3092_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getConditionalNode()); //$NON-NLS-1$
-		}
-		Object result = ConditionalNode_3092_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(36, UMLPackage.eINSTANCE.getConditionalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3601,10 +3161,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInitialNode_3093(InitialNode domainElement) {
-		if (InitialNode_3093_Constraint == null) { // lazy initialization
-			InitialNode_3093_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getInitialNode()); //$NON-NLS-1$
-		}
-		Object result = InitialNode_3093_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(10, UMLPackage.eINSTANCE.getInitialNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3612,10 +3169,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isSendSignalAction_3053(SendSignalAction domainElement) {
-		if (SendSignalAction_3053_Constraint == null) { // lazy initialization
-			SendSignalAction_3053_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getSendSignalAction()); //$NON-NLS-1$
-		}
-		Object result = SendSignalAction_3053_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(39, UMLPackage.eINSTANCE.getSendSignalAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3623,11 +3177,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAcceptEventAction_3059(AcceptEventAction domainElement) {
-		if (AcceptEventAction_3059_Constraint == null) { // lazy initialization
-			AcceptEventAction_3059_Constraint = UMLOCLFactory.getExpression(
-					"(self.trigger->isEmpty() or (not self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent)))) and self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction()); //$NON-NLS-1$
-		}
-		Object result = AcceptEventAction_3059_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(42, UMLPackage.eINSTANCE.getAcceptEventAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3635,12 +3185,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAcceptEventAction_3060(AcceptEventAction domainElement) {
-		if (AcceptEventAction_3060_Constraint == null) { // lazy initialization
-			AcceptEventAction_3060_Constraint = UMLOCLFactory
-					.getExpression(
-							"(not self.trigger->isEmpty()) and (self.trigger->forAll(tr | tr.event.oclIsKindOf(uml::TimeEvent))) and self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getAcceptEventAction()); //$NON-NLS-1$
-		}
-		Object result = AcceptEventAction_3060_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(44, UMLPackage.eINSTANCE.getAcceptEventAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3648,10 +3193,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isActivityFinalNode_3061(ActivityFinalNode domainElement) {
-		if (ActivityFinalNode_3061_Constraint == null) { // lazy initialization
-			ActivityFinalNode_3061_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getActivityFinalNode()); //$NON-NLS-1$
-		}
-		Object result = ActivityFinalNode_3061_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(46, UMLPackage.eINSTANCE.getActivityFinalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3659,10 +3201,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDecisionNode_3062(DecisionNode domainElement) {
-		if (DecisionNode_3062_Constraint == null) { // lazy initialization
-			DecisionNode_3062_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getDecisionNode()); //$NON-NLS-1$
-		}
-		Object result = DecisionNode_3062_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(47, UMLPackage.eINSTANCE.getDecisionNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3670,10 +3209,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isMergeNode_3063(MergeNode domainElement) {
-		if (MergeNode_3063_Constraint == null) { // lazy initialization
-			MergeNode_3063_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getMergeNode()); //$NON-NLS-1$
-		}
-		Object result = MergeNode_3063_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(49, UMLPackage.eINSTANCE.getMergeNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3681,10 +3217,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInitialNode_3064(InitialNode domainElement) {
-		if (InitialNode_3064_Constraint == null) { // lazy initialization
-			InitialNode_3064_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getInitialNode()); //$NON-NLS-1$
-		}
-		Object result = InitialNode_3064_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(51, UMLPackage.eINSTANCE.getInitialNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3692,10 +3225,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDataStoreNode_3065(DataStoreNode domainElement) {
-		if (DataStoreNode_3065_Constraint == null) { // lazy initialization
-			DataStoreNode_3065_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getDataStoreNode()); //$NON-NLS-1$
-		}
-		Object result = DataStoreNode_3065_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(52, UMLPackage.eINSTANCE.getDataStoreNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3703,10 +3233,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCentralBufferNode_3066(CentralBufferNode domainElement) {
-		if (CentralBufferNode_3066_Constraint == null) { // lazy initialization
-			CentralBufferNode_3066_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getCentralBufferNode()); //$NON-NLS-1$
-		}
-		Object result = CentralBufferNode_3066_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(54, UMLPackage.eINSTANCE.getCentralBufferNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3714,10 +3241,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isOpaqueAction_3067(OpaqueAction domainElement) {
-		if (OpaqueAction_3067_Constraint == null) { // lazy initialization
-			OpaqueAction_3067_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getOpaqueAction()); //$NON-NLS-1$
-		}
-		Object result = OpaqueAction_3067_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(56, UMLPackage.eINSTANCE.getOpaqueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3725,10 +3249,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isFlowFinalNode_3068(FlowFinalNode domainElement) {
-		if (FlowFinalNode_3068_Constraint == null) { // lazy initialization
-			FlowFinalNode_3068_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getFlowFinalNode()); //$NON-NLS-1$
-		}
-		Object result = FlowFinalNode_3068_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(58, UMLPackage.eINSTANCE.getFlowFinalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3736,10 +3257,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isForkNode_3069(ForkNode domainElement) {
-		if (ForkNode_3069_Constraint == null) { // lazy initialization
-			ForkNode_3069_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getForkNode()); //$NON-NLS-1$
-		}
-		Object result = ForkNode_3069_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(59, UMLPackage.eINSTANCE.getForkNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3747,10 +3265,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isJoinNode_3070(JoinNode domainElement) {
-		if (JoinNode_3070_Constraint == null) { // lazy initialization
-			JoinNode_3070_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getJoinNode()); //$NON-NLS-1$
-		}
-		Object result = JoinNode_3070_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(60, UMLPackage.eINSTANCE.getJoinNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3758,11 +3273,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPin_3071(Pin domainElement) {
-		if (Pin_3071_Constraint == null) { // lazy initialization
-			Pin_3071_Constraint = UMLOCLFactory.getExpression(
-					"(not self.oclIsTypeOf(uml::InputPin)) and (not self.oclIsTypeOf(uml::OutputPin)) and self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getPin()); //$NON-NLS-1$
-		}
-		Object result = Pin_3071_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(61, UMLPackage.eINSTANCE.getPin(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3770,10 +3281,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCreateObjectAction_3072(CreateObjectAction domainElement) {
-		if (CreateObjectAction_3072_Constraint == null) { // lazy initialization
-			CreateObjectAction_3072_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getCreateObjectAction()); //$NON-NLS-1$
-		}
-		Object result = CreateObjectAction_3072_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(63, UMLPackage.eINSTANCE.getCreateObjectAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3781,10 +3289,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAddStructuralFeatureValueAction_3073(AddStructuralFeatureValueAction domainElement) {
-		if (AddStructuralFeatureValueAction_3073_Constraint == null) { // lazy initialization
-			AddStructuralFeatureValueAction_3073_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction()); //$NON-NLS-1$
-		}
-		Object result = AddStructuralFeatureValueAction_3073_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(65, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3792,10 +3297,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallBehaviorAction_3074(CallBehaviorAction domainElement) {
-		if (CallBehaviorAction_3074_Constraint == null) { // lazy initialization
-			CallBehaviorAction_3074_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getCallBehaviorAction()); //$NON-NLS-1$
-		}
-		Object result = CallBehaviorAction_3074_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(67, UMLPackage.eINSTANCE.getCallBehaviorAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3803,10 +3305,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallOperationAction_3075(CallOperationAction domainElement) {
-		if (CallOperationAction_3075_Constraint == null) { // lazy initialization
-			CallOperationAction_3075_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getCallOperationAction()); //$NON-NLS-1$
-		}
-		Object result = CallOperationAction_3075_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(69, UMLPackage.eINSTANCE.getCallOperationAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3814,12 +3313,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isStructuredActivityNode_3076(StructuredActivityNode domainElement) {
-		if (StructuredActivityNode_3076_Constraint == null) { // lazy initialization
-			StructuredActivityNode_3076_Constraint = UMLOCLFactory
-					.getExpression(
-							"not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and not self.oclIsTypeOf(uml::ExpansionRegion) and self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getStructuredActivityNode()); //$NON-NLS-1$
-		}
-		Object result = StructuredActivityNode_3076_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(71, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3827,12 +3321,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isStructuredActivityNode_3079(StructuredActivityNode domainElement) {
-		if (StructuredActivityNode_3079_Constraint == null) { // lazy initialization
-			StructuredActivityNode_3079_Constraint = UMLOCLFactory
-					.getExpression(
-							"not self.oclIsTypeOf(uml::LoopNode) and not self.oclIsTypeOf(uml::ConditionalNode) and not self.oclIsTypeOf(uml::ExpansionRegion) and self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getStructuredActivityNode()); //$NON-NLS-1$
-		}
-		Object result = StructuredActivityNode_3079_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(71, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3840,10 +3329,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isSendSignalAction_3077(SendSignalAction domainElement) {
-		if (SendSignalAction_3077_Constraint == null) { // lazy initialization
-			SendSignalAction_3077_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getSendSignalAction()); //$NON-NLS-1$
-		}
-		Object result = SendSignalAction_3077_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(75, UMLPackage.eINSTANCE.getSendSignalAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3851,10 +3337,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isLoopNode_3078(LoopNode domainElement) {
-		if (LoopNode_3078_Constraint == null) { // lazy initialization
-			LoopNode_3078_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getLoopNode()); //$NON-NLS-1$
-		}
-		Object result = LoopNode_3078_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(77, UMLPackage.eINSTANCE.getLoopNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3862,10 +3345,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isConditionalNode_3083(ConditionalNode domainElement) {
-		if (ConditionalNode_3083_Constraint == null) { // lazy initialization
-			ConditionalNode_3083_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getConditionalNode()); //$NON-NLS-1$
-		}
-		Object result = ConditionalNode_3083_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(79, UMLPackage.eINSTANCE.getConditionalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3873,10 +3353,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isExpansionRegion_3085(ExpansionRegion domainElement) {
-		if (ExpansionRegion_3085_Constraint == null) { // lazy initialization
-			ExpansionRegion_3085_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getExpansionRegion()); //$NON-NLS-1$
-		}
-		Object result = ExpansionRegion_3085_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(81, UMLPackage.eINSTANCE.getExpansionRegion(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3884,10 +3361,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isValueSpecificationAction_3088(ValueSpecificationAction domainElement) {
-		if (ValueSpecificationAction_3088_Constraint == null) { // lazy initialization
-			ValueSpecificationAction_3088_Constraint = UMLOCLFactory.getExpression("self.inPartition->notEmpty()", UMLPackage.eINSTANCE.getValueSpecificationAction()); //$NON-NLS-1$
-		}
-		Object result = ValueSpecificationAction_3088_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(83, UMLPackage.eINSTANCE.getValueSpecificationAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3895,10 +3369,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isLoopNode_3058(LoopNode domainElement) {
-		if (LoopNode_3058_Constraint == null) { // lazy initialization
-			LoopNode_3058_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getLoopNode()); //$NON-NLS-1$
-		}
-		Object result = LoopNode_3058_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(85, UMLPackage.eINSTANCE.getLoopNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3906,10 +3377,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isConditionalNode_3082(ConditionalNode domainElement) {
-		if (ConditionalNode_3082_Constraint == null) { // lazy initialization
-			ConditionalNode_3082_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getConditionalNode()); //$NON-NLS-1$
-		}
-		Object result = ConditionalNode_3082_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(36, UMLPackage.eINSTANCE.getConditionalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3917,10 +3385,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isExpansionRegion_3084(ExpansionRegion domainElement) {
-		if (ExpansionRegion_3084_Constraint == null) { // lazy initialization
-			ExpansionRegion_3084_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getExpansionRegion()); //$NON-NLS-1$
-		}
-		Object result = ExpansionRegion_3084_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(87, UMLPackage.eINSTANCE.getExpansionRegion(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3928,10 +3393,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isValueSpecificationAction_3089(ValueSpecificationAction domainElement) {
-		if (ValueSpecificationAction_3089_Constraint == null) { // lazy initialization
-			ValueSpecificationAction_3089_Constraint = UMLOCLFactory.getExpression("self.inPartition->isEmpty()", UMLPackage.eINSTANCE.getValueSpecificationAction()); //$NON-NLS-1$
-		}
-		Object result = ValueSpecificationAction_3089_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(91, UMLPackage.eINSTANCE.getValueSpecificationAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3962,6 +3424,17 @@ public class UMLVisualIDRegistry {
 			return -1;
 		}
 		switch (container.getVisualID()) {
+		case PackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getActivity().isSuperTypeOf(domainElement.eClass())) {
+				return ActivityEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2027((Constraint) domainElement)) {
+				return LocalPreconditionEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2028((Constraint) domainElement)) {
+				return LocalPostconditionEditPart.VISUAL_ID;
+			}
+			break;
 		case ActivityEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3030((AcceptEventAction) domainElement)) {
 				return AcceptEventActionEditPart.VISUAL_ID;
@@ -4987,17 +4460,6 @@ public class UMLVisualIDRegistry {
 		case ValueSpecificationActionEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getOutputPin().isSuperTypeOf(domainElement.eClass())) {
 				return ValueSpecificationAction_OutputPinEditPart.VISUAL_ID;
-			}
-			break;
-		case PackageEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getActivity().isSuperTypeOf(domainElement.eClass())) {
-				return ActivityEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2027((Constraint) domainElement)) {
-				return LocalPreconditionEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2028((Constraint) domainElement)) {
-				return LocalPostconditionEditPart.VISUAL_ID;
 			}
 			break;
 		}
