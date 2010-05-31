@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
-import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
-import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalTransitionsEditPart;
@@ -46,7 +45,6 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_Internal
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
-import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.ConnectionPointReference;
@@ -1386,28 +1384,28 @@ public class UMLDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterNodeDescriptor> getSemanticChildren(View view) {
+		public List<UMLNodeDescriptor> getSemanticChildren(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getContainedLinks(View view) {
+		public List<UMLLinkDescriptor> getContainedLinks(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getIncomingLinks(View view) {
+		public List<UMLLinkDescriptor> getIncomingLinks(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getOutgoingLinks(View view) {
+		public List<UMLLinkDescriptor> getOutgoingLinks(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getOutgoingLinks(view);
 		}
 	};

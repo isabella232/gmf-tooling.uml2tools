@@ -15,8 +15,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.common.conventions.ConnectorEndConvention;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
-import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
-import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.common.links.PortOperationsExt;
 import org.eclipse.uml2.diagram.common.links.ProvidedInterfaceLink;
 import org.eclipse.uml2.diagram.component.edit.parts.Artifact2EditPart;
@@ -2541,28 +2539,28 @@ public class UMLDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterNodeDescriptor> getSemanticChildren(View view) {
+		public List<UMLNodeDescriptor> getSemanticChildren(View view) {
 			return org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getContainedLinks(View view) {
+		public List<UMLLinkDescriptor> getContainedLinks(View view) {
 			return org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getIncomingLinks(View view) {
+		public List<UMLLinkDescriptor> getIncomingLinks(View view) {
 			return org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getOutgoingLinks(View view) {
+		public List<UMLLinkDescriptor> getOutgoingLinks(View view) {
 			return org.eclipse.uml2.diagram.component.part.UMLDiagramUpdater.getOutgoingLinks(view);
 		}
 	};

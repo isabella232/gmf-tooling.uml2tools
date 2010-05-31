@@ -17,8 +17,6 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.*;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
-import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
-import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.common.links.PortOperationsExt;
 import org.eclipse.uml2.diagram.common.links.ProvidedInterfaceLink;
 import org.eclipse.uml2.uml.Association;
@@ -26,7 +24,6 @@ import org.eclipse.uml2.uml.AssociationClass;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.CollaborationUse;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.DataType;
@@ -5363,28 +5360,28 @@ public class UMLDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterNodeDescriptor> getSemanticChildren(View view) {
+		public List<UMLNodeDescriptor> getSemanticChildren(View view) {
 			return org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getContainedLinks(View view) {
+		public List<UMLLinkDescriptor> getContainedLinks(View view) {
 			return org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getIncomingLinks(View view) {
+		public List<UMLLinkDescriptor> getIncomingLinks(View view) {
 			return org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getOutgoingLinks(View view) {
+		public List<UMLLinkDescriptor> getOutgoingLinks(View view) {
 			return org.eclipse.uml2.diagram.clazz.part.UMLDiagramUpdater.getOutgoingLinks(view);
 		}
 	};
