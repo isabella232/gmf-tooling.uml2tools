@@ -7,23 +7,33 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EParameter;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.ocl.Environment;
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.Query;
 import org.eclipse.ocl.ecore.EcoreFactory;
+import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.expressions.OCLExpression;
 import org.eclipse.ocl.expressions.OperationCallExp;
 import org.eclipse.ocl.expressions.Variable;
 import org.eclipse.ocl.helper.OCLHelper;
+import org.eclipse.ocl.options.ParsingOptions;
 import org.eclipse.ocl.utilities.AbstractVisitor;
 import org.eclipse.ocl.utilities.PredefinedType;
+import org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.parser.lookup.OCLLookup;
 
 /**
  * @generated 
  */
 public class UMLOCLFactory {
+
+	/**
+	 * @generated
+	 */
+	private final UMLAbstractExpression[] expressions;
 
 	/**
 	 * @generated
@@ -44,13 +54,45 @@ public class UMLOCLFactory {
 	/**
 	 * @generated 
 	 */
-	private UMLOCLFactory() {
+	protected UMLOCLFactory() {
+		this.expressions = new UMLAbstractExpression[12];
+	}
+
+	/**
+	 * @generated
+	 */
+	public static UMLAbstractExpression getExpression(int index, EClassifier context, Map<String, EClassifier> environment) {
+		UMLOCLFactory cached = UMLDiagramEditorPlugin.getInstance().getUMLOCLFactory();
+		if (cached == null) {
+			UMLDiagramEditorPlugin.getInstance().setUMLOCLFactory(cached = new UMLOCLFactory());
+		}
+		if (index < 0 || index >= cached.expressions.length) {
+			throw new IllegalArgumentException();
+		}
+		if (cached.expressions[index] == null) {
+			final String[] exprBodies = new String[] {
+					"let base : String = \'Device\' in\r\nlet suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in \r\nlet space : Namespace = self.namespace in\r\nlet allMissed : Sequence(String) = suffixes->\r\n    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))\r\n    ) in\r\nlet firstMissed : String = allMissed->first() in \r\nlet noMisses : Boolean = firstMissed.oclIsUndefined() in\r\nlet allNames : Set(String) = \r\n    if noMisses \r\n    then \r\n    space.member->collect(e : NamedElement | \r\n         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base\r\n         then \'\' \r\n         else e.name \r\n         endif)->asSet()->excluding(\'\') else Set{\'not in use\'} \r\n    endif in \r\nlet longestName : String = \r\n    if noMisses\r\n    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() \r\n    else \'not in use\' \r\n    endif in \r\nif noMisses then \r\n    if longestName.oclIsUndefined() \r\n    then base \r\n    else longestName.concat(\'1\') \r\n    endif \r\nelse \r\n    base.concat(firstMissed) \r\nendif ", //$NON-NLS-1$
+					"not oclIsKindOf(uml::DeploymentSpecification)", //$NON-NLS-1$
+					"\'Artifact\'", //$NON-NLS-1$
+					"let base : String = \'Specification\' in\r\nlet suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in \r\nlet space : Namespace = self.namespace in\r\nlet allMissed : Sequence(String) = suffixes->\r\n    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))\r\n    ) in\r\nlet firstMissed : String = allMissed->first() in \r\nlet noMisses : Boolean = firstMissed.oclIsUndefined() in\r\nlet allNames : Set(String) = \r\n    if noMisses \r\n    then \r\n    space.member->collect(e : NamedElement | \r\n         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base\r\n         then \'\' \r\n         else e.name \r\n         endif)->asSet()->excluding(\'\') else Set{\'not in use\'} \r\n    endif in \r\nlet longestName : String = \r\n    if noMisses\r\n    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() \r\n    else \'not in use\' \r\n    endif in \r\nif noMisses then \r\n    if longestName.oclIsUndefined() \r\n    then base \r\n    else longestName.concat(\'1\') \r\n    endif \r\nelse \r\n    base.concat(firstMissed) \r\nendif ", //$NON-NLS-1$
+					"let base : String = \'property\' in\r\nlet suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in \r\nlet space : Namespace = self.namespace in\r\nlet allMissed : Sequence(String) = suffixes->\r\n    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))\r\n    ) in\r\nlet firstMissed : String = allMissed->first() in \r\nlet noMisses : Boolean = firstMissed.oclIsUndefined() in\r\nlet allNames : Set(String) = \r\n    if noMisses \r\n    then \r\n    space.member->collect(e : NamedElement | \r\n         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base\r\n         then \'\' \r\n         else e.name \r\n         endif)->asSet()->excluding(\'\') else Set{\'not in use\'} \r\n    endif in \r\nlet longestName : String = \r\n    if noMisses\r\n    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() \r\n    else \'not in use\' \r\n    endif in \r\nif noMisses then \r\n    if longestName.oclIsUndefined() \r\n    then base \r\n    else longestName.concat(\'1\') \r\n    endif \r\nelse \r\n    base.concat(firstMissed) \r\nendif ", //$NON-NLS-1$
+					"let base : String = \'Environment\' in\r\nlet suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in \r\nlet space : Namespace = self.namespace in\r\nlet allMissed : Sequence(String) = suffixes->\r\n    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))\r\n    ) in\r\nlet firstMissed : String = allMissed->first() in \r\nlet noMisses : Boolean = firstMissed.oclIsUndefined() in\r\nlet allNames : Set(String) = \r\n    if noMisses \r\n    then \r\n    space.member->collect(e : NamedElement | \r\n         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base\r\n         then \'\' \r\n         else e.name \r\n         endif)->asSet()->excluding(\'\') else Set{\'not in use\'} \r\n    endif in \r\nlet longestName : String = \r\n    if noMisses\r\n    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() \r\n    else \'not in use\' \r\n    endif in \r\nif noMisses then \r\n    if longestName.oclIsUndefined() \r\n    then base \r\n    else longestName.concat(\'1\') \r\n    endif \r\nelse \r\n    base.concat(firstMissed) \r\nendif ", //$NON-NLS-1$
+					"\'Artifact\'", //$NON-NLS-1$
+					"not oclIsKindOf(uml::Device) and not oclIsKindOf(uml::ExecutionEnvironment)", //$NON-NLS-1$
+					"let base : String = \'Node\' in\r\nlet suffixes : Sequence(String) = Sequence {\'\', \'1\', \'2\', \'3\', \'4\', \'5\', \'6\', \'7\', \'8\', \'9\', \'10\'} in \r\nlet space : Namespace = self.namespace in\r\nlet allMissed : Sequence(String) = suffixes->\r\n    select(s : String | not space.member->exists(e : NamedElement | e.name = base.concat(s))\r\n    ) in\r\nlet firstMissed : String = allMissed->first() in \r\nlet noMisses : Boolean = firstMissed.oclIsUndefined() in\r\nlet allNames : Set(String) = \r\n    if noMisses \r\n    then \r\n    space.member->collect(e : NamedElement | \r\n         if e = self or e.name.oclIsUndefined() or e.name.substring(1, e.name.size().min(base.size())) <> base\r\n         then \'\' \r\n         else e.name \r\n         endif)->asSet()->excluding(\'\') else Set{\'not in use\'} \r\n    endif in \r\nlet longestName : String = \r\n    if noMisses\r\n    then allNames->select(n : String | not allNames->exists(nn : String | nn.size() > n.size()))->asSequence()->first() \r\n    else \'not in use\' \r\n    endif in \r\nif noMisses then \r\n    if longestName.oclIsUndefined() \r\n    then base \r\n    else longestName.concat(\'1\') \r\n    endif \r\nelse \r\n    base.concat(firstMissed) \r\nendif ", //$NON-NLS-1$
+					"self.oclIsKindOf(uml::DeploymentTarget)", //$NON-NLS-1$
+					"self.oclIsKindOf(uml::DeploymentTarget)", //$NON-NLS-1$
+					"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or (self.oclIsTypeOf(uml::Usage) and (self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface)) or (self.client->forAll(e|not (e.oclIsKindOf(uml::Classifier) or  e.oclIsKindOf(uml::Port))))))) and self.supplier->size() = 1 and self.client->size() = 1", //$NON-NLS-1$
+			};
+			cached.expressions[index] = getExpression(exprBodies[index], context, environment == null ? Collections.<String, EClassifier> emptyMap() : environment);
+		}
+		return cached.expressions[index];
 	}
 
 	/**
 	 * @generated 
 	 */
-	public static UMLAbstractExpression getExpression(String body, EClassifier context, Map environment) {
+	public static UMLAbstractExpression getExpression(String body, EClassifier context, Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
 
@@ -58,7 +100,7 @@ public class UMLOCLFactory {
 	 * @generated 
 	 */
 	public static UMLAbstractExpression getExpression(String body, EClassifier context) {
-		return getExpression(body, context, Collections.EMPTY_MAP);
+		return getExpression(body, context, Collections.<String, EClassifier> emptyMap());
 	}
 
 	/**
@@ -69,105 +111,61 @@ public class UMLOCLFactory {
 		/**
 		 * @generated 
 		 */
-		private WeakReference queryRef;
-
-		/**
-		 * @generated 
-		 */
 		private final org.eclipse.ocl.ecore.OCL oclInstance;
-
-		/**
-		 * @generated 
-		 */
-		public Expression(String body, EClassifier context, Map environment) {
-			super(body, context);
-			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
-			initCustomEnv(oclInstance.getEnvironment(), environment);
-		}
-
-		/**
-		 * @generated 
-		 */
-		protected Query getQuery() {
-			Query oclQuery = null;
-			if (this.queryRef != null) {
-				oclQuery = (Query) this.queryRef.get();
-			}
-			if (oclQuery == null) {
-				OCLHelper oclHelper = oclInstance.createOCLHelper();
-				oclHelper.setContext(context());
-				try {
-					OCLExpression oclExpression = oclHelper.createQuery(body());
-					oclQuery = oclInstance.createQuery(oclExpression);
-					this.queryRef = new WeakReference(oclQuery);
-					setStatus(IStatus.OK, null, null);
-				} catch (ParserException e) {
-					setStatus(IStatus.ERROR, e.getMessage(), e);
-				}
-			}
-			return oclQuery;
-		}
-
-		/**
-		 * @generated 
-		 */
-		protected Object doEvaluate(Object context, Map env) {
-			Query oclQuery = getQuery();
-			if (oclQuery == null) {
-				return null;
-			}
-			EvaluationEnvironment evalEnv = oclQuery.getEvaluationEnvironment();
-			// init environment
-			for (Iterator it = env.entrySet().iterator(); it.hasNext();) {
-				Map.Entry nextEntry = (Map.Entry) it.next();
-				evalEnv.replace((String) nextEntry.getKey(), nextEntry.getValue());
-			}
-			try {
-				initExtentMap(context);
-				Object result = oclQuery.evaluate(context);
-				return (result != oclInstance.getEnvironment().getOCLStandardLibrary().getOclInvalid()) ? result : null;
-			} finally {
-				evalEnv.clear();
-				oclQuery.getExtentMap().clear();
-			}
-		}
 
 		/**
 		 * @generated
 		 */
-		private void initExtentMap(Object context) {
-			if (!getStatus().isOK() || context == null) {
-				return;
-			}
-			final Query queryToInit = getQuery();
-			final Object extentContext = context;
-			queryToInit.getExtentMap().clear();
-			if (queryToInit.queryText() != null && queryToInit.queryText().indexOf(PredefinedType.ALL_INSTANCES_NAME) >= 0) {
-				AbstractVisitor visitior = new AbstractVisitor() {
+		private org.eclipse.ocl.ecore.OCLExpression oclExpression;
 
-					private boolean usesAllInstances = false;
-
-					public Object visitOperationCallExp(OperationCallExp oc) {
-						if (!usesAllInstances) {
-							usesAllInstances = PredefinedType.ALL_INSTANCES == oc.getOperationCode();
-							if (usesAllInstances) {
-								queryToInit.getExtentMap().putAll(oclInstance.getEvaluationEnvironment().createExtentMap(extentContext));
-							}
-						}
-						return super.visitOperationCallExp(oc);
-					}
-				};
-				queryToInit.getExpression().accept(visitior);
+		/**
+		 * @generated 
+		 */
+		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
+			super(body, context);
+			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
+			initCustomEnv(oclInstance.getEnvironment(), environment);
+			Helper oclHelper = oclInstance.createOCLHelper();
+			oclHelper.setContext(context());
+			try {
+				oclExpression = oclHelper.createQuery(body());
+				setStatus(IStatus.OK, null, null);
+			} catch (ParserException e) {
+				setStatus(IStatus.ERROR, e.getMessage(), e);
 			}
 		}
 
 		/**
 		 * @generated 
 		 */
-		private static void initCustomEnv(Environment ecoreEnv, Map environment) {
-			for (Iterator it = environment.keySet().iterator(); it.hasNext();) {
-				String varName = (String) it.next();
-				EClassifier varType = (EClassifier) environment.get(varName);
+		@SuppressWarnings("rawtypes")
+		protected Object doEvaluate(Object context, Map env) {
+			if (oclExpression == null) {
+				return null;
+			}
+			// on the first call, both evalEnvironment and extentMap are clear, for later we have finally, below.
+			EvaluationEnvironment<?, ?, ?, ?, ?> evalEnv = oclInstance.getEvaluationEnvironment();
+			// initialize environment
+			for (Object nextKey : env.keySet()) {
+				evalEnv.replace((String) nextKey, env.get(nextKey));
+			}
+			try {
+				Object result = oclInstance.evaluate(context, oclExpression);
+				return oclInstance.isInvalid(result) ? null : result;
+			} finally {
+				evalEnv.clear();
+				oclInstance.setExtentMap(null); // clear allInstances cache, and get the oclInstance ready for the next call
+			}
+		}
+
+		/**
+		 * @generated 
+		 */
+		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv, Map<String, EClassifier> environment) {
+			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
+			ParsingOptions.setOption(ecoreEnv, ParsingOptions.implicitRootClass(ecoreEnv), EcorePackage.eINSTANCE.getEObject());
+			for (String varName : environment.keySet()) {
+				EClassifier varType = environment.get(varName);
 				ecoreEnv.addElement(varName, createVar(ecoreEnv, varName, varType), false);
 			}
 		}
@@ -175,8 +173,8 @@ public class UMLOCLFactory {
 		/**
 		 * @generated 
 		 */
-		private static Variable createVar(Environment ecoreEnv, String name, EClassifier type) {
-			Variable var = EcoreFactory.eINSTANCE.createVariable();
+		private static org.eclipse.ocl.ecore.Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv, String name, EClassifier type) {
+			org.eclipse.ocl.ecore.Variable var = EcoreFactory.eINSTANCE.createVariable();
 			var.setName(name);
 			var.setType(ecoreEnv.getUMLReflection().getOCLType(type));
 			return var;

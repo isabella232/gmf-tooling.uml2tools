@@ -42,106 +42,6 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static UMLAbstractExpression Class_2001_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression DataType_2004_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Dependency_2009_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Class_3007_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression DataType_3008_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Property_3001_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Class_3003_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Slot_3017_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Property_3028_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Class_3030_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Class_3033_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression DataType_3036_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Generalization_4001_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Dependency_4002_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Property_4003_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Association_4005_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression InterfaceRealization_4008_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Realization_4010_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Usage_4013_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Slot_4015_Constraint;
-
-	/**
-	 * @generated
-	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
 			if (PackageEditPart.MODEL_ID.equals(view.getType())) {
@@ -186,7 +86,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static String getType(int visualID) {
-		return String.valueOf(visualID);
+		return Integer.toString(visualID);
 	}
 
 	/**
@@ -224,6 +124,85 @@ public class UMLVisualIDRegistry {
 			}
 		}
 		switch (containerVisualID) {
+		case PackageEditPart.VISUAL_ID:
+			// We want to additionally show the Canvas Semantical Element in the auxiliary 
+			// org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart (that serves as a pure visual container for children). 
+			// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
+			// list. The only remaining part is to return correct VID for this special case.
+
+			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
+				return Package4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2001((Class) domainElement)) {
+				return Class2EditPart.VISUAL_ID;
+			}
+			// there is a group of nodes for single semantic element
+			// the group for this element consists of 
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
+			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
+			// we need to give other parts a chance to create their views
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClass2EditPart.VISUAL_ID)) {
+				return AssociationClass2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_2004((DataType) domainElement)) {
+				return DataType2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveType2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return Enumeration2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return InterfaceEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && isDependency_2009((Dependency) domainElement)) {
+				return DependencyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getGeneralizationSet().isSuperTypeOf(domainElement.eClass())) {
+				return GeneralizationSetEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface2EditPart.VISUAL_ID;
+			}
+			// Diagram header is already processed above
+			// there is a group of nodes for single semantic element
+			// the group for this element consists of 
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
+			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
+			// we need to give other parts a chance to create their views
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClassRhombEditPart.VISUAL_ID)) {
+				return AssociationClassRhombEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return PackageAsFrameEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
+			// "escape" for multi-views part : org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart.VISUAL_ID -- prevents from removing the whole group from diagram
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
+				return AssociationClass2EditPart.VISUAL_ID;
+			}
+			// "escape" for multi-views part : org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart.VISUAL_ID -- prevents from removing the whole group from diagram
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
+				return AssociationClassRhombEditPart.VISUAL_ID;
+			}
+			break;
 		case Class2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getPort().isSuperTypeOf(domainElement.eClass())) {
 				return PortEditPart.VISUAL_ID;
@@ -530,85 +509,6 @@ public class UMLVisualIDRegistry {
 				return ExpressionEditPart.VISUAL_ID;
 			}
 			break;
-		case PackageEditPart.VISUAL_ID:
-			// We want to additionally show the Canvas Semantical Element in the auxiliary 
-			// org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart (that serves as a pure visual container for children). 
-			// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
-			// list. The only remaining part is to return correct VID for this special case.
-
-			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
-				return Package4EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
-				return Package2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2001((Class) domainElement)) {
-				return Class2EditPart.VISUAL_ID;
-			}
-			// there is a group of nodes for single semantic element
-			// the group for this element consists of 
-			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
-			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
-			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
-			// we need to give other parts a chance to create their views
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClass2EditPart.VISUAL_ID)) {
-				return AssociationClass2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_2004((DataType) domainElement)) {
-				return DataType2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
-				return PrimitiveType2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
-				return Enumeration2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
-				return InterfaceEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
-				return ConstraintEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
-				return InstanceSpecification2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && isDependency_2009((Dependency) domainElement)) {
-				return DependencyEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getGeneralizationSet().isSuperTypeOf(domainElement.eClass())) {
-				return GeneralizationSetEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
-				return Interface2EditPart.VISUAL_ID;
-			}
-			// Diagram header is already processed above
-			// there is a group of nodes for single semantic element
-			// the group for this element consists of 
-			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
-			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
-			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
-			// we need to give other parts a chance to create their views
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClassRhombEditPart.VISUAL_ID)) {
-				return AssociationClassRhombEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
-				return PackageAsFrameEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
-				return InstanceSpecification4EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
-				return CommentEditPart.VISUAL_ID;
-			}
-			// "escape" for multi-views part : org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart.VISUAL_ID -- prevents from removing the whole group from diagram
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
-				return AssociationClass2EditPart.VISUAL_ID;
-			}
-			// "escape" for multi-views part : org.eclipse.uml2.diagram.clazz.edit.parts.PackageEditPart.VISUAL_ID -- prevents from removing the whole group from diagram
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass())) {
-				return AssociationClassRhombEditPart.VISUAL_ID;
-			}
-			break;
 		}
 		return -1;
 	}
@@ -632,6 +532,59 @@ public class UMLVisualIDRegistry {
 			}
 		}
 		switch (containerVisualID) {
+		case PackageEditPart.VISUAL_ID:
+			if (Package2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Class2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationClass2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DataType2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PrimitiveType2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Enumeration2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InterfaceEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceSpecification2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (DependencyEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (GeneralizationSetEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Interface2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Package4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (AssociationClassRhombEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (PackageAsFrameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InstanceSpecification4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CommentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case Package2EditPart.VISUAL_ID:
 			if (PackageNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -1210,59 +1163,6 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case PackageEditPart.VISUAL_ID:
-			if (Package2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (Class2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (AssociationClass2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (DataType2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (PrimitiveType2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (Enumeration2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (InterfaceEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ConstraintEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (InstanceSpecification2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (DependencyEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (GeneralizationSetEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (Interface2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (Package4EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (AssociationClassRhombEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (PackageAsFrameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (InstanceSpecification4EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CommentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case GeneralizationEditPart.VISUAL_ID:
 			if (GeneralizationStereotypeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -1416,10 +1316,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isClass_2001(Class domainElement) {
-		if (Class_2001_Constraint == null) { // lazy initialization
-			Class_2001_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)", UMLPackage.eINSTANCE.getClass_()); //$NON-NLS-1$
-		}
-		Object result = Class_2001_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1427,10 +1324,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDataType_2004(DataType domainElement) {
-		if (DataType_2004_Constraint == null) { // lazy initialization
-			DataType_2004_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::PrimitiveType) and not oclIsKindOf(uml::Enumeration)", UMLPackage.eINSTANCE.getDataType()); //$NON-NLS-1$
-		}
-		Object result = DataType_2004_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(23, UMLPackage.eINSTANCE.getDataType(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1438,10 +1332,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDependency_2009(Dependency domainElement) {
-		if (Dependency_2009_Constraint == null) { // lazy initialization
-			Dependency_2009_Constraint = UMLOCLFactory.getExpression("self.supplier->size() > 1 or self.client->size() > 1", UMLPackage.eINSTANCE.getDependency()); //$NON-NLS-1$
-		}
-		Object result = Dependency_2009_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(42, UMLPackage.eINSTANCE.getDependency(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1449,10 +1340,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isClass_3007(Class domainElement) {
-		if (Class_3007_Constraint == null) { // lazy initialization
-			Class_3007_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)", UMLPackage.eINSTANCE.getClass_()); //$NON-NLS-1$
-		}
-		Object result = Class_3007_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(2, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1460,10 +1348,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDataType_3008(DataType domainElement) {
-		if (DataType_3008_Constraint == null) { // lazy initialization
-			DataType_3008_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::PrimitiveType) and not oclIsKindOf(uml::Enumeration)", UMLPackage.eINSTANCE.getDataType()); //$NON-NLS-1$
-		}
-		Object result = DataType_3008_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(4, UMLPackage.eINSTANCE.getDataType(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1471,10 +1356,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isProperty_3001(Property domainElement) {
-		if (Property_3001_Constraint == null) { // lazy initialization
-			Property_3001_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port) and self.association = null", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
-		}
-		Object result = Property_3001_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(13, UMLPackage.eINSTANCE.getProperty(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1482,10 +1364,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isClass_3003(Class domainElement) {
-		if (Class_3003_Constraint == null) { // lazy initialization
-			Class_3003_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)", UMLPackage.eINSTANCE.getClass_()); //$NON-NLS-1$
-		}
-		Object result = Class_3003_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(2, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1493,12 +1372,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isSlot_3017(Slot domainElement) {
-		if (Slot_3017_Constraint == null) { // lazy initialization
-			Slot_3017_Constraint = UMLOCLFactory
-					.getExpression(
-							"self.value->size() = 0 or not self.value->exists(v : ValueSpecification | v.oclIsKindOf(InstanceValue) and not v.oclAsType(InstanceValue).oclIsUndefined())", UMLPackage.eINSTANCE.getSlot()); //$NON-NLS-1$
-		}
-		Object result = Slot_3017_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(41, UMLPackage.eINSTANCE.getSlot(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1506,10 +1380,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isProperty_3028(Property domainElement) {
-		if (Property_3028_Constraint == null) { // lazy initialization
-			Property_3028_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
-		}
-		Object result = Property_3028_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(45, UMLPackage.eINSTANCE.getProperty(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1517,10 +1388,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isClass_3030(Class domainElement) {
-		if (Class_3030_Constraint == null) { // lazy initialization
-			Class_3030_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)", UMLPackage.eINSTANCE.getClass_()); //$NON-NLS-1$
-		}
-		Object result = Class_3030_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(2, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1528,10 +1396,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isClass_3033(Class domainElement) {
-		if (Class_3033_Constraint == null) { // lazy initialization
-			Class_3033_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::AssociationClass) and not oclIsKindOf(uml::StateMachine)", UMLPackage.eINSTANCE.getClass_()); //$NON-NLS-1$
-		}
-		Object result = Class_3033_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1539,10 +1404,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDataType_3036(DataType domainElement) {
-		if (DataType_3036_Constraint == null) { // lazy initialization
-			DataType_3036_Constraint = UMLOCLFactory.getExpression("not oclIsKindOf(uml::PrimitiveType) and not oclIsKindOf(uml::Enumeration)", UMLPackage.eINSTANCE.getDataType()); //$NON-NLS-1$
-		}
-		Object result = DataType_3036_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(23, UMLPackage.eINSTANCE.getDataType(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1550,10 +1412,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isGeneralization_4001(Generalization domainElement) {
-		if (Generalization_4001_Constraint == null) { // lazy initialization
-			Generalization_4001_Constraint = UMLOCLFactory.getExpression("self.generalizationSet ->size() = 0", UMLPackage.eINSTANCE.getGeneralization()); //$NON-NLS-1$
-		}
-		Object result = Generalization_4001_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(51, UMLPackage.eINSTANCE.getGeneralization(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1561,12 +1420,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDependency_4002(Dependency domainElement) {
-		if (Dependency_4002_Constraint == null) { // lazy initialization
-			Dependency_4002_Constraint = UMLOCLFactory
-					.getExpression(
-							"(self.oclIsTypeOf(uml::Dependency) or self.oclIsTypeOf(uml::Abstraction) or self.oclIsTypeOf(uml::Substitution) or (self.oclIsTypeOf(uml::Usage) and (self.supplier->forAll(e|not e.oclIsKindOf(uml::Interface)) or (self.client->forAll(e|not (e.oclIsKindOf(uml::Classifier) or  e.oclIsKindOf(uml::Port))))))) and self.supplier->size() = 1 and self.client->size() = 1", UMLPackage.eINSTANCE.getDependency()); //$NON-NLS-1$
-		}
-		Object result = Dependency_4002_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(52, UMLPackage.eINSTANCE.getDependency(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1574,10 +1428,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isProperty_4003(Property domainElement) {
-		if (Property_4003_Constraint == null) { // lazy initialization
-			Property_4003_Constraint = UMLOCLFactory.getExpression("self.association.oclIsTypeOf(uml::AssociationClass)", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
-		}
-		Object result = Property_4003_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(53, UMLPackage.eINSTANCE.getProperty(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1585,10 +1436,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAssociation_4005(Association domainElement) {
-		if (Association_4005_Constraint == null) { // lazy initialization
-			Association_4005_Constraint = UMLOCLFactory.getExpression("not self.oclIsTypeOf(uml::AssociationClass)", UMLPackage.eINSTANCE.getAssociation()); //$NON-NLS-1$
-		}
-		Object result = Association_4005_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(54, UMLPackage.eINSTANCE.getAssociation(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1596,10 +1444,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInterfaceRealization_4008(InterfaceRealization domainElement) {
-		if (InterfaceRealization_4008_Constraint == null) { // lazy initialization
-			InterfaceRealization_4008_Constraint = UMLOCLFactory.getExpression("self.supplier->forAll(e|e.oclIsKindOf(uml::Interface))", UMLPackage.eINSTANCE.getInterfaceRealization()); //$NON-NLS-1$
-		}
-		Object result = InterfaceRealization_4008_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(55, UMLPackage.eINSTANCE.getInterfaceRealization(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1607,10 +1452,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isRealization_4010(Realization domainElement) {
-		if (Realization_4010_Constraint == null) { // lazy initialization
-			Realization_4010_Constraint = UMLOCLFactory.getExpression("self.oclIsTypeOf(uml::Realization)", UMLPackage.eINSTANCE.getRealization()); //$NON-NLS-1$
-		}
-		Object result = Realization_4010_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(57, UMLPackage.eINSTANCE.getRealization(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1618,11 +1460,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isUsage_4013(Usage domainElement) {
-		if (Usage_4013_Constraint == null) { // lazy initialization
-			Usage_4013_Constraint = UMLOCLFactory.getExpression(
-					"self.supplier->forAll(e|e.oclIsKindOf(uml::Interface)) and self.client->forAll(e|e.oclIsKindOf(uml::Classifier))", UMLPackage.eINSTANCE.getUsage()); //$NON-NLS-1$
-		}
-		Object result = Usage_4013_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(58, UMLPackage.eINSTANCE.getUsage(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1630,11 +1468,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isSlot_4015(Slot domainElement) {
-		if (Slot_4015_Constraint == null) { // lazy initialization
-			Slot_4015_Constraint = UMLOCLFactory.getExpression(
-					"self.value->exists(v : ValueSpecification | v.oclIsKindOf(InstanceValue) and not v.oclAsType(InstanceValue).oclIsUndefined())", UMLPackage.eINSTANCE.getSlot()); //$NON-NLS-1$
-		}
-		Object result = Slot_4015_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(61, UMLPackage.eINSTANCE.getSlot(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -1666,6 +1500,68 @@ public class UMLVisualIDRegistry {
 			return -1;
 		}
 		switch (container.getVisualID()) {
+		case PackageEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return Package2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2001((Class) domainElement)) {
+				return Class2EditPart.VISUAL_ID;
+			}
+			// there is a group of nodes for single semantic element
+			// the group for this element consists of 
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
+			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
+			// we need to give other parts a chance to create their views
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClass2EditPart.VISUAL_ID)) {
+				return AssociationClass2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_2004((DataType) domainElement)) {
+				return DataType2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
+				return PrimitiveType2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return Enumeration2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return InterfaceEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return ConstraintEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && isDependency_2009((Dependency) domainElement)) {
+				return DependencyEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getGeneralizationSet().isSuperTypeOf(domainElement.eClass())) {
+				return GeneralizationSetEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
+				return Interface2EditPart.VISUAL_ID;
+			}
+			// there is a group of nodes for single semantic element
+			// the group for this element consists of 
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
+			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
+			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
+			// we need to give other parts a chance to create their views
+			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClassRhombEditPart.VISUAL_ID)) {
+				return AssociationClassRhombEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
+				return PackageAsFrameEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
+				return InstanceSpecification4EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
+			break;
 		case Package2EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
 				return Package3EditPart.VISUAL_ID;
@@ -1910,68 +1806,6 @@ public class UMLVisualIDRegistry {
 			}
 			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_3030((Class) domainElement)) {
 				return Class4EditPart.VISUAL_ID;
-			}
-			break;
-		case PackageEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
-				return Package2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getClass_().isSuperTypeOf(domainElement.eClass()) && isClass_2001((Class) domainElement)) {
-				return Class2EditPart.VISUAL_ID;
-			}
-			// there is a group of nodes for single semantic element
-			// the group for this element consists of 
-			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
-			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
-			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
-			// we need to give other parts a chance to create their views
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClass2EditPart.VISUAL_ID)) {
-				return AssociationClass2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDataType().isSuperTypeOf(domainElement.eClass()) && isDataType_2004((DataType) domainElement)) {
-				return DataType2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getPrimitiveType().isSuperTypeOf(domainElement.eClass())) {
-				return PrimitiveType2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
-				return Enumeration2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
-				return InterfaceEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
-				return ConstraintEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
-				return InstanceSpecification2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getDependency().isSuperTypeOf(domainElement.eClass()) && isDependency_2009((Dependency) domainElement)) {
-				return DependencyEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getGeneralizationSet().isSuperTypeOf(domainElement.eClass())) {
-				return GeneralizationSetEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getInterface().isSuperTypeOf(domainElement.eClass())) {
-				return Interface2EditPart.VISUAL_ID;
-			}
-			// there is a group of nodes for single semantic element
-			// the group for this element consists of 
-			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassRhombEditPart.VISUAL_ID
-			// org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart.VISUAL_ID
-			// diagram updater is expected to return one node descriptor (and thus one instance of that semantic element) per node in group
-			// we need to give other parts a chance to create their views
-			if (UMLPackage.eINSTANCE.getAssociationClass().isSuperTypeOf(domainElement.eClass()) && !hasViewChild(containerView, domainElement, AssociationClassRhombEditPart.VISUAL_ID)) {
-				return AssociationClassRhombEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
-				return PackageAsFrameEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getInstanceSpecification().isSuperTypeOf(domainElement.eClass())) {
-				return InstanceSpecification4EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
-				return CommentEditPart.VISUAL_ID;
 			}
 			break;
 		}
