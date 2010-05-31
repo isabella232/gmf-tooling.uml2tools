@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.Region;
@@ -58,7 +59,7 @@ public class ChoicePseudostateCreateCommand extends EditElementCommand {
 		Region owner = (Region) getElementToEdit();
 		owner.getSubvertices().add(newElement);
 
-		UMLElementTypes.init_Pseudostate_3010(newElement);
+		ElementInitializers.getInstance().init_Pseudostate_3010(newElement);
 
 		doConfigure(newElement, monitor, info);
 

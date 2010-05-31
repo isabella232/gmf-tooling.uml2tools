@@ -71,7 +71,7 @@ public class TransitionReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Region container = (Region) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistTransition_4001(container, getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistTransition_4001(container, getLink(), getNewSource(), target);
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class TransitionReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Region container = (Region) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistTransition_4001(container, source, getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistTransition_4001(container, getLink(), source, getNewTarget());
 	}
 
 	/**

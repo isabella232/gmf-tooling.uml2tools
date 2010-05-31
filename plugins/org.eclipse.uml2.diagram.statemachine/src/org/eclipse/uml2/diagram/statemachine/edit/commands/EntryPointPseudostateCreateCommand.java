@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.StateMachine;
@@ -58,7 +59,7 @@ public class EntryPointPseudostateCreateCommand extends EditElementCommand {
 		StateMachine owner = (StateMachine) getElementToEdit();
 		owner.getConnectionPoints().add(newElement);
 
-		UMLElementTypes.init_Pseudostate_3014(newElement);
+		ElementInitializers.getInstance().init_Pseudostate_3014(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.ConnectionPointReference;
 import org.eclipse.uml2.uml.State;
@@ -58,7 +59,7 @@ public class EntryConnectionPointReferenceCreateCommand extends EditElementComma
 		State owner = (State) getElementToEdit();
 		owner.getConnections().add(newElement);
 
-		UMLElementTypes.init_ConnectionPointReference_3017(newElement);
+		ElementInitializers.getInstance().init_ConnectionPointReference_3017(newElement);
 
 		doConfigure(newElement, monitor, info);
 
