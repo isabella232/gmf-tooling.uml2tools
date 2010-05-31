@@ -103,6 +103,7 @@ public class UMLDiagramEditor extends DiagramDocumentEditor implements IGotoMark
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class type) {
 		if (type == IShowInTargetList.class) {
 			return new IShowInTargetList() {
