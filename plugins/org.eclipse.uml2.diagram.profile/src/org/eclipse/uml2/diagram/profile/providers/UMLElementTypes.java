@@ -40,7 +40,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @generated
  */
-public class UMLElementTypes extends ElementInitializers {
+public class UMLElementTypes {
 
 	/**
 	 * @generated
@@ -51,7 +51,7 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	private static Map elements;
+	private static Map<IElementType, ENamedElement> elements;
 
 	/**
 	 * @generated
@@ -61,7 +61,7 @@ public class UMLElementTypes extends ElementInitializers {
 	/**
 	 * @generated
 	 */
-	private static Set KNOWN_ELEMENT_TYPES;
+	private static Set<IElementType> KNOWN_ELEMENT_TYPES;
 
 	/**
 	 * @generated
@@ -257,7 +257,7 @@ public class UMLElementTypes extends ElementInitializers {
 	public static ENamedElement getElement(IAdaptable hint) {
 		Object type = hint.getAdapter(IElementType.class);
 		if (elements == null) {
-			elements = new IdentityHashMap();
+			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
 			elements.put(Profile_1000, UMLPackage.eINSTANCE.getProfile());
 
@@ -310,7 +310,7 @@ public class UMLElementTypes extends ElementInitializers {
 	 */
 	public static boolean isKnownElementType(IElementType elementType) {
 		if (KNOWN_ELEMENT_TYPES == null) {
-			KNOWN_ELEMENT_TYPES = new HashSet();
+			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Profile_1000);
 			KNOWN_ELEMENT_TYPES.add(Stereotype_2001);
 			KNOWN_ELEMENT_TYPES.add(Profile_2002);
