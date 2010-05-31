@@ -609,7 +609,7 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getActor_2005ContainedLinks() {
+	private List<? extends IUpdaterLinkDescriptor> getActor_2005ContainedLinks() {
 		return UMLDiagramUpdater.getActor_2005ContainedLinks(getNotationView());
 	}
 

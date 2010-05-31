@@ -121,22 +121,22 @@ public static java.util.List «EXPAND xpt::diagram::updater::DiagramUpdater::lin
 	«EXPAND xpt::Common::generatedMemberComment»
 	public static final org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater «EXPAND typedSharedInstanceName» = new org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater() {
 		«EXPAND xpt::Common::generatedMemberComment»
-		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor> getSemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
+		public java.util.List<«nodeDescriptorClassName»> getSemanticChildren(org.eclipse.gmf.runtime.notation.View view) {
 			return «self.getDiagramUpdaterQualifiedClassName()».getSemanticChildren(view);
 		}
 		
 		«EXPAND xpt::Common::generatedMemberComment»
-		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> get«getContainedLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
+		public java.util.List<«linkDescriptorClassName»> get«getContainedLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
 			return «self.getDiagramUpdaterQualifiedClassName()».get«getContainedLinksMethodNameSuffix()»Links(view);
 		}
 		
 		«EXPAND xpt::Common::generatedMemberComment»
-		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> get«getIncomingLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
+		public java.util.List<«linkDescriptorClassName»> get«getIncomingLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
 			return «self.getDiagramUpdaterQualifiedClassName()».get«getIncomingLinksMethodNameSuffix()»Links(view);
 		}
 
 		«EXPAND xpt::Common::generatedMemberComment»
-		public java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> get«getOutgoingLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
+		public java.util.List<«linkDescriptorClassName»> get«getOutgoingLinksMethodNameSuffix()»Links(org.eclipse.gmf.runtime.notation.View view) {
 			return «self.getDiagramUpdaterQualifiedClassName()».get«getOutgoingLinksMethodNameSuffix()»Links(view);
 		}
 	};

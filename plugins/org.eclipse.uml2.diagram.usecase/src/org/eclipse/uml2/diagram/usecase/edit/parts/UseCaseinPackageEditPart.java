@@ -711,7 +711,7 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart implements Prima
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getUseCase_3006ContainedLinks() {
+	private List<? extends IUpdaterLinkDescriptor> getUseCase_3006ContainedLinks() {
 		return UMLDiagramUpdater.getUseCase_3006ContainedLinks(getNotationView());
 	}
 

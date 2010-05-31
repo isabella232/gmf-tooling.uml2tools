@@ -716,7 +716,7 @@ public class UseCaseEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getUseCase_2003ContainedLinks() {
+	private List<? extends IUpdaterLinkDescriptor> getUseCase_2003ContainedLinks() {
 		return UMLDiagramUpdater.getUseCase_2003ContainedLinks(getNotationView());
 	}
 

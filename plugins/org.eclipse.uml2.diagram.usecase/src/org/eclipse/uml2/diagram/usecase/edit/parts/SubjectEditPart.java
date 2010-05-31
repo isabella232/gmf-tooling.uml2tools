@@ -636,7 +636,7 @@ public class SubjectEditPart extends ShapeNodeEditPart implements PrimaryShapeEd
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getComponent_2006ContainedLinks() {
+	private List<? extends IUpdaterLinkDescriptor> getComponent_2006ContainedLinks() {
 		return UMLDiagramUpdater.getComponent_2006ContainedLinks(getNotationView());
 	}
 

@@ -1667,28 +1667,28 @@ public class UMLDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterNodeDescriptor> getSemanticChildren(View view) {
+		public List<UMLNodeDescriptor> getSemanticChildren(View view) {
 			return org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getContainedLinks(View view) {
+		public List<UMLLinkDescriptor> getContainedLinks(View view) {
 			return org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getIncomingLinks(View view) {
+		public List<UMLLinkDescriptor> getIncomingLinks(View view) {
 			return org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
 		 * @generated
 		 */
-		public List<IUpdaterLinkDescriptor> getOutgoingLinks(View view) {
+		public List<UMLLinkDescriptor> getOutgoingLinks(View view) {
 			return org.eclipse.uml2.diagram.usecase.part.UMLDiagramUpdater.getOutgoingLinks(view);
 		}
 	};

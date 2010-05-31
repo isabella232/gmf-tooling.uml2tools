@@ -180,7 +180,7 @@
 	«IF not getOutgoingAndContainedTypeLinks(self)->isEmpty()-»
 	«EXPAND xpt::Common::generatedMemberComment»
 	@SuppressWarnings("unchecked")
-	private java.util.List<«getGenApiLinkDescriptorQualifiedClassName()»> «EXPAND getContainedLinksMethodName»() {
+	private java.util.List<? extends «getGenApiLinkDescriptorQualifiedClassName()»> «EXPAND getContainedLinksMethodName»() {
 			return «EXPAND xpt::diagram::updater::DiagramUpdater::getContainedLinksMethodCall»(getNotationView());
 	}
 	«ENDIF-»

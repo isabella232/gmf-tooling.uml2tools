@@ -590,7 +590,7 @@ public class ActorEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getActor_2002ContainedLinks() {
+	private List<? extends IUpdaterLinkDescriptor> getActor_2002ContainedLinks() {
 		return UMLDiagramUpdater.getActor_2002ContainedLinks(getNotationView());
 	}
 

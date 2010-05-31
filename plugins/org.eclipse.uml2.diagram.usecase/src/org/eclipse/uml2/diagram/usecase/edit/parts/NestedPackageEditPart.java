@@ -546,7 +546,7 @@ public class NestedPackageEditPart extends ShapeNodeEditPart implements PrimaryS
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	private List<IUpdaterLinkDescriptor> getPackage_2007ContainedLinks() {
+	private List<? extends IUpdaterLinkDescriptor> getPackage_2007ContainedLinks() {
 		return UMLDiagramUpdater.getPackage_2007ContainedLinks(getNotationView());
 	}
 
