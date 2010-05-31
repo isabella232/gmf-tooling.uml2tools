@@ -6,8 +6,8 @@ import org.eclipse.gmf.runtime.notation.View;
 
 
 public interface IDiagramUpdater {
-	public List<IUpdaterNodeDescriptor> getSemanticChildren(View view);
-	public List<IUpdaterLinkDescriptor> getContainedLinks(View view);
-	public List<IUpdaterLinkDescriptor> getIncomingLinks(View view);
-	public List<IUpdaterLinkDescriptor> getOutgoingLinks(View view);
+	public List<? extends IUpdaterNodeDescriptor> getSemanticChildren(View view);
+	public List<? extends IUpdaterLinkDescriptor> getContainedLinks(View view);
+	public List<? extends IUpdaterLinkDescriptor> getIncomingLinks(View view);
+	public List<? extends IUpdaterLinkDescriptor> getOutgoingLinks(View view);
 }

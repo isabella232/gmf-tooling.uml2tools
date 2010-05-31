@@ -183,7 +183,7 @@ public class SyncModelNode implements IAdaptable {
 	}
 
 	private List<View> createChildViews(View syncModelParent, View diagramViewParent) {
-		List<?> descriptors = getUpdater().getSemanticChildren(syncModelParent);
+		List<? extends IUpdaterNodeDescriptor> descriptors = getUpdater().getSemanticChildren(syncModelParent);
 		List<View> result = new LinkedList<View>();
 		for (Object next : descriptors) {
 			IUpdaterNodeDescriptor nextDescriptor = (IUpdaterNodeDescriptor) next;
