@@ -76,7 +76,7 @@ public class ExtensionReorientCommand extends EditElementCommand {
 		Profile profile = (Profile) getLink().eContainer();
 		Classifier metaclass = getLink().getMetaclass();
 		ElementImport target = profile.getElementImport(metaclass, false);
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistExtension_4002(profile, source, target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistExtension_4002(profile, getLink(), source, target);
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class ExtensionReorientCommand extends EditElementCommand {
 		Profile profile = (Profile) getLink().eContainer();
 		Stereotype source = getLink().getStereotype();
 		ElementImport target = (ElementImport) newEnd;
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistExtension_4002(profile, source, target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistExtension_4002(profile, getLink(), source, target);
 	}
 
 	/**

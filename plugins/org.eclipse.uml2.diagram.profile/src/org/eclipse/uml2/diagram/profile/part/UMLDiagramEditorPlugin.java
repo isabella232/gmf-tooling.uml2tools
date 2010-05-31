@@ -25,6 +25,9 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.uml2.diagram.common.providers.AlternativeUMLItemProviderAdapterFactory;
+import org.eclipse.uml2.diagram.profile.edit.policies.UMLBaseItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.profile.expressions.UMLOCLFactory;
+import org.eclipse.uml2.diagram.profile.providers.ElementInitializers;
 import org.osgi.framework.BundleContext;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 
@@ -63,6 +66,21 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private UMLBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+
+	/**
+	 * @generated
+	 */
+	private ElementInitializers initializers;
+
+	/**
+	 * @generated
+	 */
+	private UMLOCLFactory oclFactory;
+
+	/**
+	 * @generated
+	 */
 	public UMLDiagramEditorPlugin() {
 	}
 
@@ -82,6 +100,9 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
+		linkConstraints = null;
+		initializers = null;
+		oclFactory = null;
 		instance = null;
 		super.stop(context);
 	}
@@ -97,7 +118,7 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 	 * @generated
 	 */
 	protected ComposedAdapterFactory createAdapterFactory() {
-		List factories = new ArrayList();
+		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		fillItemProviderFactories(factories);
 		return new ComposedAdapterFactory(factories);
 	}
@@ -196,6 +217,48 @@ public class UMLDiagramEditorPlugin extends AbstractUIPlugin {
 			documentProvider = new UMLDocumentProvider();
 		}
 		return documentProvider;
+	}
+
+	/**
+	 * @generated
+	 */
+	public UMLBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+		return linkConstraints;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setLinkConstraints(UMLBaseItemSemanticEditPolicy.LinkConstraints lc) {
+		this.linkConstraints = lc;
+	}
+
+	/**
+	 * @generated
+	 */
+	public ElementInitializers getElementInitializers() {
+		return initializers;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setElementInitializers(ElementInitializers i) {
+		this.initializers = i;
+	}
+
+	/**
+	 * @generated
+	 */
+	public UMLOCLFactory getUMLOCLFactory() {
+		return oclFactory;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setUMLOCLFactory(UMLOCLFactory f) {
+		this.oclFactory = f;
 	}
 
 	/**

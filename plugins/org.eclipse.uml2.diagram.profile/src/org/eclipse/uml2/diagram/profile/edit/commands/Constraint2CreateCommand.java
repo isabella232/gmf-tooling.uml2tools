@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.profile.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Package;
@@ -57,7 +58,7 @@ public class Constraint2CreateCommand extends EditElementCommand {
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
 
-		UMLElementTypes.init_Constraint_2008(newElement);
+		ElementInitializers.getInstance().init_Constraint_2008(newElement);
 
 		doConfigure(newElement, monitor, info);
 

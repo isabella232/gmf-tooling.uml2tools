@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
@@ -51,6 +52,8 @@ import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ElementImport;
+import org.eclipse.uml2.uml.Extension;
+import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -302,36 +305,44 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
+	public static LinkConstraints getLinkConstraints() {
+		LinkConstraints cached = UMLDiagramEditorPlugin.getInstance().getLinkConstraints();
+		if (cached == null) {
+			UMLDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static class LinkConstraints {
 
 		/**
 		 * @generated
 		 */
-		private static final String OPPOSITE_END_VAR = "oppositeEnd"; //$NON-NLS-1$
-
-		/**
-		 * @generated
-		 */
-		private static UMLAbstractExpression Extension_4002_TargetExpression;
-
-		/**
-		 * @generated
-		 */
-		public static boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
-			return canExistGeneralization_4001(source, target);
+		LinkConstraints() {
+			// use static method #getLinkConstraints() to access instance
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateExtension_4002(Package container, Stereotype source, ElementImport target) {
-			return canExistExtension_4002(container, source, target);
+		public boolean canCreateGeneralization_4001(Classifier source, Classifier target) {
+			return canExistGeneralization_4001(null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateConstraintConstrainedElement_4003(Constraint source, Element target) {
+		public boolean canCreateExtension_4002(Package container, Stereotype source, ElementImport target) {
+			return canExistExtension_4002(container, null, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateConstraintConstrainedElement_4003(Constraint source, Element target) {
 			if (source != null) {
 				if (source.getConstrainedElements().contains(target)) {
 					return false;
@@ -344,7 +355,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateCommentAnnotatedElement_4004(Comment source, Element target) {
+		public boolean canCreateCommentAnnotatedElement_4004(Comment source, Element target) {
 			if (source != null) {
 				if (source.getAnnotatedElements().contains(target)) {
 					return false;
@@ -357,28 +368,24 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistGeneralization_4001(Classifier source, Classifier target) {
+		public boolean canExistGeneralization_4001(Generalization linkInstance, Classifier source, Classifier target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistExtension_4002(Package container, Stereotype source, ElementImport target) {
+		public boolean canExistExtension_4002(Package container, Extension linkInstance, Stereotype source, ElementImport target) {
 			try {
 				if (target == null) {
 					return true;
+				} else {
+					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getStereotype()); //$NON-NLS-1$
+					Object targetVal = UMLOCLFactory.getExpression(15, UMLPackage.eINSTANCE.getElementImport(), env).evaluate(target, Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+						return false;
+					} // else fall-through
 				}
-				if (Extension_4002_TargetExpression == null) {
-					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getStereotype());
-					Extension_4002_TargetExpression = UMLOCLFactory
-							.getExpression(
-									"self.importedElement<>null and \r\nlet metaclass : Class = self.importedElement.oclAsType(Class) in\r\nmetaclass.isMetaclass() and \r\nnot oppositeEnd.getAllExtendedMetaclasses()->includes(metaclass)\r\n", UMLPackage.eINSTANCE.getElementImport(), env); //$NON-NLS-1$
-				}
-				Object targetVal = Extension_4002_TargetExpression.evaluate(target, Collections.singletonMap(OPPOSITE_END_VAR, source));
-				if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
-					return false;
-				} // else fall-through
 				return true;
 			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
@@ -389,14 +396,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistConstraintConstrainedElement_4003(Constraint source, Element target) {
+		public boolean canExistConstraintConstrainedElement_4003(Constraint source, Element target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistCommentAnnotatedElement_4004(Comment source, Element target) {
+		public boolean canExistCommentAnnotatedElement_4004(Comment source, Element target) {
 			return true;
 		}
 

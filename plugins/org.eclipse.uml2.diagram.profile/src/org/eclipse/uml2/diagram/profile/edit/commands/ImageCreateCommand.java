@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.profile.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Image;
 import org.eclipse.uml2.uml.Stereotype;
@@ -58,7 +59,7 @@ public class ImageCreateCommand extends EditElementCommand {
 		Stereotype owner = (Stereotype) getElementToEdit();
 		owner.getIcons().add(newElement);
 
-		UMLElementTypes.init_Image_3010(newElement);
+		ElementInitializers.getInstance().init_Image_3010(newElement);
 
 		doConfigure(newElement, monitor, info);
 

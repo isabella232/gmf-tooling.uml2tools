@@ -69,7 +69,7 @@ public class ExtensionCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateExtension_4002(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateExtension_4002(getContainer(), getSource(), getTarget());
 	}
 
 	/**
