@@ -112,8 +112,7 @@ public class ActivityPartitionEditPart extends ShapeNodeEditPart implements Prim
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ActivityPartitionFigure figure = new ActivityPartitionFigure();
-		return primaryShape = figure;
+		return primaryShape = new ActivityPartitionFigure();
 	}
 
 	/**

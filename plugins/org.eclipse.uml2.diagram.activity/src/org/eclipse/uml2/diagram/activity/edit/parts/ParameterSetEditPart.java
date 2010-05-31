@@ -102,8 +102,7 @@ public class ParameterSetEditPart extends AbstractBorderItemEditPart implements 
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ParameterSetFigure figure = new ParameterSetFigure();
-		return primaryShape = figure;
+		return primaryShape = new ParameterSetFigure();
 	}
 
 	/**

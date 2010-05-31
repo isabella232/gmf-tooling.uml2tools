@@ -2,6 +2,7 @@ package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
@@ -145,8 +146,7 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ActivityFigure figure = new ActivityFigure();
-		return primaryShape = figure;
+		return primaryShape = new ActivityFigure();
 	}
 
 	/**
@@ -326,8 +326,8 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnTarget() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.ObjectNodeSelection_4004);
 		return types;
 	}
@@ -335,81 +335,33 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.DataStoreNode_3036);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.CentralBufferNode_3037);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.OutputPin_3001);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.InputPin_3094);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.Pin_3041);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.OutputPin_3002);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.InputPin_3003);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.InputPin_3004);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.InputPin_3005);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.OutputPin_3006);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.InputPin_3007);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.InputPin_3008);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.Pin_3017);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.DataStoreNode_3024);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.CentralBufferNode_3025);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.InputPin_3054);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.OutputPin_3055);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.ActivityParameterNode_3052);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.DataStoreNode_3065);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.CentralBufferNode_3066);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.Pin_3071);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.InputPin_3080);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.OutputPin_3081);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.OutputPin_3090);
-		}
-		if (relationshipType == UMLElementTypes.ObjectNodeSelection_4004) {
 			types.add(UMLElementTypes.ExpansionNode_3091);
 		}
 		return types;

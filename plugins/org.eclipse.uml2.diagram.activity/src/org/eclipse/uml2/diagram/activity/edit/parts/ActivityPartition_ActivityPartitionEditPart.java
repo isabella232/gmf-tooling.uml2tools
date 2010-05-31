@@ -113,8 +113,7 @@ public class ActivityPartition_ActivityPartitionEditPart extends ShapeNodeEditPa
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ActivityPartitionFigure figure = new ActivityPartitionFigure();
-		return primaryShape = figure;
+		return primaryShape = new ActivityPartitionFigure();
 	}
 
 	/**

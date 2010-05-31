@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.IFigure;
@@ -108,8 +109,7 @@ public class LocalPreconditionEditPart extends ShapeNodeEditPart implements Prim
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		LocalPreconditionFigure figure = new LocalPreconditionFigure();
-		return primaryShape = figure;
+		return primaryShape = new LocalPreconditionFigure();
 	}
 
 	/**
@@ -273,8 +273,8 @@ public class LocalPreconditionEditPart extends ShapeNodeEditPart implements Prim
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnTarget() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.ActionLocalPrecondition_4003);
 		types.add(UMLElementTypes.ActionLocalPostcondition_4006);
 		return types;
@@ -283,222 +283,81 @@ public class LocalPreconditionEditPart extends ShapeNodeEditPart implements Prim
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.AcceptEventAction_3030);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.AcceptEventAction_3031);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.OpaqueAction_3029);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.CreateObjectAction_3042);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3043);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.CallBehaviorAction_3044);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.CallOperationAction_3045);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.StructuredActivityNode_3046);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.OpaqueAction_3011);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.AcceptEventAction_3012);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.AcceptEventAction_3013);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.CreateObjectAction_3018);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.CallBehaviorAction_3019);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.CallOperationAction_3020);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.ConditionalNode_3092);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.SendSignalAction_3053);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.AcceptEventAction_3059);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.AcceptEventAction_3060);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.OpaqueAction_3067);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.CreateObjectAction_3072);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3073);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.CallBehaviorAction_3074);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.CallOperationAction_3075);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.StructuredActivityNode_3076);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.StructuredActivityNode_3079);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.SendSignalAction_3077);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.LoopNode_3078);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.ConditionalNode_3083);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.ExpansionRegion_3085);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3088);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.LoopNode_3058);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.ConditionalNode_3082);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPrecondition_4003) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
+		} else if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AcceptEventAction_3030);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AcceptEventAction_3031);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.OpaqueAction_3029);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.CreateObjectAction_3042);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3043);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.CallBehaviorAction_3044);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.CallOperationAction_3045);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.StructuredActivityNode_3046);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.StructuredActivityNode_3009);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.OpaqueAction_3011);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AcceptEventAction_3012);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AcceptEventAction_3013);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.CreateObjectAction_3018);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.CallBehaviorAction_3019);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.CallOperationAction_3020);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3023);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.ConditionalNode_3092);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.SendSignalAction_3053);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AcceptEventAction_3059);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AcceptEventAction_3060);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.OpaqueAction_3067);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.CreateObjectAction_3072);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.AddStructuralFeatureValueAction_3073);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.CallBehaviorAction_3074);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.CallOperationAction_3075);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.StructuredActivityNode_3076);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.StructuredActivityNode_3079);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.SendSignalAction_3077);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.LoopNode_3078);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.ConditionalNode_3083);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.ExpansionRegion_3085);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3088);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.LoopNode_3058);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.ConditionalNode_3082);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.ExpansionRegion_3084);
-		}
-		if (relationshipType == UMLElementTypes.ActionLocalPostcondition_4006) {
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
 		}
 		return types;

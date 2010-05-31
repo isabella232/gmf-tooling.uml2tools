@@ -96,8 +96,7 @@ public class ParameterEditPart extends ShapeNodeEditPart implements PrimaryShape
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ParameterFigure figure = new ParameterFigure();
-		return primaryShape = figure;
+		return primaryShape = new ParameterFigure();
 	}
 
 	/**
