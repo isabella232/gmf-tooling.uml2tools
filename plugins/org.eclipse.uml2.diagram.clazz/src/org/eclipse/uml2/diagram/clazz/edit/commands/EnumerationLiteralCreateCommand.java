@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
@@ -56,7 +57,7 @@ public class EnumerationLiteralCreateCommand extends EditElementCommand {
 		Enumeration owner = (Enumeration) getElementToEdit();
 		owner.getOwnedLiterals().add(newElement);
 
-		UMLElementTypes.init_EnumerationLiteral_3016(newElement);
+		ElementInitializers.getInstance().init_EnumerationLiteral_3016(newElement);
 
 		doConfigure(newElement, monitor, info);
 

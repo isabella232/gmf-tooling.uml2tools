@@ -73,7 +73,7 @@ public class CommunicationPathReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Package container = (Package) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistCommunicationPath_4004(container, getNewSource(), targetEnd.getType());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistCommunicationPath_4004(container, getLink(), getNewSource(), targetEnd.getType());
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class CommunicationPathReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Package container = (Package) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistCommunicationPath_4004(container, sourceEnd.getType(), getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistCommunicationPath_4004(container, getLink(), sourceEnd.getType(), getNewTarget());
 	}
 
 	/**

@@ -85,7 +85,7 @@ public class UsageCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateUsage_4008(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateUsage_4008(getContainer(), getSource(), getTarget());
 	}
 
 	/**

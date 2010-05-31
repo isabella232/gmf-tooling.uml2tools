@@ -69,7 +69,7 @@ public class Generalization2ReorientCommand extends EditElementCommand {
 			return false;
 		}
 		GeneralizationSet target = (GeneralizationSet) getLink().getGeneralizationSets().get(0);
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralization_4011(getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistGeneralization_4011(getLink(), getNewSource(), target);
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class Generalization2ReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Classifier source = (Classifier) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralization_4011(source, getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistGeneralization_4011(getLink(), source, getNewTarget());
 	}
 
 	/**

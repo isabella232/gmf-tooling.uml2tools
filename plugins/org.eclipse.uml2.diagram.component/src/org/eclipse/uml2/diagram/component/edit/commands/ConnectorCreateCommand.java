@@ -12,7 +12,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.component.edit.policies.UMLBaseItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.component.providers.ElementInitializers;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
@@ -69,7 +69,7 @@ public class ConnectorCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateConnector_4008(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateConnector_4008(getContainer(), getSource(), getTarget());
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class ConnectorCreateCommand extends EditElementCommand {
 		sourceEnd.setRole(getSource());
 		targetEnd.setRole(getTarget());
 
-		UMLElementTypes.init_Connector_4008(newElement);
+		ElementInitializers.getInstance().init_Connector_4008(newElement);
 
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

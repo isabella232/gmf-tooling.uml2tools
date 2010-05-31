@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.csd.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -55,7 +56,7 @@ public class Class2CreateCommand extends EditElementCommand {
 		Class owner = (Class) getElementToEdit();
 		owner.getNestedClassifiers().add(newElement);
 
-		UMLElementTypes.init_Class_3010(newElement);
+		ElementInitializers.getInstance().init_Class_3010(newElement);
 
 		doConfigure(newElement, monitor, info);
 

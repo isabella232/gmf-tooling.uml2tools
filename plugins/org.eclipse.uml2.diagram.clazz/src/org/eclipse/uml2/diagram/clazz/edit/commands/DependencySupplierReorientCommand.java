@@ -71,7 +71,7 @@ public class DependencySupplierReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof NamedElement && newEnd instanceof Dependency)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependencySupplier_4006(getNewSource(), getOldTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistDependencySupplier_4006(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class DependencySupplierReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof NamedElement && newEnd instanceof NamedElement)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependencySupplier_4006(getOldSource(), getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistDependencySupplier_4006(getOldSource(), getNewTarget());
 	}
 
 	/**

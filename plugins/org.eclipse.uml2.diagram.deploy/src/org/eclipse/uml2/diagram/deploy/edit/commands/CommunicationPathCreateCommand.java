@@ -69,7 +69,7 @@ public class CommunicationPathCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateCommunicationPath_4004(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateCommunicationPath_4004(getContainer(), getSource(), getTarget());
 	}
 
 	/**

@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.deploy.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Artifact;
 import org.eclipse.uml2.uml.Property;
@@ -56,7 +57,7 @@ public class PropertyCreateCommand extends EditElementCommand {
 		Artifact owner = (Artifact) getElementToEdit();
 		owner.getOwnedAttributes().add(newElement);
 
-		UMLElementTypes.init_Property_3003(newElement);
+		ElementInitializers.getInstance().init_Property_3003(newElement);
 
 		doConfigure(newElement, monitor, info);
 

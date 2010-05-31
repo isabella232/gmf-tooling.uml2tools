@@ -76,7 +76,7 @@ public class InterfaceRealizationReorientCommand extends EditElementCommand {
 			return false;
 		}
 		BehavioredClassifier container = (BehavioredClassifier) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistInterfaceRealization_4001(container, getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistInterfaceRealization_4001(container, getLink(), getNewSource(), target);
 	}
 
 	/**

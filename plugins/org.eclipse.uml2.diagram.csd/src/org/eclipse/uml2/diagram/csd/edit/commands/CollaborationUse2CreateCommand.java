@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.csd.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.CollaborationUse;
@@ -56,7 +57,7 @@ public class CollaborationUse2CreateCommand extends EditElementCommand {
 		Classifier owner = (Classifier) getElementToEdit();
 		owner.getCollaborationUses().add(newElement);
 
-		UMLElementTypes.init_CollaborationUse_3002(newElement);
+		ElementInitializers.getInstance().init_CollaborationUse_3002(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -85,7 +85,7 @@ public class InterfaceRealizationCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateInterfaceRealization_4001(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateInterfaceRealization_4001(getContainer(), getSource(), getTarget());
 	}
 
 	/**

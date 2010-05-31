@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
@@ -39,14 +40,18 @@ import org.eclipse.uml2.diagram.component.expressions.UMLOCLFactory;
 import org.eclipse.uml2.diagram.component.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Component;
 import org.eclipse.uml2.uml.ConnectableElement;
+import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
+import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.InterfaceRealization;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Port;
@@ -298,46 +303,39 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	}
 
 	/**
+	 * @generated
+	 */
+	public static LinkConstraints getLinkConstraints() {
+		LinkConstraints cached = UMLDiagramEditorPlugin.getInstance().getLinkConstraints();
+		if (cached == null) {
+			UMLDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+	/**
 	 * @generated 
 	 */
 	public static class LinkConstraints {
 
 		/**
-		 * @generated 
-		 */
-		private static final String OPPOSITE_END_VAR = "oppositeEnd"; //$NON-NLS-1$
-
-		/**
-		 * @generated 
-		 */
-		private static UMLAbstractExpression InterfaceRealization_4001_SourceExpression;
-
-		/**
-		 * @generated 
-		 */
-		private static UMLAbstractExpression PortProvided_4006_SourceExpression;
-
-		/**
-		 * @generated 
-		 */
-		private static UMLAbstractExpression PortRequired_4004_SourceExpression;
-
-		/**
 		 * @generated
 		 */
-		private static UMLAbstractExpression ConnectorEndRole_4010_SourceExpression;
-
-		/**
-		 * @generated 
-		 */
-		public static boolean canCreateInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
-			return canExistInterfaceRealization_4001(container, source, target);
+		LinkConstraints() {
+			// use static method #getLinkConstraints() to access instance
 		}
 
 		/**
 		 * @generated 
 		 */
-		public static boolean canCreatePortProvided_4006(Port source, Interface target) {
+		public boolean canCreateInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
+			return canExistInterfaceRealization_4001(container, null, source, target);
+		}
+
+		/**
+		 * @generated 
+		 */
+		public boolean canCreatePortProvided_4006(Port source, Interface target) {
 			if (source != null) {
 				if (source.getProvideds().contains(target)) {
 					return false;
@@ -350,7 +348,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated 
 		 */
-		public static boolean canCreatePortRequired_4004(Port source, Interface target) {
+		public boolean canCreatePortRequired_4004(Port source, Interface target) {
 			if (source != null) {
 				if (source.getRequireds().contains(target)) {
 					return false;
@@ -363,7 +361,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateComponentRequired_4007(Component source, Interface target) {
+		public boolean canCreateComponentRequired_4007(Component source, Interface target) {
 			if (source != null) {
 				if (source.getRequireds().contains(target)) {
 					return false;
@@ -376,15 +374,15 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateConnector_4008(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
-			return canExistConnector_4008(container, source, target);
+		public boolean canCreateConnector_4008(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
+			return canExistConnector_4008(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateDependency_4009(Package container, NamedElement source, NamedElement target) {
-			return canExistDependency_4009(container, source, target);
+		public boolean canCreateDependency_4009(Package container, NamedElement source, NamedElement target) {
+			return canExistDependency_4009(container, null, source, target);
 		}
 
 		/**
@@ -398,7 +396,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * 
 		 * @generated
 		 */
-		public static boolean canCreateConnectorEndRole_4010(ConnectorEnd source, ConnectableElement target) {
+		public boolean canCreateConnectorEndRole_4010(ConnectorEnd source, ConnectableElement target) {
 			if (source != null) {
 				if (source.getRole() != null) {
 					return false;
@@ -411,14 +409,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateAssociation_4011(Package container, Type source, Type target) {
-			return canExistAssociation_4011(container, source, target);
+		public boolean canCreateAssociation_4011(Package container, Type source, Type target) {
+			return canExistAssociation_4011(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateCommentAnnotatedElement_4012(Comment source, Element target) {
+		public boolean canCreateCommentAnnotatedElement_4012(Comment source, Element target) {
 			if (source != null) {
 				if (source.getAnnotatedElements().contains(target)) {
 					return false;
@@ -431,19 +429,17 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistInterfaceRealization_4001(BehavioredClassifier container, BehavioredClassifier source, Interface target) {
+		public boolean canExistInterfaceRealization_4001(BehavioredClassifier container, InterfaceRealization linkInstance, BehavioredClassifier source, Interface target) {
 			try {
 				if (source == null) {
 					return true;
+				} else {
+					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$
+					Object sourceVal = UMLOCLFactory.getExpression(25, UMLPackage.eINSTANCE.getBehavioredClassifier(), env).evaluate(source, Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
 				}
-				if (InterfaceRealization_4001_SourceExpression == null) {
-					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
-					InterfaceRealization_4001_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Component)", UMLPackage.eINSTANCE.getBehavioredClassifier(), env); //$NON-NLS-1$
-				}
-				Object sourceVal = InterfaceRealization_4001_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
-				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
-					return false;
-				} // else fall-through
 				return true;
 			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
@@ -454,21 +450,17 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistPortProvided_4006(Port source, Interface target) {
+		public boolean canExistPortProvided_4006(Port source, Interface target) {
 			try {
 				if (source == null) {
 					return true;
+				} else {
+					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$
+					Object sourceVal = UMLOCLFactory.getExpression(26, UMLPackage.eINSTANCE.getPort(), env).evaluate(source, Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
 				}
-				if (PortProvided_4006_SourceExpression == null) {
-					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
-					PortProvided_4006_SourceExpression = UMLOCLFactory
-							.getExpression(
-									"self.oclIsKindOf(uml::Port) and (self.oclAsType(uml::Port).type.oclIsUndefined() or self.oclAsType(uml::Port).type.oclIsKindOf(uml::Classifier))", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
-				}
-				Object sourceVal = PortProvided_4006_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
-				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
-					return false;
-				} // else fall-through
 				return true;
 			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
@@ -479,19 +471,17 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistPortRequired_4004(Port source, Interface target) {
+		public boolean canExistPortRequired_4004(Port source, Interface target) {
 			try {
 				if (source == null) {
 					return true;
+				} else {
+					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getInterface()); //$NON-NLS-1$
+					Object sourceVal = UMLOCLFactory.getExpression(27, UMLPackage.eINSTANCE.getPort(), env).evaluate(source, Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
 				}
-				if (PortRequired_4004_SourceExpression == null) {
-					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getInterface());
-					PortRequired_4004_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::Port)", UMLPackage.eINSTANCE.getPort(), env); //$NON-NLS-1$
-				}
-				Object sourceVal = PortRequired_4004_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
-				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
-					return false;
-				} // else fall-through
 				return true;
 			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
@@ -502,21 +492,21 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistComponentRequired_4007(Component source, Interface target) {
+		public boolean canExistComponentRequired_4007(Component source, Interface target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistConnector_4008(StructuredClassifier container, ConnectableElement source, ConnectableElement target) {
+		public boolean canExistConnector_4008(StructuredClassifier container, Connector linkInstance, ConnectableElement source, ConnectableElement target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistDependency_4009(Package container, NamedElement source, NamedElement target) {
+		public boolean canExistDependency_4009(Package container, Dependency linkInstance, NamedElement source, NamedElement target) {
 			return true;
 		}
 
@@ -535,20 +525,17 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistConnectorEndRole_4010(ConnectorEnd source, ConnectableElement target) {
+		public boolean canExistConnectorEndRole_4010(ConnectorEnd source, ConnectableElement target) {
 			try {
 				if (source == null) {
 					return true;
+				} else {
+					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getConnectableElement()); //$NON-NLS-1$
+					Object sourceVal = UMLOCLFactory.getExpression(31, UMLPackage.eINSTANCE.getConnectorEnd(), env).evaluate(source, Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
 				}
-				if (ConnectorEndRole_4010_SourceExpression == null) {
-					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getConnectableElement());
-					ConnectorEndRole_4010_SourceExpression = UMLOCLFactory.getExpression(
-							"self.oclIsKindOf(uml::Connector) and (self.oclAsType(uml::Connector).kind = ConnectorKind::assembly)", UMLPackage.eINSTANCE.getConnectorEnd(), env); //$NON-NLS-1$
-				}
-				Object sourceVal = ConnectorEndRole_4010_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
-				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
-					return false;
-				} // else fall-through
 				return true;
 			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
@@ -559,14 +546,14 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistAssociation_4011(Package container, Type source, Type target) {
+		public boolean canExistAssociation_4011(Package container, Association linkInstance, Type source, Type target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistCommentAnnotatedElement_4012(Comment source, Element target) {
+		public boolean canExistCommentAnnotatedElement_4012(Comment source, Element target) {
 			return true;
 		}
 	}

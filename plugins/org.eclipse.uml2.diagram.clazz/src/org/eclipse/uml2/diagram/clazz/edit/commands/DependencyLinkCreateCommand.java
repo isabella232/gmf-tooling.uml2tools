@@ -76,8 +76,8 @@ public class DependencyLinkCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateDependency_4002(getContainer(), getSource(), getTarget())//
-				&& UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4002(getSource(), getTarget(), linkEClass);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateDependency_4002(getContainer(), getSource(), getTarget()) && //
+				UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4002(getSource(), getTarget(), linkEClass);
 	}
 
 	/**

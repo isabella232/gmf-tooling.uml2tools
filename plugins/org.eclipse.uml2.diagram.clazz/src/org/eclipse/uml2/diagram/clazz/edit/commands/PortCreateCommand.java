@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.clazz.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.StructuredClassifier;
@@ -56,7 +57,7 @@ public class PortCreateCommand extends EditElementCommand {
 		StructuredClassifier owner = (StructuredClassifier) getElementToEdit();
 		owner.getOwnedAttributes().add(newElement);
 
-		UMLElementTypes.init_Port_3025(newElement);
+		ElementInitializers.getInstance().init_Port_3025(newElement);
 
 		doConfigure(newElement, monitor, info);
 

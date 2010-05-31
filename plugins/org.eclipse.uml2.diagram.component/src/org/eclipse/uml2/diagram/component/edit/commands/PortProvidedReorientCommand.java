@@ -80,7 +80,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Interface && newEnd instanceof Port)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistPortProvided_4006(getNewSource(), getOldTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistPortProvided_4006(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class PortProvidedReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Interface && newEnd instanceof Interface)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistPortProvided_4006(getOldSource(), getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistPortProvided_4006(getOldSource(), getNewTarget());
 	}
 
 	/**

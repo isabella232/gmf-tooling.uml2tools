@@ -67,7 +67,7 @@ public class RealizationCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateRealization_4010(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateRealization_4010(getContainer(), getSource(), getTarget());
 	}
 
 	/**

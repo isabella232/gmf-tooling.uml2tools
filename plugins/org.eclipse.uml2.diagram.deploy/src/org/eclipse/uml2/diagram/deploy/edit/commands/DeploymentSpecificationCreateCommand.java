@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.deploy.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.DeploymentSpecification;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -61,7 +62,7 @@ public class DeploymentSpecificationCreateCommand extends EditElementCommand {
 
 		resource.getContents().add(newElement);
 
-		UMLElementTypes.init_DeploymentSpecification_2007(newElement);
+		ElementInitializers.getInstance().init_DeploymentSpecification_2007(newElement);
 
 		doConfigure(newElement, monitor, info);
 

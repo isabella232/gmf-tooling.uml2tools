@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.component.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.Operation;
@@ -57,7 +58,7 @@ public class OperationCreateCommand extends EditElementCommand {
 		Interface owner = (Interface) getElementToEdit();
 		owner.getOwnedOperations().add(newElement);
 
-		UMLElementTypes.init_Operation_3018(newElement);
+		ElementInitializers.getInstance().init_Operation_3018(newElement);
 
 		doConfigure(newElement, monitor, info);
 

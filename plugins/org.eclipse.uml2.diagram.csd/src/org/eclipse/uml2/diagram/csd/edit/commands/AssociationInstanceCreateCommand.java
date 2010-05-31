@@ -68,7 +68,7 @@ public class AssociationInstanceCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateSlot_4015(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateSlot_4015(getContainer(), getSource(), getTarget());
 	}
 
 	/**

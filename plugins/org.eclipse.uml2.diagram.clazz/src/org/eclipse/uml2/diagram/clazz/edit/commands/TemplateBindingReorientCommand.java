@@ -69,7 +69,7 @@ public class TemplateBindingReorientCommand extends EditElementCommand {
 			return false;
 		}
 		TemplateableElement container = (TemplateableElement) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistTemplateBinding_4016(container, getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistTemplateBinding_4016(container, getLink(), getNewSource(), target);
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class TemplateBindingReorientCommand extends EditElementCommand {
 			return false;
 		}
 		TemplateableElement container = (TemplateableElement) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistTemplateBinding_4016(container, source, getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistTemplateBinding_4016(container, getLink(), source, getNewTarget());
 	}
 
 	/**

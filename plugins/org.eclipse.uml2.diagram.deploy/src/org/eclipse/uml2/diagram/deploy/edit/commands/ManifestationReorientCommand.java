@@ -66,7 +66,7 @@ public class ManifestationReorientCommand extends EditElementCommand {
 			return false;
 		}
 		PackageableElement target = getLink().getUtilizedElement();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistManifestation_4002(getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistManifestation_4002(getLink(), getNewSource(), target);
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class ManifestationReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Artifact source = (Artifact) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistManifestation_4002(source, getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistManifestation_4002(getLink(), source, getNewTarget());
 	}
 
 	/**

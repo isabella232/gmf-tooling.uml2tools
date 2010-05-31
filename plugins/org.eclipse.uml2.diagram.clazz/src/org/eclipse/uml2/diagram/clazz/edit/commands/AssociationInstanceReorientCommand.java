@@ -72,7 +72,7 @@ public class AssociationInstanceReorientCommand extends EditElementCommand {
 			return false;
 		}
 		InstanceSpecification container = (InstanceSpecification) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistSlot_4015(container, getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistSlot_4015(container, getLink(), getNewSource(), target);
 	}
 
 	/**
@@ -87,7 +87,7 @@ public class AssociationInstanceReorientCommand extends EditElementCommand {
 			return false;
 		}
 		InstanceSpecification container = (InstanceSpecification) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistSlot_4015(container, source, getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistSlot_4015(container, getLink(), source, getNewTarget());
 	}
 
 	/**

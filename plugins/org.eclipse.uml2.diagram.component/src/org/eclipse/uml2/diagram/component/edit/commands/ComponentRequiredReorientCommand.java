@@ -76,7 +76,7 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Interface && newEnd instanceof Component)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistComponentRequired_4007(getNewSource(), getOldTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistComponentRequired_4007(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class ComponentRequiredReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Interface && newEnd instanceof Interface)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistComponentRequired_4007(getOldSource(), getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistComponentRequired_4007(getOldSource(), getNewTarget());
 	}
 
 	/**

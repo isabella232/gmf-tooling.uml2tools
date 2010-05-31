@@ -80,7 +80,7 @@ public class DependencyLinkReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Package container = (Package) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4002(container, getNewSource(), target) && //
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistDependency_4002(container, getLink(), getNewSource(), target) && //
 				UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4002(getNewSource(), target, linkEClass);
 
 	}
@@ -100,7 +100,7 @@ public class DependencyLinkReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Package container = (Package) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDependency_4002(container, source, getNewTarget()) && //
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistDependency_4002(container, getLink(), source, getNewTarget()) && //
 				UMLBaseItemSemanticEditPolicy.LinkConstraints.canReallyExistDependency_4002(source, getNewTarget(), linkEClass);
 
 	}

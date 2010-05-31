@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.deploy.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Device;
 import org.eclipse.uml2.uml.Node;
@@ -56,7 +57,7 @@ public class Device2CreateCommand extends EditElementCommand {
 		Node owner = (Node) getElementToEdit();
 		owner.getNestedNodes().add(newElement);
 
-		UMLElementTypes.init_Device_3004(newElement);
+		ElementInitializers.getInstance().init_Device_3004(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -73,7 +73,7 @@ public class DeploymentReorientCommand extends EditElementCommand {
 			return false;
 		}
 		DeploymentTarget container = (DeploymentTarget) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDeployment_4001(container, getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistDeployment_4001(container, getLink(), getNewSource(), target);
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class DeploymentReorientCommand extends EditElementCommand {
 			return false;
 		}
 		DeploymentTarget container = (DeploymentTarget) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDeployment_4001(container, source, getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistDeployment_4001(container, getLink(), source, getNewTarget());
 	}
 
 	/**

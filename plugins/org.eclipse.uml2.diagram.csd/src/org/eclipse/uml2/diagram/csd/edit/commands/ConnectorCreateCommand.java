@@ -12,7 +12,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.uml2.diagram.csd.edit.policies.UMLBaseItemSemanticEditPolicy;
-import org.eclipse.uml2.diagram.csd.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.csd.providers.ElementInitializers;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.StructuredClassifier;
@@ -68,7 +68,7 @@ public class ConnectorCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateConnector_4005(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateConnector_4005(getContainer(), getSource(), getTarget());
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class ConnectorCreateCommand extends EditElementCommand {
 		getContainer().getOwnedConnectors().add(newElement);
 		newElement.createEnd().setRole(getSource());
 		newElement.createEnd().setRole(getTarget());
-		UMLElementTypes.init_Connector_4005(newElement);
+		ElementInitializers.getInstance().init_Connector_4005(newElement);
 
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

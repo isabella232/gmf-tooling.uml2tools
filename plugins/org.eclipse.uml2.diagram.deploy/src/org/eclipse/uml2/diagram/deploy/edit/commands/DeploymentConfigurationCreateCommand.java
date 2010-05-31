@@ -52,7 +52,7 @@ public class DeploymentConfigurationCreateCommand extends EditElementCommand {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateDeploymentConfiguration_4003(getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateDeploymentConfiguration_4003(getSource(), getTarget());
 	}
 
 	/**

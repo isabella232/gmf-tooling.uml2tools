@@ -71,7 +71,7 @@ public class DeploymentConfigurationReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof DeploymentSpecification && newEnd instanceof Deployment)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDeploymentConfiguration_4003(getNewSource(), getOldTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistDeploymentConfiguration_4003(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class DeploymentConfigurationReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof DeploymentSpecification && newEnd instanceof DeploymentSpecification)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistDeploymentConfiguration_4003(getOldSource(), getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistDeploymentConfiguration_4003(getOldSource(), getNewTarget());
 	}
 
 	/**

@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.deploy.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Artifact;
 import org.eclipse.uml2.uml.DeploymentSpecification;
@@ -57,7 +58,7 @@ public class DeploymentSpecification2CreateCommand extends EditElementCommand {
 		Artifact owner = (Artifact) getElementToEdit();
 		owner.getNestedArtifacts().add(newElement);
 
-		UMLElementTypes.init_DeploymentSpecification_3009(newElement);
+		ElementInitializers.getInstance().init_DeploymentSpecification_3009(newElement);
 
 		doConfigure(newElement, monitor, info);
 

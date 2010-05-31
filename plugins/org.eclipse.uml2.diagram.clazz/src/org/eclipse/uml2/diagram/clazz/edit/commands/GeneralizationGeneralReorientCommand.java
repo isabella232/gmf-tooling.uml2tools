@@ -86,7 +86,7 @@ public class GeneralizationGeneralReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof Classifier && newEnd instanceof Classifier)) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistGeneralizationGeneral_4012(getOldSource(), getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistGeneralizationGeneral_4012(getOldSource(), getNewTarget());
 	}
 
 	/**

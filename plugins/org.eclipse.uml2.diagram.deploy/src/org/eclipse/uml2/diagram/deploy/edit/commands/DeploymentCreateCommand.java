@@ -67,7 +67,7 @@ public class DeploymentCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateDeployment_4001(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateDeployment_4001(getContainer(), getSource(), getTarget());
 	}
 
 	/**

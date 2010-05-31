@@ -70,7 +70,7 @@ public class AssociationCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateAssociation_4011(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateAssociation_4011(getContainer(), getSource(), getTarget());
 	}
 
 	/**

@@ -76,7 +76,7 @@ public class AssociationReorientCommand extends EditElementCommand {
 		if (targetEnd == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistAssociation_4011(container, getNewSource(), targetEnd.getType());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistAssociation_4011(container, getLink(), getNewSource(), targetEnd.getType());
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class AssociationReorientCommand extends EditElementCommand {
 		if (sourceEnd == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistAssociation_4011(container, sourceEnd.getType(), getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistAssociation_4011(container, getLink(), sourceEnd.getType(), getNewTarget());
 	}
 
 	/**

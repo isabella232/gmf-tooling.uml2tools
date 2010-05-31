@@ -52,7 +52,7 @@ public class DependencyClientCreateCommand extends EditElementCommand {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateDependencyClient_4007(getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateDependencyClient_4007(getSource(), getTarget());
 	}
 
 	/**

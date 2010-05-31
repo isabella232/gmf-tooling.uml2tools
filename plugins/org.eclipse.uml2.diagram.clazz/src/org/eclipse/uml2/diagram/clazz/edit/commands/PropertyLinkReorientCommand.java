@@ -66,7 +66,7 @@ public class PropertyLinkReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Type target = getLink().getType();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistProperty_4003(getNewSource(), target);
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistProperty_4003(getLink(), getNewSource(), target);
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class PropertyLinkReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Association source = (Association) getLink().eContainer();
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canExistProperty_4003(source, getNewTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistProperty_4003(getLink(), source, getNewTarget());
 	}
 
 	/**

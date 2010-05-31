@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
@@ -42,12 +43,15 @@ import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Artifact;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.CommunicationPath;
+import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.DeployedArtifact;
 import org.eclipse.uml2.uml.Deployment;
 import org.eclipse.uml2.uml.DeploymentSpecification;
 import org.eclipse.uml2.uml.DeploymentTarget;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interface;
+import org.eclipse.uml2.uml.Manifestation;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
@@ -302,41 +306,44 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	/**
 	 * @generated
 	 */
+	public static LinkConstraints getLinkConstraints() {
+		LinkConstraints cached = UMLDiagramEditorPlugin.getInstance().getLinkConstraints();
+		if (cached == null) {
+			UMLDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static class LinkConstraints {
 
 		/**
 		 * @generated
 		 */
-		private static final String OPPOSITE_END_VAR = "oppositeEnd"; //$NON-NLS-1$
-
-		/**
-		 * @generated
-		 */
-		private static UMLAbstractExpression CommunicationPath_4004_SourceExpression;
-
-		/**
-		 * @generated
-		 */
-		private static UMLAbstractExpression CommunicationPath_4004_TargetExpression;
-
-		/**
-		 * @generated
-		 */
-		public static boolean canCreateDeployment_4001(DeploymentTarget container, DeploymentTarget source, DeployedArtifact target) {
-			return canExistDeployment_4001(container, source, target);
+		LinkConstraints() {
+			// use static method #getLinkConstraints() to access instance
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateManifestation_4002(Artifact source, PackageableElement target) {
-			return canExistManifestation_4002(source, target);
+		public boolean canCreateDeployment_4001(DeploymentTarget container, DeploymentTarget source, DeployedArtifact target) {
+			return canExistDeployment_4001(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateDeploymentConfiguration_4003(Deployment source, DeploymentSpecification target) {
+		public boolean canCreateManifestation_4002(Artifact source, PackageableElement target) {
+			return canExistManifestation_4002(null, source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateDeploymentConfiguration_4003(Deployment source, DeploymentSpecification target) {
 			if (source != null) {
 				if (source.getConfigurations().contains(target)) {
 					return false;
@@ -355,15 +362,15 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateCommunicationPath_4004(Package container, Type source, Type target) {
-			return canExistCommunicationPath_4004(container, source, target);
+		public boolean canCreateCommunicationPath_4004(Package container, Type source, Type target) {
+			return canExistCommunicationPath_4004(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateDependency_4005(Package container, NamedElement source, NamedElement target) {
-			return canExistDependency_4005(container, source, target);
+		public boolean canCreateDependency_4005(Package container, NamedElement source, NamedElement target) {
+			return canExistDependency_4005(container, null, source, target);
 		}
 
 		/**
@@ -376,7 +383,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canCreateCommentAnnotatedElement_4006(Comment source, Element target) {
+		public boolean canCreateCommentAnnotatedElement_4006(Comment source, Element target) {
 			if (source != null) {
 				if (source.getAnnotatedElements().contains(target)) {
 					return false;
@@ -389,51 +396,47 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistDeployment_4001(DeploymentTarget container, DeploymentTarget source, DeployedArtifact target) {
+		public boolean canExistDeployment_4001(DeploymentTarget container, Deployment linkInstance, DeploymentTarget source, DeployedArtifact target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistManifestation_4002(Artifact source, PackageableElement target) {
+		public boolean canExistManifestation_4002(Manifestation linkInstance, Artifact source, PackageableElement target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistDeploymentConfiguration_4003(Deployment source, DeploymentSpecification target) {
+		public boolean canExistDeploymentConfiguration_4003(Deployment source, DeploymentSpecification target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public static boolean canExistCommunicationPath_4004(Package container, Type source, Type target) {
+		public boolean canExistCommunicationPath_4004(Package container, CommunicationPath linkInstance, Type source, Type target) {
 			try {
 				if (source == null) {
 					return true;
+				} else {
+					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getType()); //$NON-NLS-1$
+					Object sourceVal = UMLOCLFactory.getExpression(9, UMLPackage.eINSTANCE.getType(), env).evaluate(source, Collections.singletonMap("oppositeEnd", target)); //$NON-NLS-1$
+					if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
 				}
-				if (CommunicationPath_4004_SourceExpression == null) {
-					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getType());
-					CommunicationPath_4004_SourceExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::DeploymentTarget)", UMLPackage.eINSTANCE.getType(), env); //$NON-NLS-1$
-				}
-				Object sourceVal = CommunicationPath_4004_SourceExpression.evaluate(source, Collections.singletonMap(OPPOSITE_END_VAR, target));
-				if (false == sourceVal instanceof Boolean || !((Boolean) sourceVal).booleanValue()) {
-					return false;
-				} // else fall-through
 				if (target == null) {
 					return true;
+				} else {
+					Map<String, EClassifier> env = Collections.<String, EClassifier> singletonMap("oppositeEnd", UMLPackage.eINSTANCE.getType()); //$NON-NLS-1$
+					Object targetVal = UMLOCLFactory.getExpression(10, UMLPackage.eINSTANCE.getType(), env).evaluate(target, Collections.singletonMap("oppositeEnd", source)); //$NON-NLS-1$
+					if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
+						return false;
+					} // else fall-through
 				}
-				if (CommunicationPath_4004_TargetExpression == null) {
-					Map env = Collections.singletonMap(OPPOSITE_END_VAR, UMLPackage.eINSTANCE.getType());
-					CommunicationPath_4004_TargetExpression = UMLOCLFactory.getExpression("self.oclIsKindOf(uml::DeploymentTarget)", UMLPackage.eINSTANCE.getType(), env); //$NON-NLS-1$
-				}
-				Object targetVal = CommunicationPath_4004_TargetExpression.evaluate(target, Collections.singletonMap(OPPOSITE_END_VAR, source));
-				if (false == targetVal instanceof Boolean || !((Boolean) targetVal).booleanValue()) {
-					return false;
-				} // else fall-through
 				return true;
 			} catch (Exception e) {
 				UMLDiagramEditorPlugin.getInstance().logError("Link constraint evaluation error", e); //$NON-NLS-1$
@@ -444,7 +447,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistDependency_4005(Package container, NamedElement source, NamedElement target) {
+		public boolean canExistDependency_4005(Package container, Dependency linkInstance, NamedElement source, NamedElement target) {
 			return true;
 		}
 
@@ -463,7 +466,7 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public static boolean canExistCommentAnnotatedElement_4006(Comment source, Element target) {
+		public boolean canExistCommentAnnotatedElement_4006(Comment source, Element target) {
 			return true;
 		}
 
