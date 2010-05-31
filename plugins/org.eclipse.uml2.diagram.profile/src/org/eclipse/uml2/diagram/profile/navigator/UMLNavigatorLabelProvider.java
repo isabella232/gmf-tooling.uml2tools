@@ -108,42 +108,42 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 */
 	public Image getImage(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
-		case ProfileEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/3.0.0/UML?Profile", UMLElementTypes.Profile_1000); //$NON-NLS-1$
-		case StereotypeEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Stereotype", UMLElementTypes.Stereotype_2001); //$NON-NLS-1$
-		case Profile2EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Profile", UMLElementTypes.Profile_2002); //$NON-NLS-1$
-		case EnumerationEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Enumeration", UMLElementTypes.Enumeration_2003); //$NON-NLS-1$
-		case ElementImportEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?ElementImport", UMLElementTypes.ElementImport_2006); //$NON-NLS-1$
-		case Profile3EditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Profile", UMLElementTypes.Profile_2007); //$NON-NLS-1$
+		case Stereotype2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Stereotype", UMLElementTypes.Stereotype_3003); //$NON-NLS-1$
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Constraint?constrainedElement", UMLElementTypes.ConstraintConstrainedElement_4003); //$NON-NLS-1$
 		case Constraint2EditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Constraint", UMLElementTypes.Constraint_2008); //$NON-NLS-1$
+		case Profile2EditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Profile", UMLElementTypes.Profile_2002); //$NON-NLS-1$
+		case StereotypeEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Stereotype", UMLElementTypes.Stereotype_2001); //$NON-NLS-1$
+		case Profile3EditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Profile", UMLElementTypes.Profile_2007); //$NON-NLS-1$
+		case ExtensionEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Extension", UMLElementTypes.Extension_4002); //$NON-NLS-1$
+		case GeneralizationEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Generalization", UMLElementTypes.Generalization_4001); //$NON-NLS-1$
+		case ProfileEditPart.VISUAL_ID:
+			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/3.0.0/UML?Profile", UMLElementTypes.Profile_1000); //$NON-NLS-1$
+		case EnumerationEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Enumeration", UMLElementTypes.Enumeration_2003); //$NON-NLS-1$
+		case ImageEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Image", UMLElementTypes.Image_3010); //$NON-NLS-1$
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4004); //$NON-NLS-1$
+		case EnumerationLiteralEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?EnumerationLiteral", UMLElementTypes.EnumerationLiteral_3005); //$NON-NLS-1$
+		case ConstraintEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Constraint", UMLElementTypes.Constraint_3008); //$NON-NLS-1$
+		case ElementImportEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?ElementImport", UMLElementTypes.ElementImport_2006); //$NON-NLS-1$
 		case CommentEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Comment", UMLElementTypes.Comment_2009); //$NON-NLS-1$
 		case PropertyEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Property", UMLElementTypes.Property_3001); //$NON-NLS-1$
-		case ConstraintEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Constraint", UMLElementTypes.Constraint_3008); //$NON-NLS-1$
-		case ImageEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Image", UMLElementTypes.Image_3010); //$NON-NLS-1$
-		case Stereotype2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Stereotype", UMLElementTypes.Stereotype_3003); //$NON-NLS-1$
-		case EnumerationLiteralEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?EnumerationLiteral", UMLElementTypes.EnumerationLiteral_3005); //$NON-NLS-1$
 		case ElementImport2EditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?ElementImport", UMLElementTypes.ElementImport_3009); //$NON-NLS-1$
-		case GeneralizationEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Generalization", UMLElementTypes.Generalization_4001); //$NON-NLS-1$
-		case ExtensionEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Extension", UMLElementTypes.Extension_4002); //$NON-NLS-1$
-		case ConstraintConstrainedElementEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Constraint?constrainedElement", UMLElementTypes.ConstraintConstrainedElement_4003); //$NON-NLS-1$
-		case CommentAnnotatedElementEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4004); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -202,42 +202,42 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
-		case ProfileEditPart.VISUAL_ID:
-			return getProfile_1000Text(view);
-		case StereotypeEditPart.VISUAL_ID:
-			return getStereotype_2001Text(view);
-		case Profile2EditPart.VISUAL_ID:
-			return getProfile_2002Text(view);
-		case EnumerationEditPart.VISUAL_ID:
-			return getEnumeration_2003Text(view);
-		case ElementImportEditPart.VISUAL_ID:
-			return getElementImport_2006Text(view);
-		case Profile3EditPart.VISUAL_ID:
-			return getProfile_2007Text(view);
+		case Stereotype2EditPart.VISUAL_ID:
+			return getStereotype_3003Text(view);
+		case ConstraintConstrainedElementEditPart.VISUAL_ID:
+			return getConstraintConstrainedElement_4003Text(view);
 		case Constraint2EditPart.VISUAL_ID:
 			return getConstraint_2008Text(view);
+		case Profile2EditPart.VISUAL_ID:
+			return getProfile_2002Text(view);
+		case StereotypeEditPart.VISUAL_ID:
+			return getStereotype_2001Text(view);
+		case Profile3EditPart.VISUAL_ID:
+			return getProfile_2007Text(view);
+		case ExtensionEditPart.VISUAL_ID:
+			return getExtension_4002Text(view);
+		case GeneralizationEditPart.VISUAL_ID:
+			return getGeneralization_4001Text(view);
+		case ProfileEditPart.VISUAL_ID:
+			return getProfile_1000Text(view);
+		case EnumerationEditPart.VISUAL_ID:
+			return getEnumeration_2003Text(view);
+		case ImageEditPart.VISUAL_ID:
+			return getImage_3010Text(view);
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getCommentAnnotatedElement_4004Text(view);
+		case EnumerationLiteralEditPart.VISUAL_ID:
+			return getEnumerationLiteral_3005Text(view);
+		case ConstraintEditPart.VISUAL_ID:
+			return getConstraint_3008Text(view);
+		case ElementImportEditPart.VISUAL_ID:
+			return getElementImport_2006Text(view);
 		case CommentEditPart.VISUAL_ID:
 			return getComment_2009Text(view);
 		case PropertyEditPart.VISUAL_ID:
 			return getProperty_3001Text(view);
-		case ConstraintEditPart.VISUAL_ID:
-			return getConstraint_3008Text(view);
-		case ImageEditPart.VISUAL_ID:
-			return getImage_3010Text(view);
-		case Stereotype2EditPart.VISUAL_ID:
-			return getStereotype_3003Text(view);
-		case EnumerationLiteralEditPart.VISUAL_ID:
-			return getEnumerationLiteral_3005Text(view);
 		case ElementImport2EditPart.VISUAL_ID:
 			return getElementImport_3009Text(view);
-		case GeneralizationEditPart.VISUAL_ID:
-			return getGeneralization_4001Text(view);
-		case ExtensionEditPart.VISUAL_ID:
-			return getExtension_4002Text(view);
-		case ConstraintConstrainedElementEditPart.VISUAL_ID:
-			return getConstraintConstrainedElement_4003Text(view);
-		case CommentAnnotatedElementEditPart.VISUAL_ID:
-			return getCommentAnnotatedElement_4004Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -259,8 +259,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getStereotype_2001Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Stereotype_2001, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(StereotypeNameEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Stereotype_2001, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(StereotypeNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -286,8 +286,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getEnumeration_2003Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Enumeration_2003, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(EnumerationNameEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Enumeration_2003, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(EnumerationNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -300,8 +300,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getElementImport_2006Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ElementImport_2006, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ReferencedMetaclassNode_classNameEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ElementImport_2006, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(ReferencedMetaclassNode_classNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -327,8 +327,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getConstraint_2008Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Constraint_2008, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ConstraintNameEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Constraint_2008, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(ConstraintNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -406,8 +406,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getEnumerationLiteral_3005Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.EnumerationLiteral_3005, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(EnumerationLiteralEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.EnumerationLiteral_3005, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(EnumerationLiteralEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -420,8 +420,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getElementImport_3009Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ElementImport_3009, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ElementImport2EditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.ElementImport_3009, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(ElementImport2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
@@ -447,8 +447,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getExtension_4002Text(View view) {
-		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Extension_4002, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry
-				.getType(ExtensionLink_requiredEditPart.VISUAL_ID));
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Extension_4002, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(ExtensionLink_requiredEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
