@@ -67,26 +67,6 @@ public class UMLVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	private static UMLAbstractExpression Stereotype_2001_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ElementImport_2006_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression Property_3001_Constraint;
-
-	/**
-	 * @generated
-	 */
-	private static UMLAbstractExpression ElementImport_3009_Constraint;
-
-	/**
-	 * @generated
-	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
 			if (ProfileEditPart.MODEL_ID.equals(view.getType())) {
@@ -131,7 +111,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	public static String getType(int visualID) {
-		return String.valueOf(visualID);
+		return Integer.toString(visualID);
 	}
 
 	/**
@@ -169,6 +149,35 @@ public class UMLVisualIDRegistry {
 			}
 		}
 		switch (containerVisualID) {
+		case ProfileEditPart.VISUAL_ID:
+			// We want to additionally show the Canvas Semantical Element in the auxiliary 
+			// org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart (that serves as a pure visual container for children). 
+			// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
+			// list. The only remaining part is to return correct VID for this special case.
+
+			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
+				return Profile3EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass()) && isStereotype_2001((Stereotype) domainElement)) {
+				return StereotypeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElement.eClass())) {
+				return Profile2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_2006((ElementImport) domainElement)) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			// Diagram header is already processed above
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return Constraint2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
+			break;
 		case StereotypeAttributesEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3001((Property) domainElement)) {
 				return PropertyEditPart.VISUAL_ID;
@@ -199,35 +208,6 @@ public class UMLVisualIDRegistry {
 				return ElementImport2EditPart.VISUAL_ID;
 			}
 			break;
-		case ProfileEditPart.VISUAL_ID:
-			// We want to additionally show the Canvas Semantical Element in the auxiliary 
-			// org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart (that serves as a pure visual container for children). 
-			// To do this, we modified CanonicalEditPolicy to add the Canvas semantic Element into the children 
-			// list. The only remaining part is to return correct VID for this special case.
-
-			if (containerView instanceof Diagram && domainElement != null && domainElement.equals(containerView.getElement())) {
-				return Profile3EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass()) && isStereotype_2001((Stereotype) domainElement)) {
-				return StereotypeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElement.eClass())) {
-				return Profile2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
-				return EnumerationEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_2006((ElementImport) domainElement)) {
-				return ElementImportEditPart.VISUAL_ID;
-			}
-			// Diagram header is already processed above
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
-				return Constraint2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
-				return CommentEditPart.VISUAL_ID;
-			}
-			break;
 		}
 		return -1;
 	}
@@ -251,6 +231,29 @@ public class UMLVisualIDRegistry {
 			}
 		}
 		switch (containerVisualID) {
+		case ProfileEditPart.VISUAL_ID:
+			if (StereotypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Profile2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EnumerationEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ElementImportEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Profile3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (Constraint2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (CommentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case StereotypeEditPart.VISUAL_ID:
 			if (StereotypeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -346,29 +349,6 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ProfileEditPart.VISUAL_ID:
-			if (StereotypeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (Profile2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (EnumerationEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ElementImportEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (Profile3EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (Constraint2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CommentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case ExtensionEditPart.VISUAL_ID:
 			if (ExtensionLink_requiredEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -408,12 +388,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isStereotype_2001(Stereotype domainElement) {
-		if (Stereotype_2001_Constraint == null) { // lazy initialization
-			Stereotype_2001_Constraint = UMLOCLFactory
-					.getExpression(
-							"generalization.general->forAll(e | e.oclIsKindOf(uml::Stereotype)) and\r\ngeneralization.specific->forAll(e | e.oclIsKindOf(uml::Stereotype))", UMLPackage.eINSTANCE.getStereotype()); //$NON-NLS-1$
-		}
-		Object result = Stereotype_2001_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(0, UMLPackage.eINSTANCE.getStereotype(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -421,11 +396,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isElementImport_2006(ElementImport domainElement) {
-		if (ElementImport_2006_Constraint == null) { // lazy initialization
-			ElementImport_2006_Constraint = UMLOCLFactory.getExpression(
-					"self.importedElement.oclIsUndefined() or self.importedElement.oclAsType(uml::Class).isMetaclass()", UMLPackage.eINSTANCE.getElementImport()); //$NON-NLS-1$
-		}
-		Object result = ElementImport_2006_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getElementImport(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -433,10 +404,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isProperty_3001(Property domainElement) {
-		if (Property_3001_Constraint == null) { // lazy initialization
-			Property_3001_Constraint = UMLOCLFactory.getExpression("self.association.oclIsUndefined() or not self.association.oclIsKindOf(uml::Extension)", UMLPackage.eINSTANCE.getProperty()); //$NON-NLS-1$
-		}
-		Object result = Property_3001_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(2, UMLPackage.eINSTANCE.getProperty(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -444,12 +412,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isElementImport_3009(ElementImport domainElement) {
-		if (ElementImport_3009_Constraint == null) { // lazy initialization
-			ElementImport_3009_Constraint = UMLOCLFactory
-					.getExpression(
-							"let imported : NamedElement = self.importedElement in \r\nimported.oclIsUndefined() or not imported.oclIsKindOf(Class) or not imported.oclAsType(Class).isMetaclass()\r\n", UMLPackage.eINSTANCE.getElementImport()); //$NON-NLS-1$
-		}
-		Object result = ElementImport_3009_Constraint.evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(12, UMLPackage.eINSTANCE.getElementImport(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -480,6 +443,26 @@ public class UMLVisualIDRegistry {
 			return -1;
 		}
 		switch (container.getVisualID()) {
+		case ProfileEditPart.VISUAL_ID:
+			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass()) && isStereotype_2001((Stereotype) domainElement)) {
+				return StereotypeEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElement.eClass())) {
+				return Profile2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
+				return EnumerationEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_2006((ElementImport) domainElement)) {
+				return ElementImportEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
+				return Constraint2EditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
+			break;
 		case StereotypeEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getProperty().isSuperTypeOf(domainElement.eClass()) && isProperty_3001((Property) domainElement)) {
 				return PropertyEditPart.VISUAL_ID;
@@ -504,26 +487,6 @@ public class UMLVisualIDRegistry {
 		case Profile3EditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_3009((ElementImport) domainElement)) {
 				return ElementImport2EditPart.VISUAL_ID;
-			}
-			break;
-		case ProfileEditPart.VISUAL_ID:
-			if (UMLPackage.eINSTANCE.getStereotype().isSuperTypeOf(domainElement.eClass()) && isStereotype_2001((Stereotype) domainElement)) {
-				return StereotypeEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getProfile().isSuperTypeOf(domainElement.eClass())) {
-				return Profile2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getEnumeration().isSuperTypeOf(domainElement.eClass())) {
-				return EnumerationEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getElementImport().isSuperTypeOf(domainElement.eClass()) && isElementImport_2006((ElementImport) domainElement)) {
-				return ElementImportEditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass())) {
-				return Constraint2EditPart.VISUAL_ID;
-			}
-			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
-				return CommentEditPart.VISUAL_ID;
 			}
 			break;
 		}
