@@ -13,20 +13,12 @@
  
 «EXTENSION u2t::linkstack::LinkStackUtils» 
 
-«AROUND nodeToolEntry FOR OclAny»
-«IF self.oclIsKindOf(gmfgen::Palette)-»
-«EXPAND u2t::extendedpalette::PaletteFactory::nodeToolEntry FOR self.oclAsType(gmfgen::Palette)»
-«ELSE-»
-«targetDef.proceed()-»
-«ENDIF-»
+«AROUND nodeToolEntry FOR gmfgen::Palette»
+«EXPAND u2t::extendedpalette::PaletteFactory::nodeToolEntry»
 «ENDAROUND»
 
-«AROUND linkToolEntry FOR OclAny»
-«IF self.oclIsKindOf(gmfgen::Palette)-»
-«EXPAND u2t::extendedpalette::PaletteFactory::linkToolEntry FOR self.oclAsType(gmfgen::Palette)»
-«ELSE-»
-«targetDef.proceed()-»
-«ENDIF-»
+«AROUND linkToolEntry FOR gmfgen::Palette»
+«EXPAND u2t::extendedpalette::PaletteFactory::linkToolEntry»
 «ENDAROUND»
 
 «AROUND newEntry(toolVarName : String) FOR gmfgen::ToolEntry-»

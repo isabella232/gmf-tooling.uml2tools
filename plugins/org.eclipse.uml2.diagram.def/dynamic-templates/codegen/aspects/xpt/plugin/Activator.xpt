@@ -18,11 +18,11 @@
  * NOTE: despite the above, there is some <i>additional</i> code that is contributed via AROUND additions 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«EXTENSION xpt::GenModelUtils»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«EXTENSION xpt::GenModelUtilsÂ»
 
-«AROUND xpt::plugin::Activator::additions FOR gmfgen::GenPlugin-»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND xpt::plugin::Activator::additions FOR gmfgen::GenPlugin-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public org.eclipse.jface.resource.FontRegistry getFontRegistry(){
 		if (myFontRegistry == null){
 			myFontRegistry = new org.eclipse.jface.resource.FontRegistry(org.eclipse.swt.widgets.Display.getCurrent());
@@ -33,48 +33,64 @@
 		return myFontRegistry;
 	}
 	
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public org.eclipse.swt.graphics.Font getDefaultFont(){
 		return getFontRegistry().get(org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_DEFAULT_FONT);
 	}
 	
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public org.eclipse.swt.graphics.Font getDefaultBoldFont(){
 		return getFontRegistry().getBold(org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_DEFAULT_FONT);
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private org.eclipse.jface.resource.FontRegistry myFontRegistry;
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND Activator FOR gmfgen::GenPlugin-»
-«EXPAND xpt::Common::copyright FOR editorGen-»
-package «editorGen.editor.packageName»;
+Â«AROUND Activator FOR gmfgen::GenPlugin-Â»
+Â«EXPAND xpt::Common::copyright FOR editorGen-Â»
+package Â«editorGen.editor.packageNameÂ»;
 
-«EXPAND xpt::Common::generatedClassComment»
-public class «activatorClassName» extends org.eclipse.ui.plugin.AbstractUIPlugin {
+Â«EXPAND xpt::Common::generatedClassCommentÂ»
+public class Â«activatorClassNameÂ» extends org.eclipse.ui.plugin.AbstractUIPlugin {
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	public static final String ID = "«iD»"; //$NON-NLS-1$
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public static final String ID = "Â«iDÂ»"; //$NON-NLS-1$
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public static final org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint DIAGRAM_PREFERENCES_HINT =
 			new org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint(ID);
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	private static «activatorClassName» instance;
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	private static Â«activatorClassNameÂ» instance;
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private org.eclipse.emf.edit.provider.ComposedAdapterFactory adapterFactory;	
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	private «editorGen.diagram.getDocumentProviderQualifiedClassName()» documentProvider;
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	private Â«editorGen.diagram.getDocumentProviderQualifiedClassName()Â» documentProvider;
+	
+	Â«IF editorGen.diagram.links->exists(not sansDomain)-Â»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+		private Â«editorGen.diagram.getLinkCreationConstraintsQualifiedClassName()Â» linkConstraints;
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	public «activatorClassName»() {
+	Â«ENDIF-Â»
+
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	private Â«editorGen.diagram.getElementInitializersPackageName()Â».Â«editorGen.diagram.getElementInitializersClassName()Â» initializers;
+
+	Â«IF not editorGen.expressionProviders.oclIsUndefined() -Â»
+	Â«FOREACH editorGen.expressionProviders.providers[gmfgen::GenExpressionInterpreter] AS p-Â»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+		private Â«p.getQualifiedClassName()Â» Â«p.languageÂ»Factory;
+	Â«ENDFOREACH-Â»
+	Â«ENDIF-Â»
+
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public Â«activatorClassNameÂ»() {
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void start(org.osgi.framework.BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
@@ -83,44 +99,53 @@ public class «activatorClassName» extends org.eclipse.ui.plugin.AbstractUIPlugin
 		adapterFactory = createAdapterFactory();
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void stop(org.osgi.framework.BundleContext context) throws Exception {
 		adapterFactory.dispose();
-		adapterFactory = null;
+		adapterFactory = null; 
+	Â«IF editorGen.diagram.links->exists(not sansDomain)-Â»
+		linkConstraints = null;
+	Â«ENDIF-Â»
+		initializers = null;
+	Â«IF not editorGen.expressionProviders.oclIsUndefined() -Â»
+	Â«FOREACH editorGen.expressionProviders.providers[gmfgen::GenExpressionInterpreter] AS p-Â»
+		Â«p.languageÂ»Factory = null;
+	Â«ENDFOREACH-Â»
+	Â«ENDIF-Â» 
 		instance = null;
 		super.stop(context);
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	public static «activatorClassName» getInstance() {
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public static Â«activatorClassNameÂ» getInstance() {
 		return instance;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected org.eclipse.emf.edit.provider.ComposedAdapterFactory createAdapterFactory() {
-		java.util.List factories = new java.util.ArrayList();
+		Â«EXPAND CodeStyle::newGenericInstance('factories', 'java.util.ArrayList', 'org.eclipse.emf.common.notify.AdapterFactory') FOR editorGen.diagramÂ»();
 		fillItemProviderFactories(factories);
 		return new org.eclipse.emf.edit.provider.ComposedAdapterFactory(factories);
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected void fillItemProviderFactories(java.util.List factories) {
-		«REM»THE ONLY CHANGE IS BELOW«ENDREM»«-»
+		Â«REMÂ»THE ONLY CHANGE IS BELOWÂ«ENDREMÂ»Â«-Â»
 		//custom icons for diagram elements
 		factories.add(new org.eclipse.uml2.diagram.common.providers.AlternativeUMLItemProviderAdapterFactory(getPreferenceStore()));
-		«REM»THE ONLY CHANGE IS ABOVE«ENDREM»«-»
+		Â«REMÂ»THE ONLY CHANGE IS ABOVEÂ«ENDREMÂ»Â«-Â»
 		
-		«EXPAND MetaModel::PopulateItemProviderFactories('factories') FOR editorGen-»
+		Â«EXPAND MetaModel::PopulateItemProviderFactories('factories') FOR editorGen-Â»
 		factories.add(new org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory());
 		factories.add(new org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory());
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public org.eclipse.emf.common.notify.AdapterFactory getItemProvidersAdapterFactory() {
 		return adapterFactory;
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public org.eclipse.jface.resource.ImageDescriptor getItemImageDescriptor(Object item) {
 		org.eclipse.emf.edit.provider.IItemLabelProvider labelProvider =
 				(org.eclipse.emf.edit.provider.IItemLabelProvider) adapterFactory.adapt(
@@ -190,51 +215,88 @@ public class «activatorClassName» extends org.eclipse.ui.plugin.AbstractUIPlugin
 				getInstance().getBundle(), "%" + key); //$NON-NLS-1$
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	public «editorGen.diagram.getDocumentProviderQualifiedClassName()» getDocumentProvider() {
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public Â«editorGen.diagram.getDocumentProviderQualifiedClassName()Â» getDocumentProvider() {
 		if (documentProvider == null) {
-			documentProvider = new «editorGen.diagram.getDocumentProviderQualifiedClassName()»();
+			documentProvider = new Â«editorGen.diagram.getDocumentProviderQualifiedClassName()Â»();
 		}
 		return documentProvider;
 	}
+	
+	Â«IF editorGen.diagram.links->exists(not sansDomain) -Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public Â«editorGen.diagram.getLinkCreationConstraintsQualifiedClassName()Â» getLinkConstraints() {
+		return linkConstraints;
+	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public void setLinkConstraints(Â«editorGen.diagram.getLinkCreationConstraintsQualifiedClassName()Â» lc) {
+		this.linkConstraints = lc;
+	}
+
+	Â«ENDIF-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public Â«editorGen.diagram.getElementInitializersPackageName()Â».Â«editorGen.diagram.getElementInitializersClassName()Â» getElementInitializers() {
+		return initializers;
+	}
+
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public void setElementInitializers(Â«editorGen.diagram.getElementInitializersPackageName()Â».Â«editorGen.diagram.getElementInitializersClassName()Â» i) {
+		this.initializers = i;
+	}
+
+	Â«IF not editorGen.expressionProviders.oclIsUndefined() -Â»
+	Â«FOREACH editorGen.expressionProviders.providers[gmfgen::GenExpressionInterpreter] AS p-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public Â«p.getQualifiedClassName()Â» getÂ«p.classNameÂ»() {
+		return Â«p.languageÂ»Factory;
+	}
+	
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public void setÂ«p.classNameÂ»(Â«p.getQualifiedClassName()Â» f) {
+		this.Â«p.languageÂ»Factory = f;
+	}
+
+	Â«ENDFOREACH-Â»
+	Â«ENDIF-Â»
+
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void logError(String error) {
 		logError(error, null);
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void logError(String error, Throwable throwable) {
 		if (error == null && throwable != null) {
 			error = throwable.getMessage();
 		}
 		getLog().log(new org.eclipse.core.runtime.Status(
 				org.eclipse.core.runtime.IStatus.ERROR,
-				«activatorClassName».ID,
+				Â«activatorClassNameÂ».ID,
 				org.eclipse.core.runtime.IStatus.OK,
 				error, throwable));
 		debug(error, throwable);
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void logInfo(String message) {
 		logInfo(message, null);
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	public void logInfo(String message, Throwable throwable) {
 		if (message == null && throwable != null) {
 			message = throwable.getMessage();
 		}
 		getLog().log(new org.eclipse.core.runtime.Status(
 				org.eclipse.core.runtime.IStatus.INFO,
-				«activatorClassName».ID,
+				Â«activatorClassNameÂ».ID,
 				org.eclipse.core.runtime.IStatus.OK,
 				message, throwable));
 		debug(message, throwable);
 	}
 
-	«EXPAND xpt::Common::generatedMemberComment»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private void debug(String message, Throwable throwable) {
 		if (!isDebugging()) {
 			return;
@@ -246,6 +308,6 @@ public class «activatorClassName» extends org.eclipse.ui.plugin.AbstractUIPlugin
 			throwable.printStackTrace();
 		}
 	}
-	«EXPAND xpt::plugin::Activator::additions-»
+	Â«EXPAND xpt::plugin::Activator::additions-Â»
 }
-«ENDAROUND»
+Â«ENDAROUNDÂ»
