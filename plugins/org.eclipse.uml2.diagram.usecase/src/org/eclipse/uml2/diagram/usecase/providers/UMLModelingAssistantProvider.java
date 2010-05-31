@@ -49,6 +49,19 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List<?> getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
 
+		if (editPart instanceof PackageEditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.Actor_2002);
+			types.add(UMLElementTypes.Actor_2005);
+			types.add(UMLElementTypes.UseCase_2003);
+			types.add(UMLElementTypes.UseCase_2004);
+			types.add(UMLElementTypes.Component_2006);
+			types.add(UMLElementTypes.Package_2007);
+			types.add(UMLElementTypes.Constraint_2008);
+			types.add(UMLElementTypes.Comment_2009);
+			return types;
+		}
+
 		if (editPart instanceof DiagramHeaderEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.ElementImport_3001);
@@ -92,18 +105,6 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
-		if (editPart instanceof PackageEditPart) {
-			List<IElementType> types = new ArrayList<IElementType>();
-			types.add(UMLElementTypes.Actor_2002);
-			types.add(UMLElementTypes.Actor_2005);
-			types.add(UMLElementTypes.UseCase_2003);
-			types.add(UMLElementTypes.UseCase_2004);
-			types.add(UMLElementTypes.Component_2006);
-			types.add(UMLElementTypes.Package_2007);
-			types.add(UMLElementTypes.Constraint_2008);
-			types.add(UMLElementTypes.Comment_2009);
-			return types;
-		}
 		return Collections.emptyList();
 	}
 
@@ -354,9 +355,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return null;
 		}
 		Diagram diagram = (Diagram) editPart.getRoot().getContents().getModel();
-		Collection elements = new HashSet();
-		for (Iterator it = diagram.getElement().eAllContents(); it.hasNext();) {
-			EObject element = (EObject) it.next();
+		HashSet<EObject> elements = new HashSet<EObject>();
+		for (Iterator<EObject> it = diagram.getElement().eAllContents(); it.hasNext();) {
+			EObject element = it.next();
 			if (isApplicableElement(element, types)) {
 				elements.add(element);
 			}
