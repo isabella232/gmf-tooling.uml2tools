@@ -73,7 +73,7 @@ public class InterfaceName4EditPart extends LabelEditPart implements ITextAwareE
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -189,6 +189,7 @@ public class InterfaceName4EditPart extends LabelEditPart implements ITextAwareE
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -265,7 +266,7 @@ public class InterfaceName4EditPart extends LabelEditPart implements ITextAwareE
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -305,8 +306,8 @@ public class InterfaceName4EditPart extends LabelEditPart implements ITextAwareE
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Interface_3043, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName4EditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Interface_3043, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceName4EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

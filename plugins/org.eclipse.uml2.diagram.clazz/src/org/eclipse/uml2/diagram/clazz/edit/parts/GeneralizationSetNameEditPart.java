@@ -76,7 +76,7 @@ public class GeneralizationSetNameEditPart extends LabelEditPart implements ITex
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -192,6 +192,7 @@ public class GeneralizationSetNameEditPart extends LabelEditPart implements ITex
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -272,7 +273,7 @@ public class GeneralizationSetNameEditPart extends LabelEditPart implements ITex
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -312,8 +313,8 @@ public class GeneralizationSetNameEditPart extends LabelEditPart implements ITex
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.GeneralizationSet_2012, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.GeneralizationSet_2012, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

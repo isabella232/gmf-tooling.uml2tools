@@ -82,7 +82,7 @@ public class InstanceSpecificationNameEditPart extends CompartmentEditPart imple
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -108,23 +108,7 @@ public class InstanceSpecificationNameEditPart extends CompartmentEditPart imple
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new NonResizableEditPolicy() {
-
-			protected List createSelectionHandles() {
-				List handles = new ArrayList();
-				NonResizableHandleKit.addMoveHandle((GraphicalEditPart) getHost(), handles);
-				((MoveHandle) handles.get(0)).setBorder(null);
-				return handles;
-			}
-
-			public Command getCommand(Request request) {
-				return null;
-			}
-
-			public boolean understandsRequest(Request request) {
-				return false;
-			}
-		});
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new PackageEditPart.NodeLabelDragPolicy());
 	}
 
 	/**
@@ -185,6 +169,7 @@ public class InstanceSpecificationNameEditPart extends CompartmentEditPart imple
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -269,7 +254,7 @@ public class InstanceSpecificationNameEditPart extends CompartmentEditPart imple
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -309,8 +294,8 @@ public class InstanceSpecificationNameEditPart extends CompartmentEditPart imple
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.InstanceSpecification_2008, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.InstanceSpecification_2008, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.InstanceSpecificationNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

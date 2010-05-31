@@ -81,7 +81,7 @@ public class LiteralIntegerEditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -180,6 +180,7 @@ public class LiteralIntegerEditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -264,7 +265,7 @@ public class LiteralIntegerEditPart extends CompartmentEditPart implements IText
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -304,8 +305,8 @@ public class LiteralIntegerEditPart extends CompartmentEditPart implements IText
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.LiteralInteger_3039, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.LiteralInteger_3039, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.LiteralIntegerEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

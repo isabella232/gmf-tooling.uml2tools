@@ -78,7 +78,7 @@ public class InterfaceRealizationStereotypeEditPart extends LabelEditPart implem
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -111,14 +111,7 @@ public class InterfaceRealizationStereotypeEditPart extends LabelEditPart implem
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new NonResizableLabelEditPolicy() {
-
-			protected List createSelectionHandles() {
-				MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
-				mh.setBorder(null);
-				return Collections.singletonList(mh);
-			}
-		});
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new PackageEditPart.LinkLabelDragPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new SemanticLabelDirectEditPolicy());
 	}
 
@@ -187,6 +180,7 @@ public class InterfaceRealizationStereotypeEditPart extends LabelEditPart implem
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -263,7 +257,7 @@ public class InterfaceRealizationStereotypeEditPart extends LabelEditPart implem
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -303,8 +297,8 @@ public class InterfaceRealizationStereotypeEditPart extends LabelEditPart implem
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.InterfaceRealization_4008, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationStereotypeEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.InterfaceRealization_4008, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.InterfaceRealizationStereotypeEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

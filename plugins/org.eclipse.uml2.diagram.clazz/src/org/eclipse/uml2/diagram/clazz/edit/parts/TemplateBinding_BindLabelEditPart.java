@@ -79,7 +79,7 @@ public class TemplateBinding_BindLabelEditPart extends LabelEditPart implements 
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -112,14 +112,7 @@ public class TemplateBinding_BindLabelEditPart extends LabelEditPart implements 
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new NonResizableLabelEditPolicy() {
-
-			protected List createSelectionHandles() {
-				MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
-				mh.setBorder(null);
-				return Collections.singletonList(mh);
-			}
-		});
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new PackageEditPart.LinkLabelDragPolicy());
 	}
 
 	/**
@@ -187,6 +180,7 @@ public class TemplateBinding_BindLabelEditPart extends LabelEditPart implements 
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -263,7 +257,7 @@ public class TemplateBinding_BindLabelEditPart extends LabelEditPart implements 
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));

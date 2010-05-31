@@ -75,7 +75,7 @@ public class GeneralizationSetIsCoveringIsDisjointEditPart extends LabelEditPart
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -191,6 +191,7 @@ public class GeneralizationSetIsCoveringIsDisjointEditPart extends LabelEditPart
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -267,7 +268,7 @@ public class GeneralizationSetIsCoveringIsDisjointEditPart extends LabelEditPart
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -307,8 +308,8 @@ public class GeneralizationSetIsCoveringIsDisjointEditPart extends LabelEditPart
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.GeneralizationSet_2012, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.GeneralizationSet_2012, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.GeneralizationSetIsCoveringIsDisjointEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

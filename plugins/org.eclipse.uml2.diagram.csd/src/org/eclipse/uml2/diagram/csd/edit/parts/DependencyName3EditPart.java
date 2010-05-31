@@ -76,7 +76,7 @@ public class DependencyName3EditPart extends LabelEditPart implements ITextAware
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -109,14 +109,7 @@ public class DependencyName3EditPart extends LabelEditPart implements ITextAware
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new NonResizableLabelEditPolicy() {
-
-			protected List createSelectionHandles() {
-				MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
-				mh.setBorder(null);
-				return Collections.singletonList(mh);
-			}
-		});
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new PackageEditPart.LinkLabelDragPolicy());
 	}
 
 	/**
@@ -184,6 +177,7 @@ public class DependencyName3EditPart extends LabelEditPart implements ITextAware
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -260,7 +254,7 @@ public class DependencyName3EditPart extends LabelEditPart implements ITextAware
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -300,8 +294,8 @@ public class DependencyName3EditPart extends LabelEditPart implements ITextAware
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Dependency_4017, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.csd.edit.parts.DependencyName3EditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Dependency_4017, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.csd.edit.parts.DependencyName3EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

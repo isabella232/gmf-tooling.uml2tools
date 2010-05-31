@@ -81,7 +81,7 @@ public class AssociationInstanceSourceEditPart extends LabelEditPart implements 
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -114,14 +114,7 @@ public class AssociationInstanceSourceEditPart extends LabelEditPart implements 
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new NonResizableLabelEditPolicy() {
-
-			protected List createSelectionHandles() {
-				MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
-				mh.setBorder(null);
-				return Collections.singletonList(mh);
-			}
-		});
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new PackageEditPart.LinkLabelDragPolicy());
 	}
 
 	/**
@@ -189,6 +182,7 @@ public class AssociationInstanceSourceEditPart extends LabelEditPart implements 
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -270,7 +264,7 @@ public class AssociationInstanceSourceEditPart extends LabelEditPart implements 
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -310,8 +304,8 @@ public class AssociationInstanceSourceEditPart extends LabelEditPart implements 
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Slot_4015, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.clazz.edit.parts.AssociationInstanceSourceEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Slot_4015, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.clazz.edit.parts.AssociationInstanceSourceEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
