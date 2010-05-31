@@ -78,7 +78,7 @@ public class LocalPostcondition_LiteralStringEditPart extends CompartmentEditPar
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -177,6 +177,7 @@ public class LocalPostcondition_LiteralStringEditPart extends CompartmentEditPar
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -253,7 +254,7 @@ public class LocalPostcondition_LiteralStringEditPart extends CompartmentEditPar
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
@@ -293,8 +294,8 @@ public class LocalPostcondition_LiteralStringEditPart extends CompartmentEditPar
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.LiteralString_3051, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.activity.edit.parts.LocalPostcondition_LiteralStringEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.LiteralString_3051, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.activity.edit.parts.LocalPostcondition_LiteralStringEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
