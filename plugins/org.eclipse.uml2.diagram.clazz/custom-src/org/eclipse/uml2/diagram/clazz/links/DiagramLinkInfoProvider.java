@@ -35,8 +35,8 @@ public class DiagramLinkInfoProvider implements IDiagramLinkInfoProvider {
 	}
 
 	@SuppressWarnings("unchecked")
-	public Collection<IUpdaterLinkDescriptor> getContainedLinks(View view) {
-		return UMLDiagramUpdater.getContainedLinks(view);
+	public Collection<? extends IUpdaterLinkDescriptor> getContainedLinks(View view) {
+		return UMLDiagramUpdater.TYPED_ADAPTER.getContainedLinks(view);
 	}
 
 	public String getType(int visualId) {
