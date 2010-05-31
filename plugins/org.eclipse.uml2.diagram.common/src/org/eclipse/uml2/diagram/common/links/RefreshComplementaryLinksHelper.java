@@ -77,7 +77,7 @@ public class RefreshComplementaryLinksHelper {
 
 		ILinkDetector getLinkDetector();
 
-		Collection<IUpdaterLinkDescriptor> getContainedLinks(View view);
+		Collection<? extends IUpdaterLinkDescriptor> getContainedLinks(View view);
 
 		boolean isPortProvidedEdge(Edge edge);
 
@@ -129,7 +129,7 @@ public class RefreshComplementaryLinksHelper {
 
 	private void refreshPortProvidedInterfaceConnections(IGraphicalEditPart portEditPart, IDiagramLinkInfoProvider provider) {
 		View view = portEditPart.getNotationView();
-		Collection<IUpdaterLinkDescriptor> portLinks = provider.getContainedLinks(view);
+		Collection<? extends IUpdaterLinkDescriptor> portLinks = provider.getContainedLinks(view);
 		List<IUpdaterLinkDescriptor> proposedLinks = new LinkedList<IUpdaterLinkDescriptor>();
 
 		EObject element = view.getElement();
@@ -156,7 +156,7 @@ public class RefreshComplementaryLinksHelper {
 
 	private void refreshPortRequiredInterfaceConnections(IGraphicalEditPart portEditPart, Notification notification, IDiagramLinkInfoProvider provider) {
 		View view = portEditPart.getNotationView();
-		Collection<IUpdaterLinkDescriptor> portLinks = provider.getContainedLinks(view);
+		Collection<? extends IUpdaterLinkDescriptor> portLinks = provider.getContainedLinks(view);
 		List<IUpdaterLinkDescriptor> proposedLinks = new LinkedList<IUpdaterLinkDescriptor>();
 
 		EObject element = view.getElement();
