@@ -33,11 +33,13 @@ org.eclipse.gef.palette.ToolEntry «toolVarName» = new org.eclipse.gef.palette.
 «ELSE-»
 «REM»The only change is the line below - use ToolEntries from [oeud].common plugin «ENDREM»«-»
 «LET (if genNodes->isEmpty() then 'org.eclipse.uml2.diagram.common.part.LinkToolEntry' else 'org.eclipse.uml2.diagram.common.part.NodeToolEntry' endif) AS toolEntryClass-»
-java.util.List/*<IElementType>*/ types = new java.util.ArrayList/*<IElementType>*/(«elements->size()»);
+«IF elements->size() > 1-»
+«EXPAND CodeStyle::newGenericInstance('types', 'java.util.ArrayList', 'org.eclipse.gmf.runtime.emf.type.core.IElementType') FOR elements->any(true)»(«elements->size()»);
 «FOREACH elements->asSequence() AS e-»
 types.add(«EXPAND xpt::providers::ElementTypes::accessElementType FOR e»);
 «ENDFOREACH-»
-«toolEntryClass» «toolVarName» = new «toolEntryClass»(«EXPAND xpt::editor::palette::PaletteFactory::i18nTitle», «EXPAND xpt::editor::palette::PaletteFactory::i18nDesc», types);
+«ENDIF-»
+«toolEntryClass» «toolVarName» = new «toolEntryClass»(«EXPAND xpt::editor::palette::PaletteFactory::i18nTitle», «EXPAND xpt::editor::palette::PaletteFactory::i18nDesc», «IF elements->size() > 1»types«ELSE»java.util.Collections.singletonList(«EXPAND xpt::providers::ElementTypes::accessElementType FOR elements->first()»)«ENDIF»);
 «ENDLET-»
 «ENDIF-»
 «ENDDEFINE»
