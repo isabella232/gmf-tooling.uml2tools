@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.usecase.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -55,7 +56,7 @@ public class NestedPackageCreateCommand extends EditElementCommand {
 		Package owner = (Package) getElementToEdit();
 		owner.getPackagedElements().add(newElement);
 
-		UMLElementTypes.init_Package_2007(newElement);
+		ElementInitializers.getInstance().init_Package_2007(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.usecase.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.usecase.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.ExtensionPoint;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -56,7 +57,7 @@ public class ExtensionPointCreateCommand extends EditElementCommand {
 		UseCase owner = (UseCase) getElementToEdit();
 		owner.getExtensionPoints().add(newElement);
 
-		UMLElementTypes.init_ExtensionPoint_3002(newElement);
+		ElementInitializers.getInstance().init_ExtensionPoint_3002(newElement);
 
 		doConfigure(newElement, monitor, info);
 

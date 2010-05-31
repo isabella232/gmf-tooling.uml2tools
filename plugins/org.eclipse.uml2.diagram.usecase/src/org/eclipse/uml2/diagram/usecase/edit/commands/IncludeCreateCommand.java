@@ -66,7 +66,7 @@ public class IncludeCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateInclude_4001(getContainer(), getSource(), getTarget());
+		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateInclude_4001(getContainer(), getSource(), getTarget());
 	}
 
 	/**
