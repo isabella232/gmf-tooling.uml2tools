@@ -21,6 +21,6 @@ that allows usage of link`s eClass in link constraint
 		return false;
 	}
 «ENDIF-»
-	return «EXPAND xpt::diagram::commands::CreateLinkUtils::validatorInvocation FOR link»(getContainer(), getSource(), getTarget())//
-		&& UMLBaseItemSemanticEditPolicy.LinkConstraints.«getGeneralizedCanExistMethodName()»«link.getUniqueIdentifier()»(getSource(), getTarget(), linkEClass);
+	return «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canCreateCall(link, 'getContainer()', 'getSource()', 'getTarget()')»	&& //
+		UMLBaseItemSemanticEditPolicy.LinkConstraints.«getGeneralizedCanExistMethodName()»«link.getUniqueIdentifier()»(getSource(), getTarget(), linkEClass);
 «ENDDEFINE»

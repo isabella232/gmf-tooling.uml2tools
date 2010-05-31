@@ -21,12 +21,9 @@ that allows usage of link`s eClass in link constraint
 			return false;
 		}
 		«EXPAND MetaModel::DeclareAndAssignContainer('container', 'getLink()', metaClass) FOR containmentMetaFeature.genClass»
-		return «EXPAND xpt::diagram::commands::ReorientLinkUtils::checkLinkConstraintInvocation FOR link»(container, «sourceVar», «targetVar») &&//
-			«EXPAND getAdditionCheck(link, sourceVar, targetVar)»
-	«ELSE-»
-		return «EXPAND xpt::diagram::commands::ReorientLinkUtils::checkLinkConstraintInvocation FOR link»(«sourceVar», «targetVar»)&&//
-			«EXPAND getAdditionCheck(link, sourceVar, targetVar)»
 	«ENDIF-»
+	return «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'container', 'getLink()', sourceVar, targetVar)» &&//
+		«EXPAND getAdditionCheck(link, sourceVar, targetVar)»
 «ENDDEFINE»
 
 «DEFINE getAdditionCheck(link : gmfgen::GenLink, sourceVar : String, targetVar : String) FOR gmfgen::TypeLinkModelFacet-»
