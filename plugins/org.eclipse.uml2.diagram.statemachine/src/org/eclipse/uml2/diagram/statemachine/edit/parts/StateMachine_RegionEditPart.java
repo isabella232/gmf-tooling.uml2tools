@@ -96,8 +96,7 @@ public class StateMachine_RegionEditPart extends ShapeNodeEditPart implements Pr
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		RegionFigure figure = new RegionFigure();
-		return primaryShape = figure;
+		return primaryShape = new RegionFigure();
 	}
 
 	/**

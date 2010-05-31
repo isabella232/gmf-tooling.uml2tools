@@ -129,8 +129,7 @@ public class StateMachineEditPart extends AbstractBorderedShapeEditPart implemen
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		CompositeStateFigure figure = new CompositeStateFigure();
-		return primaryShape = figure;
+		return primaryShape = new CompositeStateFigure();
 	}
 
 	/**

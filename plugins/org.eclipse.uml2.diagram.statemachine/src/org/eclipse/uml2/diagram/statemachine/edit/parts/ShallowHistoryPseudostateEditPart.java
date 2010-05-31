@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.draw2d.Ellipse;
@@ -111,8 +112,7 @@ public class ShallowHistoryPseudostateEditPart extends ShapeNodeEditPart impleme
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		ShallowHistoryFigure figure = new ShallowHistoryFigure();
-		return primaryShape = figure;
+		return primaryShape = new ShallowHistoryFigure();
 	}
 
 	/**
@@ -215,8 +215,8 @@ public class ShallowHistoryPseudostateEditPart extends ShapeNodeEditPart impleme
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSource() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnSource() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Transition_4001);
 		return types;
 	}
@@ -224,8 +224,8 @@ public class ShallowHistoryPseudostateEditPart extends ShapeNodeEditPart impleme
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof SimpleStateEditPart) {
 			types.add(UMLElementTypes.Transition_4001);
 		}
@@ -280,54 +280,24 @@ public class ShallowHistoryPseudostateEditPart extends ShapeNodeEditPart impleme
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForTarget(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.State_3001);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.State_3012);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.State_3016);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.ConnectionPointReference_3017);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.ConnectionPointReference_3018);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.FinalState_3003);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3004);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3005);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3006);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3007);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3008);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3009);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3010);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3011);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3014);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3015);
 		}
 		return types;
@@ -336,8 +306,8 @@ public class ShallowHistoryPseudostateEditPart extends ShapeNodeEditPart impleme
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMARelTypesOnTarget() {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMARelTypesOnTarget() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.Transition_4001);
 		return types;
 	}
@@ -345,54 +315,24 @@ public class ShallowHistoryPseudostateEditPart extends ShapeNodeEditPart impleme
 	/**
 	 * @generated
 	 */
-	public List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/getMATypesForSource(IElementType relationshipType) {
-		List/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/types = new ArrayList/*<org.eclipse.gmf.runtime.emf.type.core.IElementType>*/();
+	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.State_3001);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.State_3012);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.State_3016);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.ConnectionPointReference_3017);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.ConnectionPointReference_3018);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.FinalState_3003);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3004);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3005);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3006);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3007);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3008);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3009);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3010);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3011);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3014);
-		}
-		if (relationshipType == UMLElementTypes.Transition_4001) {
 			types.add(UMLElementTypes.Pseudostate_3015);
 		}
 		return types;

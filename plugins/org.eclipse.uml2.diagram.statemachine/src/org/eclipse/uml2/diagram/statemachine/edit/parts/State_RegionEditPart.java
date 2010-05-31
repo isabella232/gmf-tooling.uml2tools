@@ -96,8 +96,7 @@ public class State_RegionEditPart extends ShapeNodeEditPart implements PrimarySh
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		RegionFigure figure = new RegionFigure();
-		return primaryShape = figure;
+		return primaryShape = new RegionFigure();
 	}
 
 	/**
