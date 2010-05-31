@@ -60,7 +60,7 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-		for (Iterator it = view.getTargetEdges().iterator(); it.hasNext();) {
+		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (UMLVisualIDRegistry.getVisualID(incomingLink) == ManifestationEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
@@ -87,7 +87,7 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 				continue;
 			}
 		}
-		for (Iterator it = view.getSourceEdges().iterator(); it.hasNext();) {
+		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
 			if (UMLVisualIDRegistry.getVisualID(outgoingLink) == DeploymentEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
@@ -126,15 +126,15 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	 */
 	private void addDestroyChildNodesCommand(ICompositeCommand cmd) {
 		View view = (View) getHost().getModel();
-		for (Iterator nit = view.getChildren().iterator(); nit.hasNext();) {
+		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
 			case DeviceDevicecontents2EditPart.VISUAL_ID:
-				for (Iterator cit = node.getChildren().iterator(); cit.hasNext();) {
+				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (UMLVisualIDRegistry.getVisualID(cnode)) {
 					case Device2EditPart.VISUAL_ID:
-						for (Iterator it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (UMLVisualIDRegistry.getVisualID(incomingLink) == ManifestationEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
@@ -161,7 +161,7 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 								continue;
 							}
 						}
-						for (Iterator it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
 							if (UMLVisualIDRegistry.getVisualID(outgoingLink) == DeploymentEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
@@ -187,7 +187,7 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case ArtifactEditPart.VISUAL_ID:
-						for (Iterator it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (UMLVisualIDRegistry.getVisualID(incomingLink) == DeploymentEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
@@ -220,7 +220,7 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 								continue;
 							}
 						}
-						for (Iterator it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
 							if (UMLVisualIDRegistry.getVisualID(outgoingLink) == ManifestationEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
@@ -246,7 +246,7 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case ExecutionEnvironment2EditPart.VISUAL_ID:
-						for (Iterator it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (UMLVisualIDRegistry.getVisualID(incomingLink) == ManifestationEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
@@ -273,7 +273,7 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 								continue;
 							}
 						}
-						for (Iterator it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
 							if (UMLVisualIDRegistry.getVisualID(outgoingLink) == DeploymentEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
@@ -299,7 +299,7 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
 						break;
 					case Node2EditPart.VISUAL_ID:
-						for (Iterator it = cnode.getTargetEdges().iterator(); it.hasNext();) {
+						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (UMLVisualIDRegistry.getVisualID(incomingLink) == ManifestationEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
@@ -326,7 +326,7 @@ public class Device2ItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 								continue;
 							}
 						}
-						for (Iterator it = cnode.getSourceEdges().iterator(); it.hasNext();) {
+						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
 							if (UMLVisualIDRegistry.getVisualID(outgoingLink) == DeploymentEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);

@@ -133,7 +133,7 @@ public class GeneralizationItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		Classifier source = (Classifier) sourceEObject;
 		Classifier target = ((Generalization) targetEObject).getGeneral();
 
-		if (!UMLBaseItemSemanticEditPolicy.LinkConstraints.canCreateGeneralization_4001(source, target)) {
+		if (!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateGeneralization_4001(source, target)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		if (req.getContainmentFeature() == null) {

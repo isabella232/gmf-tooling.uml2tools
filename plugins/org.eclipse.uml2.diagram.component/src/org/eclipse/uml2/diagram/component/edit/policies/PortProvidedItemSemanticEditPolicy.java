@@ -41,7 +41,8 @@ public class PortProvidedItemSemanticEditPolicy extends UMLBaseItemSemanticEditP
 
 				@Override
 				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-					RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(port, NotationPackage.eINSTANCE.getView_SourceEdges(), RefreshComplementaryLinksHelper.PORT_PROVIDED_INTERFACES_AFTER_PORT_EVENT);
+					RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(port, NotationPackage.eINSTANCE.getView_SourceEdges(),
+							RefreshComplementaryLinksHelper.PORT_PROVIDED_INTERFACES_AFTER_PORT_EVENT);
 					return super.doExecuteWithResult(monitor, info);
 				}
 
