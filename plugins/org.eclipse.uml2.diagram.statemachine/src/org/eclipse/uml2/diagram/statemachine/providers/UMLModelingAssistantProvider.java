@@ -88,6 +88,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List<?> getTypesForPopupBarGen(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
 
+		if (editPart instanceof PackageEditPart) {
+			List<IElementType> types = new ArrayList<IElementType>();
+			types.add(UMLElementTypes.StateMachine_2005);
+			return types;
+		}
+
 		if (editPart instanceof StateMachineEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.Region_3013);
@@ -160,11 +166,6 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return types;
 		}
 
-		if (editPart instanceof PackageEditPart) {
-			List<IElementType> types = new ArrayList<IElementType>();
-			types.add(UMLElementTypes.StateMachine_2005);
-			return types;
-		}
 		return Collections.emptyList();
 	}
 
@@ -475,9 +476,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			return null;
 		}
 		Diagram diagram = (Diagram) editPart.getRoot().getContents().getModel();
-		Collection elements = new HashSet();
-		for (Iterator it = diagram.getElement().eAllContents(); it.hasNext();) {
-			EObject element = (EObject) it.next();
+		HashSet<EObject> elements = new HashSet<EObject>();
+		for (Iterator<EObject> it = diagram.getElement().eAllContents(); it.hasNext();) {
+			EObject element = it.next();
 			if (isApplicableElement(element, types)) {
 				elements.add(element);
 			}
