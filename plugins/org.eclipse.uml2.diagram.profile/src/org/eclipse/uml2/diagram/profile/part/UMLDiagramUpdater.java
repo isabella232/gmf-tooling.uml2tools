@@ -70,7 +70,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getSemanticChildren(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> getSemanticChildren(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case ProfileEditPart.VISUAL_ID: {
 			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart.VISUAL_ID). 
@@ -80,8 +80,8 @@ public class UMLDiagramUpdater {
 			//VID = org.eclipse.uml2.diagram.profile.edit.parts.Profile3EditPart.VISUAL_ID, 
 			//for the case when top-level view is created for the same semantic element as the canvas view.
 
-			LinkedList<UMLNodeDescriptor> resultAndHeader = new LinkedList<UMLNodeDescriptor>();
-			resultAndHeader.add(new UMLNodeDescriptor(view.getElement(), Profile3EditPart.VISUAL_ID));
+			LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> resultAndHeader = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor>();
+			resultAndHeader.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(view.getElement(), Profile3EditPart.VISUAL_ID));
 			resultAndHeader.addAll(getProfile_1000SemanticChildren(view));
 			return resultAndHeader;
 		}
@@ -104,7 +104,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getStereotypeAttributes_7001SemanticChildren(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> getStereotypeAttributes_7001SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -113,12 +113,12 @@ public class UMLDiagramUpdater {
 			return Collections.emptyList();
 		}
 		Stereotype modelElement = (Stereotype) containerView.getElement();
-		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == PropertyEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -128,7 +128,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getStereotypeConstraints_7002SemanticChildren(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> getStereotypeConstraints_7002SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -137,12 +137,12 @@ public class UMLDiagramUpdater {
 			return Collections.emptyList();
 		}
 		Stereotype modelElement = (Stereotype) containerView.getElement();
-		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getOwnedRules().iterator(); it.hasNext();) {
 			Constraint childElement = (Constraint) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ConstraintEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -152,7 +152,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getStereotypeImages_7006SemanticChildren(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> getStereotypeImages_7006SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -161,12 +161,12 @@ public class UMLDiagramUpdater {
 			return Collections.emptyList();
 		}
 		Stereotype modelElement = (Stereotype) containerView.getElement();
-		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getIcons().iterator(); it.hasNext();) {
 			Image childElement = (Image) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ImageEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -176,7 +176,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getProfileContents_7003SemanticChildren(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> getProfileContents_7003SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -185,12 +185,12 @@ public class UMLDiagramUpdater {
 			return Collections.emptyList();
 		}
 		Profile modelElement = (Profile) containerView.getElement();
-		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
 			PackageableElement childElement = (PackageableElement) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Stereotype2EditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -200,7 +200,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getEnumerationLiterals_7004SemanticChildren(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> getEnumerationLiterals_7004SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -209,12 +209,12 @@ public class UMLDiagramUpdater {
 			return Collections.emptyList();
 		}
 		Enumeration modelElement = (Enumeration) containerView.getElement();
-		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getOwnedLiterals().iterator(); it.hasNext();) {
 			EnumerationLiteral childElement = (EnumerationLiteral) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EnumerationLiteralEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -224,7 +224,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getProfileProfile_imports_7005SemanticChildren(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> getProfileProfile_imports_7005SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -233,12 +233,12 @@ public class UMLDiagramUpdater {
 			return Collections.emptyList();
 		}
 		Profile modelElement = (Profile) containerView.getElement();
-		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getElementImports().iterator(); it.hasNext();) {
 			ElementImport childElement = (ElementImport) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ElementImport2EditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -248,17 +248,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLNodeDescriptor> getProfile_1000SemanticChildren(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> getProfile_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
 		Profile modelElement = (Profile) view.getElement();
-		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getOwnedStereotypes().iterator(); it.hasNext();) {
 			Stereotype childElement = (Stereotype) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == StereotypeEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -266,11 +266,11 @@ public class UMLDiagramUpdater {
 			PackageableElement childElement = (PackageableElement) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Profile2EditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == Constraint2EditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -278,7 +278,7 @@ public class UMLDiagramUpdater {
 			Type childElement = (Type) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EnumerationEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -286,7 +286,7 @@ public class UMLDiagramUpdater {
 			ElementImport childElement = (ElementImport) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ElementImportEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -294,7 +294,7 @@ public class UMLDiagramUpdater {
 			Comment childElement = (Comment) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == CommentEditPart.VISUAL_ID) {
-				result.add(new UMLNodeDescriptor(childElement, visualID));
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -304,7 +304,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getContainedLinks(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case ProfileEditPart.VISUAL_ID:
 			return getProfile_1000ContainedLinks(view);
@@ -345,7 +345,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getIncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getIncomingLinks(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StereotypeEditPart.VISUAL_ID:
 			return getStereotype_2001IncomingLinks(view);
@@ -384,7 +384,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getOutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getOutgoingLinks(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StereotypeEditPart.VISUAL_ID:
 			return getStereotype_2001OutgoingLinks(view);
@@ -423,9 +423,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getStereotype_2001ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getStereotype_2001ContainedLinks(View view) {
 		Stereotype modelElement = (Stereotype) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		return result;
 	}
@@ -433,9 +433,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getProfile_2002ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getProfile_2002ContainedLinks(View view) {
 		Profile modelElement = (Profile) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Extension_4002(modelElement));
 		return result;
 	}
@@ -443,9 +443,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getEnumeration_2003ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getEnumeration_2003ContainedLinks(View view) {
 		Enumeration modelElement = (Enumeration) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		return result;
 	}
@@ -453,14 +453,14 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getElementImport_2006ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getElementImport_2006ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getProfile_2007ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getProfile_2007ContainedLinks(View view) {
 		//no links to, from and inside the diagram header
 		return Collections.emptyList();
 	}
@@ -468,9 +468,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getConstraint_2008ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getConstraint_2008ContainedLinks(View view) {
 		Constraint modelElement = (Constraint) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement));
 		return result;
 	}
@@ -478,9 +478,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getComment_2009ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getComment_2009ContainedLinks(View view) {
 		Comment modelElement = (Comment) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(modelElement));
 		return result;
 	}
@@ -488,16 +488,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getProperty_3001ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getProperty_3001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getConstraint_3008ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getConstraint_3008ContainedLinks(View view) {
 		Constraint modelElement = (Constraint) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement));
 		return result;
 	}
@@ -505,16 +505,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getImage_3010ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getImage_3010ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getStereotype_3003ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getStereotype_3003ContainedLinks(View view) {
 		Stereotype modelElement = (Stereotype) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		return result;
 	}
@@ -522,38 +522,38 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getEnumerationLiteral_3005ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getEnumerationLiteral_3005ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getElementImport_3009ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getElementImport_3009ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getGeneralization_4001ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getGeneralization_4001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getExtension_4002ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getExtension_4002ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getStereotype_2001IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getStereotype_2001IncomingLinks(View view) {
 		Stereotype modelElement = (Stereotype) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(modelElement, crossReferences));
@@ -563,10 +563,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getProfile_2002IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getProfile_2002IncomingLinks(View view) {
 		Profile modelElement = (Profile) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(modelElement, crossReferences));
 		return result;
@@ -575,10 +575,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getEnumeration_2003IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getEnumeration_2003IncomingLinks(View view) {
 		Enumeration modelElement = (Enumeration) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(modelElement, crossReferences));
@@ -588,10 +588,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getElementImport_2006IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getElementImport_2006IncomingLinks(View view) {
 		ElementImport modelElement = (ElementImport) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Extension_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(modelElement, crossReferences));
@@ -601,7 +601,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getProfile_2007IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getProfile_2007IncomingLinks(View view) {
 		//no links to, from and inside the diagram header
 		return Collections.emptyList();
 	}
@@ -609,10 +609,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getConstraint_2008IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getConstraint_2008IncomingLinks(View view) {
 		Constraint modelElement = (Constraint) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(modelElement, crossReferences));
 		return result;
@@ -621,10 +621,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getComment_2009IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getComment_2009IncomingLinks(View view) {
 		Comment modelElement = (Comment) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(modelElement, crossReferences));
 		return result;
@@ -633,52 +633,52 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getProperty_3001IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getProperty_3001IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getConstraint_3008IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getConstraint_3008IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getImage_3010IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getImage_3010IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getStereotype_3003IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getStereotype_3003IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getEnumerationLiteral_3005IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getEnumerationLiteral_3005IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getElementImport_3009IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getElementImport_3009IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getGeneralization_4001IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getGeneralization_4001IncomingLinks(View view) {
 		Generalization modelElement = (Generalization) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(modelElement, crossReferences));
 		return result;
@@ -687,10 +687,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getExtension_4002IncomingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getExtension_4002IncomingLinks(View view) {
 		Extension modelElement = (Extension) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(modelElement, crossReferences));
@@ -700,9 +700,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getStereotype_2001OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getStereotype_2001OutgoingLinks(View view) {
 		Stereotype modelElement = (Stereotype) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Extension_4002(modelElement));
 		return result;
@@ -711,16 +711,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getProfile_2002OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getProfile_2002OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getEnumeration_2003OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getEnumeration_2003OutgoingLinks(View view) {
 		Enumeration modelElement = (Enumeration) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		return result;
 	}
@@ -728,14 +728,14 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getElementImport_2006OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getElementImport_2006OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getProfile_2007OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getProfile_2007OutgoingLinks(View view) {
 		//no links to, from and inside the diagram header
 		return Collections.emptyList();
 	}
@@ -743,9 +743,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getConstraint_2008OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getConstraint_2008OutgoingLinks(View view) {
 		Constraint modelElement = (Constraint) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(modelElement));
 		return result;
 	}
@@ -753,9 +753,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getComment_2009OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getComment_2009OutgoingLinks(View view) {
 		Comment modelElement = (Comment) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(modelElement));
 		return result;
 	}
@@ -763,58 +763,58 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getProperty_3001OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getProperty_3001OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getConstraint_3008OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getConstraint_3008OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getImage_3010OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getImage_3010OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getStereotype_3003OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getStereotype_3003OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getEnumerationLiteral_3005OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getEnumerationLiteral_3005OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getElementImport_3009OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getElementImport_3009OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getGeneralization_4001OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getGeneralization_4001OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getExtension_4002OutgoingLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getExtension_4002OutgoingLinks(View view) {
 		Extension modelElement = (Extension) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		return result;
 	}
@@ -822,8 +822,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Generalization_4001(Classifier container) {
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+	private static Collection<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getContainedTypeModelFacetLinks_Generalization_4001(Classifier container) {
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		for (Iterator<?> links = container.getGeneralizations().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Generalization) {
@@ -834,7 +834,7 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 			Classifier dst = link.getGeneral();
-			result.add(new UMLLinkDescriptor(container, dst, link, UMLElementTypes.Generalization_4001, GeneralizationEditPart.VISUAL_ID));
+			result.add(new org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor(container, dst, link, UMLElementTypes.Generalization_4001, GeneralizationEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -867,9 +867,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Generalization_4001(Classifier target,
+	private static Collection<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Generalization_4001(Classifier target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getGeneralization_General() || false == setting.getEObject() instanceof Generalization) {
@@ -883,7 +883,7 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 			Classifier container = (Classifier) link.eContainer();
-			result.add(new UMLLinkDescriptor(container, target, link, UMLElementTypes.Generalization_4001, GeneralizationEditPart.VISUAL_ID));
+			result.add(new org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor(container, target, link, UMLElementTypes.Generalization_4001, GeneralizationEditPart.VISUAL_ID));
 
 		}
 		return result;
@@ -916,13 +916,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(Element target,
+	private static Collection<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(Element target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getConstraint_ConstrainedElement()) {
-				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.ConstraintConstrainedElement_4003,
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.ConstraintConstrainedElement_4003,
 						ConstraintConstrainedElementEditPart.VISUAL_ID));
 			}
 		}
@@ -932,13 +932,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(Element target,
+	private static Collection<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(Element target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getComment_AnnotatedElement()) {
-				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.CommentAnnotatedElement_4004,
+				result.add(new org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.CommentAnnotatedElement_4004,
 						CommentAnnotatedElementEditPart.VISUAL_ID));
 			}
 		}
@@ -974,11 +974,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(Constraint source) {
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+	private static Collection<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4003(Constraint source) {
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		for (Iterator<?> destinations = source.getConstrainedElements().iterator(); destinations.hasNext();) {
 			Element destination = (Element) destinations.next();
-			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ConstraintConstrainedElement_4003,
+			result.add(new org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor(source, destination, UMLElementTypes.ConstraintConstrainedElement_4003,
 					ConstraintConstrainedElementEditPart.VISUAL_ID));
 		}
 		return result;
@@ -987,11 +987,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(Comment source) {
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+	private static Collection<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4004(Comment source) {
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		for (Iterator<?> destinations = source.getAnnotatedElements().iterator(); destinations.hasNext();) {
 			Element destination = (Element) destinations.next();
-			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.CommentAnnotatedElement_4004, CommentAnnotatedElementEditPart.VISUAL_ID));
+			result.add(new org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor(source, destination, UMLElementTypes.CommentAnnotatedElement_4004, CommentAnnotatedElementEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -999,9 +999,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<UMLLinkDescriptor> getProfile_1000ContainedLinks(View view) {
+	public static List<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> getProfile_1000ContainedLinks(View view) {
 		Profile modelElement = (Profile) view.getElement();
-		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.profile.part.UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Extension_4002(modelElement));
 		return result;
 	}
