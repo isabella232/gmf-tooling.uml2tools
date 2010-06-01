@@ -47,6 +47,7 @@ import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Realization;
 import org.eclipse.uml2.uml.RedefinableTemplateSignature;
+import org.eclipse.uml2.uml.Relationship;
 import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.TemplateBinding;
 import org.eclipse.uml2.uml.TemplateSignature;
@@ -59,7 +60,6 @@ import org.eclipse.uml2.uml.ValueSpecification;
 /**
  * @generated
  */
-@SuppressWarnings("unchecked")
 public class UMLDiagramUpdater {
 
 	/**
@@ -72,8 +72,21 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getSemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getSemanticChildren(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case PackageEditPart.VISUAL_ID: {
+			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart.VISUAL_ID). 
+			//The only purpose for this node is to be a container for children (imports, etc)
+			//of the "main" diagram figure (that one shown as Canvas).
+			//Also we have modified the VisualIDRegistry#getNodeVisualID() to return
+			//VID = org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart.VISUAL_ID, 
+			//for the case when top-level view is created for the same semantic element as the canvas view.
+
+			LinkedList<UMLNodeDescriptor> resultAndHeader = new LinkedList<UMLNodeDescriptor>();
+			resultAndHeader.add(new UMLNodeDescriptor(view.getElement(), Package4EditPart.VISUAL_ID));
+			resultAndHeader.addAll(getPackage_1000SemanticChildren(view));
+			return resultAndHeader;
+		}
 		case Class2EditPart.VISUAL_ID:
 			return getClass_2001SemanticChildren(view);
 		case AssociationClass2EditPart.VISUAL_ID:
@@ -170,33 +183,20 @@ public class UMLDiagramUpdater {
 			return getInterfaceClasses_7049SemanticChildren(view);
 		case InstanceSpecificationValueEditPart.VISUAL_ID:
 			return getInstanceSpecificationValue_7046SemanticChildren(view);
-		case PackageEditPart.VISUAL_ID: {
-			//We have "dummy" TopLevelNode (with vid = org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart.VISUAL_ID). 
-			//The only purpose for this node is to be a container for children (imports, etc)
-			//of the "main" diagram figure (that one shown as Canvas).
-			//Also we have modified the VisualIDRegistry#getNodeVisualID() to return
-			//VID = org.eclipse.uml2.diagram.clazz.edit.parts.Package4EditPart.VISUAL_ID, 
-			//for the case when top-level view is created for the same semantic element as the canvas view.
-
-			List resultAndHeader = new LinkedList();
-			resultAndHeader.add(new UMLNodeDescriptor(view.getElement(), Package4EditPart.VISUAL_ID));
-			resultAndHeader.addAll(getPackage_1000SemanticChildren(view));
-			return resultAndHeader;
 		}
-		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getClass_2001SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getClass_2001SemanticChildren(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == PortEditPart.VISUAL_ID) {
@@ -217,12 +217,12 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_2007SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getAssociationClass_2007SemanticChildren(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		AssociationClass modelElement = (AssociationClass) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		{
 			TemplateSignature childElement = modelElement.getOwnedTemplateSignature();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -236,12 +236,12 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataType_2004SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getDataType_2004SemanticChildren(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		DataType modelElement = (DataType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		{
 			TemplateSignature childElement = modelElement.getOwnedTemplateSignature();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -255,12 +255,12 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_2005SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPrimitiveType_2005SemanticChildren(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		{
 			TemplateSignature childElement = modelElement.getOwnedTemplateSignature();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -274,12 +274,12 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_2003SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getEnumeration_2003SemanticChildren(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Enumeration modelElement = (Enumeration) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		{
 			TemplateSignature childElement = modelElement.getOwnedTemplateSignature();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -293,12 +293,12 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_2017SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getInstanceSpecification_2017SemanticChildren(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		{
 			ValueSpecification childElement = modelElement.getSpecification();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -312,13 +312,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClass_3033SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getClass_3033SemanticChildren(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == PortEditPart.VISUAL_ID) {
@@ -339,12 +339,12 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_3034SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getEnumeration_3034SemanticChildren(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Enumeration modelElement = (Enumeration) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		{
 			TemplateSignature childElement = modelElement.getOwnedTemplateSignature();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -358,12 +358,12 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataType_3036SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getDataType_3036SemanticChildren(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		DataType modelElement = (DataType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		{
 			TemplateSignature childElement = modelElement.getOwnedTemplateSignature();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -377,12 +377,12 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_3037SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPrimitiveType_3037SemanticChildren(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		{
 			TemplateSignature childElement = modelElement.getOwnedTemplateSignature();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -396,17 +396,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackagePackages_7010SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPackagePackages_7010SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Package modelElement = (Package) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getNestedPackages().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNestedPackages().iterator(); it.hasNext();) {
 			Package childElement = (Package) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Package3EditPart.VISUAL_ID) {
@@ -420,17 +420,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackageClassifiers_7011SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPackageClassifiers_7011SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Package modelElement = (Package) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
 			Type childElement = (Type) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ClassEditPart.VISUAL_ID) {
@@ -464,17 +464,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackageOther_7012SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPackageOther_7012SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Package modelElement = (Package) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
 			PackageableElement childElement = (PackageableElement) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == InstanceSpecificationEditPart.VISUAL_ID) {
@@ -488,17 +488,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClassAttributes_7001SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getClassAttributes_7001SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Class modelElement = (Class) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == PropertyEditPart.VISUAL_ID) {
@@ -512,17 +512,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClassOperations_7002SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getClassOperations_7002SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Class modelElement = (Class) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == OperationEditPart.VISUAL_ID) {
@@ -536,17 +536,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClassClasses_7003SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getClassClasses_7003SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Class modelElement = (Class) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
 			Classifier childElement = (Classifier) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Class3EditPart.VISUAL_ID) {
@@ -560,17 +560,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClassAttributes_7024SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getAssociationClassAttributes_7024SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		AssociationClass modelElement = (AssociationClass) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Property2EditPart.VISUAL_ID) {
@@ -584,17 +584,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClassOperations_7025SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getAssociationClassOperations_7025SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		AssociationClass modelElement = (AssociationClass) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Operation2EditPart.VISUAL_ID) {
@@ -608,17 +608,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClassClasses_7026SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getAssociationClassClasses_7026SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		AssociationClass modelElement = (AssociationClass) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
 			Classifier childElement = (Classifier) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Class3EditPart.VISUAL_ID) {
@@ -632,17 +632,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataTypeAttributes_7017SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getDataTypeAttributes_7017SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		DataType modelElement = (DataType) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Property3EditPart.VISUAL_ID) {
@@ -656,17 +656,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataTypeOperations_7018SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getDataTypeOperations_7018SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		DataType modelElement = (DataType) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Operation3EditPart.VISUAL_ID) {
@@ -680,17 +680,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveTypeAttributes_7020SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPrimitiveTypeAttributes_7020SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		PrimitiveType modelElement = (PrimitiveType) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Property4EditPart.VISUAL_ID) {
@@ -704,17 +704,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveTypeOperations_7021SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPrimitiveTypeOperations_7021SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		PrimitiveType modelElement = (PrimitiveType) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Operation4EditPart.VISUAL_ID) {
@@ -728,17 +728,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumerationLiterals_7013SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getEnumerationLiterals_7013SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Enumeration modelElement = (Enumeration) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedLiterals().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedLiterals().iterator(); it.hasNext();) {
 			EnumerationLiteral childElement = (EnumerationLiteral) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EnumerationLiteralEditPart.VISUAL_ID) {
@@ -752,17 +752,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumerationAttributes_7014SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getEnumerationAttributes_7014SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Enumeration modelElement = (Enumeration) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Property5EditPart.VISUAL_ID) {
@@ -776,17 +776,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumerationOperations_7015SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getEnumerationOperations_7015SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Enumeration modelElement = (Enumeration) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Operation5EditPart.VISUAL_ID) {
@@ -800,17 +800,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecificationSlots_7028SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getInstanceSpecificationSlots_7028SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		InstanceSpecification modelElement = (InstanceSpecification) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getSlots().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getSlots().iterator(); it.hasNext();) {
 			Slot childElement = (Slot) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == SlotEditPart.VISUAL_ID) {
@@ -824,17 +824,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterfaceAttributes_7029SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getInterfaceAttributes_7029SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Interface modelElement = (Interface) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Property6EditPart.VISUAL_ID) {
@@ -848,17 +848,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterfaceOperations_7030SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getInterfaceOperations_7030SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Interface modelElement = (Interface) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Operation6EditPart.VISUAL_ID) {
@@ -872,17 +872,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterfaceClasses_7031SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getInterfaceClasses_7031SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Interface modelElement = (Interface) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
 			Classifier childElement = (Classifier) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Class4EditPart.VISUAL_ID) {
@@ -896,17 +896,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackageImports_7032SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPackageImports_7032SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Package modelElement = (Package) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getElementImports().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getElementImports().iterator(); it.hasNext();) {
 			ElementImport childElement = (ElementImport) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ElementImportEditPart.VISUAL_ID) {
@@ -920,17 +920,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackageFramecontents_7033SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPackageFramecontents_7033SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Package modelElement = (Package) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getNestedPackages().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNestedPackages().iterator(); it.hasNext();) {
 			Package childElement = (Package) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Package6EditPart.VISUAL_ID) {
@@ -938,7 +938,7 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
 			Type childElement = (Type) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Class5EditPart.VISUAL_ID) {
@@ -966,7 +966,7 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
 			PackageableElement childElement = (PackageableElement) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == InstanceSpecification3EditPart.VISUAL_ID) {
@@ -980,17 +980,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackageFramecontents_7034SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPackageFramecontents_7034SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Package modelElement = (Package) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getNestedPackages().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNestedPackages().iterator(); it.hasNext();) {
 			Package childElement = (Package) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Package6EditPart.VISUAL_ID) {
@@ -998,7 +998,7 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
 			Type childElement = (Type) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Class5EditPart.VISUAL_ID) {
@@ -1026,7 +1026,7 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
 			PackageableElement childElement = (PackageableElement) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == InstanceSpecification3EditPart.VISUAL_ID) {
@@ -1040,17 +1040,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClassAttributes_7035SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getClassAttributes_7035SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Class modelElement = (Class) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == PropertyEditPart.VISUAL_ID) {
@@ -1064,17 +1064,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClassOperations_7036SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getClassOperations_7036SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Class modelElement = (Class) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == OperationEditPart.VISUAL_ID) {
@@ -1088,17 +1088,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClassClasses_7037SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getClassClasses_7037SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Class modelElement = (Class) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
 			Classifier childElement = (Classifier) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Class3EditPart.VISUAL_ID) {
@@ -1112,17 +1112,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumerationLiterals_7038SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getEnumerationLiterals_7038SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Enumeration modelElement = (Enumeration) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedLiterals().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedLiterals().iterator(); it.hasNext();) {
 			EnumerationLiteral childElement = (EnumerationLiteral) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == EnumerationLiteralEditPart.VISUAL_ID) {
@@ -1136,17 +1136,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumerationAttributes_7039SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getEnumerationAttributes_7039SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Enumeration modelElement = (Enumeration) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Property5EditPart.VISUAL_ID) {
@@ -1160,17 +1160,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumerationOperations_7040SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getEnumerationOperations_7040SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Enumeration modelElement = (Enumeration) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Operation5EditPart.VISUAL_ID) {
@@ -1184,17 +1184,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecificationSlots_7041SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getInstanceSpecificationSlots_7041SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		InstanceSpecification modelElement = (InstanceSpecification) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getSlots().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getSlots().iterator(); it.hasNext();) {
 			Slot childElement = (Slot) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == SlotEditPart.VISUAL_ID) {
@@ -1208,17 +1208,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataTypeAttributes_7042SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getDataTypeAttributes_7042SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		DataType modelElement = (DataType) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Property3EditPart.VISUAL_ID) {
@@ -1232,17 +1232,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataTypeOperations_7043SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getDataTypeOperations_7043SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		DataType modelElement = (DataType) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Operation3EditPart.VISUAL_ID) {
@@ -1256,17 +1256,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveTypeAttributes_7044SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPrimitiveTypeAttributes_7044SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		PrimitiveType modelElement = (PrimitiveType) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Property4EditPart.VISUAL_ID) {
@@ -1280,17 +1280,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveTypeOperations_7045SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getPrimitiveTypeOperations_7045SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		PrimitiveType modelElement = (PrimitiveType) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Operation4EditPart.VISUAL_ID) {
@@ -1304,17 +1304,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterfaceAttributes_7047SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getInterfaceAttributes_7047SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Interface modelElement = (Interface) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedAttributes().iterator(); it.hasNext();) {
 			Property childElement = (Property) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Property6EditPart.VISUAL_ID) {
@@ -1328,17 +1328,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterfaceOperations_7048SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getInterfaceOperations_7048SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Interface modelElement = (Interface) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getOwnedOperations().iterator(); it.hasNext();) {
 			Operation childElement = (Operation) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Operation6EditPart.VISUAL_ID) {
@@ -1352,17 +1352,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterfaceClasses_7049SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getInterfaceClasses_7049SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Interface modelElement = (Interface) containerView.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNestedClassifiers().iterator(); it.hasNext();) {
 			Classifier childElement = (Classifier) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Class4EditPart.VISUAL_ID) {
@@ -1376,16 +1376,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecificationValue_7046SemanticChildren(View view) {
+	public static List<UMLNodeDescriptor> getInstanceSpecificationValue_7046SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		View containerView = (View) view.eContainer();
 		if (!containerView.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		InstanceSpecification modelElement = (InstanceSpecification) containerView.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		{
 			ValueSpecification childElement = modelElement.getSpecification();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
@@ -1402,13 +1402,13 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_1000SemanticChildrenGen(View view) {
+	public static List<UMLNodeDescriptor> getPackage_1000SemanticChildrenGen(View view) {
 		if (!view.isSetElement()) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
-		for (Iterator it = modelElement.getNestedPackages().iterator(); it.hasNext();) {
+		LinkedList<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNestedPackages().iterator(); it.hasNext();) {
 			Package childElement = (Package) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Package2EditPart.VISUAL_ID) {
@@ -1420,7 +1420,7 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOwnedTypes().iterator(); it.hasNext();) {
 			Type childElement = (Type) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == Class2EditPart.VISUAL_ID) {
@@ -1458,7 +1458,7 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
 			PackageableElement childElement = (PackageableElement) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ConstraintEditPart.VISUAL_ID) {
@@ -1482,11 +1482,11 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getPackagedElements().iterator(); it.hasNext();) {
 			PackageableElement childElement = (PackageableElement) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 		}
-		for (Iterator it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
+		for (Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
 			Comment childElement = (Comment) it.next();
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == CommentEditPart.VISUAL_ID) {
@@ -1500,16 +1500,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getPackage_1000SemanticChildren(View view) {
-		List result = new ArrayList<Object>();
+	public static List<UMLNodeDescriptor> getPackage_1000SemanticChildren(View view) {
+		List<UMLNodeDescriptor> result = new ArrayList<UMLNodeDescriptor>();
 		result.addAll(getPackage_1000SemanticChildrenGen(view));
 		result.addAll(getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(view));
 		return result;
 	}
 
-	public static List getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(View view) {
+	public static List<UMLNodeDescriptor> getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(View view) {
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
+		List<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		for (Constraint next : modelElement.getOwnedRules()) {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, next);
 			if (visualID == ConstraintEditPart.VISUAL_ID) {
@@ -1523,7 +1523,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getContainedLinks(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case PackageEditPart.VISUAL_ID:
 			return getPackage_1000ContainedLinks(view);
@@ -1660,13 +1660,13 @@ public class UMLDiagramUpdater {
 		case TemplateBindingEditPart.VISUAL_ID:
 			return getTemplateBinding_4016ContainedLinks(view);
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getIncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getIncomingLinks(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case Package2EditPart.VISUAL_ID:
 			return getPackage_2002IncomingLinks(view);
@@ -1801,13 +1801,13 @@ public class UMLDiagramUpdater {
 		case TemplateBindingEditPart.VISUAL_ID:
 			return getTemplateBinding_4016IncomingLinks(view);
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getOutgoingLinks(View view) {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case Package2EditPart.VISUAL_ID:
 			return getPackage_2002OutgoingLinks(view);
@@ -1942,15 +1942,15 @@ public class UMLDiagramUpdater {
 		case TemplateBindingEditPart.VISUAL_ID:
 			return getTemplateBinding_4016OutgoingLinks(view);
 		}
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getPackage_2002ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_2002ContainedLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Association_4005(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Realization_4010(modelElement));
@@ -1963,9 +1963,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClass_2001ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getClass_2001ContainedLinks(View view) {
 		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
@@ -1976,9 +1976,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_2007ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociationClass_2007ContainedLinks(View view) {
 		AssociationClass modelElement = (AssociationClass) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Property_4003(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
@@ -1990,9 +1990,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataType_2004ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getDataType_2004ContainedLinks(View view) {
 		DataType modelElement = (DataType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2002,9 +2002,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_2005ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getPrimitiveType_2005ContainedLinks(View view) {
 		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2014,9 +2014,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_2003ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getEnumeration_2003ContainedLinks(View view) {
 		Enumeration modelElement = (Enumeration) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2026,8 +2026,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getInterface_2010ContainedLinks(View view) {
-		List result = new LinkedList();
+	public static List<UMLLinkDescriptor> getInterface_2010ContainedLinks(View view) {
+		List<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getInterface_2010ContainedLinksGen(view));
 		Interface modelElement = (Interface) view.getElement();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(modelElement));
@@ -2037,9 +2037,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_2010ContainedLinksGen(View view) {
+	public static List<UMLLinkDescriptor> getInterface_2010ContainedLinksGen(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2049,9 +2049,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getConstraint_2006ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getConstraint_2006ContainedLinks(View view) {
 		Constraint modelElement = (Constraint) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement));
 		return result;
 	}
@@ -2059,9 +2059,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_2008ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getInstanceSpecification_2008ContainedLinks(View view) {
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Slot_4015(modelElement));
 		return result;
 	}
@@ -2069,9 +2069,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDependency_2009ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getDependency_2009ContainedLinks(View view) {
 		Dependency modelElement = (Dependency) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(modelElement));
 		return result;
@@ -2080,9 +2080,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getGeneralizationSet_2012ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getGeneralizationSet_2012ContainedLinks(View view) {
 		GeneralizationSet modelElement = (GeneralizationSet) view.getElement();
-		List result = new LinkedList();
+		List<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Generalization_General_4012(modelElement));
 		return result;
 	}
@@ -2090,8 +2090,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getInterface_2013ContainedLinks(View view) {
-		List result = new LinkedList();
+	public static List<UMLLinkDescriptor> getInterface_2013ContainedLinks(View view) {
+		List<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getInterface_2013ContainedLinksGen(view));
 		Interface modelElement = (Interface) view.getElement();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(modelElement));
@@ -2101,9 +2101,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_2013ContainedLinksGen(View view) {
+	public static List<UMLLinkDescriptor> getInterface_2013ContainedLinksGen(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2113,17 +2113,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_2014ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_2014ContainedLinks(View view) {
 		//no links to, from and inside the diagram header
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_2015ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociationClass_2015ContainedLinks(View view) {
 		AssociationClass modelElement = (AssociationClass) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Property_4003(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
@@ -2135,9 +2135,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_2016ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_2016ContainedLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Association_4005(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Realization_4010(modelElement));
@@ -2150,9 +2150,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_2017ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getInstanceSpecification_2017ContainedLinks(View view) {
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Slot_4015(modelElement));
 		return result;
 	}
@@ -2160,9 +2160,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getComment_2018ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getComment_2018ContainedLinks(View view) {
 		Comment modelElement = (Comment) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(modelElement));
 		return result;
 	}
@@ -2170,9 +2170,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_3006ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_3006ContainedLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Association_4005(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Realization_4010(modelElement));
@@ -2185,9 +2185,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClass_3007ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getClass_3007ContainedLinks(View view) {
 		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
@@ -2198,9 +2198,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataType_3008ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getDataType_3008ContainedLinks(View view) {
 		DataType modelElement = (DataType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2210,9 +2210,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_3009ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getPrimitiveType_3009ContainedLinks(View view) {
 		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2222,9 +2222,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_3011ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getEnumeration_3011ContainedLinks(View view) {
 		Enumeration modelElement = (Enumeration) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2234,9 +2234,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_3012ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociationClass_3012ContainedLinks(View view) {
 		AssociationClass modelElement = (AssociationClass) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Property_4003(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
@@ -2248,8 +2248,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getInterface_3041ContainedLinks(View view) {
-		List result = new LinkedList();
+	public static List<UMLLinkDescriptor> getInterface_3041ContainedLinks(View view) {
+		List<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getInterface_3041ContainedLinksGen(view));
 		Interface modelElement = (Interface) view.getElement();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(modelElement));
@@ -2259,9 +2259,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_3041ContainedLinksGen(View view) {
+	public static List<UMLLinkDescriptor> getInterface_3041ContainedLinksGen(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2271,9 +2271,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_3013ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getInstanceSpecification_3013ContainedLinks(View view) {
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Slot_4015(modelElement));
 		return result;
 	}
@@ -2281,16 +2281,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3001ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3001ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3002ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getOperation_3002ContainedLinks(View view) {
 		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
 		return result;
 	}
@@ -2298,9 +2298,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClass_3003ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getClass_3003ContainedLinks(View view) {
 		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
@@ -2311,9 +2311,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPort_3025ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getPort_3025ContainedLinks(View view) {
 		Port modelElement = (Port) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Provided_4017(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Port_Required_4018(modelElement));
 		return result;
@@ -2322,23 +2322,23 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getRedefinableTemplateSignature_3027ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getRedefinableTemplateSignature_3027ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3019ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3019ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3020ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getOperation_3020ContainedLinks(View view) {
 		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
 		return result;
 	}
@@ -2346,16 +2346,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3014ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3014ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3015ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getOperation_3015ContainedLinks(View view) {
 		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
 		return result;
 	}
@@ -2363,16 +2363,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3021ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3021ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3022ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getOperation_3022ContainedLinks(View view) {
 		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
 		return result;
 	}
@@ -2380,9 +2380,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumerationLiteral_3016ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getEnumerationLiteral_3016ContainedLinks(View view) {
 		EnumerationLiteral modelElement = (EnumerationLiteral) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Slot_4015(modelElement));
 		return result;
 	}
@@ -2390,16 +2390,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3023ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3023ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3024ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getOperation_3024ContainedLinks(View view) {
 		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
 		return result;
 	}
@@ -2407,23 +2407,23 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getSlot_3017ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getSlot_3017ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3028ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3028ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3029ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getOperation_3029ContainedLinks(View view) {
 		Operation modelElement = (Operation) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
 		return result;
 	}
@@ -2431,9 +2431,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClass_3030ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getClass_3030ContainedLinks(View view) {
 		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
@@ -2444,16 +2444,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getElementImport_3031ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getElementImport_3031ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getPackage_3032ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_3032ContainedLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Association_4005(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Realization_4010(modelElement));
@@ -2466,9 +2466,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClass_3033ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getClass_3033ContainedLinks(View view) {
 		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
@@ -2479,9 +2479,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_3034ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getEnumeration_3034ContainedLinks(View view) {
 		Enumeration modelElement = (Enumeration) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2491,9 +2491,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_3035ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getInstanceSpecification_3035ContainedLinks(View view) {
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Slot_4015(modelElement));
 		return result;
 	}
@@ -2501,9 +2501,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataType_3036ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getDataType_3036ContainedLinks(View view) {
 		DataType modelElement = (DataType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2513,9 +2513,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_3037ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getPrimitiveType_3037ContainedLinks(View view) {
 		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2525,8 +2525,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getInterface_3042ContainedLinks(View view) {
-		List result = new LinkedList();
+	public static List<UMLLinkDescriptor> getInterface_3042ContainedLinks(View view) {
+		List<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getInterface_3042ContainedLinksGen(view));
 		Interface modelElement = (Interface) view.getElement();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(modelElement));
@@ -2536,9 +2536,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_3042ContainedLinksGen(View view) {
+	public static List<UMLLinkDescriptor> getInterface_3042ContainedLinksGen(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2548,8 +2548,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getInterface_3043ContainedLinks(View view) {
-		List result = new LinkedList();
+	public static List<UMLLinkDescriptor> getInterface_3043ContainedLinks(View view) {
+		List<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getInterface_3043ContainedLinksGen(view));
 		Interface modelElement = (Interface) view.getElement();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(modelElement));
@@ -2559,9 +2559,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_3043ContainedLinksGen(View view) {
+	public static List<UMLLinkDescriptor> getInterface_3043ContainedLinksGen(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4011(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_TemplateBinding_4016(modelElement));
@@ -2571,108 +2571,108 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getLiteralString_3038ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getLiteralString_3038ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getLiteralInteger_3039ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getLiteralInteger_3039ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getExpression_3040ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getExpression_3040ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getGeneralization_4001ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getGeneralization_4001ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getDependency_4002ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getDependency_4002ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_4003ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_4003ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAssociation_4005ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getAssociation_4005ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getInterfaceRealization_4008ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getInterfaceRealization_4008ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getRealization_4010ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getRealization_4010ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getGeneralization_4011ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getGeneralization_4011ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getUsage_4013ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getUsage_4013ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_4014ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getAssociationClass_4014ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getSlot_4015ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getSlot_4015ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getTemplateBinding_4016ContainedLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getTemplateBinding_4016ContainedLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getPackage_2002IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_2002IncomingLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -2687,10 +2687,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClass_2001IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getClass_2001IncomingLinks(View view) {
 		Class modelElement = (Class) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -2709,10 +2709,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_2007IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociationClass_2007IncomingLinks(View view) {
 		AssociationClass modelElement = (AssociationClass) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -2731,10 +2731,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataType_2004IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getDataType_2004IncomingLinks(View view) {
 		DataType modelElement = (DataType) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -2753,10 +2753,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_2005IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPrimitiveType_2005IncomingLinks(View view) {
 		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -2775,10 +2775,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_2003IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getEnumeration_2003IncomingLinks(View view) {
 		Enumeration modelElement = (Enumeration) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -2797,10 +2797,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_2010IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInterface_2010IncomingLinks(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -2822,10 +2822,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getConstraint_2006IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getConstraint_2006IncomingLinks(View view) {
 		Constraint modelElement = (Constraint) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -2839,10 +2839,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_2008IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInstanceSpecification_2008IncomingLinks(View view) {
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -2857,10 +2857,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDependency_2009IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getDependency_2009IncomingLinks(View view) {
 		Dependency modelElement = (Dependency) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -2874,10 +2874,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getGeneralizationSet_2012IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getGeneralizationSet_2012IncomingLinks(View view) {
 		GeneralizationSet modelElement = (GeneralizationSet) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -2892,10 +2892,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_2013IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInterface_2013IncomingLinks(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -2917,18 +2917,18 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_2014IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_2014IncomingLinks(View view) {
 		//no links to, from and inside the diagram header
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_2015IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociationClass_2015IncomingLinks(View view) {
 		AssociationClass modelElement = (AssociationClass) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -2947,10 +2947,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_2016IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_2016IncomingLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -2965,10 +2965,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_2017IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInstanceSpecification_2017IncomingLinks(View view) {
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -2983,10 +2983,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getComment_2018IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getComment_2018IncomingLinks(View view) {
 		Comment modelElement = (Comment) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(modelElement, crossReferences));
 		return result;
@@ -2995,87 +2995,87 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_3006IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getPackage_3006IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getClass_3007IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getClass_3007IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getDataType_3008IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getDataType_3008IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_3009IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getPrimitiveType_3009IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_3011IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getEnumeration_3011IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_3012IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getAssociationClass_3012IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getInterface_3041IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getInterface_3041IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_3013IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getInstanceSpecification_3013IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3001IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3001IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3002IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3002IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getClass_3003IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getClass_3003IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getPort_3025IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPort_3025IncomingLinks(View view) {
 		Port modelElement = (Port) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -3089,10 +3089,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getRedefinableTemplateSignature_3027IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getRedefinableTemplateSignature_3027IncomingLinks(View view) {
 		RedefinableTemplateSignature modelElement = (RedefinableTemplateSignature) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -3106,108 +3106,108 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3019IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3019IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3020IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3020IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3014IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3014IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3015IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3015IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3021IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3021IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3022IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3022IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getEnumerationLiteral_3016IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getEnumerationLiteral_3016IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3023IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3023IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3024IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3024IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getSlot_3017IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getSlot_3017IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3028IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3028IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3029IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3029IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getClass_3030IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getClass_3030IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getElementImport_3031IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getElementImport_3031IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getPackage_3032IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_3032IncomingLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -3222,10 +3222,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClass_3033IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getClass_3033IncomingLinks(View view) {
 		Class modelElement = (Class) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -3244,10 +3244,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_3034IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getEnumeration_3034IncomingLinks(View view) {
 		Enumeration modelElement = (Enumeration) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -3266,10 +3266,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_3035IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInstanceSpecification_3035IncomingLinks(View view) {
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -3284,10 +3284,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataType_3036IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getDataType_3036IncomingLinks(View view) {
 		DataType modelElement = (DataType) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -3306,10 +3306,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_3037IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPrimitiveType_3037IncomingLinks(View view) {
 		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -3328,10 +3328,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_3042IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInterface_3042IncomingLinks(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -3353,10 +3353,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_3043IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInterface_3043IncomingLinks(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -3378,31 +3378,31 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getLiteralString_3038IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getLiteralString_3038IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getLiteralInteger_3039IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getLiteralInteger_3039IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getExpression_3040IncomingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getExpression_3040IncomingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getGeneralization_4001IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getGeneralization_4001IncomingLinks(View view) {
 		Generalization modelElement = (Generalization) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(modelElement, crossReferences));
 		return result;
@@ -3411,10 +3411,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDependency_4002IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getDependency_4002IncomingLinks(View view) {
 		Dependency modelElement = (Dependency) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -3428,10 +3428,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getProperty_4003IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getProperty_4003IncomingLinks(View view) {
 		Property modelElement = (Property) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -3445,10 +3445,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociation_4005IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociation_4005IncomingLinks(View view) {
 		Association modelElement = (Association) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -3467,10 +3467,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterfaceRealization_4008IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInterfaceRealization_4008IncomingLinks(View view) {
 		InterfaceRealization modelElement = (InterfaceRealization) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -3484,10 +3484,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getRealization_4010IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getRealization_4010IncomingLinks(View view) {
 		Realization modelElement = (Realization) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -3501,10 +3501,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getGeneralization_4011IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getGeneralization_4011IncomingLinks(View view) {
 		Generalization modelElement = (Generalization) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(modelElement, crossReferences));
 		return result;
@@ -3513,10 +3513,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getUsage_4013IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getUsage_4013IncomingLinks(View view) {
 		Usage modelElement = (Usage) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement, crossReferences));
@@ -3530,10 +3530,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_4014IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociationClass_4014IncomingLinks(View view) {
 		AssociationClass modelElement = (AssociationClass) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Dependency_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_Property_4003(modelElement, crossReferences));
@@ -3552,10 +3552,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getSlot_4015IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getSlot_4015IncomingLinks(View view) {
 		Slot modelElement = (Slot) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(modelElement, crossReferences));
 		return result;
@@ -3564,10 +3564,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getTemplateBinding_4016IncomingLinks(View view) {
+	public static List<UMLLinkDescriptor> getTemplateBinding_4016IncomingLinks(View view) {
 		TemplateBinding modelElement = (TemplateBinding) view.getElement();
-		Map crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
-		List result = new LinkedList();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(modelElement, crossReferences));
 		return result;
@@ -3576,9 +3576,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_2002OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_2002OutgoingLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
@@ -3589,9 +3589,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClass_2001OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getClass_2001OutgoingLinks(View view) {
 		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -3606,9 +3606,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_2007OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociationClass_2007OutgoingLinks(View view) {
 		AssociationClass modelElement = (AssociationClass) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Property_4003(modelElement));
@@ -3624,9 +3624,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataType_2004OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getDataType_2004OutgoingLinks(View view) {
 		DataType modelElement = (DataType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -3640,9 +3640,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_2005OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPrimitiveType_2005OutgoingLinks(View view) {
 		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -3656,9 +3656,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_2003OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getEnumeration_2003OutgoingLinks(View view) {
 		Enumeration modelElement = (Enumeration) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -3672,9 +3672,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_2010OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInterface_2010OutgoingLinks(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -3688,9 +3688,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getConstraint_2006OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getConstraint_2006OutgoingLinks(View view) {
 		Constraint modelElement = (Constraint) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
@@ -3701,9 +3701,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_2008OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInstanceSpecification_2008OutgoingLinks(View view) {
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
@@ -3714,9 +3714,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDependency_2009OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getDependency_2009OutgoingLinks(View view) {
 		Dependency modelElement = (Dependency) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(modelElement));
@@ -3728,9 +3728,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getGeneralizationSet_2012OutgoingLinksGen(View view) {
+	public static List<UMLLinkDescriptor> getGeneralizationSet_2012OutgoingLinksGen(View view) {
 		GeneralizationSet modelElement = (GeneralizationSet) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
@@ -3740,20 +3740,20 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getGeneralizationSet_2012OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getGeneralizationSet_2012OutgoingLinks(View view) {
 		GeneralizationSet modelElement = (GeneralizationSet) view.getElement();
-		List result = new LinkedList();
+		List<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getGeneralizationSet_2012OutgoingLinksGen(view));
-		result.add(getOutgoingFeatureModelFacetLinks_Generalization_General_4012(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Generalization_General_4012(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getInterface_2013OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInterface_2013OutgoingLinks(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -3767,17 +3767,17 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_2014OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_2014OutgoingLinks(View view) {
 		//no links to, from and inside the diagram header
-		return Collections.EMPTY_LIST;
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_2015OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociationClass_2015OutgoingLinks(View view) {
 		AssociationClass modelElement = (AssociationClass) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Property_4003(modelElement));
@@ -3793,9 +3793,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_2016OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_2016OutgoingLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
@@ -3806,9 +3806,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_2017OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInstanceSpecification_2017OutgoingLinks(View view) {
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
@@ -3819,9 +3819,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getComment_2018OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getComment_2018OutgoingLinks(View view) {
 		Comment modelElement = (Comment) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(modelElement));
 		return result;
 	}
@@ -3829,86 +3829,86 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_3006OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getPackage_3006OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getClass_3007OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getClass_3007OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getDataType_3008OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getDataType_3008OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_3009OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getPrimitiveType_3009OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_3011OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getEnumeration_3011OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_3012OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getAssociationClass_3012OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getInterface_3041OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getInterface_3041OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_3013OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getInstanceSpecification_3013OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3001OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3001OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3002OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3002OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getClass_3003OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getClass_3003OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getPort_3025OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPort_3025OutgoingLinks(View view) {
 		Port modelElement = (Port) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
@@ -3920,9 +3920,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getRedefinableTemplateSignature_3027OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getRedefinableTemplateSignature_3027OutgoingLinks(View view) {
 		RedefinableTemplateSignature modelElement = (RedefinableTemplateSignature) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
@@ -3932,107 +3932,107 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3019OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3019OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3020OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3020OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3014OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3014OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3015OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3015OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3021OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3021OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3022OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3022OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getEnumerationLiteral_3016OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getEnumerationLiteral_3016OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3023OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3023OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3024OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3024OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getSlot_3017OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getSlot_3017OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getProperty_3028OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getProperty_3028OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getOperation_3029OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getOperation_3029OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getClass_3030OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getClass_3030OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getElementImport_3031OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getElementImport_3031OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getPackage_3032OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_3032OutgoingLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
@@ -4043,9 +4043,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getClass_3033OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getClass_3033OutgoingLinks(View view) {
 		Class modelElement = (Class) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -4060,9 +4060,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getEnumeration_3034OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getEnumeration_3034OutgoingLinks(View view) {
 		Enumeration modelElement = (Enumeration) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -4076,9 +4076,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInstanceSpecification_3035OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInstanceSpecification_3035OutgoingLinks(View view) {
 		InstanceSpecification modelElement = (InstanceSpecification) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
@@ -4089,9 +4089,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDataType_3036OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getDataType_3036OutgoingLinks(View view) {
 		DataType modelElement = (DataType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -4105,9 +4105,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPrimitiveType_3037OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getPrimitiveType_3037OutgoingLinks(View view) {
 		PrimitiveType modelElement = (PrimitiveType) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -4121,9 +4121,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_3042OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInterface_3042OutgoingLinks(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -4137,9 +4137,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterface_3043OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInterface_3043OutgoingLinks(View view) {
 		Interface modelElement = (Interface) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Association_4005(modelElement));
@@ -4153,30 +4153,30 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getLiteralString_3038OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getLiteralString_3038OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getLiteralInteger_3039OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getLiteralInteger_3039OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getExpression_3040OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getExpression_3040OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getGeneralization_4001OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getGeneralization_4001OutgoingLinks(View view) {
 		Generalization modelElement = (Generalization) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Generalization_General_4012(modelElement));
 		return result;
 	}
@@ -4184,9 +4184,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getDependency_4002OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getDependency_4002OutgoingLinks(View view) {
 		Dependency modelElement = (Dependency) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(modelElement));
@@ -4198,9 +4198,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getProperty_4003OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getProperty_4003OutgoingLinks(View view) {
 		Property modelElement = (Property) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Realization_4010(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Usage_4013(modelElement));
@@ -4210,9 +4210,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociation_4005OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociation_4005OutgoingLinks(View view) {
 		Association modelElement = (Association) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Property_4003(modelElement));
@@ -4227,9 +4227,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getInterfaceRealization_4008OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getInterfaceRealization_4008OutgoingLinks(View view) {
 		InterfaceRealization modelElement = (InterfaceRealization) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(modelElement));
@@ -4241,9 +4241,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getRealization_4010OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getRealization_4010OutgoingLinks(View view) {
 		Realization modelElement = (Realization) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(modelElement));
@@ -4255,9 +4255,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getGeneralization_4011OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getGeneralization_4011OutgoingLinks(View view) {
 		Generalization modelElement = (Generalization) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Generalization_General_4012(modelElement));
 		return result;
 	}
@@ -4265,9 +4265,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getUsage_4013OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getUsage_4013OutgoingLinks(View view) {
 		Usage modelElement = (Usage) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(modelElement));
@@ -4279,9 +4279,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getAssociationClass_4014OutgoingLinks(View view) {
+	public static List<UMLLinkDescriptor> getAssociationClass_4014OutgoingLinks(View view) {
 		AssociationClass modelElement = (AssociationClass) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Property_4003(modelElement));
@@ -4297,23 +4297,23 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getSlot_4015OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getSlot_4015OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List getTemplateBinding_4016OutgoingLinks(View view) {
-		return Collections.EMPTY_LIST;
+	public static List<UMLLinkDescriptor> getTemplateBinding_4016OutgoingLinks(View view) {
+		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	private static Collection getContainedTypeModelFacetLinks_Generalization_4001(Classifier container) {
-		Collection result = new LinkedList();
-		for (Iterator links = container.getGeneralizations().iterator(); links.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Generalization_4001(Classifier container) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> links = container.getGeneralizations().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Generalization) {
 				continue;
@@ -4331,9 +4331,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getContainedTypeModelFacetLinks_Dependency_4002(Package container) {
-		Collection result = new LinkedList();
-		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Dependency_4002(Package container) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Dependency) {
 				continue;
@@ -4366,14 +4366,9 @@ public class UMLDiagramUpdater {
 	 * 
 	 * @generated NOT
 	 */
-	private static Collection getContainedTypeModelFacetLinks_Property_4003(Association container) {
-		Collection result = new LinkedList();
-		for (Iterator links = container.getMemberEnds().iterator(); links.hasNext();) { //the only change is here : getOwnedEnds -> getMemberEnds
-			Object linkObject = links.next();
-			if (false == linkObject instanceof Property) {
-				continue;
-			}
-			Property link = (Property) linkObject;
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Property_4003(Association container) {
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Property link : container.getMemberEnds()) { //getOwnedEnds -> getMemberEnds -- sic
 			if (Property7EditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
@@ -4386,8 +4381,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getContainedTypeModelFacetLinks_Association_4005(Package container) {
-		Collection result = new LinkedList();
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Association_4005(Package container) {
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		for (PackageableElement linkObject : container.getPackagedElements()) {
 			if (false == linkObject instanceof Association) {
 				continue;
@@ -4410,21 +4405,21 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_Association_4005(Type target, Map crossReferences) {
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Association_4005(Type target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		return findRelatedAssociations(target, false);
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_Association_4005(Type source) {
+	private static Collection<UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_Association_4005(Type source) {
 		return findRelatedAssociations(source, true);
 	}
 
 	/**
 	 * @NOT-GENERATED
 	 */
-	private static Collection findRelatedAssociations(Type type, boolean sourceNotTarget) {
+	private static Collection<UMLLinkDescriptor> findRelatedAssociations(Type type, boolean sourceNotTarget) {
 		Package container = type.getNearestPackage();
 		if (container == null) {
 			return Collections.emptyList();
@@ -4461,8 +4456,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4008(BehavioredClassifier container) {
-		Collection result = new LinkedList();
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_InterfaceRealization_4008(BehavioredClassifier container) {
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008Gen(container));
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(container));
 		return result;
@@ -4471,11 +4466,10 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(Classifier container) {
-		Collection result = new LinkedList();
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(Classifier container) {
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 
-		for (Iterator links = container.getRelationships(UMLPackage.eINSTANCE.getInterfaceRealization()).iterator(); links.hasNext();) {
-			EObject linkObject = (EObject) links.next();
+		for (Relationship linkObject : container.getRelationships(UMLPackage.eINSTANCE.getInterfaceRealization())) {
 			if (false == linkObject instanceof InterfaceRealization) {
 				continue;
 			}
@@ -4497,9 +4491,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getContainedTypeModelFacetLinks_InterfaceRealization_4008Gen(BehavioredClassifier container) {
-		Collection result = new LinkedList();
-		for (Iterator links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_InterfaceRealization_4008Gen(BehavioredClassifier container) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof InterfaceRealization) {
 				continue;
@@ -4518,9 +4512,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getContainedTypeModelFacetLinks_Realization_4010(Package container) {
-		Collection result = new LinkedList();
-		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Realization_4010(Package container) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Realization) {
 				continue;
@@ -4549,9 +4543,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getContainedTypeModelFacetLinks_Generalization_4011(Classifier container) {
-		Collection result = new LinkedList();
-		for (Iterator links = container.getGeneralizations().iterator(); links.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Generalization_4011(Classifier container) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> links = container.getGeneralizations().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Generalization) {
 				continue;
@@ -4574,9 +4568,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getContainedTypeModelFacetLinks_Usage_4013(Package container) {
-		Collection result = new LinkedList();
-		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Usage_4013(Package container) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Usage) {
 				continue;
@@ -4620,10 +4614,9 @@ public class UMLDiagramUpdater {
 	 * 
 	 * @generated NOT
 	 */
-	private static Collection getContainedTypeModelFacetLinks_AssociationClass_4014(Package container) {
-		Collection result = new LinkedList();
-		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_AssociationClass_4014(Package container) {
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (PackageableElement linkObject : container.getPackagedElements()) {
 			if (false == linkObject instanceof AssociationClass) {
 				continue;
 			}
@@ -4643,21 +4636,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getContainedTypeModelFacetLinks_Slot_4015(InstanceSpecification container) {
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Slot_4015(InstanceSpecification container) {
 		return getOutgoingTypeModelFacetLinks_Slot_4015(container);
 	}
 
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getContainedTypeModelFacetLinks_TemplateBinding_4016(TemplateableElement container) {
-		Collection result = new LinkedList();
-		for (Iterator links = container.getTemplateBindings().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
-			if (false == linkObject instanceof TemplateBinding) {
-				continue;
-			}
-			TemplateBinding link = (TemplateBinding) linkObject;
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_TemplateBinding_4016(TemplateableElement container) {
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (TemplateBinding link : container.getTemplateBindings()) {
 			if (TemplateBindingEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
@@ -4671,11 +4659,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_Generalization_4001(Classifier target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Generalization_4001(Classifier target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getGeneralization_General() || false == setting.getEObject() instanceof Generalization) {
 				continue;
 			}
@@ -4696,11 +4684,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_Dependency_4002(NamedElement target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Dependency_4002(NamedElement target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getDependency_Supplier() || false == setting.getEObject() instanceof Dependency) {
 				continue;
 			}
@@ -4722,11 +4710,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_Property_4003(Type target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Property_4003(Type target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getTypedElement_Type() || false == setting.getEObject() instanceof Property) {
 				continue;
 			}
@@ -4747,13 +4735,14 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(Element target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(Element target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getConstraint_ConstrainedElement()) {
-				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.ConstraintConstrainedElement_4004, ConstraintConstrainedElementEditPart.VISUAL_ID));
+				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.ConstraintConstrainedElement_4004,
+						ConstraintConstrainedElementEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -4762,11 +4751,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(NamedElement target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Dependency_Supplier_4006(NamedElement target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getDependency_Supplier()) {
 				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.DependencySupplier_4006, DependencySupplierEditPart.VISUAL_ID));
 			}
@@ -4777,11 +4766,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingFeatureModelFacetLinks_Dependency_Client_4007(NamedElement target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Dependency_Client_4007(NamedElement target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getDependency_Client()) {
 				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.DependencyClient_4007, DependencyClientEditPart.VISUAL_ID));
 			}
@@ -4792,11 +4781,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_InterfaceRealization_4008(Interface target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_InterfaceRealization_4008(Interface target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getInterfaceRealization_Contract() || false == setting.getEObject() instanceof InterfaceRealization) {
 				continue;
 			}
@@ -4813,11 +4802,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_Realization_4010(NamedElement target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Realization_4010(NamedElement target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getDependency_Supplier() || false == setting.getEObject() instanceof Realization) {
 				continue;
 			}
@@ -4839,11 +4828,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_Generalization_4011(GeneralizationSet target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Generalization_4011(GeneralizationSet target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getGeneralization_GeneralizationSet() || false == setting.getEObject() instanceof Generalization) {
 				continue;
 			}
@@ -4864,11 +4853,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingFeatureModelFacetLinks_Generalization_General_4012(Classifier target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Generalization_General_4012(Classifier target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getGeneralization_General()) {
 				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.GeneralizationGeneral_4012, GeneralizationGeneralEditPart.VISUAL_ID));
 			}
@@ -4879,11 +4868,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_Usage_4013(NamedElement target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Usage_4013(NamedElement target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getDependency_Supplier() || false == setting.getEObject() instanceof Usage) {
 				continue;
 			}
@@ -4905,11 +4894,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_Slot_4015(InstanceSpecification target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Slot_4015(InstanceSpecification target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (EStructuralFeature.Setting setting : crossReferences.get(target)) {
 			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getInstanceValue_Instance() || false == setting.getEObject() instanceof InstanceValue) {
 				continue;
 			}
@@ -4930,11 +4917,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_TemplateBinding_4016(TemplateableElement target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_TemplateBinding_4016(TemplateableElement target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != UMLPackage.eINSTANCE.getTemplateSignature_Template() || false == setting.getEObject() instanceof TemplateBinding) {
 				continue;
 			}
@@ -4951,11 +4938,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingFeatureModelFacetLinks_Port_Provided_4017(Interface target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Port_Provided_4017(Interface target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getPort_Provided()) {
 				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.PortProvided_4017, PortProvidedEditPart.VISUAL_ID));
 			}
@@ -4966,11 +4953,11 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingFeatureModelFacetLinks_Port_Required_4018(Interface target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Port_Required_4018(Interface target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getPort_Required()) {
 				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.PortRequired_4018, PortRequiredEditPart.VISUAL_ID));
 			}
@@ -4981,13 +4968,14 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(Element target, Map crossReferences) {
-		Collection result = new LinkedList();
-		Collection settings = (Collection) crossReferences.get(target);
-		for (Iterator it = settings.iterator(); it.hasNext();) {
-			EStructuralFeature.Setting setting = (EStructuralFeature.Setting) it.next();
+	private static Collection<UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(Element target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getComment_AnnotatedElement()) {
-				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.CommentAnnotatedElement_4019, CommentAnnotatedElementEditPart.VISUAL_ID));
+				result.add(new UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.CommentAnnotatedElement_4019,
+						CommentAnnotatedElementEditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -4996,7 +4984,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_Dependency_4002(NamedElement source) {
+	private static Collection<UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_Dependency_4002(NamedElement source) {
 		Package container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -5007,10 +4995,10 @@ public class UMLDiagramUpdater {
 			}
 		}
 		if (container == null) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Dependency) {
 				continue;
@@ -5042,9 +5030,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(Constraint source) {
-		Collection result = new LinkedList();
-		for (Iterator destinations = source.getConstrainedElements().iterator(); destinations.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Constraint_ConstrainedElement_4004(Constraint source) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> destinations = source.getConstrainedElements().iterator(); destinations.hasNext();) {
 			Element destination = (Element) destinations.next();
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.ConstraintConstrainedElement_4004, ConstraintConstrainedElementEditPart.VISUAL_ID));
 		}
@@ -5054,9 +5042,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(Dependency source) {
-		Collection result = new LinkedList();
-		for (Iterator destinations = source.getSuppliers().iterator(); destinations.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Dependency_Supplier_4006(Dependency source) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> destinations = source.getSuppliers().iterator(); destinations.hasNext();) {
 			NamedElement destination = (NamedElement) destinations.next();
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.DependencySupplier_4006, DependencySupplierEditPart.VISUAL_ID));
 		}
@@ -5066,9 +5054,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(Dependency source) {
-		Collection result = new LinkedList();
-		for (Iterator destinations = source.getClients().iterator(); destinations.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Dependency_Client_4007(Dependency source) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> destinations = source.getClients().iterator(); destinations.hasNext();) {
 			NamedElement destination = (NamedElement) destinations.next();
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.DependencyClient_4007, DependencyClientEditPart.VISUAL_ID));
 		}
@@ -5078,7 +5066,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_InterfaceRealization_4008(BehavioredClassifier source) {
+	private static Collection<UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_InterfaceRealization_4008(BehavioredClassifier source) {
 		BehavioredClassifier container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -5089,10 +5077,10 @@ public class UMLDiagramUpdater {
 			}
 		}
 		if (container == null) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for (Iterator links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> links = container.getInterfaceRealizations().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof InterfaceRealization) {
 				continue;
@@ -5114,7 +5102,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_Realization_4010(NamedElement source) {
+	private static Collection<UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_Realization_4010(NamedElement source) {
 		Package container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -5125,10 +5113,10 @@ public class UMLDiagramUpdater {
 			}
 		}
 		if (container == null) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Realization) {
 				continue;
@@ -5160,8 +5148,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Generalization_General_4012(Generalization source) {
-		Collection result = new LinkedList();
+	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Generalization_General_4012(Generalization source) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Classifier destination = source.getGeneral();
 		if (destination == null) {
 			return result;
@@ -5173,7 +5161,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_Usage_4013(NamedElement source) {
+	private static Collection<UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_Usage_4013(NamedElement source) {
 		Package container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -5184,10 +5172,10 @@ public class UMLDiagramUpdater {
 			}
 		}
 		if (container == null) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for (Iterator links = container.getPackagedElements().iterator(); links.hasNext();) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> links = container.getPackagedElements().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
 			if (false == linkObject instanceof Usage) {
 				continue;
@@ -5219,7 +5207,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_Slot_4015(InstanceSpecification source) {
+	private static Collection<UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_Slot_4015(InstanceSpecification source) {
 		InstanceSpecification container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -5230,15 +5218,10 @@ public class UMLDiagramUpdater {
 			}
 		}
 		if (container == null) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for (Iterator links = container.getSlots().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
-			if (false == linkObject instanceof Slot) {
-				continue;
-			}
-			Slot link = (Slot) linkObject;
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Slot link : container.getSlots()) {
 			if (AssociationInstanceEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
@@ -5259,7 +5242,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_TemplateBinding_4016(TemplateableElement source) {
+	private static Collection<UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_TemplateBinding_4016(TemplateableElement source) {
 		TemplateableElement container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -5270,15 +5253,10 @@ public class UMLDiagramUpdater {
 			}
 		}
 		if (container == null) {
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
-		Collection result = new LinkedList();
-		for (Iterator links = container.getTemplateBindings().iterator(); links.hasNext();) {
-			Object linkObject = links.next();
-			if (false == linkObject instanceof TemplateBinding) {
-				continue;
-			}
-			TemplateBinding link = (TemplateBinding) linkObject;
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (TemplateBinding link : container.getTemplateBindings()) {
 			if (TemplateBindingEditPart.VISUAL_ID != UMLVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
@@ -5295,8 +5273,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Port_Provided_4017(Port source) {
-		Collection result = new LinkedList();
+	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Port_Provided_4017(Port source) {
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		Collection<UMLLinkDescriptor> generatedLinks = getOutgoingFeatureModelFacetLinks_Port_Provided_4017Gen(source);
 		result.addAll(generatedLinks);
 
@@ -5319,9 +5297,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Port_Provided_4017Gen(Port source) {
-		Collection result = new LinkedList();
-		for (Iterator destinations = source.getProvideds().iterator(); destinations.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Port_Provided_4017Gen(Port source) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> destinations = source.getProvideds().iterator(); destinations.hasNext();) {
 			Interface destination = (Interface) destinations.next();
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.PortProvided_4017, PortProvidedEditPart.VISUAL_ID));
 		}
@@ -5331,9 +5309,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Port_Required_4018(Port source) {
-		Collection result = new LinkedList();
-		for (Iterator destinations = source.getRequireds().iterator(); destinations.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Port_Required_4018(Port source) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> destinations = source.getRequireds().iterator(); destinations.hasNext();) {
 			Interface destination = (Interface) destinations.next();
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.PortRequired_4018, PortRequiredEditPart.VISUAL_ID));
 		}
@@ -5343,9 +5321,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(Comment source) {
-		Collection result = new LinkedList();
-		for (Iterator destinations = source.getAnnotatedElements().iterator(); destinations.hasNext();) {
+	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4019(Comment source) {
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
+		for (Iterator<?> destinations = source.getAnnotatedElements().iterator(); destinations.hasNext();) {
 			Element destination = (Element) destinations.next();
 			result.add(new UMLLinkDescriptor(source, destination, UMLElementTypes.CommentAnnotatedElement_4019, CommentAnnotatedElementEditPart.VISUAL_ID));
 		}
@@ -5389,9 +5367,9 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List getPackage_1000ContainedLinks(View view) {
+	public static List<UMLLinkDescriptor> getPackage_1000ContainedLinks(View view) {
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
+		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_Dependency_4002(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Association_4005(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Realization_4010(modelElement));
@@ -5404,8 +5382,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @NOT-generated
 	 */
-	private static Collection getOutgoingFeatureModelFacetLinks_Generalization_General_4012(GeneralizationSet source) {
-		Collection result = new LinkedList();
+	private static Collection<UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Generalization_General_4012(GeneralizationSet source) {
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		List<Generalization> generalizations = source.getGeneralizations();
 		if (generalizations.size() > 0) {
 			Generalization generalization = generalizations.get(0);
