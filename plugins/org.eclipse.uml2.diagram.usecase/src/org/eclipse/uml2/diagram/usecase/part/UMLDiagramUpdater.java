@@ -69,7 +69,6 @@ import org.eclipse.uml2.uml.UseCase;
 /**
  * @generated
  */
-@SuppressWarnings("unchecked")
 public class UMLDiagramUpdater {
 
 	/**
@@ -92,7 +91,7 @@ public class UMLDiagramUpdater {
 			//VID = org.eclipse.uml2.diagram.usecase.edit.parts.DiagramHeaderEditPart.VISUAL_ID, 
 			//for the case when top-level view is created for the same semantic element as the canvas view.
 
-			List resultAndHeader = new LinkedList();
+			LinkedList<UMLNodeDescriptor> resultAndHeader = new LinkedList<UMLNodeDescriptor>();
 			resultAndHeader.add(new UMLNodeDescriptor(view.getElement(), DiagramHeaderEditPart.VISUAL_ID));
 			resultAndHeader.addAll(getPackage_1000SemanticChildren(view));
 			return resultAndHeader;
@@ -354,16 +353,16 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	public static List getPackage_1000SemanticChildren(View view) {
-		List result = new ArrayList<Object>();
+	public static List<UMLNodeDescriptor> getPackage_1000SemanticChildren(View view) {
+		List<UMLNodeDescriptor> result = new ArrayList<UMLNodeDescriptor>();
 		result.addAll(getPackage_1000SemanticChildrenGen(view));
 		result.addAll(getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(view));
 		return result;
 	}
 
-	public static List getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(View view) {
+	public static List<UMLNodeDescriptor> getPackage_1000SemanticChildren_ConstraintsAsOwnedRules(View view) {
 		Package modelElement = (Package) view.getElement();
-		List result = new LinkedList();
+		List<UMLNodeDescriptor> result = new LinkedList<UMLNodeDescriptor>();
 		for (Constraint next : modelElement.getOwnedRules()) {
 			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, next);
 			if (visualID == ConstraintEditPart.VISUAL_ID) {
@@ -1257,8 +1256,8 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getContainedTypeModelFacetLinks_Association_4004(Package container) {
-		Collection result = new LinkedList();
+	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_Association_4004(Package container) {
+		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		for (PackageableElement linkObject : container.getPackagedElements()) {
 			if (false == linkObject instanceof Association) {
 				continue;
@@ -1483,7 +1482,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getIncomingTypeModelFacetLinks_Association_4004(Type target, Map crossReferences) {
+	private static Collection<UMLLinkDescriptor> getIncomingTypeModelFacetLinks_Association_4004(Type target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		return findRelatedAssociations(target, false);
 	}
 
@@ -1548,7 +1547,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @generated NOT
 	 */
-	private static Collection getOutgoingTypeModelFacetLinks_Association_4004(Type source) {
+	private static Collection<UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_Association_4004(Type source) {
 		return findRelatedAssociations(source, true);
 	}
 
@@ -1626,7 +1625,7 @@ public class UMLDiagramUpdater {
 	/**
 	 * @NOT-GENERATED
 	 */
-	private static Collection findRelatedAssociations(Type type, boolean sourceNotTarget) {
+	private static Collection<UMLLinkDescriptor> findRelatedAssociations(Type type, boolean sourceNotTarget) {
 		Package container = type.getNearestPackage();
 		if (container == null) {
 			return Collections.emptyList();
