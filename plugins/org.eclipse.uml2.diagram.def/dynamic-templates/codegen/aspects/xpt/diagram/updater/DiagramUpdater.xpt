@@ -63,8 +63,8 @@ if (visualID == «EXPAND xpt::editor::VisualIDRegistry::visualID») {
  			//Also we have modified the VisualIDRegistry#getNodeVisualID() to return
  			//VID = «EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeader», 
  			//for the case when top-level view is created for the same semantic element as the canvas view.
- 			 
- 			java.util.List resultAndHeader = new java.util.LinkedList();
+ 			
+ 			«EXPAND CodeStyle::newGenericInstance('resultAndHeader', 'java.util.LinkedList', descriptorFQN)»();
 			resultAndHeader.add(«-»
 				new «descriptorFQN»(view.getElement(), «EXPAND xpt::editor::VisualIDRegistry::visualID FOR childHeader»));
  			resultAndHeader.addAll(«EXPAND xpt::diagram::updater::DiagramUpdater::getSemanticChildrenMethodName»(view));
