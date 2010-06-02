@@ -1,0 +1,8 @@
+modeltype gmfgen uses "http://www.eclipse.org/gmf/2009/GenModel";
+modeltype genmodel uses "http://www.eclipse.org/emf/2002/GenModel";
+
+library Sorter;
+
+helper sortNavigatorNodesByVisualID(nodes : Sequence(gmfgen::GenCommonBase)) : Sequence(gmfgen::GenCommonBase) {
+	return nodes->sortedBy(n | n.visualID)
+}

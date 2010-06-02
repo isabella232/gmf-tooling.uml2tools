@@ -12,49 +12,78 @@
  * Generates code for labels without labelModelFacet's, assuming they have the default parser provider implementation 
  */
  
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«EXTENSION xpt::GenModelUtils»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
+Â«EXTENSION xpt::GenModelUtilsÂ»
+Â«EXTENSION xpt::navigator::UtilsÂ»
+Â«EXTENSION aspects::xpt::navigator::SorterÂ»
  
-«AROUND getText FOR gmfgen::GenChildLabelNode-»
-«REM»
+Â«AROUND getText FOR gmfgen::GenChildLabelNode-Â»
+Â«REMÂ»
 	Default GMF code works for labelModelFacet
 	We want to extend whis for GenChildLabelNode with modelFacet, say for Properties at profile diagram
-«ENDREM»«-»
-	«IF null <> modelFacet and null = labelModelFacet-»
-		«EXPAND getDiagramLabelTextForLabelWithModelFacetOnly(self, self) FOR modelFacet-»	
-	«ELSE-»
-		«targetDef.proceed()-»
-	«ENDIF-»
-«ENDAROUND»
+Â«ENDREMÂ»Â«-Â»
+	Â«IF null <> modelFacet and null = labelModelFacet-Â»
+		Â«EXPAND getDiagramLabelTextForLabelWithModelFacetOnly(self, self) FOR modelFacet-Â»	
+	Â«ELSE-Â»
+		Â«targetDef.proceed()-Â»
+	Â«ENDIF-Â»
+Â«ENDAROUNDÂ»
 
-«AROUND getDiagramLabelText(labels : Sequence(gmfgen::GenLabel)) FOR gmfgen::GenCommonBase-»
-	«IF labels->isEmpty()-»
-		«ERROR 'Empty list of labels passed'-»
-	«ENDIF-»
-	«LET labels->select(l | null <> l.modelFacet)->first().oclAsType(gmfgen::GenLabel) AS label-»
-		«IF null = label-»
+Â«AROUND getDiagramLabelText(labels : Sequence(gmfgen::GenLabel)) FOR gmfgen::GenCommonBase-Â»
+	Â«IF labels->isEmpty()-Â»
+		Â«ERROR 'Empty list of labels passed'-Â»
+	Â«ENDIF-Â»
+	Â«LET labels->select(l | null <> l.modelFacet)->first().oclAsType(gmfgen::GenLabel) AS label-Â»
+		Â«IF null = label-Â»
 			return "";	
-		«ELSE-»
-			«targetDef.proceed()-»
-		«ENDIF-»
-	«ENDLET-»
-«ENDAROUND»
+		Â«ELSE-Â»
+			Â«targetDef.proceed()-Â»
+		Â«ENDIF-Â»
+	Â«ENDLET-Â»
+Â«ENDAROUNDÂ»
 
-«DEFINE getDiagramLabelTextForLabelWithModelFacetOnly(elementTypeHolder : gmfgen::GenCommonBase, hintHolder : gmfgen::GenCommonBase) FOR gmfgen::TypeModelFacet-»
-«REM»
+Â«DEFINE getDiagramLabelTextForLabelWithModelFacetOnly(elementTypeHolder : gmfgen::GenCommonBase, hintHolder : gmfgen::GenCommonBase) FOR gmfgen::TypeModelFacet-Â»
+Â«REMÂ»
 	At the time of writing, below is almost exact copy of the GMF getDiagramLabelText() DEFINE 
-«ENDREM»«-»
-org.eclipse.core.runtime.IAdaptable hintAdapter = new «elementTypeHolder.getDiagram().getParserProviderQualifiedClassName()».HintAdapter(«elementTypeHolder.getDiagram().getElementTypesQualifiedClassName()».«elementTypeHolder.getUniqueIdentifier()», (view.getElement() != null ? view.getElement() : view), «EXPAND hintForCaseWithModelFacetOnly(hintHolder)»);
+Â«ENDREMÂ»Â«-Â»
+org.eclipse.core.runtime.IAdaptable hintAdapter = new Â«elementTypeHolder.getDiagram().getParserProviderQualifiedClassName()Â».HintAdapter(Â«elementTypeHolder.getDiagram().getElementTypesQualifiedClassName()Â».Â«elementTypeHolder.getUniqueIdentifier()Â», (view.getElement() != null ? view.getElement() : view), Â«EXPAND hintForCaseWithModelFacetOnly(hintHolder)Â»);
 org.eclipse.gmf.runtime.common.ui.services.parser.IParser parser = org.eclipse.gmf.runtime.common.ui.services.parser.ParserService.getInstance().getParser(hintAdapter);
 		
 if (parser != null) {
 	return parser.getPrintString(hintAdapter, org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions.NONE.intValue());
 } else {
-	«hintHolder.getDiagram().editorGen.plugin.getActivatorQualifiedClassName()».getInstance().logError("Parser was not found for label " + «hintHolder.visualID»); «EXPAND xpt::Common::nonNLS»
-	«EXPAND xpt::navigator::NavigatorLabelProvider::returnEmptyString-»
+	Â«hintHolder.getDiagram().editorGen.plugin.getActivatorQualifiedClassName()Â».getInstance().logError("Parser was not found for label " + Â«hintHolder.visualIDÂ»); Â«EXPAND xpt::Common::nonNLSÂ»
+	Â«EXPAND xpt::navigator::NavigatorLabelProvider::returnEmptyString-Â»
 }
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
 
-«DEFINE hintForCaseWithModelFacetOnly(hintHolder : gmfgen::GenCommonBase) FOR gmfgen::ModelFacet»«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall FOR hintHolder»«ENDDEFINE»
+Â«DEFINE hintForCaseWithModelFacetOnly(hintHolder : gmfgen::GenCommonBase) FOR gmfgen::ModelFacetÂ»Â«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall FOR hintHolderÂ»Â«ENDDEFINEÂ»
+
+Â«AROUND getViewText FOR gmfgen::GenNavigator-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+public String getText(org.eclipse.gmf.runtime.notation.View view) {
+	if (view.getElement() != null && view.getElement().eIsProxy()) {
+		return getUnresolvedDomainElementProxyText(view);
+	}
+	Â«IF not getNavigatorContainedNodes(self)->isEmpty()-Â»
+	switch (Â«EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR editorGen.diagramÂ»(view)) {
+		Â«EXPAND xpt::navigator::NavigatorLabelProvider::caseText FOREACH sortNavigatorNodesByVisualID(getNavigatorContainedNodes(self))-Â»
+	}
+	Â«ENDIF-Â»
+	return getUnknownElementText(view);
+}
+Â«ENDAROUNDÂ»
+
+Â«AROUND getViewImage FOR gmfgen::GenNavigator-Â»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+public org.eclipse.swt.graphics.Image getImage(org.eclipse.gmf.runtime.notation.View view) {
+	Â«IF not getNavigatorContainedNodes(self)->isEmpty()-Â»
+	switch (Â«EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR editorGen.diagramÂ»(view)) {
+		Â«EXPAND xpt::navigator::NavigatorLabelProvider::caseImage FOREACH sortNavigatorNodesByVisualID(getNavigatorContainedNodes(self))-Â»
+	}
+	Â«ENDIF-Â»
+	return getImage(Â«EXPAND xpt::navigator::NavigatorLabelProvider::unknownElementKeyÂ», null); Â«EXPAND xpt::Common::nonNLSÂ»
+}
+Â«ENDAROUNDÂ»

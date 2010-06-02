@@ -1,0 +1,14 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'» 
+
+«EXTENSION xpt::navigator::Utils»
+«EXTENSION aspects::xpt::navigator::Sorter»
+
+«AROUND getViewChildren FOR gmfgen::GenNavigator-»
+«EXPAND xpt::Common::generatedMemberComment»
+private Object[] getViewChildren(org.eclipse.gmf.runtime.notation.View view, Object parentElement) {
+   	switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR editorGen.diagram»(view)) {
+	«EXPAND xpt::navigator::NavigatorContentProvider::caseNavigatorNode(self) FOREACH sortNavigatorNodesByVisualID(getNavigatorContainerNodes(self))-»
+	}
+	return EMPTY_ARRAY;
+}
+«ENDAROUND»
