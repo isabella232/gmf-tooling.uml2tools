@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import org.eclipse.draw2d.ColorConstants;
@@ -28,6 +29,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
+import org.eclipse.uml2.diagram.common.editparts.CanonicalDisableHelper;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
@@ -141,8 +143,8 @@ public class AssemblyConnectorCircleEditPart extends ShapeNodeEditPart implement
 	/**
 	 * Creates figure for this edit part.
 	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
+	 * Body of this method does not depend on settings in generation model so
+	 * you may safely remove <i>generated</i> tag and modify it.
 	 * 
 	 * @generated
 	 */
@@ -156,9 +158,11 @@ public class AssemblyConnectorCircleEditPart extends ShapeNodeEditPart implement
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane.
-	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * Default implementation treats passed figure as content pane. Respects
+	 * layout one may have set for generated figure.
+	 * 
+	 * @param nodeShape
+	 *            instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
@@ -389,4 +393,11 @@ public class AssemblyConnectorCircleEditPart extends ShapeNodeEditPart implement
 
 	}
 
+	/**
+	 * @NOT generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(final Request request) {
+		return CanonicalDisableHelper.SHARED_PACKAGE_DISABLER.disableCanonicalFor(this, request, super.disableCanonicalFor(request));
+	}
 }

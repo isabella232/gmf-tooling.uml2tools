@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -36,6 +37,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.UnrestrictedOutsideBorderItemLocator;
+import org.eclipse.uml2.diagram.common.editparts.CanonicalDisableHelper;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
@@ -516,4 +518,11 @@ public class InterfaceEditPart extends AbstractBorderedShapeEditPart implements 
 
 	}
 
+	/**
+	 * @NOT generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(final Request request) {
+		return CanonicalDisableHelper.SHARED_PACKAGE_DISABLER.disableCanonicalFor(this, request, super.disableCanonicalFor(request));
+	}
 }

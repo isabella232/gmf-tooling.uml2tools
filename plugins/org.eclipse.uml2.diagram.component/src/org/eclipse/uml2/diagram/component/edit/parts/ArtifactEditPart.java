@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import org.eclipse.draw2d.Border;
@@ -45,6 +46,7 @@ import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
 import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
+import org.eclipse.uml2.diagram.common.editparts.CanonicalDisableHelper;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
@@ -661,4 +663,11 @@ public class ArtifactEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		return getPrimaryChildEditPart();
 	}
 
+	/**
+	 * @NOT generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(final Request request) {
+		return CanonicalDisableHelper.SHARED_PACKAGE_DISABLER.disableCanonicalFor(this, request, super.disableCanonicalFor(request));
+	}
 }

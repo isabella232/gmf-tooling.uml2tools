@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -61,6 +62,7 @@ import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel;
 import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
+import org.eclipse.uml2.diagram.common.editparts.CanonicalDisableHelper;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
@@ -269,8 +271,8 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 	/**
 	 * Creates figure for this edit part.
 	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
+	 * Body of this method does not depend on settings in generation model so
+	 * you may safely remove <i>generated</i> tag and modify it.
 	 * 
 	 * @generated
 	 */
@@ -284,9 +286,11 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane.
-	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * Default implementation treats passed figure as content pane. Respects
+	 * layout one may have set for generated figure.
+	 * 
+	 * @param nodeShape
+	 *            instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
@@ -994,4 +998,11 @@ public class Component2EditPart extends AbstractBorderedShapeEditPart implements
 		return getPrimaryChildEditPart();
 	}
 
+	/**
+	 * @NOT generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(final Request request) {
+		return CanonicalDisableHelper.SHARED_PACKAGE_DISABLER.disableCanonicalFor(this, request, super.disableCanonicalFor(request));
+	}
 }

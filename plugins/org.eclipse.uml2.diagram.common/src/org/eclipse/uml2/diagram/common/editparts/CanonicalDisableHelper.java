@@ -22,6 +22,8 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 public class CanonicalDisableHelper {
 
+	public static final CanonicalDisableHelper SHARED_PACKAGE_DISABLER = new CanonicalDisableHelper();
+
 	private final EClass myLinkContainerMeta;
 
 	/**

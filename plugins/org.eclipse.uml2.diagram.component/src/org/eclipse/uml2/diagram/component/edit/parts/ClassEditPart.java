@@ -1,7 +1,7 @@
 package org.eclipse.uml2.diagram.component.edit.parts;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -28,7 +28,6 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
@@ -48,6 +47,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
 import org.eclipse.uml2.diagram.common.draw2d.CenterLayout;
+import org.eclipse.uml2.diagram.common.editparts.CanonicalDisableHelper;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
@@ -238,8 +238,8 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 	/**
 	 * Creates figure for this edit part.
 	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
+	 * Body of this method does not depend on settings in generation model so
+	 * you may safely remove <i>generated</i> tag and modify it.
 	 * 
 	 * @generated
 	 */
@@ -253,9 +253,11 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane.
-	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * Default implementation treats passed figure as content pane. Respects
+	 * layout one may have set for generated figure.
+	 * 
+	 * @param nodeShape
+	 *            instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
@@ -841,6 +843,14 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		if (!isCanonicalDisabled()) {
 			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 		}
+	}
+
+	/**
+	 * @NOT generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(final Request request) {
+		return CanonicalDisableHelper.SHARED_PACKAGE_DISABLER.disableCanonicalFor(this, request, super.disableCanonicalFor(request));
 	}
 
 }
