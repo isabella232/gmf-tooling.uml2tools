@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.usecase.edit.parts;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -8,11 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -47,8 +46,8 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
-import org.eclipse.uml2.diagram.common.draw2d.OneLineDashedBorder;
 import org.eclipse.uml2.diagram.common.draw2d.SplitEllipseLayout;
+import org.eclipse.uml2.diagram.common.editparts.CanonicalDisableHelper;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
@@ -233,8 +232,8 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart implements PrimarySh
 	/**
 	 * Creates figure for this edit part.
 	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
+	 * Body of this method does not depend on settings in generation model so
+	 * you may safely remove <i>generated</i> tag and modify it.
 	 * 
 	 * @generated
 	 */
@@ -248,9 +247,11 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart implements PrimarySh
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane.
-	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * Default implementation treats passed figure as content pane. Respects
+	 * layout one may have set for generated figure.
+	 * 
+	 * @param nodeShape
+	 *            instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
@@ -1022,5 +1023,13 @@ public class InnerUseCaseEditPart extends ShapeNodeEditPart implements PrimarySh
 	 * @generated
 	 */
 	static final Font FUSECASEFIGURE_NAME_FONT = new Font(Display.getCurrent(), Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, SWT.NORMAL);
+
+	/**
+	 * @NOT generated
+	 */
+	@Override
+	protected Collection<?> disableCanonicalFor(final Request request) {
+		return CanonicalDisableHelper.SHARED_PACKAGE_DISABLER.disableCanonicalFor(this, request, super.disableCanonicalFor(request));
+	}
 
 }
