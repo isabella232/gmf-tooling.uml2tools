@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SemanticCreateCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.INodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.NoteEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewAndElementRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
@@ -29,6 +30,29 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 
 public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
+
+	/**
+	 * Diagrams that install modified edit policy for
+	 * {@link org.eclipse.gef.EditPolicy#GRAPHICAL_NODE_ROLE} also require to
+	 * install it into all default nodes, normally created outside the diagram
+	 * plugin.
+	 * 
+	 * @see #315953
+	 */
+	public static class U2TNoteEditPart extends NoteEditPart {
+
+		public U2TNoteEditPart(View view) {
+			super(view);
+		}
+
+		protected void createDefaultEditPolicies() {
+			super.createDefaultEditPolicies();
+
+			removeEditPolicy(org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE);
+			installEditPolicy(org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE, new org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy());
+
+		}
+	}
 
 	protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
 		if (!(request instanceof CreateConnectionViewRequest)) {
@@ -41,7 +65,7 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		U2TCreateLinkCommand result = new U2TCreateLinkCommand(editingDomain);
 		result.setSourceParameters(computeParameters(request));
 		result.registerInRequest(request);
-		
+
 		Diagram diagramView = getView().getDiagram();
 
 		CreateCommand createCommand = new CreateCommand(editingDomain, req.getConnectionViewDescriptor(), diagramView);
@@ -62,10 +86,10 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 		return c;
 	}
-	
+
 	@Override
 	protected INodeEditPart getConnectableEditPart() {
-		return getHost() instanceof INodeEditPart ? (INodeEditPart)getHost() : null; 
+		return getHost() instanceof INodeEditPart ? (INodeEditPart) getHost() : null;
 	}
 
 	@SuppressWarnings("restriction")
@@ -134,7 +158,7 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 		U2TCreateParametersImpl computeParameters = computeParameters(request);
 		U2TCreateLinkCommand unwrapStartCommand = unwrapStartCommand(request);
-		 
+
 		if (null != unwrapStartCommand && computeParameters != null) {
 			unwrapStartCommand.setTargetParameters(computeParameters);
 		}
@@ -176,27 +200,26 @@ public class U2TGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		}
 		return (U2TCreateLinkCommand) proxy.getICommand();
 	}
-	
-	protected U2TCreateParametersImpl computeParameters(CreateConnectionRequest request){
-		U2TCreateParametersImpl parameters = new U2TCreateParametersImpl(); 
+
+	protected U2TCreateParametersImpl computeParameters(CreateConnectionRequest request) {
+		U2TCreateParametersImpl parameters = new U2TCreateParametersImpl();
 		parameters.setParentView(getHostImpl().getNotationView());
-		
-		if (request.getLocation() != null){
+
+		if (request.getLocation() != null) {
 			IFigure hostContentPane = getHostImpl().getContentPane();
 			Point origin;
-			if (hostContentPane.getLayoutManager() instanceof XYLayout){
-				origin = ((XYLayout)hostContentPane.getLayoutManager()).getOrigin(hostContentPane);
+			if (hostContentPane.getLayoutManager() instanceof XYLayout) {
+				origin = ((XYLayout) hostContentPane.getLayoutManager()).getOrigin(hostContentPane);
 			} else {
-				origin = hostContentPane.getClientArea().getLocation();	
+				origin = hostContentPane.getClientArea().getLocation();
 			}
 			Point relativeLocation = new Point(request.getLocation());
 			hostContentPane.translateToRelative(relativeLocation);
 			relativeLocation.translate(origin.getNegated());
 			parameters.setRelativeLocation(relativeLocation);
 		}
-		
+
 		return parameters;
 	}
-	
-	
+
 }

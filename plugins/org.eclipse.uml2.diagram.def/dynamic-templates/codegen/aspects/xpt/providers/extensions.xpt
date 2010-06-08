@@ -1,0 +1,26 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»   
+«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
+
+«EXTENSION u2t::graphicalnodeep::Guard»
+«EXTENSION xpt::diagram::Utils»
+
+«AROUND extensions FOR gmfgen::GenDiagram-»
+	«targetDef.proceed()»
+«IF supportsU2TSpecificGraphicalNodeEditPolicy(self)-»
+	«EXPAND extendedEditPartProviders»
+«ENDIF-»
+«ENDAROUND»
+
+«DEFINE extendedEditPartProviders FOR gmfgen::GenDiagram-»
+	
+<extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="noteep-provider">
+	«EXPAND xpt::Common::xmlGeneratedTag»
+	<editpartProvider class="«getEditPartProviderQualifiedClassName()»">
+		<Priority name="Low"/>
+		<object class="org.eclipse.gmf.runtime.notation.Node" id="generated-note">
+			<method name="getType()" value="Note"/>
+		</object>
+		<context views="generated-note"/>
+	</editpartProvider>
+</extension>
+«ENDDEFINE»

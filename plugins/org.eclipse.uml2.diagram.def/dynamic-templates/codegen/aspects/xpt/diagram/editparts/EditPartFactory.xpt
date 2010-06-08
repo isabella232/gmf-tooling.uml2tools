@@ -14,6 +14,7 @@
 «IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
 
 «EXTENSION u2t::rotatedlabel::RotatedLabelsSupport»
+«EXTENSION u2t::graphicalnodeep::Guard»
 
 «AROUND EditPartFactory FOR gmfgen::GenDiagram-»
 «EXPAND xpt::Common::copyright FOR getDiagram().editorGen-»
@@ -58,6 +59,20 @@ public class «editPartFactoryClassName» implements org.eclipse.gef.EditPartFac
 					«ENDFOREACH-»
 				«ENDFOREACH-»
 			}
+			«REM»
+				For [315953]. Some diagrams use only U2TGraphicalNodeEditPolicy,
+				but NoteEditPart extends ShapeEditPart that installs  GraphicalNodeEditPolicy
+				in createDefaultEditPolicies() method.
+				These graphical edit policies are not compatible, so, in case 
+				U2TGraphicalNodeEditPolicy is used, it should be used everywhere.
+				createDefaultEditPolicies() method is used after edit part creation,
+				that`s why it should be overriden.
+			«ENDREM-»
+			«IF supportsU2TSpecificGraphicalNodeEditPolicy(self)-» 
+				if (org.eclipse.gmf.runtime.diagram.core.util.ViewType.NOTE.equals(view.getType())) {
+					return new org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy.U2TNoteEditPart(view);
+				}
+			«ENDIF-»
 		}
 		return createUnrecognizedEditPart(context, model);
 	}

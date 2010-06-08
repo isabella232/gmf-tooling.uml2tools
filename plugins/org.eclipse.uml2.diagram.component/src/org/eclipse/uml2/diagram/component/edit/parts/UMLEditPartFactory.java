@@ -7,12 +7,14 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
 import org.eclipse.gef.tools.CellEditorLocator;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewType;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.uml2.diagram.common.editpolicies.U2TGraphicalNodeEditPolicy;
 import org.eclipse.uml2.diagram.component.part.UMLVisualIDRegistry;
 
 /**
@@ -285,6 +287,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case CommentAnnotatedElementEditPart.VISUAL_ID:
 				return new CommentAnnotatedElementEditPart(view);
+			}
+			if (ViewType.NOTE.equals(view.getType())) {
+				return new U2TGraphicalNodeEditPolicy.U2TNoteEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

@@ -1819,6 +1819,17 @@
               type="org.eclipse.uml2.uml.Element">
         </propertyTester>
    </extension>
+<extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="noteep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="org.eclipse.uml2.diagram.component.providers.UMLEditPartProvider">
+         <Priority name="Low"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-note">
+            <method name="getType()" value="Note"/>
+         </object>
+         <context views="generated-note"/>
+      </editpartProvider>
+   </extension>
+
 
 
 
