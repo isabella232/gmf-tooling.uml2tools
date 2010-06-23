@@ -41,6 +41,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -1208,6 +1209,43 @@ public class PackageAsFrameEditPart extends ShapeNodeEditPart implements Primary
 		if (!isCanonicalDisabled()) {
 			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
+			CreateUnspecifiedTypeRequest unspecifiedRequest = (CreateUnspecifiedTypeRequest) request;
+			List<IElementType> types = unspecifiedRequest.getElementTypes();
+			if (types.contains(UMLElementTypes.Package_3032)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Class_3033)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Enumeration_3034)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.InstanceSpecification_3035)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.DataType_3036)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.PrimitiveType_3037)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Interface_3042)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Interface_3043)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(PackageAsFrameContentsEditPart.VISUAL_ID));
+			}
+		}
+
+		return super.getTargetEditPart(request);
 	}
 
 	/**
