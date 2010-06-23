@@ -5,24 +5,30 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.commands.UnexecutableCommand;
+import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.diagram.ui.actions.DiagramAction;
+import org.eclipse.gmf.runtime.diagram.ui.commands.CommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.IDiagramGraphicalViewer;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor;
+import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
@@ -73,19 +79,36 @@ public abstract class ChangeNotationAction extends DiagramAction {
 		if (editPart == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		Command deleteCommand = getDeleteViewCommand(editPart);
+	 	Command deleteCommand = getDeleteViewCommand(editPart);
 		if (deleteCommand == null) {
 			return UnexecutableCommand.INSTANCE;
-		}
+		} 
 		Command createViewCommand = getCreateViewCommand(editPart);
 		if (createViewCommand == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		CompoundCommand command = new CompoundCommand(getCommandLabel());
-		command.add(deleteCommand);
+	 	command.add(deleteCommand);
 		command.add(createViewCommand);
 		return command.isEmpty() ? UnexecutableCommand.INSTANCE
-				: (Command) command;
+				: (Command) new ICommandProxy(new Transactional(editPart, command));
+	}
+	
+	private static class Transactional extends AbstractTransactionalCommand{
+		
+		private final Command myGefCommand;
+		
+		public Transactional(IGraphicalEditPart host, Command gefCommand) {
+			super(host.getEditingDomain(), gefCommand.getLabel()==null?"":gefCommand.getLabel(), getWorkspaceFiles(host.getNotationView())); 
+			myGefCommand = gefCommand;
+		}
+
+		@Override
+		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+			myGefCommand.execute();
+			return CommandResult.newOKCommandResult();
+		}
+		
 	}
 	
 	protected final Command getDeleteViewCommand(GraphicalEditPart editPart) {
