@@ -451,8 +451,8 @@ public class UMLDiagramUpdater {
 			}
 		}
 		Resource resource = modelElement.eResource();
-		for (Iterator<EObject> semanticIterator = getPhantomNodesIterator(resource); semanticIterator.hasNext();) {
-			EObject childElement = (EObject) semanticIterator.next();
+		for (Iterator<EObject> iterator = getPhantomNodesIterator(resource); iterator.hasNext();) {
+			EObject childElement = iterator.next();
 			if (childElement == modelElement) {
 				continue;
 			}
