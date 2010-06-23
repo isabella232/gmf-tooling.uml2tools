@@ -41,6 +41,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -919,6 +920,25 @@ public class CollaborationEditPart extends ShapeNodeEditPart implements PrimaryS
 			}
 		}
 		return getPrimaryChildEditPart();
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
+			CreateUnspecifiedTypeRequest unspecifiedRequest = (CreateUnspecifiedTypeRequest) request;
+			List<IElementType> types = unspecifiedRequest.getElementTypes();
+			if (types.contains(UMLElementTypes.CollaborationUse_3002)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(CollaborationContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Property_3007)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(CollaborationContentsEditPart.VISUAL_ID));
+			}
+		}
+
+		return super.getTargetEditPart(request);
 	}
 
 	/**

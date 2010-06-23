@@ -43,6 +43,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -175,7 +176,9 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 			return true;
 		}
 		if (childEditPart instanceof Port3EditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NONE);
+			//[317478] Because of fix of [304723], preferred side must be SOUTH, EAST, NORTH or WEST.
+			//If nothing or NONE specified in *.gmfgen, WEST is used.
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((Port3EditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
@@ -979,6 +982,22 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		if (!isCanonicalDisabled()) {
 			UMLDiagramUpdateCommand.performCanonicalUpdate(getDiagramView().getElement());
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
+			CreateUnspecifiedTypeRequest unspecifiedRequest = (CreateUnspecifiedTypeRequest) request;
+			List<IElementType> types = unspecifiedRequest.getElementTypes();
+			if (types.contains(UMLElementTypes.Property_3014)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ClassClass_contentsEditPart.VISUAL_ID));
+			}
+		}
+
+		return super.getTargetEditPart(request);
 	}
 
 }

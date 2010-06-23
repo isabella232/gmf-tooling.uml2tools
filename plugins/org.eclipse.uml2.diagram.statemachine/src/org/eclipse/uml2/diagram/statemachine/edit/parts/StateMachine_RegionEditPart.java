@@ -1,5 +1,6 @@
 package org.eclipse.uml2.diagram.statemachine.edit.parts;
 
+import java.util.List;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
@@ -18,7 +19,9 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -26,6 +29,8 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.StateMachine_RegionItemSemanticEditPolicy;
+import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 /**
  * @generated
@@ -323,6 +328,55 @@ public class StateMachine_RegionEditPart extends ShapeNodeEditPart implements Pr
 			return fFigureRegionFigure_Compartment;
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
+			CreateUnspecifiedTypeRequest unspecifiedRequest = (CreateUnspecifiedTypeRequest) request;
+			List<IElementType> types = unspecifiedRequest.getElementTypes();
+			if (types.contains(UMLElementTypes.State_3001)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.State_3012)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.State_3016)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.FinalState_3003)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Pseudostate_3004)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Pseudostate_3005)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Pseudostate_3006)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Pseudostate_3007)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Pseudostate_3008)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Pseudostate_3009)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Pseudostate_3010)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Pseudostate_3011)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID));
+			}
+		}
+
+		return super.getTargetEditPart(request);
 	}
 
 }

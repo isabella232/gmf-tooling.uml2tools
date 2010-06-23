@@ -40,6 +40,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -1804,6 +1805,73 @@ public class LoopNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			}
 		}
 		return getPrimaryChildEditPart();
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
+			CreateUnspecifiedTypeRequest unspecifiedRequest = (CreateUnspecifiedTypeRequest) request;
+			List<IElementType> types = unspecifiedRequest.getElementTypes();
+			if (types.contains(UMLElementTypes.StructuredActivityNode_3009)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.OpaqueAction_3011)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.AcceptEventAction_3012)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.AcceptEventAction_3013)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.ActivityFinalNode_3014)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.DecisionNode_3015)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.FlowFinalNode_3016)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Pin_3017)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.CreateObjectAction_3018)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.CallBehaviorAction_3019)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.CallOperationAction_3020)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.ForkNode_3021)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.JoinNode_3022)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.AddStructuralFeatureValueAction_3023)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.DataStoreNode_3024)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.CentralBufferNode_3025)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.InputPin_3054)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.OutputPin_3055)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(LoopNodeContentPaneCompartmentEditPart.VISUAL_ID));
+			}
+		}
+
+		return super.getTargetEditPart(request);
 	}
 
 }
