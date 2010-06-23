@@ -16,7 +16,6 @@
 
 «AROUND additions FOR gmfgen::GenChildContainer-»
 «EXPAND deferredLayoutContent»
-«EXPAND aspects::xpt::diagram::updater::containerBaseCanonicalMethods::getFactoryHint»
 «ENDAROUND»
 
 «DEFINE deferredLayoutContent FOR gmfgen::GenChildContainer-»
