@@ -203,7 +203,9 @@ public class ClassDiagramNotationClassEditPart extends AbstractBorderedShapeEdit
 			return true;
 		}
 		if (childEditPart instanceof PortOnClassEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NONE);
+			//[317478] Because of fix of [304723], preferred side must be SOUTH, EAST, NORTH or WEST.
+			//If nothing or NONE specified in *.gmfgen, WEST is used.
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((PortOnClassEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}

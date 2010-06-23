@@ -49,6 +49,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
@@ -193,7 +194,9 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 			return true;
 		}
 		if (childEditPart instanceof PortEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.NONE);
+			//[317478] Because of fix of [304723], preferred side must be SOUTH, EAST, NORTH or WEST.
+			//If nothing or NONE specified in *.gmfgen, WEST is used.
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.WEST);
 			getBorderedFigure().getBorderItemContainer().add(((PortEditPart) childEditPart).getFigure(), locator);
 			return true;
 		}
@@ -997,6 +1000,37 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 			}
 		}
 		return getPrimaryChildEditPart();
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateUnspecifiedTypeRequest) {
+			CreateUnspecifiedTypeRequest unspecifiedRequest = (CreateUnspecifiedTypeRequest) request;
+			List<IElementType> types = unspecifiedRequest.getElementTypes();
+			if (types.contains(UMLElementTypes.Component_3001)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Artifact_3003)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Class_3004)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Interface_3005)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Property_3006)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
+			}
+			if (types.contains(UMLElementTypes.Connector_3015)) {
+				return getChildBySemanticHint(UMLVisualIDRegistry.getType(ComponentContentsEditPart.VISUAL_ID));
+			}
+		}
+
+		return super.getTargetEditPart(request);
 	}
 
 }
