@@ -83,8 +83,13 @@
 		org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator locator = «-»
 			new «(viewmap.attributes)[u2tgen::CustomLocatorAttributes]->first().oclAsType(u2tgen::CustomLocatorAttributes).customLocatorFQN»(getMainFigure());
 	«ELSE-»
+		«REM»[317478] Because of fix of [304723], preferred side must be SOUTH, EAST, NORTH or WEST. «ENDREM»«-»
+		«IF preferredSideName='NONE'-»
+		//[317478] Because of fix of [304723], preferred side must be SOUTH, EAST, NORTH or WEST.
+		//If nothing or NONE specified in *.gmfgen, WEST is used.
+		«ENDIF-»
 		org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator locator = «-»
-		   new org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator(getMainFigure(), org.eclipse.draw2d.PositionConstants.«preferredSideName»);
+		new org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator(getMainFigure(), org.eclipse.draw2d.PositionConstants.«IF preferredSideName='NONE'»WEST«ELSE»«preferredSideName»«ENDIF»);
 	«ENDIF-»
 «ENDDEFINE»
 
@@ -340,3 +345,29 @@
 «targetDef.proceed()-»
 «ENDIF-»
 «ENDAROUND»
+
+«DEFINE extendedGetTargetEditPartMethod FOR gmfgen::GenNode»
+	«EXPAND xpt::Common::generatedMemberComment»
+	«EXPAND aspects::xpt::Warnings::suppressUnchecked»
+	public org.eclipse.gef.EditPart getTargetEditPart(org.eclipse.gef.Request request) {
+	«REM»[249665] If node has compartments with list layout, gmf creation handling is used,
+	else generate our transfer creation request to compartments. «ENDREM»«-»
+	«IF compartments->notEmpty() and not hasChildrenInListCompartments(self) -»
+	if (request instanceof org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest) {
+			org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest unspecifiedRequest = (org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest) request;
+			java.util.List<org.eclipse.gmf.runtime.emf.type.core.IElementType> types = unspecifiedRequest.getElementTypes();
+«FOREACH compartments->asSequence() AS compartment-»
+	«IF compartment.childNodes->notEmpty()-»
+	 	«FOREACH compartment.childNodes->asSequence() AS childNode-»
+			if (types.contains( «EXPAND xpt::providers::ElementTypes::accessElementType FOR childNode»)) {
+				return getChildBySemanticHint(«EXPAND xpt::editor::VisualIDRegistry::typeMethodCall FOR compartment»);
+			}
+		«ENDFOREACH-»
+	«ENDIF-»
+«ENDFOREACH-»
+		}
+	«ENDIF-»
+
+		return super.getTargetEditPart(request);
+	}
+«ENDDEFINE»

@@ -18,6 +18,7 @@
 «EXTENSION xpt::diagram::editparts::Utils»
 «EXTENSION xpt::GenModelUtils»
 «EXTENSION xpt::diagram::updater::Utils»
+«EXTENSION xpt::diagram::editparts::Utils»
 «EXTENSION aspects::diagram::editparts::LinkUpdateUtil»
 «EXTENSION u2t::diagramheader::DiagramHeader»
 «EXTENSION aspects::xpt::diagram::updater::DescriptorsGenApi»
@@ -62,6 +63,12 @@
 	«ENDIF-»
 	
 	«EXPAND u2t::stereo::TextAware::performDirectEditRequest_chooseLabelForNode»
+	«-»	
+	«REM»[249665] The aim is to expand getTargetEditPartMethod on every node with compartments,
+    not only on nodes with compartments with list layout(diagram::editparts::NodeEditPart::Main).«ENDREM»«-»
+	«IF self.compartments->notEmpty() and not hasChildrenInListCompartments(self)-»
+		«EXPAND impl::diagram::editparts::NodeEditPart::extendedGetTargetEditPartMethod-»
+	«ENDIF-» 
 «ENDAROUND»
 
 «AROUND implementsList FOR gmfgen::GenNode»«EXPAND implementsPrimaryShapeEditPart FOR viewmap»«ENDAROUND»
