@@ -26,81 +26,84 @@ import org.eclipse.uml2.diagram.parser.lookup.LookupSuite;
 import org.eclipse.uml2.uml.NamedElement;
 
 public class ParserTestBase extends TestCase {
+
 	private MockLookupSuite mySuite = new MockLookupSuite();
 
 	protected MockLookupSuite getLookupSuite() {
 		return mySuite;
 	}
-	
+
 	protected static class MockLookupSuite implements LookupSuite {
+
 		private HashMap<Class, MockLookup> myLookups = new HashMap<Class, MockLookup>();
-		
-		public <T> void setLookup(Class<T> clazz, MockLookup<T> lookup){
+
+		public <T> void setLookup(Class<T> clazz, MockLookup<T> lookup) {
 			myLookups.put(clazz, lookup);
 		}
-		
+
 		public <T> MockLookup<T> getLookup(Class<T> clazz) {
 			MockLookup<T> result = myLookups.get(clazz);
-			if (result == null){
+			if (result == null) {
 				result = new MockLookup<T>();
 				setLookup(clazz, result);
 			}
 			return result;
 		}
-		
-		public void resetAll(){
-			for (MockLookup next : myLookups.values()){
+
+		public void resetAll() {
+			for (MockLookup next : myLookups.values()) {
 				next.reset();
 			}
 		}
 	}
-	
+
 	protected static class MockLookup<T> implements Lookup<T> {
+
 		private final List<String> mySearches = new LinkedList<String>();
-		
+
 		public T lookup(String name, EObject context) {
 			mySearches.add(name);
 			return null;
 		}
-		
-		@Override
+
 		public List<T> computeScope(EObject context) {
 			return Collections.emptyList();
 		}
-		
+
 		public List<IElementType> getResolutionElementTypes() {
 			return Collections.emptyList();
 		}
 
-		public void reset(){
+		public void reset() {
 			mySearches.clear();
 		}
-		
-		public void assertSearches(List<String> expected){
+
+		public void assertSearches(List<String> expected) {
 			assertEquals(expected, mySearches);
 		}
-		
-		public void assertSearches(String expected){
+
+		public void assertSearches(String expected) {
 			assertSearches(Collections.singletonList(expected));
 		}
-		
-		public void assertNoSearches(){
-			assertSearches(Collections.<String>emptyList());
+
+		public void assertNoSearches() {
+			assertSearches(Collections.<String> emptyList());
 		}
 	}
-	
+
 	protected static class FixedLookup<T extends NamedElement> extends MockLookup<T> {
+
 		private final T[] myTypes;
 
-		public FixedLookup(T[] types){
+		public FixedLookup(T[] types) {
 			myTypes = types;
 		}
-		
+
 		public T lookup(String name, EObject context) {
 			assertNotNull(name);
-			for (int i = 0; i < myTypes.length; i++){
+			for (int i = 0; i < myTypes.length; i++) {
 				T next = myTypes[i];
-				if (name.equals(next.getName())){
+				if (name.equals(next.getName())) {
 					return next;
 				}
 			}
