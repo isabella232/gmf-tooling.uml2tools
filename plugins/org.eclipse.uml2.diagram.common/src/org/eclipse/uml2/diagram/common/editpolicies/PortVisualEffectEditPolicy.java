@@ -4,8 +4,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.LineStyle;
@@ -56,7 +56,7 @@ public class PortVisualEffectEditPolicy extends AbstractVisualEffectEditPolicy {
 
 	private int getColor(IPreferenceStore store, String name) {
 		RGB rgb = PreferenceConverter.getColor(store, name);
-		return DiagramColorRegistry.getInstance().getColor(rgb).handle;
+		return FigureUtilities.RGBToInteger(rgb).intValue();
 	}
 
 	private void setLineColor(IGraphicalEditPart editPart, LineStyle lineStyle, int color) {
