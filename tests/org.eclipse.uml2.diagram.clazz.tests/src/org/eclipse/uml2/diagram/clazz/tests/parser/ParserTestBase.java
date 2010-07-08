@@ -63,6 +63,11 @@ public class ParserTestBase extends TestCase {
 			return null;
 		}
 		
+		@Override
+		public List<T> computeScope(EObject context) {
+			return Collections.emptyList();
+		}
+		
 		public List<IElementType> getResolutionElementTypes() {
 			return Collections.emptyList();
 		}

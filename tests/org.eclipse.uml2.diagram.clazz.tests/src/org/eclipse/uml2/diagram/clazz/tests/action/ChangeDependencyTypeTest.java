@@ -19,6 +19,7 @@ import org.eclipse.uml2.diagram.clazz.part.CreateDependencyLinkTool;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.clazz.tests.tool.ClassDiagramCreationToolTest;
+import org.eclipse.uml2.diagram.common.part.CreateLinkToolBase;
 import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -47,7 +48,7 @@ public class ChangeDependencyTypeTest extends ClassDiagramCreationToolTest {
 		myTargetEP = diagram.getChildBySemanticHint(UMLVisualIDRegistry.getType(DataType2EditPart.VISUAL_ID));
 		assertNotNull("DataTypeEditPart was not created.", myTargetEP);
 		UMLDiagramFacade.flushEventQueue();
-		CreateDependencyLinkTool tool = oursCreationToolList.get(myIndex1);
+		CreateLinkToolBase tool = oursCreationToolList.get(myIndex1);
 		createConnectionByTool(tool, mySourceEP, myTargetEP);
 		myDependencyEP = findConnection(getDiagramEditPart(), Dependency2EditPart.VISUAL_ID);
 		assertNotNull("DependencyLink should be created.", myDependencyEP);
@@ -140,7 +141,7 @@ public class ChangeDependencyTypeTest extends ClassDiagramCreationToolTest {
 		assertEquals(editText, type.getName().toLowerCase());
 	}
 
-	private static List<CreateDependencyLinkTool> oursCreationToolList = new ArrayList<CreateDependencyLinkTool>(4);
+	private static List<CreateLinkToolBase> oursCreationToolList = new ArrayList<CreateLinkToolBase>(4);
 
 	private static List<EClass> oursDependencyTypes = new ArrayList<EClass>(4);
 

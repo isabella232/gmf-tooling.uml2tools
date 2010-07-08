@@ -12,20 +12,21 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.Dependency2EditPart;
 import org.eclipse.uml2.diagram.clazz.part.CreateDependencyLinkTool;
 import org.eclipse.uml2.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.part.CreateLinkToolBase;
 import org.eclipse.uml2.diagram.common.tests.UMLDiagramFacade;
 import org.eclipse.uml2.uml.UMLPackage;
-
 
 public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 
 	private IGraphicalEditPart mySourceEP;
+
 	private IGraphicalEditPart myTargetEP;
 
 	public DependencyCreationToolTest(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -33,7 +34,7 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 		createNodeByTool(UMLElementTypes.Class_2001, 10, 10);
 		mySourceEP = diagram.getChildBySemanticHint(UMLVisualIDRegistry.getType(Class2EditPart.VISUAL_ID));
 		assertNotNull("ClassEditPart was not created.", mySourceEP);
-		
+
 		createNodeByTool(UMLElementTypes.DataType_2004, 100, 100);
 		myTargetEP = diagram.getChildBySemanticHint(UMLVisualIDRegistry.getType(DataType2EditPart.VISUAL_ID));
 		assertNotNull("DataTypeEditPart was not created.", myTargetEP);
@@ -58,7 +59,7 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 
 	public void testUSAGEDependency() {
 		UMLDiagramFacade.flushEventQueue();
-		CreateDependencyLinkTool tool = new CreateDependencyLinkTool.USAGE();
+		CreateLinkToolBase tool = new CreateDependencyLinkTool.USAGE();
 		createConnectionByTool(tool, mySourceEP, myTargetEP);
 		EClass type = UMLPackage.eINSTANCE.getUsage();
 		testDependency(type);
@@ -73,7 +74,7 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 	}
 
 	public void testABSTRACTIONDependencyCreationOnDoubleClick() {
-		getDiagramEditPart().getViewer().setSelection(new StructuredSelection(new Object[]{mySourceEP, myTargetEP}));
+		getDiagramEditPart().getViewer().setSelection(new StructuredSelection(new Object[] { mySourceEP, myTargetEP }));
 		CreateDependencyLinkTool tool = new CreateDependencyLinkTool.ABSTRACTION();
 		createConnectionByToolDoubleClick(tool);
 		EClass type = UMLPackage.eINSTANCE.getAbstraction();
@@ -81,7 +82,7 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 	}
 
 	public void testDEPENDENCYDependencyCreationOnDoubleClick() {
-		getDiagramEditPart().getViewer().setSelection(new StructuredSelection(new Object[]{mySourceEP, myTargetEP}));
+		getDiagramEditPart().getViewer().setSelection(new StructuredSelection(new Object[] { mySourceEP, myTargetEP }));
 		CreateDependencyLinkTool tool = new CreateDependencyLinkTool.DEPENDENCY();
 		createConnectionByToolDoubleClick(tool);
 		EClass type = UMLPackage.eINSTANCE.getDependency();
@@ -89,7 +90,7 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 	}
 
 	public void testSUBSTITUTIONDependencyCreationOnDoubleClick() {
-		getDiagramEditPart().getViewer().setSelection(new StructuredSelection(new Object[]{mySourceEP, myTargetEP}));
+		getDiagramEditPart().getViewer().setSelection(new StructuredSelection(new Object[] { mySourceEP, myTargetEP }));
 		CreateDependencyLinkTool tool = new CreateDependencyLinkTool.SUBSTITUTION();
 		createConnectionByToolDoubleClick(tool);
 		EClass type = UMLPackage.eINSTANCE.getSubstitution();
@@ -97,8 +98,8 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 	}
 
 	public void testUSAGEDependencyCreationOnDoubleClick() {
-		getDiagramEditPart().getViewer().setSelection(new StructuredSelection(new Object[]{mySourceEP, myTargetEP}));
-		CreateDependencyLinkTool tool = new CreateDependencyLinkTool.USAGE();
+		getDiagramEditPart().getViewer().setSelection(new StructuredSelection(new Object[] { mySourceEP, myTargetEP }));
+		CreateLinkToolBase tool = new CreateDependencyLinkTool.USAGE();
 		createConnectionByToolDoubleClick(tool);
 		EClass type = UMLPackage.eINSTANCE.getUsage();
 		testDependency(type);
@@ -107,7 +108,7 @@ public class DependencyCreationToolTest extends ClassDiagramCreationToolTest {
 	private void testDependency(EClass type) {
 		ConnectionEditPart associationEP = findConnection(getDiagramEditPart(), Dependency2EditPart.VISUAL_ID);
 		assertNotNull("DependencyEditPart was not created.", associationEP);
-		
+
 		EObject element = associationEP.getNotationView().getElement();
 		assertEquals("Dependency was created with incorrect Kind.", type, element.eClass());
 	}
