@@ -1444,25 +1444,6 @@ public class ActivityPartition_ExpansionRegionEditPart extends ShapeNodeEditPart
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public Label getFigureExpansionRegionFigure_keyword() {
 			return fFigureExpansionRegionFigure_keyword;
 		}

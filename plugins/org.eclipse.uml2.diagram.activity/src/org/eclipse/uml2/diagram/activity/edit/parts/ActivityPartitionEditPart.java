@@ -324,25 +324,6 @@ public class ActivityPartitionEditPart extends ShapeNodeEditPart implements Prim
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RotatedImageOfString getFigureActivityPartitionFigure_name() {
 			return fFigureActivityPartitionFigure_name;
 		}

@@ -1275,25 +1275,6 @@ public class DataStoreNodeEditPart extends AbstractBorderedShapeEditPart impleme
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public Label getFigureDataStoreFigure_states() {
 			return fFigureDataStoreFigure_states;
 		}

@@ -8,6 +8,7 @@ import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Polyline;
+import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -1108,39 +1109,20 @@ public class ActivityPartition_FlowFinalNodeEditPart extends ShapeNodeEditPart i
 		 */
 		private void createContents() {
 
-			Polyline aux_FlowFinalFigure_BackSlash0 = new Polyline();
+			PolylineShape aux_FlowFinalFigure_BackSlash0 = new PolylineShape();
 			aux_FlowFinalFigure_BackSlash0.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
 			aux_FlowFinalFigure_BackSlash0.addPoint(new Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(19)));
 			aux_FlowFinalFigure_BackSlash0.setLineWidth(1);
 
 			this.add(aux_FlowFinalFigure_BackSlash0);
 
-			Polyline aux_FlowFinalFigure_Slash0 = new Polyline();
+			PolylineShape aux_FlowFinalFigure_Slash0 = new PolylineShape();
 			aux_FlowFinalFigure_Slash0.addPoint(new Point(getMapMode().DPtoLP(4), getMapMode().DPtoLP(19)));
 			aux_FlowFinalFigure_Slash0.addPoint(new Point(getMapMode().DPtoLP(19), getMapMode().DPtoLP(4)));
 			aux_FlowFinalFigure_Slash0.setLineWidth(1);
 
 			this.add(aux_FlowFinalFigure_Slash0);
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = true;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
 		}
 
 	}

@@ -1275,25 +1275,6 @@ public class StructuredActivityNode_CentralBufferNodeEditPart extends AbstractBo
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public Label getFigureCentralBufferFigure_states() {
 			return fFigureCentralBufferFigure_states;
 		}

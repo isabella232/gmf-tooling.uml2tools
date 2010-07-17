@@ -1469,25 +1469,6 @@ public class StructuredActivityNode_StructuredActivityNodeEditPart extends Shape
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureStructuredActivityFigure_ContentPane() {
 			return fFigureStructuredActivityFigure_ContentPane;
 		}

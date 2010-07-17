@@ -455,25 +455,6 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public WrappingLabel getFigureActivityFigure_name() {
 			return getNameAndStereotypeBlock().getNameLabel();
 		}

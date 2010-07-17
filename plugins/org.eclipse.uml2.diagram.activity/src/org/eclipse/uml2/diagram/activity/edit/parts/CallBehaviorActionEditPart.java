@@ -14,6 +14,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.Polyline;
+import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
@@ -1469,7 +1470,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 
 			actionCallBehaviorFigure_AuxBottomLeft1.add(actionCallBehaviorFigure_AuxIconOwner2);
 
-			Polyline actionCallBehaviorFigure_IconCenter3 = new Polyline();
+			PolylineShape actionCallBehaviorFigure_IconCenter3 = new PolylineShape();
 			actionCallBehaviorFigure_IconCenter3.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(4)));
 			actionCallBehaviorFigure_IconCenter3.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(16)));
 			actionCallBehaviorFigure_IconCenter3.setLineWidth(2);
@@ -1477,7 +1478,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 
 			actionCallBehaviorFigure_AuxIconOwner2.add(actionCallBehaviorFigure_IconCenter3);
 
-			Polyline actionCallBehaviorFigure_IconLeft3 = new Polyline();
+			PolylineShape actionCallBehaviorFigure_IconLeft3 = new PolylineShape();
 			actionCallBehaviorFigure_IconLeft3.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
 			actionCallBehaviorFigure_IconLeft3.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode().DPtoLP(10)));
 			actionCallBehaviorFigure_IconLeft3.addPoint(new Point(getMapMode().DPtoLP(5), getMapMode().DPtoLP(16)));
@@ -1486,7 +1487,7 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 
 			actionCallBehaviorFigure_AuxIconOwner2.add(actionCallBehaviorFigure_IconLeft3);
 
-			Polyline actionCallBehaviorFigure_IconRight3 = new Polyline();
+			PolylineShape actionCallBehaviorFigure_IconRight3 = new PolylineShape();
 			actionCallBehaviorFigure_IconRight3.addPoint(new Point(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
 			actionCallBehaviorFigure_IconRight3.addPoint(new Point(getMapMode().DPtoLP(15), getMapMode().DPtoLP(10)));
 			actionCallBehaviorFigure_IconRight3.addPoint(new Point(getMapMode().DPtoLP(15), getMapMode().DPtoLP(16)));
@@ -1514,25 +1515,6 @@ public class CallBehaviorActionEditPart extends AbstractBorderedShapeEditPart im
 
 			actionCallBehaviorFigure_AuxCenter0.add(fNameAndStereotypeBlock);
 
-		}
-
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
 		}
 
 		/**

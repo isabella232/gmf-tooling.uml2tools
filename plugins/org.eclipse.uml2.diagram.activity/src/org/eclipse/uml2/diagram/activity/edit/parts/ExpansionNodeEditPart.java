@@ -1273,25 +1273,6 @@ public class ExpansionNodeEditPart extends AbstractBorderedShapeEditPart impleme
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public Label getFigureObjectNodeFigure_name() {
 			return fFigureObjectNodeFigure_name;
 		}

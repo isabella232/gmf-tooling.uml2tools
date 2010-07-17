@@ -1206,25 +1206,6 @@ public class ActivityParameterNodeEditPart extends AbstractBorderItemEditPart im
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
 			return fNameAndStereotypeBlock;
 		}

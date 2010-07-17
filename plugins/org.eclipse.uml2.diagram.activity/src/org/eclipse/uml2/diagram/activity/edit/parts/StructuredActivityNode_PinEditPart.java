@@ -1274,25 +1274,6 @@ public class StructuredActivityNode_PinEditPart extends AbstractBorderedShapeEdi
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public Label getFigureStandalonePinFigure_name() {
 			return fFigureStandalonePinFigure_name;
 		}

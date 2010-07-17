@@ -7,6 +7,7 @@ import java.util.List;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Point;
@@ -1081,7 +1082,7 @@ public class ActivityPartition_MergeNodeEditPart extends ShapeNodeEditPart imple
 	/**
 	 * @generated
 	 */
-	public class ScalableRhombFigure extends Shape {
+	public class ScalableRhombFigure extends ScalablePolygonShape {
 
 		/**
 		 * @generated
@@ -1093,84 +1094,6 @@ public class ActivityPartition_MergeNodeEditPart extends ShapeNodeEditPart imple
 			this.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode().DPtoLP(20)));
 			this.setFill(true);
 			this.setLineWidth(1);
-		}
-
-		/**
-		 * @generated
-		 */
-		private final PointList myTemplate = new PointList();
-
-		/**
-		 * @generated
-		 */
-		private Rectangle myTemplateBounds;
-
-		/**
-		 * @generated
-		 */
-		public void addPoint(Point point) {
-			myTemplate.addPoint(point);
-			myTemplateBounds = null;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void fillShape(Graphics graphics) {
-			Rectangle bounds = getBounds();
-			graphics.pushState();
-			graphics.translate(bounds.x, bounds.y);
-			graphics.fillPolygon(scalePointList());
-			graphics.popState();
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void outlineShape(Graphics graphics) {
-			Rectangle bounds = getBounds();
-			graphics.pushState();
-			graphics.translate(bounds.x, bounds.y);
-			graphics.drawPolygon(scalePointList());
-			graphics.popState();
-		}
-
-		/**
-		 * @generated
-		 */
-		private Rectangle getTemplateBounds() {
-			if (myTemplateBounds == null) {
-				myTemplateBounds = myTemplate.getBounds().getCopy().union(0, 0);
-				//just safety -- we are going to use this as divider 
-				if (myTemplateBounds.width < 1) {
-					myTemplateBounds.width = 1;
-				}
-				if (myTemplateBounds.height < 1) {
-					myTemplateBounds.height = 1;
-				}
-			}
-			return myTemplateBounds;
-		}
-
-		/**
-		 * @generated
-		 */
-		private int[] scalePointList() {
-			Rectangle pointsBounds = getTemplateBounds();
-			Rectangle actualBounds = getBounds();
-
-			float xScale = ((float) actualBounds.width) / pointsBounds.width;
-			float yScale = ((float) actualBounds.height) / pointsBounds.height;
-
-			if (xScale == 1 && yScale == 1) {
-				return myTemplate.toIntArray();
-			}
-			int[] scaled = (int[]) myTemplate.toIntArray().clone();
-			for (int i = 0; i < scaled.length; i += 2) {
-				scaled[i] = (int) Math.floor(scaled[i] * xScale);
-				scaled[i + 1] = (int) Math.floor(scaled[i + 1] * yScale);
-			}
-			return scaled;
 		}
 
 	}
