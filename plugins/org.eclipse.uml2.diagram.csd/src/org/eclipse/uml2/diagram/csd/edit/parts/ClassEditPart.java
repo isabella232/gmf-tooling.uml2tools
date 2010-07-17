@@ -850,25 +850,6 @@ public class ClassEditPart extends AbstractBorderedShapeEditPart implements Prim
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureClassFigure_PropertiesCompartment() {
 			return fFigureClassFigure_PropertiesCompartment;
 		}
