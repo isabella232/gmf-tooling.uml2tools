@@ -773,71 +773,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ElementImport_3007_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Package_3008_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Package_3008_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Class_3009_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Class_3009_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Component_3010_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Component_3010_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3011_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3011_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Operation_3012_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Operation_3012_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Class_3013_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Class_3013_incominglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_Port_3014_outgoinglinks;
 
 	/**
@@ -848,42 +783,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Property_3017_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3017_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Operation_3018_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Operation_3018_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Class_3020_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Class_3020_incominglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_InterfaceRealization_4001_target;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_InterfaceRealization_4001_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InterfaceRealization_4001_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InterfaceRealization_4001_outgoinglinks;
 
 	/**
 	 * @generated
@@ -928,12 +843,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Connector_4008_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Connector_4008_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Dependency_4009_target;
 
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Dependency_4009_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Dependency_4009_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Dependency_4009_outgoinglinks;
 
 	/**
 	 * @generated
@@ -948,7 +883,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Association_4011_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Association_4011_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Association_4011_outgoinglinks;
 
 	/**
 	 * @generated

@@ -713,42 +713,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Property_3008_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3008_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Operation_3009_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Operation_3009_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Class_3010_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Class_3010_incominglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_Port_3011_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ElementImport_3004_incominglinks;
 
 	/**
 	 * @generated
@@ -783,41 +748,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Slot_3015_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3018_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3018_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Operation_3019_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Operation_3019_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Class_3020_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Class_3020_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_Port_3011_incominglinks;
 
 	/**
@@ -833,12 +763,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Connector_4005_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Connector_4005_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Dependency_4006_target;
 
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Dependency_4006_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Dependency_4006_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Dependency_4006_outgoinglinks;
 
 	/**
 	 * @generated
@@ -853,12 +803,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_InterfaceRealization_4007_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InterfaceRealization_4007_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Usage_4008_target;
 
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Usage_4008_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Usage_4008_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Usage_4008_outgoinglinks;
 
 	/**
 	 * @generated
@@ -878,7 +848,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Association_4011_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Association_4011_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Association_4011_outgoinglinks;
 
 	/**
 	 * @generated
@@ -913,6 +893,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Slot_4015_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_CommentAnnotatedElement_4016_target;
 
 	/**
@@ -928,7 +913,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Dependency_4017_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Dependency_4017_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Dependency_4017_outgoinglinks;
 
 	/**
 	 * @generated

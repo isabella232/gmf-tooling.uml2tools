@@ -583,11 +583,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ElementImport_3001_incominglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_Device_3004_outgoinglinks;
 
 	/**
@@ -638,32 +633,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Artifact_3006_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Artifact_3006_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_Node_3007_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Node_3007_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3003_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3003_incominglinks;
 
 	/**
 	 * @generated
@@ -678,7 +653,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Deployment_4001_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Deployment_4001_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Manifestation_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Manifestation_4002_incominglinks;
 
 	/**
 	 * @generated
@@ -688,7 +678,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Manifestation_4002_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_DeploymentConfiguration_4003_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_DeploymentConfiguration_4003_source;
 
 	/**
 	 * @generated
@@ -698,7 +698,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_CommunicationPath_4004_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_CommunicationPath_4004_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CommunicationPath_4004_outgoinglinks;
 
 	/**
 	 * @generated
@@ -708,7 +718,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Dependency_4005_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Dependency_4005_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Dependency_4005_outgoinglinks;
 
 	/**
 	 * @generated
