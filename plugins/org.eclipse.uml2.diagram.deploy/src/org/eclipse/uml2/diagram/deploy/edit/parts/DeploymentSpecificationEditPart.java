@@ -911,25 +911,6 @@ public class DeploymentSpecificationEditPart extends ShapeNodeEditPart implement
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public StereotypeLabel getFigureDeploymentSpecificationFigure_stereo() {
 			return fFigureDeploymentSpecificationFigure_stereo;
 		}

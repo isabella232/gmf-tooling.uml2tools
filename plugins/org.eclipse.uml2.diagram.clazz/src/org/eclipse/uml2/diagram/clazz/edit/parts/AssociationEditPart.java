@@ -41,40 +41,6 @@ public class AssociationEditPart extends ConnectionNodeEditPart implements ITree
 	}
 
 	/**
-	 * @generated
-	 */
-	protected boolean addFixedChild(EditPart childEditPart) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected boolean removeFixedChild(EditPart childEditPart) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
 	 * Creates figure for this edit part.
 	 * 
 	 * Body of this method does not depend on settings in generation model
@@ -151,25 +117,6 @@ public class AssociationEditPart extends ConnectionNodeEditPart implements ITree
 		public AssociationLinkFigure() {
 
 			this.setForegroundColor(ColorConstants.blue);
-		}
-
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
 		}
 
 	}

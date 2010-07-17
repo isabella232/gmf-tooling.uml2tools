@@ -1016,25 +1016,6 @@ public class DependencyEditPart extends AbstractBorderedShapeEditPart implements
 			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(10), getMapMode().DPtoLP(10)));
 		}
 
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
 	}
 
 }

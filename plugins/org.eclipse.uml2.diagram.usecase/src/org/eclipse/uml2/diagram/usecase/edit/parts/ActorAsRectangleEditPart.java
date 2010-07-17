@@ -786,25 +786,6 @@ public class ActorAsRectangleEditPart extends ShapeNodeEditPart implements Prima
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public Label getActorAsRectangleFigure_name() {
 			return fActorAsRectangleFigure_name;
 		}

@@ -1260,25 +1260,6 @@ public class Package6EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public Label getPackageAsFrameFigure_name() {
 			return getNameLabel();
 		}

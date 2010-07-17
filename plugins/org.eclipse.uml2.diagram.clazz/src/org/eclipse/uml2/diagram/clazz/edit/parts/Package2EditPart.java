@@ -1449,25 +1449,6 @@ public class Package2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			return fFigurePackageFigure_OthersCompartment;
 		}
 
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
 	}
 
 }

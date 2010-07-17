@@ -787,25 +787,6 @@ public class StereotypeEditPart extends ShapeNodeEditPart implements PrimaryShap
 			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
 	}
 
 }

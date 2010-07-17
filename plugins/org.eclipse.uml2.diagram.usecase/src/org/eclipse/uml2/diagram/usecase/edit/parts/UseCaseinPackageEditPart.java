@@ -986,25 +986,6 @@ public class UseCaseinPackageEditPart extends ShapeNodeEditPart implements Prima
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public WrappingLabel getUseCaseFigure_name() {
 			return fUseCaseFigure_name;
 		}

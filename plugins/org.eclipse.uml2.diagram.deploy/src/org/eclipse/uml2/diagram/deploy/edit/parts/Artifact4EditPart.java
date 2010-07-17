@@ -621,25 +621,6 @@ public class Artifact4EditPart extends ShapeNodeEditPart implements PrimaryShape
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureArtifactFigure_body() {
 			return fFigureArtifactFigure_body;
 		}

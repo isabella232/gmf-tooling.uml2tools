@@ -1111,25 +1111,6 @@ public class InstanceSpecification4EditPart extends ShapeNodeEditPart implements
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public Label getFigureRectangleInstanceNode_NameLabel() {
 			return fFigureRectangleInstanceNode_NameLabel;
 		}

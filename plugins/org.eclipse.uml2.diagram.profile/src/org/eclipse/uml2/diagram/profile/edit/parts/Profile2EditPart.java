@@ -473,25 +473,6 @@ public class Profile2EditPart extends ShapeNodeEditPart implements PrimaryShapeE
 			return fNameAndStereotypeBlock;
 		}
 
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
 	}
 
 }

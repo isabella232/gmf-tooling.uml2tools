@@ -401,25 +401,6 @@ public class ElementImportEditPart extends ShapeNodeEditPart implements PrimaryS
 		}
 
 		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
 		 * @NOT-GENERATED
 		 */
 		public void setHasActualMetaclassImport(boolean hasActualMetaclassImport) {

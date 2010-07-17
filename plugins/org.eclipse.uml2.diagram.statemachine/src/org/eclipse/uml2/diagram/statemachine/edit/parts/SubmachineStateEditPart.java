@@ -618,25 +618,6 @@ public class SubmachineStateEditPart extends AbstractBorderedShapeEditPart imple
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
 		public RectangleFigure getFigureCompositeStateFigure_Body() {
 			return fFigureCompositeStateFigure_Body;
 		}

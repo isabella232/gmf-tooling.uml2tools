@@ -351,25 +351,6 @@ public class ForkPseudostateEditPart extends ShapeNodeEditPart implements Primar
 			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(4), getMapMode().DPtoLP(4)));
 		}
 
-		/**
-		 * @generated
-		 */
-		private boolean myUseLocalCoordinates = false;
-
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
-		}
-
-		/**
-		 * @generated
-		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
-		}
-
 	}
 
 }
