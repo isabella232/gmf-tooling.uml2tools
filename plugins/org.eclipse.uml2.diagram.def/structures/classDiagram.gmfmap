@@ -379,7 +379,7 @@
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
           <domainSpecialization
-              body="not oclIsKindOf(uml::Port) and self.association = null"/>
+              body="not oclIsKindOf(uml::Port) and self.association.oclIsUndefined()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -1364,7 +1364,7 @@
           <domainMetaElement
               href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
           <domainSpecialization
-              body="not oclIsKindOf(uml::Port)"/>
+              body="not oclIsKindOf(uml::Port) and self.association.oclIsUndefined()"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
