@@ -85,31 +85,18 @@
       </parser>
    </extension>
 
-   <extension point="org.eclipse.ui.editors">
+   <extension point="org.eclipse.ui.editors" id="generated-editor">
       <?gmfgen generated="true"?>
-
       <editor
          id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/UMLDiagramFile.gif"
-         extensions="umlcomp"
+         extensions="umlcomp,umlcomponent_diagram"
          default="true"
          class="org.eclipse.uml2.diagram.component.part.UMLDiagramEditor"
          matchingStrategy="org.eclipse.uml2.diagram.component.part.UMLMatchingStrategy"
          contributorClass="org.eclipse.uml2.diagram.component.part.UMLDiagramActionBarContributor">
       </editor>
-
-      <editor
-         id="org.eclipse.uml2.diagram.component.part.UMLDiagramEditorID"
-         name="%editorName"
-         icon="icons/obj16/UMLDiagramFile.gif"
-         extensions="umlcomponent_diagram"
-         default="true"
-         class="org.eclipse.uml2.diagram.component.part.UMLDiagramEditor"
-         matchingStrategy="org.eclipse.uml2.diagram.component.part.UMLMatchingStrategy"
-         contributorClass="org.eclipse.uml2.diagram.component.part.UMLDiagramActionBarContributor">
-      </editor>
-
    </extension>
 
    <extension point="org.eclipse.ui.newWizards" id="creation-wizard">

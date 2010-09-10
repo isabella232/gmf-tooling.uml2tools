@@ -44,31 +44,18 @@
       </parser>
    </extension>
 
-   <extension point="org.eclipse.ui.editors">
+   <extension point="org.eclipse.ui.editors" id="generated-editor">
       <?gmfgen generated="true"?>
-
       <editor
          id="org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/UMLDiagramFile.gif"
-         extensions="umlact"
+         extensions="umlact,umlactivity_diagram"
          default="true"
          class="org.eclipse.uml2.diagram.activity.part.UMLDiagramEditor"
          matchingStrategy="org.eclipse.uml2.diagram.activity.part.UMLMatchingStrategy"
          contributorClass="org.eclipse.uml2.diagram.activity.part.UMLDiagramActionBarContributor">
       </editor>
-
-      <editor
-         id="org.eclipse.uml2.diagram.activity.part.UMLDiagramEditorID"
-         name="%editorName"
-         icon="icons/obj16/UMLDiagramFile.gif"
-         extensions="umlactivity_diagram"
-         default="true"
-         class="org.eclipse.uml2.diagram.activity.part.UMLDiagramEditor"
-         matchingStrategy="org.eclipse.uml2.diagram.activity.part.UMLMatchingStrategy"
-         contributorClass="org.eclipse.uml2.diagram.activity.part.UMLDiagramActionBarContributor">
-      </editor>
-
    </extension>
 
    <extension point="org.eclipse.ui.newWizards" id="creation-wizard">

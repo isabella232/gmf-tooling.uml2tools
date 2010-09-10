@@ -78,31 +78,18 @@
       </parser>
    </extension>
 
-   <extension point="org.eclipse.ui.editors">
+   <extension point="org.eclipse.ui.editors" id="generated-editor">
       <?gmfgen generated="true"?>
-
       <editor
          id="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/UMLDiagramFile.gif"
-         extensions="umlcsd"
+         extensions="umlcsd,umlcompositestructures_diagram"
          default="true"
          class="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditor"
          matchingStrategy="org.eclipse.uml2.diagram.csd.part.UMLMatchingStrategy"
          contributorClass="org.eclipse.uml2.diagram.csd.part.UMLDiagramActionBarContributor">
       </editor>
-
-      <editor
-         id="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditorID"
-         name="%editorName"
-         icon="icons/obj16/UMLDiagramFile.gif"
-         extensions="umlcompositestructures_diagram"
-         default="true"
-         class="org.eclipse.uml2.diagram.csd.part.UMLDiagramEditor"
-         matchingStrategy="org.eclipse.uml2.diagram.csd.part.UMLMatchingStrategy"
-         contributorClass="org.eclipse.uml2.diagram.csd.part.UMLDiagramActionBarContributor">
-      </editor>
-
    </extension>
    
    <extension point="org.eclipse.ui.contexts" id="ui-context">

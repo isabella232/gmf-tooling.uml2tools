@@ -54,31 +54,18 @@
       </parser>
    </extension>
 
-   <extension point="org.eclipse.ui.editors">
+   <extension point="org.eclipse.ui.editors" id="generated-editor">
       <?gmfgen generated="true"?>
-
       <editor
          id="org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/UMLDiagramFile.gif"
-         extensions="umldepl"
+         extensions="umldepl,umldeployment_diagram"
          default="true"
          class="org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditor"
          matchingStrategy="org.eclipse.uml2.diagram.deploy.part.UMLMatchingStrategy"
          contributorClass="org.eclipse.uml2.diagram.deploy.part.UMLDiagramActionBarContributor">
       </editor>
-
-      <editor
-         id="org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditorID"
-         name="%editorName"
-         icon="icons/obj16/UMLDiagramFile.gif"
-         extensions="umldeployment_diagram"
-         default="true"
-         class="org.eclipse.uml2.diagram.deploy.part.UMLDiagramEditor"
-         matchingStrategy="org.eclipse.uml2.diagram.deploy.part.UMLMatchingStrategy"
-         contributorClass="org.eclipse.uml2.diagram.deploy.part.UMLDiagramActionBarContributor">
-      </editor>
-
    </extension>
    
    <extension point="org.eclipse.ui.contexts" id="ui-context">
