@@ -116,7 +116,9 @@ public class TransitionParser implements IParser {
 				printStringBuffer.append(effect.getLabel());
 			}
 			
-			return printStringBuffer.length() >0 ? printStringBuffer.toString() : transition.getName();
+			// Ensure that we never ever return null
+			String res = printStringBuffer.length() >0 ? printStringBuffer.toString() : transition.getName();
+			return res == null ? "" : res;
 		}
 		return ""; //$NON-NLS-1$
 	}
@@ -126,7 +128,8 @@ public class TransitionParser implements IParser {
 			Object feature = ((Notification) event).getFeature();
 			return UMLPackage.eINSTANCE.getTransition_Trigger().equals(feature) ||
 				UMLPackage.eINSTANCE.getTransition_Guard().equals(feature) ||
-				UMLPackage.eINSTANCE.getTransition_Effect().equals(feature);
+				UMLPackage.eINSTANCE.getTransition_Effect().equals(feature) ||
+				UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature);
 		}
 		return false;
 	}
