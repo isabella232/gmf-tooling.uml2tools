@@ -5,7 +5,7 @@
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
     xmlns:u2tgen="http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel" packageNamePrefix="org.eclipse.uml2.diagram.profile"
     modelID="UMLProfile"
-    diagramFileExtension="umlprofile, umlprofile_diagram"
+    diagramFileExtension="umlprofile,umlprofile_diagram"
     domainFileExtension="profile.uml"
     dynamicTemplates="true"
     templateDirectory="/org.eclipse.uml2.diagram.def/dynamic-templates/codegen">
@@ -1145,7 +1145,7 @@
       iD="org.eclipse.uml2.diagram.profile"
       name="UML2 Profile Definition Diagram Plugin (Incubation)"
       provider="Eclipse Modeling Project"
-      version="0.9.1.qualifier"
+      version="0.9.2.qualifier"
       printingEnabled="true">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.uml2.diagram.common</requiredPlugins>
