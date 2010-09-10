@@ -10,8 +10,7 @@
         name="ComponentFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="ComponentFigure"
-          fill="false">
+          name="ComponentFigure">
         <layout
             xsi:type="gmfgraph:BorderLayout"/>
         <insets

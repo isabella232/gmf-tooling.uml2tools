@@ -612,7 +612,6 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
-			this.setFill(false);
 			this.setLineWidth(1);
 
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
