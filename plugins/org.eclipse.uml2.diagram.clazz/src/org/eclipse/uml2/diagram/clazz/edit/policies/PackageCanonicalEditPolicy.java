@@ -283,8 +283,11 @@ public class PackageCanonicalEditPolicy extends CanonicalEditPolicy {
 			if (isMyDiagramElement(v)) {
 				knownViewChildren.add(v);
 			}
+			// FIXME remove this AROUND from CanonicalUpdate.xpt-template, when bug in GMF Tooling (327389) is fixed
 			if (v.getEAnnotation("Shortcut") != null && UMLDiagramUpdater.isShortcutOrphaned(v)) { //$NON-NLS-1$
 				orphaned.add(v);
+			} else {
+				knownViewChildren.remove(v);
 			}
 		}
 		// alternative to #cleanCanonicalSemanticChildren(getViewChildren(), semanticChildren)

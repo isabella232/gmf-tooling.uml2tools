@@ -7,11 +7,11 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
-
 public class TemplateLocator implements IBorderItemLocator {
+
 	private final IFigure myParentFigure;
 
-	public TemplateLocator(IFigure parentFigure){
+	public TemplateLocator(IFigure parentFigure) {
 		myParentFigure = parentFigure;
 	}
 
@@ -27,14 +27,14 @@ public class TemplateLocator implements IBorderItemLocator {
 
 	public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
 		Rectangle parentBorder = getParentBorderUnsafe();
-		
+
 		Dimension validSize = parentBorder.getSize(); //new instance
 		validSize.scale(0.8, 0.5);
 		validSize.intersect(borderItem.getPreferredSize());
-		
+
 		Rectangle result = new Rectangle(parentBorder.getTopRight(), validSize);
-		result.translate(- validSize.width / 2, - validSize.height / 2);
-		
+		result.translate(-validSize.width / 2, -validSize.height / 2);
+
 		return result;
 	}
 
@@ -43,8 +43,7 @@ public class TemplateLocator implements IBorderItemLocator {
 	}
 
 	private Rectangle getParentBorderUnsafe() {
-		return myParentFigure instanceof NodeFigure ? 
-				((NodeFigure)myParentFigure).getHandleBounds() : myParentFigure.getBounds();  
+		return myParentFigure instanceof NodeFigure ? ((NodeFigure) myParentFigure).getHandleBounds() : myParentFigure.getBounds();
 	}
-	
+
 }

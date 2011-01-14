@@ -46,25 +46,32 @@ import org.eclipse.uml2.uml.Usage;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class DependencyTypeParser implements ISemanticParser {
+
 	private final static String NOT_APPLICABLE = CustomMessages.DependencyTypeParser_not_applicable;
+
 	private final static String LABEL_DEPENDENCY_SHORT = ""; //$NON-NLS-1$
+
 	private final static String LABEL_DEPENDENCY_FULL = "dependency"; //$NON-NLS-1$
+
 	private final static String LABEL_ABSTRACTION = "abstraction"; //$NON-NLS-1$
+
 	private final static String LABEL_USAGE = "usage"; //$NON-NLS-1$
-	private final static String LABEL_SUBSTITUTION = "substitute";	 //$NON-NLS-1$
-	
+
+	private final static String LABEL_SUBSTITUTION = "substitute"; //$NON-NLS-1$
+
 	private final ViewSwitch myViewSwitch = new ViewSwitch();
+
 	private final EditSwitch myEditSwitch = new EditSwitch();
+
 	private HashMap<String, EClass> myEditStringToType;
 
-	private final FixedSetCompletionProcessor myCompletionProcessor = new FixedSetCompletionProcessor(
-			LABEL_DEPENDENCY_FULL, LABEL_ABSTRACTION, LABEL_SUBSTITUTION, LABEL_USAGE);	
+	private final FixedSetCompletionProcessor myCompletionProcessor = new FixedSetCompletionProcessor(LABEL_DEPENDENCY_FULL, LABEL_ABSTRACTION, LABEL_SUBSTITUTION, LABEL_USAGE);
 
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		myCompletionProcessor.setContext(doAdapt(element));
 		return myCompletionProcessor;
 	}
-	
+
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		if (element instanceof Dependency == false) {
 			return Collections.emptyList();
@@ -84,17 +91,17 @@ public class DependencyTypeParser implements ISemanticParser {
 		EObject subject = doAdapt(element);
 		return (subject == null) ? NOT_APPLICABLE : getViewSwitch().doSwitch(subject);
 	}
-	
+
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		EObject dependency = doAdapt(element);
 		if (dependency == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		EClass type = getType(newString);
-		if (dependency.eClass().equals(type)){
+		if (dependency.eClass().equals(type)) {
 			return IdentityCommand.INSTANCE;
 		}
-		
+
 		//XXX: adapter to EditPart is more logical here, see #158795
 		ConnectionEditPart editPart = getSelectedEditPart();
 		if (type == null || editPart == null) {
@@ -118,13 +125,13 @@ public class DependencyTypeParser implements ISemanticParser {
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return getType(editString) == null ? ParserEditStatus.UNEDITABLE_STATUS : ParserEditStatus.EDITABLE_STATUS;
 	}
-	
+
 	private EObject doAdapt(IAdaptable adaptable) {
-		return (EObject)adaptable.getAdapter(EObject.class);
+		return (EObject) adaptable.getAdapter(EObject.class);
 	}
 
 	private EClass getType(String newString) {
-		if (newString == null){
+		if (newString == null) {
 			newString = ""; //$NON-NLS-1$
 		}
 		newString = newString.trim();
@@ -136,21 +143,22 @@ public class DependencyTypeParser implements ISemanticParser {
 		if (selection instanceof IStructuredSelection == false) {
 			return null;
 		}
-		EditPart selected = ((EditPart) ((IStructuredSelection)selection).getFirstElement());
+		EditPart selected = ((EditPart) ((IStructuredSelection) selection).getFirstElement());
 		if (selected instanceof LabelEditPart) {
 			selected = selected.getParent();
 		}
-		return (selected instanceof ConnectionEditPart) ? (ConnectionEditPart)selected : null;
+		return (selected instanceof ConnectionEditPart) ? (ConnectionEditPart) selected : null;
 	}
-	
+
 	@SuppressWarnings("serial")
 	private HashMap<String, EClass> getEditStringToTypeTable() {
 		if (myEditStringToType == null) {
-			myEditStringToType = new HashMap<String, EClass>(){
+			myEditStringToType = new HashMap<String, EClass>() {
+
 				@Override
 				public EClass put(String key, EClass value) {
 					EClass result = super.put(key, value);
-					super.put(NLS.bind(QUOTE_FORMAT, new Object[]{key}), value);
+					super.put(NLS.bind(QUOTE_FORMAT, new Object[] { key }), value);
 					return result;
 				}
 			};
@@ -162,16 +170,17 @@ public class DependencyTypeParser implements ISemanticParser {
 		}
 		return myEditStringToType;
 	}
-	
-	private UMLSwitch<String> getViewSwitch(){
+
+	private UMLSwitch<String> getViewSwitch() {
 		return myViewSwitch;
 	}
 
-	private UMLSwitch<String> getEditSwitch(){
+	private UMLSwitch<String> getEditSwitch() {
 		return myEditSwitch;
 	}
-	
+
 	private static class EditSwitch extends UMLSwitch<String> {
+
 		@Override
 		public String defaultCase(EObject object) {
 			return NOT_APPLICABLE;
@@ -181,39 +190,40 @@ public class DependencyTypeParser implements ISemanticParser {
 		public String caseDependency(Dependency object) {
 			return LABEL_DEPENDENCY_FULL;
 		}
-		
+
 		@Override
 		public String caseAbstraction(Abstraction object) {
 			return quote(LABEL_ABSTRACTION);
 		}
-		
+
 		@Override
 		public String caseUsage(Usage object) {
 			return quote(LABEL_USAGE);
 		}
-		
+
 		@Override
 		public String caseSubstitution(Substitution object) {
 			return quote(LABEL_SUBSTITUTION);
 		}
-		
-		protected String quote(String text){
+
+		protected String quote(String text) {
 			return text;
 		}
 	}
-	
+
 	private static class ViewSwitch extends EditSwitch {
+
 		@Override
 		protected String quote(String text) {
-			 return NLS.bind(QUOTE_FORMAT, new Object[]{text});
+			return NLS.bind(QUOTE_FORMAT, new Object[] { text });
 		}
-		
+
 		@Override
 		public String caseDependency(Dependency object) {
 			return LABEL_DEPENDENCY_SHORT;
 		}
 	}
-	
+
 	private static final String QUOTE_FORMAT = "\u00AB{0}\u00BB"; //$NON-NLS-1$
 
 }

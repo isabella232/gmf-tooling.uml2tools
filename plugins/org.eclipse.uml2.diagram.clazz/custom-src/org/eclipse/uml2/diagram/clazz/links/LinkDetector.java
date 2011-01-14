@@ -21,7 +21,7 @@ public class LinkDetector implements ILinkDetector {
 		return InterfaceRealizationEditPart.VISUAL_ID == link.getVisualID();
 	}
 
-	public boolean isUsageLink(IUpdaterLinkDescriptor link) { 
+	public boolean isUsageLink(IUpdaterLinkDescriptor link) {
 		return UsageEditPart.VISUAL_ID == link.getVisualID();
 	}
 }

@@ -30,7 +30,7 @@ class AnalysisLevel extends UMLDetailLevel {
 	public List<EditElementCommand> getApplyCommands(TransactionalEditingDomain editingDomain, View view) {
 		FilteringStyle style = (FilteringStyle) view.getStyle(NotationPackage.eINSTANCE.getFilteringStyle());
 		List<EditElementCommand> result = new ArrayList<EditElementCommand>(2);
-		
+
 		SetRequest setFilteringRequest = new SetRequest(editingDomain, style, NotationPackage.eINSTANCE.getFilteringStyle_Filtering(), Filtering.AUTOMATIC_LITERAL);
 		result.add(new SetValueCommand(setFilteringRequest));
 
@@ -61,7 +61,7 @@ class AnalysisLevel extends UMLDetailLevel {
 	public String getLabel() {
 		return CustomMessages.AnalysisLevel_analysis_label;
 	}
-	
+
 	@Override
 	public String getId() {
 		return ID;

@@ -18,9 +18,11 @@ import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
 
 public class AssociationFromPropertyContributionItemProvider extends AbstractContributionItemProvider implements IProvider {
+
 	public static final String ACTION_CREATE_ASSOSIATION = "create_association_from_property"; //$NON-NLS-1$
+
 	public static final String MENU_CREATE_ASSOSIATION = "menu_create_association_from_property"; //$NON-NLS-1$
-	
+
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
 		if (actionId.startsWith(ACTION_CREATE_ASSOSIATION)) {
@@ -44,21 +46,22 @@ public class AssociationFromPropertyContributionItemProvider extends AbstractCon
 	}
 
 	private class MenuBuilder implements IMenuListener {
+
 		private final IWorkbenchPartDescriptor myWorkbenchPart;
 
-		public MenuBuilder(IWorkbenchPartDescriptor workbenchPart){
+		public MenuBuilder(IWorkbenchPartDescriptor workbenchPart) {
 			myWorkbenchPart = workbenchPart;
 		}
-		
+
 		public void menuAboutToShow(IMenuManager manager) {
 			buildMenu(manager);
 		}
-		
+
 		public void buildMenu(IMenuManager manager) {
 			manager.removeAll();
 			GraphicalEditPart selected = (GraphicalEditPart) getSelectedObject(myWorkbenchPart);
 			Property property = (Property) selected.getNotationView().getElement();
-			if (property.getType() == null){
+			if (property.getType() == null) {
 				return;
 			}
 			List<Property> conjugatedProperties = getConjugatedProperties(property);
@@ -79,21 +82,21 @@ public class AssociationFromPropertyContributionItemProvider extends AbstractCon
 		private List<Property> getConjugatedProperties(Property source) {
 			ArrayList<Property> result = new ArrayList<Property>();
 			Classifier sourceType = (Classifier) source.getType();
-			for (Property property : sourceType.getAttributes()){
-				if (property.getAssociation() != null){
+			for (Property property : sourceType.getAttributes()) {
+				if (property.getAssociation() != null) {
 					continue;
 				}
 				if (source.getClass_().equals(property.getType())) {
 					// source and target ends of association should differ
 					if (!source.equals(property)) {
-						result.add(property);	
+						result.add(property);
 					}
 				}
 			}
 			return result;
 		}
-		
-		private IWorkbenchPage getWorkbenchPage(){
+
+		private IWorkbenchPage getWorkbenchPage() {
 			return myWorkbenchPart.getPartPage();
 		}
 	}

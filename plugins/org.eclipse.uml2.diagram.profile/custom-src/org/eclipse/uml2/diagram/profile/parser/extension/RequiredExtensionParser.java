@@ -33,25 +33,28 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 public class RequiredExtensionParser implements ISemanticParser {
+
 	private final static String IS_REQUIRED = "{required}"; //$NON-NLS-1$
+
 	private final static String NOT_REQUIRED = ""; //$NON-NLS-1$
-	
+
 	private final static String PROPOSAL_IS_REQUIRED = IS_REQUIRED;
+
 	private final static String PROPOSAL_NOT_REQUIRED = "{}"; //$NON-NLS-1$
 
-	private final FixedSetCompletionProcessor myCompletionProcessor = new FixedSetCompletionProcessor(PROPOSAL_IS_REQUIRED, PROPOSAL_NOT_REQUIRED);	
+	private final FixedSetCompletionProcessor myCompletionProcessor = new FixedSetCompletionProcessor(PROPOSAL_IS_REQUIRED, PROPOSAL_NOT_REQUIRED);
 
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		myCompletionProcessor.setContext(doAdapt(element));
 		return myCompletionProcessor;
 	}
-	
+
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		if (element instanceof Extension == false) {
 			return Collections.EMPTY_LIST;
 		}
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		Extension extension = (Extension)element;
+		Extension extension = (Extension) element;
 		result.add(extension);
 		ExtensionEnd parsed = ((ExtensionEnd) extension.getOwnedEnds().get(0));
 		result.add(parsed);
@@ -69,8 +72,8 @@ public class RequiredExtensionParser implements ISemanticParser {
 	public String getPrintString(IAdaptable element, int flags) {
 		return getIsRequiredString(element, NOT_REQUIRED);
 	}
-	
-	private String getIsRequiredString(IAdaptable element, String whenNotRequired){
+
+	private String getIsRequiredString(IAdaptable element, String whenNotRequired) {
 		Extension elementImport = doAdapt(element);
 		return (elementImport != null && elementImport.isRequired()) ? PROPOSAL_IS_REQUIRED : whenNotRequired;
 	}
@@ -81,7 +84,7 @@ public class RequiredExtensionParser implements ISemanticParser {
 		if (extension.isRequired() == isRequired) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		int value = isRequired ? 1: 0;
+		int value = isRequired ? 1 : 0;
 		return new SetValueCommand(new SetRequest((ExtensionEnd) extension.getOwnedEnds().get(0), UMLPackage.eINSTANCE.getMultiplicityElement_Lower(), value));
 	}
 
@@ -100,10 +103,10 @@ public class RequiredExtensionParser implements ISemanticParser {
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
-	
+
 	private Extension doAdapt(IAdaptable adaptable) {
 		//CCE intentionally allowed -- should be checked externally
-		return (Extension)adaptable.getAdapter(EObject.class);
+		return (Extension) adaptable.getAdapter(EObject.class);
 	}
 
 }

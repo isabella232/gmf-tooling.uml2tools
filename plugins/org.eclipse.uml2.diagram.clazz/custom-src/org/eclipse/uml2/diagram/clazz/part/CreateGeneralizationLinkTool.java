@@ -85,7 +85,7 @@ public class CreateGeneralizationLinkTool extends UnspecifiedTypeConnectionTool 
 
 		EditPart generalizationSource = generalizationEditPart.getSource();
 		EditPart generalizationTarget = generalizationEditPart.getTarget();
-		
+
 		CompoundCommand result = new CompoundCommand();
 		result.add(createGeneralizationSetCommand);
 		result.add(getDeleteViewCommand(generalizationEditPart));
@@ -94,18 +94,18 @@ public class CreateGeneralizationLinkTool extends UnspecifiedTypeConnectionTool 
 
 		// restore existing generalization EditPart
 		result.add(getCompleteCreateGeneralizationCommand(generalization, packageEditPart, generalizationSource, created));
-//		result.add(getCreateGeneralizationGeneralCommand(packageEditPart, created, generalizationTarget));
+		//		result.add(getCreateGeneralizationGeneralCommand(packageEditPart, created, generalizationTarget));
 		return result;
 	}
 
 	private ViewAndElementDescriptor getCreatedElement(CreateViewAndElementRequest createGeneralizationSetRequest) {
 		List newObject = (List) createGeneralizationSetRequest.getNewObject();
 		return (ViewAndElementDescriptor) ((List) newObject).get(0);
-	}	
-
+	}
 
 	private Command getCreateGeneralizationGeneralCommand(GraphicalEditPart packageEditPart, final ViewAndElementDescriptor created, final EditPart targetEditPart) {
-		AbstractTransactionalCommand createGeneralizationGeneral = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(), CustomMessages.CreateGeneralizationLinkTool_change_generalization_notation_command, null) {
+		AbstractTransactionalCommand createGeneralizationGeneral = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(),
+				CustomMessages.CreateGeneralizationLinkTool_change_generalization_notation_command, null) {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
@@ -118,16 +118,17 @@ public class CreateGeneralizationLinkTool extends UnspecifiedTypeConnectionTool 
 		};
 		return new ICommandProxy(createGeneralizationGeneral);
 	}
-	
+
 	private Command getCompleteCreateGeneralizationCommand(final EObject element, GraphicalEditPart packageEditPart, final EditPart sourceEditPart, final ViewAndElementDescriptor created) {
-		AbstractTransactionalCommand createGeneralization = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(), CustomMessages.CreateGeneralizationLinkTool_change_generalization_notation_command_2, null) {
+		AbstractTransactionalCommand createGeneralization = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(),
+				CustomMessages.CreateGeneralizationLinkTool_change_generalization_notation_command_2, null) {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				View view = (View) created.getAdapter(View.class);
 				EditPart targetEditPart = (EditPart) getCurrentViewer().getEditPartRegistry().get(view);
 				CreateConnectionRequest connectionRequest = getCreateConnectionWithClassViewRequest(element, String.valueOf(Generalization2EditPart.VISUAL_ID));
-				
+
 				createConnection(sourceEditPart, targetEditPart, connectionRequest);
 
 				return CommandResult.newOKCommandResult();
@@ -135,7 +136,7 @@ public class CreateGeneralizationLinkTool extends UnspecifiedTypeConnectionTool 
 		};
 		return new ICommandProxy(createGeneralization);
 	}
-	
+
 	private CreateConnectionRequest getCreateConnectionViewRequest(final IElementType elementType, String hint) {
 		IAdaptable semanticAdapter = new IAdaptable() {
 
@@ -155,7 +156,7 @@ public class CreateGeneralizationLinkTool extends UnspecifiedTypeConnectionTool 
 		ConnectionViewDescriptor viewDescriptor = new ConnectionViewDescriptor(new EObjectAdapter(element), hint, getPreferencesHint());
 		return new CreateConnectionViewRequest(viewDescriptor);
 	}
-	
+
 	private void createConnection(EditPart sourceEditPart, EditPart targetEditPart, CreateConnectionRequest connectionRequest) {
 		connectionRequest.setTargetEditPart(sourceEditPart);
 		connectionRequest.setType(RequestConstants.REQ_CONNECTION_START);
@@ -177,7 +178,8 @@ public class CreateGeneralizationLinkTool extends UnspecifiedTypeConnectionTool 
 	}
 
 	private Command getCreateGeneralizationCommand(GraphicalEditPart packageEditPart, final ViewAndElementDescriptor created) {
-		AbstractTransactionalCommand createGeneralization = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(), CustomMessages.CreateGeneralizationLinkTool_change_generalization_notation_command_3, null) {
+		AbstractTransactionalCommand createGeneralization = new AbstractTransactionalCommand(packageEditPart.getEditingDomain(),
+				CustomMessages.CreateGeneralizationLinkTool_change_generalization_notation_command_3, null) {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {

@@ -19,6 +19,7 @@ import org.eclipse.uml2.diagram.profile.part.CustomMessages;
 import org.eclipse.uml2.uml.Profile;
 
 public class DefineProfileAction extends DiagramAction {
+
 	private static final String UNDEFINED_LABEL = CustomMessages.DefineProfileAction_indefined;
 
 	public DefineProfileAction(IWorkbenchPage workbenchPage) {
@@ -36,12 +37,12 @@ public class DefineProfileAction extends DiagramAction {
 			public Object getEditHelperContext() {
 				// TODO Auto-generated method stub
 				return null;
-			}};
-			
+			}
+		};
+
 		Command command = new ICommandProxy(new DefineProfileCommand(CustomMessages.DefineProfileAction_define_profile_command, profile, request));
 		return command;
 	}
-
 
 	@Override
 	protected Request createTargetRequest() {
@@ -63,21 +64,20 @@ public class DefineProfileAction extends DiagramAction {
 		super.refresh();
 		setText(calculateText());
 	}
-	
+
 	private String calculateText() {
 		ProfileEditPart profileEditPart = getProfileEditPart();
 		if (profileEditPart == null) {
 			return UNDEFINED_LABEL;
 		}
 		Profile profile = (Profile) profileEditPart.getNotationView().getElement();
-		return (profile.isDefined())? CustomMessages.DefineProfileAction_redefine_action : CustomMessages.DefineProfileAction_define_action;
+		return (profile.isDefined()) ? CustomMessages.DefineProfileAction_redefine_action : CustomMessages.DefineProfileAction_define_action;
 	}
-
 
 	private ProfileEditPart getProfileEditPart() {
 		for (Object next : getSelectedObjects()) {
 			if (next instanceof ProfileEditPart) {
-				ProfileEditPart profileEditPart = (ProfileEditPart)next;
+				ProfileEditPart profileEditPart = (ProfileEditPart) next;
 				return profileEditPart;
 			}
 		}
@@ -85,7 +85,7 @@ public class DefineProfileAction extends DiagramAction {
 	}
 
 	private class DefineProfileCommand extends EditElementCommand {
-		
+
 		Profile myProfile;
 
 		protected DefineProfileCommand(String label, Profile elementToEdit, IEditCommandRequest request) {
@@ -99,7 +99,7 @@ public class DefineProfileAction extends DiagramAction {
 			ProfileRegistry.getInstance().addProfile(myProfile);
 			return CommandResult.newOKCommandResult(myProfile);
 		}
-		
+
 	}
 
 }

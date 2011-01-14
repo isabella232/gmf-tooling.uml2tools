@@ -11,6 +11,7 @@ import org.eclipse.uml2.uml.PackageableElement;
  * This class remains here only to avoid breaking of the public API.
  */
 public class NewDiagramForFixedElementsWizard extends UMLClassFixedElementsWizard {
+
 	public NewDiagramForFixedElementsWizard(URI domainModelURI, EObject diagramRoot, PackageableElement[] toSelect, TransactionalEditingDomain editingDomain) {
 		super(domainModelURI, diagramRoot, toSelect, editingDomain);
 	}

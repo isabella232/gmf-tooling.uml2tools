@@ -13,27 +13,28 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class StaticPropertyVisualEffectEditPolicy extends AbstractVisualEffectEditPolicy {
+
 	@Override
 	protected void installVisualEffect() {
 		ensureHasStyle(NotationPackage.eINSTANCE.getFontStyle());
 	}
-	
+
 	@Override
 	protected void refreshVisualEffect() {
 		EObject semanticHost = getSemanticHost();
-		if (false == semanticHost instanceof Property){
+		if (false == semanticHost instanceof Property) {
 			return;
 		}
-		Property property = (Property)getSemanticHost();
+		Property property = (Property) getSemanticHost();
 		IGraphicalEditPart editPart = getHostImpl();
 		View view = editPart.getNotationView();
-		FontStyle fontStyle = (FontStyle)view.getStyle(NotationPackage.eINSTANCE.getFontStyle());
-		if (fontStyle != null && fontStyle.isUnderline() != property.isStatic()){
+		FontStyle fontStyle = (FontStyle) view.getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		if (fontStyle != null && fontStyle.isUnderline() != property.isStatic()) {
 			SetRequest request = new SetRequest(editPart.getEditingDomain(), fontStyle, NotationPackage.eINSTANCE.getFontStyle_Underline(), property.isStatic());
 			executeICommand(new SetValueCommand(request));
 		}
 	}
-	
+
 	@Override
 	protected boolean shouldHandleNotificationEvent(Notification event) {
 		return UMLPackage.eINSTANCE.getFeature_IsStatic() == event.getFeature();

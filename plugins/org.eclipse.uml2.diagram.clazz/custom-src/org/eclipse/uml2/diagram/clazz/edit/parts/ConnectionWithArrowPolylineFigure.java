@@ -8,9 +8,10 @@ import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.IMapMode;
 
+public class ConnectionWithArrowPolylineFigure extends PolylineConnectionEx {
 
-public class ConnectionWithArrowPolylineFigure  extends PolylineConnectionEx {
 	private IMapMode mapMode;
+
 	/**
 	 * @generated
 	 */
@@ -46,6 +47,7 @@ public class ConnectionWithArrowPolylineFigure  extends PolylineConnectionEx {
 		df.setScale(getMapMode().DPtoLP(7), getMapMode().DPtoLP(3));
 		return df;
 	}
+
 	private IMapMode getMapMode() {
 		return mapMode;
 	}

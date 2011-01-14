@@ -560,76 +560,76 @@ public class UMLVisualIDRegistry {
 	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistryExt() {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public String getModelID(View view) {
 			return org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public int getVisualID(View view) {
 			return org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public int getNodeVisualID(View containerView, EObject domainElement) {
 			return org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean isCompartmentVisualID(int visualID) {
 			return org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean isShortcutDescendant(View view) {
 			return org.eclipse.uml2.diagram.profile.part.UMLVisualIDRegistry.isShortcutDescendant(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private VisualIDRegistryExtension myExtension = new VisualIDRegistryExtension();
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<String> getAllHintedTypes() {
 			return myExtension.getAllHintedTypes();
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<IVisualIDRegistryExt.MenuTypeHint> getMenuTypeHints(String type) {
 			return myExtension.getMenuTypeHints(type);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public String getSemanticHint(View childView, View newParentView) {
 			return myExtension.getSemanticHint(childView, newParentView);
 		}

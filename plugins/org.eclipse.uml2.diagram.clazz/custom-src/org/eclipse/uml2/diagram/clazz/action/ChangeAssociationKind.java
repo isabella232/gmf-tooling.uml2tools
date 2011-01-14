@@ -20,8 +20,9 @@ import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Association;
 
 public class ChangeAssociationKind extends DiagramAction {
-	
+
 	private AggregationKind kind;
+
 	public ChangeAssociationKind(IWorkbenchPage workbenchPage, AggregationKind aggregationKind) {
 		super(workbenchPage);
 		this.kind = aggregationKind;
@@ -42,7 +43,7 @@ public class ChangeAssociationKind extends DiagramAction {
 		SetValueCommand setValueCommand = new SetValueCommand(request);
 		return new ICommandProxy(setValueCommand);
 	}
-	
+
 	@Override
 	protected Request createTargetRequest() {
 		return null;
@@ -52,13 +53,13 @@ public class ChangeAssociationKind extends DiagramAction {
 	protected boolean isSelectionListener() {
 		return true;
 	}
-	
+
 	private Association getAssociation() {
 		ConnectionEditPart editPart = getSelectedEditPart();
 		View view = editPart.getNotationView();
-		return (view != null) ? (Association)view.getElement() : null;
+		return (view != null) ? (Association) view.getElement() : null;
 	}
-	
+
 	private ConnectionEditPart getSelectedEditPart() {
 		for (Object ob : getSelectedObjects()) {
 			if (ob instanceof ConnectionEditPart) {
@@ -67,8 +68,7 @@ public class ChangeAssociationKind extends DiagramAction {
 		}
 		return null;
 	}
-	
-	
+
 	private Map<AggregationKind, String> getLabelTable() {
 		if (oursKindToLabelTable == null) {
 			oursKindToLabelTable = new HashMap<AggregationKind, String>();
@@ -78,8 +78,12 @@ public class ChangeAssociationKind extends DiagramAction {
 		}
 		return oursKindToLabelTable;
 	}
+
 	private static Map<AggregationKind, String> oursKindToLabelTable;
-	private static final String LABEL_NONE=CustomMessages.ChangeAssociationKind_none_action_label;
-	private static final String LABEL_COMPOSITE=CustomMessages.ChangeAssociationKind_composite_action_label;
-	private static final String LABEL_SHARED=CustomMessages.ChangeAssociationKind_shared_action_label;
+
+	private static final String LABEL_NONE = CustomMessages.ChangeAssociationKind_none_action_label;
+
+	private static final String LABEL_COMPOSITE = CustomMessages.ChangeAssociationKind_composite_action_label;
+
+	private static final String LABEL_SHARED = CustomMessages.ChangeAssociationKind_shared_action_label;
 }

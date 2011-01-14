@@ -33,15 +33,18 @@ import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class ReferencedMetaclassParser implements ISemanticParser {
+
 	private final MetaclassesList myMetaclassesList = new MetaclassesList();
+
 	private final CompletionProcessor myCompletionProcessor = new CompletionProcessor();
+
 	private final static String NO_METACLASS = CustomMessages.ReferencedMetaclassParser_no_metaclass;
 
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		myCompletionProcessor.setContext(doAdapt(element));
 		return myCompletionProcessor;
 	}
-	
+
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		if (notification instanceof Notification) {
 			Object feature = ((Notification) notification).getFeature();
@@ -61,7 +64,7 @@ public class ReferencedMetaclassParser implements ISemanticParser {
 	public String getPrintString(IAdaptable element, int flags) {
 		ElementImport elementImport = doAdapt(element);
 		String result = null;
-		if (elementImport != null){
+		if (elementImport != null) {
 			result = elementImport.getName();
 		}
 		return result == null ? NO_METACLASS : result;
@@ -73,10 +76,10 @@ public class ReferencedMetaclassParser implements ISemanticParser {
 			return UnexecutableCommand.INSTANCE;
 		}
 		ElementImport elementImport = doAdapt(element);
-		if (metaclass.equals(elementImport.getImportedElement())){
+		if (metaclass.equals(elementImport.getImportedElement())) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		return new ReplaceReferencedMetaclassCommand(elementImport, metaclass); 
+		return new ReplaceReferencedMetaclassCommand(elementImport, metaclass);
 	}
 
 	public boolean isAffectingEvent(Object event, int flags) {
@@ -90,25 +93,26 @@ public class ReferencedMetaclassParser implements ISemanticParser {
 		}
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
-	
-	private org.eclipse.uml2.uml.Class findMetaclass(IAdaptable parserElement, String editString){
-		if (editString == null){
+
+	private org.eclipse.uml2.uml.Class findMetaclass(IAdaptable parserElement, String editString) {
+		if (editString == null) {
 			return null;
 		}
 		editString = editString.trim();
-		if (editString.length() == 0){
+		if (editString.length() == 0) {
 			return null;
 		}
 		return myMetaclassesList.findElement(doAdapt(parserElement), editString);
 	}
-	
+
 	private ElementImport doAdapt(IAdaptable adaptable) {
 		//intentionally CCE
-		ElementImport elementImport = (ElementImport)adaptable.getAdapter(EObject.class);
+		ElementImport elementImport = (ElementImport) adaptable.getAdapter(EObject.class);
 		return elementImport;
 	}
-	
+
 	private class CompletionProcessor extends EObjectCompletionProcessor {
+
 		@Override
 		protected Iterable<String> computeContextProposals(EObject context) {
 			return myMetaclassesList.getElementNames(context);

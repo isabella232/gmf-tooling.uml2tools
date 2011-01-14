@@ -30,28 +30,28 @@ class CreatePortRequiredInterfaceCommand extends CreateRelationshipCommand {
 	public CreatePortRequiredInterfaceCommand(CreateRelationshipRequest request) {
 		super(request);
 	}
-	
+
 	@Override
 	public boolean canExecute() {
-		Port port = (Port)getSource();
+		Port port = (Port) getSource();
 		Type portType = port.getType();
-		if (portType instanceof Classifier){
-			Classifier classifier = (Classifier)portType;
+		if (portType instanceof Classifier) {
+			Classifier classifier = (Classifier) portType;
 			return !classifier.getAllUsedInterfaces().contains(getTarget());
 		}
 		return false;
 	}
 
 	protected EObject doDefaultElementCreation() {
-		Port port = (Port)getSource();
+		Port port = (Port) getSource();
 		Type portType = port.getType();
 		Usage usage = null;
-		if (portType instanceof Classifier){
-			Classifier classifier = (Classifier)portType;
+		if (portType instanceof Classifier) {
+			Classifier classifier = (Classifier) portType;
 			org.eclipse.uml2.uml.Package pakkage = port.getNearestPackage();
 			usage = (Usage) pakkage.createPackagedElement(null, UMLPackage.Literals.USAGE);
 			usage.getClients().add(classifier);
-			usage.getSuppliers().add((Interface)getTarget());
+			usage.getSuppliers().add((Interface) getTarget());
 		}
 		return usage;
 	}

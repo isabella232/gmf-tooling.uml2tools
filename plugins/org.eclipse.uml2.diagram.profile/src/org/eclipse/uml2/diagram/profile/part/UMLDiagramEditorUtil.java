@@ -196,11 +196,11 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * Create a new instance of domain element associated with canvas.
-	 * <!-- begin-user-doc -->
+	* Create a new instance of domain element associated with canvas.
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static Profile createInitialModel(EClass initialObject, String diagramName) {
 		Profile diagram = (Profile) UMLFactory.eINSTANCE.create(initialObject);
 		diagram.setName(diagramName);
@@ -208,11 +208,11 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * Store model element in the resource.
-	 * <!-- begin-user-doc -->
+	* Store model element in the resource.
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static void attachModelToResource(Profile model, Resource resource) {
 		resource.getContents().add(model);
 		loadDefaultImports(model);

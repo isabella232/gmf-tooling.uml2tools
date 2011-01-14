@@ -238,3 +238,14 @@ private boolean isDefinitelyNotMyDiagramElement(org.eclipse.gmf.runtime.notation
 	«ENDIF-»
 	«REM»end of fix for #208889«ENDREM»«-»
 «ENDDEFINE»
+
+«AROUND _checkOrphanedShortcuts(String orphanedCollectionVar, String viewVar) FOR gmfgen::GenDiagram-»
+«IF containsShortcutsTo->notEmpty()-»
+	// FIXME remove this AROUND from CanonicalUpdate.xpt-template, when bug in GMF Tooling (327389) is fixed
+	if («viewVar».getEAnnotation("Shortcut") != null && «editorGen.diagramUpdater.getDiagramUpdaterQualifiedClassName()».isShortcutOrphaned(«viewVar»)) {«EXPAND xpt::Common::nonNLS»
+		«orphanedCollectionVar».add(«viewVar»);
+	} else {
+		knownViewChildren.remove(«viewVar»);
+	}
+«ENDIF-»
+«ENDAROUND»

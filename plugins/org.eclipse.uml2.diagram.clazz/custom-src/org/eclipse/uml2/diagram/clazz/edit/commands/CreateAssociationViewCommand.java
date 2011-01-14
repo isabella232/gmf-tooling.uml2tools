@@ -23,8 +23,7 @@ public class CreateAssociationViewCommand extends Command {
 
 	private PreferencesHint myPreferencesHint;
 
-	public CreateAssociationViewCommand(GraphicalEditPart propertyEditPart, Type associationSource, Type associationTarget, CreateRelationshipRequest semanticRequest,
-			PreferencesHint preferencesHint) {
+	public CreateAssociationViewCommand(GraphicalEditPart propertyEditPart, Type associationSource, Type associationTarget, CreateRelationshipRequest semanticRequest, PreferencesHint preferencesHint) {
 		EditPart root = propertyEditPart.getRoot().getContents();
 		mySourceEditPart = propertyEditPart.findEditPart(root, associationSource);
 		myTargetEditPart = propertyEditPart.findEditPart(root, associationTarget);
@@ -34,10 +33,8 @@ public class CreateAssociationViewCommand extends Command {
 
 	@Override
 	public void execute() {
-		ConnectionViewDescriptor viewDescriptor = new ConnectionViewDescriptor(mySemanticAdapter, 
-				String.valueOf(AssociationEditPart.VISUAL_ID),
-				ViewUtil.APPEND, false, myPreferencesHint);
-		
+		ConnectionViewDescriptor viewDescriptor = new ConnectionViewDescriptor(mySemanticAdapter, String.valueOf(AssociationEditPart.VISUAL_ID), ViewUtil.APPEND, false, myPreferencesHint);
+
 		CreateConnectionViewRequest createViewRequest = new CreateConnectionViewRequest(viewDescriptor);
 		createViewRequest.setType(RequestConstants.REQ_CONNECTION_START);
 		createViewRequest.setTargetEditPart(mySourceEditPart);
@@ -63,8 +60,9 @@ public class CreateAssociationViewCommand extends Command {
 		// yet created
 		return true;
 	}
-	
+
 	private static class CreatedEObjectAdapter implements IAdaptable {
+
 		private final CreateRelationshipRequest myRequest;
 
 		CreatedEObjectAdapter(CreateRelationshipRequest request) {

@@ -34,6 +34,7 @@ import org.eclipse.uml2.uml.Dependency;
 public class ChangeDependencyTypeCommand extends CompoundCommand {
 
 	private EClass dependencyType;
+
 	private ConnectionEditPart editPart;
 
 	private CreateConnectionViewAndElementRequest createViewRequest;
@@ -103,7 +104,7 @@ public class ChangeDependencyTypeCommand extends CompoundCommand {
 		createElementRequest.setSource(((View) editPart.getSource().getModel()).getElement());
 		createElementRequest.setTarget(((View) editPart.getTarget().getModel()).getElement());
 		createElementRequest.setParameter(DependencyEditHelper.PARAMETER_DEPENDENCY_TYPE, dependencyType);
-		String name = ((Dependency)((View)editPart.getModel()).getElement()).getName(); 
+		String name = ((Dependency) ((View) editPart.getModel()).getElement()).getName();
 		createElementRequest.setParameter(DependencyEditHelper.PARAMETER_DEPENDENCY_NAME, name);
 		ConnectionViewAndElementDescriptor viewDescriptor = new ConnectionViewAndElementDescriptor(new CreateElementRequestAdapter(createElementRequest), semanticHint, preferencesHint);
 		return viewDescriptor;

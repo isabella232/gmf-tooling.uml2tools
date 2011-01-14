@@ -20,12 +20,12 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 
-
 public class RequiredExtensionParserProvider extends AbstractProvider implements IParserProvider {
+
 	private RequiredExtensionParser myParser;
 
 	public IParser getParser(IAdaptable hint) {
-		if (myParser == null){
+		if (myParser == null) {
 			myParser = new RequiredExtensionParser();
 		}
 		return myParser;
@@ -35,7 +35,7 @@ public class RequiredExtensionParserProvider extends AbstractProvider implements
 		boolean result = false;
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			result = (hint != null) && (hint.getAdapter(IElementType.class) == UMLElementTypes.Extension_4002); 
+			result = (hint != null) && (hint.getAdapter(IElementType.class) == UMLElementTypes.Extension_4002);
 		}
 		return result;
 	}

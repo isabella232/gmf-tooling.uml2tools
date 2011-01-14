@@ -22,15 +22,16 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.resource.UMLResource;
 
 public class MetaclassesList extends ElementProvider {
+
 	private static final boolean YES_CACHING = true;
-	
-	public MetaclassesList(){
+
+	public MetaclassesList() {
 		super(YES_CACHING);
 	}
 
 	@Override
 	public org.eclipse.uml2.uml.Class findElement(EObject context, String name) {
-		return (org.eclipse.uml2.uml.Class)super.findElement(context, name);
+		return (org.eclipse.uml2.uml.Class) super.findElement(context, name);
 	}
 
 	@Override
@@ -41,7 +42,7 @@ public class MetaclassesList extends ElementProvider {
 		}
 		return false;
 	}
-	
+
 	@Override
 	protected List<NamedElement> loadAllElements(ResourceSet resourceSet) {
 		preloadLibraries(resourceSet);

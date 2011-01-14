@@ -21,12 +21,12 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserProvider;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.uml2.diagram.profile.providers.UMLElementTypes;
 
-
 public class ReferencedMetaclassParserProvider extends AbstractProvider implements IParserProvider {
+
 	private ReferencedMetaclassParser myParser;
 
 	public IParser getParser(IAdaptable hint) {
-		if (myParser == null){
+		if (myParser == null) {
 			myParser = new ReferencedMetaclassParser();
 		}
 		return myParser;
@@ -36,7 +36,7 @@ public class ReferencedMetaclassParserProvider extends AbstractProvider implemen
 		boolean result = false;
 		if (operation instanceof GetParserOperation) {
 			IAdaptable hint = ((GetParserOperation) operation).getHint();
-			result = (hint != null) && (hint.getAdapter(IElementType.class) == UMLElementTypes.ElementImport_2006); 
+			result = (hint != null) && (hint.getAdapter(IElementType.class) == UMLElementTypes.ElementImport_2006);
 		}
 		return result;
 	}

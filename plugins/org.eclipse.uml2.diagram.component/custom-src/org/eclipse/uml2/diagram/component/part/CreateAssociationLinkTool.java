@@ -30,35 +30,41 @@ public class CreateAssociationLinkTool extends CreateLinkToolBase {
 		super(Collections.singletonList(UMLElementTypes.Association_4011));
 		myKind = kind;
 	}
-	
+
 	@Override
 	protected Map<String, Object> createAdditionalExtendedData() {
 		HashMap<String, Object> result = new HashMap<String, Object>();
 		result.put(AssociationEditHelper.PARAMETER_CONFIGURE_AGGREGATION_KIND, myKind);
 		return result;
 	}
-	
+
 	public static class NONE extends CreateAssociationLinkTool {
-		public NONE(){
+
+		public NONE() {
 			super(AggregationKind.NONE_LITERAL);
 		}
 	}
-	
+
 	public static class COMPOSITE extends CreateAssociationLinkTool {
-		public COMPOSITE(){
+
+		public COMPOSITE() {
 			super(AggregationKind.COMPOSITE_LITERAL);
 		}
 	}
-	
+
 	public static class SHARED extends CreateAssociationLinkTool {
-		public SHARED(){
+
+		public SHARED() {
 			super(AggregationKind.SHARED_LITERAL);
 		}
 	}
+
 	public static class NAVIGABLE extends CreateAssociationLinkTool {
-		public NAVIGABLE(){
+
+		public NAVIGABLE() {
 			super(AggregationKind.NONE_LITERAL);
 		}
+
 		@Override
 		protected Map<String, Object> createAdditionalExtendedData() {
 			Map<String, Object> result = super.createAdditionalExtendedData();

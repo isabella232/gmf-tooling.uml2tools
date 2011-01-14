@@ -98,7 +98,7 @@ public abstract class UMLDetailLevel {
 
 		oursAffectedVIDs.add(String.valueOf(PackageClassifiersEditPart.VISUAL_ID));
 		oursAffectedVIDs.add(String.valueOf(PackageOtherEditPart.VISUAL_ID));
-	
+
 		oursAffectedVIDs.add(String.valueOf(PrimitiveTypeAttributesEditPart.VISUAL_ID));
 		oursAffectedVIDs.add(String.valueOf(PrimitiveTypeOperationsEditPart.VISUAL_ID));
 	}
@@ -108,15 +108,14 @@ public abstract class UMLDetailLevel {
 
 		FilteringStyle style = (FilteringStyle) diagram.getStyle(NotationPackage.eINSTANCE.getFilteringStyle());
 		SetRequest setKeysRequest;
-		if (style == null){
+		if (style == null) {
 			style = NotationFactory.eINSTANCE.createFilteringStyle();
 			style.setFilteringKeys(filteringKeys);
 			setKeysRequest = new SetRequest(editingDomain, diagram, NotationPackage.eINSTANCE.getView_Styles(), style);
 		} else {
-			setKeysRequest = new SetRequest(editingDomain, style, NotationPackage.eINSTANCE.getFilteringStyle_FilteringKeys(), filteringKeys);	
+			setKeysRequest = new SetRequest(editingDomain, style, NotationPackage.eINSTANCE.getFilteringStyle_FilteringKeys(), filteringKeys);
 		}
-		
-		
+
 		return new SetValueCommand(setKeysRequest);
 	}
 

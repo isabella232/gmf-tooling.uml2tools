@@ -47,7 +47,7 @@ public class CreateAssociationFromProperty extends DiagramAction {
 		super(workbenchPage);
 		myOtherEnd = sourceEnd;
 	}
-	
+
 	@Override
 	public void refresh() {
 		super.refresh();
@@ -62,13 +62,13 @@ public class CreateAssociationFromProperty extends DiagramAction {
 		setText(DISABLED_TEXT);
 		if (myOtherEnd != null) {
 			String labelFormat = "{0}: {1}"; //$NON-NLS-1$
-			setText(NLS.bind(labelFormat, new Object[]{myOtherEnd.getClass_().getName(), myOtherEnd.getName()}));
+			setText(NLS.bind(labelFormat, new Object[] { myOtherEnd.getClass_().getName(), myOtherEnd.getName() }));
 			return;
 		}
 		GraphicalEditPart propertyEditPart = getSelectedPropertyEditPart();
 		if (propertyEditPart != null) {
 			Property property = (Property) propertyEditPart.getNotationView().getElement();
-			if (property.getType() != null){
+			if (property.getType() != null) {
 				setText(property.getType().getName());
 			}
 		}
@@ -80,37 +80,37 @@ public class CreateAssociationFromProperty extends DiagramAction {
 		if (propertyEditPart == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		
+
 		GraphicalEditPart conjugatedEditPart = null;
 		if (myOtherEnd != null) {
 			conjugatedEditPart = (GraphicalEditPart) propertyEditPart.findEditPart(propertyEditPart.getRoot().getContents(), myOtherEnd);
 		}
-		
+
 		TransactionalEditingDomain domain = propertyEditPart.getEditingDomain();
 		CompositeTransactionalCommand emfCommand = new CompositeTransactionalCommand(domain, CustomMessages.CreateAssociationFromProperty_create_association_command);
-		
+
 		Property property = (Property) propertyEditPart.getNotationView().getElement();
 		Type associationSource = property.getClass_();
 		Type associationTarget = property.getType();
 
 		CreateRelationshipRequest semanticRequest = new CreateRelationshipRequest(associationSource, associationTarget, UMLElementTypes.Association_4005);
 		emfCommand.add(new CreateAssociationCommand(semanticRequest, myOtherEnd, property));
-		
-		if (myOtherEnd != null && AggregationKind.COMPOSITE_LITERAL == property.getAggregation()){
+
+		if (myOtherEnd != null && AggregationKind.COMPOSITE_LITERAL == property.getAggregation()) {
 			SetRequest fixOtherEndAggregation = new SetRequest(propertyEditPart.getEditingDomain(), //
-					myOtherEnd, UMLPackage.eINSTANCE.getProperty_Aggregation(), AggregationKind.NONE_LITERAL); 
+					myOtherEnd, UMLPackage.eINSTANCE.getProperty_Aggregation(), AggregationKind.NONE_LITERAL);
 			emfCommand.add(new SetValueCommand(fixOtherEndAggregation));
 		}
-		
+
 		emfCommand.add(new DeleteCommand(propertyEditPart.getNotationView()));
-		if (conjugatedEditPart != null){
+		if (conjugatedEditPart != null) {
 			emfCommand.add(new DeleteCommand(conjugatedEditPart.getNotationView()));
 		}
-		
+
 		//first semantic changes in single transaction, then notation changes 
 		CompoundCommand result = new CompoundCommand();
 		result.add(new ICommandProxy(emfCommand));
-		if (((GraphicalEditPart)propertyEditPart.getParent()).isCanonical()){
+		if (((GraphicalEditPart) propertyEditPart.getParent()).isCanonical()) {
 			result.add(new CreateAssociationViewCommand(propertyEditPart, associationSource, associationTarget, semanticRequest, getPreferencesHint()));
 		}
 		return result;
@@ -142,7 +142,9 @@ public class CreateAssociationFromProperty extends DiagramAction {
 	}
 
 	private static class CreateAssociationCommand extends CreateRelationshipCommand {
+
 		private final Property myTargetEnd;
+
 		private Property mySourceEnd;
 
 		public CreateAssociationCommand(CreateRelationshipRequest request, Property sourceEnd, Property targetEnd) {
@@ -154,16 +156,16 @@ public class CreateAssociationFromProperty extends DiagramAction {
 		@Override
 		protected EObject doDefaultElementCreation() {
 			Type sourceType = (Type) getSource();
-			
+
 			Package pakkage = sourceType.getNearestPackage();
 			Association association = (Association) pakkage.createOwnedType(null, UMLPackage.Literals.ASSOCIATION);
-			
-			if (mySourceEnd == null){
+
+			if (mySourceEnd == null) {
 				mySourceEnd = association.createOwnedEnd(null, sourceType);
-			} 
+			}
 			association.getMemberEnds().add(mySourceEnd);
 			association.getMemberEnds().add(myTargetEnd);
-			
+
 			return association;
 		}
 	}

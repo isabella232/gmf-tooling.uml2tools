@@ -22,7 +22,7 @@ public class UMLDetailLevelService {
 
 	public static UMLDetailLevel getLevel(View view) {
 		Diagram diagram = view.getDiagram();
-		if (diagram == null){
+		if (diagram == null) {
 			// XXX: workaround for 186343
 			// it is unclear why notification goes to 
 			// edit part for just deleted view
@@ -59,7 +59,7 @@ public class UMLDetailLevelService {
 			if (child instanceof View) {
 				EObject childElement = ((View) child).getElement();
 				if (childElement instanceof NamedElement && ((NamedElement) childElement).getVisibility() != VisibilityKind.PUBLIC_LITERAL) {
-					result.add((View)child);
+					result.add((View) child);
 				}
 			}
 		}
@@ -80,15 +80,16 @@ public class UMLDetailLevelService {
 
 	public static final String ID_DETAIL_LEVEL_DETAILS_SUPPRESSED = DetailsSuppressedLevel.ID;
 
-	public static final UMLDetailLevel EMPTY_LEVEL = new UMLDetailLevel(){
+	public static final UMLDetailLevel EMPTY_LEVEL = new UMLDetailLevel() {
+
 		@Override
 		public void init(View view) {
 			// nothing to do
 		}
 	};
-	
-	@SuppressWarnings("unchecked") //$NON-NLS-1$
-	private static List<String> getFilteringKeysImpl(FilteringStyle style){
+
+	@SuppressWarnings("unchecked")//$NON-NLS-1$
+	private static List<String> getFilteringKeysImpl(FilteringStyle style) {
 		return style.getFilteringKeys();
 	}
 

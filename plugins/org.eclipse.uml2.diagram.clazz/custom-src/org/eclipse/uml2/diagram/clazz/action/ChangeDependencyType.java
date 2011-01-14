@@ -84,7 +84,7 @@ public class ChangeDependencyType extends DiagramAction {
 		}
 		return view.getElement().eClass();
 	}
-	
+
 	private static class SelectEditPartCommand extends Command {
 
 		private EditPartViewer viewer;

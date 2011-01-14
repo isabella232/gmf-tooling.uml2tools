@@ -12,9 +12,8 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.uml.AggregationKind;
 
-
 public class AssociationContributionItemProvider extends AbstractContributionItemProvider implements IProvider {
-	
+
 	@Override
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
@@ -35,19 +34,25 @@ public class AssociationContributionItemProvider extends AbstractContributionIte
 	}
 
 	public static final String ACTION_RECTANGLE_INTERFACE_NOTATION = "rectangle_interface_notation"; //$NON-NLS-1$
-	
-	public static final String MENU_ASSOCIATION = "AssociationTypeMenu";	 //$NON-NLS-1$
+
+	public static final String MENU_ASSOCIATION = "AssociationTypeMenu"; //$NON-NLS-1$
+
 	public static final String LABEL_ASSOCIATION = CustomMessages.AssociationContributionItemProvider_association_type_action;
-	public static final String MENU_ASSOCIATION_GROUP = "AssociationTypeGroup";	 //$NON-NLS-1$
+
+	public static final String MENU_ASSOCIATION_GROUP = "AssociationTypeGroup"; //$NON-NLS-1$
+
 	public static final String LABEL_ASSOCIATION_GROUP = CustomMessages.AssociationContributionItemProvider_association_type_group;
-	
+
 	public static final String ACTION_CHANGE_ASSOCIATION_KIND_NONE = "change_association_type_none"; //$NON-NLS-1$
+
 	public static final String ACTION_CHANGE_ASSOCIATION_KIND_COMPOSITE = "change_association_type_composite"; //$NON-NLS-1$
+
 	public static final String ACTION_CHANGE_ASSOCIATION_KIND_SHARED = "change_association_type_shared"; //$NON-NLS-1$
 
 	private HashMap<String, AggregationKind> actionIdToAssociationKind;
+
 	private HashMap<String, AggregationKind> getActionIdToAssociationKindTable() {
-		if (actionIdToAssociationKind == null) {			
+		if (actionIdToAssociationKind == null) {
 			initIdToEClassTable();
 		}
 		return actionIdToAssociationKind;

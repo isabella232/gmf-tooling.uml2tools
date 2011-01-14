@@ -9,7 +9,7 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.ui.IWorkbenchPage;
 
 public class ShowPropertyParametersItemProvider extends AbstractContributionItemProvider implements IProvider {
-	
+
 	public ShowPropertyParametersItemProvider() {
 	}
 

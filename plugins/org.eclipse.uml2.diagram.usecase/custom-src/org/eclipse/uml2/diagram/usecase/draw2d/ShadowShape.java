@@ -12,7 +12,9 @@ import org.eclipse.swt.graphics.Color;
 public abstract class ShadowShape extends AbstractProportionalShape {
 
 	private static final Color SHADOW_COLOR = new Color(null, 150, 150, 150);
+
 	private static final int SHADOW_SIZE = 3;
+
 	private static final Insets SHADOW_INSETS = new Insets(0, 0, SHADOW_SIZE, SHADOW_SIZE);
 
 	public ShadowShape(boolean is3D, Color backgroundColor, Color foregroundColor) {
@@ -99,6 +101,7 @@ public abstract class ShadowShape extends AbstractProportionalShape {
 	}
 
 	private boolean my3D;
+
 	private Border myBorder;
 
 }

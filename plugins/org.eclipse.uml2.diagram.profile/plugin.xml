@@ -90,7 +90,7 @@
       </fileTypes>
       <fileTypes
          type="text"
-         extension=" umlprofile_diagram">
+         extension="umlprofile_diagram">
       </fileTypes>
    </extension>
 
@@ -101,7 +101,7 @@
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
       <parser
-         type=" umlprofile_diagram"
+         type="umlprofile_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -496,7 +496,7 @@
          </includes>
       </viewerActionBinding>
    </extension>
-   
+   
    <extension point="org.eclipse.ui.navigator.navigatorContent">
       <?gmfgen generated="true"?>
       <navigatorContent
@@ -515,7 +515,7 @@
                </and>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value=" umlprofile_diagram"/>
+        	      <test property="org.eclipse.core.resources.extension" value="umlprofile_diagram"/>
                </and>
                <instanceof value="org.eclipse.uml2.diagram.profile.navigator.UMLAbstractNavigatorItem"/>
            	   <adapt type="org.eclipse.gmf.runtime.notation.View">
@@ -542,7 +542,7 @@
                   </and>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value=" umlprofile_diagram"/>
+        	         <test property="org.eclipse.core.resources.extension" value="umlprofile_diagram"/>
                   </and>
                   <instanceof value="org.eclipse.uml2.diagram.profile.navigator.UMLAbstractNavigatorItem"/>
                </or>
@@ -651,7 +651,7 @@
            class="org.eclipse.uml2.diagram.profile.part.UMLUriEditorInputTester">
        </propertyTester>
    </extension>
-   
+   
    <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
       <?gmfgen generated="true"?>
        <propertyTester
@@ -662,7 +662,7 @@
            class="org.eclipse.uml2.diagram.profile.part.UMLShortcutPropertyTester">
        </propertyTester>
    </extension>
-   
+   
    <extension point="org.eclipse.ui.contexts" id="ui-context">
       <?gmfgen generated="true"?>
       <context
@@ -722,7 +722,7 @@
            class="org.eclipse.uml2.diagram.profile.part.UMLDomainModelElementTester">
        </propertyTester>
    </extension>
-   
+   
    <extension point="org.eclipse.ui.menus" id="context-menus">
       <?gmfgen generated="true"?>
       <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">

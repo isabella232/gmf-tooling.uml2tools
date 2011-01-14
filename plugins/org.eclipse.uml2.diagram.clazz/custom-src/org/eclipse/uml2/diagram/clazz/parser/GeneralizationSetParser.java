@@ -18,17 +18,14 @@ public class GeneralizationSetParser extends MessageFormatParser {
 
 	private static final String OVERLAPPING = "overlapping"; //$NON-NLS-1$
 
-	private static final EAttribute[] features = new EAttribute[] {
-		UMLPackage.eINSTANCE.getGeneralizationSet_IsCovering(),
-		UMLPackage.eINSTANCE.getGeneralizationSet_IsDisjoint(),
-	};
+	private static final EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getGeneralizationSet_IsCovering(), UMLPackage.eINSTANCE.getGeneralizationSet_IsDisjoint(), };
 
 	public GeneralizationSetParser() {
 		super(features);
 		setViewPattern("{0}, {1}"); //$NON-NLS-1$
 		setEditPattern("{0}, {1}"); //$NON-NLS-1$
 	}
-	
+
 	@Override
 	protected Object getValue(EObject element, EAttribute feature) {
 		Object value = element.eGet(feature);
@@ -40,7 +37,7 @@ public class GeneralizationSetParser extends MessageFormatParser {
 		}
 		return super.getValue(element, feature);
 	}
-	
+
 	@Override
 	protected Object getValidNewValue(EAttribute feature, Object value) {
 		if (UMLPackage.eINSTANCE.getGeneralizationSet_IsCovering().equals(feature)) {
@@ -51,7 +48,7 @@ public class GeneralizationSetParser extends MessageFormatParser {
 		}
 		return super.getValidNewValue(feature, value);
 	}
-	
+
 	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return new FixedSetCompletionProcessor(COMPLETE, INCOMPLETE, DISJOINT, OVERLAPPING);

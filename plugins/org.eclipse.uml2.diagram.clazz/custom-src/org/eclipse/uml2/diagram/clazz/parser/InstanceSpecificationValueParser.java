@@ -32,7 +32,7 @@ public class InstanceSpecificationValueParser extends ValueSpecificationParser {
 
 	@Override
 	protected ValueSpecification getValueSpecification(IAdaptable adaptable) {
-		InstanceSpecification is = (InstanceSpecification) adaptable.getAdapter(EObject.class); 
+		InstanceSpecification is = (InstanceSpecification) adaptable.getAdapter(EObject.class);
 		return is.getSpecification();
 	}
 

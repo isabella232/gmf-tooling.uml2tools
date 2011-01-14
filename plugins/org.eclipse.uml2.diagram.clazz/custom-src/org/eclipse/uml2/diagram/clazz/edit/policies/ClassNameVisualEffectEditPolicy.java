@@ -1,4 +1,5 @@
 package org.eclipse.uml2.diagram.clazz.edit.policies;
+
 /**
  * @deprecated use org.eclipse.uml2.diagram.common.editpolicies.ClassifierNameVisualEffectEditPolicy instead
  */

@@ -25,13 +25,13 @@ public class ChangeDetailLevel extends DiagramAction {
 		myNewLevel = level;
 		setText(level.getLabel());
 	}
-	
+
 	@Override
 	public void refresh() {
 		super.refresh();
 		setChecked(calculateChecked());
 	}
-	
+
 	@Override
 	protected boolean calculateEnabled() {
 		DiagramEditPart diagram = getDiagramEditPart();
@@ -40,24 +40,24 @@ public class ChangeDetailLevel extends DiagramAction {
 		}
 		return UMLDetailLevelService.getLevel(diagram.getDiagramView()) != myNewLevel && super.calculateEnabled();
 	}
-	
+
 	@Override
 	protected Command getCommand() {
 		CompoundCommand result = new CompoundCommand();
 		DiagramEditPart diagramEditPart = getDiagramEditPart();
-		Diagram diagram = diagramEditPart.getDiagramView();		
+		Diagram diagram = diagramEditPart.getDiagramView();
 		TransactionalEditingDomain editingDomain = diagramEditPart.getEditingDomain();
-		
+
 		UMLDetailLevel oldLevel = UMLDetailLevelService.getLevel(diagram);
 		List<View> affectedViews = oldLevel.getAffectedViews(diagram);
-		for (View affected: affectedViews) {
-			for (EditElementCommand command: oldLevel.getUnapplyCommands(editingDomain, affected)) {
+		for (View affected : affectedViews) {
+			for (EditElementCommand command : oldLevel.getUnapplyCommands(editingDomain, affected)) {
 				result.add(new ICommandProxy(command));
 			}
 		}
 		affectedViews = myNewLevel.getAffectedViews(diagram);
-		for (View affected: affectedViews) {
-			for (EditElementCommand command: myNewLevel.getApplyCommands(editingDomain, affected)) {
+		for (View affected : affectedViews) {
+			for (EditElementCommand command : myNewLevel.getApplyCommands(editingDomain, affected)) {
 				result.add(new ICommandProxy(command));
 			}
 		}

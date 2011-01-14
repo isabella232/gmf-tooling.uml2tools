@@ -6,7 +6,7 @@ import org.eclipse.uml2.diagram.clazz.part.CustomMessages;
 import org.eclipse.uml2.diagram.common.details.DetailLevelParserOptions;
 
 class ImplementationLevel extends UMLDetailLevel {
-	
+
 	@Override
 	public void init(View view) {
 		// do nothing

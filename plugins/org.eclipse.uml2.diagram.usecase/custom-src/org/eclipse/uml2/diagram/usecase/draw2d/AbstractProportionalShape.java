@@ -75,5 +75,6 @@ public abstract class AbstractProportionalShape extends Shape {
 	}
 
 	private float myW2HRatio = 1.0f;
+
 	private boolean myIsKeepingProportions;
 }

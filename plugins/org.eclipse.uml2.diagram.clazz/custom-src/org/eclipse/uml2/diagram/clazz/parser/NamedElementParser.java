@@ -39,7 +39,7 @@ public class NamedElementParser extends MessageFormatParser {
 		// edit pattern contains space to separate name from visibility
 		setEditPattern("{0} {1}"); //$NON-NLS-1$
 	}
-	
+
 	@Override
 	public String getPrintString(IAdaptable adapter, int flags) {
 		//duplicated to be available in tests
@@ -64,27 +64,27 @@ public class NamedElementParser extends MessageFormatParser {
 		// name will be processed in the superclass method
 		return super.getValidNewValue(feature, value);
 	}
-	
+
 	@Override
 	public ICommand getParseCommand(IAdaptable adapter, String newString, int flags) {
 		newString = getParsableEditString(newString);
 		return super.getParseCommand(adapter, newString, flags);
 	}
-	
+
 	@Override
 	public IParserEditStatus isValidEditString(IAdaptable adapter, String editString) {
 		editString = getParsableEditString(editString);
 		return super.isValidEditString(adapter, editString);
 	}
-	
-	private String getParsableEditString(String editString){
-		if (editString == null || editString.length() == 0){
+
+	private String getParsableEditString(String editString) {
+		if (editString == null || editString.length() == 0) {
 			return editString;
 		}
-		if (editString.startsWith(PROTECTED) || editString.startsWith(PRIVATE) || editString.startsWith(PACKAGE)){
+		if (editString.startsWith(PROTECTED) || editString.startsWith(PRIVATE) || editString.startsWith(PACKAGE)) {
 			StringBuffer result = new StringBuffer();
 			result.append(editString.charAt(0));
-			if (editString.length() > 1){
+			if (editString.length() > 1) {
 				result.append(" ");
 				result.append(editString.substring(1).trim());
 			}
