@@ -21,26 +21,29 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 public class ConnectorParser extends SemanticParserAdapter {
 
-	private ConnectorParser(WithReferences viewAndEdit) {		
+	private ConnectorParser(WithReferences viewAndEdit) {
 		super(EMPTY_PARSER_DELEGATE, EMPTY_APPLIER, viewAndEdit);
 	}
-	
+
 	public static class ROLE_PARSER extends ConnectorParser {
+
 		public ROLE_PARSER(boolean sourceNotTarget) {
 			super(new AssociationEndToString.ROLE_VIEW(sourceNotTarget));
-		}		
+		}
 	}
-	
+
 	public static class MULTIPLICITY_PARSER extends ConnectorParser {
+
 		public MULTIPLICITY_PARSER(boolean sourceNotTarget) {
 			super(new AssociationEndToString.MULTIPLICITY_VIEW(sourceNotTarget));
-		}		
+		}
 	}
 
 	public static class MODIFIERS_PARSER extends ConnectorParser {
+
 		public MODIFIERS_PARSER(boolean sourceNotTarget) {
 			super(new AssociationEndToString.MODIFIERS_VIEW(sourceNotTarget));
-		}		
+		}
 	}
 
 	@Override
@@ -53,29 +56,31 @@ public class ConnectorParser extends SemanticParserAdapter {
 		}
 		return super.isAffectingEvent(event);
 	}
-	
+
 	@Override
 	public List getSemanticElementsBeingParsed(EObject element) {
 		if (element instanceof Connector) {
-			Association a = ((Connector)element).getType();
+			Association a = ((Connector) element).getType();
 			if (a != null) {
 				return super.getSemanticElementsBeingParsed(a);
 			}
 		}
 		return Collections.EMPTY_LIST;
 	}
-	
+
 	private static final ExternalParserBase EMPTY_PARSER_DELEGATE = new ExternalParserBase() {
+
 		@Override
 		public EClass getSubjectClass() {
-            return UMLPackage.eINSTANCE.getAssociation();
+			return UMLPackage.eINSTANCE.getAssociation();
 		}
+
 		@Override
 		public void parse(EObject target, String text) throws ExternalParserException {
 			throw new ExternalParserException(CustomMessages.ConnectorParser_parsing_is_not_supported_exception);
 		}
 	};
-	
+
 	private static final ApplyStrategy EMPTY_APPLIER = new BasicApplyStrategy();
 
 }

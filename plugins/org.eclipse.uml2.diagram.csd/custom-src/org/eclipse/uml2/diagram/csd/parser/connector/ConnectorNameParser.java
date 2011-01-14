@@ -26,9 +26,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 import com.ibm.icu.text.MessageFormat;
 
-
 public class ConnectorNameParser implements ISemanticParser {
-	private static final MessageFormat CONNECTOR_NAME_FORMAT = new MessageFormat("{0}:{1}");  //$NON-NLS-1$
+
+	private static final MessageFormat CONNECTOR_NAME_FORMAT = new MessageFormat("{0}:{1}"); //$NON-NLS-1$
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		if (notification instanceof Notification) {
@@ -48,7 +48,7 @@ public class ConnectorNameParser implements ISemanticParser {
 		List<Association> types = getTypeProposals(c);
 		LinkedList<String> names = new LinkedList<String>();
 		for (Type next : types) {
-			names.add(CONNECTOR_NAME_FORMAT.format(new Object[]{name, next.getName()}));
+			names.add(CONNECTOR_NAME_FORMAT.format(new Object[] { name, next.getName() }));
 		}
 		FixedSetCompletionProcessor cp = new FixedSetCompletionProcessor(names);
 		cp.setContext(c);
@@ -62,7 +62,7 @@ public class ConnectorNameParser implements ISemanticParser {
 			return name;
 		}
 		String type = c.getType().getName();
-		return CONNECTOR_NAME_FORMAT.format(new Object[]{name, type});
+		return CONNECTOR_NAME_FORMAT.format(new Object[] { name, type });
 	}
 
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
@@ -79,7 +79,7 @@ public class ConnectorNameParser implements ISemanticParser {
 		try {
 			Object[] parsed;
 			if (!newString.contains(":")) { //$NON-NLS-1$
-				parsed = new String[]{newString, ""}; //$NON-NLS-1$
+				parsed = new String[] { newString, "" }; //$NON-NLS-1$
 			} else {
 				parsed = CONNECTOR_NAME_FORMAT.parse(newString);
 			}
@@ -122,16 +122,16 @@ public class ConnectorNameParser implements ISemanticParser {
 
 	private List<Association> getTypeProposals(Connector c) {
 		EObject root = c.eContainer();
-		while(root.eContainer() != null) {
+		while (root.eContainer() != null) {
 			root = root.eContainer();
 		}
 		if (false == root instanceof org.eclipse.uml2.uml.Package) {
-			return Collections.<Association>emptyList();
+			return Collections.<Association> emptyList();
 		}
 		List<Association> types = new LinkedList<Association>();
-		for (Type next : ((org.eclipse.uml2.uml.Package)root).getOwnedTypes()) {
+		for (Type next : ((org.eclipse.uml2.uml.Package) root).getOwnedTypes()) {
 			if (next instanceof Association) {
-				types.add((Association)next);
+				types.add((Association) next);
 			}
 		}
 		return types;

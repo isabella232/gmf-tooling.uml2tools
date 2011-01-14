@@ -297,8 +297,8 @@ public class ClassQualifiedNameEditPart extends CompartmentEditPart implements I
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.Class_2006, getParserElement(), UMLVisualIDRegistry
-					.getType(org.eclipse.uml2.diagram.csd.edit.parts.ClassQualifiedNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.Class_2006, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.csd.edit.parts.ClassQualifiedNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

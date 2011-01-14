@@ -407,7 +407,7 @@
           xsi:type="gmfmap:FeatureLabelMapping"
           editPattern="">
         <diagramLabel
-            href="compositeStructuresDiagram_nodes.gmfgraph#ExpandedClassNode_name"/>
+            href="componentDiagram_classifiers.gmfgraph#ArtifactNode_name"/>
         <features
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
       </labelMappings>
@@ -511,7 +511,7 @@
       <compartments
           children="//@nodes.3/@ownedChild/@children.0">
         <compartment
-            href="compositeStructuresDiagram_nodes.gmfgraph#class_contents"/>
+            href="componentDiagram_classifiers.gmfgraph#ArtifactFigure_contents"/>
       </compartments>
     </ownedChild>
   </nodes>

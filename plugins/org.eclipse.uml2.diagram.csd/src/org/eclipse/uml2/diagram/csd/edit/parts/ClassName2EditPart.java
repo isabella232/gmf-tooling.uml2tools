@@ -153,9 +153,9 @@ public class ClassName2EditPart extends CompartmentEditPart implements ITextAwar
 	}
 
 	/**
-	 * @generated
-	 */
-	public void setLabel(Label figure) {
+	* @generated
+	*/
+	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -473,7 +473,7 @@ public class ClassName2EditPart extends CompartmentEditPart implements ITextAwar
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**

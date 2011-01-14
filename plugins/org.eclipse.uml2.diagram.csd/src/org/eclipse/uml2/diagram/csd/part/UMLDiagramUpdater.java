@@ -143,7 +143,7 @@ public class UMLDiagramUpdater {
 		case PackageImportsEditPart.VISUAL_ID:
 			return getPackageImports_7002SemanticChildren(view);
 		case ClassClass_contentsEditPart.VISUAL_ID:
-			return getClassClass_contents_7007SemanticChildren(view);
+			return getClassArtifactFigure_contents_7007SemanticChildren(view);
 		case InstanceSpecificationSlotsEditPart.VISUAL_ID:
 			return getInstanceSpecificationSlots_7009SemanticChildren(view);
 		case InterfaceAttributesEditPart.VISUAL_ID:
@@ -358,9 +358,9 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
-	 * @generated
-	 */
-	public static List<org.eclipse.uml2.diagram.csd.part.UMLNodeDescriptor> getClassClass_contents_7007SemanticChildren(View view) {
+	* @generated
+	*/
+	public static List<org.eclipse.uml2.diagram.csd.part.UMLNodeDescriptor> getClassArtifactFigure_contents_7007SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
@@ -2520,29 +2520,29 @@ public class UMLDiagramUpdater {
 	public static final IDiagramUpdater TYPED_ADAPTER = new IDiagramUpdater() {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLNodeDescriptor> getSemanticChildren(View view) {
 			return org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLLinkDescriptor> getContainedLinks(View view) {
 			return org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLLinkDescriptor> getIncomingLinks(View view) {
 			return org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLLinkDescriptor> getOutgoingLinks(View view) {
 			return org.eclipse.uml2.diagram.csd.part.UMLDiagramUpdater.getOutgoingLinks(view);
 		}

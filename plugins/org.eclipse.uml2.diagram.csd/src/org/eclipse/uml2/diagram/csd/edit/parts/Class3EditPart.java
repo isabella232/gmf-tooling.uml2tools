@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
@@ -18,6 +19,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -45,12 +47,16 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.uml2.diagram.common.async.AsyncDiagramComponentEditPolicy;
+import org.eclipse.uml2.diagram.common.draw2d.NameAndStereotypeBlock;
+import org.eclipse.uml2.diagram.common.draw2d.StereotypeLabel2;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.CreationEditPolicyWithCustomReparent;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
@@ -151,14 +157,14 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ExpandedClassFigure();
+		return primaryShape = new ArtifactFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ExpandedClassFigure getPrimaryShape() {
-		return (ExpandedClassFigure) primaryShape;
+	public ArtifactFigure getPrimaryShape() {
+		return (ArtifactFigure) primaryShape;
 	}
 
 	/**
@@ -166,11 +172,11 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ClassName2EditPart) {
-			((ClassName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureExpandedClassFigure_name());
+			((ClassName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureArtifactFigure_name());
 			return true;
 		}
 		if (childEditPart instanceof ClassClass_contentsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureExpandedClassFigure_contents();
+			IFigure pane = getPrimaryShape().getFigureArtifactFigure_body();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((ClassClass_contentsEditPart) childEditPart).getFigure());
 			return true;
@@ -191,7 +197,7 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 	protected boolean removeFixedChild(EditPart childEditPart) {
 
 		if (childEditPart instanceof ClassClass_contentsEditPart) {
-			IFigure pane = getPrimaryShape().getFigureExpandedClassFigure_contents();
+			IFigure pane = getPrimaryShape().getFigureArtifactFigure_body();
 			pane.remove(((ClassClass_contentsEditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -227,7 +233,7 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof ClassClass_contentsEditPart) {
-			return getPrimaryShape().getFigureExpandedClassFigure_contents();
+			return getPrimaryShape().getFigureArtifactFigure_body();
 		}
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
@@ -659,30 +665,31 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 	}
 
 	/**
-	 * @generated
-	 */
-	public class ExpandedClassFigure extends RectangleFigure {
+	* @generated
+	*/
+	public class ArtifactFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private Label fFigureExpandedClassFigure_name;
+		private RectangleFigure fFigureArtifactFigure_body;
 
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureExpandedClassFigure_contents;
+		private NameAndStereotypeBlock fNameAndStereotypeBlock;
 
 		/**
 		 * @generated
 		 */
-		public ExpandedClassFigure() {
+		public ArtifactFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
 			this.setLineWidth(1);
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2), getMapMode().DPtoLP(2)));
+
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
 			createContents();
 		}
 
@@ -691,50 +698,57 @@ public class Class3EditPart extends AbstractBorderedShapeEditPart implements Pri
 		 */
 		private void createContents() {
 
-			fFigureExpandedClassFigure_name = new Label();
-			fFigureExpandedClassFigure_name.setText("");
+			fNameAndStereotypeBlock = new NameAndStereotypeBlock();
 
-			this.add(fFigureExpandedClassFigure_name, BorderLayout.TOP);
+			fNameAndStereotypeBlock.setBorder(new MarginBorder(getMapMode().DPtoLP(8), getMapMode().DPtoLP(5), getMapMode().DPtoLP(6), getMapMode().DPtoLP(5)));
 
-			fFigureExpandedClassFigure_contents = new RectangleFigure();
-			fFigureExpandedClassFigure_contents.setOutline(false);
-			fFigureExpandedClassFigure_contents.setLineWidth(1);
+			this.add(fNameAndStereotypeBlock, BorderLayout.TOP);
 
-			this.add(fFigureExpandedClassFigure_contents, BorderLayout.CENTER);
+			fFigureArtifactFigure_body = new RectangleFigure();
+			fFigureArtifactFigure_body.setOutline(false);
+			fFigureArtifactFigure_body.setLineWidth(1);
+			fFigureArtifactFigure_body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
+			fFigureArtifactFigure_body.setBorder(createBorder0());
+
+			this.add(fFigureArtifactFigure_body, BorderLayout.CENTER);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		private boolean myUseLocalCoordinates = false;
+		private Border createBorder0() {
+			OneLineBorder result = new OneLineBorder();
 
-		/**
-		 * @generated
-		 */
-		protected boolean useLocalCoordinates() {
-			return myUseLocalCoordinates;
+			return result;
 		}
 
 		/**
 		 * @generated
 		 */
-		protected void setUseLocalCoordinates(boolean useLocalCoordinates) {
-			myUseLocalCoordinates = useLocalCoordinates;
+		public RectangleFigure getFigureArtifactFigure_body() {
+			return fFigureArtifactFigure_body;
 		}
 
 		/**
 		 * @generated
 		 */
-		public Label getFigureExpandedClassFigure_name() {
-			return fFigureExpandedClassFigure_name;
+		public NameAndStereotypeBlock getNameAndStereotypeBlock() {
+			return fNameAndStereotypeBlock;
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureExpandedClassFigure_contents() {
-			return fFigureExpandedClassFigure_contents;
+		public WrappingLabel getFigureArtifactFigure_name() {
+			return getNameAndStereotypeBlock().getNameLabel();
+		}
+
+		/**
+		 * @generated
+		 */
+		public StereotypeLabel2 getFigureArtifactFigure_stereo() {
+			return getNameAndStereotypeBlock().getStereotypeLabel();
 		}
 
 	}

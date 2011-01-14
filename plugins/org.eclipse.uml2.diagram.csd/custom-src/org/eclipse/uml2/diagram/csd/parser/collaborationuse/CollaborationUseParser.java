@@ -38,8 +38,8 @@ import org.eclipse.uml2.uml.UMLPackage;
 import com.ibm.icu.text.MessageFormat;
 
 public class CollaborationUseParser implements ISemanticParser {
-	
-	private static final MessageFormat COLLABORATION_USE_FORMAT = new MessageFormat("{0}:{1}");  //$NON-NLS-1$
+
+	private static final MessageFormat COLLABORATION_USE_FORMAT = new MessageFormat("{0}:{1}"); //$NON-NLS-1$
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		if (notification instanceof Notification) {
@@ -61,7 +61,7 @@ public class CollaborationUseParser implements ISemanticParser {
 		List<Type> types = getTypeProposals(cu);
 		LinkedList<String> names = new LinkedList<String>();
 		for (Type next : types) {
-			names.add(COLLABORATION_USE_FORMAT.format(new Object[]{name, next.getName()}));
+			names.add(COLLABORATION_USE_FORMAT.format(new Object[] { name, next.getName() }));
 		}
 		FixedSetCompletionProcessor cp = new FixedSetCompletionProcessor(names);
 		cp.setContext(cu);
@@ -72,7 +72,7 @@ public class CollaborationUseParser implements ISemanticParser {
 		CollaborationUse cu = doAdapt(element);
 		String name = cu.getName() == null ? "" : cu.getName(); //$NON-NLS-1$
 		String type = cu.getType() == null ? "" : cu.getType().getName(); //$NON-NLS-1$
-		return COLLABORATION_USE_FORMAT.format(new Object[]{name, type});
+		return COLLABORATION_USE_FORMAT.format(new Object[] { name, type });
 	}
 
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
@@ -128,14 +128,14 @@ public class CollaborationUseParser implements ISemanticParser {
 
 	private List<Type> getTypeProposals(CollaborationUse cu) {
 		EObject root = cu.eContainer();
-		while(root.eContainer() != null) {
+		while (root.eContainer() != null) {
 			root = root.eContainer();
 		}
 		if (false == root instanceof org.eclipse.uml2.uml.Package) {
-			return Collections.<Type>emptyList();
+			return Collections.<Type> emptyList();
 		}
 		List<Type> types = new LinkedList<Type>();
-		for (Type next : ((org.eclipse.uml2.uml.Package)root).getOwnedTypes()) {
+		for (Type next : ((org.eclipse.uml2.uml.Package) root).getOwnedTypes()) {
 			types.add(next);
 		}
 		return types;
