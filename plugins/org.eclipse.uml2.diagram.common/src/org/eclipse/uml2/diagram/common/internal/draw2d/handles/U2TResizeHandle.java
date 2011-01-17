@@ -24,54 +24,50 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Cursor;
 
 public class U2TResizeHandle extends ResizeHandle {
-    public U2TResizeHandle(GraphicalEditPart owner, RelativeHandleLocator locator, Cursor cursor) {
-        super(owner, locator, cursor);
-    }
-    
-    public U2TResizeHandle(GraphicalEditPart owner, int direction) {
-        this(owner, direction, 3); 
-    }
 
-    public U2TResizeHandle(GraphicalEditPart owner, int direction, int shift) {
-        this(owner, new U2TRelativeHandleLocator(owner.getFigure(), direction, shift), 
-        Cursors.getDirectionalCursor(direction));
-    }
+	public U2TResizeHandle(GraphicalEditPart owner, RelativeHandleLocator locator, Cursor cursor) {
+		super(owner, locator, cursor);
+	}
 
-    protected Color getBorderColor() {
-        return (isPrimary())
-        ? ColorConstants.white
-        : U2THandleKit.SELECTION_COLOR;
-    }
-    
-    protected Color getFillColor() {
-        return (isPrimary())
-            ? U2THandleKit.SELECTION_COLOR
-            : ColorConstants.white;
-    }
-   
-    public void setAccessible(boolean b) {
-        myIsAccessible = b;
-    }
+	public U2TResizeHandle(GraphicalEditPart owner, int direction) {
+		this(owner, direction, 3);
+	}
 
-    public Point getAccessibleLocation() {
-        if (!myIsAccessible) {
-            return null;
-        }
-        return super.getAccessibleLocation();
-    }
-    
-    protected boolean hasUserBounds(){
-    	IGraphicalEditPart ownerImpl = (IGraphicalEditPart) getOwner();
-    	View view = ownerImpl.getNotationView();
-    	if (view instanceof Node){
-    		Node node = (Node)view;
-    		if (node.getLayoutConstraint() instanceof Size){
-    			Size size = (Size)node.getLayoutConstraint();
-    			return size.eIsSet(NotationPackage.eINSTANCE.getSize_Width()) || size.eIsSet(NotationPackage.eINSTANCE.getSize_Height());
-    		}
-    	}
-    	return false;
-    }
-    
-    private boolean myIsAccessible = true;
+	public U2TResizeHandle(GraphicalEditPart owner, int direction, int shift) {
+		this(owner, new U2TRelativeHandleLocator(owner.getFigure(), direction, shift), Cursors.getDirectionalCursor(direction));
+	}
+
+	protected Color getBorderColor() {
+		return (isPrimary()) ? ColorConstants.white : U2THandleKit.SELECTION_COLOR;
+	}
+
+	protected Color getFillColor() {
+		return (isPrimary()) ? U2THandleKit.SELECTION_COLOR : ColorConstants.white;
+	}
+
+	public void setAccessible(boolean b) {
+		myIsAccessible = b;
+	}
+
+	public Point getAccessibleLocation() {
+		if (!myIsAccessible) {
+			return null;
+		}
+		return super.getAccessibleLocation();
+	}
+
+	protected boolean hasUserBounds() {
+		IGraphicalEditPart ownerImpl = (IGraphicalEditPart) getOwner();
+		View view = ownerImpl.getNotationView();
+		if (view instanceof Node) {
+			Node node = (Node) view;
+			if (node.getLayoutConstraint() instanceof Size) {
+				Size size = (Size) node.getLayoutConstraint();
+				return size.eIsSet(NotationPackage.eINSTANCE.getSize_Width()) || size.eIsSet(NotationPackage.eINSTANCE.getSize_Height());
+			}
+		}
+		return false;
+	}
+
+	private boolean myIsAccessible = true;
 }

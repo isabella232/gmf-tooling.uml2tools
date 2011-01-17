@@ -10,12 +10,15 @@ import org.eclipse.draw2d.Layer;
  * @author Yury Semikhatsky 
  */
 public interface MultiLayeredContainer {
-    Layer getLayerContentPane(String key);
-    
-    String BACKGROUND_LAYER = "Background layer"; //$NON-NLS-1$
-    /**
-     * default Layer
-     */
-    String MIDDLE_LAYER = "Middle layer"; //$NON-NLS-1$
-    String FOREGROUND_LAYER = "Foreground layer"; //$NON-NLS-1$
+
+	Layer getLayerContentPane(String key);
+
+	String BACKGROUND_LAYER = "Background layer"; //$NON-NLS-1$
+
+	/**
+	 * default Layer
+	 */
+	String MIDDLE_LAYER = "Middle layer"; //$NON-NLS-1$
+
+	String FOREGROUND_LAYER = "Foreground layer"; //$NON-NLS-1$
 }

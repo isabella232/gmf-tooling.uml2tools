@@ -56,7 +56,7 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 	private final EStructuralFeature myFeature;
 
 	private final TabbedElementChooser myChooser;
-	
+
 	private final TransactionalEditingDomain myEditingDomain;
 
 	public MultiReferenceElementChooserDialog(Shell parent, IDialogSettings settings, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature) {
@@ -77,7 +77,7 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		shell.setText(NLS.bind(Messages.MultiReferenceElementChooserDialog_dialod_choose_element, new Object[]{myFeature.getName(), labelProvider.getText(mySourceObject)}));
+		shell.setText(NLS.bind(Messages.MultiReferenceElementChooserDialog_dialod_choose_element, new Object[] { myFeature.getName(), labelProvider.getText(mySourceObject) }));
 		shell.setImage(labelProvider.getImage(mySourceObject));
 	}
 
@@ -113,25 +113,24 @@ public class MultiReferenceElementChooserDialog extends TrayDialog {
 		}
 
 		Label choiceLabel = new Label(choiceComposite, SWT.NONE);
-		choiceLabel.setText(NLS.bind(Messages.MultiReferenceElementChooserDialog_label_choose_element, new Object[]{myFeature.getEType().getName()}));
+		choiceLabel.setText(NLS.bind(Messages.MultiReferenceElementChooserDialog_label_choose_element, new Object[] { myFeature.getEType().getName() }));
 		GridData choiceLabelGridData = new GridData();
 		choiceLabelGridData.verticalAlignment = SWT.FILL;
 		choiceLabelGridData.horizontalAlignment = SWT.FILL;
 		choiceLabel.setLayoutData(choiceLabelGridData);
 
 		// UML2 Tools tabbed chooser
-		Control choiceTable = myChooser.createDialogArea(choiceComposite); 
+		Control choiceTable = myChooser.createDialogArea(choiceComposite);
 		{
-	      GridData choiceTableGridData = new GridData();
-	      choiceTableGridData.widthHint = Display.getCurrent().getBounds().width / 5;
-	      choiceTableGridData.heightHint = Display.getCurrent().getBounds().height / 3;
-	      choiceTableGridData.verticalAlignment = SWT.FILL;
-	      choiceTableGridData.horizontalAlignment = SWT.FILL;
-	      choiceTableGridData.grabExcessHorizontalSpace= true;
-	      choiceTableGridData.grabExcessVerticalSpace= true;
-	      choiceTable.setLayoutData(choiceTableGridData);
+			GridData choiceTableGridData = new GridData();
+			choiceTableGridData.widthHint = Display.getCurrent().getBounds().width / 5;
+			choiceTableGridData.heightHint = Display.getCurrent().getBounds().height / 3;
+			choiceTableGridData.verticalAlignment = SWT.FILL;
+			choiceTableGridData.horizontalAlignment = SWT.FILL;
+			choiceTableGridData.grabExcessHorizontalSpace = true;
+			choiceTableGridData.grabExcessVerticalSpace = true;
+			choiceTable.setLayoutData(choiceTableGridData);
 		}
-
 
 		// We use multi even for a single line because we want to respond to the
 		// enter key.

@@ -185,7 +185,7 @@ public class UMLModelWizardInitialObjectCreationPage extends WizardPage {
 		}
 		return initialObjectNames;
 	}
-	
+
 	/*
 	 * This method is supposed to be overriden in subclasses 
 	 */

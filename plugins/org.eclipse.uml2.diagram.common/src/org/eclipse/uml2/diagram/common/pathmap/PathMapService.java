@@ -4,20 +4,23 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.util.URI;
 
-
 public class PathMapService {
-	
+
 	private static PathMapService oursPathMapService = new PathMapService();
+
 	private PathMapResolver myFolderResolver = new FolderPathMapResolver();
+
 	private PathMapResolver myArchiveResolver = new ArchivePathMapResolver();
+
 	private PathMapResolver myPlatformresourceResolver = new PlatformResourcePathMapResolver();
+
 	private PathMapService() {
 	}
-	
+
 	public static PathMapService getInstance() {
 		return oursPathMapService;
 	}
-	
+
 	public Collection<String> getProfiles(String varName, String varValue) throws Exception {
 		URI uri = URI.createURI(varValue);
 		if (myFolderResolver.isApplicable(uri)) {

@@ -22,8 +22,8 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeRequest;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
 
-
 public class InsertingComponentEditPolicy extends ComponentEditPolicy {
+
 	/**
 	 * This is to combine the default GMF ComponentEditPolicy and ListItemComponentEditPolicy 
 	 * into single U2T wrapper.
@@ -33,28 +33,28 @@ public class InsertingComponentEditPolicy extends ComponentEditPolicy {
 	 * @see getInsertableEditPart
 	 */
 	private boolean myForListItem;
-	
-	public InsertingComponentEditPolicy(boolean forListItem){
+
+	public InsertingComponentEditPolicy(boolean forListItem) {
 		myForListItem = forListItem;
 	}
-	
-	public InsertingComponentEditPolicy(){
+
+	public InsertingComponentEditPolicy() {
 		this(false);
 	}
-	
+
 	public void setForListItem(boolean forListItem) {
 		myForListItem = forListItem;
 	}
-	
+
 	protected IInsertableEditPart getInsertableEditPart() {
-		if (myForListItem){
+		if (myForListItem) {
 			// get the container of the host list item
 			EditPart container = getHost().getParent();
-			return (container instanceof IInsertableEditPart) ? (IInsertableEditPart)container : null; 
+			return (container instanceof IInsertableEditPart) ? (IInsertableEditPart) container : null;
 		}
 		return super.getInsertableEditPart();
 	}
-	
+
 	protected Command getInsertCommand(GroupRequest insertRequest) {
 		IInsertableEditPart insertEP = getInsertableEditPart();
 		if (null == insertEP) {
@@ -70,9 +70,9 @@ public class InsertingComponentEditPolicy extends ComponentEditPolicy {
 
 			CreateUnspecifiedTypeRequest createReq = new CreateUnspecifiedTypeRequest( //
 					Collections.singletonList(insertEP.getElementType()), getHostImpl().getDiagramPreferencesHint());
-			
+
 			Command result = insertEP.getCommand(createReq);
-			if (result != null && result.canExecute()){
+			if (result != null && result.canExecute()) {
 				result = new ICommandProxy(new ExecuteCreationAndReturnEObjectCommand(editingDomain, createReq, result));
 			}
 			return result;
@@ -80,44 +80,46 @@ public class InsertingComponentEditPolicy extends ComponentEditPolicy {
 
 		return null;
 	}
-	
-	protected IGraphicalEditPart getHostImpl(){
+
+	protected IGraphicalEditPart getHostImpl() {
 		return (IGraphicalEditPart) getHost();
 	}
-	
+
 	/**
 	 * InsertAction expects semantic EObject as a result of getInsertCommand(). 
 	 * Unfortunately, what we have is the command that returns org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter  
 	 */
 	private static class ExecuteCreationAndReturnEObjectCommand extends AbstractTransactionalCommand {
+
 		private final Command myActualCommand;
+
 		private final CreateRequest myRequest;
 
-		public ExecuteCreationAndReturnEObjectCommand(TransactionalEditingDomain domain, CreateRequest request, Command actualCommand){
+		public ExecuteCreationAndReturnEObjectCommand(TransactionalEditingDomain domain, CreateRequest request, Command actualCommand) {
 			super(domain, actualCommand.getLabel(), null);
 			myRequest = request;
 			myActualCommand = actualCommand;
 		}
-		
+
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			myActualCommand.execute();
 			EObject createdSemantic = unwrapToSemantic(myRequest);
-			return CommandResult.newOKCommandResult(createdSemantic); 
+			return CommandResult.newOKCommandResult(createdSemantic);
 		}
-		
+
 		@SuppressWarnings("unchecked")
-		private EObject unwrapToSemantic(CreateRequest request){
+		private EObject unwrapToSemantic(CreateRequest request) {
 			Object creationResult = request.getNewObject();
-			if (creationResult instanceof List){
-				creationResult = ((List)creationResult).get(0);
+			if (creationResult instanceof List) {
+				creationResult = ((List) creationResult).get(0);
 			}
 			View createdView = null;
-			if (creationResult instanceof IAdaptable){
-				createdView = (View) ((IAdaptable)creationResult).getAdapter(View.class);
+			if (creationResult instanceof IAdaptable) {
+				createdView = (View) ((IAdaptable) creationResult).getAdapter(View.class);
 			}
 			return createdView == null ? null : createdView.getElement();
 		}
 	}
-	
+
 }

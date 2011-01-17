@@ -30,11 +30,11 @@ public class U2TCreateLinkCommand extends CompositeCommand {
 	private SetConnectionAnchorsCommand mySetConnectionAnchorsCommand;
 
 	private SetConnectionBendpointsCommand mySetConnectionBendpointsCommand;
-	
+
 	private U2TCreateParameters mySourceParameters;
-	
+
 	private U2TCreateParameters myTargetParameters;
-	
+
 	public U2TCreateLinkCommand(TransactionalEditingDomain domain) {
 		super(DiagramUIMessages.Commands_CreateCommand_Connection_Label);
 
@@ -100,15 +100,14 @@ public class U2TCreateLinkCommand extends CompositeCommand {
 		assertNotExecuted();
 		mySemanticCreation = semanticCreation;
 	}
-	
+
 	/**
 	 * Intentionally package local, only U2TGraphicalNodeEditPolicy can call this. 
 	 */
 	void setSourceParameters(U2TCreateParameters sourceParameters) {
 		mySourceParameters = sourceParameters;
 	}
-	
-	
+
 	/**
 	 * Intentionally package local, only U2TGraphicalNodeEditPolicy can call this. 
 	 */
@@ -162,23 +161,23 @@ public class U2TCreateLinkCommand extends CompositeCommand {
 	public SetConnectionBendpointsCommand getSetConnectionBendpointsCommand() {
 		return mySetConnectionBendpointsCommand;
 	}
-	
+
 	public U2TCreateParameters getSourceParameters() {
 		return mySourceParameters;
 	}
-	
+
 	public U2TCreateParameters getTargetParameters() {
 		return myTargetParameters;
 	}
-	
-	private void addNotNull(IUndoableOperation operation){
-		if (operation != null){
+
+	private void addNotNull(IUndoableOperation operation) {
+		if (operation != null) {
 			add(operation);
 		}
 	}
-	
-	private void removeNotNull(IUndoableOperation operation){
-		if (operation != null){
+
+	private void removeNotNull(IUndoableOperation operation) {
+		if (operation != null) {
 			remove(operation);
 		}
 	}
@@ -195,5 +194,5 @@ public class U2TCreateLinkCommand extends CompositeCommand {
 	public static U2TCreateLinkCommand getFromRequest(IEditCommandRequest request) {
 		return (U2TCreateLinkCommand) request.getParameter(REQUEST_PARAMETER_KEY);
 	}
-	
+
 }

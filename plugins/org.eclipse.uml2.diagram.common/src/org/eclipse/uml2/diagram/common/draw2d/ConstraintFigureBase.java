@@ -15,12 +15,13 @@ import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.gmf.runtime.diagram.ui.figures.NoteFigure;
 
 public class ConstraintFigureBase extends NoteFigure {
+
 	public ConstraintFigureBase() {
 		this(100, 60, new Insets(MARGIN_DP, MARGIN_DP, MARGIN_DP, CLIP_MARGIN_DP));
 	}
-	
-	public ConstraintFigureBase(int width, int height, Insets insets){
+
+	public ConstraintFigureBase(int width, int height, Insets insets) {
 		super(width, height, insets);
 	}
-	
+
 }

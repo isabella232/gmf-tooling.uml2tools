@@ -56,7 +56,7 @@ public class ProfileRegistry {
 		List<ProfileInfo> result = new ArrayList<ProfileInfo>();
 		for (IMemento childMemento : rootMemento.getChildren(ELEMENT_PROFILE)) {
 			ProfileInfo info = getProfileInfo(childMemento);
-			if (info!=null) {
+			if (info != null) {
 				result.add(info);
 			}
 		}
@@ -73,11 +73,11 @@ public class ProfileRegistry {
 		String str = getXMLString(rootMemento);
 		saveInPreferences(str);
 	}
-	
+
 	public String getPreferencesString(ProfileInfo... profiles) {
 		XMLMemento root = createRootMenu();
 		if (profiles != null) {
-			for (ProfileInfo profileInfo: profiles) {
+			for (ProfileInfo profileInfo : profiles) {
 				IMemento child = root.createChild(ELEMENT_PROFILE, profileInfo.uri);
 				storeProfileInfoInMemento(profileInfo, child);
 			}
@@ -172,7 +172,7 @@ public class ProfileRegistry {
 	private String getKey(Profile profile) {
 		return EcoreUtil.getURI(profile).toString();
 	}
-	
+
 	private static void logError(String message, Throwable e) {
 		UMLCommonPlugin.getInstance().getLog().log(new Status(IStatus.ERROR, UMLCommonPlugin.getPluginId(), message, e));
 	}
@@ -180,35 +180,35 @@ public class ProfileRegistry {
 	private static void logWarning(String message, Throwable e) {
 		UMLCommonPlugin.getInstance().getLog().log(new Status(IStatus.WARNING, UMLCommonPlugin.getPluginId(), message, e));
 	}
-	
+
 	public static class ProfileInfo {
 
 		public final String uri;
 
 		public final String name;
-		
+
 		public final boolean isBroken;
-		
+
 		private ProfileInfo(String uri, String name, boolean isBroken) {
 			this.uri = uri;
 			this.name = name;
 			this.isBroken = isBroken;
 		}
-		
+
 		public ProfileInfo(String uri, String name) {
 			this.uri = uri;
 			this.name = name;
 			this.isBroken = false;
 		}
-		
+
 		public final Profile getProfile(Resource resource) {
 			try {
-				return (Profile)resource.getResourceSet().getEObject(URI.createURI(uri), true);
+				return (Profile) resource.getResourceSet().getEObject(URI.createURI(uri), true);
 			} catch (Exception e) {
 				ProfileRegistry.getInstance().markAsBroken(this);
-				logWarning(NLS.bind("Couldn't load {1} for URI {0}", new Object[]{name, uri}), e); //$NON-NLS-1$
+				logWarning(NLS.bind("Couldn't load {1} for URI {0}", new Object[] { name, uri }), e); //$NON-NLS-1$
 			}
-			return null; 
+			return null;
 		}
 
 	}

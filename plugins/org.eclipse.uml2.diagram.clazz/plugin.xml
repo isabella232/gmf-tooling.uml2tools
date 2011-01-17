@@ -1522,15 +1522,22 @@
        </propertyTester>
    </extension>
 
-   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isDomainModelElement">
+   <extension point="org.eclipse.core.expressions.propertyTesters" id="new-diagram-property-testers">
       <?gmfgen generated="true"?>
-       <propertyTester
-           id="org.eclipse.uml2.diagram.clazz.DomainModelElementPropertyTester"
-           type="org.eclipse.emf.ecore.EObject"
-           namespace="org.eclipse.uml2.diagram.clazz"
-           properties="isDomainModelElement"
-           class="org.eclipse.uml2.diagram.clazz.part.UMLDomainModelElementTester">
-       </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.clazz.async.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUMLClassElement"
+              properties="isUMLClassElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+        </propertyTester>
+        <propertyTester
+              class="org.eclipse.uml2.diagram.clazz.async.NewDiagramPropertyTester"
+              id="org.eclipse.uml2.diagram.isUMLClassElement"
+              properties="isUMLClassElement"
+              namespace="org.eclipse.uml2.diagram"
+              type="org.eclipse.uml2.uml.Element">
+        </propertyTester>
    </extension>
 
    <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
@@ -1538,7 +1545,6 @@
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
             <contentExtension pattern="org.eclipse.uml2.diagram.clazz.resourceContent"/>
-			<contentExtension pattern="org.eclipse.uml2.diagram.clazz.domainResourceContent"/>
             <contentExtension pattern="org.eclipse.uml2.diagram.clazz.navigatorLinkHelper"/>
          </includes>
       </viewerContentBinding>
@@ -1600,33 +1606,6 @@
                </or>
             </parentExpression>
          </commonSorter>
-      </navigatorContent>
-      <navigatorContent
-            id="org.eclipse.uml2.diagram.clazz.domainResourceContent" 
-            name="%domainNavigatorContentName" 
-            priority="normal" 
-            contentProvider="org.eclipse.uml2.diagram.clazz.navigator.UMLDomainNavigatorContentProvider" 
-            labelProvider="org.eclipse.uml2.diagram.clazz.navigator.UMLDomainNavigatorLabelProvider"
-            icon="icons/obj16/UMLDiagramFile.gif"
-            activeByDefault="true">
-         <triggerPoints>
-            <or>
-	           <and>
-    	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="uml"/>
-               </and>
-               <and>
-                  <instanceof value="org.eclipse.emf.ecore.EObject"/>
-                  <test property="org.eclipse.uml2.diagram.clazz.isDomainModelElement"/>
-               </and>
-            </or>
-         </triggerPoints>
-         <possibleChildren>
-            <and>
-       	       <instanceof value="org.eclipse.emf.ecore.EObject"/>
-       	       <test property="org.eclipse.uml2.diagram.clazz.isDomainModelElement"/>
-       	    </and>
-         </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="org.eclipse.uml2.diagram.clazz.navigatorActionProvider"
@@ -2886,23 +2865,6 @@
             	</and>            	
          </enabledWhen>
       </handler>
-   </extension>
-<extension point="org.eclipse.core.expressions.propertyTesters" id="new-diagram-property-testers">
-      <?gmfgen generated="true"?>
-        <propertyTester
-              class="org.eclipse.uml2.diagram.clazz.async.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isUMLClassElement"
-              properties="isUMLClassElement"
-              namespace="org.eclipse.uml2.diagram"
-              type="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-        </propertyTester>
-        <propertyTester
-              class="org.eclipse.uml2.diagram.clazz.async.NewDiagramPropertyTester"
-              id="org.eclipse.uml2.diagram.isUMLClassElement"
-              properties="isUMLClassElement"
-              namespace="org.eclipse.uml2.diagram"
-              type="org.eclipse.uml2.uml.Element">
-        </propertyTester>
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-change-notation-Interface4">
       <?gmfgen generated="true"?>

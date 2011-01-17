@@ -7,7 +7,6 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeConnectionTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
-
 public class LinkToolEntry extends ToolEntry {
 
 	private final List<IElementType> relationshipTypes;
@@ -24,7 +23,7 @@ public class LinkToolEntry extends ToolEntry {
 		return tool;
 	}
 
-	public List<IElementType> getElementTypes() {		
+	public List<IElementType> getElementTypes() {
 		return relationshipTypes;
 	}
 

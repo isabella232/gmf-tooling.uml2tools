@@ -14,5 +14,6 @@ package org.eclipse.uml2.diagram.common.editpolicies;
 import org.eclipse.gef.EditPolicy;
 
 public interface IRefreshableFeedbackEditPolicy extends EditPolicy {
-	public void refreshFeedback(); 
+
+	public void refreshFeedback();
 }

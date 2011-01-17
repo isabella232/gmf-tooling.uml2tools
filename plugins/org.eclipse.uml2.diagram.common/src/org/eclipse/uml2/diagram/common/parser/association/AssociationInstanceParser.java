@@ -29,8 +29,8 @@ public class AssociationInstanceParser extends SemanticParserAdapter {
 	public static class ROLE_PARSER extends AssociationInstanceParser {
 
 		public ROLE_PARSER(boolean sourceNotTarget) {
-			super(new AssociationEndToString.ROLE_VIEW(sourceNotTarget){
-				
+			super(new AssociationEndToString.ROLE_VIEW(sourceNotTarget) {
+
 				@Override
 				public String getToString(EObject object, int flags) {
 					// TODO Auto-generated method stub
@@ -38,7 +38,7 @@ public class AssociationInstanceParser extends SemanticParserAdapter {
 				}
 			});
 		}
-	
+
 	}
 
 	@Override

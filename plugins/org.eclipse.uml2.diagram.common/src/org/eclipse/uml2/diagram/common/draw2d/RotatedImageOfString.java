@@ -19,12 +19,12 @@ import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
 
 public class RotatedImageOfString extends ImageFigure {
-	
+
 	public void setText(String text) {
 		this.text = text;
 		updateImage();
 	}
-	
+
 	public String getText() {
 		return this.text;
 	}
@@ -75,7 +75,10 @@ public class RotatedImageOfString extends ImageFigure {
 	}
 
 	private String text;
+
 	private Font imageFont = null;
+
 	private Color foregroundColor = null;
+
 	private Color backgroundColor = null;
 }

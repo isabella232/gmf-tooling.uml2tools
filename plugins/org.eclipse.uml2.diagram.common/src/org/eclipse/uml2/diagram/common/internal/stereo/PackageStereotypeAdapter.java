@@ -46,10 +46,10 @@ public class PackageStereotypeAdapter extends AdapterImpl {
 
 	private List<EObject> getStereotypeApplications(Object target) {
 		if (target instanceof Resource) {
-			Package pakkage = getPackage((Resource)target);
+			Package pakkage = getPackage((Resource) target);
 			Resource resource = (Resource) target;
 			List<EObject> result = new LinkedList<EObject>();
-			for (EObject o: resource.getContents()) {
+			for (EObject o : resource.getContents()) {
 				if (isStereotypeApplication(pakkage, o)) {
 					result.add(o);
 				}
@@ -86,9 +86,10 @@ public class PackageStereotypeAdapter extends AdapterImpl {
 	}
 
 	private boolean isStereotypeApplication(EObject application) {
-		org.eclipse.uml2.uml.Package pakkage = getPackage((Resource)getTarget());
+		org.eclipse.uml2.uml.Package pakkage = getPackage((Resource) getTarget());
 		return isStereotypeApplication(pakkage, application);
 	}
+
 	private Package getPackage(Resource resource) {
 		return (Package) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.PACKAGE);
 	}

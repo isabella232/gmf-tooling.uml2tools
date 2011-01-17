@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.notation.View;
 public abstract class AbstractVisualEffectEditPolicy extends CanonicalEditPolicy {
 
 	protected abstract void refreshVisualEffect();
+
 	protected abstract void installVisualEffect();
 
 	@Override
@@ -51,16 +52,16 @@ public abstract class AbstractVisualEffectEditPolicy extends CanonicalEditPolicy
 	protected final List<EObject> getSemanticChildrenList() {
 		return Collections.emptyList();
 	}
-	
-	protected final void ensureHasStyle(EClass styleClass){
-		if (!NotationPackage.eINSTANCE.getStyle().isSuperTypeOf(styleClass)){
+
+	protected final void ensureHasStyle(EClass styleClass) {
+		if (!NotationPackage.eINSTANCE.getStyle().isSuperTypeOf(styleClass)) {
 			throw new IllegalArgumentException("Notation Style expected:" + styleClass); //$NON-NLS-1$
 		}
 		IGraphicalEditPart editPart = getHostImpl();
 		View view = editPart.getNotationView();
 		Style style = view.getStyle(styleClass);
-		if (style == null){
-			style = (Style) styleClass.getEPackage().getEFactoryInstance().create(styleClass); 
+		if (style == null) {
+			style = (Style) styleClass.getEPackage().getEFactoryInstance().create(styleClass);
 			SetRequest request = new SetRequest(editPart.getEditingDomain(), view, NotationPackage.eINSTANCE.getView_Styles(), style);
 			executeICommand(new SetValueCommand(request));
 		}

@@ -1,9 +1,8 @@
-package org.eclipse.uml2.diagram.clazz.navigator;
+package org.eclipse.uml2.diagram.common.navigator;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.common.util.URI;
@@ -18,48 +17,26 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
-import org.eclipse.uml2.diagram.clazz.part.UMLDiagramEditorPlugin;
+import org.eclipse.uml2.diagram.common.navigator.UMLAbstractNavigatorItem;
+import org.eclipse.uml2.diagram.common.navigator.UMLDomainNavigatorItem;
+import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
 
-/**
- * @generated
- */
 public class UMLDomainNavigatorContentProvider implements ICommonContentProvider {
 
-	/**
-	 * @generated
-	 */
 	private AdapterFactoryContentProvider myAdapterFctoryContentProvier;
 
-	/**
-	 * @generated
-	 */
 	private static final Object[] EMPTY_ARRAY = new Object[0];
 
-	/**
-	 * @generated
-	 */
 	private Viewer myViewer;
 
-	/**
-	 * @generated
-	 */
 	private AdapterFactoryEditingDomain myEditingDomain;
 
-	/**
-	 * @generated
-	 */
 	private WorkspaceSynchronizer myWorkspaceSynchronizer;
 
-	/**
-	 * @generated
-	 */
 	private Runnable myViewerRefreshRunnable;
 
-	/**
-	 * @generated
-	 */
 	public UMLDomainNavigatorContentProvider() {
-		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
+		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(UMLCommonPlugin.getInstance().getItemProvidersAdapterFactory());
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
@@ -104,9 +81,6 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 		});
 	}
 
-	/**
-	 * @generated
-	 */
 	public void dispose() {
 		myWorkspaceSynchronizer.dispose();
 		myWorkspaceSynchronizer = null;
@@ -117,59 +91,35 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 		myEditingDomain = null;
 	}
 
-	/**
-	 * @generated
-	 */
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		myViewer = viewer;
 	}
 
-	/**
-	 * @generated
-	 */
 	void unloadAllResources() {
 		for (Resource nextResource : myEditingDomain.getResourceSet().getResources()) {
 			nextResource.unload();
 		}
 	}
 
-	/**
-	 * @generated
-	 */
 	void asyncRefresh() {
 		if (myViewer != null && !myViewer.getControl().isDisposed()) {
 			myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
 		}
 	}
 
-	/**
-	 * @generated
-	 */
 	public Object[] getElements(Object inputElement) {
 		return getChildren(inputElement);
 	}
 
-	/**
-	 * @generated
-	 */
 	public void restoreState(IMemento aMemento) {
 	}
 
-	/**
-	 * @generated
-	 */
 	public void saveState(IMemento aMemento) {
 	}
 
-	/**
-	 * @generated
-	 */
 	public void init(ICommonContentExtensionSite aConfig) {
 	}
 
-	/**
-	 * @generated
-	 */
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof IFile) {
 			IFile file = (IFile) parentElement;
@@ -184,9 +134,6 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 		return EMPTY_ARRAY;
 	}
 
-	/**
-	 * @generated
-	 */
 	public Object[] wrapEObjects(Object[] objects, Object parentElement) {
 		Collection result = new ArrayList();
 		for (int i = 0; i < objects.length; i++) {
@@ -197,9 +144,6 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 		return result.toArray();
 	}
 
-	/**
-	 * @generated
-	 */
 	public Object getParent(Object element) {
 		if (element instanceof UMLAbstractNavigatorItem) {
 			UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem) element;
@@ -208,9 +152,6 @@ public class UMLDomainNavigatorContentProvider implements ICommonContentProvider
 		return null;
 	}
 
-	/**
-	 * @generated
-	 */
 	public boolean hasChildren(Object element) {
 		return element instanceof IFile || getChildren(element).length > 0;
 	}

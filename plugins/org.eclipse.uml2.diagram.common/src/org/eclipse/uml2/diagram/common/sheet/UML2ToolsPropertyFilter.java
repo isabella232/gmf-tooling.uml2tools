@@ -22,9 +22,9 @@ public abstract class UML2ToolsPropertyFilter implements IFilter {
 		Object transformed = transformSelection(toTest);
 		return isValid(transformed);
 	}
-	
+
 	protected abstract boolean isValid(Object transformedObject);
-	
+
 	protected Object transformSelection(Object selected) {
 		if (selected instanceof EditPart) {
 			Object model = ((EditPart) selected).getModel();

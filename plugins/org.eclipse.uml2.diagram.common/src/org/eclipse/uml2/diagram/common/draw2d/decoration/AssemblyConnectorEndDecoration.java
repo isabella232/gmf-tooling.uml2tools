@@ -6,9 +6,9 @@ import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
 
-
 public class AssemblyConnectorEndDecoration extends RequiredInterfaceDecoration {
-	public void updateWithEnd(Connector connector, ConnectableElement diagramEnd){
+
+	public void updateWithEnd(Connector connector, ConnectableElement diagramEnd) {
 		ConnectorEnd sourceEnd = ConnectorEndConvention.getConnectorEnd(connector, true);
 		boolean forSourceEnd = diagramEnd != null && diagramEnd.equals(sourceEnd.getRole());
 		setVisible(forSourceEnd);

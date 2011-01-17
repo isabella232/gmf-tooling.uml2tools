@@ -5,121 +5,122 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate;
 import org.eclipse.swt.graphics.Image;
 
-
 public class SimpleLabelDelegate extends ILabelDelegate.Stub {
-        private Label myLabel;
-        private boolean myIsSelected;
 
-        public SimpleLabelDelegate(Label label) {
-            myLabel = label;
-        }
+	private Label myLabel;
 
-        @Override
-		public void setFocus(boolean b) {
-            //not supported
-        }
+	private boolean myIsSelected;
 
-        @Override
-		public void setSelected(boolean selected) {
-            //ui effect not supported
-        	myIsSelected = selected;
-        }
+	public SimpleLabelDelegate(Label label) {
+		myLabel = label;
+	}
 
-        @Override
-		public String getText() {
-            return myLabel.getText();
-        }
+	@Override
+	public void setFocus(boolean b) {
+		//not supported
+	}
 
-        @Override
-		public void setIcon(Image image, int index) {
-            if (index == 0) {
-                myLabel.setIcon(image);
-            }
-        }
+	@Override
+	public void setSelected(boolean selected) {
+		//ui effect not supported
+		myIsSelected = selected;
+	}
 
-        @Override
-		public void setAlignment(int right) {
-            myLabel.setLabelAlignment(right);
-        }
+	@Override
+	public String getText() {
+		return myLabel.getText();
+	}
 
-        @Override
-		public void setText(String text) {
-            myLabel.setText(text);
-        }
+	@Override
+	public void setIcon(Image image, int index) {
+		if (index == 0) {
+			myLabel.setIcon(image);
+		}
+	}
 
-        @Override
-		public void setTextAlignment(int alignment) {
-            myLabel.setTextAlignment(alignment);
-        }
+	@Override
+	public void setAlignment(int right) {
+		myLabel.setLabelAlignment(right);
+	}
 
-        @Override
-		public void setIconAlignment(int alignment) {
-            myLabel.setIconAlignment(alignment);
-        }
+	@Override
+	public void setText(String text) {
+		myLabel.setText(text);
+	}
 
-        @Override
-		public Rectangle getTextBounds() {
-            Rectangle rect = myLabel.getTextBounds().getCopy();
-            myLabel.translateToAbsolute(rect);
-            return rect;
-        }
+	@Override
+	public void setTextAlignment(int alignment) {
+		myLabel.setTextAlignment(alignment);
+	}
 
-        @Override
-		public void setTextPlacement(int placement) {
-            myLabel.setTextPlacement(placement);
-        }
+	@Override
+	public void setIconAlignment(int alignment) {
+		myLabel.setIconAlignment(alignment);
+	}
 
-        @Override
-		public void setTextStrikeThrough(boolean strikeThrough) {
-            //not supported
-        }
+	@Override
+	public Rectangle getTextBounds() {
+		Rectangle rect = myLabel.getTextBounds().getCopy();
+		myLabel.translateToAbsolute(rect);
+		return rect;
+	}
 
-        @Override
-		public void setTextUnderline(boolean underline) {
-            //not supported
-        }
+	@Override
+	public void setTextPlacement(int placement) {
+		myLabel.setTextPlacement(placement);
+	}
 
-        @Override
-		public Image getIcon(int index) {
-            if (index == 0) {
-                return myLabel.getIcon();
-            }
-            return null;
-        }
+	@Override
+	public void setTextStrikeThrough(boolean strikeThrough) {
+		//not supported
+	}
 
-        @Override
-		public int getIconAlignment() {
-            return myLabel.getIconAlignment();
-        }
+	@Override
+	public void setTextUnderline(boolean underline) {
+		//not supported
+	}
 
-        @Override
-		public int getTextAlignment() {
-            return myLabel.getTextAlignment();
-        }
+	@Override
+	public Image getIcon(int index) {
+		if (index == 0) {
+			return myLabel.getIcon();
+		}
+		return null;
+	}
 
-        @Override
-		public int getTextPlacement() {
-            return myLabel.getTextPlacement();
-        }
+	@Override
+	public int getIconAlignment() {
+		return myLabel.getIconAlignment();
+	}
 
-        @Override
-		public boolean hasFocus() {
-            return myLabel.hasFocus();
-        }
+	@Override
+	public int getTextAlignment() {
+		return myLabel.getTextAlignment();
+	}
 
-        @Override
-		public boolean isSelected() {
-            return myIsSelected;
-        }
+	@Override
+	public int getTextPlacement() {
+		return myLabel.getTextPlacement();
+	}
 
-        @Override
-		public boolean isTextStrikedThrough() {
-            return false;
-        }
+	@Override
+	public boolean hasFocus() {
+		return myLabel.hasFocus();
+	}
 
-        @Override
-		public boolean isTextUnderlined() {
-            return false;
-        }
+	@Override
+	public boolean isSelected() {
+		return myIsSelected;
+	}
 
-    }
+	@Override
+	public boolean isTextStrikedThrough() {
+		return false;
+	}
+
+	@Override
+	public boolean isTextUnderlined() {
+		return false;
+	}
+
+}

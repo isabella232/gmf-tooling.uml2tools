@@ -17,7 +17,7 @@ public class AppliedStereotypePropertySectionFilter extends UML2ToolsPropertyFil
 
 	@Override
 	protected boolean isValid(Object transformed) {
-		return (transformed instanceof Element) && (false == ((Element)transformed).getAppliedStereotypes().isEmpty());
+		return (transformed instanceof Element) && (false == ((Element) transformed).getAppliedStereotypes().isEmpty());
 	}
 
 }

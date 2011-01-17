@@ -14,9 +14,10 @@ import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
-public class ApplicableStereotypesItemProvider  extends AbstractContributionItemProvider implements IProvider {
+public class ApplicableStereotypesItemProvider extends AbstractContributionItemProvider implements IProvider {
+
 	public static final String MENU_APPLY_STEREOTYPE = "menu_apply_unapply_stereotype"; //$NON-NLS-1$
-	
+
 	@Override
 	protected IMenuManager createMenuManager(String menuId, IWorkbenchPartDescriptor partDescriptor) {
 		if (!MENU_APPLY_STEREOTYPE.equals(menuId)) {
@@ -32,16 +33,17 @@ public class ApplicableStereotypesItemProvider  extends AbstractContributionItem
 	}
 
 	private class MenuBuilder implements IMenuListener {
+
 		private final IWorkbenchPartDescriptor myWorkbenchPart;
 
-		public MenuBuilder(IWorkbenchPartDescriptor workbenchPart){
+		public MenuBuilder(IWorkbenchPartDescriptor workbenchPart) {
 			myWorkbenchPart = workbenchPart;
 		}
-		
+
 		public void menuAboutToShow(IMenuManager manager) {
 			buildMenu(manager);
 		}
-		
+
 		public void buildMenu(IMenuManager manager) {
 			manager.removeAll();
 			IGraphicalEditPart selected = (IGraphicalEditPart) getSelectedObject(myWorkbenchPart);
@@ -49,16 +51,16 @@ public class ApplicableStereotypesItemProvider  extends AbstractContributionItem
 			if (false == selectedElement instanceof Element) {
 				return;
 			}
-			Element element = (Element)selectedElement ;
+			Element element = (Element) selectedElement;
 			EList<Stereotype> stereotypes = element.getApplicableStereotypes();
-			for (Stereotype stereotype: stereotypes) {
+			for (Stereotype stereotype : stereotypes) {
 				ApplyStereotypeAction action = new ApplyStereotypeAction(getWorkbenchPage(), element, stereotype);
 				action.init();
 				manager.add(action);
 			}
 		}
 
-		private IWorkbenchPage getWorkbenchPage(){
+		private IWorkbenchPage getWorkbenchPage() {
 			return myWorkbenchPart.getPartPage();
 		}
 	}

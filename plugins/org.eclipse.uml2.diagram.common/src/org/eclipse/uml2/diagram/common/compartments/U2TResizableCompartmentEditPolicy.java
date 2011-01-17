@@ -35,6 +35,7 @@ public class U2TResizableCompartmentEditPolicy extends ResizableCompartmentEditP
 		collapseHandles.add(new U2TCollapseHandle(part));
 		return collapseHandles;
 	}
+
 	protected static class U2TCollapseHandle extends CompartmentCollapseHandle implements IMapMode /*, IMapModeHolder */{
 
 		private CollapsingLabel myCompartmentLabel;
@@ -52,22 +53,22 @@ public class U2TResizableCompartmentEditPolicy extends ResizableCompartmentEditP
 				myCompartmentLabel.setCollapsed(isStyleCollapsed());
 			}
 		}
-		
+
 		@SuppressWarnings("restriction")
 		public void propertyChange(PropertyChangeEvent evt) {
 			//relying on the super implementation
 			myCompartmentLabel.setCollapsed(collapseFigure.isCollapsed());
 		}
-		
+
 		public void notifyChanged(Notification notification) {
-			if (NotationPackage.eINSTANCE.getDrawerStyle_Collapsed()==notification.getFeature())
+			if (NotationPackage.eINSTANCE.getDrawerStyle_Collapsed() == notification.getFeature())
 				myCompartmentLabel.setCollapsed(notification.getNewBooleanValue());
 		}
-		
+
 		@Override
 		public IFigure findFigureAt(int x, int y, TreeSearch search) {
 			IFigure found = super.findFigureAt(x, y, search);
-			if (myCompartmentLabel != null && found != null){
+			if (myCompartmentLabel != null && found != null) {
 				return this;
 			}
 			return found;
@@ -116,6 +117,7 @@ public class U2TResizableCompartmentEditPolicy extends ResizableCompartmentEditP
 		}
 
 		protected class U2THandleLocator implements Locator {
+
 			private static final int LABEL_LINE_GAP = 6;
 
 			public void relocate(IFigure target) {
@@ -124,7 +126,7 @@ public class U2TResizableCompartmentEditPolicy extends ResizableCompartmentEditP
 					Rectangle theBounds = figureImpl.getTextPaneBounds().getCopy();
 					getOwnerFigure().translateToAbsolute(theBounds);
 					target.translateToRelative(theBounds);
-					
+
 					Dimension actualTextBounds = myCompartmentLabel.getPreferredSize(-1, -1);
 					theBounds.width = Math.min(theBounds.width, actualTextBounds.width + 2 * LABEL_LINE_GAP);
 					theBounds.translate(LABEL_LINE_GAP, 0);
@@ -133,22 +135,23 @@ public class U2TResizableCompartmentEditPolicy extends ResizableCompartmentEditP
 				}
 			}
 		}
-		
+
 		protected static class CollapsingLabel extends WrappingLabel {
+
 			private Boolean myIsCollapsed;
 
-			public CollapsingLabel(String text){
+			public CollapsingLabel(String text) {
 				super(text);
-				
+
 				setOpaque(true);
 				setTextPlacement(PositionConstants.EAST);
 				setIconAlignment(PositionConstants.BOTTOM);
 				setTextAlignment(PositionConstants.BOTTOM);
 				setAlignment(PositionConstants.CENTER);
 			}
-			
-			public void setCollapsed(boolean isCollapsed){
-				if (myIsCollapsed != null && myIsCollapsed.booleanValue() == isCollapsed){
+
+			public void setCollapsed(boolean isCollapsed) {
+				if (myIsCollapsed != null && myIsCollapsed.booleanValue() == isCollapsed) {
 					return;
 				}
 				myIsCollapsed = Boolean.valueOf(isCollapsed);
@@ -157,7 +160,7 @@ public class U2TResizableCompartmentEditPolicy extends ResizableCompartmentEditP
 				revalidate();
 				repaint();
 			}
-			
+
 		}
 
 	}

@@ -64,13 +64,10 @@ public class PileLayout extends AbstractHintLayout {
 	 */
 	protected PileConstraint getPileConstraint(IFigure figure) {
 		Object constraint = getConstraint(figure);
-		return constraint instanceof PileConstraint
-				? (PileConstraint) constraint
-				: FILL;
+		return constraint instanceof PileConstraint ? (PileConstraint) constraint : FILL;
 	}
 
-	protected Dimension calculateSize(IFigure container, int wHint, int hHint,
-			SizeExtractor sizeExtractor) {
+	protected Dimension calculateSize(IFigure container, int wHint, int hHint, SizeExtractor sizeExtractor) {
 		int totalWidth = 0; // Width of all components
 		int totalHeight = 0; // Height of all components	
 
@@ -94,13 +91,11 @@ public class PileLayout extends AbstractHintLayout {
 		return new Dimension(totalWidth, totalHeight);
 	}
 
-	protected Dimension calculateMinimumSize(IFigure container, int wHint,
-			int hHint) {
+	protected Dimension calculateMinimumSize(IFigure container, int wHint, int hHint) {
 		return calculateSize(container, wHint, hHint, MIN_SIZE_EXTRACTOR);
 	}
 
-	protected Dimension calculatePreferredSize(IFigure container, int wHint,
-			int hHint) {
+	protected Dimension calculatePreferredSize(IFigure container, int wHint, int hHint) {
 		return calculateSize(container, wHint, hHint, PREF_SIZE_EXTRACTOR);
 	}
 
@@ -114,16 +109,13 @@ public class PileLayout extends AbstractHintLayout {
 			Dimension preferred = child.getPreferredSize(clientArea.width, clientArea.height);
 			int height = preferred.height;
 			if (y >= maxY) {
-				Rectangle bounds = new Rectangle(clientArea.x, maxY,
-						clientArea.width, 0);
+				Rectangle bounds = new Rectangle(clientArea.x, maxY, clientArea.width, 0);
 				child.setBounds(bounds);
 				continue;
-			} else if (y + height > maxY
-					|| (isStretchBottom() && i == children.size() - 1)) {
+			} else if (y + height > maxY || (isStretchBottom() && i == children.size() - 1)) {
 				height = maxY - y;
 			}
-			Rectangle bounds = new Rectangle(clientArea.x, y, clientArea.width,
-					height);
+			Rectangle bounds = new Rectangle(clientArea.x, y, clientArea.width, height);
 			getPileConstraint(child).setChildBounds(preferred, bounds);
 			child.setBounds(bounds);
 			y += bounds.height + getGap();
@@ -131,7 +123,9 @@ public class PileLayout extends AbstractHintLayout {
 	}
 
 	private int myGap;
+
 	private Map<IFigure, Object> myConstraints = new HashMap<IFigure, Object>(2);
+
 	private boolean myStretchBottom;
 
 	private static final SizeExtractor MIN_SIZE_EXTRACTOR = new SizeExtractor() {
@@ -173,7 +167,8 @@ public class PileLayout extends AbstractHintLayout {
 	 */
 	public static final PileConstraint FILL = new PileConstraint() {
 
-		public void setChildBounds(Dimension preferred, Rectangle bounds) {}
+		public void setChildBounds(Dimension preferred, Rectangle bounds) {
+		}
 	};
 
 	public static final PileConstraint ALIGN_LEFT = new PileConstraint() {

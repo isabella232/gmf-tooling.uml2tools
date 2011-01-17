@@ -29,39 +29,37 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 public abstract class SlotToString extends AbstractToString {
+
 	public static class EDIT extends SlotToString {
+
 		public boolean isAffectingFeature(EStructuralFeature feature) {
 			throw new UnsupportedOperationException("I am edit toString, I am not expected to be asked"); //$NON-NLS-1$
 		}
 	}
-	
+
 	public static class VIEW extends SlotToString implements WithReferences {
-		private static final List AFFECTING = Arrays.asList(new EStructuralFeature[] {
-			UMLPackage.eINSTANCE.getSlot_Value(),
-			UMLPackage.eINSTANCE.getSlot_DefiningFeature(),
-			UMLPackage.eINSTANCE.getExpression_Symbol(),
-			UMLPackage.eINSTANCE.getLiteralString_Value(), 
-			UMLPackage.eINSTANCE.getLiteralInteger_Value(),
-		});
-		
+
+		private static final List AFFECTING = Arrays.asList(new EStructuralFeature[] { UMLPackage.eINSTANCE.getSlot_Value(), UMLPackage.eINSTANCE.getSlot_DefiningFeature(),
+				UMLPackage.eINSTANCE.getExpression_Symbol(), UMLPackage.eINSTANCE.getLiteralString_Value(), UMLPackage.eINSTANCE.getLiteralInteger_Value(), });
+
 		public boolean isAffectingFeature(EStructuralFeature feature) {
 			return AFFECTING.contains(feature);
 		}
-		
+
 		public List getAdditionalReferencedElements(EObject object) {
 			Slot slot = asSlot(object);
 			List result = new LinkedList();
 			result.add(slot);
 			StructuralFeature definingFeature = slot.getDefiningFeature();
-			if (definingFeature != null){
+			if (definingFeature != null) {
 				result.add(definingFeature);
 			}
 			result.addAll(slot.getValues());
 			return result;
 		}
-		
+
 	}
-	
+
 	public String getToString(EObject object, int flags) {
 		Slot slot = asSlot(object);
 		StringBuffer result = new StringBuffer();
@@ -69,48 +67,48 @@ public abstract class SlotToString extends AbstractToString {
 		appendSlotValue(result, slot);
 		return result.toString();
 	}
-	
-	protected void appendFeatureName(StringBuffer result, Slot slot){
+
+	protected void appendFeatureName(StringBuffer result, Slot slot) {
 		StructuralFeature feature = slot.getDefiningFeature();
 		appendName(result, feature);
 	}
-	
+
 	/**
 	 * FIXME: It is unclear from the spec how multiple values should be shown. For now assuming only one value
 	 */
-	protected void appendSlotValue(StringBuffer result, Slot slot){
-		for (Iterator values = slot.getValues().iterator(); values.hasNext();){
-			ValueSpecification next = (ValueSpecification)values.next();
+	protected void appendSlotValue(StringBuffer result, Slot slot) {
+		for (Iterator values = slot.getValues().iterator(); values.hasNext();) {
+			ValueSpecification next = (ValueSpecification) values.next();
 			String nextDisplayValue = getSlotValue(next);
-			if (!isEmpty(nextDisplayValue)){
+			if (!isEmpty(nextDisplayValue)) {
 				result.append(" = ").append(nextDisplayValue); //$NON-NLS-1$
 				//FIXME: for now stop on first success
 				break;
 			}
 		}
 	}
-	
-	protected String getSlotValue(ValueSpecification value){
-		if (value instanceof LiteralString){
-			LiteralString literal = (LiteralString)value;
+
+	protected String getSlotValue(ValueSpecification value) {
+		if (value instanceof LiteralString) {
+			LiteralString literal = (LiteralString) value;
 			return "\"" + literal.getValue() + "\""; //$NON-NLS-1$ //$NON-NLS-2$
 		}
-		if (value instanceof LiteralInteger){
-			LiteralInteger literal = (LiteralInteger)value;
+		if (value instanceof LiteralInteger) {
+			LiteralInteger literal = (LiteralInteger) value;
 			return String.valueOf(literal.getValue());
 		}
-		if (value instanceof Expression){
-			Expression expression = (Expression)value;
+		if (value instanceof Expression) {
+			Expression expression = (Expression) value;
 			return expression.getSymbol();
 		}
 		return null;
 	}
-	
-	protected Slot asSlot(EObject object){
-		if (false == object instanceof Slot){
+
+	protected Slot asSlot(EObject object) {
+		if (false == object instanceof Slot) {
 			throw new IllegalStateException("I can not provide toString for: " + object); //$NON-NLS-1$
 		}
-		return (Slot)object;
+		return (Slot) object;
 	}
-	
+
 }

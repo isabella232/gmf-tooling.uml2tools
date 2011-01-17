@@ -40,7 +40,9 @@ import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class ValueSpecificationParser implements ISemanticParser {
-	private static final Set<EStructuralFeature> ourFeatures; 
+
+	private static final Set<EStructuralFeature> ourFeatures;
+
 	private static final String BODIES_SEPARATOR = System.getProperty("line.separator") + System.getProperty("line.separator"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
@@ -87,15 +89,15 @@ public class ValueSpecificationParser implements ISemanticParser {
 			public String caseExpression(Expression object) {
 				return object.getSymbol();
 			}
-			
+
 			@Override
 			public String caseOpaqueExpression(OpaqueExpression object) {
 				StringBuilder result = new StringBuilder();
-				for (String nextBody : object.getBodies()){
-					if (nextBody == null){
+				for (String nextBody : object.getBodies()) {
+					if (nextBody == null) {
 						continue;
 					}
-					if (result.length() > 0){
+					if (result.length() > 0) {
 						result.append(BODIES_SEPARATOR);
 					}
 					result.append(nextBody);
@@ -144,13 +146,13 @@ public class ValueSpecificationParser implements ISemanticParser {
 				EStructuralFeature feature = UMLPackage.eINSTANCE.getExpression_Symbol();
 				return new SetValueCommand(new SetRequest(vs, feature, newString));
 			}
-			
+
 			@Override
 			public ICommand caseOpaqueExpression(OpaqueExpression object) {
 				String[] bodies = newString.split("(\\r|\\n|\\u0085|\\u2028|\\u2029){2,}"); //$NON-NLS-1$
 				List<String> bodiesList = new ArrayList<String>(bodies.length);
-				for (String next : bodies){
-					if (next != null && next.length() != 0){
+				for (String next : bodies) {
+					if (next != null && next.length() != 0) {
 						bodiesList.add(next);
 					}
 				}
@@ -178,18 +180,19 @@ public class ValueSpecificationParser implements ISemanticParser {
 	protected ValueSpecification getValueSpecification(IAdaptable adaptable) {
 		return (ValueSpecification) adaptable.getAdapter(EObject.class);
 	}
-	
+
 	static {
 		HashSet<EStructuralFeature> features = new HashSet<EStructuralFeature>();
 		features.add(UMLPackage.eINSTANCE.getLiteralInteger_Value());
 		features.add(UMLPackage.eINSTANCE.getLiteralString_Value());
 		features.add(UMLPackage.eINSTANCE.getExpression_Symbol());
 		features.add(UMLPackage.eINSTANCE.getOpaqueExpression_Body());
-		
+
 		ourFeatures = Collections.unmodifiableSet(features);
 	}
-	
+
 	public static class ConstraintParser extends ValueSpecificationParser {
+
 		public boolean isAffectingEvent(Object notification, int flags) {
 			if (notification instanceof Notification) {
 				Object feature = ((Notification) notification).getFeature();

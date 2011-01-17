@@ -9,11 +9,14 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 
 public class UpdateDescriptionEditPolicy extends AbstractEditPolicy {
+
 	public static final String ROLE = UpdateDescriptionEditPolicy.class.getName();
+
 	private final IDiagramUpdater myUpdater;
+
 	private final boolean myRegisterSemanticElement;
-	
-	public UpdateDescriptionEditPolicy(IDiagramUpdater updater, boolean registerSemanticElement){
+
+	public UpdateDescriptionEditPolicy(IDiagramUpdater updater, boolean registerSemanticElement) {
 		myUpdater = updater;
 		myRegisterSemanticElement = registerSemanticElement;
 	}
@@ -34,15 +37,15 @@ public class UpdateDescriptionEditPolicy extends AbstractEditPolicy {
 		}
 		return super.getCommand(request);
 	}
-	
+
 	protected final IGraphicalEditPart getHostImpl() {
-		return (IGraphicalEditPart)getHost();
+		return (IGraphicalEditPart) getHost();
 	}
 
-	protected void describeUpdate(UpdateDescriptionRequest request){
+	protected void describeUpdate(UpdateDescriptionRequest request) {
 		UpdateDescriptionRequest.Descriptor desc = request.registerDescription(getHostImpl(), myRegisterSemanticElement);
 		View view = getHostImpl().getNotationView();
-		
+
 		desc.addContainedChildren(myUpdater.getSemanticChildren(view));
 		desc.addContainedLinks(myUpdater.getContainedLinks(view));
 		desc.addOutgoingLinks(myUpdater.getOutgoingLinks(view));
@@ -54,7 +57,7 @@ public class UpdateDescriptionEditPolicy extends AbstractEditPolicy {
 			nextEP.getCommand(request); //we are not interested in result
 		}
 	}
-	
+
 	private static final Command COMMAND = new Command() {
 	};
 }

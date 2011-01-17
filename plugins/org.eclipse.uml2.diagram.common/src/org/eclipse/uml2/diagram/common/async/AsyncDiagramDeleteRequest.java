@@ -15,42 +15,42 @@ import org.eclipse.gef.requests.GroupRequest;
  * canonical mode is expected to be switched off in order to allow the expected behavior.
  */
 public class AsyncDiagramDeleteRequest extends GroupRequest {
+
 	public static enum Kind {
-		NOTATION_ONLY, 
-		SEMANTIC_AND_NOTATION, 
-		LET_TARGET_DECIDE, 
+		NOTATION_ONLY, SEMANTIC_AND_NOTATION, LET_TARGET_DECIDE,
 	}
-	
+
 	public static final String REQ_TYPE = AsyncDiagramDeleteRequest.class.getName() + ":delete"; //$NON-NLS-1$
-	
+
 	private Kind myKind = Kind.LET_TARGET_DECIDE;
+
 	private boolean myFromKeyboard = false;
-	
-	public AsyncDiagramDeleteRequest(String type){
+
+	public AsyncDiagramDeleteRequest(String type) {
 		super(type);
 	}
-	
-	public AsyncDiagramDeleteRequest(){
+
+	public AsyncDiagramDeleteRequest() {
 		this(REQ_TYPE);
 	}
-	
+
 	public Kind getKind() {
 		return myKind;
-	} 
-	
+	}
+
 	public void setKind(Kind kind) {
 		myKind = kind;
-		if (myKind == null){
+		if (myKind == null) {
 			myKind = Kind.LET_TARGET_DECIDE;
 		}
 	}
-	
+
 	public boolean isFromKeyboard() {
 		return myFromKeyboard;
 	}
-	
+
 	public void setFromKeyboard(boolean fromKeyboard) {
 		myFromKeyboard = fromKeyboard;
 	}
-	
+
 }

@@ -36,7 +36,7 @@ public class CommentFigureBase extends NoteFigure {
 		super(width, height, insets);
 		myBody = new WrappingLabel();
 		myBody.setBorder(new MarginBorder(4, 4, 4, 4));
-		
+
 		myBody.setTextPlacement(PositionConstants.EAST);
 		myBody.setTextAlignment(PositionConstants.TOP);
 		myBody.setIconAlignment(PositionConstants.TOP);

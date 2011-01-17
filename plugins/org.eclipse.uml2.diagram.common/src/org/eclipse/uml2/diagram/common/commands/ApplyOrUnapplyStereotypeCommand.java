@@ -11,11 +11,11 @@ import org.eclipse.uml2.diagram.common.Messages;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Stereotype;
 
-
 public class ApplyOrUnapplyStereotypeCommand extends EditElementCommand {
 
 	public ApplyOrUnapplyStereotypeCommand(ApplyOrUnapplyStereotypeRequest request) {
-		super(request.isApplyNotUnapply() ? Messages.ApplyOrUnapplyStereotypeCommand_command_apply_stereotype : Messages.ApplyOrUnapplyStereotypeCommand_command_unapply_stereotype, request.getElement(), request);
+		super(request.isApplyNotUnapply() ? Messages.ApplyOrUnapplyStereotypeCommand_command_apply_stereotype : Messages.ApplyOrUnapplyStereotypeCommand_command_unapply_stereotype, request
+				.getElement(), request);
 	}
 
 	@Override
@@ -28,13 +28,13 @@ public class ApplyOrUnapplyStereotypeCommand extends EditElementCommand {
 		}
 		return CommandResult.newOKCommandResult(request.getElement());
 	}
-	
+
 	public static class ApplyOrUnapplyStereotypeRequest extends AbstractEditCommandRequest {
 
 		private final Element myElement;
 
 		private final Stereotype myStereotype;
-		
+
 		private final boolean myApplyNotUnapply;
 
 		public ApplyOrUnapplyStereotypeRequest(Element element, Stereotype stereotype, boolean applyNotUnapply) {
@@ -55,7 +55,7 @@ public class ApplyOrUnapplyStereotypeCommand extends EditElementCommand {
 		public boolean isApplyNotUnapply() {
 			return myApplyNotUnapply;
 		}
-		
+
 		public Object getEditHelperContext() {
 			return null;
 		}

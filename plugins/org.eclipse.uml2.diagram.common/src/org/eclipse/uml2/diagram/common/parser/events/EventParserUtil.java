@@ -24,8 +24,10 @@ import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class EventParserUtil {
+
 	public static String getEditString(Event event) {
 		UMLSwitch<String> eventSwitch = new UMLSwitch<String>() {
+
 			@Override
 			public String caseCallEvent(CallEvent callEvent) {
 				String name = callEvent.getName();
@@ -34,7 +36,7 @@ public class EventParserUtil {
 				}
 				return name;
 			}
-			
+
 			@Override
 			public String caseSignalEvent(SignalEvent signalEvent) {
 				String name = signalEvent.getName();
@@ -43,12 +45,12 @@ public class EventParserUtil {
 				}
 				return name;
 			}
-			
+
 			@Override
 			public String caseAnyReceiveEvent(AnyReceiveEvent anyReceiveEvent) {
 				return Messages.EventParser_any_receive_event_denotation;
 			}
-			
+
 			@Override
 			public String caseTimeEvent(TimeEvent timeEvent) {
 				StringBuffer timeEventDenotation = new StringBuffer();
@@ -65,7 +67,7 @@ public class EventParserUtil {
 				timeEventDenotation.append(')');
 				return timeEventDenotation.toString();
 			}
-			
+
 			@Override
 			public String caseChangeEvent(ChangeEvent changeEvent) {
 				StringBuffer changeEventDenotation = new StringBuffer();

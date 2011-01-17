@@ -34,28 +34,28 @@ import org.eclipse.uml2.diagram.common.Messages;
 public class RotateActionHandler extends AbstractHandler {
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		DiagramDocumentEditor editor = (DiagramDocumentEditor)HandlerUtil.getActiveEditorChecked(event);
+		DiagramDocumentEditor editor = (DiagramDocumentEditor) HandlerUtil.getActiveEditorChecked(event);
 		ISelection selection = HandlerUtil.getCurrentSelectionChecked(event);
-		if (false == selection instanceof IStructuredSelection){
+		if (false == selection instanceof IStructuredSelection) {
 			return null;
 		}
-		List<?> editParts = ((IStructuredSelection)selection).toList();
-		
+		List<?> editParts = ((IStructuredSelection) selection).toList();
+
 		TransactionalEditingDomain domain = editor.getEditingDomain();
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(domain, Messages.RotateAction_rotate_command);
-		for (Object nextEditPart : editParts){
-			if (nextEditPart instanceof ShapeNodeEditPart){
-				cc.add(rotate((ShapeNodeEditPart)nextEditPart));
+		for (Object nextEditPart : editParts) {
+			if (nextEditPart instanceof ShapeNodeEditPart) {
+				cc.add(rotate((ShapeNodeEditPart) nextEditPart));
 			}
 		}
-		
-		if (cc.canExecute()){
+
+		if (cc.canExecute()) {
 			editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(cc.reduce()));
 		}
 
 		return null;
 	}
-	
+
 	private SetBoundsCommand rotate(ShapeNodeEditPart selectedElement) {
 		Dimension size = selectedElement.getSize();
 
@@ -66,5 +66,5 @@ public class RotateActionHandler extends AbstractHandler {
 		SetBoundsCommand result = new SetBoundsCommand(selectedElement.getEditingDomain(), Messages.RotateAction_rotate_command, new EObjectAdapter(selectedElement.getNotationView()), rectangle);
 		return result;
 	}
-	
+
 }

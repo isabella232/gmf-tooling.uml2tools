@@ -25,6 +25,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 public class PortToString extends AbstractToString implements WithReferences {
+
 	public String getToString(EObject object, int flags) {
 		Port port = asPort(object);
 		StringBuffer result = new StringBuffer();
@@ -33,45 +34,38 @@ public class PortToString extends AbstractToString implements WithReferences {
 		appendMultiplicity(result, port);
 		return result.toString();
 	}
-	
-	private static final List AFFECTING = Arrays.asList(new EStructuralFeature[] {
-			UMLPackage.eINSTANCE.getNamedElement_Visibility(),
-			UMLPackage.eINSTANCE.getNamedElement_Name(),
-			UMLPackage.eINSTANCE.getTypedElement_Type(),
-			UMLPackage.eINSTANCE.getMultiplicityElement_UpperValue(),
-			UMLPackage.eINSTANCE.getMultiplicityElement_LowerValue(),
-			UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value(), 
-			UMLPackage.eINSTANCE.getLiteralInteger_Value(),
-			UMLPackage.eINSTANCE.getLiteralString_Value(),
-		});
+
+	private static final List AFFECTING = Arrays.asList(new EStructuralFeature[] { UMLPackage.eINSTANCE.getNamedElement_Visibility(), UMLPackage.eINSTANCE.getNamedElement_Name(),
+			UMLPackage.eINSTANCE.getTypedElement_Type(), UMLPackage.eINSTANCE.getMultiplicityElement_UpperValue(), UMLPackage.eINSTANCE.getMultiplicityElement_LowerValue(),
+			UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value(), UMLPackage.eINSTANCE.getLiteralInteger_Value(), UMLPackage.eINSTANCE.getLiteralString_Value(), });
 
 	public boolean isAffectingFeature(EStructuralFeature feature) {
 		return AFFECTING.contains(feature);
 	}
-	
+
 	public List getAdditionalReferencedElements(EObject object) {
 		Port port = asPort(object);
 		List result = new LinkedList();
 		result.add(port);
 		ValueSpecification upper = port.getUpperValue();
-		if (upper != null){
+		if (upper != null) {
 			result.add(upper);
 		}
 		ValueSpecification lower = port.getLowerValue();
-		if (lower != null){
+		if (lower != null) {
 			result.add(lower);
 		}
-		if (port.getType() != null){
+		if (port.getType() != null) {
 			result.add(port.getType());
 		}
 		return result;
 	}
 
-	protected Port asPort(EObject object){
-		if (false == object instanceof Port){
+	protected Port asPort(EObject object) {
+		if (false == object instanceof Port) {
 			throw new IllegalStateException("I can not provide toString for: " + object); //$NON-NLS-1$
 		}
-		return (Port)object;
+		return (Port) object;
 	}
-	
+
 }

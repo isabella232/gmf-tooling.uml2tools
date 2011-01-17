@@ -47,7 +47,7 @@ class ParametersCellModifier implements ICellModifier {
 			if (defValue == null) {
 				return StringStatics.BLANK;
 			}
-			return new ValueSpecificationToStringConverter().doSwitch(defValue); 
+			return new ValueSpecificationToStringConverter().doSwitch(defValue);
 		}
 		if (EditParametersTableConstants.IS_ORDERED.equals(property)) {
 			return parameter.isOrdered();
@@ -80,9 +80,9 @@ class ParametersCellModifier implements ICellModifier {
 			updateViewer(parameter, property);
 		}
 	}
-	
+
 	public void updateViewer(Parameter parameter, String property) {
-		
+
 	}
 
 	private void setDefaultValue(Parameter parameter, Object value) {
@@ -97,7 +97,7 @@ class ParametersCellModifier implements ICellModifier {
 		if (EditPropertyParametersDialog.NULL_TYPE.equals(value)) {
 			value = null;
 		}
-		parameter.setType((Type)value);
+		parameter.setType((Type) value);
 	}
 
 }

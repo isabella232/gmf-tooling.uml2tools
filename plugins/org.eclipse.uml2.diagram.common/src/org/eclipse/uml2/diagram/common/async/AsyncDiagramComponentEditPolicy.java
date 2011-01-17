@@ -18,11 +18,11 @@ import org.eclipse.uml2.diagram.common.editpolicies.InsertingComponentEditPolicy
 
 public class AsyncDiagramComponentEditPolicy extends InsertingComponentEditPolicy {
 
-	public AsyncDiagramComponentEditPolicy(boolean forListItem){
+	public AsyncDiagramComponentEditPolicy(boolean forListItem) {
 		super(forListItem);
 	}
-	
-	public AsyncDiagramComponentEditPolicy(){
+
+	public AsyncDiagramComponentEditPolicy() {
 		this(false);
 	}
 
@@ -46,7 +46,6 @@ public class AsyncDiagramComponentEditPolicy extends InsertingComponentEditPolic
 		}
 		return super.getCommand(request);
 	}
-	
 
 	private Command createSwitchSyncAndDeleteViewCommand(AsyncDiagramDeleteRequest req) {
 		TransactionalEditingDomain editingDomain = getHostImpl().getEditingDomain();
@@ -54,8 +53,8 @@ public class AsyncDiagramComponentEditPolicy extends InsertingComponentEditPolic
 		if (toDel == null || toDel.isEmpty()) {
 			return new ICommandProxy(//
 					doCreateSwitchSyncAndDeleteViewCommand(editingDomain, getHostImpl()));
-		} 
-		
+		}
+
 		CompositeCommand cc = new CompositeCommand(StringStatics.BLANK);
 		for (Object next : toDel) {
 			IGraphicalEditPart nextEP = (IGraphicalEditPart) next;
@@ -63,27 +62,26 @@ public class AsyncDiagramComponentEditPolicy extends InsertingComponentEditPolic
 		}
 		return new ICommandProxy(cc.reduce());
 	}
-	
-	private ICommand doCreateSwitchSyncAndDeleteViewCommand(TransactionalEditingDomain domain, IGraphicalEditPart editPart){
+
+	private ICommand doCreateSwitchSyncAndDeleteViewCommand(TransactionalEditingDomain domain, IGraphicalEditPart editPart) {
 		EditPart parentEP = editPart.getParent();
 		ICommand switchCommand = null;
-		if (parentEP instanceof IGraphicalEditPart){
-			View parentView = ((IGraphicalEditPart)parentEP).getNotationView();
-			if (getCanonicalHelper().isAutoSynchronized(parentView)){
+		if (parentEP instanceof IGraphicalEditPart) {
+			View parentView = ((IGraphicalEditPart) parentEP).getNotationView();
+			if (getCanonicalHelper().isAutoSynchronized(parentView)) {
 				switchCommand = new SwitchSyncModeCommand(domain, parentView, false);
 			}
 		}
 		DeleteCommand deleteCommand = new DeleteCommand(domain, editPart.getNotationView());
-		if (switchCommand == null){
+		if (switchCommand == null) {
 			return deleteCommand;
-		} 
+		}
 		CompositeCommand result = new CompositeCommand(deleteCommand.getLabel());
 		return result.compose(switchCommand).compose(deleteCommand);
 	}
-	
-	private ICanonicalHelper getCanonicalHelper(){
+
+	private ICanonicalHelper getCanonicalHelper() {
 		return ICanonicalHelper.IMPLEMENTATION;
 	}
-	
-	
+
 }

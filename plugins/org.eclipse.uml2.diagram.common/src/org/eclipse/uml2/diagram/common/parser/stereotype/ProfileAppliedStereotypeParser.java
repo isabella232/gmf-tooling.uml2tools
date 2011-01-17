@@ -15,9 +15,10 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Profile;
 import org.eclipse.uml2.uml.Stereotype;
 
-
 public class ProfileAppliedStereotypeParser extends ClassifierAppliedStereotypeParser {
+
 	private static final String PROFILE_LABEL = "profile"; //$NON-NLS-1$
+
 	private static final String STEREOTYPE_LABEL = "stereotype"; //$NON-NLS-1$
 
 	@Override

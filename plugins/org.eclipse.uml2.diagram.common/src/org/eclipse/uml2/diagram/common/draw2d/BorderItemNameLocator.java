@@ -15,8 +15,8 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 
-
 public class BorderItemNameLocator extends BorderItemLocator {
+
 	public BorderItemNameLocator(IFigure parentFigure) {
 		super(parentFigure);
 	}
@@ -24,7 +24,7 @@ public class BorderItemNameLocator extends BorderItemLocator {
 	public BorderItemNameLocator(IFigure parentFigure, int preferredSide) {
 		super(parentFigure, preferredSide);
 	}
-	
+
 	@Override
 	public Rectangle getConstraint() {
 		return super.getConstraint();

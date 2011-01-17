@@ -29,7 +29,7 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 	protected abstract Wizard getNewDiagramWizard(Package diagramRoot);
 
 	protected abstract Wizard getNewSemiSyncDiagramWizard(Package diagramRoot, List<Element> selectedElements);
-	
+
 	protected abstract void runWizard(Wizard w, Shell s);
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -37,7 +37,7 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 		List<Element> selectedElements = getSelectedElements(getStructuredSelection(event));
 		Package diagramRoot = getDiagramRoot(selectedElements);
 		Wizard wizard = null;
-		if (selectedElements.size() == 1 && diagramRoot.equals(selectedElements.get(0)) ) {
+		if (selectedElements.size() == 1 && diagramRoot.equals(selectedElements.get(0))) {
 			wizard = getNewDiagramWizard(diagramRoot);
 		} else {
 			wizard = getNewSemiSyncDiagramWizard(diagramRoot, selectedElements);
@@ -97,7 +97,7 @@ public abstract class NewDiagramHandlerBase extends AbstractHandler {
 		}
 		return null;
 	}
-	
+
 	protected URI getDiagramFileURI(org.eclipse.uml2.uml.Package diagramRoot) {
 		return diagramRoot.eResource().getURI();
 	}

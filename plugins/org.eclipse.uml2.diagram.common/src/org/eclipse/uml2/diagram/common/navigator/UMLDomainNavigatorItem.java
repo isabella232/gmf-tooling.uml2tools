@@ -1,4 +1,4 @@
-package org.eclipse.uml2.diagram.profile.navigator;
+package org.eclipse.uml2.diagram.common.navigator;
 
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.core.runtime.Platform;
@@ -12,6 +12,7 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 /**
  * @generated
  */
+
 public class UMLDomainNavigatorItem extends PlatformObject implements IAdaptableSelection {
 
 	/**
@@ -22,8 +23,8 @@ public class UMLDomainNavigatorItem extends PlatformObject implements IAdaptable
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
 			public Object getAdapter(Object adaptableObject, Class adapterType) {
-				if (adaptableObject instanceof org.eclipse.uml2.diagram.profile.navigator.UMLDomainNavigatorItem) {
-					org.eclipse.uml2.diagram.profile.navigator.UMLDomainNavigatorItem domainNavigatorItem = (org.eclipse.uml2.diagram.profile.navigator.UMLDomainNavigatorItem) adaptableObject;
+				if (adaptableObject instanceof org.eclipse.uml2.diagram.common.navigator.UMLDomainNavigatorItem) {
+					org.eclipse.uml2.diagram.common.navigator.UMLDomainNavigatorItem domainNavigatorItem = (org.eclipse.uml2.diagram.common.navigator.UMLDomainNavigatorItem) adaptableObject;
 					EObject eObject = domainNavigatorItem.getEObject();
 					if (adapterType == EObject.class) {
 						return eObject;
@@ -39,7 +40,7 @@ public class UMLDomainNavigatorItem extends PlatformObject implements IAdaptable
 			public Class[] getAdapterList() {
 				return supportedTypes;
 			}
-		}, org.eclipse.uml2.diagram.profile.navigator.UMLDomainNavigatorItem.class);
+		}, org.eclipse.uml2.diagram.common.navigator.UMLDomainNavigatorItem.class);
 	}
 
 	/**
@@ -91,8 +92,8 @@ public class UMLDomainNavigatorItem extends PlatformObject implements IAdaptable
 	 * @generated
 	 */
 	public boolean equals(Object obj) {
-		if (obj instanceof org.eclipse.uml2.diagram.profile.navigator.UMLDomainNavigatorItem) {
-			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil.getURI(((org.eclipse.uml2.diagram.profile.navigator.UMLDomainNavigatorItem) obj).getEObject()));
+		if (obj instanceof org.eclipse.uml2.diagram.common.navigator.UMLDomainNavigatorItem) {
+			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil.getURI(((org.eclipse.uml2.diagram.common.navigator.UMLDomainNavigatorItem) obj).getEObject()));
 		}
 		return super.equals(obj);
 	}

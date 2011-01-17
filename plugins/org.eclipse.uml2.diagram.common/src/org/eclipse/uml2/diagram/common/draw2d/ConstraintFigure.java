@@ -21,35 +21,37 @@ import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
 
 public class ConstraintFigure extends ConstraintFigureBase {
+
 	private WrapLabel myFixedLabel;
+
 	private IFigure myContentPane;
 
 	public ConstraintFigure() {
 		super(100, 60, new Insets());
-		setLayoutManager( createMainLayout() );
+		setLayoutManager(createMainLayout());
 		myFixedLabel = addLabel();
 		myContentPane = addContentPane();
 	}
-	
-	public IFigure getContentPane(){
+
+	public IFigure getContentPane() {
 		return myContentPane;
 	}
-	
-	public void setFixedLabelText(String text){
+
+	public void setFixedLabelText(String text) {
 		myFixedLabel.setText(text == null ? "" : text); //$NON-NLS-1$
 	}
-	
+
 	protected LayoutManager createMainLayout() {
 		return new BorderLayout();
 	}
-	
+
 	protected WrapLabel addLabel() {
 		WrapLabel label = new WrapLabel(""); //$NON-NLS-1$
 		label.setBorder(new MarginBorder(0, CLIP_MARGIN_DP + 1, 0, CLIP_MARGIN_DP + 1));
 		add(label, BorderLayout.TOP);
 		return label;
 	}
-	
+
 	protected IFigure addContentPane() {
 		RectangleFigure contentPane = new RectangleFigure();
 		contentPane.setOutline(false);

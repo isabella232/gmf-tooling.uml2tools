@@ -39,7 +39,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 	private static final String APPLIED_PROFILE = "\u00AB{0}\u00BB"; //$NON-NLS-1$
 
 	protected static final String STEREOTYPE_SEPARATOR = ","; //$NON-NLS-1$
-	
+
 	private static final String PLUGIN_ID = "org.eclipse.uml2.diagram.common"; //$NON-NLS-1$
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
@@ -93,7 +93,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		if (classifier != null) {
 			String result = classifier;
 			if (editString != null && editString.length() > 0) {
-				result+=STEREOTYPE_SEPARATOR + StringStatics.SPACE + editString;
+				result += STEREOTYPE_SEPARATOR + StringStatics.SPACE + editString;
 			}
 			return NLS.bind(APPLIED_PROFILE, new Object[] { result });
 		}
@@ -127,7 +127,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		}
 		return toApply;
 	}
-	
+
 	protected String getElementLabel(Element element) {
 		return null;
 	}

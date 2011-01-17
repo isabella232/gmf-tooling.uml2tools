@@ -9,7 +9,6 @@ import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.runtime.diagram.ui.tools.UnspecifiedTypeCreationTool;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
-
 public class NodeToolEntry extends ToolEntry {
 
 	private final List<IElementType> elementTypes;
@@ -29,19 +28,19 @@ public class NodeToolEntry extends ToolEntry {
 		tool.setProperties(getToolProperties());
 		return tool;
 	}
-	
-	public List<IElementType> getElementTypes() {		
+
+	public List<IElementType> getElementTypes() {
 		return elementTypes;
 	}
-	
-	public static List<IElementType> filterElementTypes(List<?> list){
-		if (list == null || list.isEmpty()){
+
+	public static List<IElementType> filterElementTypes(List<?> list) {
+		if (list == null || list.isEmpty()) {
 			return Collections.emptyList();
 		}
 		ArrayList<IElementType> result = new ArrayList<IElementType>(list.size());
-		for (Object next : list){
-			if (next instanceof IElementType){
-				result.add((IElementType)next);
+		for (Object next : list) {
+			if (next instanceof IElementType) {
+				result.add((IElementType) next);
 			}
 		}
 		return result;

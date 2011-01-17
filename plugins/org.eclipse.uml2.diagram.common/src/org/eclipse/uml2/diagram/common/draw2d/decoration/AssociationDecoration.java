@@ -40,20 +40,19 @@ public class AssociationDecoration extends CompositeDecoration {
 					0, 0, // 
 					-1, 1, //
 			});
-	
-	
-		private static final PointList CROSS = new PointList(new int[] { //
-				//
-						-1, 0, // 
-						-2, -1, // 
-						-1, 0, //
-						-2, 1, //
-						-1, 0, // 
-						0, 1, //
-						-1, 0, // 
-						0, -1, //
-						-1, 0, // 
-	 			});
+
+	private static final PointList CROSS = new PointList(new int[] { //
+			//
+					-1, 0, // 
+					-2, -1, // 
+					-1, 0, //
+					-2, 1, //
+					-1, 0, // 
+					0, 1, //
+					-1, 0, // 
+					0, -1, //
+					-1, 0, // 
+			});
 
 	private ComposablePolygonDecoration myCompositeAggrecationDecoration;
 
@@ -73,7 +72,7 @@ public class AssociationDecoration extends CompositeDecoration {
 
 	private void initAggregationDecorations() {
 		myCompositeAggrecationDecoration = new ComposablePolygonDecoration();
-		
+
 		myCompositeAggrecationDecoration.setTemplate(RHOMB.getCopy());
 		myCompositeAggrecationDecoration.setBoundPoint(new Point(-2, 0));
 		myCompositeAggrecationDecoration.setFill(true);
@@ -91,11 +90,10 @@ public class AssociationDecoration extends CompositeDecoration {
 		myNavigableDecoration = new ComposablePolygonDecoration();
 		myNavigableDecoration.setTemplate(ARROW.getCopy());
 		myNavigableDecoration.setBoundPoint(new Point(-1, 0));
-		
-		
+
 		myNonNavigableDecoration = new ComposablePolygonDecoration();
 		myNonNavigableDecoration.setScale(4, 3);
-		myNonNavigableDecoration.setTemplate(CROSS.getCopy());		
+		myNonNavigableDecoration.setTemplate(CROSS.getCopy());
 		myNonNavigableDecoration.setBoundPoint(new Point(-2, 0));
 	}
 

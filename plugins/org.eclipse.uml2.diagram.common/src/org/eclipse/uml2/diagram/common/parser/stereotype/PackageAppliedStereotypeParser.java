@@ -33,7 +33,7 @@ public class PackageAppliedStereotypeParser extends ClassifierAppliedStereotypeP
 
 	//#265174 Visual distinction between Synchronized and Non-Sync diagrams
 	//Refresh icon label, when diagram status is changed 
-	@Override	
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		if (super.isAffectingEvent(event, flags)) {
 			return true;

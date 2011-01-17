@@ -15,12 +15,13 @@ import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.uml2.uml.Constraint;
 
 public class ConstraintSpecificationTab {
+
 	// Constraint#specification
 	public static class PropertySectionFilter extends UML2ToolsPropertyFilter {
 
 		@Override
 		protected boolean isValid(Object transformed) {
-			return (transformed instanceof Constraint) && ((Constraint)transformed).getSpecification() != null;
+			return (transformed instanceof Constraint) && ((Constraint) transformed).getSpecification() != null;
 		}
 
 	}
@@ -30,10 +31,10 @@ public class ConstraintSpecificationTab {
 		@Override
 		public IPropertySource getPropertySource(Object object) {
 			if (object instanceof Constraint) {
-				object = ((Constraint)object).getSpecification();
+				object = ((Constraint) object).getSpecification();
 			}
 			return super.getPropertySource(object);
 		}
 	}
-	
+
 }

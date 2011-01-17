@@ -7,5 +7,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
  * immediately after creation.
  */
 public interface NeedsParentEditPart {
+
 	public void hookParentEditPart(GraphicalEditPart parentEditPart);
 }

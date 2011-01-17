@@ -23,7 +23,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 public abstract class UMLDiagramAction extends AbstractHandler {
-	
+
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IGraphicalEditPart ep = getSelectedEditPart(event);
 		if (ep == null) {
@@ -32,7 +32,7 @@ public abstract class UMLDiagramAction extends AbstractHandler {
 		Command command = getCommand(ep);
 		if (command != null && command.canExecute()) {
 			ep.getDiagramEditDomain().getDiagramCommandStack().execute(command);
-		} 
+		}
 		return null;
 	}
 

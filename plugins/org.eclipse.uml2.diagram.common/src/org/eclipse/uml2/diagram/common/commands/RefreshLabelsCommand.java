@@ -15,29 +15,29 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 
-
 public class RefreshLabelsCommand extends Command {
+
 	private final IGraphicalEditPart myEditPart;
-	
+
 	public RefreshLabelsCommand(IGraphicalEditPart ep) {
 		myEditPart = ep;
 	}
-	
+
 	@Override
 	public void execute() {
-		if (myEditPart instanceof ITextAwareEditPart){
-			((ITextAwareEditPart)myEditPart).refresh();
+		if (myEditPart instanceof ITextAwareEditPart) {
+			((ITextAwareEditPart) myEditPart).refresh();
 		}
-		for (Object nextChildEP : myEditPart.getChildren()){
-			if (nextChildEP instanceof ITextAwareEditPart){
-				((ITextAwareEditPart)nextChildEP).refresh();
+		for (Object nextChildEP : myEditPart.getChildren()) {
+			if (nextChildEP instanceof ITextAwareEditPart) {
+				((ITextAwareEditPart) nextChildEP).refresh();
 			}
 		}
 	}
-	
+
 	@Override
 	public void undo() {
 		execute();
 	}
-	
+
 }

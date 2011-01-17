@@ -22,15 +22,16 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class OperationInplaceApplier extends BasicApplyStrategy implements ApplyStrategy {
+
 	private static final UMLPackage UML = UMLPackage.eINSTANCE;
-	
-	public List/*1.5 <ICommand>*/ apply(EObject modelObject, EObject parsedObject) {
+
+	public List/*1.5 <ICommand>*/apply(EObject modelObject, EObject parsedObject) {
 		List output = new LinkedList();
 		assertOperation(modelObject);
 		assertOperation(parsedObject);
-		Operation model = (Operation)modelObject;
-		Operation parsed = (Operation)parsedObject;
-		
+		Operation model = (Operation) modelObject;
+		Operation parsed = (Operation) parsedObject;
+
 		transferValue(output, model, parsed, UML.getNamedElement_Visibility());
 		transferValue(output, model, parsed, UML.getNamedElement_Name());
 		transferValue(output, model, parsed, UML.getOperation_IsQuery());
@@ -41,14 +42,14 @@ public class OperationInplaceApplier extends BasicApplyStrategy implements Apply
 		//XXX parameters may have incoming references, try to preserve them
 		//match parameters and transfer their features one by one instead of total delete-create
 		transferValue(output, model, parsed, UML.getBehavioralFeature_OwnedParameter());
-		
+
 		return output.isEmpty() ? NOT_EXECUTABLE : output;
 	}
-	
-	protected void assertOperation(EObject object){
-		if (false == object instanceof Operation){
+
+	protected void assertOperation(EObject object) {
+		if (false == object instanceof Operation) {
 			throw new IllegalStateException("Operation expected: " + object); //$NON-NLS-1$
 		}
 	}
-	
+
 }

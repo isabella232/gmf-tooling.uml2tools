@@ -65,10 +65,10 @@ public class ApplicableProfilesItemProvider extends AbstractContributionItemProv
 				action.init();
 				manager.add(action);
 			}
-			
+
 			Collection<ProfileInfo> profilesFromRegistry = getProfilesFromRegistry(package_);
 			List<String> loadedProfileUris = new ArrayList<String>(profiles.size());
-			for (Profile profile: profiles) {
+			for (Profile profile : profiles) {
 				loadedProfileUris.add(EcoreUtil.getURI(profile).toString());
 			}
 			for (ProfileInfo profileInfo : profilesFromRegistry) {

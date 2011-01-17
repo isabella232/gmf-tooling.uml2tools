@@ -29,14 +29,13 @@ import org.eclipse.gmf.runtime.notation.RoutingStyle;
 import org.eclipse.gmf.runtime.notation.Smoothness;
 import org.eclipse.gmf.runtime.notation.datatype.RelativeBendpoint;
 
-
 public class ConnectionRoutingHelper {
-	public static void setConnectionAnchors(Edge connection, Point sourceAnchorPoint, Rectangle sourceBounds, 
-			Point targetAnchorPoint, Rectangle targetBounds) {
+
+	public static void setConnectionAnchors(Edge connection, Point sourceAnchorPoint, Rectangle sourceBounds, Point targetAnchorPoint, Rectangle targetBounds) {
 		setConnectionSourceAnchor(connection, sourceAnchorPoint, sourceBounds);
 		setConnectionTargetAnchor(connection, targetAnchorPoint, targetBounds);
 	}
-	
+
 	public static void setConnectionSourceAnchor(Edge connection, Point sourceAnchorPoint, Rectangle sourceBounds) {
 		IdentityAnchor sourceAnchor = (IdentityAnchor) connection.getSourceAnchor();
 		if (sourceAnchor == null)
@@ -44,7 +43,7 @@ public class ConnectionRoutingHelper {
 		sourceAnchor.setId(getAnchorTerminal(sourceAnchorPoint, sourceBounds));
 		connection.setSourceAnchor(sourceAnchor);
 	}
-	
+
 	public static void setConnectionTargetAnchor(Edge connection, Point targetAnchorPoint, Rectangle targetBounds) {
 		IdentityAnchor targetAnchor = (IdentityAnchor) connection.getTargetAnchor();
 		if (targetAnchor == null)
@@ -52,19 +51,17 @@ public class ConnectionRoutingHelper {
 		targetAnchor.setId(getAnchorTerminal(targetAnchorPoint, targetBounds));
 		connection.setTargetAnchor(targetAnchor);
 	}
-	
-	public static void setConnectionBendPoints(Edge connection, List<Point> bendPoints, 
-			Point sourceRefPoint, Point targetRefPoint, boolean isSmooth) {
+
+	public static void setConnectionBendPoints(Edge connection, List<Point> bendPoints, Point sourceRefPoint, Point targetRefPoint, boolean isSmooth) {
 		List<RelativeBendpoint> newBendpoints = new ArrayList<RelativeBendpoint>();
-		
+
 		for (Iterator<Point> bendPointsIterator = bendPoints.iterator(); bendPointsIterator.hasNext();) {
 			Point bendPoint = bendPointsIterator.next();
-			newBendpoints.add(new RelativeBendpoint(bendPoint.x - (int) sourceRefPoint.preciseX(), bendPoint.y - (int) sourceRefPoint.preciseY(),
-					bendPoint.x - (int) targetRefPoint.preciseX(), bendPoint.y - (int) targetRefPoint.preciseY()));
+			newBendpoints.add(new RelativeBendpoint(bendPoint.x - (int) sourceRefPoint.preciseX(), bendPoint.y - (int) sourceRefPoint.preciseY(), bendPoint.x - (int) targetRefPoint.preciseX(),
+					bendPoint.y - (int) targetRefPoint.preciseY()));
 		}
 		if (isSmooth) {
-			RoutingStyle umlRoutingStyle = 
-				(RoutingStyle) connection.getStyle(NotationPackage.Literals.ROUTING_STYLE);
+			RoutingStyle umlRoutingStyle = (RoutingStyle) connection.getStyle(NotationPackage.Literals.ROUTING_STYLE);
 			if (umlRoutingStyle == null) {
 				umlRoutingStyle = NotationFactory.eINSTANCE.createRoutingStyle();
 			}
@@ -84,11 +81,11 @@ public class ConnectionRoutingHelper {
 	 */
 	private static String composeTerminalString(PrecisionPoint p) {
 		StringBuffer s = new StringBuffer(24);
-		s.append('(');				 		// 1 char
-		s.append((float)p.preciseX);		// 10 chars
-		s.append(',');						// 1 char
-		s.append((float)p.preciseY);		// 10 chars
-		s.append(')');						// 1 char
-		return s.toString();				// 24 chars max (+1 for safety, i.e. for string termination)
+		s.append('('); // 1 char
+		s.append((float) p.preciseX); // 10 chars
+		s.append(','); // 1 char
+		s.append((float) p.preciseY); // 10 chars
+		s.append(')'); // 1 char
+		return s.toString(); // 24 chars max (+1 for safety, i.e. for string termination)
 	}
 }

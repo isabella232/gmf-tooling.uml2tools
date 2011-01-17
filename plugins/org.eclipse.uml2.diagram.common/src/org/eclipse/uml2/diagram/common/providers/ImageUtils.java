@@ -18,7 +18,8 @@ public class ImageUtils {
 	private static final Bundle UML_BUNDLE = UMLCommonPlugin.getInstance().getBundle();
 
 	private static final String IMG_SYNC_DIAGRAM = "icons/ovr16/SyncDiagram.gif"; //$NON-NLS-1$
-	public static final String IMG_COLLAPSE_ALL  = "icons/collapseall.gif"; //$NON-NLS-1$
+
+	public static final String IMG_COLLAPSE_ALL = "icons/collapseall.gif"; //$NON-NLS-1$
 
 	public static ImageDescriptor overlay(ImageDescriptor original, ImageDescriptor overlay) {
 		List<ImageDescriptor> images = new ArrayList<ImageDescriptor>(2);
@@ -34,7 +35,7 @@ public class ImageUtils {
 		}
 		return overlay(original, getSyncPackageImage());
 	}
-	
+
 	public static ImageDescriptor getImageDescriptor(String location) {
 		ImageRegistry ir = UMLCommonPlugin.getInstance().getImageRegistry();
 		ImageDescriptor imageDescriptor = ir.getDescriptor(location);

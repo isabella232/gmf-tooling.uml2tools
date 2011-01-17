@@ -24,6 +24,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
  * @see BorderItemLocator 
  */
 public class BisectionBorderItemLocator extends BorderItemLocator {
+
 	public BisectionBorderItemLocator(IFigure parentFigure) {
 		super(parentFigure);
 	}
@@ -35,32 +36,31 @@ public class BisectionBorderItemLocator extends BorderItemLocator {
 	public BisectionBorderItemLocator(IFigure borderItem, IFigure parentFigure, Rectangle constraint) {
 		super(borderItem, parentFigure, constraint);
 	}
-	
+
 	@Override
 	public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
 		int side = findClosestSideOfParent(proposedLocation, getParentBorder());
 		return getBisectionLocation(super.getValidLocation(proposedLocation, borderItem), side);
 	}
-	
+
 	@Override
 	public void relocate(IFigure borderItem) {
-        Dimension size = getSize(borderItem);
+		Dimension size = getSize(borderItem);
 		Rectangle rectSuggested = new Rectangle(getPreferredLocation(borderItem), size);
 		int closestSide = findClosestSideOfParent(rectSuggested, getParentBorder());
 		setPreferredSideOfParent(closestSide);
 
-		Point ptNewLocation = locateOnBorder(getPreferredLocation(borderItem),
-			getPreferredSideOfParent(), 0, borderItem);
-        
+		Point ptNewLocation = locateOnBorder(getPreferredLocation(borderItem), getPreferredSideOfParent(), 0, borderItem);
+
 		setCurrentSideOfParent(findClosestSideOfParent(new Rectangle(ptNewLocation, size), getParentBorder()));
-		
+
 		Rectangle bisectLoc = getBisectionLocation(new Rectangle(ptNewLocation, size), getCurrentSideOfParent());
 		borderItem.setBounds(bisectLoc);
 	}
-	
+
 	protected Rectangle getBisectionLocation(Rectangle location, int side) {
 		Rectangle bisectingLocation = new Rectangle(location);
-		
+
 		switch (side) {
 		case PositionConstants.WEST:
 			bisectingLocation.x = bisectingLocation.x + bisectingLocation.width / 2;
@@ -78,7 +78,7 @@ public class BisectionBorderItemLocator extends BorderItemLocator {
 			bisectingLocation.y = bisectingLocation.y - bisectingLocation.height / 2;
 			break;
 		}
-		
+
 		return bisectingLocation;
 	}
 }

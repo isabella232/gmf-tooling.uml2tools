@@ -11,28 +11,27 @@ package org.eclipse.uml2.diagram.common.internal.draw2d.handles;
 
 import org.eclipse.draw2d.PositionConstants;
 
-
 public class Position2Direction {
 
-    public static int getShiftCoeffX(int dir) {
-        switch (dir & PositionConstants.EAST_WEST) {
-            case PositionConstants.WEST:
-                return -1;
-            case PositionConstants.EAST:
-                return 1;
-            default:
-                return 0;
-        }
-    }
+	public static int getShiftCoeffX(int dir) {
+		switch (dir & PositionConstants.EAST_WEST) {
+		case PositionConstants.WEST:
+			return -1;
+		case PositionConstants.EAST:
+			return 1;
+		default:
+			return 0;
+		}
+	}
 
-    public static int getShiftCoeffY(int dir) {
-        switch (dir & PositionConstants.NORTH_SOUTH) {
-            case PositionConstants.NORTH:
-                return -1;
-            case PositionConstants.SOUTH:
-                return 1;
-            default:
-                return 0;
-        }
-    }
+	public static int getShiftCoeffY(int dir) {
+		switch (dir & PositionConstants.NORTH_SOUTH) {
+		case PositionConstants.NORTH:
+			return -1;
+		case PositionConstants.SOUTH:
+			return 1;
+		default:
+			return 0;
+		}
+	}
 }

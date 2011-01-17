@@ -36,7 +36,7 @@ public class OCLFromStereoConstraint extends AbstractModelConstraint {
 				try {
 					boolean success = runConstraintOn(oclHelper, selected, c);
 					if (!success) {
-						String name = (selected instanceof NamedElement)? ((NamedElement)selected).getName(): StringStatics.BLANK;
+						String name = (selected instanceof NamedElement) ? ((NamedElement) selected).getName() : StringStatics.BLANK;
 						return ctx.createFailureStatus(name, stereo.getName(), c.getName());
 					}
 				} catch (ParserException e) {

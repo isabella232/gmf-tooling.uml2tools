@@ -19,7 +19,7 @@ public class ApplyStereotypeHelper {
 		}
 		for (String str : toApply) {
 			if (false == applicables.contains(str)) {
-				return UnexecutableCommand.INSTANCE; 
+				return UnexecutableCommand.INSTANCE;
 			}
 		}
 

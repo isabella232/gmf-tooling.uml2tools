@@ -5,8 +5,8 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.geometry.Rectangle;
 
-
 public class SplitEllipseLayout extends BorderLayout {
+
 	private int myXMargin;
 
 	private int myYMargin;

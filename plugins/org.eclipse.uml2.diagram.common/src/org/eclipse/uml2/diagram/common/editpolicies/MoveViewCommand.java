@@ -32,7 +32,7 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 	private final int myIndex;
 
 	private final PreferencesHint myPreferences;
-	
+
 	private IVisualIDRegistry myVisualIDRegistry;
 
 	public MoveViewCommand(TransactionalEditingDomain editingDomain, IAdaptable parent, IAdaptable child, PreferencesHint preferencesHint) {
@@ -47,7 +47,7 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 		myIndex = index;
 		myPreferences = preferences;
 	}
-	
+
 	public void setVisualIDRegistry(IVisualIDRegistry visualIDRegistry) {
 		myVisualIDRegistry = visualIDRegistry;
 	}
@@ -65,11 +65,11 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 		}
 		return super.getAffectedFiles();
 	}
-	
-	protected boolean checkCanMoveView(View parentView, View childView, EObject child){
-		if (myVisualIDRegistry == null){
+
+	protected boolean checkCanMoveView(View parentView, View childView, EObject child) {
+		if (myVisualIDRegistry == null) {
 			return false;
-		}	
+		}
 		int actualVisualId = myVisualIDRegistry.getVisualID(childView);
 		return myVisualIDRegistry.checkNodeVisualID(parentView, child, actualVisualId);
 	}
@@ -91,7 +91,6 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 		}
 		return CommandResult.newOKCommandResult();
 	}
-	
 
 	/**
 	 * Just a hook, default implementation does nothing
@@ -110,50 +109,50 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 				Node.class, semanticAdapter, parentView, semanticHint, myIndex, true, myPreferences);
 		return result;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	protected View createNewView(View parentView, View oldChildView, EObject child) {
 		//unfortunately, we have to reuse childView instance in order to allow command from layout edit policy to set correct bounds
 		//in order to do this, we will create the new view using service and then copy all its meaningfull contents 
 		//into the original view instance
 		View newView = basicCreateNewView(parentView, oldChildView, child);
-		if (newView == null){
+		if (newView == null) {
 			return null;
 		}
 		removeViewFromContainer(newView);
 		justMoveActualView(parentView, oldChildView);
-		
+
 		List<View> edgesToAndFromHierarchy = collectChildrenLinks(oldChildView, new ArrayList<View>());
-	
+
 		oldChildView.getPersistedChildren().clear();
 		oldChildView.getTransientChildren().clear();
 		oldChildView.getSourceEdges().clear();
 		oldChildView.getTargetEdges().clear();
-		
-		for(View childView : edgesToAndFromHierarchy){
+
+		for (View childView : edgesToAndFromHierarchy) {
 			ViewUtil.destroy(childView);
 		}
-		
+
 		oldChildView.getStyles().clear();
-		
+
 		oldChildView.getStyles().addAll(newView.getStyles());
 		oldChildView.getPersistedChildren().addAll(newView.getPersistedChildren());
 		oldChildView.getTransientChildren().addAll(newView.getTransientChildren());
 		oldChildView.getSourceEdges().addAll(newView.getSourceEdges());
 		oldChildView.getTargetEdges().addAll(newView.getTargetEdges());
-		
+
 		oldChildView.setType(newView.getType());
-		
+
 		return oldChildView;
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	private List<View> collectChildrenLinks(View view, List<View> output){
+	private List<View> collectChildrenLinks(View view, List<View> output) {
 		output.addAll(view.getTargetEdges());
 		output.addAll(view.getSourceEdges());
-		for(Object child : view.getChildren()){
-			if(child instanceof View){
-				collectChildrenLinks((View)child, output);
+		for (Object child : view.getChildren()) {
+			if (child instanceof View) {
+				collectChildrenLinks((View) child, output);
 			}
 		}
 		return output;
@@ -166,10 +165,10 @@ public class MoveViewCommand extends AbstractTransactionalCommand {
 			parentView.insertChildAt(childView, myIndex);
 		}
 	}
-	
-	private void removeViewFromContainer(View view){
-		if (view.eContainer() instanceof View){
-			((View)view.eContainer()).removeChild(view);
+
+	private void removeViewFromContainer(View view) {
+		if (view.eContainer() instanceof View) {
+			((View) view.eContainer()).removeChild(view);
 		}
 	}
 

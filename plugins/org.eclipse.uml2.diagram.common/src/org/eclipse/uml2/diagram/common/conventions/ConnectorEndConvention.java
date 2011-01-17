@@ -18,19 +18,20 @@ import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
 
 public class ConnectorEndConvention {
-	public static ConnectorEnd getConnectorEnd(Connector connector, boolean sourceNotTarget){
+
+	public static ConnectorEnd getConnectorEnd(Connector connector, boolean sourceNotTarget) {
 		List<ConnectorEnd> ends = connector.getEnds();
-		if (ends.size() < 2){
+		if (ends.size() < 2) {
 			return null;
 		}
 		return ends.get(sourceNotTarget ? 0 : 1);
 	}
-	
-	public static ConnectorEnd getSourceEnd(Connector connector){
+
+	public static ConnectorEnd getSourceEnd(Connector connector) {
 		return getConnectorEnd(connector, true);
 	}
 
-	public static ConnectorEnd getTargetEnd(Connector connector){
+	public static ConnectorEnd getTargetEnd(Connector connector) {
 		return getConnectorEnd(connector, false);
 	}
 }

@@ -16,18 +16,19 @@ import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.uml2.diagram.parser.SemanticLabelDirectEditPolicy;
 
 public class StereotypeLabelDirectEditPolicy extends SemanticLabelDirectEditPolicy {
+
 	@Override
 	protected void showDirectEditFeedback(DirectEditRequest request) {
-		if (getHostFigure() instanceof StereotypeLabel2){
-			((StereotypeLabel2)getHostFigure()).setNeverHide(true);
+		if (getHostFigure() instanceof StereotypeLabel2) {
+			((StereotypeLabel2) getHostFigure()).setNeverHide(true);
 		}
 		super.showDirectEditFeedback(request);
 	}
-	
+
 	@Override
 	public void eraseSourceFeedback(Request request) {
-		if (getHostFigure() instanceof StereotypeLabel2){
-			((StereotypeLabel2)getHostFigure()).setNeverHide(false);
+		if (getHostFigure() instanceof StereotypeLabel2) {
+			((StereotypeLabel2) getHostFigure()).setNeverHide(false);
 		}
 		super.eraseSourceFeedback(request);
 	}

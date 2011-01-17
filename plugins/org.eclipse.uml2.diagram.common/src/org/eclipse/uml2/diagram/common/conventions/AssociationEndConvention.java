@@ -19,28 +19,29 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 
 public class AssociationEndConvention {
-	public static Property getMemberEnd(Association association, boolean sourceNotTarget){
-		return (Property)association.getMemberEnds().get(sourceNotTarget ? 0 : 1);
+
+	public static Property getMemberEnd(Association association, boolean sourceNotTarget) {
+		return (Property) association.getMemberEnds().get(sourceNotTarget ? 0 : 1);
 	}
-	
-	public static Property getSourceEnd(Association association){
+
+	public static Property getSourceEnd(Association association) {
 		return getMemberEnd(association, true);
 	}
 
-	public static Property getTargetEnd(Association association){
+	public static Property getTargetEnd(Association association) {
 		return getMemberEnd(association, false);
 	}
-	
-	public static Association createAssociation(Type diagramSource, Type diagramTarget, boolean setNavigability){
+
+	public static Association createAssociation(Type diagramSource, Type diagramTarget, boolean setNavigability) {
 		//due to association end conventions (see AssociationEndConvention) 
 		//we need to have member end of type SourceType to be the first one created
 		//thus, we are calling UML2 createAssociation() in opposite order
 		Association newElement = diagramTarget.createAssociation(//
 				false, AggregationKind.NONE_LITERAL, Messages.AssociationEndConvention_source_end_name, 1, 1, // 
 				diagramSource, setNavigability, AggregationKind.NONE_LITERAL, Messages.AssociationEndConvention_target_end_name, 1, 1);
-		
+
 		//also we need to have associations stored at the same package as a source (not target like it is done in UML), scr #264509
-		if (diagramSource.getNearestPackage() != diagramTarget.getNearestPackage() && newElement.getNearestPackage() != diagramSource.getNearestPackage()){
+		if (diagramSource.getNearestPackage() != diagramTarget.getNearestPackage() && newElement.getNearestPackage() != diagramSource.getNearestPackage()) {
 			diagramSource.getNearestPackage().getOwnedTypes().add(newElement);
 		}
 		return newElement;

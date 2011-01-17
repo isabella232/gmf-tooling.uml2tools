@@ -19,26 +19,30 @@ import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 
 public class RequiredInterfaceDecoration extends PolylineDecoration {
-	private static final Point TEMP_POINT = new Point(); 
+
+	private static final Point TEMP_POINT = new Point();
+
 	private static final Rectangle TEMP_RECTANGLE = new Rectangle();
-	
+
 	private final int GAP = 3;
+
 	private int myRadius;
+
 	private int myAngle;
-	
-	public RequiredInterfaceDecoration(){
+
+	public RequiredInterfaceDecoration() {
 		setRadius(1);
 		setScale(1, 1);
 	}
-	
-	public void setRadius(int radius){
+
+	public void setRadius(int radius) {
 		myRadius = radius;
-		setTemplate(new PointList(new int[] {radius - GAP, 0} ));
+		setTemplate(new PointList(new int[] { radius - GAP, 0 }));
 	}
-	
+
 	@Override
 	public Rectangle getBounds() {
-		if (bounds == null){
+		if (bounds == null) {
 			//implicitly sets bounds
 			super.getBounds();
 			computeArcBounds(TEMP_RECTANGLE);
@@ -47,26 +51,26 @@ public class RequiredInterfaceDecoration extends PolylineDecoration {
 		}
 		return bounds;
 	}
-	
+
 	@Override
 	public void setRotation(double angle) {
 		super.setRotation(angle);
 		myAngle = (int) (angle * 180 / Math.PI);
 	}
-	
+
 	@Override
 	protected void fillShape(Graphics g) {
 		//do nothing
 	}
-	
+
 	@Override
 	protected void outlineShape(Graphics g) {
 		computeArcBounds(TEMP_RECTANGLE);
 		g.drawArc(TEMP_RECTANGLE, -myAngle + 90, 180);
 	}
-	
-	private void computeArcBounds(Rectangle output){
-		if (getPoints().size() == 0){
+
+	private void computeArcBounds(Rectangle output) {
+		if (getPoints().size() == 0) {
 			output.setSize(0, 0);
 			return;
 		}

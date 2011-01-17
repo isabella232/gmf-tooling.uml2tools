@@ -5,13 +5,12 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 
-
 public class UMLFileFilter extends ViewerFilter {
 
 	private static final String UML_FILE_EXTENSION = "uml"; //$NON-NLS-1$
-	
+
 	private final String myFileExtension;
-	
+
 	public UMLFileFilter(String fileExtension) {
 		myFileExtension = fileExtension;
 	}

@@ -8181,7 +8181,8 @@
     <requiredPlugins>org.eclipse.uml2.diagram.common</requiredPlugins>
   </plugin>
   <editor/>
-  <navigator>
+  <navigator
+      generateDomainModelNavigator="false">
     <childReferences
         child="//@diagram"/>
     <childReferences

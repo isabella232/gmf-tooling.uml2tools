@@ -11,54 +11,58 @@ import org.eclipse.draw2d.geometry.Insets;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 
-
 public class NameAndStereotypeBlock extends RectangleFigure {
+
 	private StereotypeLabel2 myStereotypeLabel;
-	private WrappingLabel myNameLabel; 
-	
-	public NameAndStereotypeBlock(){
+
+	private WrappingLabel myNameLabel;
+
+	public NameAndStereotypeBlock() {
 		setLineWidthFloat(0f);
 		setOutline(false);
 		setFill(false);
 		setLayoutManager(new TopBottomLayout());
-		
+
 		myStereotypeLabel = new StereotypeLabel2();
-		
+
 		myNameLabel = new WrappingLabel();
 		myNameLabel.setAlignment(PositionConstants.CENTER);
 		myNameLabel.setBackgroundColor(ColorConstants.yellow);
-		
+
 		this.add(myStereotypeLabel, BorderLayout.TOP);
 		this.add(myNameLabel, BorderLayout.BOTTOM);
 	}
-	
+
 	public StereotypeLabel2 getStereotypeLabel() {
 		return myStereotypeLabel;
 	}
-	
+
 	public WrappingLabel getNameLabel() {
 		return myNameLabel;
 	}
-	
+
 	@Override
 	public String toString() {
 		boolean stereoVisible = getStereotypeLabel().isVisible();
-		return "Stereo:" + getStereotypeLabel().getText() + ", [" + stereoVisible + "], Name: " + getNameLabel().getText();   //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "Stereo:" + getStereotypeLabel().getText() + ", [" + stereoVisible + "], Name: " + getNameLabel().getText(); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 	public void setNameTextWrap(boolean nameTextWrap) {
 		myNameLabel.setTextWrap(nameTextWrap);
 	}
-	
+
 	/**
 	 * Basically it is BorderLayout with 
 	 * a) only TOP/BOTTOM children and 
 	 * b) tweaked extraction of minimum size, which knows that stereotype label 
 	 * may never be hidden during inplace 
 	 */
-	private static class TopBottomLayout extends AbstractHintLayout { 
+	private static class TopBottomLayout extends AbstractHintLayout {
+
 		private IFigure top, bottom;
-		private int vGap = 5; 
+
+		private int vGap = 5;
+
 		private int hGap = 0;
 
 		@Override
@@ -77,7 +81,7 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 			int middleRowWidth = 0, middleRowHeight = 0;
 			int rows = 0, columns = 0;
 
-			if (top != null  && top.isVisible()) {
+			if (top != null && top.isVisible()) {
 				Dimension childSize = extractMinimumSize(top, wHint, hHint); //sic
 				hHint = Math.max(minHHint, hHint - (childSize.height + vGap));
 				minSize.setSize(childSize);
@@ -94,16 +98,15 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 			rows += columns > 0 ? 1 : 0;
 			// Add spacing, insets, and the size of the middle row
 			minSize.height += middleRowHeight + border.getHeight() + ((rows - 1) * vGap);
-			minSize.width = Math.max(minSize.width, middleRowWidth) + border.getWidth() 
-							+ ((columns - 1) * hGap);
-			
+			minSize.width = Math.max(minSize.width, middleRowWidth) + border.getWidth() + ((columns - 1) * hGap);
+
 			return minSize;
 		}
-		
-		private Dimension extractMinimumSize(IFigure figure, int wHint, int hHint){
-			if (figure instanceof StereotypeLabel2 && ((StereotypeLabel2)figure).isNeverHide()){
+
+		private Dimension extractMinimumSize(IFigure figure, int wHint, int hHint) {
+			if (figure instanceof StereotypeLabel2 && ((StereotypeLabel2) figure).isNeverHide()) {
 				return figure.getPreferredSize(wHint, hHint);
-			} 
+			}
 			return figure.getMinimumSize(wHint, hHint);
 		}
 
@@ -112,10 +115,10 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 			int minWHint = 0, minHHint = 0;
 			if (wHint < 0)
 				minWHint = -1;
-			
+
 			if (hHint < 0)
 				minHHint = -1;
-			
+
 			Insets border = container.getInsets();
 			wHint = Math.max(minWHint, wHint - border.getWidth());
 			hHint = Math.max(minHHint, hHint - border.getHeight());
@@ -140,9 +143,8 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 			rows += columns > 0 ? 1 : 0;
 			// Add spacing, insets, and the size of the middle row
 			prefSize.height += middleRowHeight + border.getHeight() + ((rows - 1) * vGap);
-			prefSize.width = Math.max(prefSize.width, middleRowWidth) + border.getWidth() 
-							+ ((columns - 1) * hGap);
-			
+			prefSize.width = Math.max(prefSize.width, middleRowWidth) + border.getWidth() + ((columns - 1) * hGap);
+
 			return prefSize;
 		}
 
@@ -151,7 +153,7 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 			Rectangle rect = new Rectangle();
 
 			Dimension childSize;
-			
+
 			if (top != null && top.isVisible()) {
 				childSize = top.getPreferredSize(area.width, -1);
 				rect.setLocation(area.x, area.y);
@@ -187,16 +189,16 @@ public class NameAndStereotypeBlock extends RectangleFigure {
 			if (constraint == null) {
 				return;
 			}
-			
+
 			switch (((Integer) constraint).intValue()) {
-				case PositionConstants.TOP :
-					top = child;
-					break;
-				case PositionConstants.BOTTOM :
-					bottom = child;
-					break;
-				default :
-					break;
+			case PositionConstants.TOP:
+				top = child;
+				break;
+			case PositionConstants.BOTTOM:
+				bottom = child;
+				break;
+			default:
+				break;
 			}
 		}
 

@@ -19,13 +19,14 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.swt.graphics.Color;
 
 public class EllipseDecoration extends Ellipse implements RotatableDecoration {
+
 	private boolean myAlwaysFill;
-	
-	public EllipseDecoration(){
+
+	public EllipseDecoration() {
 		setPreferredSize(new Dimension(5, 5));
 	}
-	
-	public void setAlwaysFill(boolean alwaysFill){
+
+	public void setAlwaysFill(boolean alwaysFill) {
 		myAlwaysFill = alwaysFill;
 	}
 
@@ -36,10 +37,10 @@ public class EllipseDecoration extends Ellipse implements RotatableDecoration {
 
 	public void setReferencePoint(Point p) {
 	}
-	
+
 	@Override
 	protected void outlineShape(Graphics graphics) {
-		if (myAlwaysFill){
+		if (myAlwaysFill) {
 			Color oldBack = graphics.getBackgroundColor();
 			graphics.setBackgroundColor(graphics.getForegroundColor());
 			fillShape(graphics);

@@ -55,17 +55,17 @@ public class RequiredInterfaceLink {
 		RequiredInterfaceLink anotherLink = (RequiredInterfaceLink) obj;
 		return this.myUsage.equals(anotherLink.myUsage) && this.mySource.equals(anotherLink.mySource) && this.myTarget.equals(anotherLink.myTarget);
 	}
-	
+
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
-		result.append((myUsage != null) ? myUsage.getName() : null );
+		result.append((myUsage != null) ? myUsage.getName() : null);
 		result.append("("); //$NON-NLS-1$
-		result.append((mySource != null) ? mySource.getName() : null );
+		result.append((mySource != null) ? mySource.getName() : null);
 		result.append(","); //$NON-NLS-1$
-		result.append((myTarget != null) ? myTarget.getName() : null );
+		result.append((myTarget != null) ? myTarget.getName() : null);
 		result.append(")"); //$NON-NLS-1$
 		return result.toString();
 	}
-	
+
 }

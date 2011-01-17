@@ -26,8 +26,7 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.LayoutConstraint;
 import org.eclipse.gmf.runtime.notation.Node;
 
-
-public abstract  class ConvertCommentCommandBase extends AbstractTransactionalCommand {
+public abstract class ConvertCommentCommandBase extends AbstractTransactionalCommand {
 
 	public ConvertCommentCommandBase(TransactionalEditingDomain domain, String label, List<?> affectedFiles) {
 		super(domain, label, affectedFiles);
@@ -54,31 +53,39 @@ public abstract  class ConvertCommentCommandBase extends AbstractTransactionalCo
 			convertedNode.setLayoutConstraint(makeCopy(layoutConstraint));
 		}
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	private static <T extends EObject> T makeCopy(T original){
+	private static <T extends EObject> T makeCopy(T original) {
 		return (T) EcoreUtil.copy(original);
 	}
 
 	public static interface Config {
+
 		public int getCommentVisualID();
+
 		public int getAnnotatedElementVisualID();
+
 		public IElementType getAnnotatedElementElementType();
+
 		public String getNoteAttachmentVisualID();
+
 		public String getNoteVisualId();
 	}
-	
+
 	public static class ConfigImpl implements Config {
+
 		private final int myCommentNodeVID;
+
 		private final IElementType myCommentLinkElementType;
+
 		private final int myCommentLinkVID;
 
-		public ConfigImpl(int commentNodeVID, int commentLinkVID, IElementType commentLinkElementType){
+		public ConfigImpl(int commentNodeVID, int commentLinkVID, IElementType commentLinkElementType) {
 			myCommentNodeVID = commentNodeVID;
 			myCommentLinkVID = commentLinkVID;
 			myCommentLinkElementType = commentLinkElementType;
 		}
-		
+
 		public String getNoteAttachmentVisualID() {
 			return ViewType.NOTEATTACHMENT;
 		}
@@ -86,15 +93,15 @@ public abstract  class ConvertCommentCommandBase extends AbstractTransactionalCo
 		public String getNoteVisualId() {
 			return ViewType.NOTE;
 		}
-		
+
 		public IElementType getAnnotatedElementElementType() {
 			return myCommentLinkElementType;
 		}
-		
+
 		public int getCommentVisualID() {
 			return myCommentNodeVID;
 		}
-		
+
 		public int getAnnotatedElementVisualID() {
 			return myCommentLinkVID;
 		}

@@ -21,9 +21,9 @@ import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 public abstract class AbstractPostCreateCommand extends AbstractTransactionalCommand {
 
 	private final CreateRequest myCreateRequest;
-	
+
 	private final ViewAndElementAccess myViewAndElementAccess;
-	
+
 	private final ViewHelper myViewHelper;
 
 	private final IGraphicalEditPart myHostEditPart;
@@ -35,24 +35,24 @@ public abstract class AbstractPostCreateCommand extends AbstractTransactionalCom
 		myHostEditPart = hostEditPart;
 		myViewHelper = new ViewHelper(visualIDRegistry);
 	}
-	
-	protected PreferencesHint getPreferencesHint(){
+
+	protected PreferencesHint getPreferencesHint() {
 		return getHostEditPart().getDiagramPreferencesHint();
 	}
 
 	protected IGraphicalEditPart getHostEditPart() {
 		return myHostEditPart;
 	}
-	
-	protected Point getRequestLocation(){
+
+	protected Point getRequestLocation() {
 		return myCreateRequest.getLocation();
 	}
-	
+
 	protected CreateRequest getCreateRequest() {
 		return myCreateRequest;
 	}
-	
-	protected Dimension getRequestSize(){
+
+	protected Dimension getRequestSize() {
 		return myCreateRequest.getSize();
 	}
 
@@ -63,23 +63,23 @@ public abstract class AbstractPostCreateCommand extends AbstractTransactionalCom
 	protected EObject getCreatedEntity() {
 		return myViewAndElementAccess.getCreatedEntity();
 	}
-	
-	protected ViewAndElementAccess getViewAndElementAccess(){
+
+	protected ViewAndElementAccess getViewAndElementAccess() {
 		return myViewAndElementAccess;
 	}
 
 	protected View findChildByType(View view, int visualId) {
 		return myViewHelper.findChildByType(view, visualId);
 	}
-	
-	protected Edge findOutgoingEdge(Node source, int visualId, EObject semantic){
+
+	protected Edge findOutgoingEdge(Node source, int visualId, EObject semantic) {
 		return myViewHelper.findOutgoingEdge(source, visualId, semantic);
 	}
-	
-	protected Edge findIncomingEdge(Node source, int visualId, EObject semantic){
+
+	protected Edge findIncomingEdge(Node source, int visualId, EObject semantic) {
 		return myViewHelper.findIncomingEdge(source, visualId, semantic);
 	}
-	
+
 	protected static void setLocation(View view, Point location) {
 		if (view == null || location == null) {
 			return;
@@ -95,19 +95,22 @@ public abstract class AbstractPostCreateCommand extends AbstractTransactionalCom
 		ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getSize_Width(), new Integer(size.width));
 		ViewUtil.setStructuralFeatureValue(view, NotationPackage.eINSTANCE.getSize_Height(), new Integer(size.height));
 	}
-	
+
 	public static interface ViewAndElementAccess {
+
 		public View getCreatedView();
+
 		public EObject getCreatedEntity();
 	}
-	
+
 	private static class CVAEAccess implements ViewAndElementAccess {
+
 		private final CreateViewAndElementRequest myCvaeReq;
 
 		public CVAEAccess(CreateViewAndElementRequest request) {
 			myCvaeReq = request;
 		}
-		
+
 		private CreateElementRequestAdapter getSemanticRequestAdapter() {
 			return myCvaeReq.getViewAndElementDescriptor().getCreateElementRequestAdapter();
 		}
@@ -124,7 +127,5 @@ public abstract class AbstractPostCreateCommand extends AbstractTransactionalCom
 			return (EObject) getSemanticRequestAdapter().getAdapter(EObject.class);
 		}
 	}
-	
-	
 
 }

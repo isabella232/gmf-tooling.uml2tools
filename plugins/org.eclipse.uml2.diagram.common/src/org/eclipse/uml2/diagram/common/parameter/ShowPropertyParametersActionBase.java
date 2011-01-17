@@ -18,7 +18,7 @@ import org.eclipse.uml2.uml.Operation;
  * - make action totally undoable (now only label refresh can be undone)
  */
 
-public abstract  class ShowPropertyParametersActionBase extends DiagramAction {
+public abstract class ShowPropertyParametersActionBase extends DiagramAction {
 
 	private IWorkbenchPage myWorkbechPage;
 
@@ -35,7 +35,7 @@ public abstract  class ShowPropertyParametersActionBase extends DiagramAction {
 		dialog.open();
 		execute(new RefreshEditPartCommand(getSelectedEditPart()), new NullProgressMonitor());
 	}
-	
+
 	abstract protected EditPropertyParametersDialog createDialog(Shell shell, Operation operation);
 
 	@Override
@@ -46,7 +46,8 @@ public abstract  class ShowPropertyParametersActionBase extends DiagramAction {
 	@Override
 	protected Command getCommand() {
 		// return nothing because all functionality is implemented in #doRun(IProgressMonitor) method
-		return new Command(Messages.ShowPropertyParametersActionBase_command_empty){};
+		return new Command(Messages.ShowPropertyParametersActionBase_command_empty) {
+		};
 	}
 
 	@Override
@@ -57,11 +58,11 @@ public abstract  class ShowPropertyParametersActionBase extends DiagramAction {
 	private Shell getShell() {
 		return myWorkbechPage.getActivePart().getSite().getShell();
 	}
-	
+
 	private GraphicalEditPart getSelectedEditPart() {
 		return (GraphicalEditPart) getStructuredSelection().getFirstElement();
 	}
-	
+
 	private Operation getOperationToEdit() {
 		GraphicalEditPart selected = getSelectedEditPart();
 		return (Operation) selected.getNotationView().getElement();

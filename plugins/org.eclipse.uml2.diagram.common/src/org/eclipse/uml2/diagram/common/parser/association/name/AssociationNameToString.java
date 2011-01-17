@@ -22,43 +22,42 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public abstract class AssociationNameToString extends AbstractToString {
+
 	public static class EDIT extends AssociationNameToString {
-		
+
 		public boolean isAffectingFeature(EStructuralFeature feature) {
 			throw new UnsupportedOperationException("I am edit toString, I am not expected to be asked"); //$NON-NLS-1$
 		}
-		
+
 	}
-	
+
 	public static class VIEW extends AssociationNameToString {
-		private static final List AFFECTING = Arrays.asList(new EStructuralFeature[] {
-			UMLPackage.eINSTANCE.getAssociation_IsDerived(),		
-			UMLPackage.eINSTANCE.getNamedElement_Name(),
-		});
-		
+
+		private static final List AFFECTING = Arrays.asList(new EStructuralFeature[] { UMLPackage.eINSTANCE.getAssociation_IsDerived(), UMLPackage.eINSTANCE.getNamedElement_Name(), });
+
 		public boolean isAffectingFeature(EStructuralFeature feature) {
 			return AFFECTING.contains(feature);
 		}
 	}
-	
+
 	public String getToString(EObject object, int flags) {
 		Association association = asAssociation(object);
 		StringBuffer result = new StringBuffer();
 		result.append(getIsDerived(association));
 		appendName(result, association);
-		
+
 		return result.toString();
 	}
 
-	protected Association asAssociation(EObject object){
-		if (false == object instanceof Association){
+	protected Association asAssociation(EObject object) {
+		if (false == object instanceof Association) {
 			throw new IllegalStateException("I can not provide toString for: " + object); //$NON-NLS-1$
 		}
-		return (Association)object;
+		return (Association) object;
 	}
-	
+
 	protected String getIsDerived(Association association) {
 		return association.isDerived() ? "/" : ""; //$NON-NLS-1$ //$NON-NLS-2$
 	}
-	
+
 }

@@ -14,20 +14,17 @@ import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
-
 public class XYLayoutEditPolicyWithMovableLabels extends XYLayoutEditPolicy {
+
 	/** 
 	 * We additionally allow to move label's editparts from compartments to containers with XY-layout 
 	 */
 	protected Command createAddCommand(EditPart child, Object constraint) {
-		if ( (child instanceof ShapeEditPart || isPureLabelEditPart(child) )&& constraint instanceof Rectangle) {
+		if ((child instanceof ShapeEditPart || isPureLabelEditPart(child)) && constraint instanceof Rectangle) {
 			Rectangle rect = (Rectangle) constraint;
-			
-	 		ICommand boundsCommand = 
-	 			new SetBoundsCommand(((IGraphicalEditPart) child).getEditingDomain(),
-	 				DiagramUIMessages.SetLocationCommand_Label_Resize,
-	 				new EObjectAdapter((View) child.getModel()),
-					rect.getTopLeft()); 
+
+			ICommand boundsCommand = new SetBoundsCommand(((IGraphicalEditPart) child).getEditingDomain(), DiagramUIMessages.SetLocationCommand_Label_Resize, new EObjectAdapter(
+					(View) child.getModel()), rect.getTopLeft());
 			return new ICommandProxy(boundsCommand);
 		}
 		return null;

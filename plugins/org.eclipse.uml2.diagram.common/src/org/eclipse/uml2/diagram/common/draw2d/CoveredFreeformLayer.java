@@ -28,12 +28,13 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrapLabel;
  * Freeform layer that expands children to cover client area of the figure at whole.
  */
 public class CoveredFreeformLayer extends BorderItemsAwareFreeFormLayer {
+
 	@Override
 	public Rectangle getFreeformExtent() {
-        if (myFreeformExtent != null) {
-            return myFreeformExtent;
-        }
-		
+		if (myFreeformExtent != null) {
+			return myFreeformExtent;
+		}
+
 		List children = getChildren();
 		for (int i = 0; i < children.size(); i++) {
 			IFigure child = (IFigure) children.get(i);
@@ -73,21 +74,21 @@ public class CoveredFreeformLayer extends BorderItemsAwareFreeFormLayer {
 			if (child instanceof FreeformFigure) {
 				((FreeformFigure) child).setFreeformBounds(bounds);
 			} else {
-		        Insets insets = getMarginInsets();
-		        int x = insets.left;
-		        int y = insets.top;
-		        
-		        Dimension size = bounds.getSize().getCopy().shrink(insets.getWidth(), insets.getHeight());
+				Insets insets = getMarginInsets();
+				int x = insets.left;
+				int y = insets.top;
 
-		        final Rectangle childBounds = new Rectangle(x, y, size.width, size.height);           
-		        if (child instanceof BorderedNodeFigure) {
-		        	validateSideAffixedElements((BorderedNodeFigure) child, childBounds);
-		        }
-		        child.setBounds(childBounds);
+				Dimension size = bounds.getSize().getCopy().shrink(insets.getWidth(), insets.getHeight());
+
+				final Rectangle childBounds = new Rectangle(x, y, size.width, size.height);
+				if (child instanceof BorderedNodeFigure) {
+					validateSideAffixedElements((BorderedNodeFigure) child, childBounds);
+				}
+				child.setBounds(childBounds);
 			}
 		}
 	}
-	
+
 	@Override
 	public void invalidate() {
 		super.invalidate();
@@ -103,7 +104,7 @@ public class CoveredFreeformLayer extends BorderItemsAwareFreeFormLayer {
 	public void setMarginInsets(Insets insets) {
 		myMarginInsets = insets;
 	}
-	
+
 	private void validateSideAffixedElements(BorderedNodeFigure parent, Rectangle area) {
 		List borderItems = parent.getBorderItemContainer().getChildren();
 		for (Iterator borderItemsIterator = borderItems.iterator(); borderItemsIterator.hasNext();) {
@@ -114,9 +115,9 @@ public class CoveredFreeformLayer extends BorderItemsAwareFreeFormLayer {
 				Rectangle labelBounds = borderItem.getBounds();
 				if (!area.contains(labelBounds)) {
 					Rectangle union = area.getCopy().union(labelBounds);
-					int xShift = union.width - area.width; 
+					int xShift = union.width - area.width;
 					int x = area.x == union.x ? -xShift : xShift;
-					int yShift = union.height - area.height; 
+					int yShift = union.height - area.height;
 					int y = area.y == union.y ? -yShift : yShift;
 					((BorderItemNameLocator) parent.getBorderItemContainer().getLayoutManager().getConstraint(borderItem)).getConstraint().translate(x, y);
 				}
@@ -125,20 +126,22 @@ public class CoveredFreeformLayer extends BorderItemsAwareFreeFormLayer {
 	}
 
 	private Rectangle myFreeformExtent;
+
 	private Insets myMarginInsets;
+
 	private double myMarginRatio = 0.1;
 
-	
 	private static class TranslatableInsets extends Insets implements Translatable {
+
 		public TranslatableInsets(Insets insets) {
 			super(insets);
 		}
-		
+
 		public void performScale(double factor) {
-			top  = (int)(Math.floor(top * factor));
-			bottom  = (int)(Math.floor(bottom * factor));
-			left  = (int)(Math.floor(left * factor));
-			right  = (int)(Math.floor(right * factor));
+			top = (int) (Math.floor(top * factor));
+			bottom = (int) (Math.floor(bottom * factor));
+			left = (int) (Math.floor(left * factor));
+			right = (int) (Math.floor(right * factor));
 		}
 
 		public void performTranslate(int dx, int dy) {

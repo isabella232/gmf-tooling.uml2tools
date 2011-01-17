@@ -40,7 +40,7 @@ public class RequiredPortLinkHelper {
 			Classifier classifier = (Classifier) type;
 			classifier.createUsage(getTarget());
 			RefreshComplementaryLinksHelper.getInstance().addNotificationDescription(getTarget(), NotationPackage.eINSTANCE.getView_TargetEdges(),
-					RefreshComplementaryLinksHelper.INTERFACE_AFTER_PORT_REQUIRED_REORIENTED); 
+					RefreshComplementaryLinksHelper.INTERFACE_AFTER_PORT_REQUIRED_REORIENTED);
 		}
 	}
 
@@ -59,7 +59,7 @@ public class RequiredPortLinkHelper {
 		if (false == type instanceof Classifier || (type instanceof Interface)) {
 			return false;
 		}
-		boolean isReadOnly = myEditingDomain.isReadOnly(type.eResource()); 
+		boolean isReadOnly = myEditingDomain.isReadOnly(type.eResource());
 		return !isReadOnly;
 	}
 

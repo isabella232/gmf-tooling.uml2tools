@@ -71,7 +71,7 @@ public class ImageLocationCellEditor extends TextAndDialogCellEditor {
 		// contained in some file
 		IProject profileProject = getResource(myProfileResourceURI).getProject();
 		IPath filePath = file.getFullPath();
-		IPath profilePath = profileProject.getFullPath(); 
+		IPath profilePath = profileProject.getFullPath();
 		if (profilePath.isPrefixOf(filePath)) {
 			return filePath.makeRelativeTo(profilePath).toString();
 		}

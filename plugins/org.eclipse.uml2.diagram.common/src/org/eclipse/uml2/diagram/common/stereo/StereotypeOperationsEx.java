@@ -56,7 +56,7 @@ public class StereotypeOperationsEx extends UMLUtil {
 	public static org.eclipse.swt.graphics.Image composeImages(ImageDescriptor... images) {
 		return new StereotypeImageDescriptor(images).createImage();
 	}
-	
+
 	public static org.eclipse.swt.graphics.Image composeImages(ImageDescriptor last, ImageDescriptor... images) {
 		ImageDescriptor[] allImages = new ImageDescriptor[images.length + 1];
 		System.arraycopy(images, 0, allImages, 0, images.length);
@@ -67,7 +67,7 @@ public class StereotypeOperationsEx extends UMLUtil {
 	public static ImageDescriptor getImage(Stereotype stereo) {
 		return StereotypeImages.getImageDescriptor(stereo, null);
 	}
-	
+
 	public static ImageDescriptor getImage(Stereotype stereo, ImageDescriptor metaclassImage) {
 		return StereotypeImages.getImageDescriptor(stereo, metaclassImage);
 	}
@@ -75,7 +75,7 @@ public class StereotypeOperationsEx extends UMLUtil {
 	public static ImageDescriptor[] getListOfAppliedStereotypeImages(Element element, ImageDescriptor metaclassImage) {
 		EList<EObject> stereoApplications = element.getStereotypeApplications();
 		List<ImageDescriptor> result = new ArrayList<ImageDescriptor>(stereoApplications.size());
-		for (EObject stereoApplication: stereoApplications) {
+		for (EObject stereoApplication : stereoApplications) {
 			ImageDescriptor imageDescriptor = StereotypeImages.getImageDescriptorForStereotypeApplication(stereoApplication, metaclassImage);
 			if (imageDescriptor == null) {
 				continue;
@@ -84,9 +84,9 @@ public class StereotypeOperationsEx extends UMLUtil {
 		}
 		return result.toArray(new ImageDescriptor[result.size()]);
 	}
-	
-// Almost copy of ElementOperations#getApplicableStereotypes()
-// But we operate with metaclass of the element, not with the element itself
+
+	// Almost copy of ElementOperations#getApplicableStereotypes()
+	// But we operate with metaclass of the element, not with the element itself
 	public static EList<Stereotype> getApplicableStereotypes(org.eclipse.uml2.uml.Package package_, EClassifier elementMetaclass) {
 		if (package_ != null) {
 			EList<Stereotype> applicableStereotypes = new UniqueEList.FastCompare<Stereotype>();
@@ -134,7 +134,7 @@ public class StereotypeOperationsEx extends UMLUtil {
 						//
 						// Almost copy of ElementOperations#getExtension()
 						// diff is here
-						if (eClassifier != null && ((EClass)eClassifier).isSuperTypeOf((EClass) elementMetaclass)) {
+						if (eClassifier != null && ((EClass) eClassifier).isSuperTypeOf((EClass) elementMetaclass)) {
 
 							return (Extension) association;
 						}
@@ -145,11 +145,11 @@ public class StereotypeOperationsEx extends UMLUtil {
 
 		return null;
 	}
-	
+
 	private static class StereotypeImageDescriptor extends CompositeImageDescriptor {
-		
+
 		private ImageDescriptor[] myImages;
-		
+
 		private StereotypeImageDescriptor(ImageDescriptor... images) {
 			myImages = images;
 		}
@@ -158,7 +158,7 @@ public class StereotypeOperationsEx extends UMLUtil {
 		protected void drawCompositeImage(int width, int height) {
 			int ox = 0;
 			int oy = 0;
-			for (ImageDescriptor image: myImages) {
+			for (ImageDescriptor image : myImages) {
 				ImageData imageData = image.getImageData();
 				drawImage(imageData, ox, oy);
 				ox += imageData.width;
@@ -169,14 +169,14 @@ public class StereotypeOperationsEx extends UMLUtil {
 		protected Point getSize() {
 			int ox = 0;
 			int oy = 0;
-			for (ImageDescriptor image: myImages) {
+			for (ImageDescriptor image : myImages) {
 				ImageData imageData = image.getImageData();
 				ox += imageData.width;
 				oy = Math.max(oy, imageData.height);
 			}
 			return new Point(ox, oy);
 		}
-		
+
 	}
 
 }

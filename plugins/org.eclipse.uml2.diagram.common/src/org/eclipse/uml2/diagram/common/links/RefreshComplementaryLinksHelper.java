@@ -442,8 +442,8 @@ public class RefreshComplementaryLinksHelper {
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
-			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), provider
-					.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false, givenEditPart.getDiagramPreferencesHint());
+			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(),
+					provider.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false, givenEditPart.getDiagramPreferencesHint());
 			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
@@ -561,7 +561,7 @@ public class RefreshComplementaryLinksHelper {
 	}
 
 	@SuppressWarnings("unchecked")
-	private static Collection<View> addAllChildrenViews(Collection<View> output, View parent){
+	private static Collection<View> addAllChildrenViews(Collection<View> output, View parent) {
 		output.addAll(parent.getChildren());
 		return output;
 	}

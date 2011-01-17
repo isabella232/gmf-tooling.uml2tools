@@ -17,12 +17,16 @@ import org.eclipse.uml2.diagram.common.async.SyncModelNode;
 import org.eclipse.uml2.diagram.common.async.SyncModelUI;
 
 public class SynchronizeDiagramDialog extends Dialog {
+
 	private final ILabelProvider myPluginSpecificLabelProvider;
+
 	private SyncModelUI mySyncUI;
+
 	private final SyncModelNode myRootNode;
+
 	private final List<ViewerFilter> myViewerFilters = new LinkedList<ViewerFilter>();
-	
-	public SynchronizeDiagramDialog(Shell shell, SyncModelNode rootNode, ILabelProvider pluginSpecificLableProvider){
+
+	public SynchronizeDiagramDialog(Shell shell, SyncModelNode rootNode, ILabelProvider pluginSpecificLableProvider) {
 		super(shell);
 		myRootNode = rootNode;
 		myPluginSpecificLabelProvider = pluginSpecificLableProvider;
@@ -36,18 +40,18 @@ public class SynchronizeDiagramDialog extends Dialog {
 		getShell().setText(Messages.SynchronizeDiagramDialog_dialog_choose_synchronization_mode);
 		mySyncUI = new SyncModelUI(composite, new SyncModelLabelProvider(myPluginSpecificLabelProvider));
 		mySyncUI.setRootNode(getRootSyncNode());
-		for (ViewerFilter nextFilter : myViewerFilters){
+		for (ViewerFilter nextFilter : myViewerFilters) {
 			mySyncUI.getUI().addFilter(nextFilter);
 		}
 		mySyncUI.revealRootChildren();
 		return composite;
 	}
-	
-	protected void addFilter(ViewerFilter filter){
-		if (mySyncUI == null || mySyncUI.getUI() == null){
+
+	protected void addFilter(ViewerFilter filter) {
+		if (mySyncUI == null || mySyncUI.getUI() == null) {
 			myViewerFilters.add(filter);
 		} else {
-			mySyncUI.getUI().addFilter(filter);	
+			mySyncUI.getUI().addFilter(filter);
 		}
 	}
 
@@ -57,17 +61,17 @@ public class SynchronizeDiagramDialog extends Dialog {
 		setOkButtonEnabled(true);
 		return buttonBar;
 	}
-	
+
 	private void setOkButtonEnabled(boolean enabled) {
 		getButton(IDialogConstants.OK_ID).setEnabled(enabled);
 	}
-	
-	public SyncModelNode getRootSyncNode(){
+
+	public SyncModelNode getRootSyncNode() {
 		return myRootNode;
 	}
-	
+
 	protected SyncModelUI getSyncUI() {
 		return mySyncUI;
 	}
-	
+
 }

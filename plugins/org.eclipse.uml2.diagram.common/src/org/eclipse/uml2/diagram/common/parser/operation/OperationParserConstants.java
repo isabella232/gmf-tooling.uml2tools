@@ -14,72 +14,100 @@ package org.eclipse.uml2.diagram.common.parser.operation;
 
 public interface OperationParserConstants {
 
-  int EOF = 0;
-  int SLASH = 3;
-  int COLON = 4;
-  int EQUALS = 5;
-  int LBRACKET = 6;
-  int RBRACKET = 7;
-  int LCURLY = 8;
-  int RCURLY = 9;
-  int LPAREN = 10;
-  int RPAREN = 11;
-  int COMMA = 12;
-  int PLUS = 13;
-  int MINUS = 14;
-  int NUMBER_SIGN = 15;
-  int TILDE = 16;
-  int DOT = 17;
-  int STAR = 18;
-  int REDEFINES = 19;
-  int ORDERED = 20;
-  int UNORDERED = 21;
-  int UNIQUE = 22;
-  int NON_UNIQUE = 23;
-  int QUERY = 24;
-  int IN = 25;
-  int OUT = 26;
-  int IN_OUT = 27;
-  int INTEGER_LITERAL = 28;
-  int IDENTIFIER = 29;
-  int LETTER = 30;
-  int DIGIT = 31;
+	int EOF = 0;
 
-  int DEFAULT = 0;
+	int SLASH = 3;
 
-  String[] tokenImage = {
-    "<EOF>", //$NON-NLS-1$
-    "\" \"", //$NON-NLS-1$
-    "\"\\t\"", //$NON-NLS-1$
-    "\"/\"", //$NON-NLS-1$
-    "\":\"", //$NON-NLS-1$
-    "\"=\"", //$NON-NLS-1$
-    "\"[\"", //$NON-NLS-1$
-    "\"]\"", //$NON-NLS-1$
-    "\"{\"", //$NON-NLS-1$
-    "\"}\"", //$NON-NLS-1$
-    "\"(\"", //$NON-NLS-1$
-    "\")\"", //$NON-NLS-1$
-    "\",\"", //$NON-NLS-1$
-    "\"+\"", //$NON-NLS-1$
-    "\"-\"", //$NON-NLS-1$
-    "\"#\"", //$NON-NLS-1$
-    "\"~\"", //$NON-NLS-1$
-    "\".\"", //$NON-NLS-1$
-    "\"*\"", //$NON-NLS-1$
-    "\"redefines\"", //$NON-NLS-1$
-    "\"ordered\"", //$NON-NLS-1$
-    "\"unordered\"", //$NON-NLS-1$
-    "\"unique\"", //$NON-NLS-1$
-    "\"nonunique\"", //$NON-NLS-1$
-    "\"query\"", //$NON-NLS-1$
-    "\"in\"", //$NON-NLS-1$
-    "\"out\"", //$NON-NLS-1$
-    "\"inout\"", //$NON-NLS-1$
-    "<INTEGER_LITERAL>", //$NON-NLS-1$
-    "<IDENTIFIER>", //$NON-NLS-1$
-    "<LETTER>", //$NON-NLS-1$
-    "<DIGIT>", //$NON-NLS-1$
-  };
+	int COLON = 4;
+
+	int EQUALS = 5;
+
+	int LBRACKET = 6;
+
+	int RBRACKET = 7;
+
+	int LCURLY = 8;
+
+	int RCURLY = 9;
+
+	int LPAREN = 10;
+
+	int RPAREN = 11;
+
+	int COMMA = 12;
+
+	int PLUS = 13;
+
+	int MINUS = 14;
+
+	int NUMBER_SIGN = 15;
+
+	int TILDE = 16;
+
+	int DOT = 17;
+
+	int STAR = 18;
+
+	int REDEFINES = 19;
+
+	int ORDERED = 20;
+
+	int UNORDERED = 21;
+
+	int UNIQUE = 22;
+
+	int NON_UNIQUE = 23;
+
+	int QUERY = 24;
+
+	int IN = 25;
+
+	int OUT = 26;
+
+	int IN_OUT = 27;
+
+	int INTEGER_LITERAL = 28;
+
+	int IDENTIFIER = 29;
+
+	int LETTER = 30;
+
+	int DIGIT = 31;
+
+	int DEFAULT = 0;
+
+	String[] tokenImage = { "<EOF>", //$NON-NLS-1$
+			"\" \"", //$NON-NLS-1$
+			"\"\\t\"", //$NON-NLS-1$
+			"\"/\"", //$NON-NLS-1$
+			"\":\"", //$NON-NLS-1$
+			"\"=\"", //$NON-NLS-1$
+			"\"[\"", //$NON-NLS-1$
+			"\"]\"", //$NON-NLS-1$
+			"\"{\"", //$NON-NLS-1$
+			"\"}\"", //$NON-NLS-1$
+			"\"(\"", //$NON-NLS-1$
+			"\")\"", //$NON-NLS-1$
+			"\",\"", //$NON-NLS-1$
+			"\"+\"", //$NON-NLS-1$
+			"\"-\"", //$NON-NLS-1$
+			"\"#\"", //$NON-NLS-1$
+			"\"~\"", //$NON-NLS-1$
+			"\".\"", //$NON-NLS-1$
+			"\"*\"", //$NON-NLS-1$
+			"\"redefines\"", //$NON-NLS-1$
+			"\"ordered\"", //$NON-NLS-1$
+			"\"unordered\"", //$NON-NLS-1$
+			"\"unique\"", //$NON-NLS-1$
+			"\"nonunique\"", //$NON-NLS-1$
+			"\"query\"", //$NON-NLS-1$
+			"\"in\"", //$NON-NLS-1$
+			"\"out\"", //$NON-NLS-1$
+			"\"inout\"", //$NON-NLS-1$
+			"<INTEGER_LITERAL>", //$NON-NLS-1$
+			"<IDENTIFIER>", //$NON-NLS-1$
+			"<LETTER>", //$NON-NLS-1$
+			"<DIGIT>", //$NON-NLS-1$
+	};
 
 }

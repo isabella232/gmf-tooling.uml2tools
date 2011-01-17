@@ -19,7 +19,6 @@ import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Text;
 
-
 public class RotatedImageCellEditorLocator implements CellEditorLocator {
 
 	private RotatedImageOfString rotatedImage;

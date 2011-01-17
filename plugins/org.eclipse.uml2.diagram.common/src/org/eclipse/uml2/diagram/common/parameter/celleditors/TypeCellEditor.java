@@ -32,7 +32,7 @@ public class TypeCellEditor extends ComboBoxCellEditor {
 
 	private static String[] getValues(Type[] values) {
 		String[] stringValues = new String[values.length];
-		for (int i = 0 ; i < values.length; i++) {
+		for (int i = 0; i < values.length; i++) {
 			String name = values[i].getName();
 			stringValues[i] = name != null ? name : StringStatics.BLANK;
 		}

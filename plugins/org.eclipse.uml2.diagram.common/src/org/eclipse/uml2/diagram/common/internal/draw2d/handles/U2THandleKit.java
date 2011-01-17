@@ -41,33 +41,33 @@ public class U2THandleKit {
 	}
 
 	private static void addResizeCornerHandles(IGraphicalEditPart part, List<Handle> handles, int directions) {
-		if (checkDirection(directions, PositionConstants.WEST)){
+		if (checkDirection(directions, PositionConstants.WEST)) {
 			handles.add(new ResizeFrameSideHandle(part, PositionConstants.WEST));
 			handles.add(createInaccessibleResizeHandle(part, PositionConstants.WEST));
 		}
-		if (checkDirection(directions, PositionConstants.EAST)){
+		if (checkDirection(directions, PositionConstants.EAST)) {
 			handles.add(new ResizeFrameSideHandle(part, PositionConstants.EAST, ResizeFrameSideHandle.DEFAULT_SIZE, -1));
 			handles.add(createInaccessibleResizeHandle(part, PositionConstants.EAST));
 		}
-		if (checkDirection(directions, PositionConstants.NORTH)){
+		if (checkDirection(directions, PositionConstants.NORTH)) {
 			handles.add(new ResizeFrameSideHandle(part, PositionConstants.NORTH));
 			handles.add(createInaccessibleResizeHandle(part, PositionConstants.NORTH));
 		}
-		if (checkDirection(directions, PositionConstants.SOUTH)){
+		if (checkDirection(directions, PositionConstants.SOUTH)) {
 			handles.add(new ResizeFrameSideHandle(part, PositionConstants.SOUTH));
 			handles.add(createInaccessibleResizeHandle(part, PositionConstants.SOUTH));
 		}
 
-		if (checkDirection(directions, PositionConstants.SOUTH_EAST)){
-			handles.add(createResizeCornerHandle(part, PositionConstants.SOUTH_EAST));	
+		if (checkDirection(directions, PositionConstants.SOUTH_EAST)) {
+			handles.add(createResizeCornerHandle(part, PositionConstants.SOUTH_EAST));
 		}
-		if (checkDirection(directions, PositionConstants.SOUTH_WEST)){
+		if (checkDirection(directions, PositionConstants.SOUTH_WEST)) {
 			handles.add(createResizeCornerHandle(part, PositionConstants.SOUTH_WEST));
 		}
-		if (checkDirection(directions, PositionConstants.NORTH_WEST)){
+		if (checkDirection(directions, PositionConstants.NORTH_WEST)) {
 			handles.add(createResizeCornerHandle(part, PositionConstants.NORTH_WEST));
 		}
-		if (checkDirection(directions, PositionConstants.NORTH_EAST)){
+		if (checkDirection(directions, PositionConstants.NORTH_EAST)) {
 			handles.add(createResizeCornerHandle(part, PositionConstants.NORTH_EAST));
 		}
 	}
@@ -108,24 +108,25 @@ public class U2THandleKit {
 		//handle.setDragTracker(new DragEditPartsTracker(owner));
 		return handle;
 	}
-	
-	private static boolean checkDirection(int direction, int desired){
+
+	private static boolean checkDirection(int direction, int desired) {
 		return (direction & desired) == desired;
 	}
-	
-    public static IFigure createFeedbackFigure(final IFigure original) {
-        RectangleFigure r = new RectangleFigure() {
-            protected void outlineShape(Graphics graphics) {
-                if (getBounds().width > 0 && getBounds().height > 0) {
-                	super.outlineShape(graphics);
-                }
-            };
-        };
-        r.setFill(false);
-        r.setForegroundColor(ColorConstants.black);
-        r.setLineStyle(Graphics.LINE_DOT);
-        r.setLineWidth(1);
-        return r;
-    }
-	
+
+	public static IFigure createFeedbackFigure(final IFigure original) {
+		RectangleFigure r = new RectangleFigure() {
+
+			protected void outlineShape(Graphics graphics) {
+				if (getBounds().width > 0 && getBounds().height > 0) {
+					super.outlineShape(graphics);
+				}
+			};
+		};
+		r.setFill(false);
+		r.setForegroundColor(ColorConstants.black);
+		r.setLineStyle(Graphics.LINE_DOT);
+		r.setLineWidth(1);
+		return r;
+	}
+
 }

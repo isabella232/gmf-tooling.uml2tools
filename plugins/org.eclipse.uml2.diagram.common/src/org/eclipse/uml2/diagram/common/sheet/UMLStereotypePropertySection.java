@@ -33,7 +33,7 @@ public class UMLStereotypePropertySection extends AdvancedPropertySection implem
 		if (af != null) {
 			IItemPropertySource ips = (IItemPropertySource) af.adapt(object, IItemPropertySource.class);
 			if (ips != null) {
-				return new UMLStereotypePropertySource(object, ips);					
+				return new UMLStereotypePropertySource(object, ips);
 			}
 		}
 		if (object instanceof IAdaptable) {

@@ -9,7 +9,7 @@ public class ComposablePolygonDecoration extends PolygonDecoration implements Co
 	// duplicates PolylineDecoration#transform field
 	// created to calculate EndPoint
 	private Transform endPointTransform = new Transform();
-	
+
 	private Point myBoundPoint;
 
 	public ComposablePolygonDecoration() {
@@ -46,7 +46,7 @@ public class ComposablePolygonDecoration extends PolygonDecoration implements Co
 	public void setRotationEx(double angle) {
 		endPointTransform.setRotation(angle);
 	}
-	
+
 	public void setScaleEx(double x, double y) {
 		if (endPointTransform == null) {
 			endPointTransform = new Transform();

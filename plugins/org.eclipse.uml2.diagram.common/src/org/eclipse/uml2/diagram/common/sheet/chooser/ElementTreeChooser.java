@@ -450,8 +450,8 @@ public class ElementTreeChooser implements ElementChooserPage {
 		private final ExpandNodeAction myExpandNodeChildrenAction;
 
 		private final CollapseAllAction myCollapseAllChildrenAction;
-		
-		private static final ImageDescriptor IMG_COLLAPSE_ALL= ImageUtils.getImageDescriptor(ImageUtils.IMG_COLLAPSE_ALL);
+
+		private static final ImageDescriptor IMG_COLLAPSE_ALL = ImageUtils.getImageDescriptor(ImageUtils.IMG_COLLAPSE_ALL);
 
 		public MenuBuilder(final TreeViewer viewer) {
 			myViewer = viewer;

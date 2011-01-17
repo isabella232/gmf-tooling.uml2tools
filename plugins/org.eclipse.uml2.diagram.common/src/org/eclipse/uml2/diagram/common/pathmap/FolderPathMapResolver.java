@@ -5,7 +5,6 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.util.URI;
 
-
 public class FolderPathMapResolver extends PathMapResolver {
 
 	@Override
@@ -18,5 +17,5 @@ public class FolderPathMapResolver extends PathMapResolver {
 	public boolean isApplicable(URI uri) {
 		return uri.isFile();
 	}
-	
+
 }

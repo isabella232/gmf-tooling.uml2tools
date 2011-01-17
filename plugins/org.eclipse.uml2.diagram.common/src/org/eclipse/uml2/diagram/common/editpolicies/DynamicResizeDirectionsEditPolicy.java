@@ -29,32 +29,32 @@ public class DynamicResizeDirectionsEditPolicy extends ResizableShapeEditPolicy 
 	private static final int HORIZONTAL = 1;
 
 	private int myCurrentState;
-	
-	public DynamicResizeDirectionsEditPolicy(){
+
+	public DynamicResizeDirectionsEditPolicy() {
 		myCurrentState = VERTICAL;
 		setResizeDirections(PositionConstants.NORTH | PositionConstants.SOUTH);
 	}
-	
+
 	@Override
 	public void activate() {
 		super.activate();
 		getDiagramEventBroker().addNotificationListener(getHostImpl().getNotationView(), this);
 	}
-	
+
 	@Override
 	public void deactivate() {
 		getDiagramEventBroker().removeNotificationListener(getHostImpl().getNotationView(), this);
 		super.deactivate();
 	}
-	
-	public void hostSizeChanged(){
+
+	public void hostSizeChanged() {
 		IGraphicalEditPart host = getHostImpl();
 		Integer width = (Integer) host.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width());
 		Integer height = (Integer) host.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height());
-		if (width == null){
+		if (width == null) {
 			width = Integer.valueOf(0);
 		}
-		if (height == null){
+		if (height == null) {
 			height = Integer.valueOf(0);
 		}
 		Dimension size = new Dimension(width, height);
@@ -67,7 +67,7 @@ public class DynamicResizeDirectionsEditPolicy extends ResizableShapeEditPolicy 
 			hostSizeChanged();
 		}
 	}
-	
+
 	private void correctEditPolicy(Dimension size) {
 		if (isChanged(size)) {
 			hideSelection();
@@ -75,8 +75,8 @@ public class DynamicResizeDirectionsEditPolicy extends ResizableShapeEditPolicy 
 			showSelection();
 		}
 	}
-	
-	private IGraphicalEditPart getHostImpl(){
+
+	private IGraphicalEditPart getHostImpl() {
 		return (IGraphicalEditPart) getHost();
 	}
 
@@ -96,10 +96,9 @@ public class DynamicResizeDirectionsEditPolicy extends ResizableShapeEditPolicy 
 			myCurrentState = SQUARE;
 		}
 	}
-	
-    private DiagramEventBroker getDiagramEventBroker() {
-    	return DiagramEventBroker.getInstance(getHostImpl().getEditingDomain());
-    }
-	
+
+	private DiagramEventBroker getDiagramEventBroker() {
+		return DiagramEventBroker.getInstance(getHostImpl().getEditingDomain());
+	}
 
 }

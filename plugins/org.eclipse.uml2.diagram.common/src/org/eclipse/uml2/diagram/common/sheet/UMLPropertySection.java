@@ -23,7 +23,6 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
  */
 public class UMLPropertySection extends AdvancedPropertySection implements IPropertySourceProvider {
 
-	 
 	/**
 	 * @generated
 	 */

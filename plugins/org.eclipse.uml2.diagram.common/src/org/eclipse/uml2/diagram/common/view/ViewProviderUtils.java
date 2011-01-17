@@ -9,7 +9,6 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 
-
 public class ViewProviderUtils {
 
 	/**

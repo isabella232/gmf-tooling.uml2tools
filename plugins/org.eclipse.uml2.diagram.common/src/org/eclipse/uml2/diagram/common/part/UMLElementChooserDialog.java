@@ -65,16 +65,16 @@ public class UMLElementChooserDialog extends Dialog {
 		setShellStyle(getShellStyle() | SWT.RESIZE);
 		myItemProvidersAdapterFactory = itemProvidersAdapterFactory;
 	}
-	
+
 	@Override
 	protected Control createContents(Composite parent) {
 		Control control = super.createContents(parent);
 		setSelection(myTreeViewer);
 		return control;
 	}
-	
+
 	protected void setSelection(TreeViewer treeViewer) {
-		
+
 	}
 
 	@Override
@@ -103,8 +103,9 @@ public class UMLElementChooserDialog extends Dialog {
 		myTreeViewer.setLabelProvider(new ModelElementsTreeLabelProvider());
 		myTreeViewer.addSelectionChangedListener(new OkButtonEnabler());
 	}
+
 	protected void setInput(TreeViewer treeViewer) {
-		
+
 	}
 
 	private void setOkButtonEnabled(boolean enabled) {
@@ -124,17 +125,17 @@ public class UMLElementChooserDialog extends Dialog {
 		myEditingDomain.dispose();
 		return result;
 	}
-	
+
 	protected boolean isValid(EObject selectedElement) {
 		return false;
 	}
 
 	private static class ModelElementsTreeContentProvider implements ITreeContentProvider {
-		
+
 		private static final ITreeContentProvider myWorkbenchContentProvider = new WorkbenchContentProvider();
 
 		private final AdapterFactoryContentProvider myAdapterFctoryContentProvier;
-		
+
 		private final ResourceSet myResourceSet;
 
 		public ModelElementsTreeContentProvider(AdapterFactory itemProvidersAdapterFactory, ResourceSet resourceSet) {
@@ -250,7 +251,7 @@ public class UMLElementChooserDialog extends Dialog {
 		}
 
 	}
-	
+
 	private class OkButtonEnabler implements ISelectionChangedListener {
 
 		public void selectionChanged(SelectionChangedEvent event) {

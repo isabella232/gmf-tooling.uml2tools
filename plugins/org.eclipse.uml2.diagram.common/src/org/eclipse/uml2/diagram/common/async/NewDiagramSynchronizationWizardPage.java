@@ -15,19 +15,19 @@ import org.eclipse.uml2.diagram.common.Messages;
 public abstract class NewDiagramSynchronizationWizardPage extends WizardPage {
 
 	private final TransactionalEditingDomain myDomain;
-	
+
 	private final ILabelProvider myDiagramSpecificLabelProvider;
 
 	private NewDiagramSyncHelper myNewDiagramSyncHelper;
 
 	private SyncModelUI mySyncUI;
-	
+
 	private boolean myWasVisible;
-	
+
 	protected abstract void addViewerFilters(SyncModelUI syncModelUI);
-	
+
 	protected abstract NewDiagramSyncHelper createNewDiagramSyncHelper(TransactionalEditingDomain domain);
-	
+
 	protected abstract EObject getWizardSemanticRoot();
 
 	public NewDiagramSynchronizationWizardPage(String pageName, TransactionalEditingDomain domain, ILabelProvider diagramSpecificLabelProvider) {
@@ -59,7 +59,7 @@ public abstract class NewDiagramSynchronizationWizardPage extends WizardPage {
 
 		setPageComplete(true);
 	}
-	
+
 	@Override
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
@@ -67,8 +67,8 @@ public abstract class NewDiagramSynchronizationWizardPage extends WizardPage {
 			myWasVisible = true;
 			EObject newRoot = getWizardSemanticRoot();
 			myDomain.getResourceSet().getResource(newRoot.eResource().getURI(), true);
-			
-			if (myNewDiagramSyncHelper == null){
+
+			if (myNewDiagramSyncHelper == null) {
 				myNewDiagramSyncHelper = createNewDiagramSyncHelper(myDomain);
 			}
 
@@ -77,8 +77,8 @@ public abstract class NewDiagramSynchronizationWizardPage extends WizardPage {
 			mySyncUI.revealRootChildren();
 		}
 	}
-	
-	public boolean wasVisible(){
+
+	public boolean wasVisible() {
 		return myWasVisible;
 	}
 
@@ -92,7 +92,7 @@ public abstract class NewDiagramSynchronizationWizardPage extends WizardPage {
 
 	@Override
 	public void dispose() {
-		if (myNewDiagramSyncHelper != null){
+		if (myNewDiagramSyncHelper != null) {
 			myNewDiagramSyncHelper.dispose();
 			myNewDiagramSyncHelper = null;
 		}

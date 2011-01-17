@@ -164,7 +164,7 @@ public abstract class TextAndDialogCellEditor extends ExtendedDialogCellEditor {
 		super.doGetValue();
 		return text.getText();
 	}
-	
+
 	protected Object getObjectValue() {
 		// here we return the value stored in DialogCellEditor
 		return super.doGetValue();
@@ -178,20 +178,18 @@ public abstract class TextAndDialogCellEditor extends ExtendedDialogCellEditor {
 			checkSelection();
 			checkDeleteable();
 			checkSelectable();
-		}	
-	}	
-	
-	
+		}
+	}
+
 	@Override
 	protected void updateContents(Object value) {
 		if (text == null) {
 			return;
 		}
 		text.removeModifyListener(getModifyListener());
-	    if (labelProvider != null)
-	    {
-	    	text.setText(labelProvider.getText(value));
-	    }
+		if (labelProvider != null) {
+			text.setText(labelProvider.getText(value));
+		}
 		text.addModifyListener(getModifyListener());
 	}
 

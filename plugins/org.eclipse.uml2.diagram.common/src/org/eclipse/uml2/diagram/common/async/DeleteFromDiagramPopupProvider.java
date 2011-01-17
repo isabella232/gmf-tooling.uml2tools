@@ -7,7 +7,8 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.ui.IWorkbenchPage;
 
 public class DeleteFromDiagramPopupProvider extends AbstractContributionItemProvider implements IProvider {
-	public static final String U2T_DELETE_FROM_DIAGRAM = "u2t_deleteFromDiagram";  //$NON-NLS-1$
+
+	public static final String U2T_DELETE_FROM_DIAGRAM = "u2t_deleteFromDiagram"; //$NON-NLS-1$
 
 	@Override
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {

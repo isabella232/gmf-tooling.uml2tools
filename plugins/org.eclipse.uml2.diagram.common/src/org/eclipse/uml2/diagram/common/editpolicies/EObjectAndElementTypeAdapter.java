@@ -4,15 +4,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
-
 public class EObjectAndElementTypeAdapter extends EObjectAdapter {
+
 	private final IElementType myElementType;
 
-	public EObjectAndElementTypeAdapter(EObject subject, IElementType elementType){
+	public EObjectAndElementTypeAdapter(EObject subject, IElementType elementType) {
 		super(subject);
 		myElementType = elementType;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public Object getAdapter(Class adapter) {

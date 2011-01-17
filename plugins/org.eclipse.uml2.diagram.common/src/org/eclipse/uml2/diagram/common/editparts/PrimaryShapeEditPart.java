@@ -8,5 +8,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
  * Most of the generated node' editparts are PrimaryShapeEditPart's.
  */
 public interface PrimaryShapeEditPart extends IGraphicalEditPart {
+
 	public IFigure getPrimaryShape();
 }

@@ -85,7 +85,7 @@ public class ConvertCommentIntoNoteAction extends UMLDiagramAction {
 			myPreferenceHint = preferenceHint;
 			myConfig = config;
 		}
-		
+
 		@Override
 		public boolean canExecute() {
 			return super.canExecute();
@@ -97,41 +97,41 @@ public class ConvertCommentIntoNoteAction extends UMLDiagramAction {
 			replaceAllLinks(newNote);
 			return CommandResult.newOKCommandResult();
 		}
-		
+
 		private Node createNote() {
 			Node newNote = ViewService.createNode(myParent, myConfig.getNoteVisualId(), myPreferenceHint);
 			migrateNode(myToConvert, newNote);
 			setName(myToConvert, newNote);
 			return newNote;
 		}
-		
+
 		private void replaceAllLinks(Node newNote) {
-			for (Edge next: getAnnotatedElementLinks()) {
+			for (Edge next : getAnnotatedElementLinks()) {
 				Edge created = ViewService.createEdge(newNote, next.getTarget(), myConfig.getNoteAttachmentVisualID(), myPreferenceHint);
 				migrateLink(next, created);
 			}
 		}
-		
+
 		private List<Edge> getAnnotatedElementLinks() {
 			List<Edge> result = new LinkedList<Edge>();
-			for (Object next: myToConvert.getSourceEdges()) {
-				Edge nextEdge = (Edge)next;
+			for (Object next : myToConvert.getSourceEdges()) {
+				Edge nextEdge = (Edge) next;
 				if (String.valueOf(myConfig.getAnnotatedElementVisualID()).equals(nextEdge.getType())) {
 					result.add(nextEdge);
 				}
 			}
 			return result;
 		}
-		
+
 		private void setName(View oldView, Node newView) {
-			String description = ((Comment)oldView.getElement()).getBody();
+			String description = ((Comment) oldView.getElement()).getBody();
 			DescriptionStyle style = (DescriptionStyle) newView.getStyle(NotationPackage.eINSTANCE.getDescriptionStyle());
 			if (style == null) {
 				style = (DescriptionStyle) newView.createStyle(NotationPackage.eINSTANCE.getDescriptionStyle());
 			}
 			style.setDescription(description);
 		}
-		
+
 	}
 
 }

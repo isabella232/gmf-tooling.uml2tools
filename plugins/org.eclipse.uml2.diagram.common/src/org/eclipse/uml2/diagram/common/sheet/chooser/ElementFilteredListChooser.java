@@ -36,14 +36,14 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 	private FilteredListControl myFilteredList;
 
 	private final Validator myValidator;
-	
+
 	private Object[] myListElements;
 
 	private final AdapterFactoryContentProvider myAdapterFctoryContentProvier;
 
 	private final AdapterFactory myItemProvidersAdapterFactory;
 
-	private final TransactionalEditingDomain myEditingDomain;	
+	private final TransactionalEditingDomain myEditingDomain;
 
 	private final EObject mySourceObject;
 
@@ -72,8 +72,8 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 	}
 
 	public final List<?> getSelection() {
-        Object[] result = myFilteredList.getSelectedElements();
-        return Arrays.asList(result);
+		Object[] result = myFilteredList.getSelectedElements();
+		return Arrays.asList(result);
 	}
 
 	public final void setSelection(List<?> selection) {
@@ -81,37 +81,37 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 			myFilteredList.setSelection(null);
 		} else {
 			addMissingElements(selection);
-			myFilteredList.setSelection(selection.toArray());			
+			myFilteredList.setSelection(selection.toArray());
 		}
 	}
-	
+
 	private void addMissingElements(List<?> selection) {
 		List<Object> els = Arrays.asList(myListElements);
 		if (els.containsAll(selection)) {
 			return;
 		}
 		List<Object> elementsToAdd = new ArrayList<Object>(selection.size());
-		for (Object next: selection) {
+		for (Object next : selection) {
 			next = myValidator.validate(next);
 			if (next != null && !els.contains(next)) {
 				elementsToAdd.add(next);
 			}
 		}
-		addElements(elementsToAdd.toArray(new Object[elementsToAdd.size()]));		
+		addElements(elementsToAdd.toArray(new Object[elementsToAdd.size()]));
 	}
-	
+
 	private void addElements(Object[] elements) {
 		myListElements = concatArrays(myListElements, elements);
 		myFilteredList.setListElements(myListElements);
 	}
-	
+
 	private Object[] concatArrays(Object[] first, Object[] second) {
 		Object[] result = new Object[first.length + second.length];
 		System.arraycopy(second, 0, result, 0, second.length);
 		System.arraycopy(first, 0, result, second.length, first.length);
 		return result;
 	}
-	
+
 	protected EObject[] collectElements(Object inputElement) {
 		List<EObject> result = new LinkedList<EObject>();
 		for (Object next : getAllChildren(inputElement)) {
@@ -127,12 +127,12 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 
 	protected Collection<EObject> getAllChildren(Object parentElement) {
 		return ItemPropertyDescriptor.getReachableObjectsOfType(mySourceObject, myFeature.getEType());
-//		List<Object> result = new LinkedList<Object>();
-//		for (Object next : ModelElementsContentHelper.getChildren(parentElement, myAdapterFctoryContentProvier, myEditingDomain.getResourceSet())) {
-//			result.add(next);
-//			result.addAll(getAllChildren(next));
-//		}
-//		return result;
+		//		List<Object> result = new LinkedList<Object>();
+		//		for (Object next : ModelElementsContentHelper.getChildren(parentElement, myAdapterFctoryContentProvier, myEditingDomain.getResourceSet())) {
+		//			result.add(next);
+		//			result.addAll(getAllChildren(next));
+		//		}
+		//		return result;
 	}
 
 	public void addDoubleClickListener(IDoubleClickListener l) {
@@ -140,7 +140,7 @@ public class ElementFilteredListChooser implements ElementChooserPage {
 	}
 
 	public void addSelectionListener(ISelectionChangedListener l) {
-		myFilteredList.addSelectionListener(l);		
+		myFilteredList.addSelectionListener(l);
 	}
 
 }

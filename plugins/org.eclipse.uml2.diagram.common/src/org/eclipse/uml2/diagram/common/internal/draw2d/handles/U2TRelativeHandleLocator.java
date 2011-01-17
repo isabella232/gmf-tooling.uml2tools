@@ -12,21 +12,22 @@ package org.eclipse.uml2.diagram.common.internal.draw2d.handles;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.handles.RelativeHandleLocator;
 
-
 public class U2TRelativeHandleLocator extends RelativeHandleLocator {
-    protected int myLocation;
-    private int myShift;
 
-    public U2TRelativeHandleLocator(IFigure reference, int location, int shift) {
-        super(reference, location);
-        myLocation = location;
-        myShift = shift;
-    }
-    
-    public void relocate(IFigure target) {
-        super.relocate(target);
-        target.getBounds().x += Position2Direction.getShiftCoeffX(myLocation) * myShift;
-        target.getBounds().y += Position2Direction.getShiftCoeffY(myLocation) * myShift;
-    }
-    
+	protected int myLocation;
+
+	private int myShift;
+
+	public U2TRelativeHandleLocator(IFigure reference, int location, int shift) {
+		super(reference, location);
+		myLocation = location;
+		myShift = shift;
+	}
+
+	public void relocate(IFigure target) {
+		super.relocate(target);
+		target.getBounds().x += Position2Direction.getShiftCoeffX(myLocation) * myShift;
+		target.getBounds().y += Position2Direction.getShiftCoeffY(myLocation) * myShift;
+	}
+
 }

@@ -47,11 +47,11 @@ public class TabbedElementChooser {
 	private final String mySettingsKeyLastFocus = "ReferencedElementDialog.KeyLastFocus"; //$NON-NLS-1$
 
 	private TabFolder myTabFolder;
-	
+
 	private CLabel myDetailLabel;
 
 	private LabelProviderWithContext myDetailLabelProvider;
-	
+
 	private final Validator myValidator;
 
 	private ElementTreeChooser myTreeChooserTab;
@@ -59,7 +59,6 @@ public class TabbedElementChooser {
 	private ElementFilteredListChooser myListChooserPage;
 
 	private final TransactionalEditingDomain myEditingDomain;
-	
 
 	public TabbedElementChooser(IDialogSettings settings, AdapterFactory itemProvidersAdapterFactory, EObject sourceObject, EStructuralFeature feature, TransactionalEditingDomain editingDomain) {
 		myDialogSettings = settings;
@@ -75,7 +74,7 @@ public class TabbedElementChooser {
 		Composite plate = new Composite(composite, SWT.NONE);
 		GridLayout layout = new GridLayout();
 		plate.setLayout(layout);
-		
+
 		createTabFolder(plate);
 		myTreeChooserTab = new ElementTreeChooser(myItemProvidersAdapterFactory, mySourceObject, myFeature, myEditingDomain);
 		addTabPage(Messages.TabbedElementChooser_tab_choose_from_a_tree, myTabFolder, myTreeChooserTab);
@@ -94,9 +93,9 @@ public class TabbedElementChooser {
 			}
 		});
 
-		createDetailLabel(plate);		
+		createDetailLabel(plate);
 		// XXX set context
-//		myDetailLabelProvider.setContext(context);
+		//		myDetailLabelProvider.setContext(context);
 		return plate;
 	}
 
@@ -104,11 +103,11 @@ public class TabbedElementChooser {
 		myTabFolder = new TabFolder(plate, SWT.NONE);
 		myTabFolder.setFont(plate.getFont());
 		GridData layoutData = new GridData(GridData.FILL_BOTH);
-		layoutData.widthHint = 400;		
-		layoutData.heightHint = 400; 
+		layoutData.widthHint = 400;
+		layoutData.heightHint = 400;
 		myTabFolder.setLayoutData(layoutData);
 	}
-	
+
 	protected LabelProviderWithContext getDetailLabelProvider() {
 		return new QualifiedNameLabelProvider(new AdapterFactoryLabelProvider(myItemProvidersAdapterFactory));
 	}
@@ -125,6 +124,7 @@ public class TabbedElementChooser {
 		myDetailLabel = new CLabel(plate, SWT.NONE);
 
 		addSelectionListener(new ISelectionChangedListener() {
+
 			public void selectionChanged(SelectionChangedEvent event) {
 				List<?> selection = getSelection();
 				if (selection.size() == 1) {
@@ -178,12 +178,11 @@ public class TabbedElementChooser {
 		myCurrentPage.setSelection(getInitialSelection());
 	}
 
-	
 	protected List<?> getInitialSelection() {
 		Object featureValue = mySourceObject.eGet(myFeature);
 		if (myFeature.isMany()) {
-			@SuppressWarnings("unchecked") 
-			Collection<Object> a = (Collection)featureValue;
+			@SuppressWarnings("unchecked")
+			Collection<Object> a = (Collection) featureValue;
 			return new ArrayList<Object>(a);
 		}
 		return Collections.singletonList(featureValue);
@@ -206,12 +205,14 @@ public class TabbedElementChooser {
 		myListChooserPage.addSelectionListener(listener);
 		myTreeChooserTab.addSelectionListener(listener);
 	}
-	
+
 	public interface LabelProviderWithContext extends ILabelProvider {
+
 		void setContext(Object... context);
 	}
-	
+
 	private static class FeatureValueValidator implements Validator {
+
 		private final EStructuralFeature myFeature;
 
 		public FeatureValueValidator(EStructuralFeature feature) {

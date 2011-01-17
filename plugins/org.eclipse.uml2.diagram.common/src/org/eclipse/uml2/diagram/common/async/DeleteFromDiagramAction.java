@@ -25,9 +25,9 @@ import org.eclipse.uml2.diagram.common.Messages;
  * but can't do it due to plugin exporting limitations  
  */
 public class DeleteFromDiagramAction extends DiagramAction {
-	
+
 	public DeleteFromDiagramAction(IWorkbenchPage workbenchPage) {
-		super(workbenchPage);		
+		super(workbenchPage);
 	}
 
 	/**
@@ -43,17 +43,17 @@ public class DeleteFromDiagramAction extends DiagramAction {
 		setImageDescriptor(workbenchImages.getImageDescriptor(ISharedImages.IMG_TOOL_DELETE));
 		setDisabledImageDescriptor(workbenchImages.getImageDescriptor(ISharedImages.IMG_TOOL_DELETE_DISABLED));
 	}
-	
+
 	protected boolean isSelectionListener() {
 		return true;
 	}
-	
-	protected Request createTargetRequest(){
+
+	protected Request createTargetRequest() {
 		AsyncDiagramDeleteRequest deleteReq = new AsyncDiagramDeleteRequest();
 		deleteReq.setKind(AsyncDiagramDeleteRequest.Kind.NOTATION_ONLY);
 		return deleteReq;
 	}
-	
+
 	/**
 	 * In addition to default GMF DeleteFromDiagramAction behavior, 
 	 * we want to switch container into unsynchronized mode first.  
@@ -62,39 +62,39 @@ public class DeleteFromDiagramAction extends DiagramAction {
 	protected Command getCommand() {
 		@SuppressWarnings("unchecked")
 		List<IGraphicalEditPart> objects = createOperationSet();
-		if (objects.isEmpty()){
+		if (objects.isEmpty()) {
 			return null;
 		}
-		
-		for (Object next : objects){
-			if (next instanceof ConnectionEditPart){
+
+		for (Object next : objects) {
+			if (next instanceof ConnectionEditPart) {
 				//connections are sync'ed in U2T
 				return null;
 			}
-			if (next instanceof DiagramEditPart){
+			if (next instanceof DiagramEditPart) {
 				return null;
 			}
 		}
-		
+
 		CompoundCommand result = new CompoundCommand(getLabel());
-		for (IGraphicalEditPart next : objects){
+		for (IGraphicalEditPart next : objects) {
 			result.add(next.getCommand(getTargetRequest()));
 		}
 		return result;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	protected List createOperationSet() {
 		List selection = getSelectedObjects();
-		if (selection.isEmpty() || !(selection.get(0) instanceof IGraphicalEditPart)){
+		if (selection.isEmpty() || !(selection.get(0) instanceof IGraphicalEditPart)) {
 			return Collections.emptyList();
 		}
 		List<IGraphicalEditPart> result = new LinkedList<IGraphicalEditPart>();
-		for (Object next : selection){
-			if (next instanceof IGraphicalEditPart){
+		for (Object next : selection) {
+			if (next instanceof IGraphicalEditPart) {
 				result.add((IGraphicalEditPart) next);
 			}
-		}	
+		}
 		return result;
 	}
 

@@ -7,7 +7,6 @@ import java.util.Collection;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.emf.common.util.URI;
 
-
 public class PlatformResourcePathMapResolver extends PathMapResolver {
 
 	@Override

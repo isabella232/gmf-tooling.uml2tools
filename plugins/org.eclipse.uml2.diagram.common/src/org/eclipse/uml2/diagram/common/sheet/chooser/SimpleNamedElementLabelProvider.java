@@ -5,7 +5,6 @@ import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.NamedElement;
 
-
 public class SimpleNamedElementLabelProvider implements ILabelProvider {
 
 	private final ILabelProvider myOriginalLabelProvider;

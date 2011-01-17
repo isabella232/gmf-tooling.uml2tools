@@ -72,11 +72,11 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	private final Operation myOperation;
 
 	private final Operation myOldOperation;
-	
+
 	public static final Type NULL_TYPE = UMLFactory.eINSTANCE.createClass();
-	
+
 	private final AdapterFactory myAdapterFactory;
-	
+
 	public EditPropertyParametersDialog(Shell parentShell, Operation operation, AdapterFactory af) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE);
@@ -85,14 +85,14 @@ public class EditPropertyParametersDialog extends TrayDialog {
 		myOperation = (Operation) EcoreUtil.copy(operation);
 		setHelpAvailable(false);
 	}
-	
+
 	@Override
 	protected Control createButtonBar(Composite parent) {
 		Control buttonSection = super.createButtonBar(parent);
 		((GridData) buttonSection.getLayoutData()).grabExcessVerticalSpace = false;
 		return buttonSection;
 	}
-	
+
 	@Override
 	protected void okPressed() {
 		try {
@@ -110,7 +110,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 		Composite parentComposite = (Composite) super.createDialogArea(parent);
 
 		createAddRemoveButtonBar(parentComposite);
-		
+
 		Table table = buildTable(parentComposite);
 		GridData tableLayoutData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		tableLayoutData.heightHint = TABLE_HEIGHT;
@@ -119,7 +119,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 		myTableViewer.setInput(myOperation);
 		return parentComposite;
 	}
-	
+
 	private Table buildTable(Composite parent) {
 		Table table = new Table(parent, SWT.SINGLE | SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.HIDE_SELECTION);
 		table.setLinesVisible(true);
@@ -158,9 +158,9 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	private Control createAddRemoveButtonBar(Composite parent) {
 		Composite composite = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
-    	layout.marginWidth = 0;
-    	layout.marginHeight = 0;
-    	layout.horizontalSpacing = 0;
+		layout.marginWidth = 0;
+		layout.marginHeight = 0;
+		layout.horizontalSpacing = 0;
 		layout.numColumns = 0; // this is incremented by createButton
 		composite.setLayout(layout);
 		final GridData data = new GridData(SWT.END, SWT.BEGINNING, false, false);
@@ -205,7 +205,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 
 		});
 	}
-	
+
 	private void createUpButton(Composite composite) {
 		Button addButton = createButton(composite, UP_ID, Messages.EditPropertyParametersDialog_button_up, false);
 		addButton.addSelectionListener(new SelectionAdapter() {
@@ -246,7 +246,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 					return;
 				}
 				myOperation.getOwnedParameters().remove(selected);
-				myOperation.getOwnedParameters().add(index+1, selected);
+				myOperation.getOwnedParameters().add(index + 1, selected);
 				myTableViewer.refresh();
 				myTableViewer.getControl().setFocus();
 			}
@@ -274,7 +274,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 
 	private void addCellEditors(Table table, TableViewer viewer) {
 		CellEditor name = new TextCellEditor(table);
-//		CellEditor types = new TypeCellEditor(table, getTypeProposals());
+		//		CellEditor types = new TypeCellEditor(table, getTypeProposals());
 		CellEditor types = new TypeDialogCellEditor(table, myAdapterFactory, myOldOperation, UMLPackage.eINSTANCE.getTypedElement_Type());
 		CellEditor direction = new DirectionCellEditor(table);
 		CellEditor multiplicity = new PositiveIntegerCellEditor(table);
@@ -285,7 +285,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 		CellEditor[] editors = new CellEditor[] { name, types, direction, multiplicity, defaultValue, isOrdered, isUnique };
 		viewer.setCellEditors(editors);
 	}
-	
+
 	private class ParametersContentProvider implements IStructuredContentProvider {
 
 		public Object[] getElements(Object inputElement) {
@@ -309,7 +309,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 			Parameter p = (Parameter) element;
 			switch (columnIndex) {
 			case EditParametersTableConstants.NAME_POS:
-				return p.getName() != null ? p.getName() : StringStatics.BLANK; 
+				return p.getName() != null ? p.getName() : StringStatics.BLANK;
 			case EditParametersTableConstants.TYPES_POS:
 				return p.getType() != null ? p.getType().getName() : StringStatics.BLANK;
 			case EditParametersTableConstants.MULTIPLICITY_POS:
@@ -333,7 +333,7 @@ public class EditPropertyParametersDialog extends TrayDialog {
 	}
 
 	public static class ValueSpecificationToStringConverter extends org.eclipse.uml2.uml.util.UMLSwitch<String> {
-		
+
 		private static final String EMPTY_VALUE = StringStatics.BLANK;
 
 		@Override

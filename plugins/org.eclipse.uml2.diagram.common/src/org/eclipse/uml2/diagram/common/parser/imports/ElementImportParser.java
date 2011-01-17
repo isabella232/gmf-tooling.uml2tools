@@ -24,25 +24,26 @@ import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class ElementImportParser implements ISemanticParser {
-	
+
 	private final ElementProvider myElementProvider;
+
 	private final CompletionProcessor myCompletionProcessor = new CompletionProcessor();
 
 	private static final String UNDEFINED_VALUE = Messages.ElementImportParser_undefined_value;
-	
-	
+
 	public ElementImportParser() {
 		this(new ElementImportProvider());
 	}
-	
+
 	public ElementImportParser(ElementProvider elementProvider) {
 		myElementProvider = elementProvider;
 	}
 
-	@SuppressWarnings("serial") //$NON-NLS-1$
+	@SuppressWarnings("serial")//$NON-NLS-1$
 	public List<?> getSemanticElementsBeingParsed(EObject eObject) {
 		ElementImport immport = (ElementImport) eObject;
 		List<EObject> result = new LinkedList<EObject>() {
+
 			@Override
 			public boolean add(EObject o) {
 				if (o == null) {
@@ -94,10 +95,10 @@ public class ElementImportParser implements ISemanticParser {
 			return UnexecutableCommand.INSTANCE;
 		}
 		ElementImport elementImport = doAdapt(element);
-		if (imported.equals(elementImport.getImportedElement())){
+		if (imported.equals(elementImport.getImportedElement())) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		return new SetValueCommand(new SetRequest(elementImport, UMLPackage.eINSTANCE.getElementImport_ImportedElement(), imported)); 
+		return new SetValueCommand(new SetRequest(elementImport, UMLPackage.eINSTANCE.getElementImport_ImportedElement(), imported));
 	}
 
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
@@ -107,7 +108,7 @@ public class ElementImportParser implements ISemanticParser {
 	public boolean isAffectingEvent(Object event, int flags) {
 		return isAffectingEvent(event);
 	}
-	
+
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		NamedElement imported = findElement(element, editString);
 		if (imported == null) {
@@ -115,13 +116,13 @@ public class ElementImportParser implements ISemanticParser {
 		}
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
-	
-	private NamedElement findElement(IAdaptable parserElement, String editString){
-		if (editString == null){
+
+	private NamedElement findElement(IAdaptable parserElement, String editString) {
+		if (editString == null) {
 			return null;
 		}
 		editString = editString.trim();
-		if (editString.length() == 0){
+		if (editString.length() == 0) {
 			return null;
 		}
 		return myElementProvider.findElement(doAdapt(parserElement), editString);
@@ -131,7 +132,7 @@ public class ElementImportParser implements ISemanticParser {
 		ElementImport element = (ElementImport) adaptable.getAdapter(EObject.class);
 		return element;
 	}
-	
+
 	private boolean isEmpty(String text) {
 		return text == null || text.length() == 0;
 	}
@@ -144,14 +145,15 @@ public class ElementImportParser implements ISemanticParser {
 		}
 		return false;
 	}
-	
+
 	private class CompletionProcessor extends EObjectCompletionProcessor {
+
 		@Override
 		protected Iterable<String> computeContextProposals(EObject context) {
 			return myElementProvider.getElementNames(context);
 		}
 	}
-	
+
 	private static final String PLUGIN_ID = "org.eclipse.uml2.diagram.common"; //$NON-NLS-1$
 
 }

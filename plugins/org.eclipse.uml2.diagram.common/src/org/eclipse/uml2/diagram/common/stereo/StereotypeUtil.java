@@ -21,8 +21,8 @@ public class StereotypeUtil {
 	}
 
 	public static void addStereotypeListener(Resource semanticResource, StereotypeListener l) {
-			PackageStereotypeAdapter real = new PackageStereotypeAdapter(l);
-			semanticResource.eAdapters().add(real);
+		PackageStereotypeAdapter real = new PackageStereotypeAdapter(l);
+		semanticResource.eAdapters().add(real);
 	}
 
 	public static boolean removeStereotypeListener(Resource resource, StereotypeListener l) {

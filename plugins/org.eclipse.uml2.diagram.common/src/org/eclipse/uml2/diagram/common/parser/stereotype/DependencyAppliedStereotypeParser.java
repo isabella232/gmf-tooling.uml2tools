@@ -19,8 +19,10 @@ import org.eclipse.uml2.uml.Usage;
 public class DependencyAppliedStereotypeParser extends AppliedStereotypeParser {
 
 	private final static String LABEL_ABSTRACTION = "abstraction"; //$NON-NLS-1$
+
 	private final static String LABEL_USAGE = "usage"; //$NON-NLS-1$
-	private final static String LABEL_SUBSTITUTION = "substitute";	 //$NON-NLS-1$
+
+	private final static String LABEL_SUBSTITUTION = "substitute"; //$NON-NLS-1$
 
 	@Override
 	protected String getElementLabel(Element element) {

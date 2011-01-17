@@ -44,7 +44,7 @@ public class ApplyStereotypeAction extends DiagramAction {
 		if (elementEditPart == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		boolean applyNotUnapply =!myElement.isStereotypeApplied(myStereotype);
+		boolean applyNotUnapply = !myElement.isStereotypeApplied(myStereotype);
 		ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest request = new ApplyOrUnapplyStereotypeCommand.ApplyOrUnapplyStereotypeRequest(myElement, myStereotype, applyNotUnapply);
 		CompoundCommand command = new CompoundCommand();
 		// #265971 Allow to un-do Apply Stereotype 

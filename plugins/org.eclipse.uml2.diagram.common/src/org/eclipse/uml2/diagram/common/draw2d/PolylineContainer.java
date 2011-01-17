@@ -15,7 +15,8 @@ package org.eclipse.uml2.diagram.common.draw2d;
 import org.eclipse.draw2d.RectangleFigure;
 
 public class PolylineContainer extends RectangleFigure {
-	public PolylineContainer(){
+
+	public PolylineContainer() {
 		super();
 		setOutline(false);
 		setFill(false);
@@ -24,5 +25,5 @@ public class PolylineContainer extends RectangleFigure {
 	protected boolean useLocalCoordinates() {
 		return true;
 	}
-	
+
 }

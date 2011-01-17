@@ -9,11 +9,11 @@ import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 public class ProvidedInterfaceLinkFilter implements ILinkFilter {
 
 	private final ILinkDetector myLinkDetector;
- 
+
 	private Collection<IUpdaterLinkDescriptor> myLinks;
 
 	public ProvidedInterfaceLinkFilter(ILinkDetector linkDetector) {
-		myLinkDetector = linkDetector; 
+		myLinkDetector = linkDetector;
 		myLinks = new LinkedList<IUpdaterLinkDescriptor>();
 	}
 

@@ -62,9 +62,10 @@ public class ReferencePropertyDescriptor extends PropertyDescriptor {
 		if (itemPropertyDescriptor.getFeature(object) instanceof EReference && !myItemPropertyDescriptor.getChoiceOfValues(mySourceObject).isEmpty()) {
 			if (itemPropertyDescriptor.isMany(object)) {
 				return new ExtendedDialogCellEditor(composite, getEditLabelProvider()) {
+
 					@Override
 					protected Object openDialogBox(Control cellEditorWindow) {
-						
+
 						MultiReferenceElementChooserDialog dialog = new MultiReferenceElementChooserDialog(composite.getShell(), myDialogSettings, myItemProvidersAdapterFactory, (EObject) object,
 								feature);
 						dialog.open();
@@ -89,5 +90,5 @@ public class ReferencePropertyDescriptor extends PropertyDescriptor {
 		}
 		return UMLPreferencesConstants.PREF_PROP_SHEET_REFERENCE_DIALOG.equals(value);
 	}
-	
+
 }

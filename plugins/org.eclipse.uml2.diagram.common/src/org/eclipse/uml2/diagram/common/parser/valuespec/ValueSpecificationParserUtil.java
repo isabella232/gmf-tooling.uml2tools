@@ -32,13 +32,15 @@ import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class ValueSpecificationParserUtil {
+
 	public static String getEditString(ValueSpecification valueSpecification) {
 		UMLSwitch<String> valueSpecificationSwitch = new UMLSwitch<String>() {
+
 			@Override
 			public String caseDuration(Duration duration) {
 				return ValueSpecificationParserUtil.getEditString(duration.getExpr());
 			}
-			
+
 			@Override
 			public String caseExpression(Expression expression) {
 				StringBuffer expressionDenotation = new StringBuffer();
@@ -60,7 +62,7 @@ public class ValueSpecificationParserUtil {
 				}
 				return expressionDenotation.toString();
 			}
-			
+
 			@Override
 			public String caseInstanceValue(InstanceValue instanceValue) {
 				InstanceSpecification instanceSpecification = instanceValue.getInstance();
@@ -69,7 +71,7 @@ public class ValueSpecificationParserUtil {
 				}
 				return instanceSpecification.getName();
 			}
-			
+
 			@Override
 			public String caseInterval(Interval interval) {
 				ValueSpecification min = interval.getMin();
@@ -87,33 +89,33 @@ public class ValueSpecificationParserUtil {
 				}
 				return super.caseInterval(interval);
 			}
-			
+
 			@Override
 			public String caseLiteralBoolean(LiteralBoolean literalBoolean) {
 				return literalBoolean.isValue() ? Boolean.TRUE.toString() : Boolean.FALSE.toString();
 			}
-			
+
 			@Override
 			public String caseLiteralInteger(LiteralInteger literalInteger) {
 				return Integer.toString(literalInteger.getValue());
 			}
-			
+
 			@Override
 			public String caseLiteralNull(LiteralNull literalNull) {
 				return Messages.ValueSpecificationParserUtil_literal_null;
 			}
-			
+
 			@Override
 			public String caseLiteralString(LiteralString literalString) {
 				String value = literalString.getValue();
 				return value != null ? value : StringStatics.BLANK;
 			}
-			
+
 			@Override
 			public String caseLiteralUnlimitedNatural(LiteralUnlimitedNatural literalUnlimitedNatural) {
 				return "*"; //$NON-NLS-1$
 			}
-			
+
 			@Override
 			public String caseOpaqueExpression(OpaqueExpression opaqueExpression) {
 				StringBuffer opaqueExpressionDenotation = new StringBuffer();
@@ -131,10 +133,10 @@ public class ValueSpecificationParserUtil {
 					if (bodiesIterator.hasNext()) {
 						opaqueExpressionDenotation.append(' ');
 					}
-				}				
+				}
 				return opaqueExpressionDenotation.toString();
 			}
-			
+
 			@Override
 			public String caseTimeExpression(TimeExpression timeExpression) {
 				return ValueSpecificationParserUtil.getEditString(timeExpression.getExpr());

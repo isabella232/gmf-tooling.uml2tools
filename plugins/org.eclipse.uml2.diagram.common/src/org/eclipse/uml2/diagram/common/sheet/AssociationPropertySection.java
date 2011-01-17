@@ -16,11 +16,12 @@ import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.uml.Association;
 
 public class AssociationPropertySection {
+
 	public static class AssociationPropertySectionFilter extends UML2ToolsPropertyFilter {
 
 		@Override
 		protected boolean isValid(Object transformed) {
-			return (transformed instanceof Association) && ((Association)transformed).getMemberEnds().size() == 2;
+			return (transformed instanceof Association) && ((Association) transformed).getMemberEnds().size() == 2;
 		}
 
 	}
@@ -35,7 +36,7 @@ public class AssociationPropertySection {
 			return super.getPropertySource(object);
 		}
 	}
-	
+
 	public static class TargetPropertySection extends UMLPropertySection {
 
 		@Override
@@ -46,6 +47,5 @@ public class AssociationPropertySection {
 			return super.getPropertySource(object);
 		}
 	}
-
 
 }

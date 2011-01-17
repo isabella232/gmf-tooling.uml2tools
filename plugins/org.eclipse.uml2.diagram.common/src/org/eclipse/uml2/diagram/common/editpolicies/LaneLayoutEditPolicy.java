@@ -96,6 +96,7 @@ public class LaneLayoutEditPolicy extends ConstrainedLayoutEditPolicy {
 		}
 
 		ResizableEditPolicy editPolicy = new ResizableEditPolicy() {
+
 			@Override
 			protected List<?> createSelectionHandles() {
 				List<Handle> list = new ArrayList<Handle>();

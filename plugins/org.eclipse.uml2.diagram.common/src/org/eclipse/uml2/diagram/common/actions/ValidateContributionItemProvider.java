@@ -28,7 +28,7 @@ public class ValidateContributionItemProvider extends AbstractContributionItemPr
 			return new MenuManager(GROUP_LABEL, GROUP_ID);
 		return super.createMenuManager(menuId, partDescriptor);
 	}
-	
+
 	public static final String GROUP_ID = "ValidateMenu"; //$NON-NLS-1$
 
 	public static final String ACTION_ID = "ValidateAction"; //$NON-NLS-1$

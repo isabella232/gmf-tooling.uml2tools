@@ -89,7 +89,7 @@ public class StereotypeImages {
 		}
 		return null;
 	}
-	
+
 	private static String getImageRegistryKey(EObject stereotypeApplicationOrStereotype) {
 		// we try to use stereotypeApplication in order to handle changes of its 'images' property wherever it is possible
 		// when stereotypeApplication is not accessible, we use Stereotype

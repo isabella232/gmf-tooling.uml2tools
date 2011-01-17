@@ -21,15 +21,22 @@ import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.UseCase;
 
-
 public class ClassifierAppliedStereotypeParser extends AppliedStereotypeParser {
+
 	private static final String INTERFACE_LABEL = "interface"; //$NON-NLS-1$
+
 	private static final String DATATYPE_LABEL = "dataType"; //$NON-NLS-1$
+
 	private static final String PRIMITIVETYPE_LABEL = "primitive"; //$NON-NLS-1$
+
 	private static final String ENUMERATION_LABEL = "enumeration"; //$NON-NLS-1$
+
 	private static final String COMPONENT_LABEL = "component"; //$NON-NLS-1$
+
 	private static final String ARTIFACT_LABEL = "artifact"; //$NON-NLS-1$
+
 	private static final String USECASE_LABEL = "usecase"; //$NON-NLS-1$
+
 	private static final String ACTOR_LABEL = "actor"; //$NON-NLS-1$
 
 	@Override

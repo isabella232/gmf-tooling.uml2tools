@@ -56,7 +56,7 @@ public class ClassifierNameVisualEffectEditPolicy extends AbstractVisualEffectEd
 		IGraphicalEditPart editPart = getHostImpl();
 		View view = editPart.getNotationView();
 		FontStyle fontStyle = (FontStyle) view.getStyle(NotationPackage.eINSTANCE.getFontStyle());
-		if (false == fontStyle.isBold()){
+		if (false == fontStyle.isBold()) {
 			SetRequest request = new SetRequest(editPart.getEditingDomain(), fontStyle, NotationPackage.eINSTANCE.getFontStyle_Bold(), true);
 			executeCommand(new ICommandProxy(new SetValueCommand(request)));
 		}

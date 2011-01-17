@@ -20,18 +20,19 @@ import org.eclipse.uml2.diagram.parser.BasicApplyStrategy;
 import org.eclipse.uml2.uml.Association;
 
 public class AssociationEndApplyStrategy extends BasicApplyStrategy {
+
 	private final boolean mySourceNotTarget;
 
-	public AssociationEndApplyStrategy(boolean sourceNotTarget){
+	public AssociationEndApplyStrategy(boolean sourceNotTarget) {
 		mySourceNotTarget = sourceNotTarget;
 	}
-	
+
 	@Override
 	public List apply(EObject modelObject, EObject parsedObject) {
-		if (false == modelObject instanceof Association){
+		if (false == modelObject instanceof Association) {
 			throw new IllegalStateException("Can not apply, association expected: " + modelObject); //$NON-NLS-1$
 		}
-		Association association = (Association)modelObject;
+		Association association = (Association) modelObject;
 		EObject end = AssociationEndConvention.getMemberEnd(association, mySourceNotTarget);
 		return super.apply(end, parsedObject);
 	}

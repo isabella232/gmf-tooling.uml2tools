@@ -8,7 +8,6 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 
-
 public class InterfaceLinkManager {
 
 	private boolean ourHideProvidedInterfaceLinks;
@@ -55,7 +54,7 @@ public class InterfaceLinkManager {
 		if (!ourHideUsageLinks) {
 			myLinkManagers.add(new UsageLinkFilter(myLinkDetector));
 		}
-		
+
 		myLinkManagers.add(new DefaultLinkFilter(myLinkDetector));
 	}
 

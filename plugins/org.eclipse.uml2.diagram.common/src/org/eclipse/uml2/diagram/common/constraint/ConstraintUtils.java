@@ -5,15 +5,14 @@ import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.OpaqueExpression;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-
 public class ConstraintUtils {
-	
+
 	private static final String OCL_LANGUAGE = "OCL"; //$NON-NLS-1$
 
 	public static String getOCLConstraintBody(Constraint umlConstraint) {
 		ValueSpecification s = umlConstraint.getSpecification();
 		if (s != null && s instanceof OpaqueExpression) {
-			return getOCLBodyFromOpaqueExpression((OpaqueExpression)s);
+			return getOCLBodyFromOpaqueExpression((OpaqueExpression) s);
 		}
 		return null;
 	}
@@ -21,7 +20,7 @@ public class ConstraintUtils {
 	public static void setOCLConstraintBody(Constraint umlConstraint, String body) {
 		ValueSpecification s = umlConstraint.getSpecification();
 		if (s != null && s instanceof OpaqueExpression) {
-			setOCLBodyToOpaqueExpression((OpaqueExpression)s, body);
+			setOCLBodyToOpaqueExpression((OpaqueExpression) s, body);
 		}
 	}
 

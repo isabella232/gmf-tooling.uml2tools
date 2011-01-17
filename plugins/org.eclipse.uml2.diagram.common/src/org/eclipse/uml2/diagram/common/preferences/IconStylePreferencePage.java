@@ -29,7 +29,7 @@ import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.uml2.diagram.common.Messages;
 
 public abstract class IconStylePreferencePage extends AbstractPreferencePage {
-	
+
 	public static String getConnectionLabelPreference(int visualId) {
 		return UMLPreferencesConstants.PREF_LABELS_SHOW_VISUAL_ID_PREFIX + visualId;
 	}
@@ -55,14 +55,14 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 	}
 
 	protected void createShowHideMetaclassIconGroup(Composite parent) {
-        Group group = new Group(parent, SWT.NONE);
-        group.setFont(parent.getFont());
+		Group group = new Group(parent, SWT.NONE);
+		group.setFont(parent.getFont());
 		group.setText(LABEL_SHOW_HIDE_STEREOTYPE_GROUP);
-        group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
 		myShowStereotypeIconOnly = new CheckBoxFieldEditor(UMLPreferencesConstants.PREF_ICONS_SHOW_STEREOTYPE_ICON_MODE, LABEL_SHOW_HIDE_STEREOTYPE_MODE, group);
 		//set layout after CheckBoxFieldEditor creation, because FieldEditor#createControl() sets GridLayout with empty margins
-        group.setLayout(new GridLayout());
+		group.setLayout(new GridLayout());
 		addField(myShowStereotypeIconOnly);
 	}
 
@@ -161,7 +161,7 @@ public abstract class IconStylePreferencePage extends AbstractPreferencePage {
 		});
 		return scomp;
 	}
-	
+
 	protected class ShowHideConnectorLabelGroup {
 
 		private final List<CheckBoxFieldEditor> myConnectorLabelsByVisualIdEditors = new ArrayList<CheckBoxFieldEditor>();

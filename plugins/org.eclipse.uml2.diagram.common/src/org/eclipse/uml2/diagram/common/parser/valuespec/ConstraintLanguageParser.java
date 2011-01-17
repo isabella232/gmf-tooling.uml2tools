@@ -37,7 +37,8 @@ import org.eclipse.uml2.uml.ValueSpecification;
 import org.eclipse.uml2.uml.util.UMLSwitch;
 
 public class ConstraintLanguageParser implements ISemanticParser {
-	private static final Set<EStructuralFeature> ourFeatures; 
+
+	private static final Set<EStructuralFeature> ourFeatures;
 	static {
 		HashSet<EStructuralFeature> features = new HashSet<EStructuralFeature>();
 		features.add(UMLPackage.eINSTANCE.getConstraint_Specification());

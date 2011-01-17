@@ -1631,7 +1631,8 @@
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
   </plugin>
   <editor/>
-  <navigator>
+  <navigator
+      generateDomainModelNavigator="false">
     <childReferences
         child="//@diagram"/>
     <childReferences

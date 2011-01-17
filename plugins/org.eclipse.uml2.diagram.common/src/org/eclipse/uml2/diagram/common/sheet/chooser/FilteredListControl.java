@@ -51,7 +51,7 @@ public class FilteredListControl extends Composite {
 	private FilteredList myFilteredList;
 
 	private TableViewer viewer;
-	
+
 	public FilteredListControl(Composite parent, ILabelProvider renderer) {
 		super(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
@@ -74,7 +74,7 @@ public class FilteredListControl extends Composite {
 			myInitialSelections.add(selectedElements[i]);
 		}
 	}
-	
+
 	@Override
 	public boolean setFocus() {
 		if (myFilteredList != null) {
@@ -91,7 +91,7 @@ public class FilteredListControl extends Composite {
 		data.grabExcessHorizontalSpace = true;
 		data.horizontalAlignment = GridData.FILL;
 		data.verticalAlignment = GridData.BEGINNING;
-		
+
 		text.setLayoutData(data);
 		text.setFont(parent.getFont());
 
@@ -122,10 +122,10 @@ public class FilteredListControl extends Composite {
 		return text;
 	}
 
-/* 
- * Hack to add Double-Click Listener
- * See #263035 'Filtered List: Provide access to fList field'
- */
+	/* 
+	 * Hack to add Double-Click Listener
+	 * See #263035 'Filtered List: Provide access to fList field'
+	 */
 	private Table getTable(FilteredList list) {
 		try {
 			Field field = list.getClass().getDeclaredField("fList"); //$NON-NLS-1$
@@ -133,7 +133,7 @@ public class FilteredListControl extends Composite {
 				field.setAccessible(true);
 			}
 			Object value = field.get(list);
-			return (Table)value;
+			return (Table) value;
 		} catch (SecurityException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -146,16 +146,16 @@ public class FilteredListControl extends Composite {
 		} catch (IllegalAccessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		}
 		return null;
 	}
-	
+
 	protected FilteredList createFilteredList(Composite parent) {
 		int flags = SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL | (fIsMultipleSelection ? SWT.MULTI : SWT.SINGLE);
 
 		FilteredList list = new FilteredList(parent, flags, fRenderer, fIgnoreCase, fAllowDuplicates, fMatchEmptyString);
 		Table table = getTable(list);
-		if (table!= null) {
+		if (table != null) {
 			viewer = new TableViewer(table);
 		}
 
@@ -272,6 +272,5 @@ public class FilteredListControl extends Composite {
 	public void addSelectionListener(final ISelectionChangedListener l) {
 		viewer.addSelectionChangedListener(l);
 	}
-
 
 }

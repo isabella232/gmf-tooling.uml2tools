@@ -11,6 +11,7 @@ import org.eclipse.uml2.diagram.common.stereo.ProfileRegistry.ProfileInfo;
 import org.eclipse.uml2.uml.Profile;
 
 public class ApplyProfileInfoAction extends ApplyProfileAction {
+
 	private ProfileInfo myProfileInfo;
 
 	public ApplyProfileInfoAction(IWorkbenchPage workbenchPage, org.eclipse.uml2.uml.Package package_, ProfileInfo profileInfo) {
@@ -28,7 +29,7 @@ public class ApplyProfileInfoAction extends ApplyProfileAction {
 	protected boolean calculateChecked() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean isEnabled() {
 		return !myProfileInfo.isBroken;
@@ -40,8 +41,9 @@ public class ApplyProfileInfoAction extends ApplyProfileAction {
 	}
 
 	private class ApplyProfileInfoCommand extends ApplyProfileCommand {
-		
+
 		org.eclipse.uml2.uml.Package myPackage;
+
 		private ProfileInfo myProfileInfo;
 
 		protected ApplyProfileInfoCommand(String label, org.eclipse.uml2.uml.Package package_, ProfileInfo profileinfo, IEditCommandRequest request) {
@@ -63,6 +65,6 @@ public class ApplyProfileInfoAction extends ApplyProfileAction {
 		private Profile getProfile() {
 			return myProfileInfo.getProfile(myPackage.eResource());
 		}
-		
+
 	}
 }

@@ -6,7 +6,6 @@ import java.util.LinkedList;
 
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor;
 
-
 public class UsageLinkFilter implements ILinkFilter {
 
 	private final ILinkDetector myLinkDetector;

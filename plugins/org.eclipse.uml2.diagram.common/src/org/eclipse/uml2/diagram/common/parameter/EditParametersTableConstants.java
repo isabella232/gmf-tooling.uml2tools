@@ -14,7 +14,7 @@ package org.eclipse.uml2.diagram.common.parameter;
 import org.eclipse.uml2.diagram.common.Messages;
 
 class EditParametersTableConstants {
-	
+
 	public static final String NAME = Messages.EditParametersTableConstants_column_name;
 
 	public static final String TYPES = Messages.EditParametersTableConstants_column_types;
@@ -42,7 +42,7 @@ class EditParametersTableConstants {
 	public static final int IS_ORDERED_POS = 5;
 
 	public static final int IS_UNIQUE_POS = 6;
-	
+
 	public static final String[] COLUMN_PROPERTIES = new String[] { NAME, TYPES, DIRECTION, MULTIPLICITY, DEFAULT_VALUE, IS_ORDERED, IS_UNIQUE };
 
 }

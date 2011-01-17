@@ -114,9 +114,9 @@ public class ConvertNoteToCommentAction extends UMLDiagramAction {
 		}
 
 		private void destroyNoteAndItsLinks() {
-//			for (Edge next : getNoteAttachments()) {
-//				ViewUtil.destroy(next);
-//			}
+			//			for (Edge next : getNoteAttachments()) {
+			//				ViewUtil.destroy(next);
+			//			}
 			ViewUtil.destroy(myToConvert);
 		}
 
@@ -166,7 +166,7 @@ public class ConvertNoteToCommentAction extends UMLDiagramAction {
 			return result;
 
 		}
-		
+
 		private void setName(View oldNote, Comment newComment) {
 			DescriptionStyle style = (DescriptionStyle) oldNote.getStyle(NotationPackage.eINSTANCE.getDescriptionStyle());
 			if (style != null) {
