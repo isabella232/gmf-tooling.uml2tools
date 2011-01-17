@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.Trigger;
 import org.eclipse.uml2.uml.UMLFactory;
 
 public class AcceptEventAction_2002_Initializer {
+
 	public void init(EObject instance) {
 		if (instance instanceof AcceptEventAction) {
 			AcceptEventAction action = (AcceptEventAction) instance;

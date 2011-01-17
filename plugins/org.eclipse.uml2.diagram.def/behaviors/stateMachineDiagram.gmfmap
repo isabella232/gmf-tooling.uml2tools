@@ -764,6 +764,26 @@
       </children>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Element/ownedComment"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="behavior_comments.gmfgraph#Comment_BodySpecification"/>
+        <features
+            href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment/body"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.16"/>
+      <diagramNode
+          href="behavior_comments.gmfgraph#CommentNode"/>
+    </ownedChild>
+  </nodes>
   <links>
     <domainMetaElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Transition"/>
@@ -789,6 +809,18 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Transition/target"/>
+  </links>
+  <links>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Element/ownedComment"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="stateMachineDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+    <diagramLink
+        href="behavior_comments.gmfgraph#AnnotatedElementLink"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment/annotatedElement"/>
   </links>
   <diagram>
     <diagramCanvas

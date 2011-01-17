@@ -3,6 +3,7 @@ package org.eclipse.uml2.diagram.statemachine.preferences;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
@@ -64,6 +65,8 @@ public class DiagramIconStylePreferenceHelper {
 			case ExitActivityEditPart.VISUAL_ID:
 			case DoActivityEditPart.VISUAL_ID:
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".3019.3020.3021");
+			case CommentBodyEditPart.VISUAL_ID:
+				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5016");
 			case SimpleStateNameEditPart.VISUAL_ID:
 			case CompositeStateNameEditPart.VISUAL_ID:
 			case SubmachineStateNameEditPart.VISUAL_ID:

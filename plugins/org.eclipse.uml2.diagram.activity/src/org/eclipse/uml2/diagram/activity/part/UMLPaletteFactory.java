@@ -120,6 +120,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createExpansionNode3CreationTool());
 		paletteContainer.add(createPin4Group());
 		paletteContainer.add(createSelection5CreationTool());
+		paletteContainer.add(createComment6CreationTool());
 		return paletteContainer;
 	}
 
@@ -135,6 +136,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createControlFlow1CreationTool());
 		paletteContainer.add(createObjectFlow2CreationTool());
 		paletteContainer.add(createExceptionHandlerLink3CreationTool());
+		paletteContainer.add(createAnnotatedElement4CreationTool());
 		return paletteContainer;
 	}
 
@@ -809,6 +811,21 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	* @generated
+	*/
+	private ToolEntry createComment6CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(Messages.Comment6CreationTool_title, Messages.Comment6CreationTool_desc, Collections.singletonList(UMLElementTypes.Comment_2029));
+
+		entry.setId("createComment6CreationTool"); //$NON-NLS-1$
+
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Comment_2029));
+
+		entry.setLargeIcon(entry.getSmallIcon());
+
+		return entry;
+	}
+
+	/**
 	 * @generated
 	 */
 	private ToolEntry createControlFlow1CreationTool() {
@@ -847,6 +864,22 @@ public class UMLPaletteFactory {
 		entry.setId("createExceptionHandlerLink3CreationTool"); //$NON-NLS-1$
 
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.ExceptionHandler_4005));
+
+		entry.setLargeIcon(entry.getSmallIcon());
+
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createAnnotatedElement4CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(Messages.AnnotatedElement4CreationTool_title, Messages.AnnotatedElement4CreationTool_desc,
+				Collections.singletonList(UMLElementTypes.CommentAnnotatedElement_4007));
+
+		entry.setId("createAnnotatedElement4CreationTool"); //$NON-NLS-1$
+
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CommentAnnotatedElement_4007));
 
 		entry.setLargeIcon(entry.getSmallIcon());
 

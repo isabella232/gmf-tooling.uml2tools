@@ -219,6 +219,7 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 	 */
 	private void addAllCheckBoxes(Composite parent) {
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Behavior, 3019, 3020, 3021);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Comment, 5016);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_State, 5001, 5004, 5008);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_StateMachine, 5011);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Transition, 3022);

@@ -15,12 +15,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.commands.CommentAnnotatedElementCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionReorientCommand;
+import org.eclipse.uml2.diagram.activity.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
@@ -58,6 +61,12 @@ public class ActivityPartition_DataStoreNodeItemSemanticEditPolicy extends UMLBa
 			if (UMLVisualIDRegistry.getVisualID(incomingLink) == ObjectFlowEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
@@ -116,6 +125,9 @@ public class ActivityPartition_DataStoreNodeItemSemanticEditPolicy extends UMLBa
 		if (UMLElementTypes.ObjectNodeSelection_4004 == req.getElementType()) {
 			return getGEFWrapper(new ObjectNodeSelectionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.CommentAnnotatedElement_4007 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -131,6 +143,9 @@ public class ActivityPartition_DataStoreNodeItemSemanticEditPolicy extends UMLBa
 		}
 		if (UMLElementTypes.ObjectNodeSelection_4004 == req.getElementType()) {
 			return null;
+		}
+		if (UMLElementTypes.CommentAnnotatedElement_4007 == req.getElementType()) {
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -161,6 +176,8 @@ public class ActivityPartition_DataStoreNodeItemSemanticEditPolicy extends UMLBa
 		switch (getVisualID(req)) {
 		case ObjectNodeSelectionEditPart.VISUAL_ID:
 			return getGEFWrapper(new ObjectNodeSelectionReorientCommand(req));
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

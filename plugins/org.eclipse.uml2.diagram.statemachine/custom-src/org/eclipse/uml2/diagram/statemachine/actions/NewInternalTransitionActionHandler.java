@@ -31,12 +31,13 @@ import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.TransitionKind;
 
 public class NewInternalTransitionActionHandler extends NewActionHandler {
+
 	@Override
 	protected ICommand getCreateElementCommand(ShapeNodeEditPart editPart) {
 		CreateElementRequest createRequest = new CreateElementRequest(getTransitionContainer(editPart), UMLElementTypes.Transition_3022);
 		return new CreateInternalTransitionCommand(createRequest);
 	}
-	
+
 	private EObject getTransitionContainer(ShapeNodeEditPart editPart) throws IllegalArgumentException {
 		EObject element = ((View) editPart.getModel()).getElement();
 		if (!(element instanceof State)) {
@@ -48,12 +49,13 @@ public class NewInternalTransitionActionHandler extends NewActionHandler {
 		}
 		return regions.get(0);
 	}
-	
+
 	private static class CreateInternalTransitionCommand extends CreateElementCommand {
+
 		public CreateInternalTransitionCommand(CreateElementRequest createRequest) {
 			super(createRequest);
 		}
-		
+
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			CommandResult result = super.doExecuteWithResult(monitor, info);
@@ -66,22 +68,22 @@ public class NewInternalTransitionActionHandler extends NewActionHandler {
 			transition.setTarget(state);
 			return result;
 		}
-		
+
 		private String getTransitionName(Region region) {
 			if (!hasTransition(region, CustomMessages.NewInternalTransitionActionHandler_name_prefix)) {
 				return CustomMessages.NewInternalTransitionActionHandler_name_prefix;
 			}
-			
+
 			for (int i = 1; i <= 9; i++) {
 				String name = CustomMessages.NewInternalTransitionActionHandler_name_prefix + i;
 				if (!hasTransition(region, name)) {
 					return name;
 				}
 			}
-			
+
 			return CustomMessages.NewInternalTransitionActionHandler_name_prefix;
 		}
-		
+
 		private boolean hasTransition(Region region, String name) {
 			EList<Transition> transitions = region.getTransitions();
 			for (Iterator<Transition> transitionsIterator = transitions.iterator(); transitionsIterator.hasNext();) {
@@ -89,8 +91,8 @@ public class NewInternalTransitionActionHandler extends NewActionHandler {
 					return true;
 				}
 			}
-			
+
 			return false;
 		}
- 	}
+	}
 }

@@ -42,6 +42,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -215,6 +217,8 @@ public class UMLElementTypes {
 
 			elements.put(StateMachine_2005, UMLPackage.eINSTANCE.getStateMachine());
 
+			elements.put(Comment_2006, UMLPackage.eINSTANCE.getComment());
+
 			elements.put(Region_3013, UMLPackage.eINSTANCE.getRegion());
 
 			elements.put(State_3001, UMLPackage.eINSTANCE.getState());
@@ -260,6 +264,8 @@ public class UMLElementTypes {
 			elements.put(Pseudostate_3015, UMLPackage.eINSTANCE.getPseudostate());
 
 			elements.put(Transition_4001, UMLPackage.eINSTANCE.getTransition());
+
+			elements.put(CommentAnnotatedElement_4002, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -408,6 +414,11 @@ public class UMLElementTypes {
 	public static final IHintedType Transition_4001 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Transition_4001"); //$NON-NLS-1$
 
 	/**
+	* @generated
+	*/
+	public static final IHintedType CommentAnnotatedElement_4002 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.CommentAnnotatedElement_4002"); //$NON-NLS-1$
+
+	/**
 	 * @generated
 	 */
 	private static IElementType getElementType(String id) {
@@ -430,6 +441,11 @@ public class UMLElementTypes {
 	public static final IHintedType StateMachine_2005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.StateMachine_2005"); //$NON-NLS-1$
 
 	/**
+	* @generated
+	*/
+	public static final IHintedType Comment_2006 = (IHintedType) getElementType("org.eclipse.uml2.diagram.statemachine.Comment_2006"); //$NON-NLS-1$
+
+	/**
 	 * @generated
 	 */
 	public static boolean isKnownElementType(IElementType elementType) {
@@ -437,6 +453,7 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Package_1000);
 			KNOWN_ELEMENT_TYPES.add(StateMachine_2005);
+			KNOWN_ELEMENT_TYPES.add(Comment_2006);
 			KNOWN_ELEMENT_TYPES.add(Region_3013);
 			KNOWN_ELEMENT_TYPES.add(State_3001);
 			KNOWN_ELEMENT_TYPES.add(Behavior_3019);
@@ -460,6 +477,7 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Pseudostate_3014);
 			KNOWN_ELEMENT_TYPES.add(Pseudostate_3015);
 			KNOWN_ELEMENT_TYPES.add(Transition_4001);
+			KNOWN_ELEMENT_TYPES.add(CommentAnnotatedElement_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -473,6 +491,8 @@ public class UMLElementTypes {
 			return Package_1000;
 		case StateMachineEditPart.VISUAL_ID:
 			return StateMachine_2005;
+		case CommentEditPart.VISUAL_ID:
+			return Comment_2006;
 		case StateMachine_RegionEditPart.VISUAL_ID:
 			return Region_3013;
 		case SimpleStateEditPart.VISUAL_ID:
@@ -519,6 +539,8 @@ public class UMLElementTypes {
 			return Pseudostate_3015;
 		case TransitionEditPart.VISUAL_ID:
 			return Transition_4001;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElement_4002;
 		}
 		return null;
 	}

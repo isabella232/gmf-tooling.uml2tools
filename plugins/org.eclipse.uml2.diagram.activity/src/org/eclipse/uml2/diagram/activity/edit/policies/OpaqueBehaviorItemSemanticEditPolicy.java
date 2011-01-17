@@ -14,8 +14,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.activity.edit.commands.CommentAnnotatedElementCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ObjectNodeSelectionReorientCommand;
+import org.eclipse.uml2.diagram.activity.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectNodeSelectionEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -43,6 +46,12 @@ public class OpaqueBehaviorItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (UMLVisualIDRegistry.getVisualID(incomingLink) == ObjectNodeSelectionEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -76,6 +85,9 @@ public class OpaqueBehaviorItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		if (UMLElementTypes.ObjectNodeSelection_4004 == req.getElementType()) {
 			return null;
 		}
+		if (UMLElementTypes.CommentAnnotatedElement_4007 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -85,6 +97,9 @@ public class OpaqueBehaviorItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.ObjectNodeSelection_4004 == req.getElementType()) {
 			return getGEFWrapper(new ObjectNodeSelectionCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.CommentAnnotatedElement_4007 == req.getElementType()) {
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -99,6 +114,8 @@ public class OpaqueBehaviorItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		switch (getVisualID(req)) {
 		case ObjectNodeSelectionEditPart.VISUAL_ID:
 			return getGEFWrapper(new ObjectNodeSelectionReorientCommand(req));
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

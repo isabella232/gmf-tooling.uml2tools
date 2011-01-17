@@ -15,6 +15,7 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.PseudostateKind;
 
 public class CreateEntryConnectionPointReferenceTool extends CreateConnectionPointReferenceTool {
+
 	public CreateEntryConnectionPointReferenceTool() {
 		super(UMLElementTypes.ConnectionPointReference_3017);
 	}

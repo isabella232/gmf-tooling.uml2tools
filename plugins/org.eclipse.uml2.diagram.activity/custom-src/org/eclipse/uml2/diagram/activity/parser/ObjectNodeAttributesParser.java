@@ -37,8 +37,8 @@ import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-
 public class ObjectNodeAttributesParser implements ISemanticParser {
+
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return isAffectingEvent(notification, 0);
 	}
@@ -52,13 +52,13 @@ public class ObjectNodeAttributesParser implements ISemanticParser {
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
-		EObject eObject = (EObject)element.getAdapter(EObject.class);
+		EObject eObject = (EObject) element.getAdapter(EObject.class);
 		if (!(eObject instanceof ObjectNode)) {
 			return ""; //$NON-NLS-1$
 		}
 
 		ObjectNode objectNode = (ObjectNode) eObject;
-			
+
 		StringBuffer result = new StringBuffer();
 		ObjectNodeOrderingKind ordering = objectNode.getOrdering();
 		if (!ObjectNodeOrderingKind.FIFO_LITERAL.equals(ordering)) {
@@ -78,7 +78,7 @@ public class ObjectNodeAttributesParser implements ISemanticParser {
 				result.append(',');
 			}
 			result.append(UPPER_BOUND_ATTRIBUTE + "="); //$NON-NLS-1$
-			result.append(upperBounds.stringValue()); 
+			result.append(upperBounds.stringValue());
 		}
 		return result.toString();
 	}
@@ -92,16 +92,13 @@ public class ObjectNodeAttributesParser implements ISemanticParser {
 			String key = token.substring(0, equalityPosition);
 			String value = token.substring(equalityPosition + 1);
 			if (ORDERING_ATTRIBUTE.equals(key)) {
-				resultCommand.add(new SetValueCommand(new SetRequest(adaptToEObject(element), 
-						UMLPackage.eINSTANCE.getObjectNode_Ordering(), ObjectNodeOrderingKind.get(value))));
+				resultCommand.add(new SetValueCommand(new SetRequest(adaptToEObject(element), UMLPackage.eINSTANCE.getObjectNode_Ordering(), ObjectNodeOrderingKind.get(value))));
 			} else if (CONTROL_TYPE_ATTRIBUTE.equals(key)) {
-				resultCommand.add(new SetValueCommand(new SetRequest(adaptToEObject(element), 
-						UMLPackage.eINSTANCE.getObjectNode_IsControlType(), Boolean.parseBoolean(value))));
+				resultCommand.add(new SetValueCommand(new SetRequest(adaptToEObject(element), UMLPackage.eINSTANCE.getObjectNode_IsControlType(), Boolean.parseBoolean(value))));
 			} else if (UPPER_BOUND_ATTRIBUTE.equals(key)) {
 				NamedElement foundElement = getElementProvider().findElement(adaptToEObject(element), value);
 				if (foundElement != null && foundElement instanceof ValueSpecification) {
-					resultCommand.add(new SetValueCommand(new SetRequest(adaptToEObject(element), 
-							UMLPackage.eINSTANCE.getObjectNode_UpperBound(), foundElement)));
+					resultCommand.add(new SetValueCommand(new SetRequest(adaptToEObject(element), UMLPackage.eINSTANCE.getObjectNode_UpperBound(), foundElement)));
 				}
 			}
 		}
@@ -120,9 +117,8 @@ public class ObjectNodeAttributesParser implements ISemanticParser {
 	public boolean isAffectingEvent(Object event, int flags) {
 		if (event instanceof Notification) {
 			Object feature = ((Notification) event).getFeature();
-			return UMLPackage.eINSTANCE.getObjectNode_Ordering().equals(feature) ||
-				UMLPackage.eINSTANCE.getObjectNode_IsControlType().equals(feature) ||
-				UMLPackage.eINSTANCE.getObjectNode_UpperBound().equals(feature);
+			return UMLPackage.eINSTANCE.getObjectNode_Ordering().equals(feature) || UMLPackage.eINSTANCE.getObjectNode_IsControlType().equals(feature)
+					|| UMLPackage.eINSTANCE.getObjectNode_UpperBound().equals(feature);
 		}
 		return false;
 	}
@@ -141,18 +137,20 @@ public class ObjectNodeAttributesParser implements ISemanticParser {
 	private EObject adaptToEObject(IAdaptable adaptable) {
 		return (EObject) adaptable.getAdapter(EObject.class);
 	}
-	
+
 	private ElementProvider getElementProvider() {
 		if (elementProvider == null) {
 			elementProvider = new ElementProvider();
 		}
 		return elementProvider;
 	}
-	
+
 	private static final String ORDERING_ATTRIBUTE = "ordering"; //$NON-NLS-1$
+
 	private static final String CONTROL_TYPE_ATTRIBUTE = "isControlType"; //$NON-NLS-1$
+
 	private static final String UPPER_BOUND_ATTRIBUTE = "upperBound"; //$NON-NLS-1$
-	
+
 	private static final String PLUGIN_ID = "org.eclipse.uml2.diagram.activity"; //$NON-NLS-1$
 
 	private ElementProvider elementProvider;

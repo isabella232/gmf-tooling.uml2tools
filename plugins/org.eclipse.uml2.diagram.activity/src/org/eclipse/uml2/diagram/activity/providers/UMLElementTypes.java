@@ -16,6 +16,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.uml2.diagram.activity.edit.parts.*;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AcceptTimeEventActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPostconditionEditPart;
@@ -163,6 +164,11 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static final IHintedType Constraint_2028 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.Constraint_2028"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IHintedType Comment_2029 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.Comment_2029"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -635,6 +641,11 @@ public class UMLElementTypes {
 	public static final IHintedType ExceptionHandler_4005 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.ExceptionHandler_4005"); //$NON-NLS-1$
 
 	/**
+	* @generated
+	*/
+	public static final IHintedType CommentAnnotatedElement_4007 = (IHintedType) getElementType("org.eclipse.uml2.diagram.activity.CommentAnnotatedElement_4007"); //$NON-NLS-1$
+
+	/**
 	 * @generated
 	 */
 	private static ImageRegistry getImageRegistry() {
@@ -747,6 +758,8 @@ public class UMLElementTypes {
 			elements.put(Constraint_2027, UMLPackage.eINSTANCE.getConstraint());
 
 			elements.put(Constraint_2028, UMLPackage.eINSTANCE.getConstraint());
+
+			elements.put(Comment_2029, UMLPackage.eINSTANCE.getComment());
 
 			elements.put(AcceptEventAction_3030, UMLPackage.eINSTANCE.getAcceptEventAction());
 
@@ -935,6 +948,8 @@ public class UMLElementTypes {
 			elements.put(ObjectNodeSelection_4004, UMLPackage.eINSTANCE.getObjectNode_Selection());
 
 			elements.put(ExceptionHandler_4005, UMLPackage.eINSTANCE.getExceptionHandler());
+
+			elements.put(CommentAnnotatedElement_4007, UMLPackage.eINSTANCE.getComment_AnnotatedElement());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -956,6 +971,7 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Activity_2026);
 			KNOWN_ELEMENT_TYPES.add(Constraint_2027);
 			KNOWN_ELEMENT_TYPES.add(Constraint_2028);
+			KNOWN_ELEMENT_TYPES.add(Comment_2029);
 			KNOWN_ELEMENT_TYPES.add(AcceptEventAction_3030);
 			KNOWN_ELEMENT_TYPES.add(AcceptEventAction_3031);
 			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_3032);
@@ -1050,6 +1066,7 @@ public class UMLElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ActionLocalPostcondition_4006);
 			KNOWN_ELEMENT_TYPES.add(ObjectNodeSelection_4004);
 			KNOWN_ELEMENT_TYPES.add(ExceptionHandler_4005);
+			KNOWN_ELEMENT_TYPES.add(CommentAnnotatedElement_4007);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -1067,6 +1084,8 @@ public class UMLElementTypes {
 			return Constraint_2027;
 		case LocalPostconditionEditPart.VISUAL_ID:
 			return Constraint_2028;
+		case CommentEditPart.VISUAL_ID:
+			return Comment_2029;
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return AcceptEventAction_3030;
 		case AcceptTimeEventActionEditPart.VISUAL_ID:
@@ -1255,6 +1274,8 @@ public class UMLElementTypes {
 			return ObjectNodeSelection_4004;
 		case ExceptionHandlerEditPart.VISUAL_ID:
 			return ExceptionHandler_4005;
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return CommentAnnotatedElement_4007;
 		}
 		return null;
 	}

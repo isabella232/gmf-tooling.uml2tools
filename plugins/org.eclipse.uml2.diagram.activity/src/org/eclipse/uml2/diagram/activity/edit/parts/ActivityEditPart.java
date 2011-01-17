@@ -327,8 +327,9 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.ObjectNodeSelection_4004);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4007);
 		return types;
 	}
 
@@ -363,6 +364,8 @@ public class ActivityEditPart extends AbstractBorderedShapeEditPart implements P
 			types.add(UMLElementTypes.OutputPin_3081);
 			types.add(UMLElementTypes.OutputPin_3090);
 			types.add(UMLElementTypes.ExpansionNode_3091);
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4007) {
+			types.add(UMLElementTypes.Comment_2029);
 		}
 		return types;
 	}

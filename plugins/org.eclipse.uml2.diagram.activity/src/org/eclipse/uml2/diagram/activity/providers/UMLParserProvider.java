@@ -70,6 +70,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	* @generated
+	*/
+	private IParser commentBody_5151Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getCommentBody_5151Parser() {
+		if (commentBody_5151Parser == null) {
+			commentBody_5151Parser = createCommentBody_5151Parser();
+		}
+		return commentBody_5151Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createCommentBody_5151Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getComment_Body() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
 	 * @generated
 	 */
 	private IParser acceptEventActionName_5040Parser;
@@ -3071,6 +3095,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getActivityName_5030Parser();
 		case ActivityStereotypeEditPart.VISUAL_ID:
 			return getActivityQualifiedName_5093Parser();
+		case CommentBodyEditPart.VISUAL_ID:
+			return getCommentBody_5151Parser();
 		case AcceptEventActionNameEditPart.VISUAL_ID:
 			return getAcceptEventActionName_5040Parser();
 		case AcceptEventActionStereotypeEditPart.VISUAL_ID:

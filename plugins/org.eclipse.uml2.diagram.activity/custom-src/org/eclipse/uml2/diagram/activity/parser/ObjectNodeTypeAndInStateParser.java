@@ -23,9 +23,10 @@ import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class ObjectNodeTypeAndInStateParser extends ObjectNodeTypeParser {
+
 	@Override
 	public String getPrintString(IAdaptable element, int flags) {
-		EObject eObject = (EObject)element.getAdapter(EObject.class);
+		EObject eObject = (EObject) element.getAdapter(EObject.class);
 		if (eObject instanceof ObjectNode) {
 			EList<State> states = ((ObjectNode) eObject).getInStates();
 			if (!states.isEmpty()) {
@@ -48,8 +49,7 @@ public class ObjectNodeTypeAndInStateParser extends ObjectNodeTypeParser {
 	public boolean isAffectingEvent(Object event, int flags) {
 		if (event instanceof Notification) {
 			Object feature = ((Notification) event).getFeature();
-			return UMLPackage.eINSTANCE.getObjectNode_InState().equals(feature) ||
-				super.isAffectingEvent(event, flags);
+			return UMLPackage.eINSTANCE.getObjectNode_InState().equals(feature) || super.isAffectingEvent(event, flags);
 		}
 		return false;
 	}

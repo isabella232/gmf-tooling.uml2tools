@@ -892,9 +892,10 @@ public class ActivityPartition_InitialNodeEditPart extends ShapeNodeEditPart imp
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(UMLElementTypes.ControlFlow_4001);
 		types.add(UMLElementTypes.ObjectFlow_4002);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4007);
 		return types;
 	}
 
@@ -1067,6 +1068,8 @@ public class ActivityPartition_InitialNodeEditPart extends ShapeNodeEditPart imp
 			types.add(UMLElementTypes.ExpansionRegion_3084);
 			types.add(UMLElementTypes.ExpansionNode_3091);
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4007) {
+			types.add(UMLElementTypes.Comment_2029);
 		}
 		return types;
 	}

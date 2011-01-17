@@ -29,12 +29,14 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.CallBehaviorAction;
 import org.eclipse.uml2.uml.CallOperationAction;
 import org.eclipse.uml2.uml.CentralBufferNode;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.ConditionalNode;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.ControlFlow;
 import org.eclipse.uml2.uml.CreateObjectAction;
 import org.eclipse.uml2.uml.DataStoreNode;
 import org.eclipse.uml2.uml.DecisionNode;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.ExpansionNode;
@@ -2102,6 +2104,10 @@ public class UMLDiagramUpdater {
 				result.add(new org.eclipse.uml2.diagram.activity.part.UMLNodeDescriptor(childElement, LocalPostconditionEditPart.VISUAL_ID));
 				continue;
 			}
+			if (UMLVisualIDRegistry.getNodeVisualID(view, childElement) == CommentEditPart.VISUAL_ID) {
+				result.add(new org.eclipse.uml2.diagram.activity.part.UMLNodeDescriptor(childElement, CommentEditPart.VISUAL_ID));
+				continue;
+			}
 		}
 		return result;
 	}
@@ -2126,6 +2132,8 @@ public class UMLDiagramUpdater {
 			return getConstraint_2027ContainedLinks(view);
 		case LocalPostconditionEditPart.VISUAL_ID:
 			return getConstraint_2028ContainedLinks(view);
+		case CommentEditPart.VISUAL_ID:
+			return getComment_2029ContainedLinks(view);
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3030ContainedLinks(view);
 		case AcceptTimeEventActionEditPart.VISUAL_ID:
@@ -2323,6 +2331,8 @@ public class UMLDiagramUpdater {
 			return getConstraint_2027IncomingLinks(view);
 		case LocalPostconditionEditPart.VISUAL_ID:
 			return getConstraint_2028IncomingLinks(view);
+		case CommentEditPart.VISUAL_ID:
+			return getComment_2029IncomingLinks(view);
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3030IncomingLinks(view);
 		case AcceptTimeEventActionEditPart.VISUAL_ID:
@@ -2520,6 +2530,8 @@ public class UMLDiagramUpdater {
 			return getConstraint_2027OutgoingLinks(view);
 		case LocalPostconditionEditPart.VISUAL_ID:
 			return getConstraint_2028OutgoingLinks(view);
+		case CommentEditPart.VISUAL_ID:
+			return getComment_2029OutgoingLinks(view);
 		case AcceptEventActionEditPart.VISUAL_ID:
 			return getAcceptEventAction_3030OutgoingLinks(view);
 		case AcceptTimeEventActionEditPart.VISUAL_ID:
@@ -2736,6 +2748,16 @@ public class UMLDiagramUpdater {
 	 */
 	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getConstraint_2028ContainedLinks(View view) {
 		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getComment_2029ContainedLinks(View view) {
+		Comment modelElement = (Comment) view.getElement();
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement));
+		return result;
 	}
 
 	/**
@@ -3649,6 +3671,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3661,6 +3684,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3673,6 +3697,18 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Action_LocalPrecondition_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_Action_LocalPostcondition_4006(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getComment_2029IncomingLinks(View view) {
+		Comment modelElement = (Comment) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3686,6 +3722,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3699,6 +3736,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3711,6 +3749,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3723,6 +3762,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3735,6 +3775,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3747,6 +3788,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3759,6 +3801,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3771,6 +3814,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3784,6 +3828,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3796,6 +3841,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3808,6 +3854,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3820,6 +3867,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3832,6 +3880,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3844,6 +3893,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3856,6 +3906,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3869,6 +3920,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3881,6 +3933,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3894,6 +3947,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3906,6 +3960,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3918,6 +3973,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3930,6 +3986,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3943,6 +4000,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3955,6 +4013,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3967,6 +4026,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3980,6 +4040,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -3992,6 +4053,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4005,6 +4067,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4018,6 +4081,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4031,6 +4095,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4044,6 +4109,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4057,6 +4123,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4069,6 +4136,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4081,6 +4149,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4093,6 +4162,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4105,6 +4175,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4118,6 +4189,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4131,6 +4203,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4144,6 +4217,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4156,6 +4230,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4168,6 +4243,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4181,6 +4257,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4193,6 +4270,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4205,6 +4283,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4217,6 +4296,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4229,6 +4309,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4242,6 +4323,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4254,6 +4336,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4265,6 +4348,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_ObjectNode_Selection_4004(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4277,6 +4361,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4290,6 +4375,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4297,14 +4383,22 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getActivityPartition_3056IncomingLinks(View view) {
-		return Collections.emptyList();
+		ActivityPartition modelElement = (ActivityPartition) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getActivityPartition_3057IncomingLinks(View view) {
-		return Collections.emptyList();
+		ActivityPartition modelElement = (ActivityPartition) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -4317,6 +4411,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4330,6 +4425,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4342,6 +4438,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4354,6 +4451,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4366,6 +4464,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4378,6 +4477,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4390,6 +4490,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4402,6 +4503,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4415,6 +4517,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4427,6 +4530,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4439,6 +4543,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4451,6 +4556,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4463,6 +4569,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4476,6 +4583,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4489,6 +4597,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4502,6 +4611,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4515,6 +4625,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4528,6 +4639,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4541,6 +4653,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4553,6 +4666,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4565,6 +4679,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4578,6 +4693,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4591,6 +4707,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4604,6 +4721,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4617,6 +4735,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4630,6 +4749,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4642,6 +4762,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4655,6 +4776,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4668,6 +4790,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4681,6 +4804,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4693,6 +4817,7 @@ public class UMLDiagramUpdater {
 		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4700,14 +4825,22 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getParameterSet_3086IncomingLinks(View view) {
-		return Collections.emptyList();
+		ParameterSet modelElement = (ParameterSet) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getParameter_3087IncomingLinks(View view) {
-		return Collections.emptyList();
+		Parameter modelElement = (Parameter) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -4720,6 +4853,7 @@ public class UMLDiagramUpdater {
 		result.addAll(getIncomingTypeModelFacetLinks_ControlFlow_4001(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ObjectFlow_4002(modelElement, crossReferences));
 		result.addAll(getIncomingTypeModelFacetLinks_ExceptionHandler_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
 		return result;
 	}
 
@@ -4741,21 +4875,33 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getControlFlow_4001IncomingLinks(View view) {
-		return Collections.emptyList();
+		ControlFlow modelElement = (ControlFlow) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getObjectFlow_4002IncomingLinks(View view) {
-		return Collections.emptyList();
+		ObjectFlow modelElement = (ObjectFlow) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getExceptionHandler_4005IncomingLinks(View view) {
-		return Collections.emptyList();
+		ExceptionHandler modelElement = (ExceptionHandler) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -4777,6 +4923,16 @@ public class UMLDiagramUpdater {
 	 */
 	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getConstraint_2028OutgoingLinks(View view) {
 		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getComment_2029OutgoingLinks(View view) {
+		Comment modelElement = (Comment) view.getElement();
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(modelElement));
+		return result;
 	}
 
 	/**
@@ -6087,6 +6243,22 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	private static Collection<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(Element target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getComment_AnnotatedElement()) {
+				result.add(new org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.CommentAnnotatedElement_4007,
+						CommentAnnotatedElementEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	private static Collection<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_ControlFlow_4001Gen(ActivityNode source) {
@@ -6302,34 +6474,46 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	private static Collection<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4007(Comment source) {
+		LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor>();
+		for (Iterator<?> destinations = source.getAnnotatedElements().iterator(); destinations.hasNext();) {
+			Element destination = (Element) destinations.next();
+			result.add(new org.eclipse.uml2.diagram.activity.part.UMLLinkDescriptor(source, destination, UMLElementTypes.CommentAnnotatedElement_4007, CommentAnnotatedElementEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	public static final IDiagramUpdater TYPED_ADAPTER = new IDiagramUpdater() {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLNodeDescriptor> getSemanticChildren(View view) {
 			return org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLLinkDescriptor> getContainedLinks(View view) {
 			return org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLLinkDescriptor> getIncomingLinks(View view) {
 			return org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLLinkDescriptor> getOutgoingLinks(View view) {
 			return org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater.getOutgoingLinks(view);
 		}

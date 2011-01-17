@@ -37,8 +37,8 @@ import org.eclipse.uml2.uml.Pseudostate;
 import org.eclipse.uml2.uml.PseudostateKind;
 import org.eclipse.uml2.uml.StateMachine;
 
-
 public class SelectConnectionPointsDialog extends Dialog {
+
 	public SelectConnectionPointsDialog(Shell parentShell, StateMachine input, PseudostateKind kind) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE);
@@ -49,11 +49,11 @@ public class SelectConnectionPointsDialog extends Dialog {
 	public List<Pseudostate> getSelectedConnectionPoints() {
 		return mySelectionConnectionPoints;
 	}
-	
+
 	@Override
-	protected Control createDialogArea(Composite parent) {		
+	protected Control createDialogArea(Composite parent) {
 		getShell().setText(CustomMessages.SelectConnectionPointsDialog_Title);
-		createSelector(parent);				
+		createSelector(parent);
 		return parent;
 	}
 
@@ -81,52 +81,56 @@ public class SelectConnectionPointsDialog extends Dialog {
 		viewer.addFilter(new ConnectionPointsFilter());
 		viewer.addSelectionChangedListener(new OkButtonEnabler());
 	}
-	
+
 	private StateMachine myInput;
+
 	private PseudostateKind myKind;
+
 	private List<Pseudostate> mySelectionConnectionPoints;
 
 	private static class ConnectionPointsListContentProvider implements ITreeContentProvider {
-	    public ConnectionPointsListContentProvider(StateMachine content) {
-	    	myContent = content;
-	    }
-	    
-	    public Object[] getChildren(Object parentElement) {
+
+		public ConnectionPointsListContentProvider(StateMachine content) {
+			myContent = content;
+		}
+
+		public Object[] getChildren(Object parentElement) {
 			if (parentElement instanceof StateMachine) {
-				EList connectionPoints = myContent.getConnectionPoints(); 
+				EList connectionPoints = myContent.getConnectionPoints();
 				return connectionPoints.toArray(new Pseudostate[connectionPoints.size()]);
 			}
 			return null;
 		}
-	    
+
 		public Object getParent(Object element) {
 			if (element instanceof Pseudostate) {
 				return myContent;
 			}
 			return null;
 		}
-		
+
 		public boolean hasChildren(Object element) {
 			if (element instanceof StateMachine) {
 				return true;
 			}
 			return false;
 		}
-		
+
 		public Object[] getElements(Object inputElement) {
 			return getChildren(inputElement);
 		}
-		
+
 		public void dispose() {
 		}
-		
+
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		}
-		
+
 		private StateMachine myContent;
 	}
-	
+
 	private static class ConnectionPointsListLabelProvider implements ILabelProvider {
+
 		public String getText(Object element) {
 			if (element instanceof Pseudostate) {
 				Pseudostate pseudoState = (Pseudostate) element;
@@ -140,10 +144,10 @@ public class SelectConnectionPointsDialog extends Dialog {
 				text.append(pseudoState.getName());
 				return text.toString();
 			}
-			
+
 			return myAdapterFactoryLabelProvider.getText(element);
 		}
-		
+
 		public Image getImage(Object element) {
 			return myAdapterFactoryLabelProvider.getImage(element);
 		}
@@ -163,11 +167,12 @@ public class SelectConnectionPointsDialog extends Dialog {
 		public void removeListener(ILabelProviderListener listener) {
 			myAdapterFactoryLabelProvider.removeListener(listener);
 		}
-		
+
 		private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 	}
-	
+
 	private class ConnectionPointsFilter extends ViewerFilter {
+
 		@Override
 		public boolean select(Viewer viewer, Object parentElement, Object element) {
 			if (element instanceof Pseudostate) {
@@ -181,6 +186,7 @@ public class SelectConnectionPointsDialog extends Dialog {
 	}
 
 	private class OkButtonEnabler implements ISelectionChangedListener {
+
 		public void selectionChanged(SelectionChangedEvent event) {
 			if (!(event.getSelection() instanceof IStructuredSelection)) {
 				setOkButtonEnabled(false);

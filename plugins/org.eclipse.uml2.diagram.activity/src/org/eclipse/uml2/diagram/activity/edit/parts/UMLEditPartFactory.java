@@ -49,6 +49,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case LocalPostconditionEditPart.VISUAL_ID:
 				return new LocalPostconditionEditPart(view);
 
+			case CommentEditPart.VISUAL_ID:
+				return new CommentEditPart(view);
+
+			case CommentBodyEditPart.VISUAL_ID:
+				return new CommentBodyEditPart(view);
+
 			case AcceptEventActionEditPart.VISUAL_ID:
 				return new AcceptEventActionEditPart(view);
 
@@ -810,6 +816,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case ExceptionHandlerLink_fixed_iconEditPart.VISUAL_ID:
 				return new ExceptionHandlerLink_fixed_iconEditPart(view);
+
+			case CommentAnnotatedElementEditPart.VISUAL_ID:
+				return new CommentAnnotatedElementEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

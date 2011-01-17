@@ -151,6 +151,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2028((Constraint) domainElement)) {
 				return LocalPostconditionEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
 			break;
 		case ActivityEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3030((AcceptEventAction) domainElement)) {
@@ -1212,6 +1215,9 @@ public class UMLVisualIDRegistry {
 			if (LocalPostconditionEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (CommentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ActivityEditPart.VISUAL_ID:
 			if (ActivityNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -1309,6 +1315,11 @@ public class UMLVisualIDRegistry {
 			break;
 		case LocalPostconditionEditPart.VISUAL_ID:
 			if (LocalPostconditionCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case CommentEditPart.VISUAL_ID:
+			if (CommentBodyEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -3434,6 +3445,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getConstraint().isSuperTypeOf(domainElement.eClass()) && isConstraint_2028((Constraint) domainElement)) {
 				return LocalPostconditionEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
 			break;
 		case ActivityEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getAcceptEventAction().isSuperTypeOf(domainElement.eClass()) && isAcceptEventAction_3030((AcceptEventAction) domainElement)) {
@@ -4527,6 +4541,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
+		case CommentEditPart.VISUAL_ID:
 		case AcceptEventActionEditPart.VISUAL_ID:
 		case AcceptTimeEventActionEditPart.VISUAL_ID:
 		case ActivityFinalNodeEditPart.VISUAL_ID:
@@ -4597,76 +4612,76 @@ public class UMLVisualIDRegistry {
 	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistryExt() {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public String getModelID(View view) {
 			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public int getVisualID(View view) {
 			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public int getNodeVisualID(View containerView, EObject domainElement) {
 			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean isCompartmentVisualID(int visualID) {
 			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean isShortcutDescendant(View view) {
 			return org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry.isShortcutDescendant(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private VisualIDRegistryExtension myExtension = new VisualIDRegistryExtension();
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<String> getAllHintedTypes() {
 			return myExtension.getAllHintedTypes();
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<IVisualIDRegistryExt.MenuTypeHint> getMenuTypeHints(String type) {
 			return myExtension.getMenuTypeHints(type);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public String getSemanticHint(View childView, View newParentView) {
 			return myExtension.getSemanticHint(childView, newParentView);
 		}

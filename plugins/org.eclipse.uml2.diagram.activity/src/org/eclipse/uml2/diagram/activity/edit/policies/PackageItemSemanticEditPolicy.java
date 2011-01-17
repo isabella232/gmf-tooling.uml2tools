@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsComma
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 import org.eclipse.uml2.diagram.activity.edit.commands.ActivityCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CommentCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.LocalPostconditionCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.LocalPreconditionCreateCommand;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
@@ -36,6 +37,9 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 		}
 		if (UMLElementTypes.Constraint_2028 == req.getElementType()) {
 			return getGEFWrapper(new LocalPostconditionCreateCommand(req));
+		}
+		if (UMLElementTypes.Comment_2029 == req.getElementType()) {
+			return getGEFWrapper(new CommentCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

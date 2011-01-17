@@ -32,13 +32,14 @@ import org.eclipse.uml2.uml.LiteralNull;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class ActivityEdgeWeightParser  implements IParser {
+public class ActivityEdgeWeightParser implements IParser {
+
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
-		EObject eObject = (EObject)element.getAdapter(EObject.class);
+		EObject eObject = (EObject) element.getAdapter(EObject.class);
 		if (!(eObject instanceof ActivityEdge)) {
 			return ""; //$NON-NLS-1$
 		}
@@ -57,8 +58,7 @@ public class ActivityEdgeWeightParser  implements IParser {
 		if (!(weight instanceof LiteralInteger)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		return new SetValueCommand(new SetRequest(weight, 
-				UMLPackage.eINSTANCE.getLiteralInteger_Value(), Integer.parseInt(newString)));
+		return new SetValueCommand(new SetRequest(weight, UMLPackage.eINSTANCE.getLiteralInteger_Value(), Integer.parseInt(newString)));
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {

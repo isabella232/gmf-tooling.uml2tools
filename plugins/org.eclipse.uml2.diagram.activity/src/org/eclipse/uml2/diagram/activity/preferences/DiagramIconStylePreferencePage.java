@@ -236,6 +236,7 @@ public class DiagramIconStylePreferencePage extends IconStylePreferencePage {
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_CallBehaviorAction, 5027, 5018, 5078);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_CallOperationAction, 5028, 5019, 5079);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_CentralBufferNode, 5032, 5033, 5070);
+		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_Comment, 5151);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_ConditionalNode, 5147, 5115, 5092);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_CreateObjectAction, 5025, 5017, 5076);
 		addCheckBoxForVisualIds(parent, Messages.DiagramIconStylePreferencePage_label_for_DataStoreNode, 5034, 5035, 5067);

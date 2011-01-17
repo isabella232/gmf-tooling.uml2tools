@@ -9,16 +9,22 @@ import org.eclipse.gmf.runtime.common.core.command.ICompositeCommand;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
+import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.CommentAnnotatedElementCreateCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.State_RegionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.TransitionReorientCommand;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalTransitionsEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
@@ -68,6 +74,12 @@ public class CompositeStateItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
@@ -100,6 +112,15 @@ public class CompositeStateItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 			Node node = (Node) nit.next();
 			switch (UMLVisualIDRegistry.getVisualID(node)) {
 			case State_RegionEditPart.VISUAL_ID:
+				for (Iterator<?> it = node.getTargetEdges().iterator(); it.hasNext();) {
+					Edge incomingLink = (Edge) it.next();
+					if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+						continue;
+					}
+				}
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(getEditingDomain(), node.getElement(), false))); // directlyOwned: true
 				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
@@ -157,6 +178,9 @@ public class CompositeStateItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 		if (UMLElementTypes.Transition_4001 == req.getElementType()) {
 			return getGEFWrapper(new TransitionCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.CommentAnnotatedElement_4002 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -166,6 +190,9 @@ public class CompositeStateItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.Transition_4001 == req.getElementType()) {
 			return getGEFWrapper(new TransitionCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.CommentAnnotatedElement_4002 == req.getElementType()) {
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -182,6 +209,20 @@ public class CompositeStateItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 			return getGEFWrapper(new TransitionReorientCommand(req));
 		}
 		return super.getReorientRelationshipCommand(req);
+	}
+
+	/**
+	* Returns command to reorient EReference based link. New link target or source
+	* should be the domain model element associated with this node.
+	* 
+	* @generated
+	*/
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
+		switch (getVisualID(req)) {
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
+		}
+		return super.getReorientReferenceRelationshipCommand(req);
 	}
 
 }

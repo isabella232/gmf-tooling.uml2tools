@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IDiagramUpdater;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalActivitiesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeState_InternalTransitionsEditPart;
@@ -47,7 +49,9 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEdit
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.ConnectionPointReference;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.FinalState;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.PackageableElement;
@@ -490,6 +494,14 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
+		for (Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
+			Comment childElement = (Comment) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == CommentEditPart.VISUAL_ID) {
+				result.add(new org.eclipse.uml2.diagram.statemachine.part.UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		return result;
 	}
 
@@ -502,6 +514,8 @@ public class UMLDiagramUpdater {
 			return getPackage_1000ContainedLinks(view);
 		case StateMachineEditPart.VISUAL_ID:
 			return getStateMachine_2005ContainedLinks(view);
+		case CommentEditPart.VISUAL_ID:
+			return getComment_2006ContainedLinks(view);
 		case StateMachine_RegionEditPart.VISUAL_ID:
 			return getRegion_3013ContainedLinks(view);
 		case SimpleStateEditPart.VISUAL_ID:
@@ -559,6 +573,8 @@ public class UMLDiagramUpdater {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StateMachineEditPart.VISUAL_ID:
 			return getStateMachine_2005IncomingLinks(view);
+		case CommentEditPart.VISUAL_ID:
+			return getComment_2006IncomingLinks(view);
 		case StateMachine_RegionEditPart.VISUAL_ID:
 			return getRegion_3013IncomingLinks(view);
 		case SimpleStateEditPart.VISUAL_ID:
@@ -616,6 +632,8 @@ public class UMLDiagramUpdater {
 		switch (UMLVisualIDRegistry.getVisualID(view)) {
 		case StateMachineEditPart.VISUAL_ID:
 			return getStateMachine_2005OutgoingLinks(view);
+		case CommentEditPart.VISUAL_ID:
+			return getComment_2006OutgoingLinks(view);
 		case StateMachine_RegionEditPart.VISUAL_ID:
 			return getRegion_3013OutgoingLinks(view);
 		case SimpleStateEditPart.VISUAL_ID:
@@ -678,6 +696,16 @@ public class UMLDiagramUpdater {
 	 */
 	public static List<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getStateMachine_2005ContainedLinks(View view) {
 		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getComment_2006ContainedLinks(View view) {
+		Comment modelElement = (Comment) view.getElement();
+		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement));
+		return result;
 	}
 
 	/**
@@ -851,14 +879,33 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getStateMachine_2005IncomingLinks(View view) {
-		return Collections.emptyList();
+		StateMachine modelElement = (StateMachine) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getComment_2006IncomingLinks(View view) {
+		Comment modelElement = (Comment) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getRegion_3013IncomingLinks(View view) {
-		return Collections.emptyList();
+		Region modelElement = (Region) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -869,6 +916,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -901,6 +949,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -908,7 +957,11 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getRegion_3002IncomingLinks(View view) {
-		return Collections.emptyList();
+		Region modelElement = (Region) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -919,6 +972,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -930,6 +984,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -941,6 +996,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -952,6 +1008,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -963,6 +1020,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -974,6 +1032,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -985,6 +1044,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -996,6 +1056,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1007,6 +1068,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1018,6 +1080,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1029,6 +1092,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1040,6 +1104,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1058,6 +1123,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1069,6 +1135,7 @@ public class UMLDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
 		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
 		result.addAll(getIncomingTypeModelFacetLinks_Transition_4001(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
 		return result;
 	}
 
@@ -1076,7 +1143,11 @@ public class UMLDiagramUpdater {
 	 * @generated
 	 */
 	public static List<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getTransition_4001IncomingLinks(View view) {
-		return Collections.emptyList();
+		Transition modelElement = (Transition) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
+		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -1084,6 +1155,16 @@ public class UMLDiagramUpdater {
 	 */
 	public static List<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getStateMachine_2005OutgoingLinks(View view) {
 		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getComment_2006OutgoingLinks(View view) {
+		Comment modelElement = (Comment) view.getElement();
+		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(modelElement));
+		return result;
 	}
 
 	/**
@@ -1338,6 +1419,22 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	private static Collection<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getIncomingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(Element target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == UMLPackage.eINSTANCE.getComment_AnnotatedElement()) {
+				result.add(new org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor(setting.getEObject(), target, UMLElementTypes.CommentAnnotatedElement_4002,
+						CommentAnnotatedElementEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	private static Collection<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getOutgoingTypeModelFacetLinks_Transition_4001(Vertex source) {
@@ -1374,34 +1471,46 @@ public class UMLDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	private static Collection<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> getOutgoingFeatureModelFacetLinks_Comment_AnnotatedElement_4002(Comment source) {
+		LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor> result = new LinkedList<org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor>();
+		for (Iterator<?> destinations = source.getAnnotatedElements().iterator(); destinations.hasNext();) {
+			Element destination = (Element) destinations.next();
+			result.add(new org.eclipse.uml2.diagram.statemachine.part.UMLLinkDescriptor(source, destination, UMLElementTypes.CommentAnnotatedElement_4002, CommentAnnotatedElementEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
 	 * @generated
 	 */
 	public static final IDiagramUpdater TYPED_ADAPTER = new IDiagramUpdater() {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLNodeDescriptor> getSemanticChildren(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLLinkDescriptor> getContainedLinks(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLLinkDescriptor> getIncomingLinks(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<UMLLinkDescriptor> getOutgoingLinks(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLDiagramUpdater.getOutgoingLinks(view);
 		}

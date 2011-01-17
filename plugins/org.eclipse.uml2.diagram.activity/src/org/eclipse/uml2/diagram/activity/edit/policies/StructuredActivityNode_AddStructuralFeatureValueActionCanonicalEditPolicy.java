@@ -83,6 +83,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationAction_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectAction_OutputPinEditPart;
@@ -182,6 +183,7 @@ public class StructuredActivityNode_AddStructuralFeatureValueActionCanonicalEdit
 		case ActivityEditPart.VISUAL_ID:
 		case LocalPreconditionEditPart.VISUAL_ID:
 		case LocalPostconditionEditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 		case AcceptEventActionEditPart.VISUAL_ID:
 		case AcceptTimeEventActionEditPart.VISUAL_ID:
 		case ActivityFinalNodeEditPart.VISUAL_ID:

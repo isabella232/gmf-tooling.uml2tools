@@ -44,6 +44,7 @@ import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IUpdaterNodeDescriptor;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
@@ -112,6 +113,7 @@ public class SubmachineState_InternalActivitiesCanonicalEditPolicy extends Canon
 		int visualID = UMLVisualIDRegistry.getVisualID(view);
 		switch (visualID) {
 		case StateMachineEditPart.VISUAL_ID:
+		case CommentEditPart.VISUAL_ID:
 		case StateMachine_RegionEditPart.VISUAL_ID:
 		case SimpleStateEditPart.VISUAL_ID:
 		case CompositeStateEditPart.VISUAL_ID:

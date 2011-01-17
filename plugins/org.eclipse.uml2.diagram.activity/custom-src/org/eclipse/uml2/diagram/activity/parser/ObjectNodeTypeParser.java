@@ -32,8 +32,8 @@ import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
-
 public class ObjectNodeTypeParser implements IParser {
+
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
@@ -43,7 +43,7 @@ public class ObjectNodeTypeParser implements IParser {
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
-		EObject eObject = (EObject)element.getAdapter(EObject.class);
+		EObject eObject = (EObject) element.getAdapter(EObject.class);
 		if (eObject instanceof ObjectNode) {
 			StringBuffer printStringBuffer = new StringBuffer(20);
 			ObjectNode objectNode = (ObjectNode) eObject;
@@ -64,8 +64,7 @@ public class ObjectNodeTypeParser implements IParser {
 	public boolean isAffectingEvent(Object event, int flags) {
 		if (event instanceof Notification) {
 			Object feature = ((Notification) event).getFeature();
-			return UMLPackage.eINSTANCE.getTypedElement_Type().equals(feature) ||
-			UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature);
+			return UMLPackage.eINSTANCE.getTypedElement_Type().equals(feature) || UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature);
 		}
 		return false;
 	}
@@ -111,7 +110,7 @@ public class ObjectNodeTypeParser implements IParser {
 		SetRequest request = new SetRequest(element, UMLPackage.eINSTANCE.getTypedElement_Type(), typedElement);
 		return new SetValueCommand(request);
 	}
-	
+
 	private ElementProvider getElementProvider() {
 		if (elementProvider == null) {
 			elementProvider = new TypeElementProvider();
@@ -120,13 +119,14 @@ public class ObjectNodeTypeParser implements IParser {
 	}
 
 	private static final String NAME_TYPE_SEPARATOR = ":"; //$NON-NLS-1$
-	
-	private ElementProvider elementProvider; 
-	
+
+	private ElementProvider elementProvider;
+
 	private static class TypeElementProvider extends ElementProvider {
+
 		@Override
 		protected boolean isSuitable(Object object) {
 			return object instanceof Type;
-		}		
+		}
 	}
 }

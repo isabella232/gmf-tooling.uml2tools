@@ -92,6 +92,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Constraint", UMLElementTypes.Constraint_2027); //$NON-NLS-1$
 		case LocalPostconditionEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Constraint", UMLElementTypes.Constraint_2028); //$NON-NLS-1$
+		case CommentEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Comment", UMLElementTypes.Comment_2029); //$NON-NLS-1$
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?OutputPin", UMLElementTypes.OutputPin_3001); //$NON-NLS-1$
 		case CreateObjectAction_OutputPinEditPart.VISUAL_ID:
@@ -280,6 +282,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?ExceptionHandler", UMLElementTypes.ExceptionHandler_4005); //$NON-NLS-1$
 		case ActionLocalPostconditionEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Action?localPostcondition", UMLElementTypes.ActionLocalPostcondition_4006); //$NON-NLS-1$
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4007); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -338,6 +342,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getConstraint_2027Text(view);
 		case LocalPostconditionEditPart.VISUAL_ID:
 			return getConstraint_2028Text(view);
+		case CommentEditPart.VISUAL_ID:
+			return getComment_2029Text(view);
 		case OpaqueAction_OutputPinEditPart.VISUAL_ID:
 			return getOutputPin_3001Text(view);
 		case CreateObjectAction_OutputPinEditPart.VISUAL_ID:
@@ -526,6 +532,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getExceptionHandler_4005Text(view);
 		case ActionLocalPostconditionEditPart.VISUAL_ID:
 			return getActionLocalPostcondition_4006Text(view);
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getCommentAnnotatedElement_4007Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -702,6 +710,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5023); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getCommentAnnotatedElement_4007Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**
@@ -1481,6 +1496,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
 			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5076); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getComment_2029Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Comment_2029, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(CommentBodyEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5151); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

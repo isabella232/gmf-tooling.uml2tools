@@ -25,26 +25,28 @@ import org.eclipse.gef.EditPartViewer;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartition_ActivityPartitionEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ActivityPartitionEditPart;
 
-
 public class PartitionLayout extends XYLayout {
+
 	public static int HORIZONTAL = 0;
+
 	public static int VERTICAL = 1;
 
 	private int partitionOrientation;
-	private Map<?,?> visualPartMap;
+
+	private Map<?, ?> visualPartMap;
 
 	public PartitionLayout() {
 		this(HORIZONTAL);
 	}
-	
+
 	public PartitionLayout(int orientation) {
 		partitionOrientation = orientation;
 	}
-	
+
 	public int getPartitionOrientation() {
 		return partitionOrientation;
 	}
-	
+
 	public void setViewer(EditPartViewer viewer) {
 		visualPartMap = viewer.getVisualPartMap();
 	}
@@ -56,9 +58,10 @@ public class PartitionLayout extends XYLayout {
 		Point offset = getOrigin(parent);
 		IFigure f;
 		while (children.hasNext()) {
-			f = (IFigure)children.next();
-			Rectangle bounds = (Rectangle)getConstraint(f);
-			if (bounds == null) continue;
+			f = (IFigure) children.next();
+			Rectangle bounds = (Rectangle) getConstraint(f);
+			if (bounds == null)
+				continue;
 
 			if (bounds.width == -1 || bounds.height == -1) {
 				Dimension preferredSize = f.getPreferredSize(bounds.width, bounds.height);
@@ -68,7 +71,7 @@ public class PartitionLayout extends XYLayout {
 				if (bounds.height == -1)
 					bounds.height = preferredSize.height;
 			}
-			
+
 			if (isPartition(f)) {
 				if (getPartitionOrientation() == HORIZONTAL) {
 					bounds.x = 0;
@@ -78,22 +81,21 @@ public class PartitionLayout extends XYLayout {
 					bounds.height = clientAreaSize.height;
 				}
 			}
-			
+
 			bounds = bounds.getTranslated(offset);
 			f.setBounds(bounds);
 		}
 	}
-	
+
 	private boolean isPartition(IFigure figure) {
 		if (visualPartMap == null) {
 			return false;
 		}
-		
+
 		EditPart editPart = (EditPart) visualPartMap.get(figure);
-		if (editPart == null) { 
+		if (editPart == null) {
 			return false;
 		}
-		return editPart instanceof ActivityPartitionEditPart ||
-			editPart instanceof ActivityPartition_ActivityPartitionEditPart;
+		return editPart instanceof ActivityPartitionEditPart || editPart instanceof ActivityPartition_ActivityPartitionEditPart;
 	}
 }

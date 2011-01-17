@@ -32,6 +32,8 @@ import org.eclipse.uml2.diagram.activity.edit.commands.ActionLocalPreconditionRe
 import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueAction_insertAt_InputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueAction_object_InputPinCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.AddStructuralFeatureValueAction_value_InputPinCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CommentAnnotatedElementCreateCommand;
+import org.eclipse.uml2.diagram.activity.edit.commands.CommentAnnotatedElementReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowCreateCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ControlFlowReorientCommand;
 import org.eclipse.uml2.diagram.activity.edit.commands.ExceptionHandlerCreateCommand;
@@ -43,6 +45,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActionLocalPreconditionEditP
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_insertAt_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_object_InputPinEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAction_value_InputPinEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CommentAnnotatedElementEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ControlFlowEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ExceptionHandlerEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ObjectFlowEditPart;
@@ -103,6 +106,12 @@ public class StructuredActivityNode_AddStructuralFeatureValueActionItemSemanticE
 			if (UMLVisualIDRegistry.getVisualID(incomingLink) == ExceptionHandlerEditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
@@ -198,6 +207,12 @@ public class StructuredActivityNode_AddStructuralFeatureValueActionItemSemanticE
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
+					if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+						continue;
+					}
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
@@ -239,6 +254,12 @@ public class StructuredActivityNode_AddStructuralFeatureValueActionItemSemanticE
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
+					if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+						continue;
+					}
 				}
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
@@ -277,6 +298,12 @@ public class StructuredActivityNode_AddStructuralFeatureValueActionItemSemanticE
 					if (UMLVisualIDRegistry.getVisualID(incomingLink) == ObjectFlowEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+						continue;
+					}
+					if (UMLVisualIDRegistry.getVisualID(incomingLink) == CommentAnnotatedElementEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null, incomingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
 						cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 						continue;
 					}
@@ -337,6 +364,9 @@ public class StructuredActivityNode_AddStructuralFeatureValueActionItemSemanticE
 		if (UMLElementTypes.ExceptionHandler_4005 == req.getElementType()) {
 			return getGEFWrapper(new ExceptionHandlerCreateCommand(req, req.getSource(), req.getTarget()));
 		}
+		if (UMLElementTypes.CommentAnnotatedElement_4007 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -358,6 +388,9 @@ public class StructuredActivityNode_AddStructuralFeatureValueActionItemSemanticE
 		}
 		if (UMLElementTypes.ExceptionHandler_4005 == req.getElementType()) {
 			return getGEFWrapper(new ExceptionHandlerCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (UMLElementTypes.CommentAnnotatedElement_4007 == req.getElementType()) {
+			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -392,6 +425,8 @@ public class StructuredActivityNode_AddStructuralFeatureValueActionItemSemanticE
 			return getGEFWrapper(new ActionLocalPreconditionReorientCommand(req));
 		case ActionLocalPostconditionEditPart.VISUAL_ID:
 			return getGEFWrapper(new ActionLocalPostconditionReorientCommand(req));
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

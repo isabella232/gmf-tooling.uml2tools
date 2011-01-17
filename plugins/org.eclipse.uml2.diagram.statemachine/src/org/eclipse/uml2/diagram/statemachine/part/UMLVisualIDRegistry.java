@@ -9,6 +9,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistry;
 import org.eclipse.uml2.diagram.common.genapi.IVisualIDRegistryExt;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateStereotypeEditPart;
@@ -165,6 +167,9 @@ public class UMLVisualIDRegistry {
 		case PackageEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
 				return StateMachineEditPart.VISUAL_ID;
+			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
 			}
 			break;
 		case StateMachineEditPart.VISUAL_ID:
@@ -340,6 +345,9 @@ public class UMLVisualIDRegistry {
 			if (StateMachineEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (CommentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case StateMachineEditPart.VISUAL_ID:
 			if (StateMachineNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -355,6 +363,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (ExitPointPseudostateEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case CommentEditPart.VISUAL_ID:
+			if (CommentBodyEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -781,6 +794,9 @@ public class UMLVisualIDRegistry {
 			if (UMLPackage.eINSTANCE.getStateMachine().isSuperTypeOf(domainElement.eClass())) {
 				return StateMachineEditPart.VISUAL_ID;
 			}
+			if (UMLPackage.eINSTANCE.getComment().isSuperTypeOf(domainElement.eClass())) {
+				return CommentEditPart.VISUAL_ID;
+			}
 			break;
 		case StateMachineEditPart.VISUAL_ID:
 			if (UMLPackage.eINSTANCE.getRegion().isSuperTypeOf(domainElement.eClass())) {
@@ -970,6 +986,7 @@ public class UMLVisualIDRegistry {
 	 */
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
+		case CommentEditPart.VISUAL_ID:
 		case EntryActivityEditPart.VISUAL_ID:
 		case ExitActivityEditPart.VISUAL_ID:
 		case DoActivityEditPart.VISUAL_ID:
@@ -1000,76 +1017,76 @@ public class UMLVisualIDRegistry {
 	public static final IVisualIDRegistry TYPED_ADAPTER = new IVisualIDRegistryExt() {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public String getModelID(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public int getVisualID(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public int getNodeVisualID(View containerView, EObject domainElement) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean isCompartmentVisualID(int visualID) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public boolean isShortcutDescendant(View view) {
 			return org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry.isShortcutDescendant(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private VisualIDRegistryExtension myExtension = new VisualIDRegistryExtension();
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<String> getAllHintedTypes() {
 			return myExtension.getAllHintedTypes();
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public List<IVisualIDRegistryExt.MenuTypeHint> getMenuTypeHints(String type) {
 			return myExtension.getMenuTypeHints(type);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public String getSemanticHint(View childView, View newParentView) {
 			return myExtension.getSemanticHint(childView, newParentView);
 		}

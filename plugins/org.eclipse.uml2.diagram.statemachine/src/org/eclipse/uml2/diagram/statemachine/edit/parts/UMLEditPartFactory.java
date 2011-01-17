@@ -41,6 +41,12 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StateMachineStereotypeEditPart.VISUAL_ID:
 				return new StateMachineStereotypeEditPart(view);
 
+			case CommentEditPart.VISUAL_ID:
+				return new CommentEditPart(view);
+
+			case CommentBodyEditPart.VISUAL_ID:
+				return new CommentBodyEditPart(view);
+
 			case StateMachine_RegionEditPart.VISUAL_ID:
 				return new StateMachine_RegionEditPart(view);
 
@@ -163,6 +169,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case TransitionNameEditPart.VISUAL_ID:
 				return new TransitionNameEditPart(view);
+
+			case CommentAnnotatedElementEditPart.VISUAL_ID:
+				return new CommentAnnotatedElementEditPart(view);
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

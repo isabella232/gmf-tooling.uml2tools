@@ -45,6 +45,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 public class TransitionParser implements IParser {
+
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
@@ -61,7 +62,7 @@ public class TransitionParser implements IParser {
 		}
 		TransitionHandler handler = new TransitionHandler(newString);
 		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Set Values"); //$NON-NLS-1$
-		
+
 		ICommand setTriggersCommand = getSetTriggersCommand(adaptedElement, handler.getTriggers());
 		if (setTriggersCommand != null) {
 			command.compose(setTriggersCommand);
@@ -74,20 +75,20 @@ public class TransitionParser implements IParser {
 		if (setEffectCommand != null) {
 			command.compose(setEffectCommand);
 		}
-		
+
 		if (!command.canExecute()) {
 			return getSetNameCommand(adaptedElement, newString);
 		}
-		
+
 		return command;
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {
-		EObject eObject = (EObject)element.getAdapter(EObject.class);
+		EObject eObject = (EObject) element.getAdapter(EObject.class);
 		if (eObject instanceof Transition) {
 			Transition transition = (Transition) eObject;
 			StringBuffer printStringBuffer = new StringBuffer(20);
-			
+
 			EList<Trigger> triggers = transition.getTriggers();
 			for (Iterator<Trigger> triggersIterator = triggers.iterator(); triggersIterator.hasNext();) {
 				Trigger trigger = triggersIterator.next();
@@ -99,7 +100,7 @@ public class TransitionParser implements IParser {
 					}
 				}
 			}
-			
+
 			Constraint guard = transition.getGuard();
 			if (guard != null) {
 				ValueSpecification specification = guard.getSpecification();
@@ -109,15 +110,15 @@ public class TransitionParser implements IParser {
 					printStringBuffer.append(']');
 				}
 			}
-			
+
 			Behavior effect = transition.getEffect();
 			if (effect != null) {
 				printStringBuffer.append('/');
 				printStringBuffer.append(effect.getLabel());
 			}
-			
+
 			// Ensure that we never ever return null
-			String res = printStringBuffer.length() >0 ? printStringBuffer.toString() : transition.getName();
+			String res = printStringBuffer.length() > 0 ? printStringBuffer.toString() : transition.getName();
 			return res == null ? "" : res;
 		}
 		return ""; //$NON-NLS-1$
@@ -126,10 +127,8 @@ public class TransitionParser implements IParser {
 	public boolean isAffectingEvent(Object event, int flags) {
 		if (event instanceof Notification) {
 			Object feature = ((Notification) event).getFeature();
-			return UMLPackage.eINSTANCE.getTransition_Trigger().equals(feature) ||
-				UMLPackage.eINSTANCE.getTransition_Guard().equals(feature) ||
-				UMLPackage.eINSTANCE.getTransition_Effect().equals(feature) ||
-				UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature);
+			return UMLPackage.eINSTANCE.getTransition_Trigger().equals(feature) || UMLPackage.eINSTANCE.getTransition_Guard().equals(feature)
+					|| UMLPackage.eINSTANCE.getTransition_Effect().equals(feature) || UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature);
 		}
 		return false;
 	}
@@ -137,12 +136,12 @@ public class TransitionParser implements IParser {
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.UNEDITABLE_STATUS;
 	}
-	
+
 	private ICommand getSetTriggersCommand(EObject element, List<String> triggerNotations) {
 		if (triggerNotations.isEmpty()) {
 			return null;
 		}
-		
+
 		List<Trigger> triggers = new LinkedList<Trigger>();
 		for (Iterator<String> triggersIterator = triggerNotations.iterator(); triggersIterator.hasNext();) {
 			String triggerNotation = triggersIterator.next();
@@ -156,73 +155,75 @@ public class TransitionParser implements IParser {
 		}
 		return new SetValueCommand(new SetRequest(element, UMLPackage.eINSTANCE.getTransition_Trigger(), triggers));
 	}
-	
+
 	private ICommand getSetGuardCommand(EObject element, String guardNotation) {
 		if (guardNotation == null) {
 			return null;
 		}
-		
+
 		Constraint guard = (Constraint) getGuardProvider().findElement(element, guardNotation);
 		if (guard == null) {
 			return null;
 		}
 		return new SetValueCommand(new SetRequest(element, UMLPackage.eINSTANCE.getTransition_Guard(), guard));
 	}
-	
+
 	private ICommand getSetEffectCommand(EObject element, String effectNotation) {
 		if (effectNotation == null) {
 			return null;
 		}
-		
+
 		Behavior effect = (Behavior) getEffectProvider().findElement(element, effectNotation);
 		if (effect == null) {
 			return null;
 		}
 		return new SetValueCommand(new SetRequest(element, UMLPackage.eINSTANCE.getTransition_Effect(), effect));
 	}
-	
+
 	private ICommand getSetNameCommand(EObject element, String name) {
 		if (name == null || name.length() == 0) {
 			return null;
 		}
 		return new SetValueCommand(new SetRequest(element, UMLPackage.eINSTANCE.getNamedElement_Name(), name));
 	}
-	
+
 	private ElementProvider getTriggerProvider() {
 		if (triggerProvider == null) {
 			triggerProvider = new TriggerProvider();
 		}
 		return triggerProvider;
 	}
-	
-	
+
 	private ElementProvider getGuardProvider() {
 		if (guardProvider == null) {
 			guardProvider = new GuardProvider();
 		}
 		return guardProvider;
 	}
-	
-	
+
 	public ElementProvider getEffectProvider() {
 		if (effectProvider == null) {
 			effectProvider = new BehaviorProvider();
 		}
 		return effectProvider;
 	}
-	
+
 	private ElementProvider triggerProvider;
+
 	private ElementProvider guardProvider;
+
 	private ElementProvider effectProvider;
-	
+
 	private static class BehaviorProvider extends ElementProvider {
+
 		@Override
 		protected boolean isSuitable(Object object) {
 			return object instanceof Behavior;
 		}
 	}
-	
+
 	private static class GuardProvider extends ElementProvider {
+
 		@Override
 		protected String getDisplayProposal(NamedElement element) {
 			if (element instanceof Constraint) {
@@ -233,14 +234,15 @@ public class TransitionParser implements IParser {
 			}
 			return super.getDisplayProposal(element);
 		}
-		
+
 		@Override
 		protected boolean isSuitable(Object object) {
 			return object instanceof Constraint;
 		}
 	}
-	
+
 	private static class TriggerProvider extends ElementProvider {
+
 		@Override
 		protected String getDisplayProposal(NamedElement element) {
 			if (element instanceof Trigger) {
@@ -251,40 +253,41 @@ public class TransitionParser implements IParser {
 			}
 			return super.getDisplayProposal(element);
 		}
-		
+
 		@Override
 		protected boolean isSuitable(Object object) {
 			return object instanceof Trigger;
 		}
 	}
-	
+
 	private static class TransitionHandler {
+
 		public TransitionHandler(String notation) {
 			triggers = new LinkedList<String>();
 			handle(notation);
 		}
-		
+
 		public List<String> getTriggers() {
 			return triggers;
 		}
-		
+
 		public String getGuard() {
 			return guard;
 		}
-		
+
 		public String getEffect() {
 			return effect;
 		}
-		
+
 		private void handle(String notation) {
-			int effectPosition =  notation.indexOf(EFFECT_SEPARATOR);
+			int effectPosition = notation.indexOf(EFFECT_SEPARATOR);
 			if (effectPosition >= 0) {
 				effect = notation.substring(effectPosition + 1);
 				notation = notation.substring(0, effectPosition);
 			}
 			int guardLEPosition = notation.indexOf(GUARD_LEADING_EDGE);
 			if (guardLEPosition >= 0) {
-				int guardTEPosition = notation.indexOf(GUARD_TRAILING_EDGE); 
+				int guardTEPosition = notation.indexOf(GUARD_TRAILING_EDGE);
 				if (guardTEPosition > 0 && guardTEPosition > guardLEPosition) {
 					guard = notation.substring(guardLEPosition + 1, guardTEPosition);
 					notation = notation.substring(0, guardLEPosition);
@@ -297,13 +300,17 @@ public class TransitionParser implements IParser {
 				}
 			}
 		}
-		
+
 		private static final String EFFECT_SEPARATOR = "/"; //$NON-NLS-1$
+
 		private static final String GUARD_LEADING_EDGE = "["; //$NON-NLS-1$
+
 		private static final String GUARD_TRAILING_EDGE = "]"; //$NON-NLS-1$
-		
+
 		private List<String> triggers;
+
 		private String guard;
+
 		private String effect;
 	}
 }

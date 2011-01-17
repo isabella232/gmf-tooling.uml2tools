@@ -54,17 +54,17 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 
-
 public class SelectStateMachineDialog extends Dialog {
+
 	public SelectStateMachineDialog(Shell parentShell) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE);
 	}
-	
+
 	@Override
-	protected Control createDialogArea(Composite parent) {		
+	protected Control createDialogArea(Composite parent) {
 		getShell().setText(CustomMessages.SelectStateMachineDialog_Title);
-		createViewer(parent);				
+		createViewer(parent);
 		return parent;
 	}
 
@@ -94,18 +94,19 @@ public class SelectStateMachineDialog extends Dialog {
 
 		Tree tree = treeViewer.getTree();
 		MenuManager menuManager = new MenuManager();
-        Menu menu = menuManager.createContextMenu(tree);
-        menuManager.addMenuListener(new IMenuListener(){
+		Menu menu = menuManager.createContextMenu(tree);
+		menuManager.addMenuListener(new IMenuListener() {
+
 			public void menuAboutToShow(IMenuManager manager) {
-                NewStateMachineAction newStateMachineAction = new NewStateMachineAction();
-                if (!(mySelectedModelElement instanceof Package)) {
-                	newStateMachineAction.setEnabled(false);
-                }
+				NewStateMachineAction newStateMachineAction = new NewStateMachineAction();
+				if (!(mySelectedModelElement instanceof Package)) {
+					newStateMachineAction.setEnabled(false);
+				}
 				manager.add(newStateMachineAction);
 			}
 		});
 		menuManager.setRemoveAllWhenShown(true);
-        tree.setMenu(menu);
+		tree.setMenu(menu);
 	}
 
 	private void setOkButtonEnabled(boolean enabled) {
@@ -116,28 +117,33 @@ public class SelectStateMachineDialog extends Dialog {
 		String fileExtension = file.getFullPath().getFileExtension();
 		return "uml".equals(fileExtension); //$NON-NLS-1$
 	}
-	
+
 	private EObject mySelectedModelElement;
+
 	private EditingDomain myEditingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
+
 	private TreeViewer treeViewer;
-	
+
 	private class NewStateMachineAction extends Action {
+
 		public NewStateMachineAction() {
 			super(CustomMessages.SelectStateMachineDialog_CreateStateMachineAction_Title);
 		}
-		
+
 		@Override
 		public void run() {
-			Command addCommand = AddCommand.create(myEditingDomain, mySelectedModelElement, UMLPackage.Literals.PACKAGE__PACKAGED_ELEMENT, UMLFactory.eINSTANCE.createStateMachine(), CommandParameter.NO_INDEX);
+			Command addCommand = AddCommand.create(myEditingDomain, mySelectedModelElement, UMLPackage.Literals.PACKAGE__PACKAGED_ELEMENT, UMLFactory.eINSTANCE.createStateMachine(),
+					CommandParameter.NO_INDEX);
 			myEditingDomain.getCommandStack().execute(addCommand);
 			Collection<?> result = addCommand.getResult();
 			if (result.isEmpty()) {
 				return;
 			}
 			Object createdElement = result.iterator().next();
-			Command setCommand = SetCommand.create(myEditingDomain, createdElement, UMLPackage.Literals.NAMED_ELEMENT__NAME, CustomMessages.SelectStateMachineDialog_CreateStateMachineAction_DefaultName);
+			Command setCommand = SetCommand.create(myEditingDomain, createdElement, UMLPackage.Literals.NAMED_ELEMENT__NAME,
+					CustomMessages.SelectStateMachineDialog_CreateStateMachineAction_DefaultName);
 			myEditingDomain.getCommandStack().execute(setCommand);
-			
+
 			treeViewer.setSelection(new StructuredSelection(createdElement), true);
 			try {
 				mySelectedModelElement.eResource().save(null);
@@ -149,6 +155,7 @@ public class SelectStateMachineDialog extends Dialog {
 	}
 
 	private class OkButtonEnabler implements ISelectionChangedListener {
+
 		public void selectionChanged(SelectionChangedEvent event) {
 			if (event.getSelection() instanceof IStructuredSelection) {
 				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
@@ -162,8 +169,7 @@ public class SelectStateMachineDialog extends Dialog {
 					}
 					if (selectedElement instanceof EObject) {
 						mySelectedModelElement = (EObject) selectedElement;
-						setOkButtonEnabled(mySelectedModelElement != null && 
-								mySelectedModelElement.eClass() == UMLPackage.Literals.STATE_MACHINE);
+						setOkButtonEnabled(mySelectedModelElement != null && mySelectedModelElement.eClass() == UMLPackage.Literals.STATE_MACHINE);
 						return;
 					}
 				}
@@ -174,6 +180,7 @@ public class SelectStateMachineDialog extends Dialog {
 	}
 
 	private class ModelElementsTreeContentProvider implements ITreeContentProvider {
+
 		public Object[] getChildren(Object parentElement) {
 			Object[] result = myWorkbenchContentProvider.getChildren(parentElement);
 			if (result != null && result.length > 0) {
@@ -233,10 +240,12 @@ public class SelectStateMachineDialog extends Dialog {
 		}
 
 		private ITreeContentProvider myWorkbenchContentProvider = new WorkbenchContentProvider();
+
 		private AdapterFactoryContentProvider myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 	}
 
 	private class ModelElementsTreeLabelProvider implements ILabelProvider {
+
 		public Image getImage(Object element) {
 			Image result = myWorkbenchLabelProvider.getImage(element);
 			return result != null ? result : myAdapterFactoryLabelProvider.getImage(element);
@@ -267,10 +276,12 @@ public class SelectStateMachineDialog extends Dialog {
 		}
 
 		private WorkbenchLabelProvider myWorkbenchLabelProvider = new WorkbenchLabelProvider();
+
 		private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 	}
 
 	private class ModelFilesFilter extends ViewerFilter {
+
 		@Override
 		public boolean select(Viewer viewer, Object parentElement, Object element) {
 			if (element instanceof IContainer) {

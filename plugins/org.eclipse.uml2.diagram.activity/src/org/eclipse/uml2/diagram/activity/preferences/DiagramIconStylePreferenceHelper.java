@@ -21,6 +21,7 @@ import org.eclipse.uml2.diagram.activity.edit.parts.AddStructuralFeatureValueAct
 import org.eclipse.uml2.diagram.activity.edit.parts.CallBehaviorActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CallOperationActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CentralBufferNodeNameEditPart;
+import org.eclipse.uml2.diagram.activity.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.ConditionalNodeNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.CreateObjectActionNameEditPart;
 import org.eclipse.uml2.diagram.activity.edit.parts.DataStoreNodeNameEditPart;
@@ -115,6 +116,8 @@ public class DiagramIconStylePreferenceHelper {
 			case StructuredActivityNode_CentralBufferNodeNameEditPart.VISUAL_ID:
 			case ActivityPartition_CentralBufferNodeNameEditPart.VISUAL_ID:
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5032.5033.5070");
+			case CommentBodyEditPart.VISUAL_ID:
+				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5151");
 			case StructuredActivityNode_ConditionalNodeNameEditPart.VISUAL_ID:
 			case ActivityPartition_ConditionalNodeNameEditPart.VISUAL_ID:
 			case ConditionalNodeNameEditPart.VISUAL_ID:

@@ -42,8 +42,8 @@ import org.eclipse.uml2.uml.ObjectNode;
 import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.UMLPackage;
 
-
 public class ObjectNodeInStateParser implements ISemanticParser {
+
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return isAffectingEvent(notification, 0);
 	}
@@ -82,8 +82,7 @@ public class ObjectNodeInStateParser implements ISemanticParser {
 				inStates.add((State) foundElement);
 			}
 		}
-		return new SetValueCommand(new SetRequest(adaptToEObject(element), 
-				UMLPackage.eINSTANCE.getObjectNode_InState(), inStates));
+		return new SetValueCommand(new SetRequest(adaptToEObject(element), UMLPackage.eINSTANCE.getObjectNode_InState(), inStates));
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {
@@ -128,14 +127,15 @@ public class ObjectNodeInStateParser implements ISemanticParser {
 	private static final String PLUGIN_ID = "org.eclipse.uml2.diagram.activity"; //$NON-NLS-1$
 
 	private ElementProvider elementProvider;
-	
+
 	private static class NamedElementProvider extends ElementProvider {
+
 		public NamedElementProvider(boolean isCaching) {
 			super(isCaching);
 		}
 
 		protected boolean isSuitable(Object object) {
-			return object instanceof State && ((State)object).getName() != null;
+			return object instanceof State && ((State) object).getName() != null;
 		}
 	}
 }

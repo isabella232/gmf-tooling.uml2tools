@@ -16,6 +16,9 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentAnnotatedElementEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentBodyEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DeepHistoryPseudostateEditPart;
@@ -113,6 +116,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Diagram?http://www.eclipse.org/uml2/3.0.0/UML?Package", UMLElementTypes.Package_1000); //$NON-NLS-1$
 		case StateMachineEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?StateMachine", UMLElementTypes.StateMachine_2005); //$NON-NLS-1$
+		case CommentEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?http://www.eclipse.org/uml2/3.0.0/UML?Comment", UMLElementTypes.Comment_2006); //$NON-NLS-1$
 		case SimpleStateEditPart.VISUAL_ID:
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?State", UMLElementTypes.State_3001); //$NON-NLS-1$
 		case State_RegionEditPart.VISUAL_ID:
@@ -159,6 +164,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getImage("Navigator?Node?http://www.eclipse.org/uml2/3.0.0/UML?Transition", UMLElementTypes.Transition_3022); //$NON-NLS-1$
 		case TransitionEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Transition", UMLElementTypes.Transition_4001); //$NON-NLS-1$
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?http://www.eclipse.org/uml2/3.0.0/UML?Comment?annotatedElement", UMLElementTypes.CommentAnnotatedElement_4002); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -213,6 +220,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getPackage_1000Text(view);
 		case StateMachineEditPart.VISUAL_ID:
 			return getStateMachine_2005Text(view);
+		case CommentEditPart.VISUAL_ID:
+			return getComment_2006Text(view);
 		case SimpleStateEditPart.VISUAL_ID:
 			return getState_3001Text(view);
 		case State_RegionEditPart.VISUAL_ID:
@@ -259,6 +268,8 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			return getTransition_3022Text(view);
 		case TransitionEditPart.VISUAL_ID:
 			return getTransition_4001Text(view);
+		case CommentAnnotatedElementEditPart.VISUAL_ID:
+			return getCommentAnnotatedElement_4002Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -397,6 +408,19 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	}
 
 	/**
+	* @generated
+	*/
+	private String getComment_2006Text(View view) {
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Comment_2006, view.getElement() != null ? view.getElement() : view, UMLVisualIDRegistry.getType(CommentBodyEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+		} else {
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5016); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
 	 * @generated
 	 */
 	private String getConnectionPointReference_3017Text(View view) {
@@ -501,6 +525,13 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3007); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getCommentAnnotatedElement_4002Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

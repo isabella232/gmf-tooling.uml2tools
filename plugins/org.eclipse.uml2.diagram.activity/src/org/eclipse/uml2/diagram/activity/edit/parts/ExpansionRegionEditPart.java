@@ -1155,10 +1155,11 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart implements Primar
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(UMLElementTypes.ControlFlow_4001);
 		types.add(UMLElementTypes.ObjectFlow_4002);
 		types.add(UMLElementTypes.ExceptionHandler_4005);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4007);
 		return types;
 	}
 
@@ -1368,6 +1369,8 @@ public class ExpansionRegionEditPart extends ShapeNodeEditPart implements Primar
 			types.add(UMLElementTypes.ConditionalNode_3082);
 			types.add(UMLElementTypes.ExpansionRegion_3084);
 			types.add(UMLElementTypes.ValueSpecificationAction_3089);
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4007) {
+			types.add(UMLElementTypes.Comment_2029);
 		}
 		return types;
 	}

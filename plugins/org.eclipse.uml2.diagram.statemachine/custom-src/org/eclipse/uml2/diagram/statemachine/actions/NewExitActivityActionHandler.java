@@ -26,23 +26,23 @@ import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class NewExitActivityActionHandler extends NewActionHandler {
+
 	@Override
 	protected ICommand getCreateElementCommand(ShapeNodeEditPart editPart) {
-		CreateElementRequest createRequest = 
-			new CreateElementRequest(((View) editPart.getModel()).getElement(), UMLElementTypes.Behavior_3020);
+		CreateElementRequest createRequest = new CreateElementRequest(((View) editPart.getModel()).getElement(), UMLElementTypes.Behavior_3020);
 		return new CreateExitActivityCommand(createRequest);
 	}
-	
+
 	private static class CreateExitActivityCommand extends CreateElementCommand {
+
 		public CreateExitActivityCommand(CreateElementRequest request) {
 			super(request);
 		}
-		
+
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			State state = (State) ((CreateElementRequest) getRequest()).getContainer();
-			Behavior doActivity = 
-				state.createExit(CustomMessages.NewExitActivityActionHandler_name_prefix, UMLPackage.Literals.ACTIVITY);
+			Behavior doActivity = state.createExit(CustomMessages.NewExitActivityActionHandler_name_prefix, UMLPackage.Literals.ACTIVITY);
 			return CommandResult.newOKCommandResult(doActivity);
 		}
 	}

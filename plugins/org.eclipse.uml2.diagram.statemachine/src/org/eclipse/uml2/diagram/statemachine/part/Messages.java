@@ -412,6 +412,16 @@ public class Messages extends NLS {
 	public static String ExitConnectionPointReference16CreationTool_desc;
 
 	/**
+	* @generated
+	*/
+	public static String Comment17CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Comment17CreationTool_desc;
+
+	/**
 	 * @generated
 	 */
 	public static String Transition1CreationTool_title;
@@ -420,6 +430,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String Transition1CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String AnnotatedElement2CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String AnnotatedElement2CreationTool_desc;
 
 	/**
 	 * @generated
@@ -527,6 +547,16 @@ public class Messages extends NLS {
 	public static String NavigatorGroupName_State_3016_outgoinglinks;
 
 	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Comment_2006_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Comment_2006_outgoinglinks;
+
+	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ConnectionPointReference_3017_incominglinks;
@@ -535,6 +565,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ConnectionPointReference_3017_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Region_3013_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_StateMachine_2005_incominglinks;
 
 	/**
 	 * @generated
@@ -587,6 +627,11 @@ public class Messages extends NLS {
 	public static String NavigatorGroupName_Pseudostate_3006_outgoinglinks;
 
 	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Region_3002_incominglinks;
+
+	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Pseudostate_3007_incominglinks;
@@ -595,6 +640,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Pseudostate_3007_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_CommentAnnotatedElement_4002_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_CommentAnnotatedElement_4002_source;
 
 	/**
 	 * @generated
@@ -667,6 +722,11 @@ public class Messages extends NLS {
 	public static String NavigatorGroupName_Transition_4001_source;
 
 	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Transition_4001_incominglinks;
+
+	/**
 	 * @generated
 	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
@@ -705,6 +765,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String DiagramIconStylePreferencePage_label_for_Behavior;
+
+	/**
+	* @generated
+	*/
+	public static String DiagramIconStylePreferencePage_label_for_Comment;
 
 	/**
 	 * @generated

@@ -27,14 +27,14 @@ import org.eclipse.uml2.uml.ExpansionKind;
 import org.eclipse.uml2.uml.ExpansionRegion;
 import org.eclipse.uml2.uml.UMLPackage;
 
+public class ExpansionRegionParser implements IParser {
 
-public class ExpansionRegionParser  implements IParser {
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
-		EObject eObject = (EObject)element.getAdapter(EObject.class);
+		EObject eObject = (EObject) element.getAdapter(EObject.class);
 		if (eObject instanceof ExpansionRegion) {
 			ExpansionKind mode = ((ExpansionRegion) eObject).getMode();
 			return mode.getLiteral();
@@ -47,8 +47,7 @@ public class ExpansionRegionParser  implements IParser {
 		if (mode == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		return new SetValueCommand(new SetRequest(adaptToEObject(element), 
-				UMLPackage.eINSTANCE.getExpansionRegion_Mode(), mode));
+		return new SetValueCommand(new SetRequest(adaptToEObject(element), UMLPackage.eINSTANCE.getExpansionRegion_Mode(), mode));
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {

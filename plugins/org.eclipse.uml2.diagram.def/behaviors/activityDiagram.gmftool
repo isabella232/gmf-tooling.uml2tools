@@ -186,6 +186,10 @@
           xsi:type="gmftool:CreationTool"
           title="Selection"
           description="Creating SelectionLink"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Comment"
+          description="Create Comment"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
@@ -202,6 +206,10 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="Exception Handler Link"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Annotated Element"
+          description="Create Annotated Element"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

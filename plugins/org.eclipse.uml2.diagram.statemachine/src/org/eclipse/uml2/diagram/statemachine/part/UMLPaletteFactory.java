@@ -52,6 +52,7 @@ public class UMLPaletteFactory {
 		paletteContainer.add(createExitPoint14CreationTool());
 		paletteContainer.add(createEntryConnectionPointReference15CreationTool());
 		paletteContainer.add(createExitConnectionPointReference16CreationTool());
+		paletteContainer.add(createComment17CreationTool());
 		return paletteContainer;
 	}
 
@@ -64,6 +65,7 @@ public class UMLPaletteFactory {
 		paletteContainer.setId("createLinks2Group"); //$NON-NLS-1$
 
 		paletteContainer.add(createTransition1CreationTool());
+		paletteContainer.add(createAnnotatedElement2CreationTool());
 		return paletteContainer;
 	}
 
@@ -315,6 +317,21 @@ public class UMLPaletteFactory {
 	}
 
 	/**
+	* @generated
+	*/
+	private ToolEntry createComment17CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(Messages.Comment17CreationTool_title, Messages.Comment17CreationTool_desc, Collections.singletonList(UMLElementTypes.Comment_2006));
+
+		entry.setId("createComment17CreationTool"); //$NON-NLS-1$
+
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Comment_2006));
+
+		entry.setLargeIcon(entry.getSmallIcon());
+
+		return entry;
+	}
+
+	/**
 	 * @generated
 	 */
 	private ToolEntry createTransition1CreationTool() {
@@ -323,6 +340,22 @@ public class UMLPaletteFactory {
 		entry.setId("createTransition1CreationTool"); //$NON-NLS-1$
 
 		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.Transition_4001));
+
+		entry.setLargeIcon(entry.getSmallIcon());
+
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createAnnotatedElement2CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(Messages.AnnotatedElement2CreationTool_title, Messages.AnnotatedElement2CreationTool_desc,
+				Collections.singletonList(UMLElementTypes.CommentAnnotatedElement_4002));
+
+		entry.setId("createAnnotatedElement2CreationTool"); //$NON-NLS-1$
+
+		entry.setSmallIcon(UMLElementTypes.getImageDescriptor(UMLElementTypes.CommentAnnotatedElement_4002));
 
 		entry.setLargeIcon(entry.getSmallIcon());
 

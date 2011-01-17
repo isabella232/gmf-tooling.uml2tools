@@ -352,8 +352,9 @@ public class ExitConnectionPointReferenceEditPart extends BorderedBorderItemEdit
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(UMLElementTypes.Transition_4001);
+		types.add(UMLElementTypes.CommentAnnotatedElement_4002);
 		return types;
 	}
 
@@ -379,6 +380,8 @@ public class ExitConnectionPointReferenceEditPart extends BorderedBorderItemEdit
 			types.add(UMLElementTypes.Pseudostate_3011);
 			types.add(UMLElementTypes.Pseudostate_3014);
 			types.add(UMLElementTypes.Pseudostate_3015);
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4002) {
+			types.add(UMLElementTypes.Comment_2006);
 		}
 		return types;
 	}

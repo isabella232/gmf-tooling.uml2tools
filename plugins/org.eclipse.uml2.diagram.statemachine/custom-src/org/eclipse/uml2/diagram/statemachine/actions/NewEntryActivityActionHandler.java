@@ -26,23 +26,23 @@ import org.eclipse.uml2.uml.State;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class NewEntryActivityActionHandler extends NewActionHandler {
+
 	@Override
 	protected ICommand getCreateElementCommand(ShapeNodeEditPart editPart) {
-		CreateElementRequest createRequest = 
-			new CreateElementRequest(((View) editPart.getModel()).getElement(), UMLElementTypes.Behavior_3019);
+		CreateElementRequest createRequest = new CreateElementRequest(((View) editPart.getModel()).getElement(), UMLElementTypes.Behavior_3019);
 		return new CreateEntryActivityCommand(createRequest);
 	}
 
 	private static class CreateEntryActivityCommand extends CreateElementCommand {
+
 		public CreateEntryActivityCommand(CreateElementRequest request) {
 			super(request);
 		}
-		
+
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			State state = (State) ((CreateElementRequest) getRequest()).getContainer();
-			Behavior doActivity = 
-				state.createEntry(CustomMessages.NewEntryActivityActionHandler_name_prefix, UMLPackage.Literals.ACTIVITY);
+			Behavior doActivity = state.createEntry(CustomMessages.NewEntryActivityActionHandler_name_prefix, UMLPackage.Literals.ACTIVITY);
 			return CommandResult.newOKCommandResult(doActivity);
 		}
 	}

@@ -49,8 +49,10 @@ import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.ControlFlow;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.ObjectFlow;
@@ -393,8 +395,21 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		public boolean canCreateCommentAnnotatedElement_4007(Comment source, Element target) {
+			if (source != null) {
+				if (source.getAnnotatedElements().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistCommentAnnotatedElement_4007(source, target);
+		}
+
+		/**
+			 * @generated
+			 */
 		public boolean canExistControlFlow_4001(Activity container, ControlFlow linkInstance, ActivityNode source, ActivityNode target) {
 			try {
 				if (source == null) {
@@ -454,6 +469,13 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistExceptionHandler_4005(ExecutableNode container, ExceptionHandler linkInstance, ExecutableNode source, ExecutableNode target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistCommentAnnotatedElement_4007(Comment source, Element target) {
 			return true;
 		}
 	}

@@ -27,15 +27,16 @@ import org.eclipse.uml2.diagram.statemachine.edit.helpers.StateEditHelper.StateM
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
 public class CreateSubmachineStateTool extends UnspecifiedTypeCreationTool {
+
 	public CreateSubmachineStateTool() {
 		super(Collections.singletonList(UMLElementTypes.State_3016));
 		myStateMachineWrapper = new StateMachineWrapper();
 	}
-	
+
 	@Override
 	protected Request createTargetRequest() {
 		CreateUnspecifiedTypeRequest request = (CreateUnspecifiedTypeRequest) super.createTargetRequest();
-		
+
 		//below is the only way to propagate extended data into IEditCommandRequest#parameters  
 		HashMap extendedData = new HashMap();
 		extendedData.putAll(request.getExtendedData());
@@ -43,21 +44,21 @@ public class CreateSubmachineStateTool extends UnspecifiedTypeCreationTool {
 		request.setExtendedData(extendedData);
 		return request;
 	}
-	
+
 	@Override
 	protected void executeCurrentCommand() {
 		Command currentCommand = getCurrentCommand();
 		if (currentCommand == null || !currentCommand.canExecute()) {
 			return;
 		}
-		
+
 		SelectStateMachineDialog selectDialog = new SelectStateMachineDialog(Display.getCurrent().getActiveShell());
 		if (selectDialog.open() == Window.OK && selectDialog.getSelectedModelElementURI() != null) {
 			URI selectedModelElementURI = selectDialog.getSelectedModelElementURI();
-			myStateMachineWrapper.setStateMachineURI(selectedModelElementURI); 
+			myStateMachineWrapper.setStateMachineURI(selectedModelElementURI);
 			super.executeCurrentCommand();
 		}
 	}
-	
+
 	private StateMachineWrapper myStateMachineWrapper;
 }

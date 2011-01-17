@@ -32,12 +32,13 @@ import org.eclipse.uml2.uml.StateMachine;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class SubmachineStateParser implements IParser {
+
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
-		EObject eObject = (EObject)element.getAdapter(EObject.class);
+		EObject eObject = (EObject) element.getAdapter(EObject.class);
 		if (eObject instanceof State) {
 			StringBuffer printStringBuffer = new StringBuffer(20);
 			State state = (State) eObject;
@@ -62,8 +63,7 @@ public class SubmachineStateParser implements IParser {
 	public boolean isAffectingEvent(Object event, int flags) {
 		if (event instanceof Notification) {
 			Object feature = ((Notification) event).getFeature();
-			return UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) ||
-				UMLPackage.eINSTANCE.getState_Submachine().equals(feature);
+			return UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) || UMLPackage.eINSTANCE.getState_Submachine().equals(feature);
 		}
 		return false;
 	}
@@ -85,7 +85,7 @@ public class SubmachineStateParser implements IParser {
 		}
 		String name = newString.substring(0, equalityPosition);
 		String submachine = newString.substring(equalityPosition + 1);
-		
+
 		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Set Values"); //$NON-NLS-1$
 		command.compose(getSetNameCommand(element, name));
 		if (submachine != null) {
@@ -110,19 +110,20 @@ public class SubmachineStateParser implements IParser {
 		SetRequest request = new SetRequest(element, UMLPackage.eINSTANCE.getState_Submachine(), submachineElement);
 		return new SetValueCommand(request);
 	}
-	
+
 	private ElementProvider getElementProvider() {
 		if (elementProvider == null) {
 			elementProvider = new StateMachineProvider();
 		}
 		return elementProvider;
 	}
-	
+
 	private static final String NAME_SUBMACHINE_SEPARATOR = ":"; //$NON-NLS-1$
 
 	private ElementProvider elementProvider;
-	
+
 	private static class StateMachineProvider extends ElementProvider {
+
 		@Override
 		protected boolean isSuitable(Object object) {
 			return object instanceof StateMachine;

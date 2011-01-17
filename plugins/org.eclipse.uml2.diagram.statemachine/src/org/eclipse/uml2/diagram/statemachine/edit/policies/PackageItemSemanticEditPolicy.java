@@ -6,6 +6,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
+import org.eclipse.uml2.diagram.statemachine.edit.commands.CommentCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.edit.commands.StateMachineCreateCommand;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 
@@ -28,6 +29,9 @@ public class PackageItemSemanticEditPolicy extends UMLBaseItemSemanticEditPolicy
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (UMLElementTypes.StateMachine_2005 == req.getElementType()) {
 			return getGEFWrapper(new StateMachineCreateCommand(req));
+		}
+		if (UMLElementTypes.Comment_2006 == req.getElementType()) {
+			return getGEFWrapper(new CommentCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

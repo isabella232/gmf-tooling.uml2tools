@@ -41,6 +41,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.helpers.UMLBaseEditHelper;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Region;
 import org.eclipse.uml2.uml.Transition;
 import org.eclipse.uml2.uml.Vertex;
@@ -322,9 +324,29 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		public boolean canCreateCommentAnnotatedElement_4002(Comment source, Element target) {
+			if (source != null) {
+				if (source.getAnnotatedElements().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistCommentAnnotatedElement_4002(source, target);
+		}
+
+		/**
+			 * @generated
+			 */
 		public boolean canExistTransition_4001(Region container, Transition linkInstance, Vertex source, Vertex target) {
+			return true;
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistCommentAnnotatedElement_4002(Comment source, Element target) {
 			return true;
 		}
 	}

@@ -29,14 +29,14 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.UMLPackage;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-
 public class ActivityEdgeGuardParser implements IParser {
+
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	public String getEditString(IAdaptable element, int flags) {
-		EObject eObject = (EObject)element.getAdapter(EObject.class);
+		EObject eObject = (EObject) element.getAdapter(EObject.class);
 		if (!(eObject instanceof ActivityEdge)) {
 			return ""; //$NON-NLS-1$
 		}
@@ -52,8 +52,7 @@ public class ActivityEdgeGuardParser implements IParser {
 		if (guard == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		return new SetValueCommand(new SetRequest(adaptToEObject(element), 
-				UMLPackage.eINSTANCE.getActivityEdge_Guard(), guard));
+		return new SetValueCommand(new SetRequest(adaptToEObject(element), UMLPackage.eINSTANCE.getActivityEdge_Guard(), guard));
 	}
 
 	public String getPrintString(IAdaptable element, int flags) {
@@ -79,21 +78,22 @@ public class ActivityEdgeGuardParser implements IParser {
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.UNEDITABLE_STATUS;
 	}
-	
+
 	private ElementProvider getElementProvider() {
 		if (elementProvider == null) {
 			elementProvider = new ValueSpecificationProvider();
 		}
 		return elementProvider;
 	}
-	
+
 	private EObject adaptToEObject(IAdaptable adaptable) {
 		return (EObject) adaptable.getAdapter(EObject.class);
 	}
-	
+
 	private ElementProvider elementProvider;
-	
+
 	private static class ValueSpecificationProvider extends ElementProvider {
+
 		@Override
 		protected String getDisplayProposal(NamedElement element) {
 			if (element instanceof ValueSpecification) {
@@ -101,7 +101,7 @@ public class ActivityEdgeGuardParser implements IParser {
 			}
 			return super.getDisplayProposal(element);
 		}
-		
+
 		@Override
 		protected boolean isSuitable(Object object) {
 			return object instanceof ValueSpecification;

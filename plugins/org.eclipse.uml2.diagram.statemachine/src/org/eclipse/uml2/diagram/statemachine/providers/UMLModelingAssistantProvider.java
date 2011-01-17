@@ -35,11 +35,14 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachine_RegionSubverticesEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.State_RegionSubverticesEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SubmachineStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.TerminatePseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ChoicePseudostateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentEditPart;
 import org.eclipse.uml2.diagram.statemachine.part.Messages;
 import org.eclipse.uml2.diagram.statemachine.part.UMLDiagramEditorPlugin;
 
@@ -91,6 +94,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (editPart instanceof PackageEditPart) {
 			List<IElementType> types = new ArrayList<IElementType>();
 			types.add(UMLElementTypes.StateMachine_2005);
+			types.add(UMLElementTypes.Comment_2006);
 			return types;
 		}
 
@@ -174,6 +178,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof SimpleStateEditPart) {
 			return ((SimpleStateEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
@@ -230,11 +237,23 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof StateMachineEditPart) {
+			return ((StateMachineEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof StateMachine_RegionEditPart) {
+			return ((StateMachine_RegionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof SimpleStateEditPart) {
 			return ((SimpleStateEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof CompositeStateEditPart) {
 			return ((CompositeStateEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof State_RegionEditPart) {
+			return ((State_RegionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof SubmachineStateEditPart) {
 			return ((SubmachineStateEditPart) targetEditPart).getMARelTypesOnTarget();
@@ -287,6 +306,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof SimpleStateEditPart) {
 			return ((SimpleStateEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
@@ -343,11 +365,23 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (targetEditPart instanceof StateMachineEditPart) {
+			return ((StateMachineEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof StateMachine_RegionEditPart) {
+			return ((StateMachine_RegionEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof SimpleStateEditPart) {
 			return ((SimpleStateEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof CompositeStateEditPart) {
 			return ((CompositeStateEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof State_RegionEditPart) {
+			return ((State_RegionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof SubmachineStateEditPart) {
 			return ((SubmachineStateEditPart) targetEditPart).getMATypesForSource(relationshipType);
@@ -399,6 +433,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
 		if (sourceEditPart instanceof SimpleStateEditPart) {
 			return ((SimpleStateEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}

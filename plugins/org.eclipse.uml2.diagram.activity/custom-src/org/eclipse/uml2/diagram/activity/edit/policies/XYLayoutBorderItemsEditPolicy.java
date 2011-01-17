@@ -20,8 +20,8 @@ import org.eclipse.uml2.diagram.activity.edit.parts.ActivityParameterNodeEditPar
 import org.eclipse.uml2.diagram.activity.edit.parts.ParameterSetEditPart;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 
-
 public class XYLayoutBorderItemsEditPolicy extends XYLayoutEditPolicy {
+
 	@Override
 	protected EditPolicy createChildEditPolicy(EditPart child) {
 		View childView = (View) child.getModel();

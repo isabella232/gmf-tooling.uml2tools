@@ -31,17 +31,18 @@ import org.eclipse.uml2.uml.PseudostateKind;
 import org.eclipse.uml2.uml.State;
 
 public abstract class CreateConnectionPointReferenceTool extends UnspecifiedTypeCreationTool {
+
 	public CreateConnectionPointReferenceTool(IHintedType elementType) {
 		super(Collections.singletonList(elementType));
 		connectionPoints = new LinkedList<Pseudostate>();
 	}
-	
+
 	protected abstract PseudostateKind getKind();
-	
+
 	@Override
 	protected Request createTargetRequest() {
 		CreateUnspecifiedTypeRequest request = (CreateUnspecifiedTypeRequest) super.createTargetRequest();
-		
+
 		//below is the only way to propagate extended data into IEditCommandRequest#parameters  
 		HashMap extendedData = new HashMap();
 		extendedData.putAll(request.getExtendedData());
@@ -49,14 +50,14 @@ public abstract class CreateConnectionPointReferenceTool extends UnspecifiedType
 		request.setExtendedData(extendedData);
 		return request;
 	}
-	
+
 	@Override
 	protected void executeCurrentCommand() {
 		Command currentCommand = getCurrentCommand();
 		if (currentCommand == null || !currentCommand.canExecute()) {
 			return;
 		}
-		
+
 		State state = (State) ((View) getTargetEditPart().getModel()).getElement();
 
 		SelectConnectionPointsDialog selectDialog = new SelectConnectionPointsDialog(Display.getCurrent().getActiveShell(), state.getSubmachine(), getKind());
@@ -68,6 +69,6 @@ public abstract class CreateConnectionPointReferenceTool extends UnspecifiedType
 			}
 		}
 	}
-	
+
 	private List<Pseudostate> connectionPoints;
 }

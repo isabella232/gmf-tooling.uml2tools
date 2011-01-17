@@ -27,27 +27,28 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 public abstract class NewActionHandler extends AbstractHandler {
+
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		DiagramDocumentEditor editor = (DiagramDocumentEditor)HandlerUtil.getActiveEditorChecked(event);
+		DiagramDocumentEditor editor = (DiagramDocumentEditor) HandlerUtil.getActiveEditorChecked(event);
 		ISelection selection = HandlerUtil.getCurrentSelectionChecked(event);
-		if (false == selection instanceof IStructuredSelection){
+		if (false == selection instanceof IStructuredSelection) {
 			return null;
 		}
-		List<?> editParts = ((IStructuredSelection)selection).toList();
-		
+		List<?> editParts = ((IStructuredSelection) selection).toList();
+
 		TransactionalEditingDomain domain = editor.getEditingDomain();
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(domain, CustomMessages.NewInternalTransitionActionHandler_command_label);
-		for (Object nextEditPart : editParts){
-			if (nextEditPart instanceof ShapeNodeEditPart){
+		for (Object nextEditPart : editParts) {
+			if (nextEditPart instanceof ShapeNodeEditPart) {
 				try {
-					cc.add(getCreateElementCommand((ShapeNodeEditPart)nextEditPart));
-				} catch(IllegalArgumentException iae) {
+					cc.add(getCreateElementCommand((ShapeNodeEditPart) nextEditPart));
+				} catch (IllegalArgumentException iae) {
 					;//Nothing to do
 				}
 			}
 		}
-		
-		if (cc.canExecute()){
+
+		if (cc.canExecute()) {
 			editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(cc.reduce()));
 		}
 

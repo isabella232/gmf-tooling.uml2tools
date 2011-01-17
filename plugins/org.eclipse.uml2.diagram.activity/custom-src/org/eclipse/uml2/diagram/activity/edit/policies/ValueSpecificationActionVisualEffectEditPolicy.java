@@ -24,8 +24,8 @@ import org.eclipse.uml2.diagram.common.editpolicies.AbstractVisualEffectEditPoli
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.uml.ValueSpecificationAction;
 
-
 public class ValueSpecificationActionVisualEffectEditPolicy extends AbstractVisualEffectEditPolicy {
+
 	@Override
 	protected void installVisualEffect() {
 	}
@@ -48,19 +48,19 @@ public class ValueSpecificationActionVisualEffectEditPolicy extends AbstractVisu
 			editPart.getContentPane().setForegroundColor(getHighlightColor(store));
 		}
 	}
-	
+
 	private boolean isValid(ValueSpecificationAction action) {
 		if (action.getValue() == null) {
 			return false;
 		}
-		
+
 		if (action.getResult() == null) {
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	private Color getHighlightColor(IPreferenceStore store) {
 		RGB rgb = PreferenceConverter.getColor(store, UMLPreferencesConstants.HIGHLIGHT_COLOR);
 		return DiagramColorRegistry.getInstance().getColor(rgb);

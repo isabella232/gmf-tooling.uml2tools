@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.CommentBodyEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
@@ -78,6 +79,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			stateMachineQualifiedName_5012Parser = new AppliedStereotypeParser();
 		}
 		return stateMachineQualifiedName_5012Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser commentBody_5016Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getCommentBody_5016Parser() {
+		if (commentBody_5016Parser == null) {
+			commentBody_5016Parser = createCommentBody_5016Parser();
+		}
+		return commentBody_5016Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createCommentBody_5016Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getComment_Body() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -404,6 +429,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStateMachineName_5011Parser();
 		case StateMachineStereotypeEditPart.VISUAL_ID:
 			return getStateMachineQualifiedName_5012Parser();
+		case CommentBodyEditPart.VISUAL_ID:
+			return getCommentBody_5016Parser();
 		case SimpleStateNameEditPart.VISUAL_ID:
 			return getStateName_5001Parser();
 		case SimpleStateStereotypeEditPart.VISUAL_ID:

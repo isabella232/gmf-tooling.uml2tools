@@ -178,6 +178,10 @@
           title="Exit Connection Point Reference"
           description="Create Exit Connection Point Reference"
           toolClass="org.eclipse.uml2.diagram.statemachine.part.CreateExitConnectionPointReferenceTool"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Comment"
+          description="Create Comment"/>
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
@@ -186,6 +190,10 @@
           xsi:type="gmftool:CreationTool"
           title="Transition"
           description="Create Transition"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Annotated Element"
+          description="Create Annotated Element"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

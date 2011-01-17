@@ -139,6 +139,7 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(UMLElementTypes.Activity_2026);
 			types.add(UMLElementTypes.Constraint_2027);
 			types.add(UMLElementTypes.Constraint_2028);
+			types.add(UMLElementTypes.Comment_2029);
 			return types;
 		}
 
@@ -635,6 +636,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof AcceptEventActionEditPart) {
 			return ((AcceptEventActionEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
@@ -895,6 +899,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof LocalPostconditionEditPart) {
 			return ((LocalPostconditionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			return ((AcceptEventActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
@@ -1045,6 +1052,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof SendSignalActionEditPart) {
 			return ((SendSignalActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof ActivityPartitionEditPart) {
+			return ((ActivityPartitionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ActivityPartition_ActivityPartitionEditPart) {
+			return ((ActivityPartition_ActivityPartitionEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof ActivityPartition_AcceptEventActionEditPart) {
 			return ((ActivityPartition_AcceptEventActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
@@ -1138,6 +1151,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ExpansionNodeEditPart) {
 			return ((ExpansionNodeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof ParameterSetEditPart) {
+			return ((ParameterSetEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ParameterEditPart) {
+			return ((ParameterEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			return ((ValueSpecificationActionEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
@@ -1150,6 +1169,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof AcceptEventActionEditPart) {
 			return ((AcceptEventActionEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
@@ -1410,6 +1432,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof LocalPostconditionEditPart) {
 			return ((LocalPostconditionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			return ((AcceptEventActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -1560,6 +1585,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof SendSignalActionEditPart) {
 			return ((SendSignalActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof ActivityPartitionEditPart) {
+			return ((ActivityPartitionEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ActivityPartition_ActivityPartitionEditPart) {
+			return ((ActivityPartition_ActivityPartitionEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof ActivityPartition_AcceptEventActionEditPart) {
 			return ((ActivityPartition_AcceptEventActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -1653,6 +1684,12 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ExpansionNodeEditPart) {
 			return ((ExpansionNodeEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof ParameterSetEditPart) {
+			return ((ParameterSetEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ParameterEditPart) {
+			return ((ParameterEditPart) targetEditPart).getMATypesForSource(relationshipType);
+		}
 		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			return ((ValueSpecificationActionEditPart) targetEditPart).getMATypesForSource(relationshipType);
 		}
@@ -1664,6 +1701,9 @@ public class UMLModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof CommentEditPart) {
+			return ((CommentEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+		}
 		if (sourceEditPart instanceof AcceptEventActionEditPart) {
 			return ((AcceptEventActionEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
 		}
