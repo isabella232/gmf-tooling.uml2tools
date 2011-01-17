@@ -46,11 +46,7 @@ public class ActivityPartition_MergeNodeCreateCommand extends EditElementCommand
 	 * @generated NOT
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest()).getContainer();
-		if (container instanceof View) {
-			container = ((View) container).getElement();
-		}
-		return container;
+		return getElementToEditGen().eContainer();
 	}
 
 	/**
