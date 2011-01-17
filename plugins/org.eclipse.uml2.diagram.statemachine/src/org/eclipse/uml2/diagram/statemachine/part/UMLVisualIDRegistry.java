@@ -29,12 +29,21 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointRefer
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName4EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName5EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName6EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName7EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName8EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
@@ -439,6 +448,51 @@ public class UMLVisualIDRegistry {
 			break;
 		case ExitConnectionPointReferenceEditPart.VISUAL_ID:
 			if (ExitConnectionPointReferenceNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case FinalStateEditPart.VISUAL_ID:
+			if (FinalStateNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InitialPseudostateEditPart.VISUAL_ID:
+			if (PseudostateNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ShallowHistoryPseudostateEditPart.VISUAL_ID:
+			if (PseudostateName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case DeepHistoryPseudostateEditPart.VISUAL_ID:
+			if (PseudostateName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ForkPseudostateEditPart.VISUAL_ID:
+			if (PseudostateName4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case JoinPseudostateEditPart.VISUAL_ID:
+			if (PseudostateName5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case JunctionPseudostateEditPart.VISUAL_ID:
+			if (PseudostateName6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ChoicePseudostateEditPart.VISUAL_ID:
+			if (PseudostateName7EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case TerminatePseudostateEditPart.VISUAL_ID:
+			if (PseudostateName8EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

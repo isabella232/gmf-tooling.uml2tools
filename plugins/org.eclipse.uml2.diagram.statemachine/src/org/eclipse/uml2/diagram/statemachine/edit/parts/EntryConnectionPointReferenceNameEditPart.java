@@ -575,7 +575,21 @@ public class EntryConnectionPointReferenceNameEditPart extends LabelEditPart imp
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new Label();
+		return new PseudostateFigure_ExternalLabel();
+	}
+
+	/**
+	* @generated
+	*/
+	public class PseudostateFigure_ExternalLabel extends Label {
+
+		/**
+		 * @generated
+		 */
+		public PseudostateFigure_ExternalLabel() {
+			this.setText("");
+		}
+
 	}
 
 }

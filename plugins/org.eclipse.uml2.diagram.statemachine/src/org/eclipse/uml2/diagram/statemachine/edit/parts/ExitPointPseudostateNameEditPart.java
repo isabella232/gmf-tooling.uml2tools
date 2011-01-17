@@ -47,6 +47,7 @@ import org.eclipse.uml2.diagram.common.draw2d.SimpleLabelDelegate;
 import org.eclipse.uml2.diagram.common.editpolicies.IRefreshableFeedbackEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.edit.policies.UMLTextSelectionEditPolicy;
 import org.eclipse.uml2.diagram.statemachine.part.UMLVisualIDRegistry;
+import org.eclipse.uml2.diagram.statemachine.preferences.DiagramIconStylePreferenceHelper;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider;
 
@@ -213,7 +214,15 @@ public class ExitPointPseudostateNameEditPart extends LabelEditPart implements I
 	 * @generated
 	 */
 	protected Image getLabelIcon() {
-		return null;
+		EObject parserElement = getParserElement();
+		if (parserElement == null) {
+			return null;
+		}
+		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
+		if (!shouldShow) {
+			return null;
+		}
+		return UMLElementTypes.getImage(parserElement.eClass());
 	}
 
 	/**

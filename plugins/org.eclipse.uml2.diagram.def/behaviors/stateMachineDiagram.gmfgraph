@@ -498,10 +498,11 @@
       </actualFigure>
     </descriptors>
     <descriptors
-        name="EntryExitPointFigure_ExternalLabel">
+        name="PseudostateFigure_ExternalLabel">
       <actualFigure
           xsi:type="gmfgraph:Label"
-          name="EntryExitPointFigure_ExternalLabel"/>
+          name="PseudostateFigure_ExternalLabel"
+          text=""/>
     </descriptors>
     <descriptors
         name="TransitionConnection_TransitionLabel">
@@ -604,8 +605,8 @@
       figure="CompositeStateFigure"
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
-      name="EntryExitPoint_ExternalLabel"
-      figure="EntryExitPointFigure_ExternalLabel"
+      name="Pseudostate_ExternalLabel"
+      figure="PseudostateFigure_ExternalLabel"
       elementIcon="false"/>
   <labels
       name="SimpleStateNode_stereo"
@@ -626,7 +627,7 @@
       accessor="//@figures.0/@descriptors.1/@accessors.1"/>
   <labels
       name="EntryExitPointConnectionPointReferenceNode_ExternalLabel"
-      figure="EntryExitPointFigure_ExternalLabel"
+      figure="PseudostateFigure_ExternalLabel"
       elementIcon="false"/>
   <labels
       name="TransitionLink_transition"

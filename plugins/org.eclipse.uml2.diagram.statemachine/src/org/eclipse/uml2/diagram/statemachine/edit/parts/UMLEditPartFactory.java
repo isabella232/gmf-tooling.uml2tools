@@ -107,29 +107,56 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case FinalStateEditPart.VISUAL_ID:
 				return new FinalStateEditPart(view);
 
+			case FinalStateNameEditPart.VISUAL_ID:
+				return new FinalStateNameEditPart(view);
+
 			case InitialPseudostateEditPart.VISUAL_ID:
 				return new InitialPseudostateEditPart(view);
+
+			case PseudostateNameEditPart.VISUAL_ID:
+				return new PseudostateNameEditPart(view);
 
 			case ShallowHistoryPseudostateEditPart.VISUAL_ID:
 				return new ShallowHistoryPseudostateEditPart(view);
 
+			case PseudostateName2EditPart.VISUAL_ID:
+				return new PseudostateName2EditPart(view);
+
 			case DeepHistoryPseudostateEditPart.VISUAL_ID:
 				return new DeepHistoryPseudostateEditPart(view);
+
+			case PseudostateName3EditPart.VISUAL_ID:
+				return new PseudostateName3EditPart(view);
 
 			case ForkPseudostateEditPart.VISUAL_ID:
 				return new ForkPseudostateEditPart(view);
 
+			case PseudostateName4EditPart.VISUAL_ID:
+				return new PseudostateName4EditPart(view);
+
 			case JoinPseudostateEditPart.VISUAL_ID:
 				return new JoinPseudostateEditPart(view);
+
+			case PseudostateName5EditPart.VISUAL_ID:
+				return new PseudostateName5EditPart(view);
 
 			case JunctionPseudostateEditPart.VISUAL_ID:
 				return new JunctionPseudostateEditPart(view);
 
+			case PseudostateName6EditPart.VISUAL_ID:
+				return new PseudostateName6EditPart(view);
+
 			case ChoicePseudostateEditPart.VISUAL_ID:
 				return new ChoicePseudostateEditPart(view);
 
+			case PseudostateName7EditPart.VISUAL_ID:
+				return new PseudostateName7EditPart(view);
+
 			case TerminatePseudostateEditPart.VISUAL_ID:
 				return new TerminatePseudostateEditPart(view);
+
+			case PseudostateName8EditPart.VISUAL_ID:
+				return new PseudostateName8EditPart(view);
 
 			case EntryPointPseudostateEditPart.VISUAL_ID:
 				return new EntryPointPseudostateEditPart(view);

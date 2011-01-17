@@ -53,56 +53,55 @@ import org.eclipse.uml2.diagram.statemachine.providers.UMLParserProvider;
 /**
  * @generated
  */
-
-public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
-
-	/**
-	 * @generated
-	 */
-	public static final int VISUAL_ID = 5010;
+public class FinalStateNameEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
+	public static final int VISUAL_ID = 5017;
+
+	/**
+	* @generated
+	*/
 	private DirectEditManager manager;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private IParser parser;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private List<?> parserElements;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private String defaultText;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	ILabelDelegate labelDelegate;
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	static {
-		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceNameEditPart.VISUAL_ID), new Point(0, 0));
+		registerSnapBackPosition(UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateNameEditPart.VISUAL_ID), new Point(0, 0));
 	}
 
 	/**
-	 * @generated
-	 */
-	public ExitConnectionPointReferenceNameEditPart(View view) {
+	* @generated
+	*/
+	public FinalStateNameEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
@@ -110,8 +109,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IBorderItemLocator getBorderItemLocator() {
 		IFigure parentFigure = getFigure().getParent();
 		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
@@ -122,8 +121,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void refreshBounds() {
 		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
 		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
@@ -133,8 +132,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected String getLabelTextHelper(IFigure figure) {
 		if (figure instanceof WrappingLabel) {
 			return ((WrappingLabel) figure).getText();
@@ -144,8 +143,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLabelTextHelper(IFigure figure, String text) {
 		if (figure instanceof WrappingLabel) {
 			((WrappingLabel) figure).setText(text);
@@ -155,8 +154,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Image getLabelIconHelper(IFigure figure) {
 		if (figure instanceof WrappingLabel) {
 			return ((WrappingLabel) figure).getIcon();
@@ -166,8 +165,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
 		if (figure instanceof WrappingLabel) {
 			((WrappingLabel) figure).setIcon(icon);
@@ -177,8 +176,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void setLabel(IFigure figure) {
 		unregisterVisuals();
 		setFigure(figure);
@@ -188,37 +187,37 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected EObject getParserElement() {
 		return resolveSemanticElement();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Image getLabelIcon() {
 		return null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected String getLabelText() {
 		String text = null;
 		EObject parserElement = getParserElement();
@@ -232,16 +231,16 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
 		refreshFeedback();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public String getEditText() {
 		if (getParserElement() == null || getParser() == null) {
 			return ""; //$NON-NLS-1$
@@ -250,15 +249,15 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected boolean isEditable() {
 		return getParser() != null;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ICellEditorValidator getEditTextValidator() {
 		return new ICellEditorValidator() {
 
@@ -286,8 +285,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IContentAssistProcessor getCompletionProcessor() {
 		if (getParserElement() == null || getParser() == null) {
 			return null;
@@ -296,26 +295,26 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public ParserOptions getParserOptions() {
 		return ParserOptions.NONE;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = UMLParserProvider.getParser(UMLElementTypes.ConnectionPointReference_3018, getParserElement(),
-					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceNameEditPart.VISUAL_ID));
+			parser = UMLParserProvider.getParser(UMLElementTypes.FinalState_3003, getParserElement(),
+					UMLVisualIDRegistry.getType(org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected DirectEditManager getManager() {
 		if (manager == null) {
 			setManager(new TextDirectEditManager(this, null, UMLEditPartFactory.getTextCellEditorLocator(this)));
@@ -324,22 +323,22 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setManager(DirectEditManager manager) {
 		this.manager = manager;
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void performDirectEdit() {
 		getManager().show();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void performDirectEdit(Point eventLocation) {
 		if (getManager().getClass() == TextDirectEditManager.class) {
 			((TextDirectEditManager) getManager()).show(eventLocation.getSWTPoint());
@@ -347,8 +346,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
@@ -358,8 +357,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void performDirectEditRequest(Request request) {
 		final Request theRequest = request;
 		try {
@@ -385,8 +384,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		refreshLabel();
@@ -397,8 +396,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
@@ -406,8 +405,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshUnderline() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null && getFigure() instanceof WrappingLabel) {
@@ -416,8 +415,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshStrikeThrough() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null && getFigure() instanceof WrappingLabel) {
@@ -426,8 +425,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void refreshFont() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null) {
@@ -437,15 +436,15 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void setFontColor(Color color) {
 		getFigure().setForegroundColor(color);
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void addSemanticListeners() {
 		if (getParser() instanceof ISemanticParser) {
 			EObject element = resolveSemanticElement();
@@ -459,8 +458,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void removeSemanticListeners() {
 		if (parserElements != null) {
 			for (int i = 0; i < parserElements.size(); i++) {
@@ -472,8 +471,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected AccessibleEditPart getAccessibleEditPart() {
 		if (accessibleEP == null) {
 			accessibleEP = new AccessibleGraphicalEditPart() {
@@ -487,15 +486,15 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private View getFontStyleOwnerView() {
 		return getPrimaryView();
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private void refreshFeedback() {
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 		if (pdEditPolicy instanceof IRefreshableFeedbackEditPolicy) {
@@ -504,8 +503,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private ILabelDelegate getLabelDelegate() {
 		if (labelDelegate == null) {
 			IFigure label = getFigure();
@@ -519,8 +518,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	@Override
 	public Object getAdapter(Class key) {
 		if (ILabelDelegate.class.equals(key)) {
@@ -530,8 +529,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
 		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
@@ -563,8 +562,8 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure createFigure() {
 		IFigure label = createFigurePrim();
 		defaultText = getLabelTextHelper(label);
@@ -572,15 +571,15 @@ public class ExitConnectionPointReferenceNameEditPart extends LabelEditPart impl
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected IFigure createFigurePrim() {
 		return new PseudostateFigure_ExternalLabel();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public class PseudostateFigure_ExternalLabel extends Label {
 
 		/**

@@ -8,6 +8,7 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.CompositeStateNameEditPa
 import org.eclipse.uml2.diagram.statemachine.edit.parts.DoActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
@@ -67,6 +68,8 @@ public class DiagramIconStylePreferenceHelper {
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".3019.3020.3021");
 			case CommentBodyEditPart.VISUAL_ID:
 				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5016");
+			case ExitPointPseudostateNameEditPart.VISUAL_ID:
+				return store.getBoolean(UMLPreferencesConstants.PREF_ICONS_SHOW_VISUAL_ID_PREFIX + ".5007");
 			case SimpleStateNameEditPart.VISUAL_ID:
 			case CompositeStateNameEditPart.VISUAL_ID:
 			case SubmachineStateNameEditPart.VISUAL_ID:

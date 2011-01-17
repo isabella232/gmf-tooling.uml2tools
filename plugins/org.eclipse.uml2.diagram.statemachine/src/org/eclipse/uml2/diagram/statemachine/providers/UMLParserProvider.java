@@ -23,7 +23,16 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.EntryPointPseudostateNam
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitActivityEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointReferenceNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName4EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName5EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName6EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName7EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName8EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
@@ -358,6 +367,222 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	* @generated
+	*/
+	private IParser finalStateName_5017Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getFinalStateName_5017Parser() {
+		if (finalStateName_5017Parser == null) {
+			finalStateName_5017Parser = createFinalStateName_5017Parser();
+		}
+		return finalStateName_5017Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createFinalStateName_5017Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser pseudostateName_5018Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getPseudostateName_5018Parser() {
+		if (pseudostateName_5018Parser == null) {
+			pseudostateName_5018Parser = createPseudostateName_5018Parser();
+		}
+		return pseudostateName_5018Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createPseudostateName_5018Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser pseudostateName_5019Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getPseudostateName_5019Parser() {
+		if (pseudostateName_5019Parser == null) {
+			pseudostateName_5019Parser = createPseudostateName_5019Parser();
+		}
+		return pseudostateName_5019Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createPseudostateName_5019Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser pseudostateName_5020Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getPseudostateName_5020Parser() {
+		if (pseudostateName_5020Parser == null) {
+			pseudostateName_5020Parser = createPseudostateName_5020Parser();
+		}
+		return pseudostateName_5020Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createPseudostateName_5020Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser pseudostateName_5021Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getPseudostateName_5021Parser() {
+		if (pseudostateName_5021Parser == null) {
+			pseudostateName_5021Parser = createPseudostateName_5021Parser();
+		}
+		return pseudostateName_5021Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createPseudostateName_5021Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser pseudostateName_5022Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getPseudostateName_5022Parser() {
+		if (pseudostateName_5022Parser == null) {
+			pseudostateName_5022Parser = createPseudostateName_5022Parser();
+		}
+		return pseudostateName_5022Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createPseudostateName_5022Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser pseudostateName_5023Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getPseudostateName_5023Parser() {
+		if (pseudostateName_5023Parser == null) {
+			pseudostateName_5023Parser = createPseudostateName_5023Parser();
+		}
+		return pseudostateName_5023Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createPseudostateName_5023Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser pseudostateName_5024Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getPseudostateName_5024Parser() {
+		if (pseudostateName_5024Parser == null) {
+			pseudostateName_5024Parser = createPseudostateName_5024Parser();
+		}
+		return pseudostateName_5024Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createPseudostateName_5024Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser pseudostateName_5025Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getPseudostateName_5025Parser() {
+		if (pseudostateName_5025Parser == null) {
+			pseudostateName_5025Parser = createPseudostateName_5025Parser();
+		}
+		return pseudostateName_5025Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createPseudostateName_5025Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
 	 * @generated
 	 */
 	private IParser pseudostateName_5006Parser;
@@ -455,6 +680,24 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConnectionPointReferenceName_5010Parser();
 		case InternalTransitionEditPart.VISUAL_ID:
 			return getTransition_3022Parser();
+		case FinalStateNameEditPart.VISUAL_ID:
+			return getFinalStateName_5017Parser();
+		case PseudostateNameEditPart.VISUAL_ID:
+			return getPseudostateName_5018Parser();
+		case PseudostateName2EditPart.VISUAL_ID:
+			return getPseudostateName_5019Parser();
+		case PseudostateName3EditPart.VISUAL_ID:
+			return getPseudostateName_5020Parser();
+		case PseudostateName4EditPart.VISUAL_ID:
+			return getPseudostateName_5021Parser();
+		case PseudostateName5EditPart.VISUAL_ID:
+			return getPseudostateName_5022Parser();
+		case PseudostateName6EditPart.VISUAL_ID:
+			return getPseudostateName_5023Parser();
+		case PseudostateName7EditPart.VISUAL_ID:
+			return getPseudostateName_5024Parser();
+		case PseudostateName8EditPart.VISUAL_ID:
+			return getPseudostateName_5025Parser();
 		case EntryPointPseudostateNameEditPart.VISUAL_ID:
 			return getPseudostateName_5006Parser();
 		case ExitPointPseudostateNameEditPart.VISUAL_ID:

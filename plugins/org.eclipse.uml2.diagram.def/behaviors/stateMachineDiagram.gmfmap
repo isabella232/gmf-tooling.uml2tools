@@ -450,6 +450,13 @@
             <ownedChild>
               <domainMetaElement
                   href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//FinalState"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#Pseudostate_ExternalLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
@@ -477,6 +484,13 @@
                       body="PseudostateKind::initial"/>
                 </initializers>
               </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#Pseudostate_ExternalLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
@@ -504,6 +518,13 @@
                       body="PseudostateKind::shallowHistory"/>
                 </initializers>
               </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#Pseudostate_ExternalLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
@@ -531,6 +552,13 @@
                       body="PseudostateKind::deepHistory"/>
                 </initializers>
               </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#Pseudostate_ExternalLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.6"/>
@@ -558,6 +586,13 @@
                       body="PseudostateKind::fork"/>
                 </initializers>
               </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#Pseudostate_ExternalLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.7"/>
@@ -585,6 +620,13 @@
                       body="PseudostateKind::join"/>
                 </initializers>
               </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#Pseudostate_ExternalLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.8"/>
@@ -612,6 +654,13 @@
                       body="PseudostateKind::junction"/>
                 </initializers>
               </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#Pseudostate_ExternalLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.9"/>
@@ -639,6 +688,13 @@
                       body="PseudostateKind::choice"/>
                 </initializers>
               </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#Pseudostate_ExternalLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.10"/>
@@ -666,6 +722,13 @@
                       body="PseudostateKind::terminate"/>
                 </initializers>
               </domainInitializer>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="stateMachineDiagram.gmfgraph#Pseudostate_ExternalLabel"/>
+                <features
+                    href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
+              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="stateMachineDiagram.gmftool#//@palette/@tools.0/@tools.11"/>
@@ -710,7 +773,7 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="stateMachineDiagram.gmfgraph#EntryExitPoint_ExternalLabel"/>
+                href="stateMachineDiagram.gmfgraph#Pseudostate_ExternalLabel"/>
             <features
                 href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/name"/>
           </labelMappings>

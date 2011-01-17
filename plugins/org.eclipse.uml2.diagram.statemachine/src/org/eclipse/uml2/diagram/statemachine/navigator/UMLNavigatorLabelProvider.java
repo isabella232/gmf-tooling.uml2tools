@@ -34,12 +34,21 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitConnectionPointRefer
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ExitPointPseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.FinalStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ForkPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InitialPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.InternalTransitionEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JoinPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.JunctionPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PackageEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName3EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName4EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName5EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName6EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName7EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName8EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
@@ -466,11 +475,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getFinalState_3003Text(View view) {
-		FinalState domainModelElement = (FinalState) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.FinalState_3003, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(FinalStateNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3003); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5017); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -479,11 +489,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPseudostate_3004Text(View view) {
-		Pseudostate domainModelElement = (Pseudostate) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3004, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(PseudostateNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3004); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5018); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -492,11 +503,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPseudostate_3005Text(View view) {
-		Pseudostate domainModelElement = (Pseudostate) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3005, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(PseudostateName2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3005); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5019); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -505,11 +517,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPseudostate_3006Text(View view) {
-		Pseudostate domainModelElement = (Pseudostate) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3006, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(PseudostateName3EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3006); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5020); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -518,11 +531,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPseudostate_3007Text(View view) {
-		Pseudostate domainModelElement = (Pseudostate) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3007, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(PseudostateName4EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3007); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5021); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -538,11 +552,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPseudostate_3008Text(View view) {
-		Pseudostate domainModelElement = (Pseudostate) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3008, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(PseudostateName5EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3008); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5022); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -551,11 +566,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPseudostate_3009Text(View view) {
-		Pseudostate domainModelElement = (Pseudostate) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3009, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(PseudostateName6EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3009); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5023); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -564,11 +580,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPseudostate_3010Text(View view) {
-		Pseudostate domainModelElement = (Pseudostate) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3010, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(PseudostateName7EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3010); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5024); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -577,11 +594,12 @@ public class UMLNavigatorLabelProvider extends LabelProvider implements ICommonL
 	 * @generated
 	 */
 	private String getPseudostate_3011Text(View view) {
-		Pseudostate domainModelElement = (Pseudostate) view.getElement();
-		if (domainModelElement != null) {
-			return String.valueOf(domainModelElement.getName());
+		IParser parser = UMLParserProvider.getParser(UMLElementTypes.Pseudostate_3011, view.getElement() != null ? view.getElement() : view,
+				UMLVisualIDRegistry.getType(PseudostateName8EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
 		} else {
-			UMLDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 3011); //$NON-NLS-1$
+			UMLDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5025); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
