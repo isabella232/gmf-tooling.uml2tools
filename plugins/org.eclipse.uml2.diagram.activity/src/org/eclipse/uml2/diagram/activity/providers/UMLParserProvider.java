@@ -157,6 +157,102 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	* @generated
+	*/
+	private IParser activityFinalNodeName_5154Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getActivityFinalNodeName_5154Parser() {
+		if (activityFinalNodeName_5154Parser == null) {
+			activityFinalNodeName_5154Parser = createActivityFinalNodeName_5154Parser();
+		}
+		return activityFinalNodeName_5154Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createActivityFinalNodeName_5154Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser decisionNodeName_5155Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getDecisionNodeName_5155Parser() {
+		if (decisionNodeName_5155Parser == null) {
+			decisionNodeName_5155Parser = createDecisionNodeName_5155Parser();
+		}
+		return decisionNodeName_5155Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createDecisionNodeName_5155Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser mergeNodeName_5156Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getMergeNodeName_5156Parser() {
+		if (mergeNodeName_5156Parser == null) {
+			mergeNodeName_5156Parser = createMergeNodeName_5156Parser();
+		}
+		return mergeNodeName_5156Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createMergeNodeName_5156Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser initialNodeName_5152Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getInitialNodeName_5152Parser() {
+		if (initialNodeName_5152Parser == null) {
+			initialNodeName_5152Parser = createInitialNodeName_5152Parser();
+		}
+		return initialNodeName_5152Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createInitialNodeName_5152Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
 	 * @generated
 	 */
 	private ObjectNodeTypeParser dataStoreNodeName_5034Parser;
@@ -431,6 +527,78 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			inputPinOrdering_5150Parser = new ObjectNodeAttributesParser();
 		}
 		return inputPinOrdering_5150Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser flowFinalNodeName_5157Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getFlowFinalNodeName_5157Parser() {
+		if (flowFinalNodeName_5157Parser == null) {
+			flowFinalNodeName_5157Parser = createFlowFinalNodeName_5157Parser();
+		}
+		return flowFinalNodeName_5157Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createFlowFinalNodeName_5157Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser forkNodeName_5158Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getForkNodeName_5158Parser() {
+		if (forkNodeName_5158Parser == null) {
+			forkNodeName_5158Parser = createForkNodeName_5158Parser();
+		}
+		return forkNodeName_5158Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createForkNodeName_5158Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser joinNodeName_5159Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getJoinNodeName_5159Parser() {
+		if (joinNodeName_5159Parser == null) {
+			joinNodeName_5159Parser = createJoinNodeName_5159Parser();
+		}
+		return joinNodeName_5159Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createJoinNodeName_5159Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -1166,6 +1334,78 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	* @generated
+	*/
+	private IParser activityFinalNodeName_5160Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getActivityFinalNodeName_5160Parser() {
+		if (activityFinalNodeName_5160Parser == null) {
+			activityFinalNodeName_5160Parser = createActivityFinalNodeName_5160Parser();
+		}
+		return activityFinalNodeName_5160Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createActivityFinalNodeName_5160Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser decisionNodeName_5161Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getDecisionNodeName_5161Parser() {
+		if (decisionNodeName_5161Parser == null) {
+			decisionNodeName_5161Parser = createDecisionNodeName_5161Parser();
+		}
+		return decisionNodeName_5161Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createDecisionNodeName_5161Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser flowFinalNodeName_5162Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getFlowFinalNodeName_5162Parser() {
+		if (flowFinalNodeName_5162Parser == null) {
+			flowFinalNodeName_5162Parser = createFlowFinalNodeName_5162Parser();
+		}
+		return flowFinalNodeName_5162Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createFlowFinalNodeName_5162Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
 	 * @generated
 	 */
 	private ObjectNodeTypeParser pinName_5016Parser;
@@ -1361,6 +1601,54 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			callOperationActionQualifiedName_5102Parser = new AppliedStereotypeParser();
 		}
 		return callOperationActionQualifiedName_5102Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser forkNodeName_5163Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getForkNodeName_5163Parser() {
+		if (forkNodeName_5163Parser == null) {
+			forkNodeName_5163Parser = createForkNodeName_5163Parser();
+		}
+		return forkNodeName_5163Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createForkNodeName_5163Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser joinNodeName_5164Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getJoinNodeName_5164Parser() {
+		if (joinNodeName_5164Parser == null) {
+			joinNodeName_5164Parser = createJoinNodeName_5164Parser();
+		}
+		return joinNodeName_5164Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createJoinNodeName_5164Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -1680,6 +1968,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	* @generated
+	*/
+	private IParser initialNodeName_5153Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getInitialNodeName_5153Parser() {
+		if (initialNodeName_5153Parser == null) {
+			initialNodeName_5153Parser = createInitialNodeName_5153Parser();
+		}
+		return initialNodeName_5153Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createInitialNodeName_5153Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
 	 * @generated NOT
 	 */
 	protected IParser createOutputPinOrdering_5064Parser() {
@@ -1900,6 +2212,102 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	}
 
 	/**
+	* @generated
+	*/
+	private IParser activityFinalNodeName_5165Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getActivityFinalNodeName_5165Parser() {
+		if (activityFinalNodeName_5165Parser == null) {
+			activityFinalNodeName_5165Parser = createActivityFinalNodeName_5165Parser();
+		}
+		return activityFinalNodeName_5165Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createActivityFinalNodeName_5165Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser decisionNodeName_5166Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getDecisionNodeName_5166Parser() {
+		if (decisionNodeName_5166Parser == null) {
+			decisionNodeName_5166Parser = createDecisionNodeName_5166Parser();
+		}
+		return decisionNodeName_5166Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createDecisionNodeName_5166Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser mergeNodeName_5167Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getMergeNodeName_5167Parser() {
+		if (mergeNodeName_5167Parser == null) {
+			mergeNodeName_5167Parser = createMergeNodeName_5167Parser();
+		}
+		return mergeNodeName_5167Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createMergeNodeName_5167Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser initialNodeName_5168Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getInitialNodeName_5168Parser() {
+		if (initialNodeName_5168Parser == null) {
+			initialNodeName_5168Parser = createInitialNodeName_5168Parser();
+		}
+		return initialNodeName_5168Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createInitialNodeName_5168Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
 	 * @generated
 	 */
 	private ObjectNodeTypeParser dataStoreNodeName_5067Parser;
@@ -2098,6 +2506,78 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			opaqueActionQualifiedName_5112Parser = new AppliedStereotypeParser();
 		}
 		return opaqueActionQualifiedName_5112Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser flowFinalNodeName_5169Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getFlowFinalNodeName_5169Parser() {
+		if (flowFinalNodeName_5169Parser == null) {
+			flowFinalNodeName_5169Parser = createFlowFinalNodeName_5169Parser();
+		}
+		return flowFinalNodeName_5169Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createFlowFinalNodeName_5169Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser forkNodeName_5170Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getForkNodeName_5170Parser() {
+		if (forkNodeName_5170Parser == null) {
+			forkNodeName_5170Parser = createForkNodeName_5170Parser();
+		}
+		return forkNodeName_5170Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createForkNodeName_5170Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser joinNodeName_5171Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getJoinNodeName_5171Parser() {
+		if (joinNodeName_5171Parser == null) {
+			joinNodeName_5171Parser = createJoinNodeName_5171Parser();
+		}
+		return joinNodeName_5171Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createJoinNodeName_5171Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -3103,6 +3583,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAcceptEventActionQualifiedName_5095Parser();
 		case AcceptTimeEventActionNameEditPart.VISUAL_ID:
 			return getAcceptEventActionName_5042Parser();
+		case ActivityFinalNodeNameEditPart.VISUAL_ID:
+			return getActivityFinalNodeName_5154Parser();
+		case DecisionNodeNameEditPart.VISUAL_ID:
+			return getDecisionNodeName_5155Parser();
+		case MergeNodeNameEditPart.VISUAL_ID:
+			return getMergeNodeName_5156Parser();
+		case InitialNodeNameEditPart.VISUAL_ID:
+			return getInitialNodeName_5152Parser();
 		case DataStoreNodeNameEditPart.VISUAL_ID:
 			return getDataStoreNodeName_5034Parser();
 		case DataStoreNodeInStateEditPart.VISUAL_ID:
@@ -3131,6 +3619,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getInputPinName_5149Parser();
 		case OpaqueAction_InputPinOrderingEditPart.VISUAL_ID:
 			return getInputPinOrdering_5150Parser();
+		case FlowFinalNodeNameEditPart.VISUAL_ID:
+			return getFlowFinalNodeName_5157Parser();
+		case ForkNodeNameEditPart.VISUAL_ID:
+			return getForkNodeName_5158Parser();
+		case JoinNodeNameEditPart.VISUAL_ID:
+			return getJoinNodeName_5159Parser();
 		case PinNameEditPart.VISUAL_ID:
 			return getPinName_5024Parser();
 		case PinInStateEditPart.VISUAL_ID:
@@ -3201,6 +3695,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAcceptEventActionQualifiedName_5096Parser();
 		case StructuredActivityNode_AcceptTimeEventActionNameEditPart.VISUAL_ID:
 			return getAcceptEventActionName_5043Parser();
+		case ActivityFinalNodeName2EditPart.VISUAL_ID:
+			return getActivityFinalNodeName_5160Parser();
+		case DecisionNodeName2EditPart.VISUAL_ID:
+			return getDecisionNodeName_5161Parser();
+		case FlowFinalNodeName2EditPart.VISUAL_ID:
+			return getFlowFinalNodeName_5162Parser();
 		case StructuredActivityNode_PinNameEditPart.VISUAL_ID:
 			return getPinName_5016Parser();
 		case StructuredActivityNode_PinInStateEditPart.VISUAL_ID:
@@ -3221,6 +3721,10 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getCallOperationActionName_5019Parser();
 		case StructuredActivityNode_CallOperationActionStereotypeEditPart.VISUAL_ID:
 			return getCallOperationActionQualifiedName_5102Parser();
+		case ForkNodeName2EditPart.VISUAL_ID:
+			return getForkNodeName_5163Parser();
+		case JoinNodeName2EditPart.VISUAL_ID:
+			return getJoinNodeName_5164Parser();
 		case StructuredActivityNode_AddStructuralFeatureValueActionNameEditPart.VISUAL_ID:
 			return getAddStructuralFeatureValueActionName_5020Parser();
 		case StructuredActivityNode_AddStructuralFeatureValueActionStereotypeEditPart.VISUAL_ID:
@@ -3253,6 +3757,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getConditionalNodeName_5147Parser();
 		case StructuredActivityNode_ConditionalNodeStereotypeEditPart.VISUAL_ID:
 			return getConditionalNodeQualifiedName_5148Parser();
+		case InitialNodeName2EditPart.VISUAL_ID:
+			return getInitialNodeName_5153Parser();
 		case OpaqueBehaviorNameEditPart.VISUAL_ID:
 			return getOpaqueBehaviorName_5029Parser();
 		case ActivityParameterNodeNameEditPart.VISUAL_ID:
@@ -3273,6 +3779,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getAcceptEventActionQualifiedName_5105Parser();
 		case ActivityPartition_AcceptTimeEventActionNameEditPart.VISUAL_ID:
 			return getAcceptEventActionName_5066Parser();
+		case ActivityFinalNodeName3EditPart.VISUAL_ID:
+			return getActivityFinalNodeName_5165Parser();
+		case DecisionNodeName3EditPart.VISUAL_ID:
+			return getDecisionNodeName_5166Parser();
+		case MergeNodeName2EditPart.VISUAL_ID:
+			return getMergeNodeName_5167Parser();
+		case InitialNodeName3EditPart.VISUAL_ID:
+			return getInitialNodeName_5168Parser();
 		case ActivityPartition_DataStoreNodeNameEditPart.VISUAL_ID:
 			return getDataStoreNodeName_5067Parser();
 		case ActivityPartition_DataStoreNodeInStateEditPart.VISUAL_ID:
@@ -3293,6 +3807,12 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getOpaqueActionName_5073Parser();
 		case ActivityPartition_OpaqueActionStereotypeEditPart.VISUAL_ID:
 			return getOpaqueActionQualifiedName_5112Parser();
+		case FlowFinalNodeName3EditPart.VISUAL_ID:
+			return getFlowFinalNodeName_5169Parser();
+		case ForkNodeName3EditPart.VISUAL_ID:
+			return getForkNodeName_5170Parser();
+		case JoinNodeName3EditPart.VISUAL_ID:
+			return getJoinNodeName_5171Parser();
 		case ActivityPartition_PinNameEditPart.VISUAL_ID:
 			return getPinName_5074Parser();
 		case ActivityPartition_PinInStateEditPart.VISUAL_ID:

@@ -2090,6 +2090,14 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
+		for (Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
+			Comment childElement = (Comment) it.next();
+			int visualID = UMLVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == CommentEditPart.VISUAL_ID) {
+				result.add(new org.eclipse.uml2.diagram.activity.part.UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		Resource resource = modelElement.eResource();
 		for (Iterator<EObject> iterator = getPhantomNodesIterator(resource); iterator.hasNext();) {
 			EObject childElement = iterator.next();
@@ -2102,10 +2110,6 @@ public class UMLDiagramUpdater {
 			}
 			if (UMLVisualIDRegistry.getNodeVisualID(view, childElement) == LocalPostconditionEditPart.VISUAL_ID) {
 				result.add(new org.eclipse.uml2.diagram.activity.part.UMLNodeDescriptor(childElement, LocalPostconditionEditPart.VISUAL_ID));
-				continue;
-			}
-			if (UMLVisualIDRegistry.getNodeVisualID(view, childElement) == CommentEditPart.VISUAL_ID) {
-				result.add(new org.eclipse.uml2.diagram.activity.part.UMLNodeDescriptor(childElement, CommentEditPart.VISUAL_ID));
 				continue;
 			}
 		}

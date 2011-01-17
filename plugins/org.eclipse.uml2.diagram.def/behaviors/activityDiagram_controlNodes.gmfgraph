@@ -135,6 +135,12 @@
             dy="4"/>
       </actualFigure>
     </descriptors>
+    <descriptors
+        name="NodeFigure_ExternalLabel">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="NodeFigure_ExternalLabel"/>
+    </descriptors>
   </figures>
   <nodes
       name="ActivityFinalNode"
@@ -183,4 +189,8 @@
   <nodes
       name="ChoicePseudoStateNode"
       figure="ScalableRhombFigure"/>
+  <labels
+      name="Node_ExternalLabel"
+      figure="NodeFigure_ExternalLabel"
+      elementIcon="false"/>
 </gmfgraph:Canvas>

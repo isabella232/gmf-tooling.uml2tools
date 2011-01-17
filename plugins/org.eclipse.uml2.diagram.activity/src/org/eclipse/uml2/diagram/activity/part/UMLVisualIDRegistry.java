@@ -1336,6 +1336,26 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ActivityFinalNodeEditPart.VISUAL_ID:
+			if (ActivityFinalNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case DecisionNodeEditPart.VISUAL_ID:
+			if (DecisionNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case MergeNodeEditPart.VISUAL_ID:
+			if (MergeNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InitialNodeEditPart.VISUAL_ID:
+			if (InitialNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case DataStoreNodeEditPart.VISUAL_ID:
 			if (DataStoreNodeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -1391,6 +1411,21 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (OpaqueAction_InputPinOrderingEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case FlowFinalNodeEditPart.VISUAL_ID:
+			if (FlowFinalNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ForkNodeEditPart.VISUAL_ID:
+			if (ForkNodeNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case JoinNodeEditPart.VISUAL_ID:
+			if (JoinNodeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1572,6 +1607,21 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case StructuredActivityNode_ActivityFinalNodeEditPart.VISUAL_ID:
+			if (ActivityFinalNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StructuredActivityNode_DecisionNodeEditPart.VISUAL_ID:
+			if (DecisionNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StructuredActivityNode_FlowFinalNodeEditPart.VISUAL_ID:
+			if (FlowFinalNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case StructuredActivityNode_PinEditPart.VISUAL_ID:
 			if (StructuredActivityNode_PinNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -1625,6 +1675,16 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (CallOperationAction_InputPinEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StructuredActivityNode_ForkNodeEditPart.VISUAL_ID:
+			if (ForkNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StructuredActivityNode_JoinNodeEditPart.VISUAL_ID:
+			if (JoinNodeName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1697,6 +1757,11 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (ConditionalNodeConditionalNodeCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
+			if (InitialNodeName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -1888,6 +1953,26 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID:
+			if (ActivityFinalNodeName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActivityPartition_DecisionNodeEditPart.VISUAL_ID:
+			if (DecisionNodeName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActivityPartition_MergeNodeEditPart.VISUAL_ID:
+			if (MergeNodeName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActivityPartition_InitialNodeEditPart.VISUAL_ID:
+			if (InitialNodeName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case ActivityPartition_DataStoreNodeEditPart.VISUAL_ID:
 			if (ActivityPartition_DataStoreNodeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -1924,6 +2009,21 @@ public class UMLVisualIDRegistry {
 				return true;
 			}
 			if (OpaqueAction_OutputPinEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
+			if (FlowFinalNodeName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
+			if (ForkNodeName3EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
+			if (JoinNodeName3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -2924,7 +3024,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isMergeNode_3034(MergeNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(8, UMLPackage.eINSTANCE.getMergeNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(7, UMLPackage.eINSTANCE.getMergeNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -2932,7 +3032,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInitialNode_3035(InitialNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(10, UMLPackage.eINSTANCE.getInitialNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(8, UMLPackage.eINSTANCE.getInitialNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -2940,7 +3040,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDataStoreNode_3036(DataStoreNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getDataStoreNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(9, UMLPackage.eINSTANCE.getDataStoreNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -2948,7 +3048,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCentralBufferNode_3037(CentralBufferNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(13, UMLPackage.eINSTANCE.getCentralBufferNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getCentralBufferNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -2956,7 +3056,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isOpaqueAction_3029(OpaqueAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(15, UMLPackage.eINSTANCE.getOpaqueAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(13, UMLPackage.eINSTANCE.getOpaqueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -2964,7 +3064,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isFlowFinalNode_3038(FlowFinalNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(19, UMLPackage.eINSTANCE.getFlowFinalNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(17, UMLPackage.eINSTANCE.getFlowFinalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -2972,7 +3072,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isForkNode_3039(ForkNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(20, UMLPackage.eINSTANCE.getForkNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(18, UMLPackage.eINSTANCE.getForkNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -2980,7 +3080,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isJoinNode_3040(JoinNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(21, UMLPackage.eINSTANCE.getJoinNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(19, UMLPackage.eINSTANCE.getJoinNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -2988,7 +3088,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPin_3041(Pin domainElement) {
-		Object result = UMLOCLFactory.getExpression(22, UMLPackage.eINSTANCE.getPin(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(20, UMLPackage.eINSTANCE.getPin(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -2996,7 +3096,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCreateObjectAction_3042(CreateObjectAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(24, UMLPackage.eINSTANCE.getCreateObjectAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(22, UMLPackage.eINSTANCE.getCreateObjectAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3004,7 +3104,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAddStructuralFeatureValueAction_3043(AddStructuralFeatureValueAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(26, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(24, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3012,7 +3112,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallBehaviorAction_3044(CallBehaviorAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(28, UMLPackage.eINSTANCE.getCallBehaviorAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(26, UMLPackage.eINSTANCE.getCallBehaviorAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3020,7 +3120,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallOperationAction_3045(CallOperationAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(30, UMLPackage.eINSTANCE.getCallOperationAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(28, UMLPackage.eINSTANCE.getCallOperationAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3028,7 +3128,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isStructuredActivityNode_3046(StructuredActivityNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(32, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(30, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3036,7 +3136,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isStructuredActivityNode_3009(StructuredActivityNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(32, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(30, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3044,7 +3144,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isOpaqueAction_3011(OpaqueAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(15, UMLPackage.eINSTANCE.getOpaqueAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(13, UMLPackage.eINSTANCE.getOpaqueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3084,7 +3184,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isFlowFinalNode_3016(FlowFinalNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(19, UMLPackage.eINSTANCE.getFlowFinalNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(17, UMLPackage.eINSTANCE.getFlowFinalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3092,7 +3192,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPin_3017(Pin domainElement) {
-		Object result = UMLOCLFactory.getExpression(22, UMLPackage.eINSTANCE.getPin(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(20, UMLPackage.eINSTANCE.getPin(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3100,7 +3200,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCreateObjectAction_3018(CreateObjectAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(24, UMLPackage.eINSTANCE.getCreateObjectAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(22, UMLPackage.eINSTANCE.getCreateObjectAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3108,7 +3208,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallBehaviorAction_3019(CallBehaviorAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(28, UMLPackage.eINSTANCE.getCallBehaviorAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(26, UMLPackage.eINSTANCE.getCallBehaviorAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3116,7 +3216,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallOperationAction_3020(CallOperationAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(30, UMLPackage.eINSTANCE.getCallOperationAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(28, UMLPackage.eINSTANCE.getCallOperationAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3124,7 +3224,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isForkNode_3021(ForkNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(20, UMLPackage.eINSTANCE.getForkNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(18, UMLPackage.eINSTANCE.getForkNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3132,7 +3232,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isJoinNode_3022(JoinNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(21, UMLPackage.eINSTANCE.getJoinNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(19, UMLPackage.eINSTANCE.getJoinNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3140,7 +3240,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAddStructuralFeatureValueAction_3023(AddStructuralFeatureValueAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(26, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(24, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3148,7 +3248,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDataStoreNode_3024(DataStoreNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getDataStoreNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(9, UMLPackage.eINSTANCE.getDataStoreNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3156,7 +3256,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCentralBufferNode_3025(CentralBufferNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(13, UMLPackage.eINSTANCE.getCentralBufferNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getCentralBufferNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3164,7 +3264,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isConditionalNode_3092(ConditionalNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(36, UMLPackage.eINSTANCE.getConditionalNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(34, UMLPackage.eINSTANCE.getConditionalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3172,7 +3272,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInitialNode_3093(InitialNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(10, UMLPackage.eINSTANCE.getInitialNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(8, UMLPackage.eINSTANCE.getInitialNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3180,7 +3280,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isSendSignalAction_3053(SendSignalAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(39, UMLPackage.eINSTANCE.getSendSignalAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(37, UMLPackage.eINSTANCE.getSendSignalAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3188,7 +3288,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAcceptEventAction_3059(AcceptEventAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(42, UMLPackage.eINSTANCE.getAcceptEventAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(40, UMLPackage.eINSTANCE.getAcceptEventAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3196,7 +3296,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAcceptEventAction_3060(AcceptEventAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(44, UMLPackage.eINSTANCE.getAcceptEventAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(42, UMLPackage.eINSTANCE.getAcceptEventAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3204,7 +3304,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isActivityFinalNode_3061(ActivityFinalNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(46, UMLPackage.eINSTANCE.getActivityFinalNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(44, UMLPackage.eINSTANCE.getActivityFinalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3212,7 +3312,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDecisionNode_3062(DecisionNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(47, UMLPackage.eINSTANCE.getDecisionNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(45, UMLPackage.eINSTANCE.getDecisionNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3220,7 +3320,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isMergeNode_3063(MergeNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(49, UMLPackage.eINSTANCE.getMergeNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(46, UMLPackage.eINSTANCE.getMergeNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3228,7 +3328,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInitialNode_3064(InitialNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(51, UMLPackage.eINSTANCE.getInitialNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(47, UMLPackage.eINSTANCE.getInitialNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3236,7 +3336,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDataStoreNode_3065(DataStoreNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(52, UMLPackage.eINSTANCE.getDataStoreNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(48, UMLPackage.eINSTANCE.getDataStoreNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3244,7 +3344,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCentralBufferNode_3066(CentralBufferNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(54, UMLPackage.eINSTANCE.getCentralBufferNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(50, UMLPackage.eINSTANCE.getCentralBufferNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3252,7 +3352,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isOpaqueAction_3067(OpaqueAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(56, UMLPackage.eINSTANCE.getOpaqueAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(52, UMLPackage.eINSTANCE.getOpaqueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3260,7 +3360,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isFlowFinalNode_3068(FlowFinalNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(58, UMLPackage.eINSTANCE.getFlowFinalNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(54, UMLPackage.eINSTANCE.getFlowFinalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3268,7 +3368,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isForkNode_3069(ForkNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(59, UMLPackage.eINSTANCE.getForkNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(55, UMLPackage.eINSTANCE.getForkNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3276,7 +3376,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isJoinNode_3070(JoinNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(60, UMLPackage.eINSTANCE.getJoinNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(56, UMLPackage.eINSTANCE.getJoinNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3284,7 +3384,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isPin_3071(Pin domainElement) {
-		Object result = UMLOCLFactory.getExpression(61, UMLPackage.eINSTANCE.getPin(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(57, UMLPackage.eINSTANCE.getPin(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3292,7 +3392,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCreateObjectAction_3072(CreateObjectAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(63, UMLPackage.eINSTANCE.getCreateObjectAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(59, UMLPackage.eINSTANCE.getCreateObjectAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3300,7 +3400,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isAddStructuralFeatureValueAction_3073(AddStructuralFeatureValueAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(65, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(61, UMLPackage.eINSTANCE.getAddStructuralFeatureValueAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3308,7 +3408,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallBehaviorAction_3074(CallBehaviorAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(67, UMLPackage.eINSTANCE.getCallBehaviorAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(63, UMLPackage.eINSTANCE.getCallBehaviorAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3316,7 +3416,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isCallOperationAction_3075(CallOperationAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(69, UMLPackage.eINSTANCE.getCallOperationAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(65, UMLPackage.eINSTANCE.getCallOperationAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3324,7 +3424,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isStructuredActivityNode_3076(StructuredActivityNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(71, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(67, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3332,7 +3432,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isStructuredActivityNode_3079(StructuredActivityNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(71, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(67, UMLPackage.eINSTANCE.getStructuredActivityNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3340,7 +3440,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isSendSignalAction_3077(SendSignalAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(75, UMLPackage.eINSTANCE.getSendSignalAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(71, UMLPackage.eINSTANCE.getSendSignalAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3348,7 +3448,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isLoopNode_3078(LoopNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(77, UMLPackage.eINSTANCE.getLoopNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(73, UMLPackage.eINSTANCE.getLoopNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3356,7 +3456,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isConditionalNode_3083(ConditionalNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(79, UMLPackage.eINSTANCE.getConditionalNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(75, UMLPackage.eINSTANCE.getConditionalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3364,7 +3464,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isExpansionRegion_3085(ExpansionRegion domainElement) {
-		Object result = UMLOCLFactory.getExpression(81, UMLPackage.eINSTANCE.getExpansionRegion(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(77, UMLPackage.eINSTANCE.getExpansionRegion(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3372,7 +3472,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isValueSpecificationAction_3088(ValueSpecificationAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(83, UMLPackage.eINSTANCE.getValueSpecificationAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(79, UMLPackage.eINSTANCE.getValueSpecificationAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3380,7 +3480,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isLoopNode_3058(LoopNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(85, UMLPackage.eINSTANCE.getLoopNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(81, UMLPackage.eINSTANCE.getLoopNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3388,7 +3488,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isConditionalNode_3082(ConditionalNode domainElement) {
-		Object result = UMLOCLFactory.getExpression(36, UMLPackage.eINSTANCE.getConditionalNode(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(34, UMLPackage.eINSTANCE.getConditionalNode(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3396,7 +3496,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isExpansionRegion_3084(ExpansionRegion domainElement) {
-		Object result = UMLOCLFactory.getExpression(87, UMLPackage.eINSTANCE.getExpansionRegion(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(83, UMLPackage.eINSTANCE.getExpansionRegion(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -3404,7 +3504,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isValueSpecificationAction_3089(ValueSpecificationAction domainElement) {
-		Object result = UMLOCLFactory.getExpression(91, UMLPackage.eINSTANCE.getValueSpecificationAction(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(87, UMLPackage.eINSTANCE.getValueSpecificationAction(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 

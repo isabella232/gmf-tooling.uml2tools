@@ -59,8 +59,6 @@ public class MergeNodeCreateCommand extends EditElementCommand {
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
 
-		ElementInitializers.getInstance().init_MergeNode_3034(newElement);
-
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

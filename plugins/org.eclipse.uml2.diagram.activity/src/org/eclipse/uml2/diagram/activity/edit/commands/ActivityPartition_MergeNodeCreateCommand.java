@@ -68,8 +68,6 @@ public class ActivityPartition_MergeNodeCreateCommand extends EditElementCommand
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
 
-		ElementInitializers.getInstance().init_MergeNode_3063(newElement);
-
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
@@ -87,8 +85,6 @@ public class ActivityPartition_MergeNodeCreateCommand extends EditElementCommand
 
 		ActivityPartition partition = (ActivityPartition) getElementToEditGen();
 		newElement.getInPartitions().add(partition);
-
-		ElementInitializers.getInstance().init_MergeNode_3063(newElement);
 
 		doConfigure(newElement, monitor, info);
 

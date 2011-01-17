@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
@@ -44,22 +45,17 @@ public class CommentCreateCommand extends EditElementCommand {
 	*/
 	public boolean canExecute() {
 		return true;
+
 	}
 
 	/**
 	* @generated
 	*/
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		// Uncomment to put "phantom" objects into the diagram file.		
-		// org.eclipse.emf.ecore.resource.Resource resource = 
-		// 		((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).getContainer().eResource();
-		// if (resource == null) {
-		// 	return null;
-		// }
-		Resource resource = getElementToEdit().eResource();
 		Comment newElement = UMLFactory.eINSTANCE.createComment();
 
-		resource.getContents().add(newElement);
+		Element owner = (Element) getElementToEdit();
+		owner.getOwnedComments().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

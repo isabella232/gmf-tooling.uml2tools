@@ -59,8 +59,6 @@ public class DecisionNodeCreateCommand extends EditElementCommand {
 		Activity owner = (Activity) getElementToEdit();
 		owner.getNodes().add(newElement);
 
-		ElementInitializers.getInstance().init_DecisionNode_3033(newElement);
-
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

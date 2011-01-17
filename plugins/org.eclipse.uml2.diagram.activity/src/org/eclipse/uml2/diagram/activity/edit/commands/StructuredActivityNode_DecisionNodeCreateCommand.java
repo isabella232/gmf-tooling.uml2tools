@@ -59,8 +59,6 @@ public class StructuredActivityNode_DecisionNodeCreateCommand extends EditElemen
 		StructuredActivityNode owner = (StructuredActivityNode) getElementToEdit();
 		owner.getNodes().add(newElement);
 
-		ElementInitializers.getInstance().init_DecisionNode_3015(newElement);
-
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

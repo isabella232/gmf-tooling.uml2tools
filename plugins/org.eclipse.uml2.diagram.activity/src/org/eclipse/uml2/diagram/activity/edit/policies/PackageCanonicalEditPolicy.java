@@ -153,10 +153,20 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class PackageCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	 * @generated
-	 */
-	protected EStructuralFeature getFeatureToSynchronize() {
-		return UMLPackage.eINSTANCE.getPackage_PackagedElement();
+	* @generated
+	*/
+	private Set<EStructuralFeature> myFeaturesToSynchronize;
+
+	/**
+	* @generated
+	*/
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getPackage_PackagedElement());
+			myFeaturesToSynchronize.add(UMLPackage.eINSTANCE.getElement_OwnedComment());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**

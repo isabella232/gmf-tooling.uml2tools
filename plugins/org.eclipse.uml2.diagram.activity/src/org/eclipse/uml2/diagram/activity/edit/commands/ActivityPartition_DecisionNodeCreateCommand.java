@@ -68,8 +68,6 @@ public class ActivityPartition_DecisionNodeCreateCommand extends EditElementComm
 		ActivityPartition childHolder = (ActivityPartition) getElementToEdit();
 		childHolder.getNodes().add(newElement);
 
-		ElementInitializers.getInstance().init_DecisionNode_3062(newElement);
-
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
@@ -87,8 +85,6 @@ public class ActivityPartition_DecisionNodeCreateCommand extends EditElementComm
 
 		ActivityPartition partition = (ActivityPartition) getElementToEditGen();
 		newElement.getInPartitions().add(partition);
-
-		ElementInitializers.getInstance().init_DecisionNode_3062(newElement);
 
 		doConfigure(newElement, monitor, info);
 

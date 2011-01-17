@@ -1,6 +1,7 @@
 package org.eclipse.uml2.diagram.activity.edit.parts;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,15 +17,21 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.editpolicies.ResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -35,6 +42,7 @@ import org.eclipse.uml2.diagram.activity.edit.policies.DecisionNodeItemSemanticE
 import org.eclipse.uml2.diagram.activity.part.UMLDiagramUpdater;
 import org.eclipse.uml2.diagram.activity.part.UMLVisualIDRegistry;
 import org.eclipse.uml2.diagram.activity.providers.UMLElementTypes;
+import org.eclipse.uml2.diagram.common.draw2d.UnrestrictedOutsideBorderItemLocator;
 import org.eclipse.uml2.diagram.common.editparts.PrimaryShapeEditPart;
 import org.eclipse.uml2.diagram.common.editpolicies.U2TResizableShapeEditPolicy;
 import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
@@ -43,7 +51,7 @@ import org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionEditPolicy;
  * @generated
  */
 
-public class DecisionNodeEditPart extends ShapeNodeEditPart implements PrimaryShapeEditPart {
+public class DecisionNodeEditPart extends AbstractBorderedShapeEditPart implements PrimaryShapeEditPart {
 
 	/**
 	 * @generated
@@ -90,6 +98,18 @@ public class DecisionNodeEditPart extends ShapeNodeEditPart implements PrimarySh
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
+				case DecisionNodeNameEditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy() {
+
+						protected List createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -123,6 +143,19 @@ public class DecisionNodeEditPart extends ShapeNodeEditPart implements PrimarySh
 	}
 
 	/**
+	* @generated
+	*/
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof DecisionNodeNameEditPart) {
+			IBorderItemLocator locator = new UnrestrictedOutsideBorderItemLocator(getMainFigure());
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+			return;
+		}
+
+		super.addBorderItem(borderItemContainer, borderItemEditPart);
+	}
+
+	/**
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
@@ -140,14 +173,14 @@ public class DecisionNodeEditPart extends ShapeNodeEditPart implements PrimarySh
 	}
 
 	/**
-	 * Creates figure for this edit part.
-	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
-	 * @generated
-	 */
-	protected NodeFigure createNodeFigure() {
+	* Creates figure for this edit part.
+	* 
+	* Body of this method does not depend on settings in generation model
+	* so you may safely remove <i>generated</i> tag and modify it.
+	* 
+	* @generated
+	*/
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -210,6 +243,13 @@ public class DecisionNodeEditPart extends ShapeNodeEditPart implements PrimarySh
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
 		}
+	}
+
+	/**
+	* @generated
+	*/
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(DecisionNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**

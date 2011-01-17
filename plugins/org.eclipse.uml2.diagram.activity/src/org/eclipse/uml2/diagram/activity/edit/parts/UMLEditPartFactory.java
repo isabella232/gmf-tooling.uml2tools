@@ -73,14 +73,26 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityFinalNodeEditPart.VISUAL_ID:
 				return new ActivityFinalNodeEditPart(view);
 
+			case ActivityFinalNodeNameEditPart.VISUAL_ID:
+				return new ActivityFinalNodeNameEditPart(view);
+
 			case DecisionNodeEditPart.VISUAL_ID:
 				return new DecisionNodeEditPart(view);
+
+			case DecisionNodeNameEditPart.VISUAL_ID:
+				return new DecisionNodeNameEditPart(view);
 
 			case MergeNodeEditPart.VISUAL_ID:
 				return new MergeNodeEditPart(view);
 
+			case MergeNodeNameEditPart.VISUAL_ID:
+				return new MergeNodeNameEditPart(view);
+
 			case InitialNodeEditPart.VISUAL_ID:
 				return new InitialNodeEditPart(view);
+
+			case InitialNodeNameEditPart.VISUAL_ID:
+				return new InitialNodeNameEditPart(view);
 
 			case DataStoreNodeEditPart.VISUAL_ID:
 				return new DataStoreNodeEditPart(view);
@@ -142,11 +154,20 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case FlowFinalNodeEditPart.VISUAL_ID:
 				return new FlowFinalNodeEditPart(view);
 
+			case FlowFinalNodeNameEditPart.VISUAL_ID:
+				return new FlowFinalNodeNameEditPart(view);
+
 			case ForkNodeEditPart.VISUAL_ID:
 				return new ForkNodeEditPart(view);
 
+			case ForkNodeNameEditPart.VISUAL_ID:
+				return new ForkNodeNameEditPart(view);
+
 			case JoinNodeEditPart.VISUAL_ID:
 				return new JoinNodeEditPart(view);
+
+			case JoinNodeNameEditPart.VISUAL_ID:
+				return new JoinNodeNameEditPart(view);
 
 			case PinEditPart.VISUAL_ID:
 				return new PinEditPart(view);
@@ -307,11 +328,20 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNode_ActivityFinalNodeEditPart.VISUAL_ID:
 				return new StructuredActivityNode_ActivityFinalNodeEditPart(view);
 
+			case ActivityFinalNodeName2EditPart.VISUAL_ID:
+				return new ActivityFinalNodeName2EditPart(view);
+
 			case StructuredActivityNode_DecisionNodeEditPart.VISUAL_ID:
 				return new StructuredActivityNode_DecisionNodeEditPart(view);
 
+			case DecisionNodeName2EditPart.VISUAL_ID:
+				return new DecisionNodeName2EditPart(view);
+
 			case StructuredActivityNode_FlowFinalNodeEditPart.VISUAL_ID:
 				return new StructuredActivityNode_FlowFinalNodeEditPart(view);
+
+			case FlowFinalNodeName2EditPart.VISUAL_ID:
+				return new FlowFinalNodeName2EditPart(view);
 
 			case StructuredActivityNode_PinEditPart.VISUAL_ID:
 				return new StructuredActivityNode_PinEditPart(view);
@@ -358,8 +388,14 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNode_ForkNodeEditPart.VISUAL_ID:
 				return new StructuredActivityNode_ForkNodeEditPart(view);
 
+			case ForkNodeName2EditPart.VISUAL_ID:
+				return new ForkNodeName2EditPart(view);
+
 			case StructuredActivityNode_JoinNodeEditPart.VISUAL_ID:
 				return new StructuredActivityNode_JoinNodeEditPart(view);
+
+			case JoinNodeName2EditPart.VISUAL_ID:
+				return new JoinNodeName2EditPart(view);
 
 			case StructuredActivityNode_AddStructuralFeatureValueActionEditPart.VISUAL_ID:
 				return new StructuredActivityNode_AddStructuralFeatureValueActionEditPart(view);
@@ -430,6 +466,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StructuredActivityNode_InitialNodeEditPart.VISUAL_ID:
 				return new StructuredActivityNode_InitialNodeEditPart(view);
 
+			case InitialNodeName2EditPart.VISUAL_ID:
+				return new InitialNodeName2EditPart(view);
+
 			case OpaqueBehaviorEditPart.VISUAL_ID:
 				return new OpaqueBehaviorEditPart(view);
 
@@ -484,14 +523,26 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartition_ActivityFinalNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_ActivityFinalNodeEditPart(view);
 
+			case ActivityFinalNodeName3EditPart.VISUAL_ID:
+				return new ActivityFinalNodeName3EditPart(view);
+
 			case ActivityPartition_DecisionNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_DecisionNodeEditPart(view);
+
+			case DecisionNodeName3EditPart.VISUAL_ID:
+				return new DecisionNodeName3EditPart(view);
 
 			case ActivityPartition_MergeNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_MergeNodeEditPart(view);
 
+			case MergeNodeName2EditPart.VISUAL_ID:
+				return new MergeNodeName2EditPart(view);
+
 			case ActivityPartition_InitialNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_InitialNodeEditPart(view);
+
+			case InitialNodeName3EditPart.VISUAL_ID:
+				return new InitialNodeName3EditPart(view);
 
 			case ActivityPartition_DataStoreNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_DataStoreNodeEditPart(view);
@@ -535,11 +586,20 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case ActivityPartition_FlowFinalNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_FlowFinalNodeEditPart(view);
 
+			case FlowFinalNodeName3EditPart.VISUAL_ID:
+				return new FlowFinalNodeName3EditPart(view);
+
 			case ActivityPartition_ForkNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_ForkNodeEditPart(view);
 
+			case ForkNodeName3EditPart.VISUAL_ID:
+				return new ForkNodeName3EditPart(view);
+
 			case ActivityPartition_JoinNodeEditPart.VISUAL_ID:
 				return new ActivityPartition_JoinNodeEditPart(view);
+
+			case JoinNodeName3EditPart.VISUAL_ID:
+				return new JoinNodeName3EditPart(view);
 
 			case ActivityPartition_PinEditPart.VISUAL_ID:
 				return new ActivityPartition_PinEditPart(view);
