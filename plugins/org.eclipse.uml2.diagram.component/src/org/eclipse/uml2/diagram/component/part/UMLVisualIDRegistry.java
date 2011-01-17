@@ -761,7 +761,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isClass_2007(Class domainElement) {
-		Object result = UMLOCLFactory.getExpression(14, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(15, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -785,7 +785,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isConnector_3015(Connector domainElement) {
-		Object result = UMLOCLFactory.getExpression(8, UMLPackage.eINSTANCE.getConnector(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(9, UMLPackage.eINSTANCE.getConnector(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -793,7 +793,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isClass_3009(Class domainElement) {
-		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(12, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -801,7 +801,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isProperty_3011(Property domainElement) {
-		Object result = UMLOCLFactory.getExpression(16, UMLPackage.eINSTANCE.getProperty(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(17, UMLPackage.eINSTANCE.getProperty(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -809,7 +809,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isProperty_3017(Property domainElement) {
-		Object result = UMLOCLFactory.getExpression(16, UMLPackage.eINSTANCE.getProperty(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(17, UMLPackage.eINSTANCE.getProperty(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -817,7 +817,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isClass_3020(Class domainElement) {
-		Object result = UMLOCLFactory.getExpression(11, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(12, UMLPackage.eINSTANCE.getClass_(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -825,7 +825,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isInterfaceRealization_4001(InterfaceRealization domainElement) {
-		Object result = UMLOCLFactory.getExpression(24, UMLPackage.eINSTANCE.getInterfaceRealization(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(25, UMLPackage.eINSTANCE.getInterfaceRealization(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -833,7 +833,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isConnector_4008(Connector domainElement) {
-		Object result = UMLOCLFactory.getExpression(28, UMLPackage.eINSTANCE.getConnector(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(29, UMLPackage.eINSTANCE.getConnector(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
@@ -841,7 +841,7 @@ public class UMLVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDependency_4009(Dependency domainElement) {
-		Object result = UMLOCLFactory.getExpression(30, UMLPackage.eINSTANCE.getDependency(), null).evaluate(domainElement);
+		Object result = UMLOCLFactory.getExpression(31, UMLPackage.eINSTANCE.getDependency(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
 
