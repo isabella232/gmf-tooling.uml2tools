@@ -632,7 +632,7 @@ public class ComponentEditPart extends AbstractBorderedShapeEditPart implements 
 			fFigureComponentFigure_body = new RectangleFigure();
 			fFigureComponentFigure_body.setOutline(false);
 			fFigureComponentFigure_body.setLineWidth(1);
-			fFigureComponentFigure_body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(55)));
+			fFigureComponentFigure_body.setMinimumSize(new Dimension(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
 			fFigureComponentFigure_body.setBorder(createBorder0());
 
 			this.add(fFigureComponentFigure_body, BorderLayout.CENTER);

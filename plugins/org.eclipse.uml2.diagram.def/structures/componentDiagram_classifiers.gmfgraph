@@ -59,8 +59,7 @@
           <layoutData
               xsi:type="gmfgraph:BorderLayoutData"
               alignment="FILL"/>
-          <minimumSize
-              dy="55"/>
+          <minimumSize/>
           <border
               xsi:type="gmfgraph:CustomBorder"
               qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.OneLineBorder"/>
