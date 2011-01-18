@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="site.sdk"
+      label="UML2Tools SDk/Source site feature for buckminster"
+      version="0.0.0"
+      provider-name="Eclipse Modeling Project">
+
+   <includes
+         id="org.eclipse.uml2tools.sdk"
+         version="0.0.0"/>
+
+</feature>

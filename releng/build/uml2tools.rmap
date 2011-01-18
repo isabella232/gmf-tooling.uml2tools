@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+
+  <rm:searchPath name="codegen_src">
+    <rm:provider componentTypes="osgi.bundle" readerType="local" mutable="false">
+      <rm:uri format="${project.local.url}/plugins/{0}">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+    <rm:provider componentTypes="eclipse.feature" readerType="local" mutable="false">
+      <rm:uri format="${project.local.url}/features/{0}">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  
+  <rm:searchPath name="uml2tools_src">
+    <rm:provider componentTypes="osgi.bundle" readerType="local" mutable="false">
+      <rm:uri format="${project.local.url}/plugins/{0}">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+    <rm:provider componentTypes="osgi.bundle" readerType="local" mutable="false">
+      <rm:uri format="${project.local.url}/plugins/experimental/{0}">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+    <rm:provider componentTypes="osgi.bundle" readerType="local" mutable="false">
+      <rm:uri format="${project.local.url}/examples/{0}">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+    <rm:provider componentTypes="eclipse.feature" readerType="local" mutable="false">
+      <rm:uri format="${project.local.url}/plugins/{0}-feature">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+    <rm:provider componentTypes="eclipse.feature" readerType="local" mutable="false">
+      <rm:uri format="${project.local.url}/features/{0}">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+    <rm:provider componentTypes="eclipse.feature" readerType="local" mutable="false">
+      <rm:uri format="${project.local.url}/examples/{0}-feature">
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+
+  <!--rm:searchPath name="feature.uml2tools.def">
+    <rm:provider componentTypes="eclipse.feature" readerType="local" mutable="false">
+      <rm:uri format="${project.local.url}/plugins/org.eclipse.uml2tools.def-feature"/>
+    </rm:provider>
+  </rm:searchPath-->
+  
+  <rm:locator pattern="site.gmftoolingwrapper" searchPathRef="codegen_src"/>
+  <rm:redirect pattern="org.eclipse.gmf\..*" href="platform.rmap"/>
+  <rm:locator pattern="site.codegen" searchPathRef="codegen_src"/>
+  <rm:locator pattern="site.uml2tools" searchPathRef="uml2tools_src"/>
+  <rm:locator pattern="site.diagramdef" searchPathRef="uml2tools_src"/>
+  <rm:locator pattern="site.sdk" searchPathRef="uml2tools_src"/>
+  <rm:locator pattern=".*\.codegen" searchPathRef="codegen_src"/>
+  <!--rm:locator pattern="org.eclipse.uml2tools.def" searchPathRef="feature.uml2tools.def"/-->
+  <rm:locator pattern="org.eclipse.uml2.diagram" searchPathRef="uml2tools_src"/>
+  <rm:locator pattern=".*\.uml2tools.*" searchPathRef="uml2tools_src"/>
+  <rm:redirect pattern=".*" href="platform.rmap"/>
+</rm:rmap>

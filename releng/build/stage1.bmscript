@@ -1,0 +1,6 @@
+setpref org.eclipse.buckminster.pde.targetPlatformPath=${targetplatform.dir}
+import build/platform.mspec
+import build/build_codegen.cquery
+build --clean
+perform -Dbuckminster.output.root=${stage1.dir} site.codegen#site.p2
+install ${stage1.dir}/site.codegen-eclipse.feature/site.p2 org.eclipse.uml2tools.codegen

@@ -1,0 +1,9 @@
+setpref org.eclipse.buckminster.pde.targetPlatformPath=${targetplatform.dir}
+#build diagram def update site
+import build/diagramdef.cquery
+build --clean
+perform -Dbuckminster.output.root=${stage3.dir} site.diagramdef#site.p2
+#build the real uml2tools bundles
+import build/uml2tools.cquery
+build --clean
+perform -Dbuckminster.output.root=${stage3.dir} site.uml2tools#site.p2

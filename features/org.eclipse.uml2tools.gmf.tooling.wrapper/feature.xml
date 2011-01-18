@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.uml2tools.gmf.tooling.wrapper"
+      label="UML2Tools wrapper to define GMF tooling bundles without UI dependencies"
+      version="0.0.0"
+      provider-name="Eclipse Modeling Project">
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <!--import plugin="org.eclipse.emf.common.ui" version="2.3.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.codegen" version="2.3.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.codegen.ecore" version="2.3.0" match="compatible"/-->
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.3.0" match="compatible"/>
+      <import plugin="org.eclipse.core.resources" version="3.3.0" match="compatible"/>
+      <!--import plugin="org.eclipse.ui.ide" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.forms" version="3.3.0" match="compatible"/-->
+      <import plugin="org.eclipse.jdt.core" version="3.3.0" match="compatible"/>
+      <!--import plugin="org.eclipse.jface.text" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.jface" version="3.3.0" match="compatible"/>
+      <import plugin="org.eclipse.jdt.ui" version="3.3.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.gmf.xpand" version="2.0.0" match="compatible"/-->
+      <import plugin="org.eclipse.core.runtime" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.core.resources" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.4.0" match="compatible"/>
+      <!--import plugin="org.eclipse.emf.codegen.ecore" version="2.4.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.draw2d" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.common" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.validate" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.0.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.gmf.codegen" version="2.0.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.emf.edit" version="2.4.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.emf.ecore.xmi" version="2.4.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.emf.edit.ui" version="2.4.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.codegen.ecore.ui" version="2.3.0" match="compatible"/>
+      <import plugin="org.eclipse.ui" version="3.3.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.gmf.bridge" version="1.1.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.gmf.bridge.ui.dashboard" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.codegen.edit" version="2.0.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.gmf.graphdef.codegen.ui" version="1.0.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.emf.importer" version="2.3.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.gmf.bridge.ui" version="1.1.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.gmf.graphdef" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.tooldef" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.map" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.graphdef.edit" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.tooldef.edit" version="2.0.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.emf.ecore.edit" version="2.4.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.gmf.runtime.notation" version="1.0.0" match="compatible"/>
+      <import plugin="org.eclipse.gmf.graphdef.codegen" version="2.0.0" match="compatible"/-->
+      <import plugin="org.eclipse.emf.common" version="2.3.0" match="compatible"/>
+      <!--import plugin="org.eclipse.emf.ecore.edit" version="2.3.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.gmf.map.edit" version="2.0.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.emf.ecore.editor" version="2.3.0" match="compatible"/-->
+      <import plugin="org.eclipse.emf.ecore" version="2.3.0" match="compatible"/>
+      <!--import plugin="org.eclipse.pde.ui" version="3.3.0" match="compatible"/-->
+      <import plugin="org.eclipse.pde.core" version="3.3.0" match="compatible"/>
+      <!--import plugin="org.eclipse.emf.edit" version="2.3.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.emf.edit.ui" version="2.3.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.emf.validation" version="1.1.0" match="compatible"/>
+      <import plugin="org.eclipse.core.expressions"/-->
+      <!--import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.ui.navigator"/-->
+      <!--import plugin="org.eclipse.gef"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
+      <import plugin="org.eclipse.gmf.runtime.emf.commands.core"/-->
+      <!--import plugin="org.eclipse.gmf.runtime.emf.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
+      <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/-->
+      <import plugin="org.eclipse.emf.ecore" version="2.2.0" match="compatible"/>
+      <!--import plugin="net.sourceforge.lpg.lpgjavaruntime" version="1.1.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.gmf.xpand.qvtlibrary" version="1.0.0" match="compatible"/-->
+      <import plugin="org.eclipse.core.filebuffers"/>
+      <import plugin="org.eclipse.core.jobs"/>
+      <import plugin="org.eclipse.osgi"/>
+      <!--import plugin="org.eclipse.ui" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.text" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.jface.text" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.editors" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.views" version="3.2.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.ide" version="3.2.0" match="compatible"/-->
+      <!--import plugin="org.eclipse.ocl.ecore" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.text" version="3.4.100" match="greaterOrEqual"/-->
+      <!--import plugin="org.eclipse.ui.ide" version="3.4.0" match="greaterOrEqual"/-->
+      <import plugin="org.eclipse.jdt.core" version="3.5.0" match="greaterOrEqual"/>
+      <!--import plugin="org.eclipse.m2m.qvt.oml" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.runtime" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.common" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.project" version="2.0.0" match="compatible"/-->
+      <import plugin="org.eclipse.pde.core" version="3.5.0" match="greaterOrEqual"/>
+   </requires>
+
+   <!--plugin
+         id="org.eclipse.gmf.common"
+         download-size="0"
+         install-size="0"
+         version="1.2.0.v20100226-2359"
+         unpack="false"/-->
+
+   <plugin
+         id="org.eclipse.gmf.codegen"
+         download-size="0"
+         install-size="0"
+         version="2.2.100.v20100518-2359"
+         unpack="false"/>
+
+   <!--plugin
+         id="org.eclipse.gmf.codegen.edit"
+         download-size="0"
+         install-size="0"
+         version="2.2.100.v20100309-2359"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.codegen.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.200.v20100302-2359"
+         unpack="false"/-->
+
+   <plugin
+         id="org.eclipse.gmf.graphdef"
+         download-size="0"
+         install-size="0"
+         version="2.0.100.v20090420-1925"
+         unpack="false"/>
+
+   <!--plugin
+         id="org.eclipse.gmf.graphdef.edit"
+         download-size="0"
+         install-size="0"
+         version="2.0.200.v20090216-1925"
+         unpack="false"/-->
+
+   <plugin
+         id="org.eclipse.gmf.map"
+         download-size="0"
+         install-size="0"
+         version="2.2.100.v20100309-2359"
+         unpack="false"/>
+
+   <!--plugin
+         id="org.eclipse.gmf.map.edit"
+         download-size="0"
+         install-size="0"
+         version="2.2.100.v20100309-2359"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.bridge"
+         download-size="0"
+         install-size="0"
+         version="1.1.100.v20100309-2359"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.bridge.ui"
+         download-size="0"
+         install-size="0"
+         version="1.2.100.v20090709-1925"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.bridge.ui.dashboard"
+         download-size="0"
+         install-size="0"
+         version="2.0.100.v20100226-2359"
+         unpack="false"/-->
+
+   <plugin
+         id="org.eclipse.gmf.tooling"
+         download-size="0"
+         install-size="0"
+         version="2.1.0.v20090615-0700"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gmf.graphdef.codegen"
+         download-size="0"
+         install-size="0"
+         version="2.0.100.v20100421-2359"
+         unpack="false"/>
+
+   <!--plugin
+         id="org.eclipse.gmf.graphdef.codegen.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.100.v20090114-0940"
+         unpack="false"/-->
+
+   <plugin
+         id="org.eclipse.gmf.tooldef"
+         download-size="0"
+         install-size="0"
+         version="2.0.0.v20090114-0940"
+         unpack="false"/>
+
+   <!--plugin
+         id="org.eclipse.gmf.tooldef.edit"
+         download-size="0"
+         install-size="0"
+         version="2.0.100.v20090114-0940"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.validate"
+         download-size="0"
+         install-size="0"
+         version="1.2.0.v20100302-2359"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.ecore.editor"
+         download-size="0"
+         install-size="0"
+         version="2.2.0.v20100315-2359"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.xpand"
+         download-size="0"
+         install-size="0"
+         version="2.1.0.v20100315-2101"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.xpand.editor"
+         download-size="0"
+         install-size="0"
+         version="2.1.0.v20100428-2359"
+         unpack="false"/-->
+
+   <!--plugin
+         id="net.sourceforge.lpg.lpgjavaruntime"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.v201004271650"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.xpand.migration"
+         download-size="0"
+         install-size="0"
+         version="1.0.100.v20100309-2359"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.xpand.qvtlibrary"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.v20100309-2359"
+         unpack="false"/-->
+
+   <!--plugin
+         id="org.eclipse.gmf.templates.legacy"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.v20100312-2359"/-->
+
+</feature>

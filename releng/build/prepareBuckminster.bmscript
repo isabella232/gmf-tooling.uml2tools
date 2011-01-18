@@ -1,0 +1,8 @@
+# Prepare the host (buckminster) for code generation
+install ${emf.p2.site.url} org.eclipse.emf.common
+install ${emf.p2.site.url} org.eclipse.emf.ecore
+install ${emf.p2.site.url} org.eclipse.emf.codegen
+install ${emf.p2.site.url} org.eclipse.emf.codegen.ecore
+install ${emf.p2.site.url} org.eclipse.emf.converter
+install ${stage0.dir}/site.gmftoolingwrapper-eclipse.feature/site.p2 org.eclipse.uml2tools.gmf.tooling.wrapper
+#install ${gmf.p2.site.url} org.eclipse.gmf.tooling

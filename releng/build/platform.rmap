@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rmap
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.eclipse.org/buckminster/RMap-1.0"
+	xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0"
+	xmlns:mp="http://www.eclipse.org/buckminster/MavenProvider-1.0"
+	xmlns:pp="http://www.eclipse.org/buckminster/PDEMapProvider-1.0">
+
+	<searchPath name="codegen_bin">
+    	<provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
+      		<uri format="file://${stage1.dir}/site.codegen-eclipse.feature/site.p2/?importType=binary"/>
+    	</provider>
+	</searchPath>
+	
+	<searchPath name="target.platform">
+		<provider readerType="url" componentTypes="buckminster" mutable="false" source="false">
+			<uri format="${project.local.url}/releng/platform.cspec" />
+		</provider>
+    	<provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false" resolutionFilter="(|(build.type=N)(build.type=I))">
+      		<uri format="${targetplatform.p2.site.milestone.url}/?importType=binary"/>
+    	</provider>
+    	<provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false" resolutionFilter="(|(build.type=N)(build.type=R)(build.type=S)(build.type=M)(build.type=I))">
+      		<uri format="${targetplatform.p2.site.release.url}/?importType=binary"/>
+    	</provider>
+	</searchPath>
+	
+	<locator pattern="^target\.platform$" searchPathRef="target.platform" />
+	<locator pattern=".*\.uml2.diagram.codegen.*" searchPathRef="codegen_bin" />
+	<locator pattern=".*\.uml2tools.codegen.*" searchPathRef="codegen_bin" />
+	<locator pattern=".*" searchPathRef="target.platform" />
+</rmap>
+

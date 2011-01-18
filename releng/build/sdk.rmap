@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rm:rmap
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0"
+	xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0"
+	xmlns:mp="http://www.eclipse.org/buckminster/MavenProvider-1.0"
+	xmlns:pp="http://www.eclipse.org/buckminster/PDEMapProvider-1.0">
+
+	<rm:searchPath name="uml2tools_bin">
+    	<rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
+      		<rm:uri format="file://${stage1.dir}/site.codegen-eclipse.feature/site.p2/?importType=binary"/>
+    	</rm:provider>
+    	<rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
+      		<rm:uri format="file://${stage3.dir}/site.uml2tools-eclipse.feature/site.p2/?importType=binary"/>
+    	</rm:provider>
+    	<rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
+      		<rm:uri format="file://${stage3.dir}/site.diagramdef-eclipse.feature/site.p2/?importType=binary"/>
+    	</rm:provider>
+	</rm:searchPath>
+	
+	<rm:locator pattern="org\.eclipse\.uml2tools.*\.source" searchPathRef="uml2tools_bin" />
+	<rm:locator pattern="org\.eclipse\.uml2\.diagram\..*" searchPathRef="uml2tools_bin" />
+  	<rm:redirect pattern=".*" href="uml2tools.rmap"/>
+</rm:rmap>
+

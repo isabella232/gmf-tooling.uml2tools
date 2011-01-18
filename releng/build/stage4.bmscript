@@ -1,0 +1,4 @@
+setpref org.eclipse.buckminster.pde.targetPlatformPath=${targetplatform.dir}
+import build/site.cquery
+build --clean
+perform -Dbuckminster.output.root=${stage4.dir} site.sdk#site.p2

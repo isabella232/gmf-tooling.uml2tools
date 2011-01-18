@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cs:cspecExtension
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0"
+	xmlns:cs="http://www.eclipse.org/buckminster/CSpec-1.0">
+	<cs:actions>
+		<cs:public name="build.model" actor="ant">
+			<cs:actorProperties>
+				<cs:property key="buildFile" value="build.xml"/>
+				<cs:property key="targets" value="generate"/>				
+			</cs:actorProperties>
+		</cs:public>
+	</cs:actions>
+	<cs:alterActions>
+		<cs:public name="eclipse.build">
+			<cs:prerequisites>
+				<cs:attribute name="build.model"/>
+			</cs:prerequisites>
+		</cs:public>
+	</cs:alterActions>
+</cs:cspecExtension>

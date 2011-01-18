@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="site.gmftoolingwrapper"
+      label="UML2Tools site feature for buckminster to create a wrapper for GMF tooling"
+      version="0.0.0"
+      provider-name="Eclipse Modeling Project">
+
+   <includes
+         id="org.eclipse.uml2tools.gmf.tooling.wrapper"
+         version="0.0.0"/>
+
+</feature>

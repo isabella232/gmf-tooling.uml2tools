@@ -1,0 +1,3 @@
+setpref org.eclipse.buckminster.pde.targetPlatformPath=${targetplatform.dir}
+# Install just built code generator into target platform
+#import build/install_codegen.cquery

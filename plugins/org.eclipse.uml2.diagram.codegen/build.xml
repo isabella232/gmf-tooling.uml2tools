@@ -1,0 +1,18 @@
+<project name="Build specific targets and properties" basedir=".">
+	<target name="generate">
+		<!-- The emf.Ecore2Java task is defined in emf.importer.ecore -->
+		<echo>Generate codegen model source...</echo>
+		<emf.Ecore2Java
+			model="model/gmfgenext.ecore"
+            genModel="model/gmfgenext.genmodel" 
+			jdklevel="5.0"
+			reconcilegenmodel="reload"
+			generatejavacode="true"
+			generatemodelproject="false"
+			generateeditproject="false"
+			generateeditorproject="false"
+            modelProject="." 
+            modelProjectFragmentPath="src">
+		</emf.Ecore2Java>
+	</target>
+</project>

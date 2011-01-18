@@ -1,0 +1,5 @@
+setpref org.eclipse.buckminster.pde.targetPlatformPath=${targetplatform.dir}
+import build/platform.mspec
+import build/build_toolingwrapper.cquery
+build --clean
+perform -Dbuckminster.output.root=${stage0.dir} site.gmftoolingwrapper#site.p2
