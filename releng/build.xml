@@ -1,11 +1,11 @@
 <?xml version = '1.0' encoding = 'UTF-8' ?>
-<project name="build.uml2tools" default="build.and.test" basedir=".">	
+<project name="build.uml2tools" default="build.and.test" basedir=".">
 	<import file="./build_tools.xml" />
 
 	<condition property="isWindows" value="true">
 		<os family="windows" />
 	</condition>
-	
+
 	<!-- load properties and set timestamp for the build -->
 	<property environment="env" />
 
@@ -40,48 +40,69 @@
 		<isset property="env.no_proxy" />
 	</condition>
 
-	<taskdef resource="net/sf/antcontrib/antcontrib.properties">		
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
 		<classpath>
-			<pathelement location="lib/ant-contrib-1.0b3.jar"/>
+			<pathelement location="lib/ant-contrib-1.0b3.jar" />
 		</classpath>
 	</taskdef>
-		
-	<property name="rootPath" location="${hudsonWorkSpacePath}/work" />
 
-	<property name="stage0.dir" location="${rootPath}/stage0.out" />
-	<property name="stage1.dir" location="${rootPath}/stage1.out" />
-	<property name="stage2.dir" location="${rootPath}/stage2.out" />
-	<property name="stage3.dir" location="${rootPath}/stage3.out" />
-	<property name="stage4.dir" location="${rootPath}/stage4.out" />
-	<property name="testRoot" location="${rootPath}/test" />
+	<path id="hudson.worspace.path">
+		<pathelement path="${hudsonWorkSpacePath}" />
+	</path>
+	<pathconvert dirsep="/" property="hudsonWorkSpacePathUrlFormat" refid="hudson.worspace.path" />
+	<property name="rootPath" value="${hudsonWorkSpacePathUrlFormat}/work" />
+
+	<property name="stage0.dir" value="${rootPath}/stage0.out" />
+	<property name="stage1.dir" value="${rootPath}/stage1.out" />
+	<property name="stage2.dir" value="${rootPath}/stage2.out" />
+	<property name="stage3.dir" value="${rootPath}/stage3.out" />
+	<property name="stage4.dir" value="${rootPath}/stage4.out" />
+	<property name="testRoot" value="${rootPath}/test" />
 	<property name="tools.dir" location="${hudsonWorkSpacePath}/tools" />
-	<property name="buildSitePath" location="${rootPath}/result/p2site" />
-	<property name="buildZipsPath" location="${rootPath}/result/zips" />
-	<property name="testResultsPath" location="${rootPath}/result/test" />
+	<property name="buildSitePath" value="${rootPath}/result/p2site" />
+	<property name="buildZipsPath" value="${rootPath}/result/zips" />
+	<property name="testResultsPath" value="${rootPath}/result/test" />
 	<property name="temp.dir" location="${hudsonWorkSpacePath}/tmp" />
-	
-	<fail unless="build.type" message="You have to set the 'build.type' property (example: N)"/>
-	
-	<target name="windows.warning" if="isWindows" >
+
+	<if>
+		<or>
+			<not>
+				<isset property="build.type" />
+			</not>
+			<equals arg1="${build.type}" arg2="" trim="yes" />
+		</or>
+		<then>
+			<fail message="You must set the 'build.type' property (example: N)." />
+		</then>
+	</if>
+
+	<target name="windows.warning" if="isWindows">
 		<echo level="warning" message="###################################################################" />
 		<echo level="warning" message="# Running this build under MS Windows os may fail with mysterious #" />
 		<echo level="warning" message="# errors, because we create very long path names and Windows has  #" />
 		<echo level="warning" message="# almost a problem with paths longer than 255 characters!         #" />
 		<echo level="warning" message="###################################################################" />
 	</target>
-	
+
 	<target name="build.and.test" depends="windows.warning, clean, init, install.buckminster" description="Build the UML2Tools">
 		<echo message="Building..." />
-		<ant dir="${basedir}/build" antfile="uml2tools_build.xml" target="build" inheritRefs="true" inheritall="true"/>
+		<ant dir="${basedir}/build" antfile="uml2tools_build.xml" target="build" inheritRefs="true" inheritall="true" />
 		<echo message="Testing..." />
 		<!--ant dir="${basedir}/test" antfile="uml2tools_test.xml" target="run" inheritRefs="true" /-->
 	</target>
-	
-	<target name="clean">
-		<delete dir="${rootPath}" failonerror="false"/>
-		<delete dir="${temp.dir}" failonerror="false"/>
+
+	<target name="stage4" depends="" description="Build the UML2Tools">
+		<echo message="Building..." />
+		<ant dir="${basedir}/build" antfile="uml2tools_build.xml" target="stage4" inheritRefs="true" inheritall="true" />
+		<echo message="Testing..." />
+		<!--ant dir="${basedir}/test" antfile="uml2tools_test.xml" target="run" inheritRefs="true" /-->
 	</target>
-			
+
+	<target name="clean">
+		<delete dir="${rootPath}" failonerror="false" />
+		<delete dir="${temp.dir}" failonerror="false" />
+	</target>
+
 	<target name="init">
 		<mkdir dir="${hudsonWorkSpacePath}" />
 		<mkdir dir="${temp.dir}" />
@@ -89,25 +110,25 @@
 		<available file="${tools.dir}/director/director" property="director.exists" />
 		<available file="${tools.dir}/buckminster/buckminster" property="buckminster.exists" />
 
-		<setproxy proxyhost="${PROXY_HOST}" proxyport="${PROXY_PORT}"/>
+		<setproxy proxyhost="${PROXY_HOST}" proxyport="${PROXY_PORT}" />
 	</target>
-	
+
 	<target name="get.director" unless="director.exists">
 		<echo message="Fetching headless director application from ${director.url}..." />
 		<tempfile destdir="${temp.dir}" prefix="director-" suffix=".zip" property="director.zip" deleteonexit="true" />
-		<get src="${director.url}" dest="${director.zip}" verbose="true"/>
+		<get src="${director.url}" dest="${director.zip}" verbose="true" />
 		<mkdir dir="${tools.dir}" />
 		<unzip src="${director.zip}" dest="${tools.dir}" />
 		<delete file="${director.zip}" />
 	</target>
 
 	<target name="get.buckminster" unless="buckminster.exists">
-		<get src="${buckminster.sitearchive.url}" dest="${tools.dir}/buckminster.site.zip" verbose="true"/>
+		<get src="${buckminster.sitearchive.url}" dest="${tools.dir}/buckminster.site.zip" verbose="true" />
 	</target>
 
 	<target name="install.buckminster" unless="buckminster.exists" depends="get.director, get.buckminster">
 		<echo message="Configuring headless buckminster..." />
-		<buckminster.install destination="${tools.dir}/buckminster"/>
+		<buckminster.install destination="${tools.dir}/buckminster" />
 	</target>
-	
+
 </project>

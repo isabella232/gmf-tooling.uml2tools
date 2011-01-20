@@ -2,41 +2,34 @@
 <project default="build" name="UML2Tools Buckminster build" basedir="..">
 
 	<import file="../build_tools.xml" />
-	
+
 	<!-- load properties and set timestamp for the build -->
 	<!--property environment="env"/-->
-	
-	<property name="targetplatform.dir" location="${rootPath}/targetplatform"/>
-	<property name="workspacePath" location="${rootPath}/workspace"/>
 
-	<!-- project url is required for *.rmap to determine location of plugins/features to build -->	
+	<property name="targetplatform.dir" location="${hudsonWorkSpacePath}/targetplatform" />
+	<property name="workspacePath" location="${rootPath}/workspace" />
+
+	<!-- project url is required for *.rmap to determine location of plugins/features to build -->
 	<path id="project.path">
-		<pathelement path="${basedir}/../.."/>
+		<pathelement path="${basedir}/../.." />
 	</path>
-	<pathconvert dirsep="/" property="project.uri" refid="project.path"/>
-	<property name="project.local.dir" value="${project.uri}" />		
-	<property name="project.local.url" value="${fileUrlPrefix}${project.local.dir}" />		
-	
-	<!-- Determine uml2tools version from feature --> 
-	<xmlproperty
-		file="${project.local.dir}/plugins/org.eclipse.uml2tools-feature/feature.xml"
-		collapseAttributes="true"
-		prefix="uml2tools"/>
-	<propertyregex property="uml2tools.feature.version"
-		override="true"
-		input="${uml2tools.feature.version}"
-      	regexp="([\d]*\.[\d]*\.[\d]*)(\..*)?"
-      	select="\1"
-      	casesensitive="false" />
-		
+	<pathconvert dirsep="/" property="project.uri" refid="project.path" />
+	<property name="project.local.dir" value="${project.uri}" />
+	<property name="project.local.url" value="${fileUrlPrefix}${project.local.dir}" />
+
+	<!-- Determine uml2tools version from feature -->
+	<xmlproperty file="${project.local.dir}/plugins/org.eclipse.uml2tools-feature/feature.xml" collapseAttributes="true" prefix="uml2tools" />
+	<propertyregex property="uml2tools.feature.version" override="true" input="${uml2tools.feature.version}" regexp="([\d]*\.[\d]*\.[\d]*)(\..*)?" select="\1" casesensitive="false" />
+
 	<!-- these are passed on to buckminster -->
 	<propertyset id="buckyprops">
 		<propertyref regex=".*\.dir" />
 		<propertyref regex=".*\.url" />
 		<propertyref regex=".*\.version" />
 		<propertyref regex="build.type" />
+		<propertyref regex="fileUrlPrefix" />
 	</propertyset>
-	
+
 	<macrodef name="buckminster.tmp">
 		<attribute name="command" />
 		<attribute name="workspace" />
@@ -60,23 +53,36 @@
 			</eclipse.launch>
 		</sequential>
 	</macrodef>
-		
+
 	<target name="build" depends="">
 		<echo level="info" message="Using workspace ${workspacePath}" />
-		<mkdir dir="${targetplatform.dir}"/>
-		<mkdir dir="${workspacePath}"/>
-		
+		<if>
+			<and>
+				<available file="${targetplatform.dir}/exists" />
+				<equals arg1="${build.type}" arg2="N" trim="yes" />
+			</and>
+			<then>
+				<echo level="info" message="TargetPlatform isn't downloaded again. We use the existing one." />
+			</then>
+			<else>
+				<delete dir="${targetplatform.dir}" failonerror="false" />
+			</else>
+		</if>
+
+		<mkdir dir="${targetplatform.dir}" />
+		<mkdir dir="${workspacePath}" />
+
 		<!--echo message="Setting jre to ${env.JAVA_HOME}"/>
 		<buckminster command="installJRE" workspace="${workspacePath}">
 		    <cmdargs>
 		       <arg value="- - location" />
 		       <arg value="${env.JAVA_HOME}" />
 		    </cmdargs>
-		</buckminster--> 
+		</buckminster-->
 
 		<echo level="info" message=" " />
 		<echo level="info" message="Stage 0: Build dummy site to build/install (not really) headless GMF tooling bundles..." />
-		<delete dir="${workspacePath}" failonerror="true"/>
+		<delete dir="${workspacePath}" failonerror="true" />
 		<buckminster command="--scriptfile" workspace="${workspacePath}">
 			<globargs>
 				<syspropertyset refid="buckyprops" />
@@ -85,14 +91,14 @@
 				<arg value="${basedir}/stage0.bmscript" />
 			</cmdargs>
 		</buckminster>
-		
+		<touch file="${targetplatform.dir}/exists" />
 		<echo level="info" message=" " />
 		<echo level="info" message="Create a temporary copy of buckminster to pollute with build requirements (GMF ui artefacts etc.)..." />
-		<delete dir="${tools.dir}/buckminster.tmp" failonerror="false"/>
-		<buckminster.install destination="${tools.dir}/buckminster.tmp"/>
-		
+		<delete dir="${tools.dir}/buckminster.tmp" failonerror="false" />
+		<buckminster.install destination="${tools.dir}/buckminster.tmp" />
+
 		<echo level="info" message="Prepare host (buckminster)..." />
-		<delete dir="${workspacePath}" failonerror="true"/>
+		<delete dir="${workspacePath}" failonerror="true" />
 		<buckminster.tmp command="--scriptfile" workspace="${workspacePath}">
 			<globargs>
 				<syspropertyset refid="buckyprops" />
@@ -102,9 +108,9 @@
 			</cmdargs>
 		</buckminster.tmp>
 		<echo level="info" message="Clean workspace for next stage..." />
-		<delete dir="${workspacePath}" failonerror="true"/>
-		<mkdir dir="${workspacePath}"/>
-		
+		<delete dir="${workspacePath}" failonerror="true" />
+		<mkdir dir="${workspacePath}" />
+
 		<echo level="info" message=" " />
 		<echo level="info" message="Stage 1: Build codegen bundles..." />
 		<buckminster.tmp command="--scriptfile" workspace="${workspacePath}">
@@ -115,10 +121,10 @@
 				<arg value="${basedir}/stage1.bmscript" />
 			</cmdargs>
 		</buckminster.tmp>
-		
+
 		<echo level="info" message="Clean workspace for next stage..." />
-		<delete dir="${workspacePath}" failonerror="true"/>
-		<mkdir dir="${workspacePath}"/>
+		<delete dir="${workspacePath}" failonerror="true" />
+		<mkdir dir="${workspacePath}" />
 		<echo level="info" message=" " />
 		<echo level="info" message="Stage 2: Build UML2Tools bundles (using codegen bundles from stage 1)..." />
 		<echo level="error" message="Generating diagrams from org.eclipse.uml2.diagram.def is not yet implemented," />
@@ -134,8 +140,8 @@
 		</buckminster.tmp>
 
 		<echo level="info" message="Clean workspace for next stage..." />
-		<delete dir="${workspacePath}" failonerror="true"/>
-		<mkdir dir="${workspacePath}"/>
+		<delete dir="${workspacePath}" failonerror="true" />
+		<mkdir dir="${workspacePath}" />
 		<echo level="info" message=" " />
 		<echo level="info" message="Stage 3: Build UML2Tools bundles (using generated diagram bundles from stage 2)..." />
 		<buckminster command="--scriptfile" workspace="${workspacePath}">
@@ -146,10 +152,10 @@
 				<arg value="${basedir}/stage3.bmscript" />
 			</cmdargs>
 		</buckminster>
-		
+
 		<echo level="info" message="Clean workspace for next stage..." />
-		<delete dir="${workspacePath}" failonerror="true"/>
-		<mkdir dir="${workspacePath}"/>
+		<delete dir="${workspacePath}" failonerror="true" />
+		<mkdir dir="${workspacePath}" />
 		<echo level="info" message=" " />
 		<echo level="info" message="Stage 4: Build SDK (including source bundles from stage 3)..." />
 		<buckminster command="--scriptfile" workspace="${workspacePath}">
@@ -163,9 +169,28 @@
 				<jvmarg value="-Dcbi.include.source=false" />
 			</jvmargs>
 		</buckminster>
-		
+
 		<echo level="info" message="Create a all-in-one p2 update site archive..." />
 		<zip basedir="${stage4.dir}/site.sdk-eclipse.feature/site.p2" casesensitive="true" defaultexcludes="off" includes="**" destfile="${rootPath}/mdt-uml2tools-Update-incubation-${uml2tools.feature.version}-${buildTimestamp}.zip" />
 	</target>
-	
+
+	<target name="stage4">
+
+		<echo level="info" message="Stage 4: Build SDK (including source bundles from stage 3)..." />
+		<buckminster command="--scriptfile" workspace="${workspacePath}">
+			<globargs>
+				<syspropertyset refid="buckyprops" />
+			</globargs>
+			<cmdargs>
+				<arg value="${basedir}/stage4.bmscript" />
+			</cmdargs>
+			<jvmargs>
+				<jvmarg value="-Dcbi.include.source=false" />
+			</jvmargs>
+		</buckminster>
+
+		<echo level="info" message="Create a all-in-one p2 update site archive..." />
+		<zip basedir="${stage4.dir}/site.sdk-eclipse.feature/site.p2" casesensitive="true" defaultexcludes="off" includes="**" destfile="${rootPath}/mdt-uml2tools-Update-incubation-${uml2tools.feature.version}-${buildTimestamp}.zip" />
+	</target>
+
 </project>

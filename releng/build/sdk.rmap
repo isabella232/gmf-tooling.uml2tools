@@ -8,13 +8,13 @@
 
 	<rm:searchPath name="uml2tools_bin">
     	<rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
-      		<rm:uri format="file://${stage1.dir}/site.codegen-eclipse.feature/site.p2/?importType=binary"/>
+      		<rm:uri format="${fileUrlPrefix}${stage1.dir}/site.codegen-eclipse.feature/site.p2/?importType=binary"/>
     	</rm:provider>
     	<rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
-      		<rm:uri format="file://${stage3.dir}/site.uml2tools-eclipse.feature/site.p2/?importType=binary"/>
+      		<rm:uri format="${fileUrlPrefix}${stage3.dir}/site.uml2tools-eclipse.feature/site.p2/?importType=binary"/>
     	</rm:provider>
     	<rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
-      		<rm:uri format="file://${stage3.dir}/site.diagramdef-eclipse.feature/site.p2/?importType=binary"/>
+      		<rm:uri format="${fileUrlPrefix}${stage3.dir}/site.diagramdef-eclipse.feature/site.p2/?importType=binary"/>
     	</rm:provider>
 	</rm:searchPath>
 	

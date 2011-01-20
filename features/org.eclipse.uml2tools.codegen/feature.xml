@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.uml2tools.codegen"
       label="UML2Tools codegen feature"
-      version="0.9.2.qualifier"
+      version="0.10.0.qualifier"
       provider-name="Eclipse Modeling Project">
 
    <plugin
