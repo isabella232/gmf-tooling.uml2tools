@@ -91,13 +91,6 @@
 		<!--ant dir="${basedir}/test" antfile="uml2tools_test.xml" target="run" inheritRefs="true" /-->
 	</target>
 
-	<target name="stage4" depends="" description="Build the UML2Tools">
-		<echo message="Building..." />
-		<ant dir="${basedir}/build" antfile="uml2tools_build.xml" target="stage4" inheritRefs="true" inheritall="true" />
-		<echo message="Testing..." />
-		<!--ant dir="${basedir}/test" antfile="uml2tools_test.xml" target="run" inheritRefs="true" /-->
-	</target>
-
 	<target name="clean">
 		<delete dir="${rootPath}" failonerror="false" />
 		<delete dir="${temp.dir}" failonerror="false" />

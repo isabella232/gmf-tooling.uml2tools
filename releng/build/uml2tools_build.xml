@@ -174,23 +174,4 @@
 		<zip basedir="${stage4.dir}/site.sdk-eclipse.feature/site.p2" casesensitive="true" defaultexcludes="off" includes="**" destfile="${rootPath}/mdt-uml2tools-Update-incubation-${uml2tools.feature.version}-${buildTimestamp}.zip" />
 	</target>
 
-	<target name="stage4">
-
-		<echo level="info" message="Stage 4: Build SDK (including source bundles from stage 3)..." />
-		<buckminster command="--scriptfile" workspace="${workspacePath}">
-			<globargs>
-				<syspropertyset refid="buckyprops" />
-			</globargs>
-			<cmdargs>
-				<arg value="${basedir}/stage4.bmscript" />
-			</cmdargs>
-			<jvmargs>
-				<jvmarg value="-Dcbi.include.source=false" />
-			</jvmargs>
-		</buckminster>
-
-		<echo level="info" message="Create a all-in-one p2 update site archive..." />
-		<zip basedir="${stage4.dir}/site.sdk-eclipse.feature/site.p2" casesensitive="true" defaultexcludes="off" includes="**" destfile="${rootPath}/mdt-uml2tools-Update-incubation-${uml2tools.feature.version}-${buildTimestamp}.zip" />
-	</target>
-
 </project>
