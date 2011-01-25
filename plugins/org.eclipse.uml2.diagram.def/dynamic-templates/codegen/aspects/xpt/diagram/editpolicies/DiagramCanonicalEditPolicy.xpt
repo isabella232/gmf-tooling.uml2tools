@@ -17,26 +17,6 @@
 «EXTENSION aspects::xpt::diagram::updater::DescriptorsGenApi»
 «EXTENSION u2t::async::NonCanonicalDiagram»
 
-«AROUND collectAllLinks FOR gmfgen::GenDiagram-»
-	«EXPAND xpt::Common::generatedMemberComment»
-private java.util.Collection collectAllLinks(org.eclipse.gmf.runtime.notation.View view, Domain2Notation domain2NotationMap) { 
-	if («EXPAND aspects::xpt::editor::VisualIDRegistry::isShortcutDescendantMethodCall»(view)) {
-		return collectLinksOutgoingFromShortcut(view, domain2NotationMap); «REM» the diff is here (in addition to Map -> Domain2Notation) «ENDREM»
-	}
-	java.util.Collection result = new java.util.LinkedList();
-	switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(view)) {
-		«EXPAND impl::diagram::update::CanonicalUpdate::_caseSemanticElement FOREACH getAllSemanticElements(self)-»
-	}
-	for (java.util.Iterator children = view.getChildren().iterator(); children.hasNext();) {
-		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) children.next(), domain2NotationMap));
-	}
-	for (java.util.Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
-		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) edges.next(), domain2NotationMap));
-	}
-	return result;
-}
-«ENDAROUND»
-
 «AROUND caseSemanticElement FOR gmfgen::GenCommonBase-»
 «EXPAND xpt::Common::caseVisualID» {
 	if (!domain2NotationMap.containsKey(view.getElement())) {
@@ -211,8 +191,6 @@ private java.util.Collection refreshConnections() {
 «AROUND xpt::diagram::editpolicies::DiagramCanonicalEditPolicy::additions FOR gmfgen::GenDiagram»
 	«EXPAND isNotationOnlyEdge»
 	
-	«EXPAND collectLinksOutgoingFromShortcut»
-	
 	«EXPAND DomainToNotationClass»
 	
 	«IF supportsNonCanonicalMode(self)-»
@@ -304,35 +282,6 @@ private java.util.Collection refreshConnections() {
 			return null;
 		}
 	
-	}
-
-«ENDDEFINE»
-
-«DEFINE collectLinksOutgoingFromShortcut FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment» 
-	private java.util.Collection<«getGenApiLinkDescriptorQualifiedClassName()»> collectLinksOutgoingFromShortcut(org.eclipse.gmf.runtime.notation.View view, Domain2Notation domain2NotationMap) {
-		org.eclipse.gef.EditPart ep = (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
-		if (false == ep instanceof org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart){
-			return Collections.emptyList();
-		}
-		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart editPart = (org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart)ep;
-		org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest request = new org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest();
-		//we are not using the result command -- each editpart from the tree 
-		//is required to push data into the request
-		editPart.getCommand(request);
-		
-		java.util.Set<«getGenApiLinkDescriptorQualifiedClassName()»> linksToFromShortcuts = new java.util.HashSet<«getGenApiLinkDescriptorQualifiedClassName()»>();
-		for (org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest.Descriptor next : request.getDescriptions()){
-			linksToFromShortcuts.addAll(next.getContainedLinks());
-			linksToFromShortcuts.addAll(next.getOutgoingLinks());
-			
-			if (next.getSemanticElement() != null){
-				domain2NotationMap.put(next.getSemanticElement(), next.getProvider().getNotationView());
-			}
-			
-		}
-		
-		return linksToFromShortcuts;
 	}
 
 «ENDDEFINE»

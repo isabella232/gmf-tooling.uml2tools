@@ -322,6 +322,44 @@ public class PackageCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
+	* @generated
+	*/
+	private Collection<UMLLinkDescriptor> collectLinksOutgoingFromShortcut(View view, Map<EObject, View> domain2NotationMap) {
+		EditPart ep = (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+		if (false == ep instanceof IGraphicalEditPart) {
+			return Collections.emptyList();
+		}
+		IGraphicalEditPart editPart = (IGraphicalEditPart) ep;
+		UpdateDescriptionRequest request = new UpdateDescriptionRequest();
+		//we are not using the result command -- each editpart from the tree 
+		//is required to push data into the request
+		editPart.getCommand(request);
+
+		Set<UMLLinkDescriptor> linksToFromShortcuts = new HashSet<UMLLinkDescriptor>();
+		for (UpdateDescriptionRequest.Descriptor next : request.getDescriptions()) {
+			List<IUpdaterLinkDescriptor> containedLinks = next.getContainedLinks();
+			for (IUpdaterLinkDescriptor ld : containedLinks) {
+				if (ld instanceof UMLLinkDescriptor) {
+					linksToFromShortcuts.add((UMLLinkDescriptor) ld);
+				}
+			}
+			List<IUpdaterLinkDescriptor> outgoingLinks = next.getOutgoingLinks();
+			for (IUpdaterLinkDescriptor ld : outgoingLinks) {
+				if (ld instanceof UMLLinkDescriptor) {
+					linksToFromShortcuts.add((UMLLinkDescriptor) ld);
+				}
+			}
+
+			if (next.getSemanticElement() != null) {
+				domain2NotationMap.put(next.getSemanticElement(), next.getProvider().getNotationView());
+			}
+
+		}
+
+		return linksToFromShortcuts;
+	}
+
+	/**
 	 * @generated NOT [215245]Refresh connector when PartWithPort changes
 	 */
 	private Collection refreshConnections() {
@@ -399,6 +437,9 @@ public class PackageCanonicalEditPolicy extends CanonicalEditPolicy {
 	private Collection<UMLLinkDescriptor> collectAllLinksGen(View view, Map<EObject, View> domain2NotationMap) {
 		if (!PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
+		}
+		if (view != null && view.getEAnnotation("Shortcut") != null) {
+			return collectLinksOutgoingFromShortcut(view, domain2NotationMap);
 		}
 		LinkedList<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		switch (UMLVisualIDRegistry.getVisualID(view)) {

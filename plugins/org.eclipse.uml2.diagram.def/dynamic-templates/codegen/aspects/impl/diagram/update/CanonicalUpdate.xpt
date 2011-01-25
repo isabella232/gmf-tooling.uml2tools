@@ -18,6 +18,74 @@
 «EXTENSION xpt::diagram::updater::Utils»
 «EXTENSION xpt::editor::Utils»
 «EXTENSION xpt::GenModelUtils»
+«EXTENSION aspects::xpt::diagram::updater::DescriptorsGenApi»
+
+«AROUND refreshConnectionsAuxMethods FOR gmfgen::GenDiagram-»
+	«targetDef.proceed()»
+	«EXPAND collectLinksOutgoingFromShortcut-»
+«ENDAROUND»
+
+«DEFINE collectLinksOutgoingFromShortcut FOR gmfgen::GenDiagram»
+	«EXPAND xpt::Common::generatedMemberComment» 
+	private java.util.Collection<«editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName()»> collectLinksOutgoingFromShortcut(org.eclipse.gmf.runtime.notation.View view, «EXPAND CodeStyle::G2('java.util.Map', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')» domain2NotationMap) {
+		org.eclipse.gef.EditPart ep = (org.eclipse.gef.EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+		if (false == ep instanceof org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart){
+			return Collections.emptyList();
+		}
+		org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart editPart = (org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart)ep;
+		org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest request = new org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest();
+		//we are not using the result command -- each editpart from the tree 
+		//is required to push data into the request
+		editPart.getCommand(request);
+		
+		java.util.Set<«editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName()»> linksToFromShortcuts = new java.util.HashSet<«editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName()»>();
+		for (org.eclipse.uml2.diagram.common.editpolicies.UpdateDescriptionRequest.Descriptor next : request.getDescriptions()){
+			java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> containedLinks = next.getContainedLinks();
+			for (org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor ld : containedLinks) {
+				if (ld instanceof «editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName()») {
+					linksToFromShortcuts.add((«editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName()») ld);
+				}
+			}
+			java.util.List<org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor> outgoingLinks = next.getOutgoingLinks();
+			for (org.eclipse.uml2.diagram.common.genapi.IUpdaterLinkDescriptor ld : outgoingLinks) {
+				if (ld instanceof «editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName()») {
+					linksToFromShortcuts.add((«editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName()») ld);
+				}
+			}
+			
+			if (next.getSemanticElement() != null){
+				domain2NotationMap.put(next.getSemanticElement(), next.getProvider().getNotationView());
+			}
+			
+		}
+		
+		return linksToFromShortcuts;
+	}
+
+«ENDDEFINE»
+
+«AROUND collectAllLinksMethod FOR gmfgen::GenDiagram-»
+«EXPAND xpt::Common::generatedMemberComment»
+private «EXPAND CodeStyle::G('java.util.Collection', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName())» collectAllLinks(org.eclipse.gmf.runtime.notation.View view, «EXPAND CodeStyle::G2('java.util.Map', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')» domain2NotationMap) {
+	if (!«EXPAND xpt::editor::VisualIDRegistry::modelID».equals(«EXPAND xpt::editor::VisualIDRegistry::getModelIDMethodCall»(view))) {
+		return «EXPAND CodeStyle::emptyList»;
+	}
+	if (view != null && view.getEAnnotation("Shortcut") != null) {
+			return collectLinksOutgoingFromShortcut(view, domain2NotationMap);
+	}
+	«EXPAND CodeStyle::newGenericInstance('result', 'java.util.LinkedList', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName())»();
+	switch («EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(view)) {
+		«EXPAND _caseSemanticElement FOREACH getAllSemanticElements(self)-»
+	}
+	for (java.util.Iterator children = view.getChildren().iterator(); children.hasNext();) {
+		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) children.next(), domain2NotationMap));
+	}
+	for (java.util.Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
+		result.addAll(collectAllLinks((org.eclipse.gmf.runtime.notation.View) edges.next(), domain2NotationMap));
+	}
+	return result;
+}
+«ENDAROUND»
 
 «AROUND getSemanticChildrenList FOR gmfgen::GenContainerBase-»
 	«REM»
@@ -45,7 +113,19 @@ protected java.util.List getSemanticChildrenList() {
 	«ENDIF-»
 }
 «ENDAROUND»
- 
+
+«DEFINE _caseSemanticElement FOR gmfgen::GenChildLabelNode»«ENDDEFINE»
+«DEFINE _caseSemanticElement FOR gmfgen::GenCommonBase-»
+«EXPAND xpt::Common::caseVisualID» {
+	if (!domain2NotationMap.containsKey(view.getElement())) {
+		result.addAll(«EXPAND xpt::diagram::updater::DiagramUpdater::getContainedLinksMethodCall»(view));
+	}
+	if (!domain2NotationMap.containsKey(view.getElement()) || view.getEAnnotation("Shortcut") == null) { «EXPAND xpt::Common::nonNLS»
+		domain2NotationMap.put(view.getElement(), view);
+	}	
+	break;	
+}
+«ENDDEFINE»
 	
 «AROUND refreshSemanticChildren(String createdViewsVar, gmfgen::GenDiagramUpdater diagramUpdater) FOR gmfgen::GenContainerBase-»
 «REM» All changes are supplied with remarks starting with "U2T:" «ENDREM»	«-»
