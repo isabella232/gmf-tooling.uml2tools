@@ -13,27 +13,27 @@
  * (assuming that diagram semantic element is always NamedElement) 
  * we trying to set special name to editor input for new diagram.
  */
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«EXTENSION xpt::diagram::editpolicies::Utils»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«EXTENSION xpt::diagram::editpolicies::UtilsÂ»
 
-«AROUND openCommandClass FOR gmfgen::OpenDiagramBehaviour»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND openCommandClass FOR gmfgen::OpenDiagramBehaviourÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	private static class OpenDiagramCommand extends org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand {
 
-		«EXPAND xpt::Common::generatedMemberComment»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		private final org.eclipse.gmf.runtime.notation.HintedDiagramLinkStyle diagramFacet;
 
-		«EXPAND xpt::Common::generatedMemberComment»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		OpenDiagramCommand(org.eclipse.gmf.runtime.notation.HintedDiagramLinkStyle linkStyle) {
 			// editing domain is taken for original diagram, 
 			// if we open diagram from another file, we should use another editing domain
-			super(org.eclipse.emf.transaction.util.TransactionUtil.getEditingDomain(linkStyle), «EXPAND xpt::Externalizer::accessorCall(i18nKeyForOpenCommandName()) FOR subject.getDiagram().editorGen», null);
+			super(org.eclipse.emf.transaction.util.TransactionUtil.getEditingDomain(linkStyle), Â«EXPAND xpt::Externalizer::accessorCall(i18nKeyForOpenCommandName()) FOR subject.getDiagram().editorGenÂ», null);
 			diagramFacet = linkStyle;
 		}
 
 		// FIXME canExecute if  !(readOnly && getDiagramToOpen == null), i.e. open works on ro diagrams only when there's associated diagram already
 
-		«EXPAND xpt::Common::generatedMemberComment»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		protected org.eclipse.gmf.runtime.common.core.command.CommandResult doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor monitor, org.eclipse.core.runtime.IAdaptable info) throws org.eclipse.core.commands.ExecutionException {
 			try {
 				org.eclipse.gmf.runtime.notation.Diagram diagram = getDiagramToOpen();
@@ -42,10 +42,10 @@
 				}
 				org.eclipse.emf.common.util.URI uri = diagram.eResource().getURI();
 				uri = uri.appendFragment(diagram.eResource().getURIFragment(diagram));
-				«REM»<change> It would be better to have this method in separate xPand«ENDREM»«-»
+				Â«REMÂ»<change> It would be better to have this method in separate xPandÂ«ENDREMÂ»Â«-Â»
 				String diagramName = getDiagramName(getDiagramDomainElement());
 				org.eclipse.ui.IEditorInput editorInput = new org.eclipse.emf.common.ui.URIEditorInput(uri, diagramName);
-				«REM»</change> «ENDREM»«-»
+				Â«REMÂ»</change> Â«ENDREMÂ»Â«-Â»
 				org.eclipse.ui.IWorkbenchPage page = org.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 				page.openEditor(editorInput, getEditorID());
 				return org.eclipse.gmf.runtime.common.core.command.CommandResult.newOKCommandResult();
@@ -54,12 +54,12 @@
 			}
 		}
 
-		«EXPAND xpt::Common::generatedMemberComment»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		protected org.eclipse.gmf.runtime.notation.Diagram getDiagramToOpen() {
 			return diagramFacet.getDiagramLink();
 		}
 
-		«EXPAND xpt::Common::generatedMemberComment»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		protected org.eclipse.gmf.runtime.notation.Diagram intializeNewDiagram() throws org.eclipse.core.commands.ExecutionException {
 			org.eclipse.gmf.runtime.notation.Diagram d = org.eclipse.gmf.runtime.diagram.core.services.ViewService.createDiagram(getDiagramDomainElement(), getDiagramKind(), getPreferencesHint());
 			if (d == null) {
@@ -69,18 +69,18 @@
 			assert diagramFacet.eResource() != null;
 			diagramFacet.eResource().getContents().add(d);
 			try {
-			«IF null = subject.getDiagram().editorGen.application-»
+			Â«IF null = subject.getDiagram().editorGen.application-Â»
 				new org.eclipse.ui.actions.WorkspaceModifyOperation() {
 					protected void execute(org.eclipse.core.runtime.IProgressMonitor monitor) throws org.eclipse.core.runtime.CoreException, java.lang.reflect.InvocationTargetException, InterruptedException {
 						try {
-			«ENDIF-»
+			Â«ENDIF-Â»
 				for (java.util.Iterator it = diagramFacet.eResource().getResourceSet().getResources().iterator(); it.hasNext();) {
 					org.eclipse.emf.ecore.resource.Resource nextResource = (org.eclipse.emf.ecore.resource.Resource) it.next();
 					if (nextResource.isLoaded() && !getEditingDomain().isReadOnly(nextResource)) {
-						nextResource.save(«EXPAND xpt::Common::getSaveOptions FOR subject.getDiagram()»);
+						nextResource.save(Â«EXPAND xpt::Common::getSaveOptions FOR subject.getDiagram()Â»);
 					}
 				}
-			«IF null = subject.getDiagram().editorGen.application-»
+			Â«IF null = subject.getDiagram().editorGen.application-Â»
 						} catch (java.io.IOException ex) {
 							throw new java.lang.reflect.InvocationTargetException(ex, "Save operation failed");
 						}		
@@ -91,39 +91,39 @@
 			} catch (InterruptedException e) {
 				throw new org.eclipse.core.commands.ExecutionException("Can't create diagram of '" + getDiagramKind() + "' kind", e);
 			}
-			«ELSE-»
+			Â«ELSE-Â»
 			} catch (java.io.IOException ex) {
 				throw new org.eclipse.core.commands.ExecutionException("Can't create diagram of '" + getDiagramKind() + "' kind", ex);
 			}
-			«ENDIF-»
+			Â«ENDIF-Â»
 			return d;
 		}
 
-		«EXPAND xpt::Common::generatedMemberComment»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		protected org.eclipse.emf.ecore.EObject getDiagramDomainElement() {
 			// use same element as associated with EP
 			return ((org.eclipse.gmf.runtime.notation.View) diagramFacet.eContainer()).getElement();
 		}
 
-		«EXPAND xpt::Common::generatedMemberComment»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		protected org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint getPreferencesHint() {
 			// XXX prefhint from target diagram's editor?
-			return «subject.getDiagram().editorGen.plugin.getActivatorQualifiedClassName()».DIAGRAM_PREFERENCES_HINT;
+			return Â«subject.getDiagram().editorGen.plugin.getActivatorQualifiedClassName()Â».DIAGRAM_PREFERENCES_HINT;
 		}
 
-		«EXPAND xpt::Common::generatedMemberComment»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		protected String getDiagramKind() {
-			return «IF diagramKind = null»«EXPAND xpt::editor::VisualIDRegistry::modelID FOR subject.getDiagram()»«ELSE»"«diagramKind»"«ENDIF»;
+			return Â«IF diagramKind = nullÂ»Â«EXPAND xpt::editor::VisualIDRegistry::modelID FOR subject.getDiagram()Â»Â«ELSEÂ»"Â«diagramKindÂ»"Â«ENDIFÂ»;
 		}
 
-		«EXPAND xpt::Common::generatedMemberComment»
+		Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 		protected String getEditorID() {
-			return «IF editorID = null»«subject.getDiagram().editorGen.editor.getQualifiedClassName()».ID«ELSE»"«editorID»"«ENDIF»;
+			return Â«IF editorID = nullÂ»Â«subject.getDiagram().editorGen.editor.getQualifiedClassName()Â».IDÂ«ELSEÂ»"Â«editorIDÂ»"Â«ENDIFÂ»;
 		}
 	}
-«ENDAROUND»
+Â«ENDAROUNDÂ»
 
-«AROUND additions FOR gmfgen::OpenDiagramBehaviour»
+Â«AROUND additions FOR gmfgen::OpenDiagramBehaviourÂ»
 protected static String getDiagramName(org.eclipse.emf.ecore.EObject diagramDomainElement){
 	String result = null;
 	if (diagramDomainElement instanceof org.eclipse.uml2.uml.NamedElement) {
@@ -135,4 +135,4 @@ protected static String getDiagramName(org.eclipse.emf.ecore.EObject diagramDoma
 	}
 	return result;
 }
-«ENDAROUND»
+Â«ENDAROUNDÂ»

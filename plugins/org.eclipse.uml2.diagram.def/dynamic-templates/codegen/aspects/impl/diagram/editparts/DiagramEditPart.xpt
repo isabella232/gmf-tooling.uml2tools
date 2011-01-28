@@ -10,16 +10,16 @@
  *    Michael Golubev - U2T specific creation/layout edit policy 
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
-«EXTENSION xpt::diagram::editparts::Utils»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
+Â«EXTENSION xpt::diagram::editparts::UtilsÂ»
 
-«AROUND createDefaultEditPoliciesBody FOR gmfgen::GenDiagram-»
-	«targetDef.proceed()»
-	installEditPolicy(«-»
-		org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE, «-»
-		«EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstance»);
-	installEditPolicy(«-»
-		org.eclipse.gef.EditPolicy.LAYOUT_ROLE, «-»
+Â«AROUND createDefaultEditPoliciesBody FOR gmfgen::GenDiagram-Â»
+	Â«targetDef.proceed()Â»
+	installEditPolicy(Â«-Â»
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CREATION_ROLE, Â«-Â»
+		Â«EXPAND aspects::impl::diagram::editparts::creationEditPolicy::newInstanceÂ»);
+	installEditPolicy(Â«-Â»
+		org.eclipse.gef.EditPolicy.LAYOUT_ROLE, Â«-Â»
 		new org.eclipse.uml2.diagram.common.editpolicies.XYLayoutEditPolicyWithMovableLabels()); //replace with U2T specific version
-«ENDAROUND»
+Â«ENDAROUNDÂ»
