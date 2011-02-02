@@ -103,7 +103,15 @@
 		<available file="${tools.dir}/director/director" property="director.exists" />
 		<available file="${tools.dir}/buckminster/buckminster" property="buckminster.exists" />
 
-		<setproxy proxyhost="${PROXY_HOST}" proxyport="${PROXY_PORT}" />
+		<if>
+			<and>
+				<isset property="PROXY_HOST" />
+				<not>
+					<equals arg1="${PROXY_HOST}" arg2="" trim="yes" />
+				</not>
+			</and>
+			<setproxy proxyhost="${PROXY_HOST}" proxyport="${PROXY_PORT}" />
+		</if>
 	</target>
 
 	<target name="get.director" unless="director.exists">
