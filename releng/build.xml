@@ -15,10 +15,6 @@
 
 	<property file="buckminster.properties" />
 
-	<condition property="teneo.update.site.type" value="${env.TENEO_UPDATE_SITE_TYPE}" else="interim">
-		<isset property="env.TENEO_UPDATE_SITE_TYPE" />
-	</condition>
-
 	<condition property="hudsonWorkSpacePath" value="${env.WORKSPACE}" else="${basedir}/../__DIST__">
 		<isset property="env.WORKSPACE" />
 	</condition>
@@ -68,7 +64,7 @@
 	<property name="testResultsPath" value="${rootPath}/result/test" />
 	<property name="temp.dir" location="${hudsonWorkSpacePath}/tmp" />
 
-	<property name="promoteUpdateSite" location="${u2t.download.area}/updates/${teneo.update.site.type}" />
+	<property name="promoteUpdateSite" location="${u2t.download.area}" />
 	<property name="promoteDropsLocation" location="${u2t.download.area}/downloads/drops" />
 
 	<if>
