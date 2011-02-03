@@ -451,14 +451,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
-	private DependencyAppliedStereotypeParser portName_5003Parser;
+	private IParser portName_5003Parser;
 
 	/**
 	 * @generated
 	 */
 	private IParser getPortName_5003Parser() {
 		if (portName_5003Parser == null) {
-			portName_5003Parser = new DependencyAppliedStereotypeParser();
+			portName_5003Parser = createPortName_5003Parser();
 		}
 		return portName_5003Parser;
 	}

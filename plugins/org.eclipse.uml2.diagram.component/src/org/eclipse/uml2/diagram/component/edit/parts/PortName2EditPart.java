@@ -52,9 +52,9 @@ import org.eclipse.uml2.diagram.component.providers.UMLElementTypes;
 import org.eclipse.uml2.diagram.component.providers.UMLParserProvider;
 
 /**
- * @generated NOT
+ * @generated
  */
-public class PortName2EditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart, IPrimaryEditPart {
+public class PortName2EditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -74,7 +74,7 @@ public class PortName2EditPart extends LabelEditPart implements ITextAwareEditPa
 	/**
 	 * @generated
 	 */
-	private List parserElements;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -190,6 +190,7 @@ public class PortName2EditPart extends LabelEditPart implements ITextAwareEditPa
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
@@ -266,7 +267,7 @@ public class PortName2EditPart extends LabelEditPart implements ITextAwareEditPa
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl<IParserEditStatus>() {
 
 							public void run() {
 								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
