@@ -21,7 +21,13 @@ import org.eclipse.uml2.uml.Type;
 public class AssociationEndConvention {
 
 	public static Property getMemberEnd(Association association, boolean sourceNotTarget) {
-		return (Property) association.getMemberEnds().get(sourceNotTarget ? 0 : 1);
+		if (sourceNotTarget && association.getMemberEnds().size() > 0) {
+			return (Property) association.getMemberEnds().get(0);
+		}
+		if (!sourceNotTarget && association.getMemberEnds().size() > 1) {
+			return (Property) association.getMemberEnds().get(1);
+		}
+		return null;
 	}
 
 	public static Property getSourceEnd(Association association) {
