@@ -33,6 +33,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName6EditPart
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName7EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName8EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateStereotypeEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.StateMachineNameEditPart;
@@ -110,6 +112,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	*/
 	protected IParser createCommentBody_5016Parser() {
 		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getComment_Body() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser regionName_5027Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getRegionName_5027Parser() {
+		if (regionName_5027Parser == null) {
+			regionName_5027Parser = createRegionName_5027Parser();
+		}
+		return regionName_5027Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createRegionName_5027Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
@@ -271,6 +297,30 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			stateQualifiedName_5013Parser = new AppliedStereotypeParser();
 		}
 		return stateQualifiedName_5013Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	private IParser regionName_5026Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getRegionName_5026Parser() {
+		if (regionName_5026Parser == null) {
+			regionName_5026Parser = createRegionName_5026Parser();
+		}
+		return regionName_5026Parser;
+	}
+
+	/**
+	* @generated
+	*/
+	protected IParser createRegionName_5026Parser() {
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
+		MessageFormatParser parser = new MessageFormatParser(features);
+		return parser;
 	}
 
 	/**
@@ -656,6 +706,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStateMachineQualifiedName_5012Parser();
 		case CommentBodyEditPart.VISUAL_ID:
 			return getCommentBody_5016Parser();
+		case RegionNameEditPart.VISUAL_ID:
+			return getRegionName_5027Parser();
 		case SimpleStateNameEditPart.VISUAL_ID:
 			return getStateName_5001Parser();
 		case SimpleStateStereotypeEditPart.VISUAL_ID:
@@ -670,6 +722,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 			return getStateName_5004Parser();
 		case CompositeStateStereotypeEditPart.VISUAL_ID:
 			return getStateQualifiedName_5013Parser();
+		case RegionName2EditPart.VISUAL_ID:
+			return getRegionName_5026Parser();
 		case SubmachineStateNameEditPart.VISUAL_ID:
 			return getStateName_5008Parser();
 		case SubmachineStateStereotypeEditPart.VISUAL_ID:

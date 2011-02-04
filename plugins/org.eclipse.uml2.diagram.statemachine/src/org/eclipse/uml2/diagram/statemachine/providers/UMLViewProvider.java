@@ -81,6 +81,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName6EditPart
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName7EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName8EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
@@ -482,6 +484,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
+		Node label5027 = createLabel(node, UMLVisualIDRegistry.getType(RegionNameEditPart.VISUAL_ID));
 
 		Node compartment7004 = createCompartment(node, UMLVisualIDRegistry.getType(StateMachine_RegionSubverticesEditPart.VISUAL_ID), false, false, false, false);
 		return node;
@@ -617,6 +620,7 @@ public class UMLViewProvider extends AbstractProvider implements IViewProvider {
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
+		Node label5026 = createLabel(node, UMLVisualIDRegistry.getType(RegionName2EditPart.VISUAL_ID));
 
 		Node compartment7003 = createCompartment(node, UMLVisualIDRegistry.getType(State_RegionSubverticesEditPart.VISUAL_ID), false, false, false, false);
 		return node;

@@ -777,6 +777,11 @@ public class Messages extends NLS {
 	public static String DiagramIconStylePreferencePage_label_for_Pseudostate;
 
 	/**
+	* @generated
+	*/
+	public static String DiagramIconStylePreferencePage_label_for_Region;
+
+	/**
 	 * @generated
 	 */
 	public static String DiagramIconStylePreferencePage_label_for_State;

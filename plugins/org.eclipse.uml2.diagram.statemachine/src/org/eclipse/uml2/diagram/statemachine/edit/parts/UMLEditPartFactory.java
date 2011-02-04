@@ -50,6 +50,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 			case StateMachine_RegionEditPart.VISUAL_ID:
 				return new StateMachine_RegionEditPart(view);
 
+			case RegionNameEditPart.VISUAL_ID:
+				return new RegionNameEditPart(view);
+
 			case SimpleStateEditPart.VISUAL_ID:
 				return new SimpleStateEditPart(view);
 
@@ -79,6 +82,9 @@ public class UMLEditPartFactory implements EditPartFactory {
 
 			case State_RegionEditPart.VISUAL_ID:
 				return new State_RegionEditPart(view);
+
+			case RegionName2EditPart.VISUAL_ID:
+				return new RegionName2EditPart(view);
 
 			case SubmachineStateEditPart.VISUAL_ID:
 				return new SubmachineStateEditPart(view);

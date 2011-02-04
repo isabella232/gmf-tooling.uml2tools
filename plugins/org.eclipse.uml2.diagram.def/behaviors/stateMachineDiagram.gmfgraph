@@ -204,14 +204,74 @@
           xsi:type="gmfgraph:Rectangle"
           name="RegionFigure"
           lineKind="LINE_DASH">
+        <layout
+            xsi:type="gmfgraph:BorderLayout"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="RegionFigure_Compartment"
+            name="RegionFigure_NameContainer"
             outline="false"
-            fill="false"/>
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"
+              alignment="BEGINNING"
+              vertical="true"/>
+          <layout
+              xsi:type="gmfgraph:CustomLayout"
+              qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout">
+            <attributes
+                name="StretchMajorAxis"
+                value="true"/>
+            <attributes
+                name="vertical"
+                value="false"/>
+          </layout>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="RegionFigure_InnerNameContainer"
+              outline="false"
+              fill="false">
+            <layout
+                xsi:type="gmfgraph:FlowLayout"
+                forceSingleLine="true"
+                minorAlignment="CENTER"
+                majorSpacing="3"
+                minorSpacing="3"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="RegionFigure_name"/>
+          </children>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="RegionFigure_ContentContainer"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:BorderLayoutData"/>
+          <layout
+              xsi:type="gmfgraph:FlowLayout"
+              vertical="true"
+              matchMinorSize="true"
+              forceSingleLine="true"
+              minorAlignment="CENTER"
+              majorSpacing="0"
+              minorSpacing="0"/>
+          <insets
+              top="1"
+              left="1"
+              bottom="10"
+              right="1"/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="RegionFigure_Compartment"
+              outline="false"
+              fill="false"/>
+        </children>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0"/>
     </descriptors>
     <descriptors
         name="TransitionConnection">
@@ -572,7 +632,7 @@
   <compartments
       name="subvertices"
       figure="RegionFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
   <compartments
       name="CompositeStateContent"
       figure="CompositeStateFigure"
@@ -617,6 +677,10 @@
       name="SimpleStateNode_name"
       figure="SimpleStateFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels
+      name="RegionNode_name"
+      figure="RegionFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="StateMachineNode_name"
       figure="CompositeStateFigure"

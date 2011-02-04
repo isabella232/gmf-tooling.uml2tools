@@ -44,7 +44,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="RegionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RegionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureRegionFigure_Compartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RegionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setLineWidth(1);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureRegionFigure_Compartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureRegionFigure_Compartment.setFill(false);&#xA;fFigureRegionFigure_Compartment.setOutline(false);&#xA;fFigureRegionFigure_Compartment.setLineWidth(1);&#xA;&#xA;this.add(fFigureRegionFigure_Compartment);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureRegionFigure_Compartment() {&#xA;&#x9;&#x9;return fFigureRegionFigure_Compartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RegionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.Label fFigureRegionFigure_name; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureRegionFigure_Compartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RegionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure regionFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;regionFigure_NameContainer0.setFill(false);&#xA;regionFigure_NameContainer0.setOutline(false);&#xA;regionFigure_NameContainer0.setLineWidth(1);&#xA;&#xA;this.add(regionFigure_NameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xA;&#xA;&#x9;org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout layoutRegionFigure_NameContainer0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout();&#xA;&#xA;&#xA;&#xA;&#xA;layoutRegionFigure_NameContainer0.setStretchMajorAxis(&#xA;true);&#xA;&#xA;&#xA;&#xA;&#xA;layoutRegionFigure_NameContainer0.setVertical(&#xA;false);&#xA;&#xA;&#xA;&#x9;regionFigure_NameContainer0.setLayoutManager(layoutRegionFigure_NameContainer0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure regionFigure_InnerNameContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;regionFigure_InnerNameContainer1.setFill(false);&#xA;regionFigure_InnerNameContainer1.setOutline(false);&#xA;regionFigure_InnerNameContainer1.setLineWidth(1);&#xA;&#xA;regionFigure_NameContainer0.add(regionFigure_InnerNameContainer1);&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutRegionFigure_InnerNameContainer1 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutRegionFigure_InnerNameContainer1.setStretchMinorAxis(false);&#xA;&#x9;layoutRegionFigure_InnerNameContainer1.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xA;);&#xA;&#xA;&#x9;layoutRegionFigure_InnerNameContainer1.setSpacing(3);&#xA;&#x9;layoutRegionFigure_InnerNameContainer1.setVertical(false);&#xA;&#xA;&#x9;regionFigure_InnerNameContainer1.setLayoutManager(layoutRegionFigure_InnerNameContainer1);&#xA;&#xA;&#xA;&#xA;fFigureRegionFigure_name = new org.eclipse.draw2d.Label();&#xA;fFigureRegionFigure_name.setText(&quot;&quot;);&#xA;&#xA;regionFigure_InnerNameContainer1.add(fFigureRegionFigure_name);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure regionFigure_ContentContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;regionFigure_ContentContainer0.setFill(false);&#xA;regionFigure_ContentContainer0.setOutline(false);&#xA;regionFigure_ContentContainer0.setLineWidth(1);&#xA;&#xA;regionFigure_ContentContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;&#xA;this.add(regionFigure_ContentContainer0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutRegionFigure_ContentContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutRegionFigure_ContentContainer0.setStretchMinorAxis(true);&#xA;&#x9;layoutRegionFigure_ContentContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xA;);&#xA;&#xA;&#x9;layoutRegionFigure_ContentContainer0.setSpacing(0);&#xA;&#x9;layoutRegionFigure_ContentContainer0.setVertical(true);&#xA;&#xA;&#x9;regionFigure_ContentContainer0.setLayoutManager(layoutRegionFigure_ContentContainer0);&#xA;&#xA;&#xA;&#xA;fFigureRegionFigure_Compartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureRegionFigure_Compartment.setFill(false);&#xA;fFigureRegionFigure_Compartment.setOutline(false);&#xA;fFigureRegionFigure_Compartment.setLineWidth(1);&#xA;&#xA;regionFigure_ContentContainer0.add(fFigureRegionFigure_Compartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.Label getFigureRegionFigure_name() {&#xA;&#x9;&#x9;return fFigureRegionFigure_name;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureRegionFigure_Compartment() {&#xA;&#x9;&#x9;return fFigureRegionFigure_Compartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Region"/>
@@ -53,6 +53,24 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/StateMachine/region"/>
       </modelFacet>
+      <labels
+          visualID="5027"
+          editPartClassName="RegionNameEditPart"
+          itemSemanticEditPolicyClassName="RegionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="RegionNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureRegionFigure_name"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3001"
@@ -385,7 +403,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="RegionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RegionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureRegionFigure_Compartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RegionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setLineWidth(1);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureRegionFigure_Compartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureRegionFigure_Compartment.setFill(false);&#xA;fFigureRegionFigure_Compartment.setOutline(false);&#xA;fFigureRegionFigure_Compartment.setLineWidth(1);&#xA;&#xA;this.add(fFigureRegionFigure_Compartment);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureRegionFigure_Compartment() {&#xA;&#x9;&#x9;return fFigureRegionFigure_Compartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RegionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.Label fFigureRegionFigure_name; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureRegionFigure_Compartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RegionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineWidth(1);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure regionFigure_NameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;regionFigure_NameContainer0.setFill(false);&#xA;regionFigure_NameContainer0.setOutline(false);&#xA;regionFigure_NameContainer0.setLineWidth(1);&#xA;&#xA;this.add(regionFigure_NameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xA;&#xA;&#x9;org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout layoutRegionFigure_NameContainer0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout();&#xA;&#xA;&#xA;&#xA;&#xA;layoutRegionFigure_NameContainer0.setStretchMajorAxis(&#xA;true);&#xA;&#xA;&#xA;&#xA;&#xA;layoutRegionFigure_NameContainer0.setVertical(&#xA;false);&#xA;&#xA;&#xA;&#x9;regionFigure_NameContainer0.setLayoutManager(layoutRegionFigure_NameContainer0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure regionFigure_InnerNameContainer1 = new org.eclipse.draw2d.RectangleFigure();&#xA;regionFigure_InnerNameContainer1.setFill(false);&#xA;regionFigure_InnerNameContainer1.setOutline(false);&#xA;regionFigure_InnerNameContainer1.setLineWidth(1);&#xA;&#xA;regionFigure_NameContainer0.add(regionFigure_InnerNameContainer1);&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutRegionFigure_InnerNameContainer1 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutRegionFigure_InnerNameContainer1.setStretchMinorAxis(false);&#xA;&#x9;layoutRegionFigure_InnerNameContainer1.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xA;);&#xA;&#xA;&#x9;layoutRegionFigure_InnerNameContainer1.setSpacing(3);&#xA;&#x9;layoutRegionFigure_InnerNameContainer1.setVertical(false);&#xA;&#xA;&#x9;regionFigure_InnerNameContainer1.setLayoutManager(layoutRegionFigure_InnerNameContainer1);&#xA;&#xA;&#xA;&#xA;fFigureRegionFigure_name = new org.eclipse.draw2d.Label();&#xA;fFigureRegionFigure_name.setText(&quot;&quot;);&#xA;&#xA;regionFigure_InnerNameContainer1.add(fFigureRegionFigure_name);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure regionFigure_ContentContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;regionFigure_ContentContainer0.setFill(false);&#xA;regionFigure_ContentContainer0.setOutline(false);&#xA;regionFigure_ContentContainer0.setLineWidth(1);&#xA;&#xA;regionFigure_ContentContainer0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;&#xA;this.add(regionFigure_ContentContainer0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutRegionFigure_ContentContainer0 = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutRegionFigure_ContentContainer0.setStretchMinorAxis(true);&#xA;&#x9;layoutRegionFigure_ContentContainer0.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER&#xA;);&#xA;&#xA;&#x9;layoutRegionFigure_ContentContainer0.setSpacing(0);&#xA;&#x9;layoutRegionFigure_ContentContainer0.setVertical(true);&#xA;&#xA;&#x9;regionFigure_ContentContainer0.setLayoutManager(layoutRegionFigure_ContentContainer0);&#xA;&#xA;&#xA;&#xA;fFigureRegionFigure_Compartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureRegionFigure_Compartment.setFill(false);&#xA;fFigureRegionFigure_Compartment.setOutline(false);&#xA;fFigureRegionFigure_Compartment.setLineWidth(1);&#xA;&#xA;regionFigure_ContentContainer0.add(fFigureRegionFigure_Compartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.Label getFigureRegionFigure_name() {&#xA;&#x9;&#x9;return fFigureRegionFigure_name;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureRegionFigure_Compartment() {&#xA;&#x9;&#x9;return fFigureRegionFigure_Compartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Region"/>
@@ -394,6 +412,25 @@
         <childMetaFeature
             href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/State/region"/>
       </modelFacet>
+      <labels
+          visualID="5026"
+          editPartClassName="RegionName2EditPart"
+          itemSemanticEditPolicyClassName="RegionName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="RegionNameViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureRegionFigure_name"
+            figureQualifiedClassName="org.eclipse.draw2d.Label"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/name"/>
+        </modelFacet>
+      </labels>
     </childNodes>
     <childNodes
         visualID="3016"
@@ -783,7 +820,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5018"
           editPartClassName="PseudostateNameEditPart"
-          itemSemanticEditPolicyClassName="PseudostateNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="PseudostateNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="PseudostateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -845,7 +883,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5019"
           editPartClassName="PseudostateName2EditPart"
-          itemSemanticEditPolicyClassName="PseudostateName2ItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="PseudostateName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="PseudostateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -907,7 +946,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5020"
           editPartClassName="PseudostateName3EditPart"
-          itemSemanticEditPolicyClassName="PseudostateName3ItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="PseudostateName3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="PseudostateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -976,7 +1016,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5021"
           editPartClassName="PseudostateName4EditPart"
-          itemSemanticEditPolicyClassName="PseudostateName4ItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="PseudostateName4ItemSemanticEditPolicy"
+          notationViewFactoryClassName="PseudostateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1045,7 +1086,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5022"
           editPartClassName="PseudostateName5EditPart"
-          itemSemanticEditPolicyClassName="PseudostateName5ItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="PseudostateName5ItemSemanticEditPolicy"
+          notationViewFactoryClassName="PseudostateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1113,7 +1155,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5023"
           editPartClassName="PseudostateName6EditPart"
-          itemSemanticEditPolicyClassName="PseudostateName6ItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="PseudostateName6ItemSemanticEditPolicy"
+          notationViewFactoryClassName="PseudostateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1170,7 +1213,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5024"
           editPartClassName="PseudostateName7EditPart"
-          itemSemanticEditPolicyClassName="PseudostateName7ItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="PseudostateName7ItemSemanticEditPolicy"
+          notationViewFactoryClassName="PseudostateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -1232,7 +1276,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5025"
           editPartClassName="PseudostateName8EditPart"
-          itemSemanticEditPolicyClassName="PseudostateName8ItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="PseudostateName8ItemSemanticEditPolicy"
+          notationViewFactoryClassName="PseudostateNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -2822,14 +2867,14 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.2/@labelModelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.16/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.2/@labelModelFacet //@diagram/@childNodes.3/@labelModelFacet //@diagram/@childNodes.4/@labelModelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@childNodes.13/@labels.0/@modelFacet //@diagram/@childNodes.14/@labels.0/@modelFacet //@diagram/@childNodes.15/@labels.0/@modelFacet //@diagram/@childNodes.16/@labels.0/@modelFacet //@diagram/@childNodes.17/@labels.0/@modelFacet //@diagram/@childNodes.18/@labels.0/@modelFacet //@diagram/@childNodes.19/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.20/@labels.0/@modelFacet //@diagram/@childNodes.21/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
+        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.1/@labels.1/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.common.parser.stereotype.AppliedStereotypeParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"
-        uses="//@diagram/@links.0/@labels.0/@modelFacet //@diagram/@childNodes.10/@labelModelFacet"
+        uses="//@diagram/@childNodes.10/@labelModelFacet //@diagram/@links.0/@labels.0/@modelFacet"
         qualifiedName="org.eclipse.uml2.diagram.statemachine.parser.TransitionParser"/>
     <implementations
         xsi:type="gmfgen:CustomParser"

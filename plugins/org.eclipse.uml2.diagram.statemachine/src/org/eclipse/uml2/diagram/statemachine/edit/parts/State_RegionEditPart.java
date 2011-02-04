@@ -3,12 +3,17 @@ package org.eclipse.uml2.diagram.statemachine.edit.parts;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -117,6 +122,10 @@ public class State_RegionEditPart extends ShapeNodeEditPart implements PrimarySh
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof RegionName2EditPart) {
+			((RegionName2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureRegionFigure_name());
+			return true;
+		}
 		if (childEditPart instanceof State_RegionSubverticesEditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionFigure_Compartment();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -267,6 +276,13 @@ public class State_RegionEditPart extends ShapeNodeEditPart implements PrimarySh
 	/**
 	* @generated
 	*/
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(UMLVisualIDRegistry.getType(RegionName2EditPart.VISUAL_ID));
+	}
+
+	/**
+	* @generated
+	*/
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(UMLElementTypes.CommentAnnotatedElement_4002);
@@ -297,14 +313,23 @@ public class State_RegionEditPart extends ShapeNodeEditPart implements PrimarySh
 	public class RegionFigure extends RectangleFigure {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		private Label fFigureRegionFigure_name;
+
+		/**
+			 * @generated
+			 */
 		private RectangleFigure fFigureRegionFigure_Compartment;
 
 		/**
 		 * @generated
 		 */
 		public RegionFigure() {
+
+			BorderLayout layoutThis = new BorderLayout();
+			this.setLayoutManager(layoutThis);
+
 			this.setLineWidth(1);
 			this.setLineStyle(Graphics.LINE_DASH);
 			createContents();
@@ -315,18 +340,79 @@ public class State_RegionEditPart extends ShapeNodeEditPart implements PrimarySh
 		 */
 		private void createContents() {
 
+			RectangleFigure regionFigure_NameContainer0 = new RectangleFigure();
+			regionFigure_NameContainer0.setFill(false);
+			regionFigure_NameContainer0.setOutline(false);
+			regionFigure_NameContainer0.setLineWidth(1);
+
+			this.add(regionFigure_NameContainer0, BorderLayout.TOP);
+
+			ConstrainedToolbarLayout layoutRegionFigure_NameContainer0 = new ConstrainedToolbarLayout();
+
+			layoutRegionFigure_NameContainer0.setStretchMajorAxis(true);
+
+			layoutRegionFigure_NameContainer0.setVertical(false);
+
+			regionFigure_NameContainer0.setLayoutManager(layoutRegionFigure_NameContainer0);
+
+			RectangleFigure regionFigure_InnerNameContainer1 = new RectangleFigure();
+			regionFigure_InnerNameContainer1.setFill(false);
+			regionFigure_InnerNameContainer1.setOutline(false);
+			regionFigure_InnerNameContainer1.setLineWidth(1);
+
+			regionFigure_NameContainer0.add(regionFigure_InnerNameContainer1);
+
+			ToolbarLayout layoutRegionFigure_InnerNameContainer1 = new ToolbarLayout();
+			layoutRegionFigure_InnerNameContainer1.setStretchMinorAxis(false);
+			layoutRegionFigure_InnerNameContainer1.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutRegionFigure_InnerNameContainer1.setSpacing(3);
+			layoutRegionFigure_InnerNameContainer1.setVertical(false);
+
+			regionFigure_InnerNameContainer1.setLayoutManager(layoutRegionFigure_InnerNameContainer1);
+
+			fFigureRegionFigure_name = new Label();
+			fFigureRegionFigure_name.setText("");
+
+			regionFigure_InnerNameContainer1.add(fFigureRegionFigure_name);
+
+			RectangleFigure regionFigure_ContentContainer0 = new RectangleFigure();
+			regionFigure_ContentContainer0.setFill(false);
+			regionFigure_ContentContainer0.setOutline(false);
+			regionFigure_ContentContainer0.setLineWidth(1);
+
+			regionFigure_ContentContainer0.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(1), getMapMode().DPtoLP(10), getMapMode().DPtoLP(1)));
+
+			this.add(regionFigure_ContentContainer0, BorderLayout.CENTER);
+
+			ToolbarLayout layoutRegionFigure_ContentContainer0 = new ToolbarLayout();
+			layoutRegionFigure_ContentContainer0.setStretchMinorAxis(true);
+			layoutRegionFigure_ContentContainer0.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutRegionFigure_ContentContainer0.setSpacing(0);
+			layoutRegionFigure_ContentContainer0.setVertical(true);
+
+			regionFigure_ContentContainer0.setLayoutManager(layoutRegionFigure_ContentContainer0);
+
 			fFigureRegionFigure_Compartment = new RectangleFigure();
 			fFigureRegionFigure_Compartment.setFill(false);
 			fFigureRegionFigure_Compartment.setOutline(false);
 			fFigureRegionFigure_Compartment.setLineWidth(1);
 
-			this.add(fFigureRegionFigure_Compartment);
+			regionFigure_ContentContainer0.add(fFigureRegionFigure_Compartment);
 
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		public Label getFigureRegionFigure_name() {
+			return fFigureRegionFigure_name;
+		}
+
+		/**
+			 * @generated
+			 */
 		public RectangleFigure getFigureRegionFigure_Compartment() {
 			return fFigureRegionFigure_Compartment;
 		}

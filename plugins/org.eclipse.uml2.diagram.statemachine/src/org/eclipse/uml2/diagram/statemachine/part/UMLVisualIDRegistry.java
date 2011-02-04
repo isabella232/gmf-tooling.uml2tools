@@ -44,6 +44,8 @@ import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName6EditPart
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName7EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateName8EditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.PseudostateNameEditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionName2EditPart;
+import org.eclipse.uml2.diagram.statemachine.edit.parts.RegionNameEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.ShallowHistoryPseudostateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateEditPart;
 import org.eclipse.uml2.diagram.statemachine.edit.parts.SimpleStateNameEditPart;
@@ -381,6 +383,9 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case StateMachine_RegionEditPart.VISUAL_ID:
+			if (RegionNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (StateMachine_RegionSubverticesEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -414,6 +419,9 @@ public class UMLVisualIDRegistry {
 			}
 			break;
 		case State_RegionEditPart.VISUAL_ID:
+			if (RegionName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (State_RegionSubverticesEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
