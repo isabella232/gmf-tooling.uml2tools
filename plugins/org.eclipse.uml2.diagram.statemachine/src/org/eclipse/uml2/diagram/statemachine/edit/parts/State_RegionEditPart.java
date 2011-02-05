@@ -366,13 +366,14 @@ public class State_RegionEditPart extends ShapeNodeEditPart implements PrimarySh
 			layoutRegionFigure_InnerNameContainer1.setStretchMinorAxis(false);
 			layoutRegionFigure_InnerNameContainer1.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
 
-			layoutRegionFigure_InnerNameContainer1.setSpacing(3);
+			layoutRegionFigure_InnerNameContainer1.setSpacing(0);
 			layoutRegionFigure_InnerNameContainer1.setVertical(false);
 
 			regionFigure_InnerNameContainer1.setLayoutManager(layoutRegionFigure_InnerNameContainer1);
 
 			fFigureRegionFigure_name = new Label();
 			fFigureRegionFigure_name.setText("");
+			fFigureRegionFigure_name.setBorder(new MarginBorder(getMapMode().DPtoLP(3), getMapMode().DPtoLP(3), getMapMode().DPtoLP(3), getMapMode().DPtoLP(3)));
 
 			regionFigure_InnerNameContainer1.add(fFigureRegionFigure_name);
 

@@ -234,11 +234,20 @@
                 xsi:type="gmfgraph:FlowLayout"
                 forceSingleLine="true"
                 minorAlignment="CENTER"
-                majorSpacing="3"
-                minorSpacing="3"/>
+                majorSpacing="0"
+                minorSpacing="0"/>
             <children
                 xsi:type="gmfgraph:Label"
-                name="RegionFigure_name"/>
+                name="RegionFigure_name">
+              <border
+                  xsi:type="gmfgraph:MarginBorder">
+                <insets
+                    top="3"
+                    left="3"
+                    bottom="3"
+                    right="3"/>
+              </border>
+            </children>
           </children>
         </children>
         <children
