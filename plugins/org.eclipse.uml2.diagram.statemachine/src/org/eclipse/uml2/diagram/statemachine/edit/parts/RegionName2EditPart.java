@@ -181,15 +181,7 @@ public class RegionName2EditPart extends CompartmentEditPart implements ITextAwa
 	* @generated
 	*/
 	protected Image getLabelIcon() {
-		EObject parserElement = getParserElement();
-		if (parserElement == null) {
-			return null;
-		}
-		boolean shouldShow = DiagramIconStylePreferenceHelper.shouldShowMetaclassIcon(VISUAL_ID, getDiagramPreferencesHint());
-		if (!shouldShow) {
-			return null;
-		}
-		return UMLElementTypes.getImage(parserElement.eClass());
+		return null;
 	}
 
 	/**

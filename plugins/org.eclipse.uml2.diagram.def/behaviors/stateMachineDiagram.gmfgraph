@@ -689,6 +689,7 @@
   <labels
       name="RegionNode_name"
       figure="RegionFigure"
+      elementIcon="false"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="StateMachineNode_name"
