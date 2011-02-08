@@ -5,22 +5,20 @@
  *    Tatiana Fesenko (Borland) - initial API and implementation
  */
 
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
 
-«DEFINE refreshPalette FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«DEFINE refreshPalette_addSemanticListeners FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
 		org.eclipse.uml2.uml.Package pakkage = (org.eclipse.uml2.uml.Package) resolveSemanticElement();
 		addListenerFilter("SemanticModel", this, pakkage, org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPackage_ProfileApplication());
 	}
+Â«ENDDEFINEÂ»
 
-	«EXPAND xpt::Common::generatedMemberComment»
-	protected void handleNotificationEvent(org.eclipse.emf.common.notify.Notification notification) {
-		super.handleNotificationEvent(notification);
-		if (org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPackage_ProfileApplication().equals(notification.getFeature())) {
-			«editorGen.editor.getQualifiedClassName()» editor = («editorGen.editor.getQualifiedClassName()») org.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-			editor.refreshPalette();
-		}
+Â«DEFINE refreshPalette_handleNotification FOR gmfgen::GenDiagramÂ»
+	if (org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getPackage_ProfileApplication().equals(notification.getFeature())) {
+		Â«editorGen.editor.getQualifiedClassName()Â» editor = (Â«editorGen.editor.getQualifiedClassName()Â») org.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+		editor.refreshPalette();
 	}
-«ENDDEFINE»
+Â«ENDDEFINEÂ»
