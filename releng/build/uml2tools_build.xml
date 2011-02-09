@@ -9,6 +9,16 @@
 	<property name="targetplatform.dir" location="${hudsonWorkSpacePath}/targetplatform" />
 	<property name="workspacePath" location="${rootPath}/workspace" />
 
+	
+	<path id="local.site.base.path">
+		<pathelement path="${hudsonWorkSpacePath}" />
+	</path>
+	<pathconvert dirsep="/" property="local.site.base.uri" refid="local.site.base.path" />
+	<property name="build.local.site.release.url" value="${fileUrlPrefix}${local.site.base.uri}/reference.p2.site.release" />
+	<property name="build.local.site.milestone.url" value="${fileUrlPrefix}${local.site.base.uri}/reference.p2.site.milestone" />
+	<property name="targetplatform.p2.site.release.url" value="${build.local.site.release.url}" />
+	<property name="targetplatform.p2.site.milestone.url" value="${build.local.site.milestone.url}" />
+
 	<!-- project url is required for *.rmap to determine location of plugins/features to build -->
 	<path id="project.path">
 		<pathelement path="${basedir}/../.." />
@@ -66,6 +76,9 @@
 			</then>
 			<else>
 				<delete dir="${targetplatform.dir}" failonerror="false" />
+				<echo message="Create local composite p2 reference site for all used/given/required p2 update sites for product build using: ${build.p2.sites.release.url}" />
+				<buildCompositeSite sources="${build.p2.sites.release.url}" destination="${build.local.site.release.url}" workspace.dir="${workspacePath}" />
+				<buildCompositeSite sources="${build.p2.sites.milestone.url}" destination="${build.local.site.milestone.url}" workspace.dir="${workspacePath}" />
 			</else>
 		</if>
 

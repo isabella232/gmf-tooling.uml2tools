@@ -3,18 +3,18 @@
 <project>
 	<condition property="fileUrlPrefix" value="file://">
 		<os family="unix" />
-	</condition>	
+	</condition>
 	<condition property="fileUrlPrefix" value="file:/">
 		<os family="windows" />
 	</condition>
-	
+
 	<macrodef name="eclipse.launch">
 		<attribute name="app" />
 		<element name="args" optional="true" />
 		<sequential>
 			<!-- We assume that the eclipse installation is beneath ${buildtools} -->
 			<property name="@{app}.deploy.dir" value="${tools.dir}/@{app}" />
-	
+
 			<!-- Find the Eclipse launcher and adding its location to the @{app}.launcher property -->
 			<pathconvert property="@{app}.launcher">
 				<first count="1">
@@ -26,7 +26,7 @@
 					</sort>
 				</first>
 			</pathconvert>
-	
+
 			<!-- Launch the eclipse application -->
 			<java fork="true" jar="${@{app}.launcher}" dir="${@{app}.deploy.dir}" taskname="@{app}" failonerror="true">
 				<env key="no_proxy" value="${no.proxy}" />
@@ -35,7 +35,48 @@
 			</java>
 		</sequential>
 	</macrodef>
-	
+
+	<macrodef name="headless.p2.composite">
+		<attribute name="source" description="The url of update site to become part of composite" />
+		<attribute name="destination" description="The url of composite site the soirce should be added" />
+		<attribute name="workspace.dir" description="The path to workspace directory" />
+		<sequential>
+			<eclipse.launch app="buckminster">
+				<args>
+					<arg value="-data" />
+					<arg value="@{workspace.dir}" />
+					<arg value="-application" />
+					<arg value="org.eclipse.ant.core.antRunner" />
+					<arg value="-Durl=@{source}" />
+					<arg value="-Ddestination=@{destination}" />
+					<arg value="-buildfile" />
+					<arg value="${basedir}/../build_tools.xml" />
+					<arg value="__addToCompositeUS" />
+				</args>
+			</eclipse.launch>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="buildCompositeSite">
+		<attribute name="sources" description="The url's of update sites to compound" />
+		<attribute name="destination" description="The url of composite site the soirce should be added" />
+		<attribute name="workspace.dir" description="The path to workspace directory" />
+		<sequential>
+			<for list="@{sources}" delimiter="," trim="true" param="source" keepgoing="true">
+				<sequential>
+					<if>
+						<not>
+							<equals arg1="@{source}" arg2="" trim="true" />
+						</not>
+						<then>
+							<headless.p2.composite source="@{source}" destination="@{destination}" workspace.dir="@{workspace.dir}" />
+						</then>
+					</if>
+				</sequential>
+			</for>
+		</sequential>
+	</macrodef>
+
 	<macrodef name="buckminster">
 		<attribute name="command" />
 		<attribute name="workspace" />
@@ -61,13 +102,13 @@
 			</eclipse.launch>
 		</sequential>
 	</macrodef>
-	
+
 	<macrodef name="buckminster.install">
 		<attribute name="destination" />
 		<sequential>
-			<delete dir="${temp.dir}/buckminster.p2" failonerror="false"/>
+			<delete dir="${temp.dir}/buckminster.p2" failonerror="false" />
 			<unzip src="${tools.dir}/buckminster.site.zip" dest="${temp.dir}/buckminster.p2" />
-			
+
 			<eclipse.launch app="director">
 				<args>
 					<jvmarg value="-Declipse.p2.mirrors=false" />
@@ -92,5 +133,18 @@
 			</eclipse.launch>
 		</sequential>
 	</macrodef>
-	
+
+	<!-- Internal target called inside of buckminster -->
+	<target name="__addToCompositeUS">
+		<fail unless="url" message="The url of update site to add to composite update site" />
+		<fail unless="destination" message="The destination directory (via property 'destination') is missed" />
+		<echo level="info" message="Add ${url} as part of composite repository" />
+		<p2.composite.repository>
+			<repository location="${destination}" name="The local reference mirror" append="true" />
+			<add>
+				<repository location="${url}" />
+			</add>
+		</p2.composite.repository>
+	</target>
+
 </project>

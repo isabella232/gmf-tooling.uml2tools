@@ -45,6 +45,11 @@
 			<pathelement location="lib/ant-contrib-1.0b3.jar" />
 		</classpath>
 	</taskdef>
+	<taskdef name="for" classname="net.sf.antcontrib.logic.ForTask">
+		<classpath>
+			<pathelement location="lib/ant-contrib-1.0b3.jar" />
+		</classpath>
+	</taskdef>
 
 	<path id="hudson.worspace.path">
 		<pathelement path="${hudsonWorkSpacePath}" />
@@ -87,7 +92,7 @@
 		<echo level="warning" message="###################################################################" />
 	</target>
 
-	<target name="build.and.test" depends="windows.warning, clean, init, install.buckminster" description="Build the UML2Tools">
+	<target name="build.and.test" depends="windows.warning, clean, init, install.buckminster, install.equinox" description="Build the UML2Tools">
 		<echo message="Building..." />
 		<ant dir="${basedir}/build" antfile="uml2tools_build.xml" target="build" inheritRefs="true" inheritall="true" />
 		<echo message="Testing..." />
@@ -105,6 +110,7 @@
 
 		<available file="${tools.dir}/director/director" property="director.exists" />
 		<available file="${tools.dir}/buckminster/buckminster" property="buckminster.exists" />
+		<available file="${tools.dir}/equinox.site/content.jar" property="equinox.exists" />
 
 		<if>
 			<and>
@@ -119,6 +125,32 @@
 		</if>
 	</target>
 
+	<target name="install.equinox" unless="equinox.exists">
+		<echo message="Download and UnZIP Equinox SDK ..." />
+		<get src="${equinox.sdk.url}" dest="${tools.dir}/equinox.site.zip" verbose="true" />
+		<unzip src="${tools.dir}/equinox.site.zip" dest="${tools.dir}/equinox.site" />
+
+		<eclipse.launch app="director">
+			<args>
+				<jvmarg value="-Declipse.p2.mirrors=false" />
+				<!--jvmarg value="-Dorg.eclipse.update.jarprocessor.pack200=${org.eclipse.update.jarprocessor.pack200}" /-->
+				<arg value="-r" />
+				<arg value="${fileUrlPrefix}${tools.dir}/equinox.site,${orbit.p2.site.url}" />
+				<arg value="-d" />
+				<arg value="${tools.dir}/buckminster" />
+				<arg value="-p" />
+				<arg value="Buckminster" />
+				<arg value="-i" />
+				<arg value="org.eclipse.equinox.p2.sdk.feature.group" />
+			</args>
+		</eclipse.launch>
+	</target>
+
+	<target name="install.buckminster" unless="buckminster.exists" depends="get.director, get.buckminster">
+		<echo message="Configuring headless buckminster..." />
+		<buckminster.install destination="${tools.dir}/buckminster" />
+	</target>
+
 	<target name="get.director" unless="director.exists">
 		<echo message="Fetching headless director application from ${director.url}..." />
 		<tempfile destdir="${temp.dir}" prefix="director-" suffix=".zip" property="director.zip" deleteonexit="true" />
@@ -130,11 +162,6 @@
 
 	<target name="get.buckminster" unless="buckminster.exists">
 		<get src="${buckminster.sitearchive.url}" dest="${tools.dir}/buckminster.site.zip" verbose="true" />
-	</target>
-
-	<target name="install.buckminster" unless="buckminster.exists" depends="get.director, get.buckminster">
-		<echo message="Configuring headless buckminster..." />
-		<buckminster.install destination="${tools.dir}/buckminster" />
 	</target>
 
 	<target name="promote">
