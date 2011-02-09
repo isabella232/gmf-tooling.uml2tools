@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
@@ -22,7 +21,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableLabelEditPoli
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.DropObjectsRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.ui.PlatformUI;
@@ -165,29 +163,6 @@ public class PackageEditPart extends DiagramEditPart {
 		if (UMLPackage.eINSTANCE.getPackage_ProfileApplication().equals(notification.getFeature())) {
 			UMLDiagramEditor editor = (UMLDiagramEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 			editor.refreshPalette();
-		}
-
-		// FIXME if #335955 in GMF is fixed. This is a Workaround for the case that there 
-		// exists an Edge in the semantic model, but not yet in the notation
-		// model. So we need to render the Edge on the fly.
-		// Template: /dynamic-templates/codegen/aspects/diagram/editparts/DiagramEditPart.xpt
-		if (notification.getEventType() == Notification.ADD) {
-			java.lang.Object newValue = notification.getNewValue();
-			if (newValue instanceof Edge) {
-				Map<View, EditPart> registry = getViewer().getEditPartRegistry();
-				Edge edge = (Edge) newValue;
-				// if the connection edit part already exists, just do nothing and return
-				if (registry.get(edge) != null) {
-					return;
-				}
-				EditPart sourceEditPart = registry.get(edge.getSource());
-				EditPart targetEditPart = registry.get(edge.getTarget());
-				// trigger an explicit refresh to create the connection edit part an draw the link
-				if (sourceEditPart != null && targetEditPart != null) {
-					sourceEditPart.refresh();
-					targetEditPart.refresh();
-				}
-			}
 		}
 	}
 

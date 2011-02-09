@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.common.core.util.StringStatics;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -146,6 +147,18 @@ import org.eclipse.uml2.uml.UMLPackage;
  */
 
 public class ActivityPartition_StructuredActivityNodeContentPaneCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
+
+	/**
+	* @generated
+	*/
+	protected void refreshOnActivate() {
+		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
+		List<?> c = getHost().getChildren();
+		for (int i = 0; i < c.size(); i++) {
+			((EditPart) c.get(i)).activate();
+		}
+		super.refreshOnActivate();
+	}
 
 	/**
 	 * @generated

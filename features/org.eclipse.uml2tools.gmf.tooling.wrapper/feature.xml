@@ -111,7 +111,7 @@
          id="org.eclipse.gmf.codegen"
          download-size="0"
          install-size="0"
-         version="2.2.100.v20100518-2359"
+         version="2.2.200.v20101209-2359"
          unpack="false"/>
 
    <!--plugin
@@ -132,7 +132,7 @@
          id="org.eclipse.gmf.graphdef"
          download-size="0"
          install-size="0"
-         version="2.0.100.v20090420-1925"
+         version="2.0.100.v20101215-2359"
          unpack="false"/>
 
    <!--plugin
@@ -146,7 +146,7 @@
          id="org.eclipse.gmf.map"
          download-size="0"
          install-size="0"
-         version="2.2.100.v20100309-2359"
+         version="2.2.101.v20100901-2359"
          unpack="false"/>
 
    <!--plugin
@@ -188,7 +188,7 @@
          id="org.eclipse.gmf.graphdef.codegen"
          download-size="0"
          install-size="0"
-         version="2.0.100.v20100421-2359"
+         version="2.0.101.v20100901-2359"
          unpack="false"/>
 
    <!--plugin
@@ -202,7 +202,7 @@
          id="org.eclipse.gmf.tooldef"
          download-size="0"
          install-size="0"
-         version="2.0.0.v20090114-0940"
+         version="2.0.0.v20101216-2359"
          unpack="false"/>
 
    <!--plugin
