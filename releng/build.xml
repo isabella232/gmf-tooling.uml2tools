@@ -173,10 +173,10 @@
 
 	<target name="promote">
 		<!--delete dir="${promoteUpdateSite}" />
-		<mkdir dir="${promoteUpdateSite}" />
+		<mkdir dir="${promoteUpdateSite}" /-->
 		<mkdir dir="${promoteUpdateSite}/plugins" />
 		<mkdir dir="${promoteUpdateSite}/features" />
-		<mkdir dir="${buildSitePath}" /-->
+		<!--mkdir dir="${buildSitePath}" /-->
 
 		<copy todir="${promoteUpdateSite}">
 			<fileset dir="${promoteSrc}">
