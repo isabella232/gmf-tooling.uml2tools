@@ -70,6 +70,7 @@
 	<property name="temp.dir" location="${hudsonWorkSpacePath}/tmp" />
 
 	<property name="promoteUpdateSite" location="${u2t.download.area}" />
+	<property name="promoteSrc" location="${hudsonWorkSpacePathUrlFormat}/work/stage4.out/site.sdk-eclipse.feature/site.p2" />
 	<property name="promoteDropsLocation" location="${u2t.download.area}/downloads/drops" />
 
 	<if>
@@ -171,26 +172,26 @@
 	</target>
 
 	<target name="promote">
-		<delete dir="${promoteUpdateSite}" />
+		<!--delete dir="${promoteUpdateSite}" />
 		<mkdir dir="${promoteUpdateSite}" />
 		<mkdir dir="${promoteUpdateSite}/plugins" />
 		<mkdir dir="${promoteUpdateSite}/features" />
-		<mkdir dir="${buildSitePath}" />
+		<mkdir dir="${buildSitePath}" /-->
 
 		<copy todir="${promoteUpdateSite}">
-			<fileset dir="${buildSitePath}">
+			<fileset dir="${promoteSrc}">
 				<include name="**/*" />
 				<include name="**" />
 			</fileset>
 		</copy>
 
-		<mkdir dir="${promoteDropsLocation}" />
+		<!--mkdir dir="${promoteDropsLocation}" />
 		<mkdir dir="${promoteDropsLocation}/${uml2tools.version}" />
 		<mkdir dir="${promoteDropsLocation}/${uml2tools.version}/${build.type}${buildTimestamp}" />
 		<copy todir="${promoteDropsLocation}/${uml2tools.version}/${build.type}${buildTimestamp}">
 			<fileset dir="${buildZipsPath}">
 				<include name="*.zip" />
 			</fileset>
-		</copy>
+		</copy-->
 	</target>
 </project>
