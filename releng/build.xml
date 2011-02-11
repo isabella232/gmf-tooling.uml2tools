@@ -147,18 +147,7 @@
 				<arg value="${tools.dir}/buckminster" />
 				<arg value="-profile" />
 				<arg value="Buckminster" />
-				<!--arg value="-profileProperties" />
-				<arg value="org.eclipse.update.install.features=true" /-->
 				<arg value="-roaming" />
-
-				<!--arg value="-r" />
-				<arg value="${fileUrlPrefix}${tools.dir}/equinox.site,${orbit.p2.site.url}" />
-				<arg value="-d" />
-				<arg value="${tools.dir}/buckminster" />
-				<arg value="-p" />
-				<arg value="Buckminster" />
-				<arg value="-i" />
-				<arg value="org.eclipse.equinox.p2.sdk.feature.group" /-->
 			</args>
 		</eclipse.launch>
 	</target>
