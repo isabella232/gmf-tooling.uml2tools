@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: CustomLocatorAttributesImpl.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: CustomLocatorAttributesImpl.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -31,137 +31,141 @@ import org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage;
  */
 public class CustomLocatorAttributesImpl extends EObjectImpl implements CustomLocatorAttributes {
 	/**
-	 * The default value of the '{@link #getCustomLocatorFQN() <em>Custom Locator FQN</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getCustomLocatorFQN() <em>Custom Locator FQN</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCustomLocatorFQN()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getCustomLocatorFQN()
+   * @generated
+   * @ordered
+   */
 	protected static final String CUSTOM_LOCATOR_FQN_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCustomLocatorFQN() <em>Custom Locator FQN</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getCustomLocatorFQN() <em>Custom Locator FQN</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCustomLocatorFQN()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getCustomLocatorFQN()
+   * @generated
+   * @ordered
+   */
 	protected String customLocatorFQN = CUSTOM_LOCATOR_FQN_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected CustomLocatorAttributesImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return U2TGenPackage.Literals.CUSTOM_LOCATOR_ATTRIBUTES;
-	}
+    return U2TGenPackage.Literals.CUSTOM_LOCATOR_ATTRIBUTES;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String getCustomLocatorFQN() {
-		return customLocatorFQN;
-	}
+    return customLocatorFQN;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setCustomLocatorFQN(String newCustomLocatorFQN) {
-		String oldCustomLocatorFQN = customLocatorFQN;
-		customLocatorFQN = newCustomLocatorFQN;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN, oldCustomLocatorFQN, customLocatorFQN));
-	}
+    String oldCustomLocatorFQN = customLocatorFQN;
+    customLocatorFQN = newCustomLocatorFQN;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN, oldCustomLocatorFQN, customLocatorFQN));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
-				return getCustomLocatorFQN();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
+        return getCustomLocatorFQN();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
-				setCustomLocatorFQN((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
+        setCustomLocatorFQN((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
-				setCustomLocatorFQN(CUSTOM_LOCATOR_FQN_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
+        setCustomLocatorFQN(CUSTOM_LOCATOR_FQN_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
-				return CUSTOM_LOCATOR_FQN_EDEFAULT == null ? customLocatorFQN != null : !CUSTOM_LOCATOR_FQN_EDEFAULT.equals(customLocatorFQN);
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES__CUSTOM_LOCATOR_FQN:
+        return CUSTOM_LOCATOR_FQN_EDEFAULT == null ? customLocatorFQN != null : !CUSTOM_LOCATOR_FQN_EDEFAULT.equals(customLocatorFQN);
+    }
+    return super.eIsSet(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (customLocatorFQN: ");
-		result.append(customLocatorFQN);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (customLocatorFQN: ");
+    result.append(customLocatorFQN);
+    result.append(')');
+    return result.toString();
+  }
 
 } //CustomLocatorAttributesImpl

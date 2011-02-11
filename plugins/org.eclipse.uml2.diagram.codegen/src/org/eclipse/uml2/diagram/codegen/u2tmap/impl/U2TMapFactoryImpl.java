@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TMapFactoryImpl.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: U2TMapFactoryImpl.java,v 1.2 2011/02/11 14:16:05 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.impl;
 
@@ -24,131 +24,135 @@ import org.eclipse.uml2.diagram.codegen.u2tmap.*;
  */
 public class U2TMapFactoryImpl extends EFactoryImpl implements U2TMapFactory {
 	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static U2TMapFactory init() {
-		try {
-			U2TMapFactory theU2TMapFactory = (U2TMapFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping"); 
-			if (theU2TMapFactory != null) {
-				return theU2TMapFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new U2TMapFactoryImpl();
-	}
+    try
+    {
+      U2TMapFactory theU2TMapFactory = (U2TMapFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/modeling/mdt/uml2tools/gmf/mapping"); 
+      if (theU2TMapFactory != null)
+      {
+        return theU2TMapFactory;
+      }
+    }
+    catch (Exception exception)
+    {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new U2TMapFactoryImpl();
+  }
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public U2TMapFactoryImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case U2TMapPackage.MAPPING_EXT: return createMappingExt();
-			case U2TMapPackage.NEW_MENU_DEFINITIONS: return createNewMenuDefinitions();
-			case U2TMapPackage.NEW_MENU_CONTEXT: return createNewMenuContext();
-			case U2TMapPackage.NEW_MENU_ENTRY: return createNewMenuEntry();
-			case U2TMapPackage.NEW_MENU_ALL_CHOICES: return createNewMenuAllChoices();
-			case U2TMapPackage.SEPARATOR: return createSeparator();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+    switch (eClass.getClassifierID())
+    {
+      case U2TMapPackage.MAPPING_EXT: return createMappingExt();
+      case U2TMapPackage.NEW_MENU_DEFINITIONS: return createNewMenuDefinitions();
+      case U2TMapPackage.NEW_MENU_CONTEXT: return createNewMenuContext();
+      case U2TMapPackage.NEW_MENU_ENTRY: return createNewMenuEntry();
+      case U2TMapPackage.NEW_MENU_ALL_CHOICES: return createNewMenuAllChoices();
+      case U2TMapPackage.SEPARATOR: return createSeparator();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public MappingExt createMappingExt() {
-		MappingExtImpl mappingExt = new MappingExtImpl();
-		return mappingExt;
-	}
+    MappingExtImpl mappingExt = new MappingExtImpl();
+    return mappingExt;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public NewMenuDefinitions createNewMenuDefinitions() {
-		NewMenuDefinitionsImpl newMenuDefinitions = new NewMenuDefinitionsImpl();
-		return newMenuDefinitions;
-	}
+    NewMenuDefinitionsImpl newMenuDefinitions = new NewMenuDefinitionsImpl();
+    return newMenuDefinitions;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public NewMenuContext createNewMenuContext() {
-		NewMenuContextImpl newMenuContext = new NewMenuContextImpl();
-		return newMenuContext;
-	}
+    NewMenuContextImpl newMenuContext = new NewMenuContextImpl();
+    return newMenuContext;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public NewMenuEntry createNewMenuEntry() {
-		NewMenuEntryImpl newMenuEntry = new NewMenuEntryImpl();
-		return newMenuEntry;
-	}
+    NewMenuEntryImpl newMenuEntry = new NewMenuEntryImpl();
+    return newMenuEntry;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public NewMenuAllChoices createNewMenuAllChoices() {
-		NewMenuAllChoicesImpl newMenuAllChoices = new NewMenuAllChoicesImpl();
-		return newMenuAllChoices;
-	}
+    NewMenuAllChoicesImpl newMenuAllChoices = new NewMenuAllChoicesImpl();
+    return newMenuAllChoices;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public Separator createSeparator() {
-		SeparatorImpl separator = new SeparatorImpl();
-		return separator;
-	}
+    SeparatorImpl separator = new SeparatorImpl();
+    return separator;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public U2TMapPackage getU2TMapPackage() {
-		return (U2TMapPackage)getEPackage();
-	}
+    return (U2TMapPackage)getEPackage();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
+   * @deprecated
+   * @generated
+   */
 	@Deprecated
 	public static U2TMapPackage getPackage() {
-		return U2TMapPackage.eINSTANCE;
-	}
+    return U2TMapPackage.eINSTANCE;
+  }
 
 } //U2TMapFactoryImpl

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AbstractDynamicCanonicalContainer.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: AbstractDynamicCanonicalContainer.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen;
 
@@ -30,54 +30,54 @@ import org.eclipse.gmf.codegen.gmfgen.GenCommonBase;
  */
 public interface AbstractDynamicCanonicalContainer extends Attributes {
 	/**
-	 * Returns the value of the '<em><b>Always Canonical IDs</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Always Canonical IDs</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.Integer}.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Always Canonical IDs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Always Canonical IDs</em>' attribute list.
-	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage#getAbstractDynamicCanonicalContainer_AlwaysCanonicalIDs()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Always Canonical IDs</em>' attribute list.
+   * @see org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage#getAbstractDynamicCanonicalContainer_AlwaysCanonicalIDs()
+   * @model
+   * @generated
+   */
 	EList<Integer> getAlwaysCanonicalIDs();
 
 	/**
-	 * Returns the value of the '<em><b>Initially Canonical</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Initially Canonical</b></em>' attribute.
+   * The default value is <code>"false"</code>.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Initially Canonical</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Initially Canonical</em>' attribute.
-	 * @see #setInitiallyCanonical(boolean)
-	 * @see org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage#getAbstractDynamicCanonicalContainer_InitiallyCanonical()
-	 * @model default="false"
-	 * @generated
-	 */
+   * @return the value of the '<em>Initially Canonical</em>' attribute.
+   * @see #setInitiallyCanonical(boolean)
+   * @see org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage#getAbstractDynamicCanonicalContainer_InitiallyCanonical()
+   * @model default="false"
+   * @generated
+   */
 	boolean isInitiallyCanonical();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.AbstractDynamicCanonicalContainer#isInitiallyCanonical <em>Initially Canonical</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.eclipse.uml2.diagram.codegen.u2tgen.AbstractDynamicCanonicalContainer#isInitiallyCanonical <em>Initially Canonical</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Initially Canonical</em>' attribute.
-	 * @see #isInitiallyCanonical()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Initially Canonical</em>' attribute.
+   * @see #isInitiallyCanonical()
+   * @generated
+   */
 	void setInitiallyCanonical(boolean value);
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
+   * @model kind="operation"
+   * @generated
+   */
 	EList<GenCommonBase> getAlwaysCanonicalChildren();
 
 } // AbstractDynamicCanonicalContainer

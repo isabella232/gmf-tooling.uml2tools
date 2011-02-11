@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: MappingExtImpl.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: MappingExtImpl.java,v 1.2 2011/02/11 14:16:05 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.impl;
 
@@ -34,129 +34,135 @@ import org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage;
  */
 public class MappingExtImpl extends MappingImpl implements MappingExt {
 	/**
-	 * The cached value of the '{@link #getNewMenuDefs() <em>New Menu Defs</em>}' reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getNewMenuDefs() <em>New Menu Defs</em>}' reference.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNewMenuDefs()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getNewMenuDefs()
+   * @generated
+   * @ordered
+   */
 	protected NewMenuDefinitions newMenuDefs;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected MappingExtImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return U2TMapPackage.Literals.MAPPING_EXT;
-	}
+    return U2TMapPackage.Literals.MAPPING_EXT;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public NewMenuDefinitions getNewMenuDefs() {
-		if (newMenuDefs != null && newMenuDefs.eIsProxy()) {
-			InternalEObject oldNewMenuDefs = (InternalEObject)newMenuDefs;
-			newMenuDefs = (NewMenuDefinitions)eResolveProxy(oldNewMenuDefs);
-			if (newMenuDefs != oldNewMenuDefs) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS, oldNewMenuDefs, newMenuDefs));
-			}
-		}
-		return newMenuDefs;
-	}
+    if (newMenuDefs != null && newMenuDefs.eIsProxy())
+    {
+      InternalEObject oldNewMenuDefs = (InternalEObject)newMenuDefs;
+      newMenuDefs = (NewMenuDefinitions)eResolveProxy(oldNewMenuDefs);
+      if (newMenuDefs != oldNewMenuDefs)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS, oldNewMenuDefs, newMenuDefs));
+      }
+    }
+    return newMenuDefs;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public NewMenuDefinitions basicGetNewMenuDefs() {
-		return newMenuDefs;
-	}
+    return newMenuDefs;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setNewMenuDefs(NewMenuDefinitions newNewMenuDefs) {
-		NewMenuDefinitions oldNewMenuDefs = newMenuDefs;
-		newMenuDefs = newNewMenuDefs;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS, oldNewMenuDefs, newMenuDefs));
-	}
+    NewMenuDefinitions oldNewMenuDefs = newMenuDefs;
+    newMenuDefs = newNewMenuDefs;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS, oldNewMenuDefs, newMenuDefs));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS:
-				if (resolve) return getNewMenuDefs();
-				return basicGetNewMenuDefs();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS:
+        if (resolve) return getNewMenuDefs();
+        return basicGetNewMenuDefs();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS:
-				setNewMenuDefs((NewMenuDefinitions)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS:
+        setNewMenuDefs((NewMenuDefinitions)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS:
-				setNewMenuDefs((NewMenuDefinitions)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS:
+        setNewMenuDefs((NewMenuDefinitions)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS:
-				return newMenuDefs != null;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TMapPackage.MAPPING_EXT__NEW_MENU_DEFS:
+        return newMenuDefs != null;
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //MappingExtImpl

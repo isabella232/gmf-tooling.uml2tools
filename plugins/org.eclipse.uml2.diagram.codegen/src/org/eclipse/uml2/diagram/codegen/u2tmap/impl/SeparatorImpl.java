@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: SeparatorImpl.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: SeparatorImpl.java,v 1.2 2011/02/11 14:16:05 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.impl;
 
@@ -22,22 +22,22 @@ import org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage;
  */
 public class SeparatorImpl extends AbstractNewMenuEntryImpl implements Separator {
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected SeparatorImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return U2TMapPackage.Literals.SEPARATOR;
-	}
+    return U2TMapPackage.Literals.SEPARATOR;
+  }
 
 } //SeparatorImpl

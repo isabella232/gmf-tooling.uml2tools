@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: RotatedLabelAttributesImpl.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: RotatedLabelAttributesImpl.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -24,22 +24,22 @@ import org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage;
  */
 public class RotatedLabelAttributesImpl extends EObjectImpl implements RotatedLabelAttributes {
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected RotatedLabelAttributesImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return U2TGenPackage.Literals.ROTATED_LABEL_ATTRIBUTES;
-	}
+    return U2TGenPackage.Literals.ROTATED_LABEL_ATTRIBUTES;
+  }
 
 } //RotatedLabelAttributesImpl

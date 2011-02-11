@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TMapFactory.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: U2TMapFactory.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap;
 
@@ -18,74 +18,74 @@ import org.eclipse.emf.ecore.EFactory;
  */
 public interface U2TMapFactory extends EFactory {
 	/**
-	 * The singleton instance of the factory.
-	 * <!-- begin-user-doc -->
+   * The singleton instance of the factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	U2TMapFactory eINSTANCE = org.eclipse.uml2.diagram.codegen.u2tmap.impl.U2TMapFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Mapping Ext</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Mapping Ext</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mapping Ext</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Mapping Ext</em>'.
+   * @generated
+   */
 	MappingExt createMappingExt();
 
 	/**
-	 * Returns a new object of class '<em>New Menu Definitions</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>New Menu Definitions</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>New Menu Definitions</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>New Menu Definitions</em>'.
+   * @generated
+   */
 	NewMenuDefinitions createNewMenuDefinitions();
 
 	/**
-	 * Returns a new object of class '<em>New Menu Context</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>New Menu Context</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>New Menu Context</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>New Menu Context</em>'.
+   * @generated
+   */
 	NewMenuContext createNewMenuContext();
 
 	/**
-	 * Returns a new object of class '<em>New Menu Entry</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>New Menu Entry</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>New Menu Entry</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>New Menu Entry</em>'.
+   * @generated
+   */
 	NewMenuEntry createNewMenuEntry();
 
 	/**
-	 * Returns a new object of class '<em>New Menu All Choices</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>New Menu All Choices</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>New Menu All Choices</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>New Menu All Choices</em>'.
+   * @generated
+   */
 	NewMenuAllChoices createNewMenuAllChoices();
 
 	/**
-	 * Returns a new object of class '<em>Separator</em>'.
-	 * <!-- begin-user-doc -->
+   * Returns a new object of class '<em>Separator</em>'.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Separator</em>'.
-	 * @generated
-	 */
+   * @return a new object of class '<em>Separator</em>'.
+   * @generated
+   */
 	Separator createSeparator();
 
 	/**
-	 * Returns the package supported by this factory.
-	 * <!-- begin-user-doc -->
+   * Returns the package supported by this factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the package supported by this factory.
-	 * @generated
-	 */
+   * @return the package supported by this factory.
+   * @generated
+   */
 	U2TMapPackage getU2TMapPackage();
 
 } //U2TMapFactory

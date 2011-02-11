@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: StereotypeSupportAttributeImpl.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: StereotypeSupportAttributeImpl.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -32,137 +32,141 @@ import org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage;
  */
 public class StereotypeSupportAttributeImpl extends EObjectImpl implements StereotypeSupportAttribute {
 	/**
-	 * The default value of the '{@link #getRole() <em>Role</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getRole() <em>Role</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRole()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getRole()
+   * @generated
+   * @ordered
+   */
 	protected static final StereotypeSupportRole ROLE_EDEFAULT = StereotypeSupportRole.CONTAINER;
 
 	/**
-	 * The cached value of the '{@link #getRole() <em>Role</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getRole() <em>Role</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRole()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getRole()
+   * @generated
+   * @ordered
+   */
 	protected StereotypeSupportRole role = ROLE_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected StereotypeSupportAttributeImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return U2TGenPackage.Literals.STEREOTYPE_SUPPORT_ATTRIBUTE;
-	}
+    return U2TGenPackage.Literals.STEREOTYPE_SUPPORT_ATTRIBUTE;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public StereotypeSupportRole getRole() {
-		return role;
-	}
+    return role;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setRole(StereotypeSupportRole newRole) {
-		StereotypeSupportRole oldRole = role;
-		role = newRole == null ? ROLE_EDEFAULT : newRole;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE, oldRole, role));
-	}
+    StereotypeSupportRole oldRole = role;
+    role = newRole == null ? ROLE_EDEFAULT : newRole;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE, oldRole, role));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
-				return getRole();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
+        return getRole();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
-				setRole((StereotypeSupportRole)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
+        setRole((StereotypeSupportRole)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
-				setRole(ROLE_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
+        setRole(ROLE_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
-				return role != ROLE_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE__ROLE:
+        return role != ROLE_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (role: ");
-		result.append(role);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (role: ");
+    result.append(role);
+    result.append(')');
+    return result.toString();
+  }
 
 } //StereotypeSupportAttributeImpl

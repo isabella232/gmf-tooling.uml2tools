@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: MappingExt.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: MappingExt.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap;
 
@@ -26,29 +26,29 @@ import org.eclipse.gmf.mappings.Mapping;
  */
 public interface MappingExt extends Mapping {
 	/**
-	 * Returns the value of the '<em><b>New Menu Defs</b></em>' reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>New Menu Defs</b></em>' reference.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>New Menu Defs</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>New Menu Defs</em>' reference.
-	 * @see #setNewMenuDefs(NewMenuDefinitions)
-	 * @see org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage#getMappingExt_NewMenuDefs()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>New Menu Defs</em>' reference.
+   * @see #setNewMenuDefs(NewMenuDefinitions)
+   * @see org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage#getMappingExt_NewMenuDefs()
+   * @model
+   * @generated
+   */
 	NewMenuDefinitions getNewMenuDefs();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.uml2.diagram.codegen.u2tmap.MappingExt#getNewMenuDefs <em>New Menu Defs</em>}' reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.eclipse.uml2.diagram.codegen.u2tmap.MappingExt#getNewMenuDefs <em>New Menu Defs</em>}' reference.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>New Menu Defs</em>' reference.
-	 * @see #getNewMenuDefs()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>New Menu Defs</em>' reference.
+   * @see #getNewMenuDefs()
+   * @generated
+   */
 	void setNewMenuDefs(NewMenuDefinitions value);
 
 } // MappingExt

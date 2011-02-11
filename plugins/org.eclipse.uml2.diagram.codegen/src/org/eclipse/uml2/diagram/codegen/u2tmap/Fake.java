@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: Fake.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: Fake.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap;
 
@@ -35,55 +35,55 @@ import org.eclipse.gmf.tooldef.ToolRegistry;
  */
 public interface Fake extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Explicit Graphdef Reference</b></em>' reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Explicit Graphdef Reference</b></em>' reference.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Explicit Graphdef Reference</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Explicit Graphdef Reference</em>' reference.
-	 * @see #setExplicitGraphdefReference(Canvas)
-	 * @see org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage#getFake_ExplicitGraphdefReference()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Explicit Graphdef Reference</em>' reference.
+   * @see #setExplicitGraphdefReference(Canvas)
+   * @see org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage#getFake_ExplicitGraphdefReference()
+   * @model
+   * @generated
+   */
 	Canvas getExplicitGraphdefReference();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.uml2.diagram.codegen.u2tmap.Fake#getExplicitGraphdefReference <em>Explicit Graphdef Reference</em>}' reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.eclipse.uml2.diagram.codegen.u2tmap.Fake#getExplicitGraphdefReference <em>Explicit Graphdef Reference</em>}' reference.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Explicit Graphdef Reference</em>' reference.
-	 * @see #getExplicitGraphdefReference()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Explicit Graphdef Reference</em>' reference.
+   * @see #getExplicitGraphdefReference()
+   * @generated
+   */
 	void setExplicitGraphdefReference(Canvas value);
 
 	/**
-	 * Returns the value of the '<em><b>Explicit Tooldef Reference</b></em>' reference.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Explicit Tooldef Reference</b></em>' reference.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Explicit Tooldef Reference</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Explicit Tooldef Reference</em>' reference.
-	 * @see #setExplicitTooldefReference(ToolRegistry)
-	 * @see org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage#getFake_ExplicitTooldefReference()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Explicit Tooldef Reference</em>' reference.
+   * @see #setExplicitTooldefReference(ToolRegistry)
+   * @see org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage#getFake_ExplicitTooldefReference()
+   * @model
+   * @generated
+   */
 	ToolRegistry getExplicitTooldefReference();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.uml2.diagram.codegen.u2tmap.Fake#getExplicitTooldefReference <em>Explicit Tooldef Reference</em>}' reference.
-	 * <!-- begin-user-doc -->
+   * Sets the value of the '{@link org.eclipse.uml2.diagram.codegen.u2tmap.Fake#getExplicitTooldefReference <em>Explicit Tooldef Reference</em>}' reference.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Explicit Tooldef Reference</em>' reference.
-	 * @see #getExplicitTooldefReference()
-	 * @generated
-	 */
+   * @param value the new value of the '<em>Explicit Tooldef Reference</em>' reference.
+   * @see #getExplicitTooldefReference()
+   * @generated
+   */
 	void setExplicitTooldefReference(ToolRegistry value);
 
 } // Fake

@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: CounterpartSemanticHintAttributeImpl.java,v 1.1 2010/05/27 11:50:59 mgolubev Exp $
+ * $Id: CounterpartSemanticHintAttributeImpl.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -32,190 +32,194 @@ import org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage;
  */
 public class CounterpartSemanticHintAttributeImpl extends EObjectImpl implements CounterpartSemanticHintAttribute {
 	/**
-	 * The default value of the '{@link #getParentVisualId() <em>Parent Visual Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getParentVisualId() <em>Parent Visual Id</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParentVisualId()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getParentVisualId()
+   * @generated
+   * @ordered
+   */
 	protected static final String PARENT_VISUAL_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getParentVisualId() <em>Parent Visual Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getParentVisualId() <em>Parent Visual Id</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParentVisualId()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getParentVisualId()
+   * @generated
+   * @ordered
+   */
 	protected String parentVisualId = PARENT_VISUAL_ID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getChildVisualId() <em>Child Visual Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getChildVisualId() <em>Child Visual Id</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getChildVisualId()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getChildVisualId()
+   * @generated
+   * @ordered
+   */
 	protected static final String CHILD_VISUAL_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getChildVisualId() <em>Child Visual Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getChildVisualId() <em>Child Visual Id</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getChildVisualId()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getChildVisualId()
+   * @generated
+   * @ordered
+   */
 	protected String childVisualId = CHILD_VISUAL_ID_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected CounterpartSemanticHintAttributeImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return U2TGenPackage.Literals.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE;
-	}
+    return U2TGenPackage.Literals.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String getParentVisualId() {
-		return parentVisualId;
-	}
+    return parentVisualId;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setParentVisualId(String newParentVisualId) {
-		String oldParentVisualId = parentVisualId;
-		parentVisualId = newParentVisualId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID, oldParentVisualId, parentVisualId));
-	}
+    String oldParentVisualId = parentVisualId;
+    parentVisualId = newParentVisualId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID, oldParentVisualId, parentVisualId));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String getChildVisualId() {
-		return childVisualId;
-	}
+    return childVisualId;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setChildVisualId(String newChildVisualId) {
-		String oldChildVisualId = childVisualId;
-		childVisualId = newChildVisualId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID, oldChildVisualId, childVisualId));
-	}
+    String oldChildVisualId = childVisualId;
+    childVisualId = newChildVisualId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID, oldChildVisualId, childVisualId));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID:
-				return getParentVisualId();
-			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID:
-				return getChildVisualId();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID:
+        return getParentVisualId();
+      case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID:
+        return getChildVisualId();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID:
-				setParentVisualId((String)newValue);
-				return;
-			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID:
-				setChildVisualId((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID:
+        setParentVisualId((String)newValue);
+        return;
+      case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID:
+        setChildVisualId((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID:
-				setParentVisualId(PARENT_VISUAL_ID_EDEFAULT);
-				return;
-			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID:
-				setChildVisualId(CHILD_VISUAL_ID_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID:
+        setParentVisualId(PARENT_VISUAL_ID_EDEFAULT);
+        return;
+      case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID:
+        setChildVisualId(CHILD_VISUAL_ID_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID:
-				return PARENT_VISUAL_ID_EDEFAULT == null ? parentVisualId != null : !PARENT_VISUAL_ID_EDEFAULT.equals(parentVisualId);
-			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID:
-				return CHILD_VISUAL_ID_EDEFAULT == null ? childVisualId != null : !CHILD_VISUAL_ID_EDEFAULT.equals(childVisualId);
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__PARENT_VISUAL_ID:
+        return PARENT_VISUAL_ID_EDEFAULT == null ? parentVisualId != null : !PARENT_VISUAL_ID_EDEFAULT.equals(parentVisualId);
+      case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE__CHILD_VISUAL_ID:
+        return CHILD_VISUAL_ID_EDEFAULT == null ? childVisualId != null : !CHILD_VISUAL_ID_EDEFAULT.equals(childVisualId);
+    }
+    return super.eIsSet(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (parentVisualId: ");
-		result.append(parentVisualId);
-		result.append(", childVisualId: ");
-		result.append(childVisualId);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (parentVisualId: ");
+    result.append(parentVisualId);
+    result.append(", childVisualId: ");
+    result.append(childVisualId);
+    result.append(')');
+    return result.toString();
+  }
 
 } //CounterpartSemanticHintAttributeImpl

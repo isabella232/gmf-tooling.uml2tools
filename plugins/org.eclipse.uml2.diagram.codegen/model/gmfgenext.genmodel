@@ -45,6 +45,21 @@
       <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/StereotypeSupportAttribute">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/StereotypeSupportAttribute/role"/>
       </genClasses>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/LinkToolStackSupportAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/LinkToolStackSupportAttribute/toolClassProviderName"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/LinkToolStackSupportAttribute/baseSemanticClassName"/>
+      </genClasses>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/LinkToolStackInfoAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/LinkToolStackInfoAttribute/toolgroupTitle"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/LinkToolStackInfoAttribute/elementUniqueIdentifier"/>
+      </genClasses>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/GeneralizedLinkConstraintAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/GeneralizedLinkConstraintAttribute/linkConstraint"/>
+      </genClasses>
+      <genClasses ecoreClass="gmfgenext.ecore#//u2tgen/CounterpartSemanticHintAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/CounterpartSemanticHintAttribute/parentVisualId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gmfgenext.ecore#//u2tgen/CounterpartSemanticHintAttribute/childVisualId"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="U2TMap" basePackage="org.eclipse.uml2.diagram.codegen"
         disposableProviderFactory="true" ecorePackage="gmfgenext.ecore#//u2tmap">

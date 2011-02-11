@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AbstractDynamicCanonicalContainerImpl.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: AbstractDynamicCanonicalContainerImpl.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -40,184 +40,189 @@ import org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage;
  */
 public abstract class AbstractDynamicCanonicalContainerImpl extends EObjectImpl implements AbstractDynamicCanonicalContainer {
 	/**
-	 * The cached value of the '{@link #getAlwaysCanonicalIDs() <em>Always Canonical IDs</em>}' attribute list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getAlwaysCanonicalIDs() <em>Always Canonical IDs</em>}' attribute list.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAlwaysCanonicalIDs()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getAlwaysCanonicalIDs()
+   * @generated
+   * @ordered
+   */
 	protected EList<Integer> alwaysCanonicalIDs;
 
 	/**
-	 * The default value of the '{@link #isInitiallyCanonical() <em>Initially Canonical</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #isInitiallyCanonical() <em>Initially Canonical</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isInitiallyCanonical()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isInitiallyCanonical()
+   * @generated
+   * @ordered
+   */
 	protected static final boolean INITIALLY_CANONICAL_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isInitiallyCanonical() <em>Initially Canonical</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #isInitiallyCanonical() <em>Initially Canonical</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isInitiallyCanonical()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isInitiallyCanonical()
+   * @generated
+   * @ordered
+   */
 	protected boolean initiallyCanonical = INITIALLY_CANONICAL_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected AbstractDynamicCanonicalContainerImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return U2TGenPackage.Literals.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER;
-	}
+    return U2TGenPackage.Literals.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public EList<Integer> getAlwaysCanonicalIDs() {
-		if (alwaysCanonicalIDs == null) {
-			alwaysCanonicalIDs = new EDataTypeUniqueEList<Integer>(Integer.class, this, U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS);
-		}
-		return alwaysCanonicalIDs;
-	}
+    if (alwaysCanonicalIDs == null)
+    {
+      alwaysCanonicalIDs = new EDataTypeUniqueEList<Integer>(Integer.class, this, U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS);
+    }
+    return alwaysCanonicalIDs;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public boolean isInitiallyCanonical() {
-		return initiallyCanonical;
-	}
+    return initiallyCanonical;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setInitiallyCanonical(boolean newInitiallyCanonical) {
-		boolean oldInitiallyCanonical = initiallyCanonical;
-		initiallyCanonical = newInitiallyCanonical;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL, oldInitiallyCanonical, initiallyCanonical));
-	}
+    boolean oldInitiallyCanonical = initiallyCanonical;
+    initiallyCanonical = newInitiallyCanonical;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL, oldInitiallyCanonical, initiallyCanonical));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public EList<GenCommonBase> getAlwaysCanonicalChildren() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+    // TODO: implement this method
+    // Ensure that you remove @generated or mark it @generated NOT
+    throw new UnsupportedOperationException();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
-				return getAlwaysCanonicalIDs();
-			case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
-				return isInitiallyCanonical();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
+        return getAlwaysCanonicalIDs();
+      case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
+        return isInitiallyCanonical();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
-				getAlwaysCanonicalIDs().clear();
-				getAlwaysCanonicalIDs().addAll((Collection<? extends Integer>)newValue);
-				return;
-			case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
-				setInitiallyCanonical((Boolean)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
+        getAlwaysCanonicalIDs().clear();
+        getAlwaysCanonicalIDs().addAll((Collection<? extends Integer>)newValue);
+        return;
+      case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
+        setInitiallyCanonical((Boolean)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
-				getAlwaysCanonicalIDs().clear();
-				return;
-			case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
-				setInitiallyCanonical(INITIALLY_CANONICAL_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
+        getAlwaysCanonicalIDs().clear();
+        return;
+      case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
+        setInitiallyCanonical(INITIALLY_CANONICAL_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
-				return alwaysCanonicalIDs != null && !alwaysCanonicalIDs.isEmpty();
-			case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
-				return initiallyCanonical != INITIALLY_CANONICAL_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__ALWAYS_CANONICAL_IDS:
+        return alwaysCanonicalIDs != null && !alwaysCanonicalIDs.isEmpty();
+      case U2TGenPackage.ABSTRACT_DYNAMIC_CANONICAL_CONTAINER__INITIALLY_CANONICAL:
+        return initiallyCanonical != INITIALLY_CANONICAL_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (alwaysCanonicalIDs: ");
-		result.append(alwaysCanonicalIDs);
-		result.append(", initiallyCanonical: ");
-		result.append(initiallyCanonical);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (alwaysCanonicalIDs: ");
+    result.append(alwaysCanonicalIDs);
+    result.append(", initiallyCanonical: ");
+    result.append(initiallyCanonical);
+    result.append(')');
+    return result.toString();
+  }
 
 } //AbstractDynamicCanonicalContainerImpl

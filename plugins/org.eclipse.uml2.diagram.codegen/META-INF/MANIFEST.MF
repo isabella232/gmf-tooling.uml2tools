@@ -19,7 +19,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.codegen;visibility:=reexport,
  org.eclipse.gmf.codegen.ui,
  org.eclipse.ui,
- org.eclipse.uml2.uml,
+ org.eclipse.uml2.uml;bundle-version="3.1.1",
  org.eclipse.m2m.qvt.oml,
  org.eclipse.gmf.map
 Bundle-ActivationPolicy: lazy

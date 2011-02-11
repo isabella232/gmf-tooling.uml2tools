@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: NewMenuAllChoices.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: NewMenuAllChoices.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap;
 
@@ -28,19 +28,19 @@ import org.eclipse.emf.ecore.EClass;
  */
 public interface NewMenuAllChoices extends NewMenuEntry {
 	/**
-	 * Returns the value of the '<em><b>Exclusions</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.EClass}.
-	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Exclusions</b></em>' reference list.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EClass}.
+   * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Exclusions</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Exclusions</em>' reference list.
-	 * @see org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage#getNewMenuAllChoices_Exclusions()
-	 * @model
-	 * @generated
-	 */
+   * @return the value of the '<em>Exclusions</em>' reference list.
+   * @see org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage#getNewMenuAllChoices_Exclusions()
+   * @model
+   * @generated
+   */
 	EList<EClass> getExclusions();
 
 } // NewMenuAllChoices

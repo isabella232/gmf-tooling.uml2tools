@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: InteractionDiagramAttributesImpl.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: InteractionDiagramAttributesImpl.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -31,137 +31,141 @@ import org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage;
  */
 public class InteractionDiagramAttributesImpl extends EObjectImpl implements InteractionDiagramAttributes {
 	/**
-	 * The default value of the '{@link #isMultiLayered() <em>Multi Layered</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #isMultiLayered() <em>Multi Layered</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isMultiLayered()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isMultiLayered()
+   * @generated
+   * @ordered
+   */
 	protected static final boolean MULTI_LAYERED_EDEFAULT = true;
 
 	/**
-	 * The cached value of the '{@link #isMultiLayered() <em>Multi Layered</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #isMultiLayered() <em>Multi Layered</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isMultiLayered()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isMultiLayered()
+   * @generated
+   * @ordered
+   */
 	protected boolean multiLayered = MULTI_LAYERED_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected InteractionDiagramAttributesImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return U2TGenPackage.Literals.INTERACTION_DIAGRAM_ATTRIBUTES;
-	}
+    return U2TGenPackage.Literals.INTERACTION_DIAGRAM_ATTRIBUTES;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public boolean isMultiLayered() {
-		return multiLayered;
-	}
+    return multiLayered;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setMultiLayered(boolean newMultiLayered) {
-		boolean oldMultiLayered = multiLayered;
-		multiLayered = newMultiLayered;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED, oldMultiLayered, multiLayered));
-	}
+    boolean oldMultiLayered = multiLayered;
+    multiLayered = newMultiLayered;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED, oldMultiLayered, multiLayered));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
-				return isMultiLayered();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
+        return isMultiLayered();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
-				setMultiLayered((Boolean)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
+        setMultiLayered((Boolean)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
-				setMultiLayered(MULTI_LAYERED_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
+        setMultiLayered(MULTI_LAYERED_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
-				return multiLayered != MULTI_LAYERED_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES__MULTI_LAYERED:
+        return multiLayered != MULTI_LAYERED_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (multiLayered: ");
-		result.append(multiLayered);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (multiLayered: ");
+    result.append(multiLayered);
+    result.append(')');
+    return result.toString();
+  }
 
 } //InteractionDiagramAttributesImpl

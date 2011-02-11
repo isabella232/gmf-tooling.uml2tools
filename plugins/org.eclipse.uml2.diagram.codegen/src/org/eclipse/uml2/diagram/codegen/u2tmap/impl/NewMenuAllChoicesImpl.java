@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: NewMenuAllChoicesImpl.java,v 1.1 2009/01/14 20:47:10 mgolubev Exp $
+ * $Id: NewMenuAllChoicesImpl.java,v 1.2 2011/02/11 14:16:05 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tmap.impl;
 
@@ -32,104 +32,109 @@ import org.eclipse.uml2.diagram.codegen.u2tmap.U2TMapPackage;
  */
 public class NewMenuAllChoicesImpl extends NewMenuEntryImpl implements NewMenuAllChoices {
 	/**
-	 * The cached value of the '{@link #getExclusions() <em>Exclusions</em>}' reference list.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getExclusions() <em>Exclusions</em>}' reference list.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExclusions()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getExclusions()
+   * @generated
+   * @ordered
+   */
 	protected EList<EClass> exclusions;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected NewMenuAllChoicesImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return U2TMapPackage.Literals.NEW_MENU_ALL_CHOICES;
-	}
+    return U2TMapPackage.Literals.NEW_MENU_ALL_CHOICES;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public EList<EClass> getExclusions() {
-		if (exclusions == null) {
-			exclusions = new EObjectResolvingEList<EClass>(EClass.class, this, U2TMapPackage.NEW_MENU_ALL_CHOICES__EXCLUSIONS);
-		}
-		return exclusions;
-	}
+    if (exclusions == null)
+    {
+      exclusions = new EObjectResolvingEList<EClass>(EClass.class, this, U2TMapPackage.NEW_MENU_ALL_CHOICES__EXCLUSIONS);
+    }
+    return exclusions;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case U2TMapPackage.NEW_MENU_ALL_CHOICES__EXCLUSIONS:
-				return getExclusions();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case U2TMapPackage.NEW_MENU_ALL_CHOICES__EXCLUSIONS:
+        return getExclusions();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case U2TMapPackage.NEW_MENU_ALL_CHOICES__EXCLUSIONS:
-				getExclusions().clear();
-				getExclusions().addAll((Collection<? extends EClass>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case U2TMapPackage.NEW_MENU_ALL_CHOICES__EXCLUSIONS:
+        getExclusions().clear();
+        getExclusions().addAll((Collection<? extends EClass>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case U2TMapPackage.NEW_MENU_ALL_CHOICES__EXCLUSIONS:
-				getExclusions().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TMapPackage.NEW_MENU_ALL_CHOICES__EXCLUSIONS:
+        getExclusions().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case U2TMapPackage.NEW_MENU_ALL_CHOICES__EXCLUSIONS:
-				return exclusions != null && !exclusions.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TMapPackage.NEW_MENU_ALL_CHOICES__EXCLUSIONS:
+        return exclusions != null && !exclusions.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //NewMenuAllChoicesImpl

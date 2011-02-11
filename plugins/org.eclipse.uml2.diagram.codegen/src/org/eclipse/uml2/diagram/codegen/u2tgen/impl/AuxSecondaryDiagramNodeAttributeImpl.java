@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: AuxSecondaryDiagramNodeAttributeImpl.java,v 1.1 2009/03/10 13:47:21 tfesenko Exp $
+ * $Id: AuxSecondaryDiagramNodeAttributeImpl.java,v 1.2 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -31,137 +31,141 @@ import org.eclipse.uml2.diagram.codegen.u2tgen.U2TGenPackage;
  */
 public class AuxSecondaryDiagramNodeAttributeImpl extends EObjectImpl implements AuxSecondaryDiagramNodeAttribute {
 	/**
-	 * The default value of the '{@link #isSubstituteWithCanvasElement() <em>Substitute With Canvas Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #isSubstituteWithCanvasElement() <em>Substitute With Canvas Element</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSubstituteWithCanvasElement()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isSubstituteWithCanvasElement()
+   * @generated
+   * @ordered
+   */
 	protected static final boolean SUBSTITUTE_WITH_CANVAS_ELEMENT_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isSubstituteWithCanvasElement() <em>Substitute With Canvas Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #isSubstituteWithCanvasElement() <em>Substitute With Canvas Element</em>}' attribute.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSubstituteWithCanvasElement()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #isSubstituteWithCanvasElement()
+   * @generated
+   * @ordered
+   */
 	protected boolean substituteWithCanvasElement = SUBSTITUTE_WITH_CANVAS_ELEMENT_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected AuxSecondaryDiagramNodeAttributeImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return U2TGenPackage.Literals.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE;
-	}
+    return U2TGenPackage.Literals.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public boolean isSubstituteWithCanvasElement() {
-		return substituteWithCanvasElement;
-	}
+    return substituteWithCanvasElement;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public void setSubstituteWithCanvasElement(boolean newSubstituteWithCanvasElement) {
-		boolean oldSubstituteWithCanvasElement = substituteWithCanvasElement;
-		substituteWithCanvasElement = newSubstituteWithCanvasElement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT, oldSubstituteWithCanvasElement, substituteWithCanvasElement));
-	}
+    boolean oldSubstituteWithCanvasElement = substituteWithCanvasElement;
+    substituteWithCanvasElement = newSubstituteWithCanvasElement;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT, oldSubstituteWithCanvasElement, substituteWithCanvasElement));
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
-				return isSubstituteWithCanvasElement();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
+        return isSubstituteWithCanvasElement();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
-				setSubstituteWithCanvasElement((Boolean)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
+        setSubstituteWithCanvasElement((Boolean)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
-				setSubstituteWithCanvasElement(SUBSTITUTE_WITH_CANVAS_ELEMENT_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
+        setSubstituteWithCanvasElement(SUBSTITUTE_WITH_CANVAS_ELEMENT_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
-				return substituteWithCanvasElement != SUBSTITUTE_WITH_CANVAS_ELEMENT_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE__SUBSTITUTE_WITH_CANVAS_ELEMENT:
+        return substituteWithCanvasElement != SUBSTITUTE_WITH_CANVAS_ELEMENT_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (substituteWithCanvasElement: ");
-		result.append(substituteWithCanvasElement);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (substituteWithCanvasElement: ");
+    result.append(substituteWithCanvasElement);
+    result.append(')');
+    return result.toString();
+  }
 
 } //AuxSecondaryDiagramNodeAttributeImpl

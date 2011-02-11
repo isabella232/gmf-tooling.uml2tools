@@ -2,7 +2,7 @@
  * <copyright>
  * </copyright>
  *
- * $Id: U2TGenFactoryImpl.java,v 1.3 2010/05/27 11:50:59 mgolubev Exp $
+ * $Id: U2TGenFactoryImpl.java,v 1.4 2011/02/11 14:16:06 cwaniek Exp $
  */
 package org.eclipse.uml2.diagram.codegen.u2tgen.impl;
 
@@ -25,247 +25,253 @@ import org.eclipse.uml2.diagram.codegen.u2tgen.*;
  */
 public class U2TGenFactoryImpl extends EFactoryImpl implements U2TGenFactory {
 	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public static U2TGenFactory init() {
-		try {
-			U2TGenFactory theU2TGenFactory = (U2TGenFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel"); 
-			if (theU2TGenFactory != null) {
-				return theU2TGenFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new U2TGenFactoryImpl();
-	}
+    try
+    {
+      U2TGenFactory theU2TGenFactory = (U2TGenFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel"); 
+      if (theU2TGenFactory != null)
+      {
+        return theU2TGenFactory;
+      }
+    }
+    catch (Exception exception)
+    {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new U2TGenFactoryImpl();
+  }
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public U2TGenFactoryImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE: return createAuxSecondaryDiagramNodeAttribute();
-			case U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES: return createCustomLocatorAttributes();
-			case U2TGenPackage.DETAILS_LEVEL_ATTRIBUTES: return createDetailsLevelAttributes();
-			case U2TGenPackage.SUBSTITUTABLE_BY_ATTRIBUTES: return createSubstitutableByAttributes();
-			case U2TGenPackage.DYNAMIC_CANONICAL_COMPARTMENT: return createDynamicCanonicalCompartment();
-			case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES: return createInteractionDiagramAttributes();
-			case U2TGenPackage.ROTATED_LABEL_ATTRIBUTES: return createRotatedLabelAttributes();
-			case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE: return createStereotypeSupportAttribute();
-			case U2TGenPackage.LINK_TOOL_STACK_SUPPORT_ATTRIBUTE: return createLinkToolStackSupportAttribute();
-			case U2TGenPackage.LINK_TOOL_STACK_INFO_ATTRIBUTE: return createLinkToolStackInfoAttribute();
-			case U2TGenPackage.GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE: return createGeneralizedLinkConstraintAttribute();
-			case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE: return createCounterpartSemanticHintAttribute();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+    switch (eClass.getClassifierID())
+    {
+      case U2TGenPackage.AUX_SECONDARY_DIAGRAM_NODE_ATTRIBUTE: return createAuxSecondaryDiagramNodeAttribute();
+      case U2TGenPackage.CUSTOM_LOCATOR_ATTRIBUTES: return createCustomLocatorAttributes();
+      case U2TGenPackage.DETAILS_LEVEL_ATTRIBUTES: return createDetailsLevelAttributes();
+      case U2TGenPackage.SUBSTITUTABLE_BY_ATTRIBUTES: return createSubstitutableByAttributes();
+      case U2TGenPackage.DYNAMIC_CANONICAL_COMPARTMENT: return createDynamicCanonicalCompartment();
+      case U2TGenPackage.INTERACTION_DIAGRAM_ATTRIBUTES: return createInteractionDiagramAttributes();
+      case U2TGenPackage.ROTATED_LABEL_ATTRIBUTES: return createRotatedLabelAttributes();
+      case U2TGenPackage.STEREOTYPE_SUPPORT_ATTRIBUTE: return createStereotypeSupportAttribute();
+      case U2TGenPackage.LINK_TOOL_STACK_SUPPORT_ATTRIBUTE: return createLinkToolStackSupportAttribute();
+      case U2TGenPackage.LINK_TOOL_STACK_INFO_ATTRIBUTE: return createLinkToolStackInfoAttribute();
+      case U2TGenPackage.GENERALIZED_LINK_CONSTRAINT_ATTRIBUTE: return createGeneralizedLinkConstraintAttribute();
+      case U2TGenPackage.COUNTERPART_SEMANTIC_HINT_ATTRIBUTE: return createCounterpartSemanticHintAttribute();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case U2TGenPackage.STEREOTYPE_SUPPORT_ROLE:
-				return createStereotypeSupportRoleFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+    switch (eDataType.getClassifierID())
+    {
+      case U2TGenPackage.STEREOTYPE_SUPPORT_ROLE:
+        return createStereotypeSupportRoleFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case U2TGenPackage.STEREOTYPE_SUPPORT_ROLE:
-				return convertStereotypeSupportRoleToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+    switch (eDataType.getClassifierID())
+    {
+      case U2TGenPackage.STEREOTYPE_SUPPORT_ROLE:
+        return convertStereotypeSupportRoleToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public AuxSecondaryDiagramNodeAttribute createAuxSecondaryDiagramNodeAttribute() {
-		AuxSecondaryDiagramNodeAttributeImpl auxSecondaryDiagramNodeAttribute = new AuxSecondaryDiagramNodeAttributeImpl();
-		return auxSecondaryDiagramNodeAttribute;
-	}
+    AuxSecondaryDiagramNodeAttributeImpl auxSecondaryDiagramNodeAttribute = new AuxSecondaryDiagramNodeAttributeImpl();
+    return auxSecondaryDiagramNodeAttribute;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public CustomLocatorAttributes createCustomLocatorAttributes() {
-		CustomLocatorAttributesImpl customLocatorAttributes = new CustomLocatorAttributesImpl();
-		return customLocatorAttributes;
-	}
+    CustomLocatorAttributesImpl customLocatorAttributes = new CustomLocatorAttributesImpl();
+    return customLocatorAttributes;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public DetailsLevelAttributes createDetailsLevelAttributes() {
-		DetailsLevelAttributesImpl detailsLevelAttributes = new DetailsLevelAttributesImpl();
-		return detailsLevelAttributes;
-	}
+    DetailsLevelAttributesImpl detailsLevelAttributes = new DetailsLevelAttributesImpl();
+    return detailsLevelAttributes;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public SubstitutableByAttributes createSubstitutableByAttributes() {
-		SubstitutableByAttributesImpl substitutableByAttributes = new SubstitutableByAttributesImpl();
-		return substitutableByAttributes;
-	}
+    SubstitutableByAttributesImpl substitutableByAttributes = new SubstitutableByAttributesImpl();
+    return substitutableByAttributes;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public DynamicCanonicalCompartment createDynamicCanonicalCompartment() {
-		DynamicCanonicalCompartmentImpl dynamicCanonicalCompartment = new DynamicCanonicalCompartmentImpl();
-		return dynamicCanonicalCompartment;
-	}
+    DynamicCanonicalCompartmentImpl dynamicCanonicalCompartment = new DynamicCanonicalCompartmentImpl();
+    return dynamicCanonicalCompartment;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public InteractionDiagramAttributes createInteractionDiagramAttributes() {
-		InteractionDiagramAttributesImpl interactionDiagramAttributes = new InteractionDiagramAttributesImpl();
-		return interactionDiagramAttributes;
-	}
+    InteractionDiagramAttributesImpl interactionDiagramAttributes = new InteractionDiagramAttributesImpl();
+    return interactionDiagramAttributes;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public RotatedLabelAttributes createRotatedLabelAttributes() {
-		RotatedLabelAttributesImpl rotatedLabelAttributes = new RotatedLabelAttributesImpl();
-		return rotatedLabelAttributes;
-	}
+    RotatedLabelAttributesImpl rotatedLabelAttributes = new RotatedLabelAttributesImpl();
+    return rotatedLabelAttributes;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public StereotypeSupportAttribute createStereotypeSupportAttribute() {
-		StereotypeSupportAttributeImpl stereotypeSupportAttribute = new StereotypeSupportAttributeImpl();
-		return stereotypeSupportAttribute;
-	}
+    StereotypeSupportAttributeImpl stereotypeSupportAttribute = new StereotypeSupportAttributeImpl();
+    return stereotypeSupportAttribute;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public LinkToolStackSupportAttribute createLinkToolStackSupportAttribute() {
-		LinkToolStackSupportAttributeImpl linkToolStackSupportAttribute = new LinkToolStackSupportAttributeImpl();
-		return linkToolStackSupportAttribute;
-	}
+    LinkToolStackSupportAttributeImpl linkToolStackSupportAttribute = new LinkToolStackSupportAttributeImpl();
+    return linkToolStackSupportAttribute;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public LinkToolStackInfoAttribute createLinkToolStackInfoAttribute() {
-		LinkToolStackInfoAttributeImpl linkToolStackInfoAttribute = new LinkToolStackInfoAttributeImpl();
-		return linkToolStackInfoAttribute;
-	}
+    LinkToolStackInfoAttributeImpl linkToolStackInfoAttribute = new LinkToolStackInfoAttributeImpl();
+    return linkToolStackInfoAttribute;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public GeneralizedLinkConstraintAttribute createGeneralizedLinkConstraintAttribute() {
-		GeneralizedLinkConstraintAttributeImpl generalizedLinkConstraintAttribute = new GeneralizedLinkConstraintAttributeImpl();
-		return generalizedLinkConstraintAttribute;
-	}
+    GeneralizedLinkConstraintAttributeImpl generalizedLinkConstraintAttribute = new GeneralizedLinkConstraintAttributeImpl();
+    return generalizedLinkConstraintAttribute;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public CounterpartSemanticHintAttribute createCounterpartSemanticHintAttribute() {
-		CounterpartSemanticHintAttributeImpl counterpartSemanticHintAttribute = new CounterpartSemanticHintAttributeImpl();
-		return counterpartSemanticHintAttribute;
-	}
+    CounterpartSemanticHintAttributeImpl counterpartSemanticHintAttribute = new CounterpartSemanticHintAttributeImpl();
+    return counterpartSemanticHintAttribute;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public StereotypeSupportRole createStereotypeSupportRoleFromString(EDataType eDataType, String initialValue) {
-		StereotypeSupportRole result = StereotypeSupportRole.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+    StereotypeSupportRole result = StereotypeSupportRole.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public String convertStereotypeSupportRoleToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+    return instanceValue == null ? null : instanceValue.toString();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	public U2TGenPackage getU2TGenPackage() {
-		return (U2TGenPackage)getEPackage();
-	}
+    return (U2TGenPackage)getEPackage();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
+   * @deprecated
+   * @generated
+   */
 	@Deprecated
 	public static U2TGenPackage getPackage() {
-		return U2TGenPackage.eINSTANCE;
-	}
+    return U2TGenPackage.eINSTANCE;
+  }
 
 } //U2TGenFactoryImpl
