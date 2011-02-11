@@ -172,12 +172,14 @@
 	</target>
 
 	<target name="promote">
+		<exec dir="." executable="sh" >
+			<arg line="-c promote.sh" />
+		</exec>
 		<!--delete dir="${promoteUpdateSite}" />
-		<mkdir dir="${promoteUpdateSite}" /-->
+		<mkdir dir="${promoteUpdateSite}" />
 		<mkdir dir="${promoteUpdateSite}/plugins" />
 		<mkdir dir="${promoteUpdateSite}/features" />
-		<!--mkdir dir="${buildSitePath}" /-->
-
+		<mkdir dir="${buildSitePath}" />
 		<copy todir="${promoteUpdateSite}">
 			<fileset dir="${promoteSrc}">
 				<include name="**/*" />
@@ -185,7 +187,7 @@
 			</fileset>
 		</copy>
 
-		<!--mkdir dir="${promoteDropsLocation}" />
+		<mkdir dir="${promoteDropsLocation}" />
 		<mkdir dir="${promoteDropsLocation}/${uml2tools.version}" />
 		<mkdir dir="${promoteDropsLocation}/${uml2tools.version}/${build.type}${buildTimestamp}" />
 		<copy todir="${promoteDropsLocation}/${uml2tools.version}/${build.type}${buildTimestamp}">

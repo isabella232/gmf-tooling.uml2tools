@@ -1,0 +1,1 @@
+cp -r ${WORKSPACE}/work/stage4.out/site.sdk-eclipse.feature/site.p2/ /home/data/httpd/download.eclipse.org/modeling/mdt/uml2tools/
