@@ -172,9 +172,7 @@
 	</target>
 
 	<target name="promote">
-		<exec dir="." executable="sh" >
-			<arg line="-c promote.sh" />
-		</exec>
+		<exec dir="." executable="promote.sh" />
 		<!--delete dir="${promoteUpdateSite}" />
 		<mkdir dir="${promoteUpdateSite}" />
 		<mkdir dir="${promoteUpdateSite}/plugins" />
