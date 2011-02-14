@@ -177,6 +177,17 @@
 		<mkdir dir="${promoteUpdateSite}/plugins" />
 		<mkdir dir="${promoteUpdateSite}/features" />
 		<mkdir dir="${buildSitePath}" /-->
+
+		<delete>
+			<fileset dir="${promoteUpdateSite}">
+				<exclude name="*downloads/*" />
+				<exclude name="*javadoc/*" />
+			</fileset>
+		</delete>
+
+		<mkdir dir="${promoteUpdateSite}/plugins" />
+		<mkdir dir="${promoteUpdateSite}/features" />
+
 		<copy todir="${promoteUpdateSite}">
 			<fileset dir="${promoteSrc}">
 				<include name="**/*" />
