@@ -86,17 +86,18 @@ public class UMLCreateShortcutAction extends AbstractHandler {
 	public static IStatus createShortcut(TransactionalEditingDomain editingDomain, IOperationHistory history, EObject selectedElement, EditPart editPart, IEditorPart diagramEditor) {
 
 		final View view = (View) editPart.getModel();
-		final EditPart parentPart = editPart.getParent();
+		final EditPart parentPart = editPart;
 		final Diagram diagram = view.getDiagram();
 
 		CreateViewRequest.ViewDescriptor viewDescriptor = new CreateViewRequest.ViewDescriptor(new EObjectAdapter(selectedElement), Node.class, null, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 
 		ICommand command = new CreateCommand(editingDomain, viewDescriptor, diagram);
 		command = command.compose(new UMLCreateShortcutDecorationsCommand(editingDomain, diagram, viewDescriptor));
+
 		IStatus status = null;
 		try {
 			status = OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
-		} catch (ExecutionException e) {
+		} catch (Exception e) {
 			status = new Status(IStatus.ERROR, UMLDiagramEditorPlugin.ID, IStatus.OK, "Unable to create shortcut", e); //$NON-NLS-1$
 		}
 
