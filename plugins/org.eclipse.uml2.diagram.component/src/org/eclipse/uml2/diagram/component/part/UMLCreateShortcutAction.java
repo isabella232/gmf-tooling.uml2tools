@@ -86,7 +86,7 @@ public class UMLCreateShortcutAction extends AbstractHandler {
 	public static IStatus createShortcut(TransactionalEditingDomain editingDomain, IOperationHistory history, EObject selectedElement, EditPart editPart, IEditorPart diagramEditor) {
 
 		final View view = (View) editPart.getModel();
-		final EditPart parentPart = editPart.getParent();
+		final EditPart parentPart = editPart;
 		final Diagram diagram = view.getDiagram();
 
 		CreateViewRequest.ViewDescriptor viewDescriptor = new CreateViewRequest.ViewDescriptor(new EObjectAdapter(selectedElement), Node.class, null, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
