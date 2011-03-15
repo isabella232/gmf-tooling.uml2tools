@@ -35,6 +35,12 @@
 			class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
 			checkPluginLoaded="false">
 		<Priority name="Medium"/>
+«FOREACH self.links->asSequence() AS nextLink-»
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="«nextLink.getEditPartQualifiedClassName()»"/>
+			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+		</popupContribution>
+«ENDFOREACH-»
 «FOREACH self.getAllNodes()->asSequence() AS nextNode-»
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
 			<popupStructuredContributionCriteria objectClass="«nextNode.getEditPartQualifiedClassName()»"/>
@@ -49,6 +55,18 @@
 			class="org.eclipse.uml2.diagram.common.async.DeleteFromDiagramPopupProvider"
 			checkPluginLoaded="false">
 		<Priority name="Low"/>
+«REM»
+	We install all Links again, although we'll never be able to delete them. But so we get a disabled menu item for links.
+«ENDREM»«-»
+«FOREACH self.links->asSequence() AS nextLink-»
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="«nextLink.getEditPartQualifiedClassName()»"/>
+			<popupAction
+				path="/editGroup"
+				id="«EXPAND U2TDeleteFromDiagramAction_id FOR nextLink»">
+			</popupAction>
+		</popupContribution>
+«ENDFOREACH-»
 «FOREACH self.getAllNodes()->asSequence() AS nextNode-»
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
 			<popupStructuredContributionCriteria objectClass="«nextNode.getEditPartQualifiedClassName()»"/>
