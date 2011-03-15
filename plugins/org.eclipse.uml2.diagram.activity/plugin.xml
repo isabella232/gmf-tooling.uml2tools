@@ -1460,7 +1460,7 @@
            class="org.eclipse.uml2.diagram.activity.part.UMLUriEditorInputTester">
        </propertyTester>
    </extension>
-<extension point="org.eclipse.ui.contexts" id="ui-context">
+<extension point="org.eclipse.ui.contexts" id="ui-context">
       <?gmfgen generated="true"?>
       <context
          description="%context.description"

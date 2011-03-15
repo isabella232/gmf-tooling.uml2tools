@@ -1023,6 +1023,22 @@
 			checkPluginLoaded="false">
 		<Priority name="Medium"/>
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart"/>
+			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart"/>
+			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ConstraintConstrainedElementEditPart"/>
+			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.CommentAnnotatedElementEditPart"/>
+			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
 			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart"/>
 			<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
 		</popupContribution>
@@ -1080,6 +1096,34 @@
 			class="org.eclipse.uml2.diagram.common.async.DeleteFromDiagramPopupProvider"
 			checkPluginLoaded="false">
 		<Priority name="Low"/>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.GeneralizationEditPart"/>
+			<popupAction
+				path="/editGroup"
+				id="u2t_deleteFromDiagram">
+			</popupAction>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ExtensionEditPart"/>
+			<popupAction
+				path="/editGroup"
+				id="u2t_deleteFromDiagram">
+			</popupAction>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.ConstraintConstrainedElementEditPart"/>
+			<popupAction
+				path="/editGroup"
+				id="u2t_deleteFromDiagram">
+			</popupAction>
+		</popupContribution>
+		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.CommentAnnotatedElementEditPart"/>
+			<popupAction
+				path="/editGroup"
+				id="u2t_deleteFromDiagram">
+			</popupAction>
+		</popupContribution>
 		<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
 			<popupStructuredContributionCriteria objectClass="org.eclipse.uml2.diagram.profile.edit.parts.StereotypeEditPart"/>
 			<popupAction
