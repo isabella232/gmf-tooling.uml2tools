@@ -52,33 +52,35 @@ public class ApplicableProfilesItemProvider extends AbstractContributionItemProv
 		}
 
 		public void buildMenu(IMenuManager manager) {
-			manager.removeAll();
-			GraphicalEditPart selected = (GraphicalEditPart) getSelectedObject(myWorkbenchPart);
+			if (getSelectedObject(myWorkbenchPart) instanceof GraphicalEditPart) {
+				manager.removeAll();
+				GraphicalEditPart selected = (GraphicalEditPart) getSelectedObject(myWorkbenchPart);
 
-			org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) selected.getNotationView().getElement();
-			loadProfilesFromUML2Registry(package_);
+				org.eclipse.uml2.uml.Package package_ = (org.eclipse.uml2.uml.Package) selected.getNotationView().getElement();
+				loadProfilesFromUML2Registry(package_);
 
-			List<Profile> profiles = getProfiles(package_);
-			for (Profile profile : profiles) {
-				// no much sense to cache dynamic target specific actions
-				ApplyProfileAction action = new ApplyProfileAction(getWorkbenchPage(), package_, profile);
-				action.init();
-				manager.add(action);
-			}
-
-			Collection<ProfileInfo> profilesFromRegistry = getProfilesFromRegistry(package_);
-			List<String> loadedProfileUris = new ArrayList<String>(profiles.size());
-			for (Profile profile : profiles) {
-				loadedProfileUris.add(EcoreUtil.getURI(profile).toString());
-			}
-			for (ProfileInfo profileInfo : profilesFromRegistry) {
-				// filter profiles, that have already been loaded
-				if (loadedProfileUris.contains(profileInfo.uri)) {
-					continue;
+				List<Profile> profiles = getProfiles(package_);
+				for (Profile profile : profiles) {
+					// no much sense to cache dynamic target specific actions
+					ApplyProfileAction action = new ApplyProfileAction(getWorkbenchPage(), package_, profile);
+					action.init();
+					manager.add(action);
 				}
-				ApplyProfileInfoAction action = new ApplyProfileInfoAction(getWorkbenchPage(), package_, profileInfo);
-				action.init();
-				manager.add(action);
+
+				Collection<ProfileInfo> profilesFromRegistry = getProfilesFromRegistry(package_);
+				List<String> loadedProfileUris = new ArrayList<String>(profiles.size());
+				for (Profile profile : profiles) {
+					loadedProfileUris.add(EcoreUtil.getURI(profile).toString());
+				}
+				for (ProfileInfo profileInfo : profilesFromRegistry) {
+					// filter profiles, that have already been loaded
+					if (loadedProfileUris.contains(profileInfo.uri)) {
+						continue;
+					}
+					ApplyProfileInfoAction action = new ApplyProfileInfoAction(getWorkbenchPage(), package_, profileInfo);
+					action.init();
+					manager.add(action);
+				}
 			}
 		}
 

@@ -26,7 +26,9 @@ public class GMFValidateAction extends ValidateAction {
 	@Override
 	public void setActiveWorkbenchPart(IWorkbenchPart workbenchPart) {
 		super.setActiveWorkbenchPart(workbenchPart);
-		domain = ((DiagramDocumentEditor) workbenchPart).getEditingDomain();
+		if (workbenchPart instanceof DiagramDocumentEditor) {
+			domain = ((DiagramDocumentEditor) workbenchPart).getEditingDomain();
+		}
 	}
 
 	@Override

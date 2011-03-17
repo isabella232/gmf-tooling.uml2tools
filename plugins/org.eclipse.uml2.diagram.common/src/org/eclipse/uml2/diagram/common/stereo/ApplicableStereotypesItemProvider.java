@@ -45,18 +45,20 @@ public class ApplicableStereotypesItemProvider extends AbstractContributionItemP
 		}
 
 		public void buildMenu(IMenuManager manager) {
-			manager.removeAll();
-			IGraphicalEditPart selected = (IGraphicalEditPart) getSelectedObject(myWorkbenchPart);
-			EObject selectedElement = selected.getNotationView().getElement();
-			if (false == selectedElement instanceof Element) {
-				return;
-			}
-			Element element = (Element) selectedElement;
-			EList<Stereotype> stereotypes = element.getApplicableStereotypes();
-			for (Stereotype stereotype : stereotypes) {
-				ApplyStereotypeAction action = new ApplyStereotypeAction(getWorkbenchPage(), element, stereotype);
-				action.init();
-				manager.add(action);
+			if (getSelectedObject(myWorkbenchPart) instanceof IGraphicalEditPart) {
+				manager.removeAll();
+				IGraphicalEditPart selected = (IGraphicalEditPart) getSelectedObject(myWorkbenchPart);
+				EObject selectedElement = selected.getNotationView().getElement();
+				if (false == selectedElement instanceof Element) {
+					return;
+				}
+				Element element = (Element) selectedElement;
+				EList<Stereotype> stereotypes = element.getApplicableStereotypes();
+				for (Stereotype stereotype : stereotypes) {
+					ApplyStereotypeAction action = new ApplyStereotypeAction(getWorkbenchPage(), element, stereotype);
+					action.init();
+					manager.add(action);
+				}
 			}
 		}
 
