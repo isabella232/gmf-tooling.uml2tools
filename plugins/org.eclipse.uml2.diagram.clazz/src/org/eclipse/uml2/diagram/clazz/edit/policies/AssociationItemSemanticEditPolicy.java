@@ -7,6 +7,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.uml2.diagram.clazz.edit.commands.AssociationCreateCommand;
+import org.eclipse.uml2.diagram.clazz.edit.commands.AssociationDeleteCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.AssociationReorientCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.CommentAnnotatedElementCreateCommand;
 import org.eclipse.uml2.diagram.clazz.edit.commands.CommentAnnotatedElementReorientCommand;
@@ -46,6 +47,7 @@ import org.eclipse.uml2.diagram.clazz.edit.parts.RealizationEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.TemplateBindingEditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.UsageEditPart;
 import org.eclipse.uml2.diagram.clazz.providers.UMLElementTypes;
+import org.eclipse.uml2.uml.Association;
 
 /**
  * @generated
@@ -62,8 +64,20 @@ public class AssociationItemSemanticEditPolicy extends UMLBaseItemSemanticEditPo
 	/**
 	 * @generated
 	 */
-	protected Command getDestroyElementCommand(DestroyElementRequest req) {
+	protected Command getDestroyElementCommandGen(DestroyElementRequest req) {
 		return getGEFWrapper(new DestroyElementCommand(req));
+	}
+
+	/**
+	 * @generated NOT
+	 */
+	protected Command getDestroyElementCommand(DestroyElementRequest req) {
+		//Because of the complex metamodel concerning associations (especially navigable associations)
+		//we have to deal with Association in a special way. (also see #320244)
+		if (req.getElementToDestroy() instanceof Association) {
+			return getGEFWrapper(new AssociationDeleteCommand(req));
+		}
+		return getDestroyElementCommandGen(req);
 	}
 
 	/**
