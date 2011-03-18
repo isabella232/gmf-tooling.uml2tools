@@ -352,13 +352,10 @@ public class UMLElementChooserDialog extends Dialog {
 					}
 					if (selectedElement instanceof EObject) {
 						EObject selectedModelElement = (EObject) selectedElement;
-						boolean isDiagramRootPackage = EcoreUtil.getURI(selectedModelElement).equals(EcoreUtil.getURI(myView.getDiagram().getElement()));
-						if (!isDiagramRootPackage) {
-							setOkButtonEnabled(ViewService.getInstance().provides(Node.class, new EObjectAdapter(selectedModelElement), myView, null, ViewUtil.APPEND, true,
-									UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-							mySelectedModelElementURI = EcoreUtil.getURI(selectedModelElement);
-							return;
-						}
+						setOkButtonEnabled(ViewService.getInstance().provides(Node.class, new EObjectAdapter(selectedModelElement), myView, null, ViewUtil.APPEND, true,
+								UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+						mySelectedModelElementURI = EcoreUtil.getURI(selectedModelElement);
+						return;
 					}
 				}
 			}
