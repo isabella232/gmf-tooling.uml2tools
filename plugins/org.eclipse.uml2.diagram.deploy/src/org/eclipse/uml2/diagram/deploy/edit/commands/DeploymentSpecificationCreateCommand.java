@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.diagram.deploy.providers.ElementInitializers;
 import org.eclipse.uml2.diagram.deploy.providers.UMLElementTypes;
 import org.eclipse.uml2.uml.DeploymentSpecification;
+import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
@@ -45,22 +46,17 @@ public class DeploymentSpecificationCreateCommand extends EditElementCommand {
 	 */
 	public boolean canExecute() {
 		return true;
+
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		// Uncomment to put "phantom" objects into the diagram file.		
-		// org.eclipse.emf.ecore.resource.Resource resource = 
-		// 		((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).getContainer().eResource();
-		// if (resource == null) {
-		// 	return null;
-		// }
-		Resource resource = getElementToEdit().eResource();
 		DeploymentSpecification newElement = UMLFactory.eINSTANCE.createDeploymentSpecification();
 
-		resource.getContents().add(newElement);
+		Package owner = (Package) getElementToEdit();
+		owner.getPackagedElements().add(newElement);
 
 		ElementInitializers.getInstance().init_DeploymentSpecification_2007(newElement);
 

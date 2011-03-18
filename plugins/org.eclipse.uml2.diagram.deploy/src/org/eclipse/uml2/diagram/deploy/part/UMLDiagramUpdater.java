@@ -441,6 +441,10 @@ public class UMLDiagramUpdater {
 				result.add(new org.eclipse.uml2.diagram.deploy.part.UMLNodeDescriptor(childElement, visualID));
 				continue;
 			}
+			if (visualID == DeploymentSpecificationEditPart.VISUAL_ID) {
+				result.add(new org.eclipse.uml2.diagram.deploy.part.UMLNodeDescriptor(childElement, visualID));
+				continue;
+			}
 		}
 		for (Iterator<?> it = modelElement.getOwnedComments().iterator(); it.hasNext();) {
 			Comment childElement = (Comment) it.next();
@@ -450,25 +454,7 @@ public class UMLDiagramUpdater {
 				continue;
 			}
 		}
-		Resource resource = modelElement.eResource();
-		for (Iterator<EObject> iterator = getPhantomNodesIterator(resource); iterator.hasNext();) {
-			EObject childElement = iterator.next();
-			if (childElement == modelElement) {
-				continue;
-			}
-			if (UMLVisualIDRegistry.getNodeVisualID(view, childElement) == DeploymentSpecificationEditPart.VISUAL_ID) {
-				result.add(new org.eclipse.uml2.diagram.deploy.part.UMLNodeDescriptor(childElement, DeploymentSpecificationEditPart.VISUAL_ID));
-				continue;
-			}
-		}
 		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static Iterator<EObject> getPhantomNodesIterator(Resource resource) {
-		return resource.getAllContents();
 	}
 
 	/**

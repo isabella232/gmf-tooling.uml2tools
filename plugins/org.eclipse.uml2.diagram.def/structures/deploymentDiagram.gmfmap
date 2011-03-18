@@ -303,6 +303,10 @@
     </ownedChild>
   </nodes>
   <nodes>
+    <containmentFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/packagedElement"/>
+    <childrenFeature
+        href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//Package/ownedType"/>
     <ownedChild>
       <domainMetaElement
           href="../../../plugin/org.eclipse.uml2.uml/model/UML.ecore#//DeploymentSpecification"/>
