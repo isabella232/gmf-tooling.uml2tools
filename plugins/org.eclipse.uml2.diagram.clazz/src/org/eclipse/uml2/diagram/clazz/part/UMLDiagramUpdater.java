@@ -4460,7 +4460,27 @@ public class UMLDiagramUpdater {
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_InterfaceRealization_4008(BehavioredClassifier container) {
 		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008Gen(container));
-		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(container));
+		
+		Collection<UMLLinkDescriptor> resultTmp = new LinkedList<UMLLinkDescriptor>();
+		resultTmp.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(container));
+
+		// eliminate duplicates
+		for (UMLLinkDescriptor linkDesc : resultTmp) {
+			EObject link = linkDesc.getModelElement();
+			if (link instanceof InterfaceRealization) {
+				boolean duplicateFound = false;
+				for (UMLLinkDescriptor desc : result) {
+					if (EcoreUtil.getURI(desc.getModelElement()).equals(EcoreUtil.getURI(link))) {
+						duplicateFound = true;
+						break;
+					}
+				}
+				if (!duplicateFound) {
+					result.add(linkDesc);
+				}
+			}
+		}
+
 		return result;
 	}
 
