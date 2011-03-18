@@ -962,7 +962,7 @@
            class="org.eclipse.uml2.diagram.component.part.UMLUriEditorInputTester">
        </propertyTester>
    </extension>
-<extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+<extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
       <?gmfgen generated="true"?>
        <propertyTester
            id="org.eclipse.uml2.diagram.component.ShortcutPropertyTester"
@@ -972,7 +972,7 @@
            class="org.eclipse.uml2.diagram.component.part.UMLShortcutPropertyTester">
        </propertyTester>
    </extension>
-   <extension point="org.eclipse.ui.contexts" id="ui-context">
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
       <?gmfgen generated="true"?>
       <context
          description="%context.description"

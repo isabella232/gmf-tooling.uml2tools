@@ -495,7 +495,7 @@
          </includes>
       </viewerActionBinding>
    </extension>
-   
+   
    <extension point="org.eclipse.ui.navigator.navigatorContent">
       <?gmfgen generated="true"?>
       <navigatorContent
@@ -623,7 +623,7 @@
            class="org.eclipse.uml2.diagram.profile.part.UMLUriEditorInputTester">
        </propertyTester>
    </extension>
-   
+   
    <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
       <?gmfgen generated="true"?>
        <propertyTester
@@ -634,7 +634,7 @@
            class="org.eclipse.uml2.diagram.profile.part.UMLShortcutPropertyTester">
        </propertyTester>
    </extension>
-   
+   
    <extension point="org.eclipse.ui.contexts" id="ui-context">
       <?gmfgen generated="true"?>
       <context

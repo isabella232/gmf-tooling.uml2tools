@@ -1510,7 +1510,7 @@
            class="org.eclipse.uml2.diagram.clazz.part.UMLUriEditorInputTester">
        </propertyTester>
    </extension>
-   
+   
    <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
       <?gmfgen generated="true"?>
        <propertyTester

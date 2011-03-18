@@ -1,0 +1,30 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«AROUND OBE_selectionChanged FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+public void selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent event) {
+	if (event.getSelection() instanceof org.eclipse.jface.viewers.IStructuredSelection) {
+		org.eclipse.jface.viewers.IStructuredSelection selection = (org.eclipse.jface.viewers.IStructuredSelection) event.getSelection();
+		if (selection.size() == 1) {
+			Object selectedElement = selection.getFirstElement();
+			if (selectedElement instanceof org.eclipse.emf.edit.provider.IWrapperItemProvider) {
+				selectedElement = ((org.eclipse.emf.edit.provider.IWrapperItemProvider) selectedElement).getValue();
+			}
+			if (selectedElement instanceof org.eclipse.emf.ecore.util.FeatureMap.Entry) {
+				selectedElement = ((org.eclipse.emf.ecore.util.FeatureMap.Entry) selectedElement).getValue();
+			}
+			if (selectedElement instanceof org.eclipse.emf.ecore.EObject) {
+				org.eclipse.emf.ecore.EObject selectedModelElement = (org.eclipse.emf.ecore.EObject) selectedElement;
+				boolean isDiagramRootPackage = org.eclipse.emf.ecore.util.EcoreUtil.getURI(selectedModelElement).equals(org.eclipse.emf.ecore.util.EcoreUtil.getURI(myView.getDiagram().getElement()));
+				if (!isDiagramRootPackage) {
+					setOkButtonEnabled(org.eclipse.gmf.runtime.diagram.core.services.ViewService.getInstance().provides(org.eclipse.gmf.runtime.notation.Node.class, new org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter(selectedModelElement), myView, null, org.eclipse.gmf.runtime.diagram.core.util.ViewUtil.APPEND, true, «EXPAND xpt::plugin::Activator::preferenceHintAccess FOR editorGen»));
+					mySelectedModelElementURI = org.eclipse.emf.ecore.util.EcoreUtil.getURI(selectedModelElement);
+					return;
+				}
+			}
+		}
+	}
+	mySelectedModelElementURI = null;
+	setOkButtonEnabled(false);
+}
+«ENDAROUND»
