@@ -2267,7 +2267,7 @@
             fixedForeground="true"/>
         <attributes
             xsi:type="u2tgen:GeneralizedLinkConstraintAttribute"
-            linkConstraint="if (UMLPackage.eINSTANCE.getUsage().isSuperTypeOf(linkClass)) {     if ((source instanceof Classifier || source instanceof org.eclipse.uml2.uml.Port) &amp;&amp; target instanceof Interface) {      return false;     }    }    return true;"/>
+            linkConstraint="if (linkClass != null) {    if (UMLPackage.eINSTANCE.getUsage().isSuperTypeOf(linkClass)) {     if ((source instanceof Classifier || source instanceof org.eclipse.uml2.uml.Port) &amp;&amp; target instanceof Interface) {      return false;     }    }    }    return true;"/>
         <attributes
             xsi:type="u2tgen:LinkToolStackSupportAttribute"
             toolClassProviderName="CreateDependencyLinkTool"

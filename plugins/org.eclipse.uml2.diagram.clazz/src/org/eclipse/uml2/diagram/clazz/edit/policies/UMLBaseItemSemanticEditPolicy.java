@@ -536,9 +536,11 @@ public class UMLBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public static boolean canReallyExistDependency_4002(NamedElement source, NamedElement target, EClass linkClass) {
-			if (UMLPackage.eINSTANCE.getUsage().isSuperTypeOf(linkClass)) {
-				if ((source instanceof Classifier || source instanceof Port) && target instanceof Interface) {
-					return false;
+			if (linkClass != null) {
+				if (UMLPackage.eINSTANCE.getUsage().isSuperTypeOf(linkClass)) {
+					if ((source instanceof Classifier || source instanceof Port) && target instanceof Interface) {
+						return false;
+					}
 				}
 			}
 			return true;
