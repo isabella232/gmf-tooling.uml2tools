@@ -184,7 +184,7 @@
 		</buckminster>
 
 		<echo level="info" message="Create a all-in-one p2 update site archive..." />
-		<zip basedir="${stage4.dir}/site.sdk-eclipse.feature/site.p2" casesensitive="true" defaultexcludes="off" includes="**" destfile="${rootPath}/mdt-uml2tools-Update-incubation-${uml2tools.feature.version}-${buildTimestamp}.zip" />
+		<zip basedir="${stage4.dir}/site.sdk-eclipse.feature/site.p2" casesensitive="true" defaultexcludes="off" includes="**" destfile="${rootPath}/mdt-uml2tools-${uml2tools.feature.version}-${build.type}${buildTimestamp}.zip" />
 	</target>
 
 </project>
