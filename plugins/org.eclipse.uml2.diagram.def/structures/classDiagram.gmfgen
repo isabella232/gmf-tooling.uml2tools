@@ -5742,7 +5742,7 @@
       iD="org.eclipse.uml2.diagram.clazz"
       name="UML2 Class Diagram Plugin (Incubation)"
       provider="Eclipse Modeling Project"
-      version="0.9.2.qualifier"
+      version="0.10.0.qualifier"
       printingEnabled="true">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.uml2.diagram.common</requiredPlugins>

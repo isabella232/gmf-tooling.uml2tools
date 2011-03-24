@@ -4460,7 +4460,7 @@ public class UMLDiagramUpdater {
 	private static Collection<UMLLinkDescriptor> getContainedTypeModelFacetLinks_InterfaceRealization_4008(BehavioredClassifier container) {
 		Collection<UMLLinkDescriptor> result = new LinkedList<UMLLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008Gen(container));
-		
+
 		Collection<UMLLinkDescriptor> resultTmp = new LinkedList<UMLLinkDescriptor>();
 		resultTmp.addAll(getContainedTypeModelFacetLinks_InterfaceRealization_4008_ForAllClassifiers(container));
 

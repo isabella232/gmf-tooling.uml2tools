@@ -1932,7 +1932,7 @@
       iD="org.eclipse.uml2.diagram.statemachine"
       name="UML2 State Machine Diagram Plugin (Incubation)"
       provider="Eclipse Modeling Project"
-      version="0.9.2.qualifier"
+      version="0.10.0.qualifier"
       printingEnabled="true">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
