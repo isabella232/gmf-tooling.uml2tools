@@ -69,10 +69,6 @@
 	<property name="testResultsPath" value="${rootPath}/result/test" />
 	<property name="temp.dir" location="${hudsonWorkSpacePath}/tmp" />
 
-	<property name="promoteUpdateSite" location="${u2t.download.area}" />
-	<property name="promoteSrc" location="${hudsonWorkSpacePathUrlFormat}/work/stage4.out/site.sdk-eclipse.feature/site.p2" />
-	<property name="promoteDropsLocation" location="${u2t.download.area}/downloads/drops" />
-
 	<if>
 		<or>
 			<not>
@@ -169,39 +165,5 @@
 
 	<target name="get.buckminster" unless="buckminster.exists">
 		<get src="${buckminster.sitearchive.url}" dest="${tools.dir}/buckminster.site.zip" verbose="true" />
-	</target>
-
-	<target name="promote">
-		<!--delete dir="${promoteUpdateSite}" />
-		<mkdir dir="${promoteUpdateSite}" />
-		<mkdir dir="${promoteUpdateSite}/plugins" />
-		<mkdir dir="${promoteUpdateSite}/features" />
-		<mkdir dir="${buildSitePath}" /-->
-
-		<delete>
-			<fileset dir="${promoteUpdateSite}">
-				<exclude name="*downloads/*" />
-				<exclude name="*javadoc/*" />
-			</fileset>
-		</delete>
-
-		<mkdir dir="${promoteUpdateSite}/plugins" />
-		<mkdir dir="${promoteUpdateSite}/features" />
-
-		<copy todir="${promoteUpdateSite}">
-			<fileset dir="${promoteSrc}">
-				<include name="**/*" />
-				<include name="**" />
-			</fileset>
-		</copy>
-
-		<!--mkdir dir="${promoteDropsLocation}" />
-		<mkdir dir="${promoteDropsLocation}/${uml2tools.version}" />
-		<mkdir dir="${promoteDropsLocation}/${uml2tools.version}/${build.type}${buildTimestamp}" />
-		<copy todir="${promoteDropsLocation}/${uml2tools.version}/${build.type}${buildTimestamp}">
-			<fileset dir="${buildZipsPath}">
-				<include name="*.zip" />
-			</fileset>
-		</copy-->
 	</target>
 </project>
