@@ -16,7 +16,7 @@
 		<provider readerType="url" componentTypes="buckminster" mutable="false" source="false">
 			<uri format="${project.local.url}/releng/platform.cspec" />
 		</provider>
-    	<provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false" resolutionFilter="(|(build.type=N)(build.type=I))">
+    	<provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false" resolutionFilter="(|(build.type=N)(build.type=I)(build.type=M))">
       		<uri format="${targetplatform.p2.site.milestone.url}/?importType=binary"/>
     	</provider>
     	<provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false" resolutionFilter="(|(build.type=N)(build.type=R)(build.type=S)(build.type=M)(build.type=I))">
