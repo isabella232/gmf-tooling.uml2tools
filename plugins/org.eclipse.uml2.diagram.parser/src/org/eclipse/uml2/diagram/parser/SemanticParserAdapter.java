@@ -31,15 +31,13 @@ public class SemanticParserAdapter extends ParserAdapter implements ISemanticPar
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return isAffectingEvent(notification);
 	}
-	
+
 	public List getSemanticElementsBeingParsed(EObject element) {
-		return isValidElement(element) ? 
-				getViewToStringImpl().getAdditionalReferencedElements(element) : 
-				Collections.EMPTY_LIST;
+		return isValidElement(element) ? getViewToStringImpl().getAdditionalReferencedElements(element) : Collections.EMPTY_LIST;
 	}
-	
-	private ExternalToString.WithReferences getViewToStringImpl(){
-		return (ExternalToString.WithReferences)getViewToString();
+
+	private ExternalToString.WithReferences getViewToStringImpl() {
+		return (ExternalToString.WithReferences) getViewToString();
 	}
 
 }

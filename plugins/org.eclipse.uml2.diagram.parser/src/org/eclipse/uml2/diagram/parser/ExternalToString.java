@@ -18,22 +18,24 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 public interface ExternalToString {
+
 	public String getToString(EObject object, int flags);
-	
+
 	public boolean isAffectingFeature(EStructuralFeature feature);
-	
-	public static final ExternalToString NOT_IMPLEMENTED = new ExternalToString(){
-	
+
+	public static final ExternalToString NOT_IMPLEMENTED = new ExternalToString() {
+
 		public String getToString(EObject object, int flags) {
 			return "-NOT-IMPLEMENTED-";
 		}
-		
+
 		public boolean isAffectingFeature(EStructuralFeature feature) {
 			return false;
 		}
 	};
-	
+
 	public static interface WithReferences extends ExternalToString {
+
 		public List getAdditionalReferencedElements(EObject object);
 	}
 }

@@ -29,69 +29,73 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.uml2.uml.NamedElement;
 
-
 public class LookupResolverImpl implements LookupResolver {
+
 	private LookupResolveRequest myTheOnlyRequest;
+
 	private Callback myTheOnlyCallback;
+
 	private boolean myIsMultipleResolveRequired;
+
 	private final IGraphicalEditPart myResolvingEditPart;
-	
-	public LookupResolverImpl(IGraphicalEditPart resolvingEditPart){
+
+	public LookupResolverImpl(IGraphicalEditPart resolvingEditPart) {
 		myResolvingEditPart = resolvingEditPart;
 	}
-	
-	public void addLookupResolveRequest(LookupResolveRequest request, Callback callback){
-		if (isEmpty()){
+
+	public void addLookupResolveRequest(LookupResolveRequest request, Callback callback) {
+		if (isEmpty()) {
 			myTheOnlyCallback = callback;
 			myTheOnlyRequest = request;
 		} else {
 			myIsMultipleResolveRequired = true;
 		}
 	}
-	
-	public boolean isEmpty(){
+
+	public boolean isEmpty() {
 		return myTheOnlyCallback == null && myTheOnlyRequest == null;
 	}
-	
-	public boolean canResolve(){
+
+	public boolean canResolve() {
 		return !isEmpty() && !myIsMultipleResolveRequired;
 	}
-	
+
 	public AbstractTransactionalCommand getResolveCommand() {
-		if (!canResolve()){
+		if (!canResolve()) {
 			return null;
 		}
 		TransactionalEditingDomain domain = myResolvingEditPart.getEditingDomain();
 		final CreateUnspecifiedTypeRequest createRequest = new CreateUnspecifiedTypeRequest(myTheOnlyRequest.getElementTypes(), myResolvingEditPart.getDiagramPreferencesHint());
 		final Command gefCommand = myResolvingEditPart.getCommand(createRequest);
-		if (!gefCommand.canExecute()){
+		if (!gefCommand.canExecute()) {
 			return null;
 		}
 		//XXX gef inside transactional command???
-		return new AbstractTransactionalCommand(domain, "", null){
+		return new AbstractTransactionalCommand(domain, "", null) {
+
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				gefCommand.execute();
 				NamedElement resolution = getNewObject();
-				if (resolution != null){
+				if (resolution != null) {
 					resolution.eSet(myTheOnlyRequest.getInitFeature(), myTheOnlyRequest.getInitValue());
 					myTheOnlyCallback.lookupResolved(resolution);
 				}
 				return CommandResult.newOKCommandResult();
 			}
-			
-			private NamedElement getNewObject(){
-				for (Object next : createRequest.getElementTypes()){
-					IElementType nextElementType = (IElementType)next;
+
+			private NamedElement getNewObject() {
+				for (Object next : createRequest.getElementTypes()) {
+					IElementType nextElementType = (IElementType) next;
 					CreateRequest nextRequest = createRequest.getRequestForType(nextElementType);
-					List allNew = (List)nextRequest.getNewObject();
-					for (Object nextCreated : allNew){
-						if (nextCreated instanceof IAdaptable){
-							View createdView = (View) ((IAdaptable)nextCreated).getAdapter(View.class);
+					List allNew = (List) nextRequest.getNewObject();
+					for (Object nextCreated : allNew) {
+						if (nextCreated instanceof IAdaptable) {
+							View createdView = (View) ((IAdaptable) nextCreated).getAdapter(View.class);
 							if (createdView != null) {
-								EObject createdEntity = createdView.getElement(); 
-								if (createdEntity instanceof NamedElement){
-									return (NamedElement)createdEntity;
+								EObject createdEntity = createdView.getElement();
+								if (createdEntity instanceof NamedElement) {
+									return (NamedElement) createdEntity;
 								}
 							}
 						}
@@ -101,6 +105,5 @@ public class LookupResolverImpl implements LookupResolver {
 			}
 		};
 	}
-	
 
 }

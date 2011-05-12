@@ -32,6 +32,8 @@ public interface UMLPreferencesConstants {
 
 	String SHOW_ONE_WAY_NAVIGABILITY = "org.eclipse.uml2.diagram.clazz.preferences.show_only_one_way_navigability"; //$NON-NLS-1$
 
+	String SHOW_DEFAULT_MULTIPLICITY = "org.eclipse.uml2.diagram.preferences.show_default_multiplicity"; //$NON-NLS-1$
+
 	String HIGHLIGHT_COLOR = "org.eclipse.uml2.diagram.highlight.color"; //$NON-NLS-1$
 
 	String PREF_MANAGE_LINKS_HIDE_PROVIDED_INTERFACE_LINKS = "org.eclipse.uml2.diagram.preferences.hide_provided_interface_links"; //$NON-NLS-1$

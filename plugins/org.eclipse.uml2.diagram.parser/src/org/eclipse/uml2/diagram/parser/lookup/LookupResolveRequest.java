@@ -18,26 +18,29 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
 public class LookupResolveRequest {
+
 	private final List<IElementType> myElementTypes;
+
 	private final EStructuralFeature myInitFeature;
+
 	private final Object myInitValue;
 
-	public LookupResolveRequest(List<IElementType> elementTypes, EStructuralFeature initFeature, Object initValue){
+	public LookupResolveRequest(List<IElementType> elementTypes, EStructuralFeature initFeature, Object initValue) {
 		myElementTypes = elementTypes;
 		myInitFeature = initFeature;
 		myInitValue = initValue;
 	}
-	
+
 	public List<IElementType> getElementTypes() {
 		return myElementTypes;
 	}
-	
+
 	public EStructuralFeature getInitFeature() {
 		return myInitFeature;
 	}
-	
+
 	public Object getInitValue() {
 		return myInitValue;
 	}
-	
+
 }

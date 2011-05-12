@@ -24,42 +24,46 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.uml2.uml.NamedElement;
 
 public class OCLLookup<T extends NamedElement> implements Lookup<T> {
+
 	public static interface Expression {
+
 		public Object evaluate(Object context);
 	}
-	
+
 	private Expression mySelector;
+
 	private final ArrayList<IElementType> myResolutionTypes;
+
 	private static final IElementType[] NO_RESOLUTIONS = new IElementType[0];
-	
-	public OCLLookup(Expression ocl){
+
+	public OCLLookup(Expression ocl) {
 		this(ocl, NO_RESOLUTIONS);
 	}
-	
-	public OCLLookup(Expression ocl, IElementType[] resolutions){
+
+	public OCLLookup(Expression ocl, IElementType[] resolutions) {
 		mySelector = ocl;
-		if (resolutions == null){
+		if (resolutions == null) {
 			resolutions = NO_RESOLUTIONS;
 		}
 		myResolutionTypes = new ArrayList<IElementType>(Arrays.asList(resolutions));
 	}
-	
+
 	public List getResolutionElementTypes() {
 		return new ArrayList<IElementType>(myResolutionTypes);
 	}
-	
-	public List<T> computeScope(EObject context){
+
+	public List<T> computeScope(EObject context) {
 		Object result = mySelector.evaluate(context);
-		if (result instanceof Collection){
-			return new LinkedList<T>((Collection<T>)result);
+		if (result instanceof Collection) {
+			return new LinkedList<T>((Collection<T>) result);
 		}
 		return Collections.emptyList();
 	}
-	
+
 	public T lookup(String name, EObject context) {
 		List<T> scope = computeScope(context);
-		for (T next : scope){
-			if (name.equals(next.getName()) || name.equals(next.getQualifiedName())){
+		for (T next : scope) {
+			if (name.equals(next.getName()) || name.equals(next.getQualifiedName())) {
 				return next;
 			}
 		}

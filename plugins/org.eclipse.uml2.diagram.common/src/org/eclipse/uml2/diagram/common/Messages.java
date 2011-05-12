@@ -194,6 +194,10 @@ public class Messages extends NLS {
 
 	public static String ViewFiltersPreferencePage_label_hide_usage_links;
 
+	public static String MainPreferencePage_group_display_settings;
+
+	public static String MainPreferencePage_show_default_multiplicity;
+
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

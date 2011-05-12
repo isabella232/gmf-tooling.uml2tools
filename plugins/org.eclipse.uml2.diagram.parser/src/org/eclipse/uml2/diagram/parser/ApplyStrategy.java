@@ -19,7 +19,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 
 public interface ApplyStrategy {
-	public List/*1.5 <ICommand>*/ apply(EObject modelObject, EObject parsedObject);
-	
-	public static final List/*1.5 <ICommand>*/ NOT_EXECUTABLE = Collections.singletonList(UnexecutableCommand.INSTANCE);
+
+	public List/*1.5 <ICommand>*/apply(EObject modelObject, EObject parsedObject);
+
+	public static final List/*1.5 <ICommand>*/NOT_EXECUTABLE = Collections.singletonList(UnexecutableCommand.INSTANCE);
 }

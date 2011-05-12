@@ -26,6 +26,7 @@ public interface LookupResolver {
 	public abstract AbstractTransactionalCommand getResolveCommand();
 
 	public static interface Callback {
+
 		public void lookupResolved(NamedElement resolution);
 	}
 

@@ -19,7 +19,9 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
 import org.eclipse.uml2.diagram.common.details.DetailLevelParserOptions;
+import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.parser.AbstractToString;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
@@ -107,7 +109,7 @@ public abstract class OperationToString extends AbstractToString {
 			result.append(getDirection(next));
 			appendName(result, next);
 			appendType(result, next);
-			appendMultiplicity(result, next);
+			appendMultiplicity(result, next, UMLCommonPlugin.getInstance().getPreferenceStore().getBoolean(UMLPreferencesConstants.SHOW_DEFAULT_MULTIPLICITY) == false);
 			if (editNotView) {
 				appendDefaultParameterValue(result, next);
 			}

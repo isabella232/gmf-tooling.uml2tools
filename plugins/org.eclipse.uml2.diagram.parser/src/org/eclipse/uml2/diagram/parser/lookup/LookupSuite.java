@@ -18,26 +18,29 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 
 public interface LookupSuite {
+
 	public <T> Lookup<T> getLookup(Class<T> clazz);
-	
-	public static final Lookup NULL_LOOKUP = new Lookup(){
-		public Object lookup(String name, EObject context){
+
+	public static final Lookup NULL_LOOKUP = new Lookup() {
+
+		public Object lookup(String name, EObject context) {
 			return null;
 		}
-		
+
 		public List getResolutionElementTypes() {
 			return Collections.emptyList();
 		}
 
-		public List computeScope(EObject context) { 
+		public List computeScope(EObject context) {
 			return Collections.emptyList();
 		}
 	};
-	
-	public static final LookupSuite NULL_SUITE = new LookupSuite(){
+
+	public static final LookupSuite NULL_SUITE = new LookupSuite() {
+
 		public <T> Lookup<T> getLookup(Class<T> clazz) {
 			return NULL_LOOKUP;
 		}
 	};
-	
+
 }

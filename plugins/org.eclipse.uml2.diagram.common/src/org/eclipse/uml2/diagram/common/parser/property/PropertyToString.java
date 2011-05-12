@@ -19,7 +19,9 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
 import org.eclipse.uml2.diagram.common.details.DetailLevelParserOptions;
+import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.parser.AbstractToString;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -39,7 +41,7 @@ public abstract class PropertyToString extends AbstractToString {
 			appendIsDerived(result, property);
 			appendName(result, property);
 			appendType(result, property);
-			appendMultiplicity(result, property);
+			appendMultiplicity(result, property, UMLCommonPlugin.getInstance().getPreferenceStore().getBoolean(UMLPreferencesConstants.SHOW_DEFAULT_MULTIPLICITY) == false);
 			appendDefault(result, property);
 			appendPropertyModifiers(result, property);
 			return result.toString();
@@ -71,7 +73,7 @@ public abstract class PropertyToString extends AbstractToString {
 				appendIsDerived(result, property);
 				appendName(result, property);
 				appendType(result, property);
-				appendMultiplicity(result, property);
+				appendMultiplicity(result, property, UMLCommonPlugin.getInstance().getPreferenceStore().getBoolean(UMLPreferencesConstants.SHOW_DEFAULT_MULTIPLICITY) == false);
 				appendDefault(result, property);
 			}
 			return result.toString();

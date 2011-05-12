@@ -20,73 +20,70 @@ import org.eclipse.uml2.uml.TypedElement;
 import org.eclipse.uml2.uml.VisibilityKind;
 
 public abstract class AbstractToString implements ExternalToString {
+
 	protected String getVisibility(NamedElement namedElement) {
-		VisibilityKind visibility = namedElement.getVisibility(); 
-		switch (visibility.getValue()){
-			case VisibilityKind.PACKAGE : 
-				return "~";
-			case VisibilityKind.PRIVATE : 
-				return "-";
-			case VisibilityKind.PROTECTED : 
-				return "#";
-			case VisibilityKind.PUBLIC : 
-				return ""; //omitted
+		VisibilityKind visibility = namedElement.getVisibility();
+		switch (visibility.getValue()) {
+		case VisibilityKind.PACKAGE:
+			return "~";
+		case VisibilityKind.PRIVATE:
+			return "-";
+		case VisibilityKind.PROTECTED:
+			return "#";
+		case VisibilityKind.PUBLIC:
+			return ""; //omitted
 		}
 		throw new IllegalArgumentException("Unknown visibility for :" + namedElement + ", that is: " + visibility);
 	}
-	
-	protected void appendName(StringBuffer result, NamedElement namedElement){
-		if (namedElement == null){
+
+	protected void appendName(StringBuffer result, NamedElement namedElement) {
+		if (namedElement == null) {
 			return;
 		}
 		String name = namedElement.getName();
-		if (!isEmpty(name)){
+		if (!isEmpty(name)) {
 			result.append(name);
 		}
 	}
 
 	protected void appendType(StringBuffer result, TypedElement typedElement) {
-		if (typedElement == null){
+		if (typedElement == null) {
 			return;
 		}
 		Type type = typedElement.getType();
-		if (type == null){
+		if (type == null) {
 			return;
 		}
 		appendType(result, type.getName());
 	}
-	
+
 	protected static void appendType(StringBuffer result, String typeName) {
-		if (isEmpty(typeName)){
+		if (isEmpty(typeName)) {
 			return;
 		}
 		result.append(" : ");
 		result.append(typeName);
 	}
-	
-	protected static boolean isEmpty(String text){
+
+	protected static boolean isEmpty(String text) {
 		return text == null || text.trim().length() == 0;
 	}
 
-	protected void appendMultiplicity(StringBuffer result, MultiplicityElement element) {
-		appendMultiplicity(result, element, true);
-	}
-	
 	protected void appendMultiplicity(StringBuffer result, MultiplicityElement element, boolean skipIfExactlyOne) {
-		if (element == null){
+		if (element == null) {
 			return;
 		}
 		int lower = element.getLower();
 		int upper = element.getUpper();
-		if (upper == 1 && lower == 1 && skipIfExactlyOne){
+		if (upper == 1 && lower == 1 && skipIfExactlyOne) {
 			return;
 		}
 		result.append(" [");
-		if (lower != upper){
+		if (lower != upper) {
 			result.append(lower);
 			result.append('.').append('.');
 		}
-		if (upper == LiteralUnlimitedNatural.UNLIMITED){
+		if (upper == LiteralUnlimitedNatural.UNLIMITED) {
 			result.append('*');
 		} else {
 			result.append(upper);
@@ -95,24 +92,25 @@ public abstract class AbstractToString implements ExternalToString {
 	}
 
 	protected static class ModifiersBuilder {
+
 		private final StringBuffer myBuffer;
-		
-		public ModifiersBuilder(){
+
+		public ModifiersBuilder() {
 			myBuffer = new StringBuffer();
 		}
-		
-		public void appendModifier(String modifier){
-			if (modifier.length() == 0){
+
+		public void appendModifier(String modifier) {
+			if (modifier.length() == 0) {
 				return;
 			}
-			if (myBuffer.length() != 0){
+			if (myBuffer.length() != 0) {
 				myBuffer.append(", ");
 			}
 			myBuffer.append(modifier);
 		}
-		
-		public void writeInto(StringBuffer output){
-			if (myBuffer.length() == 0){
+
+		public void writeInto(StringBuffer output) {
+			if (myBuffer.length() == 0) {
 				return;
 			}
 			output.append(" ");
@@ -120,11 +118,11 @@ public abstract class AbstractToString implements ExternalToString {
 			output.append(myBuffer);
 			output.append(" }");
 		}
-		
+
 		public String toString() {
 			return super.toString();
 		}
-		
+
 	}
 
 }

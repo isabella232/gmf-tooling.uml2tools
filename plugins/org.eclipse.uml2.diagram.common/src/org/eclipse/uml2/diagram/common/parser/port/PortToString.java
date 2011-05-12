@@ -18,6 +18,8 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
+import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.parser.AbstractToString;
 import org.eclipse.uml2.diagram.parser.ExternalToString.WithReferences;
 import org.eclipse.uml2.uml.Port;
@@ -31,7 +33,7 @@ public class PortToString extends AbstractToString implements WithReferences {
 		StringBuffer result = new StringBuffer();
 		appendName(result, port);
 		appendType(result, port);
-		appendMultiplicity(result, port);
+		appendMultiplicity(result, port, UMLCommonPlugin.getInstance().getPreferenceStore().getBoolean(UMLPreferencesConstants.SHOW_DEFAULT_MULTIPLICITY) == false);
 		return result.toString();
 	}
 

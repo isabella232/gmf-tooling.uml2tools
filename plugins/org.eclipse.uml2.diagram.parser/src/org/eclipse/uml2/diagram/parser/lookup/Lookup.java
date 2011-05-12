@@ -18,7 +18,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
 public interface Lookup<T> {
+
 	T lookup(String name, EObject context);
-	List<IElementType> getResolutionElementTypes(); 
+
+	List<IElementType> getResolutionElementTypes();
+
 	List<T> computeScope(EObject context);
 }

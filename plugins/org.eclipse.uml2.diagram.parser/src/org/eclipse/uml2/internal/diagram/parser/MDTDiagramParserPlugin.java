@@ -17,6 +17,7 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
 public class MDTDiagramParserPlugin extends Plugin {
+
 	private static MDTDiagramParserPlugin anInstance;
 
 	public void start(BundleContext context) throws Exception {

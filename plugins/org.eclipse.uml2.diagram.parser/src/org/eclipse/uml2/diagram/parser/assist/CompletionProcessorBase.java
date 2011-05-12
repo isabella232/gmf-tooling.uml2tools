@@ -86,8 +86,8 @@ public abstract class CompletionProcessorBase implements IContentAssistProcessor
 			throw new IllegalStateException(e);
 		}
 	}
-	
-	protected final String getControlTextBeforeSelection(IContentAssistSubjectControl subjectControl){
+
+	protected final String getControlTextBeforeSelection(IContentAssistSubjectControl subjectControl) {
 		Point selection = subjectControl.getSelectedRange();
 		int selectionStart = selection.x;
 		return getPrefix(subjectControl, selectionStart);

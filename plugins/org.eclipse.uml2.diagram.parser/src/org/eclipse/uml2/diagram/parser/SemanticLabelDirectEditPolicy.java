@@ -17,6 +17,7 @@ import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 
 public class SemanticLabelDirectEditPolicy extends LabelDirectEditPolicy {
+
 	@Override
 	protected Command getDirectEditCommand(DirectEditRequest edit) {
 		Command applyChanges = super.getDirectEditCommand(edit);
@@ -24,13 +25,14 @@ public class SemanticLabelDirectEditPolicy extends LabelDirectEditPolicy {
 			return applyChanges;
 		}
 		Command postRefresh = null;
-		if (applyChanges != null && applyChanges.canExecute()){
+		if (applyChanges != null && applyChanges.canExecute()) {
 			postRefresh = new PostRefreshCommand();
 		}
 		return applyChanges.chain(postRefresh);
 	}
-	
+
 	private class PostRefreshCommand extends Command {
+
 		@Override
 		public void execute() {
 			getHost().refresh();

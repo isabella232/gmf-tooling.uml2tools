@@ -47,7 +47,6 @@ import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseNameEditPart;
 import org.eclipse.uml2.diagram.usecase.edit.parts.UseCaseStereoEditPart;
 import org.eclipse.uml2.diagram.usecase.parsers.MessageFormatParser;
 import org.eclipse.uml2.diagram.usecase.part.UMLVisualIDRegistry;
-import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
@@ -518,16 +517,16 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 				new AssociationEndApplyStrategy(sourceNotTarget), //
 				new AssociationEndToString.MULTIPLICITY_VIEW(sourceNotTarget) {
 
-					@Override
-					protected void appendMultiplicity(StringBuffer result, MultiplicityElement element) {
-						appendMultiplicity(result, element, true);
-					}
+					//					@Override
+					//					protected void appendMultiplicity(StringBuffer result, MultiplicityElement element, boolean skipIfExactlyOne) {
+					//						super.appendMultiplicity(result, element, skipIfExactlyOne);
+					//					}
 				}, new AssociationEndToString.EDIT(sourceNotTarget) {
 
-					@Override
-					protected void appendMultiplicity(StringBuffer result, MultiplicityElement element) {
-						appendMultiplicity(result, element, false);
-					}
+					//					@Override
+					//					protected void appendMultiplicity(StringBuffer result, MultiplicityElement element, boolean skipIfExactlyOne) {
+					//						super.appendMultiplicity(result, element, skipIfExactlyOne);
+					//					}
 				});
 	}
 

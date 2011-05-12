@@ -18,8 +18,10 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
+import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
@@ -125,7 +127,7 @@ public abstract class AssociationEndToString extends PropertyToString {
 		public String getToString(EObject object, int flags) {
 			Property property = asProperty(object);
 			StringBuffer result = new StringBuffer();
-			appendMultiplicity(result, property);
+			appendMultiplicity(result, property, UMLCommonPlugin.getInstance().getPreferenceStore().getBoolean(UMLPreferencesConstants.SHOW_DEFAULT_MULTIPLICITY) == false);
 			return result.toString();
 		}
 

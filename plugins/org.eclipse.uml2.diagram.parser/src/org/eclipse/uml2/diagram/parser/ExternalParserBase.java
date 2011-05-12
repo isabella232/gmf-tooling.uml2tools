@@ -24,15 +24,17 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public abstract class ExternalParserBase {
+
 	private LookupSuite myLookups = LookupSuite.NULL_SUITE;
+
 	private LookupResolver myLookupResolver = LookupResolver.NULL;
-	
+
 	private EObject myContext;
-	
+
 	public abstract EClass getSubjectClass();
 
 	public abstract void parse(EObject target, String text) throws ExternalParserException;
-	
+
 	public final EObject parseNewObject(EObject context, String text) throws ExternalParserException {
 		myContext = context;
 		try {
@@ -43,7 +45,7 @@ public abstract class ExternalParserBase {
 			myContext = null;
 		}
 	}
-	
+
 	public final void parse(EObject target, String text, EObject context) throws ExternalParserException {
 		myContext = context;
 		try {
@@ -52,58 +54,58 @@ public abstract class ExternalParserBase {
 			myContext = null;
 		}
 	}
-	
-	public final void setLookupSuite(LookupSuite suite){
+
+	public final void setLookupSuite(LookupSuite suite) {
 		myLookups = suite;
-		if (myLookups == null){
+		if (myLookups == null) {
 			myLookups = LookupSuite.NULL_SUITE;
 		}
 	}
-	
-	public final void setLookupResolver(LookupResolver lookupResolver){
+
+	public final void setLookupResolver(LookupResolver lookupResolver) {
 		myLookupResolver = lookupResolver;
-		if (myLookupResolver == null){
+		if (myLookupResolver == null) {
 			myLookupResolver = LookupResolver.NULL;
 		}
 	}
-	
-	public final LookupSuite getLookupSuite(){
+
+	public final LookupSuite getLookupSuite() {
 		return myLookups;
 	}
-	
-	public final <T> T lookup(Class<T> clazz, String name){
+
+	public final <T> T lookup(Class<T> clazz, String name) {
 		Lookup<T> lookup = getLookupSuite().getLookup(clazz);
 		return lookup.lookup(name, getContext());
 	}
-	
-	public EObject createSubjectPrototype(){
+
+	public EObject createSubjectPrototype() {
 		EClass subjectClass = getSubjectClass();
 		return subjectClass.getEPackage().getEFactoryInstance().create(subjectClass);
 	}
-	
-	protected final EObject getContext(){
+
+	protected final EObject getContext() {
 		return myContext;
 	}
-	
-	protected final void checkContext(){
-		if (getContext() == null){
+
+	protected final void checkContext() {
+		if (getContext() == null) {
 			throw new IllegalStateException("I need context element to perform lookups");
 		}
 	}
-	
-	protected <T extends NamedElement> void applyLookup(Class<T> clazz, String name, LookupResolver.Callback callback){
+
+	protected <T extends NamedElement> void applyLookup(Class<T> clazz, String name, LookupResolver.Callback callback) {
 		Lookup<T> lookup = getLookupSuite().getLookup(clazz);
 		T result = lookup.lookup(name, getContext());
-		if (result != null){
+		if (result != null) {
 			callback.lookupResolved(result);
 			return;
 		}
 		List<IElementType> allowedTypes = lookup.getResolutionElementTypes();
-		if (allowedTypes.isEmpty()){
+		if (allowedTypes.isEmpty()) {
 			return;
 		}
 		LookupResolveRequest request = new LookupResolveRequest(allowedTypes, UMLPackage.eINSTANCE.getNamedElement_Name(), name);
 		myLookupResolver.addLookupResolveRequest(request, callback);
 	}
-	
+
 }

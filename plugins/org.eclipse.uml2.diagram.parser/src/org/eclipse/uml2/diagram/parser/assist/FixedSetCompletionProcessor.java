@@ -25,11 +25,11 @@ public class FixedSetCompletionProcessor extends EObjectCompletionProcessor {
 	public FixedSetCompletionProcessor(List<String> proposals) {
 		myProposals = Collections.unmodifiableList(new ArrayList<String>(proposals));
 	}
-	
-	public FixedSetCompletionProcessor(String ...proposals){
+
+	public FixedSetCompletionProcessor(String... proposals) {
 		this(Arrays.asList(proposals));
 	}
-	
+
 	@Override
 	protected Iterable<String> computeContextProposals(EObject context) {
 		return myProposals;
