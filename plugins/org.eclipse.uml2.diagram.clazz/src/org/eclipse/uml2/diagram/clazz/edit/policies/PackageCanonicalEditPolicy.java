@@ -425,6 +425,11 @@ public class PackageCanonicalEditPolicy extends CanonicalEditPolicy {
 				UMLLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
 				if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination()
 						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+					//Add the edge and it's domain element to the domain2Notation-Map.
+
+					if (!domain2NotationMap.containsKey(nextDiagramLink.getElement())) {
+						domain2NotationMap.put(nextDiagramLink.getElement(), nextDiagramLink);
+					}
 					linksIterator.remove();
 					linkDescriptorsIterator.remove();
 					break;

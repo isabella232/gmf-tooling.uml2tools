@@ -25,6 +25,43 @@
 	«EXPAND collectLinksOutgoingFromShortcut-»
 «ENDAROUND»
 
+«AROUND refreshConnectionsBody FOR gmfgen::GenDiagram-»
+«EXPAND CodeStyle::G2('java.util.Map', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')» domain2NotationMap = new «EXPAND CodeStyle::G2('java.util.HashMap', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')»();
+	«EXPAND CodeStyle::G('java.util.Collection', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName())» linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
+	java.util.Collection existingLinks = new java.util.LinkedList(getDiagram().getEdges());
+	for (java.util.Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+		org.eclipse.gmf.runtime.notation.Edge nextDiagramLink = (org.eclipse.gmf.runtime.notation.Edge) linksIterator.next();
+		int diagramLinkVisualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall»(nextDiagramLink);
+		if (diagramLinkVisualID == -1«EXPAND _compareLinkVisualID FOREACH links->select(gl | gl.modelFacet.oclIsUndefined())») {
+			if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
+				linksIterator.remove();
+			}
+			continue;
+		}
+		org.eclipse.emf.ecore.EObject diagramLinkObject = nextDiagramLink.getElement();
+		org.eclipse.emf.ecore.EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
+		org.eclipse.emf.ecore.EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
+		«EXPAND CodeStyle::iterate('nextLinkDescriptor', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName(), 'linkDescriptorsIterator', 'linkDescriptors.iterator()')-»
+			if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination() && diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+				//Add the edge and it's domain element to the domain2Notation-Map.
+				«REM»
+				This is necessary when the source of the link is a shortcut. Otherwise the map will already contain an entry for this link. 
+				«ENDREM»
+				if (!domain2NotationMap.containsKey(nextDiagramLink.getElement())) {
+					domain2NotationMap.put(nextDiagramLink.getElement(), nextDiagramLink);
+				}
+				linksIterator.remove();
+				linkDescriptorsIterator.remove();
+				break;
+			}
+		}
+	}
+	deleteViews(existingLinks.iterator());
+	return createConnections(linkDescriptors, domain2NotationMap);
+«ENDAROUND»
+
+«DEFINE _compareLinkVisualID FOR gmfgen::GenLink» || diagramLinkVisualID == «EXPAND xpt::editor::VisualIDRegistry::visualID»«ENDDEFINE»
+
 «AROUND _caseSemanticElement FOR gmfgen::GenCommonBase-»
 «EXPAND xpt::Common::caseVisualID» {
 	if (!domain2NotationMap.containsKey(view.getElement())) {
