@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: De
+Bundle-SymbolicName: org.eclipse.uml2.diagram.common.nl.de
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: org.eclipse.uml2.diagram.common;bundle-version="0.9.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
