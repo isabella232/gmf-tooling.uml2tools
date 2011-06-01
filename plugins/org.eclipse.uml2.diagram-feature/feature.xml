@@ -22,29 +22,40 @@
       <update label="%updateSiteName" url="http://download.eclipse.org/modeling/mdt/updates/"/>
    </url>
 
+   <includes
+         id="org.eclipse.uml2.diagram.activity.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2.diagram.clazz.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2.diagram.component.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2.diagram.csd.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2.diagram.deploy.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2.diagram.profile.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2.diagram.statemachine.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.uml2.diagram.usecase.feature"
+         version="0.0.0"/>
+
    <plugin
          id="org.eclipse.uml2.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.activity"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.csd"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.clazz"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -65,56 +76,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.uml2.diagram.component"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.uml2.diagram.parser"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.statemachine"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.profile"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.deploy"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.usecase"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.sequence"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.uml2.diagram.sequence.model"
          download-size="0"
          install-size="0"
          version="0.0.0"
