@@ -81,7 +81,7 @@ public class ApplyProfileAction extends DiagramAction {
 	}
 
 	protected String calculateText() {
-		String name = myProfile.getName();
+		String name = myProfile.getLabel();
 		return name != null ? name : EMPTY_NAME;
 	}
 

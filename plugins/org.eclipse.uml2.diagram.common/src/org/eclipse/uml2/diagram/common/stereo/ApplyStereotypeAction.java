@@ -68,7 +68,7 @@ public class ApplyStereotypeAction extends DiagramAction {
 	}
 
 	private String calculateText() {
-		String name = myStereotype.getQualifiedName();
+		String name = myStereotype.getLabel();
 		return name != null ? name : EMPTY_NAME;
 	}
 
