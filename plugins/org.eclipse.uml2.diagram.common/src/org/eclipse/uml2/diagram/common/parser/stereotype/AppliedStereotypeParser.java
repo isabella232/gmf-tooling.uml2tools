@@ -64,6 +64,12 @@ public class AppliedStereotypeParser implements ISemanticParser {
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable subject) {
 		return null;
 	}
+	
+	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
+		Element subject = doAdapt(element);
+		List<String> toApply = getStereotypesToApply(newString);
+		return ApplyStereotypeHelper.getCommand(subject, toApply);
+	}
 
 	public String getEditString(IAdaptable element, int flags) {
 		Element subject = doAdapt(element);
@@ -80,24 +86,34 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		}
 		return result.toString();
 	}
-
-	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
-		Element subject = doAdapt(element);
-		List<String> toApply = getStereotypesToApply(newString);
-		return ApplyStereotypeHelper.getCommand(subject, toApply);
-	}
-
+	
 	public String getPrintString(IAdaptable element, int flags) {
 		String classifier = getElementLabel(doAdapt(element));
-		String editString = getEditString(element, flags);
+		String labelString = this.getLabelString(element, flags);
 		if (classifier != null) {
 			String result = classifier;
-			if (editString != null && editString.length() > 0) {
-				result += STEREOTYPE_SEPARATOR + StringStatics.SPACE + editString;
+			if (labelString != null && labelString.length() > 0) {
+				result += STEREOTYPE_SEPARATOR + StringStatics.SPACE + labelString;
 			}
 			return NLS.bind(APPLIED_PROFILE, new Object[] { result });
 		}
-		return editString == null || editString.length() == 0 ? editString : NLS.bind(APPLIED_PROFILE, new Object[] { editString });
+		return labelString == null || labelString.length() == 0 ? labelString : NLS.bind(APPLIED_PROFILE, new Object[] { labelString });
+	}
+	
+	private String getLabelString(IAdaptable element, int flags) {
+		Element subject = doAdapt(element);
+		List<Stereotype> stereos = subject.getAppliedStereotypes();
+		if (stereos.isEmpty()) {
+			return ""; //$NON-NLS-1$
+		}
+		StringBuffer result = new StringBuffer();
+		for (Stereotype next : stereos) {
+			if (result.length() > 0) {
+				result.append(STEREOTYPE_SEPARATOR + " "); //$NON-NLS-1$
+			}
+			result.append(next.getLabel());
+		}
+		return result.toString();
 	}
 
 	public boolean isAffectingEvent(Object event, int flags) {
