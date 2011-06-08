@@ -17,4 +17,5 @@
 «targetDef.proceed()»
 preferences.icons=Icon Style
 «EXPAND u2t::async::extensions::i18n_values FOR self.editorGen.diagram-»
+«EXPAND u2t::stereo::extensions::stereotypeI18n FOR self.editorGen.diagram-»
 «ENDAROUND»

@@ -100,7 +100,15 @@
                 afterTab="property.tab.domain"
                 category="domain"
                 id="property.tab.domain.taggedvalues"
-                label="Tagged Values"/>
+                label="%tab.taggedvalues"/>
       </propertyTabs>
    </extension>
+«ENDDEFINE»
+
+«DEFINE stereotypeI18n FOR gmfgen::GenDiagram-»
+«IF supportsStereotypes(self)-»
+
+# Property Sheet for Stereotypes
+tab.taggedvalues=Tagged Values
+«ENDIF»
 «ENDDEFINE»

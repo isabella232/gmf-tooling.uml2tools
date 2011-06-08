@@ -948,7 +948,7 @@
                 afterTab="property.tab.domain"
                 category="domain"
                 id="property.tab.domain.taggedvalues"
-                label="Tagged Values"/>
+                label="%tab.taggedvalues"/>
       </propertyTabs>
    </extension>
 
