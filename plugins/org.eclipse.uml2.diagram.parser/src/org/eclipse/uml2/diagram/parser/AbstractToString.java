@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.TypedElement;
 import org.eclipse.uml2.uml.VisibilityKind;
 
 public abstract class AbstractToString implements ExternalToString {
-
+	
 	protected String getVisibility(NamedElement namedElement) {
 		VisibilityKind visibility = namedElement.getVisibility();
 		switch (visibility.getValue()) {
@@ -68,16 +68,20 @@ public abstract class AbstractToString implements ExternalToString {
 	protected static boolean isEmpty(String text) {
 		return text == null || text.trim().length() == 0;
 	}
-
-	protected void appendMultiplicity(StringBuffer result, MultiplicityElement element, boolean skipIfExactlyOne) {
+	
+	protected void appendMultiplicity(StringBuffer result, MultiplicityElement element, MultiplicityViewOption multiplicityViewOption) {
 		if (element == null) {
+			return;
+		}
+		if (multiplicityViewOption == MultiplicityViewOption.NO_MULTIPLICITY) {
 			return;
 		}
 		int lower = element.getLower();
 		int upper = element.getUpper();
-		if (upper == 1 && lower == 1 && skipIfExactlyOne) {
+		if (upper == 1 && lower == 1 && (multiplicityViewOption == MultiplicityViewOption.NO_DEFAULT_MULTIPLICITY)) {
 			return;
 		}
+		
 		result.append(" [");
 		if (lower != upper) {
 			result.append(lower);

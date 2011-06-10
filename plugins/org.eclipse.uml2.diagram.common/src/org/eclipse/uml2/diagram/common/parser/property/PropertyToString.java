@@ -21,8 +21,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
 import org.eclipse.uml2.diagram.common.details.DetailLevelParserOptions;
+import org.eclipse.uml2.diagram.common.parser.MultiplicityViewOptionConverter;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.parser.AbstractToString;
+import org.eclipse.uml2.diagram.parser.MultiplicityViewOption;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -41,7 +43,9 @@ public abstract class PropertyToString extends AbstractToString {
 			appendIsDerived(result, property);
 			appendName(result, property);
 			appendType(result, property);
-			appendMultiplicity(result, property, UMLCommonPlugin.getInstance().getPreferenceStore().getBoolean(UMLPreferencesConstants.SHOW_DEFAULT_MULTIPLICITY) == false);
+			String viewOptionString = UMLCommonPlugin.getInstance().getPreferenceStore().getString(UMLPreferencesConstants.SHOW_MULTIPLICITY_OPTIONS);
+			MultiplicityViewOption viewOption = MultiplicityViewOptionConverter.parsePreferenceValue(viewOptionString);
+			appendMultiplicity(result, property, viewOption);
 			appendDefault(result, property);
 			appendPropertyModifiers(result, property);
 			return result.toString();
@@ -73,7 +77,9 @@ public abstract class PropertyToString extends AbstractToString {
 				appendIsDerived(result, property);
 				appendName(result, property);
 				appendType(result, property);
-				appendMultiplicity(result, property, UMLCommonPlugin.getInstance().getPreferenceStore().getBoolean(UMLPreferencesConstants.SHOW_DEFAULT_MULTIPLICITY) == false);
+				String viewOptionString = UMLCommonPlugin.getInstance().getPreferenceStore().getString(UMLPreferencesConstants.SHOW_MULTIPLICITY_OPTIONS);
+				MultiplicityViewOption viewOption = MultiplicityViewOptionConverter.parsePreferenceValue(viewOptionString);
+				appendMultiplicity(result, property, viewOption);
 				appendDefault(result, property);
 			}
 			return result.toString();

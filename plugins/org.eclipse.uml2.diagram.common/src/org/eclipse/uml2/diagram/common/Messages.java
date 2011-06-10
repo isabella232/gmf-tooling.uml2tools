@@ -196,7 +196,11 @@ public class Messages extends NLS {
 
 	public static String MainPreferencePage_group_display_settings;
 
-	public static String MainPreferencePage_show_default_multiplicity;
+	public static String MainPreferencePage_show_no_multiplicity;
+
+	public static String MainPreferencePage_show_no_default_multiplicity;
+
+	public static String MainPreferencePage_show_all_multiplicity;
 
 	static {
 		// initialize resource bundle

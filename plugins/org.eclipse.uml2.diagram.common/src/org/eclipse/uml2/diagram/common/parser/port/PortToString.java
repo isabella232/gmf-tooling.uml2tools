@@ -19,8 +19,10 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
+import org.eclipse.uml2.diagram.common.parser.MultiplicityViewOptionConverter;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.parser.AbstractToString;
+import org.eclipse.uml2.diagram.parser.MultiplicityViewOption;
 import org.eclipse.uml2.diagram.parser.ExternalToString.WithReferences;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -33,7 +35,9 @@ public class PortToString extends AbstractToString implements WithReferences {
 		StringBuffer result = new StringBuffer();
 		appendName(result, port);
 		appendType(result, port);
-		appendMultiplicity(result, port, UMLCommonPlugin.getInstance().getPreferenceStore().getBoolean(UMLPreferencesConstants.SHOW_DEFAULT_MULTIPLICITY) == false);
+		String viewOptionString = UMLCommonPlugin.getInstance().getPreferenceStore().getString(UMLPreferencesConstants.SHOW_MULTIPLICITY_OPTIONS);
+		MultiplicityViewOption viewOption = MultiplicityViewOptionConverter.parsePreferenceValue(viewOptionString);
+		appendMultiplicity(result, port, viewOption);
 		return result.toString();
 	}
 

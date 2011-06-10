@@ -24,6 +24,7 @@ public interface UMLPreferencesConstants {
 
 	String VALUE_CONNECTOR_SHOW_SELECTED_VISUAL_IDS = "labels.show.selected.visual.ids"; //$NON-NLS-1$
 
+	// -----------------------
 	String NAVIGATION_ARROWS_OPTION = "org.eclipse.uml2.diagram.clazz.preferences.navigationP_arrows_options"; //$NON-NLS-1$
 
 	String SHOW_ALL_ARROWS = "org.eclipse.uml2.diagram.clazz.preferences.show_all_arrows_and_xs"; //$NON-NLS-1$
@@ -32,8 +33,16 @@ public interface UMLPreferencesConstants {
 
 	String SHOW_ONE_WAY_NAVIGABILITY = "org.eclipse.uml2.diagram.clazz.preferences.show_only_one_way_navigability"; //$NON-NLS-1$
 
-	String SHOW_DEFAULT_MULTIPLICITY = "org.eclipse.uml2.diagram.preferences.show_default_multiplicity"; //$NON-NLS-1$
+	// -----------------------
+	String SHOW_MULTIPLICITY_OPTIONS = "org.eclipse.uml2.diagram.preferences.show_multiplicity_options"; //$NON-NLS-1$
+	
+	String SHOW_NO_MULTIPLICITY = "org.eclipse.uml2.diagram.preferences.show_no_multiplicity"; //$NON-NLS-1$
 
+	String SHOW_NO_DEFAULT_MULTIPLICITY = "org.eclipse.uml2.diagram.preferences.show_no_default_multiplicity"; //$NON-NLS-1$
+
+	String SHOW_ALL_MULTIPLICITY = "org.eclipse.uml2.diagram.preferences.show_all_multiplicity"; //$NON-NLS-1$
+
+	// -----------------------
 	String HIGHLIGHT_COLOR = "org.eclipse.uml2.diagram.highlight.color"; //$NON-NLS-1$
 
 	String PREF_MANAGE_LINKS_HIDE_PROVIDED_INTERFACE_LINKS = "org.eclipse.uml2.diagram.preferences.hide_provided_interface_links"; //$NON-NLS-1$

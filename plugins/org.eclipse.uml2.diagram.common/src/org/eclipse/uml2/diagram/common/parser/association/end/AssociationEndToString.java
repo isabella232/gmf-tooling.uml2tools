@@ -20,9 +20,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.uml2.diagram.common.UMLCommonPlugin;
 import org.eclipse.uml2.diagram.common.conventions.AssociationEndConvention;
+import org.eclipse.uml2.diagram.common.parser.MultiplicityViewOptionConverter;
 import org.eclipse.uml2.diagram.common.parser.property.PropertyToString;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.parser.ExternalToString;
+import org.eclipse.uml2.diagram.parser.MultiplicityViewOption;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.TypedElement;
@@ -127,7 +129,9 @@ public abstract class AssociationEndToString extends PropertyToString {
 		public String getToString(EObject object, int flags) {
 			Property property = asProperty(object);
 			StringBuffer result = new StringBuffer();
-			appendMultiplicity(result, property, UMLCommonPlugin.getInstance().getPreferenceStore().getBoolean(UMLPreferencesConstants.SHOW_DEFAULT_MULTIPLICITY) == false);
+			String viewOptionString = UMLCommonPlugin.getInstance().getPreferenceStore().getString(UMLPreferencesConstants.SHOW_MULTIPLICITY_OPTIONS);
+			MultiplicityViewOption viewOption = MultiplicityViewOptionConverter.parsePreferenceValue(viewOptionString);
+			appendMultiplicity(result, property, viewOption);
 			return result.toString();
 		}
 
