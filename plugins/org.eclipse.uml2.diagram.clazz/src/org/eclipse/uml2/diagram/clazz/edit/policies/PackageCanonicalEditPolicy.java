@@ -42,6 +42,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.Ratio;
 import org.eclipse.gmf.runtime.notation.Size;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.runtime.notation.impl.EdgeImpl;
 import org.eclipse.uml2.diagram.clazz.conventions.InterfaceNotationConvention;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClass2EditPart;
 import org.eclipse.uml2.diagram.clazz.edit.parts.AssociationClassConnectorEditPart;
@@ -956,6 +957,10 @@ public class PackageCanonicalEditPolicy extends CanonicalEditPolicy {
 				IAdaptable viewAdapter = (IAdaptable) ccr.getNewObject();
 				if (viewAdapter != null) {
 					adapters.add(viewAdapter);
+					//add newly generated view to domain2notation map
+					EObject domainElement = (EObject) nextLinkDescriptor.getSemanticAdapter().getAdapter(EObject.class);
+					View viewElement = (View) viewAdapter.getAdapter(EObject.class);
+					domain2NotationMap.put(domainElement, viewElement);
 				}
 			}
 		}

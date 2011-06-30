@@ -537,6 +537,10 @@ public class ProfileCanonicalEditPolicy extends CanonicalEditPolicy {
 				IAdaptable viewAdapter = (IAdaptable) ccr.getNewObject();
 				if (viewAdapter != null) {
 					adapters.add(viewAdapter);
+					//add newly generated view to domain2notation map
+					EObject domainElement = (EObject) nextLinkDescriptor.getSemanticAdapter().getAdapter(EObject.class);
+					View viewElement = (View) viewAdapter.getAdapter(EObject.class);
+					domain2NotationMap.put(domainElement, viewElement);
 				}
 			}
 		}
