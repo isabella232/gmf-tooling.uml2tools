@@ -322,20 +322,26 @@ public class PackageCanonicalEditPolicy extends CanonicalEditPolicy {
 				continue;
 			}
 			EObject diagramLinkObject = nextDiagramLink.getElement();
-			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
-			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-			for (Iterator<UMLLinkDescriptor> linkDescriptorsIterator = linkDescriptors.iterator(); linkDescriptorsIterator.hasNext();) {
-				UMLLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
-				if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination()
-						&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
-					//Add the edge and it's domain element to the domain2Notation-Map.
+			View sourceView = nextDiagramLink.getSource();
+			View targetView = nextDiagramLink.getTarget();
+			if (sourceView != null && targetView != null) {
+				EObject diagramLinkSrc = sourceView.getElement();
+				EObject diagramLinkDst = targetView.getElement();
+				if (diagramLinkSrc != null && diagramLinkDst != null) {
+					for (Iterator<UMLLinkDescriptor> linkDescriptorsIterator = linkDescriptors.iterator(); linkDescriptorsIterator.hasNext();) {
+						UMLLinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
+						if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination()
+								&& diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+							//Add the edge and it's domain element to the domain2Notation-Map.
 
-					if (!domain2NotationMap.containsKey(nextDiagramLink.getElement())) {
-						domain2NotationMap.put(nextDiagramLink.getElement(), nextDiagramLink);
+							if (!domain2NotationMap.containsKey(nextDiagramLink.getElement())) {
+								domain2NotationMap.put(nextDiagramLink.getElement(), nextDiagramLink);
+							}
+							linksIterator.remove();
+							linkDescriptorsIterator.remove();
+							break;
+						}
 					}
-					linksIterator.remove();
-					linkDescriptorsIterator.remove();
-					break;
 				}
 			}
 		}

@@ -39,20 +39,26 @@
 			continue;
 		}
 		org.eclipse.emf.ecore.EObject diagramLinkObject = nextDiagramLink.getElement();
-		org.eclipse.emf.ecore.EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
-		org.eclipse.emf.ecore.EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-		«EXPAND CodeStyle::iterate('nextLinkDescriptor', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName(), 'linkDescriptorsIterator', 'linkDescriptors.iterator()')-»
-			if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination() && diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
-				//Add the edge and it's domain element to the domain2Notation-Map.
-				«REM»
-				This is necessary when the source of the link is a shortcut. Otherwise the map will already contain an entry for this link. 
-				«ENDREM»
-				if (!domain2NotationMap.containsKey(nextDiagramLink.getElement())) {
-					domain2NotationMap.put(nextDiagramLink.getElement(), nextDiagramLink);
+		org.eclipse.gmf.runtime.notation.View sourceView = nextDiagramLink.getSource();
+		org.eclipse.gmf.runtime.notation.View targetView = nextDiagramLink.getTarget();
+		if (sourceView != null && targetView != null) {
+			org.eclipse.emf.ecore.EObject diagramLinkSrc = sourceView.getElement();
+			org.eclipse.emf.ecore.EObject diagramLinkDst = targetView.getElement();
+			if (diagramLinkSrc != null && diagramLinkDst != null) {
+				«EXPAND CodeStyle::iterate('nextLinkDescriptor', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName(), 'linkDescriptorsIterator', 'linkDescriptors.iterator()')-»
+					if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination() && diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+						//Add the edge and it's domain element to the domain2Notation-Map.
+						«REM»
+						This is necessary when the source of the link is a shortcut. Otherwise the map will already contain an entry for this link. 
+						«ENDREM»
+						if (!domain2NotationMap.containsKey(nextDiagramLink.getElement())) {
+							domain2NotationMap.put(nextDiagramLink.getElement(), nextDiagramLink);
+						}
+						linksIterator.remove();
+						linkDescriptorsIterator.remove();
+						break;
+					}
 				}
-				linksIterator.remove();
-				linkDescriptorsIterator.remove();
-				break;
 			}
 		}
 	}
