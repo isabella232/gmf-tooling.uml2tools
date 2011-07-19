@@ -123,11 +123,13 @@ public class «creationWizardClassName»
 			public void run(org.eclipse.core.runtime.IProgressMonitor monitor)
 					throws InvocationTargetException, InterruptedException {
 	«ENDIF-»
-				diagram = «getDiagramEditorUtilQualifiedClassName()».createDiagram(diagramModelFilePage.getURI(),
+			final String diagramName = diagramModelFilePage.getURI().lastSegment();
+				final String diagramNameWithoutExtension = diagramModelFilePage.getURI().trimFileExtension().lastSegment();
+				diagram = «getDiagramEditorUtilQualifiedClassName()».createDiagram(diagramModelFilePage.getEncodedURI(),
 	«IF standaloneDomainModel(self)-»
-						domainModelFilePage.getURI(),
+						domainModelFilePage.getEncodedURI(),
 	«IF needInitialObject(self)-» 
-	initialObjectCreationPage.getInitialObject(), initialObjectCreationPage.getEncoding(),
+	diagramName, diagramNameWithoutExtension, initialObjectCreationPage.getInitialObject(), initialObjectCreationPage.getEncoding(),
 	«ENDIF-» 
 	«ENDIF-»
 						monitor);

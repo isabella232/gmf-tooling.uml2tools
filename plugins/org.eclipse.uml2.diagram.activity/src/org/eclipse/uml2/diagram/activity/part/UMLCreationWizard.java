@@ -124,7 +124,9 @@ public class UMLCreationWizard extends Wizard implements INewWizard {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
 			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
-				diagram = UMLDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), domainModelFilePage.getURI(), monitor);
+				final String diagramName = diagramModelFilePage.getURI().lastSegment();
+				final String diagramNameWithoutExtension = diagramModelFilePage.getURI().trimFileExtension().lastSegment();
+				diagram = UMLDiagramEditorUtil.createDiagram(diagramModelFilePage.getEncodedURI(), domainModelFilePage.getEncodedURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
 						UMLDiagramEditorUtil.openDiagram(diagram);

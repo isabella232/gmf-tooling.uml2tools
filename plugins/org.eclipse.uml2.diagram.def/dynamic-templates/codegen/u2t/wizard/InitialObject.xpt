@@ -63,7 +63,7 @@
 
 «DEFINE createDiagramMethod FOR gmfgen::GenDiagram-»
 	«EXPAND xpt::Common::generatedMemberComment((if editorGen.application = null then 'This method should be called within a workspace modify operation since it creates resources.' else '' endif))»
-	public static org.eclipse.emf.ecore.resource.Resource createDiagram(org.eclipse.emf.common.util.URI diagramURI,«IF standaloneDomainModel(self)» org.eclipse.emf.common.util.URI modelURI,«ENDIF» «IF needInitialObject(self)»final org.eclipse.emf.ecore.EClass initialObject, final String encoding, «ENDIF»org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
+	public static org.eclipse.emf.ecore.resource.Resource createDiagram(org.eclipse.emf.common.util.URI diagramURI,«IF standaloneDomainModel(self)» org.eclipse.emf.common.util.URI modelURI,«ENDIF» final String diagramName, final String diagramNameWithoutExtension, «IF needInitialObject(self)»final org.eclipse.emf.ecore.EClass initialObject, final String encoding, «ENDIF»org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
 		org.eclipse.emf.transaction.TransactionalEditingDomain editingDomain = org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		progressMonitor.beginTask(«EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreateDiagramProgressTask(self)) FOR editorGen», 3);
 		final org.eclipse.emf.ecore.resource.Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
@@ -73,10 +73,6 @@
 		((org.eclipse.emf.ecore.xmi.XMLResource) diagramResource).getDefaultSaveOptions().put(org.eclipse.emf.ecore.xmi.XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
 		((org.eclipse.emf.ecore.xmi.XMLResource) diagramResource).getDefaultLoadOptions().put(org.eclipse.emf.ecore.xmi.XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
 «ENDIF-»
-		final String diagramName = diagramURI.lastSegment();
-		«IF needDefaultName(self)-»
-		final String diagramNameWithoutExtension = diagramURI.trimFileExtension().lastSegment();
-		«ENDIF-»
 		org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand command = new org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand(editingDomain, «EXPAND xpt::Externalizer::accessorCall(i18nKeyForCreateDiagramCommandLabel(self)) FOR editorGen», java.util.Collections.EMPTY_LIST) {
 			protected org.eclipse.gmf.runtime.common.core.command.CommandResult doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor monitor, org.eclipse.core.runtime.IAdaptable info) throws org.eclipse.core.commands.ExecutionException {
 «IF domainDiagramElement <> null-»

@@ -9,11 +9,11 @@
  * Contributors:
  *    Tatiana Fesenko (Borland) - #194187 UMLWizard usability
  */
-«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'»
+Â«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'Â»
+Â«IMPORT 'http://www.eclipse.org/emf/2002/Ecore'Â»
 
-«AROUND additions FOR gmfgen::GenDiagram»
-	«EXPAND xpt::Common::generatedMemberComment»
+Â«AROUND additions FOR gmfgen::GenDiagramÂ»
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
 	/**
 	 * #174315 Automatically set diagram file extension
 	 * @generated
@@ -32,7 +32,7 @@
 	 * @generated
 	 */
 	protected void setDomainFileName(org.eclipse.jface.wizard.IWizardPage nextPage) {
-		«creationWizardPageClassName» nextWizardPage = («creationWizardPageClassName») nextPage;
+		Â«creationWizardPageClassNameÂ» nextWizardPage = (Â«creationWizardPageClassNameÂ») nextPage;
 		String fileName = getFileName();
 		String extension = getExtension();
 		if (fileName.endsWith(extension)) {
@@ -41,4 +41,13 @@
 		fileName += nextWizardPage.getExtension();
 		nextWizardPage.setFileName(fileName);
 	}
-«ENDAROUND»
+	
+	Â«EXPAND xpt::Common::generatedMemberCommentÂ»
+	public org.eclipse.emf.common.util.URI getEncodedURI() {
+	Â«IF editorGen.application = null-Â»
+		return org.eclipse.emf.common.util.URI.createPlatformResourceURI(getFilePath().toString(), true);
+	Â«ELSE-Â»
+		return org.eclipse.emf.common.util.URI.createFileURI(getFilePath().toString());
+	Â«ENDIF-Â»
+	}
+Â«ENDAROUNDÂ»

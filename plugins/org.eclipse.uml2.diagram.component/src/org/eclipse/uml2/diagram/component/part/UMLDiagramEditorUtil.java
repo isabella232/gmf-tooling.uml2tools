@@ -152,16 +152,15 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * This method should be called within a workspace modify operation since it creates resources.
-	 * @generated
-	 */
-	public static Resource createDiagram(URI diagramURI, URI modelURI, final EClass initialObject, final String encoding, IProgressMonitor progressMonitor) {
+	* This method should be called within a workspace modify operation since it creates resources.
+	* @generated
+	*/
+	public static Resource createDiagram(URI diagramURI, URI modelURI, final String diagramName, final String diagramNameWithoutExtension, final EClass initialObject, final String encoding,
+			IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		progressMonitor.beginTask(Messages.UMLDiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
 		final Resource modelResource = editingDomain.getResourceSet().createResource(modelURI);
-		final String diagramName = diagramURI.lastSegment();
-		final String diagramNameWithoutExtension = diagramURI.trimFileExtension().lastSegment();
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.UMLDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {

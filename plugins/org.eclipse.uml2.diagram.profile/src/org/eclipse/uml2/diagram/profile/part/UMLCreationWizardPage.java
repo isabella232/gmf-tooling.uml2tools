@@ -117,4 +117,11 @@ public class UMLCreationWizardPage extends WizardNewFileCreationPage {
 		nextWizardPage.setFileName(fileName);
 	}
 
+	/**
+	* @generated
+	*/
+	public URI getEncodedURI() {
+		return URI.createPlatformResourceURI(getFilePath().toString(), true);
+	}
+
 }

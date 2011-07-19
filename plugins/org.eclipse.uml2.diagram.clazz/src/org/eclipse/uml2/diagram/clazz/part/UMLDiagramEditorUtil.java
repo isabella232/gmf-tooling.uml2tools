@@ -1,7 +1,6 @@
 package org.eclipse.uml2.diagram.clazz.part;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -9,7 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.resources.IFile;
@@ -63,8 +61,8 @@ import org.eclipse.uml2.uml.resource.UMLResource;
 public class UMLDiagramEditorUtil {
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static Map<?, ?> getSaveOptions() {
 		HashMap<String, Object> saveOptions = new HashMap<String, Object>();
 		saveOptions.put(XMLResource.OPTION_ENCODING, "UTF-8"); //$NON-NLS-1$
@@ -73,8 +71,8 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static Map getSaveOptions(String encoding) {
 		Map saveOptions = new HashMap();
 		saveOptions.put(XMLResource.OPTION_ENCODING, encoding == null ? "UTF-8" : encoding); //$NON-NLS-1$
@@ -83,8 +81,8 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static boolean openDiagram(Resource diagram) throws PartInitException {
 		String path = diagram.getURI().toPlatformString(true);
 		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot().findMember(new Path(path));
@@ -96,8 +94,8 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static void setCharset(IFile file) {
 		if (file == null) {
 			return;
@@ -110,8 +108,8 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static String getUniqueFileName(IPath containerFullPath, String fileName, String extension) {
 		if (containerFullPath == null) {
 			containerFullPath = new Path(""); //$NON-NLS-1$
@@ -152,16 +150,15 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * This method should be called within a workspace modify operation since it creates resources.
-	 * @generated
-	 */
-	public static Resource createDiagram(URI diagramURI, URI modelURI, final EClass initialObject, final String encoding, IProgressMonitor progressMonitor) {
+	* This method should be called within a workspace modify operation since it creates resources.
+	* @generated
+	*/
+	public static Resource createDiagram(URI diagramURI, URI modelURI, final String diagramName, final String diagramNameWithoutExtension, final EClass initialObject, final String encoding,
+			IProgressMonitor progressMonitor) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		progressMonitor.beginTask(Messages.UMLDiagramEditorUtil_CreateDiagramProgressTask, 3);
 		final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
 		final Resource modelResource = editingDomain.getResourceSet().createResource(modelURI);
-		final String diagramName = diagramURI.lastSegment();
-		final String diagramNameWithoutExtension = diagramURI.trimFileExtension().lastSegment();
 		AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.UMLDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
 
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
@@ -198,7 +195,7 @@ public class UMLDiagramEditorUtil {
 	/**
 	* Create a new instance of domain element associated with canvas.
 	* <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	* <!-- end-user-doc -->
 	* @generated
 	*/
 	private static Package createInitialModel(EClass initialObject, String diagramName) {
@@ -210,7 +207,7 @@ public class UMLDiagramEditorUtil {
 	/**
 	* Store model element in the resource.
 	* <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	* <!-- end-user-doc -->
 	* @generated
 	*/
 	private static void attachModelToResource(Package model, Resource resource) {
@@ -220,8 +217,8 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static void selectElementsInDiagram(IDiagramWorkbenchPart diagramPart, List<EditPart> editParts) {
 		diagramPart.getDiagramGraphicalViewer().deselectAll();
 
@@ -239,8 +236,8 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static int findElementsInDiagramByID(DiagramEditPart diagramPart, EObject element, List<EditPart> editPartCollector) {
 		IDiagramGraphicalViewer viewer = (IDiagramGraphicalViewer) diagramPart.getViewer();
 		final int intialNumOfEditParts = editPartCollector.size();
@@ -280,8 +277,8 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static View findView(DiagramEditPart diagramEditPart, EObject targetElement, LazyElement2ViewMap lazyElement2ViewMap) {
 		boolean hasStructuralURI = false;
 		if (targetElement.eResource() instanceof XMLResource) {
@@ -301,36 +298,37 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * @generated
-	 */
+	* XXX This is quite suspicious code (especially editPartTmpHolder) and likely to be removed soon
+	* @generated
+	*/
 	public static class LazyElement2ViewMap {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private Map<EObject, View> element2ViewMap;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private View scope;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private Set<? extends EObject> elementSet;
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public LazyElement2ViewMap(View scope, Set<? extends EObject> elements) {
 			this.scope = scope;
 			this.elementSet = elements;
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		public final Map<EObject, View> getElement2ViewMap() {
 			if (element2ViewMap == null) {
 				element2ViewMap = new HashMap<EObject, View>();
@@ -350,8 +348,8 @@ public class UMLDiagramEditorUtil {
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		private static boolean buildElement2ViewMap(View parentView, Map<EObject, View> element2ViewMap, Set<? extends EObject> elements) {
 			if (elements.size() == element2ViewMap.size()) {
 				return true;
@@ -378,8 +376,8 @@ public class UMLDiagramEditorUtil {
 	} //LazyElement2ViewMap	
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	public static IFile getFile(URI uri) {
 		if (uri.toString().startsWith("platform:/resource")) { //$NON-NLS-1$
 			String path = uri.toString().substring("platform:/resource".length()); //$NON-NLS-1$
@@ -392,8 +390,8 @@ public class UMLDiagramEditorUtil {
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	private static void loadDefaultImports(Package model) {
 		ResourceSet resourceSet = model.eResource().getResourceSet();
 		Model umlLibrary = (Model) resourceSet.getResource(URI.createURI(UMLResource.UML_PRIMITIVE_TYPES_LIBRARY_URI), true).getContents().get(0);
