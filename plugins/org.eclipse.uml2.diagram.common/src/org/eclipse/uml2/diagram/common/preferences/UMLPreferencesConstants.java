@@ -35,7 +35,7 @@ public interface UMLPreferencesConstants {
 
 	// -----------------------
 	String SHOW_MULTIPLICITY_OPTIONS = "org.eclipse.uml2.diagram.preferences.show_multiplicity_options"; //$NON-NLS-1$
-	
+
 	String SHOW_NO_MULTIPLICITY = "org.eclipse.uml2.diagram.preferences.show_no_multiplicity"; //$NON-NLS-1$
 
 	String SHOW_NO_DEFAULT_MULTIPLICITY = "org.eclipse.uml2.diagram.preferences.show_no_default_multiplicity"; //$NON-NLS-1$

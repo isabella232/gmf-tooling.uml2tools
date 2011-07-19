@@ -3,7 +3,6 @@ package org.eclipse.uml2.diagram.common.parser;
 import org.eclipse.uml2.diagram.common.preferences.UMLPreferencesConstants;
 import org.eclipse.uml2.diagram.parser.MultiplicityViewOption;
 
-
 public final class MultiplicityViewOptionConverter {
 
 	public static MultiplicityViewOption parsePreferenceValue(String preferenceValue) {

@@ -21,7 +21,7 @@ public class MainPreferencePage extends AbstractPreferencePage {
 	@Override
 	protected void addFields(Composite parent) {
 		myShowMultiplicityOptions = new RadioGroupFieldEditor(UMLPreferencesConstants.SHOW_MULTIPLICITY_OPTIONS, Messages.MainPreferencePage_group_display_settings, 1, new String[][] {
-				{ Messages.MainPreferencePage_show_no_multiplicity, UMLPreferencesConstants.SHOW_NO_MULTIPLICITY }, 
+				{ Messages.MainPreferencePage_show_no_multiplicity, UMLPreferencesConstants.SHOW_NO_MULTIPLICITY },
 				{ Messages.MainPreferencePage_show_no_default_multiplicity, UMLPreferencesConstants.SHOW_NO_DEFAULT_MULTIPLICITY },
 				{ Messages.MainPreferencePage_show_all_multiplicity, UMLPreferencesConstants.SHOW_ALL_MULTIPLICITY } }, parent, true);
 		addField(myShowMultiplicityOptions);

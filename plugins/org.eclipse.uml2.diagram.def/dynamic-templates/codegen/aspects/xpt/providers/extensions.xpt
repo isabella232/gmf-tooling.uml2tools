@@ -1,8 +1,6 @@
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»   
-«IMPORT 'http://www.eclipse.org/modeling/mdt/uml2tools/gmf/GenModel'»
 
 «EXTENSION u2t::graphicalnodeep::Guard»
-«EXTENSION xpt::diagram::Utils»
 
 «AROUND extensions FOR gmfgen::GenDiagram-»
 	«targetDef.proceed()»

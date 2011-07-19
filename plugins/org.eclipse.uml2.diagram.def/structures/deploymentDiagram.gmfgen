@@ -30,7 +30,7 @@
           elementUniqueIdentifier="Dependency_4005"/>
     </viewmap>
     <containsShortcutsTo>uml</containsShortcutsTo>
-    <shortcutsProvidedFor>uml</shortcutsProvidedFor>
+    <shortcutsProvidedFor>UMLDeployment</shortcutsProvidedFor>
     <domainDiagramElement
         href="../../../plugin/org.eclipse.uml2.uml/model/UML.genmodel#//uml/Package"/>
     <childNodes

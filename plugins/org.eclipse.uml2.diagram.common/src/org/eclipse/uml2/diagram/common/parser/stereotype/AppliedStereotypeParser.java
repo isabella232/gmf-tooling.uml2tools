@@ -64,7 +64,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable subject) {
 		return null;
 	}
-	
+
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		Element subject = doAdapt(element);
 		List<String> toApply = getStereotypesToApply(newString);
@@ -86,7 +86,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		}
 		return result.toString();
 	}
-	
+
 	public String getPrintString(IAdaptable element, int flags) {
 		String classifier = getElementLabel(doAdapt(element));
 		String labelString = this.getLabelString(element, flags);
@@ -99,7 +99,7 @@ public class AppliedStereotypeParser implements ISemanticParser {
 		}
 		return labelString == null || labelString.length() == 0 ? labelString : NLS.bind(APPLIED_PROFILE, new Object[] { labelString });
 	}
-	
+
 	private String getLabelString(IAdaptable element, int flags) {
 		Element subject = doAdapt(element);
 		List<Stereotype> stereos = subject.getAppliedStereotypes();

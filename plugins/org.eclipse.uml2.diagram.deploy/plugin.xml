@@ -266,7 +266,7 @@
       <viewProvider class="org.eclipse.uml2.diagram.deploy.providers.UMLViewProvider">
          <Priority name="Lowest"/>
          <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
-            <method name="getType()" value="uml"/>
+            <method name="getType()" value="UMLDeployment"/>
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="UMLDeployment"/>
